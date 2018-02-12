@@ -169,7 +169,7 @@ export namespace EnglishDateTime {
 	export const SinceRegex = `\\b(since|after or equal to|starting (from|on|with))\\b`;
 	export const AgoRegex = `\\b(ago)\\b`;
 	export const LaterRegex = `\\b(later|from now)\\b`;
-	export const InConnectorRegex = `\\b(in)\\b`;
+	export const InConnectorRegex = `\\b(in|within)\\b`;
 	export const AmPmDescRegex = `(ampm)`;
 	export const MorningStartEndRegex = `(^(morning|${AmDescRegex}))|((morning|${AmDescRegex})$)`;
 	export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;
