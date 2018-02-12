@@ -399,7 +399,7 @@ AgoRegex: !simpleRegex
 LaterRegex: !simpleRegex
   def: \b(later|from now)\b
 InConnectorRegex: !simpleRegex
-  def: \b(in)\b
+  def: \b(in|within)\b
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !nestedRegex

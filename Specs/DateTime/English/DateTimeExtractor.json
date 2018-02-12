@@ -782,4 +782,34 @@
     }
   ]
 }
+,
+{
+  "Input": "I will leave in 2 minutes",  
+  "Results": [
+    {
+      "Text": "in 2 minutes",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back within 2 hours",  
+  "Results": [
+    {
+      "Text": "within 2 hours",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Can you make it in ten seconds?",  
+  "Results": [
+    {
+      "Text": "in ten seconds",
+      "Type": "datetime"
+    }
+  ]
+}
 ]
