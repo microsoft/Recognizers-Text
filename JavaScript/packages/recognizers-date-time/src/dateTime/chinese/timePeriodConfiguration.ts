@@ -57,12 +57,14 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         this.lowBoundMap = ChineseDateTime.TimeLowBoundDesc;
     }
 
-    public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
+    public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult{
         if (!referenceTime) referenceTime = new Date();
 
+        let result = new DateTimeParseResult(er);
         let extra: DateTimeExtra<TimePeriodType> = er.data;
+        
         if (!extra) {
-            return null;
+            return result;
         }
 
         let parseResult = this.parseTimePeriod(extra, referenceTime);
@@ -76,7 +78,6 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
             parseResult.pastResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(parseResult.pastValue.item2);
         }
 
-        let result = new DateTimeParseResult(er);
         result.value = parseResult;
         result.resolutionStr = '';
         result.timexStr = parseResult.timex;
