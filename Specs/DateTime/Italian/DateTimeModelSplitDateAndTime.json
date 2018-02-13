@@ -1,0 +1,831 @@
+[{
+  "Input": "I'll be out next hour",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "hour",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT1H",
+            "Mod": "after",
+            "type": "duration",
+            "value": "3600"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out next 5 minutes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 minutes",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT5M",
+            "Mod": "after",
+            "type": "duration",
+            "value": "300"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out next 3 days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 days",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P3D",
+            "Mod": "after",
+            "type": "duration",
+            "value": "259200"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting now",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "now",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PRESENT_REF",
+            "type": "time",
+            "value": "2016-11-07 00:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting tongiht at 7",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T07",
+            "type": "time",
+            "value": "07:00:00"
+          },
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting tongiht at 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting 2 hours later",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT2H",
+            "Mod": "after",
+            "type": "duration",
+            "value": "7200"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting tomorrow from 5pm to 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "type": "date",
+            "value": "2016-11-08"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "5pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T17",
+            "type": "time",
+            "value": "17:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting today from 5pm to 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-07",
+            "type": "date",
+            "value": "2016-11-07"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "5pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T17",
+            "type": "time",
+            "value": "17:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting next Monday from 5pm to 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next monday",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-14",
+            "type": "date",
+            "value": "2016-11-14"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "5pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T17",
+            "type": "time",
+            "value": "17:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting from 5pm to 7pm tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "type": "date",
+            "value": "2016-11-08"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "5pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T17",
+            "type": "time",
+            "value": "17:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting from 5pm to 7pm today",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-07",
+            "type": "date",
+            "value": "2016-11-07"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "5pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T17",
+            "type": "time",
+            "value": "17:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting from 5pm to 7pm next Monday",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next monday",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-14",
+            "type": "date",
+            "value": "2016-11-14"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "5pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T17",
+            "type": "time",
+            "value": "17:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting tomorrow from 5 to 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "type": "date",
+            "value": "2016-11-08"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "from 5 to 7pm",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17,T19,PT2H)",
+            "type": "timerange",
+            "start": "17:00:00",
+            "end": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting from Sep.1st to Sep.5th",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sep.1st",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-09-01",
+            "type": "date",
+            "value": "2016-09-01"
+          },
+          {
+            "timex": "XXXX-09-01",
+            "type": "date",
+            "value": "2017-09-01"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "sep.5th",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-09-05",
+            "type": "date",
+            "value": "2016-09-05"
+          },
+          {
+            "timex": "XXXX-09-05",
+            "type": "date",
+            "value": "2017-09-05"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting from July the 5th to July the 8th",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "july the 5th",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-07-05",
+            "type": "date",
+            "value": "2016-07-05"
+          },
+          {
+            "timex": "XXXX-07-05",
+            "type": "date",
+            "value": "2017-07-05"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "july the 8th",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-07-08",
+            "type": "date",
+            "value": "2016-07-08"
+          },
+          {
+            "timex": "XXXX-07-08",
+            "type": "date",
+            "value": "2017-07-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting from 5:30 to 7:00",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5:30",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T05:30",
+            "type": "time",
+            "value": "05:30:00"
+          },
+          {
+            "timex": "T17:30",
+            "type": "time",
+            "value": "17:30:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7:00",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T07:00",
+            "type": "time",
+            "value": "07:00:00"
+          },
+          {
+            "timex": "T19:00",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting from 5pm to 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T17",
+            "type": "time",
+            "value": "17:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting from 5am to 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5am",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T05",
+            "type": "time",
+            "value": "05:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting 2 days later",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 days",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P2D",
+            "Mod": "after",
+            "type": "duration",
+            "value": "172800"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I had 2 minutes ago",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT2M",
+            "Mod": "before",
+            "type": "duration",
+            "value": "120"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting tomorrow at 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "type": "date",
+            "value": "2016-11-08"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19",
+            "type": "time",
+            "value": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting tomorrow morning at 7pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "type": "date",
+            "value": "2016-11-08"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "morning at 7pm",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T07",
+            "type": "time",
+            "value": "07:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+]

@@ -1,0 +1,286 @@
+[{
+  "Input": "I'll leave weekly",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "weekly",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave daily",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "daily",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every day",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave each month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "each month",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave annually",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "annually",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave annual",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "annual",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave each two days",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "each two days",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every three week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every three week",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave 3pm every day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm every day",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave 3pm each day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm each day",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave each 4/15",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "each 4/15",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every monday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every monday",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave each monday 4pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "each monday 4pm",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every morning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every morning",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every morning at 9am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every morning at 9am",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every afternoon at 4pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every afternoon at 4pm",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every night at 9pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every night at 9pm",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every night at 9",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every night at 9",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave mornings at 9am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mornings at 9am",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave on mornings at 9",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on mornings at 9",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave at 9am every Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9am every Sunday",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave at 9am on Mondays",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9am on Mondays",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave at 9am Mondays",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9am Mondays",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave on Mondays",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on Mondays",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave on Sundays",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on Sundays",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave Sundays",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sundays",
+      "Type": "set"
+    }
+  ]
+}
+]

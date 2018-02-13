@@ -9,6 +9,7 @@ using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
+using Microsoft.Recognizers.Text.DateTime.Italian;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.DateTime.French;
@@ -157,6 +158,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetFrenchExtractor(extractorName);
                 case Culture.German:
                     return GetGermanExtractor(extractorName);
+                case Culture.Italian:
+                    return GetItalianExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{language}' not supported");
@@ -180,6 +183,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetFrenchParser(parserName);
                 case Culture.German:
                     return GetGermanParser(parserName);
+                case Culture.Italian:
+                    return GetItalianParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{language}' not supported");
@@ -527,7 +532,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Date:
                     return new BaseDateParser(new GermanDateParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Time:
-                    return new DateTime.French.TimeParser(new GermanTimeParserConfiguration(commonConfiguration));
+                    return new DateTime.German.TimeParser(new GermanTimeParserConfiguration(commonConfiguration));
                 case DateTimeParsers.DatePeriod:
                     return new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(commonConfiguration));
                 case DateTimeParsers.TimePeriod:
@@ -547,6 +552,67 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for German not supported");
+        }
+
+        public static IDateTimeExtractor GetItalianExtractor(DateTimeExtractors extractorName)
+        {
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new ItalianDateExtractorConfiguration());
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new ItalianTimeExtractorConfiguration());
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration());
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration());
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration());
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration());
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration());
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new ItalianSetExtractorConfiguration());
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.None));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseMergedExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Italian not supported");
+        }
+
+        public static IDateTimeParser GetItalianParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new ItalianCommonDateTimeParserConfiguration(DateTimeOptions.None);
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new ItalianDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.Italian.TimeParser(new ItalianTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new ItalianDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new ItalianTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new ItalianDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new ItalianDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new ItalianDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new ItalianHolidayParserConfiguration());
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new ItalianSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedParser(new ItalianMergedParserConfiguration(DateTimeOptions.None));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Italian not supported");
         }
 
         private static IModel GetCustomModelFor(string language)

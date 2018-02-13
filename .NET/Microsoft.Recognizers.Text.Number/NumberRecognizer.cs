@@ -99,6 +99,19 @@ namespace Microsoft.Recognizers.Text.Number
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration()),
                             new German.PercentageExtractor())
             });
+
+            RegisterModel(Culture.Italian, options.ToString(), new Dictionary<Type, IModel>
+            {
+                [typeof(NumberModel)] = new NumberModel(
+                           AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
+                           new Italian.NumberExtractor(NumberMode.PureNumber)),
+                [typeof(OrdinalModel)] = new OrdinalModel(
+                           AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration()),
+                           new Italian.OrdinalExtractor()),
+                [typeof(PercentModel)] = new PercentModel(
+                           AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
+                           new Italian.PercentageExtractor())
+            });
         }
 
         public IModel GetNumberModel(string culture, bool fallbackToDefaultCulture = true)

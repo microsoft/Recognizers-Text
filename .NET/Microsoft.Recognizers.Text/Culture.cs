@@ -10,6 +10,7 @@ namespace Microsoft.Recognizers.Text
         public const string Portuguese = "pt-br";
         public const string French = "fr-fr";
         public const string German = "de-de";
+        public const string Italian = "it-it";
 
         public string CultureName;
         public string CultureCode;
@@ -20,7 +21,8 @@ namespace Microsoft.Recognizers.Text
             new Culture("Spanish", Spanish),
             new Culture("Portuguese", Portuguese),
             new Culture("French", French),
-            new Culture("German", German)
+            new Culture("German", German),
+            new Culture("Italian", Italian)
         };
 
         private Culture(string cultureName, string cultureCode)

@@ -267,6 +267,46 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                              }
                              ),
             });
+
+            RegisterModel(Culture.Italian, options.ToString(), new Dictionary<Type, IModel>
+            {
+                [typeof(CurrencyModel)] = new CurrencyModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Italian.CurrencyExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Italian.CurrencyParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(TemperatureModel)] = new TemperatureModel(
+                new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Italian.TemperatureExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Italian.TemperatureParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(DimensionModel)] = new DimensionModel(
+                new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Italian.DimensionExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Italian.DimensionParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(AgeModel)] = new AgeModel(
+                new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Italian.AgeExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Italian.AgeParserConfiguration())
+                                }
+                            }
+                            ),
+            });
         }
 
         public IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)

@@ -1,0 +1,276 @@
+[{
+  "Input": "I'll go back on easter",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "easter",
+      "Type": "date",
+      "Value": {
+        "Timex": "",
+        "FutureResolution": {
+          "date": "0001-01-01"
+        },
+        "PastResolution": {
+          "date": "0001-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on christmas day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "christmas day",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-12-25",
+        "FutureResolution": {
+          "date": "2016-12-25"
+        },
+        "PastResolution": {
+          "date": "2015-12-25"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on new year eve",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "new year eve",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-12-31",
+        "FutureResolution": {
+          "date": "2016-12-31"
+        },
+        "PastResolution": {
+          "date": "2015-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on new year's eve",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "new year's eve",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-12-31",
+        "FutureResolution": {
+          "date": "2016-12-31"
+        },
+        "PastResolution": {
+          "date": "2015-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on christmas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "christmas",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-12-25",
+        "FutureResolution": {
+          "date": "2016-12-25"
+        },
+        "PastResolution": {
+          "date": "2015-12-25"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Yuandan",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Yuandan",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-01",
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on thanks giving day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "thanks giving day",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-11-WXX-4-4",
+        "FutureResolution": {
+          "date": "2016-11-24"
+        },
+        "PastResolution": {
+          "date": "2015-11-26"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on thanksgiving",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "thanksgiving",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-11-WXX-4-4",
+        "FutureResolution": {
+          "date": "2016-11-24"
+        },
+        "PastResolution": {
+          "date": "2015-11-26"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on father's day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "father's day",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-06-WXX-7-3",
+        "FutureResolution": {
+          "date": "2017-06-18"
+        },
+        "PastResolution": {
+          "date": "2016-06-19"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Yuandan of next year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Yuandan of next year",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-01-01",
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2017-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on thanks giving day 2010",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "thanks giving day 2010",
+      "Type": "date",
+      "Value": {
+        "Timex": "2010-11-WXX-4-4",
+        "FutureResolution": {
+          "date": "2010-11-25"
+        },
+        "PastResolution": {
+          "date": "2010-11-25"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on father's day of 2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "father's day of 2015",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-06-WXX-7-3",
+        "FutureResolution": {
+          "date": "2015-06-21"
+        },
+        "PastResolution": {
+          "date": "2015-06-21"
+        }
+      }
+    }
+  ]
+}
+]

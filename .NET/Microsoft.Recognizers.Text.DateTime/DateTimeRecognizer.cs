@@ -8,6 +8,7 @@ using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.German;
 
 using Microsoft.Recognizers.Text.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -72,6 +73,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                               new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
                               new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))
                           ));
+
+            RegisterModel(Culture.Italian, type, options.ToString(), new DateTimeModel(
+                             new BaseMergedParser(new ItalianMergedParserConfiguration(options)),
+                             new BaseMergedExtractor(new ItalianMergedExtractorConfiguration(options))
+                         ));
         }
 
         private DateTimeRecognizer(string cultureCode, DateTimeOptions options)
@@ -114,6 +120,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     RegisterModel(Culture.Portuguese, type, options.ToString(), new DateTimeModel(
                                       new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
                                       new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))
+                                  ));
+                    break;
+
+                case Culture.Italian:
+                    RegisterModel(Culture.Italian, type, options.ToString(), new DateTimeModel(
+                                      new BaseMergedParser(new ItalianMergedParserConfiguration(options)),
+                                      new BaseMergedExtractor(new ItalianMergedExtractorConfiguration(options))
                                   ));
                     break;
 

@@ -3,26 +3,26 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: anni|anno|anni di età|anno di età|anni d'età|anno d'età
-    Month: mese|mesi|mese di età|mesi di età|mese d'età|mesi d'età
-    Week: settimana|settimane|settimana di età|settimane di età|settimana d'età|settimane d'età
-    Day: giorni|giorno|giorni di età|giorno mane di età|giorni d'età|giorno d'età
+    Anno: anni|anno|anni di età|anno di età|anni d'età|anno d'età
+    Mese: mese|mesi|mese di età|mesi di età|mese d'età|mesi d'età
+    Settimana: settimana|settimane|settimana di età|settimane di età|settimana d'età|settimane d'età
+    Giorno: giorni|giorno|giorni di età|giorno mane di età|giorni d'età|giorno d'età
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Square kilometer: chilometro quadrato|chilometri quadrati|km quadrato|km quadrati|chilometro quadro|chilometri quadri|km quadro|km quadri|km2|km^2|km²
-    Square hectometer: ettometro quadrato|ettometri quadrati|hm quadrato|hm quadrati|ettometro quadro|ettometri quadri|hm quadro|hm quadri|hm2|hm^2|hm²|ettaro|ettari
-    Square decameter: decametro quadrato|decametri quadrati|dam quadrato|dam quadrati|decametro quadro|decametri quadri|dam quadro|dam quadri|dam2|dam^2|dam²
-    Square meter: metro quadrato|metri quadrati|m quadrato|m quadrati|metro quadro|metri quadri|m quadro|m quadri|m2|m^2|m²
-    Square decimeter: decimetro quadrato|decimetri quadrati|dm quadrato|dm quadrati|decimetro quadro|decimetri quadri|dm quadro|dm quadri|dm2|dm^2|dm²
-    Square centimeter: centimetro quadrato|centimetri quadrati|cm quadrato|cm quadrati|centimetro quadro|centimetri quadri|cm quadro|cm quadri|cm2|cm^2|cm²
-    Square millimeter: millimetro quadrato|millimetri quadrati|mm quadrato|mm quadrati|millimetro quadro|millimetri quadri|mm quadro|mm quadri|mm2|mm^2|mm²
-    Square inch: pollice quadrato|pollici quadrati|in quadrato|in quadrati|pollice quadro|pollici quadri|in quadro|in quadri|sq in|sq inch|square inch|square inches|in2|in^2|in²
-    Square foot: piede quadrato|piedi quadrati|ft quadrato|ft quadrati|piede quadro|piedi quadri|ft quadro|ft quadri|sqft|sq ft|sq foot|sq feet|square foot|square feet|feet2|feet^2|feet²|ft2|ft^2|ft²
-    Square mile: miglio quadrato|miglia quadrata|miglia quadrate|mi quadrato|mi quadrati|mi quadrate|miglio quadro|miglia quadre|ft quadro|ft quadri|sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²
-    Square yard: iarda quadrata|iarda quadra|iarde quadrate|iarde quadre|yd2|yd^2|yd²
-    Acre: acro|acri
+    Chilometro quadrato: chilometro quadrato|chilometri quadrati|km quadrato|km quadrati|chilometro quadro|chilometri quadri|km quadro|km quadri|km2|km^2|km²
+    Ettometro quadrato: ettometro quadrato|ettometri quadrati|hm quadrato|hm quadrati|ettometro quadro|ettometri quadri|hm quadro|hm quadri|hm2|hm^2|hm²|ettaro|ettari
+    Decametro quadrato: decametro quadrato|decametri quadrati|dam quadrato|dam quadrati|decametro quadro|decametri quadri|dam quadro|dam quadri|dam2|dam^2|dam²
+    Metro quadrato: metro quadrato|metri quadrati|m quadrato|m quadrati|metro quadro|metri quadri|m quadro|m quadri|m2|m^2|m²
+    Decimetro quadrato: decimetro quadrato|decimetri quadrati|dm quadrato|dm quadrati|decimetro quadro|decimetri quadri|dm quadro|dm quadri|dm2|dm^2|dm²
+    Centimetro quadrato: centimetro quadrato|centimetri quadrati|cm quadrato|cm quadrati|centimetro quadro|centimetri quadri|cm quadro|cm quadri|cm2|cm^2|cm²
+    Millimetro quadrato: millimetro quadrato|millimetri quadrati|mm quadrato|mm quadrati|millimetro quadro|millimetri quadri|mm quadro|mm quadri|mm2|mm^2|mm²
+    Pollice quadrato: pollice quadrato|pollici quadrati|in quadrato|in quadrati|pollice quadro|pollici quadri|in quadro|in quadri|sq in|sq inch|square inch|square inches|in2|in^2|in²
+    Piede quadrato: piede quadrato|piedi quadrati|ft quadrato|ft quadrati|piede quadro|piedi quadri|ft quadro|ft quadri|sqft|sq ft|sq foot|sq feet|square foot|square feet|feet2|feet^2|feet²|ft2|ft^2|ft²
+    Miglio quadrato: miglio quadrato|miglia quadrata|miglia quadrate|mi quadrato|mi quadrati|mi quadrate|miglio quadro|miglia quadre|ft quadro|ft quadri|sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²
+    Iarda quadrato: iarda quadrata|iarda quadra|iarde quadrate|iarde quadre|yd2|yd^2|yd²
+    Acro: acro|acri
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
 #Reference Source: https://en.wikipedia.org/wiki/List_of_circulating_currencies
@@ -330,7 +330,7 @@ CurrencySuffixList: !dictionary
 #Dollar
     United States dollar: dollaro americano|dollari americani|dollaro statunitense|dollari statunitensi|dollaro degli stati uniti|dollari delgi stati uniti|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|us$|us dollar|us dollars|u.s dollar|u.s dollars
     East Caribbean dollar: dollaro dei caraibi orientali|dollari dei caraibi orientali|east Caribbean $|xcd
-    Australian dollar: dollaro australiano|dollari australiani|dollaro dell'australia|australian $|australian$|aud
+    Australian dollar: dollaro australiano|dollari australiani|dollaro dell australia|australian $|australian$|aud
     Bahamian dollar: dollaro delle bahamas|dollari delle bahamas|bahamian $|bahamian$|bsd
     Barbadian dollar: dollaro barbados|dollari barbados|dollaro delle barbados|dollari delle barbados|bbd
     Belize dollar: dollaro del belize|dollari del belize|belize $|bzd
@@ -372,8 +372,8 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 #Dollar Prefix
-    Dollar: $
-    United States dollar: $ stati uniti|us$|us $|u.s. $|u.s $
+    Dollaro: $
+    Dollaro americano: $ stati uniti|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $
     Australian dollar: $ australiano|$ australia
     Bahamian dollar: bahamas $|$ bahamas
@@ -480,82 +480,79 @@ InformationSuffixList: !dictionary
 AmbiguousDimensionUnitList: !list
   types: [ string, string ]
   entries:
-    - barrel
-    - barrels
+    - barile
+    - barili
     - grain
     - pound
     - stone
-    - yards
-    - yard
+    - iarde
+    - iarda
     - cord
     - dram
     - feet
     - foot
     - gill
-    - knot
+    - nodo
     - peck
-    - cup
+    - tazza
     - fps
     - pts
     - in
     - \"
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
-  def: (?<=(\s|^|\W))
+  def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
-  def: (?=(\s|\W|$))
+  def: (?=(\s|\P{L}|$))
+ConnectorToken: de
 #LengthExtractorConfiguration
-LenghtSuffixList: !dictionary
+LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kilometer: km|chilometro|chilometri|kilometro|kilometeri
-    Hectometer: hm|ettometro|ettometri
-    Decameter: dam|decametro|decametri
-    Meter: m|metro|metri
-    Decimeter: dm|decimetro|decimetri
-    Centimeter: cm|centimetro|centimetri
-    Millimeter: mm|millimetro|millimetri
-    Micrometer: μm|micrometro|micrometri
-    Nanometer: nm|nanometro|nanometri
-    Picometer: pm|picometro|picometri
-    Mile: -mile|mile|miles|miglia|miglio
-    Yard: iarda|iard
-    Inch: pollice|pollici
-    Foot: piede|piedi
-    Light year: anni luce|anno luce|anni-luce|anno-luce
-    Pt: punto|punti|pt|pts
+    Chilometro: km|chilometro|chilometri|kilometro|kilometeri
+    Ettometro: hm|ettometro|ettometri
+    Decametro: dam|decametro|decametri
+    Metro: m|metro|metri
+    Decimetro: dm|decimetro|decimetri
+    Centimetro: cm|centimetro|centimetri
+    Millimetro: mm|millimetro|millimetri
+    Micrometro: μm|micrometro|micrometri
+    Nanometro: nm|nanometro|nanometri
+    Picometro: pm|picometro|picometri
+    Miglio: -mile|mile|miles|miglia|miglio
+    Iarda: iarda|iarde
+    Pollice: pollice|pollici
+    Piede: piede|piedi
+    Anno luce: anni luce|anno luce|anni-luce|anno-luce
 AmbiguousLengthUnitList: !list
   types: [ string ]
   entries:
     - m
-    - yard
-    - yards
-    - pm
-    - pt
-    - pts
+    - iarda
+    - iarde
 #SpeedExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Meter per second: metro / secondo|metri / secondi|m/s|metri per secondo|metri al secondo|metro per secondo|metro al secondo
-    Kilometer per hour: km/h|km/ora|kilometro per ora|kilometri per ora|chilometro per ora|chilometri per ora|kilometro all'ora|kilometri all'ora|chilometro all'ora|chilometri all'ora
-    Kilometer per minute: km/min|km/minuto|kilometro per minuto|kilometri per minuto|chilometro per minuto|chilometri per minuto|kilometro al minuto|kilometri al minuto|chilometro al minuto|chilometri al minuto
-    Kilometer per second: km/s|km/secondo|kilometro per secondo|kilometri per secondo|chilometro per secondo|chilometri per secondo|kilometro al secondo|kilometri al secondo|chilometro al secondo|chilometri al secondo
-    Mile per hour: mph|miglia per ora|miglio per ora|miglia all'ora|miglio all'ora
-    Knot: kt|nodo|nodi|kn
-    Foot per second: ft/s|foot/s|piede/s|piedi/s|piede per secondo|piedi per secondo|piede al secondo|piedi al secondo
-    Foot per minute: ft/min|foot/min|piede/min|piedi/min|piede per minute|piedi per minute|piede al minute|piedi al minute
-    Yard per minute: iarda per minuto|iarde per minuto|iarda al minuto|iarde al minuto
-    Yard per second: iarda per secondo|iarde per secondo|iarda al secondo|iarde al secondo
+    Metro al secondo: metro / secondo|metri / secondi|m/s|metri per secondo|metri al secondo|metro per secondo|metro al secondo
+    Chilometri all'ora: km/h|km/ora|kilometro per ora|kilometri per ora|chilometro per ora|chilometri per ora|kilometro all'ora|kilometri all'ora|chilometro all'ora|chilometri all'ora
+    Chilometri al minuto: km/min|km/minuto|kilometro per minuto|kilometri per minuto|chilometro per minuto|chilometri per minuto|kilometro al minuto|kilometri al minuto|chilometro al minuto|chilometri al minuto
+    Chilometri al secondo: km/s|km/secondo|kilometro per secondo|kilometri per secondo|chilometro per secondo|chilometri per secondo|kilometro al secondo|kilometri al secondo|chilometro al secondo|chilometri al secondo
+    Miglia all'ora: mph|miglia per ora|miglio per ora|miglia all'ora|miglio all'ora
+    Nodo: kt|nodo|nodi|kn
+    Piede al secondo: ft/s|foot/s|piede/s|piedi/s|piede per secondo|piedi per secondo|piede al secondo|piedi al secondo
+    Piede al minuto: ft/min|foot/min|piede/min|piedi/min|piede per minute|piedi per minute|piede al minute|piedi al minute
+    Iarda al minuto: iarda per minuto|iarde per minuto|iarda al minuto|iarde al minuto
+    Iarda al secondo: iarda per secondo|iarde per secondo|iarda al secondo|iarde al secondo
 #TemperatureExtractorConfiguration
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    F: gradi fahrenheit|grado fahrenheit|°f|grado farenheit|gradi farenheit|farenheit|f
+    F: gradi fahrenheit|grado fahrenheit|°f|fahrenheit|f|gradi f|farenheit|gradi farenheit|grado farenheit
     K: k|kelvin
     R: rankine|°r
     D: delisle|°de
-    C: gradi celsius|grado celsius|grado centigrado|gradi centigradi|°c|c|grado|gradi
+    C: gradi celsius|grado celsius|grado centigrado|gradi centigradi|°c|c|celsius|gradi c|centigrado|centigradi
     Degree: grado|gradi|°
 AmbiguousTemperatureUnitList: !list
   types: [ string ]
@@ -567,53 +564,47 @@ AmbiguousTemperatureUnitList: !list
 VolumeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Cubic meter: m3|m^3|m³|metro cubo|metri cubi|metro cubico|metri cubici
-    Cubic centimeter: cm3|cm^3|cm³|centimetro cubo|centimetri cubi|centimetro cubico|centimetri cubici
-    Cubic millimiter: mm3|mm^3|mm³|millimetro cubo|millimetri cubi|millimetro cubico|millimetri cubici
-    Hectoliter: ettolitro|ettolitri
-    Decaliter: dal|decalitro|decalitri|dekalitro|dekalitri
-    Liter: l|litro|litri
-    Deciliter: dl|decilitro|decilitri
-    Centiliter: cl|centilitro|centilitri
-    Milliliter: ml|millimetro|millimetri
-    Cubic yard: iarda cubica|iarde cubiche
-    Cubic inch: pollice cubo|pollice cubico|pollici cubici|pollici cubi
-    Cubic foot: piede cubo|piedi cubi|piede cubico|piedi cubici
-    Cubic mile: miglio cubo|miglio cubico|miglia cubica|miglia cubiche
-    Fluid ounce: oncia|once|oncia fluida|once fluide
-    Teaspoon: teaspoon|teaspoons
-    Tablespoon: tablespoon|tablespoons
-    Pint: pint|pints
-    Volume unit: fluid dram|gill|quart|minim|barrel|cord|peck|bushel|hogshead
+    Metro cubo: m3|m^3|m³|metro cubo|metri cubi|metro cubico|metri cubici
+    Centimetro cubo: cm3|cm^3|cm³|centimetro cubo|centimetri cubi|centimetro cubico|centimetri cubici
+    Millimetro cubo: mm3|mm^3|mm³|millimetro cubo|millimetri cubi|millimetro cubico|millimetri cubici
+    Ettolitro: ettolitro|ettolitri
+    Decalitro: dal|decalitro|decalitri|dekalitro|dekalitri
+    Litro: l|litro|litri
+    Decilitro: dl|decilitro|decilitri
+    Centilitro: cl|centilitro|centilitri
+    Millilitro: ml|millimetro|millimetri
+    Iarda cubica: iarda cubica|iarde cubiche
+    Pollice cubo: pollice cubo|pollice cubico|pollici cubici|pollici cubi
+    Piede cubo: piede cubo|piedi cubi|piede cubico|piedi cubici
+    Miglia cubica: miglio cubo|miglio cubico|miglia cubica|miglia cubiche
+    Oncia liquida: oncia|once|oncia fluida|once fluide|once liquida|once liquide
+    Cucchiaino: cucchiaino|cucchiaini
+    Cucchiaio: cucchiaio|cucchiai
+    Tazza: tazza|tazze
+    Pinta: pinta|pinte
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
     - l
-    - ounce
-    - oz
-    - cup
-    - peck
-    - cord
-    - gill
+    - oncia
+    - tazza
+    - cucchiaino
+    - cucchiaio
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kilogram: kg|kilogrammo|chilogrammo|chilogrammi|kilogrammi|kilo|kili|chilo|chili
-    Gram: g|grammo|grammi|gr
-    Milligram: mg|milligrammo|milligrammi
-    Barrel: barrels|barrel
-    Gallon: gallone|galloni
-    Metric ton: metric tons|metric ton
-    Ton: tonnellata|tonnellate
-    Pound: libbra|libbre
-    Ounce: oncia|once
-    Weight unit: pennyweight|grain|british long ton|US short hundredweight|stone|dram
+    Chilogrammo: kg|kilogrammo|chilogrammo|chilogrammi|kilogrammi|kilo|kili|chilo|chili
+    Grammo: g|grammo|grammi|gr
+    Milligrammo: mg|milligrammo|milligrammi
+    Barile: barili|barile
+    Gallone: gallone|galloni
+    Tonnellata: tonnellata|tonnellate
+    Libbra: libbra|libbre
+    Oncia: oncia|once
 AmbiguousWeightUnitList: !list
   types: [ string ]
   entries:
     - g
     - oz
-    - stone
-    - dram
 ...

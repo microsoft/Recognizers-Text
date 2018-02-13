@@ -1,0 +1,848 @@
+[{
+  "Input": "I'll be back at 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back at seven",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seven",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7:56pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7:56:35pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7:56:35 pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 12:34",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:34",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 12:34:20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:34:20",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back T12:34:20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "T12:34:20",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 00:00",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "00:00",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 00:00:30",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "00:00:30",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's 7 o'clock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 o'clock",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's seven o'clock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seven o'clock",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's 8 in the morning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 in the morning",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's 8 in the night",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 in the night",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's half past eight",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half past eight",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's half past 8pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half past 8pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's 30 mins past eight",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30 mins past eight",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's a quarter past eight",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a quarter past eight",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's quarter past eight",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "quarter past eight",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's three quarters past 9pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three quarters past 9pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's three minutes to eight",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three minutes to eight",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's half past seven o'clock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half past seven o'clock",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's half past seven afternoon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half past seven afternoon",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's half past seven in the morning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half past seven in the morning",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's a quarter to 8 in the morning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a quarter to 8 in the morning",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "It's 20 min past eight in the evening",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 min past eight in the evening",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back in the afternoon at 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon at 7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back afternoon at 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "afternoon at 7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back afternoon 7:00",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "afternoon 7:00",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back afternoon 7:00:14",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "afternoon 7:00:14",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back afternoon seven pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "afternoon seven pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back seven thirty pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seven thirty pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back seven thirty five pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seven thirty five pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back at eleven five",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "eleven five",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back three mins to five thirty ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three mins to five thirty",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back five thirty in the night",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "five thirty in the night",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back in the night five thirty",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the night five thirty",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back noonish",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "noonish",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back noon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "noon",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 12 noon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12 noon",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 11ish",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11ish",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 11-ish",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11-ish",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 340pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "340pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 1140 a.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1140 a.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "midnight",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "midnight",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mid-night",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid-night",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mid night",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid night",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "midmorning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "midmorning",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mid-morning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid-morning",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mid morning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid morning",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "midafternoon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "midafternoon",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mid-afternoon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid-afternoon",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mid afternoon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid afternoon",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "midday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "midday",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mid-day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid-day",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mid day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid day",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "noon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "noon",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7 p m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7 p. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7 p. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7 p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7:56 a m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56 a m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7:56:35 a. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 a. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7:56:35 am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 am",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 7:56:35 a. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 a. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back seven thirty p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seven thirty p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back seven thirty p m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seven thirty p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back seven thirty p. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seven thirty p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back seven thirty p. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seven thirty p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 340 pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "340 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back 1140 a m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1140 a m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "which emails have gotten p as subject",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "which emails have gotten a reply",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "I'll be back 12 o'clock lunchtime",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12 o'clock lunchtime",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back lunchtime 12 o'clock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "lunchtime 12 o'clock",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back at lunchtime 12 o'clock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "at lunchtime 12 o'clock",
+      "Type": "time"
+    }
+  ]
+}
+]
