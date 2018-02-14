@@ -1,6 +1,10 @@
+# Microsoft Recognizer Text Overview
+
 Microsoft.Recognizers.Text provides robust recognition and resolution of numbers, units, and date/time expressed in multiple languages. Full support for Chinese, English, French, Spanish, and Portuguese. Partial support for German. More on the way.
 
-Microsoft.Recognizers.Text currently has implementations in C# and Javascript!
+Microsoft.Recognizers.Text currently has implementations in C# and Javascript:
+* [C# version](https://github.com/Microsoft/Recognizers-Text/tree/master/.NET)
+* [JavaScript verison](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript)
 
 Nuget packages - for the base classes and the different supported entities - are available in nuget.org at: https://www.nuget.org/profiles/Recognizers.Text
 
