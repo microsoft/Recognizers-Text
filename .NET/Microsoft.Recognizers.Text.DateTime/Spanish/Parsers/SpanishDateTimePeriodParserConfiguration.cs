@@ -43,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex FutureRegex { get; }
 
+        public Regex FutureSuffixRegex { get; }
+
         public Regex NumberCombinedWithUnitRegex { get; }
 
         public Regex UnitRegex { get; }
@@ -82,6 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeOfDayRegex = SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
+            FutureSuffixRegex = SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = SpanishDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
             UnitRegex = SpanishTimePeriodExtractorConfiguration.UnitRegex;
             PeriodTimeOfDayWithDateRegex = SpanishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;

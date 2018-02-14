@@ -90,6 +90,12 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 // check whether it contains string like "more or equal", "less or equal", "at least", etc.
                 var match = Config.MoreOrEqual.Match(extResult.Text);
+
+                if (!match.Success)
+                {
+                    match = Config.MoreOrEqualSuffix.Match(extResult.Text);
+                }
+
                 if (match.Success)
                 {
                     leftBracket = NumberRangeConstants.LEFT_CLOSED;
@@ -100,6 +106,12 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 match = Config.LessOrEqual.Match(extResult.Text);
+
+                if (!match.Success)
+                {
+                    match = Config.LessOrEqualSuffix.Match(extResult.Text);
+                }
+
                 if (match.Success)
                 {
                     rightBracket = NumberRangeConstants.RIGHT_CLOSED;
@@ -154,6 +166,12 @@ namespace Microsoft.Recognizers.Text.Number
                 rightBracket = NumberRangeConstants.RIGHT_OPEN;
 
                 var match = Config.MoreOrEqual.Match(extResult.Text);
+
+                if (!match.Success)
+                {
+                    match = Config.MoreOrEqualSuffix.Match(extResult.Text);
+                }
+
                 if (match.Success)
                 {
                     leftBracket = NumberRangeConstants.LEFT_CLOSED;
@@ -175,6 +193,12 @@ namespace Microsoft.Recognizers.Text.Number
                 leftBracket = NumberRangeConstants.LEFT_OPEN;
 
                 var match = Config.LessOrEqual.Match(extResult.Text);
+
+                if (!match.Success)
+                {
+                    match = Config.LessOrEqualSuffix.Match(extResult.Text);
+                }
+
                 if (match.Success)
                 {
                     rightBracket = NumberRangeConstants.RIGHT_CLOSED;

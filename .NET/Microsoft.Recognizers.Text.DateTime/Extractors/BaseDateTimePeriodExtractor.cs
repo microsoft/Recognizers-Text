@@ -387,14 +387,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 
                 match = this.config.PastPrefixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(match.Index + match.Length)))
+                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                 {
                     ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
                     continue;
                 }
 
                 match = this.config.NextPrefixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(match.Index + match.Length)))
+                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                {
+                    ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                }
+
+                match = this.config.FutureSuffixRegex.Match(afterStr);
+                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                 {
                     ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
                 }

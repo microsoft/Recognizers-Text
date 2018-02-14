@@ -44,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex FutureRegex { get; }
 
+        public Regex FutureSuffixRegex { get; }
+
         public Regex NumberCombinedWithUnitRegex { get; }
 
         public Regex UnitRegex { get; }
@@ -84,6 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
             PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;

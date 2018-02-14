@@ -123,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = TimeTypeConstants.beforeMod;
+                val.Mod = TimeTypeConstants.BEFORE_MOD;
                 pr.Value = val;
             }
 
@@ -132,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = TimeTypeConstants.afterMod;
+                val.Mod = TimeTypeConstants.AFTER_MOD;
                 pr.Value = val;
             }
 
@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = TimeTypeConstants.beforeMod;
+                val.Mod = TimeTypeConstants.BEFORE_MOD;
                 pr.Value = val;
                 hasBefore = true;
             }
@@ -153,7 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStrPrefix.Length;
                 pr.Text = modStrPrefix + pr.Text + modStrSuffix;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = TimeTypeConstants.sinceMod;
+                val.Mod = TimeTypeConstants.SINCE_MOD;
                 pr.Value = val;
             }
 
@@ -358,30 +358,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_TIMEPERIOD:
-                        if (resolution.ContainsKey(TimeTypeConstants.START))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
                         {
-                            resolutionPm[TimeTypeConstants.START] = FormatUtil.ToPm(resolution[TimeTypeConstants.START]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_START] = FormatUtil.ToPm(resolution[TimeTypeConstants.RESOLVE_START]);
                         }
 
-                        if (resolution.ContainsKey(TimeTypeConstants.END))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_END))
                         {
-                            resolutionPm[TimeTypeConstants.END] = FormatUtil.ToPm(resolution[TimeTypeConstants.END]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_END] = FormatUtil.ToPm(resolution[TimeTypeConstants.RESOLVE_END]);
                         }
 
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                        splited = resolution[TimeTypeConstants.START].Split(' ');
-                        if (resolution.ContainsKey(TimeTypeConstants.START))
+                        splited = resolution[TimeTypeConstants.RESOLVE_START].Split(' ');
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
                         {
-                            resolutionPm[TimeTypeConstants.START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
                         }
 
-                        splited = resolution[TimeTypeConstants.END].Split(' ');
+                        splited = resolution[TimeTypeConstants.RESOLVE_END].Split(' ');
 
-                        if (resolution.ContainsKey(TimeTypeConstants.END))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_END))
                         {
-                            resolutionPm[TimeTypeConstants.END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
                         }
 
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
@@ -440,15 +440,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (!string.IsNullOrEmpty(mod))
                 {
-                    if (mod.Equals(TimeTypeConstants.beforeMod))
+                    if (mod.Equals(TimeTypeConstants.BEFORE_MOD))
                     {
-                        res.Add(TimeTypeConstants.END, resolutionDic[type]);
+                        res.Add(TimeTypeConstants.RESOLVE_END, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(TimeTypeConstants.afterMod))
+                    if (mod.Equals(TimeTypeConstants.AFTER_MOD))
                     {
-                        res.Add(TimeTypeConstants.START, resolutionDic[type]);
+                        res.Add(TimeTypeConstants.RESOLVE_START, resolutionDic[type]);
                         return;
                     }
                 }
@@ -476,31 +476,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(mod))
             {
                 //For before mode, the start of the period should be the end the new period, no start 
-                if (mod.Equals(TimeTypeConstants.beforeMod))
+                if (mod.Equals(TimeTypeConstants.BEFORE_MOD))
                 {
-                    res.Add(TimeTypeConstants.END, start);
+                    res.Add(TimeTypeConstants.RESOLVE_END, start);
                     return;
                 }
 
                 //For after mode, the end of the period should be the start the new period, no end 
-                if (mod.Equals(TimeTypeConstants.afterMod))
+                if (mod.Equals(TimeTypeConstants.AFTER_MOD))
                 {
-                    res.Add(TimeTypeConstants.START, end);
+                    res.Add(TimeTypeConstants.RESOLVE_START, end);
                     return;
                 }
 
                 //For since mode, the start of the period should be the start the new period, no end 
-                if (mod.Equals(TimeTypeConstants.sinceMod))
+                if (mod.Equals(TimeTypeConstants.SINCE_MOD))
                 {
-                    res.Add(TimeTypeConstants.START, start);
+                    res.Add(TimeTypeConstants.RESOLVE_START, start);
                     return;
                 }
             }
 
             if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
             {
-                res.Add(TimeTypeConstants.START, start);
-                res.Add(TimeTypeConstants.END, end);
+                res.Add(TimeTypeConstants.RESOLVE_START, start);
+                res.Add(TimeTypeConstants.RESOLVE_END, end);
             }
         }
     }

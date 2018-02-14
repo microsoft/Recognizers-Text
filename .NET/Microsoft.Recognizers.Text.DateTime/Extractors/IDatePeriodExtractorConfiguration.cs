@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FutureRegex { get; }
 
+        Regex FutureSuffixRegex { get; }
+
         Regex WeekOfRegex { get; }
 
         Regex MonthOfRegex { get; }
