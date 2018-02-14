@@ -157,27 +157,27 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
 ### Microsoft.Recognizers.Text.DateTime
 
-* [DateTimeModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-date-time/src/dateTime/dateTimeRecognizer.ts)
+* **DateTime**
 
-    This model will find any date, time, duration and date/time ranges, even if its write in colloquial language. E.g. _"I'll go back 8pm today"_ will return _"2017-10-04 20:00:00"_.
-
-    `new DateTimeRecognizers(Recognizers.Culture.English).getDateTimeModel()`
-
-    Optionally, you can use the `recognizeDateTime` method to parse your input with the same result.
+    This recognizer will find any date, time, duration and date/time ranges, even if its write in colloquial language. E.g. _"I'll go back 8pm today"_ will return _"2017-10-04 20:00:00"_.
 
     `Recognizers.recognizeDateTime("I'll go back 8pm today", Recognizers.Culture.English)`
 
+    Or you can obtain a model instance using:
+
+    `new DateTimeRecognizers(Recognizers.Culture.English).getDateTimeModel()`
+
 ### Microsoft.Recognizers.Text.Options
 
-* [BooleanModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-options/src/options/optionsRecognizer.ts)
+* **Booleans**
 
-    This model will find any boolean value, even if its write with emoji. E.g. _"👌 It's ok"_ will return _"true"_.
-
-    `new OptionsRecognizers(Recognizers.Culture.English).getBooleanModel()`
-
-    Optionally, you can use the `recognizeBoolean` method to parse your input with the same result.
+    This recognizer will find any boolean value, even if its write with emoji. E.g. _"👌 It's ok"_ will return _"true"_.
 
     `Recognizers.recognizeBoolean("👌 It's ok", Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new OptionsRecognizers(Recognizers.Culture.English).getBooleanModel()`
 
 ## Samples
 
