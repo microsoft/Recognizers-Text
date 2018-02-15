@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Text.Number;
 
 using DateObject = System.DateTime;
 
@@ -10,10 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class FullDateTimeParser : IDateTimeParser
     {
-        private readonly Regex beforeRegex;
-
-        private readonly Regex afterRegex;
-
         private readonly IFullDateTimeParserConfiguration config;
 
         public const string ParserTypeName = "datetimeV2";
@@ -21,8 +14,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public FullDateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
-            beforeRegex = new Regex(config.Before, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            afterRegex = afterRegex = new Regex(config.After, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
         
         public ParseResult Parse(ExtractResult extResult)
@@ -35,25 +26,54 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             // push, save teh MOD string
-            bool hasBefore = false, hasAfter = false;
-            var modStr = string.Empty;
-            if (beforeRegex.IsMatch(er.Text))
+            bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false;
+            string modStr = string.Empty, modStrPrefix = string.Empty, modStrSuffix = string.Empty;
+            var beforeMatch = config.BeforeRegex.Match(er.Text);
+            var afterMatch = config.AfterRegex.Match(er.Text);
+            var untilMatch = config.UntilRegex.Match(er.Text);
+            var sinceMatchPrefix = config.SincePrefixRegex.Match(er.Text);
+            var sinceMatchSuffix = config.SinceSuffixRegex.Match(er.Text);
+
+            if (beforeMatch.Success && er.Text.EndsWith(beforeMatch.Value))
             {
                 hasBefore = true;
-                var match = beforeRegex.Match(er.Text);
-                er.Start += match.Length;
-                er.Length -= match.Length;
-                er.Text = er.Text.Substring(match.Length);
-                modStr = match.Value;
+                er.Length -= beforeMatch.Length;
+                er.Text = er.Text.Substring(0, er.Length ?? 0);
+                modStr = beforeMatch.Value;
             }
-            else if (afterRegex.IsMatch(er.Text))
+            else if (afterMatch.Success && er.Text.EndsWith(afterMatch.Value))
             {
                 hasAfter = true;
-                var match = afterRegex.Match(er.Text);
-                er.Start += match.Length;
-                er.Length -= match.Length;
-                er.Text = er.Text.Substring(match.Length);
-                modStr = match.Value;
+                er.Length -= afterMatch.Length;
+                er.Text = er.Text.Substring(0, er.Length ?? 0);
+                modStr = afterMatch.Value;
+            }
+            else if (untilMatch.Success && untilMatch.Index == 0)
+            {
+                hasUntil = true;
+                er.Start += untilMatch.Length;
+                er.Length -= untilMatch.Length;
+                er.Text = er.Text.Substring(untilMatch.Length);
+                modStr = untilMatch.Value;
+            }
+            else
+            {
+                if (sinceMatchPrefix.Success && sinceMatchPrefix.Index == 0)
+                {
+                    hasSince = true;
+                    er.Start += sinceMatchPrefix.Length;
+                    er.Length -= sinceMatchPrefix.Length;
+                    er.Text = er.Text.Substring(sinceMatchPrefix.Length);
+                    modStrPrefix = sinceMatchPrefix.Value;
+                }
+
+                if (sinceMatchSuffix.Success && er.Text.EndsWith(sinceMatchSuffix.Value))
+                {
+                    hasSince = true;
+                    er.Length -= sinceMatchSuffix.Length;
+                    er.Text = er.Text.Substring(0, er.Length ?? 0);
+                    modStrSuffix = sinceMatchSuffix.Value;
+                }
             }
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
@@ -101,34 +121,53 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hasBefore)
             {
                 pr.Length += modStr.Length;
-                pr.Start -= modStr.Length;
-                pr.Text = modStr + pr.Text;
+                pr.Text = pr.Text + modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = TimeTypeConstants.beforeMod;
+                val.Mod = TimeTypeConstants.BEFORE_MOD;
                 pr.Value = val;
             }
 
             if (hasAfter)
             {
                 pr.Length += modStr.Length;
-                pr.Start -= modStr.Length;
-                pr.Text = modStr + pr.Text;
+                pr.Text = pr.Text + modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = TimeTypeConstants.afterMod;
+                val.Mod = TimeTypeConstants.AFTER_MOD;
                 pr.Value = val;
             }
 
-            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter);
+            if (hasUntil)
+            {
+                pr.Length += modStr.Length;
+                pr.Start -= modStr.Length;
+                pr.Text = modStr + pr.Text;
+                var val = (DateTimeResolutionResult)pr.Value;
+                val.Mod = TimeTypeConstants.BEFORE_MOD;
+                pr.Value = val;
+                hasBefore = true;
+            }
+
+            if (hasSince)
+            {
+                pr.Length += modStrPrefix.Length + modStrSuffix.Length;
+                pr.Start -= modStrPrefix.Length;
+                pr.Text = modStrPrefix + pr.Text + modStrSuffix;
+                var val = (DateTimeResolutionResult)pr.Value;
+                val.Mod = TimeTypeConstants.SINCE_MOD;
+                pr.Value = val;
+            }
+
+            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
 
             //change the type at last for the after or before mode
-            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter)}";
+            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
 
             return pr;
         }
 
-        public string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter)
+        public string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter, bool hasSince)
         {
-            if (hasBefore || hasAfter)
+            if (hasBefore || hasAfter || hasSince)
             {
                 if (type.Equals(Constants.SYS_DATETIME_DATE))
                 {
@@ -150,13 +189,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
 
-        public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter)
+        public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
             var resolutions = new List<Dictionary<string, string>>();
             var res = new Dictionary<string, object>();
 
             var type = slot.Type;
-            var typeOutput = DetermineDateTimeType(slot.Type, hasBefore, hasAfter);
+            var typeOutput = DetermineDateTimeType(slot.Type, hasBefore, hasAfter, hasSince);
             var timex = slot.TimexStr;
 
             var val = (DateTimeResolutionResult)slot.Value;
@@ -246,6 +285,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         value.Add("timex", timex);
                     }
 
+                    if (!string.IsNullOrEmpty(mod))
+                    {
+                        value.Add("Mod", mod);
+                    }
+
                     if (!string.IsNullOrEmpty(type))
                     {
                         value.Add("type", typeOutput);
@@ -314,30 +358,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_TIMEPERIOD:
-                        if (resolution.ContainsKey(TimeTypeConstants.START))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
                         {
-                            resolutionPm[TimeTypeConstants.START] = FormatUtil.ToPm(resolution[TimeTypeConstants.START]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_START] = FormatUtil.ToPm(resolution[TimeTypeConstants.RESOLVE_START]);
                         }
 
-                        if (resolution.ContainsKey(TimeTypeConstants.END))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_END))
                         {
-                            resolutionPm[TimeTypeConstants.END] = FormatUtil.ToPm(resolution[TimeTypeConstants.END]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_END] = FormatUtil.ToPm(resolution[TimeTypeConstants.RESOLVE_END]);
                         }
 
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                        splited = resolution[TimeTypeConstants.START].Split(' ');
-                        if (resolution.ContainsKey(TimeTypeConstants.START))
+                        splited = resolution[TimeTypeConstants.RESOLVE_START].Split(' ');
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
                         {
-                            resolutionPm[TimeTypeConstants.START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
                         }
 
-                        splited = resolution[TimeTypeConstants.END].Split(' ');
+                        splited = resolution[TimeTypeConstants.RESOLVE_END].Split(' ');
 
-                        if (resolution.ContainsKey(TimeTypeConstants.END))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_END))
                         {
-                            resolutionPm[TimeTypeConstants.END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
                         }
 
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
@@ -396,15 +440,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (!string.IsNullOrEmpty(mod))
                 {
-                    if (mod.Equals(TimeTypeConstants.beforeMod))
+                    if (mod.Equals(TimeTypeConstants.BEFORE_MOD))
                     {
-                        res.Add(TimeTypeConstants.END, resolutionDic[type]);
+                        res.Add(TimeTypeConstants.RESOLVE_END, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(TimeTypeConstants.afterMod))
+                    if (mod.Equals(TimeTypeConstants.AFTER_MOD))
                     {
-                        res.Add(TimeTypeConstants.START, resolutionDic[type]);
+                        res.Add(TimeTypeConstants.RESOLVE_START, resolutionDic[type]);
                         return;
                     }
                 }
@@ -432,24 +476,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(mod))
             {
                 //For before mode, the start of the period should be the end the new period, no start 
-                if (mod.Equals(TimeTypeConstants.beforeMod))
+                if (mod.Equals(TimeTypeConstants.BEFORE_MOD))
                 {
-                    res.Add(TimeTypeConstants.END, start);
+                    res.Add(TimeTypeConstants.RESOLVE_END, start);
                     return;
                 }
 
                 //For after mode, the end of the period should be the start the new period, no end 
-                if (mod.Equals(TimeTypeConstants.afterMod))
+                if (mod.Equals(TimeTypeConstants.AFTER_MOD))
                 {
-                    res.Add(TimeTypeConstants.START, end);
+                    res.Add(TimeTypeConstants.RESOLVE_START, end);
+                    return;
+                }
+
+                //For since mode, the start of the period should be the start the new period, no end 
+                if (mod.Equals(TimeTypeConstants.SINCE_MOD))
+                {
+                    res.Add(TimeTypeConstants.RESOLVE_START, start);
                     return;
                 }
             }
 
             if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
             {
-                res.Add(TimeTypeConstants.START, start);
-                res.Add(TimeTypeConstants.END, end);
+                res.Add(TimeTypeConstants.RESOLVE_START, start);
+                res.Add(TimeTypeConstants.RESOLVE_END, end);
             }
         }
     }

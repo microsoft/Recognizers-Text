@@ -11,6 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex SinceRegex { get; }
 
+        public Regex YearAfterRegex { get; }
+
+        public Regex YearRegex { get; }
+
         public IDateTimeParser GetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
@@ -20,6 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             BeforeRegex = FrenchMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = FrenchMergedExtractorConfiguration.AfterRegex;
             SinceRegex = FrenchMergedExtractorConfiguration.SinceRegex;
+            YearAfterRegex = FrenchMergedExtractorConfiguration.YearAfterRegex;
+            YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
             DatePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(this));

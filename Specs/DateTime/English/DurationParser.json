@@ -459,6 +459,282 @@
 }
 ,
 {
+  "Input": "I'll leave for all-day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all-day",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "duration": "86400"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all-week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all-week",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1W",
+        "FutureResolution": {
+          "duration": "604800"
+        },
+        "PastResolution": {
+          "duration": "604800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all-month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all-month",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1M",
+        "FutureResolution": {
+          "duration": "2592000"
+        },
+        "PastResolution": {
+          "duration": "2592000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all-year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all-year",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1Y",
+        "FutureResolution": {
+          "duration": "31536000"
+        },
+        "PastResolution": {
+          "duration": "31536000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full day",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "duration": "86400"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full week",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1W",
+        "FutureResolution": {
+          "duration": "604800"
+        },
+        "PastResolution": {
+          "duration": "604800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full month",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1M",
+        "FutureResolution": {
+          "duration": "2592000"
+        },
+        "PastResolution": {
+          "duration": "2592000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full year",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1Y",
+        "FutureResolution": {
+          "duration": "31536000"
+        },
+        "PastResolution": {
+          "duration": "31536000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full-day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full-day",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "duration": "86400"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full-week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full-week",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1W",
+        "FutureResolution": {
+          "duration": "604800"
+        },
+        "PastResolution": {
+          "duration": "604800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full-month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full-month",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1M",
+        "FutureResolution": {
+          "duration": "2592000"
+        },
+        "PastResolution": {
+          "duration": "2592000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full-year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full-year",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1Y",
+        "FutureResolution": {
+          "duration": "31536000"
+        },
+        "PastResolution": {
+          "duration": "31536000"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll leave for an hour",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -475,6 +751,29 @@
         },
         "PastResolution": {
           "duration": "3600"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for whole day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "whole day",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "duration": "86400"
         }
       }
     }

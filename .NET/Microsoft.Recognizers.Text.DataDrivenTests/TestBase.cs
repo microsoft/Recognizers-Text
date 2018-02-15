@@ -152,6 +152,47 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                if (expected.Start != 0) Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
+                if (expected.End != 0) Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
+
+                var values = actual.Resolution as IDictionary<string, object>;
+                var listValues = values["values"] as IList<Dictionary<string, string>>;
+                var actualValues = listValues.FirstOrDefault();
+
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution["values"].ToString());
+                var expectedValues = expectedObj.FirstOrDefault();
+
+                CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
+            }
+        }
+
+        public void TestDateTimeAlt()
+        {
+
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+            {
+                Assert.Inconclusive(message);
+            }
+
+            if (Debugger.IsAttached && TestSpec.Debug)
+            {
+                Debugger.Break();
+            }
+
+            var referenceDateTime = TestSpec.GetReferenceDateTime();
+
+            var actualResults = ((DateTimeModel)Model).Parse(TestSpec.Input, referenceDateTime);
+            var expectedResults = TestSpec.CastResults<ExtendedModelResult>();
+
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
+
+            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+            {
+                var expected = tuple.Item1;
+                var actual = tuple.Item2 as ExtendedModelResult;
+
+                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
                 if (expected.ParentText != null)
                 {
@@ -279,6 +320,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     }
                 }
             }
+        }
+
+        public void TestSequence()
+        {
+            TestNumber();
         }
 
         private static string GetMessage(TestModel spec)

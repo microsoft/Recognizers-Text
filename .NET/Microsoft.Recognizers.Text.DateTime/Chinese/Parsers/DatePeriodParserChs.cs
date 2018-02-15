@@ -167,11 +167,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
-                    if (year < 100 && year >= 30)
+                    if (year < 100 && year >= this.config.TwoNumYear)
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 30)
+                    else if (year < 100 && year < this.config.TwoNumYear)
                     {
                         year += 2000;
                     }
@@ -269,7 +269,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // handle like "2016年到2017年"
-        private static DateTimeResolutionResult ParseYearToYear(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseYearToYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var match = DatePeriodExtractorChs.YearToYear.Match(text);
@@ -311,28 +311,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
 
-                if (beginYear < 100 && beginYear >= 90)
+                if (beginYear < 100 && beginYear >= this.config.TwoNumYear)
                 {
                     beginYear += 1900;
                 }
-                else if (beginYear < 100 && beginYear < 20)
+                else if (beginYear < 100 && beginYear < this.config.TwoNumYear)
                 {
                     beginYear += 2000;
                 }
 
-                if (endYear < 100 && endYear >= 90)
+                if (endYear < 100 && endYear >= this.config.TwoNumYear)
                 {
                     endYear += 1900;
                 }
-                else if (endYear < 100 && endYear < 20)
+                else if (endYear < 100 && endYear < this.config.TwoNumYear)
                 {
                     endYear += 2000;
                 }
 
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
-                var endDay = DateObject.MinValue.SafeCreateFromValue(endYear, 12, 31);
-                var beginTimex = beginYear.ToString("D4");
-                var endTimex = endYear.ToString("D4");
+                var endDay = DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
+                var beginTimex = FormatUtil.LuisDate(beginYear, 1, 1);
+                var endTimex = FormatUtil.LuisDate(endYear, 1, 1);
                 ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
@@ -389,11 +389,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
             }
 
-            if (year < 100 && year >= 90)
+            if (year < 100 && year >= this.config.TwoNumYear)
             {
                 year += 1900;
             }
-            else if (year < 20)
+            else if (year < this.config.TwoNumYear)
             {
                 year += 2000;
             }
@@ -498,9 +498,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     if (trimedText.EndsWith("周") | trimedText.EndsWith("星期"))
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7*swift);
-                        ret.Timex = monday.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                        .ToString("D2");
+                        ret.Timex = FormatUtil.ToIsoWeekTimex(monday);
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(
@@ -638,7 +636,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // only contains year like "2016年"
-        private static DateTimeResolutionResult ParseYear(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var match = DatePeriodExtractorChs.YearRegex.Match(text);
@@ -695,11 +693,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var re = ConvertChineseToInteger(tmp);
                 var year = re;
 
-                if (year < 100 && year >= 90)
+                if (year < 100 && year >= this.config.TwoNumYear)
                 {
                     year += 1900;
                 }
-                else if (year < 100 && year < 20)
+                else if (year < 100 && year < this.config.TwoNumYear)
                 {
                     year += 2000;
                 }
@@ -1059,11 +1057,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
 
-                if (year < 100 && year >= 90)
+                if (year < 100 && year >= this.config.TwoNumYear)
                 {
                     year += 1900;
                 }
-                else if (year < 100 && year < 20)
+                else if (year < 100 && year < this.config.TwoNumYear)
                 {
                     year += 2000;
                 }
@@ -1123,11 +1121,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
             }
 
-            if (year < 100 && year >= 90)
+            if (year < 100 && year >= this.config.TwoNumYear)
             {
                 year += 1900;
             }
-            else if (year < 100 && year < 20)
+            else if (year < 100 && year < this.config.TwoNumYear)
             {
                 year += 2000;
             }
@@ -1150,10 +1148,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new DateTimeResolutionResult();
             int century = referenceDate.Year / 100 + 1;
             int decade;
-            int beginYear;
-            int beginMonth = 1, endMonth = 12;
-            int beginDay = 1, endDay = 31;
-            int decadeLastYear = 9;
+            int beginYear, endYear;
+            int decadeLastYear = 10;
             var inputCentury = false;
 
             var trimedText = text.Trim();
@@ -1211,26 +1207,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             beginYear = (century - 1) * 100 + decade;
+            endYear = beginYear + decadeLastYear;
 
             if (inputCentury)
             {
-                beginLuisStr = FormatUtil.LuisDate(beginYear, beginMonth, beginDay);
-                endLuisStr = FormatUtil.LuisDate(beginYear + decadeLastYear, endMonth, endDay);
+                beginLuisStr = FormatUtil.LuisDate(beginYear, 1, 1);
+                endLuisStr = FormatUtil.LuisDate(endYear, 1, 1);
             }
             else
             {
                 var beginYearStr = "XX" + decade.ToString();
-                beginLuisStr = FormatUtil.LuisDate(-1, beginMonth, beginDay);
+                beginLuisStr = FormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (decade + decadeLastYear).ToString();
-                endLuisStr = FormatUtil.LuisDate(-1, endMonth, endDay);
+                var endYearStr = "XX" + (endYear % 100).ToString("D2");
+                endLuisStr = FormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
             ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";
 
             int futureYear = beginYear, pastYear = beginYear;
-            var startDate = DateObject.MinValue.SafeCreateFromValue(beginYear, beginMonth, beginDay);
+            var startDate = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
             if (!inputCentury && startDate < referenceDate)
             {
                 futureYear += 100;
@@ -1242,12 +1239,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(
-                DateObject.MinValue.SafeCreateFromValue(futureYear, beginMonth, beginDay),
-                DateObject.MinValue.SafeCreateFromValue(futureYear + decadeLastYear, endMonth, endDay));
+                DateObject.MinValue.SafeCreateFromValue(futureYear, 1, 1),
+                DateObject.MinValue.SafeCreateFromValue(futureYear + decadeLastYear, 1, 1));
 
             ret.PastValue = new Tuple<DateObject, DateObject>(
-                DateObject.MinValue.SafeCreateFromValue(pastYear, beginMonth, beginDay),
-                DateObject.MinValue.SafeCreateFromValue(pastYear + decadeLastYear, endMonth, endDay));
+                DateObject.MinValue.SafeCreateFromValue(pastYear, 1, 1),
+                DateObject.MinValue.SafeCreateFromValue(pastYear + decadeLastYear, 1, 1));
 
             ret.Success = true;
 

@@ -47,6 +47,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex FutureRegex = 
             new Regex(DateTimeDefinitions.FutureRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex FutureSuffixRegex =
+            new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // composite regexes
         public static readonly Regex SimpleCasesRegex = 
             new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -132,6 +135,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex DecadeWithCenturyRegex =
             new Regex(DateTimeDefinitions.DecadeWithCenturyRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex YearPeriodRegex =
+            new Regex(DateTimeDefinitions.YearPeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex RelativeDecadeRegex =
+            new Regex(DateTimeDefinitions.RelativeDecadeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -140,6 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             MonthWithYearRegex,
             MonthNumWithYearRegex,
             YearRegex,
+            YearPeriodRegex,
             WeekOfMonthRegex,
             WeekOfYearRegex,
             MonthFrontBetweenRegex,
@@ -151,7 +161,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
-            DecadeWithCenturyRegex
+            DecadeWithCenturyRegex,
+            RelativeDecadeRegex
         };
 
         public PortugueseDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
@@ -190,6 +201,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 
+        Regex IDatePeriodExtractorConfiguration.FutureSuffixRegex => FutureSuffixRegex;
+
         Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
 
         Regex IDatePeriodExtractorConfiguration.MonthOfRegex => MonthOfRegex;
@@ -197,6 +210,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDatePeriodExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDatePeriodExtractorConfiguration.InConnectorRegex => InConnectorRegex;
+
+        Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
+
+        Regex IDatePeriodExtractorConfiguration.RelativeDecadeRegex => RelativeDecadeRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

@@ -1,5 +1,5 @@
-import { IExtractor, IParser, ExtractResult, RegExpUtility, StringUtility } from "recognizers-text";
-import { ChineseNumberParserConfiguration, AgnosticNumberParserFactory, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor, ChineseCardinalExtractor } from "recognizers-text-number"
+import { IExtractor, IParser, ExtractResult, RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
+import { ChineseNumberParserConfiguration, AgnosticNumberParserFactory, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor, ChineseCardinalExtractor } from "@microsoft/recognizers-text-number"
 import { Constants, TimeTypeConstants } from "../constants";
 import { IDateTimePeriodExtractorConfiguration, BaseDateTimePeriodExtractor, IDateTimePeriodParserConfiguration, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"

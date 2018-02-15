@@ -1,12 +1,14 @@
 var _ = require('lodash');
-var RecognizerTextNumber = require('recognizers-text-number');
-var NumberRecognizer = require('recognizers-text-number').NumberRecognizer;
+var RecognizerTextNumber = require('@microsoft/recognizers-text-number');
+var NumberRecognizer = require('@microsoft/recognizers-text-number').NumberRecognizer;
 var SupportedCultures = require('./cultures.js');
 
 var modelGetters = {
     'NumberModel': NumberRecognizer.instance.getNumberModel,
     'OrdinalModel': NumberRecognizer.instance.getOrdinalModel,
     'PercentModel': NumberRecognizer.instance.getPercentageModel,
+    // TODO: Implement number range model in javascript
+    'NumberRangeModel': NumberRecognizer.instance.getNumberModel,
     'CustomNumberModel': getCustomNumberModel
 };
 

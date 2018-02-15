@@ -45,5 +45,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             base.TestNumber();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-English.csv", "NumberRangeModel-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberRangeModel()
+        {
+            base.TestNumber();
+        }
     }
 }

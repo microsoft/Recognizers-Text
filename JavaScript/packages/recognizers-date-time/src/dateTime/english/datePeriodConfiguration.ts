@@ -1,7 +1,7 @@
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
-import { RegExpUtility } from "recognizers-text";
-import { BaseNumberParser, BaseNumberExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "recognizers-text-number"
+import { RegExpUtility } from "@microsoft/recognizers-text";
+import { BaseNumberParser, BaseNumberExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "@microsoft/recognizers-text-number"
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"

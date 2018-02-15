@@ -1748,6 +1748,17 @@
 }
 ,
 {
+  "Input": "I'll be out the coming week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "coming week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out September",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -2094,6 +2105,17 @@
   "Results": [
     {
       "Text": "from 2015/08/12 until October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from Friday the 2nd until Tuesday the 6th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from Friday the 2nd until Tuesday the 6th",
       "Type": "daterange"
     }
   ]
@@ -2897,6 +2919,174 @@
   "Results": [
     {
       "Text": "Year two hundred and sixty seven",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the week after next",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the week after next",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in the past 2 decades",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the past 2 decades",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in the last two decades",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the last two decades",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in the next decade",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the next decade",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 4 weeks in the future",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 weeks in the future",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 2 days hence",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 days hence",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana can find us a time beginning of next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "beginning of next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Sure, let's get a Skype end of next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "end of next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Sure, let's get a Skype start of next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "start of next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, find us a time end of March",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "end of March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please find us a time mid next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "cortana can arrange us to meet mid March",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "what about by mid summer?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid summer",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I can find us a time beginning of next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "beginning of next week",
       "Type": "daterange"
     }
   ]

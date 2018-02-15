@@ -1,4 +1,4 @@
-import { CultureInfo, Culture } from "recognizers-text-number";
+import { CultureInfo, Culture } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { FrenchNumberWithUnitExtractorConfiguration, FrenchNumberWithUnitParserConfiguration } from "./base";
 import { FrenchNumericWithUnit } from "../../resources/frenchNumericWithUnit";

@@ -69,6 +69,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AmDescRegex =
+            new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PmDescRegex =
+            new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public Regex FollowedUnit => TimeFollowedUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
@@ -83,6 +89,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex NextPrefixRegex => FrenchDatePeriodExtractorConfiguration.NextPrefixRegex; // Note: FR 'next' i.e 'prochain' is a suffix following after, i.e 'lundi prochain', however 'prefix' is enforced by interface
 
+        public Regex FutureSuffixRegex => FrenchDatePeriodExtractorConfiguration.FutureSuffixRegex;
+
         public Regex WeekDayRegex => new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex => PeriodTimeOfDayWithDateRegex;
@@ -90,6 +98,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateTimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.MiddlePauseRegex => MiddlePauseRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.AmDescRegex => AmDescRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
         public IExtractor CardinalExtractor { get; }
 

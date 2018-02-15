@@ -47,6 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FutureRegex { get; }
 
+        Regex FutureSuffixRegex { get; }
+
         Regex NumberCombinedWithUnit { get; }
 
         Regex WeekOfMonthRegex { get; }
@@ -82,6 +84,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex YearPlusNumberRegex { get; }
 
         Regex DecadeWithCenturyRegex { get; }
+
+        Regex YearPeriodRegex { get; }
+
+        Regex RelativeDecadeRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

@@ -468,6 +468,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Comment = "late";
                 }
             }
+            else
+            {
+                match = this.Config.AmDescRegex.Match(trimedText);
+                if (!match.Success)
+                {
+                    match = this.Config.PmDescRegex.Match(trimedText);
+                }
+
+                if (match.Success)
+                {
+                    timeText = match.Value;
+                }
+            }
 
             // Handle time of day
 
@@ -516,6 +529,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Handle Date followed by morning, afternoon and morning, afternoon followed by Date
             match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimedText);
+
+            if (!match.Success)
+            {
+                match = this.Config.AmDescRegex.Match(trimedText);
+                if (!match.Success)
+                {
+                    match = this.Config.PmDescRegex.Match(trimedText);
+                }
+            }
+
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index).Trim();
@@ -677,28 +700,35 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var prefixMatch = Config.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        mod = TimeTypeConstants.beforeMod;
+                        mod = TimeTypeConstants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
                     }
 
                     prefixMatch = Config.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        mod = TimeTypeConstants.afterMod;
+                        mod = TimeTypeConstants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
                     var suffixMatch = Config.PastRegex.Match(afterStr);
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
-                        mod = TimeTypeConstants.beforeMod;
+                        mod = TimeTypeConstants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
                     }
 
                     suffixMatch = Config.FutureRegex.Match(afterStr);
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
-                        mod = TimeTypeConstants.afterMod;
+                        mod = TimeTypeConstants.AFTER_MOD;
+                        endTime = beginTime.AddSeconds(swiftSeconds);
+                    }
+
+                    suffixMatch = Config.FutureSuffixRegex.Match(afterStr);
+                    if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
+                    {
+                        mod = TimeTypeConstants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 

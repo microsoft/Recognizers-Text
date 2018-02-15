@@ -10,6 +10,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex SinceRegex { get; }
 
+        public Regex YearAfterRegex { get; }
+
+        public Regex YearRegex { get; }
+
         public IDateTimeParser GetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
@@ -19,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = GermanMergedExtractorConfiguration.AfterRegex;
             SinceRegex = GermanMergedExtractorConfiguration.SinceRegex;
+            YearAfterRegex = GermanMergedExtractorConfiguration.YearAfterRegex;
+            YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
             DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));

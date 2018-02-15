@@ -7,10 +7,6 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="rem xcopy /E &quot;$(TargetDir)\..\*&quot; &quot;$(TargetDir)..\..\..\..\build\package\&quot; /Y" />
-  </Target>
-
   <ItemGroup>
     <PackageReference Include="YamlDotNet" Version="4.2.1" />
   </ItemGroup>

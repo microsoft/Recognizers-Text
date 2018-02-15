@@ -12,6 +12,8 @@ export namespace SpanishDateTime {
 	export const AndRegex = `(?<and>y|y\\s*el|--|-|—|——)`;
 	export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\\b|t)`;
 	export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
+	export const MinYearNum = '1500';
+	export const MaxYearNum = '2100';
 	export const YearRegex = `(?<year>((1[5-9]|20)\\d{2})|9\\d|0\\d|1\\d|2\\d)`;
 	export const FullYearRegex = `\\b(?<year>19\\d{2}|20\\d{2})\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\\s+mes)\\b`;
@@ -50,7 +52,7 @@ export namespace SpanishDateTime {
 	export const NextDateRegex = `\\b(((pr[oó]ximo|siguiente)\\s*)${WeekDayRegex})|(${WeekDayRegex}(\\s+(de\\s+)?(la\\s+)?(pr[oó]xima|siguiente)(\\s*semana)))\\b`;
 	export const SpecialDayRegex = `\\b((el\\s+)?(d[ií]a\\s+antes\\s+de\\s+ayer|anteayer)|((el\\s+)?d[ií]a\\s+(despu[eé]s\\s+)?de\\s+mañana|pasado\\s+mañana)|(el\\s)?d[ií]a siguiente|(el\\s)?pr[oó]ximo\\s+d[ií]a|(el\\s+)?[uú]ltimo d[ií]a|(d)?el d[ií]a|ayer|mañana|hoy)\\b`;
 	export const ForTheRegex = `^[.]`;
-	export const WeekDayAndDayOfMothRegex = `^[.]`;
+	export const WeekDayAndDayOfMonthRegex = `^[.]`;
 	export const WeekDayOfMonthRegex = `(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
 	export const NumberEndingPattern = `^[.]`;
 	export const SpecialDateRegex = `(?<=\\b(en)\\s+el\\s+)${DayRegex}\\b`;
@@ -153,6 +155,7 @@ export namespace SpanishDateTime {
 	export const CenturyRegex = `^[.]`;
 	export const DecadeRegex = `^[.]`;
 	export const DecadeWithCenturyRegex = `^[.]`;
+	export const RelativeDecadeRegex = `^[.]`;
 	export const FullTextYearRegex = `^[\\*]`;
 	export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
 	export const AgoRegex = `\\b(antes)\\b`;
@@ -188,6 +191,9 @@ export namespace SpanishDateTime {
 	export const CommonDatePrefixRegex = `^[\\.]`;
 	export const DurationUnitRegex = `^[\\.]`;
 	export const DurationConnectorRegex = `^[.]`;
+	export const YearAfterRegex = `^[.]`;
+	export const YearPeriodRegex = `^[.]`;
+	export const FutureSuffixRegex = `^[.]`;
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 }

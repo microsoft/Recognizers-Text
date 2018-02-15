@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Microsoft.Recognizers.Text.Number;
+using System.Globalization;
 
 using DateObject = System.DateTime;
 
@@ -16,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static readonly string DateMinString = FormatUtil.FormatDate(DateObject.MinValue);
         public static readonly string DateTimeMinString = FormatUtil.FormatDateTime(DateObject.MinValue);
+        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         public BaseMergedParser(IMergedParserConfiguration configuration)
         {
@@ -33,11 +33,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             // push, save the MOD string
-            bool hasBefore = false, hasAfter = false, hasSince = false;
+            bool hasBefore = false, hasAfter = false, hasSince = false, hasYearAfter = false;
             var modStr = string.Empty;
             var beforeMatch = Config.BeforeRegex.Match(er.Text);
             var afterMatch = Config.AfterRegex.Match(er.Text);
-            var sinceMatch = Config.SinceRegex.Match(er.Text); 
+            var sinceMatch = Config.SinceRegex.Match(er.Text);
+            
             if (beforeMatch.Success && beforeMatch.Index==0)
             {
                 hasBefore = true;
@@ -62,6 +63,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Text = er.Text.Substring(sinceMatch.Length);
                 modStr = sinceMatch.Value;
             }
+            else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success)
+            {
+                // This has to be put at the last, or cases like "before 2012" "after 2012" will fall into this
+                // 2012 or after/above
+                var match = Config.YearAfterRegex.Match(er.Text);
+                if (match.Success && er.Text.EndsWith(match.Value))
+                {
+                    hasYearAfter = true;
+                    er.Length -= match.Length;
+                    er.Text = er.Text.Substring(0, er.Length ?? 0);
+                    modStr = match.Value;
+                }
+            }
+                
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
@@ -115,7 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult) pr.Value;
-                val.Mod = TimeTypeConstants.beforeMod;
+                val.Mod = TimeTypeConstants.BEFORE_MOD;
                 pr.Value = val;
             }
 
@@ -125,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult) pr.Value;
-                val.Mod = TimeTypeConstants.afterMod;
+                val.Mod = TimeTypeConstants.AFTER_MOD;
                 pr.Value = val;
             }
 
@@ -135,8 +150,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
-                val.Mod = TimeTypeConstants.sinceMod;
+                val.Mod = TimeTypeConstants.SINCE_MOD;
                 pr.Value = val;
+            }
+
+            if (hasYearAfter && pr.Value != null)
+            {
+                pr.Length += modStr.Length;
+                pr.Text = pr.Text + modStr;
+                var val = (DateTimeResolutionResult)pr.Value;
+                val.Mod = TimeTypeConstants.SINCE_MOD;
+                pr.Value = val;
+                hasSince = true;
             }
 
             if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0
@@ -291,6 +316,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // if the WeekOf and in ClendarMode, modify the past part of our resolution
+            if ((Config.Options & DateTimeOptions.CalendarMode) != 0 && 
+                    !string.IsNullOrEmpty(comment) && comment.Equals("WeekOf"))
+            {
+                ResolveWeekOf(res, "resolveToPast"); 
+            }
+
             foreach (var p in res)
             {
                 if (p.Value is Dictionary<string, string>)
@@ -404,35 +436,35 @@ namespace Microsoft.Recognizers.Text.DateTime
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_TIMEPERIOD:
-                        if (resolution.ContainsKey(TimeTypeConstants.START))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
                         {
-                            resolutionPm[TimeTypeConstants.START] = FormatUtil.ToPm(resolution[TimeTypeConstants.START]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_START] = FormatUtil.ToPm(resolution[TimeTypeConstants.RESOLVE_START]);
                         }
 
-                        if (resolution.ContainsKey(TimeTypeConstants.END))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_END))
                         {
-                            resolutionPm[TimeTypeConstants.END] = FormatUtil.ToPm(resolution[TimeTypeConstants.END]);
+                            resolutionPm[TimeTypeConstants.RESOLVE_END] = FormatUtil.ToPm(resolution[TimeTypeConstants.RESOLVE_END]);
                         }
 
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                        if (resolution.ContainsKey(TimeTypeConstants.START))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
                         {
-                            splited = resolution[TimeTypeConstants.START].Split(' ');
-                            if (resolution.ContainsKey(TimeTypeConstants.START))
+                            splited = resolution[TimeTypeConstants.RESOLVE_START].Split(' ');
+                            if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
                             {
-                                resolutionPm[TimeTypeConstants.START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                                resolutionPm[TimeTypeConstants.RESOLVE_START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
                             }
                         }
 
-                        if (resolution.ContainsKey(TimeTypeConstants.END))
+                        if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_END))
                         {
-                            splited = resolution[TimeTypeConstants.END].Split(' ');
+                            splited = resolution[TimeTypeConstants.RESOLVE_END].Split(' ');
 
-                            if (resolution.ContainsKey(TimeTypeConstants.END))
+                            if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_END))
                             {
-                                resolutionPm[TimeTypeConstants.END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                                resolutionPm[TimeTypeConstants.RESOLVE_END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
                             }
                         }
 
@@ -441,6 +473,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 resolutionDic.Add(keyName + "Pm", resolutionPm);
+            }
+        }
+
+        internal void ResolveWeekOf(Dictionary<string, object> resolutionDic, string keyName)
+        {
+            if (resolutionDic.ContainsKey(keyName))
+            {
+                var resolution = (Dictionary<string, string>)resolutionDic[keyName];
+
+                var monday = DateObject.Parse(resolution["start"]);
+                resolution[Constants.TimexKey] = FormatUtil.ToIsoWeekTimex(monday);
+
+                resolutionDic.Remove(keyName);
+                resolutionDic.Add(keyName, resolution);
             }
         }
 
@@ -542,21 +588,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (!string.IsNullOrEmpty(mod))
                 {
-                    if (mod.Equals(TimeTypeConstants.beforeMod))
+                    if (mod.Equals(TimeTypeConstants.BEFORE_MOD))
                     {
-                        res.Add(TimeTypeConstants.END, resolutionDic[type]);
+                        res.Add(TimeTypeConstants.RESOLVE_END, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(TimeTypeConstants.afterMod))
+                    if (mod.Equals(TimeTypeConstants.AFTER_MOD))
                     {
-                        res.Add(TimeTypeConstants.START, resolutionDic[type]);
+                        res.Add(TimeTypeConstants.RESOLVE_START, resolutionDic[type]);
                         return;
                     }
 
-                    if (mod.Equals(TimeTypeConstants.sinceMod))
+                    if (mod.Equals(TimeTypeConstants.SINCE_MOD))
                     {
-                        res.Add(TimeTypeConstants.START, resolutionDic[type]);
+                        res.Add(TimeTypeConstants.RESOLVE_START, resolutionDic[type]);
                         return;
                     }
                 }
@@ -584,31 +630,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(mod))
             {
                 //For before mode, the start of the period should be the end the new period, no start 
-                if (mod.Equals(TimeTypeConstants.beforeMod))
+                if (mod.Equals(TimeTypeConstants.BEFORE_MOD))
                 {
-                    res.Add(TimeTypeConstants.END, start);
+                    res.Add(TimeTypeConstants.RESOLVE_END, start);
                     return;
                 }
 
                 //For after mode, the end of the period should be the start the new period, no end 
-                if (mod.Equals(TimeTypeConstants.afterMod))
+                if (mod.Equals(TimeTypeConstants.AFTER_MOD))
                 {
-                    res.Add(TimeTypeConstants.START, end);
+                    res.Add(TimeTypeConstants.RESOLVE_START, end);
                     return;
                 }
 
                 //For since mode, the start of the period should be the start the new period, no end 
-                if (mod.Equals(TimeTypeConstants.sinceMod))
+                if (mod.Equals(TimeTypeConstants.SINCE_MOD))
                 {
-                    res.Add(TimeTypeConstants.START, start);
+                    res.Add(TimeTypeConstants.RESOLVE_START, start);
                     return;
                 }
             }
 
             if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
             {
-                res.Add(TimeTypeConstants.START, start);
-                res.Add(TimeTypeConstants.END, end);
+                res.Add(TimeTypeConstants.RESOLVE_START, start);
+                res.Add(TimeTypeConstants.RESOLVE_END, end);
             }
         }
     }

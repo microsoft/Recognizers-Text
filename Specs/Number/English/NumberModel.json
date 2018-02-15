@@ -1629,4 +1629,10 @@
     }
   ]
 }
+,
+{
+  "Input": "Book a first class seat to seattle",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
 ]

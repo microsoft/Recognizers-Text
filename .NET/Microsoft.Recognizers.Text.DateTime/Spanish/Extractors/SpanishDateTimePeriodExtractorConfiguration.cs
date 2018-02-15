@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex NextPrefixRegex => SpanishDatePeriodExtractorConfiguration.FutureRegex;
 
+        public Regex FutureSuffixRegex => SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
+
         //TODO: add this
         public static readonly Regex WeekDayRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -75,6 +77,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AmDescRegex =
+            new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PmDescRegex =
+            new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.WeekDayRegex => WeekDayRegex;
@@ -88,6 +96,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateTimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.MiddlePauseRegex => MiddlePauseRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.AmDescRegex => AmDescRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

@@ -1,7 +1,7 @@
 var _ = require('lodash');
 var Constants = require('./constants');
 var SupportedCultures = require('./cultures');
-var Recognizers = require('recognizers-text-date-time');
+var Recognizers = require('@microsoft/recognizers-text-date-time');
 
 // Configs
 var EnglishCommonDateTimeParserConfiguration = Recognizers.EnglishCommonDateTimeParserConfiguration;

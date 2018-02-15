@@ -1,6 +1,6 @@
-import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "recognizers-text";
+import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
-import { BaseNumberExtractor, BaseNumberParser } from "recognizers-text-number"
+import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { Token, DateTimeResolutionResult, StringMap } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime";

@@ -228,6 +228,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
                 var match = this.config.PeriodTimeOfDayWithDateRegex.Match(afterStr);
+
+                if (!match.Success)
+                {
+                    match = this.config.AmDescRegex.Match(afterStr);
+                    if (!match.Success)
+                    {
+                        match = this.config.PmDescRegex.Match(afterStr);
+                    }
+                }
+
                 if (match.Success)
                 {
                     if (string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
@@ -377,14 +387,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 
                 match = this.config.PastPrefixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(match.Index + match.Length)))
+                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                 {
                     ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
                     continue;
                 }
 
                 match = this.config.NextPrefixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(match.Index + match.Length)))
+                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                {
+                    ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                }
+
+                match = this.config.FutureSuffixRegex.Match(afterStr);
+                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                 {
                     ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
                 }

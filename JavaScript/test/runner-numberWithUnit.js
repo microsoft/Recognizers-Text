@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var NumberWithUnitRecognizer = require('recognizers-text-number-with-unit').NumberWithUnitRecognizer;
+var NumberWithUnitRecognizer = require('@microsoft/recognizers-text-number-with-unit').NumberWithUnitRecognizer;
 var SupportedCultures = require('./cultures.js');
 
 var modelGetters = {

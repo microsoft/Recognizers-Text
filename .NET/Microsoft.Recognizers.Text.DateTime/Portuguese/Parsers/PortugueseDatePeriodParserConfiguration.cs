@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex YearRegex { get; }
         public Regex PastRegex { get; }
         public Regex FutureRegex { get; }
+        public Regex FutureSuffixRegex { get; }
         public Regex NumberCombinedWithUnit { get; }
         public Regex WeekOfMonthRegex { get; }
         public Regex WeekOfYearRegex { get; }
@@ -59,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
+        public Regex RelativeDecadeRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -113,6 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = PortugueseDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = PortugueseDatePeriodExtractorConfiguration.FutureRegex;
+            FutureSuffixRegex = PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = PortugueseDurationExtractorConfiguration.NumberCombinedWithUnit;
             WeekOfMonthRegex = PortugueseDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = PortugueseDatePeriodExtractorConfiguration.WeekOfYearRegex;
@@ -127,6 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             WeekWithWeekDayRangeRegex = PortugueseDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = PortugueseDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = PortugueseDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = PortugueseDatePeriodExtractorConfiguration.YearPeriodRegex;
+            RelativeDecadeRegex = PortugueseDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

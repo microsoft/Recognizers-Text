@@ -44,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex FutureRegex { get; }
 
+        public Regex FutureSuffixRegex { get; }
+
         public Regex NumberCombinedWithUnitRegex { get; }
 
         public Regex UnitRegex { get; }
@@ -53,6 +55,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex RelativeTimeUnitRegex { get; }
 
         public Regex RestOfDateTimeRegex { get; }
+
+        public Regex AmDescRegex { get; }
+
+        public Regex PmDescRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -80,11 +86,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
             PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
             RelativeTimeUnitRegex = EnglishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             RestOfDateTimeRegex = EnglishDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = EnglishDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = EnglishDateTimePeriodExtractorConfiguration.PmDescRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

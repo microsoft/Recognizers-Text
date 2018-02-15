@@ -399,6 +399,31 @@
 }
 ,
 {
+  "Input": "近三年销量最高的品牌是什么？",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "近三年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2014-03-22,2017-03-22,P3Y)",
+        "FutureResolution": {
+          "startDate": "2014-03-22",
+          "endDate": "2017-03-22"
+        },
+        "PastResolution": {
+          "startDate": "2014-03-22",
+          "endDate": "2017-03-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "后1年",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -417,6 +442,31 @@
         "PastResolution": {
           "startDate": "2017-03-23",
           "endDate": "2018-03-23"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "在未来两天",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "未来两天",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-03-23,2017-03-25,P2D)",
+        "FutureResolution": {
+          "startDate": "2017-03-23",
+          "endDate": "2017-03-25"
+        },
+        "PastResolution": {
+          "startDate": "2017-03-23",
+          "endDate": "2017-03-25"
         }
       }
     }
@@ -468,6 +518,82 @@
 }
 ,
 {
+  "Input": "时间从2016到2018",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从2016到2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-01-01,2018-01-01,P2Y)",
+        "FutureResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "时间从2016-2018",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从2016-2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-01-01,2018-01-01,P2Y)",
+        "FutureResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "时间从二零一六年至二零一八年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从二零一六年至二零一八年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-01-01,2018-01-01,P2Y)",
+        "FutureResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "上世纪90年代",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -479,14 +605,14 @@
       "Text": "上世纪90年代",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1990-01-01,1999-12-31,P10Y)",
+        "Timex": "(1990-01-01,2000-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "1990-01-01",
-          "endDate": "1999-12-31"
+          "endDate": "2000-01-01"
         },
         "PastResolution": {
           "startDate": "1990-01-01",
-          "endDate": "1999-12-31"
+          "endDate": "2000-01-01"
         }
       }
     }
@@ -505,14 +631,14 @@
       "Text": "本世纪20年代",
       "Type": "daterange",
       "Value": {
-        "Timex": "(2020-01-01,2029-12-31,P10Y)",
+        "Timex": "(2020-01-01,2030-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2020-01-01",
-          "endDate": "2029-12-31"
+          "endDate": "2030-01-01"
         },
         "PastResolution": {
           "startDate": "2020-01-01",
-          "endDate": "2029-12-31"
+          "endDate": "2030-01-01"
         }
       }
     }
@@ -531,14 +657,14 @@
       "Text": "20世纪80年代",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1980-01-01,1989-12-31,P10Y)",
+        "Timex": "(1980-01-01,1990-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "1980-01-01",
-          "endDate": "1989-12-31"
+          "endDate": "1990-01-01"
         },
         "PastResolution": {
           "startDate": "1980-01-01",
-          "endDate": "1989-12-31"
+          "endDate": "1990-01-01"
         }
       }
     }
@@ -557,14 +683,14 @@
       "Text": "50年代",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XX50-01-01,XX59-12-31,P10Y)",
+        "Timex": "(XX50-01-01,XX60-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2050-01-01",
-          "endDate": "2059-12-31"
+          "endDate": "2060-01-01"
         },
         "PastResolution": {
           "startDate": "1950-01-01",
-          "endDate": "1959-12-31"
+          "endDate": "1960-01-01"
         }
       }
     }
@@ -583,14 +709,14 @@
       "Text": "19世纪70年代",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1870-01-01,1879-12-31,P10Y)",
+        "Timex": "(1870-01-01,1880-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "1870-01-01",
-          "endDate": "1879-12-31"
+          "endDate": "1880-01-01"
         },
         "PastResolution": {
           "startDate": "1870-01-01",
-          "endDate": "1879-12-31"
+          "endDate": "1880-01-01"
         }
       }
     }
@@ -609,14 +735,14 @@
       "Text": "十九世纪七十年代",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1870-01-01,1879-12-31,P10Y)",
+        "Timex": "(1870-01-01,1880-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "1870-01-01",
-          "endDate": "1879-12-31"
+          "endDate": "1880-01-01"
         },
         "PastResolution": {
           "startDate": "1870-01-01",
-          "endDate": "1879-12-31"
+          "endDate": "1880-01-01"
         }
       }
     }
@@ -635,14 +761,14 @@
       "Text": "九十年代",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XX90-01-01,XX99-12-31,P10Y)",
+        "Timex": "(XX90-01-01,XX00-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2090-01-01",
-          "endDate": "2099-12-31"
+          "endDate": "2100-01-01"
         },
         "PastResolution": {
           "startDate": "1990-01-01",
-          "endDate": "1999-12-31"
+          "endDate": "2000-01-01"
         }
       }
     }

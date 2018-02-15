@@ -30,6 +30,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.NumberEndingPattern,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex YearAfterRegex =
+            new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] FilterWordRegexList =
         {
 
@@ -80,6 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+        Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
     }
 }

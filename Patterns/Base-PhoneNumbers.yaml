@@ -1,0 +1,13 @@
+---
+NumberReplaceToken: '@builtin.phonenumber'
+GeneralPhoneNumberRegex: !simpleRegex
+  def: (\b((\d[\s-/]?){8,})\b)
+BrazilPhoneNumberRegex: !simpleRegex
+  def: (((?'brac'\B\(\s?)|\b)\d{2,3}(?'-brac'\s?\))?\s?)\s?\d{4,5}-?\d{3,5}\b(?(brac)(?!))
+UkPhoneNumberRegex: !simpleRegex
+  def: (((\b(00)|\B\+)\s?)?\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3})\b)
+GermanyPhoneNumberRegex: !simpleRegex
+  def: (\b(\d{4}\s?[-/]?(\s?\d){7,8})\b)
+USPhoneNumberRegex: !simpleRegex
+  def: ((((\B\+)|\b)1(\s|-)?)|\b)?(\B\(|\b)\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{4}\b
+...

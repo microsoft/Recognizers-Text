@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, ParseResult, FormatUtility } from "recognizers-text";
+import { IModel, ModelResult, IExtractor, ParseResult, FormatUtility } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { IDateTimeExtractor } from "./baseDateTime";
 

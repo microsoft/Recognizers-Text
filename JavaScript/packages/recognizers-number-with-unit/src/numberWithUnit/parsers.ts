@@ -1,5 +1,5 @@
-import { IExtractor, ExtractResult, IParser, ParseResult } from "recognizers-text";
-import { CultureInfo } from "recognizers-text-number";
+import { IExtractor, ExtractResult, IParser, ParseResult } from "@microsoft/recognizers-text";
+import { CultureInfo } from "@microsoft/recognizers-text-number";
 import last = require("lodash.last");
 
 export class UnitValue {

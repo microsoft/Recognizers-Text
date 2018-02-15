@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex YearRegex { get; }
         public Regex PastRegex { get; }
         public Regex FutureRegex { get; }
+        public Regex FutureSuffixRegex { get; }
         public Regex NumberCombinedWithUnit { get; }
         public Regex WeekOfMonthRegex { get; }
         public Regex WeekOfYearRegex { get; }
@@ -59,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
+        public Regex RelativeDecadeRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -122,6 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = FrenchDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = FrenchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = FrenchDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = FrenchDatePeriodExtractorConfiguration.WeekOfYearRegex;
@@ -136,6 +140,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WeekWithWeekDayRangeRegex = FrenchDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = FrenchDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = FrenchDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = FrenchDatePeriodExtractorConfiguration.YearPeriodRegex;
+            RelativeDecadeRegex = FrenchDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

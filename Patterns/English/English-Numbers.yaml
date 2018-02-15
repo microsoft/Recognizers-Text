@@ -70,7 +70,7 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\b)
+  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
@@ -110,6 +110,52 @@ NumberWithSuffixPercentage: !nestedRegex
 NumberWithPrefixPercentage: !nestedRegex
   def: (per cent of|percent of|percents of)(\s*)({BaseNumbers.NumberReplaceToken})
   references: [ BaseNumbers.NumberReplaceToken ]
+#NumberRange Regex
+TillRegex: !simpleRegex
+  def: (to|through|--|-|—|——|~)
+MoreRegex: !simpleRegex
+  def: ((bigger|greater|more|higher|larger)(\s+than)?|above|over|>)
+LessRegex: !simpleRegex
+  def: ((less|lower|smaller|fewer)(\s+than)?|below|under|<)
+EqualRegex: !simpleRegex
+  def: (equal(\s+(to|than))?|=)
+MoreOrEqual: !nestedRegex
+  def: (({MoreRegex}\s+or\s+{EqualRegex})|at\s+least|no\s+{LessRegex}|>\s*=)
+  references: [ MoreRegex, EqualRegex, LessRegex ]
+MoreOrEqualSuffix: !simpleRegex
+  def: (and|or)\s+(more|greater|higher|larger|bigger)(?!\s+than)
+LessOrEqual: !nestedRegex
+  def: (({LessRegex}\s+or\s+{EqualRegex})|at\s+most|no\s+{MoreRegex}|<\s*=)
+  references: [ LessRegex, EqualRegex, MoreRegex ]
+LessOrEqualSuffix: !simpleRegex
+  def: (and|or)\s+(less|lower|smaller|fewer)(?!\s+than)
+OneNumberRangeMoreRegex1: !nestedRegex
+  def: ({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  references: [ MoreOrEqual, MoreRegex ]
+OneNumberRangeMoreRegex2: !nestedRegex
+  def: (?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*{MoreOrEqualSuffix}
+  references: [ MoreOrEqualSuffix ]
+OneNumberRangeLessRegex1: !nestedRegex
+  def: ({LessOrEqual}|{LessRegex})\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  references: [ LessOrEqual, LessRegex ]
+OneNumberRangeLessRegex2: !nestedRegex
+  def: (?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*{LessOrEqualSuffix}
+  references: [ LessOrEqualSuffix ]
+OneNumberRangeEqualRegex: !nestedRegex
+  def: '{EqualRegex}\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)'
+  references: [ EqualRegex ]
+TwoNumberRangeRegex1: !nestedRegex
+  def: between\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*and\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  references: [ TillRegex ]
+TwoNumberRangeRegex2: !nestedRegex
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+TwoNumberRangeRegex3: !nestedRegex
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+TwoNumberRangeRegex4: !nestedRegex
+  def: (from\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\bfrom\b)).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  references: [ TillRegex ]
 #Parser
 DecimalSeparatorChar: !char '.'
 FractionMarkerToken: over

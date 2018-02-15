@@ -11,6 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex SinceRegex { get; }
 
+        public Regex YearAfterRegex { get; }
+
+        public Regex YearRegex { get; }
+
         public IDateTimeParser GetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
@@ -20,6 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
             SinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
+            YearAfterRegex = SpanishMergedExtractorConfiguration.YearAfterRegex;
+            YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
 
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
