@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ForTheRegex { get; }
 
-        Regex WeekDayAndDayOfMothRegex { get; }
+        Regex WeekDayAndDayOfMonthRegex { get; }
 
         Regex RelativeMonthRegex { get; }
 

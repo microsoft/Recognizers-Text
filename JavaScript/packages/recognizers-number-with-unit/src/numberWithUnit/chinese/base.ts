@@ -1,5 +1,5 @@
-import { IExtractor, IParser } from "recognizers-text";
-import { Culture, CultureInfo, NumberMode, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberExtractor, ChineseNumberParserConfiguration, ChineseNumberMode } from "recognizers-text-number";
+import { IExtractor, IParser } from "@microsoft/recognizers-text";
+import { Culture, CultureInfo, NumberMode, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberExtractor, ChineseNumberParserConfiguration, ChineseNumberMode } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
 import { BaseNumberWithUnitParserConfiguration } from "../parsers";

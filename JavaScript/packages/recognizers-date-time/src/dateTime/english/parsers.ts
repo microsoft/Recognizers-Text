@@ -1,7 +1,7 @@
 import { BaseTimeParser, ITimeParserConfiguration } from "../baseTime"
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
 import { DateTimeResolutionResult, FormatUtil } from "../utilities"
-import { RegExpUtility } from "recognizers-text";
+import { RegExpUtility } from "@microsoft/recognizers-text";
 
 export class EnglishTimeParser extends BaseTimeParser {
     constructor(configuration: ITimeParserConfiguration) {

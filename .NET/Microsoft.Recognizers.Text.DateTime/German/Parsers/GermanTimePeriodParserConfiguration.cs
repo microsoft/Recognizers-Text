@@ -53,31 +53,31 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (trimedText.EndsWith("morning"))
+            if (trimedText.EndsWith("morgen"))
             {
                 timex = "TMO";
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (trimedText.EndsWith("afternoon"))
+            else if (trimedText.EndsWith("nachmittag"))
             {
                 timex = "TAF";
                 beginHour = 12;
                 endHour = 16;
             }
-            else if (trimedText.EndsWith("evening"))
+            else if (trimedText.EndsWith("abend"))
             {
                 timex = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.Equals("daytime"))
+            else if (trimedText.Equals("tag"))
             {
                 timex = "TDT";
                 beginHour = 8;
                 endHour = 18;
             }
-            else if (trimedText.EndsWith("night"))
+            else if (trimedText.EndsWith("nacht"))
             {
                 timex = "TNI";
                 beginHour = 20;

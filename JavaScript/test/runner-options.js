@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var OptionsRecognizer = require('recognizers-text-options').OptionsRecognizer;
+var OptionsRecognizer = require('@microsoft/recognizers-text-options').OptionsRecognizer;
 var SupportedCultures = require('./cultures.js');
 
 var modelGetters = {

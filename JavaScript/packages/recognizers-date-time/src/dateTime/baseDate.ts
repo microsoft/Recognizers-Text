@@ -1,7 +1,7 @@
-import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text";
+import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants"
-import { Constants as NumberConstants } from "recognizers-text-number"
-import { BaseNumberExtractor, BaseNumberParser } from "recognizers-text-number"
+import { Constants as NumberConstants } from "@microsoft/recognizers-text-number"
+import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number"
 import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek, StringMap } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
@@ -15,7 +15,7 @@ export interface IDateExtractorConfiguration {
     ofMonth: RegExp,
     dateUnitRegex: RegExp,
     forTheRegex: RegExp,
-    weekDayAndDayOfMothRegex: RegExp,
+    weekDayAndDayOfMonthRegex: RegExp,
     relativeMonthRegex: RegExp,
     weekDayRegex: RegExp,
     dayOfWeek: ReadonlyMap<string, number>;
@@ -77,7 +77,7 @@ export class BaseDateExtractor implements IDateTimeExtractor {
             if (num < 1 || num > 31) {
                 return;
             }
-            if (result.start > 0) {
+            if (result.start >= 0) {
                 let frontString = source.substring(0, result.start | 0);
                 let match = RegExpUtility.getMatches(this.config.monthEnd, frontString)[0];
                 if (match && match.length) {
@@ -86,34 +86,50 @@ export class BaseDateExtractor implements IDateTimeExtractor {
                 }
 
                 // handling cases like 'for the 25th'
-                match = RegExpUtility.getMatches(this.config.forTheRegex, source).pop();
-                if (match) {
-                    let ordinalNum = match.groups('DayOfMonth').value;
-                    if (ordinalNum === result.text) {
-                        let length = match.groups('end').value.length;
-                        ret.push(new Token(match.index, match.index + match.length - length));
-                        return;
+                let matches = RegExpUtility.getMatches(this.config.forTheRegex, source);
+                let isFound = false;
+                matches.forEach(matchCase => {
+                    if (matchCase) {
+                        let ordinalNum = matchCase.groups('DayOfMonth').value;
+                        if (ordinalNum === result.text) {
+                            let length = matchCase.groups('end').value.length;
+                            ret.push(new Token(matchCase.index, matchCase.index + matchCase.length - length));
+                            isFound = true;
+                        }
                     }
+                })
+
+                if (isFound) {
+                    return;
                 }
 
                 // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
-                match = RegExpUtility.getMatches(this.config.weekDayAndDayOfMothRegex, source).pop();
-                if (match) {
-                    let month = refDate.getMonth();
-                    let year = refDate.getFullYear();
+                matches = RegExpUtility.getMatches(this.config.weekDayAndDayOfMonthRegex, source);
+                matches.forEach(matchCase => {
+                    if (matchCase) {
+                        let ordinalNum = matchCase.groups('DayOfMonth').value;
+                        if (ordinalNum === result.text) {
+                            let month = refDate.getMonth();
+                            let year = refDate.getFullYear();
 
-                    // get week of day for the ordinal number which is regarded as a date of reference month
-                    let date = DateUtils.safeCreateFromMinValue(year, month, num);
-                    let numWeekDayStr = DayOfWeek[date.getDay()].toString().toLowerCase();
+                            // get week of day for the ordinal number which is regarded as a date of reference month
+                            let date = DateUtils.safeCreateFromMinValue(year, month, num);
+                            let numWeekDayStr = DayOfWeek[date.getDay()].toString().toLowerCase();
 
-                    // get week day from text directly, compare it with the weekday generated above
-                    // to see whether they refer to a same week day
-                    let extractedWeekDayStr = match.groups("weekday").value.toString().toLowerCase();
-                    if (date !== DateUtils.minValue() &&
-                        this.config.dayOfWeek.get(numWeekDayStr) == this.config.dayOfWeek.get(extractedWeekDayStr)) {
-                        ret.push(new Token(match.index, result.start + result.length));
-                        return;
+                            // get week day from text directly, compare it with the weekday generated above
+                            // to see whether they refer to a same week day
+                            let extractedWeekDayStr = matchCase.groups("weekday").value.toString().toLowerCase();
+                            if (date !== DateUtils.minValue() &&
+                                this.config.dayOfWeek.get(numWeekDayStr) == this.config.dayOfWeek.get(extractedWeekDayStr)) {
+                                ret.push(new Token(matchCase.index, result.start + result.length));
+                                isFound = true;
+                            }
+                        }
                     }
+                })
+
+                if (isFound) {
+                    return;
                 }
 
                 // handling cases like '20th of next month'
@@ -182,7 +198,7 @@ export interface IDateParserConfiguration {
     thisRegex: RegExp
     weekDayOfMonthRegex: RegExp
     forTheRegex: RegExp
-    weekDayAndDayOfMothRegex: RegExp
+    weekDayAndDayOfMonthRegex: RegExp
     relativeMonthRegex: RegExp
     utilityConfiguration: IDateTimeUtilityConfiguration
     dateTokenPrefix: string
@@ -386,7 +402,7 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
-        match = RegExpUtility.getMatches(this.config.weekDayAndDayOfMothRegex, trimmedSource).pop();
+        match = RegExpUtility.getMatches(this.config.weekDayAndDayOfMonthRegex, trimmedSource).pop();
         if (match) {
             let dayStr = match.groups('DayOfMonth').value;
             let er = ExtractResult.getFromText(dayStr);

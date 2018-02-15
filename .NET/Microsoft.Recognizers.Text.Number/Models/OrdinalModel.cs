@@ -6,6 +6,6 @@
         {
         }
 
-        public override string ModelTypeName => "ordinal";
+        public override string ModelTypeName => Constants.MODEL_ORDINAL;
     }
 }

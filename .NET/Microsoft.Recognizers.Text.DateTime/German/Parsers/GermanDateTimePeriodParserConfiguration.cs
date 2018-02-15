@@ -44,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex FutureRegex { get; }
 
+        public Regex FutureSuffixRegex { get; }
+
         public Regex NumberCombinedWithUnitRegex { get; }
 
         public Regex UnitRegex { get; }
@@ -53,6 +55,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex RelativeTimeUnitRegex { get; }
 
         public Regex RestOfDateTimeRegex { get; }
+
+        public Regex AmDescRegex { get; }
+
+        public Regex PmDescRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -79,11 +85,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeOfDayRegex = GermanDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = GermanDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = GermanDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = GermanDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = GermanDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = GermanTimePeriodExtractorConfiguration.TimeUnitRegex;
             PeriodTimeOfDayWithDateRegex = GermanDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
             RelativeTimeUnitRegex = GermanDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             RestOfDateTimeRegex = GermanDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = GermanDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = GermanDateTimePeriodExtractorConfiguration.PmDescRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
@@ -146,11 +155,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var trimedText = text.Trim().ToLowerInvariant();
 
             var swift = 0;
-            if (trimedText.StartsWith("next"))
+            if (trimedText.StartsWith("nächster") || trimedText.StartsWith("nächste") || trimedText.StartsWith("nächsten") || trimedText.StartsWith("nächstes"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (trimedText.StartsWith("letzter") || trimedText.StartsWith("letzte") || trimedText.StartsWith("letzten") || trimedText.StartsWith("letztes"))
             {
                 swift = -1;
             }

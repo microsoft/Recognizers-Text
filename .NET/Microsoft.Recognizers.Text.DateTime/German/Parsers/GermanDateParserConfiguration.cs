@@ -117,24 +117,23 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             var match = RelativeDayRegex.Match(text);
 
-            if (trimedText.Equals("today"))
+            if (trimedText.Equals("heute"))
             {
                 swift = 0;
             }
-            else if (trimedText.Equals("tomorrow") || trimedText.Equals("tmr"))
+            else if (trimedText.Equals("morgen") || trimedText.Equals("tmr"))
             {
                 swift = 1;
             }
-            else if (trimedText.Equals("yesterday"))
+            else if (trimedText.Equals("gestern"))
             {
                 swift = -1;
             }
-            else if (trimedText.EndsWith("day after tomorrow") ||
-                     trimedText.EndsWith("day after tmr"))
+            else if (trimedText.EndsWith("übermorgen"))
             {
                 swift = 2;
             }
-            else if (trimedText.EndsWith("day before yesterday"))
+            else if (trimedText.EndsWith("vorgestern"))
             {
                 swift = -2;
             }
@@ -168,7 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsCardinalLast(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.Equals("last");
+            return trimedText.Equals("letzten");
         }
     }
 }

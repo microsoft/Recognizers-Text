@@ -1,4 +1,4 @@
-import { RegExpUtility } from "recognizers-text";
+import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IBooleanExtractorConfiguration } from "../extractors";
 import { EnglishOptions } from "../../resources/englishOptions";
 

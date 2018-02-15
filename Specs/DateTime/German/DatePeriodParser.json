@@ -1,1 +1,300 @@
-[]
+[{
+    "Input": "Ich bin vom 3. bis zum 12. September weg.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "vom 3. bis zum 12. September",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        }
+      }
+    ]
+  },
+  {//Assert.Null
+    "Input": "Ich bin nächsten Monat vom 4. bis zum 23. weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "nächsten Monat vom 4. bis zum 23. ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        }
+      }
+    ]
+  },{
+    "Input": "Ich bin diesen Monat vom 4. bis zum 22. weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript, dotnet",
+    "Results": [
+      {
+        "Text": "diesen Monat vom 4. bis zum 22. ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Diese Woche wird das bei mir leider gar nicht gehen.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Diese Woche",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Letzten September war ich nicht hier.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Letzten September",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-09",
+          "FutureResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das war in der letzten Woche im Juli.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "der letzten Woche im Juli",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-07-W04",
+          "FutureResolution": {
+            "startDate": "2017-07-24",
+            "endDate": "2017-07-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-25",
+            "endDate": "2016-08-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "diese Woche",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "diese Woche",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin vom 1. Januar bis Mittwoch dem 22. Januar weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "vom 1. Januar bis Mittwoch dem 22. Januar",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-01-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zwischen dem 2. und dem 22. Oktober bin ich weg.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Zwischen dem 2. und dem 22. Oktober",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Im November zwischen dem 19. und dem 20. bin ich nicht da.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "Im November zwischen dem 19. und dem 20. ",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das nimmt bestimmt noch den Rest der Woche in Anspruch.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Rest der Woche",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vielleicht klappt es ja nächstes Jahr.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nächstes Jahr",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,6 +1,6 @@
-import { RegExpUtility, ExtractResult } from "recognizers-text";
-import { CultureInfo, Culture, BaseNumberExtractor, BaseNumberParser } from "recognizers-text-number";
-import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration, NumberWithUnitParser, ChineseNumberWithUnitParserConfiguration, UnitValue } from "recognizers-text-number-with-unit";
+import { RegExpUtility, ExtractResult } from "@microsoft/recognizers-text";
+import { CultureInfo, Culture, BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
+import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration, NumberWithUnitParser, ChineseNumberWithUnitParserConfiguration, UnitValue } from "@microsoft/recognizers-text-number-with-unit";
 import { BaseDateTimeExtractor } from "./baseDateTime";
 import { IDurationParserConfiguration, BaseDurationParser } from "../baseDuration";
 import { Constants, TimeTypeConstants } from "../constants"

@@ -1,9 +1,9 @@
-import { IParser, ParseResult, ExtractResult } from "recognizers-text";
+import { IParser, ParseResult, ExtractResult } from "@microsoft/recognizers-text";
 import { CultureInfo, Culture } from "../culture";
 import { Constants } from "./constants";
 import trimEnd = require("lodash.trimend");
 import sortBy = require("lodash.sortby");
-import { RegExpUtility } from "recognizers-text";
+import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BigNumber } from 'bignumber.js';
 
 // Disable BigNumber errors when passing number with more than 15 significant digits

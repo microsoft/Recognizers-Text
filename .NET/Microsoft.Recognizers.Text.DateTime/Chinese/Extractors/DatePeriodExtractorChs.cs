@@ -85,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             OneWordPeriodRegex,
             StrictYearRegex,
             YearToYear,
+            MonthToMonth,
             YearAndMonth,
             PureNumYearAndMonth,
             YearInChineseRegex,
@@ -210,8 +211,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
-                match = FutureRegex.Match(beforeStr);
 
+                match = FutureRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
                     ret.Add(new Token(match.Index, duration.End));

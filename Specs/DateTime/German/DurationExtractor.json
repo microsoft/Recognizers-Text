@@ -1,1 +1,67 @@
-[]
+[{
+    "Input": "Ich gehe für 3 Stunden",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 Stunden",
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe für 3 std",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 std",
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe für 7 Jahre",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "7 Jahre",
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe für sieben Jahre",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "sieben Jahre",
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "Das wird in etwa ein Jahr dauern.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ein Jahr",
+        "Type": "duration"
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin für ein halbes Jahr weg",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ein halbes Jahr",
+        "Type": "duration"
+      }
+    ]
+  }
+]

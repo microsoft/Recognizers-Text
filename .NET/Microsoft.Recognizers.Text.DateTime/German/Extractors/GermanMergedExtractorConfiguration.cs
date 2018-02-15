@@ -27,6 +27,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex NumberEndingPattern =
             new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex YearAfterRegex =
+            new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] FilterWordRegexList =
         {
             // one on one
@@ -77,6 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+        Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
     }
 }

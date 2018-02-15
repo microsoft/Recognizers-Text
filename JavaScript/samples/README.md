@@ -17,7 +17,7 @@ And then start the sample:
 The important piece is the `Recognizers` module, which you'll need to import using:
 
 ````JavaScript
-var Recognizers = require('recognizers-text-suite');
+var Recognizers = require('@microsoft/recognizers-text-suite');
 ````
 
 Then, the sample gets a model reference of each available Recognizer. We need to do so by passing the Culture code we'll want to detect. E.g.: `en-us`.
@@ -127,7 +127,7 @@ var result = model.parse("I need to leave ASAP");
 // ]
 ````
 
-> Alternativly, if you are using Browserify, Babel or Webpack, the UMD module can be used instead (located at `/dist/recognizers-text.umd.js`). This is the default when using `require('recognizers-text')`.
+> Alternativly, if you are using Browserify, Babel or Webpack, the UMD module can be used instead (located at `/dist/recognizers-text.umd.js`). This is the default when using `require('@microsoft/recognizers-text')`.
 
 > NOTE for IE11: In order to support it, the [core-js shim](https://github.com/zloirock/core-js) needs to be added:
 
@@ -159,7 +159,7 @@ In order to validate user input, [Custom prompts](https://github.com/Microsoft/B
 
 ````JavaScript
 // NumberModel
-var Recognizers = require('recognizers-text-suite');
+var Recognizers = require('@microsoft/recognizers-text-suite');
 var numberModel = Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English);
 
 // Ask for amount of roses and validate input
@@ -237,7 +237,7 @@ This dialog uses a helper method to call the DateTime Recognizer, to validate th
 
 ````JavaScript
 // Our Number and DateTime Recognizer models
-var Recognizers = require('recognizers-text-suite');
+var Recognizers = require('@microsoft/recognizers-text-suite');
 var dateModel = Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English);
 
 // Date Helpers

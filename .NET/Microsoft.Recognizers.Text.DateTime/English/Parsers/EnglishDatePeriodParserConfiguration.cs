@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex YearRegex { get; }
         public Regex PastRegex { get; }
         public Regex FutureRegex { get; }
+        public Regex FutureSuffixRegex { get; }
         public Regex NumberCombinedWithUnit { get; }
         public Regex WeekOfMonthRegex { get; }
         public Regex WeekOfYearRegex { get; }
@@ -59,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
+        public Regex RelativeDecadeRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -72,10 +75,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(
                 DateTimeDefinitions.ThisPrefixRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterNextSuffixRegex =
+            new Regex(
+                DateTimeDefinitions.AfterNextSuffixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+        
         #endregion
 
         #region Dictionaries
@@ -121,6 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             YearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = EnglishDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = EnglishDatePeriodExtractorConfiguration.WeekOfYearRegex;
@@ -135,6 +144,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WeekWithWeekDayRangeRegex = EnglishDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = EnglishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = EnglishDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = EnglishDatePeriodExtractorConfiguration.YearPeriodRegex;
+            RelativeDecadeRegex = EnglishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -150,7 +161,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (AfterNextSuffixRegex.IsMatch(trimedText))
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
@@ -165,7 +180,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (AfterNextSuffixRegex.IsMatch(trimedText))
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
@@ -195,7 +214,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsMonthOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("month");
+            return trimedText.EndsWith("month") || trimedText.Contains(" month ") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsMonthToDate(string text)
@@ -207,19 +226,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsWeekend(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("weekend");
+            return trimedText.EndsWith("weekend") || trimedText.Contains(" weekend ") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("week");
+            return trimedText.EndsWith("week") || trimedText.Contains(" week ") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsYearOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("year");
+            return trimedText.EndsWith("year") || trimedText.Contains(" year ") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsYearToDate(string text)

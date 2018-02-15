@@ -227,6 +227,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Start -= modLengh;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
+
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
+                {
+                    // 2012 or after/above
+                    var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
+
+                    var match = config.YearAfterRegex.Match(afterStr.TrimStart());
+                    if (match.Success && match.Index == 0)
+                    {
+                        var modLengh = match.Length + afterStr.IndexOf(match.Value);
+                        er.Length += modLengh;
+                        er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                    }
+                }
             }
         }
 

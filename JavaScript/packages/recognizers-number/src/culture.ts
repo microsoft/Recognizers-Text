@@ -1,4 +1,4 @@
-import { Culture as BaseCulture, CultureInfo as BaseCultureInfo } from "recognizers-text";
+import { Culture as BaseCulture, CultureInfo as BaseCultureInfo } from "@microsoft/recognizers-text";
 import trimEnd = require("lodash.trimend");
 import { BigNumber } from 'bignumber.js';
 import { LongFormatType } from "./number/models";

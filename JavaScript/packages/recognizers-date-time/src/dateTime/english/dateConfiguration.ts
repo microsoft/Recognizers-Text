@@ -1,8 +1,8 @@
 import { IDateExtractorConfiguration, IDateParserConfiguration } from "../baseDate"
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { IDateTimeUtilityConfiguration } from "../utilities";
-import { RegExpUtility } from "recognizers-text";
-import { BaseNumberParser, BaseNumberExtractor, EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "recognizers-text-number";
+import { RegExpUtility } from "@microsoft/recognizers-text";
+import { BaseNumberParser, BaseNumberExtractor, EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration, EnglishDateTimeUtilityConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
@@ -16,7 +16,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly ofMonth: RegExp;
     readonly dateUnitRegex: RegExp;
     readonly forTheRegex: RegExp;
-    readonly weekDayAndDayOfMothRegex: RegExp;
+    readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
     readonly weekDayRegex: RegExp;
     readonly dayOfWeek: ReadonlyMap<string, number>;
@@ -54,7 +54,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
         this.ofMonth = RegExpUtility.getSafeRegExp(EnglishDateTime.OfMonth);
         this.dateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex);
         this.forTheRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ForTheRegex);
-        this.weekDayAndDayOfMothRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMothRegex);
+        this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMonthRegex);
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeMonthRegex);
         this.weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex);
         this.dayOfWeek = EnglishDateTime.DayOfWeek;
@@ -89,7 +89,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     readonly thisRegex: RegExp
     readonly weekDayOfMonthRegex: RegExp
     readonly forTheRegex: RegExp;
-    readonly weekDayAndDayOfMothRegex: RegExp;
+    readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string
@@ -135,7 +135,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         this.thisRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisRegex);
         this.weekDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex);
         this.forTheRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ForTheRegex);
-        this.weekDayAndDayOfMothRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMothRegex);
+        this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMonthRegex);
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeMonthRegex);
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = EnglishDateTime.DateTokenPrefix;

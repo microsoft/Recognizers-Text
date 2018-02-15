@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL;
-        
+
         public OrdinalExtractor()
         {
             var regexes = new Dictionary<Regex, string>

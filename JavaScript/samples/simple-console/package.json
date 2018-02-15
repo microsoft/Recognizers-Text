@@ -8,6 +8,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "recognizers-text-suite": "file:../../packages/recognizers-text-suite"
+    "@microsoft/recognizers-text-suite": "file:../../packages/recognizers-text-suite"
   }
 }

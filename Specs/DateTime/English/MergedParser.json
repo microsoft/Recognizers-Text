@@ -1227,7 +1227,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1240,6 +1239,295 @@
             "type": "timerange",
             "start": "08:00:00",
             "end": "12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave by tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "by tomorrow",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2016-11-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave before tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before tomorrow",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2016-11-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave no later than tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "no later than tomorrow",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2016-11-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "give me all open spots with dates after or equal to 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after or equal to 1/1/2016",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-01-01",
+            "Mod": "since",
+            "type": "daterange",
+            "start": "2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave later than 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later than 1/1/2016",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-01-01",
+            "Mod": "after",
+            "type": "daterange",
+            "start": "2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave after 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after 1/1/2016",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-01-01",
+            "Mod": "after",
+            "type": "daterange",
+            "start": "2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave earlier than 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "earlier than 1/1/2016",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-01-01",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will close starting from 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "starting from 1/1/2016",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-01-01",
+            "Mod": "since",
+            "type": "daterange",
+            "start": "2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ending with 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ending with 1/1/2016",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-01-01",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave sooner than 2020",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sooner than 2020",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2020",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2020-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The range is until 2012",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "until 2012",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2012",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2012-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The range is 2012 or after",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2012 or after",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2012",
+            "Mod": "since",
+            "type": "daterange",
+            "start": "2012-01-01"
           }
         ]
       }

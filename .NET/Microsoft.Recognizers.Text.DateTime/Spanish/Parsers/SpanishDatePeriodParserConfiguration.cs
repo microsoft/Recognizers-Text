@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex YearRegex { get; }
         public Regex PastRegex { get; }
         public Regex FutureRegex { get; }
+        public Regex FutureSuffixRegex { get; }
         public Regex NumberCombinedWithUnit { get; }
         public Regex WeekOfMonthRegex { get; }
         public Regex WeekOfYearRegex { get; }
@@ -59,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
+        public Regex RelativeDecadeRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -114,6 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
+            FutureSuffixRegex = SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = SpanishDurationExtractorConfiguration.NumberCombinedWithUnit;
             WeekOfMonthRegex = SpanishDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = SpanishDatePeriodExtractorConfiguration.WeekOfYearRegex;
@@ -128,6 +132,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekWithWeekDayRangeRegex = SpanishDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = SpanishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = SpanishDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = SpanishDatePeriodExtractorConfiguration.YearPeriodRegex;
+            RelativeDecadeRegex = SpanishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

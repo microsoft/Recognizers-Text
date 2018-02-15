@@ -879,4 +879,40 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll go back tuesday AM",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tuesday AM",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tuesday PM",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tuesday PM",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 2 hours in the future",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours in the future",
+      "Type": "datetimerange"
+    }
+  ]
+}
 ]

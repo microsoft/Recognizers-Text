@@ -2,7 +2,7 @@ import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../ex
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { SpanishNumeric } from "../../resources/spanishNumeric";
-import { RegExpUtility } from "recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text"
 
 export class SpanishNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;

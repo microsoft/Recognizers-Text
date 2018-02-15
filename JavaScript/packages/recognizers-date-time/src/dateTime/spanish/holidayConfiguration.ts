@@ -1,5 +1,5 @@
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration } from "../baseHoliday";
-import { RegExpUtility } from "recognizers-text";
+import { RegExpUtility } from "@microsoft/recognizers-text";
 import { DateUtils } from "../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 

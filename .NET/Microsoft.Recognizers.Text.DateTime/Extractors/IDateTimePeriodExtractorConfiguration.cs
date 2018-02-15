@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NextPrefixRegex { get; }
 
+        Regex FutureSuffixRegex { get; }
+
         Regex WeekDayRegex { get; }
 
         Regex PeriodTimeOfDayWithDateRegex { get; }
@@ -38,6 +40,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex GeneralEndingRegex { get; }
 
         Regex MiddlePauseRegex { get; }
+
+        Regex AmDescRegex { get; }
+
+        Regex PmDescRegex { get; }
 
         IExtractor CardinalExtractor { get; }
 

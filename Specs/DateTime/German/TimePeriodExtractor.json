@@ -1,1 +1,34 @@
-[]
+[{
+    "Input": "Ich werde von 5 bis 6 weg sein",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "5 bis 6",
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde von 5 bis 6 Uhr weg sein",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "5 bis 6 Uhr",
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde von 5 bis 6 Uhr Nachmittags",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "5 bis 6 Uhr Nachmittags",
+        "Type": "timerange"
+      }
+    ]
+  }
+]

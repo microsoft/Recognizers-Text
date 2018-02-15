@@ -10,11 +10,11 @@
 		"browser-test": "npm run browserify && node ./test/browser-specs/server.js"
 	},
 	"browserify-shim": {
-		"recognizers-text": "global:recognizersTextBase",
-		"recognizers-text-options": "global:recognizersTextOptions",
-		"recognizers-text-number": "global:recognizersTextNumber",
-		"recognizers-text-number-with-unit": "global:recognizersTextNumberWithUnit",
-		"recognizers-text-date-time": "global:recognizersTextDateTime"
+		"@microsoft/recognizers-text": "global:microsoftRecognizersTextBase",
+		"@microsoft/recognizers-text-options": "global:microsoftRecognizersTextOptions",
+		"@microsoft/recognizers-text-number": "global:microsoftRecognizersTextNumber",
+		"@microsoft/recognizers-text-number-with-unit": "global:microsoftRecognizersTextNumberWithUnit",
+		"@microsoft/recognizers-text-date-time": "global:microsoftRecognizersTextDateTime"
 	},
 	"browserify": {
 		"transform": [
@@ -70,11 +70,11 @@
 		"express": "^4.16.1"
 	},
 	"dependencies": {
-		"recognizers-text": "file:./packages/recognizers-text",
-		"recognizers-text-options": "file:./packages/recognizers-options",
-		"recognizers-text-date-time": "file:./packages/recognizers-date-time",
-		"recognizers-text-number": "file:./packages/recognizers-number",
-		"recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
-		"recognizers-text-suite": "file:./packages/recognizers-text-suite"
+		"@microsoft/recognizers-text": "file:./packages/recognizers-text",
+		"@microsoft/recognizers-text-options": "file:./packages/recognizers-options",
+		"@microsoft/recognizers-text-date-time": "file:./packages/recognizers-date-time",
+		"@microsoft/recognizers-text-number": "file:./packages/recognizers-number",
+		"@microsoft/recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
+		"@microsoft/recognizers-text-suite": "file:./packages/recognizers-text-suite"
 	}
 }

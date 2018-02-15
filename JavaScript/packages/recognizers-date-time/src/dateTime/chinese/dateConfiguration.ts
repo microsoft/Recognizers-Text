@@ -1,6 +1,6 @@
-import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility } from "recognizers-text";
-import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor } from "recognizers-text-number"
-import { Constants as NumberConstants } from "recognizers-text-number"
+import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text";
+import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number"
+import { Constants as NumberConstants } from "@microsoft/recognizers-text-number"
 import { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { Constants, TimeTypeConstants } from "../constants"
@@ -16,7 +16,7 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly ofMonth: RegExp;
     readonly dateUnitRegex: RegExp;
     readonly forTheRegex: RegExp;
-    readonly weekDayAndDayOfMothRegex: RegExp;
+    readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
     readonly weekDayRegex: RegExp;
     readonly dayOfWeek: ReadonlyMap<string, number>;
@@ -109,7 +109,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     readonly thisRegex: RegExp
     readonly weekDayOfMonthRegex: RegExp
     readonly forTheRegex: RegExp;
-    readonly weekDayAndDayOfMothRegex: RegExp;
+    readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string

@@ -1,4 +1,4 @@
-import { RegExpUtility } from "recognizers-text";
+import { RegExpUtility } from "@microsoft/recognizers-text";
 import { ISetExtractorConfiguration, ISetParserConfiguration } from "../baseSet";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";

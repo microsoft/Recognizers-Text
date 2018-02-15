@@ -15,6 +15,7 @@ using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Recognizers.Text.DateTime.German;
+using Microsoft.Recognizers.Text.Sequence;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -54,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Number,
         Ordinal,
         Percent,
+        NumberRange,
         Age,
         Currency,
         Dimension,
@@ -63,6 +65,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         CustomNumber,
         DateTimeCalendarMode,
         DateTimeExtendedTypes,
+        PhoneNumber,
     }
 
     public enum DateTimeExtractors
@@ -108,6 +111,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return NumberRecognizer.Instance.GetOrdinalModel(language);
                 case Models.Percent:
                     return NumberRecognizer.Instance.GetPercentageModel(language);
+                case Models.NumberRange:
+                    return NumberRecognizer.Instance.GetNumberRangeModel(language);
                 case Models.Age:
                     return NumberWithUnitRecognizer.Instance.GetAgeModel(language);
                 case Models.Currency:
@@ -127,6 +132,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 // DateTimeAlt function is only activated when ExtendedTypes is enabled
                 case Models.DateTimeExtendedTypes:
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.ExtendedTypes).GetDateTimeModel(language);
+                case Models.PhoneNumber:
+                    return SequenceRecognizer.Instance.GetPhoneNumberModel(language);
             }
 
             throw new Exception($"Model '{modelName}' for '{language}' not supported");

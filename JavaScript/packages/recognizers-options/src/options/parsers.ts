@@ -1,4 +1,4 @@
-import { IParser, ExtractResult, ParseResult } from "recognizers-text";
+import { IParser, ExtractResult, ParseResult } from "@microsoft/recognizers-text";
 import { Constants } from "./constants";
 
 export interface IOptionsParserConfiguration<T> {

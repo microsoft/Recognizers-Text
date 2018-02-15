@@ -43,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex FutureRegex { get; }
 
+        public Regex FutureSuffixRegex { get; }
+
         public Regex NumberCombinedWithUnitRegex { get; }
 
         public Regex UnitRegex { get; }
@@ -52,6 +54,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex RelativeTimeUnitRegex { get; }
 
         public Regex RestOfDateTimeRegex { get; }
+
+        public Regex AmDescRegex { get; }
+
+        public Regex PmDescRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -78,11 +84,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = PortugueseDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = PortugueseDatePeriodExtractorConfiguration.FutureRegex;
+            FutureSuffixRegex = PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = PortugueseDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
             UnitRegex = PortugueseTimePeriodExtractorConfiguration.UnitRegex;
             PeriodTimeOfDayWithDateRegex = PortugueseDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
             RelativeTimeUnitRegex = PortugueseDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             RestOfDateTimeRegex = PortugueseDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = PortugueseDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = PortugueseDateTimePeriodExtractorConfiguration.PmDescRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

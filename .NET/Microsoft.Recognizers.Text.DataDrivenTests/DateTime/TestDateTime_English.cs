@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         public void DateTimeModelExtendedTypes()
         {
             base.ModelInitialize(Models);
-            base.TestDateTime();
+            base.TestDateTimeAlt();
         }
     }
 }

@@ -91,11 +91,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if (trimedText.EndsWith("morning") && hour >= 12)
+            if ((trimedText.EndsWith("morgen")|| trimedText.EndsWith("morgens")) && hour >= 12)
             {
                 result -= 12;
             }
-            else if (!trimedText.EndsWith("morning") && hour < 12)
+            else if (!(trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour < 12)
             {
                 result += 12;
             }
@@ -105,15 +105,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("now"))
+            if (trimedText.EndsWith("jetzt"))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimedText.Equals("recently") || trimedText.Equals("previously"))
+            else if (trimedText.Equals("neulich") || trimedText.Equals("vorher") || trimedText.Equals("vorhin"))
             {
                 timex = "PAST_REF";
             }
-            else if (trimedText.Equals("as soon as possible") || trimedText.Equals("asap"))
+            else if (trimedText.Equals("so früh wie möglich") || trimedText.Equals("asap"))
             {
                 timex = "FUTURE_REF";
             }
@@ -131,11 +131,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var trimedText = text.Trim().ToLowerInvariant();
 
             var swift = 0;
-            if (trimedText.StartsWith("next"))
+            if (trimedText.StartsWith("nächsten") || trimedText.StartsWith("nächste") || trimedText.StartsWith("nächstes") || trimedText.StartsWith("nächster"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (trimedText.StartsWith("letzten") || trimedText.StartsWith("letzte") || trimedText.StartsWith("letztes") || trimedText.StartsWith("letzter"))
             {
                 swift = -1;
             }

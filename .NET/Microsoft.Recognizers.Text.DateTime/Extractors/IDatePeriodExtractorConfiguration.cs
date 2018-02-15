@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FutureRegex { get; }
 
+        Regex FutureSuffixRegex { get; }
+
         Regex WeekOfRegex { get; }
 
         Regex MonthOfRegex { get; }
@@ -34,6 +36,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex RangeUnitRegex { get; }
 
         Regex InConnectorRegex { get; }
+
+        Regex YearPeriodRegex { get; }
+
+        Regex RelativeDecadeRegex { get; }
 
         IDateTimeExtractor DatePointExtractor { get; }
 

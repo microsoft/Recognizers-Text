@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex YearRegex { get; }
         public Regex PastRegex { get; }
         public Regex FutureRegex { get; }
+        public Regex FutureSuffixRegex { get; }
         public Regex NumberCombinedWithUnit { get; }
         public Regex WeekOfMonthRegex { get; }
         public Regex WeekOfYearRegex { get; }
@@ -59,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
+        public Regex RelativeDecadeRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -121,6 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = GermanDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = GermanDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = GermanDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = GermanDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = GermanDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = GermanDatePeriodExtractorConfiguration.WeekOfYearRegex;
@@ -135,6 +139,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WeekWithWeekDayRangeRegex = GermanDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = GermanDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = GermanDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = GermanDatePeriodExtractorConfiguration.YearPeriodRegex;
+            RelativeDecadeRegex = GermanDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -183,19 +189,20 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsFuture(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.StartsWith("this") || trimedText.StartsWith("next"));
+            return (trimedText.StartsWith("dieser") || trimedText.StartsWith("diesen") || trimedText.StartsWith("dieses") || trimedText.StartsWith("diese") || 
+                trimedText.StartsWith("nächster") || trimedText.StartsWith("nächstes") || trimedText.StartsWith("nächsten") || trimedText.StartsWith("nächste"));
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.Equals("last");
+            return (trimedText.Equals("letzter") || trimedText.Equals("letztes") || trimedText.Equals("letzten"));
         }
 
         public bool IsMonthOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("month");
+            return trimedText.EndsWith("monat");
         }
 
         public bool IsMonthToDate(string text)
@@ -207,19 +214,19 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsWeekend(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("weekend");
+            return trimedText.EndsWith("wochenende");
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("week");
+            return trimedText.EndsWith("woche");
         }
 
         public bool IsYearOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("year");
+            return (trimedText.EndsWith("jahr") || trimedText.EndsWith("jahre") || trimedText.EndsWith("jahren") || trimedText.EndsWith("jahres"));
         }
 
         public bool IsYearToDate(string text)
