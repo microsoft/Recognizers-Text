@@ -1,11 +1,12 @@
-# BUILD: docker build -t recognizers-text .
-# RUN: docker run -d -p 0.0.0.0:8000:8000 --name recognizers-text-browser 
+## Step 1: BUILD & RUN: 
+#> docker build -t recognizers-text . && docker run -it -p 0.0.0.0:8000:8000 --name recognizers-text-browser recognizers-text
+
+## Step 2: Wait until you see: 
+#> Browser Sample listening on port 8000!
+
+## Step 3: Open browser to http://localhost:8000/
 
 FROM node:latest
-
-EXPOSE 8000
-
-VOLUME .:/usr/src/
 
 #user is docker with password docker, has access to sudo
 RUN useradd -m docker && \
@@ -14,12 +15,14 @@ RUN useradd -m docker && \
 
 WORKDIR /usr/src/
 
-RUN npm install -g ts-node && \
-    npm install -g typescript && \
-  git clone https://github.com/Microsoft/Recognizers-Text && \
-  cd Recognizers-Text\Javascript && \
+RUN git clone https://github.com/Microsoft/Recognizers-Text && \
+  echo "***Clone complete" && \
+  cd Recognizers-Text/JavaScript && \
+  npm install && \
+  echo "***Install complete" && \
   npm run-script build && \
-  npm run build-resources && \
-  cd samples\browser
+  echo "***Build complete"
   
+WORKDIR /usr/src/Recognizers-Text/JavaScript/samples/browser
+
 CMD ["npm", "start"]
