@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 	public static class NumbersDefinitions
 	{
 		public const string LangMarker = "It";
-		public const string RoundNumberIntegerRegex = @"(cento|mille|milione|miliardo|trilione)";
+		public const string RoundNumberIntegerRegex = @"(cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni)";
 		public const string ZeroToNineIntegerRegex = @"(e uno|un|uno|una|due|tre|quattro|cinque|sei|sette|otto|nove|zero)";
 		public const string TenToNineteenIntegerRegex = @"(diciassette|tredici|quattordici|diciotto|diciannove|quindici|sedici|undici|dodici|dieci)";
 		public const string TensNumberIntegerRegex = @"(settanta|venti|trenta|ottanta|novanta|quaranta|cinquanta|sessanta)";
@@ -76,9 +76,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string[] WrittenDecimalSeparatorTexts = { "virgule" };
 		public static readonly string[] WrittenGroupSeparatorTexts = { "point", "points" };
 		public static readonly string[] WrittenIntegerSeparatorTexts = { "e", "-" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "e" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { "e", "su" };
 		public const string HalfADozenRegex = @"mezza\s+dozzina";
-		public const string DigitalNumberRegex = @"((?<=\b)(cento|mille|milione|miliardo|trilione|dozzina(e)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))";
+		public const string DigitalNumberRegex = @"((?<=\b)(cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni|dozzina|dozzine)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
 		{
 			{ "zero", 0 },
@@ -115,9 +115,15 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "novanta", 90 },
 			{ "cento", 100 },
 			{ "mille", 1000 },
+			{ "un milione", 1000000 },
 			{ "milione", 1000000 },
+			{ "milioni", 1000000 },
+			{ "un miliardo", 1000000000 },
 			{ "miliardo", 1000000000 },
-			{ "trilione", 1000000000000 }
+			{ "miliardi", 1000000000 },
+			{ "un trilione", 1000000000000 },
+			{ "trilione", 1000000000000 },
+			{ "trilioni", 1000000000000 }
 		};
 		public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
 		{
@@ -320,13 +326,30 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "cento", 100 },
 			{ "mille", 1000 },
 			{ "milione", 1000000 },
+			{ "milioni", 1000000 },
 			{ "miliardo", 1000000000 },
+			{ "miliardi", 1000000000 },
 			{ "trilione", 1000000000000 },
+			{ "trilioni", 1000000000000 },
 			{ "centinaio", 100 },
+			{ "centinai", 100 },
+			{ "centinaie", 100 },
 			{ "millesimo", 1000 },
 			{ "milionesimo", 1000000 },
 			{ "miliardersimo", 1000000000 },
 			{ "trilioneisimo", 1000000000000 },
+			{ "millesima", 1000 },
+			{ "milionesima", 1000000 },
+			{ "miliardersima", 1000000000 },
+			{ "trilioneisima", 1000000000000 },
+			{ "millesimi", 1000 },
+			{ "milionesimi", 1000000 },
+			{ "miliardersimi", 1000000000 },
+			{ "trilioneisimi", 1000000000000 },
+			{ "millesime", 1000 },
+			{ "milionesime", 1000000 },
+			{ "miliardersime", 1000000000 },
+			{ "trilioneisime", 1000000000000 },
 			{ "centinaia", 100 },
 			{ "migliaia", 1000 },
 			{ "milionata", 1000000 },

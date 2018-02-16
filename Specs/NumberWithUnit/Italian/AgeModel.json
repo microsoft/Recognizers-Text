@@ -29,195 +29,194 @@
 }
 ,
 {
-  "Input": "I'm only 29 years old!",
+  "Input": "Ho solo 29 anni!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "29 years old",
+      "Text": "29 anni",
       "TypeName": "age",
       "Resolution": {
         "value": "29",
-        "unit": "Year"
+        "unit": "Anno"
       }
     }
   ]
 }
 ,
 {
-  "Input": "Now, after ninety five years of age, perspectives change.",
+  "Input": "Adesso, dopo novantacinque anni di età, le prospettive cambiano.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ninety five years of age",
+      "Text": "novantacinque anni di età",
       "TypeName": "age",
       "Resolution": {
         "value": "95",
-        "unit": "Year"
+        "unit": "Anno"
       }
     }
   ]
 }
 ,
 {
-  "Input": "The Great Wall of China is more than 500 years old and extends for more than 5,000 miles.",
+  "Input": "La Grande Muraglia cinese ha più di 500 anni e si estende per più di 5,000 miglia.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "500 years old",
+      "Text": "500 anni",
       "TypeName": "age",
       "Resolution": {
         "value": "500",
-        "unit": "Year"
+        "unit": "Anno"
       }
     }
   ]
 }
 ,
 {
-  "Input": "She's 60 years old; she was born in May 8, 1945.",
+  "Input": "Lei ha 60 anni; è nata l'8 maggio 1945.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "60 years old",
+      "Text": "60 anni",
       "TypeName": "age",
       "Resolution": {
         "value": "60",
-        "unit": "Year"
+        "unit": "Anno"
       }
     }
   ]
 }
 ,
 {
-  "Input": "25% of cases are not diagnosed until around 3 years of age.",
+  "Input": "Il 25% dei casi non viene diagnosticato fino a circa 3 anni di età.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 years of age",
+      "Text": "3 anni di età",
       "TypeName": "age",
       "Resolution": {
         "value": "3",
-        "unit": "Year"
+        "unit": "Anno"
       }
     }
   ]
 }
 ,
 {
-  "Input": "When will there be pressure to fulfil a promise that is one year old?",
+  "Input": "Quando ci sarà la pressione di adempiere ad una promessa che ha un anno?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "one year old",
+      "Text": "un anno",
       "TypeName": "age",
       "Resolution": {
         "value": "1",
-        "unit": "Year"
+        "unit": "Anno"
       }
     }
   ]
 }
 ,
 {
-  "Input": "It happened when the baby was only ten months old.",
+  "Input": "è successo quando il bambino aveva solo dieci mesi.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten months old",
+      "Text": "dieci mesi",
       "TypeName": "age",
       "Resolution": {
         "value": "10",
-        "unit": "Month"
+        "unit": "Mese"
       }
     }
   ]
 }
 ,
 {
-  "Input": "The committee proposal is 8 months old.",
+  "Input": "La proposta del comitato ha 8 mesi.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8 months old",
+      "Text": "8 mesi",
       "TypeName": "age",
       "Resolution": {
         "value": "8",
-        "unit": "Month"
+        "unit": "Mese"
       }
     }
   ]
 }
 ,
 {
-  "Input": "Aproximately 50% of cases are diagnosed at around eighteen months of age.",
+  "Input": "Approssimativamente il 50% dei casi viene diagnosticato intorno ai diciotto mesi di età.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "eighteen months of age",
+      "Text": "diciotto mesi di età",
       "TypeName": "age",
       "Resolution": {
         "value": "18",
-        "unit": "Month"
+        "unit": "Mese"
       }
     }
   ]
 }
 ,
 {
-  "Input": "It is possible, but in 2006 95% of them were younger than three months old.",
-  "NotSupportedByDesign": "python",
+  "Input": "è possiblie, ma nel 2006 95% di loro erano più giovani di tre mesi.",
   "Results": [
     {
-      "Text": "three months old",
+      "Text": "tre mesi",
       "TypeName": "age",
       "Resolution": {
         "value": "3",
-        "unit": "Month"
+        "unit": "Mese"
       }
     }
   ]
 }
 ,
 {
-  "Input": "If we go ahead in December, it will be three weeks old.",
+  "Input": "Se andiamo avanti a Dicembre, avrà tre settimane.",   
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "three weeks old",
+      "Text": "tre settimane",
       "TypeName": "age",
       "Resolution": {
         "value": "3",
-        "unit": "Week"
+        "unit": "Settimana"
       }
     }
   ]
 }
 ,
 {
-  "Input": "At 6 weeks of age, one can already celebrate Christmas.",
+  "Input": "A 6 settimane di età, si può già festeggiare il Natale.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "6 weeks of age",
+      "Text": "6 settimane di età",
       "TypeName": "age",
       "Resolution": {
         "value": "6",
-        "unit": "Week"
+        "unit": "Settimana"
       }
     }
   ]
 }
 ,
 {
-  "Input": "A 90 day old utilities bill is quite late.",
+  "Input": "Una bolletta delle utenze di 90 giorni è piuttosto tardi.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "90 day old",
+      "Text": "90 giorni",
       "TypeName": "age",
       "Resolution": {
         "value": "90",
-        "unit": "Day"
+        "unit": "Giorno"
       }
     }
   ]

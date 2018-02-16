@@ -19,10 +19,10 @@ namespace Microsoft.Recognizers.Definitions.Italian
 	{
 		public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
 		{
-			{ "Anno", "anni|anno|anni di età|anno di età|anni d'età|anno d'età" },
-			{ "Mese", "mese|mesi|mese di età|mesi di età|mese d'età|mesi d'età" },
-			{ "Settimana", "settimana|settimane|settimana di età|settimane di età|settimana d'età|settimane d'età" },
-			{ "Giorno", "giorni|giorno|giorni di età|giorno mane di età|giorni d'età|giorno d'età" }
+			{ "Anno", "anni di età|anno di età|anni d'età|anno d'età|anno|anni" },
+			{ "Mese", "mese di età|mesi di età|mese d'età|mesi d'età|mese|mesi" },
+			{ "Settimana", "settimana di età|settimane di età|settimana d'età|settimane d'età|settimana|settimane" },
+			{ "Giorno", "giorni di età|giorno di età|giorni d'età|giorno d'età|giorno|giorni" }
 		};
 		public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
 		{
@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "Afghan afghani", "afghani|؋|afn|afghanistan" },
 			{ "Pul", "pul" },
 			{ "Euro", "euros|euro|€|eur" },
-			{ "Cent", "cents|cent|-cents|-cent|sen|centesimi|centesimo" },
+			{ "Cent", "cents|cent|centesimo|-cent|sen|centesimi|centesimo" },
 			{ "Albanian lek", "lek albanese|lek" },
 			{ "Qindarkë", "qindarkë|qindarkës|qindarke|qindarkes" },
 			{ "Angolan kwanza", "kwanza angolano|kwanza angolani|kz|aoa|kwanza" },
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "Belgian franc", "belgian franc|bi.|b.fr.|bef|belgium franc" },
 			{ "Rappen", "rappen|-rappen" },
 			{ "Franc", "francs|franc|fr.|fs|franco|franchi" },
-			{ "Centime", "centimes|centime|santim|centesimo|centesimi" },
+			{ "Centime", "centimes|centime|santim" },
 			{ "Russian ruble", "rublo russo|rubli russi|₽|rub" },
 			{ "New Belarusian ruble", "nuovo rublo bielorusso|nuovi rubli bielorussi|byn" },
 			{ "Old Belarusian ruble", "rublo bielorusso|rubli bielorussi|byr" },
@@ -287,13 +287,13 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "Chinese yuan", "yuan|yuan cinese|renminbi|cny|rmb|￥" },
 			{ "Fen", "fen" },
 			{ "Jiao", "jiao" },
-			{ "Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka" },
+			{ "Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka|marco finlandese|marchi finlandesi" },
 			{ "Penni", "penniä|penni" }
 		};
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
 			{ "Dollaro", "$" },
-			{ "Dollaro americano", "$ stati uniti|us$|us $|u.s. $|u.s $" },
+			{ "United states dollar", "$ stati uniti|us$|us $|u.s. $|u.s $" },
 			{ "East Caribbean dollar", "east caribbean $" },
 			{ "Australian dollar", "$ australiano|$ australia" },
 			{ "Bahamian dollar", "bahamas $|$ bahamas" },
@@ -420,7 +420,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		};
 		public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
 		public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
-		public const string ConnectorToken = "de";
+		public const string ConnectorToken = "di";
 		public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
 		{
 			{ "Chilometro", "km|chilometro|chilometri|kilometro|kilometeri" },
@@ -488,11 +488,13 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "Pollice cubo", "pollice cubo|pollice cubico|pollici cubici|pollici cubi" },
 			{ "Piede cubo", "piede cubo|piedi cubi|piede cubico|piedi cubici" },
 			{ "Miglia cubica", "miglio cubo|miglio cubico|miglia cubica|miglia cubiche" },
-			{ "Oncia liquida", "oncia|once|oncia fluida|once fluide|once liquida|once liquide" },
+			{ "Oncia", "oncia|once" },
+			{ "Oncia liquida", "oncia fluida|once fluide|once liquida|once liquide" },
 			{ "Cucchiaino", "cucchiaino|cucchiaini" },
 			{ "Cucchiaio", "cucchiaio|cucchiai" },
 			{ "Tazza", "tazza|tazze" },
-			{ "Pinta", "pinta|pinte" }
+			{ "Pinta", "pinta|pinte" },
+			{ "Gallone", "gallone|galloni" }
 		};
 		public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
 		{

@@ -2,7 +2,7 @@
 LangMarker: It
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (cento|mille|milione|miliardo|trilione)
+  def: (cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (e uno|un|uno|una|due|tre|quattro|cinque|sei|sette|otto|nove|zero)
 TenToNineteenIntegerRegex: !simpleRegex
@@ -133,7 +133,7 @@ CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: ({BaseNumbers.NumberReplaceToken})(\s*)(%|percento|per cento)
+  def: ({BaseNumbers.NumberReplaceToken})(\s*)(%|percento|per cento|percentuale)
   references: [ BaseNumbers.NumberReplaceToken ]
 NumberWithPrefixPercentage: !nestedRegex
   def: (percento di|per cento di)(\s*)({BaseNumbers.NumberReplaceToken})
@@ -147,11 +147,11 @@ WordSeparatorToken: e
 WrittenDecimalSeparatorTexts: [virgule]
 WrittenGroupSeparatorTexts: [point, points]
 WrittenIntegerSeparatorTexts: [e, '-']
-WrittenFractionSeparatorTexts: [e]
+WrittenFractionSeparatorTexts: [e, su]
 HalfADozenRegex: !simpleRegex
   def: mezza\s+dozzina
 DigitalNumberRegex: !simpleRegex
-  def: ((?<=\b)(cento|mille|milione|miliardo|trilione|dozzina(e)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
+  def: ((?<=\b)(cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni|dozzina|dozzine)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -189,9 +189,15 @@ CardinalNumberMap: !dictionary
     novanta: 90
     cento: 100
     mille: 1000
+    un milione: 1000000
     milione: 1000000
+    milioni: 1000000
+    un miliardo: 1000000000
     miliardo: 1000000000
+    miliardi: 1000000000
+    un trilione: 1000000000000
     trilione: 1000000000000
+    trilioni: 1000000000000
 OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -394,13 +400,30 @@ RoundNumberMap: !dictionary
     cento: 100
     mille: 1000
     milione: 1000000
+    milioni: 1000000
     miliardo: 1000000000
+    miliardi: 1000000000
     trilione: 1000000000000
+    trilioni: 1000000000000
     centinaio: 100
+    centinai: 100
+    centinaie: 100
     millesimo: 1000
     milionesimo: 1000000
     miliardersimo: 1000000000
     trilioneisimo: 1000000000000
+    millesima: 1000
+    milionesima: 1000000
+    miliardersima: 1000000000
+    trilioneisima: 1000000000000
+    millesimi: 1000
+    milionesimi: 1000000
+    miliardersimi: 1000000000
+    trilioneisimi: 1000000000000
+    millesime: 1000
+    milionesime: 1000000
+    miliardersime: 1000000000
+    trilioneisime: 1000000000000
     centinaia: 100
     migliaia: 1000
     milionata: 1000000

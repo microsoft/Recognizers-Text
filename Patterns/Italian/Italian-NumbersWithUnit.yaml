@@ -3,10 +3,10 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Anno: anni|anno|anni di età|anno di età|anni d'età|anno d'età
-    Mese: mese|mesi|mese di età|mesi di età|mese d'età|mesi d'età
-    Settimana: settimana|settimane|settimana di età|settimane di età|settimana d'età|settimane d'età
-    Giorno: giorni|giorno|giorni di età|giorno mane di età|giorni d'età|giorno d'età
+    Anno: anni di età|anno di età|anni d'età|anno d'età|anno|anni
+    Mese: mese di età|mesi di età|mese d'età|mesi d'età|mese|mesi
+    Settimana: settimana di età|settimane di età|settimana d'età|settimane d'età|settimana|settimane
+    Giorno: giorni di età|giorno di età|giorni d'età|giorno d'età|giorno|giorni
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
@@ -35,7 +35,7 @@ CurrencySuffixList: !dictionary
     Pul: pul
 #Euro
     Euro: euros|euro|€|eur
-    Cent: cents|cent|-cents|-cent|sen|centesimi|centesimo
+    Cent: cents|cent|centesimo|-cent|sen|centesimi|centesimo
 #Albanian lek
 #No use of "ALL" "L"
     Albanian lek: lek albanese|lek
@@ -269,7 +269,7 @@ CurrencySuffixList: !dictionary
     Belgian franc: belgian franc|bi.|b.fr.|bef|belgium franc
     Rappen: rappen|-rappen
     Franc: francs|franc|fr.|fs|franco|franchi
-    Centime: centimes|centime|santim|centesimo|centesimi
+    Centime: centimes|centime|santim
 #Ruble
     Russian ruble: rublo russo|rubli russi|₽|rub
     New Belarusian ruble: nuovo rublo bielorusso|nuovi rubli bielorussi|byn
@@ -366,14 +366,14 @@ CurrencySuffixList: !dictionary
     Fen: fen
     Jiao: jiao
 #Additional
-    Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka
+    Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka|marco finlandese|marchi finlandesi
     Penni: penniä|penni
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 #Dollar Prefix
     Dollaro: $
-    Dollaro americano: $ stati uniti|us$|us $|u.s. $|u.s $
+    United states dollar: $ stati uniti|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $
     Australian dollar: $ australiano|$ australia
     Bahamian dollar: bahamas $|$ bahamas
@@ -504,7 +504,7 @@ BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
   def: (?=(\s|\P{L}|$))
-ConnectorToken: de
+ConnectorToken: di
 #LengthExtractorConfiguration
 LengthSuffixList: !dictionary
   types: [ string, string ]
@@ -577,11 +577,13 @@ VolumeSuffixList: !dictionary
     Pollice cubo: pollice cubo|pollice cubico|pollici cubici|pollici cubi
     Piede cubo: piede cubo|piedi cubi|piede cubico|piedi cubici
     Miglia cubica: miglio cubo|miglio cubico|miglia cubica|miglia cubiche
-    Oncia liquida: oncia|once|oncia fluida|once fluide|once liquida|once liquide
+    Oncia: oncia|once
+    Oncia liquida: oncia fluida|once fluide|once liquida|once liquide
     Cucchiaino: cucchiaino|cucchiaini
     Cucchiaio: cucchiaio|cucchiai
     Tazza: tazza|tazze
     Pinta: pinta|pinte
+    Gallone: gallone|galloni
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
