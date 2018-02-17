@@ -1,17 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Definitions;
+using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
-    public abstract class BaseSequenceExtractor : IExtractor
+    class BaseIPExtractor : BaseSequenceExtractor
     {
-        internal abstract ImmutableDictionary<Regex, string> Regexes { get; }
+        internal override ImmutableDictionary<Regex, string> Regexes { get; }
+        protected sealed override string ExtractType { get; } = Constants.MODEL_IP;
 
-        protected virtual string ExtractType { get; } = "";
+        public BaseIPExtractor()
+        {
+            var regexes = new Dictionary<Regex, string>
+            {
+                {
+                    new Regex(BaseIP.IPV4Regex), Constants.MODEL_IPV4
+                },
+                {
+                    new Regex(BaseIP.IPV6Regex), Constants.MODEL_IPV6
+                }
+            };
+            
+            Regexes = regexes.ToImmutableDictionary();
+        }
 
-        public virtual List<ExtractResult> Extract(string text)
+        public override List<ExtractResult> Extract(string text)
         {
             var result = new List<ExtractResult>();
 
@@ -22,8 +40,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             var matchSource = new Dictionary<Match, string>();
             var matched = new bool[text.Length];
-
-            //Traverse every match results to see each position in the text is matched or not.
+            
             var collections = Regexes.ToDictionary(o => o.Key.Matches(text), p => p.Value);
             foreach (var collection in collections)
             {
@@ -38,8 +55,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                     matchSource.Add(m, collection.Value);
                 }
             }
-
-            //Form the extracted results from all the matched intervals in the text.
+            
             var lastNotMatched = -1;
             for (var i = 0; i < text.Length; i++)
             {
@@ -50,6 +66,17 @@ namespace Microsoft.Recognizers.Text.Sequence
                         var start = lastNotMatched + 1;
                         var length = i - lastNotMatched;
                         var substr = text.Substring(start, length);
+                        if (substr.StartsWith("::") &&
+                            (start > 0 && char.IsLetterOrDigit(text[start - 1])))
+                        {
+                            continue;
+                        }
+                        else if (substr.EndsWith("::") && 
+                            (i + 1 < text.Length && char.IsLetterOrDigit(text[i + 1])))
+                        {
+                            continue;
+                        }
+
                         bool matchFunc(Match o) => o.Index == start && o.Length == length;
 
                         if (matchSource.Keys.Any(matchFunc))
