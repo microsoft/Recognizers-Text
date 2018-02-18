@@ -122,7 +122,6 @@
   ]
 }
 ,
-//IPv6
 {
   "Input": "My PC IPv6 address is ABEF:452::FE10",
   "NotSupported": "javascript",
