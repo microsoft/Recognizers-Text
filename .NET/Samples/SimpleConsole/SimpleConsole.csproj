@@ -66,6 +66,10 @@
       <Project>{f1005971-0341-4635-ac1b-b272681d0834}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Options\Microsoft.Recognizers.Text.Options.csproj">
+      <Project>{9318ea22-c36a-48c8-9882-8a0d2d74c356}</Project>
+      <Name>Microsoft.Recognizers.Text.Options</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj">
       <Project>{a5f60d50-81f7-44f8-a2b4-a63606376ee7}</Project>
       <Name>Microsoft.Recognizers.Text.Sequence</Name>
@@ -78,6 +82,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
-</PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -6,6 +6,7 @@ using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
+using Microsoft.Recognizers.Text.Options;
 using Microsoft.Recognizers.Text.Sequence;
 
 using Newtonsoft.Json;
@@ -102,7 +103,11 @@ namespace SimpleConsole
 
                 // Add IP recognizer - This recognizer will find any Ipv4/Ipv6 presented
                 // E.g "My Ip is 8.8.8.8"
-                SequenceRecognizer.Instance.GetIpAddressModel(defaultCulture)
+                SequenceRecognizer.Instance.GetIpAddressModel(defaultCulture),
+                
+                // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
+                // E.g "yup, I need that" will return "True"
+                OptionsRecognizer.Instance.GetBooleanModel(defaultCulture)
             };
         }
 

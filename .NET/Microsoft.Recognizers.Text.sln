@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -26,6 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\English\English-DateTime.yaml = ..\Patterns\English\English-DateTime.yaml
 		..\Patterns\English\English-Numbers.yaml = ..\Patterns\English\English-Numbers.yaml
 		..\Patterns\English\English-NumbersWithUnit.yaml = ..\Patterns\English\English-NumbersWithUnit.yaml
+		..\Patterns\English\English-Options.yaml = ..\Patterns\English\English-Options.yaml
 		..\Patterns\French\French-DateTime.yaml = ..\Patterns\French\French-DateTime.yaml
 		..\Patterns\French\French-Numbers.yaml = ..\Patterns\French\French-Numbers.yaml
 		..\Patterns\French\French-NumbersWithUnit.yaml = ..\Patterns\French\French-NumbersWithUnit.yaml
@@ -59,6 +60,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.NumberWithUnit", "Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj", "{E9BE4F64-9CC5-433C-90CC-A379A732E5E8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Sequence", "Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj", "{A5F60D50-81F7-44F8-A2B4-A63606376EE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Options", "Microsoft.Recognizers.Text.Options\Microsoft.Recognizers.Text.Options.csproj", "{9318EA22-C36A-48C8-9882-8A0D2D74C356}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,6 +109,10 @@ Global
 		{A5F60D50-81F7-44F8-A2B4-A63606376EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F60D50-81F7-44F8-A2B4-A63606376EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5F60D50-81F7-44F8-A2B4-A63606376EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
