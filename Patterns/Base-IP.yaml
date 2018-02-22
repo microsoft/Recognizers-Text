@@ -1,42 +1,42 @@
 ---
-IPV4Regex: !simpleRegex
+Ipv4Regex: !simpleRegex
   def: \b(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)((\.(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)){3})\b
-BasicIPV6Element: !simpleRegex
+BasicIpv6Element: !simpleRegex
   def: ([\da-fA-F]{1,4})
-BasicIPV6Regex: !nestedRegex
-  def: (({BasicIPV6Element}:){7}{BasicIPV6Element})
-  references: [BasicIPV6Element]
-IPV6EllipsisRegex1: !nestedRegex
-  def: (:(:{BasicIPV6Element}){1,7})
-  references: [BasicIPV6Element]
-IPV6EllipsisRegex2: !nestedRegex
-  def: (({BasicIPV6Element}:){1}((:{BasicIPV6Element}){1,6}))
-  references: [BasicIPV6Element]
-IPV6EllipsisRegex3: !nestedRegex
-  def: (({BasicIPV6Element}:){2}((:{BasicIPV6Element}){1,5}))
-  references: [BasicIPV6Element]
-IPV6EllipsisRegex4: !nestedRegex
-  def: (({BasicIPV6Element}:){3}((:{BasicIPV6Element}){1,4}))
-  references: [BasicIPV6Element]
-IPV6EllipsisRegex5: !nestedRegex
-  def: (({BasicIPV6Element}:){4}((:{BasicIPV6Element}){1,3}))
-  references: [BasicIPV6Element]
-IPV6EllipsisRegex6: !nestedRegex
-  def: (({BasicIPV6Element}:){5}((:{BasicIPV6Element}){1,2}))
-  references: [BasicIPV6Element]
-IPV6EllipsisRegex7: !nestedRegex
-  def: (({BasicIPV6Element}:){6}((:{BasicIPV6Element}){1}))
-  references: [BasicIPV6Element]
-IPV6EllipsisRegex8: !nestedRegex
-  def: (({BasicIPV6Element}:){7}(:))
-  references: [BasicIPV6Element]
-IPV6EllipsisRegexOther: !nestedRegex
-  def: \B::\B|\B:(:{BasicIPV6Element}){0,7}\b|\b({BasicIPV6Element}:){0,7}:\B
-  references: [BasicIPV6Element]
-MergedIPV6Regex: !nestedRegex
-  def: ({BasicIPV6Regex}|{IPV6EllipsisRegex1}|{IPV6EllipsisRegex2}|{IPV6EllipsisRegex3}|{IPV6EllipsisRegex4}|{IPV6EllipsisRegex5}|{IPV6EllipsisRegex6}|{IPV6EllipsisRegex7}|{IPV6EllipsisRegex8})
-  references: [BasicIPV6Regex, IPV6EllipsisRegex1, IPV6EllipsisRegex2, IPV6EllipsisRegex3, IPV6EllipsisRegex4, IPV6EllipsisRegex5, IPV6EllipsisRegex6, IPV6EllipsisRegex7, IPV6EllipsisRegex8]
-IPV6Regex: !nestedRegex
-  def: (\b{MergedIPV6Regex}\b)|({IPV6EllipsisRegexOther})
-  references: [MergedIPV6Regex, IPV6EllipsisRegexOther]
+BasicIpv6Regex: !nestedRegex
+  def: (({BasicIpv6Element}:){7}{BasicIpv6Element})
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegex1: !nestedRegex
+  def: (:(:{BasicIpv6Element}){1,7})
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegex2: !nestedRegex
+  def: (({BasicIpv6Element}:){1}((:{BasicIpv6Element}){1,6}))
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegex3: !nestedRegex
+  def: (({BasicIpv6Element}:){2}((:{BasicIpv6Element}){1,5}))
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegex4: !nestedRegex
+  def: (({BasicIpv6Element}:){3}((:{BasicIpv6Element}){1,4}))
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegex5: !nestedRegex
+  def: (({BasicIpv6Element}:){4}((:{BasicIpv6Element}){1,3}))
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegex6: !nestedRegex
+  def: (({BasicIpv6Element}:){5}((:{BasicIpv6Element}){1,2}))
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegex7: !nestedRegex
+  def: (({BasicIpv6Element}:){6}((:{BasicIpv6Element}){1}))
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegex8: !nestedRegex
+  def: (({BasicIpv6Element}:){7}(:))
+  references: [BasicIpv6Element]
+Ipv6EllipsisRegexOther: !nestedRegex
+  def: \B::\B|\B:(:{BasicIpv6Element}){0,7}\b|\b({BasicIpv6Element}:){0,7}:\B
+  references: [BasicIpv6Element]
+MergedIpv6Regex: !nestedRegex
+  def: ({BasicIpv6Regex}|{Ipv6EllipsisRegex1}|{Ipv6EllipsisRegex2}|{Ipv6EllipsisRegex3}|{Ipv6EllipsisRegex4}|{Ipv6EllipsisRegex5}|{Ipv6EllipsisRegex6}|{Ipv6EllipsisRegex7}|{Ipv6EllipsisRegex8})
+  references: [BasicIpv6Regex, Ipv6EllipsisRegex1, Ipv6EllipsisRegex2, Ipv6EllipsisRegex3, Ipv6EllipsisRegex4, Ipv6EllipsisRegex5, Ipv6EllipsisRegex6, Ipv6EllipsisRegex7, Ipv6EllipsisRegex8]
+Ipv6Regex: !nestedRegex
+  def: (\b{MergedIpv6Regex}\b)|({Ipv6EllipsisRegexOther})
+  references: [MergedIpv6Regex, Ipv6EllipsisRegexOther]
 ...

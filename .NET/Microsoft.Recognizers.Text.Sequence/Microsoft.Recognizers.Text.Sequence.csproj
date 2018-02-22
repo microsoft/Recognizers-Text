@@ -16,10 +16,6 @@
     <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="(robocopy /E /XO /R:3 /W:3 &quot;$(TargetDir)..&quot; &quot;$(SolutionDir)build\package&quot; *.*) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0" />
   </Target>

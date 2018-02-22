@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             RegisterModel(Culture.English, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor()),
-                [typeof(IPModel)] = new IPModel(new IPParser(), new IPExtractor())
+                [typeof(IpAddressModel)] = new IpAddressModel(new IpParser(), new IpExtractor())
             });
         }
 
@@ -23,9 +23,9 @@ namespace Microsoft.Recognizers.Text.Sequence
             return GetModel<PhoneNumberModel>(Culture.English, fallbackToDefaultCulture, SequenceOptions.None.ToString());
         }
 
-        public IModel GetIPModel(string culture, bool fallbackToDefaultCulture = true)
+        public IModel GetIpAddressModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<IPModel>(Culture.English, fallbackToDefaultCulture, SequenceOptions.None.ToString());
+            return GetModel<IpAddressModel>(Culture.English, fallbackToDefaultCulture, SequenceOptions.None.ToString());
         }
 
     }

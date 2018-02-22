@@ -5,9 +5,9 @@
 //     the code is regenerated.
 //     
 //     Generation parameters:
-//     - DataFilename: Patterns\Base-IP.yaml
+//     - DataFilename: Patterns\Base-Ip.yaml
 //     - Language: NULL
-//     - ClassName: BaseIP
+//     - ClassName: BaseIp
 // </auto-generated>
 //------------------------------------------------------------------------------
 namespace Microsoft.Recognizers.Definitions
@@ -15,21 +15,21 @@ namespace Microsoft.Recognizers.Definitions
 	using System;
 	using System.Collections.Generic;
 
-	public static class BaseIP
+	public static class BaseIp
 	{
-		public const string IPV4Regex = @"\b(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)((\.(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)){3})\b";
-		public const string BasicIPV6Element = @"([\da-fA-F]{1,4})";
-		public static readonly string BasicIPV6Regex = $@"(({BasicIPV6Element}:){{7}}{BasicIPV6Element})";
-		public static readonly string IPV6EllipsisRegex1 = $@"(:(:{BasicIPV6Element}){{1,7}})";
-		public static readonly string IPV6EllipsisRegex2 = $@"(({BasicIPV6Element}:){{1}}((:{BasicIPV6Element}){{1,6}}))";
-		public static readonly string IPV6EllipsisRegex3 = $@"(({BasicIPV6Element}:){{2}}((:{BasicIPV6Element}){{1,5}}))";
-		public static readonly string IPV6EllipsisRegex4 = $@"(({BasicIPV6Element}:){{3}}((:{BasicIPV6Element}){{1,4}}))";
-		public static readonly string IPV6EllipsisRegex5 = $@"(({BasicIPV6Element}:){{4}}((:{BasicIPV6Element}){{1,3}}))";
-		public static readonly string IPV6EllipsisRegex6 = $@"(({BasicIPV6Element}:){{5}}((:{BasicIPV6Element}){{1,2}}))";
-		public static readonly string IPV6EllipsisRegex7 = $@"(({BasicIPV6Element}:){{6}}((:{BasicIPV6Element}){{1}}))";
-		public static readonly string IPV6EllipsisRegex8 = $@"(({BasicIPV6Element}:){{7}}(:))";
-		public static readonly string IPV6EllipsisRegexOther = $@"\B::\B|\B:(:{BasicIPV6Element}){{0,7}}\b|\b({BasicIPV6Element}:){{0,7}}:\B";
-		public static readonly string MergedIPV6Regex = $@"({BasicIPV6Regex}|{IPV6EllipsisRegex1}|{IPV6EllipsisRegex2}|{IPV6EllipsisRegex3}|{IPV6EllipsisRegex4}|{IPV6EllipsisRegex5}|{IPV6EllipsisRegex6}|{IPV6EllipsisRegex7}|{IPV6EllipsisRegex8})";
-		public static readonly string IPV6Regex = $@"(\b{MergedIPV6Regex}\b)|({IPV6EllipsisRegexOther})";
+		public const string Ipv4Regex = @"\b(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)((\.(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)){3})\b";
+		public const string BasicIpv6Element = @"([\da-fA-F]{1,4})";
+		public static readonly string BasicIpv6Regex = $@"(({BasicIpv6Element}:){{7}}{BasicIpv6Element})";
+		public static readonly string Ipv6EllipsisRegex1 = $@"(:(:{BasicIpv6Element}){{1,7}})";
+		public static readonly string Ipv6EllipsisRegex2 = $@"(({BasicIpv6Element}:){{1}}((:{BasicIpv6Element}){{1,6}}))";
+		public static readonly string Ipv6EllipsisRegex3 = $@"(({BasicIpv6Element}:){{2}}((:{BasicIpv6Element}){{1,5}}))";
+		public static readonly string Ipv6EllipsisRegex4 = $@"(({BasicIpv6Element}:){{3}}((:{BasicIpv6Element}){{1,4}}))";
+		public static readonly string Ipv6EllipsisRegex5 = $@"(({BasicIpv6Element}:){{4}}((:{BasicIpv6Element}){{1,3}}))";
+		public static readonly string Ipv6EllipsisRegex6 = $@"(({BasicIpv6Element}:){{5}}((:{BasicIpv6Element}){{1,2}}))";
+		public static readonly string Ipv6EllipsisRegex7 = $@"(({BasicIpv6Element}:){{6}}((:{BasicIpv6Element}){{1}}))";
+		public static readonly string Ipv6EllipsisRegex8 = $@"(({BasicIpv6Element}:){{7}}(:))";
+		public static readonly string Ipv6EllipsisRegexOther = $@"\B::\B|\B:(:{BasicIpv6Element}){{0,7}}\b|\b({BasicIpv6Element}:){{0,7}}:\B";
+		public static readonly string MergedIpv6Regex = $@"({BasicIpv6Regex}|{Ipv6EllipsisRegex1}|{Ipv6EllipsisRegex2}|{Ipv6EllipsisRegex3}|{Ipv6EllipsisRegex4}|{Ipv6EllipsisRegex5}|{Ipv6EllipsisRegex6}|{Ipv6EllipsisRegex7}|{Ipv6EllipsisRegex8})";
+		public static readonly string Ipv6Regex = $@"(\b{MergedIpv6Regex}\b)|({Ipv6EllipsisRegexOther})";
 	}
 }

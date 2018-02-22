@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Recognizers.Text.Sequence.English
 {
-    class IPParser : BaseIPParser
+    class IpParser : BaseIpParser
     { 
-        public IPParser()
+        public IpParser()
         {
 
         }

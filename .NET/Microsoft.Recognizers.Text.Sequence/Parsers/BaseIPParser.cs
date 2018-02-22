@@ -2,7 +2,7 @@
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
-    class BaseIPParser : BaseSequenceParser
+    class BaseIpParser : BaseSequenceParser
     {
         public override ParseResult Parse(ExtractResult extResult)
         {

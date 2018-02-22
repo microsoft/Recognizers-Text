@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
-    class BaseIPExtractor : BaseSequenceExtractor
+    class BaseIpExtractor : BaseSequenceExtractor
     {
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
-        protected sealed override string ExtractType { get; } = Constants.MODEL_IP;
+        protected sealed override string ExtractType { get; } = Constants.SYS_IP;
 
-        public BaseIPExtractor()
+        public BaseIpExtractor()
         {
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BaseIP.IPV4Regex), Constants.MODEL_IPV4
+                    new Regex(BaseIp.Ipv4Regex), Constants.IP_REGEX_IPV4
                 },
                 {
-                    new Regex(BaseIP.IPV6Regex), Constants.MODEL_IPV6
+                    new Regex(BaseIp.Ipv6Regex), Constants.IP_REGEX_IPV6
                 }
             };
             
@@ -66,12 +66,12 @@ namespace Microsoft.Recognizers.Text.Sequence
                         var start = lastNotMatched + 1;
                         var length = i - lastNotMatched;
                         var substr = text.Substring(start, length);
-                        if (substr.StartsWith("::") &&
+                        if (substr.StartsWith(Constants.IPV6_ELLIPSIS) &&
                             (start > 0 && char.IsLetterOrDigit(text[start - 1])))
                         {
                             continue;
                         }
-                        else if (substr.EndsWith("::") && 
+                        else if (substr.EndsWith(Constants.IPV6_ELLIPSIS) && 
                             (i + 1 < text.Length && char.IsLetterOrDigit(text[i + 1])))
                         {
                             continue;

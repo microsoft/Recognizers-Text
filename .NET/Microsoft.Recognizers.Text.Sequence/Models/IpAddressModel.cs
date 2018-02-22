@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Recognizers.Text.Sequence
 {
-    public class IPModel : AbstractSequenceModel
+    public class IpAddressModel : AbstractSequenceModel
     {
-        public IPModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public IpAddressModel(IParser parser, IExtractor extractor) : base(parser, extractor)
         {
         }
 
