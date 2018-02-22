@@ -1,32 +1,41 @@
-﻿using System;
+﻿using Microsoft.Recognizers.Text.Utilities;
+using System;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
-    public abstract class Recognizer<TModelOptions>
+    public abstract class Recognizer<TModelOptions> where TModelOptions : struct
     {
         private readonly ModelFactory<TModelOptions> factory;
 
-        public string CurrentCulture { get; private set; }
+        public string DefaultCulture { get; private set; }
 
         public TModelOptions Options { get; private set; }
 
-        protected Recognizer(string culture, TModelOptions options)
+        protected Recognizer(string defaultCulture, TModelOptions options, bool lazyInitialization = true)
         {
-            if (string.IsNullOrWhiteSpace(culture))
+            if (string.IsNullOrWhiteSpace(defaultCulture))
             {
-                throw new ArgumentException("culture", "The Culture is required");
+                throw new ArgumentException("culture", "The default culture is required");
             }
 
-            this.CurrentCulture = culture;
+            this.DefaultCulture = defaultCulture;
             this.Options = options;
 
             this.factory = new ModelFactory<TModelOptions>();
             InitializeConfiguration();
+
+            if (!lazyInitialization) this.InitializeModels(options);
         }
 
-        protected T GetModel<T>() where T : IModel
+        protected Recognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : this(defaultCulture, EnumUtils.Convert<TModelOptions>(options), lazyInitialization)
         {
-            return this.factory.GetModel<T>(CurrentCulture, Options);
+        }
+
+        protected T GetModel<T>(string culture = null) where T : IModel
+        {
+            return this.factory.GetModel<T>(culture, DefaultCulture, Options);
         }
 
         protected void RegisterModel<T>(string culture, Func<TModelOptions, IModel> modelCreator)
@@ -35,5 +44,11 @@ namespace Microsoft.Recognizers.Text
         }
 
         protected abstract void InitializeConfiguration();
+
+        protected void InitializeModels(TModelOptions options)
+        {
+            this.factory.Keys.ToList().ForEach(
+                (key) => this.factory.InitializeModel(key.modelType, key.culture, options));
+        }
     }
 }

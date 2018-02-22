@@ -1,59 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer<NumberWithUnitOptions>
     {
-        public NumberWithUnitRecognizer(string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
-            : base(culture, options)
+        public NumberWithUnitRecognizer(string defaultCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
         }
 
-        public CurrencyModel GetCurrencyModel()
+        public NumberWithUnitRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
-            return GetModel<CurrencyModel>();
         }
 
-        public TemperatureModel GetTemperatureModel()
+        public NumberWithUnitRecognizer(string defaultCulture, int options)
+            : base(defaultCulture, options)
         {
-            return GetModel<TemperatureModel>();
         }
 
-        public DimensionModel GetDimensionModel()
+        public CurrencyModel GetCurrencyModel(string culture = null)
         {
-            return GetModel<DimensionModel>();
+            return GetModel<CurrencyModel>(culture);
         }
 
-        public AgeModel GetAgeModel()
+        public TemperatureModel GetTemperatureModel(string culture = null)
         {
-            return GetModel<AgeModel>();
+            return GetModel<TemperatureModel>(culture);
+        }
+
+        public DimensionModel GetDimensionModel(string culture = null)
+        {
+            return GetModel<DimensionModel>(culture);
+        }
+
+        public AgeModel GetAgeModel(string culture = null)
+        {
+            return GetModel<AgeModel>(culture);
         }
 
         public static List<ModelResult> RecognizeCurrency(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
         {
-            return RecognizeByModel(recognizer => recognizer.GetCurrencyModel(), query, culture, options);
+            return RecognizeByModel(recognizer => recognizer.GetCurrencyModel(culture), query, options);
         }
 
         public static List<ModelResult> RecognizeTemperature(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
         {
-            return RecognizeByModel(recognizer => recognizer.GetTemperatureModel(), query, culture, options);
+            return RecognizeByModel(recognizer => recognizer.GetTemperatureModel(culture), query, options);
         }
 
         public static List<ModelResult> RecognizeDimension(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
         {
-            return RecognizeByModel(recognizer => recognizer.GetDimensionModel(), query, culture, options);
+            return RecognizeByModel(recognizer => recognizer.GetDimensionModel(culture), query, options);
         }
 
         public static List<ModelResult> RecognizeAge(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
         {
-            return RecognizeByModel(recognizer => recognizer.GetAgeModel(), query, culture, options);
+            return RecognizeByModel(recognizer => recognizer.GetAgeModel(culture), query, options);
         }
 
-        private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, string culture, NumberWithUnitOptions options)
+        private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
         {
-            var recognizer = new NumberWithUnitRecognizer(culture, options);
+            var recognizer = new NumberWithUnitRecognizer(Culture.English, options);
             var model = getModelFunc(recognizer);
             return model.Parse(query);
         }

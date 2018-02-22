@@ -11,54 +11,64 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class NumberRecognizer : Recognizer<NumberOptions>
     {
-        public NumberRecognizer(string culture, NumberOptions options = NumberOptions.None)
-            : base(culture, options)
+        public NumberRecognizer(string defaultCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
         }
 
-        public NumberModel GetNumberModel()
+        public NumberRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
-            return GetModel<NumberModel>();
         }
 
-        public OrdinalModel GetOrdinalModel()
+        public NumberRecognizer(string defaultCulture, int options)
+            : base(defaultCulture, options)
         {
-            return GetModel<OrdinalModel>();
         }
 
-        public PercentModel GetPercentageModel()
+        public NumberModel GetNumberModel(string culture = null)
         {
-            return GetModel<PercentModel>();
+            return GetModel<NumberModel>(culture);
         }
 
-        public NumberRangeModel GetNumberRangeModel()
+        public OrdinalModel GetOrdinalModel(string culture = null)
         {
-            return GetModel<NumberRangeModel>();
+            return GetModel<OrdinalModel>(culture);
+        }
+
+        public PercentModel GetPercentageModel(string culture = null)
+        {
+            return GetModel<PercentModel>(culture);
+        }
+
+        public NumberRangeModel GetNumberRangeModel(string culture = null)
+        {
+            return GetModel<NumberRangeModel>(culture);
         }
 
         public static List<ModelResult> RecognizeNumber(string query, string culture, NumberOptions options = NumberOptions.None)
         {
-            return RecognizeByModel(recognizer => recognizer.GetNumberModel(), query, culture, options);
+            return RecognizeByModel(recognizer => recognizer.GetNumberModel(culture), query, options);
         }
 
         public static List<ModelResult> RecognizeOrdinal(string query, string culture, NumberOptions options = NumberOptions.None)
         {
-            return RecognizeByModel(recognizer => recognizer.GetOrdinalModel(), query, culture, options);
+            return RecognizeByModel(recognizer => recognizer.GetOrdinalModel(culture), query, options);
         }
 
         public static List<ModelResult> RecognizePercentage(string query, string culture, NumberOptions options = NumberOptions.None)
         {
-            return RecognizeByModel(recognizer => recognizer.GetPercentageModel(), query, culture, options);
+            return RecognizeByModel(recognizer => recognizer.GetPercentageModel(culture), query, options);
         }
 
         public static List<ModelResult> RecognizeNumberRange(string query, string culture, NumberOptions options = NumberOptions.None)
         {
-            return RecognizeByModel(recognizer => recognizer.GetNumberRangeModel(), query, culture, options);
+            return RecognizeByModel(recognizer => recognizer.GetNumberRangeModel(culture), query, options);
         }
 
-        private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc,  string query, string culture, NumberOptions options)
+        private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc,  string query, NumberOptions options)
         {
-            var recognizer = new NumberRecognizer(culture, options);
+            var recognizer = new NumberRecognizer(Culture.English, options);
             var model = getModelFunc(recognizer);
             return model.Parse(query);
         }

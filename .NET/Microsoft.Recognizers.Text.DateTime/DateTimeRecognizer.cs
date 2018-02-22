@@ -10,21 +10,26 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-        public DateTimeRecognizer(string culture, DateTimeOptions options = DateTimeOptions.None)
-            : base(culture, options)
+        public DateTimeRecognizer(string defaultCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
+        }
+
+        public DateTimeRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
+        {
+        }
+        
+        public DateTimeModel GetDateTimeModel(string culture = null)
+        {
+            return GetModel<DateTimeModel>(culture);
         }
 
         public static List<ModelResult> RecognizeDateTime(string query, string culture, DateTimeOptions options = DateTimeOptions.None, System.DateTime? refTime = null)
         {
-            var recognizer = new DateTimeRecognizer(culture, options);
-            var model = recognizer.GetDateTimeModel();
+            var recognizer = new DateTimeRecognizer(Culture.English, options);
+            var model = recognizer.GetDateTimeModel(culture);
             return model.Parse(query, refTime ?? System.DateTime.Now);
-        }
-
-        public DateTimeModel GetDateTimeModel()
-        {
-            return GetModel<DateTimeModel>();
         }
 
         protected override void InitializeConfiguration()

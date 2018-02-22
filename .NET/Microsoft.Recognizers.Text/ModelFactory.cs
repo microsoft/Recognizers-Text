@@ -8,34 +8,63 @@ namespace Microsoft.Recognizers.Text
     {
         private static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> cache = new ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>();
 
-        public T GetModel<T>(string culture, TModelOptions options) where T : IModel
+        public T GetModel<T>(string culture, string defaultCulture, TModelOptions options) where T : IModel
         {
-            if (string.IsNullOrEmpty(culture))
+            string selectedCulture = string.IsNullOrEmpty(culture) ? defaultCulture : culture;
+            if (string.IsNullOrEmpty(selectedCulture))
             {
                 throw new ArgumentNullException("culture", "Culture is required.");
             }
 
-            // Look in cache
-            var cacheKey = (culture.ToLowerInvariant(), typeof(T), options.ToString());
-            if (cache.ContainsKey(cacheKey))
+            if (TryGetModel(selectedCulture, options, out T model))
             {
-                return (T)cache[cacheKey];
+                return model;
             }
-
-            // Use Factory to create instance
-            var key = GenerateKey(culture, typeof(T));
-            if (this.ContainsKey(key))
+            else if (TryGetModel(defaultCulture, options, out model))
             {
-                var factoryMethod = this[key];
-                var model = (T)factoryMethod(options);
-
-                // Store in cache
-                cache[cacheKey] = model;
-
                 return model;
             }
 
             throw new ArgumentException($"Could not find Model with the specified configuration: {culture}, {typeof(T).ToString()}");
+        }
+
+        public void InitializeModel(Type modelType, string culture, TModelOptions options)
+        {
+            this.TryGetModel(modelType, culture, options, out IModel model);
+        }
+
+        private bool TryGetModel<T>(string culture, TModelOptions options, out T model) where T : IModel
+        {
+            var result = this.TryGetModel(typeof(T), culture, options, out IModel outModel);
+            model = (T)outModel;
+            return result;
+        }
+
+        private bool TryGetModel(Type modelType, string culture, TModelOptions options, out IModel model)
+        {
+            // Look in cache
+            var cacheKey = (culture.ToLowerInvariant(), modelType, options.ToString());
+            if (cache.ContainsKey(cacheKey))
+            {
+                model = cache[cacheKey];
+                return true;
+            }
+
+            // Use Factory to create instance
+            var key = GenerateKey(culture, modelType);
+            if (this.ContainsKey(key))
+            {
+                var factoryMethod = this[key];
+                model = factoryMethod(options);
+
+                // Store in cache
+                cache[cacheKey] = model;
+
+                return true;
+            }
+
+            model = default(IModel);
+            return false;
         }
 
         public new void Add((string culture, Type modelType) config, Func<TModelOptions, IModel> modelCreator)
