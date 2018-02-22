@@ -32,6 +32,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         }
 
         [TestMethod]
+        public void InitializationNonLazy_CanGetModel()
+        {
+            var recognizer = new NumberRecognizer(DefaultCulture, NumberOptions.None, lazyInitialization: false);
+            Assert.AreEqual(recognizer.GetNumberModel(), recognizer.GetNumberModel(DefaultCulture));
+        }
+
+        [TestMethod]
         public void InitilaizationWithIntOption_ResolveOptionsEnum()
         {
             var recognizer = new NumberRecognizer(DefaultCulture, 0);

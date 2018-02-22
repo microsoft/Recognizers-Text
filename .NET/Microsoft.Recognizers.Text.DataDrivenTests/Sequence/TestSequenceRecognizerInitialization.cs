@@ -33,6 +33,13 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         }
 
         [TestMethod]
+        public void InitializationNonLazy_CanGetModel()
+        {
+            var recognizer = new SequenceRecognizer(DefaultCulture, SequenceOptions.None, lazyInitialization: false);
+            Assert.AreEqual(recognizer.GetPhoneNumberModel(), recognizer.GetPhoneNumberModel(DefaultCulture));
+        }
+
+        [TestMethod]
         public void InitilaizationWithIntOption_ResolveOptionsEnum()
         {
             var recognizer = new SequenceRecognizer(DefaultCulture, 0);

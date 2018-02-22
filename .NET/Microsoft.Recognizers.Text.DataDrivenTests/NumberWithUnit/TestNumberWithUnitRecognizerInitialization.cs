@@ -32,6 +32,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         }
 
         [TestMethod]
+        public void InitializationNonLazy_CanGetModel()
+        {
+            var recognizer = new NumberWithUnitRecognizer(DefaultCulture, NumberWithUnitOptions.None, lazyInitialization: false);
+            Assert.AreEqual(recognizer.GetCurrencyModel(), recognizer.GetCurrencyModel(DefaultCulture));
+        }
+
+        [TestMethod]
         public void InitilaizationWithIntOption_ResolveOptionsEnum()
         {
             var recognizer = new NumberWithUnitRecognizer(DefaultCulture, 0);
