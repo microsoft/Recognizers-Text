@@ -10,14 +10,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-        public DateTimeRecognizer(string defaultCulture, DateTimeOptions options = DateTimeOptions.None, bool forceInit = false)
-            : base(defaultCulture, options)
+        public DateTimeRecognizer(string defaultCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
-            if (forceInit) this.ForceInit(options);
         }
 
-        public DateTimeRecognizer(string defaultCulture, int options)
-            : base(defaultCulture, options)
+        public DateTimeRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
         }
         

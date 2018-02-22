@@ -6,8 +6,13 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class SequenceRecognizer : Recognizer<SequenceOptions>
     {
-        public SequenceRecognizer(string defaultCulture, SequenceOptions options = SequenceOptions.None)
-            :base(defaultCulture, options)
+        public SequenceRecognizer(string defaultCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true)
+            :base(defaultCulture, options, lazyInitialization)
+        {
+        }
+
+        public SequenceRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
         }
 

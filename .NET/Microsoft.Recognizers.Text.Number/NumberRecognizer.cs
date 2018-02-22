@@ -11,8 +11,13 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class NumberRecognizer : Recognizer<NumberOptions>
     {
-        public NumberRecognizer(string defaultCulture, NumberOptions options = NumberOptions.None)
-            : base(defaultCulture, options)
+        public NumberRecognizer(string defaultCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
+        {
+        }
+
+        public NumberRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
         }
 

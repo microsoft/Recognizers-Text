@@ -5,8 +5,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer<NumberWithUnitOptions>
     {
-        public NumberWithUnitRecognizer(string defaultCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
-            : base(defaultCulture, options)
+        public NumberWithUnitRecognizer(string defaultCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
+        {
+        }
+
+        public NumberWithUnitRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : base(defaultCulture, options, lazyInitialization)
         {
         }
 
