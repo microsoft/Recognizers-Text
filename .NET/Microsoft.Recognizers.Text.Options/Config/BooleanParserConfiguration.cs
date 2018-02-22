@@ -2,11 +2,6 @@
 
 namespace Microsoft.Recognizers.Text.Options
 {
-    public interface IOptionParserConfiguration<T>
-    {
-        IDictionary<string, T> Resolutions { get; }
-    }
-
     public class BooleanParserConfiguration : IOptionParserConfiguration<bool>
     {
         public static IDictionary<string, bool> Resolutions = new Dictionary<string, bool>

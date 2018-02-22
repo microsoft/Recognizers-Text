@@ -5,6 +5,14 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Options.Extractors
 {
+
+    public class OptionsExtractDataResult
+    {
+        public IEnumerable<ExtractResult> OtherMatches { get; set; }
+        public string Source { get; set; }
+        public double Score { get; set; }
+    }
+
     public class OptionsExtractor : IExtractor
     {
         private readonly IChoiceExtractorConfiguration config;
@@ -52,11 +60,12 @@ namespace Microsoft.Recognizers.Text.Options.Extractors
                             Length = length,
                             Text = text.Substring(start, length).Trim(),
                             Type = item.Value,
-                            Data = new
+                            Data = new OptionsExtractDataResult()
                             {
                                 Source = text,
-                                Score = topScore
-                            }
+                                Score = topScore,
+                                OtherMatches = new List<ExtractResult>()
+                            } 
                         });
                         if (topScore > globalTopScore)
                         {
@@ -75,7 +84,10 @@ namespace Microsoft.Recognizers.Text.Options.Extractors
 
             if (config.OnlyTopMatch)
             {
+                var globalTopResultData = (partialResults[globalTopResultIndex].Data as OptionsExtractDataResult);
                 results.Add(partialResults[globalTopResultIndex]);
+                partialResults.RemoveAt(globalTopResultIndex);
+                globalTopResultData.OtherMatches = partialResults;
             }
             else
             {
@@ -85,14 +97,53 @@ namespace Microsoft.Recognizers.Text.Options.Extractors
             return results;
         }
 
-        private double MatchValue(IList<string> sourceTokens, IList<string> matchToken, int i)
+        private double MatchValue(IEnumerable<string> source, IEnumerable<string> match, int startPosition)
         {
-            return 0.5;
+            double matched = 0;
+            var totalDeviation = 0;
+            foreach (var token in match)
+            {
+                var pos = IndexOfToken(source.ToList(), token, startPosition);
+                if (pos >= 0)
+                {
+                    var distance = matched > 0 ? pos - startPosition : 0;
+                    if (distance <= config.MaxDistance)
+                    {
+                        matched++;
+                        totalDeviation += distance;
+                        startPosition = pos + 1;
+                    }
+                }
+            }
+
+            var score = 0.0;
+            if (matched > 0 && (matched == match.Count() || config.AllowPartialMatch))
+            {
+                var completeness = matched / match.Count();
+                var accuracy = completeness * (matched / (matched + totalDeviation));
+                var initialScore = accuracy * (matched / source.Count());
+
+                score = 0.4 + (0.6 * initialScore);
+            }
+            return score;
         }
 
-        private IList<string> Tokenize(string trimmedText)
+        private static int IndexOfToken(List<string> tokens, string token, int startPos)
         {
-            return new string[] { "yes" };
+            if (tokens.Count <= startPos) return -1;
+            return tokens.FindIndex(startPos, x => x == token);
+        }
+
+        private static Regex simpleTokenizer = new Regex(@"\w+", RegexOptions.IgnoreCase);
+        private IList<string> Tokenize(string text)
+        {
+            var tokens = new List<string>();
+            foreach (Match match in simpleTokenizer.Matches(text))
+            {
+                tokens.Add(match.Value);
+            }
+
+            return tokens;
         }
     }
 }
