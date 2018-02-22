@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text
 
         public TModelOptions Options { get; private set; }
 
-        protected Recognizer(string defaultCulture, TModelOptions options)
+        protected Recognizer(string defaultCulture, TModelOptions options, bool lazyInitialization = true)
         {
             if (string.IsNullOrWhiteSpace(defaultCulture))
             {
@@ -24,10 +24,12 @@ namespace Microsoft.Recognizers.Text
 
             this.factory = new ModelFactory<TModelOptions>();
             InitializeConfiguration();
+
+            if (!lazyInitialization) this.InitializeModels(options);
         }
 
-        protected Recognizer(string defaultCulture, int options)
-            : this(defaultCulture, EnumUtils.Convert<TModelOptions>(options))
+        protected Recognizer(string defaultCulture, int options, bool lazyInitialization = true)
+            : this(defaultCulture, EnumUtils.Convert<TModelOptions>(options), lazyInitialization)
         {
         }
 
@@ -43,7 +45,7 @@ namespace Microsoft.Recognizers.Text
 
         protected abstract void InitializeConfiguration();
 
-        protected void ForceInit(TModelOptions options)
+        protected void InitializeModels(TModelOptions options)
         {
             this.factory.Select((constructor) => this.factory.GetModel<IModel>(constructor.Key.culture, this.DefaultCulture, options));
         }
