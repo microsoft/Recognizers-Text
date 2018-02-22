@@ -7,7 +7,12 @@ namespace Microsoft.Recognizers.Text.Sequence
     public class SequenceRecognizer : Recognizer<SequenceOptions>
     {
         public SequenceRecognizer(string defaultCulture, SequenceOptions options = SequenceOptions.None)
-            :base(defaultCulture, options)
+            : base(defaultCulture, options)
+        {
+        }
+
+        public SequenceRecognizer(string defaultCulture, int options)
+            : base(defaultCulture, options)
         {
         }
 

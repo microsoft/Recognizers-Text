@@ -16,6 +16,11 @@ namespace Microsoft.Recognizers.Text.Number
         {
         }
 
+        public NumberRecognizer(string defaultCulture, int options)
+            : base(defaultCulture, options)
+        {
+        }
+
         public NumberModel GetNumberModel(string culture = null)
         {
             return GetModel<NumberModel>(culture);

@@ -10,6 +10,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
         }
 
+        public NumberWithUnitRecognizer(string defaultCulture, int options)
+            : base(defaultCulture, options)
+        {
+        }
+
         public CurrencyModel GetCurrencyModel(string culture = null)
         {
             return GetModel<CurrencyModel>(culture);
