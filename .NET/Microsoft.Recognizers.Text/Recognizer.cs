@@ -47,7 +47,8 @@ namespace Microsoft.Recognizers.Text
 
         protected void InitializeModels(TModelOptions options)
         {
-            this.factory.Select((constructor) => this.factory.GetModel<IModel>(constructor.Key.culture, this.DefaultCulture, options));
+            this.factory.Keys.ToList().ForEach(
+                (key) => this.factory.InitializeModel(key.modelType, key.culture, options));
         }
     }
 }

@@ -28,22 +28,34 @@ namespace Microsoft.Recognizers.Text
             throw new ArgumentException($"Could not find Model with the specified configuration: {culture}, {typeof(T).ToString()}");
         }
 
+        public void InitializeModel(Type modelType, string culture, TModelOptions options)
+        {
+            this.TryGetModel(modelType, culture, options, out IModel model);
+        }
+
         private bool TryGetModel<T>(string culture, TModelOptions options, out T model) where T : IModel
         {
+            var result = this.TryGetModel(typeof(T), culture, options, out IModel outModel);
+            model = (T)outModel;
+            return result;
+        }
+
+        private bool TryGetModel(Type modelType, string culture, TModelOptions options, out IModel model)
+        {
             // Look in cache
-            var cacheKey = (culture.ToLowerInvariant(), typeof(T), options.ToString());
+            var cacheKey = (culture.ToLowerInvariant(), modelType, options.ToString());
             if (cache.ContainsKey(cacheKey))
             {
-                model = (T)cache[cacheKey];
+                model = cache[cacheKey];
                 return true;
             }
 
             // Use Factory to create instance
-            var key = GenerateKey(culture, typeof(T));
+            var key = GenerateKey(culture, modelType);
             if (this.ContainsKey(key))
             {
                 var factoryMethod = this[key];
-                model = (T)factoryMethod(options);
+                model = factoryMethod(options);
 
                 // Store in cache
                 cache[cacheKey] = model;
@@ -51,7 +63,7 @@ namespace Microsoft.Recognizers.Text
                 return true;
             }
 
-            model = default(T);
+            model = default(IModel);
             return false;
         }
 

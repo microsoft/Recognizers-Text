@@ -32,6 +32,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         }
 
         [TestMethod]
+        public void InitializationNonLazy_CanGetModel()
+        {
+            var recognizer = new DateTimeRecognizer(DefaultCulture, DateTimeOptions.None, lazyInitialization: false);
+            Assert.AreEqual(recognizer.GetDateTimeModel(), recognizer.GetDateTimeModel(DefaultCulture));
+        }
+
+        [TestMethod]
         public void InitilaizationWithIntOption_ResolveOptionsEnum()
         {
             var recognizer = new DateTimeRecognizer(DefaultCulture, 5);
