@@ -72,7 +72,9 @@
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Portuguese.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Chinese.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_English.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerInitialization.cs" />
     <Compile Include="Number\TestDecimalAndThousandsSeparators.cs" />
+    <Compile Include="Number\TestNumberRecognizerInitialization.cs" />
     <Compile Include="Number\TestNumber_French.cs" />
     <Compile Include="Number\TestNumber_German.cs" />
     <Compile Include="Number\TestNumber_Portuguese.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Number\TestNumber_Spanish.cs" />
     <Compile Include="Number\TestNumberRecognizer_English.cs" />
     <Compile Include="Number\TestParserFactory.cs" />
+    <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
     <Compile Include="Sequence\TestSequenceRecognizer_English.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
     <Compile Include="TestBase.cs" />
