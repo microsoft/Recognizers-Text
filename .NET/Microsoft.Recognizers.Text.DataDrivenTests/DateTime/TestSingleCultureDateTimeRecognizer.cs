@@ -1,29 +1,35 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Microsoft.Recognizers.Text.DateTime.Tests
 {
     [TestClass]
     public class TestSingleCultureDateTimeRecognizer
     {
-        private readonly IModel model = new DateTimeRecognizer(Culture.English).GetDateTimeModel();
+        private readonly string EnglishCulture = Culture.English;
+        private readonly string SpanishCulture = Culture.Spanish;
+        private readonly string ChineseCulture = Culture.Chinese;
+        private readonly string InvalidCulture = "no-va";
 
-        public void BasicTest(string text, string expected)
+        [TestMethod]
+        public void GetModelWithoutCultureShouldUseDefaultCulture()
         {
-            var pr = model.Parse(text);
-            Assert.AreEqual(1, pr.Count);
-            Assert.AreEqual(expected, pr[0].Text);
-            
-            var values = pr[0].Resolution["values"] as IEnumerable<Dictionary<string, string>>;
-            Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, values.First()["type"]);
+            var recognizer = new DateTimeRecognizer(EnglishCulture);
+            Assert.AreEqual(recognizer.GetDateTimeModel(), recognizer.GetDateTimeModel(EnglishCulture));
         }
 
         [TestMethod]
-        public void TestSingleCultureDateExtract()
+        public void GetModelWithCultureShoudUseCulture()
         {
-            BasicTest("I'll go back now", "now");
+            var recognizer = new DateTimeRecognizer(EnglishCulture);
+            Assert.AreNotEqual(recognizer.GetDateTimeModel(SpanishCulture), recognizer.GetDateTimeModel());
+        }
+
+        [TestMethod]
+        public void GetModelWithInvalidCultureShouldUseDefaultCulture()
+        {
+            var recognizer = new DateTimeRecognizer(EnglishCulture);
+            Assert.AreEqual(recognizer.GetDateTimeModel(InvalidCulture), recognizer.GetDateTimeModel());
         }
     }
 }
