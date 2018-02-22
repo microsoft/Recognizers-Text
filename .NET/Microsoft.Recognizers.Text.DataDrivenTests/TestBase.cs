@@ -91,7 +91,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
-                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
+
+                foreach (var key in expected.Resolution.Keys)
+                {
+                    Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
+                }
             }
         }
 

@@ -12,7 +12,8 @@ namespace Microsoft.Recognizers.Text.Sequence
                 Length = extResult.Length,
                 Text = extResult.Text,
                 Type = extResult.Type,
-                ResolutionStr = DropLeadingZeros(extResult.Text)
+                ResolutionStr = DropLeadingZeros(extResult.Text),
+                Data = extResult.Data
             };
 
             return result;

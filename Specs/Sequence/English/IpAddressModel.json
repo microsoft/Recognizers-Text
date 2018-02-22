@@ -8,7 +8,24 @@
       "Text": "1.1.1.1",
       "TypeName": "ip",
       "Resolution": {
-        "value": "1.1.1.1"
+        "value": "1.1.1.1",
+        "type": "ipv4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "My PC IP address is 1.1.1.1/25",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1.1.1.1/25",
+      "TypeName": "ip",
+      "Resolution": {
+        "value": "1.1.1.1/25",
+        "type": "ipv4"
       }
     }
   ]
@@ -23,7 +40,8 @@
       "Text": "0.0.0.0",
       "TypeName": "ip",
       "Resolution": {
-        "value": "0.0.0.0"
+        "value": "0.0.0.0",
+        "type": "ipv4"
       }
     }
   ]
@@ -38,7 +56,8 @@
       "Text": "255.255.255.255",
       "TypeName": "ip",
       "Resolution": {
-        "value": "255.255.255.255"
+        "value": "255.255.255.255",
+        "type": "ipv4"
       }
     }
   ]
@@ -53,7 +72,24 @@
       "Text": "8.8.8.8",
       "TypeName": "ip",
       "Resolution": {
-        "value": "8.8.8.8"
+        "value": "8.8.8.8",
+        "type": "ipv4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "8.8.8.8/24 is the ip address",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8.8.8.8/24",
+      "TypeName": "ip",
+      "Resolution": {
+        "value": "8.8.8.8/24",
+        "type": "ipv4"
       }
     }
   ]
@@ -68,7 +104,8 @@
       "Text": "08.008.08.08",
       "TypeName": "ip",
       "Resolution": {
-        "value": "8.8.8.8"
+        "value": "8.8.8.8",
+        "type": "ipv4"
       }
     }
   ]
@@ -131,7 +168,8 @@
       "Text": "ABEF:452::FE10",
       "TypeName": "ip",
       "Resolution": {
-        "value": "ABEF:452::FE10"
+        "value": "ABEF:452::FE10",
+        "type": "ipv6"
       }
     }
   ]
@@ -146,7 +184,8 @@
       "Text": "12::1",
       "TypeName": "ip",
       "Resolution": {
-        "value": "12::1"
+        "value": "12::1",
+        "type": "ipv6"
       }
     }
   ]
@@ -161,7 +200,8 @@
       "Text": "::",
       "TypeName": "ip",
       "Resolution": {
-        "value": "::"
+        "value": "::",
+        "type": "ipv6"
       }
     }
   ]
@@ -176,7 +216,8 @@
       "Text": "::1",
       "TypeName": "ip",
       "Resolution": {
-        "value": "::1"
+        "value": "::1",
+        "type": "ipv6"
       }
     }
   ]
@@ -191,7 +232,8 @@
       "Text": "1::1",
       "TypeName": "ip",
       "Resolution": {
-        "value": "1::1"
+        "value": "1::1",
+        "type": "ipv6"
       }
     }
   ]
@@ -206,7 +248,8 @@
       "Text": "1::",
       "TypeName": "ip",
       "Resolution": {
-        "value": "1::"
+        "value": "1::",
+        "type": "ipv6"
       }
     }
   ]
@@ -221,7 +264,8 @@
       "Text": "0000:0000:0000:0000:0000:0000:0000:0000",
       "TypeName": "ip",
       "Resolution": {
-        "value": "0:0:0:0:0:0:0:0"
+        "value": "0:0:0:0:0:0:0:0",
+        "type": "ipv6"
       }
     }
   ]
@@ -236,7 +280,8 @@
       "Text": "123:45::ADC:6",
       "TypeName": "ip",
       "Resolution": {
-        "value": "123:45::ADC:6"
+        "value": "123:45::ADC:6",
+        "type": "ipv6"
       }
     }
   ]
@@ -266,7 +311,8 @@
       "Text": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
       "TypeName": "ip",
       "Resolution": {
-        "value": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210"
+        "value": "FEDC:BA98:7654:3210:FEDC:BA98:7654:3210",
+        "type": "ipv6"
       }
     }
   ]
@@ -281,7 +327,8 @@
       "Text": "fe80:0000:0000:0000:0204:61ff:fe9d:f156",
       "TypeName": "ip",
       "Resolution": {
-        "value": "fe80:0:0:0:204:61ff:fe9d:f156"
+        "value": "fe80:0:0:0:204:61ff:fe9d:f156",
+        "type": "ipv6"
       }
     }
   ]
@@ -296,7 +343,8 @@
       "Text": "fe80:0:0:0:204:61ff:fe9d:f156",
       "TypeName": "ip",
       "Resolution": {
-        "value": "fe80:0:0:0:204:61ff:fe9d:f156"
+        "value": "fe80:0:0:0:204:61ff:fe9d:f156",
+        "type": "ipv6"
       }
     }
   ]
@@ -311,7 +359,8 @@
       "Text": "fe80::204:61ff:fe9d:f156",
       "TypeName": "ip",
       "Resolution": {
-        "value": "fe80::204:61ff:fe9d:f156"
+        "value": "fe80::204:61ff:fe9d:f156",
+        "type": "ipv6"
       }
     }
   ]
@@ -326,7 +375,8 @@
       "Text": "2001::",
       "TypeName": "ip",
       "Resolution": {
-        "value": "2001::"
+        "value": "2001::",
+        "type": "ipv6"
       }
     }
   ]

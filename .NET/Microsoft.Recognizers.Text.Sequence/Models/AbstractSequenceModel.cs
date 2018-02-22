@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected IParser Parser { get; private set; }
 
-        public List<ModelResult> Parse(string query)
+        public virtual List<ModelResult> Parse(string query)
         {
             var parsedSequences = new List<ParseResult>();
 
