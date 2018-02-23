@@ -194,6 +194,7 @@ export namespace PortugueseDateTime {
 	export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
 	export const YearAfterRegex = `^[.]`;
 	export const YearPeriodRegex = `^[.]`;
+	export const FutureSuffixRegex = `^[.]`;
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 }

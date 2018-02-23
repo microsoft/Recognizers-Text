@@ -2971,4 +2971,124 @@
     }
   ]
 }
+,
+{
+  "Input": "It will happen 4 weeks in the future",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 weeks in the future",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 2 days hence",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 days hence",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana can find us a time beginning of next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "beginning of next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Sure, let's get a Skype end of next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "end of next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Sure, let's get a Skype start of next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "start of next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, find us a time end of March",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "end of March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please find us a time mid next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "cortana can arrange us to meet mid March",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "what about by mid summer?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mid summer",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I can find us a time beginning of next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "beginning of next week",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

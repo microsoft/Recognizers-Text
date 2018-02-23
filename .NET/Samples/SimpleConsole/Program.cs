@@ -48,7 +48,7 @@ namespace SimpleConsole
                 }
             }
         }
-        
+
         /// <summary>
         /// Parse query with all recognizers
         /// </summary>
@@ -93,11 +93,14 @@ namespace SimpleConsole
 
                 // PhoneNumber recognizer will find any phone number presented
                 // E.g "My phone number is ( 19 ) 38294427."
-                SequenceRecognizer.RecognizePhoneNumber(query, culture));
+                SequenceRecognizer.RecognizePhoneNumber(query, culture),
+
+                // Add IP recognizer - This recognizer will find any Ipv4/Ipv6 presented
+                // E.g "My Ip is 8.8.8.8"
+                SequenceRecognizer.RecognizeIpAddress(query, culture)
+                );
         }
 
-        /// <summary>
-        /// Merge all results into a single enumerable
         /// </summary>
         private static IEnumerable<ModelResult> MergeResults(params List<ModelResult>[] results)
         {

@@ -44,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex FutureRegex { get; }
 
+        public Regex FutureSuffixRegex { get; }
+
         public Regex NumberCombinedWithUnitRegex { get; }
 
         public Regex UnitRegex { get; }
@@ -83,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             TimeOfDayRegex = FrenchDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;          
             FutureRegex = FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = FrenchDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = FrenchDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = FrenchTimePeriodExtractorConfiguration.TimeUnitRegex;
             PeriodTimeOfDayWithDateRegex = FrenchDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;

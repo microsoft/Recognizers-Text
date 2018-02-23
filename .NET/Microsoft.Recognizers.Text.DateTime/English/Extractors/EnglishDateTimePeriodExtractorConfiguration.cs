@@ -85,6 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex NextPrefixRegex => EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
 
+        public Regex FutureSuffixRegex => EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
+
         public Regex WeekDayRegex => new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDateTimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;

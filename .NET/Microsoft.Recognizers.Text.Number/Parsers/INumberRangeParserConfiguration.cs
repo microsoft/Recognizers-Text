@@ -23,6 +23,10 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex LessOrEqual { get; }
 
+        Regex MoreOrEqualSuffix { get; }
+
+        Regex LessOrEqualSuffix { get; }
+
         #endregion
 
     }
