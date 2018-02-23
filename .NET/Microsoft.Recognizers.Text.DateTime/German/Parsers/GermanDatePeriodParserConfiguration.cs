@@ -55,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
+        public Regex WithinConnectorRegex { get; }
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
@@ -142,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             YearPeriodRegex = GermanDatePeriodExtractorConfiguration.YearPeriodRegex;
             RelativeDecadeRegex = GermanDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
+            WithinConnectorRegex = GermanDatePeriodExtractorConfiguration.WithinConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

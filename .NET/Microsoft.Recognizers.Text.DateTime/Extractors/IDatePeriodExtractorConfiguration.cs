@@ -37,6 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex InConnectorRegex { get; }
 
+        Regex WithinConnectorRegex { get; }
+
         Regex YearPeriodRegex { get; }
 
         Regex RelativeDecadeRegex { get; }

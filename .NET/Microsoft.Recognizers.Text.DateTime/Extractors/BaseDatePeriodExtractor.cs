@@ -228,6 +228,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Add(new Token(startToken, duration.End));
                     }
                 }
+
+                // within "Days/Weeks/Months/Years" should be handled as dateRange here
+                match = config.WithinConnectorRegex.Match(beforeStr);
+                if (MatchPrefixRegexInSegment(beforeStr, match))
+                {
+                    var startToken = match.Index;
+                    match = config.DateUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                    if (match.Success)
+                    {
+                        ret.Add(new Token(startToken, duration.End));
+                    }
+                }
             }
 
             return ret;

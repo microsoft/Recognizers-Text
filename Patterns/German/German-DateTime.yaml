@@ -377,6 +377,9 @@ LaterRegex: !simpleRegex
   def: \b(später|von jetzt an)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+WithinConnectorRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !simpleRegex
