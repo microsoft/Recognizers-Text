@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.Options.Parsers
         public IEnumerable<OptionsOtherMatchParseResult> OtherMatches { get; set; }
     }
 
-    class OptionsParser<T> : IParser
+    public class OptionsParser<T> : IParser
     {
         private readonly IOptionParserConfiguration<T> config;
 
