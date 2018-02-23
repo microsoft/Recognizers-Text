@@ -9,11 +9,11 @@ namespace Microsoft.Recognizers.Text.Options
 {
     public class OptionsRecognizer : Recognizer
     {
-        public static readonly OptionsRecognizer Instance = new OptionsRecognizer();
+        public static readonly OptionsRecognizer Instance = new OptionsRecognizer(OptionsRecognizerOptions.None);
 
-        public OptionsRecognizer()
+        public OptionsRecognizer(OptionsRecognizerOptions options)
         {
-            RegisterModel(Culture.English, "None", new Dictionary<Type, IModel>
+            RegisterModel(Culture.English, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof(BooleanModel)] = new BooleanModel(new BooleanParser(), new BooleanExtractor(new EnglishBooleanExtractorConfiguration()))
             });
