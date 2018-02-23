@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using NeoSmart.Unicode;
 
 namespace Microsoft.Recognizers.Text.Options.Extractors
 {
@@ -134,13 +135,40 @@ namespace Microsoft.Recognizers.Text.Options.Extractors
             return tokens.FindIndex(startPos, x => x == token);
         }
 
-        private static Regex simpleTokenizer = new Regex(@"\w+", RegexOptions.IgnoreCase);
         private IList<string> Tokenize(string text)
         {
             var tokens = new List<string>();
-            foreach (Match match in simpleTokenizer.Matches(text))
+            var letters = text.Letters();
+
+            var token = string.Empty;
+            foreach (var letter in letters)
             {
-                tokens.Add(match.Value);
+                var codePoint = letter.Codepoints().FirstOrDefault();
+                if (codePoint > 0xFFFF)
+                {
+                    // Character is in a Supplementary Unicode Plane. This is where emoji live so
+                    // we're going to just break each character in this range out as its own token.
+                    tokens.Add(letter);
+                    if (!string.IsNullOrWhiteSpace(token))
+                    {
+                        tokens.Add(token);
+                        token = string.Empty;
+                    }
+                }
+                else if (!(config.TokenRegex.IsMatch(letter) || string.IsNullOrWhiteSpace(letter)))
+                {
+                    token = token + letter;
+                }
+                else if(!string.IsNullOrWhiteSpace(token))
+                {
+                    tokens.Add(token);
+                    token = string.Empty;
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(token))
+            {
+                tokens.Add(token);
+                token = string.Empty;
             }
 
             return tokens;
