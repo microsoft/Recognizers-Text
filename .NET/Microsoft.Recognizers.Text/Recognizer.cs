@@ -8,34 +8,27 @@ namespace Microsoft.Recognizers.Text
     {
         private readonly ModelFactory<TModelOptions> factory;
 
-        public string DefaultCulture { get; private set; }
+        public string TargetCulture { get; private set; }
 
         public TModelOptions Options { get; private set; }
 
-        protected Recognizer(string defaultCulture, TModelOptions options, bool lazyInitialization = true)
+        protected Recognizer(string targetCulture, TModelOptions options, bool lazyInitialization)
         {
-            if (string.IsNullOrWhiteSpace(defaultCulture))
-            {
-                throw new ArgumentException("culture", "The default culture is required");
-            }
-
-            this.DefaultCulture = defaultCulture;
             this.Options = options;
+            this.TargetCulture = targetCulture;
 
             this.factory = new ModelFactory<TModelOptions>();
             InitializeConfiguration();
 
-            if (!lazyInitialization) this.InitializeModels(options);
+            if (!lazyInitialization)
+            {
+                this.InitializeModels(targetCulture, options);
+            }
         }
-
-        protected Recognizer(string defaultCulture, int options, bool lazyInitialization = true)
-            : this(defaultCulture, EnumUtils.Convert<TModelOptions>(options), lazyInitialization)
+        
+        protected T GetModel<T>(string culture, bool fallbackToDefaultCulture) where T : IModel
         {
-        }
-
-        protected T GetModel<T>(string culture = null) where T : IModel
-        {
-            return this.factory.GetModel<T>(culture, DefaultCulture, Options);
+            return this.factory.GetModel<T>(culture ?? TargetCulture, fallbackToDefaultCulture, Options);
         }
 
         protected void RegisterModel<T>(string culture, Func<TModelOptions, IModel> modelCreator)
@@ -45,10 +38,14 @@ namespace Microsoft.Recognizers.Text
 
         protected abstract void InitializeConfiguration();
 
-        protected void InitializeModels(TModelOptions options)
+        protected void InitializeModels(string targetCulture, TModelOptions options)
         {
-            this.factory.Keys.ToList().ForEach(
-                (key) => this.factory.InitializeModel(key.modelType, key.culture, options));
+            this.factory.Keys
+                .Where(key => string.IsNullOrEmpty(targetCulture) || key.culture.Equals(targetCulture))
+                .ToList()
+                .ForEach(key => this.factory.InitializeModel(key.modelType, key.culture, options));
         }
+
+        public static TModelOptions GetOption(int value) => EnumUtils.Convert<TModelOptions>(value);
     }
 }

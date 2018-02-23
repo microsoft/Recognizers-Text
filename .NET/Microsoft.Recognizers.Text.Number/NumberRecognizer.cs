@@ -11,64 +11,69 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class NumberRecognizer : Recognizer<NumberOptions>
     {
-        public NumberRecognizer(string defaultCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
-            : base(defaultCulture, options, lazyInitialization)
+        public NumberRecognizer(string targetCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
+            : base(targetCulture, options, lazyInitialization)
         {
         }
 
-        public NumberRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
-            : base(defaultCulture, options, lazyInitialization)
+        public NumberRecognizer(string targetCulture, int options, bool lazyInitialization = true)
+            : this(targetCulture, GetOption(options), lazyInitialization)
         {
         }
 
-        public NumberRecognizer(string defaultCulture, int options)
-            : base(defaultCulture, options)
+        public NumberRecognizer(NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
         {
         }
 
-        public NumberModel GetNumberModel(string culture = null)
+        public NumberRecognizer(int options, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
         {
-            return GetModel<NumberModel>(culture);
         }
 
-        public OrdinalModel GetOrdinalModel(string culture = null)
+        public NumberModel GetNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<OrdinalModel>(culture);
+            return GetModel<NumberModel>(culture, fallbackToDefaultCulture);
         }
 
-        public PercentModel GetPercentageModel(string culture = null)
+        public OrdinalModel GetOrdinalModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<PercentModel>(culture);
+            return GetModel<OrdinalModel>(culture, fallbackToDefaultCulture);
         }
 
-        public NumberRangeModel GetNumberRangeModel(string culture = null)
+        public PercentModel GetPercentageModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<NumberRangeModel>(culture);
+            return GetModel<PercentModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static List<ModelResult> RecognizeNumber(string query, string culture, NumberOptions options = NumberOptions.None)
+        public NumberRangeModel GetNumberRangeModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetNumberModel(culture), query, options);
+            return GetModel<NumberRangeModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static List<ModelResult> RecognizeOrdinal(string query, string culture, NumberOptions options = NumberOptions.None)
+        public static List<ModelResult> RecognizeNumber(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetOrdinalModel(culture), query, options);
+            return RecognizeByModel(recognizer => recognizer.GetNumberModel(culture, fallbackToDefaultCulture), query, options);
         }
 
-        public static List<ModelResult> RecognizePercentage(string query, string culture, NumberOptions options = NumberOptions.None)
+        public static List<ModelResult> RecognizeOrdinal(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetPercentageModel(culture), query, options);
+            return RecognizeByModel(recognizer => recognizer.GetOrdinalModel(culture, fallbackToDefaultCulture), query, options);
         }
 
-        public static List<ModelResult> RecognizeNumberRange(string query, string culture, NumberOptions options = NumberOptions.None)
+        public static List<ModelResult> RecognizePercentage(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetNumberRangeModel(culture), query, options);
+            return RecognizeByModel(recognizer => recognizer.GetPercentageModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizeNumberRange(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetNumberRangeModel(culture, fallbackToDefaultCulture), query, options);
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc,  string query, NumberOptions options)
         {
-            var recognizer = new NumberRecognizer(Culture.English, options);
+            var recognizer = new NumberRecognizer(options);
             var model = getModelFunc(recognizer);
             return model.Parse(query);
         }

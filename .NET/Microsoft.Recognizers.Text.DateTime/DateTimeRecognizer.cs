@@ -10,25 +10,35 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-        public DateTimeRecognizer(string defaultCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
-            : base(defaultCulture, options, lazyInitialization)
+        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
+            : base(targetCulture, options, lazyInitialization)
         {
         }
 
-        public DateTimeRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
-            : base(defaultCulture, options, lazyInitialization)
+        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = true)
+            : this(targetCulture, GetOption(options), lazyInitialization)
         {
+        }
+
+        public DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
+        {
+        }
+
+        public DateTimeRecognizer(int options, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
+        {
+        }
+
+        public DateTimeModel GetDateTimeModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
         }
         
-        public DateTimeModel GetDateTimeModel(string culture = null)
+        public static List<ModelResult> RecognizeDateTime(string query, string culture, DateTimeOptions options = DateTimeOptions.None, System.DateTime? refTime = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<DateTimeModel>(culture);
-        }
-
-        public static List<ModelResult> RecognizeDateTime(string query, string culture, DateTimeOptions options = DateTimeOptions.None, System.DateTime? refTime = null)
-        {
-            var recognizer = new DateTimeRecognizer(Culture.English, options);
-            var model = recognizer.GetDateTimeModel(culture);
+            var recognizer = new DateTimeRecognizer(options);
+            var model = recognizer.GetDateTimeModel(culture, fallbackToDefaultCulture);
             return model.Parse(query, refTime ?? System.DateTime.Now);
         }
 
