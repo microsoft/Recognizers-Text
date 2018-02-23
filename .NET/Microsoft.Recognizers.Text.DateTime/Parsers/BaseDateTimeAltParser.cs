@@ -58,15 +58,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             // original type of the extracted entity
-            var subType = ((Dictionary<string, object>)(er.Data))[Constants.SubType].ToString();
+            var subType = ((Dictionary<string, object>)(er.Data))[DateTimeResolutionKey.SubType].ToString();
             var dateTimeEr = new ExtractResult();
 
             // e.g. {next week Mon} or {Tue}, formmer--"next week Mon" doesn't contain "context" key
             var hasContext = false;
             ExtractResult contextEr = null;
-            if (((Dictionary<string, object>)er.Data).ContainsKey(Constants.Context))
+            if (((Dictionary<string, object>)er.Data).ContainsKey(DateTimeResolutionKey.Context))
             {
-                contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context];
+                contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[DateTimeResolutionKey.Context];
                 dateTimeEr.Text = $"{contextEr.Text} {er.Text}";
                 hasContext = true;
             }
@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private void GetResolution(ExtractResult er, DateTimeParseResult pr, DateTimeResolutionResult ret)
         {
-            var parentText = (string)((Dictionary<string, object>)er.Data)[Constants.ParentText];
+            var parentText = (string)((Dictionary<string, object>)er.Data)[DateTimeResolutionKey.ParentText];
             var type = pr.Type;
             var isPeriod = false;
             var isSinglePoint = false;
@@ -217,14 +217,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     {startPointType, futureStartPointResolution},
                     {endPointType, futureEndPointResolution},
-                    {Constants.ParentText, parentText}
+                    {DateTimeResolutionKey.ParentText, parentText}
                 };
 
                 ret.PastResolution = new Dictionary<string, string>
                 {
                     {startPointType, pastStartPointResolution},
                     {endPointType, pastEndPointResolution},
-                    {Constants.ParentText, parentText}
+                    {DateTimeResolutionKey.ParentText, parentText}
                 };
             }
             else if (isSinglePoint)
@@ -232,13 +232,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.FutureResolution = new Dictionary<string, string>
                 {
                     {singlePointType, singlePointResolution},
-                    {Constants.ParentText, parentText}
+                    {DateTimeResolutionKey.ParentText, parentText}
                 };
 
                 ret.PastResolution = new Dictionary<string, string>
                 {
                     {singlePointType, singlePointResolution},
-                    {Constants.ParentText, parentText}
+                    {DateTimeResolutionKey.ParentText, parentText}
                 };
             }
         }

@@ -263,11 +263,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var comment = val.Comment;
 
             //the following should added to res first since the ResolveAmPm is using these fields
-            AddResolutionFields(res, Constants.TimexKey, timex);
-            AddResolutionFields(res, Constants.CommentKey, comment);
-            AddResolutionFields(res, Constants.ModKey, mod);
-            AddResolutionFields(res, Constants.TypeKey, typeOutput);
-            AddResolutionFields(res, Constants.IsLunarKey, islunar? islunar.ToString():string.Empty);
+            AddResolutionFields(res, DateTimeResolutionKey.TimexKey, timex);
+            AddResolutionFields(res, DateTimeResolutionKey.CommentKey, comment);
+            AddResolutionFields(res, DateTimeResolutionKey.ModKey, mod);
+            AddResolutionFields(res, ResolutionKey.TypeKey, typeOutput);
+            AddResolutionFields(res, DateTimeResolutionKey.IsLunarKey, islunar? islunar.ToString():string.Empty);
 
             var pastResolutionStr = ((DateTimeResolutionResult) slot.Value).PastResolution;
             var futureResolutionStr = ((DateTimeResolutionResult) slot.Value).FutureResolution;
@@ -286,41 +286,41 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (resolutionPast.Count > 0)
                 {
-                    AddResolutionFields(res, Constants.ResolveKey, resolutionPast);
+                    AddResolutionFields(res, DateTimeResolutionKey.ResolveKey, resolutionPast);
                 }
             }
             else
             {
                 if (resolutionPast.Count > 0)
                 {
-                    AddResolutionFields(res, Constants.ResolveToPastKey, resolutionPast);
+                    AddResolutionFields(res, DateTimeResolutionKey.ResolveToPastKey, resolutionPast);
                 }
 
                 if (resolutionFuture.Count > 0)
                 {
-                    AddResolutionFields(res, Constants.ResolveToFutureKey, resolutionFuture);
+                    AddResolutionFields(res, DateTimeResolutionKey.ResolveToFutureKey, resolutionFuture);
                 }
             }
 
             // if ampm, double our resolution accordingly
-            if (!string.IsNullOrEmpty(comment) && comment.Equals("ampm"))
+            if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_AmPm))
             {
-                if (res.ContainsKey("resolve"))
+                if (res.ContainsKey(DateTimeResolutionKey.ResolveKey))
                 {
-                    ResolveAmpm(res, "resolve");
+                    ResolveAmpm(res, DateTimeResolutionKey.ResolveKey);
                 }
                 else
                 {
-                    ResolveAmpm(res, "resolveToPast");
-                    ResolveAmpm(res, "resolveToFuture");
+                    ResolveAmpm(res, DateTimeResolutionKey.ResolveToPastKey);
+                    ResolveAmpm(res, DateTimeResolutionKey.ResolveToFutureKey);
                 }
             }
 
             // if the WeekOf and in ClendarMode, modify the past part of our resolution
             if ((Config.Options & DateTimeOptions.CalendarMode) != 0 && 
-                    !string.IsNullOrEmpty(comment) && comment.Equals("WeekOf"))
+                    !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
             {
-                ResolveWeekOf(res, "resolveToPast"); 
+                ResolveWeekOf(res, DateTimeResolutionKey.ResolveToPastKey); 
             }
 
             foreach (var p in res)
@@ -329,10 +329,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var value = new Dictionary<string, string>();
 
-                    AddResolutionFields(value, Constants.TimexKey, timex);
-                    AddResolutionFields(value, Constants.ModKey, mod);
-                    AddResolutionFields(value, Constants.TypeKey, typeOutput);
-                    AddResolutionFields(value, Constants.IsLunarKey, islunar ? islunar.ToString() : string.Empty);
+                    AddResolutionFields(value, DateTimeResolutionKey.TimexKey, timex);
+                    AddResolutionFields(value, DateTimeResolutionKey.ModKey, mod);
+                    AddResolutionFields(value, ResolutionKey.TypeKey, typeOutput);
+                    AddResolutionFields(value, DateTimeResolutionKey.IsLunarKey, islunar ? islunar.ToString() : string.Empty);
 
                     foreach (var q in (Dictionary<string, string>) p.Value)
                     {
@@ -354,20 +354,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var notResolved = new Dictionary<string, string> {
                     {
-                        "timex", timex
+                        DateTimeResolutionKey.TimexKey, timex
                     },
                     {
-                        "type", typeOutput
+                        ResolutionKey.TypeKey, typeOutput
                     },
                     {
-                        "value", "not resolved"
+                        ResolutionKey.ValueKey, "not resolved"
                     }
                 };
 
                 resolutions.Add(notResolved);
             }
 
-            return new SortedDictionary<string, object> { { "values", resolutions } };
+            return new SortedDictionary<string, object> { { ResolutionKey.ValueListKey, resolutions } };
         }
 
         private string DetermineResolutionDateTimeType(Dictionary<string, string> pastResolutionStr)
@@ -413,27 +413,27 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(keyName))
             {
                 var resolution = (Dictionary<string, string>) resolutionDic[keyName];
-                if (!resolutionDic.ContainsKey("timex"))
+                if (!resolutionDic.ContainsKey(DateTimeResolutionKey.TimexKey))
                 {
                     return;
                 }
 
-                var timex = (string) resolutionDic["timex"];
+                var timex = (string) resolutionDic[DateTimeResolutionKey.TimexKey];
                 resolutionDic.Remove(keyName);
 
                 resolutionDic.Add(keyName + "Am", resolution);
 
                 var resolutionPm = new Dictionary<string, string>();
-                switch ((string) resolutionDic["type"])
+                switch ((string) resolutionDic[ResolutionKey.TypeKey])
                 {
                     case Constants.SYS_DATETIME_TIME:
-                        resolutionPm[TimeTypeConstants.VALUE] = FormatUtil.ToPm(resolution[TimeTypeConstants.VALUE]);
-                        resolutionPm["timex"] = FormatUtil.ToPm(timex);
+                        resolutionPm[ResolutionKey.ValueKey] = FormatUtil.ToPm(resolution[ResolutionKey.ValueKey]);
+                        resolutionPm[DateTimeResolutionKey.TimexKey] = FormatUtil.ToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIME:
-                        var splited = resolution[TimeTypeConstants.VALUE].Split(' ');
-                        resolutionPm[TimeTypeConstants.VALUE] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
-                        resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
+                        var splited = resolution[ResolutionKey.ValueKey].Split(' ');
+                        resolutionPm[ResolutionKey.ValueKey] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                        resolutionPm[DateTimeResolutionKey.TimexKey] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_TIMEPERIOD:
                         if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
@@ -446,7 +446,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             resolutionPm[TimeTypeConstants.RESOLVE_END] = FormatUtil.ToPm(resolution[TimeTypeConstants.RESOLVE_END]);
                         }
 
-                        resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
+                        resolutionPm[DateTimeResolutionKey.TimexKey] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
                         if (resolution.ContainsKey(TimeTypeConstants.RESOLVE_START))
@@ -468,7 +468,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                         }
 
-                        resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
+                        resolutionPm[DateTimeResolutionKey.TimexKey] = FormatUtil.AllStringToPm(timex);
                         break;
                 }
 
@@ -482,8 +482,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var resolution = (Dictionary<string, string>)resolutionDic[keyName];
 
-                var monday = DateObject.Parse(resolution["start"]);
-                resolution[Constants.TimexKey] = FormatUtil.ToIsoWeekTimex(monday);
+                var monday = DateObject.Parse(resolution[TimeTypeConstants.START]);
+                resolution[DateTimeResolutionKey.TimexKey] = FormatUtil.ToIsoWeekTimex(monday);
 
                 resolutionDic.Remove(keyName);
                 resolutionDic.Add(keyName, resolution);
@@ -510,7 +510,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (resolutionDic.ContainsKey(TimeTypeConstants.DURATION))
                 {
-                    res.Add(TimeTypeConstants.VALUE, resolutionDic[TimeTypeConstants.DURATION]);
+                    res.Add(ResolutionKey.ValueKey, resolutionDic[TimeTypeConstants.DURATION]);
                 }
             }
             else if (type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
@@ -607,7 +607,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                res.Add(TimeTypeConstants.VALUE, resolutionDic[type]);
+                res.Add(ResolutionKey.ValueKey, resolutionDic[type]);
             }
         }
 

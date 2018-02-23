@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             {
                 Start = o.Start.Value,
                 End = o.Start.Value + o.Length.Value - 1,
-                Resolution = new SortedDictionary<string, object> { { "value", o.ResolutionStr } },
+                Resolution = new SortedDictionary<string, object> { { ResolutionKey.ValueKey, o.ResolutionStr } },
                 Text = o.Text,
                 TypeName = ModelTypeName
             }).ToList();

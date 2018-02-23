@@ -30,7 +30,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string DURATION = "duration";
         public const string SET = "set";
         public const string TIME = "time";
-        public const string VALUE = "value";
         public const string START_TIME = "startTime";
         public const string END_TIME = "endTime";
 

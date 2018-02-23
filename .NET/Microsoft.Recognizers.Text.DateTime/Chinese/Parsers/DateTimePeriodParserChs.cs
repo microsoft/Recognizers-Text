@@ -291,7 +291,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             rightTime = rightTime.AddSeconds(second);
 
             //the right side time contains "ampm", while the left side doesn't
-            if (rightResult.Comment != null && rightResult.Comment.Equals("ampm") &&
+            if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm) &&
                 leftResult.Comment == null && rightTime < leftTime)
             {
                 rightTime = rightTime.AddHours(12);

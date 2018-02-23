@@ -14,24 +14,21 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SYS_DATETIME_SET = "set";
         public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
 
-        //key
-        public const string TimexKey = "timex";
-        public const string CommentKey = "Comment";
-        public const string ModKey = "Mod";
-        public const string TypeKey = "type";
-        public const string IsLunarKey = "isLunar";
-        public const string ResolveKey = "resolve";
-        public const string ResolveToPastKey = "resolveToPast";
-        public const string ResolveToFutureKey = "resolveToFuture";
-        public const string MultipleDurationType = "multipleDurationType";
-        public const string Context = "context";
-        public const string SubType = "subType";
-        public const string ParentText = "parentText";
-
+        //Model Name
+        public const string MODEL_DATETIME = "datetime";
+        
         //Multiple Duration Types
         public const string MultipleDuration_DateTime = "multipleDurationDateTime";
         public const string MultipleDuration_Date = "multipleDurationDate";
         public const string MultipleDuration_Time = "multipleDurationTime";
+
+        //Comment
+        public const string Comment_AmPm = "ampm";
+        public const string Comment_Early = "early";
+        public const string Comment_Late = "late";
+        public const string Comment_WeekOf = "WeekOf";
+        public const string Comment_MonthOf = "MonthOf";
+
 
         //Invalid year
         public const int InvalidYear = int.MinValue;

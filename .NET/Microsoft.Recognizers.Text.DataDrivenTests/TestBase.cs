@@ -91,8 +91,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
-
-                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
+                Assert.AreEqual(expected.Resolution[ResolutionKey.ValueKey], actual.Resolution[ResolutionKey.ValueKey], GetMessage(TestSpec));
             }
         }
 
@@ -121,8 +120,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
-                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
-                Assert.AreEqual(expected.Resolution["unit"], actual.Resolution["unit"], GetMessage(TestSpec));
+                Assert.AreEqual(expected.Resolution[ResolutionKey.ValueKey], actual.Resolution[ResolutionKey.ValueKey], GetMessage(TestSpec));
+                Assert.AreEqual(expected.Resolution[ResolutionKey.UnitKey], actual.Resolution[ResolutionKey.UnitKey], GetMessage(TestSpec));
             }
         }
 
@@ -157,10 +156,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 if (expected.End != 0) Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values["values"] as IList<Dictionary<string, string>>;
+                var listValues = values[ResolutionKey.ValueListKey] as IList<Dictionary<string, string>>;
                 var actualValues = listValues.FirstOrDefault();
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution["values"].ToString());
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueListKey].ToString());
                 var expectedValues = expectedObj.FirstOrDefault();
 
                 CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
@@ -201,10 +200,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 }
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values["values"] as IList<Dictionary<string, string>>;
+                var listValues = values[ResolutionKey.ValueListKey] as IList<Dictionary<string, string>>;
                 var actualValues = listValues.FirstOrDefault();
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution["values"].ToString());
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueListKey].ToString());
                 var expectedValues = expectedObj.FirstOrDefault();
 
                 CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
@@ -310,10 +309,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var values = actual.Value as IDictionary<string, object>;
                 if (values != null)
                 {
-                    var actualValues = values["values"] as IList<Dictionary<string, string>>;
+                    var actualValues = values[ResolutionKey.ValueListKey] as IList<Dictionary<string, string>>;
 
                     var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
-                    var expectedValues = expectedObj["values"];
+                    var expectedValues = expectedObj[ResolutionKey.ValueListKey];
 
                     foreach (var results in Enumerable.Zip(expectedValues, actualValues, Tuple.Create))
                     {
