@@ -326,7 +326,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 resolutions.Add(notResolved);
             }
 
-            return new SortedDictionary<string, object> { { ResolutionKey.ValueListKey, resolutions } };
+            return new SortedDictionary<string, object> { { ResolutionKey.ValueSetKey, resolutions } };
         }
 
         internal void ResolveAmpm(Dictionary<string, object> resolutionDic,

@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             Assert.AreEqual(1, pr.Count);
             Assert.AreEqual(expected, pr[0].Text);
             
-            var values = pr[0].Resolution[ResolutionKey.ValueListKey] as IEnumerable<Dictionary<string, string>>;
+            var values = pr[0].Resolution[ResolutionKey.ValueSetKey] as IEnumerable<Dictionary<string, string>>;
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, values.First()[ResolutionKey.TypeKey]);
         }
 

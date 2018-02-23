@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public IDateTimeExtractor Extractor { get; set; }
         public IDateTimeParser DateTimeParser { get; set; }
         public TestModel TestSpec { get; set; }
-        
+
         public void TestSpecInitialize(TestResources resources)
         {
             TestSpec = resources.GetSpecForContext(TestContext);
@@ -103,10 +103,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 if (expected.End != 0) Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values[ResolutionKey.ValueListKey] as IList<Dictionary<string, string>>;
+                var listValues = values[ResolutionKey.ValueSetKey] as IList<Dictionary<string, string>>;
                 var actualValues = listValues.FirstOrDefault();
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueListKey].ToString());
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSetKey].ToString());
                 var expectedValues = expectedObj.FirstOrDefault();
 
                 CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
@@ -138,10 +138,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 }
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values[ResolutionKey.ValueListKey] as IList<Dictionary<string, string>>;
+                var listValues = values[ResolutionKey.ValueSetKey] as IList<Dictionary<string, string>>;
                 var actualValues = listValues.FirstOrDefault();
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueListKey].ToString());
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSetKey].ToString());
                 var expectedValues = expectedObj.FirstOrDefault();
 
                 CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
@@ -220,10 +220,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var values = actual.Value as IDictionary<string, object>;
                 if (values != null)
                 {
-                    var actualValues = values[ResolutionKey.ValueListKey] as IList<Dictionary<string, string>>;
+                    var actualValues = values[ResolutionKey.ValueSetKey] as IList<Dictionary<string, string>>;
 
                     var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
-                    var expectedValues = expectedObj[ResolutionKey.ValueListKey];
+                    var expectedValues = expectedObj[ResolutionKey.ValueSetKey];
 
                     foreach (var results in Enumerable.Zip(expectedValues, actualValues, Tuple.Create))
                     {

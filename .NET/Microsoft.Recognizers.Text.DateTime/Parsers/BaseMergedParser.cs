@@ -367,7 +367,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 resolutions.Add(notResolved);
             }
 
-            return new SortedDictionary<string, object> { { ResolutionKey.ValueListKey, resolutions } };
+            return new SortedDictionary<string, object> { { ResolutionKey.ValueSetKey, resolutions } };
         }
 
         private string DetermineResolutionDateTimeType(Dictionary<string, string> pastResolutionStr)
