@@ -35,8 +35,6 @@ namespace Microsoft.Recognizers.Text.Options.Extractors
 
             var partialResults = new List<ExtractResult>();
             var sourceTokens = Tokenize(trimmedText);
-            var globalTopScore = 0.0;
-            var globalTopResultIndex = 0;
 
             foreach (var item in config.MapRegexes)
             {
@@ -68,11 +66,6 @@ namespace Microsoft.Recognizers.Text.Options.Extractors
                                 OtherMatches = new List<ExtractResult>()
                             } 
                         });
-                        if (topScore > globalTopScore)
-                        {
-                            globalTopScore = topScore;
-                            globalTopResultIndex = partialResults.Count - 1;
-                        }
                     }
                 }
             }
@@ -82,17 +75,30 @@ namespace Microsoft.Recognizers.Text.Options.Extractors
                 return results;
             }
 
+            partialResults = partialResults.OrderBy(l1 => l1.Start).ToList();
 
             if (config.OnlyTopMatch)
             {
-                var globalTopResultData = (partialResults[globalTopResultIndex].Data as OptionsExtractDataResult);
-                results.Add(partialResults[globalTopResultIndex]);
-                partialResults.RemoveAt(globalTopResultIndex);
-                globalTopResultData.OtherMatches = partialResults;
+                var topScore = 0.0;
+                var topResultIndex = 0;
+                for (int i = 0; i < partialResults.Count; i++)
+                {
+                    var data = partialResults[i].Data as OptionsExtractDataResult;
+                    if (data.Score > topScore)
+                    {
+                        topScore = data.Score;
+                        topResultIndex = i;
+                    }
+                }
+
+                var topResultData = (partialResults[topResultIndex].Data as OptionsExtractDataResult);
+                topResultData.OtherMatches = partialResults;
+                results.Add(partialResults[topResultIndex]);
+                partialResults.RemoveAt(topResultIndex);
             }
             else
             {
-                results = partialResults.OrderBy(l1 => l1.Start).ToList();
+                results = partialResults;
             }
 
             return results;
