@@ -16,6 +16,7 @@ using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.Sequence;
+using Microsoft.Recognizers.Text.Options;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -67,6 +68,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimeExtendedTypes,
         PhoneNumber,
         IpAddress,
+        Boolean,
     }
 
     public enum DateTimeExtractors
@@ -137,6 +139,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return SequenceRecognizer.Instance.GetPhoneNumberModel(language);
                 case Models.IpAddress:
                     return SequenceRecognizer.Instance.GetIpAddressModel(language);
+                case Models.Boolean:
+                    return OptionsRecognizer.Instance.GetBooleanModel(language);
             }
 
             throw new Exception($"Model '{modelName}' for '{language}' not supported");
