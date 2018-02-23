@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         [TestMethod]
         public void IpAddressModel()
         {
-            TestSequence();
+            TestIpAddress();
         }
     }
 }

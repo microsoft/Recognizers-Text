@@ -296,7 +296,8 @@
       "Text": "::1:123:23",
       "TypeName": "ip",
       "Resolution": {
-        "value": "::1:123:23"
+        "value": "::1:123:23",
+        "type": "ipv6"
       }
     }
   ]
@@ -405,5 +406,4 @@
   "Results": [
   ]
 }
-
 ]

@@ -11,6 +11,7 @@ namespace Microsoft.Recognizers.Text.Sequence
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
         protected sealed override string ExtractType { get; } = Constants.SYS_IP;
 
+        // The Ipv6 address regexes is written following the Recommendation: https://tools.ietf.org/html/rfc5952
         public BaseIpExtractor()
         {
             var regexes = new Dictionary<Regex, string>
