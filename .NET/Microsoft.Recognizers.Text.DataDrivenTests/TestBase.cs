@@ -69,21 +69,21 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestNumber()
         {
-            GeneralPreTest();
+            TestPreValidation();
 
-            GeneralMainTest();
+            ValidateResults(new List<string>() { });
         }
 
         public void TestNumberWithUnit()
         {
-            GeneralPreTest();
-
-            GeneralMainTest(testUnit: true);
+            TestPreValidation();
+            
+            ValidateResults(new List<string>() { ResolutionKey.Unit });
         }
 
         public void TestDateTime()
         {
-            GeneralPreTest();
+            TestPreValidation();
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
@@ -103,10 +103,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 if (expected.End != 0) Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values[ResolutionKey.ValueSetKey] as IList<Dictionary<string, string>>;
+                var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
                 var actualValues = listValues.FirstOrDefault();
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSetKey].ToString());
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
                 var expectedValues = expectedObj.FirstOrDefault();
 
                 CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestDateTimeAlt()
         {
-            GeneralPreTest();
+            TestPreValidation();
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
@@ -138,10 +138,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 }
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values[ResolutionKey.ValueSetKey] as IList<Dictionary<string, string>>;
+                var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
                 var actualValues = listValues.FirstOrDefault();
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSetKey].ToString());
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
                 var expectedValues = expectedObj.FirstOrDefault();
 
                 CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
@@ -150,7 +150,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestDateTimeExtractor()
         {
-            GeneralPreTest();
+            TestPreValidation();
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
@@ -171,7 +171,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestDateTimeParser()
         {
-            GeneralPreTest();
+            TestPreValidation();
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
@@ -201,7 +201,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestDateTimeMergedParser()
         {
-            GeneralPreTest();
+            TestPreValidation();
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
@@ -220,10 +220,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var values = actual.Value as IDictionary<string, object>;
                 if (values != null)
                 {
-                    var actualValues = values[ResolutionKey.ValueSetKey] as IList<Dictionary<string, string>>;
+                    var actualValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
 
                     var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
-                    var expectedValues = expectedObj[ResolutionKey.ValueSetKey];
+                    var expectedValues = expectedObj[ResolutionKey.ValueSet];
 
                     foreach (var results in Enumerable.Zip(expectedValues, actualValues, Tuple.Create))
                     {
@@ -235,16 +235,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         
         public void TestIpAddress()
         {
-            GeneralPreTest();
-            GeneralMainTest(testType: true);
+            TestPreValidation();
+            ValidateResults(new List<string>() { ResolutionKey.Type });
         }
 
-        public void TestSequence()
+        public void TestPhoneNumber()
         {
-            TestNumber();
+            TestPreValidation();
+            ValidateResults(new List<string>() { });
         }
         
-        private void GeneralPreTest()
+        private void TestPreValidation()
         {
             if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
@@ -257,7 +258,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
         }
 
-        private void GeneralMainTest(bool testUnit = false, bool testType = false)
+        private void ValidateResults(List<string> TestResolutionKeys)
         {
             var actualResults = Model.Parse(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ModelResult>();
@@ -272,15 +273,14 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
-                Assert.AreEqual(expected.Resolution[ResolutionKey.ValueKey], actual.Resolution[ResolutionKey.ValueKey], GetMessage(TestSpec));
-                if (testType)
-                {
-                    Assert.AreEqual(expected.Resolution[ResolutionKey.TypeKey], actual.Resolution[ResolutionKey.TypeKey], GetMessage(TestSpec));
-                }
+                Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
 
-                if (testUnit)
+                if (TestResolutionKeys != null)
                 {
-                    Assert.AreEqual(expected.Resolution[ResolutionKey.UnitKey], actual.Resolution[ResolutionKey.UnitKey], GetMessage(TestSpec));
+                    foreach (var key in TestResolutionKeys)
+                    {
+                        Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
+                    }
                 }
             }
         }

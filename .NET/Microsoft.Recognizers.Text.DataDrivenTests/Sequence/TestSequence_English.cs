@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         [TestMethod]
         public void PhoneNumberModel()
         {
-            TestSequence();
+            TestPhoneNumber();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "IpAddressModel-English.csv", "IpAddressModel-English#csv", DataAccessMethod.Sequential)]

@@ -2,9 +2,9 @@
 {
     public static class ResolutionKey
     {
-        public const string ValueSetKey = "values";
-        public const string ValueKey = "value";
-        public const string TypeKey = "type";
-        public const string UnitKey = "unit";
+        public const string ValueSet = "values";
+        public const string Value = "value";
+        public const string Type = "type";
+        public const string Unit = "unit";
     }
 }

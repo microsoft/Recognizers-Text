@@ -63,13 +63,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var parentTextLen = ers[j].Start + ers[j].Length - ers[i].Start;
                         var parentText = text.Substring(parentTextStart ?? 0, parentTextLen ?? 0);
 
-                        data.Add(DateTimeResolutionKey.ParentText, parentText);
+                        data.Add(Constants.ParentText, parentText);
                         ers[j].Type = Constants.SYS_DATETIME_DATETIMEALT;
                         ers[j].Data = data;
 
                         ers[i].Data = new Dictionary<string, object> {
-                                { DateTimeResolutionKey.SubType, ers[i].Type },
-                                { DateTimeResolutionKey.ParentText, parentText }
+                                { Constants.SubType, ers[i].Type },
+                                { Constants.ParentText, parentText }
                             };
                         ers[i].Type = Constants.SYS_DATETIME_DATETIMEALT;
 
@@ -120,8 +120,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var ers = config.DateExtractor.Extract(former.Text);
                 if (ers.Count == 1)
                 {
-                    data.Add(DateTimeResolutionKey.Context, ers[0]);
-                    data.Add(DateTimeResolutionKey.SubType, Constants.SYS_DATETIME_TIME);
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
                 }
             }
             return data;
@@ -136,8 +136,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var ers = config.DatePeriodExtractor.Extract(former.Text);
                 if (ers.Count == 1)
                 {
-                    data.Add(DateTimeResolutionKey.Context, ers[0]);
-                    data.Add(DateTimeResolutionKey.SubType, Constants.SYS_DATETIME_DATE);
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
                 }
                 else
                 {
@@ -151,9 +151,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                             contextErs.Text = match.Value;
                             contextErs.Start = match.Index;
                             contextErs.Length = match.Length;
-                            contextErs.Type = TimeTypeConstants.RELATIVE_PREFIX_MOD;
-                            data.Add(DateTimeResolutionKey.Context, contextErs);
-                            data.Add(DateTimeResolutionKey.SubType, Constants.SYS_DATETIME_DATE);
+                            contextErs.Type = Constants.RELATIVE_PREFIX_MOD;
+                            data.Add(Constants.Context, contextErs);
+                            data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
                         }
                     }
                 }
@@ -176,9 +176,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         contextErs.Text = match.Value;
                         contextErs.Start = match.Index;
                         contextErs.Length = match.Length;
-                        contextErs.Type = TimeTypeConstants.AM_PM_MOD;
-                        data.Add(DateTimeResolutionKey.Context, contextErs);
-                        data.Add(DateTimeResolutionKey.SubType, Constants.SYS_DATETIME_TIME);
+                        contextErs.Type = Constants.AM_PM_MOD;
+                        data.Add(Constants.Context, contextErs);
+                        data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
                     }
                 }
             }
@@ -194,8 +194,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var ers = config.DateExtractor.Extract(former.Text);
                 if (ers.Count == 1)
                 {
-                    data.Add(DateTimeResolutionKey.Context, ers[0]);
-                    data.Add(DateTimeResolutionKey.SubType, Constants.SYS_DATETIME_TIMEPERIOD);
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_TIMEPERIOD);
                 }
             }
             return data;
@@ -210,8 +210,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var ers = config.DatePeriodExtractor.Extract(former.Text);
                 if (ers.Count == 1)
                 {
-                    data.Add(DateTimeResolutionKey.Context, ers[0]);
-                    data.Add(DateTimeResolutionKey.SubType, Constants.SYS_DATETIME_DATETIME);
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIME);
                 }
             }
             return data;

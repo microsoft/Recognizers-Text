@@ -703,35 +703,35 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var prefixMatch = Config.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        mod = TimeTypeConstants.BEFORE_MOD;
+                        mod = Constants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
                     }
 
                     prefixMatch = Config.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        mod = TimeTypeConstants.AFTER_MOD;
+                        mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
                     var suffixMatch = Config.PastRegex.Match(afterStr);
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
-                        mod = TimeTypeConstants.BEFORE_MOD;
+                        mod = Constants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
                     }
 
                     suffixMatch = Config.FutureRegex.Match(afterStr);
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
-                        mod = TimeTypeConstants.AFTER_MOD;
+                        mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
                     suffixMatch = Config.FutureSuffixRegex.Match(afterStr);
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
-                        mod = TimeTypeConstants.AFTER_MOD;
+                        mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
