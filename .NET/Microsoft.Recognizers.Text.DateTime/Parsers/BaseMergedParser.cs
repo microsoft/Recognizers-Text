@@ -482,7 +482,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var resolution = (Dictionary<string, string>)resolutionDic[keyName];
 
-                var monday = DateObject.Parse(resolution[TimeTypeConstants.START]);
+                var monday = DateObject.Parse(resolution[TimeTypeConstants.RESOLVE_START]);
                 resolution[DateTimeResolutionKey.TimexKey] = FormatUtil.ToIsoWeekTimex(monday);
 
                 resolutionDic.Remove(keyName);

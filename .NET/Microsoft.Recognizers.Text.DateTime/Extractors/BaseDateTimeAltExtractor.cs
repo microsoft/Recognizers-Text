@@ -152,8 +152,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                             contextErs.Start = match.Index;
                             contextErs.Length = match.Length;
                             contextErs.Type = TimeTypeConstants.RELATIVE_PREFIX_MOD;
-                            data.Add(Constants.Context, contextErs);
-                            data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
+                            data.Add(DateTimeResolutionKey.Context, contextErs);
+                            data.Add(DateTimeResolutionKey.SubType, Constants.SYS_DATETIME_DATE);
                         }
                     }
                 }
