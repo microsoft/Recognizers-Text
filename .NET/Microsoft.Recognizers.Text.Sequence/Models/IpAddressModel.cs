@@ -4,21 +4,15 @@ using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
-    public abstract class AbstractSequenceModel : IModel
+    public class IpAddressModel : AbstractSequenceModel
     {
-        protected AbstractSequenceModel(IParser parser, IExtractor extractor)
+        public IpAddressModel(IParser parser, IExtractor extractor) : base(parser, extractor)
         {
-            this.Parser = parser;
-            this.Extractor = extractor;
         }
 
-        public abstract string ModelTypeName { get; }
-
-        protected IExtractor Extractor { get; private set; }
-
-        protected IParser Parser { get; private set; }
-
-        public virtual List<ModelResult> Parse(string query)
+        public override string ModelTypeName => Constants.MODEL_IP;
+        
+        public override List<ModelResult> Parse(string query)
         {
             var parsedSequences = new List<ParseResult>();
 
@@ -38,11 +32,14 @@ namespace Microsoft.Recognizers.Text.Sequence
                 // No result.
             }
 
-            return parsedSequences.Select(o => new ModelResult
+            return parsedSequences.Where(o => o.Data != null).Select(o => new ModelResult
             {
                 Start = o.Start.Value,
                 End = o.Start.Value + o.Length.Value - 1,
-                Resolution = new SortedDictionary<string, object> { { "value", o.ResolutionStr } },
+                Resolution = new SortedDictionary<string, object> {
+                    { "value", o.ResolutionStr },
+                    { "type", o.Data }
+                },
                 Text = o.Text,
                 TypeName = ModelTypeName
             }).ToList();

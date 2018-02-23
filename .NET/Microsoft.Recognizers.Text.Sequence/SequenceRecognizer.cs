@@ -13,13 +13,19 @@ namespace Microsoft.Recognizers.Text.Sequence
         {
             RegisterModel(Culture.English, options.ToString(), new Dictionary<Type, IModel>
             {
-                [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor())
+                [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor()),
+                [typeof(IpAddressModel)] = new IpAddressModel(new IpParser(), new IpExtractor())
             });
         }
 
         public IModel GetPhoneNumberModel(string culture, bool fallbackToDefaultCulture = true)
         {
             return GetModel<PhoneNumberModel>(Culture.English, fallbackToDefaultCulture, SequenceOptions.None.ToString());
+        }
+
+        public IModel GetIpAddressModel(string culture, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<IpAddressModel>(Culture.English, fallbackToDefaultCulture, SequenceOptions.None.ToString());
         }
 
     }
