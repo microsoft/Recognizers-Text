@@ -12,7 +12,7 @@ NPM packages are available in npmjs.com (with the @preview tag for now) at:
 https://www.npmjs.com/~recognizers.text
 
 Contributions are greatly welcome! Both for fixes and extensions in the currently supported languages and for expansion to new ones.
-Especially for Japanese, Korean, and Dutch.
+Especially for Japanese, Italian, Korean, and Dutch.
 
 # Contributing
 
