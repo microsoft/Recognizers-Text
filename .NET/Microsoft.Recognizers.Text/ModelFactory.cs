@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -29,7 +30,15 @@ namespace Microsoft.Recognizers.Text
             throw new ArgumentException($"Could not find Model with the specified configuration: {culture}, {typeof(T).ToString()}");
         }
 
-        public void InitializeModel(Type modelType, string culture, TModelOptions options)
+        public void InitializeModels(string targetCulture, TModelOptions options)
+        {
+            this.Keys
+                .Where(key => string.IsNullOrEmpty(targetCulture) || key.culture.Equals(targetCulture))
+                .ToList()
+                .ForEach(key => this.InitializeModel(key.modelType, key.culture, options));
+        }
+
+        private void InitializeModel(Type modelType, string culture, TModelOptions options)
         {
             this.TryGetModel(modelType, culture, options, out IModel model);
         }

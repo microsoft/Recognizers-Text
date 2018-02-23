@@ -25,24 +25,24 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
         }
 
-        public CurrencyModel GetCurrencyModel(string culture = null, bool lazyInitialization = true)
+        public CurrencyModel GetCurrencyModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<CurrencyModel>(culture, lazyInitialization);
+            return GetModel<CurrencyModel>(culture, fallbackToDefaultCulture);
         }
 
-        public TemperatureModel GetTemperatureModel(string culture = null, bool lazyInitialization = true)
+        public TemperatureModel GetTemperatureModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<TemperatureModel>(culture, lazyInitialization);
+            return GetModel<TemperatureModel>(culture, fallbackToDefaultCulture);
         }
 
-        public DimensionModel GetDimensionModel(string culture = null, bool lazyInitialization = true)
+        public DimensionModel GetDimensionModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<DimensionModel>(culture, lazyInitialization);
+            return GetModel<DimensionModel>(culture, fallbackToDefaultCulture);
         }
 
-        public AgeModel GetAgeModel(string culture = null, bool lazyInitialization = true)
+        public AgeModel GetAgeModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<AgeModel>(culture, lazyInitialization);
+            return GetModel<AgeModel>(culture, fallbackToDefaultCulture);
         }
 
         public static List<ModelResult> RecognizeCurrency(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool fallbackToDefaultCulture = true)

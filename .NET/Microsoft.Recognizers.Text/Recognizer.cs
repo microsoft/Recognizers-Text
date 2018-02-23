@@ -1,6 +1,5 @@
 ﻿using Microsoft.Recognizers.Text.Utilities;
 using System;
-using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -38,12 +37,9 @@ namespace Microsoft.Recognizers.Text
 
         protected abstract void InitializeConfiguration();
 
-        protected void InitializeModels(string targetCulture, TModelOptions options)
+        private void InitializeModels(string targetCulture, TModelOptions options)
         {
-            this.factory.Keys
-                .Where(key => string.IsNullOrEmpty(targetCulture) || key.culture.Equals(targetCulture))
-                .ToList()
-                .ForEach(key => this.factory.InitializeModel(key.modelType, key.culture, options));
+            this.factory.InitializeModels(targetCulture, options);
         }
 
         public static TModelOptions GetOption(int value) => EnumUtils.Convert<TModelOptions>(value);

@@ -53,14 +53,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         }
 
         [TestMethod]
-        public void InitilaizationWithIntOption_ResolveOptionsEnum()
+        public void InitializationWithIntOption_ResolveOptionsEnum()
         {
             var recognizer = new DateTimeRecognizer(EnglishCulture, 5);
             Assert.IsTrue(recognizer.Options.HasFlag(DateTimeOptions.SkipFromToMerge | DateTimeOptions.CalendarMode));
         }
 
         [TestMethod]
-        public void InitilaizationWithInvalidOptions_ThrowError()
+        public void InitializationWithInvalidOptions_ThrowError()
         {
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => new DateTimeRecognizer(EnglishCulture, -1));
         }
