@@ -6,25 +6,35 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class SequenceRecognizer : Recognizer<SequenceOptions>
     {
-        public SequenceRecognizer(string defaultCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true)
-            :base(defaultCulture, options, lazyInitialization)
+        public SequenceRecognizer(string targetCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true)
+            : base(targetCulture, options, lazyInitialization)
         {
         }
 
-        public SequenceRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
-            : base(defaultCulture, options, lazyInitialization)
+        public SequenceRecognizer(string targetCulture, int options, bool lazyInitialization = true)
+            : this(targetCulture, GetOption(options), lazyInitialization)
         {
         }
 
-        public IModel GetPhoneNumberModel(string culture = null)
+        public SequenceRecognizer(SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true)
+            : base(null, options, lazyInitialization)
         {
-            return GetModel<PhoneNumberModel>(culture);
         }
 
-        public static List<ModelResult> RecognizePhoneNumber(string query, string culture, SequenceOptions options = SequenceOptions.None)
+        public SequenceRecognizer(int options, bool lazyInitialization = true)
+            : this(null, GetOption(options), lazyInitialization)
         {
-            var recognizer = new SequenceRecognizer(Culture.English, options);
-            var model = recognizer.GetPhoneNumberModel(culture);
+        }
+
+        public IModel GetPhoneNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<PhoneNumberModel>(culture, fallbackToDefaultCulture);
+        }
+
+        public static List<ModelResult> RecognizePhoneNumber(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            var recognizer = new SequenceRecognizer(options);
+            var model = recognizer.GetPhoneNumberModel(culture, fallbackToDefaultCulture);
             return model.Parse(query);
         }
 

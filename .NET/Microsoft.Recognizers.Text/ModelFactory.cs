@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -8,19 +9,20 @@ namespace Microsoft.Recognizers.Text
     {
         private static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> cache = new ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>();
 
-        public T GetModel<T>(string culture, string defaultCulture, TModelOptions options) where T : IModel
+        private static readonly string fallbackCulture = Culture.English;
+
+        public T GetModel<T>(string culture, bool fallbackToDefaultCulture, TModelOptions options) where T : IModel
         {
-            string selectedCulture = string.IsNullOrEmpty(culture) ? defaultCulture : culture;
-            if (string.IsNullOrEmpty(selectedCulture))
+            if (string.IsNullOrEmpty(culture))
             {
                 throw new ArgumentNullException("culture", "Culture is required.");
             }
 
-            if (TryGetModel(selectedCulture, options, out T model))
+            if (TryGetModel(culture, options, out T model))
             {
                 return model;
             }
-            else if (TryGetModel(defaultCulture, options, out model))
+            else if (fallbackToDefaultCulture && TryGetModel(fallbackCulture, options, out model))
             {
                 return model;
             }
@@ -28,7 +30,15 @@ namespace Microsoft.Recognizers.Text
             throw new ArgumentException($"Could not find Model with the specified configuration: {culture}, {typeof(T).ToString()}");
         }
 
-        public void InitializeModel(Type modelType, string culture, TModelOptions options)
+        public void InitializeModels(string targetCulture, TModelOptions options)
+        {
+            this.Keys
+                .Where(key => string.IsNullOrEmpty(targetCulture) || key.culture.Equals(targetCulture))
+                .ToList()
+                .ForEach(key => this.InitializeModel(key.modelType, key.culture, options));
+        }
+
+        private void InitializeModel(Type modelType, string culture, TModelOptions options)
         {
             this.TryGetModel(modelType, culture, options, out IModel model);
         }

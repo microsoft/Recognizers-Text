@@ -5,64 +5,69 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer<NumberWithUnitOptions>
     {
-        public NumberWithUnitRecognizer(string defaultCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
-            : base(defaultCulture, options, lazyInitialization)
+        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
+            : base(targetCulture, options, lazyInitialization)
         {
         }
 
-        public NumberWithUnitRecognizer(string defaultCulture, int options, bool lazyInitialization = true)
-            : base(defaultCulture, options, lazyInitialization)
+        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = true)
+            : this(targetCulture, GetOption(options), lazyInitialization)
         {
         }
 
-        public NumberWithUnitRecognizer(string defaultCulture, int options)
-            : base(defaultCulture, options)
+        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
         {
         }
 
-        public CurrencyModel GetCurrencyModel(string culture = null)
+        public NumberWithUnitRecognizer(int options, bool lazyInitialization = true)
+            : this(null, GetOption(options), lazyInitialization)
         {
-            return GetModel<CurrencyModel>(culture);
         }
 
-        public TemperatureModel GetTemperatureModel(string culture = null)
+        public CurrencyModel GetCurrencyModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<TemperatureModel>(culture);
+            return GetModel<CurrencyModel>(culture, fallbackToDefaultCulture);
         }
 
-        public DimensionModel GetDimensionModel(string culture = null)
+        public TemperatureModel GetTemperatureModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<DimensionModel>(culture);
+            return GetModel<TemperatureModel>(culture, fallbackToDefaultCulture);
         }
 
-        public AgeModel GetAgeModel(string culture = null)
+        public DimensionModel GetDimensionModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<AgeModel>(culture);
+            return GetModel<DimensionModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static List<ModelResult> RecognizeCurrency(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
+        public AgeModel GetAgeModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetCurrencyModel(culture), query, options);
+            return GetModel<AgeModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static List<ModelResult> RecognizeTemperature(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
+        public static List<ModelResult> RecognizeCurrency(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetTemperatureModel(culture), query, options);
+            return RecognizeByModel(recognizer => recognizer.GetCurrencyModel(culture, fallbackToDefaultCulture), query, options);
         }
 
-        public static List<ModelResult> RecognizeDimension(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
+        public static List<ModelResult> RecognizeTemperature(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetDimensionModel(culture), query, options);
+            return RecognizeByModel(recognizer => recognizer.GetTemperatureModel(culture, fallbackToDefaultCulture), query, options);
         }
 
-        public static List<ModelResult> RecognizeAge(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
+        public static List<ModelResult> RecognizeDimension(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetAgeModel(culture), query, options);
+            return RecognizeByModel(recognizer => recognizer.GetDimensionModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizeAge(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetAgeModel(culture, fallbackToDefaultCulture), query, options);
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)
         {
-            var recognizer = new NumberWithUnitRecognizer(Culture.English, options);
+            var recognizer = new NumberWithUnitRecognizer(options);
             var model = getModelFunc(recognizer);
             return model.Parse(query);
         }
