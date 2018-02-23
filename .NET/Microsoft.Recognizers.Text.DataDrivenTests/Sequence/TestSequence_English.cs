@@ -35,5 +35,12 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         {
             TestSequence();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "IpAddressModel-English.csv", "IpAddressModel-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void IpAddressModel()
+        {
+            TestIpAddress();
+        }
     }
 }

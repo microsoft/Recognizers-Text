@@ -23,6 +23,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="BaseIp.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseIp.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseNumbers.cs">
       <DependentUpon>BaseNumbers.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -148,6 +153,10 @@
     <None Update="BaseDateTime.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseDateTime.cs</LastGenOutput>
+    </None>
+    <None Update="BaseIp.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseIp.cs</LastGenOutput>
     </None>
     <None Update="BaseNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
