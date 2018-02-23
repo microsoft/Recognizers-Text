@@ -103,14 +103,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, false);
                 
-                ((DateTimeResolutionResult)durationParseResult.Value).Mod = TimeTypeConstants.beforeMod;
+                ((DateTimeResolutionResult)durationParseResult.Value).Mod = TimeTypeConstants.BEFORE_MOD;
             }
             else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
                      MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InConnectorRegex))
             {
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, true);
 
-                ((DateTimeResolutionResult)durationParseResult.Value).Mod = TimeTypeConstants.afterMod;
+                ((DateTimeResolutionResult)durationParseResult.Value).Mod = TimeTypeConstants.AFTER_MOD;
             }
 
             if (resultDateTime != referenceTime)

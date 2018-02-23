@@ -231,6 +231,21 @@
 }
 ,
 {
+  "Input": "He is over thirty years old.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "over thirty",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(30,)"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "His age is no less than thirty.",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -254,7 +269,22 @@
       "Text": "five hundred and more",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(500,)"
+        "value": "[500,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "There're about five hundred or more in these products.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "five hundred or more",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[500,)"
       }
     }
   ]
@@ -291,6 +321,36 @@
 }
 ,
 {
+  "Input": "Find the prime numbers which are less than or equal to 100",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "less than or equal to 100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,100]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "There're about five hundred or less in these products.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "five hundred or less",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,500]"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "Find the prime numbers which are < = 100",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -315,6 +375,36 @@
       "TypeName": "numberrange",
       "Resolution": {
         "value": "(,170)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His height is under 170.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "under 170",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,170)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Fewer than a thousand giant pandas still live in the wild.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Fewer than a thousand",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,1000)"
       }
     }
   ]

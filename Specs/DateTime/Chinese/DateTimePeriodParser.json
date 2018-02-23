@@ -274,6 +274,31 @@
 }
 ,
 {
+  "Input": "在未来的3小时",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "未来的3小时",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+        "FutureResolution": {
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 19:12:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 19:12:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "帮我定一个从现在到八点的会议",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"

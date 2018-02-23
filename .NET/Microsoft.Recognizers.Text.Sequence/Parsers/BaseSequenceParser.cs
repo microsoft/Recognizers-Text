@@ -2,7 +2,7 @@
 {
     class BaseSequenceParser : IParser
     {
-        public ParseResult Parse(ExtractResult extResult)
+        public virtual ParseResult Parse(ExtractResult extResult)
         {
             var result = new ParseResult
             {

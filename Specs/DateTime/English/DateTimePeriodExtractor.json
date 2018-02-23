@@ -903,4 +903,16 @@
     }
   ]
 }
+,
+{
+  "Input": "It will happen 2 hours in the future",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours in the future",
+      "Type": "datetimerange"
+    }
+  ]
+}
 ]

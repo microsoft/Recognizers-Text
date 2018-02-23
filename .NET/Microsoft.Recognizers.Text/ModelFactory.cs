@@ -13,11 +13,6 @@ namespace Microsoft.Recognizers.Text
 
         public T GetModel<T>(string culture, bool fallbackToDefaultCulture, TModelOptions options) where T : IModel
         {
-            if (string.IsNullOrEmpty(culture))
-            {
-                throw new ArgumentNullException("culture", "Culture is required.");
-            }
-
             if (TryGetModel(culture, options, out T model))
             {
                 return model;
@@ -52,6 +47,12 @@ namespace Microsoft.Recognizers.Text
 
         private bool TryGetModel(Type modelType, string culture, TModelOptions options, out IModel model)
         {
+            model = default(IModel);
+            if (string.IsNullOrEmpty(culture))
+            {
+                return false;
+            }
+
             // Look in cache
             var cacheKey = (culture.ToLowerInvariant(), modelType, options.ToString());
             if (cache.ContainsKey(cacheKey))
@@ -69,11 +70,9 @@ namespace Microsoft.Recognizers.Text
 
                 // Store in cache
                 cache[cacheKey] = model;
-
                 return true;
             }
 
-            model = default(IModel);
             return false;
         }
 

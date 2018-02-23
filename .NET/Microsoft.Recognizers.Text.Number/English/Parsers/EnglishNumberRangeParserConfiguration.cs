@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public Regex LessOrEqual { get; private set; }
 
+        public Regex MoreOrEqualSuffix { get; private set; }
+
+        public Regex LessOrEqualSuffix { get; private set; }
+
         public EnglishNumberRangeParserConfiguration() : this(new CultureInfo(Culture.English))
         {
         }
@@ -31,6 +35,8 @@ namespace Microsoft.Recognizers.Text.Number.English
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }
 }

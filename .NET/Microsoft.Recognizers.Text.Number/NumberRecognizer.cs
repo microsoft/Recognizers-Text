@@ -11,12 +11,12 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class NumberRecognizer : Recognizer<NumberOptions>
     {
-        public NumberRecognizer(string targetCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
+        public NumberRecognizer(string targetCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = false)
             : base(targetCulture, options, lazyInitialization)
         {
         }
 
-        public NumberRecognizer(string targetCulture, int options, bool lazyInitialization = true)
+        public NumberRecognizer(string targetCulture, int options, bool lazyInitialization = false)
             : this(targetCulture, GetOption(options), lazyInitialization)
         {
         }

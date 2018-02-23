@@ -43,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FutureRegex { get; }
 
+        Regex FutureSuffixRegex { get; }
+
         Regex NumberCombinedWithUnitRegex { get; }
 
         Regex UnitRegex { get; }

@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex YearRegex { get; }
         public Regex PastRegex { get; }
         public Regex FutureRegex { get; }
+        public Regex FutureSuffixRegex { get; }
         public Regex NumberCombinedWithUnit { get; }
         public Regex WeekOfMonthRegex { get; }
         public Regex WeekOfYearRegex { get; }
@@ -124,6 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = FrenchDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = FrenchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = FrenchDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = FrenchDatePeriodExtractorConfiguration.WeekOfYearRegex;

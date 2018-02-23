@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-
-using Microsoft.Recognizers.Text.Sequence.English;
+﻿using Microsoft.Recognizers.Text.Sequence.English;
+using System;
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
     public class SequenceRecognizer : Recognizer<SequenceOptions>
     {
-        public SequenceRecognizer(string targetCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true)
+        public SequenceRecognizer(string targetCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = false)
             : base(targetCulture, options, lazyInitialization)
         {
         }
 
-        public SequenceRecognizer(string targetCulture, int options, bool lazyInitialization = true)
+        public SequenceRecognizer(string targetCulture, int options, bool lazyInitialization = false)
             : this(targetCulture, GetOption(options), lazyInitialization)
         {
         }
@@ -31,10 +31,25 @@ namespace Microsoft.Recognizers.Text.Sequence
             return GetModel<PhoneNumberModel>(culture, fallbackToDefaultCulture);
         }
 
+        public IModel GetIpAddressModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<IpAddressModel>(culture, fallbackToDefaultCulture);
+        }
+
         public static List<ModelResult> RecognizePhoneNumber(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
         {
+            return RecognizeByModel(recognizer => recognizer.GetPhoneNumberModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizeIpAddress(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetIpAddressModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)
+        {
             var recognizer = new SequenceRecognizer(options);
-            var model = recognizer.GetPhoneNumberModel(culture, fallbackToDefaultCulture);
+            var model = getModelFunc(recognizer);
             return model.Parse(query);
         }
 
@@ -43,6 +58,10 @@ namespace Microsoft.Recognizers.Text.Sequence
             RegisterModel<PhoneNumberModel>(
                 Culture.English,
                 (options) => new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor()));
+
+            RegisterModel<IpAddressModel>(
+                Culture.English,
+                (options) => new IpAddressModel(new IpParser(), new IpExtractor()));
         }
     }
 }

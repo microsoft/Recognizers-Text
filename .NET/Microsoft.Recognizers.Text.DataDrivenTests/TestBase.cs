@@ -91,6 +91,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+
                 Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
             }
         }
@@ -319,6 +320,36 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                         CollectionAssert.AreEqual(results.Item1, results.Item2, GetMessage(TestSpec));
                     }
                 }
+            }
+        }
+        
+        public void TestIpAddress()
+        {
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+            {
+                Assert.Inconclusive(message);
+            }
+
+            if (Debugger.IsAttached && TestSpec.Debug)
+            {
+                Debugger.Break();
+            }
+
+            var actualResults = Model.Parse(TestSpec.Input);
+            var expectedResults = TestSpec.CastResults<ModelResult>();
+
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
+
+            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+            {
+                var expected = tuple.Item1;
+                var actual = tuple.Item2;
+
+                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+
+                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
+                Assert.AreEqual(expected.Resolution["type"], actual.Resolution["type"], GetMessage(TestSpec));
             }
         }
 

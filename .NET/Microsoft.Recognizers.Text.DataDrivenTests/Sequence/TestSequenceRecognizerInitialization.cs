@@ -47,6 +47,13 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         }
 
         [TestMethod]
+        public void WithoutTargetCultureAndWithoutCulture_FallbackToEnglishCulture()
+        {
+            var recognizer = new SequenceRecognizer();
+            Assert.AreEqual(recognizer.GetPhoneNumberModel(), recognizer.GetPhoneNumberModel(EnglishCulture));
+        }
+
+        [TestMethod]
         public void InitializationNonLazy_CanGetModel()
         {
             var recognizer = new SequenceRecognizer(EnglishCulture, SequenceOptions.None, lazyInitialization: false);

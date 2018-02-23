@@ -66,6 +66,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimeCalendarMode,
         DateTimeExtendedTypes,
         PhoneNumber,
+        IpAddress,
     }
 
     public enum DateTimeExtractors
@@ -135,6 +136,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new DateTimeRecognizer(culture, DateTimeOptions.ExtendedTypes).GetDateTimeModel();
                 case Models.PhoneNumber:
                     return new SequenceRecognizer(culture).GetPhoneNumberModel();
+                case Models.IpAddress:
+                    return new SequenceRecognizer(culture).GetIpAddressModel();
             }
 
             throw new Exception($"Model '{modelName}' for '{culture}' not supported");
