@@ -16,15 +16,15 @@
 }
 ,
 {
-  "Input": "My PC IP address is 1.1.1.1/25",
+  "Input": "My PC IP address is 1.1.1.2/25",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1.1.1.1/25",
+      "Text": "1.1.1.2",
       "TypeName": "ip",
       "Resolution": {
-        "value": "1.1.1.1/25",
+        "value": "1.1.1.2",
         "type": "ipv4"
       }
     }
@@ -80,15 +80,15 @@
 }
 ,
 {
-  "Input": "8.8.8.8/24 is the ip address",
+  "Input": "8.8.8.1/24 is the ip address",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8.8.8.8/24",
+      "Text": "8.8.8.1",
       "TypeName": "ip",
       "Resolution": {
-        "value": "8.8.8.8/24",
+        "value": "8.8.8.1",
         "type": "ipv4"
       }
     }

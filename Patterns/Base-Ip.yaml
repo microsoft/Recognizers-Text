@@ -1,9 +1,6 @@
 ---
-SubnetRange: !simpleRegex
-  def: ([4-9]|([1-2]\d)|30)
-Ipv4Regex: !nestedRegex
-  def: \b(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)((\.(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)){3})(\/{SubnetRange})?\b
-  references: [SubnetRange]
+Ipv4Regex: !simpleRegex
+  def: \b(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)((\.(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)){3})\b
 BasicIpv6Element: !simpleRegex
   def: ([\da-fA-F]{1,4})
 BasicIpv6Regex: !nestedRegex

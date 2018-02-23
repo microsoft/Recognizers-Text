@@ -17,8 +17,7 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BaseIp
 	{
-		public const string SubnetRange = @"([4-9]|([1-2]\d)|30)";
-		public static readonly string Ipv4Regex = $@"\b(1\d{{2}}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{{0,2}}\d)((\.(1\d{{2}}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{{0,2}}\d)){{3}})(\/{SubnetRange})?\b";
+		public const string Ipv4Regex = @"\b(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)((\.(1\d{2}|2[0-4]\d|25[0-5]|0?[1-9]\d|0{0,2}\d)){3})\b";
 		public const string BasicIpv6Element = @"([\da-fA-F]{1,4})";
 		public static readonly string BasicIpv6Regex = $@"(({BasicIpv6Element}:){{7}}{BasicIpv6Element})";
 		public static readonly string Ipv6EllipsisRegex1 = $@"(:(:{BasicIpv6Element}){{1,7}})";
