@@ -46,6 +46,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         }
 
         [TestMethod]
+        public void WithoutTargetCultureAndWithoutCulture_FallbackToEnglishCulture()
+        {
+            var recognizer = new NumberRecognizer();
+            Assert.AreEqual(recognizer.GetNumberModel(), recognizer.GetNumberModel(EnglishCulture));
+        }
+
+        [TestMethod]
         public void InitializationNonLazy_CanGetModel()
         {
             var recognizer = new NumberRecognizer(EnglishCulture, NumberOptions.None, lazyInitialization: false);

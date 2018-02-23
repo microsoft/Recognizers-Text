@@ -10,12 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
+        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = false)
             : base(targetCulture, options, lazyInitialization)
         {
         }
 
-        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = true)
+        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false)
             : this(targetCulture, GetOption(options), lazyInitialization)
         {
         }

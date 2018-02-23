@@ -46,6 +46,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         }
 
         [TestMethod]
+        public void WithoutTargetCultureAndWithoutCulture_FallbackToEnglishCulture()
+        {
+            var recognizer = new NumberWithUnitRecognizer();
+            Assert.AreEqual(recognizer.GetCurrencyModel(), recognizer.GetCurrencyModel(EnglishCulture));
+        }
+
+        [TestMethod]
         public void InitializationNonLazy_CanGetModel()
         {
             var recognizer = new NumberWithUnitRecognizer(EnglishCulture, NumberWithUnitOptions.None, lazyInitialization: false);

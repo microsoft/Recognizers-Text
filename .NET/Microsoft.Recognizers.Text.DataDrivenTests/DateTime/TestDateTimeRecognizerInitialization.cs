@@ -46,6 +46,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         }
 
         [TestMethod]
+        public void WithoutTargetCultureAndWithoutCulture_FallbackToEnglishCulture()
+        {
+            var recognizer = new DateTimeRecognizer();
+            Assert.AreEqual(recognizer.GetDateTimeModel(), recognizer.GetDateTimeModel(EnglishCulture));
+        }
+
+        [TestMethod]
         public void InitializationNonLazy_CanGetModel()
         {
             var recognizer = new DateTimeRecognizer(EnglishCulture, DateTimeOptions.None, lazyInitialization: false);

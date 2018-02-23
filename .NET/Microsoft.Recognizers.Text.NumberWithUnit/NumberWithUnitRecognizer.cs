@@ -5,12 +5,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer<NumberWithUnitOptions>
     {
-        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
+        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = false)
             : base(targetCulture, options, lazyInitialization)
         {
         }
 
-        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = true)
+        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = false)
             : this(targetCulture, GetOption(options), lazyInitialization)
         {
         }
