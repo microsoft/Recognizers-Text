@@ -732,6 +732,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
+                    // Handle the "within xx seconds/minutes/hours" case
+                    // Set the beginTime equal to reference time for now
+                    prefixMatch = Config.WithinConnectorRegex.Match(beforeStr);
+                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
+                        !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
+                    {
+                        mod = TimeTypeConstants.AFTER_MOD;
+                        endTime = beginTime.AddSeconds(swiftSeconds);
+                    }
+
                     ret.Timex =
                         $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)}," +
                         $"{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)}," +

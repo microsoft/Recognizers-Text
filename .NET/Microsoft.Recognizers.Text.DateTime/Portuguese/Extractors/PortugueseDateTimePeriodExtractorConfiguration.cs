@@ -83,6 +83,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex PmDescRegex =
             new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WithinConnectorRegex =
+            new Regex(DateTimeDefinitions.WithinConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.WeekDayRegex => WeekDayRegex;
@@ -100,6 +103,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDateTimePeriodExtractorConfiguration.AmDescRegex => AmDescRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.WithinConnectorRegex => WithinConnectorRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

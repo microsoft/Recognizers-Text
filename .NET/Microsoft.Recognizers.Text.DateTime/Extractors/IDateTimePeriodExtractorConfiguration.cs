@@ -45,6 +45,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PmDescRegex { get; }
 
+        Regex WithinConnectorRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IDateTimeExtractor SingleDateExtractor { get; }
