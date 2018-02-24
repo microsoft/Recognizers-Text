@@ -60,45 +60,45 @@ namespace SimpleConsole
         {
             return new IModel[]
             {
-                //// Add Number recognizer - This recognizer will find any number from the input
-                //// E.g "I have two apples" will return "2".
-                //NumberRecognizer.Instance.GetNumberModel(defaultCulture),
+                // Add Number recognizer - This recognizer will find any number from the input
+                // E.g "I have two apples" will return "2".
+                NumberRecognizer.Instance.GetNumberModel(defaultCulture),
                 
-                //// Add Ordinal number recognizer - This recognizer will find any ordinal number
-                //// E.g "eleventh" will return "11".
-                //NumberRecognizer.Instance.GetOrdinalModel(defaultCulture),
+                // Add Ordinal number recognizer - This recognizer will find any ordinal number
+                // E.g "eleventh" will return "11".
+                NumberRecognizer.Instance.GetOrdinalModel(defaultCulture),
 
-                //// Add Percentage recognizer - This recognizer will find any number presented as percentage
-                //// E.g "one hundred percents" will return "100%"
-                //NumberRecognizer.Instance.GetPercentageModel(defaultCulture),
+                // Add Percentage recognizer - This recognizer will find any number presented as percentage
+                // E.g "one hundred percents" will return "100%"
+                NumberRecognizer.Instance.GetPercentageModel(defaultCulture),
 
-                //// Add Number Range recognizer - This recognizer will find any cardinal or ordinal number range
-                //// E.g. "between 2 and 5" will return "(2,5)"
-                //NumberRecognizer.Instance.GetNumberRangeModel(defaultCulture),
+                // Add Number Range recognizer - This recognizer will find any cardinal or ordinal number range
+                // E.g. "between 2 and 5" will return "(2,5)"
+                NumberRecognizer.Instance.GetNumberRangeModel(defaultCulture),
 
-                //// Add Age recognizer - This recognizer will find any age number presented
-                //// E.g "After ninety five years of age, perspectives change" will return "95 Year"
-                //NumberWithUnitRecognizer.Instance.GetAgeModel(defaultCulture),
+                // Add Age recognizer - This recognizer will find any age number presented
+                // E.g "After ninety five years of age, perspectives change" will return "95 Year"
+                NumberWithUnitRecognizer.Instance.GetAgeModel(defaultCulture),
 
-                //// Add Currency recognizer - This recognizer will find any currency presented
-                //// E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
-                //NumberWithUnitRecognizer.Instance.GetCurrencyModel(defaultCulture),
+                // Add Currency recognizer - This recognizer will find any currency presented
+                // E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
+                NumberWithUnitRecognizer.Instance.GetCurrencyModel(defaultCulture),
 
-                //// Add Dimension recognizer - This recognizer will find any dimension presented
-                //// E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
-                //NumberWithUnitRecognizer.Instance.GetDimensionModel(defaultCulture),
+                // Add Dimension recognizer - This recognizer will find any dimension presented
+                // E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
+                NumberWithUnitRecognizer.Instance.GetDimensionModel(defaultCulture),
 
-                //// Add Temperature recognizer - This recognizer will find any temperature presented
-                //// E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-                //NumberWithUnitRecognizer.Instance.GetTemperatureModel(defaultCulture),
+                // Add Temperature recognizer - This recognizer will find any temperature presented
+                // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
+                NumberWithUnitRecognizer.Instance.GetTemperatureModel(defaultCulture),
 
                 // Add Datetime recognizer - This model will find any Date even if its write in coloquial language - 
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
                 DateTimeRecognizer.GetInstance().GetDateTimeModel(defaultCulture),
 
-                //// Add PhoneNumber recognizer - This recognizer will find any phone number presented
-                //// E.g "My phone number is ( 19 ) 38294427."
-                //SequenceRecognizer.Instance.GetPhoneNumberModel(defaultCulture) 
+                // Add PhoneNumber recognizer - This recognizer will find any phone number presented
+                // E.g "My phone number is ( 19 ) 38294427."
+                SequenceRecognizer.Instance.GetPhoneNumberModel(defaultCulture) 
             };
         }
 
