@@ -230,12 +230,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // within "Days/Weeks/Months/Years" should be handled as dateRange here
+                // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
                 match = config.WithinConnectorRegex.Match(beforeStr);
                 if (MatchPrefixRegexInSegment(beforeStr, match))
                 {
                     var startToken = match.Index;
-                    match = config.DateUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-                    if (match.Success)
+                    var matchDate = config.DateUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                    var matchTime = config.TimeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+
+                    if (matchDate.Success && !matchTime.Success)
                     {
                         ret.Add(new Token(startToken, duration.End));
                     }

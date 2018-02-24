@@ -61,6 +61,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateTimeDefinitions.DateUnitRegex, // year, month, week, day
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TimeUnitRegex =
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex PastPrefixRegex = // **In French, Past/Next is suffix, but interface enforces this 
             new Regex(
                 DateTimeDefinitions.PastSuffixRegex, // past, last, previous
@@ -260,6 +263,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDatePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex IDatePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
+
+        Regex IDatePeriodExtractorConfiguration.TimeUnitRegex => TimeUnitRegex;
 
         Regex IDatePeriodExtractorConfiguration.FollowedDateUnit => FollowedDateUnit;
 

@@ -733,10 +733,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handle the "within xx seconds/minutes/hours" case
+                    // Should also handle the multiple duration case like P1DT8H
                     // Set the beginTime equal to reference time for now
                     prefixMatch = Config.WithinConnectorRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
-                        !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
+                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         mod = TimeTypeConstants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
