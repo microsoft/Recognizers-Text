@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Definitions.English
 	{
 		public const string LangMarker = "Eng";
 		public const string TokenizerRegex = @"[^\w\d]";
-		public const string TrueRegex = @"(true|yes|yep|y|sure|ok|\uD83D\uDC4D|\uD83D\uDC4C)";
-		public const string FalseRegex = @"(false|nope|nop|no|\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
+		public const string TrueRegex = @"\b(true|yes|yep|y|sure|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
+		public const string FalseRegex = @"\b(false|nope|nop|no)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
 	}
 }
