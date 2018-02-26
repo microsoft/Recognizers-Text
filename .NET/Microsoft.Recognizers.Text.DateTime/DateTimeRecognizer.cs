@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOption(options), lazyInitialization)
+            : this(targetCulture, GetOptions(options), lazyInitialization)
         {
         }
 

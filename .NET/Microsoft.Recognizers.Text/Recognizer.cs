@@ -1,5 +1,5 @@
-﻿using Microsoft.Recognizers.Text.Utilities;
-using System;
+﻿using System;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -42,6 +42,6 @@ namespace Microsoft.Recognizers.Text
             this.factory.InitializeModels(targetCulture, options);
         }
 
-        public static TModelOptions GetOption(int value) => EnumUtils.Convert<TModelOptions>(value);
+        public static TModelOptions GetOptions(int value) => EnumUtils.Convert<TModelOptions>(value);
     }
 }

@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Number
         }
 
         public NumberRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOption(options), lazyInitialization)
+            : this(targetCulture, GetOptions(options), lazyInitialization)
         {
         }
 

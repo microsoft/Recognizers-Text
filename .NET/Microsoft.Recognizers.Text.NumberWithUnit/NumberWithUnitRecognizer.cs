@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         }
 
         public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOption(options), lazyInitialization)
+            : this(targetCulture, GetOptions(options), lazyInitialization)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         }
 
         public NumberWithUnitRecognizer(int options, bool lazyInitialization = true)
-            : this(null, GetOption(options), lazyInitialization)
+            : this(null, GetOptions(options), lazyInitialization)
         {
         }
 
