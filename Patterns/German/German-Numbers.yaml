@@ -11,6 +11,11 @@ TenToNineteenIntegerRegex: !simpleRegex
   def: (siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)
 TensNumberIntegerRegex: !simpleRegex
   def: (siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig)
+SignSymbolRegex: !simpleRegex
+  def: (minus|negative)
+SymbolRegex: !nestedRegex
+  def: ^({SignSymbolRegex}\s+).*
+  references: [ SignSymbolRegex ]
 SeparaIntRegex: !nestedRegex
   def: ((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]

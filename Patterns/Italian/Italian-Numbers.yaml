@@ -11,6 +11,11 @@ TenToNineteenIntegerRegex: !simpleRegex
   def: (diciassette|tredici|quattordici|diciotto|diciannove|quindici|sedici|undici|dodici|dieci)
 TensNumberIntegerRegex: !simpleRegex
   def: (settanta|venti|trenta|ottanta|novanta|quaranta|cinquanta|sessanta)
+SignSymbolRegex: !simpleRegex
+  def: (negativo)
+SymbolRegex: !nestedRegex
+  def: ^({SignSymbolRegex}\s+).*
+  references: [ SignSymbolRegex ]
 SeparaIntRegex: !nestedRegex
   def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(e\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]

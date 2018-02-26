@@ -1634,4 +1634,79 @@
   "NotSupportedByDesign": "python",
   "Results": []
 }
+,
+{
+  "Input": "negative ninety - five hundred fifths",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "negative ninety - five hundred fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1900"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "minus ninety - five hundred fifths",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "minus ninety - five hundred fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1900"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "minus one",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "minus one",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "minus one hundred thirty fifths",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "minus one hundred thirty fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-2.85714285714286"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Negative one over 20",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "Negative one over 20",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-0.05"
+      }
+    }
+  ]
+}
 ]

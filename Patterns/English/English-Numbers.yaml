@@ -5,6 +5,11 @@ RoundNumberIntegerRegex: !simpleRegex
   def: (hundred|thousand|million|billion|trillion)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (three|seven|eight|four|five|zero|nine|one|two|six)
+SignSymbolRegex: !simpleRegex
+  def: (minus|negative)
+SymbolRegex: !nestedRegex
+  def: ^({SignSymbolRegex}\s+).*
+  references: [ SignSymbolRegex ]
 AnIntRegex: !simpleRegex
   def: (an|a)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
@@ -15,8 +20,8 @@ SeparaIntRegex: !nestedRegex
   def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
 AllIntRegex: !nestedRegex
-  def: (((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})
-  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex ]
+  def: (({SignSymbolRegex}\s+)?(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex}))
+  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex, SignSymbolRegex ]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex

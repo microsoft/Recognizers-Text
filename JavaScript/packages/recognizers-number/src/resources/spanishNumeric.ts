@@ -15,6 +15,8 @@ export namespace SpanishNumeric {
 	export const TenToNineteenIntegerRegex = `(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)`;
 	export const TwentiesIntegerRegex = `(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)`;
 	export const TensNumberIntegerRegex = `(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)`;
+	export const SignSymbolRegex = `(negativo)`;
+	export const SymbolRegex = `^(${SignSymbolRegex}\\s+).*`;
 	export const DigitsNumberRegex = `\\d|\\d{1,3}(\\.\\d{3})`;
 	export const BelowHundredsRegex = `((${TenToNineteenIntegerRegex}|${TwentiesIntegerRegex}|(${TensNumberIntegerRegex}(\\s+y\\s+${ZeroToNineIntegerRegex})?))|${ZeroToNineIntegerRegex})`;
 	export const BelowThousandsRegex = `(${HundredsNumberIntegerRegex}(\\s+${BelowHundredsRegex})?|${BelowHundredsRegex})`;

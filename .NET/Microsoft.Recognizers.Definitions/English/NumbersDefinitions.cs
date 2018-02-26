@@ -20,11 +20,13 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string LangMarker = "Eng";
 		public const string RoundNumberIntegerRegex = @"(hundred|thousand|million|billion|trillion)";
 		public const string ZeroToNineIntegerRegex = @"(three|seven|eight|four|five|zero|nine|one|two|six)";
+		public const string SignSymbolRegex = @"(minus|negative)";
+		public static readonly string SymbolRegex = $@"^({SignSymbolRegex}\s+).*";
 		public const string AnIntRegex = @"(an|a)(?=\s)";
 		public const string TenToNineteenIntegerRegex = @"(seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)";
 		public const string TensNumberIntegerRegex = @"(seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)";
 		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))";
-		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})";
+		public static readonly string AllIntRegex = $@"(({SignSymbolRegex}\s+)?(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex}))";
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})";

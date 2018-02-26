@@ -13,6 +13,11 @@ TwentiesIntegerRegex: !simpleRegex
   def: (veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)
 TensNumberIntegerRegex: !simpleRegex
   def: (cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)
+SignSymbolRegex: !simpleRegex
+  def: (negativo)
+SymbolRegex: !nestedRegex
+  def: ^({SignSymbolRegex}\s+).*
+  references: [ SignSymbolRegex ]
 DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
 BelowHundredsRegex: !nestedRegex

@@ -11,11 +11,13 @@ export namespace EnglishNumeric {
 	export const LangMarker = 'Eng';
 	export const RoundNumberIntegerRegex = `(hundred|thousand|million|billion|trillion)`;
 	export const ZeroToNineIntegerRegex = `(three|seven|eight|four|five|zero|nine|one|two|six)`;
+	export const SignSymbolRegex = `(minus|negative)`;
+	export const SymbolRegex = `^(${SignSymbolRegex}\\s+).*`;
 	export const AnIntRegex = `(an|a)(?=\\s)`;
 	export const TenToNineteenIntegerRegex = `(seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)`;
 	export const TensNumberIntegerRegex = `(seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)`;
 	export const SeparaIntRegex = `(((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex})(\\s+${RoundNumberIntegerRegex})*))|((${AnIntRegex}(\\s+${RoundNumberIntegerRegex})+))`;
-	export const AllIntRegex = `((((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*${SeparaIntRegex})`;
+	export const AllIntRegex = `((${SignSymbolRegex}\\s+)?((((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*${SeparaIntRegex}))`;
 	export const PlaceHolderPureNumber = `\\b`;
 	export const PlaceHolderDefault = `\\D|\\b`;
 	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\.\\d+[a-zA-Z]))(?=${placeholder})`; }

@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string TenToNineteenIntegerRegex = @"(dix\Wneuf|dix\Whuit|dix\Wsept|seize|quinze|quatorze|treize|douze|onze|dix)";
 		public const string TensNumberIntegerRegex = @"(octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)";
 		public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
+		public const string SignSymbolRegex = @"(négatif)";
+		public static readonly string SymbolRegex = $@"^({SignSymbolRegex}\s+).*";
 		public static readonly string HundredsNumberIntegerRegex = $@"(({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))";
 		public static readonly string BelowHundredsRegex = $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\W+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
 		public static readonly string BelowThousandsRegex = $@"(({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\s+{TenToNineteenIntegerRegex})";

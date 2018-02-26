@@ -24,6 +24,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string TenToNineteenIntegerRegex = @"(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)";
 		public const string TwentiesIntegerRegex = @"(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)";
 		public const string TensNumberIntegerRegex = @"(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)";
+		public const string SignSymbolRegex = @"(negativo)";
+		public static readonly string SymbolRegex = $@"^({SignSymbolRegex}\s+).*";
 		public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
 		public static readonly string BelowHundredsRegex = $@"(({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\s+y\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
 		public static readonly string BelowThousandsRegex = $@"({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})";

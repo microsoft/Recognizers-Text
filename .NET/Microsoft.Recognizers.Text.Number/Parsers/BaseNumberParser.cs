@@ -64,6 +64,16 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
+            //Resolve symbol prefix
+            bool isLessZero = false;
+            var matchSymbol = Config.SymbolRegex.Match(extResult.Text);
+
+            if (matchSymbol.Success)
+            {
+                isLessZero = true;
+                extResult.Text = extResult.Text.Substring(matchSymbol.Groups[1].Length);
+            }
+
             if (extra.Contains("Num"))
             {
                 ret = DigitNumberParse(extResult);
@@ -83,6 +93,12 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (ret?.Value != null)
             {
+                if (isLessZero)
+                {
+                    ret.Text = matchSymbol.Groups[1].Value + extResult.Text;
+                    ret.Value = -(double)ret.Value;
+                }
+
                 ret.ResolutionStr = Config.CultureInfo != null
                     ? ((double)ret.Value).ToString(Config.CultureInfo)
                     : ret.Value.ToString();

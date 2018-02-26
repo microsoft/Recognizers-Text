@@ -11,6 +11,11 @@ TensNumberIntegerRegex: !simpleRegex
   def: (octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)
 DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
+SignSymbolRegex: !simpleRegex
+  def: (négatif)
+SymbolRegex: !nestedRegex
+  def: ^({SignSymbolRegex}\s+).*
+  references: [ SignSymbolRegex ]
 HundredsNumberIntegerRegex: !nestedRegex
   # TODO: Work on this one
   def: (({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))
