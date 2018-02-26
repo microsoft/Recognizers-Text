@@ -37,8 +37,8 @@ namespace Microsoft.Recognizers.Text.Sequence
                 Start = o.Start.Value,
                 End = o.Start.Value + o.Length.Value - 1,
                 Resolution = new SortedDictionary<string, object> {
-                    { "value", o.ResolutionStr },
-                    { "type", o.Data }
+                    { ResolutionKey.Value, o.ResolutionStr },
+                    { ResolutionKey.Type, o.Data }
                 },
                 Text = o.Text,
                 TypeName = ModelTypeName

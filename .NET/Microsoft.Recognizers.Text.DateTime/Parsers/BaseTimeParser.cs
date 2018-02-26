@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (hour <= 12 && hour != 0)
                     {
-                        ret.Comment = "ampm";
+                        ret.Comment = Constants.Comment_AmPm;
                     }
 
                     ret.Timex = "T" + hour.ToString("D2");
@@ -303,7 +303,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (hour <= 12 && !hasPm && !hasAm && !hasMid)
             {
-                ret.Comment = "ampm";
+                ret.Comment = Constants.Comment_AmPm;
             }
 
             ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
