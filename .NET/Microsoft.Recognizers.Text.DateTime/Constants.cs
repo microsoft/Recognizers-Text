@@ -14,26 +14,48 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SYS_DATETIME_SET = "set";
         public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
 
-        //key
-        public const string TimexKey = "timex";
-        public const string CommentKey = "Comment";
-        public const string ModKey = "Mod";
-        public const string TypeKey = "type";
-        public const string IsLunarKey = "isLunar";
-        public const string ResolveKey = "resolve";
-        public const string ResolveToPastKey = "resolveToPast";
-        public const string ResolveToFutureKey = "resolveToFuture";
-        public const string MultipleDurationType = "multipleDurationType";
-        public const string Context = "context";
-        public const string SubType = "subType";
-        public const string ParentText = "parentText";
+        // Model Name
+        public const string MODEL_DATETIME = "datetime";
 
-        //Multiple Duration Types
+        // Multiple Duration Types
+        public const string MultipleDuration_Type = "multipleDurationType";
         public const string MultipleDuration_DateTime = "multipleDurationDateTime";
         public const string MultipleDuration_Date = "multipleDurationDate";
         public const string MultipleDuration_Time = "multipleDurationTime";
+        
+        // DateTime Parse
+        public const string Resolve = "resolve";
+        public const string ResolveToPast = "resolveToPast";
+        public const string ResolveToFuture = "resolveToFuture";
 
-        //Invalid year
+        // In the ExtractResult data
+        public const string Context = "context";
+        public const string ContextType_RelativePrefix = "relativePrefix";
+        public const string ContextType_AmPm = "AmPm";
+        public const string SubType = "subType";
+
+        // Comment - internal tag used during entity processing, never exposed to users. 
+        // Tags are filtered out in BaseMergedParser DateTimeResolution()
+        public const string Comment = "Comment";
+        // AmPm time representation for time parser
+        public const string Comment_AmPm = "ampm";
+        // Prefix early/late for time parser
+        public const string Comment_Early = "early";
+        public const string Comment_Late = "late";
+        // Parse week of date format
+        public const string Comment_WeekOf = "WeekOf";
+        public const string Comment_MonthOf = "MonthOf";
+
+        // Mod Value
+        public const string BEFORE_MOD = "before";
+        public const string AFTER_MOD = "after";
+        public const string SINCE_MOD = "since";
+
+        public const string EARLY_MOD = "start";
+        public const string MID_MOD = "mid";
+        public const string LATE_MOD = "end";
+
+        // Invalid year
         public const int InvalidYear = int.MinValue;
     }
 }
