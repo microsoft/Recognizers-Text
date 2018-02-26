@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             contextErs.Text = match.Value;
                             contextErs.Start = match.Index;
                             contextErs.Length = match.Length;
-                            contextErs.Type = Constants.ContextType_RELATIVE_PREFIX;
+                            contextErs.Type = Constants.Context_Type_RELATIVE_PREFIX;
                             data.Add(Constants.Context, contextErs);
                             data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
                         }
@@ -176,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         contextErs.Text = match.Value;
                         contextErs.Start = match.Index;
                         contextErs.Length = match.Length;
-                        contextErs.Type = Constants.ContextType_AM_PM;
+                        contextErs.Type = Constants.Context_Type_AM_PM;
                         data.Add(Constants.Context, contextErs);
                         data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
                     }

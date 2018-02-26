@@ -200,15 +200,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     string type = null;
                     if (timeUnit == totalUnit)
                     {
-                        type = Constants.MultipleDuration_Time;
+                        type = Constants.Multiple_Duration_Time;
                     }
                     else if (timeUnit == 0)
                     {
-                        type = Constants.MultipleDuration_Date;
+                        type = Constants.Multiple_Duration_Date;
                     }
                     else
                     {
-                        type = Constants.MultipleDuration_DateTime;
+                        type = Constants.Multiple_Duration_DateTime;
                     }
                     node.Data = type;
 

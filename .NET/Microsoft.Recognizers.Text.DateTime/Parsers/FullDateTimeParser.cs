@@ -215,7 +215,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!string.IsNullOrEmpty(comment))
             {
-                res.Add(DateTimeResolutionKey.Comment, comment);
+                res.Add(Constants.Comment, comment);
             }
 
             if (!string.IsNullOrEmpty(mod))
@@ -239,33 +239,33 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (resolutionPast.Count > 0)
                 {
-                    res.Add(Constants.ResolveKey, resolutionPast);
+                    res.Add(Constants.Resolve, resolutionPast);
                 }
             }
             else
             {
                 if (resolutionPast.Count > 0)
                 {
-                    res.Add(Constants.ResolveToPastKey, resolutionPast);
+                    res.Add(Constants.Resolve_To_Past, resolutionPast);
                 }
 
                 if (resolutionFuture.Count > 0)
                 {
-                    res.Add(Constants.ResolveToFutureKey, resolutionFuture);
+                    res.Add(Constants.Resolve_To_Future, resolutionFuture);
                 }
             }
 
             // if ampm, double our resolution accordingly
             if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_AmPm))
             {
-                if (res.ContainsKey(Constants.ResolveKey))
+                if (res.ContainsKey(Constants.Resolve))
                 {
-                    ResolveAmpm(res, Constants.ResolveKey);
+                    ResolveAmpm(res, Constants.Resolve);
                 }
                 else
                 {
-                    ResolveAmpm(res, Constants.ResolveToPastKey);
-                    ResolveAmpm(res, Constants.ResolveToFutureKey);
+                    ResolveAmpm(res, Constants.Resolve_To_Past);
+                    ResolveAmpm(res, Constants.Resolve_To_Future);
                 }
             }
 

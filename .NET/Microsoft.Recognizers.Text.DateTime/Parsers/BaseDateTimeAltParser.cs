@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
                     dateTimePr = this.config.TimeParser.Parse(dateTimeEr, referenceTime);
                 }
-                else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == Constants.ContextType_RELATIVE_PREFIX)
+                else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == Constants.Context_Type_RELATIVE_PREFIX)
                 {
                     // for cases:
                     //      Monday 9 am or 11 am
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dateTimeEr.Type = Constants.SYS_DATETIME_DATETIME;
                     dateTimePr = this.config.DateTimeParser.Parse(dateTimeEr, referenceTime);
                 }
-                else if (contextEr.Type == Constants.ContextType_AM_PM)
+                else if (contextEr.Type == Constants.Context_Type_AM_PM)
                 {
                     // for cases: in the afternoon 3 o'clock or 5 o'clock
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
@@ -116,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIMEPERIOD;
                     dateTimePr = this.config.TimePeriodParser.Parse(dateTimeEr, referenceTime);
                 }
-                else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == Constants.ContextType_RELATIVE_PREFIX)
+                else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == Constants.Context_Type_RELATIVE_PREFIX)
                 {
                     dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
                     dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);

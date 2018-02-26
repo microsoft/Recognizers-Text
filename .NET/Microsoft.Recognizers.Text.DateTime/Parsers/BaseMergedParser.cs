@@ -262,9 +262,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var mod = val.Mod;
             var comment = val.Comment;
 
-            //the following should added to res first since the ResolveAmPm is using these fields
+            // The following should be added to res first, since ResolveAmPm requires these fields.
             AddResolutionFields(res, DateTimeResolutionKey.Timex, timex);
-            AddResolutionFields(res, DateTimeResolutionKey.Comment, comment);
+            AddResolutionFields(res, Constants.Comment, comment);
             AddResolutionFields(res, DateTimeResolutionKey.Mod, mod);
             AddResolutionFields(res, ResolutionKey.Type, typeOutput);
             AddResolutionFields(res, DateTimeResolutionKey.IsLunar, islunar? islunar.ToString():string.Empty);
@@ -286,33 +286,33 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (resolutionPast.Count > 0)
                 {
-                    AddResolutionFields(res, Constants.ResolveKey, resolutionPast);
+                    AddResolutionFields(res, Constants.Resolve, resolutionPast);
                 }
             }
             else
             {
                 if (resolutionPast.Count > 0)
                 {
-                    AddResolutionFields(res, Constants.ResolveToPastKey, resolutionPast);
+                    AddResolutionFields(res, Constants.Resolve_To_Past, resolutionPast);
                 }
 
                 if (resolutionFuture.Count > 0)
                 {
-                    AddResolutionFields(res, Constants.ResolveToFutureKey, resolutionFuture);
+                    AddResolutionFields(res, Constants.Resolve_To_Future, resolutionFuture);
                 }
             }
 
             // if ampm, double our resolution accordingly
             if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_AmPm))
             {
-                if (res.ContainsKey(Constants.ResolveKey))
+                if (res.ContainsKey(Constants.Resolve))
                 {
-                    ResolveAmpm(res, Constants.ResolveKey);
+                    ResolveAmpm(res, Constants.Resolve);
                 }
                 else
                 {
-                    ResolveAmpm(res, Constants.ResolveToPastKey);
-                    ResolveAmpm(res, Constants.ResolveToFutureKey);
+                    ResolveAmpm(res, Constants.Resolve_To_Past);
+                    ResolveAmpm(res, Constants.Resolve_To_Future);
                 }
             }
 
@@ -320,7 +320,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if ((Config.Options & DateTimeOptions.CalendarMode) != 0 && 
                     !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
             {
-                ResolveWeekOf(res, Constants.ResolveToPastKey); 
+                ResolveWeekOf(res, Constants.Resolve_To_Past); 
             }
 
             foreach (var p in res)
