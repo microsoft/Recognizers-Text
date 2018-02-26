@@ -257,9 +257,14 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Debugger.Break();
             }
         }
-
-        private void ValidateResults(List<string> TestResolutionKeys = null)
+        
+        private void ValidateResults(List<string> testResolutionKeys = null)
         {
+            if (testResolutionKeys == null)
+            {
+                testResolutionKeys = new List<string>();
+            }
+
             var actualResults = Model.Parse(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
@@ -274,13 +279,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
                 Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
-
-                if (TestResolutionKeys != null)
+                
+                foreach (var key in testResolutionKeys)
                 {
-                    foreach (var key in TestResolutionKeys)
-                    {
-                        Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
-                    }
+                    Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
                 }
             }
         }
