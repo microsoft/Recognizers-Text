@@ -293,12 +293,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (resolutionPast.Count > 0)
                 {
-                    AddResolutionFields(res, Constants.Resolve_To_Past, resolutionPast);
+                    AddResolutionFields(res, Constants.ResolveToPast, resolutionPast);
                 }
 
                 if (resolutionFuture.Count > 0)
                 {
-                    AddResolutionFields(res, Constants.Resolve_To_Future, resolutionFuture);
+                    AddResolutionFields(res, Constants.ResolveToFuture, resolutionFuture);
                 }
             }
 
@@ -311,8 +311,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    ResolveAmpm(res, Constants.Resolve_To_Past);
-                    ResolveAmpm(res, Constants.Resolve_To_Future);
+                    ResolveAmpm(res, Constants.ResolveToPast);
+                    ResolveAmpm(res, Constants.ResolveToFuture);
                 }
             }
 
@@ -320,7 +320,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if ((Config.Options & DateTimeOptions.CalendarMode) != 0 && 
                     !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
             {
-                ResolveWeekOf(res, Constants.Resolve_To_Past); 
+                ResolveWeekOf(res, Constants.ResolveToPast); 
             }
 
             foreach (var p in res)

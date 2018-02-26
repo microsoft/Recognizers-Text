@@ -18,20 +18,20 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MODEL_DATETIME = "datetime";
 
         // Multiple Duration Types
-        public const string Multiple_Duration_Type = "multipleDurationType";
-        public const string Multiple_Duration_DateTime = "multipleDurationDateTime";
-        public const string Multiple_Duration_Date = "multipleDurationDate";
-        public const string Multiple_Duration_Time = "multipleDurationTime";
+        public const string MultipleDuration_Type = "multipleDurationType";
+        public const string MultipleDuration_DateTime = "multipleDurationDateTime";
+        public const string MultipleDuration_Date = "multipleDurationDate";
+        public const string MultipleDuration_Time = "multipleDurationTime";
         
         // DateTime Parse
         public const string Resolve = "resolve";
-        public const string Resolve_To_Past = "resolveToPast";
-        public const string Resolve_To_Future = "resolveToFuture";
+        public const string ResolveToPast = "resolveToPast";
+        public const string ResolveToFuture = "resolveToFuture";
 
         // In the ExtractResult data
         public const string Context = "context";
-        public const string Context_Type_RELATIVE_PREFIX = "relativePrefix";
-        public const string Context_Type_AM_PM = "AmPm";
+        public const string ContextType_RelativePrefix = "relativePrefix";
+        public const string ContextType_AmPm = "AmPm";
         public const string SubType = "subType";
 
         // Comment - internal tag used during entity processing, never exposed to users. 
