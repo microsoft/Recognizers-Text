@@ -33,17 +33,17 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         }
 
         [TestMethod]
-        public void WithInvalidCultureAndWithoutFallback_ThrowError()
+        public void WithInvalidCulture_AlwaysUseEnglish()
         {
             var recognizer = new SequenceRecognizer();
-            Assert.ThrowsException<ArgumentException>(() => recognizer.GetPhoneNumberModel(InvalidCulture, fallbackToDefaultCulture: false));
+            Assert.AreEqual(recognizer.GetPhoneNumberModel(InvalidCulture), recognizer.GetPhoneNumberModel(EnglishCulture));
         }
 
         [TestMethod]
-        public void WithInvalidCultureAsTargetAndWithoutFallback_ThrowError()
+        public void WithInvalidCultureAsTarget_AlwaysUseEnglish()
         {
             var recognizer = new SequenceRecognizer(InvalidCulture);
-            Assert.ThrowsException<ArgumentException>(() => recognizer.GetPhoneNumberModel(fallbackToDefaultCulture: false));
+            Assert.AreEqual(recognizer.GetPhoneNumberModel(), recognizer.GetPhoneNumberModel(EnglishCulture));
         }
 
         [TestMethod]

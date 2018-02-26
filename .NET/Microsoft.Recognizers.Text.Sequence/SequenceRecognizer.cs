@@ -1,6 +1,6 @@
-﻿using Microsoft.Recognizers.Text.Sequence.English;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Sequence.English;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
@@ -28,12 +28,12 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public IModel GetPhoneNumberModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<PhoneNumberModel>(culture, fallbackToDefaultCulture);
+            return GetModel<PhoneNumberModel>(Culture.English, fallbackToDefaultCulture);
         }
 
         public IModel GetIpAddressModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<IpAddressModel>(culture, fallbackToDefaultCulture);
+            return GetModel<IpAddressModel>(Culture.English, fallbackToDefaultCulture);
         }
 
         public static List<ModelResult> RecognizePhoneNumber(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
