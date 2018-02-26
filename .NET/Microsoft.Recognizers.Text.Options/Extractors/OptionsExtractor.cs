@@ -137,7 +137,11 @@ namespace Microsoft.Recognizers.Text.Options.Extractors
 
         private static int IndexOfToken(List<string> tokens, string token, int startPos)
         {
-            if (tokens.Count <= startPos) return -1;
+            if (tokens.Count <= startPos)
+            {
+                return -1;
+            }
+            
             return tokens.FindIndex(startPos, x => x == token);
         }
 
