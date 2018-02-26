@@ -460,6 +460,7 @@
 {
   "Input": "负10000",
   "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "负10000",
