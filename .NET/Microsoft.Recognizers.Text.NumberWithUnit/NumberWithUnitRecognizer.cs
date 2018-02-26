@@ -74,6 +74,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         protected override void InitializeConfiguration()
         {
+            #region English
             RegisterModel<CurrencyModel>(
                 Culture.English,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -110,7 +111,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
                     }
                 }));
+            #endregion
 
+            #region Chinese
             RegisterModel<CurrencyModel>(
                 Culture.Chinese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -163,7 +166,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
                     }
                 }));
+            #endregion
 
+            #region Spanish
             RegisterModel<CurrencyModel>(
                 Culture.Spanish,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -200,7 +205,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
                     }
                 }));
+            #endregion
 
+            #region Portuguese
             RegisterModel<CurrencyModel>(
                 Culture.Portuguese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -237,7 +244,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Portuguese.AgeParserConfiguration())
                     }
                 }));
+            #endregion
 
+            #region French
             RegisterModel<CurrencyModel>(
                 Culture.French,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -274,8 +283,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new French.AgeParserConfiguration())
                     }
                 }));
+            #endregion
 
-
+            #region German
             RegisterModel<CurrencyModel>(
                 Culture.German,
                 (options) => new CurrencyModel(
@@ -316,6 +326,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                     new NumberWithUnitParser(new German.AgeParserConfiguration())
                                 }
                             }));
+            #endregion
         }
     }
 }

@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.Number
             return RecognizeByModel(recognizer => recognizer.GetNumberRangeModel(culture, fallbackToDefaultCulture), query, options);
         }
 
-        private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc,  string query, NumberOptions options)
+        private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)
         {
             var recognizer = new NumberRecognizer(options);
             var model = getModelFunc(recognizer);
@@ -80,6 +80,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected override void InitializeConfiguration()
         {
+            #region English
             RegisterModel<NumberModel>(
                 Culture.English,
                 (options) => new NumberModel(
@@ -100,7 +101,9 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberRangeModel(
                             new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
                             new English.NumberRangeExtractor()));
+            #endregion
 
+            #region Chinese
             RegisterModel<NumberModel>(
                 Culture.Chinese,
                 (options) => new NumberModel(
@@ -121,7 +124,9 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberRangeModel(
                             new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
                             new Chinese.NumberRangeExtractor()));
+            #endregion
 
+            #region Spanish
             RegisterModel<NumberModel>(
                 Culture.Spanish,
                 (options) => new NumberModel(
@@ -137,7 +142,9 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
                     new Spanish.PercentageExtractor()));
+            #endregion
 
+            #region Portuguese
             RegisterModel<NumberModel>(
                 Culture.Portuguese,
                 (options) => new NumberModel(
@@ -153,7 +160,9 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
                     new Portuguese.PercentageExtractor()));
+            #endregion
 
+            #region French
             RegisterModel<NumberModel>(
                 Culture.French,
                 (options) => new NumberModel(
@@ -169,7 +178,9 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
                     new French.PercentageExtractor()));
+            #endregion
 
+            #region German
             RegisterModel<NumberModel>(
                 Culture.German,
                 (options) => new NumberModel(
@@ -185,6 +196,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration()),
                     new German.PercentageExtractor()));
+            #endregion
         }
     }
 }
