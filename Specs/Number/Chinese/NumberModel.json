@@ -458,6 +458,20 @@
 }
 ,
 {
+  "Input": "负10000",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "负10000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-10000"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "一打",
   "NotSupportedByDesign": "python",
   "Results": [
