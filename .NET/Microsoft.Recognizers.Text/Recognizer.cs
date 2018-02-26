@@ -3,20 +3,20 @@ using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text
 {
-    public abstract class Recognizer<TModelOptions> where TModelOptions : struct
+    public abstract class Recognizer<TRecognizerOptions> where TRecognizerOptions : struct
     {
-        private readonly ModelFactory<TModelOptions> factory;
+        private readonly ModelFactory<TRecognizerOptions> factory;
 
         public string TargetCulture { get; private set; }
 
-        public TModelOptions Options { get; private set; }
+        public TRecognizerOptions Options { get; private set; }
 
-        protected Recognizer(string targetCulture, TModelOptions options, bool lazyInitialization)
+        protected Recognizer(string targetCulture, TRecognizerOptions options, bool lazyInitialization)
         {
             this.Options = options;
             this.TargetCulture = targetCulture;
 
-            this.factory = new ModelFactory<TModelOptions>();
+            this.factory = new ModelFactory<TRecognizerOptions>();
             InitializeConfiguration();
 
             if (!lazyInitialization)
@@ -30,18 +30,18 @@ namespace Microsoft.Recognizers.Text
             return this.factory.GetModel<T>(culture ?? TargetCulture, fallbackToDefaultCulture, Options);
         }
 
-        protected void RegisterModel<T>(string culture, Func<TModelOptions, IModel> modelCreator)
+        protected void RegisterModel<T>(string culture, Func<TRecognizerOptions, IModel> modelCreator)
         {
             this.factory.Add((culture, typeof(T)), modelCreator);
         }
 
         protected abstract void InitializeConfiguration();
 
-        private void InitializeModels(string targetCulture, TModelOptions options)
+        private void InitializeModels(string targetCulture, TRecognizerOptions options)
         {
             this.factory.InitializeModels(targetCulture, options);
         }
 
-        public static TModelOptions GetOptions(int value) => EnumUtils.Convert<TModelOptions>(value);
+        public static TRecognizerOptions GetOptions(int value) => EnumUtils.Convert<TRecognizerOptions>(value);
     }
 }
