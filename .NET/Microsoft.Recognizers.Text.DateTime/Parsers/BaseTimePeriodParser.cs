@@ -253,8 +253,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beginTime = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
             var endTime = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
 
-            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) 
-                && endTime <= beginTime && endTime.Hour<12)
+            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && 
+                endTime <= beginTime && endTime.Hour<12)
             {
                 endTime = endTime.AddHours(12);
                 ((DateTimeResolutionResult) pr2.Value).FutureValue = endTime;
@@ -273,10 +273,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             
-            if (!string.IsNullOrEmpty(ampmStr1) 
-                && ampmStr1.EndsWith(Constants.Comment_AmPm) 
-                && !string.IsNullOrEmpty(ampmStr2) 
-                && ampmStr2.EndsWith(Constants.Comment_AmPm))
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm)  && 
+                !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
             {
                 ret.Comment = Constants.Comment_AmPm;
             }

@@ -316,7 +316,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            // if the WeekOf and in ClendarMode, modify the past part of our resolution
+            // if the WeekOf and in CalendarMode, modify the past part of our resolution
             if ((Config.Options & DateTimeOptions.CalendarMode) != 0 && 
                     !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
             {

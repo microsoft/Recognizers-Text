@@ -170,8 +170,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 endTime.Hour, endTime.Minute, endTime.Second)
                                 );
 
-                        if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment)
-                            && timePeriodResolutionResult.Comment.Equals(Constants.Comment_AmPm))
+                        if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment) && 
+                            timePeriodResolutionResult.Comment.Equals(Constants.Comment_AmPm))
                         {
                             ret.Comment = Constants.Comment_AmPm;
                         }
@@ -428,10 +428,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
             var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
-            if (!string.IsNullOrEmpty(ampmStr1) 
-                && ampmStr1.EndsWith(Constants.Comment_AmPm) 
-                && !string.IsNullOrEmpty(ampmStr2) 
-                && ampmStr2.EndsWith(Constants.Comment_AmPm))
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && 
+                !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
             {
                 ret.Comment = Constants.Comment_AmPm;
             }

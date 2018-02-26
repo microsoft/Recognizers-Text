@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         {
             TestPreValidation();
 
-            ValidateResults(new List<string>() { });
+            ValidateResults();
         }
 
         public void TestNumberWithUnit()
@@ -242,7 +242,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestPhoneNumber()
         {
             TestPreValidation();
-            ValidateResults(new List<string>() { });
+            ValidateResults();
         }
         
         private void TestPreValidation()
@@ -258,7 +258,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
         }
 
-        private void ValidateResults(List<string> TestResolutionKeys)
+        private void ValidateResults(List<string> TestResolutionKeys = null)
         {
             var actualResults = Model.Parse(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ModelResult>();

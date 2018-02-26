@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SET = "set";
         public const string TIME = "time";
 
-        //SubType for Future/Past in DateTimeResolutionResult
+        // Internal SubType for Future/Past in DateTimeResolutionResult
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string START_DATETIME = "startDateTime";
