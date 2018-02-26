@@ -287,7 +287,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
         }
 
-        public void TestOptions()
+        public void TestChoice()
         {
             if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {

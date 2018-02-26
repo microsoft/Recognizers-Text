@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\English\English-DateTime.yaml = ..\Patterns\English\English-DateTime.yaml
 		..\Patterns\English\English-Numbers.yaml = ..\Patterns\English\English-Numbers.yaml
 		..\Patterns\English\English-NumbersWithUnit.yaml = ..\Patterns\English\English-NumbersWithUnit.yaml
-		..\Patterns\English\English-Options.yaml = ..\Patterns\English\English-Options.yaml
+		..\Patterns\English\English-Choice.yaml = ..\Patterns\English\English-Choice.yaml
 		..\Patterns\French\French-DateTime.yaml = ..\Patterns\French\French-DateTime.yaml
 		..\Patterns\French\French-Numbers.yaml = ..\Patterns\French\French-Numbers.yaml
 		..\Patterns\French\French-NumbersWithUnit.yaml = ..\Patterns\French\French-NumbersWithUnit.yaml
@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Sequence", "Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj", "{A5F60D50-81F7-44F8-A2B4-A63606376EE7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Options", "Microsoft.Recognizers.Text.Options\Microsoft.Recognizers.Text.Options.csproj", "{9318EA22-C36A-48C8-9882-8A0D2D74C356}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Choice", "Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj", "{9318EA22-C36A-48C8-9882-8A0D2D74C356}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

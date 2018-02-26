@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.Options;
+using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.Sequence;
 
 using Newtonsoft.Json;
@@ -107,7 +107,7 @@ namespace SimpleConsole
                 
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"
-                OptionsRecognizer.Instance.GetBooleanModel(defaultCulture)
+                ChoiceRecognizer.Instance.GetBooleanModel(defaultCulture)
             };
         }
 

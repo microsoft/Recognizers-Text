@@ -16,7 +16,7 @@ using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.Sequence;
-using Microsoft.Recognizers.Text.Options;
+using Microsoft.Recognizers.Text.Choice;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -140,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case Models.IpAddress:
                     return SequenceRecognizer.Instance.GetIpAddressModel(language);
                 case Models.Boolean:
-                    return OptionsRecognizer.Instance.GetBooleanModel(language);
+                    return ChoiceRecognizer.Instance.GetBooleanModel(language);
             }
 
             throw new Exception($"Model '{modelName}' for '{language}' not supported");

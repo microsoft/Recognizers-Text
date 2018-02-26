@@ -11,7 +11,7 @@
 	},
 	"browserify-shim": {
 		"@microsoft/recognizers-text": "global:microsoftRecognizersTextBase",
-		"@microsoft/recognizers-text-options": "global:microsoftRecognizersTextOptions",
+		"@microsoft/recognizers-text-choice": "global:microsoftRecognizersTextChoice",
 		"@microsoft/recognizers-text-number": "global:microsoftRecognizersTextNumber",
 		"@microsoft/recognizers-text-number-with-unit": "global:microsoftRecognizersTextNumberWithUnit",
 		"@microsoft/recognizers-text-date-time": "global:microsoftRecognizersTextDateTime"
@@ -71,7 +71,7 @@
 	},
 	"dependencies": {
 		"@microsoft/recognizers-text": "file:./packages/recognizers-text",
-		"@microsoft/recognizers-text-options": "file:./packages/recognizers-options",
+		"@microsoft/recognizers-text-choice": "file:./packages/recognizers-choice",
 		"@microsoft/recognizers-text-date-time": "file:./packages/recognizers-date-time",
 		"@microsoft/recognizers-text-number": "file:./packages/recognizers-number",
 		"@microsoft/recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
