@@ -25,10 +25,10 @@
   {
     "Input": "Das ganze findet dann am Montag um 4 Uhr statt",
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
-        "Text": "am Montag um 4 Uhr ",
+        "Text": "Montag um 4 Uhr",
         "Type": "datetime"
       }
     ]
@@ -56,12 +56,12 @@
     ]
   },
   {
-    "Input": "Das meeting geht morgen von 12 bis 14 Uhr.",
+    "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
-        "Text": "morgen von 12 bis 14 Uhr.",
+        "Text": "Morgen von 12 bis 14 Uhr",
         "Type": "datetimerange"
       }
     ]
@@ -131,12 +131,48 @@
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "16. März 2017 ",
+        "Text": "16. März 2017",
         "Type": "date" 
       }
       ,
       {
         "Text": "heute um 2 Uhr Nachmittags",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Wir treffen uns am Freitag Nachmittag für 3 Stunden.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "am Freitag Nachmittag ",
+        "Type": "set" 
+      },{
+        "Text": "3 Stunden.",
+        "Type": "datetimerange" 
+      }
+    ]
+  },
+  {
+    "Input": "das ist morgen um 4 Uhr ",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "morgen um 4 Uhr",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "das war gestern 4 Uhr ",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "gestern 4 Uhr",
         "Type": "datetime"
       }
     ]

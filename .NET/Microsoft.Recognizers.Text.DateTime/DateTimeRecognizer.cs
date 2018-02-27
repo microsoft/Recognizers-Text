@@ -72,6 +72,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                               new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
                               new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))
                           ));
+            RegisterModel(Culture.German, type, options.ToString(), new DateTimeModel(
+                              new BaseMergedParser(new GermanMergedParserConfiguration(options)),
+                              new BaseMergedExtractor(new GermanMergedExtractorConfiguration(options))
+                          ));
         }
 
         private DateTimeRecognizer(string cultureCode, DateTimeOptions options)
@@ -115,6 +119,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                                       new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
                                       new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))
                                   ));
+                    break;
+
+                case Culture.German:
+                    RegisterModel(Culture.German, type, options.ToString(), new DateTimeModel(
+                              new BaseMergedParser(new GermanMergedParserConfiguration(options)),
+                              new BaseMergedExtractor(new GermanMergedExtractorConfiguration(options))
+                          ));
                     break;
 
                 default:
