@@ -43,7 +43,7 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
     }
 
     protected InitializeConfiguration() {
-        // English models
+        //#region English
         this.registerModel("NumberModel", Culture.English, (options) => new NumberModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()),
             new EnglishNumberExtractor(NumberMode.PureNumber)));
@@ -53,8 +53,9 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         this.registerModel("PercentModel", Culture.English, (options) => new PercentModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()),
             new EnglishPercentageExtractor()));
+        //#endregion
 
-        // Spanish models
+        //#region Spanish
         this.registerModel("NumberModel", Culture.Spanish, (options) => new NumberModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
             new SpanishNumberExtractor(NumberMode.PureNumber)));
@@ -64,8 +65,9 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         this.registerModel("PercentModel", Culture.Spanish, (options) => new PercentModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
             new SpanishPercentageExtractor()));
+        //#endregion
 
-        // Portuguese models
+        //#region Portuguese
         this.registerModel("NumberModel", Culture.Portuguese, (options) => new NumberModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration()),
             new PortugueseNumberExtractor(NumberMode.PureNumber)));
@@ -75,8 +77,9 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         this.registerModel("PercentModel", Culture.Portuguese, (options) => new PercentModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
             new PortuguesePercentageExtractor()));
+        //#endregion
 
-        // Chinese models
+        //#region Chinese
         this.registerModel("NumberModel", Culture.Chinese, (options) => new NumberModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
             new ChineseNumberExtractor()));
@@ -86,8 +89,9 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         this.registerModel("PercentModel", Culture.Chinese, (options) => new PercentModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
             new ChinesePercentageExtractor()));
+        //#endregion
 
-        // French models
+        //#region French
         this.registerModel("NumberModel", Culture.French, (options) => new NumberModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
             new FrenchNumberExtractor(NumberMode.PureNumber)));
@@ -97,6 +101,7 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         this.registerModel("PercentModel", Culture.French, (options) => new PercentModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
             new FrenchPercentageExtractor()));
+        //#endregion
     }
 
     getNumberModel(): IModel {

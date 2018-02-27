@@ -56,7 +56,7 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
     }
 
     protected InitializeConfiguration() {
-        // English models
+        //#region English
         this.registerModel("CurrencyModel", Culture.English, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
         ])));
@@ -69,8 +69,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("AgeModel", Culture.English, (options) => new AgeModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
+        //#endregion
 
-        // Spanish models
+        //#region Spanish
         this.registerModel("CurrencyModel", Culture.Spanish, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new SpanishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new SpanishCurrencyParserConfiguration())]
         ])));
@@ -83,8 +84,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("AgeModel", Culture.Spanish, (options) => new AgeModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new SpanishAgeExtractorConfiguration()), new NumberWithUnitParser(new SpanishAgeParserConfiguration())]
         ])));
+        //#endregion
 
-        // Portuguese models
+        //#region Portuguese
         this.registerModel("CurrencyModel", Culture.Portuguese, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new PortugueseCurrencyExtractorConfiguration()), new NumberWithUnitParser(new PortugueseCurrencyParserConfiguration())]
         ])));
@@ -97,8 +99,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("AgeModel", Culture.Portuguese, (options) => new AgeModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new PortugueseAgeExtractorConfiguration()), new NumberWithUnitParser(new PortugueseAgeParserConfiguration())]
         ])));
+        //#endregion
 
-        // Chinese models
+        //#region Chinese
         this.registerModel("CurrencyModel", Culture.Chinese, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new ChineseCurrencyExtractorConfiguration()), new NumberWithUnitParser(new ChineseCurrencyParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
@@ -115,8 +118,9 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
             [new NumberWithUnitExtractor(new ChineseAgeExtractorConfiguration()), new NumberWithUnitParser(new ChineseAgeParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
+        //#endregion
 
-        // French models
+        //#region French
         this.registerModel("CurrencyModel", Culture.French, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new FrenchCurrencyExtractorConfiguration()), new NumberWithUnitParser(new FrenchCurrencyParserConfiguration())]
         ])));
@@ -129,6 +133,7 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("AgeModel", Culture.French, (options) => new AgeModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new FrenchAgeExtractorConfiguration()), new NumberWithUnitParser(new FrenchAgeParserConfiguration())]
         ])));
+        //#endregion
     }
 
     getCurrencyModel(): IModel {

@@ -24,11 +24,12 @@ export default class OptionsRecognizer extends Recognizer<OptionsRecognizersOpti
     }
 
     protected InitializeConfiguration() {
-        // English models
+        //#region English
         this.registerModel("BooleanModel", Culture.English, (options) => new BooleanModel(
             new BooleanParser(),
             new BooleanExtractor(new EnglishBooleanExtractorConfiguration())
         ));
+        //endregion
     }
 
     getBooleanModel(): IModel {
