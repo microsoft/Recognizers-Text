@@ -209,7 +209,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var timeStr = pr2.TimexStr;
-            if (timeStr.EndsWith("ampm"))
+            if (timeStr.EndsWith(Constants.Comment_AmPm))
             {
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
@@ -220,7 +220,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hour <= 12 && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
-                ret.Comment = "ampm";
+                ret.Comment = Constants.Comment_AmPm;
             }
 
             ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
@@ -231,7 +231,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             pr2.TimexStr = timeStr;
             if (!string.IsNullOrEmpty(ret.Comment))
             {
-                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals("ampm") ? "ampm" : "";
+                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals(Constants.Comment_AmPm) ? Constants.Comment_AmPm : "";
             }
             
             // Add the date and time object in case we want to split them
@@ -313,7 +313,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hour = this.config.GetHour(matchStr, hour);
 
                 // In this situation, timeStr cannot end up with "ampm", because we always have a "morning" or "night"
-                if (timeStr.EndsWith("ampm"))
+                if (timeStr.EndsWith(Constants.Comment_AmPm))
                 {
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }

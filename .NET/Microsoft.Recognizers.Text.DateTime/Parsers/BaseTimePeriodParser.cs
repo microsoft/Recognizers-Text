@@ -253,8 +253,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beginTime = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
             var endTime = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
 
-            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith("ampm") 
-                && endTime <= beginTime && endTime.Hour<12)
+            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && 
+                endTime <= beginTime && endTime.Hour<12)
             {
                 endTime = endTime.AddHours(12);
                 ((DateTimeResolutionResult) pr2.Value).FutureValue = endTime;
@@ -273,9 +273,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith("ampm") && !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith("ampm"))
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm)  && 
+                !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
             {
-                ret.Comment = "ampm";
+                ret.Comment = Constants.Comment_AmPm;
             }
 
             ret.SubDateTimeEntities = new List<object> {pr1, pr2};
@@ -301,7 +302,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var early = match.Groups["early"].Value;
                     text = text.Replace(early, "");
                     hasEarly = true;
-                    ret.Comment = "early";
+                    ret.Comment = Constants.Comment_Early;
                 }
 
                 if (!hasEarly && !string.IsNullOrEmpty(match.Groups["late"].Value))
@@ -309,7 +310,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var late = match.Groups["late"].Value;
                     text = text.Replace(late, "");
                     hasLate = true;
-                    ret.Comment = "late";
+                    ret.Comment = Constants.Comment_Late;
                 }
             }
 

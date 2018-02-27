@@ -11,7 +11,7 @@ export class EnglishBooleanExtractorConfiguration implements IBooleanExtractorCo
     constructor(onlyTopMatch: boolean = true) {
         this.regexTrue = RegExpUtility.getSafeRegExp(EnglishOptions.TrueRegex);
         this.regexFalse = RegExpUtility.getSafeRegExp(EnglishOptions.FalseRegex);
-        this.tokenRegex = RegExpUtility.getSafeRegExp(EnglishOptions.TokenizerRegex);
+        this.tokenRegex = RegExpUtility.getSafeRegExp(EnglishOptions.TokenizerRegex, 'is');
         this.onlyTopMatch = onlyTopMatch;
     }
 }

@@ -18,10 +18,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static bool InclusiveEndPeriod = false;
 
-        private const string WeekOfComment="WeekOf";
-
-        private const string MonthOfComment = "MonthOf";
-
         public BaseDatePeriodParser(IDatePeriodParserConfiguration configuration)
         {
             config = configuration;
@@ -309,19 +305,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     earlyPrefix = true;
                     trimedText = match.Groups["suffix"].ToString();
-                    ret.Mod = TimeTypeConstants.EARLY_MOD;
+                    ret.Mod = Constants.EARLY_MOD;
                 }
                 else if (match.Groups["LatePrefix"].Success)
                 {
                     latePrefix = true;
                     trimedText = match.Groups["suffix"].ToString();
-                    ret.Mod = TimeTypeConstants.LATE_MOD;
+                    ret.Mod = Constants.LATE_MOD;
                 }
                 else if (match.Groups["MidPrefix"].Success)
                 {
                     midPrefix = true;
                     trimedText = match.Groups["suffix"].ToString();
-                    ret.Mod = TimeTypeConstants.MID_MOD;
+                    ret.Mod = Constants.MID_MOD;
                 }
 
                 var monthStr = match.Groups["month"].Value;
@@ -853,7 +849,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (future)
             {
-                mod = TimeTypeConstants.AFTER_MOD;
+                mod = Constants.AFTER_MOD;
 
                 // For future the beginDate should add 1 first
                 beginDate = referenceDate.AddDays(1);
@@ -861,7 +857,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                mod = TimeTypeConstants.BEFORE_MOD;
+                mod = Constants.BEFORE_MOD;
                 beginDate = DurationParsingUtil.ShiftDateTime(timex, endDate, false);
             }
         }
@@ -1033,15 +1029,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (match.Groups["EarlyPrefix"].Success)
                 {
-                    ret.Mod = TimeTypeConstants.EARLY_MOD;
+                    ret.Mod = Constants.EARLY_MOD;
                 }
                 else if (match.Groups["MidPrefix"].Success)
                 {
-                    ret.Mod = TimeTypeConstants.MID_MOD;
+                    ret.Mod = Constants.MID_MOD;
                 }
                 else if (match.Groups["LatePrefix"].Success)
                 {
-                    ret.Mod = TimeTypeConstants.LATE_MOD;
+                    ret.Mod = Constants.LATE_MOD;
                 }
 
                 int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
@@ -1083,7 +1079,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.Timex = pr.Timex;
                 }
-                ret.Comment = WeekOfComment;
+                ret.Comment = Constants.Comment_WeekOf;
                 ret.FutureValue= GetWeekRangeFromDate((DateObject)pr.FutureValue);
                 ret.PastValue= GetWeekRangeFromDate((DateObject)pr.PastValue);
                 ret.Success = true;
@@ -1100,7 +1096,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = (DateTimeResolutionResult)config.DateParser.Parse(ex[0], referenceDate).Value;
                 ret.Timex = pr.Timex;
-                ret.Comment = MonthOfComment;
+                ret.Comment = Constants.Comment_MonthOf;
                 ret.FutureValue = GetMonthRangeFromDate((DateObject)pr.FutureValue);
                 ret.PastValue = GetMonthRangeFromDate((DateObject)pr.PastValue);
                 ret.Success = true;
