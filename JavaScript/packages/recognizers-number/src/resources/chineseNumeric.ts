@@ -39,7 +39,7 @@ export namespace ChineseNumeric {
 	export const NotSingleRegexChs = `((${ZeroToNineIntegerRegexChs}|${ZeroToNineChsFullHalfRegexChs}|[十拾])\\s*(\\s*[多几幾余]?\\s*${RoundNumberIntegerRegexChs}){1,2}|[十拾]|${RoundNumberIntegerRegexChs}\\s*(${ZeroToNineIntegerRegexChs}|${ZeroToNineChsFullHalfRegexChs}|零))\\s*(((${ZeroToNineIntegerRegexChs}|${ZeroToNineChsFullHalfRegexChs})\\s*(\\s*[多几幾余]?\\s*${RoundNumberIntegerRegexChs}){1,2}|零)\\s*)*${ZeroToNineIntegerRegexChs}?`;
 	export const SingleRegexChs = `(?<!${ZeroToNineIntegerRegexChs})${ZeroToNineIntegerRegexChs}(?=${WhiteListRegex})`;
 	export const AllIntRegexChs = `(((${ZeroToNineIntegerRegexChs}|${ZeroToNineChsFullHalfRegexChs}|[十拾])\\s*(\\s*[多几幾余]?\\s*${RoundNumberIntegerRegexChs}){1,2}|[十拾]|${RoundNumberIntegerRegexChs}\\s*(${ZeroToNineIntegerRegexChs}|${ZeroToNineChsFullHalfRegexChs}|零))\\s*(((${ZeroToNineIntegerRegexChs}|${ZeroToNineChsFullHalfRegexChs})\\s*(\\s*[多几幾余]?\\s*${RoundNumberIntegerRegexChs}){1,2}|零)\\s*)*${ZeroToNineIntegerRegexChs}?|${ZeroToNineIntegerRegexChs})`;
-	export const NumbersSpecialsChars = `(${SignSymbolRegexNum}\\s*)?${ZeroToNineChsFullHalfRegexChs}+`;
+	export const NumbersSpecialsChars = `((${SignSymbolRegexNum}|${SignSymbolRegexChs})\\s*)?${ZeroToNineChsFullHalfRegexChs}+`;
 	export const NumbersSpecialsCharsWithSuffix = `${SignSymbolRegexNum}?${ZeroToNineChsFullHalfRegexChs}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)`;
 	export const DottedNumbersSpecialsChar = `${SignSymbolRegexNum}?${ZeroToNineChsFullHalfRegexChs}{1,3}([,，]${ZeroToNineChsFullHalfRegexChs}{3})+`;
 	export const NumbersWithHalfDozen = `半(${RoundNumberIntegerRegexChs}|打)`;

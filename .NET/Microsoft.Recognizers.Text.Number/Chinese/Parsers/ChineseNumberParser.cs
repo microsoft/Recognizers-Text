@@ -38,6 +38,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             {
                 simplifiedExtResultChs.Text = ReplaceFullWithHalf(simplifiedExtResultChs.Text);
                 ret = DigitNumberParse(simplifiedExtResultChs);
+                if (Config.SymbolRegex.IsMatch(simplifiedExtResultChs.Text) && (double)ret.Value > 0)
+                {
+                    ret.Value = -(double)ret.Value;
+                }
                 ret.ResolutionStr = ret.Value.ToString();
             }
             else if (extra.Contains("Pow"))
