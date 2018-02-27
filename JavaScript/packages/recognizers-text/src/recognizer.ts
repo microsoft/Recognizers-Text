@@ -1,12 +1,12 @@
 import { IModel, ModelFactory } from "./models"
 
-export abstract class Recognizer<TModelOptions> {
-  public readonly RecognizerOptions: TModelOptions;
+export abstract class Recognizer<TRecognizerOptions> {
+  public readonly RecognizerOptions: TRecognizerOptions;
   public readonly RecognizerCulture: string;
 
-  private readonly modelFactory: ModelFactory<TModelOptions> = new ModelFactory<TModelOptions>();
+  private readonly modelFactory: ModelFactory<TRecognizerOptions> = new ModelFactory<TRecognizerOptions>();
 
-  protected constructor(culture: string, options: TModelOptions) {
+  protected constructor(culture: string, options: TRecognizerOptions) {
     this.RecognizerCulture = culture;
     this.RecognizerOptions = options;
     this.InitializeConfiguration();
@@ -18,7 +18,7 @@ export abstract class Recognizer<TModelOptions> {
     return this.modelFactory.getModel(modelTypeName, this.RecognizerCulture, this.RecognizerOptions);
   }
 
-  registerModel(modelTypeName: string, culture: string, modelCreator: (options: TModelOptions) => IModel) {
+  registerModel(modelTypeName: string, culture: string, modelCreator: (options: TRecognizerOptions) => IModel) {
     this.modelFactory.registerModel(modelTypeName, culture, modelCreator);
   }
 }
