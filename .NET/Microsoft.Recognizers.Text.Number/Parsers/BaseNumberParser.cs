@@ -64,14 +64,14 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
-            //Resolve symbol prefix
-            bool isLessZero = false;
-            var matchSymbol = Config.SymbolRegex.Match(extResult.Text);
+            // Resolve symbol prefix
+            bool isNegative = false;
+            var matchNegative = Config.NegativeNumberSignRegex.Match(extResult.Text);
 
-            if (matchSymbol.Success)
+            if (matchNegative.Success)
             {
-                isLessZero = true;
-                extResult.Text = extResult.Text.Substring(matchSymbol.Groups[1].Length);
+                isNegative = true;
+                extResult.Text = extResult.Text.Substring(matchNegative.Groups[1].Length);
             }
 
             if (extra.Contains("Num"))
@@ -93,9 +93,10 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (ret?.Value != null)
             {
-                if (isLessZero)
+                if (isNegative)
                 {
-                    ret.Text = matchSymbol.Groups[1].Value + extResult.Text;
+                    // Recover to the origin extracted Text
+                    ret.Text = matchNegative.Groups[1].Value + extResult.Text;
                     ret.Value = -(double)ret.Value;
                 }
 
@@ -126,14 +127,14 @@ namespace Microsoft.Recognizers.Text.Number
 
             double scale = 10;
             var dot = false;
-            var isLessZero = false;
+            var isNegative = false;
             double tmp = 0;
             for (var i = 0; i < handle.Length; i++)
             {
                 var ch = handle[i];
                 if (ch == '^' || ch == 'E')
                 {
-                    if (isLessZero)
+                    if (isNegative)
                     {
                         calStack.Enqueue(-tmp);
                     }
@@ -144,7 +145,7 @@ namespace Microsoft.Recognizers.Text.Number
                     tmp = 0;
                     scale = 10;
                     dot = false;
-                    isLessZero = false;
+                    isNegative = false;
                 }
                 else if (ch >= '0' && ch <= '9')
                 {
@@ -165,7 +166,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (ch == '-')
                 {
-                    isLessZero = !isLessZero;
+                    isNegative = !isNegative;
                 }
                 else if (ch == '+')
                 {
@@ -174,7 +175,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (i == handle.Length - 1)
                 {
-                    if (isLessZero)
+                    if (isNegative)
                     {
                         calStack.Enqueue(-tmp);
                     }
@@ -660,7 +661,7 @@ namespace Microsoft.Recognizers.Text.Number
             double temp = 0;
             double scale = 10;
             var dot = false;
-            var isLessZero = false;
+            var isNegative = false;
             var isFrac = digitStr.Contains('/'); 
 
             var calStack = new Stack<double>();
@@ -697,7 +698,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (ch == '-')
                 {
-                    isLessZero = true;
+                    isNegative = true;
                 }
             }
             calStack.Push(temp);
@@ -717,7 +718,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
             calResult *= power;
 
-            if (isLessZero)
+            if (isNegative)
             {
                 return -calResult;
             }

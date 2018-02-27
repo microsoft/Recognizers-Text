@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            this.SymbolRegex = new Regex(NumbersDefinitions.SymbolRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         public Regex DigitalNumberRegex { get; private set; }
 
-        public Regex SymbolRegex { get; private set; }
+        public Regex NegativeNumberSignRegex { get; private set; }
 
         public string FractionMarkerToken { get; private set; }
 

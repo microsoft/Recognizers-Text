@@ -335,12 +335,12 @@ export class BaseNumberParser implements IParser {
 
         let scale = new BigNumber(10);
         let dot = false;
-        let isLessZero = false;
+        let isNegative = false;
         let tmp = new BigNumber(0);
         for (let i = 0; i < handle.length; i++) {
             let ch = handle[i];
             if (ch === '^' || ch === 'E') {
-                if (isLessZero) {
+                if (isNegative) {
                     calStack.push(tmp.negated());
                 }
                 else {
@@ -349,7 +349,7 @@ export class BaseNumberParser implements IParser {
                 tmp = new BigNumber(0);
                 scale = new BigNumber(10);
                 dot = false;
-                isLessZero = false;
+                isNegative = false;
             }
             else if (ch.charCodeAt(0) - 48 >= 0 && ch.charCodeAt(0) - 48 <= 9) {
                 if (dot) {
@@ -368,14 +368,14 @@ export class BaseNumberParser implements IParser {
                 scale = new BigNumber(0.1);
             }
             else if (ch === '-') {
-                isLessZero = !isLessZero;
+                isNegative = !isNegative;
             }
             else if (ch === '+') {
                 continue;
             }
 
             if (i === handle.length - 1) {
-                if (isLessZero) {
+                if (isNegative) {
                     calStack.push(tmp.negated());
                 }
                 else {
@@ -566,7 +566,7 @@ export class BaseNumberParser implements IParser {
         let tmp = new BigNumber(0);
         let scale = new BigNumber(10);
         let dot = false;
-        let isLessZero = false;
+        let isNegative = false;
         let isFrac = false;
 
         let calStack = new Array<BigNumber>();
@@ -598,7 +598,7 @@ export class BaseNumberParser implements IParser {
                 scale = new BigNumber(0.1);
             }
             else if (ch === '-') {
-                isLessZero = true;
+                isNegative = true;
             }
         }
         calStack.push(tmp);
@@ -619,7 +619,7 @@ export class BaseNumberParser implements IParser {
         // calResult *= power;
         calResult = calResult.times(power);
 
-        if (isLessZero) {
+        if (isNegative) {
             return calResult.negated().toNumber();
         }
 

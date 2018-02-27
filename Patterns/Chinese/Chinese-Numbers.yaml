@@ -148,13 +148,13 @@ FracSplitRegex: !simpleRegex
   def: 又|分\s*之
 ZeroToNineIntegerRegexChs: !simpleRegex
   def: '[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]'
-SignSymbolRegexChs: !simpleRegex
+NegativeNumberTermsRegexChs: !simpleRegex
   def: '[负負]'
-SignSymbolRegexNum: !simpleRegex
+NegativeNumberTermsRegexNum: !simpleRegex
   def: (?<![-－])[-－]
-SymbolRegex: !nestedRegex
-  def: ^{SignSymbolRegexChs}.*|^{SignSymbolRegexNum}.*
-  references: [SignSymbolRegexChs, SignSymbolRegexNum]
+NegativeNumberSignRegex: !nestedRegex
+  def: ^{NegativeNumberTermsRegexChs}.*|^{NegativeNumberTermsRegexNum}.*
+  references: [NegativeNumberTermsRegexChs, NegativeNumberTermsRegexNum]
 SpeGetNumberRegex: !nestedRegex
   def: '{ZeroToNineChsFullHalfRegexChs}|{ZeroToNineIntegerRegexChs}|[十拾半对對]'
   references: [ZeroToNineChsFullHalfRegexChs, ZeroToNineIntegerRegexChs]
@@ -174,14 +174,14 @@ AllIntRegexChs: !nestedRegex
   def: ((({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegexChs}){1,2}|[十拾]|{RoundNumberIntegerRegexChs}\s*({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs}|零))\s*((({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegexChs}){1,2}|零)\s*)*{ZeroToNineIntegerRegexChs}?|{ZeroToNineIntegerRegexChs})
   references: [ZeroToNineIntegerRegexChs, ZeroToNineChsFullHalfRegexChs, RoundNumberIntegerRegexChs]
 NumbersSpecialsChars: !nestedRegex
-  def: (({SignSymbolRegexNum}|{SignSymbolRegexChs})\s*)?{ZeroToNineChsFullHalfRegexChs}+
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs, SignSymbolRegexChs ]
+  def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegexChs})\s*)?{ZeroToNineChsFullHalfRegexChs}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs, NegativeNumberTermsRegexChs ]
 NumbersSpecialsCharsWithSuffix: !nestedRegex
-  def: '{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)'
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]
+  def: '{NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)'
+  references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs]
 DottedNumbersSpecialsChar: !nestedRegex
-  def: '{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}{1,3}([,，]{ZeroToNineChsFullHalfRegexChs}{3})+'
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]
+  def: '{NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}{1,3}([,，]{ZeroToNineChsFullHalfRegexChs}{3})+'
+  references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs]
 NumbersWithHalfDozen: !nestedRegex
   def: 半({RoundNumberIntegerRegexChs}|打)
   references: [RoundNumberIntegerRegexChs]
@@ -191,42 +191,42 @@ NumbersWithDozen: !nestedRegex
 PointRegexChsStr: !simpleRegex
   def: '[点點\.．]'
 AllFloatRegexChs: !nestedRegex
-  def: '{SignSymbolRegexChs}?{AllIntRegexChs}\s*{PointRegexChsStr}\s*[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇](\s*{ZeroToNineIntegerRegexChs})*'
-  references: [SignSymbolRegexChs, AllIntRegexChs, PointRegexChsStr, ZeroToNineIntegerRegexChs]
+  def: '{NegativeNumberTermsRegexChs}?{AllIntRegexChs}\s*{PointRegexChsStr}\s*[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇](\s*{ZeroToNineIntegerRegexChs})*'
+  references: [NegativeNumberTermsRegexChs, AllIntRegexChs, PointRegexChsStr, ZeroToNineIntegerRegexChs]
 NumbersWithoutPercent: !nestedRegex
-  def: (?<![百佰]\s*分\s*之\s*({AllIntRegexChs}[点點]*|{AllFloatRegexChs})*){SignSymbolRegexChs}?({NotSingleRegexChs}|{SingleRegexChs})(?!({AllIntRegexChs}*([点點]{ZeroToNineIntegerRegexChs}+)*|{AllFloatRegexChs})*\s*[个個]\s*[百佰]\s*分\s*[点點])
-  references: [AllIntRegexChs, AllFloatRegexChs, SignSymbolRegexChs, NotSingleRegexChs, SingleRegexChs, ZeroToNineIntegerRegexChs]
+  def: (?<![百佰]\s*分\s*之\s*({AllIntRegexChs}[点點]*|{AllFloatRegexChs})*){NegativeNumberTermsRegexChs}?({NotSingleRegexChs}|{SingleRegexChs})(?!({AllIntRegexChs}*([点點]{ZeroToNineIntegerRegexChs}+)*|{AllFloatRegexChs})*\s*[个個]\s*[百佰]\s*分\s*[点點])
+  references: [AllIntRegexChs, AllFloatRegexChs, NegativeNumberTermsRegexChs, NotSingleRegexChs, SingleRegexChs, ZeroToNineIntegerRegexChs]
 NumbersWithPercent: !nestedRegex
-  def: (?<![百佰]\s*分\s*之\s*({AllIntRegexChs}[点點]*|{AllFloatRegexChs})*){SignSymbolRegexChs}?{AllIntRegexChs}(?!({AllIntRegexChs}*([点點]{ZeroToNineIntegerRegexChs}+)*|{AllFloatRegexChs})*\s*[个個]\s*[百佰]\s*分\s*[点點])
-  references: [AllIntRegexChs, AllFloatRegexChs, SignSymbolRegexChs, ZeroToNineIntegerRegexChs]
+  def: (?<![百佰]\s*分\s*之\s*({AllIntRegexChs}[点點]*|{AllFloatRegexChs})*){NegativeNumberTermsRegexChs}?{AllIntRegexChs}(?!({AllIntRegexChs}*([点點]{ZeroToNineIntegerRegexChs}+)*|{AllFloatRegexChs})*\s*[个個]\s*[百佰]\s*分\s*[点點])
+  references: [AllIntRegexChs, AllFloatRegexChs, NegativeNumberTermsRegexChs, ZeroToNineIntegerRegexChs]
 #DoubleExtractor
 PointRegexChs: !nestedRegex
   def: '{PointRegexChsStr}'
   references: [PointRegexChsStr]
 DoubleSpecialsChars: !nestedRegex
-  def: (?<!({ZeroToNineChsFullHalfRegexChs}+[\.．]{ZeroToNineChsFullHalfRegexChs}*))({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+[\.．]{ZeroToNineChsFullHalfRegexChs}+(?!{ZeroToNineChsFullHalfRegexChs}*[\.．]{ZeroToNineChsFullHalfRegexChs}+)
-  references: [ZeroToNineChsFullHalfRegexChs, SignSymbolRegexNum]
+  def: (?<!({ZeroToNineChsFullHalfRegexChs}+[\.．]{ZeroToNineChsFullHalfRegexChs}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+[\.．]{ZeroToNineChsFullHalfRegexChs}+(?!{ZeroToNineChsFullHalfRegexChs}*[\.．]{ZeroToNineChsFullHalfRegexChs}+)
+  references: [ZeroToNineChsFullHalfRegexChs, NegativeNumberTermsRegexNum]
 DoubleSpecialsCharsWithNegatives: !nestedRegex
-  def: (?<!({ZeroToNineChsFullHalfRegexChs}+|\.\.|．．))({SignSymbolRegexNum}\s*)?[\.．]{ZeroToNineChsFullHalfRegexChs}+(?!{ZeroToNineChsFullHalfRegexChs}*([\.．]{ZeroToNineChsFullHalfRegexChs}+))
-  references: [ZeroToNineChsFullHalfRegexChs, SignSymbolRegexNum]
+  def: (?<!({ZeroToNineChsFullHalfRegexChs}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineChsFullHalfRegexChs}+(?!{ZeroToNineChsFullHalfRegexChs}*([\.．]{ZeroToNineChsFullHalfRegexChs}+))
+  references: [ZeroToNineChsFullHalfRegexChs, NegativeNumberTermsRegexNum]
 SimpleDoubleSpecialsChars: !nestedRegex
-  def: ({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}{1,3}([,，]{ZeroToNineChsFullHalfRegexChs}{3})+[\.．]{ZeroToNineChsFullHalfRegexChs}+
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]
+  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}{1,3}([,，]{ZeroToNineChsFullHalfRegexChs}{3})+[\.．]{ZeroToNineChsFullHalfRegexChs}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs]
 DoubleWithMultiplierRegex: !nestedRegex
-  def: ({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+[\.．]{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]
+  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+[\.．]{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)
+  references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs]
 DoubleWithThousandsRegex: !nestedRegex
-  def: '{SignSymbolRegexChs}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?\s*[多几幾余]?[万亿萬億]{1,2}'
-  references: [SignSymbolRegexChs, ZeroToNineChsFullHalfRegexChs]
+  def: '{NegativeNumberTermsRegexChs}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?\s*[多几幾余]?[万亿萬億]{1,2}'
+  references: [NegativeNumberTermsRegexChs, ZeroToNineChsFullHalfRegexChs]
 DoubleAllFloatRegex: !nestedRegex
   def: (?<![百佰]\s*分\s*之\s*(({AllIntRegexChs}[点點]*)|{AllFloatRegexChs})*){AllFloatRegexChs}(?!{ZeroToNineIntegerRegexChs}*\s*[个個]\s*[百佰]\s*分\s*[点點])
   references: [AllIntRegexChs, AllFloatRegexChs, ZeroToNineIntegerRegexChs]
 DoubleExponentialNotationRegex: !nestedRegex
-  def: (?<!{ZeroToNineChsFullHalfRegexChs}+[\.．])({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineChsFullHalfRegexChs}*)|[0０](?!{ZeroToNineChsFullHalfRegexChs}+))
-  references: [ZeroToNineChsFullHalfRegexChs, SignSymbolRegexNum]
+  def: (?<!{ZeroToNineChsFullHalfRegexChs}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineChsFullHalfRegexChs}*)|[0０](?!{ZeroToNineChsFullHalfRegexChs}+))
+  references: [ZeroToNineChsFullHalfRegexChs, NegativeNumberTermsRegexNum]
 DoubleScientificNotationRegex: !nestedRegex
-  def: (?<!{ZeroToNineChsFullHalfRegexChs}+[\.．])({SignSymbolRegexNum}\s*)?({ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineChsFullHalfRegexChs}*)
-  references: [ZeroToNineChsFullHalfRegexChs, SignSymbolRegexNum]
+  def: (?<!{ZeroToNineChsFullHalfRegexChs}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineChsFullHalfRegexChs}*)
+  references: [ZeroToNineChsFullHalfRegexChs, NegativeNumberTermsRegexNum]
 #OrdinalExtractor
 OrdinalRegexChs: !nestedRegex
   def: 第{AllIntRegexChs}
@@ -236,14 +236,14 @@ OrdinalNumbersRegex: !nestedRegex
   references: [ZeroToNineChsFullHalfRegexChs]
 #FractionExtractor
 AllFractionNumber: !nestedRegex
-  def: '{SignSymbolRegexChs}?(({ZeroToNineChsFullHalfRegexChs}+|{AllIntRegexChs})\s*又\s*)?{SignSymbolRegexChs}?({ZeroToNineChsFullHalfRegexChs}+|{AllIntRegexChs})\s*分\s*之\s*{SignSymbolRegexChs}?({ZeroToNineChsFullHalfRegexChs}+|{AllIntRegexChs})'
-  references: [SignSymbolRegexChs, ZeroToNineChsFullHalfRegexChs, AllIntRegexChs]
+  def: '{NegativeNumberTermsRegexChs}?(({ZeroToNineChsFullHalfRegexChs}+|{AllIntRegexChs})\s*又\s*)?{NegativeNumberTermsRegexChs}?({ZeroToNineChsFullHalfRegexChs}+|{AllIntRegexChs})\s*分\s*之\s*{NegativeNumberTermsRegexChs}?({ZeroToNineChsFullHalfRegexChs}+|{AllIntRegexChs})'
+  references: [NegativeNumberTermsRegexChs, ZeroToNineChsFullHalfRegexChs, AllIntRegexChs]
 FractionNotationSpecialsCharsRegex: !nestedRegex
-  def: ({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+\s+{ZeroToNineChsFullHalfRegexChs}+[/／]{ZeroToNineChsFullHalfRegexChs}+
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]
+  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+\s+{ZeroToNineChsFullHalfRegexChs}+[/／]{ZeroToNineChsFullHalfRegexChs}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs]
 FractionNotationRegex: !nestedRegex
-  def: ({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+[/／]{ZeroToNineChsFullHalfRegexChs}+
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]
+  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+[/／]{ZeroToNineChsFullHalfRegexChs}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs]
 #PercentageExtractor
 PercentagePointRegex: !nestedRegex
   def: (?<!{AllIntRegexChs})({AllFloatRegexChs}|{AllIntRegexChs})\s*[个個]\s*[百佰]\s*分\s*[点點]
@@ -288,8 +288,8 @@ NumbersFractionPercentageRegex: !nestedRegex
   def: '{ZeroToNineChsFullHalfRegexChs}{1,3}([,，]{ZeroToNineChsFullHalfRegexChs}{3})+\s*[个個]\s*[百佰]\s*分\s*[点點]'
   references: [ZeroToNineChsFullHalfRegexChs]
 SimpleIntegerPercentageRegex: !nestedRegex
-  def: '{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?(\s*)[％%]'
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]
+  def: '{NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?(\s*)[％%]'
+  references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs]
 NumbersFoldsPercentageRegex: !nestedRegex
   def: '{ZeroToNineChsFullHalfRegexChs}(([\.．]?|\s*){ZeroToNineChsFullHalfRegexChs})?\s*折'
   references: [ZeroToNineChsFullHalfRegexChs]

@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         IEnumerable<string> WrittenFractionSeparatorTexts { get; }
 
-        Regex SymbolRegex { get; }
+        Regex NegativeNumberSignRegex { get; }
 
         #endregion
 

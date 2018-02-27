@@ -1636,7 +1636,7 @@
 }
 ,
 {
-  "Input": "negative ninety - five hundred fifths",
+  "Input": "The answer is negative ninety - five hundred fifths",
   "NotSupportedByDesign": "python",
   "NotSupported": "javascript",
   "Results": [
@@ -1651,7 +1651,7 @@
 }
 ,
 {
-  "Input": "minus ninety - five hundred fifths",
+  "Input": "The answer is minus ninety - five hundred fifths",
   "NotSupportedByDesign": "python",
   "NotSupported": "javascript",
   "Results": [
@@ -1666,7 +1666,7 @@
 }
 ,
 {
-  "Input": "minus one",
+  "Input": "The answer is minus one",
   "NotSupportedByDesign": "python",
   "NotSupported": "javascript",
   "Results": [
@@ -1681,7 +1681,7 @@
 }
 ,
 {
-  "Input": "minus one hundred thirty fifths",
+  "Input": "The answer is minus one hundred thirty fifths",
   "NotSupportedByDesign": "python",
   "NotSupported": "javascript",
   "Results": [
@@ -1696,7 +1696,7 @@
 }
 ,
 {
-  "Input": "Negative one over 20",
+  "Input": "The answer is Negative one over 20",
   "NotSupportedByDesign": "python",
   "NotSupported": "javascript",
   "Results": [
