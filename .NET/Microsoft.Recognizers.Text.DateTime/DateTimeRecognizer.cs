@@ -1,48 +1,44 @@
-﻿using System;
-
+﻿using System.Collections.Generic;
 using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
-using Microsoft.Recognizers.Text.DateTime.German;
-
-using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class DateTimeRecognizer : Recognizer
+    public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-
-        private DateTimeOptions instanceOptions;
-
-        public static DateTimeOptions Convert(int value)
+        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = false)
+            : base(targetCulture, options, lazyInitialization)
         {
-            return EnumUtils.Convert<DateTimeOptions>(value);
         }
 
-        public static DateTimeRecognizer GetCleanInstance()
+        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false)
+            : this(targetCulture, GetOptions(options), lazyInitialization)
         {
-            return new DateTimeRecognizer();
         }
 
-        public static DateTimeRecognizer GetInstance(DateTimeOptions options = DateTimeOptions.None)
+        public DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
         {
-            return new DateTimeRecognizer(options);
         }
 
-        public static DateTimeRecognizer GetSingleCultureInstance(string cultureCode, DateTimeOptions options = DateTimeOptions.None)
+        public DateTimeRecognizer(int options, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
         {
-            return new DateTimeRecognizer(cultureCode, options);
         }
 
-        private DateTimeRecognizer(DateTimeOptions options)
+        public DateTimeModel GetDateTimeModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            Initialize(options);
+            return GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
         }
-
-        private void Initialize(DateTimeOptions options)
+        
+        public static List<ModelResult> RecognizeDateTime(string query, string culture, DateTimeOptions options = DateTimeOptions.None, System.DateTime? refTime = null, bool fallbackToDefaultCulture = true)
         {
+            var recognizer = new DateTimeRecognizer(options);
+            var model = recognizer.GetDateTimeModel(culture, fallbackToDefaultCulture);
+            return model.Parse(query, refTime ?? System.DateTime.Now);
 
             instanceOptions = options;
 
@@ -78,41 +74,31 @@ namespace Microsoft.Recognizers.Text.DateTime
                           ));
         }
 
-        private DateTimeRecognizer(string cultureCode, DateTimeOptions options)
+        protected override void InitializeConfiguration()
         {
+            RegisterModel<DateTimeModel>(
+                Culture.English,
+                (options) => new DateTimeModel(
+                    new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
+                    new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))));
 
-            instanceOptions = options;
+            RegisterModel<DateTimeModel>(
+                Culture.Chinese,
+                (options) => new DateTimeModel(
+                    new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
+                    new MergedExtractorChs(options)));
 
-            var type = typeof(DateTimeModel);
+            RegisterModel<DateTimeModel>(
+                Culture.Spanish,
+                (options) => new DateTimeModel(
+                    new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
+                    new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))));
 
-            switch (cultureCode) {
-                case Culture.English:
-                    RegisterModel(cultureCode, type, options.ToString(), new DateTimeModel(
-                                      new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
-                                      new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))
-                                  ));
-                    break;
-
-                case Culture.Chinese:
-                    RegisterModel(cultureCode, type, options.ToString(), new DateTimeModel(
-                                      new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
-                                      new MergedExtractorChs(options)
-                                  ));
-                    break;
-
-                case Culture.Spanish:
-                    RegisterModel(Culture.Spanish, type, options.ToString(), new DateTimeModel(
-                                      new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
-                                      new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))
-                                  ));
-                    break;
-
-                case Culture.French:
-                    RegisterModel(Culture.French, type, options.ToString(), new DateTimeModel(
-                                      new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
-                                      new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))
-                                  ));
-                    break;
+            RegisterModel<DateTimeModel>(
+                Culture.French,
+                (options) => new DateTimeModel(
+                    new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
+                    new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))));
 
                 case Culture.Portuguese:
                     RegisterModel(Culture.Portuguese, type, options.ToString(), new DateTimeModel(
@@ -179,6 +165,5 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return model;
         }
-  
     }
 }

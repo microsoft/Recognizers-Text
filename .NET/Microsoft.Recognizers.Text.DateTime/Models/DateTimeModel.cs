@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeModel : IModel
     {
-        public string ModelTypeName => "datetime";
+        public string ModelTypeName => Constants.MODEL_DATETIME;
         
         protected IDateTimeExtractor Extractor { get; private set; }
 
@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private string GetParentText(DateTimeParseResult parsedDateTime)
         {
-            return ((Dictionary<string, object>)(parsedDateTime.Data))[Constants.ParentText].ToString();
+            return ((Dictionary<string, object>)(parsedDateTime.Data))[ExtendedModelResult.ParentTextKey].ToString();
         }
 
     }

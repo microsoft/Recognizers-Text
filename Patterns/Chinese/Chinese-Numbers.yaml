@@ -174,8 +174,8 @@ AllIntRegexChs: !nestedRegex
   def: ((({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegexChs}){1,2}|[十拾]|{RoundNumberIntegerRegexChs}\s*({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs}|零))\s*((({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegexChs}){1,2}|零)\s*)*{ZeroToNineIntegerRegexChs}?|{ZeroToNineIntegerRegexChs})
   references: [ZeroToNineIntegerRegexChs, ZeroToNineChsFullHalfRegexChs, RoundNumberIntegerRegexChs]
 NumbersSpecialsChars: !nestedRegex
-  def: ({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+
-  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]
+  def: (({SignSymbolRegexNum}|{SignSymbolRegexChs})\s*)?{ZeroToNineChsFullHalfRegexChs}+
+  references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs, SignSymbolRegexChs ]
 NumbersSpecialsCharsWithSuffix: !nestedRegex
   def: '{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)'
   references: [SignSymbolRegexNum, ZeroToNineChsFullHalfRegexChs]

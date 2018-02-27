@@ -165,7 +165,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string NotSingleRegexChs = $@"(({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegexChs}){{1,2}}|[十拾]|{RoundNumberIntegerRegexChs}\s*({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs}|零))\s*((({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegexChs}){{1,2}}|零)\s*)*{ZeroToNineIntegerRegexChs}?";
 		public static readonly string SingleRegexChs = $@"(?<!{ZeroToNineIntegerRegexChs}){ZeroToNineIntegerRegexChs}(?={WhiteListRegex})";
 		public static readonly string AllIntRegexChs = $@"((({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs}|[十拾])\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegexChs}){{1,2}}|[十拾]|{RoundNumberIntegerRegexChs}\s*({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs}|零))\s*((({ZeroToNineIntegerRegexChs}|{ZeroToNineChsFullHalfRegexChs})\s*(\s*[多几幾余]?\s*{RoundNumberIntegerRegexChs}){{1,2}}|零)\s*)*{ZeroToNineIntegerRegexChs}?|{ZeroToNineIntegerRegexChs})";
-		public static readonly string NumbersSpecialsChars = $@"({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+";
+		public static readonly string NumbersSpecialsChars = $@"(({SignSymbolRegexNum}|{SignSymbolRegexChs})\s*)?{ZeroToNineChsFullHalfRegexChs}+";
 		public static readonly string NumbersSpecialsCharsWithSuffix = $@"{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)";
 		public static readonly string DottedNumbersSpecialsChar = $@"{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}{{1,3}}([,，]{ZeroToNineChsFullHalfRegexChs}{{3}})+";
 		public static readonly string NumbersWithHalfDozen = $@"半({RoundNumberIntegerRegexChs}|打)";

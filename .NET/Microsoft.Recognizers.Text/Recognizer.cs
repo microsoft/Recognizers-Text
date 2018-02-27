@@ -1,47 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text
 {
-    public abstract class Recognizer : IRecognizer {
+    public abstract class Recognizer<TRecognizerOptions> where TRecognizerOptions : struct
+    {
+        private readonly ModelFactory<TRecognizerOptions> factory;
 
-        private const string NoneOptions = "None";
+        public string TargetCulture { get; private set; }
 
-        private readonly ModelContainer modelContainer = new ModelContainer();
+        public TRecognizerOptions Options { get; private set; }
 
-        protected void RegisterModel(string culture, Type type, string options, IModel model)
+        protected Recognizer(string targetCulture, TRecognizerOptions options, bool lazyInitialization)
         {
-            modelContainer.RegisterModel(culture, type, model, options);
+            this.Options = options;
+            this.TargetCulture = targetCulture;
+
+            this.factory = new ModelFactory<TRecognizerOptions>();
+            InitializeConfiguration();
+
+            if (!lazyInitialization)
+            {
+                this.InitializeModels(targetCulture, options);
+            }
+        }
+        
+        protected T GetModel<T>(string culture, bool fallbackToDefaultCulture) where T : IModel
+        {
+            return this.factory.GetModel<T>(culture ?? TargetCulture, fallbackToDefaultCulture, Options);
         }
 
-        protected void RegisterModel(string culture, string options, Dictionary<Type, IModel> models)
+        protected void RegisterModel<T>(string culture, Func<TRecognizerOptions, IModel> modelCreator)
         {
-            modelContainer.RegisterModel(culture, models, options);
+            this.factory.Add((culture, typeof(T)), modelCreator);
         }
 
-        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = NoneOptions)
+        protected abstract void InitializeConfiguration();
+
+        private void InitializeModels(string targetCulture, TRecognizerOptions options)
         {
-            return modelContainer.GetModel<TModel>(culture, fallbackToDefaultCulture, options);
+            this.factory.InitializeModels(targetCulture, options);
         }
 
-        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture = true, string options = NoneOptions)
-        {
-            return modelContainer.TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture, options);
-        }
-
-        protected bool ContainsModels()
-        {
-            return modelContainer.ContainsModels();
-        }
-
-        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = NoneOptions)
-        {
-            return modelContainer.ContainsModel<TModel>(culture, fallbackToDefaultCulture, options);
-        }
-
-        protected IModel GetSingleModel<TModel>()
-        {
-            return modelContainer.GetSingleModel<TModel>();
-        }
+        public static TRecognizerOptions GetOptions(int value) => EnumUtils.Convert<TRecognizerOptions>(value);
     }
 }

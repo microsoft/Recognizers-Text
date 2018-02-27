@@ -11,8 +11,8 @@ for /f "usebackq tokens=*" %%i in (`..\packages\vswhere.2.2.7\tools\vswhere -lat
 if not exist ..\nuget mkdir ..\nuget
 if exist ..\nuget\Microsoft.Recognizers.Text.Sequence*.nupkg erase /s ..\nuget\Microsoft.Recognizers.Text.Sequence*.nupkg
 "%MSBuildDir%\MSBuild\15.0\Bin\MSBuild.exe" /property:Configuration=release Microsoft.Recognizers.Text.Sequence.csproj
-for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\net462\Microsoft.Recognizers.Text.dll).FileVersionInfo.FileVersion"') do set basic=%%v
-for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\net462\Microsoft.Recognizers.Text.Sequence.dll).FileVersionInfo.FileVersion"') do set numberVersion=%%v
+for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\netstandard2.0\Microsoft.Recognizers.Text.dll).FileVersionInfo.FileVersion"') do set basic=%%v
+for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\netstandard2.0\Microsoft.Recognizers.Text.Sequence.dll).FileVersionInfo.FileVersion"') do set numberVersion=%%v
 ..\packages\NuGet.CommandLine.4.3.0\tools\NuGet.exe pack Microsoft.Recognizers.Text.Sequence.nuspec -symbols -properties version=%numberVersion%;basic=%basic% -OutputDirectory ..\nuget
 
 set error=%errorlevel%

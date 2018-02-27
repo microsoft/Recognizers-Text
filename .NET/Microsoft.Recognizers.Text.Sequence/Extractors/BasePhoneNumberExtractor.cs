@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Sequence
     {
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
 
-        protected sealed override string ExtractType { get; } = Constants.MODEL_PHONE_NUMBER;
+        protected sealed override string ExtractType { get; } = Constants.SYS_PHONE_NUMBER;
 
         public BasePhoneNumberExtractor()
         {
