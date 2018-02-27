@@ -47,6 +47,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Ich bin nächsten Monat vom 4. bis zum 23. weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-01T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nächsten Monat vom 4. bis zum 23.",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        }
+      }
+    ]
   },{
     "Input": "Ich bin diesen Monat vom 4. bis zum 22. weg",
     "Context": {

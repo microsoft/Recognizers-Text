@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if ((trimedText.EndsWith("morgen")|| trimedText.EndsWith("morgens")) && hour >= 12)
+            if ((trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour >= 12)
             {
                 result -= 12;
             }

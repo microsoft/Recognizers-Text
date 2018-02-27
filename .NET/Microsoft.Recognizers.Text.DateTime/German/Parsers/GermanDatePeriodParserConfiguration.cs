@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsMonthOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("monat")|| trimedText.EndsWith("monate")|| trimedText.EndsWith("monaten")|| trimedText.EndsWith("monats"));
+            return (trimedText.EndsWith("monat") || trimedText.EndsWith("monate") || trimedText.EndsWith("monaten") || trimedText.EndsWith("monats"));
         }
 
         public bool IsMonthToDate(string text)
@@ -214,7 +214,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsWeekend(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("wochenende")|| trimedText.EndsWith("wochenendes"));
+            return (trimedText.EndsWith("wochenende") || trimedText.EndsWith("wochenendes"));
         }
 
         public bool IsWeekOnly(string text)
