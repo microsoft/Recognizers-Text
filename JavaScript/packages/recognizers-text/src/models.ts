@@ -14,11 +14,11 @@ export class ModelResult {
     resolution: { [key: string]: any }
 }
 
-class ModelFactoryKey {
+class ModelFactoryKey<TModelOptions> {
     culture: string;
     modelType: string;
-    options: string;
-    constructor(culture: string, modelType: string, options: string = null) {
+    options: TModelOptions;
+    constructor(culture: string, modelType: string, options: TModelOptions = null) {
         this.culture = culture.toLowerCase();
         this.modelType = modelType;
         this.options = options;
@@ -28,8 +28,8 @@ class ModelFactoryKey {
         return JSON.stringify(this);
     }
 
-    public static fromString(key: string): ModelFactoryKey {
-        return <ModelFactoryKey>JSON.parse(key);
+    public static fromString<TModelOptions>(key: string): ModelFactoryKey<TModelOptions> {
+        return <ModelFactoryKey<TModelOptions>>JSON.parse(key);
     }
 }
 
@@ -93,6 +93,6 @@ export class ModelFactory<TModelOptions> {
     }
     
     private generateCacheKey(modelTypeName: string, culture: string, options: TModelOptions): string {
-        return new ModelFactoryKey(culture, modelTypeName, options.toString()).toString();
+        return new ModelFactoryKey<TModelOptions>(culture, modelTypeName, options).toString();
     }
 }
