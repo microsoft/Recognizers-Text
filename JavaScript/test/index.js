@@ -7,6 +7,7 @@ var dateTimeRecognizerEnglish = require('./dateTimeRecognizer-english');
 var dateTimeRecognizerInitialization = require('./dateTimeRecognizer-initialization');
 var numberRecognizerEnglish = require('./numberRecognizer-english');
 var numberRecognizerInitialization = require('./numberRecognizer-initialization');
+var numberWithUnitRecognizerEnglish = require('./numberWithUnitRecognizer-english');
 
 // run
 SpecRunner(describe, specs.readAll());
@@ -15,4 +16,4 @@ dateTimeRecognizerEnglish(describe);
 dateTimeRecognizerInitialization(describe);
 choiceRecognizerEnglish(describe);
 choiceRecognizerInitialization(describe);
-numberRecognizerInitialization(describe);
+numberRecognizerInitialization(describe);numberWithUnitRecognizerEnglish(describe);
