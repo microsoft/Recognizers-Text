@@ -10,7 +10,9 @@ namespace Microsoft.Recognizers.Text.Choice.Extractors
     public class ChoiceExtractDataResult
     {
         public IEnumerable<ExtractResult> OtherMatches { get; set; }
+
         public string Source { get; set; }
+
         public double Score { get; set; }
     }
 
@@ -175,6 +177,7 @@ namespace Microsoft.Recognizers.Text.Choice.Extractors
                     token = string.Empty;
                 }
             }
+
             if (!string.IsNullOrWhiteSpace(token))
             {
                 tokens.Add(token);

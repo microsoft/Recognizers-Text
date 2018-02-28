@@ -9,8 +9,10 @@ namespace Microsoft.Recognizers.Text.Choice.English.Extractors
     {
         public static readonly Regex TrueRegex = 
             new Regex(OptionsDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex FalseRegex = 
             new Regex(OptionsDefinitions.FalseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex TokenRegex = 
             new Regex(OptionsDefinitions.TokenizerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

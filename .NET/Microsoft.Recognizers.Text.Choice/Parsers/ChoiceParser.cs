@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.Choice.Extractors;
 
 namespace Microsoft.Recognizers.Text.Choice.Parsers
@@ -11,13 +7,16 @@ namespace Microsoft.Recognizers.Text.Choice.Parsers
     public class OptionsOtherMatchParseResult
     {
         public double Score { get; set; }
+
         public string Text { get; set; }
+
         public object Value { get; set; }
     }
 
     public class OptionsParseDataResult
     {
         public double Score { get; set; }
+
         public IEnumerable<OptionsOtherMatchParseResult> OtherMatches { get; set; }
     }
 
