@@ -18,6 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeParser HolidayParser { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public GermanMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;
@@ -30,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));
             GetParser = new BaseSetParser(new GermanSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration());
+            TimeZoneParser = new BaseTimeZoneParser();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SYS_DATETIME_DURATION = "duration";
         public const string SYS_DATETIME_SET = "set";
         public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
+        public const string SYS_DATETIME_TIMEZONE = "timezone";
 
         // Model Name
         public const string MODEL_DATETIME = "datetime";
@@ -57,5 +58,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
+
+        // special value for timezone
+        public const int Illegal = -10000;
+        public const string UTCSHIFT = "UTC MINUTES SHIFT";
     }
 }

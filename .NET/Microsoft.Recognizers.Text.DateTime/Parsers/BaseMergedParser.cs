@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     modStr = match.Value;
                 }
             }
-                
+
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
@@ -97,6 +97,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
             {
                 pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
+            }
+            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
+            {
+                pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
             {

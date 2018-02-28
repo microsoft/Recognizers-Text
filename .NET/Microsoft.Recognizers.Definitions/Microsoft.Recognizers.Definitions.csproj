@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="English\TimeZoneDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TimeZoneDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="French\DateTimeDefinitions.cs">
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -189,6 +194,10 @@
     <None Update="English\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="English\TimeZoneDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TimeZoneDefinitions.cs</LastGenOutput>
     </None>
     <None Update="French\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
