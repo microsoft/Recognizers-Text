@@ -20,7 +20,7 @@ class ModelFactoryKey<TModelOptions> {
     modelType: string;
     options: TModelOptions;
     constructor(culture: string, modelType: string, options: TModelOptions = null) {
-        this.culture = culture.toLowerCase();
+        this.culture = culture ? culture.toLowerCase() : null;
         this.modelType = modelType;
         this.options = options;
     }
