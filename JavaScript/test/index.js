@@ -12,3 +12,4 @@ numberRecognizerEnglish(describe);
 dateTimeRecognizerEnglish(describe);
 dateTimeRecognizerInitialization(describe);
 choiceRecognizerEnglish(describe);
+choiceRecognizerInitialization(describe);

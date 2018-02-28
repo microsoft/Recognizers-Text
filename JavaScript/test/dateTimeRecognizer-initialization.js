@@ -45,8 +45,8 @@ module.exports = function (describe) {
 
         it('InitializationWithIntOption_ResolveOptionsEnum', t => {
             var recognizer = new DateTimeRecognizer(EnglishCulture, 5);
-            t.true((recognizer.Options & DateTimeOptions.SkipFromToMerge) > 0);
-            t.true((recognizer.Options & DateTimeOptions.Calendar) > 0);
+            t.true((recognizer.Options & DateTimeOptions.SkipFromToMerge) === DateTimeOptions.SkipFromToMerge);
+            t.true((recognizer.Options & DateTimeOptions.Calendar) === DateTimeOptions.Calendar);
         });
 
         it('InitializationWithInvalidOptions_ThrowError', t => {
