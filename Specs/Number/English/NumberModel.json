@@ -1638,7 +1638,6 @@
 {
   "Input": "The answer is negative ninety - five hundred fifths",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "negative ninety - five hundred fifths",
@@ -1653,7 +1652,6 @@
 {
   "Input": "The answer is minus ninety - five hundred fifths",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "minus ninety - five hundred fifths",
@@ -1668,7 +1666,6 @@
 {
   "Input": "The answer is minus one",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "minus one",
@@ -1683,7 +1680,6 @@
 {
   "Input": "The answer is minus one hundred thirty fifths",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "minus one hundred thirty fifths",
@@ -1696,15 +1692,42 @@
 }
 ,
 {
-  "Input": "The answer is Negative one over 20",
+  "Input": "The answer is negative one over 20",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
   "Results": [
     {
-      "Text": "Negative one over 20",
+      "Text": "negative one over 20",
       "TypeName": "number",
       "Resolution": {
         "value": "-0.05"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The answer is minus five point five",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "minus five point five",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-5.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The answer is minus 5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "minus 5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-5"
       }
     }
   ]
