@@ -8,12 +8,15 @@ var dateTimeRecognizerInitialization = require('./dateTimeRecognizer-initializat
 var numberRecognizerEnglish = require('./numberRecognizer-english');
 var numberRecognizerInitialization = require('./numberRecognizer-initialization');
 var numberWithUnitRecognizerEnglish = require('./numberWithUnitRecognizer-english');
+var numberWithUnitRecognizerInitialization = require('./numberWithUnitRecognizer-initialization');
 
 // run
 SpecRunner(describe, specs.readAll());
-numberRecognizerEnglish(describe);
 dateTimeRecognizerEnglish(describe);
 dateTimeRecognizerInitialization(describe);
 choiceRecognizerEnglish(describe);
 choiceRecognizerInitialization(describe);
-numberRecognizerInitialization(describe);numberWithUnitRecognizerEnglish(describe);
+numberRecognizerEnglish(describe);
+numberRecognizerInitialization(describe);
+numberWithUnitRecognizerEnglish(describe);
+numberWithUnitRecognizerInitialization(describe);

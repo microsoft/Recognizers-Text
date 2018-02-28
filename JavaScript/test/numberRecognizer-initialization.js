@@ -49,7 +49,7 @@ module.exports = function (describe) {
         });
 
         it('InitializationWithInvalidOptions_ThrowError', t => {
-            t.throws(() => { new DateTimeRecognizer(InvalidCulture, -1)});
+            t.throws(() => { new NumberRecognizer(InvalidCulture, -1)});
         });
     });
 }
