@@ -12,6 +12,7 @@ export class PortugueseNumberParserConfiguration implements INumberParserConfigu
     readonly cultureInfo: CultureInfo;
     readonly digitalNumberRegex: RegExp;
     readonly fractionMarkerToken: string;
+    readonly negativeNumberSignRegex: RegExp;
     readonly halfADozenRegex: RegExp;
     readonly halfADozenText: string;
     readonly langMarker: string;
@@ -55,6 +56,7 @@ export class PortugueseNumberParserConfiguration implements INumberParserConfigu
         this.cardinalNumberMap = PortugueseNumeric.CardinalNumberMap;
         this.ordinalNumberMap = ordinalNumberMap;
         this.roundNumberMap = PortugueseNumeric.RoundNumberMap;
+        this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(PortugueseNumeric.NegativeNumberSignRegex, "is");
         this.halfADozenRegex = RegExpUtility.getSafeRegExp(PortugueseNumeric.HalfADozenRegex);
         this.digitalNumberRegex = RegExpUtility.getSafeRegExp(PortugueseNumeric.DigitalNumberRegex);
     }

@@ -51,6 +51,21 @@
 }
 ,
 {
+  "Input": "He scores between negative ten and fifteen.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between negative ten and fifteen",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(-10,15)"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "He ranks higher than the tenth but lower than the fifteenth.",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",

@@ -38,6 +38,10 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             {
                 simplifiedExtResultChs.Text = ReplaceFullWithHalf(simplifiedExtResultChs.Text);
                 ret = DigitNumberParse(simplifiedExtResultChs);
+                if (Config.NegativeNumberSignRegex.IsMatch(simplifiedExtResultChs.Text) && (double)ret.Value > 0)
+                {
+                    ret.Value = -(double)ret.Value;
+                }
                 ret.ResolutionStr = ret.Value.ToString();
             }
             else if (extra.Contains("Pow"))
@@ -136,7 +140,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                 ? GetDigitValueChs(demoPart, 1.0)
                 : GetIntValueChs(demoPart);
 
-            if (Config.SymbolRegex.IsMatch(intPart))
+            if (Config.NegativeNumberSignRegex.IsMatch(intPart))
             {
                 result.Value = intValue - numValue / demoValue;
             }
@@ -177,7 +181,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     splitResult[0] = "零";
                 }
 
-                if (Config.SymbolRegex.IsMatch(splitResult[0]))
+                if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
                 {
                     result.Value = GetIntValueChs(splitResult[0]) - GetPointValue(splitResult[1]);
                 }
@@ -338,7 +342,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                 var doubleValue = GetIntValueChs(splitResult[0]);
                 if (splitResult.Length == 2)
                 {
-                    if (Config.SymbolRegex.IsMatch(splitResult[0]))
+                    if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
                     {
                         doubleValue -= GetPointValue(splitResult[1]);
                     }
@@ -378,16 +382,16 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         private double GetDigitValueChs(string intStr, double power)
         {
-            var isLessZero = false;
-            if (Config.SymbolRegex.IsMatch(intStr))
+            var isNegative = false;
+            if (Config.NegativeNumberSignRegex.IsMatch(intStr))
             {
-                isLessZero = true;
+                isNegative = true;
                 intStr = intStr.Substring(1);
             }
 
             intStr = ReplaceFullWithHalf(intStr);
             var intValue = GetDigitalValue(intStr, power);
-            if (isLessZero)
+            if (isNegative)
             {
                 intValue = -intValue;
             }
@@ -414,11 +418,11 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             double intValue = 0, partValue = 0, beforeValue = 1;
             var isRoundBefore = false;
             long roundBefore = -1, roundDefault = 1;
-            var isLessZero = false;
+            var isNegative = false;
 
-            if (Config.SymbolRegex.IsMatch(intStr))
+            if (Config.NegativeNumberSignRegex.IsMatch(intStr))
             {
-                isLessZero = true;
+                isNegative = true;
                 intStr = intStr.Substring(1);
             }
 
@@ -482,7 +486,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                 }
             }
 
-            if (isLessZero)
+            if (isNegative)
             {
                 intValue = -intValue;
             }

@@ -18,7 +18,7 @@ export default {
   plugins: [
     alias({
       '@microsoft/recognizers-text': path.resolve(__dirname, '../recognizers-text/compiled/recognizers-text.js'),
-      '@microsoft/recognizers-text-options': path.resolve(__dirname, '../recognizers-options/compiled/recognizers-text-options.js'),
+      '@microsoft/recognizers-text-choice': path.resolve(__dirname, '../recognizers-choice/compiled/recognizers-text-choice.js'),
       '@microsoft/recognizers-text-number': path.resolve(__dirname, '../recognizers-number/compiled/recognizers-text-number.js'),
       '@microsoft/recognizers-text-number-with-unit': path.resolve(__dirname, '../recognizers-number-with-unit/compiled/recognizers-text-number-with-unit.js'),
       '@microsoft/recognizers-text-date-time': path.resolve(__dirname, '../recognizers-date-time/compiled/recognizers-text-date-time.js'),

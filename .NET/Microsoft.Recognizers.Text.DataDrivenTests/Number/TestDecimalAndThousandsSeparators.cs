@@ -42,6 +42,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public IEnumerable<string> WrittenFractionSeparatorTexts { get; }
 
+        // Test-specific initialization: the Regex matches nothing.
+        public Regex NegativeNumberSignRegex { get; } = new Regex(@"[^\s\S]"); 
+
         public LongFormTestConfiguration(char decimalSep, char nonDecimalSep)
         {
             this.DecimalSeparatorChar = decimalSep;
@@ -52,7 +55,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             this.RoundNumberMap = ImmutableDictionary<string, long>.Empty;
             this.DigitalNumberRegex = new Regex(@"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
                                                 RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Singleline);
-
         }
 
         public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)

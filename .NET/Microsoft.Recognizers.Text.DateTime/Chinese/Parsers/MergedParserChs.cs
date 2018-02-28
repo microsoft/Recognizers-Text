@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var val = (DateTimeResolutionResult)pr.Value;
                 if (val != null)
                 {
-                    val.Mod = TimeTypeConstants.BEFORE_MOD;
+                    val.Mod = Constants.BEFORE_MOD;
                 }
                 pr.Value = val;
             }
@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var val = (DateTimeResolutionResult)pr.Value;
                 if (val != null)
                 {
-                    val.Mod = TimeTypeConstants.AFTER_MOD;
+                    val.Mod = Constants.AFTER_MOD;
                 }
                 pr.Value = val;
             }
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var val = (DateTimeResolutionResult)pr.Value;
                 if (val != null)
                 {
-                    val.Mod = TimeTypeConstants.SINCE_MOD;
+                    val.Mod = Constants.SINCE_MOD;
                 }
                 pr.Value = val;
             }

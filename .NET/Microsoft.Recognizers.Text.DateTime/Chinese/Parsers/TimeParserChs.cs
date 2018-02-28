@@ -176,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (noDesc)
             {
                 //build.Append("ampm");
-                dtResult.Comment = "ampm";
+                dtResult.Comment = Constants.Comment_AmPm;
             }
 
             dtResult.Timex = build.ToString();

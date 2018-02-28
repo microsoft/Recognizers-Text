@@ -50,12 +50,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         Resolution = (o.Value is UnitValue) ?
                             new SortedDictionary<string, object>
                             {
-                                {"value", ((UnitValue)o.Value).Number},
-                                {"unit", ((UnitValue)o.Value).Unit}
+                                {ResolutionKey.Value, ((UnitValue)o.Value).Number},
+                                {ResolutionKey.Unit, ((UnitValue)o.Value).Unit}
                             }
                             : new SortedDictionary<string, object>
                             {
-                                {"value", (string)o.Value}
+                                {ResolutionKey.Value, (string)o.Value}
                             },
                         Text = o.Text,
                         TypeName = ModelTypeName
