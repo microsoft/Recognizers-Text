@@ -23,8 +23,8 @@ function recognizeByModel(getModelFunc: (n: DateTimeRecognizer) => IDateTimeMode
 }
 
 export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
-    constructor(culture: string, options: DateTimeOptions = DateTimeOptions.None) {
-        super(culture, options);
+    constructor(culture: string, options: DateTimeOptions = DateTimeOptions.None, lazyInitialization: boolean = false) {
+        super(culture, options, lazyInitialization);
     }
 
     protected InitializeConfiguration() {

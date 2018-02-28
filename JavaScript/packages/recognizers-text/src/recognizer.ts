@@ -6,10 +6,14 @@ export abstract class Recognizer<TRecognizerOptions> {
 
   private readonly modelFactory: ModelFactory<TRecognizerOptions> = new ModelFactory<TRecognizerOptions>();
 
-  protected constructor(culture: string, options: TRecognizerOptions) {
-    this.TargetCulture = culture;
+  protected constructor(targetCulture: string, options: TRecognizerOptions, lazyInitialization: boolean) {
+    this.TargetCulture = targetCulture;
     this.RecognizerOptions = options;
     this.InitializeConfiguration();
+
+    if (!lazyInitialization) {
+      this.initializeModels(targetCulture, options)
+    }
   }
 
   protected abstract InitializeConfiguration();
@@ -20,5 +24,9 @@ export abstract class Recognizer<TRecognizerOptions> {
 
   registerModel(modelTypeName: string, culture: string, modelCreator: (options: TRecognizerOptions) => IModel) {
     this.modelFactory.registerModel(modelTypeName, culture, modelCreator);
+  }
+
+  private initializeModels(targetCulture: string, options: TRecognizerOptions) {
+    this.modelFactory.initializeModels(targetCulture, options);
   }
 }

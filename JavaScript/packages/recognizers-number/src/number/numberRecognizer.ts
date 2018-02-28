@@ -37,9 +37,8 @@ function recognizeByModel(getModelFunc: (n: NumberRecognizer) => IModel, query: 
 }
 
 export default class NumberRecognizer extends Recognizer<NumberOptions> {
-
-    constructor(culture, options: NumberOptions = NumberOptions.None) {
-        super(culture, options);
+    constructor(culture, options: NumberOptions = NumberOptions.None, lazyInitialization: boolean = false) {
+        super(culture, options, lazyInitialization);
     }
 
     protected InitializeConfiguration() {

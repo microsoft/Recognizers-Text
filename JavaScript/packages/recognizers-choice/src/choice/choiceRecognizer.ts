@@ -19,8 +19,8 @@ function recognizeByModel(getModelFunc: (n: OptionsRecognizer) => IModel, query:
 }
 
 export default class OptionsRecognizer extends Recognizer<ChoiceOptions> {
-    constructor(culture: string, options: ChoiceOptions = ChoiceOptions.None) {
-        super(culture, options);
+    constructor(culture: string, options: ChoiceOptions = ChoiceOptions.None, lazyInitialization: boolean = false) {
+        super(culture, options, lazyInitialization);
     }
 
     protected InitializeConfiguration() {

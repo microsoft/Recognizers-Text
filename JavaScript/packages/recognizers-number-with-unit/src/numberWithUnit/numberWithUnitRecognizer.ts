@@ -51,8 +51,8 @@ function recognizeByModel(getModelFunc: (n: NumberWithUnitRecognizer) => IModel,
 }
 
 export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> {
-    constructor(culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None) {
-        super(culture, options);
+    constructor(culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, lazyInitialization: boolean = false) {
+        super(culture, options, lazyInitialization);
     }
 
     protected InitializeConfiguration() {
