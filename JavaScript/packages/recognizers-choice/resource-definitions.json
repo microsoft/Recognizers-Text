@@ -2,10 +2,10 @@
     "outputPath": "./src/resources/",
     "configFiles": [
         {
-            "input": [ "English", "English-Options" ],
-            "output": "englishOptions",
+            "input": [ "English", "English-Choice" ],
+            "output": "englishChoice",
             "header": [
-                "export namespace EnglishOptions {"
+                "export namespace EnglishChoice {"
             ],
             "footer": [ "}" ]
         }

@@ -11,7 +11,7 @@ export interface IChoiceExtractorConfiguration {
     onlyTopMatch: boolean;
 }
 
-export class OptionsExtractor implements IExtractor {
+export class ChoiceExtractor implements IExtractor {
     private readonly config: IChoiceExtractorConfiguration;
     protected extractType: string;
 
@@ -133,7 +133,7 @@ export interface IBooleanExtractorConfiguration {
     onlyTopMatch: boolean;
 }
 
-export class BooleanExtractor extends OptionsExtractor {
+export class BooleanExtractor extends ChoiceExtractor {
     private static readonly booleanTrue = Constants.SYS_BOOLEAN_TRUE;
     private static readonly booleanFalse = Constants.SYS_BOOLEAN_FALSE;
 

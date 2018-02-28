@@ -1,14 +1,14 @@
 var _ = require('lodash');
-var OptionsRecognizer = require('@microsoft/recognizers-text-options').OptionsRecognizer;
+var ChoiceRecognizer = require('@microsoft/recognizers-text-choice').ChoiceRecognizer;
 var SupportedCultures = require('./cultures.js');
 
 var modelGetters = {
-    'BooleanModel': OptionsRecognizer.instance.getBooleanModel
+    'BooleanModel': ChoiceRecognizer.instance.getBooleanModel
 };
 
-module.exports = function getOptionsTestRunner(config) {
+module.exports = function getChoiceTestRunner(config) {
     try {
-        var model = getOptionsModel(config);
+        var model = getChoiceModel(config);
     } catch (err) {
         return null;
     }
@@ -35,16 +35,16 @@ module.exports = function getOptionsTestRunner(config) {
     };
 }
 
-function getOptionsModel(config) {
+function getChoiceModel(config) {
     var getModel = modelGetters[config.subType];
     if (!getModel) {
-        throw new Error(`Options model of ${config.subType} not supported.`);
+        throw new Error(`Choice model of ${config.subType} not supported.`);
     }
 
     var culture = SupportedCultures[config.language].cultureCode;
     if (!culture) {
-        throw new Error(`Options model of ${config.subType} with culture ${config.language} not supported.`);
+        throw new Error(`Choice model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(OptionsRecognizer.instance)(culture, false);
+    return getModel.bind(ChoiceRecognizer.instance)(culture, false);
 }

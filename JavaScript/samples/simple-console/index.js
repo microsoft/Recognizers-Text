@@ -88,7 +88,7 @@ function getModels() {
 
         // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
         // E.g "yup, I need that" will return "True"
-        Recognizers.OptionsRecognizer.instance.getBooleanModel(defaultCulture)
+        Recognizers.ChoiceRecognizer.instance.getBooleanModel(defaultCulture)
     ];
 }
 

@@ -1,14 +1,14 @@
 import { IParser, ExtractResult, ParseResult } from "@microsoft/recognizers-text";
 import { Constants } from "./constants";
 
-export interface IOptionsParserConfiguration<T> {
+export interface IChoiceParserConfiguration<T> {
     resolutions: Map<string, T>;
 }
 
-export class OptionsParser<T> implements IParser {
-    private readonly config: IOptionsParserConfiguration<T>;
+export class ChoiceParser<T> implements IParser {
+    private readonly config: IChoiceParserConfiguration<T>;
 
-    constructor(config: IOptionsParserConfiguration<T>) {
+    constructor(config: IChoiceParserConfiguration<T>) {
         this.config = config;
     }
 
@@ -26,13 +26,13 @@ export class OptionsParser<T> implements IParser {
     }
 }
 
-export class BooleanParser extends OptionsParser<boolean> {
+export class BooleanParser extends ChoiceParser<boolean> {
     constructor() {
         let resolutions = new Map<string, boolean>([
             [Constants.SYS_BOOLEAN_TRUE, true],
             [Constants.SYS_BOOLEAN_FALSE, false]
         ]);
-        let config: IOptionsParserConfiguration<boolean> = {
+        let config: IChoiceParserConfiguration<boolean> = {
             resolutions: resolutions
         }
         super(config);

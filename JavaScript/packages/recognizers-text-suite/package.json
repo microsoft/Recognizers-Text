@@ -35,6 +35,6 @@
     "@microsoft/recognizers-text-date-time": "^1.0.0-rc.32.0",
     "@microsoft/recognizers-text-number": "^1.0.0-rc.32.0",
     "@microsoft/recognizers-text-number-with-unit": "^1.0.0-rc.32.0",
-    "@microsoft/recognizers-text-options": "^1.0.0-rc.32.0"
+    "@microsoft/recognizers-text-choice": "^1.0.0-rc.32.0"
   }
 }
