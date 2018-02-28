@@ -704,6 +704,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
                     }
 
+                    // Handle the "within (the) (next) xx seconds/minutes/hours" case
+                    // Should also handle the multiple duration case like P1DT8H
+                    // Set the beginTime equal to reference time for now
+                    prefixMatch = Config.WithinNextPrefixRegex.Match(beforeStr);
+                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    {
+                        endTime = beginTime.AddSeconds(swiftSeconds);
+                    }
+
                     prefixMatch = Config.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
@@ -729,15 +738,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
                         mod = TimeTypeConstants.AFTER_MOD;
-                        endTime = beginTime.AddSeconds(swiftSeconds);
-                    }
-
-                    // Handle the "within xx seconds/minutes/hours" case
-                    // Should also handle the multiple duration case like P1DT8H
-                    // Set the beginTime equal to reference time for now
-                    prefixMatch = Config.WithinNextPrefixRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
-                    {
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 

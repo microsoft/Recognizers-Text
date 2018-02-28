@@ -3656,4 +3656,56 @@
     }
   ]
 }
+,
+{
+  "Input": "I will be back within the next 3 years",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "within the next 3 years",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-11-08,2020-11-08,P3Y)",
+        "FutureResolution": {
+          "startDate": "2017-11-08",
+          "endDate": "2020-11-08"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-08",
+          "endDate": "2020-11-08"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I will be back within the upcoming 5 years 1 month 12 days",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "within the upcoming 5 years 1 month 12 days",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+        "FutureResolution": {
+          "startDate": "2017-11-08",
+          "endDate": "2022-12-20"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-08",
+          "endDate": "2022-12-20"
+        }
+      }
+    }
+  ]
+}
 ]

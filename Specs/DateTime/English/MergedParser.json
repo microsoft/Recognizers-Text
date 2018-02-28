@@ -1759,4 +1759,104 @@
     }
   ]
 }
+,
+{
+  "Input":"I will be back within the next 1 day and 5 hours",
+  "Context":{
+    "ReferenceDateTime":"2016-11-07T16:12:00"
+  },
+  "NotSupported":"javascript",
+  "NotSupportedByDesign":"python",
+  "Results":[
+    {
+      "Text":"within the next 1 day and 5 hours",
+      "Type":"datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+            "type":"datetimerange",
+            "start":"2016-11-07 16:12:00",
+            "end":"2016-11-08 21:12:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input":"This task would complete within the upcoming 2 days 1 hour 5 minutes 30 seconds",
+  "Context":{
+    "ReferenceDateTime":"2016-11-07T16:12:00"
+  },
+  "NotSupported":"javascript",
+  "NotSupportedByDesign":"python",
+  "Results":[
+    {
+      "Text":"within the upcoming 2 days 1 hour 5 minutes 30 seconds",
+      "Type":"datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+            "type":"datetimerange",
+            "start":"2016-11-07 16:12:00",
+            "end":"2016-11-09 17:17:30"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input":"I will be back within the next 15 seconds",
+  "Context":{
+    "ReferenceDateTime":"2016-11-07T16:12:00"
+  },
+  "NotSupported":"javascript",
+  "NotSupportedByDesign":"python",
+  "Results":[
+    {
+      "Text":"within the next 15 seconds",
+      "Type":"datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+            "type":"datetimerange",
+            "start":"2016-11-07 16:12:00",
+            "end":"2016-11-07 16:12:15"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input":"I will be back within next 10 months",
+  "Context":{
+    "ReferenceDateTime":"2017-11-08T00:00:00"
+  },
+  "NotSupported":"javascript",
+  "NotSupportedByDesign":"python",
+  "Results":[
+    {
+      "Text":"within next 10 months",
+      "Type":"datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"(2017-11-08,2018-09-08,P10M)",
+            "type":"daterange",
+            "start":"2017-11-08",
+            "end":"2018-09-08"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

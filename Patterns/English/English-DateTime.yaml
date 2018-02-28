@@ -401,7 +401,7 @@ LaterRegex: !simpleRegex
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 WithinNextPrefixRegex: !nestedRegex
-  def: \b(within\s+(the\s+)?({NextPrefixRegex})?)
+  def: \b(within(\s+the)?(\s+{NextPrefixRegex})?)\b
   references: [ NextPrefixRegex ]
 AmPmDescRegex: !simpleRegex
   def: (ampm)
