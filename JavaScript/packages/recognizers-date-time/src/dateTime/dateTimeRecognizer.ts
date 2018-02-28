@@ -57,7 +57,7 @@ export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
         //#endregion
     }
 
-    getDateTimeModel(): IDateTimeModel {
-        return this.getModel("DateTimeModel");
+    getDateTimeModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IDateTimeModel {
+        return this.getModel("DateTimeModel", culture, fallbackToDefaultCulture);
     }
 }

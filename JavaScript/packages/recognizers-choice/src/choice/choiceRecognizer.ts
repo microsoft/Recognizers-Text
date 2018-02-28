@@ -32,7 +32,7 @@ export default class OptionsRecognizer extends Recognizer<ChoiceOptions> {
         //#endregion
     }
 
-    getBooleanModel(): IModel {
-        return this.getModel("BooleanModel");
+    getBooleanModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("BooleanModel", culture, fallbackToDefaultCulture);
     }
 }

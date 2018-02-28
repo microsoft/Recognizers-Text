@@ -136,19 +136,19 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         //#endregion
     }
 
-    getCurrencyModel(): IModel {
-        return this.getModel("CurrencyModel");
+    getCurrencyModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("CurrencyModel", culture, fallbackToDefaultCulture);
     }
 
-    getTemperatureModel(): IModel {
-        return this.getModel("TemperatureModel");
+    getTemperatureModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("TemperatureModel", culture, fallbackToDefaultCulture);
     }
 
-    getDimensionModel(): IModel {
-        return this.getModel("DimensionModel");
+    getDimensionModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("DimensionModel", culture, fallbackToDefaultCulture);
     }
 
-    getAgeModel(): IModel {
-        return this.getModel("AgeModel");
+    getAgeModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("AgeModel", culture, fallbackToDefaultCulture);
     }
 }

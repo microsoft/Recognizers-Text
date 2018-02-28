@@ -104,15 +104,15 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         //#endregion
     }
 
-    getNumberModel(): IModel {
-        return this.getModel("NumberModel");
+    getNumberModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("NumberModel", culture, fallbackToDefaultCulture);
     }
 
-    getOrdinalModel(): IModel {
-        return this.getModel("OrdinalModel");
+    getOrdinalModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("OrdinalModel", culture, fallbackToDefaultCulture);
     }
 
-    getPercentageModel(): IModel {
-        return this.getModel("PercentModel");
+    getPercentageModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("PercentModel", culture, fallbackToDefaultCulture);
     }
 }

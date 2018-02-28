@@ -41,14 +41,18 @@ export class ModelFactory<TModelOptions> {
 
     private static cache: Map<string, IModel> = new Map<string, IModel>();
 
-    getModel(modelTypeName: string, culture: string, options: TModelOptions): IModel {
+    getModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean, options: TModelOptions): IModel {
 
         let result = this.tryGetModel(modelTypeName, culture, options);
-        if (!result.containsModel) {
-            throw new Error(`No IModel instance for ${culture}-${modelTypeName}`);
+        if (!result.containsModel && fallbackToDefaultCulture) {
+            result = this.tryGetModel(modelTypeName, ModelFactory.fallbackCulture, options);
         }
 
-        return result.model;
+        if (result.containsModel) {
+            return result.model;
+        }
+
+        throw new Error(`Could not find Model with the specified configuration: ${culture},${modelTypeName}`);
     }
 
     tryGetModel(modelTypeName: string, culture: string, options: TModelOptions): { containsModel: boolean; model?: IModel } {
