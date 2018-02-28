@@ -18,6 +18,7 @@ export interface INumberParserConfiguration {
     readonly cultureInfo: CultureInfo;
     readonly digitalNumberRegex: RegExp;
     readonly fractionMarkerToken: string;
+    readonly negativeNumberSignRegex: RegExp;
     readonly halfADozenRegex: RegExp;
     readonly halfADozenText: string;
     readonly langMarker: string;
@@ -70,6 +71,16 @@ export class BaseNumberParser implements IParser {
                 extra = this.config.langMarker;
             }
         }
+        
+        // Resolve symbol prefix
+        let isNegative = false;
+        let matchNegative = extResult.text.match(this.config.negativeNumberSignRegex);
+
+        if (matchNegative)
+        {
+            isNegative = true;
+            extResult.text = extResult.text.substr(matchNegative[1].length);
+        }
 
         if (extra.includes("Num")) {
             ret = this.digitNumberParse(extResult);
@@ -86,6 +97,19 @@ export class BaseNumberParser implements IParser {
         }
 
         if (ret && ret.value) {
+            if (isNegative)
+            {
+                // Recover to the original extracted Text
+                ret.text = matchNegative[1] + extResult.text;
+                // Check if ret.value is a BigNumber
+                if (typeof ret.value == "number") {
+                    ret.value = -ret.value;
+                }
+                else {
+                    ret.value.s = -1;
+                }
+            }
+
             ret.resolutionStr = this.config.cultureInfo
                 ? this.config.cultureInfo.format(ret.value)
                 : ret.value.toString();
@@ -335,12 +359,12 @@ export class BaseNumberParser implements IParser {
 
         let scale = new BigNumber(10);
         let dot = false;
-        let isLessZero = false;
+        let isNegative = false;
         let tmp = new BigNumber(0);
         for (let i = 0; i < handle.length; i++) {
             let ch = handle[i];
             if (ch === '^' || ch === 'E') {
-                if (isLessZero) {
+                if (isNegative) {
                     calStack.push(tmp.negated());
                 }
                 else {
@@ -349,7 +373,7 @@ export class BaseNumberParser implements IParser {
                 tmp = new BigNumber(0);
                 scale = new BigNumber(10);
                 dot = false;
-                isLessZero = false;
+                isNegative = false;
             }
             else if (ch.charCodeAt(0) - 48 >= 0 && ch.charCodeAt(0) - 48 <= 9) {
                 if (dot) {
@@ -368,14 +392,14 @@ export class BaseNumberParser implements IParser {
                 scale = new BigNumber(0.1);
             }
             else if (ch === '-') {
-                isLessZero = !isLessZero;
+                isNegative = !isNegative;
             }
             else if (ch === '+') {
                 continue;
             }
 
             if (i === handle.length - 1) {
-                if (isLessZero) {
+                if (isNegative) {
                     calStack.push(tmp.negated());
                 }
                 else {
@@ -566,7 +590,7 @@ export class BaseNumberParser implements IParser {
         let tmp = new BigNumber(0);
         let scale = new BigNumber(10);
         let dot = false;
-        let isLessZero = false;
+        let isNegative = false;
         let isFrac = false;
 
         let calStack = new Array<BigNumber>();
@@ -598,7 +622,7 @@ export class BaseNumberParser implements IParser {
                 scale = new BigNumber(0.1);
             }
             else if (ch === '-') {
-                isLessZero = true;
+                isNegative = true;
             }
         }
         calStack.push(tmp);
@@ -619,7 +643,7 @@ export class BaseNumberParser implements IParser {
         // calResult *= power;
         calResult = calResult.times(power);
 
-        if (isLessZero) {
+        if (isNegative) {
             return calResult.negated().toNumber();
         }
 

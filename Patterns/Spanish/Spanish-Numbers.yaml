@@ -13,6 +13,12 @@ TwentiesIntegerRegex: !simpleRegex
   def: (veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)
 TensNumberIntegerRegex: !simpleRegex
   def: (cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)
+NegativeNumberTermsRegex: !simpleRegex
+   # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+NegativeNumberSignRegex: !nestedRegex
+  def: ^({NegativeNumberTermsRegex}\s+).*
+  references: [ NegativeNumberTermsRegex ]
 DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
 BelowHundredsRegex: !nestedRegex
@@ -28,8 +34,8 @@ SeparaIntRegex: !nestedRegex
   def: ({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})
   references: [ SupportThousandsRegex, BelowThousandsRegex ]
 AllIntRegex: !nestedRegex
-  def: ({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?)
-  references: [ SeparaIntRegex, BelowThousandsRegex ]
+  def: ((NegativeNumberTermsRegex)?({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?))
+  references: [ SeparaIntRegex, BelowThousandsRegex, NegativeNumberTermsRegex ]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
