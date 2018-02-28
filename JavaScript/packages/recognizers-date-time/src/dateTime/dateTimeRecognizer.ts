@@ -12,13 +12,10 @@ export enum DateTimeOptions {
     None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4 
 }
 
-export function recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None, referenceDate: Date = new Date()): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getDateTimeModel(), query, culture, options, referenceDate);
-}
-
-function recognizeByModel(getModelFunc: (n: DateTimeRecognizer) => IDateTimeModel, query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None, referenceDate: Date = new Date()): Array<ModelResult> {
+export function recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None,
+        referenceDate: Date = new Date(), fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
     let recognizer = new DateTimeRecognizer(culture, options);
-    let model = getModelFunc(recognizer);
+    let model = recognizer.getDateTimeModel(culture, fallbackToDefaultCulture);
     return model.parse(query, referenceDate);
 }
 

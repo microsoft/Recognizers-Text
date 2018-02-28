@@ -28,20 +28,20 @@ export enum NumberWithUnitOptions {
     None = 0,
 }
 
-export function recognizeCurrency(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getCurrencyModel(), query, culture, options);
+export function recognizeCurrency(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getCurrencyModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-export function recognizeTemperature(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getTemperatureModel(), query, culture, options);
+export function recognizeTemperature(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getTemperatureModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-export function recognizeDimension(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getDimensionModel(), query, culture, options);
+export function recognizeDimension(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getDimensionModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-export function recognizeAge(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getAgeModel(), query, culture, options);
+export function recognizeAge(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getAgeModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
 function recognizeByModel(getModelFunc: (n: NumberWithUnitRecognizer) => IModel, query: string, culture: string, options: NumberWithUnitOptions): Array<ModelResult> {

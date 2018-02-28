@@ -8,13 +8,10 @@ export enum ChoiceOptions {
     None = 0,
 }
 
-export function recognizeBoolean(query: string, culture: string, options: ChoiceOptions = ChoiceOptions.None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getBooleanModel(), query, culture, options);
-}
-
-function recognizeByModel(getModelFunc: (n: OptionsRecognizer) => IModel, query: string, culture: string, options: ChoiceOptions): Array<ModelResult> {
+export function recognizeBoolean(query: string, culture: string, options: ChoiceOptions = ChoiceOptions.None,
+        fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
     let recognizer = new OptionsRecognizer(culture, options);
-    let model = getModelFunc(recognizer);
+    let model = recognizer.getBooleanModel(culture, fallbackToDefaultCulture);
     return model.parse(query);
 }
 

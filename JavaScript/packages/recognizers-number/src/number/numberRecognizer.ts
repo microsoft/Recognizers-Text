@@ -18,16 +18,16 @@ export enum NumberOptions {
     None = 0,
 }
 
-export function recognizeNumber(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getNumberModel(), query, culture, options);
+export function recognizeNumber(query: string, culture: string, options: NumberOptions = NumberOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getNumberModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-export function recognizeOrdinal(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getOrdinalModel(), query, culture, options);
+export function recognizeOrdinal(query: string, culture: string, options: NumberOptions = NumberOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getOrdinalModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
-export function recognizePercentage(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
-    return recognizeByModel(recognizer => recognizer.getPercentageModel(), query, culture, options);
+export function recognizePercentage(query: string, culture: string, options: NumberOptions = NumberOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getPercentageModel(culture, fallbackToDefaultCulture), query, culture, options);
 }
 
 function recognizeByModel(getModelFunc: (n: NumberRecognizer) => IModel, query: string, culture: string, options: NumberOptions): Array<ModelResult> {
