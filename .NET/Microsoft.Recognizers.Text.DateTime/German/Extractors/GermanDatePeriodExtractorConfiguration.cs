@@ -115,8 +115,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex InConnectorRegex =
             new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WithinConnectorRegex =
-            new Regex(DateTimeDefinitions.WithinConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WithinRegex =
+            new Regex(DateTimeDefinitions.WithinRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RestOfDateRegex =
             new Regex(DateTimeDefinitions.RestOfDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -212,7 +212,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDatePeriodExtractorConfiguration.InConnectorRegex => InConnectorRegex;
 
-        Regex IDatePeriodExtractorConfiguration.WithinConnectorRegex => WithinConnectorRegex;
+        Regex IDatePeriodExtractorConfiguration.WithinRegex => WithinRegex;
 
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
 

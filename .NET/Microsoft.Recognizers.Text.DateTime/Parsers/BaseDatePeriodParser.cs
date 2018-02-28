@@ -790,11 +790,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handle the "within two weeks" case which means from today to the end of next two weeks
-                    prefixMatch = config.WithinConnectorRegex.Match(beforeStr);
+                    prefixMatch = config.WithinRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex))
                     {
-                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, future: true, out mod);
+                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, future: true, mod: out mod);
 
                         // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate, but for the "within" case it should start from the current day.
                         beginDate = beginDate.AddDays(-1);

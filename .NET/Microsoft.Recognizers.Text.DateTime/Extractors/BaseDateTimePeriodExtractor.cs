@@ -407,7 +407,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // within "Seconds/Minutes/Hours" should be handled as datetimeRange here
                 // within XX days + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
-                match = config.WithinConnectorRegex.Match(beforeStr);
+                match = config.WithinRegex.Match(beforeStr);
                 if (MatchPrefixRegexInSegment(beforeStr, match))
                 {
                     var startToken = match.Index;

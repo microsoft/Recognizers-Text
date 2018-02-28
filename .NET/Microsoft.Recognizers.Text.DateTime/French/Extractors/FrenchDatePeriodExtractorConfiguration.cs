@@ -180,9 +180,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.InConnectorRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WithinConnectorRegex =
+        public static readonly Regex WithinRegex =
             new Regex(
-                DateTimeDefinitions.WithinConnectorRegex,
+                DateTimeDefinitions.WithinRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RestOfDateRegex =
@@ -284,7 +284,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDatePeriodExtractorConfiguration.InConnectorRegex => InConnectorRegex;
 
-        Regex IDatePeriodExtractorConfiguration.WithinConnectorRegex => WithinConnectorRegex;
+        Regex IDatePeriodExtractorConfiguration.WithinRegex => WithinRegex;
 
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
 

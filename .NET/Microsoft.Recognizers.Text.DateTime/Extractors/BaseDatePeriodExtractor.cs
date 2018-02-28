@@ -231,7 +231,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // within "Days/Weeks/Months/Years" should be handled as dateRange here
                 // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
-                match = config.WithinConnectorRegex.Match(beforeStr);
+                match = config.WithinRegex.Match(beforeStr);
                 if (MatchPrefixRegexInSegment(beforeStr, match))
                 {
                     var startToken = match.Index;

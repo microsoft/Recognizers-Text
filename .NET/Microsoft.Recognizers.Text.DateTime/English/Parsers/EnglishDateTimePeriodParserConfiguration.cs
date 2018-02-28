@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex PmDescRegex { get; }
 
-        public Regex WithinConnectorRegex { get; }
+        public Regex WithinRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             RestOfDateTimeRegex = EnglishDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
             AmDescRegex = EnglishDateTimePeriodExtractorConfiguration.AmDescRegex;
             PmDescRegex = EnglishDateTimePeriodExtractorConfiguration.PmDescRegex;
-            WithinConnectorRegex = EnglishDateTimePeriodExtractorConfiguration.WithinConnectorRegex;
+            WithinRegex = EnglishDateTimePeriodExtractorConfiguration.WithinRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

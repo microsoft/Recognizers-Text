@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PmDescRegex { get; }
 
-        Regex WithinConnectorRegex { get; }
+        Regex WithinRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 
