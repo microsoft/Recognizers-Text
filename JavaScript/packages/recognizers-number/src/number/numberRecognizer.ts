@@ -103,6 +103,10 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         //#endregion
     }
 
+    protected IsValidOptions(options: number): boolean {
+        return options >= 0 && options <= NumberOptions.None
+    }
+
     getNumberModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
         return this.getModel("NumberModel", culture, fallbackToDefaultCulture);
     }

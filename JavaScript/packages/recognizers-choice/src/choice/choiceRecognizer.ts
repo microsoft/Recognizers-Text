@@ -29,6 +29,10 @@ export default class OptionsRecognizer extends Recognizer<ChoiceOptions> {
         //#endregion
     }
 
+    protected IsValidOptions(options: number): boolean {
+        return options >= 0 && options <= ChoiceOptions.None
+    }
+
     getBooleanModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
         return this.getModel("BooleanModel", culture, fallbackToDefaultCulture);
     }

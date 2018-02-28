@@ -50,10 +50,7 @@ module.exports = function (describe) {
         });
 
         it('InitializationWithInvalidOptions_ThrowError', t => {
-            t.pass();
-
-            // TODO: Find an approach to correctly check for valid enum values
-            // t.throws(() => { new DateTimeRecognizer(InvalidCulture, -1)});
+            t.throws(() => { new DateTimeRecognizer(InvalidCulture, -1)});
         });
     });
 }

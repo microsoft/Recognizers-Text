@@ -27,31 +27,35 @@ export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
     protected InitializeConfiguration() {
         //#region English
         this.registerModel("DateTimeModel", Culture.English, (options) => new DateTimeModel(
-            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), this.RecognizerOptions),
-            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), this.RecognizerOptions)
+            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), this.Options),
+            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), this.Options)
         ));
         //#endregion
 
         //#region Spanish
         this.registerModel("DateTimeModel", Culture.Spanish, (options) => new DateTimeModel(
-            new BaseMergedParser(new SpanishMergedParserConfiguration(), this.RecognizerOptions),
-            new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), this.RecognizerOptions)
+            new BaseMergedParser(new SpanishMergedParserConfiguration(), this.Options),
+            new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), this.Options)
         ));
         //#endregion
 
         //#region Chinese
         this.registerModel("DateTimeModel", Culture.Chinese, (options) => new DateTimeModel(
             new ChineseFullMergedParser(),
-            new ChineseMergedExtractor(this.RecognizerOptions)
+            new ChineseMergedExtractor(this.Options)
         ));
         //#endregion
 
         //#region French
         this.registerModel("DateTimeModel", Culture.French, (options) => new DateTimeModel(
-            new BaseMergedParser(new FrenchMergedParserConfiguration(), this.RecognizerOptions),
-            new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), this.RecognizerOptions)
+            new BaseMergedParser(new FrenchMergedParserConfiguration(), this.Options),
+            new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), this.Options)
         ));
         //#endregion
+    }
+
+    protected IsValidOptions(options: number): boolean {
+        return options >= 0 && options <= DateTimeOptions.None + DateTimeOptions.SkipFromToMerge + DateTimeOptions.SplitDateAndTime + DateTimeOptions.Calendar;
     }
 
     getDateTimeModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IDateTimeModel {

@@ -6,7 +6,9 @@ export abstract class Recognizer<TRecognizerOptions> {
 
   private readonly modelFactory: ModelFactory<TRecognizerOptions> = new ModelFactory<TRecognizerOptions>();
 
-  protected constructor(targetCulture: string, options: TRecognizerOptions, lazyInitialization: boolean) {
+  protected constructor(targetCulture: string, options: TRecognizerOptions, lazyInitialization: boolean);
+  protected constructor(targetCulture: string, options: any, lazyInitialization: boolean) {
+    if(!this.IsValidOptions(options)) throw new Error(`${options} is not a valid options value.`)
     this.TargetCulture = targetCulture;
     this.Options = options;
     this.InitializeConfiguration();
@@ -17,6 +19,8 @@ export abstract class Recognizer<TRecognizerOptions> {
   }
 
   protected abstract InitializeConfiguration();
+
+  protected abstract IsValidOptions(options): boolean;
 
   getModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean): IModel {
     return this.modelFactory.getModel(modelTypeName, culture || this.TargetCulture, fallbackToDefaultCulture, this.Options);

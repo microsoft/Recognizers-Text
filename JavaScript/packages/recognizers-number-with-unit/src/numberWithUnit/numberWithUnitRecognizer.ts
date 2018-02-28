@@ -136,6 +136,10 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         //#endregion
     }
 
+    protected IsValidOptions(options: number): boolean {
+        return options >= 0 && options <= NumberWithUnitOptions.None
+    }
+
     getCurrencyModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
         return this.getModel("CurrencyModel", culture, fallbackToDefaultCulture);
     }
