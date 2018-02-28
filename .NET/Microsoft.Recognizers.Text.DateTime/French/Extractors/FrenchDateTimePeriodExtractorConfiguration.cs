@@ -75,8 +75,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex PmDescRegex =
             new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WithinRegex =
-            new Regex(DateTimeDefinitions.WithinRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WithinNextPrefixRegex =
+            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public Regex FollowedUnit => TimeFollowedUnit;
 
@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
-        Regex IDateTimePeriodExtractorConfiguration.WithinRegex => WithinRegex;
+        Regex IDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
         public IExtractor CardinalExtractor { get; }
 

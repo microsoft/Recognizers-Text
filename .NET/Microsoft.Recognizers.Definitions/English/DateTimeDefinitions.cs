@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string AgoRegex = @"\b(ago)\b";
 		public const string LaterRegex = @"\b(later|from now)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
-		public const string WithinRegex = @"\b(within)\b";
+		public static readonly string WithinNextPrefixRegex = $@"\b(within\s+(the\s+)?({NextPrefixRegex})?)";
 		public const string AmPmDescRegex = @"(ampm)";
 		public static readonly string MorningStartEndRegex = $@"(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)";
 		public static readonly string AfternoonStartEndRegex = $@"(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)";

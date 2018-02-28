@@ -400,8 +400,9 @@ LaterRegex: !simpleRegex
   def: \b(later|from now)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
-WithinRegex: !simpleRegex
-  def: \b(within)\b
+WithinNextPrefixRegex: !nestedRegex
+  def: \b(within\s+(the\s+)?({NextPrefixRegex})?)
+  references: [ NextPrefixRegex ]
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !nestedRegex

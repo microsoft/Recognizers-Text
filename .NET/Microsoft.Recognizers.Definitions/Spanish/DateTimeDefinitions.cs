@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string MonthOfRegex = @"(mes)(\s*)((do|da|de))";
 		public const string RangeUnitRegex = @"\b(?<unit>años|año|meses|mes|semanas|semana)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
-		public const string WithinRegex = @"^[.]";
+		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string FromRegex = @"((desde|de)(\s*la(s)?)?)$";
 		public const string ConnectorAndRegex = @"(y\s*(la(s)?)?)$";
 		public const string BetweenRegex = @"(entre\s*(la(s)?)?)";

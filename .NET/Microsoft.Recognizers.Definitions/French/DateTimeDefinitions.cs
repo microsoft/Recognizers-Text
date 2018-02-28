@@ -168,7 +168,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string AgoPrefixRegex = @"\b(y a)\b";
 		public const string LaterRegex = @"\b(plus tard)\b";
 		public const string InConnectorRegex = @"\b(dans|en|sur)\b";
-		public const string WithinRegex = @"^[.]";
+		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string AmDescRegex = @"(h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)";
 		public const string PmDescRegex = @"(h|pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b)";
 		public const string AmPmDescRegex = @"(h|ampm)";

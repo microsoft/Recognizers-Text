@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
-        public Regex WithinRegex { get; }
+        public Regex WithinNextPrefixRegex { get; }
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
@@ -144,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             YearPeriodRegex = FrenchDatePeriodExtractorConfiguration.YearPeriodRegex;
             RelativeDecadeRegex = FrenchDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
-            WithinRegex = FrenchDatePeriodExtractorConfiguration.WithinRegex;
+            WithinNextPrefixRegex = FrenchDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

@@ -790,7 +790,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handle the "within two weeks" case which means from today to the end of next two weeks
-                    prefixMatch = config.WithinRegex.Match(beforeStr);
+                    prefixMatch = config.WithinNextPrefixRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex))
                     {

@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex InConnectorRegex { get; }
 
-        Regex WithinRegex { get; }
+        Regex WithinNextPrefixRegex { get; }
 
         Regex NextPrefixRegex { get; }
 
