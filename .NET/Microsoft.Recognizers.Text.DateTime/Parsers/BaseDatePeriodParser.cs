@@ -794,9 +794,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex))
                     {
-                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod);
+                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, future: true, out mod);
 
-                        // In GetModAndDate, if this is the "future" case, the beginDate/endDate add one day; For the "within" case, after discussion, we don't need to add this one day.
+                        // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate, but for the "within" case it should start from the current day.
                         beginDate = beginDate.AddDays(-1);
                         endDate = endDate.AddDays(-1);
                     }

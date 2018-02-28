@@ -738,7 +738,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     prefixMatch = Config.WithinConnectorRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        mod = TimeTypeConstants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
