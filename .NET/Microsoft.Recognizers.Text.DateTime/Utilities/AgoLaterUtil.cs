@@ -21,26 +21,36 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeString = text.Substring(0, (int)er.Start);
                 var index = -1;
 
-                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
+                if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
+                {
+                    // For range unit like "week, month, year", it should output dateRange or datetimeRange
+                    if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
+                    {
+                        if (er.Start != null && er.Length != null && (int)er.Start >= index)
+                        {
+                            ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
+                        }
+                    }
+                }
+                else if (MatchingUtil.GetWithinIndex(beforeString, utilityConfiguration.WithinConnectorRegex, out index))
+                {
+                    // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
+                    if (!utilityConfiguration.DateUnitRegex.IsMatch(er.Text) && !utilityConfiguration.TimeUnitRegex.IsMatch(er.Text))
+                    {
+                        if (er.Start != null && er.Length != null && (int)er.Start >= index)
+                        {
+                            ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
+                        }
+                    }
+                }
+                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
                 {
                     ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                 }
                 else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
                 {
                     ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
-                }
-                else if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
-                {
-
-                    // For range unit like "week, month, year", it should output dateRange or datetimeRange
-                    if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
-                    {
-                        if (er.Start != null && er.Length != null && (int) er.Start >= index)
-                        {
-                            ret.Add(new Token((int) er.Start - index, (int) er.Start + (int) er.Length));
-                        }
-                    }
-                }
+                }                
             }
 
             return ret;

@@ -10,7 +10,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
         Regex InConnectorRegex { get; }
 
+        Regex WithinConnectorRegex { get; }
+
         Regex RangeUnitRegex { get; }
+
+        Regex TimeUnitRegex { get; }
+
+        Regex DateUnitRegex { get; }
 
         Regex AmDescRegex { get; }
 

@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
 
         public static readonly Regex InConnectorRegex = new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WithinConnectorRegex = new Regex(DateTimeDefinitions.WithinConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PmDescRegex = new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -20,6 +22,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
         public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex TimeUnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex DateUnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex CommonDatePrefixRegex = new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -29,6 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
 
         Regex IDateTimeUtilityConfiguration.InConnectorRegex => InConnectorRegex;
 
+        Regex IDateTimeUtilityConfiguration.WithinConnectorRegex => WithinConnectorRegex;
+
         Regex IDateTimeUtilityConfiguration.AmDescRegex => AmDescRegex;
 
         Regex IDateTimeUtilityConfiguration.PmDescRegex => PmDescRegex;
@@ -36,6 +46,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
         Regex IDateTimeUtilityConfiguration.AmPmDescRegex => AmPmDescRegex;
 
         Regex IDateTimeUtilityConfiguration.RangeUnitRegex => RangeUnitRegex;
+
+        Regex IDateTimeUtilityConfiguration.TimeUnitRegex => TimeUnitRegex;
+
+        Regex IDateTimeUtilityConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex IDateTimeUtilityConfiguration.CommonDatePrefixRegex => CommonDatePrefixRegex;
 
