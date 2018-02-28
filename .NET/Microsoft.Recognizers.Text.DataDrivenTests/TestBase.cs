@@ -20,8 +20,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             get { return testContextInstance; }
             set { testContextInstance = value; }
         }
-
-        public IModel Model { get; set; }
+        
         public IDateTimeExtractor Extractor { get; set; }
         public IDateTimeParser DateTimeParser { get; set; }
         public TestModel TestSpec { get; set; }
@@ -29,18 +28,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestSpecInitialize(TestResources resources)
         {
             TestSpec = resources.GetSpecForContext(TestContext);
-        }
-
-        public void ModelInitialize(IDictionary<string, IModel> models)
-        {
-            var key = TestContext.TestName;
-            if (!models.TryGetValue(key, out IModel model))
-            {
-                model = TestContext.GetModel();
-                models.Add(key, model);
-            }
-
-            Model = model;
         }
 
         public void ExtractorInitialize(IDictionary<string, IDateTimeExtractor> extractors)
@@ -70,15 +57,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestNumber()
         {
             TestPreValidation();
-
             ValidateResults();
         }
 
         public void TestNumberWithUnit()
         {
             TestPreValidation();
-            
-            ValidateResults(new List<string>() { ResolutionKey.Unit });
+            ValidateResults(new string[] { ResolutionKey.Unit });
         }
 
         public void TestDateTime()
@@ -87,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
-            var actualResults = ((DateTimeModel)Model).Parse(TestSpec.Input, referenceDateTime);
+            var actualResults = TestContext.GetModelParseResults(referenceDateTime)(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
@@ -119,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
-            var actualResults = ((DateTimeModel)Model).Parse(TestSpec.Input, referenceDateTime);
+            var actualResults = TestContext.GetModelParseResults(referenceDateTime)(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ExtendedModelResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
@@ -257,15 +242,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Debugger.Break();
             }
         }
-        
-        private void ValidateResults(List<string> testResolutionKeys = null)
-        {
-            if (testResolutionKeys == null)
-            {
-                testResolutionKeys = new List<string>();
-            }
 
-            var actualResults = Model.Parse(TestSpec.Input);
+        private void ValidateResults(IEnumerable<string> testResolutionKeys = null)
+        {
+            var actualResults = TestContext.GetModelParseResults()(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
@@ -280,7 +260,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
                 
-                foreach (var key in testResolutionKeys)
+                foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
                 {
                     Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
                 }
@@ -289,32 +269,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestChoice()
         {
-            if (TestUtils.EvaluateSpec(TestSpec, out string message))
-            {
-                Assert.Inconclusive(message);
-            }
-
-            if (Debugger.IsAttached && TestSpec.Debug)
-            {
-                Debugger.Break();
-            }
-
-            var actualResults = Model.Parse(TestSpec.Input);
-            var expectedResults = TestSpec.CastResults<ModelResult>();
-
-            Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
-
-            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
-            {
-                var expected = tuple.Item1;
-                var actual = tuple.Item2;
-
-                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
-                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
-
-                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
-                Assert.AreEqual(expected.Resolution["score"], actual.Resolution["score"], GetMessage(TestSpec));
-            }
+            TestPreValidation();
+            ValidateResults(new string[] { ResolutionKey.Value, ResolutionKey.Score });
         }
 
         private static string GetMessage(TestModel spec)

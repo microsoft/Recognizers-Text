@@ -6,5 +6,6 @@
         public const string Value = "value";
         public const string Type = "type";
         public const string Unit = "unit";
+        public const string Score = "score";
     }
 }
