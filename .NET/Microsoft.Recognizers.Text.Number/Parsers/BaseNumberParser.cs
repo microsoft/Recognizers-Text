@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 if (isNegative)
                 {
-                    // Recover to the origin extracted Text
+                    // Recover to the original extracted Text
                     ret.Text = matchNegative.Groups[1].Value + extResult.Text;
                     ret.Value = -(double)ret.Value;
                 }
