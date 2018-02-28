@@ -1,13 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{55DA4431-1E79-4DCB-883F-6C945B02B043}"
 	ProjectSection(SolutionItems) = preProject
 		CreateAllPackages.cmd = CreateAllPackages.cmd
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.DateTime", "Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj", "{19522B81-C63F-4DD5-AB4C-674CD44D67D6}"
@@ -26,6 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\English\English-DateTime.yaml = ..\Patterns\English\English-DateTime.yaml
 		..\Patterns\English\English-Numbers.yaml = ..\Patterns\English\English-Numbers.yaml
 		..\Patterns\English\English-NumbersWithUnit.yaml = ..\Patterns\English\English-NumbersWithUnit.yaml
+		..\Patterns\English\English-Choice.yaml = ..\Patterns\English\English-Choice.yaml
 		..\Patterns\French\French-DateTime.yaml = ..\Patterns\French\French-DateTime.yaml
 		..\Patterns\French\French-Numbers.yaml = ..\Patterns\French\French-Numbers.yaml
 		..\Patterns\French\French-NumbersWithUnit.yaml = ..\Patterns\French\French-NumbersWithUnit.yaml
@@ -43,6 +45,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.DataDrivenTests", "Microsoft.Recognizers.Text.DataDrivenTests\Microsoft.Recognizers.Text.DataDrivenTests.csproj", "{2783050D-97E2-4F10-99F0-E2D970FD996A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{452C724B-66C1-4F67-A718-E7733F79961D}"
+	ProjectSection(SolutionItems) = preProject
+		Samples\README.md = Samples\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleConsole", "Samples\SimpleConsole\SimpleConsole.csproj", "{062ACBE8-C3EF-4F5B-BFD1-04B129A7F1D2}"
 EndProject
@@ -59,6 +64,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.NumberWithUnit", "Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj", "{E9BE4F64-9CC5-433C-90CC-A379A732E5E8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Sequence", "Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj", "{A5F60D50-81F7-44F8-A2B4-A63606376EE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Choice", "Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj", "{9318EA22-C36A-48C8-9882-8A0D2D74C356}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,6 +113,10 @@ Global
 		{A5F60D50-81F7-44F8-A2B4-A63606376EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F60D50-81F7-44F8-A2B4-A63606376EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5F60D50-81F7-44F8-A2B4-A63606376EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

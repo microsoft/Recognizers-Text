@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 
 using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
+using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.Sequence;
-
-using Newtonsoft.Json;
 
 namespace SimpleConsole
 {
@@ -39,11 +39,7 @@ namespace SimpleConsole
                     if (input.Length > 0)
                     {
                         // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
-                        /* var results = GetModels()
-                            .Select(parser => parser.Parse(input))
-                            .SelectMany(a => a);
-                            */
-                        var results = DateTimeRecognizer.GetInstance().GetDateTimeModel(defaultCulture).Parse(input);
+                        var results = ParseAll(input, defaultCulture);
 
                         // Write output
                         Console.WriteLine(results.Count() > 0 ? (string.Format("I found the following entities ({0:d}):", results.Count())) : "I found no entities.");
@@ -53,59 +49,66 @@ namespace SimpleConsole
                 }
             }
         }
-        
+
         /// <summary>
-        /// Get all recognizers model instances.
+        /// Parse query with all recognizers
         /// </summary>
-        /// <returns>A list of all the existing recognizer's models</returns>
-        private static IEnumerable<IModel> GetModels()
+        private static IEnumerable<ModelResult> ParseAll(string query, string culture)
         {
-            return new IModel[]
-            {
-                // Add Number recognizer - This recognizer will find any number from the input
+            return MergeResults(
+                // Number recognizer will find any number from the input
                 // E.g "I have two apples" will return "2".
-                NumberRecognizer.Instance.GetNumberModel(defaultCulture),
-                
-                // Add Ordinal number recognizer - This recognizer will find any ordinal number
+                NumberRecognizer.RecognizeNumber(query, culture),
+
+                // Ordinal number recognizer will find any ordinal number
                 // E.g "eleventh" will return "11".
-                NumberRecognizer.Instance.GetOrdinalModel(defaultCulture),
+                NumberRecognizer.RecognizeOrdinal(query, culture),
 
-                // Add Percentage recognizer - This recognizer will find any number presented as percentage
+                // Percentage recognizer will find any number presented as percentage
                 // E.g "one hundred percents" will return "100%"
-                NumberRecognizer.Instance.GetPercentageModel(defaultCulture),
+                NumberRecognizer.RecognizePercentage(query, culture),
 
-                // Add Number Range recognizer - This recognizer will find any cardinal or ordinal number range
+                // Number Range recognizer will find any cardinal or ordinal number range
                 // E.g. "between 2 and 5" will return "(2,5)"
-                NumberRecognizer.Instance.GetNumberRangeModel(defaultCulture),
+                NumberRecognizer.RecognizeNumberRange(query, culture),
 
-                // Add Age recognizer - This recognizer will find any age number presented
+                // Age recognizer will find any age number presented
                 // E.g "After ninety five years of age, perspectives change" will return "95 Year"
-                NumberWithUnitRecognizer.Instance.GetAgeModel(defaultCulture),
+                NumberWithUnitRecognizer.RecognizeAge(query, culture),
 
-                // Add Currency recognizer - This recognizer will find any currency presented
+                // Currency recognizer will find any currency presented
                 // E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
-                NumberWithUnitRecognizer.Instance.GetCurrencyModel(defaultCulture),
+                NumberWithUnitRecognizer.RecognizeCurrency(query, culture),
 
-                // Add Dimension recognizer - This recognizer will find any dimension presented
+                // Dimension recognizer will find any dimension presented
                 // E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
-                NumberWithUnitRecognizer.Instance.GetDimensionModel(defaultCulture),
+                NumberWithUnitRecognizer.RecognizeDimension(query, culture),
 
-                // Add Temperature recognizer - This recognizer will find any temperature presented
+                // Temperature recognizer will find any temperature presented
                 // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-                NumberWithUnitRecognizer.Instance.GetTemperatureModel(defaultCulture),
+                NumberWithUnitRecognizer.RecognizeTemperature(query, culture),
 
-                // Add Datetime recognizer - This model will find any Date even if its write in coloquial language - 
+                // Datetime recognizer This model will find any Date even if its write in coloquial language 
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-                DateTimeRecognizer.GetInstance().GetDateTimeModel(defaultCulture),
+                DateTimeRecognizer.RecognizeDateTime(query, culture),
 
-                // Add PhoneNumber recognizer - This recognizer will find any phone number presented
+                // PhoneNumber recognizer will find any phone number presented
                 // E.g "My phone number is ( 19 ) 38294427."
-                SequenceRecognizer.Instance.GetPhoneNumberModel(defaultCulture),
+                SequenceRecognizer.RecognizePhoneNumber(query, culture),
 
                 // Add IP recognizer - This recognizer will find any Ipv4/Ipv6 presented
                 // E.g "My Ip is 8.8.8.8"
-                SequenceRecognizer.Instance.GetIpAddressModel(defaultCulture)
-            };
+                SequenceRecognizer.RecognizeIpAddress(query, culture),
+
+                // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
+                // E.g "yup, I need that" will return "True"
+                ChoiceRecognizer.RecognizeBoolean(query, culture)
+                );
+        }
+        
+        private static IEnumerable<ModelResult> MergeResults(params List<ModelResult>[] results)
+        {
+            return results.SelectMany(o => o);
         }
 
         /// <summary>

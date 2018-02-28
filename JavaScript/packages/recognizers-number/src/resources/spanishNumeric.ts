@@ -15,12 +15,14 @@ export namespace SpanishNumeric {
 	export const TenToNineteenIntegerRegex = `(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)`;
 	export const TwentiesIntegerRegex = `(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)`;
 	export const TensNumberIntegerRegex = `(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)`;
+	export const NegativeNumberTermsRegex = `^[.]`;
+	export const NegativeNumberSignRegex = `^(${NegativeNumberTermsRegex}\\s+).*`;
 	export const DigitsNumberRegex = `\\d|\\d{1,3}(\\.\\d{3})`;
 	export const BelowHundredsRegex = `((${TenToNineteenIntegerRegex}|${TwentiesIntegerRegex}|(${TensNumberIntegerRegex}(\\s+y\\s+${ZeroToNineIntegerRegex})?))|${ZeroToNineIntegerRegex})`;
 	export const BelowThousandsRegex = `(${HundredsNumberIntegerRegex}(\\s+${BelowHundredsRegex})?|${BelowHundredsRegex})`;
 	export const SupportThousandsRegex = `((${BelowThousandsRegex}|${BelowHundredsRegex})\\s+${RoundNumberIntegerRegex}(\\s+${RoundNumberIntegerRegex})?)`;
 	export const SeparaIntRegex = `(${SupportThousandsRegex}(\\s+${SupportThousandsRegex})*(\\s+${BelowThousandsRegex})?|${BelowThousandsRegex})`;
-	export const AllIntRegex = `(${SeparaIntRegex}|mil(\\s+${BelowThousandsRegex})?)`;
+	export const AllIntRegex = `((NegativeNumberTermsRegex)?(${SeparaIntRegex}|mil(\\s+${BelowThousandsRegex})?))`;
 	export const PlaceHolderPureNumber = `\\b`;
 	export const PlaceHolderDefault = `\\D|\\b`;
 	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }

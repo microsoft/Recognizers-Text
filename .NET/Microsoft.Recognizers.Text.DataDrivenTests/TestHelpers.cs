@@ -16,6 +16,7 @@ using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.Sequence;
+using Microsoft.Recognizers.Text.Choice;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -67,6 +68,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimeExtendedTypes,
         PhoneNumber,
         IpAddress,
+        Boolean,
     }
 
     public enum DateTimeExtractors
@@ -104,51 +106,54 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     {
         public static IModel GetModel(this TestContext context)
         {
-            var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
+            var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
             var modelName = TestUtils.GetModel(context.TestName);
+
             switch (modelName)
             {
                 case Models.Number:
-                    return NumberRecognizer.Instance.GetNumberModel(language);
+                    return new NumberRecognizer(culture).GetNumberModel();
                 case Models.Ordinal:
-                    return NumberRecognizer.Instance.GetOrdinalModel(language);
+                    return new NumberRecognizer(culture).GetOrdinalModel();
                 case Models.Percent:
-                    return NumberRecognizer.Instance.GetPercentageModel(language);
+                    return new NumberRecognizer(culture).GetPercentageModel();
                 case Models.NumberRange:
-                    return NumberRecognizer.Instance.GetNumberRangeModel(language);
+                    return new NumberRecognizer(culture).GetNumberRangeModel();
                 case Models.Age:
-                    return NumberWithUnitRecognizer.Instance.GetAgeModel(language);
+                    return new NumberWithUnitRecognizer(culture).GetAgeModel();
                 case Models.Currency:
-                    return NumberWithUnitRecognizer.Instance.GetCurrencyModel(language);
+                    return new NumberWithUnitRecognizer(culture).GetCurrencyModel();
                 case Models.Dimension:
-                    return NumberWithUnitRecognizer.Instance.GetDimensionModel(language);
+                    return new NumberWithUnitRecognizer(culture).GetDimensionModel();
                 case Models.Temperature:
-                    return NumberWithUnitRecognizer.Instance.GetTemperatureModel(language);
+                    return new NumberWithUnitRecognizer(culture).GetTemperatureModel();
                 case Models.DateTime:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.None).GetDateTimeModel(language);
+                    return new DateTimeRecognizer(culture).GetDateTimeModel();
                 case Models.DateTimeSplitDateAndTime:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.SplitDateAndTime).GetDateTimeModel(language);
+                    return new DateTimeRecognizer(culture, DateTimeOptions.SplitDateAndTime).GetDateTimeModel();
                 case Models.CustomNumber:
-                    return GetCustomModelFor(language);
+                    return GetCustomModelFor(culture);
                 case Models.DateTimeCalendarMode:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
+                    return new DateTimeRecognizer(culture, DateTimeOptions.CalendarMode).GetDateTimeModel();
                 // DateTimeAlt function is only activated when ExtendedTypes is enabled
                 case Models.DateTimeExtendedTypes:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.ExtendedTypes).GetDateTimeModel(language);
+                    return new DateTimeRecognizer(culture, DateTimeOptions.ExtendedTypes).GetDateTimeModel();
                 case Models.PhoneNumber:
-                    return SequenceRecognizer.Instance.GetPhoneNumberModel(language);
+                    return new SequenceRecognizer(culture).GetPhoneNumberModel();
                 case Models.IpAddress:
-                    return SequenceRecognizer.Instance.GetIpAddressModel(language);
+                    return new SequenceRecognizer(culture).GetIpAddressModel();
+                case Models.Boolean:
+                    return new ChoiceRecognizer(culture).GetBooleanModel();
             }
 
-            throw new Exception($"Model '{modelName}' for '{language}' not supported");
+            throw new Exception($"Model '{modelName}' for '{culture}' not supported");
         }
 
         public static IDateTimeExtractor GetExtractor(this TestContext context)
         {
-            var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
+            var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
             var extractorName = TestUtils.GetExtractor(context.TestName);
-            switch (language)
+            switch (culture)
             {
                 case Culture.English:
                     return GetEnglishExtractor(extractorName);
@@ -164,14 +169,14 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetGermanExtractor(extractorName);
             }
 
-            throw new Exception($"Extractor '{extractorName}' for '{language}' not supported");
+            throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
         }
 
         public static IDateTimeParser GetDateTimeParser(this TestContext context)
         {
-            var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
+            var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
             var parserName = TestUtils.GetParser(context.TestName);
-            switch (language)
+            switch (culture)
             {
                 case Culture.English:
                     return GetEnglishParser(parserName);
@@ -187,7 +192,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetGermanParser(parserName);
             }
 
-            throw new Exception($"Parser '{parserName}' for '{language}' not supported");
+            throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
         }
 
         public static IDateTimeExtractor GetEnglishExtractor(DateTimeExtractors extractorName)
@@ -558,9 +563,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for German not supported");
         }
 
-        private static IModel GetCustomModelFor(string language)
+        private static IModel GetCustomModelFor(string culture)
         {
-            switch (language)
+            switch (culture)
             {
                 case Culture.Chinese:
                     return new NumberModel(
@@ -568,7 +573,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                         new NumberExtractor(ChineseNumberMode.ExtractAll));
             }
 
-            throw new Exception($"Custom Model for '{language}' not supported");
+            throw new Exception($"Custom Model for '{culture}' not supported");
         }
     }
 
