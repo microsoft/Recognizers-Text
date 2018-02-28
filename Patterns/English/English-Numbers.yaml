@@ -6,9 +6,9 @@ RoundNumberIntegerRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: (three|seven|eight|four|five|zero|nine|one|two|six)
 NegativeNumberTermsRegex: !simpleRegex
-  def: (minus|negative)
+  def: ((minus|negative)\s+)
 NegativeNumberSignRegex: !nestedRegex
-  def: ^({NegativeNumberTermsRegex}\s+).*
+  def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]
 AnIntRegex: !simpleRegex
   def: (an|a)(?=\s)
@@ -20,28 +20,30 @@ SeparaIntRegex: !nestedRegex
   def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
 AllIntRegex: !nestedRegex
-  def: (({NegativeNumberTermsRegex}\s+)?(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex}))
-  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex, NegativeNumberTermsRegex ]
+  def: (((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})
+  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex ]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})
+  def: ((minus|negative)\s+)?(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
-NumbersWithSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)
+NumbersWithSuffix: !nestedRegex
+  def: ({NegativeNumberTermsRegex})?(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)
+  references: [ NegativeNumberTermsRegex ]
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
-  references: [ RoundNumberIntegerRegex ]
-NumbersWithDozenSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)
+  def: ({NegativeNumberTermsRegex})?(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  references: [ RoundNumberIntegerRegex, NegativeNumberTermsRegex ]
+NumbersWithDozenSuffix: !nestedRegex
+  def: ({NegativeNumberTermsRegex})?(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)
+  references: [ NegativeNumberTermsRegex ]
 AllIntRegexWithLocks: !nestedRegex
-  def: ((?<=\b){AllIntRegex}(?=\b))
-  references: [ AllIntRegex ]
+  def: ((?<=\b)(({NegativeNumberTermsRegex})?{AllIntRegex})(?=\b))
+  references: [ AllIntRegex, NegativeNumberTermsRegex ]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)
-  references: [ AllIntRegex ]
+  def: (?<=\b)({NegativeNumberTermsRegex})?(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)
+  references: [ AllIntRegex, NegativeNumberTermsRegex ]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (hundredth|thousandth|millionth|billionth|trillionth)
@@ -67,19 +69,21 @@ OrdinalEnglishRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
 #Fraction Regex
-FractionNotationWithSpacesRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationWithSpacesRegex: !nestedRegex
+  def: (({NegativeNumberTermsRegex})?(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$)))
+  references: [ NegativeNumberTermsRegex ]
+FractionNotationRegex: !nestedRegex
+  def: ({NegativeNumberTermsRegex})?(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+  references: [ NegativeNumberTermsRegex ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
+  def: (?<=\b)({NegativeNumberTermsRegex})?({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, NegativeNumberTermsRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
+  def: (?<=\b)({NegativeNumberTermsRegex})?({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, NegativeNumberTermsRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
-  references: [ AllIntRegex ]
+  def: (?<=\b)({NegativeNumberTermsRegex})?(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
+  references: [ AllIntRegex, NegativeNumberTermsRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex
   def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
@@ -87,12 +91,15 @@ AllPointRegex: !nestedRegex
 AllFloatRegex: !nestedRegex
   def: '{AllIntRegex}(\s+point){AllPointRegex}'
   references: [ AllIntRegex, AllPointRegex ]
-DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)
-DoubleExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)e([+-]*[1-9]\d*)(?=\b)
-DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)\^([+-]*[1-9]\d*)(?=\b)
+DoubleWithMultiplierRegex: !nestedRegex
+  def: ({NegativeNumberTermsRegex})?(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)
+  references: [ NegativeNumberTermsRegex ]
+DoubleExponentialNotationRegex: !nestedRegex
+  def: ({NegativeNumberTermsRegex})?(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)e([+-]*[1-9]\d*)(?=\b)
+  references: [ NegativeNumberTermsRegex ]
+DoubleCaretExponentialNotationRegex: !nestedRegex
+  def: ({NegativeNumberTermsRegex})?(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)\^([+-]*[1-9]\d*)(?=\b)
+  references: [ NegativeNumberTermsRegex ]
 DoubleDecimalPointRegex: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+(?!(\.\d+))(?={placeholder})
   params: [ placeholder ]
@@ -100,11 +107,11 @@ DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+))\.\d+(?!(\.\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithRoundNumber: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s+{RoundNumberIntegerRegex}(?=\b)
-  references: [ RoundNumberIntegerRegex ]
+  def: ({NegativeNumberTermsRegex})?(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  references: [ RoundNumberIntegerRegex, NegativeNumberTermsRegex ]
 DoubleAllFloatRegex: !nestedRegex
-  def: ((?<=\b){AllFloatRegex}(?=\b))
-  references: [ AllFloatRegex ]
+  def: ((?<=\b)({NegativeNumberTermsRegex})?{AllFloatRegex}(?=\b))
+  references: [ AllFloatRegex, NegativeNumberTermsRegex ]
 #Number Regex
 CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
