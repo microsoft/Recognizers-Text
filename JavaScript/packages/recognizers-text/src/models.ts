@@ -14,6 +14,25 @@ export class ModelResult {
     resolution: { [key: string]: any }
 }
 
+class ModelFactoryKey {
+    culture: string;
+    modelType: string;
+    options: string;
+    constructor(culture: string, modelType: string, options: string = null) {
+        this.culture = culture.toLowerCase();
+        this.modelType = modelType;
+        this.options = options;
+    }
+
+    public toString(): string {
+        return JSON.stringify(this);
+    }
+
+    public static fromString(key: string): ModelFactoryKey {
+        return <ModelFactoryKey>JSON.parse(key);
+    }
+}
+
 export class ModelFactory<TModelOptions> {
     static readonly defaultCulture: string = Culture.English;
 
@@ -60,7 +79,7 @@ export class ModelFactory<TModelOptions> {
     }
 
     private generateKey(modelTypeName: string, culture: string): string {
-        return `${culture.toLowerCase()}-${modelTypeName}`;
+        return new ModelFactoryKey(culture, modelTypeName).toString();
     }
 
     private getModelFromCache(modelTypeName: string, culture: string, options: TModelOptions): IModel{
@@ -74,6 +93,6 @@ export class ModelFactory<TModelOptions> {
     }
     
     private generateCacheKey(modelTypeName: string, culture: string, options: TModelOptions): string {
-        return `${culture.toLowerCase()}-${modelTypeName}-${options.toString()}`;
+        return new ModelFactoryKey(culture, modelTypeName, options.toString()).toString();
     }
 }
