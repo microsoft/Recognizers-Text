@@ -1,4 +1,4 @@
-export { default as ChoiceRecognizer, recognizeBoolean } from "./choice/choiceRecognizer";
+export { default as ChoiceRecognizer, ChoiceOptions, recognizeBoolean } from "./choice/choiceRecognizer";
 export { Culture } from "@microsoft/recognizers-text";
 export { Constants } from "./choice/constants";
 export { ChoiceModel, BooleanModel } from "./choice/models";
