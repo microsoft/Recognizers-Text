@@ -29,7 +29,7 @@ export default class OptionsRecognizer extends Recognizer<ChoiceOptions> {
             new BooleanParser(),
             new BooleanExtractor(new EnglishBooleanExtractorConfiguration())
         ));
-        //endregion
+        //#endregion
     }
 
     getBooleanModel(): IModel {

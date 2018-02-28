@@ -30,7 +30,7 @@ class ModelFactoryKey<TModelOptions> {
     }
 
     public static fromString<TModelOptions>(key: string): ModelFactoryKey<TModelOptions> {
-        return <ModelFactoryKey<TModelOptions>>JSON.parse(key);
+        return JSON.parse(key) as ModelFactoryKey<TModelOptions>;
     }
 }
 
