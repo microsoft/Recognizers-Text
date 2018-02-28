@@ -34,7 +34,7 @@ export class ChineseNumberParserConfiguration implements INumberParserConfigurat
     readonly percentageRegex: RegExp;
     readonly doubleAndRoundChsRegex: RegExp;
     readonly fracSplitRegex: RegExp;
-    readonly NegativeNumberSignRegex: RegExp;
+    readonly negativeNumberSignRegex: RegExp;
     readonly pointRegexChs: RegExp;
     readonly speGetNumberRegex: RegExp;
     readonly pairRegex: RegExp;
@@ -75,7 +75,7 @@ export class ChineseNumberParserConfiguration implements INumberParserConfigurat
         this.percentageRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PercentageRegex, "gis");
         this.doubleAndRoundChsRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleAndRoundChsRegex, "gis");
         this.fracSplitRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.FracSplitRegex, "gis");
-        this.NegativeNumberSignRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.NegativeNumberSignRegex, "gis");
+        this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.NegativeNumberSignRegex, "gis");
         this.pointRegexChs = RegExpUtility.getSafeRegExp(ChineseNumeric.PointRegexChs, "gis");
         this.speGetNumberRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.SpeGetNumberRegex, "gis");
         this.pairRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PairRegex, "gis");
