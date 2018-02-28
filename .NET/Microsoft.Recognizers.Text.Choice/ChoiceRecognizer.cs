@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Choice.English.Extractors;
 using Microsoft.Recognizers.Text.Choice.Extractors;
 using Microsoft.Recognizers.Text.Choice.Models;
