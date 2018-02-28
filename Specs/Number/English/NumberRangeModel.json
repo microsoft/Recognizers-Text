@@ -51,12 +51,12 @@
 }
 ,
 {
-  "Input": "He scores between the negative ten and the fifteen.",
+  "Input": "He scores between negative ten and fifteen.",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between the negative ten and the fifteen",
+      "Text": "between negative ten and fifteen",
       "TypeName": "numberrange",
       "Resolution": {
         "value": "(-10,15)"
