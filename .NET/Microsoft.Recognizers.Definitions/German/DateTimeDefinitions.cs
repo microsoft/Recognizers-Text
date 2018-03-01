@@ -169,6 +169,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AgoRegex = @"\b(ago)\b";
 		public const string LaterRegex = @"\b(später|von jetzt an)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
+		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string AmPmDescRegex = @"(ampm)";
 		public const string MorningStartEndRegex = @"(^(morgen(s)?))|((morgen(s)?)$)";
 		public const string AfternoonStartEndRegex = @"(^(nachmittag(s)?))|((nachmittag(s)?)$)";

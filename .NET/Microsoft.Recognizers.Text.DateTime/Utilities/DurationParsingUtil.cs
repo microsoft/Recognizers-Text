@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     class DurationParsingUtil
     {
-        public static bool isTimeDuration(string unitStr)
+        public static bool IsTimeDurationUnit(string unitStr)
         {
             var ret = false;
             switch (unitStr)
@@ -34,6 +34,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             var dict = ResolveDurationTimex(timex);
 
             return (dict.Count > 1);
+        }
+
+        public static bool IsDateDuration(string timex)
+        {
+            var dict = ResolveDurationTimex(timex);
+
+            foreach (var unit in dict.Keys)
+            {
+                if (IsTimeDurationUnit(unit))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public static DateObject ShiftDateTime(string timex, DateObject referenceDateTime, bool future)

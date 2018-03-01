@@ -250,7 +250,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
+  def: ([^A-Za-z]{1,}|\b)(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|minute)\b
 FivesRegex: !simpleRegex
@@ -400,6 +400,9 @@ LaterRegex: !simpleRegex
   def: \b(later|from now)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+WithinNextPrefixRegex: !nestedRegex
+  def: \b(within(\s+the)?(\s+{NextPrefixRegex})?)\b
+  references: [ NextPrefixRegex ]
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !nestedRegex

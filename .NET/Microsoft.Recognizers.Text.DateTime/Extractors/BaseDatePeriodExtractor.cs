@@ -188,6 +188,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
+                // within "Days/Weeks/Months/Years" should be handled as dateRange here
+                // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
+                match = config.WithinNextPrefixRegex.Match(beforeStr);
+                if (MatchPrefixRegexInSegment(beforeStr, match))
+                {
+                    var startToken = match.Index;
+                    var matchDate = config.DateUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                    var matchTime = config.TimeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+
+                    if (matchDate.Success && !matchTime.Success)
+                    {
+                        ret.Add(new Token(startToken, duration.End));
+                    }
+                }
+
                 match = this.config.FutureRegex.Match(beforeStr);
                 if (MatchPrefixRegexInSegment(beforeStr, match))
                 {

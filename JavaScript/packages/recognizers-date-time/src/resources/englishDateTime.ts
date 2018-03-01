@@ -107,7 +107,7 @@ export namespace EnglishDateTime {
 	export const MidTimeRegex = `(?<mid>(${MidnightRegex}|${MidmorningRegex}|${MidafternoonRegex}|${MiddayRegex}))`;
 	export const AtRegex = `\\b(((?<=\\bat\\s+)(${EngTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
 	export const IshRegex = `\\b(${BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\\b`;
-	export const TimeUnitRegex = `(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b`;
+	export const TimeUnitRegex = `([^A-Za-z]{1,}|\\b)(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b`;
 	export const RestrictedTimeUnitRegex = `(?<unit>hour|minute)\\b`;
 	export const FivesRegex = `(?<tens>(fifteen|twenty(\\s*five)?|thirty(\\s*five)?|forty(\\s*five)?|fourty(\\s*five)?|fifty(\\s*five)?|ten|five))\\b`;
 	export const HourRegex = `\\b(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)`;
@@ -170,6 +170,7 @@ export namespace EnglishDateTime {
 	export const AgoRegex = `\\b(ago)\\b`;
 	export const LaterRegex = `\\b(later|from now)\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
+	export const WithinNextPrefixRegex = `\\b(within(\\s+the)?(\\s+${NextPrefixRegex})?)\\b`;
 	export const AmPmDescRegex = `(ampm)`;
 	export const MorningStartEndRegex = `(^(morning|${AmDescRegex}))|((morning|${AmDescRegex})$)`;
 	export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;

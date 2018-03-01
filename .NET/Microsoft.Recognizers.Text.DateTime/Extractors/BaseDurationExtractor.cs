@@ -137,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     curUnit = unitMatch.Groups["unit"].ToString();
                     totalUnit++;
-                    if (DurationParsingUtil.isTimeDuration(UnitMap[curUnit]))
+                    if (DurationParsingUtil.IsTimeDurationUnit(UnitMap[curUnit]))
                     {
                         timeUnit++;
                     }
@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
 
                             totalUnit++;
-                            if (DurationParsingUtil.isTimeDuration(UnitMap[nextUnitStr]))
+                            if (DurationParsingUtil.IsTimeDurationUnit(UnitMap[nextUnitStr]))
                             {
                                 timeUnit++;
                             }
