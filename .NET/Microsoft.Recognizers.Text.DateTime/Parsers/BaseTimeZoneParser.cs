@@ -22,53 +22,53 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // GetMinutes compute minutes shift from UTC 0 from matched numbers in texts. e.g. "-4:30" -> -270; "8"-> 480; "+8"-> 480
-        public int GetMinutes(string matchedNumber)
+        public int ComputeMinutes(string utcOffset)
         {
-            if (matchedNumber.Length == 0)
+            if (utcOffset.Length == 0)
             {
-                return Constants.Illegal;
+                return Constants.InvalidOffsetValue;
             }
 
-            int bs = 1; // earlier than utc, default value
-            if (matchedNumber.StartsWith("+") || matchedNumber.StartsWith("-"))
+            int sign = 1; // earlier than utc, default value
+            if (utcOffset.StartsWith("+") || utcOffset.StartsWith("-"))
             {
-                if (matchedNumber.StartsWith("-"))
+                if (utcOffset.StartsWith("-"))
                 {
-                    bs = -1; // later than utc 0
+                    sign = -1; // later than utc 0
                 }
 
-                matchedNumber = matchedNumber.Substring(1).Trim();
+                utcOffset = utcOffset.Substring(1).Trim();
             }
 
             int hours = 0;
             int minutes = 0;
-            if (matchedNumber.Contains(":"))
+            if (utcOffset.Contains(":"))
             {
-                List<string> splitParts = matchedNumber.Split(':').ToList();
+                List<string> splitParts = utcOffset.Split(':').ToList();
                 string f1 = splitParts[0];
                 string f2 = splitParts[1];
                 hours = int.Parse(f1);
                 minutes = int.Parse(f2);
             }
-            else if (int.TryParse(matchedNumber, out hours))
+            else if (int.TryParse(utcOffset, out hours))
             {
                 minutes = 0;
             }
 
             if (hours > 12)
             {
-                return Constants.Illegal;
+                return Constants.InvalidOffsetValue;
             }
 
             if (minutes != 0 && minutes != 15 && minutes != 30 && minutes != 45 && minutes != 60)
             {
-                return Constants.Illegal;
+                return Constants.InvalidOffsetValue;
             }
 
-            int totalm = hours * 60 + minutes;
-            totalm *= bs;
+            int offsetInMinutes = hours * 60 + minutes;
+            offsetInMinutes *= sign;
 
-            return totalm;
+            return offsetInMinutes;
         }
 
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
@@ -81,54 +81,50 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Text = er.Text,
                 Type = er.Type
             };
-
-            var val = new DateTimeResolutionResult();
+            
             string text = er.Text.ToLower();
             string matched = Regex.Match(text, TimeZoneDefinitions.DirectUTCRegex).Groups[2].Value;
-            int tmpMinutes = GetMinutes(matched);
+            int offsetInMinutes = ComputeMinutes(matched);
 
-            if (tmpMinutes != Constants.Illegal)
+            if (offsetInMinutes != Constants.InvalidOffsetValue)
             {
-                val.Success = true;
-                val.TimeZoneResolution = new TimeZoneResolutionResult()
-                {
-                    Value = $"UTC{(tmpMinutes > 0 ? "+" : "")}{tmpMinutes / 60.0}",
-                    OffsetMins = tmpMinutes
-                };
-
-                result.Value = val;
-                result.ResolutionStr = Constants.UTCSHIFT + ": " + tmpMinutes.ToString();
+                result.Value = GetDateTimeResolutionResult(offsetInMinutes);
+                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + offsetInMinutes.ToString();
             }
             else if (TimeZoneDefinitions.abbr2Minute.ContainsKey(text))
             {
                 int utcMinuteShift = TimeZoneDefinitions.abbr2Minute[text];
-
-                val.Success = true;
-                val.TimeZoneResolution = new TimeZoneResolutionResult()
-                {
-                    Value = $"UTC{(utcMinuteShift > 0 ? "+" : "")}{utcMinuteShift / 60.0}",
-                    OffsetMins = utcMinuteShift
-                };
-
-                result.Value = val;
-                result.ResolutionStr = Constants.UTCSHIFT + ": " + utcMinuteShift.ToString();
+                result.Value = GetDateTimeResolutionResult(utcMinuteShift);
+                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
             }
             else if (TimeZoneDefinitions.full2Minute.ContainsKey(text))
             {
                 int utcMinuteShift = TimeZoneDefinitions.full2Minute[text.ToLower()];
-
-                val.Success = true;
-                val.TimeZoneResolution = new TimeZoneResolutionResult()
-                {
-                    Value = $"UTC{(utcMinuteShift > 0 ? "+" : "")}{utcMinuteShift / 60.0}",
-                    OffsetMins = utcMinuteShift
-                };
-
-                result.Value = val;
-                result.ResolutionStr = Constants.UTCSHIFT + ": " + utcMinuteShift.ToString();
+                result.Value = GetDateTimeResolutionResult(utcMinuteShift);
+                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
             }
 
             return result;
+        }
+
+        public DateTimeResolutionResult GetDateTimeResolutionResult(int offsetMins)
+        {
+            var val = new DateTimeResolutionResult()
+            {
+                Success = true,
+                TimeZoneResolution = new TimeZoneResolutionResult()
+                {
+                    Value = ConvertOffsetInMinsToOffsetString(offsetMins),
+                    OffsetMins = offsetMins
+                }
+            };
+
+            return val;
+        }
+
+        public string ConvertOffsetInMinsToOffsetString(int offsetMins)
+        {
+            return $"Utc{(offsetMins > 0 ? "+" : "")}{offsetMins / 60.0}";
         }
     }
 }

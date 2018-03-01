@@ -755,6 +755,7 @@
 },
 {
   "Input": "This is beijing time",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -765,6 +766,7 @@
 },
 {
   "Input": "This is afghanistan standard time",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

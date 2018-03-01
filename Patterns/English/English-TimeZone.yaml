@@ -277,10 +277,8 @@ full2Minute: !dictionary
    ulaanbaatar standard time: 480
    us eastern standard time: -300
    us mountain standard time: -420
-   utc: 0
    utc+12: 720
    utc-02: -120
-   utc-11á: 0
    venezuela standard time: -240
    vladivostok standard time: 600
    w. australia standard time: 480

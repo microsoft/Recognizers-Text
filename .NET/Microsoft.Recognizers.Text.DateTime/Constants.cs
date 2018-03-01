@@ -60,8 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int InvalidYear = int.MinValue;
 
         // special value for timezone
-        public const int Illegal = -10000;
-        public const string UTCSHIFT = "UTCOffsetMins";
+        public const int InvalidOffsetValue = -10000;
+        public const string UtcOffsetMinsKey = "UTCOffsetMins";
         public const string ResolveTimeZone = "resolveTimeZone";
     }
 }

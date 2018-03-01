@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -24,10 +24,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Chinese\Chinese-DateTime.yaml = ..\Patterns\Chinese\Chinese-DateTime.yaml
 		..\Patterns\Chinese\Chinese-Numbers.yaml = ..\Patterns\Chinese\Chinese-Numbers.yaml
 		..\Patterns\Chinese\Chinese-NumbersWithUnit.yaml = ..\Patterns\Chinese\Chinese-NumbersWithUnit.yaml
+		..\Patterns\English\English-Choice.yaml = ..\Patterns\English\English-Choice.yaml
 		..\Patterns\English\English-DateTime.yaml = ..\Patterns\English\English-DateTime.yaml
 		..\Patterns\English\English-Numbers.yaml = ..\Patterns\English\English-Numbers.yaml
 		..\Patterns\English\English-NumbersWithUnit.yaml = ..\Patterns\English\English-NumbersWithUnit.yaml
-		..\Patterns\English\English-Choice.yaml = ..\Patterns\English\English-Choice.yaml
+		..\Patterns\English\English-TimeZone.yaml = ..\Patterns\English\English-TimeZone.yaml
 		..\Patterns\French\French-DateTime.yaml = ..\Patterns\French\French-DateTime.yaml
 		..\Patterns\French\French-Numbers.yaml = ..\Patterns\French\French-Numbers.yaml
 		..\Patterns\French\French-NumbersWithUnit.yaml = ..\Patterns\French\French-NumbersWithUnit.yaml

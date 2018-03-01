@@ -98,10 +98,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
-            {
-                pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
-            }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
             {
                 pr = this.Config.TimePeriodParser.Parse(er, referenceTime);
@@ -121,6 +117,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
                 pr = this.Config.DateTimeAltParser.Parse(er, referenceTime);
+            }
+            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
+            {
+                pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
             }
             else
             {
@@ -331,7 +331,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var timeZoneResolution = new Dictionary<string, string>();
                 timeZoneResolution.Add(ResolutionKey.Value, val.TimeZoneResolution.Value);
-                timeZoneResolution.Add(Constants.UTCSHIFT, val.TimeZoneResolution.OffsetMins.ToString());
+                timeZoneResolution.Add(Constants.UtcOffsetMinsKey, val.TimeZoneResolution.OffsetMins.ToString());
 
                 AddResolutionFields(res, Constants.ResolveTimeZone, timeZoneResolution);
             }

@@ -97,18 +97,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 int firstIndex = -1;
                 for (var i = 0; i < dst.Count; i++)
                 {
-                    //if (dst[i].IsOverlap(result))
-                    //{
-                    //    if (firstIndex == -1)
-                    //    {
-                    //        firstIndex = i;
-                    //    }
-                    //    isFound = true;
-                    //    if (result.Length > dst[i].Length)
-                    //    {
-                    //        overlapIndexes.Add(i);
-                    //    }
-                    //}
                     if (dst[i].IsOverlap(result))
                     {
                         isFound = true;

@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-    [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationExtractor-English.csv", "DurationExtractor-English#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationExtractor-English.csv", "DurationExtractor-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DurationExtractor()
         {
@@ -196,7 +196,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-    [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationParser-English.csv", "DurationParser-English#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationParser-English.csv", "DurationParser-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DurationParser()
         {
