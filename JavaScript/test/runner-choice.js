@@ -1,22 +1,16 @@
 var _ = require('lodash');
-var ChoiceRecognizer = require('@microsoft/recognizers-text-choice').ChoiceRecognizer;
+var Recognizer = require('@microsoft/recognizers-text-suite');
 var SupportedCultures = require('./cultures.js');
 
-var modelGetters = {
-    'BooleanModel': new ChoiceRecognizer().getBooleanModel
+var parserGetters = {
+    'BooleanModel': (input, culture, options) => Recognizer.recognizeBoolean(input, culture, options, false)
 };
 
 module.exports = function getChoiceTestRunner(config) {
-    try {
-        var model = getChoiceModel(config);
-    } catch (err) {
-        return null;
-    }
-
     return function (t, testCase) {
 
         if (testCase.Debug) debugger;
-        var result = model.parse(testCase.Input);
+        var result = getResults(testCase.Input, config);
 
         t.is(result.length, testCase.Results.length, 'Result count');
         _.zip(result, testCase.Results).forEach(o => {
@@ -35,16 +29,16 @@ module.exports = function getChoiceTestRunner(config) {
     };
 }
 
-function getChoiceModel(config) {
-    var getModel = modelGetters[config.subType];
-    if (!getModel) {
-        throw new Error(`Choice model of ${config.subType} not supported.`);
+function getResults(input, config) {
+    var parserFunction = parserGetters[config.subType];
+    if(!parserFunction) {
+        throw new Error(`NumberWithUnit model of ${config.subType} not supported.`);
     }
 
     var culture = SupportedCultures[config.language].cultureCode;
     if (!culture) {
-        throw new Error(`Choice model of ${config.subType} with culture ${config.language} not supported.`);
+        throw new Error(`NumberWithUnit model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(new ChoiceRecognizer(culture))();
+    return parserFunction(input, culture, 0);
 }

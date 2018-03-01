@@ -1,26 +1,23 @@
 var _ = require('lodash');
+var Recognizer = require('@microsoft/recognizers-text-suite');
+var NumberOptions = require('@microsoft/recognizers-text-suite').NumberOptions;
 var RecognizerTextNumber = require('@microsoft/recognizers-text-number');
-var NumberRecognizer = require('@microsoft/recognizers-text-number').NumberRecognizer;
-var NumberOptions = require('@microsoft/recognizers-text-number').NumberOptions;
 var SupportedCultures = require('./cultures.js');
 
-
-var recognizer = new NumberRecognizer()
-var modelGetters = {
-    'NumberModel': recognizer.getNumberModel,
-    'OrdinalModel': recognizer.getOrdinalModel,
-    'PercentModel': recognizer.getPercentageModel,
+var parserGetters = {
+    'NumberModel': (input, culture, options) => Recognizer.recognizeNumber(input, culture, options, false),
+    'OrdinalModel': (input, culture, options) => Recognizer.recognizeOrdinal(input, culture, options, false),
+    'PercentModel': (input, culture, options) => Recognizer.recognizePercentage(input, culture, options, false),
     // TODO: Implement number range model in javascript
-    'NumberRangeModel': recognizer.getNumberModel,
-    'CustomNumberModel': getCustomNumberModel
+    'NumberRangeModel': (input, culture, options) => null,
+    'CustomNumberModel': (input, culture, options) => getCustomNumberModel(culture).parse(input)
 };
 
 module.exports = function getNumberTestRunner(config) {
-    var model = getNumberModel(config);
     return function (t, testCase) {
 
         if (testCase.Debug) debugger;
-        var result = model.parse(testCase.Input);
+        var result = getResults(testCase.Input, config);
 
         t.is(result.length, testCase.Results.length, 'Result count');
         _.zip(result, testCase.Results).forEach(o => {
@@ -47,9 +44,9 @@ function getCustomNumberModel(culture) {
     return null;
 }
 
-function getNumberModel(config) {
-    var getModel = modelGetters[config.subType];
-    if(!getModel) {
+function getResults(input, config) {
+    var parserFunction = parserGetters[config.subType];
+    if(!parserFunction) {
         throw new Error(`Number model of ${config.subType} not supported.`);
     }
 
@@ -58,5 +55,5 @@ function getNumberModel(config) {
         throw new Error(`Number model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(new NumberRecognizer(culture, NumberOptions.None))(culture, false);
+    return parserFunction(input, culture, 0);
 }
