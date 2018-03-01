@@ -14,12 +14,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex AbbreviationRegex =
             new Regex(
-                TimeZoneDefinitions.AbbrRegex,
+                TimeZoneDefinitions.AbbreviationsRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex StandardTimeRegex =
             new Regex(
-                TimeZoneDefinitions.FullRegex,
+                TimeZoneDefinitions.FullNameRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] TimeZoneRegexList =

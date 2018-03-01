@@ -91,15 +91,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 result.Value = GetDateTimeResolutionResult(offsetInMinutes);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + offsetInMinutes.ToString();
             }
-            else if (TimeZoneDefinitions.abbr2Minute.ContainsKey(text))
+            else if (TimeZoneDefinitions.AbbrToMinMapping.ContainsKey(text))
             {
-                int utcMinuteShift = TimeZoneDefinitions.abbr2Minute[text];
+                int utcMinuteShift = TimeZoneDefinitions.AbbrToMinMapping[text];
                 result.Value = GetDateTimeResolutionResult(utcMinuteShift);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
             }
-            else if (TimeZoneDefinitions.full2Minute.ContainsKey(text))
+            else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(text))
             {
-                int utcMinuteShift = TimeZoneDefinitions.full2Minute[text.ToLower()];
+                int utcMinuteShift = TimeZoneDefinitions.FullToMinMapping[text.ToLower()];
                 result.Value = GetDateTimeResolutionResult(utcMinuteShift);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
             }
