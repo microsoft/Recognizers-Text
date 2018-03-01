@@ -61,6 +61,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateTimeDefinitions.DateUnitRegex, // year, month, week, day
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TimeUnitRegex =
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex PastPrefixRegex = // **In French, Past/Next is suffix, but interface enforces this 
             new Regex(
                 DateTimeDefinitions.PastSuffixRegex, // past, last, previous
@@ -177,6 +180,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.InConnectorRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WithinNextPrefixRegex =
+            new Regex(
+                DateTimeDefinitions.WithinNextPrefixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex RestOfDateRegex =
             new Regex(DateTimeDefinitions.RestOfDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -256,6 +264,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDatePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
+        Regex IDatePeriodExtractorConfiguration.TimeUnitRegex => TimeUnitRegex;
+
         Regex IDatePeriodExtractorConfiguration.FollowedDateUnit => FollowedDateUnit;
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
@@ -273,6 +283,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDatePeriodExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDatePeriodExtractorConfiguration.InConnectorRegex => InConnectorRegex;
+
+        Regex IDatePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
 

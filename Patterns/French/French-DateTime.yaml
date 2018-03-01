@@ -371,6 +371,9 @@ LaterRegex: !simpleRegex
   def: \b(plus tard)\b
 InConnectorRegex: !simpleRegex
   def: \b(dans|en|sur)\b
+WithinNextPrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AmDescRegex: !simpleRegex
   def: (h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)
 PmDescRegex: !simpleRegex

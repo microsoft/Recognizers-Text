@@ -1,14 +1,17 @@
 var _ = require('lodash');
 var RecognizerTextNumber = require('@microsoft/recognizers-text-number');
 var NumberRecognizer = require('@microsoft/recognizers-text-number').NumberRecognizer;
+var NumberOptions = require('@microsoft/recognizers-text-number').NumberOptions;
 var SupportedCultures = require('./cultures.js');
 
+
+var recognizer = new NumberRecognizer()
 var modelGetters = {
-    'NumberModel': NumberRecognizer.instance.getNumberModel,
-    'OrdinalModel': NumberRecognizer.instance.getOrdinalModel,
-    'PercentModel': NumberRecognizer.instance.getPercentageModel,
+    'NumberModel': recognizer.getNumberModel,
+    'OrdinalModel': recognizer.getOrdinalModel,
+    'PercentModel': recognizer.getPercentageModel,
     // TODO: Implement number range model in javascript
-    'NumberRangeModel': NumberRecognizer.instance.getNumberModel,
+    'NumberRangeModel': recognizer.getNumberModel,
     'CustomNumberModel': getCustomNumberModel
 };
 
@@ -30,14 +33,16 @@ module.exports = function getNumberTestRunner(config) {
     };
 }
 
-function getCustomNumberModel(culture, fallbackToDefaultCulture) {
+function getCustomNumberModel(culture) {
     switch (culture) {
         case SupportedCultures['Chinese'].cultureCode:
             return new RecognizerTextNumber.NumberModel(
-                RecognizerTextNumber.AgnosticNumberParserFactory.getParser(RecognizerTextNumber.AgnosticNumberParserType.Number, new RecognizerTextNumber.ChineseNumberParserConfiguration()),
-                new RecognizerTextNumber.ChineseNumberExtractor(1)
+                RecognizerTextNumber.AgnosticNumberParserFactory.getParser(
+                    RecognizerTextNumber.AgnosticNumberParserType.Number,
+                    new RecognizerTextNumber.ChineseNumberParserConfiguration()),
+                new RecognizerTextNumber.ChineseNumberExtractor(RecognizerTextNumber.ChineseNumberMode.ExtractAll)
             );
-        break;
+            break;
     }
     return null;
 }
@@ -53,5 +58,5 @@ function getNumberModel(config) {
         throw new Error(`Number model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(NumberRecognizer.instance)(culture, false);
+    return getModel.bind(new NumberRecognizer(culture, NumberOptions.None))(culture, false);
 }

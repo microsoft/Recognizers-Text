@@ -2,11 +2,12 @@ var _ = require('lodash');
 var NumberWithUnitRecognizer = require('@microsoft/recognizers-text-number-with-unit').NumberWithUnitRecognizer;
 var SupportedCultures = require('./cultures.js');
 
+var recognizer = new NumberWithUnitRecognizer();
 var modelGetters = {
-    'AgeModel': NumberWithUnitRecognizer.instance.getAgeModel,
-    'CurrencyModel': NumberWithUnitRecognizer.instance.getCurrencyModel,
-    'TemperatureModel': NumberWithUnitRecognizer.instance.getTemperatureModel,
-    'DimensionModel': NumberWithUnitRecognizer.instance.getDimensionModel
+    'AgeModel': recognizer.getAgeModel,
+    'CurrencyModel': recognizer.getCurrencyModel,
+    'TemperatureModel': recognizer.getTemperatureModel,
+    'DimensionModel': recognizer.getDimensionModel
 };
 
 module.exports = function getNumberWithUnitTestRunner(config) {
@@ -49,5 +50,5 @@ function getNumberWithUnitModel(config) {
         throw new Error(`NumberWithUnit model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(NumberWithUnitRecognizer.instance)(culture, false);
+    return getModel.bind(new NumberWithUnitRecognizer(culture))();
 }

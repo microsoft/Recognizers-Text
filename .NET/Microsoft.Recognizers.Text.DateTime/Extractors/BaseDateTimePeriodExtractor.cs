@@ -379,6 +379,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
+                // within (the) (next) "Seconds/Minutes/Hours" should be handled as datetimeRange here
+                // within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
+                match = config.WithinNextPrefixRegex.Match(beforeStr);
+                if (MatchPrefixRegexInSegment(beforeStr, match))
+                {
+                    var startToken = match.Index;
+                    match = config.TimeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                    if (match.Success)
+                    {
+                        ret.Add(new Token(startToken, duration.End));
+                    }
+                }
+
                 match = this.config.NextPrefixRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
@@ -404,7 +417,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
                 }
-
             }
 
             return ret;
@@ -426,6 +438,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        private bool MatchPrefixRegexInSegment(string beforeStr, Match match)
+        {
+            var result = match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
+            return result;
         }
     }
 }

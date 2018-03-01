@@ -41,6 +41,7 @@ export namespace SpanishDateTime {
 	export const MonthOfRegex = `(mes)(\\s*)((do|da|de))`;
 	export const RangeUnitRegex = `\\b(?<unit>años|año|meses|mes|semanas|semana)\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
+	export const WithinNextPrefixRegex = `^[.]`;
 	export const FromRegex = `((desde|de)(\\s*la(s)?)?)$`;
 	export const ConnectorAndRegex = `(y\\s*(la(s)?)?)$`;
 	export const BetweenRegex = `(entre\\s*(la(s)?)?)`;

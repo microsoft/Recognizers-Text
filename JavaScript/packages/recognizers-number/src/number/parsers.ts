@@ -102,7 +102,7 @@ export class BaseNumberParser implements IParser {
                 // Recover to the original extracted Text
                 ret.text = matchNegative[1] + extResult.text;
                 // Check if ret.value is a BigNumber
-                if (typeof ret.value == "number") {
+                if (typeof ret.value === "number") {
                     ret.value = -ret.value;
                 }
                 else {

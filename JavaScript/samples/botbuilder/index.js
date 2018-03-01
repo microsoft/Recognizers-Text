@@ -1,8 +1,8 @@
 // Our Number and DateTime Recognizer models
 var Recognizers = require('@microsoft/recognizers-text-suite');
-var numberModel = Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English);
-var dateModel = Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English);
-var booleanModel = Recognizers.OptionsRecognizer.instance.getBooleanModel(Recognizers.Culture.English);
+var recognizeNumber = (query) => Recognizers.recognizeNumber(query, Recognizers.Culture.English);
+var recognizeDate = (query) => Recognizers.recognizeDateTime(query, Recognizers.Culture.English);
+var recognizeBoolean = (query) => Recognizers.recognizeBoolean(query, Recognizers.Culture.English);
 
 // This loads the environment variables from the .env file
 require('dotenv-extended').load();
@@ -13,7 +13,7 @@ var restify = require('restify');
 
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
+server.listen(process.env.port || process.env.PORT || 3979, function () {
     console.log('%s listening to %s', server.name, server.url);
 });
 
@@ -114,8 +114,7 @@ bot.dialog('ask-amount', new builder.Prompt().onRecognize((context, callback) =>
     var input = context.message.text || '';
 
     // Parse user input as is
-    var results = numberModel.parse(input);
-    console.log('numberModel parse results: ', results);
+    var results = recognizeNumber(input);
 
     // Care for the first result only
     if (results.length && results[0].typeName === 'number') {
@@ -144,7 +143,6 @@ var DateValidationErros = {
 // Ask for delivery date and validate input
 bot.dialog('ask-date', new builder.Prompt().onRecognize((context, callback) => {
     var result = validateAndExtract(context.message.text || '');
-    console.log('ask-date-result:', result);
 
     if (result.valid) {
         // return value to calling dialog
@@ -162,8 +160,7 @@ bot.dialog('ask-confirmation', new builder.Prompt().onRecognize((context, callba
     var input = context.message.text || '';
 
     // Parse user input as is
-    var results = booleanModel.parse(input);
-    console.log('booleanModel parse results: ', results);
+    var results = recognizeBoolean(input);
 
     // Care for the first result only
     if (results.length && results[0].typeName === 'boolean') {
@@ -203,10 +200,7 @@ bot.on('error', function (e) {
 // Date Helpers
 function validateAndExtract(input) {
 
-    var results = dateModel.parse(input);
-
-    // Log the results
-    console.log('dateModel.parse() results', results);
+    var results = recognizeDate(input);
 
     // Check there are valid results
     if (results.length && results[0].typeName.startsWith('datetimeV2')) {

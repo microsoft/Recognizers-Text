@@ -30,47 +30,47 @@ var myCulture = Recognizers.Culture.English;
 
 // Add Number recognizer - This recognizer will find any number from the input
 // E.g "I have two apples" will return "2".
-Recognizers.NumberRecognizer.instance.getNumberModel(myCulture)
+Recognizers.recognizeNumber(query, myCulture)
 
 // Add Ordinal number recognizer - This recognizer will find any ordinal number
 // E.g "eleventh" will return "11".
-Recognizers.NumberRecognizer.instance.getOrdinalModel(myCulture)
+Recognizers.recognizeOrdinal(query, myCulture)
 
 // Add Percentage recognizer - This recognizer will find any number presented as percentage
 // E.g "one hundred percents" will return "100%"
-Recognizers.NumberRecognizer.instance.getPercentageModel(myCulture)
+Recognizers.recognizePercentage(query, myCulture)
 
 // Add Age recognizer - This recognizer will find any age number presented
 // E.g "After ninety five years of age, perspectives change" will return "95 Year"
-Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(myCulture)
+Recognizers.recognizeAge(query, myCulture)
 
 // Add Currency recognizer - This recognizer will find any currency presented
 // E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
-Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(myCulture)
+Recognizers.recognizeCurrency(query, myCulture)
 
 // Add Dimension recognizer - This recognizer will find any dimension presented
 // E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
-Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(myCulture)
+Recognizers.recognizeDimension(query, myCulture)
 
 // Add Temperature recognizer - This recognizer will find any temperature presented
 // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(myCulture)
+Recognizers.recognizeTemperature(query, myCulture)
 
 // Add Datetime recognizer - This model will find any Date even if its write in coloquial language -
 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-Recognizers.DateTimeRecognizer.instance.getDateTimeModel(myCulture)
+Recognizers.recognizeDateTime(query, myCulture)
+
+// Boolean recognizer - This function will find yes/no like responses, including emoji -
+// E.g "yup, I need that" will return "True"
+Recognizers.recognizeBoolean(query, myCulture)
 ````
 
 All these models accept an input as a string and returns an **Array** of [ModelResult](../packages/recognizers-number/src/models.ts#L8-L14):
 
 ````JavaScript
-// Number model
-var model = Recognizers.NumberRecognizer.instance.getNumberModel("en-us");
+var result = Recognizers.recognizeNumber("I have twenty apples");
 
-// Parse input using Number model
-var result = model.parse("I have twenty apples");
-
-// result is:
+// Returns:
 // [
 // 	{
 // 		"start": 7,
@@ -106,8 +106,7 @@ The sample works by referencing the browser bundle generated on build (located a
 Recognizers Models can then be obtained from the global `RecognizersText` namespace:
 
 ````JavaScript
-var model = RecognizersText.DateTimeRecognizer.instance.getDateTimeModel("en-us");
-var result = model.parse("I need to leave ASAP");
+var result = Recognizers.recognizeDateTime("I need to leave ASAP", "en-us");
 
 // Returns:
 // [
@@ -158,15 +157,10 @@ Once connected, the bot will display a welcome message and ask for how many rose
 In order to validate user input, [Custom prompts](https://github.com/Microsoft/BotBuilder/issues/3129#issuecomment-315849557) are used, which can run custom validation logic using the [`onRecognizer` handler](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.prompt.html#onrecognize). The following code creates a bot dialog that prompts the user for an integer number:
 
 ````JavaScript
-// NumberModel
-var Recognizers = require('@microsoft/recognizers-text-suite');
-var numberModel = Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English);
-
 // Ask for amount of roses and validate input
 bot.dialog('ask-amount', new builder.Prompt().onRecognize((context, callback) => {
     var input = context.message.text || '';
-    var results = numberModel.parse(input);
-    console.log('numberModel parse results: ', results);
+    var results = Recognizers.recognizeNumber(input, Recognizers.Culture.English);
 
     // Care for the first result only
     if (results.length && results[0].typeName === 'number') {
@@ -236,17 +230,10 @@ The [`ask-date` dialog](./botbuilder/index.js#L118-L132) does exactly that. It w
 This dialog uses a helper method to call the DateTime Recognizer, to validate the subtype and check the selected delivery moment is at least one hour from now:
 
 ````JavaScript
-// Our Number and DateTime Recognizer models
-var Recognizers = require('@microsoft/recognizers-text-suite');
-var dateModel = Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English);
-
 // Date Helpers
 function validateAndExtract(input) {
 
-    var results = dateModel.parse(input);
-
-    // Log the results
-    console.log('dateModel.parse() results', results);
+    var results = Recognizers.recognizeDateTime(input, Recognizers.Culture.English);
 
     // Check there are valid results
     if (results.length && results[0].typeName.startsWith('datetimeV2')) {

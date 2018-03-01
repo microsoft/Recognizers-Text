@@ -12,42 +12,53 @@ export enum DateTimeOptions {
     None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4 
 }
 
-export default class DateTimeRecognizer extends Recognizer {
-    static readonly instance: DateTimeRecognizer = new DateTimeRecognizer(DateTimeOptions.None);
+export function recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None,
+        referenceDate: Date = new Date(), fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
+    let recognizer = new DateTimeRecognizer(culture, options);
+    let model = recognizer.getDateTimeModel(culture, fallbackToDefaultCulture);
+    return model.parse(query, referenceDate);
+}
 
-    private constructor(options: DateTimeOptions) {
-        super();
+export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
+    constructor(culture: string, options: DateTimeOptions = DateTimeOptions.None, lazyInitialization: boolean = false) {
+        super(culture, options, lazyInitialization);
+    }
 
-        // English models
-        this.registerModel("DateTimeModel", Culture.English, new DateTimeModel(
-            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), options),
-            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options)
+    protected InitializeConfiguration() {
+        //#region English
+        this.registerModel("DateTimeModel", Culture.English, (options) => new DateTimeModel(
+            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), this.Options),
+            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), this.Options)
         ));
+        //#endregion
 
-        // Spanish models
-        this.registerModel("DateTimeModel", Culture.Spanish, new DateTimeModel(
-            new BaseMergedParser(new SpanishMergedParserConfiguration(), options),
-            new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
+        //#region Spanish
+        this.registerModel("DateTimeModel", Culture.Spanish, (options) => new DateTimeModel(
+            new BaseMergedParser(new SpanishMergedParserConfiguration(), this.Options),
+            new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), this.Options)
         ));
+        //#endregion
 
-        // Chinese models
-        this.registerModel("DateTimeModel", Culture.Chinese, new DateTimeModel(
+        //#region Chinese
+        this.registerModel("DateTimeModel", Culture.Chinese, (options) => new DateTimeModel(
             new ChineseFullMergedParser(),
-            new ChineseMergedExtractor(options)
+            new ChineseMergedExtractor(this.Options)
         ));
+        //#endregion
 
-        // French models
-        this.registerModel("DateTimeModel", Culture.French, new DateTimeModel(
-            new BaseMergedParser(new FrenchMergedParserConfiguration(), options),
-            new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), options)
+        //#region French
+        this.registerModel("DateTimeModel", Culture.French, (options) => new DateTimeModel(
+            new BaseMergedParser(new FrenchMergedParserConfiguration(), this.Options),
+            new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), this.Options)
         ));
+        //#endregion
     }
 
-    getDateTimeModel(culture: string = "", fallbackToDefaultCulture: boolean = true): IDateTimeModel {
+    protected IsValidOptions(options: number): boolean {
+        return options >= 0 && options <= DateTimeOptions.None + DateTimeOptions.SkipFromToMerge + DateTimeOptions.SplitDateAndTime + DateTimeOptions.Calendar;
+    }
+
+    getDateTimeModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IDateTimeModel {
         return this.getModel("DateTimeModel", culture, fallbackToDefaultCulture);
-    }
-
-    public static getSingleCultureInstance(cultureCode: string, options: DateTimeOptions = DateTimeOptions.None): DateTimeRecognizer {
-        return new DateTimeRecognizer(options);
     }
 }

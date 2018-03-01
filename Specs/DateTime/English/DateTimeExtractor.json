@@ -782,4 +782,14 @@
     }
   ]
 }
+,
+{
+  "Input": "I will leave in 2 minutes",  
+  "Results": [
+    {
+      "Text": "in 2 minutes",
+      "Type": "datetime"
+    }
+  ]
+}
 ]
