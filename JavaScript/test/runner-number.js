@@ -4,7 +4,7 @@ var NumberOptions = require('@microsoft/recognizers-text-suite').NumberOptions;
 var RecognizerTextNumber = require('@microsoft/recognizers-text-number');
 var SupportedCultures = require('./cultures.js');
 
-var parserGetters = {
+var modelFunctions = {
     'NumberModel': (input, culture, options) => Recognizer.recognizeNumber(input, culture, options, false),
     'OrdinalModel': (input, culture, options) => Recognizer.recognizeOrdinal(input, culture, options, false),
     'PercentModel': (input, culture, options) => Recognizer.recognizePercentage(input, culture, options, false),
@@ -45,8 +45,8 @@ function getCustomNumberModel(culture) {
 }
 
 function getResults(input, config) {
-    var parserFunction = parserGetters[config.subType];
-    if(!parserFunction) {
+    var modelFunction = modelFunctions[config.subType];
+    if(!modelFunction) {
         throw new Error(`Number model of ${config.subType} not supported.`);
     }
 
@@ -55,5 +55,5 @@ function getResults(input, config) {
         throw new Error(`Number model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return parserFunction(input, culture, 0);
+    return modelFunction(input, culture, 0);
 }

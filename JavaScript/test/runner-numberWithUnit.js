@@ -2,7 +2,7 @@ var _ = require('lodash');
 var Recognizer = require('@microsoft/recognizers-text-suite');
 var SupportedCultures = require('./cultures.js');
 
-var parserGetters = {
+var modelFunctions = {
     'AgeModel': (input, culture, options) => Recognizer.recognizeAge(input, culture, options, false),
     'CurrencyModel': (input, culture, options) => Recognizer.recognizeCurrency(input, culture, options, false),
     'TemperatureModel': (input, culture, options) => Recognizer.recognizeTemperature(input, culture, options, false),
@@ -33,8 +33,8 @@ module.exports = function getNumberWithUnitTestRunner(config) {
 }
 
 function getResults(input, config) {
-    var parserFunction = parserGetters[config.subType];
-    if(!parserFunction) {
+    var modelFunction = modelFunctions[config.subType];
+    if(!modelFunction) {
         throw new Error(`NumberWithUnit model of ${config.subType} not supported.`);
     }
 
@@ -43,5 +43,5 @@ function getResults(input, config) {
         throw new Error(`NumberWithUnit model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return parserFunction(input, culture, 0);
+    return modelFunction(input, culture, 0);
 }

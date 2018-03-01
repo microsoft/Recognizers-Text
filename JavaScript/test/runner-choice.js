@@ -2,7 +2,7 @@ var _ = require('lodash');
 var Recognizer = require('@microsoft/recognizers-text-suite');
 var SupportedCultures = require('./cultures.js');
 
-var parserGetters = {
+var modelFunctions = {
     'BooleanModel': (input, culture, options) => Recognizer.recognizeBoolean(input, culture, options, false)
 };
 
@@ -30,8 +30,8 @@ module.exports = function getChoiceTestRunner(config) {
 }
 
 function getResults(input, config) {
-    var parserFunction = parserGetters[config.subType];
-    if(!parserFunction) {
+    var modelFunction = modelFunctions[config.subType];
+    if(!modelFunction) {
         throw new Error(`NumberWithUnit model of ${config.subType} not supported.`);
     }
 
@@ -40,5 +40,5 @@ function getResults(input, config) {
         throw new Error(`NumberWithUnit model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return parserFunction(input, culture, 0);
+    return modelFunction(input, culture, 0);
 }

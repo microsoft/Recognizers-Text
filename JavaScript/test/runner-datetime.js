@@ -9,7 +9,7 @@ var Parsers = require('./datetime-parsers');
 
 var ignoredTest = null;
 
-var modelsGetters = {
+var modelFunctions = {
     'DateTimeModel': (input, culture, options, refDate) => Recognizer.recognizeDateTime(input, culture, options, refDate, false)
 }
 
@@ -150,7 +150,7 @@ function getMergedParserTestRunner(extractor, parser) {
     };
 }
 
-function getModelTestRunner(modelFunction) {
+function getModelTestRunner(getResults) {
     return function (t, testCase) {
         var expected = testCase.Results;
         var referenceDateTime = getReferenceDate(testCase);
@@ -159,7 +159,7 @@ function getModelTestRunner(modelFunction) {
             debugger;
         }
 
-        var result = modelFunction(testCase.Input, referenceDateTime);
+        var result = getResults(testCase.Input, referenceDateTime);
         t.is(result.length, expected.length, 'Result count');
         _.zip(result, expected).forEach(o => {
             var actual = o[0];
@@ -193,7 +193,7 @@ function getParser(config) {
 }
 
 function getModelFunction(config) {
-    var modelFunction = modelsGetters['DateTimeModel'];
+    var modelFunction = modelFunctions['DateTimeModel'];
 
     var options = DateTimeOptions.None + 
         config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None +
