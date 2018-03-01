@@ -120,7 +120,7 @@ export class BaseDateExtractor implements IDateTimeExtractor {
                             // to see whether they refer to a same week day
                             let extractedWeekDayStr = matchCase.groups("weekday").value.toString().toLowerCase();
                             if (date !== DateUtils.minValue() &&
-                                this.config.dayOfWeek.get(numWeekDayStr) == this.config.dayOfWeek.get(extractedWeekDayStr)) {
+                                this.config.dayOfWeek.get(numWeekDayStr) === this.config.dayOfWeek.get(extractedWeekDayStr)) {
                                 ret.push(new Token(matchCase.index, result.start + result.length));
                                 isFound = true;
                             }

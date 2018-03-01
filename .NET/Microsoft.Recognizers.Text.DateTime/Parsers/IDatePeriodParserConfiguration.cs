@@ -69,6 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex InConnectorRegex { get; }
 
+        Regex WithinNextPrefixRegex { get; }
+
         Regex NextPrefixRegex { get; }
 
         Regex PastPrefixRegex { get; }

@@ -21,11 +21,8 @@ function runRecognition() {
             if (input.toLowerCase() === 'exit') {
                 return process.exit();
             } else {
-                // Retrieve all the parsers and call 'parse' to recognize all the values from the user input
-                var results = getModels().map(function (model) {
-                        // Recognize values from the user input
-                        return model.parse(input);
-                    });
+                // Retrieve all the ModelResult recognized from the user input
+                var results = parseAll(input, defaultCulture);
 
                 results = [].concat.apply([], results);
 
@@ -51,44 +48,43 @@ function write(message = ""){
     process.stdout.write(message + "\n");
 }
 
-// Get all recognizers model instances.
-function getModels() {
+function parseAll(input, culture) {
     return [
-        // Add Number recognizer - This recognizer will find any number from the input
+        // Number recognizer - This function will find any number from the input
         // E.g "I have two apples" will return "2".
-        Recognizers.NumberRecognizer.instance.getNumberModel(defaultCulture),
+        ...Recognizers.recognizeNumber(input, culture),
 
-        // Add Ordinal number recognizer - This recognizer will find any ordinal number
+        // Ordinal number recognizer - This function will find any ordinal number
         // E.g "eleventh" will return "11".
-        Recognizers.NumberRecognizer.instance.getOrdinalModel(defaultCulture),
+        ...Recognizers.recognizeOrdinal(input, culture),
 
-        // Add Percentage recognizer - This recognizer will find any number presented as percentage
+        // Percentage recognizer - This function will find any number presented as percentage
         // E.g "one hundred percents" will return "100%"
-        Recognizers.NumberRecognizer.instance.getPercentageModel(defaultCulture),
+        ...Recognizers.recognizePercentage(input, culture),
 
-        // Add Age recognizer - This recognizer will find any age number presented
+        // Age recognizer - This function will find any age number presented
         // E.g "After ninety five years of age, perspectives change" will return "95 Year"
-        Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(defaultCulture),
+        ...Recognizers.recognizeAge(input, culture),
 
-        // Add Currency recognizer - This recognizer will find any currency presented
+        // Currency recognizer - This function will find any currency presented
         // E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
-        Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(defaultCulture),
+        ...Recognizers.recognizeCurrency(input, culture),
 
-        // Add Dimension recognizer - This recognizer will find any dimension presented
+        // Dimension recognizer - This function will find any dimension presented
         // E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
-        Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(defaultCulture),
+        ...Recognizers.recognizeDimension(input, culture),
 
-        // Add Temperature recognizer - This recognizer will find any temperature presented
+        // Temperature recognizer - This function will find any temperature presented
         // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-        Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(defaultCulture),
-
-        // Add DateTime recognizer - This model will find any Date even if its write in colloquial language -
+        ...Recognizers.recognizeTemperature(input, culture),
+        
+        // DateTime recognizer - This function will find any Date even if its write in colloquial language -
         // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-        Recognizers.DateTimeRecognizer.instance.getDateTimeModel(defaultCulture),
+        ...Recognizers.recognizeDateTime(input, culture),
 
-        // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
+        // Boolean recognizer - This function will find yes/no like responses, including emoji -
         // E.g "yup, I need that" will return "True"
-        Recognizers.ChoiceRecognizer.instance.getBooleanModel(defaultCulture)
+        ...Recognizers.recognizeBoolean(input, culture)
     ];
 }
 

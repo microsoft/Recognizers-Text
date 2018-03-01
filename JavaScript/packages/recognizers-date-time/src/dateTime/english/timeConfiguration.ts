@@ -136,7 +136,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                             adjust.hasPm = true;
                         }
                     } else if (RegExpUtility.getMatches(this.nightRegex, pmStr).length > 0) {
-                        // for hour <=3 or == 12, we treat it as am, for example 1 in the night (midnight) == 1am
+                        // for hour <=3 or === 12, we treat it as am, for example 1 in the night (midnight) === 1am
                         if (adjust.hour <= 3 || adjust.hour === 12) {
                             if (adjust.hour === 12) {
                                 adjust.hour = 0;

@@ -65,8 +65,8 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
 
         this.addMod(result, source);
 
-        //filtering
-        if ((this.options & DateTimeOptions.Calendar) != 0) {
+        // filtering
+        if ((this.options & DateTimeOptions.Calendar) !== 0) {
             this.checkCalendarFilterList(result, source);
         }
 
@@ -77,7 +77,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
     private checkCalendarFilterList(ers: ExtractResult[], text: string) {
         for (let er of ers.reverse()) {
             for (let negRegex of this.config.filterWordRegexList) {
-                var match = RegExpUtility.getMatches(negRegex, er.text).pop();
+                let match = RegExpUtility.getMatches(negRegex, er.text).pop();
                 if (match) {
                     ers.splice(ers.indexOf(er));
                 }

@@ -55,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
+        public Regex WithinNextPrefixRegex { get; }
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
@@ -134,6 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             YearPeriodRegex = PortugueseDatePeriodExtractorConfiguration.YearPeriodRegex;
             RelativeDecadeRegex = PortugueseDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
+            WithinNextPrefixRegex = PortugueseDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
