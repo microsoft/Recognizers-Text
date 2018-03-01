@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Linq;
 
 using Microsoft.Recognizers.Text.DateTime;
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Newtonsoft.Json;
@@ -69,10 +68,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestDateTime()
         {
             TestPreValidation();
-
-            var referenceDateTime = TestSpec.GetReferenceDateTime();
-
-            var actualResults = TestContext.GetModelParseResults(referenceDateTime)(TestSpec.Input);
+            
+            var actualResults = TestContext.GetModelParseResults(TestSpec);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
@@ -101,10 +98,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestDateTimeAlt()
         {
             TestPreValidation();
-
-            var referenceDateTime = TestSpec.GetReferenceDateTime();
-
-            var actualResults = TestContext.GetModelParseResults(referenceDateTime)(TestSpec.Input);
+            
+            var actualResults = TestContext.GetModelParseResults(TestSpec);
             var expectedResults = TestSpec.CastResults<ExtendedModelResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
@@ -229,7 +224,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             TestPreValidation();
             ValidateResults();
         }
-        
+
+        public void TestChoice()
+        {
+            TestPreValidation();
+            ValidateResults(new string[] { ResolutionKey.Value, ResolutionKey.Score });
+        }
+
         private void TestPreValidation()
         {
             if (TestUtils.EvaluateSpec(TestSpec, out string message))
@@ -245,7 +246,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         private void ValidateResults(IEnumerable<string> testResolutionKeys = null)
         {
-            var actualResults = TestContext.GetModelParseResults()(TestSpec.Input);
+            var actualResults = TestContext.GetModelParseResults(TestSpec);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
@@ -265,12 +266,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
                 }
             }
-        }
-
-        public void TestChoice()
-        {
-            TestPreValidation();
-            ValidateResults(new string[] { ResolutionKey.Value, ResolutionKey.Score });
         }
 
         private static string GetMessage(TestModel spec)
