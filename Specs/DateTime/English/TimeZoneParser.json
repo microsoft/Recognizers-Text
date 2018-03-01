@@ -40,7 +40,7 @@
     "Results": [
       {
         "Text": "gmt-3",
-        "Type": "date",
+        "Type": "timezone",
         "Value": {
           "UTC MINUTES SHIFT": -180
         }

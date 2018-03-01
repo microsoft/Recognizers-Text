@@ -752,5 +752,25 @@
       "Type": "daterange"
     }
   ]
+},
+{
+  "Input": "This is beijing time",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "beijing time",
+      "Type": "timezone"
+    }
+  ]
+},
+{
+  "Input": "This is afghanistan standard time",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "afghanistan standard time",
+      "Type": "timezone"
+    }
+  ]
 }
 ]

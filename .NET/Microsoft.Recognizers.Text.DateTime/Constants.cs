@@ -61,6 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // special value for timezone
         public const int Illegal = -10000;
-        public const string UTCSHIFT = "UTC MINUTES SHIFT";
+        public const string UTCSHIFT = "UTCOffsetMins";
+        public const string ResolveTimeZone = "resolveTimeZone";
     }
 }

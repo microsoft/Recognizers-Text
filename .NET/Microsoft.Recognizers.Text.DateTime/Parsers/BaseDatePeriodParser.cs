@@ -1367,10 +1367,4 @@ namespace Microsoft.Recognizers.Text.DateTime
             return InclusiveEndPeriod;
         }
     }
-
-    public enum CalculateRangeMode
-    {
-        Week,
-        Month
-    }
 }

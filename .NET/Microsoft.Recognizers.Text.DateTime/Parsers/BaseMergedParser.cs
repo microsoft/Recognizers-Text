@@ -327,6 +327,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ResolveWeekOf(res, Constants.ResolveToPast); 
             }
 
+            if (val.TimeZoneResolution != null)
+            {
+                var timeZoneResolution = new Dictionary<string, string>();
+                timeZoneResolution.Add(ResolutionKey.Value, val.TimeZoneResolution.Value);
+                timeZoneResolution.Add(Constants.UTCSHIFT, val.TimeZoneResolution.OffsetMins.ToString());
+
+                AddResolutionFields(res, Constants.ResolveTimeZone, timeZoneResolution);
+            }
+
             foreach (var p in res)
             {
                 if (p.Value is Dictionary<string, string>)
@@ -354,7 +363,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (resolutionPast.Count == 0 && resolutionFuture.Count == 0)
+            if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimeZoneResolution == null)
             {
                 var notResolved = new Dictionary<string, string> {
                     {
