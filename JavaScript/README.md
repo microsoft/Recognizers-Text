@@ -44,67 +44,140 @@ Or, if you prefer to use a single type of recognizer:
 * Get **only** the date and time Recognizer's features:
 `npm install @microsoft/recognizers-text-date-time`
 
+* Get **only** the options (like boolean) Recognizer's features:
+`npm install @microsoft/recognizers-text-options`
+
 ## API Documentation
 
 Once the proper package is installed, you'll need to reference the package:
 
 ````JavaScript
 var Recognizers = require('@microsoft/recognizers-text-suite');
+var NumberRecognizers = require('@microsoft/recognizers-text-number');
+var NumberWithUnitRecognizers = require('@microsoft/recognizers-text-number-with-unit');
+var DateTimeRecognizers = require('@microsoft/recognizers-text-date-time');
+var OptionsRecognizers = require('@microsoft/recognizers-text-options');
 ````
+
+### Recognizer's Models
+
+This is the preferred way if you need to parse multiple inputs based on the same context (e.g.: language and options):
+
+```C#
+var recognizer = new NumberRecognizers.NumberRecognizer(Recognizers.Culture.English);
+var model = recognizer.getNumberModel();
+var result = model.parse('Twelve');
+```
+
+Or, for less verbosity, you use the helper methods:
+
+`var result = Recognizers.recognizeNumber("Twelve", Recognizers.Culture.English);`
+
+Internally, both methods will cache the instance models to avoid extra costs.
 
 ### Microsoft.Recognizers.Text.Number
 
-* [NumberModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
+* **Numbers**
 
-    This recognizer will find any number from the input. E.g. "I have two apples" will return "2".
+    This recognizer will find any number from the input. E.g. _"I have two apples"_ will return _"2"_.
 
-    `Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English)`
+    `Recognizers.recognizeNumber('I have two apples', Recognizers.Culture.English)`
 
-* [OrdinalModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
+    Or you can obtain a model instance using:
 
-    This recognizer will find any ordinal number. E.g. "eleventh" will return "11".
+    `new NumberRecognizers.NumberRecognizer(Recognizers.Culture.English).getNumberModel()`
 
-    `Recognizers.NumberRecognizer.instance.getOrdinalModel(Recognizers.Culture.English)`
 
-* [PercentageModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
+* **Ordinal Numbers**
 
-    This recognizer will find any number presented as percentage. E.g. "one hundred percents" will return "100%".
+    This recognizer will find any ordinal number. E.g. _"eleventh"_ will return _"11"_.
 
-    `Recognizers.NumberRecognizer.instance.getPercentageModel(Recognizers.Culture.English)`
+    `Recognizers.recognizeOrdinal('eleventh', Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberRecognizers.NumberRecognizer(Recognizers.Culture.English).getOrdinalModel()`
+
+
+* **Percentages**
+
+    This recognizer will find any number presented as percentage. E.g. _"one hundred percents"_ will return _"100%"_.
+
+    `Recognizers.recognizePercentage('one hundred percents', Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberRecognizers.NumberRecognizer(Recognizers.Culture.English).getPercentageModel()`
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
-* [AgeModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+* **Ages**
 
-    This recognizer will find any age number presented. E.g. "After ninety five years of age, perspectives change" will return "95 Year".
+    This recognizer will find any age number presented. E.g. _"After ninety five years of age, perspectives change"_ will return _"95 Year"_.
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(Recognizers.Culture.English)`
+    `Recognizers.recognizeAge('After ninety five years of age, perspectives change', Recognizers.Culture.English)`
 
-* [CurrencyModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+    Or you can obtain a model instance using:
 
-    This recognizer will find any currency presented. E.g. "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
+    `new NumberWithUnitRecognizers.NumberWithUnitRecognizer(Recognizers.Culture.English).getAgeModel()`
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(Recognizers.Culture.English)`
 
-* [DimensionModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+* **Currencies**
 
-    This recognizer will find any dimension presented. E.g. "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
+    This recognizer will find any currency presented. E.g. _"Interest expense in the 1988 third quarter was $ 75.3 million"_ will return _"75300000 Dollar"_.
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(Recognizers.Culture.English)`
+    `Recognizers.recognizeCurrency('Interest expense in the 1988 third quarter was $ 75.3 million', Recognizers.Culture.English)`
 
-* [TemperatureModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+    Or you can obtain a model instance using:
 
-    This recognizer will find any temperature presented. E.g. "Set the temperature to 30 degrees celsius" will return "30 C".
+    `new NumberWithUnitRecognizers.NumberWithUnitRecognizer(Recognizers.Culture.English).getCurrencyModel()`
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(Recognizers.Culture.English)`
+
+* **Dimensions**
+
+    This recognizer will find any dimension presented. E.g. _"The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours."_ will return _"6 Mile"_.
+
+    `Recognizers.recognizeDimension('The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.', Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizers.NumberWithUnitRecognizer(Recognizers.Culture.English).getDimensionModel()`
+
+
+* **Temperatures**
+
+    This recognizer will find any temperature presented. E.g. _"Set the temperature to 30 degrees celsius"_ will return _"30 C"_.
+
+    `Recognizers.recognizeTemperature('Set the temperature to 30 degrees celsius', Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizers.NumberWithUnitRecognizer(Recognizers.Culture.English).getTemperatureModel()`
+
 
 ### Microsoft.Recognizers.Text.DateTime
 
-* [DateTimeModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-date-time/src/dateTime/dateTimeRecognizer.ts)
+* **DateTime**
 
-    This model will find any date, time, duration and date/time ranges, even if its write in coloquial language. E.g. "I'll go back 8pm today" will return "2017-10-04 20:00:00".
+    This recognizer will find any date, time, duration and date/time ranges, even if its write in colloquial language. E.g. _"I'll go back 8pm today"_ will return _"2017-10-04 20:00:00"_.
 
-    `Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English)`
+    `Recognizers.recognizeDateTime("I'll go back 8pm today", Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new DateTimeRecognizers(Recognizers.Culture.English).getDateTimeModel()`
+
+### Microsoft.Recognizers.Text.Options
+
+* **Booleans**
+
+    This recognizer will find any boolean value, even if its write with emoji. E.g. _"👌 It's ok"_ will return _"true"_.
+
+    `Recognizers.recognizeBoolean("👌 It's ok", Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new OptionsRecognizers(Recognizers.Culture.English).getBooleanModel()`
 
 ## Samples
 
@@ -117,4 +190,4 @@ The recognizers were designed to disjoint language's logic from the recognizer's
 To achieve this, the recognizers contains the following folders:
 
 * [Specs](https://github.com/Microsoft/Recognizers-Text/tree/master/Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
-* [Patterns](https://github.com/Microsoft/Recognizers-Text/tree/master/Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.
+* [Patterns](https://github.com/Microsoft/Recognizers-Text/tree/master/Patterns)  - Contains all the regular expressions that fulfill the recognizers logic. It's divided by supported language.

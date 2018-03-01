@@ -360,9 +360,9 @@ export class DateUtils {
 
     static totalHours(from: Date, to: Date): number {
         // Fix to mimic .NET's Convert.ToInt32()
-        // C#: Math.Round(4.5) == 4
-        // C#: Convert.ToInt32(4.5) == 4
-        // JS: Math.round(4.5) == 5 !!
+        // C#: Math.Round(4.5) === 4
+        // C#: Convert.ToInt32(4.5) === 4
+        // JS: Math.round(4.5) === 5 !!
         let fromEpoch = from.getTime() - (from.getTimezoneOffset() * 60 * 1000);
         let toEpoch = to.getTime() - (to.getTimezoneOffset() * 60 * 1000);
         return Math.round(Math.abs(fromEpoch - toEpoch - 0.00001) / this.oneHour);

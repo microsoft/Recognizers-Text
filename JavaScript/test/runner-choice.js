@@ -3,7 +3,7 @@ var ChoiceRecognizer = require('@microsoft/recognizers-text-choice').ChoiceRecog
 var SupportedCultures = require('./cultures.js');
 
 var modelGetters = {
-    'BooleanModel': ChoiceRecognizer.instance.getBooleanModel
+    'BooleanModel': new ChoiceRecognizer().getBooleanModel
 };
 
 module.exports = function getChoiceTestRunner(config) {
@@ -46,5 +46,5 @@ function getChoiceModel(config) {
         throw new Error(`Choice model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(ChoiceRecognizer.instance)(culture, false);
+    return getModel.bind(new ChoiceRecognizer(culture))();
 }
