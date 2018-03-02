@@ -17,6 +17,8 @@ export abstract class BaseNumberExtractor implements IExtractor {
 
     protected extractType: string = "";
 
+    protected negativeNumberTermsRegex : RegExp = null;
+
     extract(source: string): Array<ExtractResult> {
         if (!source || source.trim().length === 0) {
             return [];
@@ -52,6 +54,17 @@ export abstract class BaseNumberExtractor implements IExtractor {
                     let length = i - last;
                     let substr = source.substring(start, start + length).trim();
                     let srcMatch = Array.from(matchSource.keys()).find(m => m.index === start && m.length === length);
+
+                    // Extract negative numbers
+                    if (this.negativeNumberTermsRegex !== null) {
+                        var match = source.substr(0, start).match(this.negativeNumberTermsRegex);
+                        if (match) {
+                            start = match.index;
+                            length = length + match[0].length;
+                            substr = match[0] + substr;
+                        }
+                    }
+
                     if (srcMatch) {
                         result.push({
                             start: start,

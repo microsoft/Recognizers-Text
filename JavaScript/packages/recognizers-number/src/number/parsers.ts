@@ -18,6 +18,7 @@ export interface INumberParserConfiguration {
     readonly cultureInfo: CultureInfo;
     readonly digitalNumberRegex: RegExp;
     readonly fractionMarkerToken: string;
+    readonly negativeNumberSignRegex: RegExp;
     readonly halfADozenRegex: RegExp;
     readonly halfADozenText: string;
     readonly langMarker: string;
@@ -70,6 +71,16 @@ export class BaseNumberParser implements IParser {
                 extra = this.config.langMarker;
             }
         }
+        
+        // Resolve symbol prefix
+        let isNegative = false;
+        let matchNegative = extResult.text.match(this.config.negativeNumberSignRegex);
+
+        if (matchNegative)
+        {
+            isNegative = true;
+            extResult.text = extResult.text.substr(matchNegative[1].length);
+        }
 
         if (extra.includes("Num")) {
             ret = this.digitNumberParse(extResult);
@@ -86,6 +97,19 @@ export class BaseNumberParser implements IParser {
         }
 
         if (ret && ret.value) {
+            if (isNegative)
+            {
+                // Recover to the original extracted Text
+                ret.text = matchNegative[1] + extResult.text;
+                // Check if ret.value is a BigNumber
+                if (typeof ret.value === "number") {
+                    ret.value = -ret.value;
+                }
+                else {
+                    ret.value.s = -1;
+                }
+            }
+
             ret.resolutionStr = this.config.cultureInfo
                 ? this.config.cultureInfo.format(ret.value)
                 : ret.value.toString();
