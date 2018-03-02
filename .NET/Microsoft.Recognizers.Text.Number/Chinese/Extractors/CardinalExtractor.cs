@@ -9,11 +9,11 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
 
         //CardinalExtractor = Int + Double
-        public CardinalExtractor(ChineseNumberMode mode = ChineseNumberMode.Default)
+        public CardinalExtractor(NumberOptions options = NumberOptions.None)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 
-            var intExtractChs = new IntegerExtractor(mode);
+            var intExtractChs = new IntegerExtractor(options);
             builder.AddRange(intExtractChs.Regexes);
 
             var douExtractorChs = new DoubleExtractor();

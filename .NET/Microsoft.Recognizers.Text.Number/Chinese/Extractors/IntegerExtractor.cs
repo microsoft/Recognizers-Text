@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER;
-        
-        public IntegerExtractor(ChineseNumberMode mode = ChineseNumberMode.Default)
+
+        public IntegerExtractor(NumberOptions options = NumberOptions.None)
         {
             var regexes = new Dictionary<Regex, string>()
             {
@@ -42,20 +42,16 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     , "IntegerChs"
                 }
             };
-            switch (mode)
+
+            if (options.HasFlag(NumberOptions.ChineseNumbersWithPercent))
             {
-                case ChineseNumberMode.Default:
-                    //一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
-                    regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersWithoutPercent, RegexOptions.Singleline),
-                        "IntegerChs");
-                    break;
-                case ChineseNumberMode.ExtractAll:
-                    //一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
-                    regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersWithPercent, RegexOptions.Singleline),
-                        "IntegerChs");
-                    break;
+                //一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
+                regexes.Add(new Regex(NumbersDefinitions.NumbersWithPercent, RegexOptions.Singleline), "IntegerChs");
+            }
+            else
+            {
+                //一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
+                regexes.Add(new Regex(NumbersDefinitions.NumbersWithoutPercent, RegexOptions.Singleline), "IntegerChs");
             }
 
             Regexes = regexes.ToImmutableDictionary();

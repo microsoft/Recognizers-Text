@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = new NumberExtractor(ChineseNumberMode.ExtractAll);
+            this.UnitNumExtractor = new NumberExtractor(NumberOptions.ChineseNumbersWithPercent);
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

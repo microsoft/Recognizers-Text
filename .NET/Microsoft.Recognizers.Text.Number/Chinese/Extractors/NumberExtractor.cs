@@ -1,5 +1,4 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
@@ -10,12 +9,12 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
 
-        public NumberExtractor(ChineseNumberMode mode = ChineseNumberMode.Default)
+        public NumberExtractor(NumberOptions options = NumberOptions.None)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 
             //Add Cardinal
-            var cardExtractChs = new CardinalExtractor(mode);
+            var cardExtractChs = new CardinalExtractor(options);
             builder.AddRange(cardExtractChs.Regexes);
             
             //Add Fraction
@@ -24,13 +23,5 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             Regexes = builder.ToImmutable();
         }
-    }
-
-    public enum ChineseNumberMode
-    {
-        //for number with white list
-        Default,
-        //for number without white list
-        ExtractAll,
     }
 }
