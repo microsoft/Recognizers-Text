@@ -1,6 +1,7 @@
 [
   {
     "Input": "Book me a room at beijing time",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -11,6 +12,7 @@
   },
   {
     "Input": "Book me a room at utc4:30",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -21,6 +23,7 @@
   },
   {
     "Input": "Book me a room at gmt-3",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -31,6 +34,7 @@
   },
   {
     "Input": "Book me a room at afghanistan standard time",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -41,6 +45,7 @@
   },
   {
     "Input": "Book me a room at aft",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {

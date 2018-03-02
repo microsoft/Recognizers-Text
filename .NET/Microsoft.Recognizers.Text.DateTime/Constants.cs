@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // special value for timezone
         public const int InvalidOffsetValue = -10000;
-        public const string UtcOffsetMinsKey = "UTCOffsetMins";
+        public const string UtcOffsetMinsKey = "UtcOffsetMins";
         public const string ResolveTimeZone = "resolveTimeZone";
     }
 }
