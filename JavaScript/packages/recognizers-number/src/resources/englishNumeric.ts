@@ -11,8 +11,6 @@ export namespace EnglishNumeric {
 	export const LangMarker = 'Eng';
 	export const RoundNumberIntegerRegex = `(hundred|thousand|million|billion|trillion)`;
 	export const ZeroToNineIntegerRegex = `(three|seven|eight|four|five|zero|nine|one|two|six)`;
-	export const NegativeNumberTermsRegex = `((minus|negative)\\s+)`;
-	export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*`;
 	export const AnIntRegex = `(an|a)(?=\\s)`;
 	export const TenToNineteenIntegerRegex = `(seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)`;
 	export const TensNumberIntegerRegex = `(seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)`;
@@ -20,12 +18,12 @@ export namespace EnglishNumeric {
 	export const AllIntRegex = `((((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*${SeparaIntRegex})`;
 	export const PlaceHolderPureNumber = `\\b`;
 	export const PlaceHolderDefault = `\\D|\\b`;
-	export const NumbersWithPlaceHolder = (placeholder: string) => { return `((minus|negative)\\s+)?(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\.\\d+[a-zA-Z]))(?=${placeholder})`; }
-	export const NumbersWithSuffix = `(${NegativeNumberTermsRegex})?(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s*(K|k|M|T|G)(?=\\b)`;
-	export const RoundNumberIntegerRegexWithLocks = `(${NegativeNumberTermsRegex})?(?<=\\b)\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
-	export const NumbersWithDozenSuffix = `(${NegativeNumberTermsRegex})?(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dozen(s)?(?=\\b)`;
-	export const AllIntRegexWithLocks = `((?<=\\b)((${NegativeNumberTermsRegex})?${AllIntRegex})(?=\\b))`;
-	export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(${NegativeNumberTermsRegex})?(((half\\s+)?a\\s+dozen)|(${AllIntRegex}\\s+dozen(s)?))(?=\\b)`;
+	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\.\\d+[a-zA-Z]))(?=${placeholder})`; }
+	export const NumbersWithSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s*(K|k|M|T|G)(?=\\b)`;
+	export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
+	export const NumbersWithDozenSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dozen(s)?(?=\\b)`;
+	export const AllIntRegexWithLocks = `((?<=\\b)${AllIntRegex}(?=\\b))`;
+	export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(((half\\s+)?a\\s+dozen)|(${AllIntRegex}\\s+dozen(s)?))(?=\\b)`;
 	export const RoundNumberOrdinalRegex = `(hundredth|thousandth|millionth|billionth|trillionth)`;
 	export const BasicOrdinalRegex = `(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)`;
 	export const SuffixBasicOrdinalRegex = `(((((${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*(${TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?${BasicOrdinalRegex})`;
@@ -35,20 +33,20 @@ export namespace EnglishNumeric {
 	export const OrdinalNumericRegex = `(?<=\\b)(\\d{1,3}(\\s*,\\s*\\d{3})*\\s*th)(?=\\b)`;
 	export const OrdinalRoundNumberRegex = `(?<!(a|an)\\s+)${RoundNumberOrdinalRegex}`;
 	export const OrdinalEnglishRegex = `(?<=\\b)${AllOrdinalRegex}(?=\\b)`;
-	export const FractionNotationWithSpacesRegex = `((${NegativeNumberTermsRegex})?(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$)))`;
-	export const FractionNotationRegex = `(${NegativeNumberTermsRegex})?(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
-	export const FractionNounRegex = `(?<=\\b)(${NegativeNumberTermsRegex})?(${AllIntRegex}\\s+(and\\s+)?)?(${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)`;
-	export const FractionNounWithArticleRegex = `(?<=\\b)(${NegativeNumberTermsRegex})?(${AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|half|quarter)(?=\\b)`;
-	export const FractionPrepositionRegex = `(?<=\\b)(${NegativeNumberTermsRegex})?((${AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+((${AllIntRegex})|(\\d+)(?!\\.))(?=\\b)`;
+	export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
+	export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
+	export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)`;
+	export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|half|quarter)(?=\\b)`;
+	export const FractionPrepositionRegex = `(?<=\\b)((${AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+((${AllIntRegex})|(\\d+)(?!\\.))(?=\\b)`;
 	export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;
 	export const AllFloatRegex = `${AllIntRegex}(\\s+point)${AllPointRegex}`;
-	export const DoubleWithMultiplierRegex = `(${NegativeNumberTermsRegex})?(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+\\s*(K|k|M|G|T|B|b)(?=\\b)`;
-	export const DoubleExponentialNotationRegex = `(${NegativeNumberTermsRegex})?(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))(\\d+(\\.\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)`;
-	export const DoubleCaretExponentialNotationRegex = `(${NegativeNumberTermsRegex})?(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))(\\d+(\\.\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)`;
+	export const DoubleWithMultiplierRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+\\s*(K|k|M|G|T|B|b)(?=\\b)`;
+	export const DoubleExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))(\\d+(\\.\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)`;
+	export const DoubleCaretExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))(\\d+(\\.\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)`;
 	export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+(?!(\\.\\d+))(?=${placeholder})`; }
 	export const DoubleWithoutIntegralRegex = (placeholder: string) => { return `(?<=\\s|^)(?<!(\\d+))\\.\\d+(?!(\\.\\d+))(?=${placeholder})`; }
-	export const DoubleWithRoundNumber = `(${NegativeNumberTermsRegex})?(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
-	export const DoubleAllFloatRegex = `((?<=\\b)(${NegativeNumberTermsRegex})?${AllFloatRegex}(?=\\b))`;
+	export const DoubleWithRoundNumber = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
+	export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
 	export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)`;
 	export const NumberWithSuffixPercentage = `(${BaseNumbers.NumberReplaceToken})(\\s*)(%|per cents|per cent|cents|cent|percentage|percents|percent)`;
 	export const NumberWithPrefixPercentage = `(per cent of|percent of|percents of)(\\s*)(${BaseNumbers.NumberReplaceToken})`;

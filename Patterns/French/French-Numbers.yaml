@@ -11,12 +11,6 @@ TensNumberIntegerRegex: !simpleRegex
   def: (octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)
 DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
-NegativeNumberTermsRegex: !simpleRegex
-   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-NegativeNumberSignRegex: !nestedRegex
-  def: ^({NegativeNumberTermsRegex}\s+).*
-  references: [ NegativeNumberTermsRegex ]
 HundredsNumberIntegerRegex: !nestedRegex
   # TODO: Work on this one
   def: (({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))
@@ -34,8 +28,8 @@ SeparaIntRegex: !nestedRegex
   def: ({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})
   references: [ SupportThousandsRegex, BelowThousandsRegex ]
 AllIntRegex: !nestedRegex
-  def: ((NegativeNumberTermsRegex)?({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?))
-  references: [ SeparaIntRegex, BelowThousandsRegex, NegativeNumberTermsRegex ]
+  def: ({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)
+  references: [ SeparaIntRegex, BelowThousandsRegex ]
 NumbersWithPlaceHolder: !paramsRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]

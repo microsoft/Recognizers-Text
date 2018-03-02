@@ -23,14 +23,12 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string TenToNineteenIntegerRegex = @"(dix\Wneuf|dix\Whuit|dix\Wsept|seize|quinze|quatorze|treize|douze|onze|dix)";
 		public const string TensNumberIntegerRegex = @"(octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)";
 		public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
-		public const string NegativeNumberTermsRegex = @"^[.]";
-		public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";
 		public static readonly string HundredsNumberIntegerRegex = $@"(({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))";
 		public static readonly string BelowHundredsRegex = $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\W+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
 		public static readonly string BelowThousandsRegex = $@"(({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\s+{TenToNineteenIntegerRegex})";
 		public static readonly string SupportThousandsRegex = $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
 		public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
-		public static readonly string AllIntRegex = $@"((NegativeNumberTermsRegex)?({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?))";
+		public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})";
 		public const string NumbersWithSuffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)";
 		public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)";

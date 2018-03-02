@@ -24,14 +24,12 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string TenToNineteenIntegerRegex = @"(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)";
 		public const string TwentiesIntegerRegex = @"(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)";
 		public const string TensNumberIntegerRegex = @"(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)";
-		public const string NegativeNumberTermsRegex = @"^[.]";
-		public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";
 		public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
 		public static readonly string BelowHundredsRegex = $@"(({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\s+y\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
 		public static readonly string BelowThousandsRegex = $@"({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})";
 		public static readonly string SupportThousandsRegex = $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
 		public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
-		public static readonly string AllIntRegex = $@"((NegativeNumberTermsRegex)?({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?))";
+		public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?)";
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})";

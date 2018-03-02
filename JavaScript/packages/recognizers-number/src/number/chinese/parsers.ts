@@ -184,7 +184,7 @@ export class ChineseNumberParser extends BaseNumberParser {
 
             let doubleValue = this.getIntValueChs(splitResult[0]);
             if (splitResult.length === 2) {
-                if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, splitResult[0])) {
+                if (RegExpUtility.isMatch(this.config.symbolRegex, splitResult[0])) {
                     doubleValue -= this.getPointValueChs(splitResult[1]);
                 } else {
                     doubleValue += this.getPointValueChs(splitResult[1]);
@@ -228,7 +228,7 @@ export class ChineseNumberParser extends BaseNumberParser {
             ? this.getDigitValueChs(demoPart, 1.0)
             : this.getIntValueChs(demoPart);
 
-        if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, intPart)) {
+        if (RegExpUtility.isMatch(this.config.symbolRegex, intPart)) {
             result.value = intValue - numValue / demoValue;
         } else {
             result.value = intValue + numValue / demoValue;
@@ -255,7 +255,7 @@ export class ChineseNumberParser extends BaseNumberParser {
                 splitResult[0] = "零";
             }
 
-            if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, splitResult[0])) {
+            if (RegExpUtility.isMatch(this.config.symbolRegex, splitResult[0])) {
                 result.value = this.getIntValueChs(splitResult[0]) - this.getPointValueChs(splitResult[1]);
             } else {
                 result.value = this.getIntValueChs(splitResult[0]) + this.getPointValueChs(splitResult[1]);
@@ -290,16 +290,16 @@ export class ChineseNumberParser extends BaseNumberParser {
     }
 
     private getDigitValueChs(value: string, power: number): number {
-        let isNegative = false;
+        let isLessZero = false;
         let resultStr = value;
-        if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, resultStr)) {
-            isNegative = true;
+        if (RegExpUtility.isMatch(this.config.symbolRegex, resultStr)) {
+            isLessZero = true;
             resultStr = resultStr.substr(1);
         }
 
         resultStr = this.replaceFullWithHalf(resultStr);
         let result = this.getDigitalValue(resultStr, power);
-        if (isNegative) {
+        if (isLessZero) {
             result = - result;
         }
 
@@ -326,10 +326,10 @@ export class ChineseNumberParser extends BaseNumberParser {
         let isRoundBefore = false;
         let roundBefore = -1;
         let roundDefault = 1;
-        let isNegative = false;
+        let isLessZero = false;
 
-        if (RegExpUtility.isMatch(this.config.negativeNumberSignRegex, resultStr)) {
-            isNegative = true;
+        if (RegExpUtility.isMatch(this.config.symbolRegex, resultStr)) {
+            isLessZero = true;
             resultStr = resultStr.substr(1);
         }
 
@@ -377,7 +377,7 @@ export class ChineseNumberParser extends BaseNumberParser {
             }
         }
 
-        if (isNegative) {
+        if (isLessZero) {
             intValue = - intValue;
         }
 

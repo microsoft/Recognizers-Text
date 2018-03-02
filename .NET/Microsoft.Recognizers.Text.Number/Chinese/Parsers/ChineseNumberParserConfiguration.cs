@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DoubleAndRoundChsRegex = new Regex(NumbersDefinitions.DoubleAndRoundChsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            SymbolRegex = new Regex(NumbersDefinitions.SymbolRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             PointRegexChs = new Regex(NumbersDefinitions.PointRegexChs, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline | RegexOptions.IgnoreCase);
             PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public Regex FracSplitRegex { get; private set; }
 
-        public Regex NegativeNumberSignRegex { get; private set; }
+        public Regex SymbolRegex { get; private set; }
 
         public Regex PointRegexChs { get; private set; }
 

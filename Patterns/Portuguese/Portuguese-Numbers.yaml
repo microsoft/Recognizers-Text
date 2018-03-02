@@ -22,18 +22,12 @@ BelowThousandsRegex: !nestedRegex
 SupportThousandsRegex: !nestedRegex
   def: (({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)
   references: [ BelowThousandsRegex, BelowHundredsRegex, RoundNumberIntegerRegex ]
-NegativeNumberTermsRegex: !simpleRegex
-   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-NegativeNumberSignRegex: !nestedRegex
-  def: ^({NegativeNumberTermsRegex}\s+).*
-  references: [ NegativeNumberTermsRegex ]
 SeparaIntRegex: !nestedRegex
   def: ({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})
   references: [ SupportThousandsRegex, BelowThousandsRegex ]
 AllIntRegex: !nestedRegex
-  def: ((NegativeNumberTermsRegex)?({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?))
-  references: [ SeparaIntRegex, BelowThousandsRegex, NegativeNumberTermsRegex ]
+  def: ({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?)
+  references: [ SeparaIntRegex, BelowThousandsRegex ]
 AllPointRegex: !nestedRegex
   def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{AllIntRegex}))
   references: [ ZeroToNineIntegerRegex, AllIntRegex ]
