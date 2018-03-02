@@ -29,12 +29,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return Constants.InvalidOffsetValue;
             }
 
-            int sign = Constants.PositiveOne; // later than utc, default value
+            int sign = Constants.PositiveSign; // later than utc, default value
             if (utcOffset.StartsWith("+") || utcOffset.StartsWith("-"))
             {
                 if (utcOffset.StartsWith("-"))
                 {
-                    sign = Constants.NegativeOne; // earlier than utc 0
+                    sign = Constants.NegativeSign; // earlier than utc 0
                 }
 
                 utcOffset = utcOffset.Substring(1).Trim();
@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 TimeZoneResolution = new TimeZoneResolutionResult()
                 {
                     Value = ConvertOffsetInMinsToOffsetString(offsetMins),
-                    OffsetMins = offsetMins
+                    UtcOffsetMins = offsetMins
                 }
             };
 

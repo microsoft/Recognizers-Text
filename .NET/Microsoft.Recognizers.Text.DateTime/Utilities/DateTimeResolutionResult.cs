@@ -36,6 +36,6 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public string Value { get; set; }
 
-        public int OffsetMins { get; set; }
+        public int UtcOffsetMins { get; set; }
     }
 }

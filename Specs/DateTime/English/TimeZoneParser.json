@@ -11,7 +11,10 @@
         "Text": "beijing time",
         "Type": "timezone",
         "Value": {
-          "UtcOffsetMinsT": 480
+          "TimeZoneResolution": {
+            "Value": "Utc+8",
+            "UtcOffsetMins": 480
+          }
         }
       }
     ]
@@ -28,7 +31,10 @@
         "Text": "utc4:30",
         "Type": "timezone",
         "Value": {
-          "UtcOffsetMins": 270
+          "TimeZoneResolution": {
+            "Value": "Utc+4.5",
+            "UtcOffsetMins": 270
+          }
         }
       }
     ]
@@ -45,7 +51,10 @@
         "Text": "gmt-3",
         "Type": "timezone",
         "Value": {
-          "UtcOffsetMins": -180
+          "TimeZoneResolution": {
+            "Value": "Utc-3",
+            "UtcOffsetMins": -180
+          }
         }
       }
     ]
@@ -62,7 +71,10 @@
         "Text": "afghanistan standard time",
         "Type": "timezone",
         "Value": {
-          "UtcOffsetMins": 270
+          "TimeZoneResolution": {
+            "Value": "Utc+4.5",
+            "UtcOffsetMins": 270
+          }
         }
       }
     ]
@@ -79,7 +91,10 @@
         "Text": "aft",
         "Type": "timezone",
         "Value": {
-          "UtcOffsetMins": 270
+          "TimeZoneResolution": {
+            "Value": "Utc+4.5",
+            "UtcOffsetMins": 270
+          }
         }
       }
     ]

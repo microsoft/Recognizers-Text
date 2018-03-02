@@ -331,7 +331,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var timeZoneResolution = new Dictionary<string, string>();
                 timeZoneResolution.Add(ResolutionKey.Value, val.TimeZoneResolution.Value);
-                timeZoneResolution.Add(Constants.UtcOffsetMinsKey, val.TimeZoneResolution.OffsetMins.ToString());
+                timeZoneResolution.Add(Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString());
 
                 AddResolutionFields(res, Constants.ResolveTimeZone, timeZoneResolution);
             }
