@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string NegativeNumberTermsRegex = @"^[.]";
 		public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";
 		public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
-		public static readonly string AllIntRegex = $@"((NegativeNumberTermsRegex)?({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?))";
+		public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?)";
 		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{AllIntRegex}))";
 		public static readonly string SpecialFractionInteger = $@"((({AllIntRegex})i?({ZeroToNineIntegerRegex})|({AllIntRegex}))\s+a?v[oa]s?)";
 		public const string PlaceHolderDefault = @"\D|\b";

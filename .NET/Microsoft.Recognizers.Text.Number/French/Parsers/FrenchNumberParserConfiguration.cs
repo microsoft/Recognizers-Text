@@ -44,7 +44,6 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -54,8 +53,6 @@ namespace Microsoft.Recognizers.Text.Number.French
         public char DecimalSeparatorChar { get; private set; }
 
         public Regex DigitalNumberRegex { get; private set; }
-
-        public Regex NegativeNumberSignRegex { get; private set; }
 
         public string FractionMarkerToken { get; private set; }
 

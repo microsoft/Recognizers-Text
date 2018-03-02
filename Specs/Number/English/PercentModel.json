@@ -193,18 +193,4 @@
     }
   ]
 }
-,
-{
-  "Input": "just need minus five percent",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "minus five percent",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "-5%"
-      }
-    }
-  ]
-}
 ]
