@@ -17,6 +17,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.Recognizers.Text.Choice;
+using System.Collections.Concurrent;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -651,6 +652,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Extractor '{extractor}' not supported");
+        }
+    }
+
+    public static class RecognizerExtensions
+    {
+        public static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> GetInternalCache<TRecognizerOptions>(this Recognizer<TRecognizerOptions> source) where TRecognizerOptions : struct
+        {
+            var modelFactoryProp = typeof(Recognizer<TRecognizerOptions>).GetField("factory", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var modelFactory = modelFactoryProp.GetValue(source);
+            var cacheProp = modelFactory.GetType().GetField("cache", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+            return cacheProp.GetValue(modelFactory) as ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>;
         }
     }
 }

@@ -57,7 +57,9 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Choice\TestChoiceRecognizerCache.cs" />
     <Compile Include="Choice\TestChoiceRecognizerInitialization.cs" />
+    <Compile Include="DateTime\TestDateTimeRecognizerCache.cs" />
     <Compile Include="DateTime\TestDateTime_Chinese.cs" />
     <Compile Include="DateTime\TestDateTime_French.cs" />
     <Compile Include="DateTime\TestDateTime_Portuguese.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="DateTime\TestDateTime_Spanish.cs" />
     <Compile Include="DateTime\TestDateTime_English.cs" />
     <Compile Include="DateTime\TestDateTimeRecognizerInitialization.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerCache.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_French.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_German.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Spanish.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="NumberWithUnit\TestNumberWithUnit_English.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerInitialization.cs" />
     <Compile Include="Number\TestDecimalAndThousandsSeparators.cs" />
+    <Compile Include="Number\TestNumberRecognizerCache.cs" />
     <Compile Include="Number\TestNumberRecognizerInitialization.cs" />
     <Compile Include="Number\TestNumber_French.cs" />
     <Compile Include="Number\TestNumber_German.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="Number\TestNumber_Spanish.cs" />
     <Compile Include="Number\TestParserFactory.cs" />
     <Compile Include="Choice\TestChoice_English.cs" />
+    <Compile Include="Sequence\TestSequenceRecognizerCache.cs" />
     <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
     <Compile Include="TestBase.cs" />
