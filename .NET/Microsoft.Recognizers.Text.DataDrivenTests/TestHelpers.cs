@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DateObject = System.DateTime;
-using Newtonsoft.Json;
 
+using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
-using Microsoft.Recognizers.Text.DateTime.Spanish;
+using Microsoft.Recognizers.Text.DateTime.French;
+using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
+using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.DateTime.French;
-using Microsoft.Recognizers.Text.Number.Chinese;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.Sequence;
-using Microsoft.Recognizers.Text.Choice;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -38,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizerLanguage[1];
                 var rawData = File.ReadAllText(specsFile);
                 var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
-                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine + 
+                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine +
                                   string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
                 resources.Add(Path.GetFileNameWithoutExtension(specsFile), specs);
             }
@@ -105,9 +104,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>() {
             { Models.Number, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
-            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
+            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
-            { Models.CustomNumber, (test, culture) => GetCustomModelFor(culture).Parse(test.Input) },
+            { Models.CustomNumber, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.ChineseNumbersWithPercent, fallbackToDefaultCulture: false) },
             { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Currency, (test, culture) => NumberWithUnitRecognizer.RecognizeCurrency(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Dimension, (test, culture) => NumberWithUnitRecognizer.RecognizeDimension(test.Input, culture, fallbackToDefaultCulture: false) },
@@ -130,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             return modelFunction(test, culture);
         }
-        
+
         public static IDateTimeExtractor GetExtractor(this TestContext context)
         {
             var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
@@ -293,7 +292,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new DateTime.Chinese.SetParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Merged:
-                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration() );
+                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
@@ -539,19 +538,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for German not supported");
-        }
-
-        private static IModel GetCustomModelFor(string culture)
-        {
-            switch (culture)
-            {
-                case Culture.Chinese:
-                    return new NumberModel(
-                        AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
-                        new NumberExtractor(NumberOptions.ChineseNumbersWithPercent));
-            }
-
-            throw new Exception($"Custom Model for '{culture}' not supported");
         }
     }
 
