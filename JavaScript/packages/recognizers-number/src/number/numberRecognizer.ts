@@ -16,6 +16,7 @@ import { ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtra
 
 export enum NumberOptions {
     None = 0,
+    ChineseNumbersWithPercent = 1
 }
 
 export function recognizeNumber(query: string, culture: string, options: NumberOptions = NumberOptions.None, fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
@@ -81,7 +82,7 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         //#region Chinese
         this.registerModel("NumberModel", Culture.Chinese, (options) => new NumberModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
-            new ChineseNumberExtractor()));
+            new ChineseNumberExtractor(options)));
         this.registerModel("OrdinalModel", Culture.Chinese, (options) => new OrdinalModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new ChineseNumberParserConfiguration()),
             new ChineseOrdinalExtractor()));
@@ -104,7 +105,7 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
     }
 
     protected IsValidOptions(options: number): boolean {
-        return options >= 0 && options <= NumberOptions.None
+        return options >= 0 && options <= NumberOptions.ChineseNumbersWithPercent;
     }
 
     getNumberModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
