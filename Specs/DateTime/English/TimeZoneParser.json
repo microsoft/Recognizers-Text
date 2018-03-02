@@ -11,7 +11,7 @@
         "Text": "beijing time",
         "Type": "timezone",
         "Value": {
-          "UTC MINUTES SHIFT": 480
+          "UtcOffsetMinsT": 480
         }
       }
     ]
@@ -28,7 +28,7 @@
         "Text": "utc4:30",
         "Type": "timezone",
         "Value": {
-          "UTC MINUTES SHIFT": 270
+          "UtcOffsetMins": 270
         }
       }
     ]
@@ -45,7 +45,7 @@
         "Text": "gmt-3",
         "Type": "timezone",
         "Value": {
-          "UTC MINUTES SHIFT": -180
+          "UtcOffsetMins": -180
         }
       }
     ]
@@ -62,7 +62,7 @@
         "Text": "afghanistan standard time",
         "Type": "timezone",
         "Value": {
-          "UTC MINUTES SHIFT": 270
+          "UtcOffsetMins": 270
         }
       }
     ]
@@ -79,7 +79,7 @@
         "Text": "aft",
         "Type": "timezone",
         "Value": {
-          "UTC MINUTES SHIFT": 270
+          "UtcOffsetMins": 270
         }
       }
     ]

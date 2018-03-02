@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return this.Parse(result, DateObject.Now);
         }
 
-        // GetMinutes compute minutes shift from UTC 0 from matched numbers in texts. e.g. "-4:30" -> -270; "8"-> 480; "+8"-> 480
+        // Compute UTC offset in minutes from matched timezone offset in text. e.g. "-4:30" -> -270; "+8"-> 480.
         public int ComputeMinutes(string utcOffset)
         {
             if (utcOffset.Length == 0)
@@ -29,12 +29,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return Constants.InvalidOffsetValue;
             }
 
-            int sign = 1; // earlier than utc, default value
+            int sign = Constants.PositiveOne; // later than utc, default value
             if (utcOffset.StartsWith("+") || utcOffset.StartsWith("-"))
             {
                 if (utcOffset.StartsWith("-"))
                 {
-                    sign = -1; // later than utc 0
+                    sign = Constants.NegativeOne; // earlier than utc 0
                 }
 
                 utcOffset = utcOffset.Substring(1).Trim();
@@ -44,11 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             int minutes = 0;
             if (utcOffset.Contains(":"))
             {
-                List<string> splitParts = utcOffset.Split(':').ToList();
-                string f1 = splitParts[0];
-                string f2 = splitParts[1];
-                hours = int.Parse(f1);
-                minutes = int.Parse(f2);
+                List<string> tokens = utcOffset.Split(':').ToList();
+                hours = int.Parse(tokens[0]);
+                minutes = int.Parse(tokens[1]);
             }
             else if (int.TryParse(utcOffset, out hours))
             {
@@ -83,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             };
             
             string text = er.Text.ToLower();
-            string matched = Regex.Match(text, TimeZoneDefinitions.DirectUTCRegex).Groups[2].Value;
+            string matched = Regex.Match(text, TimeZoneDefinitions.DirectUtcRegex).Groups[2].Value;
             int offsetInMinutes = ComputeMinutes(matched);
 
             if (offsetInMinutes != Constants.InvalidOffsetValue)

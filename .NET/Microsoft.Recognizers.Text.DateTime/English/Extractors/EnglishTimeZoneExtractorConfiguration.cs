@@ -7,9 +7,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
-        public static readonly Regex DirectUTCRegex =
+        public static readonly Regex DirectUtcRegex =
             new Regex(
-                TimeZoneDefinitions.DirectUTCRegex,
+                TimeZoneDefinitions.DirectUtcRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AbbreviationRegex =
@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex[] TimeZoneRegexList =
         {
-            DirectUTCRegex,
+            DirectUtcRegex,
             AbbreviationRegex,
             StandardTimeRegex
         };

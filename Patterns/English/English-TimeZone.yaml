@@ -1,6 +1,6 @@
 ---
 # Direct UTC Expression
-DirectUTCRegex: !simpleRegex
+DirectUtcRegex: !simpleRegex
   def: (utc|gmt)(\s*[+\-]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?
 AbbreviationsRegex: !simpleRegex
   def: (\b)(AFT|AKST|AKDT|ABST|AST|ARBST|ARST|ART|ADT|ACST|AEST|AEDT|AZT|AZST|AZOT|AZOST|BST|CCST|CT|CVT|AMT|AMST|ACDT|CAST|CADT|BTT|CBT|CBST|CET|CEST|SBT|CST|CDT|CSTM|CDTM|BIT|EAT|EET|EEST|ESAT|ESAST|EST|EDT|ESTM|EDTM|EGST|YEKT|FJT|FJST|GET|GMT|GNST|GNDT|GST|GTBST|HAST|HST|HADT|HDT|IST|IRST|IRDT|ISST|ISDT|JST|JDT|PETT|KST|LINT|MAGT|MAGST|MUT|MAT|MEST|MVST|MOST|WEST|MST|MDT|MSTM|MDTM|MYST|NCAST|NMST|NMDT|NPT|NZST|NZDT|NST|NDT|IRKT|KRAT|PSAT|PSAST|PST|PDT|PSTM|PDTM|PKT|PYT|PYST|RST|MSK|SAEST|SAPST|SAWST|SST|SMST|THA|SNST|SAST|SLT|TIST|TAST|TADT|TST|TOT|TOST|TRT|ULAT|UTC|VET|VLAT|AWST|WAT|ECT|WAST|WET|WPST|YAKT)(\b)
@@ -277,8 +277,6 @@ FullToMinMapping: !dictionary
    ulaanbaatar standard time: 480
    us eastern standard time: -300
    us mountain standard time: -420
-   utc+12: 720
-   utc-02: -120
    venezuela standard time: -240
    vladivostok standard time: 600
    w. australia standard time: 480
