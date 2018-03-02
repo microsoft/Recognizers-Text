@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             int sign = Constants.PositiveSign; // later than utc, default value
-            if (utcOffset.StartsWith("+") || utcOffset.StartsWith("-"))
+            if (utcOffset.StartsWith("+") || utcOffset.StartsWith("-") || utcOffset.StartsWith("±"))
             {
                 if (utcOffset.StartsWith("-"))
                 {
@@ -122,7 +122,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public string ConvertOffsetInMinsToOffsetString(int offsetMins)
         {
-            return $"Utc{(offsetMins > 0 ? "+" : "")}{offsetMins / 60.0}";
+            return $"Utc{(offsetMins >= 0 ? "+" : "-")}{ConvertMinsToRegularFormat(Math.Abs(offsetMins))}";
+        }
+
+        public string ConvertMinsToRegularFormat(int offsetMins)
+        {
+            return TimeSpan.FromMinutes(offsetMins).ToString(@"hh\:mm");
         }
     }
 }

@@ -120,7 +120,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
             {
-                pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
+                // Commented out for now to not affect the package release.
+                // pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
             }
             else
             {

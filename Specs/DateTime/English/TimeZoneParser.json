@@ -12,7 +12,7 @@
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "Value": "Utc+8",
+            "Value": "Utc+08:00",
             "UtcOffsetMins": 480
           }
         }
@@ -32,7 +32,7 @@
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "Value": "Utc+4.5",
+            "Value": "Utc+04:30",
             "UtcOffsetMins": 270
           }
         }
@@ -52,7 +52,7 @@
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "Value": "Utc-3",
+            "Value": "Utc-03:00",
             "UtcOffsetMins": -180
           }
         }
@@ -72,7 +72,7 @@
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "Value": "Utc+4.5",
+            "Value": "Utc+04:30",
             "UtcOffsetMins": 270
           }
         }
@@ -92,8 +92,28 @@
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
-            "Value": "Utc+4.5",
+            "Value": "Utc+04:30",
             "UtcOffsetMins": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at utc±0",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "utc±0",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "Utc+00:00",
+            "UtcOffsetMins": 0
           }
         }
       }
