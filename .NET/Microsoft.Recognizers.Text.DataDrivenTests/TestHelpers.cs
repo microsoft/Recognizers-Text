@@ -102,47 +102,33 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
     public static class TestContextExtensions
     {
+        private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>() {
+            { Models.Number, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
+            { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.CustomNumber, (test, culture) => GetCustomModelFor(culture).Parse(test.Input) },
+            { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Currency, (test, culture) => NumberWithUnitRecognizer.RecognizeCurrency(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Dimension, (test, culture) => NumberWithUnitRecognizer.RecognizeDimension(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Temperature, (test, culture) => NumberWithUnitRecognizer.RecognizeTemperature(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.DateTime, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.DateTimeSplitDateAndTime, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.SplitDateAndTime, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.DateTimeCalendarMode, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.CalendarMode, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.DateTimeExtendedTypes, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.ExtendedTypes, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.PhoneNumber, (test, culture) => SequenceRecognizer.RecognizePhoneNumber(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.IpAddress, (test, culture) => SequenceRecognizer.RecognizeIpAddress(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Boolean, (test, culture) => ChoiceRecognizer.RecognizeBoolean(test.Input, culture, fallbackToDefaultCulture: false) }
+        };
+
         public static IList<ModelResult> GetModelParseResults(this TestContext context, TestModel test)
         {
             var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
             var modelName = TestUtils.GetModel(context.TestName);
 
-            switch (modelName)
-            {
-                case Models.Number:
-                    return NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.Ordinal:
-                    return NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.Percent:
-                    return NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.NumberRange:
-                    return NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.CustomNumber:
-                    return GetCustomModelFor(culture).Parse(test.Input);
-                case Models.Age:
-                    return NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.Currency:
-                    return NumberWithUnitRecognizer.RecognizeCurrency(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.Dimension:
-                    return NumberWithUnitRecognizer.RecognizeDimension(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.Temperature:
-                    return NumberWithUnitRecognizer.RecognizeTemperature(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.DateTime:
-                    return DateTimeRecognizer.RecognizeDateTime(test.Input, culture, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false);
-                case Models.DateTimeSplitDateAndTime:
-                    return DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.SplitDateAndTime, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false);
-                case Models.DateTimeCalendarMode:
-                    return DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.CalendarMode, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false);
-                case Models.DateTimeExtendedTypes:
-                    return DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.ExtendedTypes, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false);
-                case Models.PhoneNumber:
-                    return SequenceRecognizer.RecognizePhoneNumber(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.IpAddress:
-                    return SequenceRecognizer.RecognizeIpAddress(test.Input, culture, fallbackToDefaultCulture: false);
-                case Models.Boolean:
-                    return ChoiceRecognizer.RecognizeBoolean(test.Input, culture, fallbackToDefaultCulture: false);
-            }
-            return null;
+            var modelFunction = modelFunctions[modelName];
+
+            return modelFunction(test, culture);
         }
         
         public static IDateTimeExtractor GetExtractor(this TestContext context)
