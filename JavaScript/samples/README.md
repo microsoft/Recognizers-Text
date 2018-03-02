@@ -59,6 +59,14 @@ Recognizers.recognizeTemperature(query, myCulture)
 // Add Datetime recognizer - This model will find any Date even if its write in coloquial language -
 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
 Recognizers.recognizeDateTime(query, myCulture)
+        
+// Add PhoneNumber recognizer - This recognizer will find any phone number presented
+// E.g "My phone number is ( 19 ) 38294427."
+Recognizers.recognizePhoneNumber(query, myCulture),
+
+// Add IP recognizer - This recognizer will find any Ipv4/Ipv6 presented
+// E.g "My Ip is 8.8.8.8"
+Recognizers.recognizeIpAddress(query, myCulture),
 
 // Boolean recognizer - This function will find yes/no like responses, including emoji -
 // E.g "yup, I need that" will return "True"

@@ -4,7 +4,7 @@ Microsoft.Recognizers.Text provides robust recognition and resolution of numbers
 
 Microsoft.Recognizers.Text currently has implementations in C# and Javascript:
 * [C# version](https://github.com/Microsoft/Recognizers-Text/tree/master/.NET)
-* [JavaScript verison](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript)
+* [JavaScript verison](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-text-suite)
 
 Nuget packages - for the base classes and the different supported entities - are available in nuget.org at: https://www.nuget.org/profiles/Recognizers.Text
 
