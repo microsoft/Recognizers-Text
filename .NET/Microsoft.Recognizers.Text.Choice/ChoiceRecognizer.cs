@@ -2,7 +2,7 @@
 using Microsoft.Recognizers.Text.Choice.Extractors;
 using Microsoft.Recognizers.Text.Choice.Models;
 using Microsoft.Recognizers.Text.Choice.Parsers;
-using Microsoft.Recognizers.Text.Choice.Japanese.Extractors;
+using Microsoft.Recognizers.Text.Choice.English.Extractors;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.Choice
         {
             RegisterModel<BooleanModel>(
                 Culture.English,
-                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new JapaneseBooleanExtractorConfiguration())));
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new EnglishBooleanExtractorConfiguration())));
         }
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Choice.Extractors;
 
 namespace Microsoft.Recognizers.Text.Choice.English.Extractors
 {
-    public class JapaneseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
+    public class EnglishBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex = 
             new Regex(OptionsDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Choice.English.Extractors
             {FalseRegex, Constants.SYS_BOOLEAN_FALSE }
         };
 
-        public JapaneseBooleanExtractorConfiguration(bool onlyTopMatch = true)
+        public EnglishBooleanExtractorConfiguration(bool onlyTopMatch = true)
         {
             this.OnlyTopMatch = onlyTopMatch;
         }
