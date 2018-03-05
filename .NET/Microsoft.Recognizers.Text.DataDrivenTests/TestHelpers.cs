@@ -14,8 +14,9 @@ using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
+using System.Collections.Concurrent;
 using DateObject = System.DateTime;
+using Newtonsoft.Json;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -129,7 +130,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             return modelFunction(test, culture);
         }
-
+        
         public static IDateTimeExtractor GetExtractor(this TestContext context)
         {
             var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
@@ -637,6 +638,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Extractor '{extractor}' not supported");
+        }
+    }
+
+    public static class RecognizerExtensions
+    {
+        public static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> GetInternalCache<TRecognizerOptions>(this Recognizer<TRecognizerOptions> source) where TRecognizerOptions : struct
+        {
+            var modelFactoryProp = typeof(Recognizer<TRecognizerOptions>).GetField("factory", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var modelFactory = modelFactoryProp.GetValue(source);
+            var cacheProp = modelFactory.GetType().GetField("cache", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+            return cacheProp.GetValue(modelFactory) as ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>;
         }
     }
 }

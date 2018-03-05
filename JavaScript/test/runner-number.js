@@ -5,9 +5,9 @@ var RecognizerTextNumber = require('@microsoft/recognizers-text-number');
 var SupportedCultures = require('./cultures.js');
 
 var modelFunctions = {
-    'NumberModel': (input, culture, options) => Recognizer.recognizeNumber(input, culture, NumberOptions.None, false),
-    'OrdinalModel': (input, culture, options) => Recognizer.recognizeOrdinal(input, culture, NumberOptions.None, false),
-    'PercentModel': (input, culture, options) => Recognizer.recognizePercentage(input, culture, NumberOptions.None, false),
+    'NumberModel': (input, culture, options) => Recognizer.recognizeNumber(input, culture, options, false),
+    'OrdinalModel': (input, culture, options) => Recognizer.recognizeOrdinal(input, culture, options, false),
+    'PercentModel': (input, culture, options) => Recognizer.recognizePercentage(input, culture, options, false),
     // TODO: Implement number range model in javascript
     'NumberRangeModel': (input, culture, options) => null,
     'CustomNumberModel': (input, culture, options) => Recognizer.recognizeNumber(input, culture, NumberOptions.ChineseNumbersWithPercent, false)

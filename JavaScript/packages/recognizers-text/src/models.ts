@@ -79,12 +79,12 @@ export class ModelFactory<TModelOptions> {
     }
 
     initializeModels(targetCulture: string, options: TModelOptions) {
-        for (let key in this.modelFactories) {
+        this.modelFactories.forEach((value, key) => {
             let modelFactoryKey = ModelFactoryKey.fromString<TModelOptions>(key);
             if (StringUtility.isNullOrEmpty(targetCulture) || modelFactoryKey.culture === targetCulture) {
                 this.tryGetModel(modelFactoryKey.modelType, modelFactoryKey.culture, modelFactoryKey.options)
             }
-        }
+        });
     }
 
     private generateKey(modelTypeName: string, culture: string): string {

@@ -34,6 +34,12 @@ Install Recognizer's by launching the following commands:
 * Get datetime Recognizer's features:
 `nuget install Microsoft.Recognizers.Text.DateTime`
 
+* Get sequence Recognizer's features:
+`nuget install Microsoft.Recognizers.Text.Sequence`
+
+* Get choice Recognizer's features:
+`nuget install Microsoft.Recognizers.Text.Choice`
+
 ## API Documentation
 
 Resolution of values can be achieved in two ways, using the Recognizer's models or using the helper methods:
@@ -152,11 +158,35 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This model will find any patter of symbols detected as a phone number, even if its write in coloquial language. E.g. "My phone number is 1 (877) 609-2233." will return "1 (877) 609-2233".
 
-    `DateTimeRecognizer.RecognizePhoneNumber("My phone number is 1 (877) 609-2233.", Culture.English)`
+    `SequenceRecognizer.RecognizePhoneNumber("My phone number is 1 (877) 609-2233.", Culture.English)`
 
     Or you can obtain a model instance using:
 
     `new SequenceRecognizer(Culture.English).GetPhoneNumberModel()`
+
+    * **IP Addresses**
+
+    This model will find any Ipv4/Ipv6 presented. 
+    E.g. "My Ip is 8.8.8.8".
+
+    `SequenceRecognizer.RecognizeIpAddress"My Ip is 8.8.8.8", Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new SequenceRecognizer(Culture.English).GetIpAddressModel()`
+
+### Microsoft.Recognizers.Text.Choice
+
+* **Booleans**
+
+    This recognizer will find any boolean value, even if its write with emoji. 
+    E.g. _"👌 It's ok"_ will return `True`.
+
+    `ChoiceRecognizer.RecognizeBoolean("👌 It's ok", Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new ChoiceRecognizer(Culture.English).GetBooleanModel()`
 
 
 ## Samples
