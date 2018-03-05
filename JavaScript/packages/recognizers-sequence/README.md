@@ -2,4 +2,4 @@
 
 This module (`recognizers-text-sequence`) is a sub-module of `recognizers-text-suite`.
 
-Please check the [main README](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript) for more details.
+Please check the [main README](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-text-suite) for more details.
