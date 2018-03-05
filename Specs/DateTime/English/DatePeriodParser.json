@@ -1749,6 +1749,81 @@
 }
 ,
 {
+  "Input": "I'll be out the Q3 this year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the Q3 this year",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-07-01,2016-10-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2016-10-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2016-10-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 Q3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 Q3",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-07-01,2016-10-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2016-10-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2016-10-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back during Q3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Q3",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-07-01,2016-10-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2017-07-01",
+          "endDate": "2017-10-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2016-10-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll leave this summer",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"

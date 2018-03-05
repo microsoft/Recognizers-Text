@@ -1005,22 +1005,63 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var cardinalStr = match.Groups["cardinal"].Value.ToLower();
             var orderStr = match.Groups["order"].Value.ToLower();
+            var numberStr = match.Groups["number"].Value;
 
+            bool noSpecificYear = false;
             int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+
             if (year == Constants.InvalidYear)
             {
                 var swift = this.config.GetSwiftYear(orderStr);
                 if (swift < -1)
                 {
-                    return ret;
+                    swift = 0;
+                    noSpecificYear = true;
                 }
                 year = referenceDate.Year + swift;
             }
 
-            var quarterNum = this.config.CardinalMap[cardinalStr];
+            int quarterNum;
+            if (!string.IsNullOrEmpty(numberStr))
+            {
+                quarterNum = int.Parse(numberStr);
+            }
+            else
+            {
+                quarterNum = this.config.CardinalMap[cardinalStr];
+            }
+
             var beginDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * 3 - 2, 1);
             var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * 3 + 1, 1);
-            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+
+            if (noSpecificYear)
+            {
+                if (endDate.CompareTo(referenceDate) < 0)
+                {
+                    ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+
+                    var futureBeginDate = DateObject.MinValue.SafeCreateFromValue(year + 1, quarterNum * 3 - 2, 1);
+                    var futureEndDate = DateObject.MinValue.SafeCreateFromValue(year + 1, quarterNum * 3 + 1, 1);
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(futureBeginDate, futureEndDate);
+                }
+                else if (endDate.CompareTo(referenceDate) > 0)
+                {
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+
+                    var pastBeginDate = DateObject.MinValue.SafeCreateFromValue(year - 1, quarterNum * 3 - 2, 1);
+                    var pastEndDate = DateObject.MinValue.SafeCreateFromValue(year - 1, quarterNum * 3 + 1, 1);
+                    ret.PastValue = new Tuple<DateObject, DateObject>(pastBeginDate, pastEndDate);
+                }
+                else
+                {
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+                }
+            } 
+            else
+            {
+                ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+            }
+
             ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
 

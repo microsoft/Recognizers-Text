@@ -82,12 +82,14 @@ FollowedDateUnit: !nestedRegex
 NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
+QuarterTermRegex: !simpleRegex
+  def: (((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter)|(Q(?<number>[1-4])))
 QuarterRegex: !nestedRegex
-  def: (the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter(\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year)
-  references: [ YearRegex, RelativeRegex ]
+  def: (the\s+)?{QuarterTermRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?
+  references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
 QuarterRegexYearFront: !nestedRegex
-  def: ({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter
-  references: [ YearRegex, RelativeRegex ]
+  def: ({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?{QuarterTermRegex}
+  references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
 EarlyPrefixRegex: !simpleRegex
   def: ?<EarlyPrefix>early|beginning of|start of
 MidPrefixRegex: !simpleRegex

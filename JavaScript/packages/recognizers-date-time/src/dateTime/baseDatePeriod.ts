@@ -903,19 +903,53 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let cardinalStr = match.groups('cardinal').value;
         let yearStr = match.groups('year').value;
         let orderStr = match.groups('order').value;
+        let numberStr = match.groups('number').value; 
 
+        let noSpecificYear = false;
         let year = Number.parseInt(yearStr, 10);
+
         if (isNaN(year)) {
             let swift = this.config.getSwiftYear(orderStr);
-            if (swift < -1) return result;
+            if (swift < -1) {
+                swift = 0;
+                noSpecificYear = true;
+            }
             year = referenceDate.getFullYear() + swift;
         }
 
-        let quarterNum = this.config.cardinalMap.get(cardinalStr);
+        let quarterNum : number;
+        if (!numberStr) {
+            quarterNum = this.config.cardinalMap.get(cardinalStr);
+        } else {
+            quarterNum = parseInt(numberStr)
+        }
+
         let beginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, quarterNum * 3 - 3, 1);
         let endDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, quarterNum * 3, 1);
-        result.futureValue = [beginDate, endDate];
-        result.pastValue = [beginDate, endDate];
+
+        if (noSpecificYear) {
+            if (endDate < referenceDate) {
+                result.pastValue = [beginDate, endDate];
+                
+                let futureBeginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year + 1, quarterNum * 3 - 3, 1);
+                let futureEndDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year + 1, quarterNum * 3, 1);
+                result.futureValue = [futureBeginDate, futureEndDate];
+            } else if (endDate > referenceDate) {
+                result.futureValue = [beginDate, endDate];
+                
+                let pastBeginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year - 1, quarterNum * 3 - 3, 1);
+                let pastEndDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year - 1, quarterNum * 3, 1);
+                result.pastValue = [pastBeginDate, pastEndDate];
+            } else {
+                result.futureValue = [beginDate, endDate];
+                result.pastValue = [beginDate, endDate];
+            }
+        }
+        else {
+            result.futureValue = [beginDate, endDate];
+            result.pastValue = [beginDate, endDate];
+        }
+
         result.timex = `(${FormatUtil.luisDateFromDate(beginDate)},${FormatUtil.luisDateFromDate(endDate)},P3M)`;
         result.success = true;
         return result;
