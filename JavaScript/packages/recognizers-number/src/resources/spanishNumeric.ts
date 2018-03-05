@@ -22,7 +22,7 @@ export namespace SpanishNumeric {
 	export const BelowThousandsRegex = `(${HundredsNumberIntegerRegex}(\\s+${BelowHundredsRegex})?|${BelowHundredsRegex})`;
 	export const SupportThousandsRegex = `((${BelowThousandsRegex}|${BelowHundredsRegex})\\s+${RoundNumberIntegerRegex}(\\s+${RoundNumberIntegerRegex})?)`;
 	export const SeparaIntRegex = `(${SupportThousandsRegex}(\\s+${SupportThousandsRegex})*(\\s+${BelowThousandsRegex})?|${BelowThousandsRegex})`;
-	export const AllIntRegex = `((NegativeNumberTermsRegex)?(${SeparaIntRegex}|mil(\\s+${BelowThousandsRegex})?))`;
+	export const AllIntRegex = `(${SeparaIntRegex}|mil(\\s+${BelowThousandsRegex})?)`;
 	export const PlaceHolderPureNumber = `\\b`;
 	export const PlaceHolderDefault = `\\D|\\b`;
 	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }

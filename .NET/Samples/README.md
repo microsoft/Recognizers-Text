@@ -65,6 +65,14 @@ DateTimeRecognizer.RecognizeDateTime(query, culture);
 // PhoneNumber recognizer will find any phone number presented
 // E.g "My phone number is ( 19 ) 38294427."
 SequenceRecognizer.RecognizePhoneNumber(query, culture);
+
+//IP recognizer will find any Ipv4/Ipv6 presented
+// E.g "My Ip is 8.8.8.8"
+SequenceRecognizer.RecognizeIpAddress(query, culture);
+
+//Boolean recognizer will find yes/no like responses, including emoji -
+// E.g "yup, I need that" will return "True"
+ChoiceRecognizer.RecognizeBoolean(query, culture);
 ````
 
 All these methods accept an input string and culture, and returns an **IEnumerable** of [ModelResult](../Microsoft.Recognizers.Text/Models/ModelResult.cs):

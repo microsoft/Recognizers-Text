@@ -21,7 +21,7 @@ export namespace FrenchNumeric {
 	export const BelowThousandsRegex = `((${HundredsNumberIntegerRegex}(\\s+${BelowHundredsRegex})?|${BelowHundredsRegex}|${TenToNineteenIntegerRegex})|cent\\s+${TenToNineteenIntegerRegex})`;
 	export const SupportThousandsRegex = `((${BelowThousandsRegex}|${BelowHundredsRegex})\\s+${RoundNumberIntegerRegex}(\\s+${RoundNumberIntegerRegex})?)`;
 	export const SeparaIntRegex = `(${SupportThousandsRegex}(\\s+${SupportThousandsRegex})*(\\s+${BelowThousandsRegex})?|${BelowThousandsRegex})`;
-	export const AllIntRegex = `((NegativeNumberTermsRegex)?(${SeparaIntRegex}|mille(\\s+${BelowThousandsRegex})?))`;
+	export const AllIntRegex = `(${SeparaIntRegex}|mille(\\s+${BelowThousandsRegex})?)`;
 	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }
 	export const NumbersWithSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(k|M|T|G)(?=\\b)`;
 	export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)(${DigitsNumberRegex})+\\s+${RoundNumberIntegerRegex}(?=\\b)`;

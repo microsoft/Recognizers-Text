@@ -21,7 +21,7 @@ export namespace PortugueseNumeric {
 	export const NegativeNumberTermsRegex = `^[.]`;
 	export const NegativeNumberSignRegex = `^(${NegativeNumberTermsRegex}\\s+).*`;
 	export const SeparaIntRegex = `(${SupportThousandsRegex}(\\s+${SupportThousandsRegex})*(\\s+${BelowThousandsRegex})?|${BelowThousandsRegex})`;
-	export const AllIntRegex = `((NegativeNumberTermsRegex)?(${SeparaIntRegex}|mil(\\s+${BelowThousandsRegex})?))`;
+	export const AllIntRegex = `(${SeparaIntRegex}|mil(\\s+${BelowThousandsRegex})?)`;
 	export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${AllIntRegex}))`;
 	export const SpecialFractionInteger = `(((${AllIntRegex})i?(${ZeroToNineIntegerRegex})|(${AllIntRegex}))\\s+a?v[oa]s?)`;
 	export const PlaceHolderDefault = `\\D|\\b`;

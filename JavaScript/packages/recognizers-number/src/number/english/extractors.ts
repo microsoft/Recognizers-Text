@@ -6,9 +6,13 @@ import { RegExpUtility } from "@microsoft/recognizers-text"
 
 export class EnglishNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
+    protected negativeNumberTermsRegex: RegExp;
 
     constructor(mode: NumberMode = NumberMode.Default) {
         super();
+
+        this.negativeNumberTermsRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.NegativeNumberTermsRegex + "$", "is");
+
         let regexes = new Array<RegExpValue>();
 
         // Add Cardinal

@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
-    class BaseIpExtractor : BaseSequenceExtractor
+    public class BaseIpExtractor : BaseSequenceExtractor
     {
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
         protected sealed override string ExtractType { get; } = Constants.SYS_IP;

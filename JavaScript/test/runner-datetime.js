@@ -1,6 +1,6 @@
-var Recognizer = require('@microsoft/recognizers-text-date-time').DateTimeRecognizer;
-var DateTimeOptions = require('@microsoft/recognizers-text-date-time').DateTimeOptions;
 var _ = require('lodash');
+var Recognizer = require('@microsoft/recognizers-text-suite');
+var DateTimeOptions = require('@microsoft/recognizers-text-date-time').DateTimeOptions;
 
 var Constants = require('./constants');
 var SupportedCultures = require('./cultures');
@@ -9,10 +9,14 @@ var Parsers = require('./datetime-parsers');
 
 var ignoredTest = null;
 
+var modelFunctions = {
+    'DateTimeModel': (input, culture, options, refDate) => Recognizer.recognizeDateTime(input, culture, options, refDate, false)
+}
+
 module.exports = function getDateTimeRunner(config) {
     var extractor = getExtractor(config);
     var parser = getParser(config);
-    var model = getModel(config);
+    var modelFunction = getModelFunction(config);
 
     // Extractor only test
     if (config.subType.includes(Constants.Extractor)) {
@@ -45,12 +49,12 @@ module.exports = function getDateTimeRunner(config) {
 
     // Model test
     if (config.subType.includes(Constants.Model)) {
-        if (!model) {
+        if (!modelFunction) {
             return ignoredTest;
             // throw new Error(`Cannot found model for ${JSON.stringify(config)}.`);
         }
 
-        return getModelTestRunner(model);
+        return getModelTestRunner(modelFunction);
     }
 
     return ignoredTest;
@@ -146,7 +150,7 @@ function getMergedParserTestRunner(extractor, parser) {
     };
 }
 
-function getModelTestRunner(model) {
+function getModelTestRunner(getResults) {
     return function (t, testCase) {
         var expected = testCase.Results;
         var referenceDateTime = getReferenceDate(testCase);
@@ -155,7 +159,7 @@ function getModelTestRunner(model) {
             debugger;
         }
 
-        var result = model.parse(testCase.Input, referenceDateTime);
+        var result = getResults(testCase.Input, referenceDateTime);
         t.is(result.length, expected.length, 'Result count');
         _.zip(result, expected).forEach(o => {
             var actual = o[0];
@@ -188,27 +192,16 @@ function getParser(config) {
     return parser;
 }
 
-var models = {};
-function getModel(config) {
-    var options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
+function getModelFunction(config) {
+    var modelFunction = modelFunctions['DateTimeModel'];
+
+    var options = DateTimeOptions.None + 
+        config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None +
+        config.subType.includes('CalendarMode') ? DateTimeOptions.Calendar : DateTimeOptions.None;
+
     var culture = SupportedCultures[config.language].cultureCode;
 
-    var key = [culture, options.toString()].join('-');
-    var model = models[key];
-    if (model === undefined) {
-        try {
-            model = (new Recognizer(culture, options)).getDateTimeModel(),
-			models[key] = model;
-        } catch (err) {
-            // not yet supported - save null model, tests will then be ignored
-            models[key] = null;
-
-            return null;
-        }
-
-    }
-
-    return model;
+    return (input, refDate) => modelFunction(input, culture, options, refDate);
 }
 
 function parseISOLocal(s) {

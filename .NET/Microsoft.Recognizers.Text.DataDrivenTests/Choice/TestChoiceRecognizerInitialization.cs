@@ -1,21 +1,34 @@
 ﻿using System;
-using Microsoft.Recognizers.Text.Choice;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Recognizers.Text.DataDrivenTests.Choice
+namespace Microsoft.Recognizers.Text.Choice.Tests
 {
     [TestClass]
     public class TestChoiceRecognizerInitialization
     {
-        private readonly string EnglishCulture = Culture.English;
-        private readonly string SpanishCulture = Culture.Spanish;
-        private readonly string InvalidCulture = "vo-id";
+        private const string TestInput = "true";
+
+        private const string EnglishCulture = Culture.English;
+        //private const string SpanishCulture = Culture.Spanish;
+        private const string InvalidCulture = "vo-id";
+
+        private IModel controlModel;
+
+        public TestChoiceRecognizerInitialization()
+        {
+            controlModel = new Models.BooleanModel(
+                new Parsers.BooleanParser(),
+                new Extractors.BooleanExtractor(new English.Extractors.EnglishBooleanExtractorConfiguration()));
+        }
 
         [TestMethod]
         public void WithoutCulture_UseTargetCulture()
         {
             var recognizer = new ChoiceRecognizer(EnglishCulture);
-            Assert.AreEqual(recognizer.GetBooleanModel(), recognizer.GetBooleanModel(EnglishCulture));
+            var testedModel = recognizer.GetBooleanModel();
+
+            TestChoice(testedModel, controlModel, TestInput);
         }
 
         [TestMethod]
@@ -28,7 +41,27 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Choice
         public void WithInvalidCulture_UseTargetCulture()
         {
             var recognizer = new ChoiceRecognizer(EnglishCulture);
-            Assert.AreEqual(recognizer.GetBooleanModel(InvalidCulture), recognizer.GetBooleanModel());
+            var testedModel = recognizer.GetBooleanModel(InvalidCulture);
+
+            TestChoice(testedModel, controlModel, TestInput);
+        }
+
+        [TestMethod]
+        public void WithInvalidCulture_AlwaysUseEnglish()
+        {
+            var recognizer = new ChoiceRecognizer();
+            var testedModel = recognizer.GetBooleanModel(InvalidCulture);
+
+            TestChoice(testedModel, controlModel, TestInput);
+        }
+
+        [TestMethod]
+        public void WithoutTargetCultureAndWithoutCulture_FallbackToEnglishCulture()
+        {
+            var recognizer = new ChoiceRecognizer();
+            var testedModel = recognizer.GetBooleanModel();
+
+            TestChoice(testedModel, controlModel, TestInput);
         }
 
         [TestMethod]
@@ -46,20 +79,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Choice
         }
 
         [TestMethod]
-        public void WithoutTargetCultureAndWithoutCulture_FallbackToEnglishCulture()
-        {
-            var recognizer = new ChoiceRecognizer();
-            Assert.AreEqual(recognizer.GetBooleanModel(), recognizer.GetBooleanModel(EnglishCulture));
-        }
-
-        [TestMethod]
-        public void InitializationNonLazy_CanGetModel()
-        {
-            var recognizer = new ChoiceRecognizer(EnglishCulture, ChoiceOptions.None, lazyInitialization: false);
-            Assert.AreEqual(recognizer.GetBooleanModel(), recognizer.GetBooleanModel(EnglishCulture));
-        }
-
-        [TestMethod]
         public void InitializationWithIntOption_ResolveOptionsEnum()
         {
             var recognizer = new ChoiceRecognizer(EnglishCulture, 0);
@@ -70,6 +89,27 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Choice
         public void InitializationWithInvalidOptions_ThrowError()
         {
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => new ChoiceRecognizer(EnglishCulture, -1));
+        }
+        
+        private void TestChoice(IModel testedModel, IModel controlModel, string source)
+        {
+            var expectedResults = controlModel.Parse(source);
+            var actualResults = testedModel.Parse(source);
+
+            Assert.AreEqual(expectedResults.Count, actualResults.Count, source);
+            Assert.IsTrue(expectedResults.Count > 0, source);
+
+            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+            {
+                var expected = tuple.Item1;
+                var actual = tuple.Item2;
+
+                Assert.AreEqual(expected.TypeName, actual.TypeName, source);
+                Assert.AreEqual(expected.Text, actual.Text, source);
+
+                Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], source);
+                Assert.AreEqual(expected.Resolution[ResolutionKey.Score], actual.Resolution[ResolutionKey.Score], source);
+            }
         }
     }
 }
