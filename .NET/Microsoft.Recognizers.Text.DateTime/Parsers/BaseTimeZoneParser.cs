@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public string ConvertOffsetInMinsToOffsetString(int offsetMins)
         {
-            return $"Utc{(offsetMins >= 0 ? "+" : "-")}{ConvertMinsToRegularFormat(Math.Abs(offsetMins))}";
+            return $"UTC{(offsetMins >= 0 ? "+" : "-")}{ConvertMinsToRegularFormat(Math.Abs(offsetMins))}";
         }
 
         public string ConvertMinsToRegularFormat(int offsetMins)
