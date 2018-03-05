@@ -1,23 +1,17 @@
 var _ = require('lodash');
-var SequenceRecognizer = require('@microsoft/recognizers-text-sequence').SequenceRecognizer;
+var Recognizer = require('@microsoft/recognizers-text-suite');
 var SupportedCultures = require('./cultures.js');
 
-var modelGetters = {
-    'PhoneNumberModel': new SequenceRecognizer().getPhoneNumberModel,
-    'IpAddressModel': new SequenceRecognizer().getIpAddressModel
+var modelFunctions = {
+    'PhoneNumberModel': (input, culture, options) => Recognizer.recognizePhoneNumber(input, culture, options),
+    'IpAddressModel': (input, culture, options) => Recognizer.recognizeIpAddress(input, culture, options)
 };
 
 module.exports = function getSequenceTestRunner(config) {
-    try {
-        var model = getSequenceModel(config);
-    } catch (err) {
-        return null;
-    }
-
     return function (t, testCase) {
 
         if (testCase.Debug) debugger;
-        var result = model.parse(testCase.Input);
+        var result = getResults(testCase.Input, config);
 
         t.is(result.length, testCase.Results.length, 'Result count');
         _.zip(result, testCase.Results).forEach(o => {
@@ -35,9 +29,9 @@ module.exports = function getSequenceTestRunner(config) {
     };
 }
 
-function getSequenceModel(config) {
-    var getModel = modelGetters[config.subType];
-    if (!getModel) {
+function getResults(input, config) {
+    var modelFunction = modelFunctions[config.subType];
+    if(!modelFunction) {
         throw new Error(`Sequence model of ${config.subType} not supported.`);
     }
 
@@ -46,5 +40,5 @@ function getSequenceModel(config) {
         throw new Error(`Sequence model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(new SequenceRecognizer(culture))();
+    return modelFunction(input, culture, 0);
 }

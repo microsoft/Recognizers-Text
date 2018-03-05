@@ -12,21 +12,18 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
     public class TestSequence_English : TestBase
     {
         public static TestResources TestResources { get; protected set; }
-        public static IDictionary<string, IModel> Models { get; protected set; }
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
             TestResources = new TestResources();
             TestResources.InitFromTestContext(context);
-            Models = new Dictionary<string, IModel>();
         }
 
         [TestInitialize]
         public void TestInitialize()
         {
             base.TestSpecInitialize(TestResources);
-            base.ModelInitialize(Models);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PhoneNumberModel-English.csv", "PhoneNumberModel-English#csv", DataAccessMethod.Sequential)]
