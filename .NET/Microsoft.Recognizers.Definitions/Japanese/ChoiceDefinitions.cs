@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 
 	public static class OptionsDefinitions
 	{
-		public const string LangMarker = "Jp";
+		public const string LangMarker = "Jpn";
 		public const string TokenizerRegex = @"[^\w\d]";
 		public const string TrueRegex = @"\b(はい|そうです|そう|よい)\b|(\uD83D\uDC4D|\uD83D\uDC4C)";
 		public const string FalseRegex = @"\b(いいえ|ではありません|ではない|じゃない|じゃありません)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";

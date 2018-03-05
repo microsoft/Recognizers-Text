@@ -7,16 +7,16 @@ namespace Microsoft.Recognizers.Text.Choice.Japanese.Extractors
 {
     public class JapaneseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
-        public static readonly Regex TrueRegex = 
+        public static readonly Regex TrueRegex =
             new Regex(OptionsDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FalseRegex = 
+        public static readonly Regex FalseRegex =
             new Regex(OptionsDefinitions.FalseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TokenRegex = 
+        public static readonly Regex TokenRegex =
             new Regex(OptionsDefinitions.TokenizerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly IDictionary<Regex, string> MapRegexes =  new Dictionary<Regex, string>()
+        public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {
             {TrueRegex, Constants.SYS_BOOLEAN_TRUE },
             {FalseRegex, Constants.SYS_BOOLEAN_FALSE }

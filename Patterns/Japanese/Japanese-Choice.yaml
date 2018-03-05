@@ -1,9 +1,9 @@
 ﻿---
-LangMarker: Eng
+LangMarker: Jpn
 #Boolean Recognizers
 TokenizerRegex: !simpleRegex
   def: '[^\w\d]'
 TrueRegex: !simpleRegex
-  def: \b(true|yes|yep|y|sure|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+  def: \b(はい|そうです|そう|よい)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
 FalseRegex: !simpleRegex
-  def: \b(false|nope|nop|no)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
+  def: \b(いいえ|ではありません|ではない|じゃない|じゃありません)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
