@@ -34,8 +34,8 @@ SeparaIntRegex: !nestedRegex
   def: ({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})
   references: [ SupportThousandsRegex, BelowThousandsRegex ]
 AllIntRegex: !nestedRegex
-  def: ((NegativeNumberTermsRegex)?({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?))
-  references: [ SeparaIntRegex, BelowThousandsRegex, NegativeNumberTermsRegex ]
+  def: ({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)
+  references: [ SeparaIntRegex, BelowThousandsRegex ]
 NumbersWithPlaceHolder: !paramsRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]

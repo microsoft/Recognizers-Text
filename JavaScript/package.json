@@ -14,6 +14,7 @@
 		"@microsoft/recognizers-text-choice": "global:microsoftRecognizersTextChoice",
 		"@microsoft/recognizers-text-number": "global:microsoftRecognizersTextNumber",
 		"@microsoft/recognizers-text-number-with-unit": "global:microsoftRecognizersTextNumberWithUnit",
+		"@microsoft/recognizers-text-sequence": "global:microsoftRecognizersSequence",
 		"@microsoft/recognizers-text-date-time": "global:microsoftRecognizersTextDateTime"
 	},
 	"browserify": {
@@ -75,6 +76,7 @@
 		"@microsoft/recognizers-text-date-time": "file:./packages/recognizers-date-time",
 		"@microsoft/recognizers-text-number": "file:./packages/recognizers-number",
 		"@microsoft/recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
+		"@microsoft/recognizers-text-sequence": "file:./packages/recognizers-sequence",
 		"@microsoft/recognizers-text-suite": "file:./packages/recognizers-text-suite"
 	}
 }

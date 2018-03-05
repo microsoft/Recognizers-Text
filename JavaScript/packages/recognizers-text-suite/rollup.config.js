@@ -22,6 +22,7 @@ export default {
       '@microsoft/recognizers-text-number': path.resolve(__dirname, '../recognizers-number/compiled/recognizers-text-number.js'),
       '@microsoft/recognizers-text-number-with-unit': path.resolve(__dirname, '../recognizers-number-with-unit/compiled/recognizers-text-number-with-unit.js'),
       '@microsoft/recognizers-text-date-time': path.resolve(__dirname, '../recognizers-date-time/compiled/recognizers-text-date-time.js'),
+      '@microsoft/recognizers-text-sequence': path.resolve(__dirname, '../recognizers-sequence/compiled/recognizers-text-sequence.js'),
     }),
     // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
     commonjs(),

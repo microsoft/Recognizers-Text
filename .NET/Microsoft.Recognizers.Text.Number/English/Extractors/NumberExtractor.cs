@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
+        protected sealed override Regex NegativeNumberTermsRegex { get; }
+
         private static readonly ConcurrentDictionary<string, NumberExtractor> Instances = new ConcurrentDictionary<string, NumberExtractor>();
 
         public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default) {
@@ -29,6 +31,8 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         private NumberExtractor(NumberMode mode = NumberMode.Default)
         {
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
             
             //Add Cardinal
