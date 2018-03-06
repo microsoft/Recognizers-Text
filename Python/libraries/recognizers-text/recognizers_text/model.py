@@ -6,10 +6,6 @@ from .culture import Culture
 
 TModelOptions = TypeVar('TModelOptions')
 
-class Model(ABC):
-    @abstractmethod
-    def parse(self, query: str) -> List[ModelResult]:
-        raise NotImplementedError
 
 class ModelResult():
     def __init__(self):
@@ -18,6 +14,11 @@ class ModelResult():
         self.end: int
         self.typeName: str
         self.resolution: Dict[str, object]
+
+class Model(ABC):
+    @abstractmethod
+    def parse(self, query: str) -> List[ModelResult]:
+        raise NotImplementedError
 
 class ModelFactoryKey(Generic[TModelOptions]):
     def __init__(self, model_type: str, culture: str, options: TModelOptions):
