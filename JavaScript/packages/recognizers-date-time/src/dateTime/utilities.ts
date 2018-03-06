@@ -465,6 +465,15 @@ export class DateUtils {
         return this.safeCreateFromValue(this.minValue(), year, month, day, hour, minute, second);
     }
 
+    // Resolve month overflow
+    static safeCreateDateResolveOverflow(year: number, month: number, day: number): Date {
+        if (month >= 12) {
+            year += (month + 1) / 12;
+            month %= 12;
+        }       
+        return this.safeCreateFromMinValue(year, month, day);
+    }
+
     static safeCreateFromMinValueWithDateAndTime(date: Date, time?: Date): Date {
         return this.safeCreateFromMinValue(
             date.getFullYear(), date.getMonth(), date.getDate(),

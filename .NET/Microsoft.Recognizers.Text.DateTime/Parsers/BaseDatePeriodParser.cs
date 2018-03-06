@@ -1029,8 +1029,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 halfNum = this.config.CardinalMap[cardinalStr];
             }
 
-            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, halfNum * 6 - 5, 1);
-            var endDate = DateObject.MinValue.SafeCreateFromValue(year, halfNum * 6, 1).AddMonths(1);
+            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, (halfNum - 1) * Constants.SemesterMonthCount + 1, 1);
+            var endDate = DateObject.MinValue.SafeCreateFromValue(year, halfNum * Constants.SemesterMonthCount, 1).AddMonths(1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
             ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P6M)";
             ret.Success = true;
@@ -1081,8 +1081,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 quarterNum = this.config.CardinalMap[cardinalStr];
             }
 
-            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * 3 - 2, 1);
-            var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * 3, 1).AddMonths(1);
+            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, (quarterNum - 1) * Constants.TrimesterMonthCount + 1, 1);
+            var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * Constants.TrimesterMonthCount, 1).AddMonths(1);
 
             if (noSpecificYear)
             {
@@ -1090,16 +1090,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
 
-                    var futureBeginDate = DateObject.MinValue.SafeCreateFromValue(year + 1, quarterNum * 3 - 2, 1);
-                    var futureEndDate = DateObject.MinValue.SafeCreateFromValue(year + 1, quarterNum * 3, 1).AddMonths(1);
+                    var futureBeginDate = DateObject.MinValue.SafeCreateFromValue(year + 1, (quarterNum - 1) * Constants.TrimesterMonthCount + 1, 1);
+                    var futureEndDate = DateObject.MinValue.SafeCreateFromValue(year + 1, quarterNum * Constants.TrimesterMonthCount, 1).AddMonths(1);
                     ret.FutureValue = new Tuple<DateObject, DateObject>(futureBeginDate, futureEndDate);
                 }
                 else if (endDate.CompareTo(referenceDate) > 0)
                 {
                     ret.FutureValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
 
-                    var pastBeginDate = DateObject.MinValue.SafeCreateFromValue(year - 1, quarterNum * 3 - 2, 1);
-                    var pastEndDate = DateObject.MinValue.SafeCreateFromValue(year - 1, quarterNum * 3, 1).AddMonths(1);
+                    var pastBeginDate = DateObject.MinValue.SafeCreateFromValue(year - 1, (quarterNum - 1) * Constants.TrimesterMonthCount + 1, 1);
+                    var pastEndDate = DateObject.MinValue.SafeCreateFromValue(year - 1, quarterNum * Constants.TrimesterMonthCount, 1).AddMonths(1);
                     ret.PastValue = new Tuple<DateObject, DateObject>(pastBeginDate, pastEndDate);
                 }
                 else
