@@ -46,6 +46,7 @@ export namespace EnglishDateTime {
 	export const QuarterTermRegex = `(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\\s+quarter)|(Q(?<number>[1-4])))`;
 	export const QuarterRegex = `(the\\s+)?${QuarterTermRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?`;
 	export const QuarterRegexYearFront = `(${YearRegex}|${RelativeRegex}\\s+year)\\s+(the\\s+)?${QuarterTermRegex}`;
+	export const QuarterRegexYearBack = `(the\\s+)?${QuarterTermRegex}\\s+(${YearRegex}|${RelativeRegex}\\s+year)`;
 	export const EarlyPrefixRegex = `?<EarlyPrefix>early|beginning of|start of`;
 	export const MidPrefixRegex = `?<MidPrefix>mid|middle of`;
 	export const LaterPrefixRegex = `?<LatePrefix>late|later|end of`;
