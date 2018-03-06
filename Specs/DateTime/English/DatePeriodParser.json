@@ -1749,14 +1749,14 @@
 }
 ,
 {
-  "Input": "I'll be out the Q3 this year",
+  "Input": "I'll be out during Q3 this year",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the Q3 this year",
+      "Text": "Q3 this year",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1871,6 +1871,140 @@
       }
     }
   ]
+}
+,
+{
+  "Input": "I'll be out during Q4 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Q4 2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-10-01,2017-01-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2016-10-01",
+          "endDate": "2017-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-10-01",
+          "endDate": "2017-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out during H1 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "H1 2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-01-01,2016-07-01,P6M)",
+        "FutureResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2016-07-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2016-07-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out during H2 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "H2 2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-07-01,2017-01-01,P6M)",
+        "FutureResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2017-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2017-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out during 2016 H2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 H2",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-07-01,2017-01-01,P6M)",
+        "FutureResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2017-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2017-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out during 2016H2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016H2",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-07-01,2017-01-01,P6M)",
+        "FutureResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2017-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2017-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out during H2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {

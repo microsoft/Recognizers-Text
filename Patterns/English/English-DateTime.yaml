@@ -90,9 +90,20 @@ QuarterRegex: !nestedRegex
 QuarterRegexYearFront: !nestedRegex
   def: ({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?{QuarterTermRegex}
   references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
-QuarterRegexYearBack: !nestedRegex
-  def: (the\s+)?{QuarterTermRegex}\s+({YearRegex}|{RelativeRegex}\s+year)
-  references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
+HalfYearTermRegex: !simpleRegex
+  def: (?<cardinal>first|1st|second|2nd)\s+half
+HalfYearFrontRegex: !nestedRegex
+  def: (?<year>((1[5-9]|20)\d{2})|2100)\s*(the\s+)?H(?<number>[1-2])
+  references: [ YearRegex ]
+HalfYearBackRegex: !nestedRegex
+  def: (the\s+)?(H(?<number>[1-2])|({HalfYearTermRegex}))(\s+of|\s*,\s*)?\s+({YearRegex})
+  references: [ YearRegex, HalfYearTermRegex ]
+HalfYearRelativeRegex: !nestedRegex
+  def: (the\s+)?{HalfYearTermRegex}(\s+of|\s*,\s*)?\s+({RelativeRegex}\s+year)
+  references: [ RelativeRegex, HalfYearTermRegex ]
+AllHalfYearRegex: !nestedRegex
+  def: ({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})
+  references: [ HalfYearFrontRegex, HalfYearBackRegex, HalfYearRelativeRegex ]
 EarlyPrefixRegex: !simpleRegex
   def: ?<EarlyPrefix>early|beginning of|start of
 MidPrefixRegex: !simpleRegex

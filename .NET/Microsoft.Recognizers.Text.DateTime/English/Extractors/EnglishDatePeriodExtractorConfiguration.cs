@@ -97,8 +97,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex QuarterRegexYearFront =
             new Regex(DateTimeDefinitions.QuarterRegexYearFront, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex QuarterRegexYearBack =
-            new Regex(DateTimeDefinitions.QuarterRegexYearBack, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AllHalfYearRegex =
+            new Regex(DateTimeDefinitions.AllHalfYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SeasonRegex =
             new Regex(DateTimeDefinitions.SeasonRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             MonthFrontSimpleCasesRegex,
             QuarterRegex,
             QuarterRegexYearFront,
-            QuarterRegexYearBack,
+            AllHalfYearRegex,
             SeasonRegex,
             WhichWeekRegex,
             RestOfDateRegex,
