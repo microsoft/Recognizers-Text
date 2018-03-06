@@ -243,6 +243,7 @@ export interface IDatePeriodParserConfiguration {
     weekOfYearRegex: RegExp
     quarterRegex: RegExp
     quarterRegexYearFront: RegExp
+    allHalfYearRegex: RegExp
     seasonRegex: RegExp
     weekOfRegex: RegExp
     monthOfRegex: RegExp
@@ -304,6 +305,9 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             }
             if (!innerResult.success) {
                 innerResult = this.parseWeekOfYear(source, referenceDate);
+            }
+            if (!innerResult.success) {
+                innerResult = this.parseHalfYear(source, referenceDate);
             }
             if (!innerResult.success) {
                 innerResult = this.parseQuarter(source, referenceDate);
@@ -892,6 +896,43 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
+    protected parseHalfYear(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let match = RegExpUtility.getMatches(this.config.allHalfYearRegex, source).pop();
+        if (!match || match.length !== source.length) return result;
+
+        let cardinalStr = match.groups('cardinal').value;
+        let yearStr = match.groups('year').value;
+        let orderStr = match.groups('order').value;
+        let numberStr = match.groups('number').value; 
+
+        let year = Number.parseInt(yearStr, 10);
+
+        if (isNaN(year)) {
+            let swift = this.config.getSwiftYear(orderStr);
+            if (swift < -1) {
+                return result;
+            }
+            year = referenceDate.getFullYear() + swift;
+        }
+
+        let quarterNum : number;
+        if (!numberStr) {
+            quarterNum = this.config.cardinalMap.get(cardinalStr);
+        } else {
+            quarterNum = parseInt(numberStr)
+        }
+
+        let beginDate = DateUtils.safeCreateDateResolveOverflow(year, (quarterNum - 1) * Constants.SemesterMonthCount, 1);
+        let endDate = DateUtils.safeCreateDateResolveOverflow(year, quarterNum * Constants.SemesterMonthCount, 1);
+
+        result.futureValue = [beginDate, endDate];
+        result.pastValue = [beginDate, endDate];
+        result.timex = `(${FormatUtil.luisDateFromDate(beginDate)},${FormatUtil.luisDateFromDate(endDate)},P6M)`;
+        result.success = true;
+        return result;
+    }
+
     protected parseQuarter(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.quarterRegex, source).pop();
@@ -924,21 +965,21 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             quarterNum = parseInt(numberStr)
         }
 
-        let beginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, quarterNum * 3 - 3, 1);
-        let endDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, quarterNum * 3, 1);
+        let beginDate = DateUtils.safeCreateDateResolveOverflow(year, (quarterNum - 1) * Constants.TrimesterMonthCount, 1);
+        let endDate = DateUtils.safeCreateDateResolveOverflow(year, quarterNum * Constants.TrimesterMonthCount, 1);
 
         if (noSpecificYear) {
             if (endDate < referenceDate) {
                 result.pastValue = [beginDate, endDate];
                 
-                let futureBeginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year + 1, quarterNum * 3 - 3, 1);
-                let futureEndDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year + 1, quarterNum * 3, 1);
+                let futureBeginDate = DateUtils.safeCreateDateResolveOverflow(year + 1, (quarterNum - 1) * Constants.TrimesterMonthCount, 1);
+                let futureEndDate = DateUtils.safeCreateDateResolveOverflow(year + 1, quarterNum * Constants.TrimesterMonthCount, 1);
                 result.futureValue = [futureBeginDate, futureEndDate];
             } else if (endDate > referenceDate) {
                 result.futureValue = [beginDate, endDate];
                 
-                let pastBeginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year - 1, quarterNum * 3 - 3, 1);
-                let pastEndDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year - 1, quarterNum * 3, 1);
+                let pastBeginDate = DateUtils.safeCreateDateResolveOverflow(year - 1, (quarterNum - 1) * Constants.TrimesterMonthCount, 1);
+                let pastEndDate = DateUtils.safeCreateDateResolveOverflow(year - 1, quarterNum * Constants.TrimesterMonthCount, 1);
                 result.pastValue = [pastBeginDate, pastEndDate];
             } else {
                 result.futureValue = [beginDate, endDate];

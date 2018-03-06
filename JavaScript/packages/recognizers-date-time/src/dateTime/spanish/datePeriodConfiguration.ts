@@ -47,6 +47,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(SpanishDateTime.MonthFrontSimpleCasesRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegexYearFront),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.AllHalfYearRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.SeasonRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.LaterEarlyPeriodRegex),
@@ -107,6 +108,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly weekOfYearRegex: RegExp;
     readonly quarterRegex: RegExp;
     readonly quarterRegexYearFront: RegExp;
+    readonly allHalfYearRegex: RegExp;
     readonly seasonRegex: RegExp;
     readonly weekOfRegex: RegExp;
     readonly monthOfRegex: RegExp;
@@ -153,6 +155,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.weekOfYearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfYearRegex);
         this.quarterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegex);
         this.quarterRegexYearFront = RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegexYearFront);
+        this.allHalfYearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AllHalfYearRegex);
         this.seasonRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SeasonRegex);
         this.whichWeekRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WhichWeekRegex);
         this.weekOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfRegex);

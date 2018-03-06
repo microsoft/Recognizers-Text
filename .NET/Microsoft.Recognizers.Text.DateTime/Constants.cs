@@ -57,5 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
+
+        public const int TrimesterMonthCount = 3;
+        public const int SemesterMonthCount = 6;
     }
 }

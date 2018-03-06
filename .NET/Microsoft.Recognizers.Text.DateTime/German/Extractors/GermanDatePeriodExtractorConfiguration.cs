@@ -97,6 +97,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex QuarterRegexYearFront =
             new Regex(DateTimeDefinitions.QuarterRegexYearFront, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AllHalfYearRegex =
+            new Regex(DateTimeDefinitions.AllHalfYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex SeasonRegex =
             new Regex(DateTimeDefinitions.SeasonRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
