@@ -9,6 +9,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Choice
     {
         private readonly string EnglishCulture = Culture.English;
         private readonly string SpanishCulture = Culture.Spanish;
+        private readonly string JapaneseCulture = Culture.Japanese;
         private readonly string InvalidCulture = "vo-id";
 
         [TestMethod]
