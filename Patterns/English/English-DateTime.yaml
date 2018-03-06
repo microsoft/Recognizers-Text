@@ -90,6 +90,9 @@ QuarterRegex: !nestedRegex
 QuarterRegexYearFront: !nestedRegex
   def: ({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?{QuarterTermRegex}
   references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
+QuarterRegexYearBack: !nestedRegex
+  def: (the\s+)?{QuarterTermRegex}\s+({YearRegex}|{RelativeRegex}\s+year)
+  references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
 EarlyPrefixRegex: !simpleRegex
   def: ?<EarlyPrefix>early|beginning of|start of
 MidPrefixRegex: !simpleRegex

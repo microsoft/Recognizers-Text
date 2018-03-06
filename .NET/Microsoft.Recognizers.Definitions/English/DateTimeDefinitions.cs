@@ -55,6 +55,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string QuarterTermRegex = @"(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter)|(Q(?<number>[1-4])))";
 		public static readonly string QuarterRegex = $@"(the\s+)?{QuarterTermRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?";
 		public static readonly string QuarterRegexYearFront = $@"({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?{QuarterTermRegex}";
+		public static readonly string QuarterRegexYearBack = $@"(the\s+)?{QuarterTermRegex}\s+({YearRegex}|{RelativeRegex}\s+year)";
 		public const string EarlyPrefixRegex = @"?<EarlyPrefix>early|beginning of|start of";
 		public const string MidPrefixRegex = @"?<MidPrefix>mid|middle of";
 		public const string LaterPrefixRegex = @"?<LatePrefix>late|later|end of";

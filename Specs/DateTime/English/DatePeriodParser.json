@@ -1824,6 +1824,56 @@
 }
 ,
 {
+  "Input": "I'll be back during Q2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Q2",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-04-01,2016-07-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2017-04-01",
+          "endDate": "2017-07-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-04-01",
+          "endDate": "2016-07-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back Q1 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Q1 2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-01-01,2016-04-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2016-04-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2016-04-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll leave this summer",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"

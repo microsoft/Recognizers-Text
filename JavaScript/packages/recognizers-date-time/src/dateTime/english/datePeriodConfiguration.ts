@@ -42,6 +42,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearBack),
             RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex),
@@ -110,6 +111,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly weekOfYearRegex: RegExp
     readonly quarterRegex: RegExp
     readonly quarterRegexYearFront: RegExp
+    readonly quarterRegexYearBack: RegExp
     readonly seasonRegex: RegExp
     readonly weekOfRegex: RegExp
     readonly monthOfRegex: RegExp
@@ -147,6 +149,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.weekOfYearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfYearRegex);
         this.quarterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegex);
         this.quarterRegexYearFront = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront);
+        this.quarterRegexYearBack = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearBack);
         this.seasonRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex);
         this.weekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex);
         this.monthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex);
