@@ -10,12 +10,12 @@ export enum ChoiceOptions {
 
 export function recognizeBoolean(query: string, culture: string, options: ChoiceOptions = ChoiceOptions.None,
         fallbackToDefaultCulture: boolean = true): Array<ModelResult> {
-    let recognizer = new OptionsRecognizer(culture, options);
+    let recognizer = new ChoiceRecognizer(culture, options);
     let model = recognizer.getBooleanModel(culture, fallbackToDefaultCulture);
     return model.parse(query);
 }
 
-export default class OptionsRecognizer extends Recognizer<ChoiceOptions> {
+export default class ChoiceRecognizer extends Recognizer<ChoiceOptions> {
     constructor(culture: string, options: ChoiceOptions = ChoiceOptions.None, lazyInitialization: boolean = false) {
         super(culture, options, lazyInitialization);
     }
