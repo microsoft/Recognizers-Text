@@ -1,0 +1,9 @@
+﻿---
+LangMarker: Jpn
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
+TrueRegex: !simpleRegex
+  def: \b(はい|そうです|そう|よい)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(いいえ|ではありません|ではない|じゃない|じゃありません)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
