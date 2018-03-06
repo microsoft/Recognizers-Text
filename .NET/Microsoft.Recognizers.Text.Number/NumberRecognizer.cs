@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.Chinese,
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
-                    new Chinese.NumberExtractor()));
+                    new Chinese.NumberExtractor(options)));
             RegisterModel<OrdinalModel>(
                 Culture.Chinese,
                 (options) => new OrdinalModel(

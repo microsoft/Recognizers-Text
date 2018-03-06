@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
     {
         public ChineseNumberWithUnitParserConfiguration(CultureInfo ci) : base(ci)
         {
-            this.InternalNumberExtractor = new NumberExtractor(ChineseNumberMode.Default);
+            this.InternalNumberExtractor = new NumberExtractor();
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration());
             this.ConnectorToken = string.Empty;
         }

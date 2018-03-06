@@ -10,7 +10,7 @@ var modelFunctions = {
     'PercentModel': (input, culture, options) => Recognizer.recognizePercentage(input, culture, options, false),
     // TODO: Implement number range model in javascript
     'NumberRangeModel': (input, culture, options) => null,
-    'CustomNumberModel': (input, culture, options) => getCustomNumberModel(culture).parse(input)
+    'CustomNumberModel': (input, culture, options) => Recognizer.recognizeNumber(input, culture, NumberOptions.ChineseNumbersWithPercent, false)
 };
 
 module.exports = function getNumberTestRunner(config) {
@@ -30,20 +30,6 @@ module.exports = function getNumberTestRunner(config) {
     };
 }
 
-function getCustomNumberModel(culture) {
-    switch (culture) {
-        case SupportedCultures['Chinese'].cultureCode:
-            return new RecognizerTextNumber.NumberModel(
-                RecognizerTextNumber.AgnosticNumberParserFactory.getParser(
-                    RecognizerTextNumber.AgnosticNumberParserType.Number,
-                    new RecognizerTextNumber.ChineseNumberParserConfiguration()),
-                new RecognizerTextNumber.ChineseNumberExtractor(RecognizerTextNumber.ChineseNumberMode.ExtractAll)
-            );
-            break;
-    }
-    return null;
-}
-
 function getResults(input, config) {
     var modelFunction = modelFunctions[config.subType];
     if(!modelFunction) {
@@ -55,5 +41,5 @@ function getResults(input, config) {
         throw new Error(`Number model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return modelFunction(input, culture, 0);
+    return modelFunction(input, culture);
 }

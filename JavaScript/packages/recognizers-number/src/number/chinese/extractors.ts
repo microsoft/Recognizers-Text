@@ -3,23 +3,17 @@ import { Constants } from "../constants";
 import { LongFormatType } from "../models";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
 import { RegExpUtility } from "@microsoft/recognizers-text"
-
-export enum ChineseNumberMode {
-    // for number with white list
-    Default,
-    // for number without white list
-    ExtractAll,
-}
+import { NumberOptions } from "../numberRecognizer";
 
 export class ChineseNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
 
-    constructor(mode: ChineseNumberMode = ChineseNumberMode.Default) {
+    constructor(options: NumberOptions = NumberOptions.None) {
         super();
         let regexes = new Array<RegExpValue>();
 
         // Add Cardinal
-        let cardExtract = new ChineseCardinalExtractor(mode);
+        let cardExtract = new ChineseCardinalExtractor(options);
         cardExtract.regexes.forEach(r => regexes.push(r));
 
         // Add Fraction
@@ -33,12 +27,12 @@ export class ChineseNumberExtractor extends BaseNumberExtractor {
 export class ChineseCardinalExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM_CARDINAL;
 
-    constructor(mode: ChineseNumberMode = ChineseNumberMode.Default) {
+    constructor(options: NumberOptions = NumberOptions.None) {
         super();
         let regexes = new Array<RegExpValue>();
 
         // Add Integer Regexes
-        let intExtract = new ChineseIntegerExtractor(mode);
+        let intExtract = new ChineseIntegerExtractor(options);
         intExtract.regexes.forEach(r => regexes.push(r));
 
         // Add Double Regexes
@@ -52,7 +46,7 @@ export class ChineseCardinalExtractor extends BaseNumberExtractor {
 export class ChineseIntegerExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM_INTEGER;
 
-    constructor(mode: ChineseNumberMode = ChineseNumberMode.Default) {
+    constructor(options: NumberOptions = NumberOptions.None) {
         super();
 
         let regexes = new Array<RegExpValue>(
@@ -78,19 +72,13 @@ export class ChineseIntegerExtractor extends BaseNumberExtractor {
             }
         );
 
-        switch (mode) {
-            case ChineseNumberMode.Default:
-                regexes.push({ // 一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
-                    regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithoutPercent, "gi"),
-                    value: "IntegerChs"
-                });
-                break;
-            case ChineseNumberMode.ExtractAll:
-                regexes.push({ // 一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
-                    regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithPercent, "gi"),
-                    value: "IntegerChs"
-                });
-                break;
+        if (options & NumberOptions.ChineseNumbersWithPercent) {
+            // 一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
+            regexes.push({ regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithPercent, "gi"), value: "IntegerChs" });
+        }
+        else {
+            // 一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
+            regexes.push({ regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithoutPercent, "gi"), value: "IntegerChs" });
         }
 
         this.regexes = regexes;
