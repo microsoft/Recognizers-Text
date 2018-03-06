@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Choice.Extractors;
+using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.Choice.Japanese.Extractors
 {
     public class JapaneseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex =
-            new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(OptionsDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex FalseRegex =
-            new Regex(ChoiceDefinitions.FalseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(OptionsDefinitions.FalseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TokenRegex =
-            new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(OptionsDefinitions.TokenizerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {

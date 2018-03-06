@@ -59,6 +59,8 @@
   <ItemGroup>
     <Compile Include="Choice\TestChoiceRecognizer_English.cs" />
     <Compile Include="Choice\TestChoiceRecognizerInitialization.cs" />
+    <Compile Include="Choice\TestChoiceRecognizer_Japanese.cs" />
+    <Compile Include="Choice\TestChoice_Japanese.cs" />
     <Compile Include="DateTime\TestDateTimeRecognizer_English.cs" />
     <Compile Include="DateTime\TestDateTime_Chinese.cs" />
     <Compile Include="DateTime\TestDateTime_French.cs" />
