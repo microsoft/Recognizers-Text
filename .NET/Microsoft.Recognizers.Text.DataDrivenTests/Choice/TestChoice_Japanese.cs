@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Choice
             base.TestSpecInitialize(TestResources);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BooleanModel-English.csv", "BooleanModel-English#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BooleanModel-Japanese.csv", "BooleanModel-Japanese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BooleanModel()
         {
