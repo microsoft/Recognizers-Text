@@ -5,8 +5,8 @@
 ## Docker Image Name:      recognizers-text
 ## Docker Container Name:  recognizers-text-browser
 ##
-## Once the container is running, use the URL (http://localhost:8000/) to 
-## query the recognizers at ./index.html.
+## Once the container is running, use the URL on the host
+## (http://localhost:8000/) to query the recognizers at ./index.html.
 ##
 ## The container user and password are both "docker"
 ## Log on interactively to use other Nodejs samples
