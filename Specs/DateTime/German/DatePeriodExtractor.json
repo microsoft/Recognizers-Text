@@ -492,5 +492,25 @@
         "Type": "daterange"
       }
     ]
+  },{
+    "Input": "Ich bin diesen Monat vom 4. bis zum 22. weg",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "diesen Monat vom 4. bis zum 22.",
+        "Type": "daterange"
+      }
+    ]
+  },{
+    "Input": "Ich bin vom 4. bis zum 23. weg",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "vom 4. bis zum 23.",
+        "Type": "daterange"
+      }
+    ]
   }
 ]

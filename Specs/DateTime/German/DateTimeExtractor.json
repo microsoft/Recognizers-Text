@@ -54,13 +54,104 @@
       }
     ]
   },
-  {//for some reason, creating a with an additional regex without the month or making the month optional in the existing regex makes this test and the above fail 
+  {
     "Input": "Ich gehe am 15. um 8 Uhr weg.",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript",
     "Results": [
       {
         "Text": "15. um 8 Uhr",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am 23. Oktober um 7 los.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "23. Oktober um 7",
+        "Type": "datetime"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich gehe am 14. Oktober um 8:00 los.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "14. Oktober um 8:00",
+        "Type": "datetime"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das ganze ist am 14. Oktober um 8:00:00 Uhr",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "14. Oktober um 8:00:00 Uhr",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe dann diesen Montag um 8:00 los",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "diesen Montag um 8:00",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Um 8 Uhr diesen Morgen",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "8 Uhr diesen Morgen",
+        "Type": "datetime"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich gehe dann gegen 8 Uhr diesen Abend nach Hause",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "8 Uhr diesen Abend",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Am Ende des Tages",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Am Ende des Tages",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Am Ende des Monats",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Am Ende des Monats",
         "Type": "datetime"
       }
     ]
