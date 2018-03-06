@@ -76,7 +76,7 @@
 
             // parse input using specified recognizer
             function parse(input) {
-                var model;
+                var recognizeFunction;
                 var language = document.getElementById("language");
                 var recognizer = document.getElementById("recognizer");
                 var culture = language.options[language.selectedIndex].value;
@@ -85,31 +85,31 @@
                 try {
                     switch (selectedRecognizer) {
                         case "Number":
-                            model = RecognizersText.NumberRecognizer.instance.getNumberModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizeNumber;
                             break;
                         case "NumberOrdinal":
-                            model = RecognizersText.NumberRecognizer.instance.getOrdinalModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizeOrdinal;
                             break;
                         case "NumberPercentage":
-                            model = RecognizersText.NumberRecognizer.instance.getPercentageModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizePercentage;
                             break;
                         case "NumberWithUnitCurrency":
-                            model = RecognizersText.NumberWithUnitRecognizer.instance.getCurrencyModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizeCurrency;
                             break;
                         case "NumberWithUnitTemperature":
-                            model = RecognizersText.NumberWithUnitRecognizer.instance.getTemperatureModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizeTemperature;
                             break;
                         case "NumberWithUnitDimension":
-                            model = RecognizersText.NumberWithUnitRecognizer.instance.getDimensionModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizeDimension;
                             break;
                         case "NumberWithUnitAge":
-                            model = RecognizersText.NumberWithUnitRecognizer.instance.getAgeModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizeAge;
                             break;
                         case "DateTime":
-                            model = RecognizersText.DateTimeRecognizer.instance.getDateTimeModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizeDateTime;
                             break;
                         case "Boolean":
-                            model = RecognizersText.OptionsRecognizer.instance.getBooleanModel(culture, false);
+                            recognizeFunction = RecognizersText.recognizeBoolean;
                             break;
                     }
                 } catch(err) {
@@ -117,7 +117,7 @@
                 }
 
                 // Parse
-                return model.parse(input);
+                return recognizeFunction(input, culture);
             }
 
         });

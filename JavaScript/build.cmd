@@ -1,7 +1,7 @@
 @ECHO off
 
 ECHO.
-ECHO # Building Javacript platform
+ECHO # Building Javascript platform
 
 REM Check Node/NPM installation
 WHERE /q node

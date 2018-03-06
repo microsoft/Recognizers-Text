@@ -1,0 +1,21 @@
+{
+    "outputPath": "./src/resources/",
+    "configFiles": [
+        {
+            "input": ["Base-PhoneNumbers" ],
+            "output": "basePhoneNumbers",
+            "header": [
+                "export namespace BasePhoneNumbers {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": ["Base-Ip" ],
+            "output": "baseIp",
+            "header": [
+                "export namespace BaseIp {"
+            ],
+            "footer": [ "}" ]
+        }
+    ]
+}

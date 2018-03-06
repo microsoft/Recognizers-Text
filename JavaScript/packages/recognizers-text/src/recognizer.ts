@@ -1,33 +1,36 @@
-import { IModel, ModelContainer } from "./models"
+import { IModel, ModelFactory } from "./models"
 
-export interface IRecognizer {
-  getModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean): void
+export abstract class Recognizer<TRecognizerOptions> {
+  public readonly Options: TRecognizerOptions;
+  public readonly TargetCulture: string;
 
-  tryGetModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean): { containsModel: boolean; model?: IModel }
+  private readonly modelFactory: ModelFactory<TRecognizerOptions> = new ModelFactory<TRecognizerOptions>();
 
-  containsModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean): boolean
-}
+  protected constructor(targetCulture: string, options: TRecognizerOptions, lazyInitialization: boolean);
+  protected constructor(targetCulture: string, options: any, lazyInitialization: boolean) {
+    if(!this.IsValidOptions(options)) throw new Error(`${options} is not a valid options value.`)
+    this.TargetCulture = targetCulture;
+    this.Options = options;
+    this.InitializeConfiguration();
 
-export abstract class Recognizer implements IRecognizer {
-  private readonly modelContainer: ModelContainer = new ModelContainer();
-
-  getModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): IModel {
-    return this.modelContainer.getModel(modelTypeName, culture, fallbackToDefaultCulture);
+    if (!lazyInitialization) {
+      this.initializeModels(targetCulture, options)
+    }
   }
 
-  tryGetModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): { containsModel: boolean; model?: IModel } {
-    return this.modelContainer.tryGetModel(modelTypeName, culture, fallbackToDefaultCulture);
+  protected abstract InitializeConfiguration();
+
+  protected abstract IsValidOptions(options): boolean;
+
+  getModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean): IModel {
+    return this.modelFactory.getModel(modelTypeName, culture || this.TargetCulture, fallbackToDefaultCulture, this.Options);
   }
 
-  containsModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): boolean {
-    return this.modelContainer.containsModel(modelTypeName, culture, fallbackToDefaultCulture);
+  registerModel(modelTypeName: string, culture: string, modelCreator: (options: TRecognizerOptions) => IModel) {
+    this.modelFactory.registerModel(modelTypeName, culture, modelCreator);
   }
 
-  registerModel(modelTypeName: string, culture: string, model: IModel) {
-    this.modelContainer.registerModel(modelTypeName, culture, model);
-  }
-
-  registerModels(models: Map<string, IModel>, culture: string) {
-    this.modelContainer.registerModels(models, culture);
+  private initializeModels(targetCulture: string, options: TRecognizerOptions) {
+    this.modelFactory.initializeModels(targetCulture, options);
   }
 }

@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-using System.Text.RegularExpressions;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDatePeriodParser : IDateTimeParser
@@ -751,6 +748,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
 
+                    // Handle the "within two weeks" case which means from today to the end of next two weeks
+                    prefixMatch = config.WithinNextPrefixRegex.Match(beforeStr);
+                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
+                        DurationParsingUtil.IsDateDuration(durationResult.Timex))
+                    {
+                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, future: true, mod: out mod);
+
+                        // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate, but for the "within" case it should start from the current day.
+                        beginDate = beginDate.AddDays(-1);
+                        endDate = endDate.AddDays(-1);
+                    }
+
                     prefixMatch = config.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
@@ -783,7 +792,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         durationResult.Timex = "P1" + unit;
                         beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
-                    }
+                    }                    
 
                     if (!string.IsNullOrEmpty(mod))
                     {
@@ -996,22 +1005,63 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var cardinalStr = match.Groups["cardinal"].Value.ToLower();
             var orderStr = match.Groups["order"].Value.ToLower();
+            var numberStr = match.Groups["number"].Value;
 
+            bool noSpecificYear = false;
             int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+
             if (year == Constants.InvalidYear)
             {
                 var swift = this.config.GetSwiftYear(orderStr);
                 if (swift < -1)
                 {
-                    return ret;
+                    swift = 0;
+                    noSpecificYear = true;
                 }
                 year = referenceDate.Year + swift;
             }
 
-            var quarterNum = this.config.CardinalMap[cardinalStr];
+            int quarterNum;
+            if (!string.IsNullOrEmpty(numberStr))
+            {
+                quarterNum = int.Parse(numberStr);
+            }
+            else
+            {
+                quarterNum = this.config.CardinalMap[cardinalStr];
+            }
+
             var beginDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * 3 - 2, 1);
             var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * 3 + 1, 1);
-            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+
+            if (noSpecificYear)
+            {
+                if (endDate.CompareTo(referenceDate) < 0)
+                {
+                    ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+
+                    var futureBeginDate = DateObject.MinValue.SafeCreateFromValue(year + 1, quarterNum * 3 - 2, 1);
+                    var futureEndDate = DateObject.MinValue.SafeCreateFromValue(year + 1, quarterNum * 3 + 1, 1);
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(futureBeginDate, futureEndDate);
+                }
+                else if (endDate.CompareTo(referenceDate) > 0)
+                {
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+
+                    var pastBeginDate = DateObject.MinValue.SafeCreateFromValue(year - 1, quarterNum * 3 - 2, 1);
+                    var pastEndDate = DateObject.MinValue.SafeCreateFromValue(year - 1, quarterNum * 3 + 1, 1);
+                    ret.PastValue = new Tuple<DateObject, DateObject>(pastBeginDate, pastEndDate);
+                }
+                else
+                {
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+                }
+            } 
+            else
+            {
+                ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+            }
+
             ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
 

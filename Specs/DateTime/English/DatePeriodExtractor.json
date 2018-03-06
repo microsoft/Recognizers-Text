@@ -2221,6 +2221,28 @@
 }
 ,
 {
+  "Input": "I'll be back during Q1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Q1",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Q3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Q3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out 2015.3",
   "NotSupportedByDesign": "python",
   "Results": [

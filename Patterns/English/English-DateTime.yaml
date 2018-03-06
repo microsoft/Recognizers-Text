@@ -82,12 +82,17 @@ FollowedDateUnit: !nestedRegex
 NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
+QuarterTermRegex: !simpleRegex
+  def: (((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter)|(Q(?<number>[1-4])))
 QuarterRegex: !nestedRegex
-  def: (the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter(\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year)
-  references: [ YearRegex, RelativeRegex ]
+  def: (the\s+)?{QuarterTermRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?
+  references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
 QuarterRegexYearFront: !nestedRegex
-  def: ({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter
-  references: [ YearRegex, RelativeRegex ]
+  def: ({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?{QuarterTermRegex}
+  references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
+QuarterRegexYearBack: !nestedRegex
+  def: (the\s+)?{QuarterTermRegex}\s+({YearRegex}|{RelativeRegex}\s+year)
+  references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
 EarlyPrefixRegex: !simpleRegex
   def: ?<EarlyPrefix>early|beginning of|start of
 MidPrefixRegex: !simpleRegex
@@ -250,7 +255,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
+  def: ([^A-Za-z]{1,}|\b)(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|minute)\b
 FivesRegex: !simpleRegex
@@ -400,6 +405,9 @@ LaterRegex: !simpleRegex
   def: \b(later|from now)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
+WithinNextPrefixRegex: !nestedRegex
+  def: \b(within(\s+the)?(\s+{NextPrefixRegex})?)\b
+  references: [ NextPrefixRegex ]
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !nestedRegex

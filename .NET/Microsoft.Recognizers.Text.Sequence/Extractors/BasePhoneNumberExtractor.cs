@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
-    class BasePhoneNumberExtractor : BaseSequenceExtractor
+    public class BasePhoneNumberExtractor : BaseSequenceExtractor
     {
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
 

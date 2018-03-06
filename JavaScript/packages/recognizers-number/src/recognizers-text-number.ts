@@ -1,4 +1,4 @@
-export { default as NumberRecognizer } from "./number/numberRecognizer";
+export { default as NumberRecognizer, NumberOptions, recognizeNumber, recognizeOrdinal, recognizePercentage } from "./number/numberRecognizer";
 export { Culture, CultureInfo } from "./culture";
 export { FormatUtility, StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text";
 export { BaseNumbers } from "./resources/baseNumbers";

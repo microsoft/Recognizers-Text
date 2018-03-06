@@ -7,6 +7,7 @@ using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
+using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.Sequence;
 
 namespace SimpleConsole
@@ -97,11 +98,14 @@ namespace SimpleConsole
 
                 // Add IP recognizer - This recognizer will find any Ipv4/Ipv6 presented
                 // E.g "My Ip is 8.8.8.8"
-                SequenceRecognizer.RecognizeIpAddress(query, culture)
+                SequenceRecognizer.RecognizeIpAddress(query, culture),
+
+                // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
+                // E.g "yup, I need that" will return "True"
+                ChoiceRecognizer.RecognizeBoolean(query, culture)
                 );
         }
-
-        /// </summary>
+        
         private static IEnumerable<ModelResult> MergeResults(params List<ModelResult>[] results)
         {
             return results.SelectMany(o => o);
