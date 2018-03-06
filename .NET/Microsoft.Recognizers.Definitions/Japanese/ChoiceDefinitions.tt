@@ -2,6 +2,6 @@
 <#
 	this.DataFilename = @"Patterns\Japanese\Japanese-Choice.yaml";
 	this.Language = "Japanese";
-	this.ClassName = "OptionsDefinitions";
+	this.ClassName = "ChoiceDefinitions";
 #>
 <#@ include file="..\CommonDefinitions.ttinclude"#>
