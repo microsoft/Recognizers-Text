@@ -193,10 +193,10 @@ PointRegexChsStr: !simpleRegex
 AllFloatRegexChs: !nestedRegex
   def: '{NegativeNumberTermsRegexChs}?{AllIntRegexChs}\s*{PointRegexChsStr}\s*[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇](\s*{ZeroToNineIntegerRegexChs})*'
   references: [NegativeNumberTermsRegexChs, AllIntRegexChs, PointRegexChsStr, ZeroToNineIntegerRegexChs]
-NumbersWithoutPercent: !nestedRegex
+NumbersWithAllowListRegex: !nestedRegex
   def: (?<![百佰]\s*分\s*之\s*({AllIntRegexChs}[点點]*|{AllFloatRegexChs})*){NegativeNumberTermsRegexChs}?({NotSingleRegexChs}|{SingleRegexChs})(?!({AllIntRegexChs}*([点點]{ZeroToNineIntegerRegexChs}+)*|{AllFloatRegexChs})*\s*[个個]\s*[百佰]\s*分\s*[点點])
   references: [AllIntRegexChs, AllFloatRegexChs, NegativeNumberTermsRegexChs, NotSingleRegexChs, SingleRegexChs, ZeroToNineIntegerRegexChs]
-NumbersWithPercent: !nestedRegex
+NumbersAggressiveRegex: !nestedRegex
   def: (?<![百佰]\s*分\s*之\s*({AllIntRegexChs}[点點]*|{AllFloatRegexChs})*){NegativeNumberTermsRegexChs}?{AllIntRegexChs}(?!({AllIntRegexChs}*([点點]{ZeroToNineIntegerRegexChs}+)*|{AllFloatRegexChs})*\s*[个個]\s*[百佰]\s*分\s*[点點])
   references: [AllIntRegexChs, AllFloatRegexChs, NegativeNumberTermsRegexChs, ZeroToNineIntegerRegexChs]
 #DoubleExtractor

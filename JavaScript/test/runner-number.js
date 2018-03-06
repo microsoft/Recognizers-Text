@@ -37,7 +37,7 @@ function getCustomNumberModel(culture) {
                 RecognizerTextNumber.AgnosticNumberParserFactory.getParser(
                     RecognizerTextNumber.AgnosticNumberParserType.Number,
                     new RecognizerTextNumber.ChineseNumberParserConfiguration()),
-                new RecognizerTextNumber.ChineseNumberExtractor(RecognizerTextNumber.ChineseNumberMode.ExtractAll)
+                new RecognizerTextNumber.ChineseNumberExtractor(RecognizerTextNumber.ChineseNumberExtractorMode.ExtractAll)
             );
             break;
     }
