@@ -7,7 +7,7 @@
 //     Generation parameters:
 //     - DataFilename: Patterns\Japanese\Japanese-Choice.yaml
 //     - Language: Japanese
-//     - ClassName: OptionsDefinitions
+//     - ClassName: ChoiceDefinitions
 // </auto-generated>
 //------------------------------------------------------------------------------
 namespace Microsoft.Recognizers.Definitions.Japanese
@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 	using System;
 	using System.Collections.Generic;
 
-	public static class OptionsDefinitions
+	public static class ChoiceDefinitions
 	{
 		public const string LangMarker = "Jpn";
 		public const string TokenizerRegex = @"[^\w\d]";
