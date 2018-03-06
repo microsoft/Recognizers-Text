@@ -549,7 +549,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case Culture.Chinese:
                     return new NumberModel(
                         AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
-                        new NumberExtractor(ChineseNumberMode.ExtractAll));
+                        new NumberExtractor(ChineseNumberExtractorMode.ExtractAll));
             }
 
             throw new Exception($"Custom Model for '{culture}' not supported");

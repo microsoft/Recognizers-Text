@@ -46,8 +46,8 @@ export namespace ChineseNumeric {
 	export const NumbersWithDozen = `${AllIntRegexChs}[双雙对對打](?!${AllIntRegexChs})`;
 	export const PointRegexChsStr = `[点點\\.．]`;
 	export const AllFloatRegexChs = `${NegativeNumberTermsRegexChs}?${AllIntRegexChs}\\s*${PointRegexChsStr}\\s*[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇](\\s*${ZeroToNineIntegerRegexChs})*`;
-	export const NumbersWithoutPercent = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegexChs}[点點]*|${AllFloatRegexChs})*)${NegativeNumberTermsRegexChs}?(${NotSingleRegexChs}|${SingleRegexChs})(?!(${AllIntRegexChs}*([点點]${ZeroToNineIntegerRegexChs}+)*|${AllFloatRegexChs})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
-	export const NumbersWithPercent = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegexChs}[点點]*|${AllFloatRegexChs})*)${NegativeNumberTermsRegexChs}?${AllIntRegexChs}(?!(${AllIntRegexChs}*([点點]${ZeroToNineIntegerRegexChs}+)*|${AllFloatRegexChs})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
+	export const NumbersWithAllowListRegex = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegexChs}[点點]*|${AllFloatRegexChs})*)${NegativeNumberTermsRegexChs}?(${NotSingleRegexChs}|${SingleRegexChs})(?!(${AllIntRegexChs}*([点點]${ZeroToNineIntegerRegexChs}+)*|${AllFloatRegexChs})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
+	export const NumbersAggressiveRegex = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegexChs}[点點]*|${AllFloatRegexChs})*)${NegativeNumberTermsRegexChs}?${AllIntRegexChs}(?!(${AllIntRegexChs}*([点點]${ZeroToNineIntegerRegexChs}+)*|${AllFloatRegexChs})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
 	export const PointRegexChs = `${PointRegexChsStr}`;
 	export const DoubleSpecialsChars = `(?<!(${ZeroToNineChsFullHalfRegexChs}+[\\.．]${ZeroToNineChsFullHalfRegexChs}*))(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineChsFullHalfRegexChs}+[\\.．]${ZeroToNineChsFullHalfRegexChs}+(?!${ZeroToNineChsFullHalfRegexChs}*[\\.．]${ZeroToNineChsFullHalfRegexChs}+)`;
 	export const DoubleSpecialsCharsWithNegatives = `(?<!(${ZeroToNineChsFullHalfRegexChs}+|\\.\\.|．．))(${NegativeNumberTermsRegexNum}\\s*)?[\\.．]${ZeroToNineChsFullHalfRegexChs}+(?!${ZeroToNineChsFullHalfRegexChs}*([\\.．]${ZeroToNineChsFullHalfRegexChs}+))`;
