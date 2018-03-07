@@ -10,6 +10,7 @@ namespace Microsoft.Recognizers.Text.Choice.Tests
         private const string TestInput = "true";
 
         private const string EnglishCulture = Culture.English;
+        private const string JapaneseCulture = Culture.Japanese;
         //private const string SpanishCulture = Culture.Spanish;
         private const string InvalidCulture = "vo-id";
 
