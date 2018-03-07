@@ -1,9 +1,11 @@
 from recognizers_text import Culture
 from recognizers_number.number import NumberModel
 from recognizers_number.number import NumberRecognizer
+from recognizers_number.number.english.extractors import EnglishNumberExtractor
+from recognizers_number.number.parsers import BaseNumberParser
 
 class TestInitializationNumberRecognizer():
-    control_model = NumberModel()
+    control_model = NumberModel(None, None)
     english_culture = Culture.English
     spanish_culture = Culture.Spanish
     invalid_culture = "vo-id"

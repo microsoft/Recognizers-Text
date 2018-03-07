@@ -6,7 +6,8 @@ from recognizers_text.parser import ParseResult, Parser
 
 class AbstractNumberModel(Model):
     @abstractproperty
-    def model_type_name(self): str
+    def model_type_name(self) -> str:
+        raise NotImplementedError
 
     def __init__(self, parser: Parser, extractor: Extractor):
         self.parser: Parser=parser

@@ -22,5 +22,5 @@ class ExtractResult:
 
 class Extractor(ABC):
     @abstractmethod
-    def extract(self, input: str) -> List[ExtractResult]:
+    def extract(self, source: str) -> List[ExtractResult]:
         raise NotImplementedError

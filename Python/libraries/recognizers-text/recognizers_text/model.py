@@ -16,7 +16,8 @@ class ModelResult():
 
 class Model(ABC):
     @abstractproperty
-    def model_type_name(self): str
+    def model_type_name(self) -> str:
+        raise NotImplementedError
 
     @abstractmethod
     def parse(self, query: str) -> List[ModelResult]:
