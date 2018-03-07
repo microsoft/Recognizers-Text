@@ -50,12 +50,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex WeekOfYearRegex { get; }
         public Regex QuarterRegex { get; }
         public Regex QuarterRegexYearFront { get; }
+        public Regex AllHalfYearRegex { get; }
         public Regex SeasonRegex { get; }
         public Regex WhichWeekRegex { get; }
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
-        public Regex WithinConnectorRegex { get; }
+        public Regex WithinNextPrefixRegex { get; }
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
@@ -123,6 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             WeekOfYearRegex = PortugueseDatePeriodExtractorConfiguration.WeekOfYearRegex;
             QuarterRegex = PortugueseDatePeriodExtractorConfiguration.QuarterRegex;
             QuarterRegexYearFront = PortugueseDatePeriodExtractorConfiguration.QuarterRegexYearFront;
+            AllHalfYearRegex = PortugueseDatePeriodExtractorConfiguration.AllHalfYearRegex;
             SeasonRegex = PortugueseDatePeriodExtractorConfiguration.SeasonRegex;
             WhichWeekRegex = PortugueseDatePeriodExtractorConfiguration.WhichWeekRegex;
             WeekOfRegex = PortugueseDatePeriodExtractorConfiguration.WeekOfRegex;
@@ -135,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             YearPeriodRegex = PortugueseDatePeriodExtractorConfiguration.YearPeriodRegex;
             RelativeDecadeRegex = PortugueseDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
-            WithinConnectorRegex = PortugueseDatePeriodExtractorConfiguration.WithinConnectorRegex;
+            WithinNextPrefixRegex = PortugueseDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

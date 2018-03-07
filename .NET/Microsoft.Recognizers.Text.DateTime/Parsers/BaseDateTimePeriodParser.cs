@@ -170,10 +170,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 endTime.Hour, endTime.Minute, endTime.Second)
                                 );
 
-                        if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment)
-                            && timePeriodResolutionResult.Comment.Equals("ampm"))
+                        if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment) && 
+                            timePeriodResolutionResult.Comment.Equals(Constants.Comment_AmPm))
                         {
-                            ret.Comment = "ampm";
+                            ret.Comment = Constants.Comment_AmPm;
                         }
 
                         ret.Success = true;
@@ -295,7 +295,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!hasAm && !hasPm && beginHour <= 12 && endHour <= 12)
                 {
-                    ret.Comment = "ampm";
+                    ret.Comment = Constants.Comment_AmPm;
                 }
 
                 var beginStr = dateStr + "T" + beginHour.ToString("D2");
@@ -428,9 +428,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
             var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith("ampm") && !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith("ampm"))
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && 
+                !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
             {
-                ret.Comment = "ampm";
+                ret.Comment = Constants.Comment_AmPm;
             }
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
@@ -459,13 +460,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!string.IsNullOrEmpty(match.Groups["early"].Value))
                 {
                     hasEarly = true;
-                    ret.Comment = "early";
+                    ret.Comment = Constants.Comment_Early;
                 }
 
                 if (!hasEarly && !string.IsNullOrEmpty(match.Groups["late"].Value))
                 {
                     hasLate = true;
-                    ret.Comment = "late";
+                    ret.Comment = Constants.Comment_Late;
                 }
             }
             else
@@ -700,45 +701,44 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var prefixMatch = Config.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        mod = TimeTypeConstants.BEFORE_MOD;
+                        mod = Constants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
+                    }
+
+                    // Handle the "within (the) (next) xx seconds/minutes/hours" case
+                    // Should also handle the multiple duration case like P1DT8H
+                    // Set the beginTime equal to reference time for now
+                    prefixMatch = Config.WithinNextPrefixRegex.Match(beforeStr);
+                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    {
+                        endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
                     prefixMatch = Config.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        mod = TimeTypeConstants.AFTER_MOD;
+                        mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
                     var suffixMatch = Config.PastRegex.Match(afterStr);
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
-                        mod = TimeTypeConstants.BEFORE_MOD;
+                        mod = Constants.BEFORE_MOD;
                         beginTime = referenceTime.AddSeconds(-swiftSeconds);
                     }
 
                     suffixMatch = Config.FutureRegex.Match(afterStr);
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
-                        mod = TimeTypeConstants.AFTER_MOD;
+                        mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
                     suffixMatch = Config.FutureSuffixRegex.Match(afterStr);
                     if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
                     {
-                        mod = TimeTypeConstants.AFTER_MOD;
-                        endTime = beginTime.AddSeconds(swiftSeconds);
-                    }
-
-                    // Handle the "within xx seconds/minutes/hours" case
-                    // Should also handle the multiple duration case like P1DT8H
-                    // Set the beginTime equal to reference time for now
-                    prefixMatch = Config.WithinConnectorRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
-                    {
-                        mod = TimeTypeConstants.AFTER_MOD;
+                        mod = Constants.AFTER_MOD;
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
@@ -834,7 +834,5 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return ret;
         }
-
-
     }
 }

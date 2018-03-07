@@ -57,26 +57,36 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Choice\TestChoiceRecognizerCache.cs" />
+    <Compile Include="Choice\TestChoiceRecognizerInitialization.cs" />
+    <Compile Include="DateTime\TestDateTimeRecognizerCache.cs" />
     <Compile Include="DateTime\TestDateTime_Chinese.cs" />
     <Compile Include="DateTime\TestDateTime_French.cs" />
     <Compile Include="DateTime\TestDateTime_Portuguese.cs" />
     <Compile Include="DateTime\TestDateTime_German.cs" />
     <Compile Include="DateTime\TestDateTime_Spanish.cs" />
     <Compile Include="DateTime\TestDateTime_English.cs" />
-    <Compile Include="DateTime\TestSingleCultureDateTimeRecognizer.cs" />
+    <Compile Include="DateTime\TestDateTimeRecognizerInitialization.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerCache.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_French.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_German.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Spanish.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Portuguese.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Chinese.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_English.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerInitialization.cs" />
     <Compile Include="Number\TestDecimalAndThousandsSeparators.cs" />
+    <Compile Include="Number\TestNumberRecognizerCache.cs" />
+    <Compile Include="Number\TestNumberRecognizerInitialization.cs" />
     <Compile Include="Number\TestNumber_French.cs" />
     <Compile Include="Number\TestNumber_German.cs" />
     <Compile Include="Number\TestNumber_Portuguese.cs" />
     <Compile Include="Number\TestNumber_Chinese.cs" />
     <Compile Include="Number\TestNumber_Spanish.cs" />
     <Compile Include="Number\TestParserFactory.cs" />
+    <Compile Include="Choice\TestChoice_English.cs" />
+    <Compile Include="Sequence\TestSequenceRecognizerCache.cs" />
+    <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="TestHelpers.cs" />
@@ -99,6 +109,10 @@
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
       <Project>{f1005971-0341-4635-ac1b-b272681d0834}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj">
+      <Project>{9318ea22-c36a-48c8-9882-8a0d2d74c356}</Project>
+      <Name>Microsoft.Recognizers.Text.Choice</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj">
       <Project>{a5f60d50-81f7-44f8-a2b4-a63606376ee7}</Project>

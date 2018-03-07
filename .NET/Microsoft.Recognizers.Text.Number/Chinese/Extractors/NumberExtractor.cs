@@ -1,5 +1,4 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
@@ -10,15 +9,15 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
 
-        public NumberExtractor(ChineseNumberMode mode = ChineseNumberMode.Default)
+        public NumberExtractor(ChineseNumberExtractorMode mode = ChineseNumberExtractorMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 
-            //Add Cardinal
+            // Add Cardinal
             var cardExtractChs = new CardinalExtractor(mode);
             builder.AddRange(cardExtractChs.Regexes);
             
-            //Add Fraction
+            // Add Fraction
             var fracExtractChs = new FractionExtractor();
             builder.AddRange(fracExtractChs.Regexes);
 
@@ -26,11 +25,12 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         }
     }
 
-    public enum ChineseNumberMode
+    // These modes only apply to ChineseNumberExtractor.
+    // The default more urilizes an allow list to avoid extracting numbers in ambiguous/undesired combinations of Chinese ideograms.
+    // ExtractAll mode is to be used in cases where extraction should be more aggressive (e.g. in Units extraction).
+    public enum ChineseNumberExtractorMode
     {
-        //for number with white list
-        Default,
-        //for number without white list
-        ExtractAll,
+        Default, // Number extraction with an allow list that filters what numbers to extract.
+        ExtractAll, // Extract all number-related terms aggressively.
     }
 }

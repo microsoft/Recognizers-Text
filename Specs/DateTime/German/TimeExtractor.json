@@ -108,4 +108,112 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "Es ist 8 Uhr Morgens",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "8 Uhr Morgens",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Es ist 8 Uhr Abends",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "8 Uhr Abends",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "es ist halb 8",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "halb 8",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Es ist 30 min nach acht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "30 min nach acht",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Es ist viertel nach acht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "viertel nach acht",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Es ist viertel vor acht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "viertel vor acht",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "drei Minuten vor 8",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "drei Minuten vor 8",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "halb 7 Nachmittags",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "halb 7 Nachmittags",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "halb 7 Morgens",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "halb 7 Morgens",
+        "Type": "time"
+      }
+    ]
+  }
 ]

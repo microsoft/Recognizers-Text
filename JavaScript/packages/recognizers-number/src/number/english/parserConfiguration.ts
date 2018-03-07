@@ -12,6 +12,7 @@ export class EnglishNumberParserConfiguration implements INumberParserConfigurat
     readonly cultureInfo: CultureInfo;
     readonly digitalNumberRegex: RegExp;
     readonly fractionMarkerToken: string;
+    readonly negativeNumberSignRegex: RegExp;
     readonly halfADozenRegex: RegExp;
     readonly halfADozenText: string;
     readonly langMarker: string;
@@ -45,6 +46,7 @@ export class EnglishNumberParserConfiguration implements INumberParserConfigurat
         this.cardinalNumberMap = EnglishNumeric.CardinalNumberMap;
         this.ordinalNumberMap = EnglishNumeric.OrdinalNumberMap;
         this.roundNumberMap = EnglishNumeric.RoundNumberMap;
+        this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.NegativeNumberSignRegex, "is");
         this.halfADozenRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.HalfADozenRegex, "gis");
         this.digitalNumberRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.DigitalNumberRegex, "gis");
     }

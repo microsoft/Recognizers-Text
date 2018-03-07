@@ -146,6 +146,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly weekOfYearRegex: RegExp
     readonly quarterRegex: RegExp
     readonly quarterRegexYearFront: RegExp
+    readonly allHalfYearRegex: RegExp
     readonly seasonRegex: RegExp
     readonly weekOfRegex: RegExp
     readonly monthOfRegex: RegExp

@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Recognizers.Text.Sequence
 {
-    class BaseSequenceParser : IParser
+    public class BaseSequenceParser : IParser
     {
-        public ParseResult Parse(ExtractResult extResult)
+        public virtual ParseResult Parse(ExtractResult extResult)
         {
             var result = new ParseResult
             {

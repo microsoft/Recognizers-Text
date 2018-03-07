@@ -243,7 +243,7 @@ export class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                         let timeErs = this.config.timePeriodExtractor.extract(beforeStr);
                         if (timeErs.length > 0) {
                             for (let tp of timeErs) {
-                                var midStr = beforeStr.substr(tp.start + tp.length || 0);
+                                let midStr = beforeStr.substr(tp.start + tp.length || 0);
                                 if (StringUtility.isNullOrWhitespace(midStr)) {
                                     tokens.push(new Token(tp.start || 0, tp.start + tp.length + midStr.length + e.length || 0));
                                 }
@@ -259,7 +259,7 @@ export class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                         let timeErs = this.config.timePeriodExtractor.extract(afterStr);
                         if (timeErs.length > 0) {
                             for (let tp of timeErs) {
-                                var midStr = afterStr.substr(0, tp.start || 0);
+                                let midStr = afterStr.substr(0, tp.start || 0);
                                 if (StringUtility.isNullOrWhitespace(midStr)) {
                                     tokens.push(new Token(e.start, e.start + e.length + midStr.length + tp.length || 0));
                                 }
@@ -636,8 +636,8 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
 
         if (ers.length === 0 || ers[0].length !== beforeStr.length) {
             let valid = false;
-            if (ers.length > 0 && ers[0].start == 0) {
-                var midStr = beforeStr.substr(ers[0].start + ers[0].length || 0);
+            if (ers.length > 0 && ers[0].start === 0) {
+                let midStr = beforeStr.substr(ers[0].start + ers[0].length || 0);
                 if (StringUtility.isNullOrWhitespace(midStr.replace(',', ' '))) {
                     valid = true;
                 }
@@ -646,8 +646,8 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             if (!valid) {
                 ers = this.config.dateExtractor.extract(afterStr);
                 if (ers.length === 0 || ers[0].length !== afterStr.length) {
-                    if (ers.length > 0 && ers[0].start + ers[0].length == afterStr.length) {
-                        var midStr = afterStr.substr(0, ers[0].start || 0);
+                    if (ers.length > 0 && ers[0].start + ers[0].length === afterStr.length) {
+                        let midStr = afterStr.substr(0, ers[0].start || 0);
                         if (StringUtility.isNullOrWhitespace(midStr.replace(',', ' '))) {
                             valid = true;
                         }
@@ -663,16 +663,16 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             }
         }
 
-        var hasSpecificTimePeriod = false;
+        let hasSpecificTimePeriod = false;
         if (timePeriodErs.length > 0)
         {
-            var TimePr = this.config.timePeriodParser.parse(timePeriodErs[0]);
+            let TimePr = this.config.timePeriodParser.parse(timePeriodErs[0]);
             if (TimePr != null)
             {
-                var periodFuture = TimePr.value.futureValue;
-                var periodPast = TimePr.value.pastValue;
+                let periodFuture = TimePr.value.futureValue;
+                let periodPast = TimePr.value.pastValue;
 
-                if (periodFuture == periodPast)
+                if (periodFuture === periodPast)
                 {
                     matched.beginHour = periodFuture.item1.getHours();
                     matched.endHour = periodFuture.item2.getHours();

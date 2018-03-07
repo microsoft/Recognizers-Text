@@ -149,6 +149,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.QuarterRegexYearFront,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline); 
 
+        public static readonly Regex AllHalfYearRegex =
+            new Regex(
+                DateTimeDefinitions.AllHalfYearRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex SeasonRegex =
             new Regex(
                 DateTimeDefinitions.SeasonRegex,
@@ -180,9 +185,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.InConnectorRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WithinConnectorRegex =
+        public static readonly Regex WithinNextPrefixRegex =
             new Regex(
-                DateTimeDefinitions.WithinConnectorRegex,
+                DateTimeDefinitions.WithinNextPrefixRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RestOfDateRegex =
@@ -284,7 +289,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDatePeriodExtractorConfiguration.InConnectorRegex => InConnectorRegex;
 
-        Regex IDatePeriodExtractorConfiguration.WithinConnectorRegex => WithinConnectorRegex;
+        Regex IDatePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
 

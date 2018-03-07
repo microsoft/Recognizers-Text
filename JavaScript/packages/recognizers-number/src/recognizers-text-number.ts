@@ -1,4 +1,4 @@
-export { default as NumberRecognizer } from "./number/numberRecognizer";
+export { default as NumberRecognizer, NumberOptions, recognizeNumber, recognizeOrdinal, recognizePercentage } from "./number/numberRecognizer";
 export { Culture, CultureInfo } from "./culture";
 export { FormatUtility, StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text";
 export { BaseNumbers } from "./resources/baseNumbers";
@@ -19,6 +19,6 @@ export { PortugueseCardinalExtractor, PortugueseDoubleExtractor, PortugueseFract
 export { PortugueseNumberParserConfiguration } from "./number/portuguese/parserConfiguration";
 export { FrenchCardinalExtractor, FrenchDoubleExtractor, FrenchFractionExtractor, FrenchIntegerExtractor, FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor } from "./number/french/extractors";
 export { FrenchNumberParserConfiguration } from "./number/french/parserConfiguration";
-export { ChineseCardinalExtractor, ChineseDoubleExtractor, ChineseFractionExtractor, ChineseIntegerExtractor, ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor, ChineseNumberMode } from "./number/chinese/extractors";
+export { ChineseCardinalExtractor, ChineseDoubleExtractor, ChineseFractionExtractor, ChineseIntegerExtractor, ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor, ChineseNumberExtractorMode } from "./number/chinese/extractors";
 export { ChineseNumberParserConfiguration } from "./number/chinese/parserConfiguration";
 export { ChineseNumberParser } from "./number/chinese/parsers";

@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex InConnectorRegex { get; }
 
-        Regex WithinConnectorRegex { get; }
+        Regex WithinNextPrefixRegex { get; }
 
         Regex YearPeriodRegex { get; }
 

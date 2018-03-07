@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PmDescRegex { get; }
 
-        public Regex WithinConnectorRegex { get; }
+        public Regex WithinNextPrefixRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             RestOfDateTimeRegex = SpanishDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
             AmDescRegex = SpanishDateTimePeriodExtractorConfiguration.AmDescRegex;
             PmDescRegex = SpanishDateTimePeriodExtractorConfiguration.PmDescRegex;
-            WithinConnectorRegex = SpanishDateTimePeriodExtractorConfiguration.WithinConnectorRegex;
+            WithinNextPrefixRegex = SpanishDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

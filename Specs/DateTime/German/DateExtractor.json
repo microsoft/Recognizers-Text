@@ -131,7 +131,7 @@
     "NotSupported":"javascript",
     "Results": [
       {
-        "Text": "15. ",
+        "Text": "15.",
         "Type": "date"
       }
     ]
@@ -176,6 +176,28 @@
     "Results": [
       {
         "Text": "23.3.2017",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am zweiten Februar wieder da.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "zweiten Februar",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am zweiten Februar 2018 wieder da.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "zweiten Februar 2018",
         "Type": "date"
       }
     ]

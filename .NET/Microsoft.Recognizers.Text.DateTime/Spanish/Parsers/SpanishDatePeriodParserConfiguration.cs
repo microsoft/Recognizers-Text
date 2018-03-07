@@ -50,12 +50,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex WeekOfYearRegex { get; }
         public Regex QuarterRegex { get; }
         public Regex QuarterRegexYearFront { get; }
+        public Regex AllHalfYearRegex { get; }
         public Regex SeasonRegex { get; }
         public Regex WhichWeekRegex { get; }
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
-        public Regex WithinConnectorRegex { get; }
+        public Regex WithinNextPrefixRegex { get; }
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
@@ -124,6 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekOfYearRegex = SpanishDatePeriodExtractorConfiguration.WeekOfYearRegex;
             QuarterRegex = SpanishDatePeriodExtractorConfiguration.QuarterRegex;
             QuarterRegexYearFront = SpanishDatePeriodExtractorConfiguration.QuarterRegexYearFront;
+            AllHalfYearRegex = SpanishDatePeriodExtractorConfiguration.AllHalfYearRegex;
             SeasonRegex = SpanishDatePeriodExtractorConfiguration.SeasonRegex;
             WhichWeekRegex = SpanishDatePeriodExtractorConfiguration.WhichWeekRegex;
             WeekOfRegex = SpanishDatePeriodExtractorConfiguration.WeekOfRegex;
@@ -136,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             YearPeriodRegex = SpanishDatePeriodExtractorConfiguration.YearPeriodRegex;
             RelativeDecadeRegex = SpanishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
-            WithinConnectorRegex = SpanishDatePeriodExtractorConfiguration.WithinConnectorRegex;
+            WithinNextPrefixRegex = SpanishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

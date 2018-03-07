@@ -11,6 +11,8 @@ export namespace EnglishNumeric {
 	export const LangMarker = 'Eng';
 	export const RoundNumberIntegerRegex = `(hundred|thousand|million|billion|trillion)`;
 	export const ZeroToNineIntegerRegex = `(three|seven|eight|four|five|zero|nine|one|two|six)`;
+	export const NegativeNumberTermsRegex = `((minus|negative)\\s+)`;
+	export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*`;
 	export const AnIntRegex = `(an|a)(?=\\s)`;
 	export const TenToNineteenIntegerRegex = `(seventeen|thirteen|fourteen|eighteen|nineteen|fifteen|sixteen|eleven|twelve|ten)`;
 	export const TensNumberIntegerRegex = `(seventy|twenty|thirty|eighty|ninety|forty|fifty|sixty)`;

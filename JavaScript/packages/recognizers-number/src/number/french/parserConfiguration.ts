@@ -12,6 +12,7 @@ export class FrenchNumberParserConfiguration implements INumberParserConfigurati
     readonly cultureInfo: CultureInfo;
     readonly digitalNumberRegex: RegExp;
     readonly fractionMarkerToken: string;
+    readonly negativeNumberSignRegex: RegExp;
     readonly halfADozenRegex: RegExp;
     readonly halfADozenText: string;
     readonly langMarker: string;
@@ -45,6 +46,7 @@ export class FrenchNumberParserConfiguration implements INumberParserConfigurati
         this.cardinalNumberMap = FrenchNumeric.CardinalNumberMap;
         this.ordinalNumberMap = FrenchNumeric.OrdinalNumberMap;
         this.roundNumberMap = FrenchNumeric.RoundNumberMap;
+        this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(FrenchNumeric.NegativeNumberSignRegex, "is");
         this.halfADozenRegex = RegExpUtility.getSafeRegExp(FrenchNumeric.HalfADozenRegex);
         this.digitalNumberRegex = RegExpUtility.getSafeRegExp(FrenchNumeric.DigitalNumberRegex);
     }

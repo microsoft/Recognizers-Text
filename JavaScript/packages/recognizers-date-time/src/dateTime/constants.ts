@@ -17,6 +17,9 @@ export class Constants {
     static readonly ResolveKey: string = "resolve";
     static readonly ResolveToPastKey: string = "resolveToPast";
     static readonly ResolveToFutureKey: string = "resolveToFuture";
+
+    static readonly SemesterMonthCount: number = 6;
+    static readonly TrimesterMonthCount: number = 3;
 }
 
 export class TimeTypeConstants {

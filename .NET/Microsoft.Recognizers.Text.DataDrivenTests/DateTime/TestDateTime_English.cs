@@ -10,7 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         public static TestResources TestResources { get; private set; }
         public static IDictionary<string, IDateTimeExtractor> Extractors { get; private set; }
         public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
-        public static IDictionary<string, IModel> Models { get; private set; }
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
@@ -19,7 +18,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestResources.InitFromTestContext(context);
             Extractors = new Dictionary<string, IDateTimeExtractor>();
             Parsers = new Dictionary<string, IDateTimeParser>();
-            Models = new Dictionary<string, IModel>();
         }
 
         [TestInitialize]
@@ -210,7 +208,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void DateTimeModel()
         {
-            base.ModelInitialize(Models);
             base.TestDateTime();
         }
 
@@ -218,7 +215,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void DateTimeModelSplitDateAndTime()
         {
-            base.ModelInitialize(Models);
             base.TestDateTime();
         }
 
@@ -226,7 +222,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void DateTimeModelCalendarMode()
         {
-            base.ModelInitialize(Models);
             base.TestDateTime();
         }
 
@@ -234,7 +229,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void DateTimeModelExtendedTypes()
         {
-            base.ModelInitialize(Models);
             base.TestDateTimeAlt();
         }
     }

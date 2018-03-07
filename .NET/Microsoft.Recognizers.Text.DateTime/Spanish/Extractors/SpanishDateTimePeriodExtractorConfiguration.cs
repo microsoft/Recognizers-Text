@@ -83,8 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex PmDescRegex =
             new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WithinConnectorRegex =
-            new Regex(DateTimeDefinitions.WithinConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WithinNextPrefixRegex =
+            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
-        Regex IDateTimePeriodExtractorConfiguration.WithinConnectorRegex => WithinConnectorRegex;
+        Regex IDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

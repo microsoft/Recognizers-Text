@@ -168,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             var timeStr = pr2.TimexStr;
-            if (timeStr.EndsWith("ampm"))
+            if (timeStr.EndsWith(Constants.Comment_AmPm))
             {
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
@@ -181,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 !string.IsNullOrEmpty(val.Comment))
             {
                 //ret.Timex += "ampm";
-                ret.Comment = "ampm";
+                ret.Comment = Constants.Comment_AmPm;
             }
 
             ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
@@ -266,7 +266,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 // in this situation, luisStr cannot end up with "ampm", because we always have a "morning" or "night"
                 var timeStr = pr.TimexStr;
-                if (timeStr.EndsWith("ampm"))
+                if (timeStr.EndsWith(Constants.Comment_AmPm))
                 {
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }

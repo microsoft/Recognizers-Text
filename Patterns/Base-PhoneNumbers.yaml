@@ -1,9 +1,9 @@
 ---
 NumberReplaceToken: '@builtin.phonenumber'
 GeneralPhoneNumberRegex: !simpleRegex
-  def: (\b((\d[\s-/]?){8,})\b)
+  def: (\b((\d[\s-/]?){7,}\d)\b)
 BrazilPhoneNumberRegex: !simpleRegex
-  def: (((?'brac'\B\(\s?)|\b)\d{2,3}(?'-brac'\s?\))?\s?)\s?\d{4,5}-?\d{3,5}\b(?(brac)(?!))
+  def: (((\B\(\s?))\d{2,3}(\s?\))|(\b\d{2,3}))\s?\d{4,5}-?\d{3,5}\b
 UkPhoneNumberRegex: !simpleRegex
   def: (((\b(00)|\B\+)\s?)?\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3})\b)
 GermanyPhoneNumberRegex: !simpleRegex
