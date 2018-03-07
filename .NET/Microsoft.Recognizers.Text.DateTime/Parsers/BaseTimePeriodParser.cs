@@ -137,15 +137,20 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (!string.IsNullOrEmpty(amStr) || rightAmValid)
                     {
-                        
-                        if (beginHour >= 12)
+                        if (endHour >= 12)
+                        {
+                            endHour -= 12;
+                        }
+
+                        if (beginHour >= 12 && beginHour - 12 < endHour)
                         {
                             beginHour -= 12;
                         }
 
-                        if (endHour >= 12)
+                        // Resolve case like "11 to 3am"
+                        if (beginHour < 12 && beginHour > endHour)
                         {
-                            endHour -= 12;
+                            beginHour += 12;
                         }
 
                         isValid = true;
@@ -175,7 +180,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var beginStr = "T" + beginHour.ToString("D2");
                     var endStr = "T" + endHour.ToString("D2");
 
-                    ret.Timex = $"({beginStr},{endStr},PT{endHour - beginHour}H)";
+                    if (endHour >= beginHour)
+                    {
+                        ret.Timex = $"({beginStr},{endStr},PT{endHour - beginHour}H)";
+                    }
+                    else
+                    {
+                        ret.Timex = $"({beginStr},{endStr},PT{endHour - beginHour + 24}H)";
+                    }
 
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                         DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
