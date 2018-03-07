@@ -900,6 +900,162 @@
 }
 ,
 {
+  "Input": "please help me set up a meeting from 1:30am to 3",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30am to 3",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T01:30,T03,PT1H30M)",
+        "FutureResolution": {
+          "startTime": "01:30:00",
+          "endTime": "03:00:00"
+        },
+        "PastResolution": {
+          "startTime": "01:30:00",
+          "endTime": "03:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The class is from 11 am to 3",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 11 am to 3",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T11,T15,PT4H)",
+        "FutureResolution": {
+          "startTime": "11:00:00",
+          "endTime": "15:00:00"
+        },
+        "PastResolution": {
+          "startTime": "11:00:00",
+          "endTime": "15:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The class is from 11 pm to 3",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 11 pm to 3",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T23,T03,PT4H)",
+        "FutureResolution": {
+          "startTime": "23:00:00",
+          "endTime": "03:00:00"
+        },
+        "PastResolution": {
+          "startTime": "23:00:00",
+          "endTime": "03:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The class is from 11:01 pm to 11",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 11:01 pm to 11",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T23:01,T11,PT11H59M)",
+        "FutureResolution": {
+          "startTime": "23:01:00",
+          "endTime": "11:00:00"
+        },
+        "PastResolution": {
+          "startTime": "23:01:00",
+          "endTime": "11:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The class is from 11:01 am to 11",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 11:01 am to 11",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T11:01,T23,PT11H59M)",
+        "FutureResolution": {
+          "startTime": "11:01:00",
+          "endTime": "23:00:00"
+        },
+        "PastResolution": {
+          "startTime": "11:01:00",
+          "endTime": "23:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "please help me set up a meeting from 11am to 11:50",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 11am to 11:50",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T11,T11:50,PT50M)",
+        "FutureResolution": {
+          "startTime": "11:00:00",
+          "endTime": "11:50:00"
+        },
+        "PastResolution": {
+          "startTime": "11:00:00",
+          "endTime": "11:50:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "set up meeting from 1:30 pm to 3:30",
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
@@ -977,6 +1133,58 @@
 }
 ,
 {
+  "Input": "I have been waiting from 0:01 am to 1 pm",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 0:01 am to 1 pm",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T00:01,T13,PT12H59M)",
+        "FutureResolution": {
+          "startTime": "00:01:00",
+          "endTime": "13:00:00"
+        },
+        "PastResolution": {
+          "startTime": "00:01:00",
+          "endTime": "13:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I have been waiting from 0:01 am to 1",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 0:01 am to 1",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T00:01,T01,PT59M)",
+        "FutureResolution": {
+          "startTime": "00:01:00",
+          "endTime": "01:00:00"
+        },
+        "PastResolution": {
+          "startTime": "00:01:00",
+          "endTime": "01:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "set up meeting from 3 to 3:30",
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
@@ -1022,6 +1230,188 @@
         "PastResolution": {
           "startTime": "01:30:00",
           "endTime": "03:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "please help me set up a meeting from 1:30 to 3pm",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 to 3pm",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T13:30,T15,PT1H30M)",
+        "FutureResolution": {
+          "startTime": "13:30:00",
+          "endTime": "15:00:00"
+        },
+        "PastResolution": {
+          "startTime": "13:30:00",
+          "endTime": "15:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "please help me set up a meeting from 11 to 3pm",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 11 to 3pm",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T11,T15,PT4H)",
+        "FutureResolution": {
+          "startTime": "11:00:00",
+          "endTime": "15:00:00"
+        },
+        "PastResolution": {
+          "startTime": "11:00:00",
+          "endTime": "15:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "please help me set up a meeting from 11 to 11:50am",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 11 to 11:50am",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T11,T11:50,PT50M)",
+        "FutureResolution": {
+          "startTime": "11:00:00",
+          "endTime": "11:50:00"
+        },
+        "PastResolution": {
+          "startTime": "11:00:00",
+          "endTime": "11:50:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "please help me set up a meeting from 11 to 3am",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 11 to 3am",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T23,T03,PT4H)",
+        "FutureResolution": {
+          "startTime": "23:00:00",
+          "endTime": "03:00:00"
+        },
+        "PastResolution": {
+          "startTime": "23:00:00",
+          "endTime": "03:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "please help me set up a meeting from 10 to 11am",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 10 to 11am",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T10,T11,PT1H)",
+        "FutureResolution": {
+          "startTime": "10:00:00",
+          "endTime": "11:00:00"
+        },
+        "PastResolution": {
+          "startTime": "10:00:00",
+          "endTime": "11:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "please help me set up a meeting from 23 to 3am",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 23 to 3am",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T23,T03,PT4H)",
+        "FutureResolution": {
+          "startTime": "23:00:00",
+          "endTime": "03:00:00"
+        },
+        "PastResolution": {
+          "startTime": "23:00:00",
+          "endTime": "03:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "please help me set up a meeting from 23 to 3pm",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 23 to 3pm",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T23,T15,PT16H)",
+        "FutureResolution": {
+          "startTime": "23:00:00",
+          "endTime": "15:00:00"
+        },
+        "PastResolution": {
+          "startTime": "23:00:00",
+          "endTime": "15:00:00"
         }
       }
     }
