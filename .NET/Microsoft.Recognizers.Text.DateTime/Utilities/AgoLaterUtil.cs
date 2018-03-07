@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
-                else if (MatchingUtil.GetWithinIndex(beforeString, utilityConfiguration.WithinConnectorRegex, out index))
+                else if (MatchingUtil.GetWithinIndex(beforeString, utilityConfiguration.WithinNextPrefixRegex, out index))
                 {
                     // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
                     if (!utilityConfiguration.DateUnitRegex.IsMatch(er.Text) && !utilityConfiguration.TimeUnitRegex.IsMatch(er.Text))

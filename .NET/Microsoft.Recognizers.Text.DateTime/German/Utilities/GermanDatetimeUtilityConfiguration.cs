@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German.Utilities
         public static readonly Regex InConnectorRegex = new Regex(DateTimeDefinitions.InConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WithinConnectorRegex = new Regex(DateTimeDefinitions.WithinConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WithinNextPrefixRegex = new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German.Utilities
 
         Regex IDateTimeUtilityConfiguration.InConnectorRegex => InConnectorRegex;
 
-        Regex IDateTimeUtilityConfiguration.WithinConnectorRegex => WithinConnectorRegex;
+        Regex IDateTimeUtilityConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
         Regex IDateTimeUtilityConfiguration.AmDescRegex => AmDescRegex;
 
