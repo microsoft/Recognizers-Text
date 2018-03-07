@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.Recognizers.Text.DataDrivenTests;
+﻿using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -25,13 +24,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Chinese.csv", "NumberModel-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModel()
-        {
-            base.TestNumber();
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CustomNumberModel-Chinese.csv", "CustomNumberModel-Chinese#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void CustomNumberModel()
         {
             base.TestNumber();
         }
