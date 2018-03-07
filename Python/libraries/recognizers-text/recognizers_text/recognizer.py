@@ -16,7 +16,7 @@ class Recognizer(Generic[TModelOptions], ABC):
     def initialize_configuration(self):
         raise NotImplementedError
 
-    def get_model(self, model_type_name: str, culture: str, fallback_to_default_culture: str) -> Model:
+    def get_model(self, model_type_name: str, culture: str, fallback_to_default_culture: bool) -> Model:
         if culture is None:
             culture=self.target_culture
         return self.model_factory.get_model(model_type_name, culture, fallback_to_default_culture, self.options)

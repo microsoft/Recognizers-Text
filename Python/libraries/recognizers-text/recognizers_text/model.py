@@ -29,7 +29,7 @@ class ModelFactory(Generic[TModelOptions]):
     def __init__(self):
         self.model_factories: Dict[NamedTuple("key", [("model_type", str), ("culture", str)]), Callable[[TModelOptions], Model]]
 
-    def get_model(self, model_type_name: str, culture: str, fallback_to_default_culture: str, options: TModelOptions) -> Model:
+    def get_model(self, model_type_name: str, culture: str, fallback_to_default_culture: bool, options: TModelOptions) -> Model:
         result=self.try_get_model(model_type_name, culture, options)
         if result is None and fallback_to_default_culture is True:
             result=self.try_get_model(model_type_name, ModelFactory.__fallback_to_default_culture, options)
