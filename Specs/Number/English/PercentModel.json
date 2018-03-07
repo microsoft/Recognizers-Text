@@ -1,6 +1,6 @@
 [{
   "Input": "100%",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "100%",
@@ -14,7 +14,7 @@
 ,
 {
   "Input": " 100% ",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "100%",
@@ -28,7 +28,7 @@
 ,
 {
   "Input": " 100 percent",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "100 percent",
@@ -42,7 +42,7 @@
 ,
 {
   "Input": " 100 percentage",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "100 percentage",
@@ -56,7 +56,7 @@
 ,
 {
   "Input": "240 percent",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "240 percent",
@@ -70,7 +70,7 @@
 ,
 {
   "Input": "twenty percent",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "twenty percent",
@@ -84,7 +84,7 @@
 ,
 {
   "Input": "thirty percentage",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "thirty percentage",
@@ -98,7 +98,7 @@
 ,
 {
   "Input": "one hundred percent",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "one hundred percent",
@@ -112,7 +112,7 @@
 ,
 {
   "Input": "one hundred percents",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "one hundred percents",
@@ -126,7 +126,7 @@
 ,
 {
   "Input": "percents of twenty",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "percents of twenty",
@@ -140,7 +140,7 @@
 ,
 {
   "Input": "percent of 10",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "percent of 10",
@@ -154,7 +154,7 @@
 ,
 {
   "Input": "per cent of twenty-two",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "per cent of twenty-two",
@@ -168,7 +168,7 @@
 ,
 {
   "Input": "per cent of 210",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "per cent of 210",
@@ -182,7 +182,7 @@
 ,
 {
   "Input": "10 percent",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "10 percent",
@@ -196,7 +196,7 @@
 ,
 {
   "Input": "just need minus five percent",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "minus five percent",

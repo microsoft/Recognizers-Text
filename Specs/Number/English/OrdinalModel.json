@@ -1,6 +1,6 @@
 [{
   "Input": "three trillionth",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "three trillionth",
@@ -14,13 +14,13 @@
 ,
 {
   "Input": "a trillionth",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "a hundred trillionth",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "a hundred trillionth",
@@ -34,7 +34,7 @@
 ,
 {
   "Input": "11th",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "11th",
@@ -48,7 +48,7 @@
 ,
 {
   "Input": "21st",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "21st",
@@ -62,7 +62,7 @@
 ,
 {
   "Input": "30th",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "30th",
@@ -76,7 +76,7 @@
 ,
 {
   "Input": "2nd",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "2nd",
@@ -90,7 +90,7 @@
 ,
 {
   "Input": "eleventh",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "eleventh",
@@ -104,7 +104,7 @@
 ,
 {
   "Input": "twentieth",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "twentieth",
@@ -118,7 +118,7 @@
 ,
 {
   "Input": "twenty-fifth",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "twenty-fifth",
@@ -132,7 +132,7 @@
 ,
 {
   "Input": "twenty-first",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "twenty-first",
@@ -146,7 +146,7 @@
 ,
 {
   "Input": "one hundred twenty fifth",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "one hundred twenty fifth",
@@ -160,7 +160,7 @@
 ,
 {
   "Input": "one hundred twenty-fifth",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "one hundred twenty-fifth",
@@ -174,7 +174,7 @@
 ,
 {
   "Input": "trillionth",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "trillionth",
@@ -188,7 +188,7 @@
 ,
 {
   "Input": "twenty-one trillion and three hundred twenty second",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "twenty-one trillion and three hundred twenty second",
@@ -202,7 +202,7 @@
 ,
 {
   "Input": "two hundredth",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "two hundredth",
@@ -215,7 +215,7 @@
 },
 {
   "Input": "Book a first class seat to seattle",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "first",
