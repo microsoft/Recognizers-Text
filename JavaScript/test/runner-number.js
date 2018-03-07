@@ -9,8 +9,7 @@ var modelFunctions = {
     'OrdinalModel': (input, culture, options) => Recognizer.recognizeOrdinal(input, culture, options, false),
     'PercentModel': (input, culture, options) => Recognizer.recognizePercentage(input, culture, options, false),
     // TODO: Implement number range model in javascript
-    'NumberRangeModel': (input, culture, options) => null,
-    'CustomNumberModel': (input, culture, options) => getCustomNumberModel(culture).parse(input)
+    'NumberRangeModel': (input, culture, options) => null
 };
 
 module.exports = function getNumberTestRunner(config) {
@@ -28,20 +27,6 @@ module.exports = function getNumberTestRunner(config) {
             t.is(actual.resolution.value, expected.Resolution.value, 'Result.Resolution.value');
         });
     };
-}
-
-function getCustomNumberModel(culture) {
-    switch (culture) {
-        case SupportedCultures['Chinese'].cultureCode:
-            return new RecognizerTextNumber.NumberModel(
-                RecognizerTextNumber.AgnosticNumberParserFactory.getParser(
-                    RecognizerTextNumber.AgnosticNumberParserType.Number,
-                    new RecognizerTextNumber.ChineseNumberParserConfiguration()),
-                new RecognizerTextNumber.ChineseNumberExtractor(RecognizerTextNumber.ChineseNumberExtractorMode.ExtractAll)
-            );
-            break;
-    }
-    return null;
 }
 
 function getResults(input, config) {

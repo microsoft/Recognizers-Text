@@ -108,7 +108,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
-            { Models.CustomNumber, (test, culture) => GetCustomModelFor(culture).Parse(test.Input) },
             { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Currency, (test, culture) => NumberWithUnitRecognizer.RecognizeCurrency(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Dimension, (test, culture) => NumberWithUnitRecognizer.RecognizeDimension(test.Input, culture, fallbackToDefaultCulture: false) },
@@ -542,18 +541,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for German not supported");
         }
 
-        private static IModel GetCustomModelFor(string culture)
-        {
-            switch (culture)
-            {
-                case Culture.Chinese:
-                    return new NumberModel(
-                        AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
-                        new NumberExtractor(ChineseNumberExtractorMode.ExtractAll));
-            }
-
-            throw new Exception($"Custom Model for '{culture}' not supported");
-        }
     }
 
     public static class TestModelExtensions
