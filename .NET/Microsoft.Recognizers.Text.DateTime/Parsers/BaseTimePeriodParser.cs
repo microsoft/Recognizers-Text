@@ -266,7 +266,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beginTime = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
             var endTime = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
 
-            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && endTime <= beginTime && endTime.Hour < 12)
+            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && endTime <= beginTime && endTime.AddHours(12) > beginTime)
             {
                 endTime = endTime.AddHours(12);
                 ((DateTimeResolutionResult)pr2.Value).FutureValue = endTime;
@@ -277,7 +277,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && endTime.Hour > beginTime.Hour + 12)
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && endTime > beginTime.AddHours(12))
             {
                 beginTime = beginTime.AddHours(12);
                 ((DateTimeResolutionResult)pr1.Value).FutureValue = beginTime;
@@ -288,8 +288,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            var minutes = (endTime - beginTime).TotalMinutes % 60;
-            var hours = (int)(endTime - beginTime).TotalMinutes / 60;
+            if (endTime < beginTime)
+            {
+                endTime = endTime.AddDays(1);
+            }
+
+            var minutes = (endTime - beginTime).Minutes;
+            var hours = (endTime - beginTime).Hours;
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr}," +
                         $"PT{(hours > 0 ? hours + "H" : "")}{(minutes > 0 ? minutes + "M" : "")})";
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
