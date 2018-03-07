@@ -107,5 +107,171 @@
         "Type": "datetimerange"
       }
     ]
+  },
+  {
+    "Input": "Ich komme dann heute zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "heute",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Diese Nacht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Diese Nacht",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Diesen Abend",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Diesen Abend",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Diesen Morgen",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Diesen Morgen",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Diesen Nachmittag",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Diesen Nachmittag",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Die nächste Nacht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nächste Nacht",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "In der letzten Nacht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "letzten Nacht",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Morgen Nacht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Morgen Nacht",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "nächsten Montag Nachmittag",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nächsten Montag Nachmittag",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Am 5. Mai in der Nacht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "5. Mai in der Nacht",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "in den letzten 3 Minuten",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "letzten 3 Minuten",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "in den nächsten 3 Minuten",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nächsten 3 Minuten",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "in den vorherigen 3 Minuten",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "vorherigen 3 Minuten",
+        "Type": "datetimerange"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "in den nächsten 3 Stunden",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nächsten 3 Stunden",
+        "Type": "datetimerange"
+      }
+    ]
   }
 ]

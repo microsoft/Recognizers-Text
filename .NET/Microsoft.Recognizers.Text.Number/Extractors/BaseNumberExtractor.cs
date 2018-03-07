@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual string ExtractType { get; } = "";
 
+        protected virtual Regex NegativeNumberTermsRegex { get; } = null;
+
         public virtual List<ExtractResult> Extract(string source)
         {
             if (string.IsNullOrEmpty(source))
@@ -53,6 +55,18 @@ namespace Microsoft.Recognizers.Text.Number
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
                             var srcMatch = matchSource.Keys.First(o => o.Index == start && o.Length == length);
+
+                            // Extract negative numbers
+                            if (NegativeNumberTermsRegex != null) {
+                                var match = NegativeNumberTermsRegex.Match(source.Substring(0, start));
+                                if (match.Success)
+                                {
+                                    start = match.Index;
+                                    length = length + match.Length;
+                                    substr = match.Value + substr;
+                                }
+                            }
+
                             var er = new ExtractResult
                             {
                                 Start = start,

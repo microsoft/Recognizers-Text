@@ -63,5 +63,136 @@
         "Type": "duration"
       }
     ]
+  },
+  {
+    "Input": "Ich bin für 3 Monate weg",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 Monate",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Bin in 3 Minuten wieder da",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 Minuten",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "3 min noch",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das hat ja nur 3,5 Sekunden gedauert",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3,5 Sekunden",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "123,45 sek",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "123,45 sek",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das geht noch für zwei Wochen so weiter",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "zwei Wochen",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Dauer: zwanzig min",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "zwanzig min",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich bin den ganzen Tag lang weg",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ganzen Tag",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich bin die ganze Woche lang weg",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ganze Woche",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich bin den ganzen Monat lang weg",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ganzen Monat",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich bin das ganze Jahr lang weg",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ganze Jahr",
+        "Type": "duration"
+      }
+    ]
   }
 ]

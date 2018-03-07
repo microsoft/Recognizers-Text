@@ -12,6 +12,7 @@ export class SpanishNumberParserConfiguration implements INumberParserConfigurat
     readonly cultureInfo: CultureInfo;
     readonly digitalNumberRegex: RegExp;
     readonly fractionMarkerToken: string;
+    readonly negativeNumberSignRegex: RegExp;
     readonly halfADozenRegex: RegExp;
     readonly halfADozenText: string;
     readonly langMarker: string;
@@ -55,6 +56,7 @@ export class SpanishNumberParserConfiguration implements INumberParserConfigurat
         this.cardinalNumberMap = SpanishNumeric.CardinalNumberMap;
         this.ordinalNumberMap = ordinalNumberMap;
         this.roundNumberMap = SpanishNumeric.RoundNumberMap;
+        this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(SpanishNumeric.NegativeNumberSignRegex, "is");
         this.halfADozenRegex = RegExpUtility.getSafeRegExp(SpanishNumeric.HalfADozenRegex);
         this.digitalNumberRegex = RegExpUtility.getSafeRegExp(SpanishNumeric.DigitalNumberRegex);
     }

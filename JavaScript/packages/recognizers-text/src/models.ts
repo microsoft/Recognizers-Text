@@ -1,4 +1,6 @@
 import { Culture } from "./culture";
+import { match, cache } from "xregexp";
+import { StringUtility } from "./utilities";
 
 export interface IModel {
     readonly modelTypeName: string
@@ -13,63 +15,93 @@ export class ModelResult {
     resolution: { [key: string]: any }
 }
 
-export class ModelContainer {
-    static readonly defaultCulture: string = Culture.English;
-
-    private modelInstances: Map<string, IModel> = new Map<string, IModel>();
-
-    getModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): IModel {
-        let result = this.tryGetModel(modelTypeName, culture, fallbackToDefaultCulture);
-        if (!result.containsModel) {
-            throw new Error(`No IModel instance for ${culture}-${modelTypeName}`);
-        }
-
-        return result.model as IModel;
+class ModelFactoryKey<TModelOptions> {
+    culture: string;
+    modelType: string;
+    options: TModelOptions;
+    constructor(culture: string, modelType: string, options: TModelOptions = null) {
+        this.culture = culture ? culture.toLowerCase() : null;
+        this.modelType = modelType;
+        this.options = options;
     }
 
-    tryGetModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): { containsModel: boolean; model?: IModel } {
-        let model: IModel;
-        let ret: boolean = true;
-        let key = this.generateKey(modelTypeName, culture);
-        if (!this.modelInstances.has(key)) {
-            if (fallbackToDefaultCulture) {
-                culture = ModelContainer.defaultCulture;
-                key = this.generateKey(modelTypeName, culture);
-            }
+    public toString(): string {
+        return JSON.stringify(this);
+    }
 
-            if (!this.modelInstances.has(key)) {
-                ret = false;
-            }
+    public static fromString<TModelOptions>(key: string): ModelFactoryKey<TModelOptions> {
+        return JSON.parse(key) as ModelFactoryKey<TModelOptions>;
+    }
+}
+
+export class ModelFactory<TModelOptions> {
+    static readonly fallbackCulture: string = Culture.English;
+
+    private modelFactories: Map<string, (options: TModelOptions) => IModel> = new Map<string, (options: TModelOptions) => IModel>();
+
+    private static cache: Map<string, IModel> = new Map<string, IModel>();
+
+    getModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean, options: TModelOptions): IModel {
+
+        let result = this.tryGetModel(modelTypeName, culture, options);
+        if (!result.containsModel && fallbackToDefaultCulture) {
+            result = this.tryGetModel(modelTypeName, ModelFactory.fallbackCulture, options);
         }
 
-        if (ret) {
-            return { containsModel: true, model: this.modelInstances.get(key) };
+        if (result.containsModel) {
+            return result.model;
+        }
+
+        throw new Error(`Could not find Model with the specified configuration: ${culture},${modelTypeName}`);
+    }
+
+    tryGetModel(modelTypeName: string, culture: string, options: TModelOptions): { containsModel: boolean; model?: IModel } {
+        let cacheResult = this.getModelFromCache(modelTypeName, culture, options);
+        if (cacheResult) return { containsModel: true, model: cacheResult };
+
+        let key = this.generateKey(modelTypeName, culture);
+        if (this.modelFactories.has(key)) {
+            let model = this.modelFactories.get(key)(options);
+            this.registerModelInCache(modelTypeName, culture, options, model);
+            return { containsModel: true, model: model };
         }
 
         return { containsModel: false };
     }
 
-    containsModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): boolean {
-        return this.tryGetModel(modelTypeName, culture, fallbackToDefaultCulture).containsModel;
-    }
-
-    registerModel(modelTypeName: string, culture: string, model: IModel) {
+    registerModel(modelTypeName: string, culture: string, modelCreator: (options: TModelOptions) => IModel) {
         let key = this.generateKey(modelTypeName, culture);
-        if (this.modelInstances.has(key)) {
-            throw new Error(`${culture}-${modelTypeName} has been registered.`);
+        if (this.modelFactories.has(key)) {
+            throw new Error(`${culture}-${modelTypeName} has already been registered.`);
         }
 
-        this.modelInstances.set(key, model);
+        this.modelFactories.set(key, modelCreator);
     }
 
-    registerModels(models: Map<string, IModel>, culture: string) {
-        for (let key in models.keys()) {
-            let model: IModel = models.get(key) as IModel;
-            this.registerModel(key, culture, model);
-        }
+    initializeModels(targetCulture: string, options: TModelOptions) {
+        this.modelFactories.forEach((value, key) => {
+            let modelFactoryKey = ModelFactoryKey.fromString<TModelOptions>(key);
+            if (StringUtility.isNullOrEmpty(targetCulture) || modelFactoryKey.culture === targetCulture) {
+                this.tryGetModel(modelFactoryKey.modelType, modelFactoryKey.culture, modelFactoryKey.options)
+            }
+        });
     }
 
     private generateKey(modelTypeName: string, culture: string): string {
-        return `${culture.toLowerCase()}-${modelTypeName}`;
+        return new ModelFactoryKey(culture, modelTypeName).toString();
+    }
+
+    private getModelFromCache(modelTypeName: string, culture: string, options: TModelOptions): IModel {
+        let key = this.generateCacheKey(modelTypeName, culture, options);
+        return ModelFactory.cache.get(key);
+    }
+
+    private registerModelInCache(modelTypeName: string, culture: string, options: TModelOptions, model: IModel) {
+        let key = this.generateCacheKey(modelTypeName, culture, options);
+        ModelFactory.cache.set(key, model);
+    }
+
+    private generateCacheKey(modelTypeName: string, culture: string, options: TModelOptions): string {
+        return new ModelFactoryKey<TModelOptions>(culture, modelTypeName, options).toString();
     }
 }

@@ -8,6 +8,9 @@ namespace Microsoft.Recognizers.Text
 {
     public class ExtendedModelResult : ModelResult
     {
+        // Parameter Key
+        public static readonly string ParentTextKey = "parentText";
+
         public string ParentText { get; set; }
 
         public ExtendedModelResult()

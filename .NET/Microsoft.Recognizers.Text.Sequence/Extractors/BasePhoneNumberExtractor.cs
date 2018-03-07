@@ -5,11 +5,11 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
-    class BasePhoneNumberExtractor : BaseSequenceExtractor
+    public class BasePhoneNumberExtractor : BaseSequenceExtractor
     {
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
 
-        protected sealed override string ExtractType { get; } = Constants.MODEL_PHONE_NUMBER;
+        protected sealed override string ExtractType { get; } = Constants.SYS_PHONE_NUMBER;
 
         public BasePhoneNumberExtractor()
         {

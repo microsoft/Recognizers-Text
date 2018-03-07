@@ -14,6 +14,8 @@ export namespace FrenchNumeric {
 	export const TenToNineteenIntegerRegex = `(dix\\Wneuf|dix\\Whuit|dix\\Wsept|seize|quinze|quatorze|treize|douze|onze|dix)`;
 	export const TensNumberIntegerRegex = `(octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)`;
 	export const DigitsNumberRegex = `\\d|\\d{1,3}(\\.\\d{3})`;
+	export const NegativeNumberTermsRegex = `^[.]`;
+	export const NegativeNumberSignRegex = `^(${NegativeNumberTermsRegex}\\s+).*`;
 	export const HundredsNumberIntegerRegex = `((${ZeroToNineIntegerRegex}(\\s+cent))|cent|((\\s+cent\\s)+${TensNumberIntegerRegex}))`;
 	export const BelowHundredsRegex = `((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}(\\W+${ZeroToNineIntegerRegex})?))|${ZeroToNineIntegerRegex})`;
 	export const BelowThousandsRegex = `((${HundredsNumberIntegerRegex}(\\s+${BelowHundredsRegex})?|${BelowHundredsRegex}|${TenToNineteenIntegerRegex})|cent\\s+${TenToNineteenIntegerRegex})`;
