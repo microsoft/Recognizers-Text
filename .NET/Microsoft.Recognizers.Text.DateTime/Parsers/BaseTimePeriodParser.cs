@@ -154,14 +154,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else if (!string.IsNullOrEmpty(pmStr) || rightPmValid)
                     {
 
-                        if (beginHour < 12)
-                        {
-                            beginHour += 12;
-                        }
-
                         if (endHour < 12)
                         {
                             endHour += 12;
+                        }
+
+                        // Resolve case like "11 to 3pm"
+                        if (beginHour + 12 < endHour)
+                        {
+                            beginHour += 12;
                         }
 
                         isValid = true;
@@ -253,15 +254,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beginTime = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
             var endTime = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
 
-            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && 
-                endTime <= beginTime && endTime.Hour<12)
+            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && endTime <= beginTime && endTime.Hour < 12)
             {
                 endTime = endTime.AddHours(12);
-                ((DateTimeResolutionResult) pr2.Value).FutureValue = endTime;
+                ((DateTimeResolutionResult)pr2.Value).FutureValue = endTime;
                 pr2.TimexStr = $"T{endTime.Hour}";
                 if (endTime.Minute > 0)
                 {
                     pr2.TimexStr = $"{pr2.TimexStr}:{endTime.Minute}";
+                }
+            }
+
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && endTime.Hour > beginTime.Hour + 12)
+            {
+                beginTime = beginTime.AddHours(12);
+                ((DateTimeResolutionResult)pr1.Value).FutureValue = beginTime;
+                pr1.TimexStr = $"T{beginTime.Hour}";
+                if (beginTime.Minute > 0)
+                {
+                    pr1.TimexStr = $"{pr1.TimexStr}:{beginTime.Minute}";
                 }
             }
 
