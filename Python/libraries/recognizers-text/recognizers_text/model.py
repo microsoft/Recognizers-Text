@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod, abstractproperty
 from typing import List, Dict, Generic, TypeVar, Callable, Tuple, NamedTuple, Optional
 from collections import namedtuple
 
@@ -11,10 +11,13 @@ class ModelResult():
         self.text: str
         self.start: int
         self.end: int
-        self.typeName: str
+        self.type_name: str
         self.resolution: Dict[str, object]
 
 class Model(ABC):
+    @abstractproperty
+    def model_type_name(self): str
+
     @abstractmethod
     def parse(self, query: str) -> List[ModelResult]:
         raise NotImplementedError
