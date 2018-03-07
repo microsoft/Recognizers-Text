@@ -30,13 +30,16 @@ class AbstractNumberModel(Model):
         return result
 
 class NumberModel(AbstractNumberModel):
+    @property
     def model_type_name(self) -> str:
         return 'number'
 
 class OrdinalModel(AbstractNumberModel):
+    @property
     def model_type_name(self) -> str:
         return 'ordinal'
 
 class PercentModel(AbstractNumberModel):
+    @property
     def model_type_name(self) -> str:
         return 'percentage'
