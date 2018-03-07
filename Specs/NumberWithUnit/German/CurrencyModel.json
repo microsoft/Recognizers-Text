@@ -254,7 +254,7 @@
   ]
 }
 ,
-{//DIN 1333
+{
   "Input": "Der Haushalt beläuft sich auf 12 500 EUR.",
   "NotSupportedByDesign": "python",
   "NotSupported": "javascript,dotnet",
@@ -286,7 +286,7 @@
   ]
 }
 ,
-{//Age-Model currently does not work with ordinals
+{
   "Input": "Der Umsatz sank in der zweiten Jahreshälfte um 27% auf 300 000 GBP",
   "NotSupportedByDesign": "python",
   "NotSupported": "javascript,dotnet",

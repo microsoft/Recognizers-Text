@@ -193,7 +193,6 @@
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
-      //Normal numbers are detected because they can also be used as ordinal with suffix if there is a dot behind it (1. = 1st for example). might need to figure out a better solution
       {
         "Text": "erste",
         "TypeName": "ordinal",
@@ -229,7 +228,7 @@
           "value": "6"
         }
       },
-      {//This is falsely detected as ordinal because "acht" can be either an ordinal or a number, depending on context
+      {
         "Text": "acht",
         "TypeName": "ordinal",
         "Resolution": {

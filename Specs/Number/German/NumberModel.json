@@ -97,7 +97,7 @@
       }
     ]
   },
-  {//does not yet recognize 'Komma' as ','
+  {
     "Input": "zwei Komma drei",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
@@ -594,7 +594,7 @@
           "value": "100"
         }
       },
-      {//Whitespace at the end currently necessary because of the possible follow-up-numbers. Regex needs refinement here.
+      {
         "Text": "300 Milliarden ",
         "TypeName": "number",
         "Resolution": {
