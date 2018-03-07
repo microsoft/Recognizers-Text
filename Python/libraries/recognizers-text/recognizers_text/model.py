@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod, abstractproperty
+from enum import Flag
 from typing import List, Dict, Generic, TypeVar, Callable, Tuple, NamedTuple, Optional
 from collections import namedtuple
 
 from .culture import Culture
 
-TModelOptions = TypeVar('TModelOptions')
+TModelOptions = TypeVar('TModelOptions', bound=Flag)
 
 class ModelResult():
     def __init__(self):
@@ -28,10 +29,10 @@ model_ctor_key=namedtuple('model_ctor_key', ['model_type', 'culture'])
 
 class ModelFactory(Generic[TModelOptions]):
     __fallback_to_default_culture=Culture.English
-    __cache: Dict[NamedTuple("key", [("model_type", str), ("culture", str), ("options", TModelOptions)]), Model]
+    __cache: Dict[NamedTuple("key", [("model_type", str), ("culture", str), ("options", TModelOptions)]), Model]=dict()
 
     def __init__(self):
-        self.model_factories: Dict[NamedTuple("key", [("model_type", str), ("culture", str)]), Callable[[TModelOptions], Model]]
+        self.model_factories: Dict[NamedTuple("key", [("model_type", str), ("culture", str)]), Callable[[TModelOptions], Model]]=dict()
 
     def get_model(self, model_type_name: str, culture: str, fallback_to_default_culture: bool, options: TModelOptions) -> Model:
         result=self.try_get_model(model_type_name, culture, options)
@@ -51,7 +52,7 @@ class ModelFactory(Generic[TModelOptions]):
         cacheResult=self.get_model_from_cache(model_type_name, culture, options)
         if cacheResult is not None:
             return cacheResult
-        key=self.generate_key(model_type_name, culture)
+        key=model_ctor_key(model_type=model_type_name, culture=culture)
         model_ctor=self.model_factories.get(key, None)
         if model_ctor is not None:
             model=model_ctor(options)
@@ -70,4 +71,4 @@ class ModelFactory(Generic[TModelOptions]):
     def initialize_models(self, target_culture: str, options: TModelOptions):
         for key in self.model_factories:
             if target_culture is None or target_culture is key.culture:
-                self.try_get_model(key.model_type, key.culture, key.options)
+                self.try_get_model(key.model_type, key.culture, options)
