@@ -369,11 +369,9 @@ export class BaseTimePeriodParser implements IDateTimeParser {
 
                     // check if the middle string between the time point and the valid number is a connect string.
                     var middleStr = text.substr(midStrBegin, midStrEnd);
-                    // var tillMatch = this.config.tillRegex.match(middleStr);
                     var tillMatch = middleStr.match(this.config.tillRegex);
                     if (tillMatch)
                     {
-                        // num.data = null;
                         num.type = Constants.SYS_DATETIME_TIME;
                         ers.push(num);
                         validTimeNumber = true;
