@@ -506,7 +506,6 @@
 ,
 {
   "Input": "set up meeting 1:30p.m. to 4!",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -582,7 +581,6 @@
 ,
 {
   "Input": "set up meeting from 1 to 3:30",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -594,7 +592,6 @@
 ,
 {
   "Input": "set up meeting from 1:30 to 3",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

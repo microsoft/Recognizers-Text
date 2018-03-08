@@ -322,6 +322,7 @@ export enum DayOfWeek {
 export class DateUtils {
     private static readonly oneDay = 24 * 60 * 60 * 1000;
     private static readonly oneHour = 60 * 60 * 1000;
+    private static readonly oneMinute = 60 * 1000;
     private static readonly oneSecond = 1000;
 
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
@@ -366,6 +367,18 @@ export class DateUtils {
         let fromEpoch = from.getTime() - (from.getTimezoneOffset() * 60 * 1000);
         let toEpoch = to.getTime() - (to.getTimezoneOffset() * 60 * 1000);
         return Math.round(Math.abs(fromEpoch - toEpoch - 0.00001) / this.oneHour);
+    }
+
+    static totalHoursFloor(from: Date, to: Date): number {
+        let fromEpoch = from.getTime() - (from.getTimezoneOffset() * this.oneMinute);
+        let toEpoch = to.getTime() - (to.getTimezoneOffset() * this.oneMinute);
+        return Math.floor(Math.abs(fromEpoch - toEpoch) / this.oneHour);
+    }
+
+    static totalMinutesFloor(from: Date, to: Date): number {
+        let fromEpoch = from.getTime() - (from.getTimezoneOffset() * this.oneMinute);
+        let toEpoch = to.getTime() - (to.getTimezoneOffset() * this.oneMinute);
+        return Math.floor(Math.abs(fromEpoch - toEpoch) / this.oneMinute);
     }
 
     static totalSeconds(from: Date, to: Date): number {
