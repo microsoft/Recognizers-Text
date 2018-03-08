@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Choice.Extractors
+namespace Microsoft.Recognizers.Text.Choice
 {
     public interface IChoiceExtractorConfiguration
     {

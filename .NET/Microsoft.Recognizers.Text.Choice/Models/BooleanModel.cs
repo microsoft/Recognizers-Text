@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Recognizers.Text.Choice.Parsers;
 
-namespace Microsoft.Recognizers.Text.Choice.Models
+namespace Microsoft.Recognizers.Text.Choice
 {
     public class BooleanModel : ChoiceModel
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.Spanish;
-using Microsoft.Recognizers.Text.Choice.Extractors;
 
-namespace Microsoft.Recognizers.Text.Choice.Spanish.Extractors
+using Microsoft.Recognizers.Definitions.Spanish;
+
+namespace Microsoft.Recognizers.Text.Choice.Spanish
 {
     public class SpanishBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
