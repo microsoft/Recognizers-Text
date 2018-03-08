@@ -1,0 +1,58 @@
+{
+    "outputPath": "./recognizers_number/resources/",
+    "configFiles": [
+        {
+            "input": [ "Base-Numbers" ],
+            "output": "base_numbers",
+            "header": [
+                "class BaseNumbers:"
+            ],
+            "footer": [ "" ]
+        },
+        {
+            "input": [ "English", "English-Numbers" ],
+            "output": "english_numeric",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "class EnglishNumeric:"
+            ],
+            "footer": [ "" ]
+        },
+        {
+            "input": [ "Spanish", "Spanish-Numbers" ],
+            "output": "spanish_numeric",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "class SpanishNumeric:"
+            ],
+            "footer": [ "" ]
+        },
+        {
+            "input": [ "Portuguese", "Portuguese-Numbers" ],
+            "output": "portuguese_numeric",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "class PortugueseNumeric:"
+            ],
+            "footer": [ "" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-Numbers" ],
+            "output": "chinese_numeric",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "class ChineseNumeric:"
+            ],
+            "footer": [ "" ]
+        },
+        {
+            "input": [ "French", "French-Numbers" ],
+            "output": "french_numeric",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "class FrenchNumeric:"
+            ],
+            "footer": [ "" ]
+        }
+    ]
+}
