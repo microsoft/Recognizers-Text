@@ -1,8 +1,16 @@
 import pytest
 from runner import *
+from recognizers_number.number import NumberRecognizer
+
+modelFunction = {
+    'NumberModel': NumberRecognizer.recognize_number,
+    'OrdinalModel': NumberRecognizer.recognize_ordinal,
+    'PercentModel': NumberRecognizer.recognize_percentage,
+}
+
 
 def get_results(culture, model, source):
-    return []
+    return modelFunction[model](source, culture)
 
 @pytest.mark.parametrize("culture, model, source, expected_results", get_specs("Number"))
 def test_number_recognizer(culture, model, source, expected_results):
