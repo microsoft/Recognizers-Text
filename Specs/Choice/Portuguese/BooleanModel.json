@@ -1,6 +1,5 @@
 [{
   "Input": "Claro!",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "Não. Eu acho que não.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +46,6 @@
 ,
 {
   "Input": "nao. eu disse 5 de setembro",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -64,7 +61,6 @@
 ,
 {
   "Input": "sim... eu já disse que eu não gosto de cebola!",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -80,7 +76,6 @@
 ,
 {
   "Input": "Eu disse NÃO, não sim!",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +91,6 @@
 ,
 {
   "Input": "Sim. Eu disse não.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +106,6 @@
 ,
 {
   "Input": "👌 Tá ok",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +113,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.6
+        "score": 0.6
       }
     }
   ]
@@ -128,7 +121,6 @@
 ,
 {
   "Input": "👌👌👌",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
