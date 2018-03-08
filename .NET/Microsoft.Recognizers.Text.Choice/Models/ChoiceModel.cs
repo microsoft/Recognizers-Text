@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Microsoft.Recognizers.Text.Choice.Models
+namespace Microsoft.Recognizers.Text.Choice
 {
     public abstract class ChoiceModel : IModel
     {

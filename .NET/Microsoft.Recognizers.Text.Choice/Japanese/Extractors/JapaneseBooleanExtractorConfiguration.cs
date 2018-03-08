@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Choice.Extractors;
 
-namespace Microsoft.Recognizers.Text.Choice.Japanese.Extractors
+namespace Microsoft.Recognizers.Text.Choice.Japanese
 {
     public class JapaneseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {

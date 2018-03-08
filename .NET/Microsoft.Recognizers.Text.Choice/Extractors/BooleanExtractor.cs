@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Recognizers.Text.Choice.Extractors
+﻿namespace Microsoft.Recognizers.Text.Choice
 {
     public class BooleanExtractor : ChoiceExtractor
     {

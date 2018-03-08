@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Choice.Extractors;
-using Microsoft.Recognizers.Text.Choice.Models;
-using Microsoft.Recognizers.Text.Choice.Parsers;
-using Microsoft.Recognizers.Text.Choice.English.Extractors;
-using Microsoft.Recognizers.Text.Choice.Japanese.Extractors;
-using Microsoft.Recognizers.Text.Choice.Portuguese.Extractors;
+
+using Microsoft.Recognizers.Text.Choice.English;
+using Microsoft.Recognizers.Text.Choice.Japanese;
+using Microsoft.Recognizers.Text.Choice.Portuguese;
 
 namespace Microsoft.Recognizers.Text.Choice
 {

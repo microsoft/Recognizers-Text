@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Recognizers.Text.Choice.Parsers
+﻿namespace Microsoft.Recognizers.Text.Choice
 {
     public class BooleanParser : OptionsParser<bool>
     {

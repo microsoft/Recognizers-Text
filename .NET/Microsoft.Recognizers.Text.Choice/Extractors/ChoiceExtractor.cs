@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
 using NeoSmart.Unicode;
 
-namespace Microsoft.Recognizers.Text.Choice.Extractors
+namespace Microsoft.Recognizers.Text.Choice
 {
 
     public class ChoiceExtractDataResult
