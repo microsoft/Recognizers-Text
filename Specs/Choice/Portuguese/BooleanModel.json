@@ -1,9 +1,9 @@
 [{
-  "Input": "Sure!",
+  "Input": "Claro!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Sure",
+      "Text": "Claro",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
@@ -14,11 +14,41 @@
 }
 ,
 {
-  "Input": "I don't thing so. no.",
+  "Input": "Não. Eu acho que não.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "no",
+      "Text": "Não",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+		"score": 0.52
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Acho que sim.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sim",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.6
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "nao. eu disse 5 de setembro",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "nao",
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
@@ -29,56 +59,26 @@
 }
 ,
 {
-  "Input": "I think that would work. so yes I will.",
+  "Input": "sim... eu já disse que eu não gosto de cebola!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "yes",
+      "Text": "sim",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.4666666666666667
+		"score": 0.46
       }
     }
   ]
 }
 ,
 {
-  "Input": "no. I said the fourth of July",
+  "Input": "Eu disse NÃO, não sim!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "no",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": false,
-		"score": 0.4857142857142857
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "yes... I said no onions",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "yes",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": true,
-		"score": 0.52
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I said NO not yes!",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "NO",
+      "Text": "NÃO",
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
@@ -89,11 +89,11 @@
 }
 ,
 {
-  "Input": "Yes. I said no",
+  "Input": "Sim. Eu disse não.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Yes",
+      "Text": "Sim",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
@@ -104,7 +104,7 @@
 }
 ,
 {
-  "Input": "👌 It's ok",
+  "Input": "👌 Tá ok",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +112,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.55
+		"score": 0.6
       }
     }
   ]
