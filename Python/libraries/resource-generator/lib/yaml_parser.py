@@ -69,7 +69,7 @@ class Dictionary:
 class List:
     yaml_tag = u'!list'
     def __init__(self, type_, entries):
-        self.type = type_
+        self.type_ = type_
         self.entries = entries
 
     @classmethod

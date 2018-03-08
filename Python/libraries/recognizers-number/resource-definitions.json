@@ -5,54 +5,54 @@
             "input": [ "Base-Numbers" ],
             "output": "base_numbers",
             "header": [
-                "export namespace BaseNumbers {"
+                "class BaseNumbers:"
             ],
-            "footer": [ "}" ]
+            "footer": [ "" ]
         },
         {
             "input": [ "English", "English-Numbers" ],
             "output": "english_numeric",
             "header": [
-                "import { BaseNumbers } from \"./baseNumbers\";",
-                "export namespace EnglishNumeric {"
+                "from .base_numbers import BaseNumbers",
+                "class EnglishNumeric:"
             ],
-            "footer": [ "}" ]
+            "footer": [ "" ]
         },
         {
             "input": [ "Spanish", "Spanish-Numbers" ],
             "output": "spanish_numeric",
             "header": [
-                "import { BaseNumbers } from \"./baseNumbers\";",
-                "export namespace SpanishNumeric {"
+                "from .base_numbers import BaseNumbers",
+                "class SpanishNumeric:"
             ],
-            "footer": [ "}" ]
+            "footer": [ "" ]
         },
         {
             "input": [ "Portuguese", "Portuguese-Numbers" ],
             "output": "portuguese_numeric",
             "header": [
-                "import { BaseNumbers } from \"./baseNumbers\";",
-                "export namespace PortugueseNumeric {"
+                "from .base_numbers import BaseNumbers",
+                "class PortugueseNumeric:"
             ],
-            "footer": [ "}" ]
+            "footer": [ "" ]
         },
         {
             "input": [ "Chinese", "Chinese-Numbers" ],
             "output": "chinese_numeric",
             "header": [
-                "import { BaseNumbers } from \"./baseNumbers\";",
-                "export namespace ChineseNumeric {"
+                "from .base_numbers import BaseNumbers",
+                "class ChineseNumeric:"
             ],
-            "footer": [ "}" ]
+            "footer": [ "" ]
         },
         {
             "input": [ "French", "French-Numbers" ],
             "output": "french_numeric",
             "header": [
-                "import { BaseNumbers } from \"./baseNumbers\";",
-                "export namespace FrenchNumeric {"
+                "from .base_numbers import BaseNumbers",
+                "class FrenchNumeric:"
             ],
-            "footer": [ "}" ]
+            "footer": [ "" ]
         }
     ]
 }

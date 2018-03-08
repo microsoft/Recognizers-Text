@@ -9,7 +9,7 @@ class Startup:
     def main(self, argv) -> int:
         resource_definition_path = argv[1]
         specs = json.load(open(resource_definition_path), object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
-        output_path = specs.outputPath
+        output_path = os.path.join(os.path.dirname(resource_definition_path), specs.outputPath)
 
         for config in specs.configFiles:
             input_file_path = os.path.join(*RESOURCES_PATH, *config.input) + '.yaml'
