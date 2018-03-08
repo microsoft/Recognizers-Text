@@ -1,0 +1,9 @@
+﻿---
+LangMarker: Por
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
+TrueRegex: !simpleRegex
+  def: \b(verdade|verdadeir[oa]|sim|isso|claro|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(falso|n[aã]o|incorreto|nada disso)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
