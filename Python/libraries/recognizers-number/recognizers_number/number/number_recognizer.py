@@ -1,7 +1,5 @@
 from enum import Flag
-from recognizers_text.culture import Culture
-from recognizers_text.recognizer import Recognizer
-from recognizers_text.model import Model
+from recognizers_text import Culture, Recognizer, Model
 from .models import NumberModel, OrdinalModel, PercentModel
 
 class NumberOptions(Flag):

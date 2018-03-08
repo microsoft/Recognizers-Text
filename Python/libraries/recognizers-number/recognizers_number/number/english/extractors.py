@@ -1,70 +1,77 @@
 import re
 from typing import Pattern, List, NamedTuple
 
+from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.english_numeric import EnglishNumeric
 from recognizers_number.number.extractors import BaseNumberExtractor, re_val
 
 class EnglishNumberExtractor(BaseNumberExtractor):
-    def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
+    @property
+    def regexes(self) -> List[re_val]:
         return self.__regexes
 
+    @property
     def _extract_type(self) -> str:
         return 'SYS_NUM'
 
+    @property
     def _negative_number_terms(self) -> Pattern:
         return self.__negative_number_terms
 
-    def __init__(self, mode):
-        super()
+    def __init__(self, mode: NumberMode=NumberMode.DEFAULT):
         self.__negative_number_terms=re.compile(EnglishNumeric.NegativeNumberTermsRegex)
-        self.__regexes=list()
+        self.__regexes: List[re_val] = list()
         cardinal_ex=None
 
-        # TODO switch mode
-
+        if mode is NumberMode.PURE_NUMBER:
+            cardinal_ex=EnglishCardinalExtractor(EnglishNumeric.PlaceHolderPureNumber)
+        elif mode is NumberMode.CURRENCY:
+            self.__regexes.append(re_val(re=EnglishNumeric.CurrencyRegex, val="IntegerNum"))
+        
         if cardinal_ex is None:
             cardinal_ex=EnglishCardinalExtractor(None)
-        for regex in list(cardinal_ex.regexes):
-            self.__regexes.append(regex)
+
+        self.__regexes.extend(cardinal_ex.regexes)
         
         fraction_ex=EnglishFractionExtractor()
-        for regex in list(fraction_ex.regexes):
-            self.__regexes.append(regex)
+        self.__regexes.extend(fraction_ex.regexes)
 
 class EnglishCardinalExtractor(BaseNumberExtractor):
-    def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
+    @property
+    def regexes(self) -> List[re_val]:
         return self.__regexes
-
+        
+    @property
     def _extract_type(self) -> str:
         return 'SYS_NUM_CARDINAL'
 
+    @property
     def _negative_number_terms(self): pass
 
     def __init__(self, placeholder):
-        super()
-        self.__regexes: List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]
+        self.__regexes: List[re_val] = list()
 
         # Add integer regexes
         integer_ex=EnglishIntegerExtractor(placeholder)
-        for regex in list(integer_ex.regexes):
-            self.__regexes.append(regex)
+        self.__regexes.extend(integer_ex.regexes)
             
         # Add double regexes
         double_ex=EnglishDoubleExtractor(placeholder)
-        for regex in list(double_ex.regexes):
-            self.__regexes.append(regex)
+        self.__regexes.extend(double_ex.regexes)
 
 class EnglishIntegerExtractor(BaseNumberExtractor):
+    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
+    @property
     def _extract_type(self) -> str:
         return 'SYS_NUM_INTEGER'
 
+    @property
     def _negative_number_terms(self): pass
 
     def __init__(self, placeholder):
-        super()
         self.__regexes=list([
             re_val(
                 re=EnglishNumeric.NumbersWithPlaceHolder,
@@ -73,7 +80,7 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
                 re=EnglishNumeric.NumbersWithSuffix,
                 val='IntegerNum'),
             re_val(
-                re=None,
+                re=self._generate_format_regex(LongFormatMode.INTEGER_COMMA, placeholder),
                 val='IntegerNum'),
             re_val(
                 re=EnglishNumeric.RoundNumberIntegerRegexWithLocks,
@@ -90,16 +97,18 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
         ])
 
 class EnglishDoubleExtractor(BaseNumberExtractor):
+    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
+    @property
     def _extract_type(self) -> str:
         return 'SYS_NUM_DOUBLE'
 
+    @property
     def _negative_number_terms(self): pass
 
     def __init__(self, placeholder):
-        super()
         self.__regexes=list([
             re_val(
                 re=EnglishNumeric.DoubleDecimalPointRegex(placeholder),
@@ -108,7 +117,7 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
                 re=EnglishNumeric.DoubleWithoutIntegralRegex(placeholder),
                 val='DoubleNum'),
             re_val(
-                re=None,
+                re=self._generate_format_regex(LongFormatMode.DOUBLE_COMMA_DOT, placeholder),
                 val='DoubleNum'),
             re_val(
                 re=EnglishNumeric.DoubleWithMultiplierRegex,
@@ -128,16 +137,18 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
         ])
 
 class EnglishFractionExtractor(BaseNumberExtractor):
+    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
+    @property
     def _extract_type(self) -> str:
         return 'SYS_NUM_FRACTION'
 
+    @property
     def _negative_number_terms(self): pass
 
     def __init__(self):
-        super()
         self.__regexes=list([
             re_val(
                 re=EnglishNumeric.FractionNotationWithSpacesRegex,
@@ -157,16 +168,18 @@ class EnglishFractionExtractor(BaseNumberExtractor):
         ])
 
 class EnglishOrdinalExtractor(BaseNumberExtractor):
+    @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
 
+    @property
     def _extract_type(self) -> str:
         return 'SYS_NUM_ORDINAL'
 
+    @property
     def _negative_number_terms(self): pass
 
     def __init__(self):
-        super()
         self.__regexes=list([
             re_val(
                 re=EnglishNumeric.OrdinalSuffixRegex,

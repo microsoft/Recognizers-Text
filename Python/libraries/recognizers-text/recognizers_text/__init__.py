@@ -1,4 +1,4 @@
-from .culture import Culture
+from .culture import *
 from .recognizer import *
 from .model import *
 from .extractor import *

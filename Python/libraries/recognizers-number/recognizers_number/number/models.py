@@ -1,8 +1,24 @@
 from abc import ABC, abstractproperty
 from typing import List, Dict, Generic, TypeVar, Callable, Tuple, NamedTuple, Optional
+from enum import Enum
+from collections import namedtuple
+
 from recognizers_text import Model, ModelResult
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_text.parser import ParseResult, Parser
+
+class NumberMode(Enum):
+    DEFAULT=0,
+    CURRENCY=1,
+    PURE_NUMBER=2
+
+long_format_type = namedtuple('long_format_type', ['thousands_mark', 'decimals_mark'])
+
+class LongFormatMode:
+    INTEGER_COMMA=long_format_type(thousands_mark=',', decimals_mark=None)
+    INTEGER_DOT=long_format_type(thousands_mark='.', decimals_mark=None)
+    DOUBLE_COMMA_DOT=long_format_type(thousands_mark=',', decimals_mark='.')
+    DOUBLE_DOT_COMMA=long_format_type(thousands_mark='.', decimals_mark=',')
 
 class AbstractNumberModel(Model):
     @abstractproperty
