@@ -3,6 +3,8 @@ import { BooleanModel } from "./models";
 import { BooleanExtractor } from "./extractors";
 import { BooleanParser } from "./parsers";
 import { EnglishBooleanExtractorConfiguration } from "./english/boolean";
+import { JapaneseBooleanExtractorConfiguration } from "./japanese/boolean";
+import { PortugueseBooleanExtractorConfiguration } from "./portuguese/boolean";
 
 export enum ChoiceOptions {
     None = 0,
@@ -25,6 +27,20 @@ export default class ChoiceRecognizer extends Recognizer<ChoiceOptions> {
         this.registerModel("BooleanModel", Culture.English, (options) => new BooleanModel(
             new BooleanParser(),
             new BooleanExtractor(new EnglishBooleanExtractorConfiguration())
+        ));
+        //#endregion
+
+        //#region Japanese
+        this.registerModel("BooleanModel", Culture.Japanese, (options) => new BooleanModel(
+            new BooleanParser(),
+            new BooleanExtractor(new JapaneseBooleanExtractorConfiguration())
+        ));
+        //#endregion
+
+        //#region Portuguese
+        this.registerModel("BooleanModel", Culture.Portuguese, (options) => new BooleanModel(
+            new BooleanParser(),
+            new BooleanExtractor(new PortugueseBooleanExtractorConfiguration())
         ));
         //#endregion
     }

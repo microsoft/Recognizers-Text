@@ -5,4 +5,8 @@ export { ChoiceModel, BooleanModel } from "./choice/models";
 export { IChoiceExtractorConfiguration, ChoiceExtractor, IBooleanExtractorConfiguration, BooleanExtractor } from "./choice/extractors";
 export { IChoiceParserConfiguration, ChoiceParser, BooleanParser } from "./choice/parsers";
 export { EnglishBooleanExtractorConfiguration } from "./choice/english/boolean";
+export { PortugueseBooleanExtractorConfiguration } from "./choice/portuguese/boolean";
+export { JapaneseBooleanExtractorConfiguration } from "./choice/japanese/boolean";
 export { EnglishChoice } from "./resources/englishChoice";
+export { PortugueseChoice } from "./resources/portugueseChoice";
+export { JapaneseChoice } from "./resources/japaneseChoice";
