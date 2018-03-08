@@ -9,7 +9,9 @@ export interface ITimePeriodExtractorConfiguration {
     simpleCasesRegex: RegExp[];
     tillRegex: RegExp;
     timeOfDayRegex: RegExp;
+    generalEndingRegex: RegExp;
     singleTimeExtractor: IDateTimeExtractor;
+    integerExtractor: IExtractor;
     getFromTokenIndex(text: string): { matched: boolean, index: number };
     hasConnectorToken(text: string): boolean;
     getBetweenTokenIndex(text: string): { matched: boolean, index: number };
@@ -56,7 +58,82 @@ export class BaseTimePeriodExtractor implements IDateTimeExtractor {
     private mergeTwoTimePoints(text: string, refDate: Date): Array<Token> {
         let ret = [];
         let ers = this.config.singleTimeExtractor.extract(text, refDate);
+        let numErs = this.config.integerExtractor.extract(text);
 
+        // Check if it is an ending number
+        if (numErs.length > 0)
+        {
+            let timeNumbers: Array<ExtractResult> = [];
+
+            // check if it is a ending number
+            let endingNumber = false;
+            let num = numErs[numErs.length - 1];
+            if (num.start + num.length == text.length)
+            {
+                endingNumber = true;
+            }
+            else
+            {
+                let afterStr = text.substr(num.start + num.length);
+                let endingMatch = afterStr.match(this.config.generalEndingRegex);
+                if (endingMatch)
+                {
+                    endingNumber = true;
+                }
+            }
+
+            if (endingNumber)
+            {
+                timeNumbers.push(num);
+            }
+
+            let i = 0;
+            let j = 0;
+            while (i < numErs.length)
+            {
+                // find subsequent time point
+                let numEndPoint = numErs[i].start + numErs[i].length;
+                while (j < ers.length && ers[j].start <= numEndPoint)
+                {
+                    j++;
+                }
+
+                if (j >= ers.length)
+                {
+                    break;
+                }
+
+                // check connector string
+                let midStr = text.substr(numEndPoint, ers[j].start - numEndPoint);
+                let match = midStr.match(this.config.tillRegex);
+                if (match && match[0].length === midStr.trim().length)
+                {
+                    timeNumbers.push(numErs[i]);
+                }
+                i++;
+            }
+
+            // check overlap
+            for (let timeNum of timeNumbers)
+            {
+                let overlap = false;
+                for (let er of ers)
+                {
+                    if (er.start <= timeNum.start && er.start + er.length >= timeNum.start)
+                    {
+                        overlap = true;
+                    }
+                }
+
+                if (!overlap)
+                {
+                    ers.push(timeNum);
+                }
+            }
+
+            ers = ers.sort((x, y) => (x.start - y.start));
+        }
+        
         // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
         let idx = 0;
         while (idx < ers.length - 1) {
@@ -116,9 +193,11 @@ export class BaseTimePeriodExtractor implements IDateTimeExtractor {
 export interface ITimePeriodParserConfiguration {
     timeExtractor: IDateTimeExtractor;
     timeParser: BaseTimeParser;
+    integerExtractor: IExtractor;
     pureNumberFromToRegex: RegExp;
     pureNumberBetweenAndRegex: RegExp;
     timeOfDayRegex: RegExp;
+    tillRegex: RegExp;
     numbers: ReadonlyMap<string, number>;
     utilityConfiguration: IDateTimeUtilityConfiguration;
     getMatchedTimexRange(text: string): {
@@ -209,21 +288,32 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                     RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.toLowerCase()).length;
                 if (!StringUtility.isNullOrEmpty(amStr) || rightAmValid) {
 
-                    if (beginHour >= 12) {
-                        beginHour -= 12;
-                    }
                     if (endHour >= 12) {
                         endHour -= 12;
                     }
+
+                    if (beginHour >= 12 && beginHour - 12 < endHour) {
+                        beginHour -= 12;
+                    }
+
+                    // Resolve case like "11 to 3am"
+                    if (beginHour < 12 && beginHour > endHour) {
+                        beginHour += 12;
+                    }
+
                     isValid = true;
                 }
                 else if (!StringUtility.isNullOrEmpty(pmStr) || rightPmValid) {
-                    if (beginHour < 12) {
-                        beginHour += 12;
-                    }
+                    
                     if (endHour < 12) {
                         endHour += 12;
                     }
+
+                    // Resolve case like "11 to 3pm"
+                    if (beginHour + 12 < endHour) {
+                        beginHour += 12;
+                    }
+
                     isValid = true;
                 }
             }
@@ -231,6 +321,10 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             if (isValid) {
                 let beginStr = "T" + FormatUtil.toString(beginHour, 2);
                 let endStr = "T" + FormatUtil.toString(endHour, 2);
+
+                if (beginHour >= endHour) {
+                    endHour += 24
+                }
 
                 ret.timex = `(${beginStr},${endStr},PT${endHour - beginHour}H)`;
 
@@ -252,6 +346,49 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         let ers = this.config.timeExtractor.extract(text, referenceTime);
         let pr1: DateTimeParseResult = null;
         let pr2: DateTimeParseResult = null;
+
+        let validTimeNumber = false;
+
+        if (ers.length !== 2) {
+            if (ers.length === 1) {
+                let numErs = this.config.integerExtractor.extract(text);
+
+                for (let num of numErs) {
+                    let midStrBegin = 0, midStrEnd = 0;
+                    // ending number
+                    if (num.start > ers[0].start + ers[0].length)
+                    {
+                        midStrBegin = ers[0].start + ers[0].length;
+                        midStrEnd = num.start - midStrBegin;
+                    }
+                    else if (num.start + num.length < ers[0].start)
+                    {
+                        midStrBegin = num.start + num.length;
+                        midStrEnd = ers[0].start - midStrBegin;
+                    }
+
+                    // check if the middle string between the time point and the valid number is a connect string.
+                    var middleStr = text.substr(midStrBegin, midStrEnd);
+                    // var tillMatch = this.config.tillRegex.match(middleStr);
+                    var tillMatch = middleStr.match(this.config.tillRegex);
+                    if (tillMatch)
+                    {
+                        // num.data = null;
+                        num.type = Constants.SYS_DATETIME_TIME;
+                        ers.push(num);
+                        validTimeNumber = true;
+                        break;
+                    }
+                }
+
+                ers = ers.sort((x, y) => (x.start - y.start));
+            }
+
+            if (!validTimeNumber) {
+                return ret;
+            }
+        }
+
         if (ers.length !== 2) {
             return ret;
         }
@@ -267,13 +404,38 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         let ampmStr2 = pr2.value.comment;
         let beginTime: Date = pr1.value.futureValue;
         let endTime: Date = pr2.value.futureValue;
+
         if (!StringUtility.isNullOrEmpty(ampmStr2) && ampmStr2.endsWith("ampm")
-            && endTime <= beginTime && endTime.getHours() < 12) {
-            endTime.setHours(endTime.getHours() + 12);
+            && endTime <= beginTime && DateUtils.addHours(endTime, 12) > beginTime) {
+            endTime = DateUtils.addHours(endTime, 12);
             pr2.value.futureValue = endTime;
+            pr2.timexStr = `T${endTime.getHours()}`;
+            if (endTime.getMinutes() > 0) {
+                pr2.timexStr = `${pr2.timexStr}:${endTime.getMinutes()}`;
+            }
         }
 
-        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT${DateUtils.totalHours(endTime, beginTime)}H)`;
+        if (!StringUtility.isNullOrEmpty(ampmStr1) && ampmStr1.endsWith("ampm")
+            && endTime > DateUtils.addHours(beginTime, 12)) 
+        {
+            beginTime = DateUtils.addHours(beginTime, 12);
+            pr1.value.futureValue = beginTime;
+            pr1.timexStr = `T${beginTime.getHours()}`;
+            if (beginTime.getMinutes() > 0) {
+                pr1.timexStr = `${pr1.timexStr}:${beginTime.getMinutes()}`;
+            }
+        }
+
+        if (endTime < beginTime) {
+            endTime = DateUtils.addDays(endTime, 1);
+        }
+
+        let hours = DateUtils.totalHoursFloor(endTime, beginTime);
+        let minutes = DateUtils.totalMinutesFloor(endTime, beginTime) % 60;
+        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT` + 
+                    (hours > 0 ? `${hours}H` : '') +
+                    (minutes > 0 ? `${minutes}M` : '') + 
+                    ')';
         ret.futureValue = ret.pastValue = { item1: beginTime, item2: endTime };
         ret.success = true;
 
