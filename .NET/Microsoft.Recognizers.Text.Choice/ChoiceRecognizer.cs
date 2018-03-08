@@ -3,6 +3,7 @@
 using Microsoft.Recognizers.Text.Choice.English;
 using Microsoft.Recognizers.Text.Choice.Japanese;
 using Microsoft.Recognizers.Text.Choice.Portuguese;
+using Microsoft.Recognizers.Text.Choice.Spanish;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
