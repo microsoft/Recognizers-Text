@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
+using Microsoft.Recognizers.Text.Choice.Extractors;
 
-using Microsoft.Recognizers.Definitions.English;
-
-namespace Microsoft.Recognizers.Text.Choice.English
+namespace Microsoft.Recognizers.Text.Choice.Spanish.Extractors
 {
-    public class EnglishBooleanExtractorConfiguration : IBooleanExtractorConfiguration
+    public class SpanishBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex = 
             new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Choice.English
             {FalseRegex, Constants.SYS_BOOLEAN_FALSE }
         };
 
-        public EnglishBooleanExtractorConfiguration(bool onlyTopMatch = true)
+        public SpanishBooleanExtractorConfiguration(bool onlyTopMatch = true)
         {
             this.OnlyTopMatch = onlyTopMatch;
         }

@@ -53,6 +53,10 @@ namespace Microsoft.Recognizers.Text.Choice
             RegisterModel<BooleanModel>(
                 Culture.Portuguese,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new PortugueseBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Spanish,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new SpanishBooleanExtractorConfiguration())));
         }
     }
 }

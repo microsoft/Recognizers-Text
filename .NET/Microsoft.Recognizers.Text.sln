@@ -39,6 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Portuguese\Portuguese-DateTime.yaml = ..\Patterns\Portuguese\Portuguese-DateTime.yaml
 		..\Patterns\Portuguese\Portuguese-Numbers.yaml = ..\Patterns\Portuguese\Portuguese-Numbers.yaml
 		..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml = ..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml
+		..\Patterns\Spanish\Spanish-Choice.yaml = ..\Patterns\Spanish\Spanish-Choice.yaml
 		..\Patterns\Spanish\Spanish-DateTime.yaml = ..\Patterns\Spanish\Spanish-DateTime.yaml
 		..\Patterns\Spanish\Spanish-Numbers.yaml = ..\Patterns\Spanish\Spanish-Numbers.yaml
 		..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml = ..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml
