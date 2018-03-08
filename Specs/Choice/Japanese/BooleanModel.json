@@ -1,5 +1,6 @@
 [{
   "Input": "はい!",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,6 +16,7 @@
 ,
 {
   "Input": "いいえ、駄目です.",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -23,6 +25,22 @@
       "Resolution": {
         "value": false,
 		"score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌👌👌",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.6
       }
     }
   ]

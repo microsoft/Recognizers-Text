@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -35,6 +35,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\German\German-Numbers.yaml = ..\Patterns\German\German-Numbers.yaml
 		..\Patterns\German\German-NumbersWithUnit.yaml = ..\Patterns\German\German-NumbersWithUnit.yaml
 		..\Patterns\Japanese\Japanese-Choice.yaml = ..\Patterns\Japanese\Japanese-Choice.yaml
+		..\Patterns\Portuguese\Portuguese-Choice.yaml = ..\Patterns\Portuguese\Portuguese-Choice.yaml
 		..\Patterns\Portuguese\Portuguese-DateTime.yaml = ..\Patterns\Portuguese\Portuguese-DateTime.yaml
 		..\Patterns\Portuguese\Portuguese-Numbers.yaml = ..\Patterns\Portuguese\Portuguese-Numbers.yaml
 		..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml = ..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml
