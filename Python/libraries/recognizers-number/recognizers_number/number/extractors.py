@@ -29,17 +29,37 @@ class BaseNumberExtractor(Extractor):
         result: List[ExtractResult]=list()
         match_source: Dict[[Match], str]=dict()
         matched: List[bool]=[False] *len(source)
-        
-        matches_list = map(lambda x : matches_val(matches=re.findall(x.re, source), val=x.val), self.regexes)
-        matches_list = filter(lambda x : x.matches, matches_list)
+
+        matches_list = list(map(lambda x : matches_val(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes))
+        matches_list = list(filter(lambda x : x.matches is not None, matches_list))
 
         for ml in matches_list:
             for m in ml.matches:
-                for j in range(len(source)):
-                    matched[m.index+j]=True
-                match_source[m]=ml.value
+                for j in range(len(m.group())):
+                    matched[m.start()+j]=True
+                match_source[m]=ml.val
 
-        # TODO: extractor
+        last = -1
+        for i in range(len(source)):
+            if not matched[i]:
+                last = i
+            else:
+                if (i+1 == len(source) or not matched[i+1]):
+                    start = last+1
+                    length = i-last
+                    substr = source[start : start+length].strip()
+                    srcmatch = next(x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length))
+
+                    # TODO extract negative numbers
+                    if srcmatch is not None:
+                        value = ExtractResult()
+                        value.start = start
+                        value.length = length
+                        value.text = substr
+                        value.type = self._extract_type
+                        if srcmatch in match_source:
+                            value.data = srcmatch
+                        result.append(value)
         return result
 
     def _generate_format_regex(self, format_type: long_format_type, placeholder: str=None) -> Pattern:

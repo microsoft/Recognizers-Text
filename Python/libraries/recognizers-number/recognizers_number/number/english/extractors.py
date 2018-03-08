@@ -29,7 +29,7 @@ class EnglishNumberExtractor(BaseNumberExtractor):
             self.__regexes.append(re_val(re=EnglishNumeric.CurrencyRegex, val="IntegerNum"))
         
         if cardinal_ex is None:
-            cardinal_ex=EnglishCardinalExtractor(None)
+            cardinal_ex=EnglishCardinalExtractor()
 
         self.__regexes.extend(cardinal_ex.regexes)
         
@@ -48,7 +48,7 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
     @property
     def _negative_number_terms(self): pass
 
-    def __init__(self, placeholder):
+    def __init__(self, placeholder: str=EnglishNumeric.PlaceHolderDefault):
         self.__regexes: List[re_val] = list()
 
         # Add integer regexes
@@ -71,10 +71,10 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
     @property
     def _negative_number_terms(self): pass
 
-    def __init__(self, placeholder):
-        self.__regexes=list([
+    def __init__(self, placeholder: str=EnglishNumeric.PlaceHolderDefault):
+        self.__regexes=[
             re_val(
-                re=EnglishNumeric.NumbersWithPlaceHolder,
+                re=EnglishNumeric.NumbersWithPlaceHolder(placeholder),
                 val='IntegerNum'),
             re_val(
                 re=EnglishNumeric.NumbersWithSuffix,
@@ -94,7 +94,7 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
             re_val(
                 re=EnglishNumeric.AllIntRegexWithDozenSuffixLocks,
                 val='IntegerEng')
-        ])
+        ]
 
 class EnglishDoubleExtractor(BaseNumberExtractor):
     @property
@@ -109,7 +109,7 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
     def _negative_number_terms(self): pass
 
     def __init__(self, placeholder):
-        self.__regexes=list([
+        self.__regexes=[
             re_val(
                 re=EnglishNumeric.DoubleDecimalPointRegex(placeholder),
                 val='DoubleNum'),
@@ -134,7 +134,7 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
             re_val(
                 re=EnglishNumeric.DoubleCaretExponentialNotationRegex,
                 val='DoublePow')
-        ])
+        ]
 
 class EnglishFractionExtractor(BaseNumberExtractor):
     @property
@@ -149,7 +149,7 @@ class EnglishFractionExtractor(BaseNumberExtractor):
     def _negative_number_terms(self): pass
 
     def __init__(self):
-        self.__regexes=list([
+        self.__regexes=[
             re_val(
                 re=EnglishNumeric.FractionNotationWithSpacesRegex,
                 val='FracNum'),
@@ -165,7 +165,7 @@ class EnglishFractionExtractor(BaseNumberExtractor):
             re_val(
                 re=EnglishNumeric.FractionPrepositionRegex,
                 val='FracEng')
-        ])
+        ]
 
 class EnglishOrdinalExtractor(BaseNumberExtractor):
     @property
@@ -180,7 +180,7 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
     def _negative_number_terms(self): pass
 
     def __init__(self):
-        self.__regexes=list([
+        self.__regexes=[
             re_val(
                 re=EnglishNumeric.OrdinalSuffixRegex,
                 val='OrdinalNum'),
@@ -193,4 +193,4 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
             re_val(
                 re=EnglishNumeric.OrdinalRoundNumberRegex,
                 val='OrdEng')
-        ])
+        ]

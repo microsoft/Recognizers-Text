@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 NAME = "recognizers-text-number"
 VERSION = "1.0.0"
-REQUIRES = ['recognizers-text']
+REQUIRES = ['recognizers-text', 'regex']
 
 setup(
     name=NAME,

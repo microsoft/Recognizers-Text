@@ -2,7 +2,7 @@ import pytest
 from recognizers_text import Culture
 from recognizers_number.number import NumberModel
 from recognizers_number.number import NumberRecognizer
-from recognizers_number.number.english.extractors import EnglishNumberExtractor
+from recognizers_number.number.english.extractors import EnglishIntegerExtractor
 from recognizers_number.number import NumberOptions
 from recognizers_number.number.parsers import BaseNumberParser
 
@@ -23,8 +23,10 @@ class TestInitializationNumberRecognizer():
         assert type(actual.parser) is not type(expected.parser)
 
     def test_without_culture_use_target_culture(self):
-       recognizer = NumberRecognizer(self.english_culture)
-       self.assert_models_equal(self.control_model, recognizer.get_number_model())
+        extractor = EnglishIntegerExtractor()
+        pepe=extractor.extract('number one and two')
+        recognizer = NumberRecognizer(self.english_culture)
+        self.assert_models_equal(self.control_model, recognizer.get_number_model())
 
     def test_withOtherCulture_not_use_target_culture(self):
         recognizer = NumberRecognizer(self.english_culture)
