@@ -7,7 +7,7 @@
 # ------------------------------------------------------------------------------
 
 class BaseNumbers:
-    NumberReplaceToken = '@builtin.num'
+    NumberReplaceToken = f'@builtin.num'
     IntegerRegexDefinition = lambda placeholder, thousandsmark: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({thousandsmark}\\d{{3}})+(?={placeholder})'
     DoubleRegexDefinition = lambda placeholder, thousandsmark, decimalmark: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({thousandsmark}\\d{{3}})+{decimalmark}\\d+(?={placeholder})'
-    PlaceHolderDefault = '\\\\D|\\\\b'
+    PlaceHolderDefault = f'\\\\D|\\\\b'
