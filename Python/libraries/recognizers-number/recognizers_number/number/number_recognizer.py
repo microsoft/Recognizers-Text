@@ -1,6 +1,7 @@
 from enum import Flag
 from recognizers_text import Culture, Recognizer, Model
-from .models import NumberModel, OrdinalModel, PercentModel
+from typing import List
+from .models import NumberModel, OrdinalModel, PercentModel, ModelResult
 
 class NumberOptions(Flag):
     NONE = 0
@@ -25,3 +26,15 @@ class NumberRecognizer(Recognizer[NumberOptions]):
 
     def get_number_model(self, culture: str=None, fallback_to_default_culture: bool=True) -> Model:
         return self.get_model("NumberModel", culture, fallback_to_default_culture)
+
+    @staticmethod
+    def recognize_number(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+        pass
+
+    @staticmethod
+    def recognize_ordinal(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+        pass
+
+    @staticmethod
+    def recognize_percentage(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+        pass

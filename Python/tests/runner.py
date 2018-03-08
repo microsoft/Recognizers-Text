@@ -3,7 +3,6 @@ import glob
 import os
 import json
 
-
 def splitall(path):
     allparts = []
     while 1:
@@ -21,7 +20,8 @@ def splitall(path):
 
 def get_suite_config(json_path):
     parts = splitall(json_path)
-    return { "type": parts[2], "sub_type": parts[4], "language": parts[3] }
+    filename, file_extension = os.path.splitext(parts[4])
+    return { "type": parts[2], "sub_type": filename, "language": parts[3] }
 
 def get_suite(json_path):
     print(json_path)
@@ -40,17 +40,9 @@ def get_specs(spec_type):
             if "NotSupportedByDesign" in spec and "python" in spec["NotSupportedByDesign"]:
                 continue
             if "NotSupported" in spec and "python" in spec["NotSupported"]:
+                ret_specs.append(pytest.param(sp["config"]["language"], sp["config"]["sub_type"], spec["Input"], spec["Results"], marks=pytest.mark.skip(reason="Not supported")))
                 continue
             ret_specs.append((sp["config"]["language"], sp["config"]["sub_type"], spec["Input"], spec["Results"]))
     return ret_specs
 
 specs = get_all_specs()
-
-def get_model_function(culture, model):
-    pass
-    
-@pytest.mark.parametrize("culture, model, source, results", get_specs("Number"))
-def test_if_it_works(culture, model, source, expected_results):
-    func = get_model_function(culture, model)
-    result = func(source)
-    assert result == expected_results
