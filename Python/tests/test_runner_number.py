@@ -8,7 +8,6 @@ modelFunction = {
     'PercentModel': NumberRecognizer.recognize_percentage,
 }
 
-
 def get_results(culture, model, source):
     return modelFunction[model](source, culture)
 
