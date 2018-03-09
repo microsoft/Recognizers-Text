@@ -13,7 +13,7 @@ class NumberParserConfiguration(ABC):
     @abstractproperty
     def round_number_map(self) -> Dict[str, int]: pass
     @abstractproperty
-    def culture_Info(self) -> str: pass
+    def culture_info(self) -> str: pass
     @abstractproperty
     def digital_number_regex(self) -> Pattern: pass
     @abstractproperty
@@ -41,9 +41,9 @@ class NumberParserConfiguration(ABC):
     @abstractproperty
     def written_fraction_separator_texts(self) -> List[str]: pass
     @abstractproperty
-    def normalize_token_set(tokens: List[str], context: ParseResult) -> List[str]: pass
+    def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]: pass
     @abstractproperty
-    def resolve_composite_number(number_str: str) -> int: pass
+    def resolve_composite_number(self, number_str: str) -> int: pass
     
 class BaseNumberParser(Parser):
     @abstractproperty
@@ -52,7 +52,7 @@ class BaseNumberParser(Parser):
     def __init__(self, config: NumberParserConfiguration):
         self.config: NumberParserConfiguration = config
 
-        singleIntFrac = f"{self.config.word_separator_token}| -|{self.get_key_regex(self.config.cardinal_number_map.keys())}|{self.get_key_regex(self.config.ordinal_number_map.keys())}"
+        singleIntFrac = f"{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}"
 
         #self.text_number_regex: Pattern = RegExpUtility.getSafeRegExp(String.raw`(?=\b)(${singleIntFrac})(?=\b)`, "gis")
         #self.arabic_number_regex: Pattern = RegExpUtility.getSafeRegExp(String.raw`\d+`, "is")
@@ -67,5 +67,42 @@ class BaseNumberParser(Parser):
             return None
         return ParseResult(source)
 
-    def get_key_regex(self, keys: List[str]) -> str:
+    def _get_key_regex(self, keys: List[str]) -> str:
         return str.join('|', sorted(keys, key = len, reverse=True))
+
+    def _digit_number_parse(self, ext_result: ExtractResult) -> ParseResult:
+        pass
+    
+    def _is_digit(self, c: str) -> bool:
+        pass
+    
+    def _frac_like_number_parse(self, ext_result: ExtractResult) -> ParseResult:
+        pass
+    
+    def _text_number_parse(self, ext_result: ExtractResult) -> ParseResult:
+        pass
+
+    def _power_number_parse(self, ext_result: ExtractResult) -> ParseResult:
+        pass
+
+    def __split_multi(self, source: str, tokens: List[str]) -> List[str]:
+        pass
+
+    def __get_matches(self, source: str) -> List[str]:
+        pass
+
+    def __is_composable(self, big: int, small: int) -> bool:
+        pass
+
+    def __get_int_value(self, matches: List[str]) -> int:
+        pass
+
+    def __get_point_value(self, matches: List[str]) -> float:
+        pass
+
+    def __get_digital_value(self, digitstr: str, power: int) -> float:
+        pass
+
+class BasePercentageParser(BaseNumberParser):
+    def parse(self, source: ExtractResult) -> Optional[ParseResult]:
+        pass
