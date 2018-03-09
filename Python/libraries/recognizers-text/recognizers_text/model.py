@@ -40,7 +40,7 @@ class ModelFactory(Generic[TModelOptions]):
             result=self.try_get_model(model_type_name, ModelFactory.__fallback_to_default_culture, options)
         if result is not None:
             return result
-        raise NotImplementedError
+        raise ValueError(f'Could not find Model with the specified configuration: {culture},{model_type_name}')
 
     def register_model(self, model_type_name: str, culture: str, model_ctor: Callable[[TModelOptions], Model]):
         key=model_ctor_key(model_type=model_type_name, culture=culture)
