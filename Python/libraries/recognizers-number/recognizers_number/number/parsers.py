@@ -99,8 +99,64 @@ class BaseNumberParser(Parser):
         pass
 
     def __get_digital_value(self, digitstr: str, power: int) -> float:
-        pass
+        tmp: float = 0
+        scale: float = 10
+        dot: bool = False
+        negative: bool = False
+        fraction: bool = False
+
+        call_stack: List[int] = list()
+
+        for c in digitstr:
+            if c == '/':
+                fraction = True
+
+            if c == ' ' or c == '/':
+                call_stack.append(tmp)
+            elif c.isdigit():
+                if dot:
+                    tmp = tmp + scale * int(c)
+                    scale *= 0.1
+                else:
+                    tmp = tmp * scale + int(c)
+            elif c == self.config.decimal_separator_char:
+                dot = True
+                scale = 0.1
+            elif c == '-':
+                negative = True
+
+        call_stack.append(tmp)
+
+        # is the number is a fraction.
+        cal_result = 0
+        if fraction:
+            deno = call_stack.pop()
+            mole = call_stack.pop()
+            cal_result += mole / deno
+        
+        for n in call_stack:
+            cal_result += n
+
+        cal_result *= power
+
+        return cal_result if not negative else -cal_result
 
 class BasePercentageParser(BaseNumberParser):
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
-        pass
+        original = source.text
+
+        # do replace text & data from extended info
+        if type(source.data) is list:
+            source.text = source.data[0]
+            source.data = source.data[1].data
+        
+        result: ParseResult() = super().parse(source)
+
+        if len(result.resolution_str) > 0:
+            if not result.resolution_str.strip().endswith('%'):
+                result.resolution_str = result.resolution_str.strip() + '%'
+
+        result.data = source.text
+        result.text = original
+
+        return result
