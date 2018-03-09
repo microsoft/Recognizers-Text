@@ -1,7 +1,10 @@
 from enum import IntFlag
-from recognizers_text import Culture, Recognizer, Model
 from typing import List
-from .models import NumberModel, OrdinalModel, PercentModel, ModelResult
+from recognizers_text import Culture, Recognizer, Model
+from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
+from recognizers_number.number.english.extractors import EnglishNumberExtractor
+from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
+from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
 
 class NumberOptions(IntFlag):
     NONE = 0
@@ -14,15 +17,15 @@ class NumberRecognizer(Recognizer[NumberOptions]):
 
     def initialize_configuration(self):
         self.register_model("NumberModel", Culture.English, lambda options: NumberModel(
-            None,
-            None
+            AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, EnglishNumberParserConfiguration()),
+            EnglishNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         self.register_model("OrdinalModel", Culture.English, lambda options: OrdinalModel(
-            None,
+            AgnosticNumberParserFactory.get_parser(ParserType.ORDINAL, EnglishNumberParserConfiguration()),
             None
         ))
         self.register_model("PercentModel", Culture.English, lambda options: PercentModel(
-            None,
+            AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, EnglishNumberParserConfiguration()),
             None
         ))
 
