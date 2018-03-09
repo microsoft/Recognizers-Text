@@ -53,7 +53,7 @@ class BaseNumberParser(Parser):
         single_int_frac = f"{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}"
         self.text_number_regex: Pattern = regex.compile(fr"(?=\b)(${single_int_frac})(?=\b)", flags=regex.I | regex.S)
         self.arabic_number_regex: Pattern = regex.compile(r"\d+", flags=regex.I | regex.S)
-        self.round_number_set: List[str] = list(self.config.round_number_map.key())
+        self.round_number_set: List[str] = list(self.config.round_number_map.keys())
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # check if the parser is configured to support specific types
