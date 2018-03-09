@@ -1,4 +1,4 @@
-import re
+import regex
 from typing import Pattern, List, NamedTuple
 
 from recognizers_number.number.models import NumberMode, LongFormatMode
@@ -19,7 +19,7 @@ class EnglishNumberExtractor(BaseNumberExtractor):
         return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode=NumberMode.DEFAULT):
-        self.__negative_number_terms=re.compile(EnglishNumeric.NegativeNumberTermsRegex)
+        self.__negative_number_terms=regex.compile(EnglishNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[re_val] = list()
         cardinal_ex=None
 

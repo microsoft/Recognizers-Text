@@ -28,15 +28,16 @@ class BaseNumberExtractor(Extractor):
             return list()
         result: List[ExtractResult]=list()
         match_source: Dict[[Match], str]=dict()
-        matched: List[bool]=[False] *len(source)
+        matched: List[bool]=[False] * len(source)
 
-        matches_list = list(map(lambda x : matches_val(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes))
-        matches_list = list(filter(lambda x : x.matches is not None, matches_list))
+        matches_list = map(lambda x : matches_val(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes)
+        matches_list = filter(lambda x : x.matches is not None, matches_list)
 
         for ml in matches_list:
             for m in ml.matches:
                 for j in range(len(m.group())):
                     matched[m.start()+j]=True
+                # Keep Source Data for extra information
                 match_source[m]=ml.val
 
         last = -1
@@ -47,10 +48,17 @@ class BaseNumberExtractor(Extractor):
                 if (i+1 == len(source) or not matched[i+1]):
                     start = last+1
                     length = i-last
-                    substr = source[start : start+length].strip()
+                    substr = source[start:start+length].strip()
                     srcmatch = next(x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length))
 
-                    # TODO extract negative numbers
+                    # extract negative numbers
+                    if self._negative_number_terms is not None:
+                        match = regex.search(self._negative_number_terms, source[0:start])
+                        if match is not None:
+                            start = match.start()
+                            length = length + match.end() - match.start()
+                            substr = source[start:start+length].strip()
+
                     if srcmatch is not None:
                         value = ExtractResult()
                         value.start = start
