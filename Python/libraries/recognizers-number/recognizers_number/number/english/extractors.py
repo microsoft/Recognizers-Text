@@ -4,6 +4,7 @@ from typing import Pattern, List, NamedTuple
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.english_numeric import EnglishNumeric
 from recognizers_number.number.extractors import re_val, BaseNumberExtractor, BasePercentageExtractor
+from recognizers_number.number.constants import Constants
 
 class EnglishNumberExtractor(BaseNumberExtractor):
     @property
@@ -12,7 +13,7 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
     @property
     def _extract_type(self) -> str:
-        return 'SYS_NUM'
+        return Constants.SYS_NUM
 
     @property
     def _negative_number_terms(self) -> Pattern:
@@ -43,7 +44,7 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
         
     @property
     def _extract_type(self) -> str:
-        return 'SYS_NUM_CARDINAL'
+        return Constants.SYS_NUM_CARDINAL
 
     @property
     def _negative_number_terms(self): pass
@@ -66,7 +67,7 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
 
     @property
     def _extract_type(self) -> str:
-        return 'SYS_NUM_INTEGER'
+        return Constants.SYS_NUM_INTEGER
 
     @property
     def _negative_number_terms(self): pass
@@ -103,7 +104,7 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
 
     @property
     def _extract_type(self) -> str:
-        return 'SYS_NUM_DOUBLE'
+        return Constants.SYS_NUM_DOUBLE
 
     @property
     def _negative_number_terms(self): pass
@@ -143,7 +144,7 @@ class EnglishFractionExtractor(BaseNumberExtractor):
 
     @property
     def _extract_type(self) -> str:
-        return 'SYS_NUM_FRACTION'
+        return Constants.SYS_NUM_FRACTION
 
     @property
     def _negative_number_terms(self): pass
@@ -174,7 +175,7 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
 
     @property
     def _extract_type(self) -> str:
-        return 'SYS_NUM_ORDINAL'
+        return Constants.SYS_NUM_ORDINAL
 
     @property
     def _negative_number_terms(self): pass

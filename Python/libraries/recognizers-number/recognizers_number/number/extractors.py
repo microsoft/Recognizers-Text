@@ -6,6 +6,7 @@ import regex
 from recognizers_number.number.models import long_format_type
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.resources.base_numbers import BaseNumbers
+from recognizers_number.number.constants import Constants
 
 re_val=namedtuple('re_val', ['re', 'val'])
 matches_val=namedtuple('matches_val', ['matches', 'val'])
@@ -90,7 +91,7 @@ class BasePercentageExtractor(Extractor):
         
     @property
     def _extract_type(self) -> str:
-        return 'SYS_NUM_PERCENTAGE'
+        return Constants.SYS_NUM_PERCENTAGE
 
     def __init__(self, number_extractor: BaseNumberExtractor):
         self.number_extractor = number_extractor
