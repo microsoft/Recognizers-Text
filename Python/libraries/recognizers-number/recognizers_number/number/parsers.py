@@ -129,7 +129,19 @@ class BaseNumberParser(Parser):
         pass
 
     def __get_point_value(self, matches: List[str]) -> float:
-        pass
+        result = 0
+        first_match = matches[0]
+        if first_match in self.config.cardinal_number_map and self.config.cardinal_number_map[first_match] >= 10:
+            prefix = '0.'
+            tmp_int = self.__get_int_value(matches)
+            result = float(prefix + str(tmp_int))
+        else:
+            scale = 0.1
+            for match in matches:
+                result += scale * self.config.cardinal_number_map[match]
+                scale *= 0.1
+                
+        return result
 
     def __get_digital_value(self, digitstr: str, power: int) -> float:
         tmp: float = 0
