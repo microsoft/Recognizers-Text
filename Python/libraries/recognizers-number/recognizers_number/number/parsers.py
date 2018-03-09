@@ -158,13 +158,21 @@ class BaseNumberParser(Parser):
         pass
 
     def __split_multi(self, source: str, tokens: List[str]) -> List[str]:
-        pass
+        # We can use the first token as a temporary join character
+        tmp = tokens[0]
+        for token in tokens:
+            source = source.split(token).join(tmp)
+        return source.split(tmp)
 
     def __get_matches(self, source: str) -> List[str]:
-        pass
+        matches = list(regex.finditer(self._text_number_parse, source))
+        return filter(None, map(lambda m : m.group().lower(), matches))
 
+    # Test if big and combine with small.
+    # e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
     def __is_composable(self, big: int, small: int) -> bool:
-        pass
+        base_num = 100 if small > 10 else 10
+        return big % base_num == 0 and big / base_num >=1
 
     def __get_int_value(self, matches: List[str]) -> int:
         is_end = [False] * len(matches)
