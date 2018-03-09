@@ -146,7 +146,7 @@ class BaseNumberParser(Parser):
         return result
     
     def _is_digit(self, c: str) -> bool:
-        pass
+        return c.isdigit()
     
     def _frac_like_number_parse(self, ext_result: ExtractResult) -> ParseResult:
         pass
