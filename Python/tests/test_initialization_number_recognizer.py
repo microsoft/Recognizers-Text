@@ -18,12 +18,12 @@ class TestInitializationNumberRecognizer():
     def assert_models_equal(self, expected, actual):
         assert actual.model_type_name == expected.model_type_name
         assert type(actual.extractor) is type(expected.extractor)
-        assert type(actual.parser) is type(expected.parser)
+        assert type(actual.parser.config) is type(expected.parser.config)
         
     def assert_models_distinct(self, expected, actual):
         assert actual.model_type_name == expected.model_type_name
         assert type(actual.extractor) is not type(expected.extractor)
-        assert type(actual.parser) is not type(expected.parser)
+        assert type(actual.parser.config) is not type(expected.parser.config)
 
     def test_without_culture_use_target_culture(self):
         extractor = EnglishIntegerExtractor()
