@@ -1,6 +1,5 @@
 [{
   "Input": "はい!",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "いいえ、駄目です.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -32,7 +30,6 @@
 ,
 {
   "Input": "👌👌👌",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
