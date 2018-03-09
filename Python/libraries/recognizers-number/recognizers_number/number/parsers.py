@@ -152,10 +152,79 @@ class BaseNumberParser(Parser):
         pass
     
     def _text_number_parse(self, ext_result: ExtractResult) -> ParseResult:
-        pass
+        result = ParseResult(ext_result)
+
+        handle = regex.sub(self.config.half_a_dozen_regex, self.config.half_a_dozen_text, ext_result.text.lower().replace())
+        num_group = self.__split_multi(handle, filter(None, self.config.written_decimal_separator_texts))
+
+        int_part = num_group[0]
+
+        matches = list(map(lambda x : x.lower(), list(regex.finditer(self.text_number_regex, int_part)))) if len(int_part) > 0 else list()
+
+        int_part_real = self.__get_int_value(matches)
+
+        point_part_real = 0
+        if len(num_group) == 2:
+            point_part = num_group[1]
+            matches = list(map(lambda x : x.lower(), list(regex.finditer(self.text_number_regex, point_part))))
+            point_part_real += self.__get_point_value(matches)
+
+        result.value = int_part_real + point_part_real
+        return result
 
     def _power_number_parse(self, ext_result: ExtractResult) -> ParseResult:
-        pass
+        result = ParseResult(ext_result)
+
+        handle = ext_result.text.upper()
+        exponent = '^' not in ext_result.text
+
+        # [1] 1e10
+        # [2] 1.1^-23
+        call_stack = list()
+        scale = 10
+        dot = False
+        negative = False
+        tmp = 0
+
+        for i in range(len(handle)):
+            c = handle[i]
+            if c in ['^', 'E']:
+                if negative:
+                    call_stack.append(-tmp)
+                else:
+                    call_stack.append(tmp)
+                tmp = 0
+                scale = 10
+                dot = False
+                negative = False
+            elif c.isdigit():
+                if dot:
+                    tmp = tmp + scale * int(c)
+                    scale *= 0.1
+                else:
+                    tmp = tmp * scale + int(c)
+            elif c == self.config.decimal_separator_char:
+                dot = True
+                scale = 0.1
+            elif c == '-':
+                negative = not negative
+            elif c == '+':
+                continue
+            if i == len(handle)-1:
+                if negative:
+                    call_stack.append(-tmp)
+                else:
+                    call_stack.append(tmp)
+        result_value = 0
+        if exponent:
+            result_value = call_stack.pop(0) * pow(10, call_stack.pop(0))
+        else:
+            result_value = pow(call_stack.pop(0), call_stack.pop(0))
+
+        result.value = result_value
+        result.resolution_str = str(result_value)
+
+        return result
 
     def __split_multi(self, source: str, tokens: List[str]) -> List[str]:
         # We can use the first token as a temporary join character
