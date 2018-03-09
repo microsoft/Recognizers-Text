@@ -126,7 +126,81 @@ class BaseNumberParser(Parser):
         pass
 
     def __get_int_value(self, matches: List[str]) -> int:
-        pass
+        is_end = [False] * len(matches)
+
+        tmp_val = 0
+        end_flag = 1
+
+        # Scan from end to start, find the end word
+        for i in range(len(matches)-1, 0, -1):
+            if matches[i] in self.round_number_set:
+                # if false,then continue, you will meet hundred first, then thousand.
+                if (end_flag > self.config.round_number_map[matches[i]]):
+                    continue
+                is_end[i] = True
+                end_flag = self.config.round_number_map[matches[i]]
+        
+        if end_flag == 1:
+            tmp_stack = list()
+            old_sym = ''
+            for match in matches:
+                cardinal = match in self.config.cardinal_number_map
+                ordinal = match in self.config.ordinal_number_map
+                if cardinal or ordinal:
+                    match_value = self.config.cardinal_number_map.get(match, self.config.ordinal_number_map[match])
+
+                    #This is just for ordinal now. Not for fraction ever.
+                    if ordinal:
+                        frac_part = self.config.ordinal_number_map[match]
+                        if len(tmp_stack) > 0:
+                            int_part = tmp_stack.pop()
+                            # if intPart >= fracPart, it means it is an ordinal number
+                            # it begins with an integer, ends with an ordinal
+                            # e.g. ninety-ninth
+                            if int_part >= frac_part:
+                                tmp_stack.append(int_part + frac_part)
+                            else:
+                                for val in tmp_stack:
+                                    int_part += val
+                                tmp_stack.clear()
+                                tmp_stack.append(int_part * frac_part)
+                        else:
+                            tmp_stack.append(frac_part)
+                    elif match in self.config.cardinal_number_map:
+                        if old_sym == '-':
+                            tmp = tmp_stack.pop() + match_value
+                            tmp_stack.append(tmp)
+                        elif old_sym == self.config.written_integer_separator_texts[0] or len(tmp_stack) < 2:
+                            tmp_stack.append(match_value)
+                        elif len(tmp_stack) >= 2:
+                            tmp = tmp_stack.pop() + match_value
+                            tmp += tmp_stack.pop()
+                            tmp_stack.append(tmp)
+                else:
+                    complex_val = self.config.resolve_composite_number(match)
+                    if complex_val != 0:
+                        tmp_stack.append(complex_val)
+                old_sym = match
+            for tmp in tmp_stack:
+                tmp_val += tmp
+        else:
+            last_index = 0
+            part_value = 1
+            mul_value = 1
+            for i in range(len(is_end)):
+                if is_end[i]:
+                    mul_value = self.config.round_number_map[matches[i]]
+                    part_value = 1
+                    if i != 0:
+                        part_value = self.__get_int_value(matches[last_index:i])
+                    tmp_val += mul_value * part_value
+                    last_index = i + 1
+            # Calculate the part like "thirty-one"
+            mul_value = 1
+            if last_index != len(is_end):
+                part_value = self.__get_int_value(matches[last_index:len(is_end)])
+                tmp_val += mul_value * part_value
+        return tmp_val
 
     def __get_point_value(self, matches: List[str]) -> float:
         result = 0
@@ -140,7 +214,7 @@ class BaseNumberParser(Parser):
             for match in matches:
                 result += scale * self.config.cardinal_number_map[match]
                 scale *= 0.1
-                
+
         return result
 
     def __get_digital_value(self, digitstr: str, power: int) -> float:
