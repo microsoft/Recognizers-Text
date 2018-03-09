@@ -1,13 +1,15 @@
-from enum import Flag
+from enum import IntFlag
 from recognizers_text import Culture, Recognizer, Model
 from typing import List
 from .models import NumberModel, OrdinalModel, PercentModel, ModelResult
 
-class NumberOptions(Flag):
+class NumberOptions(IntFlag):
     NONE = 0
 
 class NumberRecognizer(Recognizer[NumberOptions]):
     def __init__(self, target_culture: str=None, options: NumberOptions=NumberOptions.NONE, lazy_initialization: bool=True):
+        if options < NumberOptions.NONE or options > NumberOptions.NONE:
+            raise ValueError()
         super().__init__(target_culture, options, lazy_initialization)
 
     def initialize_configuration(self):
