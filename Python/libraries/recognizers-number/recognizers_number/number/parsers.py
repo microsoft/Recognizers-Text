@@ -53,7 +53,7 @@ class BaseNumberParser(Parser):
         single_int_frac = f"{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}"
         self.text_number_regex: Pattern = regex.compile(fr"(?=\b)(${single_int_frac})(?=\b)", flags=regex.I | regex.S)
         self.arabic_number_regex: Pattern = regex.compile(r"\d+", flags=regex.I | regex.S)
-        self.round_number_set: List[str] = list(self.config.round_number_map.key())
+        self.round_number_set: List[str] = list(self.config.round_number_map.keys())
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # check if the parser is configured to support specific types
@@ -102,10 +102,51 @@ class BaseNumberParser(Parser):
         return str.join('|', sorted(keys, key = len, reverse=True))
 
     def _digit_number_parse(self, ext_result: ExtractResult) -> ParseResult:
-        pass
+        result =  ParseResult()
+        result.start = ext_result.start
+        result.length = ext_result.length
+        result.text = ext_result.text
+        result.type = ext_result.type
+        
+        # [1] 24
+        # [2] 12 32/33
+        # [3] 1,000,000
+        # [4] 234.567
+        # [5] 44/55
+        # [6] 2 hundred
+        # dot occured.
+
+        power = 1
+        tmp_index = -1
+        start_index = 0
+        handle = ext_result.text.lower()
+
+        matches = regex.search(self.config.digital_number_regex, handle)
+        if matches:
+            for match in matches:
+                # TODO chek if it is necessary in python HACK: Matching regex may be buggy, may include a digit before the unit
+                # match.value = match.value.replace(/\d/g, '')
+                # match.length = match.value.length
+
+                rep = self.config.round_number_map.get(match.value)
+                # \\s+ for filter the spaces.
+                power *= rep
+
+                # tslint:disable-next-line:no-conditional-assignment
+                tmp_index = handle.index(match.value, start_index)
+                while tmp_index >= 0:
+                    front = handle[0:tmp_index].rstrip()
+                    start_index = len(front)
+                    handle = front + handle[tmp_index + len(match):]
+                    tmp_index = handle.index(match.value, start_index)
+
+        # scale used in the calculate of double
+        result.value = self.__get_digital_value(handle, power)
+
+        return result
     
     def _is_digit(self, c: str) -> bool:
-        pass
+        return c.isdigit()
     
     def _frac_like_number_parse(self, ext_result: ExtractResult) -> ParseResult:
         pass
