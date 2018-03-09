@@ -46,11 +46,9 @@ class NumberParserConfiguration(ABC):
     def resolve_composite_number(self, number_str: str) -> int: pass
     
 class BaseNumberParser(Parser):
-    @abstractproperty
-    def supported_types(self) -> List[str]: pass
-
     def __init__(self, config: NumberParserConfiguration):
         self.config: NumberParserConfiguration = config
+        self.supported_types: List[str] = list()
 
         singleIntFrac = f"{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}"
 
