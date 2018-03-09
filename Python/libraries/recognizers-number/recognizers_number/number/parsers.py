@@ -50,20 +50,53 @@ class BaseNumberParser(Parser):
         self.config: NumberParserConfiguration = config
         self.supported_types: List[str] = list()
 
-        singleIntFrac = f"{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}"
-
-        #self.text_number_regex: Pattern = RegExpUtility.getSafeRegExp(String.raw`(?=\b)(${singleIntFrac})(?=\b)`, "gis")
-        #self.arabic_number_regex: Pattern = RegExpUtility.getSafeRegExp(String.raw`\d+`, "is")
-        #self.roundN_number_set: Pattern = new Set<string>()
-        #self.config.round_number_map.forEach((value, key) =>
-        #    self.roundNumberSet.add(key)
-        #);
+        single_int_frac = f"{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}"
+        self.text_number_regex: Pattern = regex.compile(fr"(?=\b)(${single_int_frac})(?=\b)", flags=regex.I | regex.S)
+        self.arabic_number_regex: Pattern = regex.compile(r"\d+", flags=regex.I | regex.S)
+        self.round_number_set: List[str] = list(self.config.round_number_map.key())
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # check if the parser is configured to support specific types
         if source.type not in self.supported_types:
             return None
-        return ParseResult(source)
+        ret: Optional[ParseResult] = None
+        extra = source.data
+        if not extra:
+            if self.arabic_number_regex.search(source.text):
+                extra = "Num"
+            else:
+                extra = self.config.lang_marker
+        
+        #Resolve symbol prefix
+        is_negative = False
+        match_negative = source.text.search(self.config.negative_number_sign_regex)
+
+        if match_negative:
+            is_negative = True
+            source.text = source.text[len(match_negative[1]):]
+        
+        if "Num" in extra:
+            ret = self._digit_number_parse(source)
+        elif regex.search(fr'Frac${self.config.langMarker}', extra): # Frac is a special number, parse via another method
+            ret = self._frac_like_number_parse(source)
+        elif self.config.lang_marker in extra:
+            ret = self._text_number_parse(source)
+        elif "Pow" in extra:
+            ret = self._power_number_parse(source)
+        
+        if ret and ret.value:
+            if is_negative:
+                # Recover to the original extracted Text
+                ret.text = match_negative[1] + source.text
+                # Check if ret.value is a BigNumber
+                if type(ret.value) is int:
+                    ret.value = -ret.value
+                else:
+                    ret.value.s = -1
+        
+            ret.resolution_str = self.config.culture_info.format(ret.value) if self.config.culture_info else str(ret.value)
+
+        return ret
 
     def _get_key_regex(self, keys: List[str]) -> str:
         return str.join('|', sorted(keys, key = len, reverse=True))
