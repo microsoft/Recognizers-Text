@@ -102,7 +102,7 @@ class BaseNumberParser(Parser):
         return str.join('|', sorted(keys, key = len, reverse=True))
 
     def _digit_number_parse(self, ext_result: ExtractResult) -> ParseResult:
-        result =  ParseResult()
+        result = ParseResult()
         result.start = ext_result.start
         result.length = ext_result.length
         result.text = ext_result.text
@@ -149,7 +149,104 @@ class BaseNumberParser(Parser):
         return c.isdigit()
     
     def _frac_like_number_parse(self, ext_result: ExtractResult) -> ParseResult:
-        pass
+        result = ParseResult()
+        result.start = ext_result.start
+        result.length = ext_result.length
+        result.text = ext_result.text
+        result.type = ext_result.type
+
+        result_text = ext_result.text.lower()
+        if regex.search(self.config.fraction_marker_token, result_text.includes):
+            over_index = result_text.indexOf(self.config.fraction_marker_token)
+            small_part = result_text[0:over_index].strip()
+            big_part = result_text[over_index + self.config.fraction_marker_token.length:len(result_text)].strip()
+            smallValue = self.__get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.get_intValue(self.get_matches(small_part))
+            big_value = self.__get_digital_value(big_part, 1) if self._is_digit(big_part[0]) else self.get_intValue(self.get_matches(big_part))
+
+            result.value = smallValue / big_value
+        else:
+            words = list(filter(lambda x: x, result_text.split(" ")))
+            frac_words = self.config.normalize_token_set(words, result)
+
+            # Split fraction with integer
+            split_index = frac_words.length - 1
+            current_value = self.config.resolve_composite_number(frac_words[split_index])
+            round_value = 1
+
+            for split_index in range(frac_words.length - 2, split_index, -1):
+                if (self.config.written_fraction_separator_texts.index(frac_words[split_index]) > -1
+                    or self.config.written_integer_separator_texts.index(frac_words[split_index]) > -1):
+                    continue
+                previous_value = current_value
+                current_value = self.config.resolve_composite_number(frac_words[split_index])
+
+                sm_hundreds = 100
+
+                # previous : hundred
+                # current : one
+                if ((previous_value >= sm_hundreds and previous_value > current_value)
+                    or (previous_value < sm_hundreds and self.__is_composable(current_value, previous_value))):
+                    if (previous_value < sm_hundreds and current_value >= round_value):
+                        round_value = current_value
+                    elif (previous_value < sm_hundreds and current_value < round_value):
+                        split_index += 1
+                        break
+
+                    # current is the first word
+                    if split_index == 0:
+                        # scan, skip the first word
+                        split_index = 1
+                        while split_index <= frac_words.length - 2:
+                            # e.g. one hundred thousand
+                            # frac[i+1] % 100 and frac[i] % 100 = 0
+                            if (self.config.resolve_composite_number(frac_words[split_index]) >= sm_hundreds
+                                and not (self.config.written_fraction_separator_texts.indexOf(frac_words[split_index + 1]) > -1)
+                                and self.config.resolve_composite_number(frac_words[split_index + 1]) < sm_hundreds):
+                                split_index += 1
+                                break
+                            split_index += 1
+                        break
+                    continue
+                split_index += 1
+                break
+
+            frac_part = []
+            for i in range(split_index, frac_words.length):
+                if frac_words[i].index("-") > -1:
+                    split = frac_words[i].split('-')
+                    frac_part.append(split[0])
+                    frac_part.append("-")
+                    frac_part.append(split[1])
+                else:
+                    frac_part.append(frac_words[i])
+
+            frac_words.splice(split_index, len(frac_words) - split_index)
+
+            # denomi = denominator
+            denomi_value = self.__get_int_value(frac_part)
+            # Split mixed number with fraction
+            numer_value = 0
+            int_value = 0
+
+            mixedIndex = frac_words.length
+            for i in (frac_words.length - 1, 0, -1):
+                if (i < frac_words.length - 1 and self.config.written_fraction_separator_texts.indexOf(frac_words[i]) > -1):
+                    numerStr = " ".join(frac_words[i + 1:frac_words.length])
+                    numer_value = self.__get_int_value(self.__get_matches(numerStr))
+                    mixedIndex = i + 1
+                    break
+
+            int_str = " ".join(frac_words[0:mixedIndex])
+            int_value = self.__get_int_value(self.__get_matches(int_str))
+
+            # Find mixed number
+            if (mixedIndex != frac_words.length and numer_value < denomi_value):
+                # int_value + numer_value / denomi_value
+                result.value = int_value + numer_value/ denomi_value
+            else:
+                # (int_value + numer_value) / denomi_value
+                result.value = int_value + numer_value / denomi_value
+        return result
     
     def _text_number_parse(self, ext_result: ExtractResult) -> ParseResult:
         result = ParseResult(ext_result)
@@ -272,7 +369,7 @@ class BaseNumberParser(Parser):
                         frac_part = self.config.ordinal_number_map[match]
                         if len(tmp_stack) > 0:
                             int_part = tmp_stack.pop()
-                            # if intPart >= fracPart, it means it is an ordinal number
+                            # if intPart >= frac_part, it means it is an ordinal number
                             # it begins with an integer, ends with an ordinal
                             # e.g. ninety-ninth
                             if int_part >= frac_part:
