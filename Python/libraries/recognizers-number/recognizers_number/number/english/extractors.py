@@ -3,7 +3,7 @@ from typing import Pattern, List, NamedTuple
 
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.english_numeric import EnglishNumeric
-from recognizers_number.number.extractors import BaseNumberExtractor, re_val
+from recognizers_number.number.extractors import re_val, BaseNumberExtractor, BasePercentageExtractor
 
 class EnglishNumberExtractor(BaseNumberExtractor):
     @property
@@ -193,4 +193,14 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
             re_val(
                 re=EnglishNumeric.OrdinalRoundNumberRegex,
                 val='OrdEng')
+        ]
+
+class EnglishPercentageExtractor(BasePercentageExtractor):
+    def __init__(self):
+        super().__init__(EnglishNumberExtractor(NumberMode.DEFAULT))
+
+    def get_definitions(self) -> List[str]:
+        return [
+            EnglishNumeric.NumberWithSuffixPercentage,
+            EnglishNumeric.NumberWithPrefixPercentage
         ]
