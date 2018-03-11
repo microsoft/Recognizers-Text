@@ -1,244 +1,244 @@
 [{
-  "Input": "this is 2 days",
+  "Input": "questo è 2 giorni",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 days",
+      "Text": "2 giorni",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "this is before 4pm",
+  "Input": "questo è prima dell 4pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before 4pm",
+      "Text": "prima delle 4pm",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "this is before 4pm tomorrow",
+  "Input": "questo è prima delle 4pm di domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before 4pm tomorrow",
+      "Text": "prima delle 4pm di domani",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "this is before tomorrow 4pm ",
+  "Input": "questo è prima di domani alle 4pm ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before tomorrow 4pm",
+      "Text": "prima di domani alle 4pm",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "this is after 4pm",
+  "Input": "questo è dopo le 4pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after 4pm",
+      "Text": "dopo le 4pm",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "this is after 4pm tomorrow",
+  "Input": "questo è dopo le 4pm di domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after 4pm tomorrow",
+      "Text": "dopo le 4pm di domani",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "this is after tomorrow 4pm ",
+  "Input": "questo è dopo di domani alle 4pm ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after tomorrow 4pm",
+      "Text": "dopo di domani alle 4pm",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be back in 5 minutes",
+  "Input": "Tornerò tra 5 minuti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 5 minutes",
+      "Text": "tra 5 minuti",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "past week",
+  "Input": "scorsa settimana",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "past week",
+      "Text": "scorsa settimana",
       "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "Input": "schedule a meeting in 10 hours",
+  "Input": "programma un appuntamento tra 10 ore",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 10 hours",
+      "Text": "tra 10 ore",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "What's this day look like?",
+  "Input": "Com'è questa giornata?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this day",
+      "Text": "questa giornata",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "What's this week look like?",
+  "Input": "Com'è questa settimana?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this week",
+      "Text": "questa settimana",
       "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "Input": "What's my week look like?",
+  "Input": "Com'è la mia settimana?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "my week",
+      "Text": "mia settimana",
       "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "Input": "What's the week look like?",
+  "Input": "Com'è la settimana?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the week",
+      "Text": "la settimana",
       "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "Input": "What's my day look like?",
+  "Input": "Com'è la mia giornata?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "my day",
+      "Text": "la mia giornata",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "What's the day look like?",
+  "Input": "Com'è la giornata?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the day",
+      "Text": "la giornata",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Schedule a meeting from 9am to 11am",
+  "Input": "Programma un appuntamento dalle 9am alle 11am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 9am to 11am",
+      "Text": "dalle 9am alle 11am",
       "Type": "timerange"
     }
   ]
 }
 ,
 {
-  "Input": "Schedule a meeting from 9am to 11am tomorrow",
+  "Input": "Programma un appuntamento dalle 9am alle 11am di domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 9am to 11am tomorrow",
+      "Text": "dalle 9am alle 11am di domani",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "Change July 22nd meeting in Bellevue to August 22nd",
+  "Input": "Cambia l'appuntamento del 22 Luglio a Bellevue al 22 Agosto",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "July 22nd",
+      "Text": "22 Luglio",
       "Type": "date"
     },
     {
-      "Text": "August 22nd",
+      "Text": "22 Agosto",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "after 7/2 ",
+  "Input": "dopo il 7/2 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after 7/2",
+      "Text": "dopo il 7/2",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "since 7/2 ",
+  "Input": "dal 7/2 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "since 7/2",
+      "Text": "dal 7/2",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "before 7/2 ",
+  "Input": "prima del 7/2 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before 7/2",
+      "Text": "prima del 7/2",
       "Type": "date"
     }
   ]
@@ -278,98 +278,82 @@
 }
 ,
 {
-  "Input": "May 29th",
+  "Input": "29 Maggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "May 29th",
+      "Text": "29 Maggio",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "March 29th",
+  "Input": "29 Marzo",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "March 29th",
+      "Text": "29 Marzo",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I born in March",
+  "Input": "Sono nato a Marzo",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "March",
+      "Text": "Marzo",
       "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "Input": "I born in the March",
+  "Input": "è successo a Maggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the March",
+      "Text": "Maggio",
       "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "Input": "what happend at the May",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the May",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "What are the hours of Palomino? ",
+  "Input": "Qual è l'orario di Palomino? ",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
-  "Input": "in the sun",
+  "Input": "al sole",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
-  "Input": "which email have gotten a reply",
+  "Input": "quale email ha avuto una risposta",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
-  "Input": "He is often alone",
+  "Input": "Lui è spesso da solo",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+
+{
+  "Input": "ore di michigan",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
-  "Input": "often a bird",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "Input": "michigan hours",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "Input": "I'll change the 3pm appointment to 4.",
+  "Input": "Cambierò l'appuntamento delle 3pm alle 4.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -385,7 +369,7 @@
 }
 ,
 {
-  "Input": "I'll change the 3pm appointment to 4,",
+  "Input": "Cambierò l'appuntamento delle 3pm alle 4,",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -401,43 +385,43 @@
 }
 ,
 {
-  "Input": "I'll change the three pm appointment to four",
+  "Input": "Cambierò l'appuntamento delle tre pm alle quattro",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "three pm",
+      "Text": "tre pm",
       "Type": "time"
     }
     ,
     {
-      "Text": "four",
+      "Text": "quattro",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to eleven",
+  "Input": "Cambierò l'appuntamento delle dieci am alle undici",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
     {
-      "Text": "eleven",
+      "Text": "undici",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 4.,",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 4.,",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
@@ -449,43 +433,43 @@
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to eleven!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle undici!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
     {
-      "Text": "eleven",
+      "Text": "undici",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to eleven?",
+  "Input": "Cambierò l'appuntamento delle dieci am alle undici?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
     {
-      "Text": "eleven",
+      "Text": "undici",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 20!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 20!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
@@ -497,43 +481,43 @@
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to twenty!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle venti!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
     {
-      "Text": "twenty",
+      "Text": "venti",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to thirteen!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle tredici!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
     {
-      "Text": "thirteen",
+      "Text": "tredici",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 13!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 13!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
@@ -545,11 +529,11 @@
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 0!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 0!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
@@ -561,11 +545,11 @@
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 24!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 24!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
@@ -577,11 +561,11 @@
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to zero.",
+  "Input": "Cambierò l'appuntamento delle dieci am alle zero.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
@@ -593,27 +577,27 @@
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to twenty four.",
+  "Input": "Cambierò l'appuntamento delle dieci am alle ventiquattro.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
     {
-      "Text": "twenty four",
+      "Text": "ventiquattro",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 4, how do you think?",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 4, cosa ne pensi?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
   	,
@@ -625,130 +609,130 @@
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 4.3",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 4.3",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to twenty six",
+  "Input": "Cambierò l'appuntamento delle dieci am alle ventisei",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 4 or later",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 4 o più tardi",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to 25",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 25",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "I'll change the ten am appointment to twenty five",
+  "Input": "Cambierò l'appuntamento delle dieci am alle venticinque",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "time"
     }
     ,
     {
-      "Text": "twenty five",
+      "Text": "venticinque",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "next meeting will be held on March 16th, 2017, how about we have a discussion at 2pm this afternoon?",
+  "Input": "il prossimo incontro si terrà il 16 Marzo 2017, cosa ne dici di avere una discussione alle 2pm questo pomeriggio?",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "March 16th, 2017",
+      "Text": "16 Marzo 2017",
       "Type": "date"
     }
     ,
     {
-      "Text": "2pm this afternoon",
+      "Text": "2pm questo pomeriggio",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "April 1st, 2018, we can plan it 2pm this afternoon",
+  "Input": "1 Aprile 2018, possiamo pianificarlo alle 2pm questo pomeriggio",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "April 1st, 2018",
+      "Text": "1 Aprile 2018",
       "Type": "date"
     }
     ,
     {
-      "Text": "2pm this afternoon",
+      "Text": "2pm questo pomeriggio",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "The range is before 2012",
+  "Input": "L'intervallo è prima del 2012",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before 2012",
+      "Text": "prima del 2012",
       "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "Input": "The range is until 2012",
+  "Input": "L'intervallo è fino al 2012",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "until 2012",
+      "Text": "fino al 2012",
       "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "Input": "The range is 2012 or after",
+  "Input": "L'intervallo è 2012 o dopo",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2012 or after",
+      "Text": "2012 o dopo",
       "Type": "daterange"
     }
   ]

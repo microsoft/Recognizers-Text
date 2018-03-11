@@ -1,12 +1,12 @@
 [{
-  "Input": "I'll go back Oct/2",
+  "Input": "Tornerò il Ott/2",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "oct/2",
+      "Text": "ott/2",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -27,7 +27,7 @@
 }
 ,
 {
-  "Input": "I'll go back on 22/04",
+  "Input": "Tornerò il 22/04",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -55,14 +55,14 @@
 }
 ,
 {
-  "Input": "I'll go back May twenty nine",
+  "Input": "Tornerò il ventinove maggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "may twenty nine",
+      "Text": "ventinove maggio",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -83,14 +83,14 @@
 }
 ,
 {
-  "Input": "I'll go back second of Aug.",
+  "Input": "Tornerò il due Ago.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "second of aug",
+      "Text": "due Ago",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -111,14 +111,14 @@
 }
 ,
 {
-  "Input": "I'll go back today",
+  "Input": "Tornerò oggi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "today",
+      "Text": "oggi",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -134,14 +134,14 @@
 }
 ,
 {
-  "Input": "I'll go back tomorrow",
+  "Input": "Tornerò domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow",
+      "Text": "domani",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -157,14 +157,14 @@
 }
 ,
 {
-  "Input": "I'll go back yesterday",
+  "Input": "Tornerò ieri",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "yesterday",
+      "Text": "ieri",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -180,14 +180,14 @@
 }
 ,
 {
-  "Input": "I'll go back on Friday",
+  "Input": "Tornerò venerdì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "friday",
+      "Text": "venerdì",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -208,14 +208,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 4-23 in next month",
+  "Input": "Sarò fuori dal 4-23 nel prossimo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4-23 in next month",
+      "Text": "dal 4-23 nel prossimo mese",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -232,14 +232,14 @@
 }
 ,
 {
-  "Input": "I'll be out between 3 and 12 of Sept hahaha",
+  "Input": "Sarò fuori tra il 3 e il 12 di set hahaha",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 3 and 12 of sept",
+      "Text": "tra il 3 e il 12 di set",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -262,14 +262,14 @@
 }
 ,
 {
-  "Input": "I'll be out this September",
+  "Input": "Sarò fuori questo Settembre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this september",
+      "Text": "questo settembre",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -286,14 +286,14 @@
 }
 ,
 {
-  "Input": "I'll be out January 12, 2016 - 01/22/2016",
+  "Input": "Sarò fuori il 12 Gennaio 2016 - 01/22/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "january 12, 2016 - 01/22/2016",
+      "Text": "12 gennaio 2016 - 01/22/2016",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -310,14 +310,14 @@
 }
 ,
 {
-  "Input": "I'll be out next 3 days",
+  "Input": "Sarò fuori i prossimi 3 giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next 3 days",
+      "Text": "i prossimi 3 giorni",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -334,14 +334,14 @@
 }
 ,
 {
-  "Input": "I'll be out the last week of july",
+  "Input": "Sarò fuori l'ultima settimana di luglio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the last week of july",
+      "Text": "l'ultima settimana di luglio",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -364,7 +364,7 @@
 }
 ,
 {
-  "Input": "I'll be out 2015-3",
+  "Input": "Sarò fuori 2015-3",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -388,14 +388,14 @@
 }
 ,
 {
-  "Input": "I'll leave this SUMMER",
+  "Input": "Partirò questa ESTATE",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this summer",
+      "Text": "questa estate",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -411,14 +411,14 @@
 }
 ,
 {
-  "Input": "I'll be out since tomorrow",
+  "Input": "Sarò fuori da domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "since tomorrow",
+      "Text": "da domani",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -435,14 +435,14 @@
 }
 ,
 {
-  "Input": "I'll be out since August",
+  "Input": "Sarò fuori da Agosto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "since august",
+      "Text": "da agosto",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -465,14 +465,14 @@
 }
 ,
 {
-  "Input": "I'll be out since this August",
+  "Input": "Sarò fuori da questo Agosto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "since this august",
+      "Text": "da questo agosto",
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -489,14 +489,14 @@
 }
 ,
 {
-  "Input": "I'll go back now",
+  "Input": "Tornerò adesso",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "now",
+      "Text": "adesso",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -512,14 +512,14 @@
 }
 ,
 {
-  "Input": "I'll go back October 14 for 8:00:31am",
+  "Input": "Tornerò il 14 Ottobre per le 8:00:31am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "october 14 for 8:00:31am",
+      "Text": "14 Ottobre per le 8:00:31am",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -540,14 +540,14 @@
 }
 ,
 {
-  "Input": "I'll go back tomorrow 8:00am",
+  "Input": "Tornerò domani alle 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow 8:00am",
+      "Text": "domani alle 8:00am",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -563,14 +563,14 @@
 }
 ,
 {
-  "Input": "I'll go back 10, tonight",
+  "Input": "Tornerò alle 10, stanotte",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "10, tonight",
+      "Text": "alle 10, stanotte",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -586,14 +586,14 @@
 }
 ,
 {
-  "Input": "I'll go back 8am this morning",
+  "Input": "Tornerò alle 8am stamattina",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8am this morning",
+      "Text": "alle 8am stamattina",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -609,14 +609,14 @@
 }
 ,
 {
-  "Input": "I'll go back end of tomorrow",
+  "Input": "Tornerò alla fine di domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "end of tomorrow",
+      "Text": "alla fine di domani",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -632,14 +632,14 @@
 }
 ,
 {
-  "Input": "I'll go back end of the sunday",
+  "Input": "Tornerò alla fine di domenica",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "end of the sunday",
+      "Text": "alla fine di domenica",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -660,14 +660,14 @@
 }
 ,
 {
-  "Input": "I'll go back end of this sunday",
+  "Input": "Tornerò alla fine di questa domenica",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "end of this sunday",
+      "Text": "alla fine di questa domenica",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -683,14 +683,14 @@
 }
 ,
 {
-  "Input": "I'll be out five to seven today",
+  "Input": "Sarò fuori dalle cinque alle sette oggi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "five to seven today",
+      "Text": "dalle cinque alle sette oggi",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -713,14 +713,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 5 to 6pm of April 22",
+  "Input": "Sarò fuori dalle 5 alle 6pm del 22 Aprile",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 5 to 6pm of april 22",
+      "Text": "dalle 5 alle 6pm del 22 aprile",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -743,14 +743,14 @@
 }
 ,
 {
-  "Input": "I'll be out 3:00 to 4:00 tomorrow",
+  "Input": "Sarò fuori dalle 3:00 alle 4:00 domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3:00 to 4:00 tomorrow",
+      "Text": "dalle 3:00 alle 4:00 domani",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -773,14 +773,14 @@
 }
 ,
 {
-  "Input": "I'll go back this evening",
+  "Input": "Tornerò stasera",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this evening",
+      "Text": "stasera",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -797,14 +797,14 @@
 }
 ,
 {
-  "Input": "I'll go back tomorrow night",
+  "Input": "Tornerò domani notte",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow night",
+      "Text": "domani notte",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -821,14 +821,14 @@
 }
 ,
 {
-  "Input": "I'll go back next monday afternoon",
+  "Input": "Tornerò il prossimo lunedì pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next monday afternoon",
+      "Text": "prossimo lunedì pomeriggio",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -845,14 +845,14 @@
 }
 ,
 {
-  "Input": "I'll go back next hour",
+  "Input": "Tornerò tra un'ora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next hour",
+      "Text": "tra un'ora",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -869,14 +869,14 @@
 }
 ,
 {
-  "Input": "I'll go back tuesday in the morning",
+  "Input": "Tornerò martedì in mattinata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday in the morning",
+      "Text": "martedì in mattinata",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -899,14 +899,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3h",
+  "Input": "Andrò via per 3 ore",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3h",
+      "Text": "3 ore",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -922,14 +922,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3.5years",
+  "Input": "Andrò via per 3,5 anni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3.5years",
+      "Text": "3,5 anni",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -945,14 +945,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3 minutes",
+  "Input": "Andrò via per 3 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 minutes",
+      "Text": "3 minuti",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -968,7 +968,7 @@
 }
 ,
 {
-  "Input": "I'll leave for 123.45 sec",
+  "Input": "Andrò via per 123.45 sec",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -991,14 +991,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all day",
+  "Input": "Andrò via per tutto il giorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all day",
+      "Text": "tutto il giorno",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -1014,14 +1014,14 @@
 }
 ,
 {
-  "Input": "I'll leave for twenty and four hours",
+  "Input": "Andrò via per ventiquattro ore",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "twenty and four hours",
+      "Text": "ventiquattro ore",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -1037,14 +1037,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all month",
+  "Input": "Andrò via per tutto il mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all month",
+      "Text": "tutto il mese",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -1060,14 +1060,14 @@
 }
 ,
 {
-  "Input": "I'll leave for an hour",
+  "Input": "Andrò via per un'ora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "an hour",
+      "Text": "un'ora",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -1083,14 +1083,14 @@
 }
 ,
 {
-  "Input": "I'll leave for few hours",
+  "Input": "Andrò via per qualche ora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "few hours",
+      "Text": "qualche ora",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -1106,14 +1106,14 @@
 }
 ,
 {
-  "Input": "I'll leave for a few minutes",
+  "Input": "Andrò via per qualche minuto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a few minutes",
+      "Text": "qualche minuto",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -1129,14 +1129,14 @@
 }
 ,
 {
-  "Input": "I'll leave for some days",
+  "Input": "Andrò via per alcuni giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "some days",
+      "Text": "alcuni giorni",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -1152,14 +1152,14 @@
 }
 ,
 {
-  "Input": "I'll leave for several weeks",
+  "Input": "Andrò via per diverse settimane",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "several weeks",
+      "Text": "diverse settimane",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -1175,14 +1175,14 @@
 }
 ,
 {
-  "Input": "I'll leave weekly",
+  "Input": "Andrò via settimanalmente",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "weekly",
+      "Text": "settimanalmente",
       "TypeName": "datetimeV2.set",
       "Resolution": {
         "values": [
@@ -1198,14 +1198,14 @@
 }
 ,
 {
-  "Input": "I'll leave every day",
+  "Input": "Andrò via ogni giorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every day",
+      "Text": "ogni giorno",
       "TypeName": "datetimeV2.set",
       "Resolution": {
         "values": [
@@ -1221,14 +1221,14 @@
 }
 ,
 {
-  "Input": "I'll leave annually",
+  "Input": "Andrò via annualmente",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "annually",
+      "Text": "annualmente",
       "TypeName": "datetimeV2.set",
       "Resolution": {
         "values": [
@@ -1244,14 +1244,14 @@
 }
 ,
 {
-  "Input": "I'll leave each two days",
+  "Input": "Andrò via ogni due giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each two days",
+      "Text": "ogni due giorni",
       "TypeName": "datetimeV2.set",
       "Resolution": {
         "values": [
@@ -1267,14 +1267,14 @@
 }
 ,
 {
-  "Input": "I'll leave every three week",
+  "Input": "Ma ne vado ogni tre settimane",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every three week",
+      "Text": "ogni tre settimane",
       "TypeName": "datetimeV2.set",
       "Resolution": {
         "values": [
@@ -1290,14 +1290,14 @@
 }
 ,
 {
-  "Input": "I'll leave 3pm each day",
+  "Input": "Andrò via alle 3pm ogni giorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm each day",
+      "Text": "3pm ogni giorno",
       "TypeName": "datetimeV2.set",
       "Resolution": {
         "values": [
@@ -1313,14 +1313,14 @@
 }
 ,
 {
-  "Input": "I'll leave every monday",
+  "Input": "Andrò via ogni lunedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every monday",
+      "Text": "ogni lunedì",
       "TypeName": "datetimeV2.set",
       "Resolution": {
         "values": [
@@ -1336,14 +1336,14 @@
 }
 ,
 {
-  "Input": "I'll leave each monday at 4pm",
+  "Input": "Andrò via ogni lunedì alle 4pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each monday at 4pm",
+      "Text": "ogni lunedì alle 4pm",
       "TypeName": "datetimeV2.set",
       "Resolution": {
         "values": [
@@ -1359,7 +1359,7 @@
 }
 ,
 {
-  "Input": "I'll be back 7:56:30 pm",
+  "Input": "Tornerò alle 7:56:30 pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -1382,14 +1382,14 @@
 }
 ,
 {
-  "Input": "It's half past seven o'clock",
+  "Input": "Sono le sette e mezza",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half past seven o'clock",
+      "Text": "le sette e mezza",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1410,14 +1410,14 @@
 }
 ,
 {
-  "Input": "It's 20 min past eight in the evening",
+  "Input": "Sone le otto e 20 di sera",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "20 min past eight in the evening",
+      "Text": "le otto e 20 di sera",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1433,14 +1433,14 @@
 }
 ,
 {
-  "Input": "I'll be back in the morning at 7",
+  "Input": "Tornerò la mattina alle 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the morning at 7",
+      "Text": "la mattina alle 7",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1456,14 +1456,14 @@
 }
 ,
 {
-  "Input": "I'll be back in the afternoon at 7",
+  "Input": "Tornerò il pomeriggio alle 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the afternoon at 7",
+      "Text": "il pomeriggio alle 7",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1479,14 +1479,14 @@
 }
 ,
 {
-  "Input": "I'll be back noonish",
+  "Input": "Tornerò verso mezzogiorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "noonish",
+      "Text": "verso mezzogiorno",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1502,14 +1502,14 @@
 }
 ,
 {
-  "Input": "I'll be back 11ish",
+  "Input": "Tornerò verso le 11",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "11ish",
+      "Text": "verso le 11",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1525,7 +1525,7 @@
 }
 ,
 {
-  "Input": "I'll be back 1140 a.m.",
+  "Input": "Tonerò alle 1140 a.m.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -1548,14 +1548,14 @@
 }
 ,
 {
-  "Input": "12 noon",
+  "Input": "12 mezzogiorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 noon",
+      "Text": "12 mezzogiorno",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1571,14 +1571,14 @@
 }
 ,
 {
-  "Input": "I'll be out 5 to 6pm",
+  "Input": "Sarò fuori dalle 5 alle 6pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5 to 6pm",
+      "Text": "dalle 5 alle 6pm",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -1595,14 +1595,14 @@
 }
 ,
 {
-  "Input": "I'll be out 5 to seven in the morning",
+  "Input": "Sarò fuori dalle 5 alle sette di mattina",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5 to seven in the morning",
+      "Text": "dalle 5 alle sette di mattina",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -1619,14 +1619,14 @@
 }
 ,
 {
-  "Input": "I'll be out between 5 and 6 in the afternoon",
+  "Input": "Sarò fuori tra le 5 e le 6 del pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 5 and 6 in the afternoon",
+      "Text": "tra le 5 e le 6 del pomeriggio",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -1643,14 +1643,14 @@
 }
 ,
 {
-  "Input": "I'll be out 4:00 to 7 oclock",
+  "Input": "Sarò fuori dalle 4:00 alle 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4:00 to 7 oclock",
+      "Text": "dalle 4:00 alle 7",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -1673,14 +1673,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 3 in the morning until 5pm",
+  "Input": "Sarò fuori dalle 3 di mattina fino alle 5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 3 in the morning until 5pm",
+      "Text": "dalle 3 di mattina fino alle 5pm",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -1697,14 +1697,14 @@
 }
 ,
 {
-  "Input": "I'll be out between 4pm and 5pm",
+  "Input": "Sarò fuori tra le 4pm e le 5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 4pm and 5pm",
+      "Text": "tra le 4pm e le 5pm",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -1721,14 +1721,14 @@
 }
 ,
 {
-  "Input": "let's meet in the morning",
+  "Input": "Incontriamoci in mattinata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the morning",
+      "Text": "in mattinata",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -1745,14 +1745,14 @@
 }
 ,
 {
-  "Input": "let's meet in the evening",
+  "Input": "Incontriamoci in serata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the evening",
+      "Text": "in serata",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -1769,14 +1769,14 @@
 }
 ,
 {
-  "Input": "I'll go back now",
+  "Input": "Tornerò adesso",
   "Context": {
     "ReferenceDateTime": "2017-09-28T14:11:10.9626841"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "now",
+      "Text": "adesso",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1792,14 +1792,14 @@
 }
 ,
 {
-  "Input": "I'll be back in 5 minutes",
+  "Input": "Tornerò tra 5 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 5 minutes",
+      "Text": "tra 5 minuti",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1815,14 +1815,14 @@
 }
 ,
 {
-  "Input": "in 5 minutes",
+  "Input": "in 5 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 5 minutes",
+      "Text": "in 5 minuti",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1838,7 +1838,7 @@
 }
 ,
 {
-  "Input": "schedule me a meeting next week Mon 9 am or 1 pm",
+  "Input": "organizzami un appuntamento lunedì della settimana prossima alle 9 am o all' 1 pm",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
@@ -1846,7 +1846,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week mon 9 am",
+      "Text": "lunedì della settimana prossima alle 9 am",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1874,7 +1874,7 @@
   ]
 },
 {
-  "Input": "schedule me a meeting next week Mon or Tue",
+  "Input": "organizzami un appuntamento la prossima settimana di lun o mar",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
@@ -1882,7 +1882,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week mon",
+      "Text": "prossima settimana di lun",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -1895,7 +1895,7 @@
       }
     },
     {
-      "Text": "tue",
+      "Text": "mar",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -1915,7 +1915,7 @@
   ]
 },
 {
-  "Input": "schedule me a meeting in the morning 9 oclock or 10 oclock",
+  "Input": "organizzami un appuntamento la mattina dalle 9 alle 10",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
@@ -1923,7 +1923,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the morning 9 oclock",
+      "Text": "la mattina dalle 9",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1936,7 +1936,7 @@
       }
     },
     {
-      "Text": "10 oclock",
+      "Text": "10",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -1951,7 +1951,7 @@
   ]
 },
 {
-  "Input": "schedule me a meeting next Monday 1-3 pm or 5-6 pm",
+  "Input": "organizzami un appuntamento il prossimo lunedì 1-3 pm o 5-6 pm",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
@@ -1959,7 +1959,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next monday 1-3 pm",
+      "Text": "il prossimo lunedì 1-3 pm",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -1989,7 +1989,7 @@
   ]
 },
 {
-  "Input": "Monday 8-9am or 9-10 am works.",
+  "Input": "Lunedì 8-9am o 9-10 am lavora.",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
@@ -1997,7 +1997,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "monday 8-9am",
+      "Text": "lunedì 8-9am",
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
         "values": [
@@ -2033,7 +2033,7 @@
   ]
 },
 {
-  "Input": "Cortana could try to arrange a Skype call next week on Tuesday or Thursday please?",
+  "Input": "Cortana potresti provare ad organizzare una chiamata Skype per la prossima settimana di martedì o di giovedì, per favore?",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
@@ -2041,7 +2041,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week on tuesday",
+      "Text": "per la prossima settimana di martedì",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -2054,7 +2054,7 @@
       }
     },
     {
-      "Text": "thursday",
+      "Text": "giovedì",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -2074,7 +2074,7 @@
   ]
 },
 {
-  "Input": "Cortana could try to arrange a Skype call next week on Tuesday 9 am or Thursday 1 pm please?",
+  "Input": "Cortana potresti provare ad organizzare una chiamata Skype per la prossima settimana martedì alle 9 am o giovedì alle 1 pm, per favore?",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
@@ -2082,7 +2082,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week on tuesday 9 am",
+      "Text": "la prossima settimana martedì alle 9 am",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -2095,7 +2095,7 @@
       }
     },
     {
-      "Text": "thursday 1 pm",
+      "Text": "giovedì alle 1 pm",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [

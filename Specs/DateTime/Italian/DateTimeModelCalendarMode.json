@@ -1,6 +1,6 @@
 [
 {
-  "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of April 10?",
+  "Input": "Potresti aiutare me e Joan a trovare un momento per incontrarci nel mio ufficio (112/2018) la settimana del 10 Aprile?",
   "Context": {
     "ReferenceDateTime": "2018-02-08T00:00:00"
   },
@@ -8,7 +8,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the week of april 10",
+      "Text": "la settimana del 10 aprile",
       "Start": 71,
       "End": 90,
       "TypeName": "datetimeV2.daterange",
@@ -33,7 +33,7 @@
 }
 ,
 {
-  "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of july 23?",
+  "Input": "Potresti aiutare me e Joan a trovare un momento per incontrarci nel mio ufficio (112/2018) la settimana del 23 Luglio?",
   "Context": {
     "ReferenceDateTime": "2018-02-08T00:00:00"
   },
@@ -41,7 +41,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the week of july 23",
+      "Text": "la settimana del 23 luglio",
       "Start": 71,
       "End": 89,
       "TypeName": "datetimeV2.daterange",
@@ -66,34 +66,7 @@
 }
 ,
 {
-  "Input": "schedule me a one on one meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-},
-{
-  "Input": "schedule me a 1:1 meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-},
-{
-  "Input": "schedule me a 1-1 meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-},
-{
-  "Input": "schedule me a one:one meeting",
+  "Input": "organizzami un incontro privato",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -103,17 +76,7 @@
 }
 ,
 {
-  "Input": "schedule me a one-one meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "Input": "I will leave tmr 3",
+  "Input": "Partirò domani alle 3",
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
@@ -121,7 +84,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tmr 3",
+      "Text": "domani alle 3",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -137,7 +100,7 @@
 }
 ,
 {
-  "Input": "I will leave tomorrow three",
+  "Input": "Partirò alle tre di domani",
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
@@ -145,7 +108,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow three",
+      "Text": "alle tre di domani",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -161,7 +124,7 @@
 }
 ,
 {
-  "Input": "I will leave yesterday at 12",
+  "Input": "Sono partito ieri alle 12",
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
@@ -169,7 +132,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "yesterday at 12",
+      "Text": "ieri alle 12",
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -185,7 +148,7 @@
 }
 ,
 {
-  "Input": "Schedule a meeting before 4",
+  "Input": "organizza un appuntamento prima delle 4",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -193,7 +156,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before 4",
+      "Text": "prima delle 4",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -210,7 +173,7 @@
 }
 ,
 {
-  "Input": "Schedule a meeting after three",
+  "Input": "organizza un appuntamento dopo le tre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -218,7 +181,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after three",
+      "Text": "dopo le tre",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -235,7 +198,7 @@
 }
 ,
 {
-  "Input": "Schedule a meeting no later than 4",
+  "Input": "organizza un appuntamento non più tardi delle 4",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -243,7 +206,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "no later than 4",
+      "Text": "non più tardi delle 4",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [

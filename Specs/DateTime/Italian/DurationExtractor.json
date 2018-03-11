@@ -1,5 +1,5 @@
 [{
-  "Input": "I'll leave for 3h",
+  "Input": "Andrò via per 3h",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -10,29 +10,29 @@
 }
 ,
 {
-  "Input": "I'll leave for 3day",
+  "Input": "Andrò via per 3 giorni",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3day",
+      "Text": "3 giorni",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 3.5years",
+  "Input": "Andrò via per 3,5anni",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3.5years",
+      "Text": "3,5anni",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 3 h",
+  "Input": "Andrò via per 3 h",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -43,73 +43,40 @@
 }
 ,
 {
-  "Input": "I'll leave for 3 hours",
+  "Input": "Andrò via per 3 ore",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 hours",
+      "Text": "3 ore",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 3 hrs",
+  "Input": "Andrò via per 3 mesi",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 hrs",
+      "Text": "3 mesi",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 3 hr",
+  "Input": "Andrò via per 3 minuti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 hr",
+      "Text": "3 minuti",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 3 day",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 day",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for 3 months",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 months",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for 3 minutes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 minutes",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for 3 min",
+  "Input": "Andrò via per 3 min",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,18 +87,18 @@
 }
 ,
 {
-  "Input": "I'll leave for 3.5 second ",
+  "Input": "Andrò via per 3.5 secondi ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3.5 second",
+      "Text": "3.5 secondi",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 123.45 sec",
+  "Input": "Andrò via per 123.45 sec",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -142,464 +109,387 @@
 }
 ,
 {
-  "Input": "I'll leave for two weeks",
+  "Input": "Andrò via per due settimane",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two weeks",
+      "Text": "due settimane",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for twenty min",
+  "Input": "Andrò via per venti min",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "twenty min",
+      "Text": "venti min",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for twenty and four hours",
+  "Input": "Andrò via per ventiquattro ore",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "twenty and four hours",
+      "Text": "ventiquattro ore",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for all day",
+  "Input": "Andrò via per tutto il giorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all day",
+      "Text": "tutto il giorno",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for all week",
+  "Input": "Andrò via per tutta la settimana",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all week",
+      "Text": "tutta la settimana",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for all month",
+  "Input": "Andrò via per tutto il mese",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all month",
+      "Text": "tutto il mese",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for all year",
+  "Input": "Andrò via per tutto l'anno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all year",
+      "Text": "tutto l'anno",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for all-day",
+  "Input": "Andrò via per il giorno intero",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all-day",
+      "Text": "giorno intero",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for all-week",
+  "Input": "Andrò via per la settimana intera",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all-week",
+      "Text": "settimana intera",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for all-month",
+  "Input": "Andrò via per il mese intero",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all-month",
+      "Text": "mese intero",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for all-year",
+  "Input": "Andrò via per l'anno intero",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all-year",
+      "Text": "anno intero",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for full day",
+  "Input": "Andrò via per l'intero giorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full day",
+      "Text": "intero giorno",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for full week",
+  "Input": "Andrò via per l'intera settimana",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full week",
+      "Text": "intera settimana",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for full month",
+  "Input": "Andrò via per l'intero mese",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full month",
+      "Text": "intero mese",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for full year",
+  "Input": "Andrò via per l'intero anno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full year",
+      "Text": "intero anno",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for full-day",
+  "Input": "Andrò via per un'ora",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full-day",
+      "Text": "un'ora",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for full-week",
+  "Input": "Andrò via per un anno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full-week",
+      "Text": "un anno",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for full-month",
+  "Input": "metà anno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full-month",
+      "Text": "metà anno",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for full-year",
+  "Input": "Andrò via per 3 min",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full-year",
+      "Text": "3 min",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for an hour",
+  "Input": "Andrò via per 30 minuti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "an hour",
+      "Text": "30 minuti",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for a year",
+  "Input": "Andrò via per una mezzora",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a year",
+      "Text": "una mezzora",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "half year",
+  "Input": "Andrò via per mezzora",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half year",
+      "Text": "mezzora",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "half an year",
+  "Input": "Andrò via per un'ora e mezza",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half an year",
+      "Text": "un'ora e mezza",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 3-min",
+  "Input": "Andrò via per due ore",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3-min",
+      "Text": "due ore",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 30-minutes",
+  "Input": "Andrò via due ore e mezza",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "30-minutes",
+      "Text": "due ore e mezza",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for a half hour",
+  "Input": "In una settimana",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a half hour",
+      "Text": "una settimana",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for half an hour",
+  "Input": "In un giorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half an hour",
+      "Text": "un giorno",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for an hour and half",
+  "Input": "per un'ora",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "an hour and half",
+      "Text": "un'ora",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for an hour and a half",
+  "Input": "per un mese",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "an hour and a half",
+      "Text": "un mese",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for half hour",
+  "Input": "Andrò via per poche ore",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half hour",
+      "Text": "poche ore",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for two hours",
+  "Input": "Andrò via per pochi minuti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two hours",
+      "Text": "pochi minuti",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for two and a half hours",
+  "Input": "Andrò via per alcuni giorni",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two and a half hours",
+      "Text": "alcuni giorni",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "In a week",
+  "Input": "Andrò via per diversi giorni",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a week",
+      "Text": "diversi giorni",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "In a day",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a day",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "for an hour",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "an hour",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "for a month",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a month",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for few hours",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "few hours",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for a few minutes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a few minutes",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for some days",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "some days",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for several days",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "several days",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for 1 year 1 month 21 days",
+  "Input": "Andrò via per 1 anno 1 mese 21 giorni",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 year 1 month 21 days",
+      "Text": "1 anno 1 mese 21 giorni",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave for 2 days 1 month",
+  "Input": "Andrò via per 2 giorni 1 mese",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 days 1 month",
+      "Text": "2 giorni 1 mese",
       "Type": "duration"
     }
   ]

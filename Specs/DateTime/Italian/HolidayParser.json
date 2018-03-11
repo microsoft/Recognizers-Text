@@ -1,12 +1,12 @@
 [{
-  "Input": "I'll go back on easter",
+  "Input": "Tornerò a pasqua",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "easter",
+      "Text": "pasqua",
       "Type": "date",
       "Value": {
         "Timex": "",
@@ -22,14 +22,14 @@
 }
 ,
 {
-  "Input": "I'll go back on christmas day",
+  "Input": "Tornerò il giorno di natale",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "christmas day",
+      "Text": "il giorno di natale",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-12-25",
@@ -45,14 +45,14 @@
 }
 ,
 {
-  "Input": "I'll go back on new year eve",
+  "Input": "Tornerò la vigilia di capodanno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "new year eve",
+      "Text": "la vigilia di capodanno",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-12-31",
@@ -68,37 +68,14 @@
 }
 ,
 {
-  "Input": "I'll go back on new year's eve",
+  "Input": "Tornerò a natale",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "new year's eve",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-31",
-        "FutureResolution": {
-          "date": "2016-12-31"
-        },
-        "PastResolution": {
-          "date": "2015-12-31"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on christmas",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "christmas",
+      "Text": "natale",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-12-25",
@@ -114,14 +91,14 @@
 }
 ,
 {
-  "Input": "I'll go back on Yuandan",
+  "Input": "Tornerò al capodanno cinese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Yuandan",
+      "Text": "capodanno cinese",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-01",
@@ -137,14 +114,14 @@
 }
 ,
 {
-  "Input": "I'll go back on thanks giving day",
+  "Input": "Tornerò il giorno del ringraziamento",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "thanks giving day",
+      "Text": "giorno del ringraziamento",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-11-WXX-4-4",
@@ -160,14 +137,14 @@
 }
 ,
 {
-  "Input": "I'll go back on thanksgiving",
+  "Input": "Tornerò al ringraziamento",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "thanksgiving",
+      "Text": "ringraziamento",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-11-WXX-4-4",
@@ -183,14 +160,14 @@
 }
 ,
 {
-  "Input": "I'll go back on father's day",
+  "Input": "Tornerò alla festa del papà",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "father's day",
+      "Text": "festa del papà",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-06-WXX-7-3",
@@ -206,14 +183,14 @@
 }
 ,
 {
-  "Input": "I'll go back on Yuandan of next year",
+  "Input": "Tornerò al capodanno cinese del prossimo anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Yuandan of next year",
+      "Text": "capodanno cinese del prossimo anno",
       "Type": "date",
       "Value": {
         "Timex": "2017-01-01",
@@ -229,14 +206,14 @@
 }
 ,
 {
-  "Input": "I'll go back on thanks giving day 2010",
+  "Input": "Tornerò il giorno del ringraziamento del 2010",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "thanks giving day 2010",
+      "Text": "giorno del ringraziamento del 2010",
       "Type": "date",
       "Value": {
         "Timex": "2010-11-WXX-4-4",
@@ -252,14 +229,14 @@
 }
 ,
 {
-  "Input": "I'll go back on father's day of 2015",
+  "Input": "Tornerò alla festa del papà del 2015",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "father's day of 2015",
+      "Text": "festa del papà del 2015",
       "Type": "date",
       "Value": {
         "Timex": "2015-06-WXX-7-3",

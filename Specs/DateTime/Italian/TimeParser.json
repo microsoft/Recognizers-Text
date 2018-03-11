@@ -1,9 +1,9 @@
 [{
-  "Input": "set an alarm for eight forty",
+  "Input": "imposta una sveglia per le otto e quaranta",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "eight forty",
+      "Text": "otto e quaranta",
       "Type": "time",
       "Value": {
         "Timex": "T08:40",
@@ -19,11 +19,11 @@
 }
 ,
 {
-  "Input": "set an alarm for eight forty am",
+  "Input": "imposta una sveglia per le otto e quaranta am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "eight forty am",
+      "Text": "otto e quaranta am",
       "Type": "time",
       "Value": {
         "Timex": "T08:40",
@@ -39,11 +39,11 @@
 }
 ,
 {
-  "Input": "set an alarm for eight forty pm",
+  "Input": "imposta una sveglia per le otto e quaranta pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "eight forty pm",
+      "Text": "otto e quaranta pm",
       "Type": "time",
       "Value": {
         "Timex": "T20:40",
@@ -59,11 +59,11 @@
 }
 ,
 {
-  "Input": "set an alarm for ten forty five",
+  "Input": "imposta una sveglia per le dieci e quarantacinque",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten forty five",
+      "Text": "dieci e quarantacinque",
       "Type": "time",
       "Value": {
         "Timex": "T10:45",
@@ -79,11 +79,11 @@
 }
 ,
 {
-  "Input": "set an alarm for fifteen fifteen p m",
+  "Input": "imposta una sveglia per le quindici e quindici p m",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "fifteen fifteen p m",
+      "Text": "quindici e quindici p m",
       "Type": "time",
       "Value": {
         "Timex": "T15:15",
@@ -99,11 +99,11 @@
 }
 ,
 {
-  "Input": "set an alarm for fifteen thirty p m",
+  "Input": "imposta una sveglia per le quindici e trenta p m",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "fifteen thirty p m",
+      "Text": "quindici e trenta p m",
       "Type": "time",
       "Value": {
         "Timex": "T15:30",
@@ -119,11 +119,11 @@
 }
 ,
 {
-  "Input": "set an alarm for ten ten",
+  "Input": "imposta una sveglia per le dieci e dieci",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten ten",
+      "Text": "dieci e dieci",
       "Type": "time",
       "Value": {
         "Timex": "T10:10",
@@ -139,11 +139,11 @@
 }
 ,
 {
-  "Input": "set an alarm for ten fifty five p. m.",
+  "Input": "imposta una sveglia per le dieci e cinquantacinque p. m.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten fifty five p. m.",
+      "Text": "dieci e cinquantacinque p. m.",
       "Type": "time",
       "Value": {
         "Timex": "T22:55",
@@ -159,7 +159,7 @@
 }
 ,
 {
-  "Input": "I'll be back at 7ampm",
+  "Input": "Tornerò alle 7ampm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -179,7 +179,7 @@
 }
 ,
 {
-  "Input": "I'll be back at 7",
+  "Input": "Tornerò alle 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -199,11 +199,11 @@
 }
 ,
 {
-  "Input": "I'll be back at seven",
+  "Input": "Tornerò alle sette",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "seven",
+      "Text": "sette",
       "Type": "time",
       "Value": {
         "Timex": "T07",
@@ -219,7 +219,7 @@
 }
 ,
 {
-  "Input": "I'll be back 7pm",
+  "Input": "Tornerò alle 7pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -239,7 +239,7 @@
 }
 ,
 {
-  "Input": "I'll be back 7:56pm",
+  "Input": "Tornerò alle 7:56pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -259,7 +259,7 @@
 }
 ,
 {
-  "Input": "I'll be back 7:56:30pm",
+  "Input": "Tornerò alle 7:56:30pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -279,7 +279,7 @@
 }
 ,
 {
-  "Input": "I'll be back 7:56:30 pm",
+  "Input": "Tornerò alle 7:56:30 pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -299,7 +299,7 @@
 }
 ,
 {
-  "Input": "I'll be back 12:34",
+  "Input": "Tornerò alle 12:34",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -319,7 +319,7 @@
 }
 ,
 {
-  "Input": "I'll be back 12:34:25 ",
+  "Input": "Tornerò alle 12:34:25 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -339,11 +339,11 @@
 }
 ,
 {
-  "Input": "It's 7 o'clock",
+  "Input": "Sono le 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "7 o'clock",
+      "Text": "7",
       "Type": "time",
       "Value": {
         "Timex": "T07",
@@ -359,11 +359,11 @@
 }
 ,
 {
-  "Input": "It's seven o'clock",
+  "Input": "Sono le sette",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "seven o'clock",
+      "Text": "sette",
       "Type": "time",
       "Value": {
         "Timex": "T07",
@@ -379,11 +379,11 @@
 }
 ,
 {
-  "Input": "It's 8 in the morning",
+  "Input": "Sono le 8 del mattino",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8 in the morning",
+      "Text": "8 del mattino",
       "Type": "time",
       "Value": {
         "Timex": "T08",
@@ -399,11 +399,11 @@
 }
 ,
 {
-  "Input": "It's 8 in the night",
+  "Input": "Sono le 8 di notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8 in the night",
+      "Text": "8 di notte",
       "Type": "time",
       "Value": {
         "Timex": "T20",
@@ -419,11 +419,11 @@
 }
 ,
 {
-  "Input": "It's half past eight",
+  "Input": "Sono le otto e mezza",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half past eight",
+      "Text": "otto e mezza",
       "Type": "time",
       "Value": {
         "Timex": "T08:30",
@@ -439,11 +439,11 @@
 }
 ,
 {
-  "Input": "It's half past 8pm",
+  "Input": "Sono le 8 e mezza pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half past 8pm",
+      "Text": "8 e mezza pm",
       "Type": "time",
       "Value": {
         "Timex": "T20:30",
@@ -459,11 +459,11 @@
 }
 ,
 {
-  "Input": "It's 30 mins past eight",
+  "Input": "Sono le otto e 30 min",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "30 mins past eight",
+      "Text": "otto e 30 min",
       "Type": "time",
       "Value": {
         "Timex": "T08:30",
@@ -479,11 +479,11 @@
 }
 ,
 {
-  "Input": "It's a quarter past eight",
+  "Input": "Sono le otto e un quarto",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a quarter past eight",
+      "Text": "otto e un quarto",
       "Type": "time",
       "Value": {
         "Timex": "T08:15",
@@ -499,31 +499,11 @@
 }
 ,
 {
-  "Input": "It's quarter past eight",
+  "Input": "Sono le 9pm e tre quarti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "quarter past eight",
-      "Type": "time",
-      "Value": {
-        "Timex": "T08:15",
-        "FutureResolution": {
-          "time": "08:15:00"
-        },
-        "PastResolution": {
-          "time": "08:15:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "It's three quarters past 9pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "three quarters past 9pm",
+      "Text": "9pm e tre quarti",
       "Type": "time",
       "Value": {
         "Timex": "T21:45",
@@ -539,11 +519,11 @@
 }
 ,
 {
-  "Input": "It's three minutes to eight",
+  "Input": "Sono le otto meno tre minuti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "three minutes to eight",
+      "Text": "otto meno tre minuti",
       "Type": "time",
       "Value": {
         "Timex": "T07:57",
@@ -559,11 +539,11 @@
 }
 ,
 {
-  "Input": "It's half past seven o'clock",
+  "Input": "Sono le sette e mezza",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half past seven o'clock",
+      "Text": "sette e mezza",
       "Type": "time",
       "Value": {
         "Timex": "T07:30",
@@ -579,11 +559,11 @@
 }
 ,
 {
-  "Input": "It's half past seven afternoon",
+  "Input": "Sono le sette e mezza di pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half past seven afternoon",
+      "Text": "sette e mezza di pomeriggio",
       "Type": "time",
       "Value": {
         "Timex": "T19:30",
@@ -599,11 +579,11 @@
 }
 ,
 {
-  "Input": "It's half past seven in the morning",
+  "Input": "Sono le sette e mezza del mattino",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half past seven in the morning",
+      "Text": "sette e mezza del mattino",
       "Type": "time",
       "Value": {
         "Timex": "T07:30",
@@ -619,11 +599,11 @@
 }
 ,
 {
-  "Input": "It's a quarter to 8 in the morning",
+  "Input": "Sono le 8 meno un quarto del mattino",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a quarter to 8 in the morning",
+      "Text": "8 meno un quarto del mattino",
       "Type": "time",
       "Value": {
         "Timex": "T07:45",
@@ -639,11 +619,11 @@
 }
 ,
 {
-  "Input": "It's 20 min past eight in the evening",
+  "Input": "Sono le otto e 20 min di sera",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "20 min past eight in the evening",
+      "Text": "otto e 20 min di sera",
       "Type": "time",
       "Value": {
         "Timex": "T20:20",
@@ -659,11 +639,11 @@
 }
 ,
 {
-  "Input": "I'll be back in the afternoon at 7",
+  "Input": "Tornerò nel pomeriggio alle 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the afternoon at 7",
+      "Text": "nel pomeriggio alle 7",
       "Type": "time",
       "Value": {
         "Timex": "T19",
@@ -679,11 +659,11 @@
 }
 ,
 {
-  "Input": "I'll be back afternoon at 7",
+  "Input": "Tornerò all  7 di pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "afternoon at 7",
+      "Text": "7 di pomeriggio",
       "Type": "time",
       "Value": {
         "Timex": "T19",
@@ -699,11 +679,11 @@
 }
 ,
 {
-  "Input": "I'll be back afternoon 7:00",
+  "Input": "Tornerò alle 7:00 di pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "afternoon 7:00",
+      "Text": "7:00 di pomeriggio",
       "Type": "time",
       "Value": {
         "Timex": "T19:00",
@@ -719,11 +699,11 @@
 }
 ,
 {
-  "Input": "I'll be back afternoon 7:00:05",
+  "Input": "Tornerò alle 7:00:05 di pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "afternoon 7:00:05",
+      "Text": "7:00:05 di pomeriggio",
       "Type": "time",
       "Value": {
         "Timex": "T19:00:05",
@@ -739,11 +719,11 @@
 }
 ,
 {
-  "Input": "I'll be back afternoon seven pm",
+  "Input": "Tornerò alle sette pm di pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "afternoon seven pm",
+      "Text": "sette pm di pomeriggio",
       "Type": "time",
       "Value": {
         "Timex": "T19",
@@ -759,11 +739,11 @@
 }
 ,
 {
-  "Input": "I'll go back seven thirty pm",
+  "Input": "Tornerò alle sette e trenta pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "seven thirty pm",
+      "Text": "sette e trenta pm",
       "Type": "time",
       "Value": {
         "Timex": "T19:30",
@@ -779,11 +759,11 @@
 }
 ,
 {
-  "Input": "I'll go back seven thirty five pm",
+  "Input": "Tornerò alle sette e trentacinque pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "seven thirty five pm",
+      "Text": "sette e trentacinque pm",
       "Type": "time",
       "Value": {
         "Timex": "T19:35",
@@ -799,11 +779,11 @@
 }
 ,
 {
-  "Input": "I'll go back eleven twenty pm",
+  "Input": "Tornerò alle undici e venti pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "eleven twenty pm",
+      "Text": "undici e venti pm",
       "Type": "time",
       "Value": {
         "Timex": "T23:20",
@@ -819,11 +799,11 @@
 }
 ,
 {
-  "Input": "I'll be back noonish",
+  "Input": "Tornerò più o meno a mezzogiorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "noonish",
+      "Text": "più o meno a mezzogiorno",
       "Type": "time",
       "Value": {
         "Timex": "T12",
@@ -839,11 +819,11 @@
 }
 ,
 {
-  "Input": "I'll be back 12 noon",
+  "Input": "Tornerò a mezzogiorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 noon",
+      "Text": "mezzogiorno",
       "Type": "time",
       "Value": {
         "Timex": "T12",
@@ -859,11 +839,11 @@
 }
 ,
 {
-  "Input": "I'll be back 11ish",
+  "Input": "Tornerò più o meno alle 11",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "11ish",
+      "Text": "più o meno alle 11",
       "Type": "time",
       "Value": {
         "Timex": "T11",
@@ -879,27 +859,7 @@
 }
 ,
 {
-  "Input": "I'll be back 11-ish",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11-ish",
-      "Type": "time",
-      "Value": {
-        "Timex": "T11",
-        "FutureResolution": {
-          "time": "11:00:00"
-        },
-        "PastResolution": {
-          "time": "11:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be back 340pm",
+  "Input": "Tornerò alle 340pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -919,7 +879,7 @@
 }
 ,
 {
-  "Input": "I'll be back 1140 a.m.",
+  "Input": "Tornerò alle 1140 a.m.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -939,11 +899,11 @@
 }
 ,
 {
-  "Input": "midnight",
+  "Input": "mezzanotte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "midnight",
+      "Text": "mezzanotte",
       "Type": "time",
       "Value": {
         "Timex": "T00",
@@ -959,51 +919,11 @@
 }
 ,
 {
-  "Input": "mid-night",
+  "Input": "metà mattina",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mid-night",
-      "Type": "time",
-      "Value": {
-        "Timex": "T00",
-        "FutureResolution": {
-          "time": "00:00:00"
-        },
-        "PastResolution": {
-          "time": "00:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "mid night",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mid night",
-      "Type": "time",
-      "Value": {
-        "Timex": "T00",
-        "FutureResolution": {
-          "time": "00:00:00"
-        },
-        "PastResolution": {
-          "time": "00:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "midmorning",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "midmorning",
+      "Text": "metà mattina",
       "Type": "time",
       "Value": {
         "Timex": "T10",
@@ -1019,11 +939,11 @@
 }
 ,
 {
-  "Input": "mid-morning",
+  "Input": "metà mattinata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mid-morning",
+      "Text": "metà mattinata",
       "Type": "time",
       "Value": {
         "Timex": "T10",
@@ -1039,31 +959,11 @@
 }
 ,
 {
-  "Input": "mid morning",
+  "Input": "metà pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mid morning",
-      "Type": "time",
-      "Value": {
-        "Timex": "T10",
-        "FutureResolution": {
-          "time": "10:00:00"
-        },
-        "PastResolution": {
-          "time": "10:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "midafternoon",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "midafternoon",
+      "Text": "metà pomeriggio",
       "Type": "time",
       "Value": {
         "Timex": "T14",
@@ -1079,51 +979,11 @@
 }
 ,
 {
-  "Input": "mid-afternoon",
+  "Input": "metà giornata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mid-afternoon",
-      "Type": "time",
-      "Value": {
-        "Timex": "T14",
-        "FutureResolution": {
-          "time": "14:00:00"
-        },
-        "PastResolution": {
-          "time": "14:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "mid afternoon",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mid afternoon",
-      "Type": "time",
-      "Value": {
-        "Timex": "T14",
-        "FutureResolution": {
-          "time": "14:00:00"
-        },
-        "PastResolution": {
-          "time": "14:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "midday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "midday",
+      "Text": "metà giornata",
       "Type": "time",
       "Value": {
         "Timex": "T12",
@@ -1139,11 +999,11 @@
 }
 ,
 {
-  "Input": "mid-day",
+  "Input": "mezzogiorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mid-day",
+      "Text": "mezzogiorno",
       "Type": "time",
       "Value": {
         "Timex": "T12",
@@ -1159,11 +1019,11 @@
 }
 ,
 {
-  "Input": "mid day",
+  "Input": "Tornerò alle 12 ora di pranzo",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mid day",
+      "Text": "alle 12 ora di pranzo",
       "Type": "time",
       "Value": {
         "Timex": "T12",
@@ -1179,51 +1039,11 @@
 }
 ,
 {
-  "Input": "noon",
+  "Input": "Tornerò alle 12 mezzanotte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "noon",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be back 12 lunchtime",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 lunchtime",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be back 12 midnight",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 midnight",
+      "Text": "12 mezzanotte",
       "Type": "time",
       "Value": {
         "Timex": "T00",
@@ -1239,11 +1059,11 @@
 }
 ,
 {
-  "Input": "I'll be back 12 in the night",
+  "Input": "Tornerò alle 12 di notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 in the night",
+      "Text": "12 di notte",
       "Type": "time",
       "Value": {
         "Timex": "T00",
@@ -1259,11 +1079,11 @@
 }
 ,
 {
-  "Input": "I'll be back 1 o'clock midnight",
+  "Input": "Tornerò all'1 di notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 o'clock midnight",
+      "Text": "1 di notte",
       "Type": "time",
       "Value": {
         "Timex": "T01",
@@ -1279,31 +1099,11 @@
 }
 ,
 {
-  "Input": "I'll be back 12 o'clock lunchtime",
+  "Input": "Tornerò alle 11 ora di pranzo",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 o'clock lunchtime",
-      "Type": "time",
-      "Value": {
-        "Timex": "T12",
-        "FutureResolution": {
-          "time": "12:00:00"
-        },
-        "PastResolution": {
-          "time": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be back 11 o'clock lunchtime",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11 o'clock lunchtime",
+      "Text": "11 ora di pranzo",
       "Type": "time",
       "Value": {
         "Timex": "T11",
@@ -1319,11 +1119,11 @@
 }
 ,
 {
-  "Input": "I'll be back 1 o'clock lunchtime",
+  "Input": "Tornerò all'1 ora di pranzo",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 o'clock lunchtime",
+      "Text": "1 ora di pranzo",
       "Type": "time",
       "Value": {
         "Timex": "T13",
@@ -1339,11 +1139,11 @@
 }
 ,
 {
-  "Input": "I'll be back at lunchtime 11 o'clock",
+  "Input": "Tornerò a ora di pranzo alle 11",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "at lunchtime 11 o'clock",
+      "Text": "a ora di pranzo alle 11",
       "Type": "time",
       "Value": {
         "Timex": "T11",
@@ -1359,7 +1159,7 @@
 }
 ,
 {
-  "Input": "I'll be back 7:56:13 pm",
+  "Input": "Tornerò alle 7:56:13 pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1379,7 +1179,7 @@
 }
 ,
 {
-  "Input": "I'll be back 12:34:45 ",
+  "Input": "Tornerò alle 12:34:45 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1399,11 +1199,11 @@
 }
 ,
 {
-  "Input": "I'll be back afternoon 7:00:25",
+  "Input": "Tornerò alle 7:00:25 di pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "afternoon 7:00:25",
+      "Text": "7:00:25 di pomeriggio",
       "Type": "time",
       "Value": {
         "Timex": "T19:00:25",
@@ -1419,11 +1219,11 @@
 }
 ,
 {
-  "Input": "I'll go back seven thirty am",
+  "Input": "Tornerò alle sette e trenta am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "seven thirty am",
+      "Text": "sette e trenta am",
       "Type": "time",
       "Value": {
         "Timex": "T07:30",
@@ -1439,11 +1239,11 @@
 }
 ,
 {
-  "Input": "I'll go back at eleven five",
+  "Input": "Tornerò alle undici e cinque",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "eleven five",
+      "Text": "undici e cinque",
       "Type": "time",
       "Value": {
         "Timex": "T11:05",
@@ -1459,11 +1259,11 @@
 }
 ,
 {
-  "Input": "I'll go back three mins to five thirty ",
+  "Input": "Tornerò alle cinque e mezza meno tre minuti ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "three mins to five thirty",
+      "Text": "cinque e mezza meno tre minuti",
       "Type": "time",
       "Value": {
         "Timex": "T05:27",
@@ -1479,11 +1279,11 @@
 }
 ,
 {
-  "Input": "I'll go back five thirty in the night",
+  "Input": "Tornerò alle cinque e mezza di notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "five thirty in the night",
+      "Text": "cinque e mezza di notte",
       "Type": "time",
       "Value": {
         "Timex": "T17:30",
@@ -1499,11 +1299,11 @@
 }
 ,
 {
-  "Input": "I'll go back in the night five thirty",
+  "Input": "Tornerò di notte alle cinque e mezza",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the night five thirty",
+      "Text": "di notte alle cinque e mezza",
       "Type": "time",
       "Value": {
         "Timex": "T17:30",
@@ -1519,11 +1319,11 @@
 }
 ,
 {
-  "Input": "I'll be back noon",
+  "Input": "Tornerò a mezzogiorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "noon",
+      "Text": "mezzogiorno",
       "Type": "time",
       "Value": {
         "Timex": "T12",
@@ -1539,11 +1339,11 @@
 }
 ,
 {
-  "Input": "I'll be back at lunchtime 12 o'clock",
+  "Input": "Tornerò a ora di pranzo alle 12",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "at lunchtime 12 o'clock",
+      "Text": "ora di pranzo alle 12",
       "Type": "time",
       "Value": {
         "Timex": "T12",

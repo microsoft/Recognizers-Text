@@ -1,916 +1,851 @@
 [{
-  "Input": "I'll be out five to seven today",
+  "Input": "Sarò fuori dalle cinque alle sette di oggi",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "five to seven today",
+      "Text": "dalle cinque alle sette di oggi",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out five to seven of tomorrow",
+  "Input": "Sarò fuori dalle cinque alle sette di domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "five to seven of tomorrow",
+      "Text": "dalle cinque alle sette di domani",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 5 to 6 next sunday",
+  "Input": "Sarò fuori dalle 5 alle 6 la prossima domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 5 to 6 next sunday",
+      "Text": "dalle 5 alle 6 la prossima domenica",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 5 to 6pm next sunday",
+  "Input": "Sarò fuori dalle 5 alle 6pm la prossima domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 5 to 6pm next sunday",
+      "Text": "dalle 5 alle 6pm la prossima domenica",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 4pm to 5pm today",
+  "Input": "Sarò fuori dalle 4pm alle 5pm di oggi",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4pm to 5pm today",
+      "Text": "dalle 4pm alle 5pm di oggi",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 4pm today to 5pm tomorrow",
+  "Input": "Sarò fuori dalle 4pm di oggi alle 5pm di domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4pm today to 5pm tomorrow",
+      "Text": "dalle 4pm di oggi alle 5pm di domani",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 4pm to 5pm of tomorrow",
+  "Input": "Sarò fuori dalle 4pm alle 5pm di domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4pm to 5pm of tomorrow",
+      "Text": "dalle 4pm alle 5pm di domani",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 4pm to 5pm of 2017-6-6",
+  "Input": "Sarò fuori dalle 4pm alle 5pm di 2017-6-6",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4pm to 5pm of 2017-6-6",
+      "Text": "dalle 4pm alle 5pm di 2017-6-6",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 4pm to 5pm May 5, 2018",
+  "Input": "Sarò fuori dalle 4pm alle 5pm il 5 Maggio 2018",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4pm to 5pm May 5, 2018",
+      "Text": "dalle 4pm alle 5pm il 5 Maggio 2018",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 4:00 to 5pm May 5, 2018",
+  "Input": "Sarò fuori dalle 4:00 alle 5pm il 5 Maggio 2018",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4:00 to 5pm May 5, 2018",
+      "Text": "dalle 4:00 alle 5pm il 5 Maggio 2018",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 4pm on Jan 1, 2016 to 5pm today",
+  "Input": "Sarò fuori dalle 4pm del 1 Gen 2016 alle 5pm di oggi",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4pm on Jan 1, 2016 to 5pm today",
+      "Text": "dalle 4pm del 1 Gen 2016 alle 5pm di oggi",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+  "Input": "Sarò fuori dalle 2:00pm, 2016-2-21 alle 3:32, 04/23/2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+      "Text": "dalle 2:00pm, 2016-2-21 alle 3:32, 04/23/2016",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out from today at 4 to next Wedn at 5",
+  "Input": "Sarò fuori da oggi alle 4 al prossimo mer alle 5",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from today at 4 to next Wedn at 5",
+      "Text": "da oggi alle 4 al prossimo mer alle 5",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out between 4pm and 5pm today",
+  "Input": "Sarò fuori tra le 4pm e le 5pm di oggi",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 4pm and 5pm today",
+      "Text": "tra le 4pm e le 5pm di oggi",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out between 4pm on Jan 1, 2016 and 5pm today",
+  "Input": "Sarò fuori tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 4pm on Jan 1, 2016 and 5pm today",
+      "Text": "tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tonight",
+  "Input": "Tornerò stanotte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tonight",
+      "Text": "stanotte",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this night",
+  "Input": "Tornerò questa notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this night",
+      "Text": "questa notte",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this evening",
+  "Input": "Tornerò questa sera",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this evening",
+      "Text": "questa sera",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this morning",
+  "Input": "Tornerò questa mattina",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this morning",
+      "Text": "questa mattina",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this afternoon",
+  "Input": "Tornerò questo pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this afternoon",
+      "Text": "questo pomeriggio",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next night",
+  "Input": "Pornerò la prossima notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next night",
+      "Text": "la prossima notte",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back last night",
+  "Input": "Sono tornato la scorsa notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last night",
+      "Text": "la scorsa notte",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow night",
+  "Input": "Tornerò domani notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow night",
+      "Text": "domani notte",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next monday afternoon",
+  "Input": "Tornerò il prossimo lunedì pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next monday afternoon",
+      "Text": "il prossimo lunedì pomeriggio",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back May 5th night",
+  "Input": "Tornerò il 5 Maggio notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "May 5th night",
+      "Text": "5 Maggio notte",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back last 3 minute",
+  "Input": "Tornerò negli ultimi 3 minuti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last 3 minute",
+      "Text": "ultimi 3 minuti",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back past 3 minute",
+  "Input": "Sono tornato nei 3 minuti precedenti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "past 3 minute",
+      "Text": "3 minuti precedenti",
       "Type": "datetimerange"
     }
   ]
 }
 ,
+
 {
-  "Input": "I'll go back previous 3 minute",
+  "Input": "Tornerò nelle prossime 5 ore",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "previous 3 minute",
+      "Text": "prossime 5 ore",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back previous 3mins",
+  "Input": "Tornerò nell'ultimo minuto",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "previous 3mins",
+      "Text": nell'ultimo minuto",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next 5 hrs",
+  "Input": "Tornerò la prossima ora",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next 5 hrs",
+      "Text": "prossima ora",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back last minute",
+  "Input": "Tornerò gli ultimi minuti",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last minute",
+      "Text": "ultimi minuti",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next hour",
+  "Input": "Sono tornato diversi minuti passati",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next hour",
+      "Text": "diversi minuti passati",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back last few minutes",
+  "Input": "Tornerò martedì mattina",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last few minutes",
+      "Text": "martedì mattina",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back past several minutes",
+  "Input": "Tornerò martedì pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "past several minutes",
+      "Text": "martedì pomeriggio",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tuesday in the morning",
+  "Input": "Tornerò martedì sera",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday in the morning",
+      "Text": "martedì sera",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tuesday in the afternoon",
+  "Input": "incontriamoci in prima mattinata martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday in the afternoon",
+      "Text": "al mattino presto martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tuesday in the evening",
+  "Input": "incontriamoci in tarda mattinata martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday in the evening",
+      "Text": "in tarda mattinata martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early-morning Tuesday",
+  "Input": "incontriamoci nel primo pomeriggio martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-morning Tuesday",
+      "Text": "nel primo pomeriggio martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late-morning Tuesday",
+  "Input": "incontriamoci nel tardo pomeriggio martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-morning Tuesday",
+      "Text": "nel tardo pomeriggio martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early-afternoon Tuesday",
+  "Input": "incontriamoci di sera presto martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-afternoon Tuesday",
+      "Text": "di sera presto martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late-afternoon Tuesday",
+  "Input": "incontriamoci in tarda serata martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-afternoon Tuesday",
+      "Text": "in tarda serata martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early-evening Tuesday",
+  "Input": "incontriamoci di notte presto martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-evening Tuesday",
+      "Text": "di notte presto martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late-evening Tuesday",
+  "Input": "incontriamoci in tarda nottata martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-evening Tuesday",
+      "Text": "in tarda nottata martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early-night Tuesday",
+  "Input": "incontriamoci a notte fonda martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-night Tuesday",
+      "Text": "a notte fonda martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late-night Tuesday",
+  "Input": "incontriamoci la mattina presto di martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-night Tuesday",
+      "Text": "la mattina presto di martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early night Tuesday",
+  "Input": "incontriamoci nella tarda mattinata di martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early night Tuesday",
+      "Text": "nella tarda mattinata di martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late night Tuesday",
+  "Input": "incontriamoci nel primo pomeriggio di martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late night Tuesday",
+      "Text": "nel primo pomeriggio di martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early-morning on Tuesday",
+  "Input": "incontriamoci nel tardo pomeriggio di martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-morning on Tuesday",
+      "Text": "nel tardo pomeriggio di martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late-morning on Tuesday",
+  "Input": "incontriamoci nella sera presto di martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-morning on Tuesday",
+      "Text": "di sera presto di martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early-afternoon on Tuesday",
+  "Input": "incontriamoci nella tarda serata di martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-afternoon on Tuesday",
+      "Text": "nella tarda serata di martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late-afternoon on Tuesday",
+  "Input": "incontriamoci nella notte presto di martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-afternoon on Tuesday",
+      "Text": "nella notte presto di martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early-evening on Tuesday",
+  "Input": "incontriamoci nella tarda nottata di martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-evening on Tuesday",
+      "Text": "nella tarda nottata di martedì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late-evening on Tuesday",
+  "Input": "incontriamoci martedì il prima mattinata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-evening on Tuesday",
+      "Text": "martedì in prima mattinata",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early-night on Tuesday",
+  "Input": "incontriamoci martedì in tarda mattinata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-night on Tuesday",
+      "Text": "martedì in tarda mattinata",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late-night on Tuesday",
+  "Input": "incontriamoci martedì nel primo pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-night on Tuesday",
+      "Text": "martedì nel primo pomeriggio",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the early night on Tuesday",
+  "Input": "incontriamoci martedì nel tardo pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early night on Tuesday",
+      "Text": "martedì nel tardo pomeriggio",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet in the late night on Tuesday",
+  "Input": "incontriamoci martedì di sera presto",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late night on Tuesday",
+      "Text": "martedì di sera presto",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday early-morning",
+  "Input": "incontriamoci martedì in tarda serata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early-morning",
+      "Text": "martedì in tarda serata",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday late-morning",
+  "Input": "incontriamoci martedì di notte presto",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late-morning",
+      "Text": "martedì di notte presto",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday early-afternoon",
+  "Input": "incontriamoci martedì in tarda nottata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early-afternoon",
+      "Text": "martedì in tarda nottata",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday late-afternoon",
+  "Input": "incontriamoci martedì a tarda notte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late-afternoon",
+      "Text": "martedì a tarda notte",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday early-evening",
+  "Input": "Sarò fuori il resto della giornata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early-evening",
+      "Text": "resto della giornata",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday late-evening",
+  "Input": "Sarò fuori il resto di questa giornata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late-evening",
+      "Text": "resto di questa giornata",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday early-night",
+  "Input": "Sarò fuori il resto della giornata corrente",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early-night",
+      "Text": "resto della giornata corrente",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday late-night",
+  "Input": "Sarò fuori il resto del giorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late-night",
+      "Text": "il resto del giorno",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday early night",
+  "Input": "Cortana, per favore organizza uno schiky per una riunione d'affari con Wayne, venerdì tra le 1PM e le 4 PM. ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early night",
+      "Text": " venerdì tra le 1PM e le 4 PM",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "let's meet on Tuesday late night",
+  "Input": "Ci puoi calendarizzare domani tra le 8am e le 2pm?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late night",
+      "Text": "domani tra le 8am e le 2pm",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out rest of the day",
+  "Input": "Ci puoi calendarizzare il 9 Dic tra le 8am e le 2pm?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of the day",
+      "Text": "9 Dic tra le 8am e le 2pm",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out rest of this day",
+  "Input": "Ciao Cortana- Per favore organizza un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min questo venerdì, nel pomeriggio.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of this day",
+      "Text": "questo venerdì, nel pomeriggio",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out rest of current day",
+  "Input": "Ciao Cortana- Per favore organizza un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min nel pomeriggio, questo venerdì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of current day",
+      "Text": "nel pomeriggio, questo venerdì",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll be out rest the day",
+  "Input": "Cortana, per favore organizza uno skype per una riunione di lavoro con Wayne, venerdì pomeriggio tra le 1PM e le 4 PM.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest the day",
+      "Text": "venerdì pomeriggio tra le 1PM e le 4 PM",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday between 1PM and 4 PM. ",
+  "Input": "Cortana, per favore organizza uno skype per una riunione di lavoro con Wayne, nel pomeriggio di venerdì tra le 1PM e le 4 PM.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday between 1PM and 4 PM",
+      "Text": "nel pomeriggio di venerdì tra le 1PM e le 4 PM",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "Can you schedule us tomorrow between 8am and 2pm?",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tomorrow between 8am and 2pm",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Can you schedule us Dec 9th between 8am and 2pm?",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Dec 9th between 8am and 2pm",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting this Friday, in the afternoon.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "this Friday, in the afternoon",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, this Friday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the afternoon, this Friday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday afternoon between 1PM and 4 PM.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Friday afternoon between 1PM and 4 PM",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please schedule a skype for business meeting with Wayne, in the afternoon on Friday between 1PM and 4 PM.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the afternoon on Friday between 1PM and 4 PM",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Can you schedule us 2015-09-23 1p.m. to 4",
+  "Input": "Ci puoi calendarizzare il 2015-09-23 dalle 1p.m. alle 4",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2015-09-23 1p.m. to 4",
+      "Text": "2015-09-23 dalle 1p.m. alle 4",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "Can you schedule us 2015-09-23 1:30p.m. to 4.",
+  "Input": "Ci puoi calendarizzare il 2015-09-23 dalle 1:30p.m. alle 4.",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2015-09-23 1:30p.m. to 4",
+      "Text": "2015-09-23 dalle 1:30p.m. alle 4",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tuesday AM",
+  "Input": "Tornerò martedì AM",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday AM",
+      "Text": "martedì AM",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tuesday PM",
+  "Input": "Tornerò martedì PM",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday PM",
+      "Text": "martedì PM",
       "Type": "datetimerange"
     }
   ]
 }
 ,
 {
-  "Input": "It will happen 2 hours in the future",
+  "Input": "Succederà 2 ore in futuro",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 hours in the future",
+      "Text": "2 ore in futuro",
       "Type": "datetimerange"
     }
   ]

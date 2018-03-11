@@ -1,5 +1,5 @@
 [{
-  "Input": "Change my meeting from 9am to 11am",
+  "Input": "Cambia il mio appuntamento dalle 9am alle 11am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -18,13 +18,13 @@
 }
 ,
 {
-  "Input": "Change my meeting from Nov.19th to Nov.23th",
+  "Input": "Cambia il mio appuntamento dal 19 Nov al 23 Nov",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Start": 23,
       "Length": 8,
-      "Text": "Nov.19th",
+      "Text": "19 Nov",
       "Type": "date"
     },
     {

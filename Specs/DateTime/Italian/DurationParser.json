@@ -1,5 +1,5 @@
 [{
-  "Input": "I'll leave for 3h",
+  "Input": "Andrò via per 3h",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -22,14 +22,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3day",
+  "Input": "Andrò via per 3giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3day",
+      "Text": "3giorni",
       "Type": "duration",
       "Value": {
         "Timex": "P3D",
@@ -45,14 +45,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3.5years",
+  "Input": "Andrò via per 3,5anni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3.5years",
+      "Text": "3,5anni",
       "Type": "duration",
       "Value": {
         "Timex": "P3.5Y",
@@ -68,7 +68,7 @@
 }
 ,
 {
-  "Input": "I'll leave for 3 h",
+  "Input": "Andrò via per 3 h",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -91,14 +91,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3 hours",
+  "Input": "Andrò via per 3 ore",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 hours",
+      "Text": "3 ore",
       "Type": "duration",
       "Value": {
         "Timex": "PT3H",
@@ -114,60 +114,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3 hrs",
+  "Input": "Andrò via per 3 giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 hrs",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
-        },
-        "PastResolution": {
-          "duration": "10800"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for 3 hr",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 hr",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
-        },
-        "PastResolution": {
-          "duration": "10800"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for 3 day",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 day",
+      "Text": "3 giorni",
       "Type": "duration",
       "Value": {
         "Timex": "P3D",
@@ -183,14 +137,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3 months",
+  "Input": "Andrò via per 3 mesi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 months",
+      "Text": "3 mesi",
       "Type": "duration",
       "Value": {
         "Timex": "P3M",
@@ -206,14 +160,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3 minutes",
+  "Input": "Andrò via per 3 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 minutes",
+      "Text": "3 minuti",
       "Type": "duration",
       "Value": {
         "Timex": "PT3M",
@@ -229,7 +183,7 @@
 }
 ,
 {
-  "Input": "I'll leave for 3 min",
+  "Input": "Andrò via per 3 min",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -252,14 +206,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 3.5 second ",
+  "Input": "Andrò via per 3.5 secondi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3.5 second",
+      "Text": "3.5 secondi",
       "Type": "duration",
       "Value": {
         "Timex": "PT3.5S",
@@ -275,7 +229,7 @@
 }
 ,
 {
-  "Input": "I'll leave for 123.45 sec",
+  "Input": "Andrò via per 123.45 sec",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -298,14 +252,14 @@
 }
 ,
 {
-  "Input": "I'll leave for two weeks",
+  "Input": "Andrò via per due settimane",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two weeks",
+      "Text": "due settimane",
       "Type": "duration",
       "Value": {
         "Timex": "P2W",
@@ -321,14 +275,14 @@
 }
 ,
 {
-  "Input": "I'll leave for twenty min",
+  "Input": "Andrò via per venti min",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "twenty min",
+      "Text": "venti min",
       "Type": "duration",
       "Value": {
         "Timex": "PT20M",
@@ -344,14 +298,14 @@
 }
 ,
 {
-  "Input": "I'll leave for twenty and four hours",
+  "Input": "Andrò via per ventiquattro ore",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "twenty and four hours",
+      "Text": "ventiquattro ore",
       "Type": "duration",
       "Value": {
         "Timex": "PT24H",
@@ -367,14 +321,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all day",
+  "Input": "Andrò via per tutto il giorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all day",
+      "Text": "tutto il giorno",
       "Type": "duration",
       "Value": {
         "Timex": "P1D",
@@ -390,14 +344,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all week",
+  "Input": "Andrò via per tutta la settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all week",
+      "Text": "tutta la settimana",
       "Type": "duration",
       "Value": {
         "Timex": "P1W",
@@ -413,14 +367,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all month",
+  "Input": "Andrò via per tutto il mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all month",
+      "Text": "tutto il mese",
       "Type": "duration",
       "Value": {
         "Timex": "P1M",
@@ -436,14 +390,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all year",
+  "Input": "Andrò via per tutto l'anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all year",
+      "Text": "tutto l'anno",
       "Type": "duration",
       "Value": {
         "Timex": "P1Y",
@@ -459,14 +413,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all-day",
+  "Input": "Andrò via per il giorno intero",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all-day",
+      "Text": "il giorno intero",
       "Type": "duration",
       "Value": {
         "Timex": "P1D",
@@ -482,14 +436,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all-week",
+  "Input": "Andrò via per l'intero weekend",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all-week",
+      "Text": "l'intero weekend",
       "Type": "duration",
       "Value": {
         "Timex": "P1W",
@@ -505,14 +459,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all-month",
+  "Input": "Andrò via per l'intero mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all-month",
+      "Text": "l'intero mese",
       "Type": "duration",
       "Value": {
         "Timex": "P1M",
@@ -528,14 +482,14 @@
 }
 ,
 {
-  "Input": "I'll leave for all-year",
+  "Input": "Andrò via per l'intero anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "all-year",
+      "Text": "l'intero anno",
       "Type": "duration",
       "Value": {
         "Timex": "P1Y",
@@ -551,198 +505,14 @@
 }
 ,
 {
-  "Input": "I'll leave for full day",
+  "Input": "Andrò via per un'ora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "full day",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "duration": "86400"
-        },
-        "PastResolution": {
-          "duration": "86400"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for full week",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "full week",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "duration": "604800"
-        },
-        "PastResolution": {
-          "duration": "604800"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for full month",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "full month",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1M",
-        "FutureResolution": {
-          "duration": "2592000"
-        },
-        "PastResolution": {
-          "duration": "2592000"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for full year",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "full year",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "duration": "31536000"
-        },
-        "PastResolution": {
-          "duration": "31536000"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for full-day",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "full-day",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "duration": "86400"
-        },
-        "PastResolution": {
-          "duration": "86400"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for full-week",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "full-week",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "duration": "604800"
-        },
-        "PastResolution": {
-          "duration": "604800"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for full-month",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "full-month",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1M",
-        "FutureResolution": {
-          "duration": "2592000"
-        },
-        "PastResolution": {
-          "duration": "2592000"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for full-year",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "full-year",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "duration": "31536000"
-        },
-        "PastResolution": {
-          "duration": "31536000"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for an hour",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "an hour",
+      "Text": "un'ora",
       "Type": "duration",
       "Value": {
         "Timex": "PT1H",
@@ -758,37 +528,14 @@
 }
 ,
 {
-  "Input": "I'll leave for whole day",
+  "Input": "metà anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "whole day",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "duration": "86400"
-        },
-        "PastResolution": {
-          "duration": "86400"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "half year",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "half year",
+      "Text": "metà anno",
       "Type": "duration",
       "Value": {
         "Timex": "P0.5Y",
@@ -804,14 +551,14 @@
 }
 ,
 {
-  "Input": "half an year",
+  "Input": "semestre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half an year",
+      "Text": "semestre",
       "Type": "duration",
       "Value": {
         "Timex": "P0.5Y",
@@ -827,7 +574,7 @@
 }
 ,
 {
-  "Input": "I'll leave for 3-min",
+  "Input": "Andrò via per 3-min",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -850,14 +597,14 @@
 }
 ,
 {
-  "Input": "I'll leave for 30-minutes",
+  "Input": "Andrò via per 30-minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "30-minutes",
+      "Text": "30-minuti",
       "Type": "duration",
       "Value": {
         "Timex": "PT30M",
@@ -873,14 +620,14 @@
 }
 ,
 {
-  "Input": "I'll leave for an hour and a half",
+  "Input": "Andrò via per un'ora e mezza",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "an hour and a half",
+      "Text": "un'ora e mezza",
       "Type": "duration",
       "Value": {
         "Timex": "PT1.5H",
@@ -896,37 +643,14 @@
 }
 ,
 {
-  "Input": "I'll leave for an hour and half",
+  "Input": "Andrò via per mezzora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "an hour and half",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT1.5H",
-        "FutureResolution": {
-          "duration": "5400"
-        },
-        "PastResolution": {
-          "duration": "5400"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave for half hour",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "half hour",
+      "Text": "mezzora",
       "Type": "duration",
       "Value": {
         "Timex": "PT0.5H",
@@ -942,14 +666,14 @@
 }
 ,
 {
-  "Input": "I'll leave for two hour",
+  "Input": "Andrò via per due ore",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two hour",
+      "Text": "due ore",
       "Type": "duration",
       "Value": {
         "Timex": "PT2H",
@@ -965,14 +689,14 @@
 }
 ,
 {
-  "Input": "I'll leave for two and a half hours",
+  "Input": "Andrò via per due ore e mezza",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two and a half hours",
+      "Text": "due ore e mezza",
       "Type": "duration",
       "Value": {
         "Timex": "PT2.5H",
@@ -988,7 +712,7 @@
 }
 ,
 {
-  "Input": "I'll leave for 1 year 1 month 21 days",
+  "Input": "Andrò via per 1 anno 1 mese 21 giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -996,7 +720,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 year 1 month 21 days",
+      "Text": "1 anno 1 mese 21 giorni",
       "Type": "duration",
       "Value": {
         "Timex": "P1Y1M21D",
@@ -1012,7 +736,7 @@
 }
 ,
 {
-  "Input": "I'll leave for 2 days 1 month",
+  "Input": "Andrò via per 2 giorni 1 mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -1020,7 +744,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 days 1 month",
+      "Text": "2 giorni 1 mese",
       "Type": "duration",
       "Value": {
         "Timex": "P1M2D",
@@ -1036,7 +760,7 @@
 }
 ,
 {
-  "Input": "I'll leave for one week three days",
+  "Input": "Andrò via per una settimana e tre giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -1044,7 +768,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "one week three days",
+      "Text": "una settimana e tre giorni",
       "Type": "duration",
       "Value": {
         "Timex": "P1W3D",

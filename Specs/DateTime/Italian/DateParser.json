@@ -1,5 +1,5 @@
 [{
-  "Input": "I'll go back on 15",
+  "Input": "Tornerò il 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -22,14 +22,14 @@
 }
 ,
 {
-  "Input": "I'll go back Oct. 2",
+  "Input": "Tornerò il 2 Ott.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Oct. 2",
+      "Text": "2 Ott.",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-10-02",
@@ -45,14 +45,14 @@
 }
 ,
 {
-  "Input": "I'll go back Oct-2",
+  "Input": "Tornerò il 2-Ott",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Oct-2",
+      "Text": "2-Ott",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-10-02",
@@ -68,14 +68,14 @@
 }
 ,
 {
-  "Input": "I'll go back Oct/2",
+  "Input": "Tornerò il 2/Ott",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Oct/2",
+      "Text": "2/Ott",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-10-02",
@@ -91,14 +91,14 @@
 }
 ,
 {
-  "Input": "I'll go back October. 2",
+  "Input": "Tornerò il 2 Ottobre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "October. 2",
+      "Text": "2 Ottobre",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-10-02",
@@ -114,14 +114,14 @@
 }
 ,
 {
-  "Input": "I'll go back January 12, 2016",
+  "Input": "Tornerò il 12 Gennaio 2106",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "January 12, 2016",
+      "Text": "12 Gennaio, 2106",
       "Type": "date",
       "Value": {
         "Timex": "2016-01-12",
@@ -137,14 +137,14 @@
 }
 ,
 {
-  "Input": "I'll go back Monday January 12th, 2016",
+  "Input": "Tornerò Lunedì 12 Gennaio 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Monday January 12th, 2016",
+      "Text": "Lunedì 12 Gennaio 2016",
       "Type": "date",
       "Value": {
         "Timex": "2016-01-12",
@@ -160,7 +160,7 @@
 }
 ,
 {
-  "Input": "I'll go back 02/22/2016",
+  "Input": "Tornerò il 02/22/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -183,7 +183,7 @@
 }
 ,
 {
-  "Input": "I'll go back 21/04/2016",
+  "Input": "TOrnerò il 21/04/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -206,7 +206,7 @@
 }
 ,
 {
-  "Input": "I'll go back 21/04/16",
+  "Input": "Tornerò il 21/04/16",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -229,7 +229,7 @@
 }
 ,
 {
-  "Input": "I'll go back 21-04-2016",
+  "Input": "Tornerò il 21-04-2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -252,7 +252,7 @@
 }
 ,
 {
-  "Input": "I'll go back on 4.22",
+  "Input": "Tornerò il on 4.22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -275,7 +275,7 @@
 }
 ,
 {
-  "Input": "I'll go back on 4-22",
+  "Input": "Tornerò il 4-22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -298,53 +298,7 @@
 }
 ,
 {
-  "Input": "I'll go back in 4.22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back at 4-22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on    4/22",
+  "Input": "Tornerò il    4/22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -367,7 +321,7 @@
 }
 ,
 {
-  "Input": "I'll go back on 22/04",
+  "Input": "Tornerò il 22/04",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -390,7 +344,7 @@
 }
 ,
 {
-  "Input": "I'll go back     4/22",
+  "Input": "Tornerò il     4/22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -413,30 +367,7 @@
 }
 ,
 {
-  "Input": "I'll go back 22/04",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 2015/08/12",
+  "Input": "Tornerò il 2015/08/12",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -459,7 +390,7 @@
 }
 ,
 {
-  "Input": "I'll go back 08/12,2015",
+  "Input": "Tonerò il 08/12,2015",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -482,7 +413,7 @@
 }
 ,
 {
-  "Input": "I'll go back 08/12,15",
+  "Input": "Tornerò il 08/12,15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -505,14 +436,14 @@
 }
 ,
 {
-  "Input": "I'll go back 1st Jan",
+  "Input": "Tornerò il 1 Gen",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1st Jan",
+      "Text": "1 Gen",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-01",
@@ -528,14 +459,14 @@
 }
 ,
 {
-  "Input": "I'll go back Jan-1",
+  "Input": "Tornerò il primo Gen",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Jan-1",
+      "Text": "primo Gen",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-01",
@@ -551,14 +482,14 @@
 }
 ,
 {
-  "Input": "I'll go back Wed, 22 of Jan",
+  "Input": "Tornerò Mer, 22 Gen",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Wed, 22 of Jan",
+      "Text": "Mer, 22 Gen",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-22",
@@ -574,37 +505,14 @@
 }
 ,
 {
-  "Input": "I'll go back Jan first",
+  "Input": "Tornerò il ventuno Maggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Jan first",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back May twenty-first",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "May twenty-first",
+      "Text": "ventuno Maggio",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-05-21",
@@ -620,37 +528,14 @@
 }
 ,
 {
-  "Input": "I'll go back May twenty one",
+  "Input": "Tornerò il due di Ago.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "May twenty one",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-05-21",
-        "FutureResolution": {
-          "date": "2017-05-21"
-        },
-        "PastResolution": {
-          "date": "2016-05-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back second of Aug.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "second of Aug",
+      "Text": "due di Ago",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-08-02",
@@ -666,14 +551,14 @@
 }
 ,
 {
-  "Input": "I'll go back twenty second of June",
+  "Input": "Tornerò il ventidue di Giugno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "twenty second of June",
+      "Text": " ventidue di Giugno",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-06-22",
@@ -689,14 +574,14 @@
 }
 ,
 {
-  "Input": "I'll go back on Friday",
+  "Input": "Tornerò Venerdì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday",
+      "Text": "Venerdì",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-WXX-5",
@@ -712,37 +597,14 @@
 }
 ,
 {
-  "Input": "I'll go back |Friday",
+  "Input": "Tornerò oggi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-WXX-5",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back today",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "today",
+      "Text": "oggi",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-07",
@@ -758,14 +620,14 @@
 }
 ,
 {
-  "Input": "I'll go back tomorrow",
+  "Input": "Tornerò domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow",
+      "Text": "domani",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-08",
@@ -781,14 +643,14 @@
 }
 ,
 {
-  "Input": "I'll go back yesterday",
+  "Input": "Sono tornato ieri",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "yesterday",
+      "Text": "ieri",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-06",
@@ -804,14 +666,14 @@
 }
 ,
 {
-  "Input": "I'll go back the day before yesterday",
+  "Input": "Sono tornato l'altroieri",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the day before yesterday",
+      "Text": "l'altroieri",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-05",
@@ -827,14 +689,14 @@
 }
 ,
 {
-  "Input": "I'll go back the day after tomorrow",
+  "Input": "Tornerò dopodomani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the day after tomorrow",
+      "Text": "dopodomani",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-09",
@@ -850,14 +712,14 @@
 }
 ,
 {
-  "Input": "The day after tomorrow",
+  "Input": "Dopodomani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "The day after tomorrow",
+      "Text": "Dopodomani",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-09",
@@ -873,14 +735,14 @@
 }
 ,
 {
-  "Input": "I'll go back the next day",
+  "Input": "Tornerò il giorno dopo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the next day",
+      "Text": "il giorno dopo",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-08",
@@ -896,37 +758,14 @@
 }
 ,
 {
-  "Input": "I'll go back next day",
+  "Input": "Tornerò questo venerdì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next day",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-08",
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back this Friday",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "this Friday",
+      "Text": "questo venerdì",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-11",
@@ -942,14 +781,14 @@
 }
 ,
 {
-  "Input": "I'll go back next Sunday",
+  "Input": "Tornerò domenica prossima",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next Sunday",
+      "Text": "domenica prossima",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-20",
@@ -965,14 +804,14 @@
 }
 ,
 {
-  "Input": "I'll go back last Sunday",
+  "Input": "Sono tornato domenica scorsa",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last Sunday",
+      "Text": "domenica scorsa",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-06",
@@ -988,14 +827,14 @@
 }
 ,
 {
-  "Input": "I'll go back this week Friday",
+  "Input": "Tornerò questa settimana, venerdì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this week Friday",
+      "Text": "questa settimana, venerdì",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-11",
@@ -1011,14 +850,14 @@
 }
 ,
 {
-  "Input": "I'll go back next week Sunday",
+  "Input": "Tornerò la prossima settimana, domenica",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week Sunday",
+      "Text": "la prossima settimana, domenica",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-20",
@@ -1034,14 +873,14 @@
 }
 ,
 {
-  "Input": "I'll go back last week Sunday",
+  "Input": "Sono tornato la scorsa settimana, domenica",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last week Sunday",
+      "Text": "la scorsa settimana, domenica",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-06",
@@ -1057,14 +896,14 @@
 }
 ,
 {
-  "Input": "I'll go back last day",
+  "Input": "Sono tornato l'ultimo giorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last day",
+      "Text": "l'ultimo giorno",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-06",
@@ -1080,37 +919,14 @@
 }
 ,
 {
-  "Input": "I'll go back the last day",
+  "Input": "Tornerò in giornata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the last day",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back the day",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the day",
+      "Text": "in giornata",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-07",
@@ -1126,14 +942,14 @@
 }
 ,
 {
-  "Input": "I'll go back 15 June 2016",
+  "Input": "Tornerò il 15 Giugno 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15 June 2016",
+      "Text": "15 Giugno 2016",
       "Type": "date",
       "Value": {
         "Timex": "2016-06-15",
@@ -1149,14 +965,14 @@
 }
 ,
 {
-  "Input": "I'll go back the first friday of july",
+  "Input": "Tornerò il primo venerdì di luglio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the first friday of july",
+      "Text": "il primo venerdì di luglio",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-07-WXX-5-#1",
@@ -1172,14 +988,14 @@
 }
 ,
 {
-  "Input": "I'll go back the first friday in this month",
+  "Input": "Tornerò il primo venerdì di questo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the first friday in this month",
+      "Text": "il primo venerdì di questo mese",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-11-WXX-5-#1",
@@ -1195,14 +1011,14 @@
 }
 ,
 {
-  "Input": "I'll go back next week on Friday",
+  "Input": "Tornerò la prossima settimana, di venerdì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week on Friday",
+      "Text": "la prossima settimana, di venerdì",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-18",
@@ -1218,14 +1034,14 @@
 }
 ,
 {
-  "Input": "I'll go back on Friday next week",
+  "Input": "Tornerò venerdì della prossima settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on Friday next week",
+      "Text": "venerdì della prossima settimana",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-18",
@@ -1241,14 +1057,14 @@
 }
 ,
 {
-  "Input": "I'll go back my day",
+  "Input": "Tornerò questo giorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "my day",
+      "Text": "questo giorno",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-07",
@@ -1264,37 +1080,14 @@
 }
 ,
 {
-  "Input": "I'll go back this day",
+  "Input": "Sono tornato il giorno passato",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this day",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-07",
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back past day",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "past day",
+      "Text": "il giorno passato",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-06",
@@ -1310,14 +1103,14 @@
 }
 ,
 {
-  "Input": "I'll go back two weeks from now",
+  "Input": "Tornerò tra due settimane da adesso",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two weeks from now",
+      "Text": "tra due settimane da adesso",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-21",
@@ -1333,14 +1126,14 @@
 }
 ,
 {
-  "Input": "who did I email a month ago",
+  "Input": "a chi ho mandato una email un mese fa",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a month ago",
+      "Text": "un mese fa",
       "Type": "date",
       "Value": {
         "Timex": "2016-10-07",
@@ -1356,14 +1149,14 @@
 }
 ,
 {
-  "Input": "who did I email few month ago",
+  "Input": "a chi ho mandato una email pochi mesi fa",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "few month ago",
+      "Text": "pochi mesi fa",
       "Type": "date",
       "Value": {
         "Timex": "2016-08-07",
@@ -1379,14 +1172,14 @@
 }
 ,
 {
-  "Input": "who did I email a few day ago",
+  "Input": "a chi ho mandato una email pochi giorni fa",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a few day ago",
+      "Text": "pochi giorni fa",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-04",
@@ -1402,14 +1195,14 @@
 }
 ,
 {
-  "Input": "I went back for the 27",
+  "Input": "Sono tornato per il 27",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27",
+      "Text": "per il 27",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-27",
@@ -1425,14 +1218,14 @@
 }
 ,
 {
-  "Input": "I went back for the 27th",
+  "Input": "Sono tornato per il 27.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27th",
+      "Text": "per il 27",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-27",
@@ -1448,14 +1241,14 @@
 }
 ,
 {
-  "Input": "I went back for the 27.",
+  "Input": "Sono tornato per il 27!",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27",
+      "Text": "per il 27",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-27",
@@ -1471,14 +1264,14 @@
 }
 ,
 {
-  "Input": "I went back for the 27!",
+  "Input": "Sono tornato per il 27 .",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27",
+      "Text": "per il 27",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-27",
@@ -1494,37 +1287,14 @@
 }
 ,
 {
-  "Input": "I went back for the 27 .",
+  "Input": "Sono tornato per il 21",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 21st",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the 21st",
+      "Text": "per il 21",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-21",
@@ -1540,14 +1310,14 @@
 }
 ,
 {
-  "Input": "I went back for the 22nd",
+  "Input": "Sono tornato per il 22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 22nd",
+      "Text": "per il 22",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-22",
@@ -1563,14 +1333,14 @@
 }
 ,
 {
-  "Input": "I went back for the second",
+  "Input": "Sono tornato per il due",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the second",
+      "Text": "per il due",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-02",
@@ -1586,14 +1356,14 @@
 }
 ,
 {
-  "Input": "I went back for the twenty second",
+  "Input": "Sono tornato per il ventidue",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the twenty second",
+      "Text": "per il ventidue",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-22",
@@ -1609,14 +1379,14 @@
 }
 ,
 {
-  "Input": "I went back for the thirty",
+  "Input": "Sono tornato per il trenta",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the thirty",
+      "Text": "per il trenta",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-XX-30",
@@ -1632,14 +1402,14 @@
 }
 ,
 {
-  "Input": "I went back Thursday the 21st",
+  "Input": "Sono tornato giovedì 21",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8080661+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Thursday the 21st",
+      "Text": "giovedì 21",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-21",
@@ -1655,14 +1425,14 @@
 }
 ,
 {
-  "Input": "I went back Friday the 22nd",
+  "Input": "Sono tornato venerdì 22",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8110663+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday the 22nd",
+      "Text": "venerdì 22",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-22",
@@ -1678,14 +1448,14 @@
 }
 ,
 {
-  "Input": "I went back Saturday the 23rd",
+  "Input": "Sono tornato sabato 23",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8120465+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Saturday the 23rd",
+      "Text": "sabato 23",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-23",
@@ -1701,14 +1471,14 @@
 }
 ,
 {
-  "Input": "I went back Friday the 15th",
+  "Input": "Sono tornato venerdì 15",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8130455+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday the 15th",
+      "Text": "venerdì 15",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-15",
@@ -1724,14 +1494,14 @@
 }
 ,
 {
-  "Input": "I went back Thursday the twenty first",
+  "Input": "Sono tornato giovedì ventuno",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8140457+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Thursday the twenty first",
+      "Text": "giovedì ventuno",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-21",
@@ -1747,14 +1517,14 @@
 }
 ,
 {
-  "Input": "I went back Friday the twenty second",
+  "Input": "Sono tornato venerdì ventidue",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8150456+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday the twenty second",
+      "Text": "venerdì ventidue",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-22",
@@ -1770,14 +1540,14 @@
 }
 ,
 {
-  "Input": "I went back Friday the fifteen",
+  "Input": "Sono tornato venerdì quindici",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8160454+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday the fifteen",
+      "Text": "venerdì quindici",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-15",
@@ -1793,14 +1563,14 @@
 }
 ,
 {
-  "Input": "I'll go back second Sunday",
+  "Input": "Tornerò la seconda domenica",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "second Sunday",
+      "Text": "la seconda domenica",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-10",
@@ -1816,14 +1586,14 @@
 }
 ,
 {
-  "Input": "I'll go back first Sunday",
+  "Input": "Tornerò la prima domenica",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "first Sunday",
+      "Text": "la prima domenica",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-03",
@@ -1839,14 +1609,14 @@
 }
 ,
 {
-  "Input": "I'll go back third Tuesday",
+  "Input": "Tornerò il terzo martedì",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8210454+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "third Tuesday",
+      "Text": "il terzo martedì",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-19",
@@ -1862,14 +1632,14 @@
 }
 ,
 {
-  "Input": "I'll go back fifth Sunday",
+  "Input": "Tornerò la quinta domenica",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:49.8225493+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "fifth Sunday",
+      "Text": "quinta domenica",
       "Type": "date",
       "Value": {
         "Timex": "2017-09-31",
@@ -1885,14 +1655,14 @@
 }
 ,
 {
-  "Input": "I went back 20th of next month",
+  "Input": "Tornerò il 20 del prossimo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "20th of next month",
+      "Text": "il 20 del prossimo mese",
       "Type": "date",
       "Value": {
         "Timex": "2016-12-20",
@@ -1908,14 +1678,14 @@
 }
 ,
 {
-  "Input": "I went back 31st of this month",
+  "Input": "Sono tornato il 31 di questo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "31st of this month",
+      "Text": "il 31 di questo mese",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-31",
@@ -1931,14 +1701,14 @@
 }
 ,
 {
-  "Input": "I'll go back January 12, 2018",
+  "Input": "Tornerò il 12 Gennaio 2018",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "January 12, 2018",
+      "Text": "12 Gennaio 2018",
       "Type": "date",
       "Value": {
         "Timex": "2018-01-12",
@@ -1954,7 +1724,7 @@
 }
 ,
 {
-  "Input": "I'll go back 9-18-15",
+  "Input": "Tornerò il 9-18-15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -1977,14 +1747,14 @@
 }
 ,
 {
-  "Input": "I went back two days ago",
+  "Input": "Sono tornato due giorni fa",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two days ago",
+      "Text": "due giorni fa",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-05",
@@ -2000,14 +1770,14 @@
 }
 ,
 {
-  "Input": "I went back two years ago",
+  "Input": "Sono tornato due anni fa",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two years ago",
+      "Text": "due anni fa",
       "Type": "date",
       "Value": {
         "Timex": "2014-11-07",
@@ -2046,7 +1816,7 @@
 }
 ,
 {
-  "Input": "We had a meeting 1 month 21 days ago",
+  "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
@@ -2054,7 +1824,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 month 21 days ago",
+      "Text": "1 mese e 21 giorni fa",
       "Type": "date",
       "Value": {
         "Timex": "2017-10-02",
@@ -2070,7 +1840,7 @@
 }
 ,
 {
-  "Input": "I left here 2 years 1 month 21 days ago",
+  "Input": "Sono partito 2 anni, 1 mese e 21 giorni fa",
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
@@ -2078,7 +1848,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 years 1 month 21 days ago",
+      "Text": "2 anni, 1 mese e 21 giorni fa",
       "Type": "date",
       "Value": {
         "Timex": "2015-10-02",
@@ -2094,7 +1864,7 @@
 }
 ,
 {
-  "Input": "I will leve here 2 years 21 days later",
+  "Input": "Partirò 2 anni e 21 giorni dopo",
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
@@ -2102,7 +1872,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 years 21 days later",
+      "Text": "2 anni e 21 giorni dopo",
       "Type": "date",
       "Value": {
         "Timex": "2019-12-14",
@@ -2118,7 +1888,7 @@
 }
 ,
 {
-  "Input": "I left here 1 month 2 years 21 days ago",
+  "Input": "Sono partito 1 mese, 2 anni e 21 giorni fa",
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
@@ -2126,7 +1896,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 month 2 years 21 days ago",
+      "Text": "1 mese, 2 anni e 21 giorni fa",
       "Type": "date",
       "Value": {
         "Timex": "2015-10-02",
@@ -2142,7 +1912,7 @@
 }
 ,
 {
-  "Input": "We had a meeting 1 month and 21 days ago",
+  "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
@@ -2150,7 +1920,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 month and 21 days ago",
+      "Text": "1 mese e 21 giorni fa",
       "Type": "date",
       "Value": {
         "Timex": "2017-10-02",
@@ -2166,31 +1936,7 @@
 }
 ,
 {
-  "Input": "We had a meeting 1 month, 21 days ago",
-  "Context": {
-    "ReferenceDateTime": "2017-11-23T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 month, 21 days ago",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2017-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "We had a meeting the 20th of next month",
+  "Input": "Avremo un appuntamento il 20 del prossimo mese",
   "Context": {
     "ReferenceDateTime": "2017-12-07T00:00:00"
   },
@@ -2198,7 +1944,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the 20th of next month",
+      "Text": "il 20 del prossimo mese",
       "Type": "date",
       "Value": {
         "Timex": "2018-01-20",
@@ -2214,14 +1960,14 @@
 }
 ,
 {
-  "Input": "We had a meeting 5 December 1391",
+  "Input": "Abbiamo avuto un appuntamento il 5 Dicembre 1391",
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5 December 1391",
+      "Text": "5 Dicembre 1391",
       "Type": "date",
       "Value": {
         "Timex": "1391-12-05",
@@ -2237,7 +1983,7 @@
 }
 ,
 {
-  "Input": "Monday, Jan twenty two, 2018",
+  "Input": "Lunedì, ventidue Gen, 2018",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2245,7 +1991,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Monday, Jan twenty two, 2018",
+      "Text": "Lunedì, ventidue Gen, 2018",
       "Type": "date",
       "Value": {
         "Timex": "2018-01-22",
@@ -2261,7 +2007,7 @@
 }
 ,
 {
-  "Input": "on Sunday Jan twenty one two thousand and eighteen",
+  "Input": "Domenica ventuno Gen duemiladiciotto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2269,7 +2015,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Sunday Jan twenty one two thousand and eighteen",
+      "Text": "Domenica ventuno Gen duemiladiciotto",
       "Type": "date",
       "Value": {
         "Timex": "2018-01-21",
@@ -2285,7 +2031,7 @@
 }
 ,
 {
-  "Input": "on September the twenty-first nineteen seventy eight",
+  "Input": "a Settembre, il ventuno, millenovecentosettantatre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2293,7 +2039,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "September the twenty-first nineteen seventy eight",
+      "Text": "Settembre, il ventuno, millenovecentosettantatre",
       "Type": "date",
       "Value": {
         "Timex": "1978-09-21",
@@ -2309,7 +2055,7 @@
 }
 ,
 {
-  "Input": "on September 10, nineteen zero one",
+  "Input": "il 10 Settembre, millenovecentouno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2317,7 +2063,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "September 10, nineteen zero one",
+      "Text": "10 Settembre, millenovecentouno",
       "Type": "date",
       "Value": {
         "Timex": "1901-09-10",
@@ -2333,7 +2079,7 @@
 }
 ,
 {
-  "Input": "on the tenth of September, two thousand",
+  "Input": "il dieci di Settembre, duemila",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2341,7 +2087,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tenth of September, two thousand",
+      "Text": "dieci di Settembre, duemila",
       "Type": "date",
       "Value": {
         "Timex": "2000-09-10",

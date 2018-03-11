@@ -1,284 +1,273 @@
 [{
-  "Input": "I'll leave weekly",
+  "Input": "Andrò via settimanalmente",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "weekly",
+      "Text": "settimanalmente",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave daily",
+  "Input": "Andrò via quotidianamente",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "daily",
+      "Text": "quotidianamente",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave every day",
+  "Input": "Andrò via ogni giorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every day",
+      "Text": "ogni giorno",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave each month",
+  "Input": "Andrò via ogni mese",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each month",
+      "Text": "ogni mese",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave annually",
+  "Input": "Andrò via annualmente",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "annually",
+      "Text": "annualmente",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave annual",
+  "Input": "Andrò via una volta all'anno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "annual",
+      "Text": "una volta all'anno",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave each two days",
+  "Input": "Andrò via ogni due giorni",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each two days",
+      "Text": "ogni due giorni",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave every three week",
+  "Input": "Andrò via ogni tre settimane",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every three week",
+      "Text": "ogni tre settimane",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave 3pm every day",
+  "Input": "Andrò via alle 3pm ogni giorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm every day",
+      "Text": "alle 3pm ogni giorno",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave 3pm each day",
+  "Input": "Andrò via ogni 4/15",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm each day",
+      "Text": "ogni 4/15",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave each 4/15",
+  "Input": "Andrò via ogni lunedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each 4/15",
+      "Text": "ogni lunedì",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave every monday",
+  "Input": "Andrò via ogni lunedì alle 4pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every monday",
+      "Text": "ogni lunedì alle 4pm",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave each monday 4pm",
+  "Input": "Andrò via ogni mattina",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each monday 4pm",
+      "Text": "ogni mattina",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave every morning",
+  "Input": "Andrò via ogni mattina alle 9am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every morning",
+      "Text": "ogni mattina alle 9am",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave every morning at 9am",
+  "Input": "Andrò via ogni pomeriggio alle 4pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every morning at 9am",
+      "Text": "ogni pomeriggio alle 4pm",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave every afternoon at 4pm",
+  "Input": "Andrò via ogni notte alle 9pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every afternoon at 4pm",
+      "Text": "ogni notte alle 9pm",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave every night at 9pm",
+  "Input": "Andrò via ogni notte alle 9",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every night at 9pm",
+      "Text": "ogni notte alle 9",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave every night at 9",
+  "Input": "Andrò via la mattina alle 9am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every night at 9",
+      "Text": "la mattina alle 9am",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave mornings at 9am",
+  "Input": "Andrò via di mattina alle 9",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mornings at 9am",
+      "Text": "di mattina alle 9",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave on mornings at 9",
+  "Input": "Andrò via alle 9am ogni domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on mornings at 9",
+      "Text": "alle 9am ogni domenica",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave at 9am every Sunday",
+  "Input": "Andrò via alle 9am di lunedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "9am every Sunday",
+      "Text": "alle 9am di lunedì",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave at 9am on Mondays",
+  "Input": "Andrò via alle 9am il lunedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "9am on Mondays",
+      "Text": "alle 9am il lunedì",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave at 9am Mondays",
+  "Input": "Andrò via il lunedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "9am Mondays",
+      "Text": "il lunedì",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave on Mondays",
+  "Input": "Andrò via la domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on Mondays",
+      "Text": "la domenica",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "I'll leave on Sundays",
+  "Input": "Andrò via di domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on Sundays",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave Sundays",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Sundays",
+      "Text": "di domenica",
       "Type": "set"
     }
   ]

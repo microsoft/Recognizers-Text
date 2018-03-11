@@ -1,12 +1,12 @@
 [{
-  "Input": "I'll be out next hour",
+  "Input": "Sarò fuori la prossima ora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "hour",
+      "Text": "ora",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -23,14 +23,14 @@
 }
 ,
 {
-  "Input": "I'll be out next 5 minutes",
+  "Input": "Sarò fuori i prossimi 5 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5 minutes",
+      "Text": "5 minuti",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -47,14 +47,14 @@
 }
 ,
 {
-  "Input": "I'll be out next 3 days",
+  "Input": "Sarò fuori i prossimi 3 giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 days",
+      "Text": "3 giorni",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -71,14 +71,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting now",
+  "Input": "organizza un appuntamento adesso",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "now",
+      "Text": "adesso",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [
@@ -94,7 +94,7 @@
 }
 ,
 {
-  "Input": "schedule a meeting tongiht at 7",
+  "Input": "organizza un appuntamento stanotte alle 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -122,7 +122,7 @@
 }
 ,
 {
-  "Input": "schedule a meeting tongiht at 7pm",
+  "Input": "organizza un appuntamento stanotte alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -145,14 +145,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting 2 hours later",
+  "Input": "organizza un appuntamento 2 ore dopo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 hours",
+      "Text": "2 ore",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -169,14 +169,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting tomorrow from 5pm to 7pm",
+  "Input": "organizza un appuntamento domani dalle 5pm alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow",
+      "Text": "domani",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -218,14 +218,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting today from 5pm to 7pm",
+  "Input": "organizza un appuntamento oggi dalle 5pm alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "today",
+      "Text": "oggi",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -267,14 +267,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting next Monday from 5pm to 7pm",
+  "Input": "organizza un appuntamento lunedì prossimo dalle 5pm alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next monday",
+      "Text": "lunedì prossimo",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -316,14 +316,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting from 5pm to 7pm tomorrow",
+  "Input": "organizza un appuntamento dalle 5pm alle 7pm domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow",
+      "Text": "domani",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -365,14 +365,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting from 5pm to 7pm today",
+  "Input": "organizza un appuntamento dalle 5pm alle 7pm oggi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "today",
+      "Text": "oggi",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -414,14 +414,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting from 5pm to 7pm next Monday",
+  "Input": "organizza un appuntamento dalle 5pm alle 7pm lunedì prossimo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next monday",
+      "Text": "lunedì prossimo",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -463,14 +463,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting tomorrow from 5 to 7pm",
+  "Input": "organizza un appuntamento domani dalle 5 alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow",
+      "Text": "domani",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -483,7 +483,7 @@
       }
     },
     {
-      "Text": "from 5 to 7pm",
+      "Text": "dalle 5 alle 7pm",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [
@@ -500,14 +500,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting from Sep.1st to Sep.5th",
+  "Input": "organizza un appuntamento dal 1 Set al 5 Set",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "sep.1st",
+      "Text": "1 set",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -525,7 +525,7 @@
       }
     },
     {
-      "Text": "sep.5th",
+      "Text": "5 set",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -546,14 +546,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting from July the 5th to July the 8th",
+  "Input": "organizza un appuntamento dal 5 Luglio all'8 Luglio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "july the 5th",
+      "Text": "5 luglio",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -571,7 +571,7 @@
       }
     },
     {
-      "Text": "july the 8th",
+      "Text": "8 luglio",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -592,7 +592,7 @@
 }
 ,
 {
-  "Input": "schedule a meeting from 5:30 to 7:00",
+  "Input": "organizza un appuntamento dalle 5:30 alle 7:00",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -638,7 +638,7 @@
 }
 ,
 {
-  "Input": "schedule a meeting from 5pm to 7pm",
+  "Input": "organizza un appuntamento dalle 5pm alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -674,7 +674,7 @@
 }
 ,
 {
-  "Input": "schedule a meeting from 5am to 7pm",
+  "Input": "organizza un appuntamento dalle 5am alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -710,14 +710,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting 2 days later",
+  "Input": "organizza un appuntamento 2 giorni dopo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 days",
+      "Text": "2 giorni",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -734,14 +734,14 @@
 }
 ,
 {
-  "Input": "I had 2 minutes ago",
+  "Input": "L'ho avuto 2 minuti fa",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 minutes",
+      "Text": "2 minuti",
       "TypeName": "datetimeV2.duration",
       "Resolution": {
         "values": [
@@ -758,14 +758,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting tomorrow at 7pm",
+  "Input": "organizza un appuntamento domani alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow",
+      "Text": "domani",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -794,14 +794,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting tomorrow morning at 7pm",
+  "Input": "organizza un appuntamento domani mattina alle 7pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow",
+      "Text": "domani",
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -814,7 +814,7 @@
       }
     },
     {
-      "Text": "morning at 7pm",
+      "Text": "mattina alle 7pm",
       "TypeName": "datetimeV2.time",
       "Resolution": {
         "values": [

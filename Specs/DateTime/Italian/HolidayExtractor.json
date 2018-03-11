@@ -1,97 +1,97 @@
 [{
-  "Input": "I'll go back on christmas",
+  "Input": "Tornerò a natale",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "christmas",
+      "Text": "natale",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on christmas day",
+  "Input": "Tornerò il giorno di natale",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "christmas day",
+      "Text": "il giorno di natale",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Yuandan",
+  "Input": "Tornerò al capodanno cinese",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Yuandan",
+      "Text": "capodanno cinese",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on thanks giving day",
+  "Input": "Tornerò il giorno del ringraziamento",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "thanks giving day",
+      "Text": "giorno del ringraziamento",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on father's day",
+  "Input": "Tornerò alla festa del papà",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "father's day",
+      "Text": "festa del papà",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Yuandan of this year",
+  "Input": "Tornerò al capodanno cinese di quest'anno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Yuandan of this year",
+      "Text": "capodanno cinese di quest'anno",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Yuandan of 2016",
+  "Input": "Tornerò al capodanno cinese del 2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Yuandan of 2016",
+      "Text": "capodanno cinese del 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Yuandan 2016",
+  "Input": "Tornerò al capodanno cinese 2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Yuandan 2016",
+      "Text": "capodanno cinese 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on clean monday",
+  "Input": "Tornerò il primo giorno di quaresima",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "clean monday",
+      "Text": "il primo giorno di quaresima",
       "Type": "date"
     }
   ]

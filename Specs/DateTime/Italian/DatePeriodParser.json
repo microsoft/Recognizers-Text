@@ -1,12 +1,12 @@
 [{
-  "Input": "I'll be out from 4 to 22 this month",
+  "Input": "Sarò fuori dal 4 al 22 questo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4 to 22 this month",
+      "Text": "dal 4 al 22 questo mese",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-04,2016-11-22,P18D)",
@@ -24,14 +24,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 4-23 in next month",
+  "Input": "Sarò fuori dal 4-23 nel prossimo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4-23 in next month",
+      "Text": "dal 4-23 nel prossimo mese",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-12-04,2016-12-23,P19D)",
@@ -49,14 +49,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 3 until 12 of Sept hahaha",
+  "Input": "Sarò fuori dal 3 fino al 12 Set hahaha",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 3 until 12 of Sept",
+      "Text": "dal 3 fino al 12 Set",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
@@ -74,14 +74,14 @@
 }
 ,
 {
-  "Input": "I'll be out from Friday the 11th until Tuesday the 15th",
+  "Input": "Sarò fuori da venerdì 11 fino a martedì 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from Friday the 11th until Tuesday the 15th",
+      "Text": "da venerdì 11 fino a martedì 15",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-11,2016-11-15,P4D)",
@@ -99,14 +99,14 @@
 }
 ,
 {
-  "Input": "I'll be out 4 to 23 next month",
+  "Input": "Sarò fuori dal 4 al 23 il prossimo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4 to 23 next month",
+      "Text": "dal 4 al 23 il prossimo mese",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-12-04,2016-12-23,P19D)",
@@ -124,14 +124,14 @@
 }
 ,
 {
-  "Input": "I'll be out 4 till 23 of this month",
+  "Input": "Sarò fuori dal 4 fino al 23 di questo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4 till 23 of this month",
+      "Text": "dal 4 fino al 23 di questo mese",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-04,2016-11-23,P19D)",
@@ -149,14 +149,14 @@
 }
 ,
 {
-  "Input": "I'll be out between 4 and 22 this month",
+  "Input": "Sarò fuori tra il 4 e il 22 questo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 4 and 22 this month",
+      "Text": "tra il 4 e il 22 questo mese",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-04,2016-11-22,P18D)",
@@ -174,14 +174,14 @@
 }
 ,
 {
-  "Input": "I'll be out between 3 and 12 of Sept hahaha",
+  "Input": "Sarò fuori tra il 3 e il 12 di Set hahaha",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 3 and 12 of Sept",
+      "Text": "tra il 3 e il 12 di Set",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
@@ -199,14 +199,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 4 to 22 January, 1995",
+  "Input": "Sarò fuori dal 4 al 22 Gennaio 1995",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4 to 22 January, 1995",
+      "Text": "dal 4 al 22 Gennaio 1995",
       "Type": "daterange",
       "Value": {
         "Timex": "(1995-01-04,1995-01-22,P18D)",
@@ -224,14 +224,14 @@
 }
 ,
 {
-  "Input": "I'll be out between 4-22 January, 1995",
+  "Input": "Sarò fuori tra il 4-22 Gennaio 1995",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 4-22 January, 1995",
+      "Text": "tra il 4-22 Gennaio 1995",
       "Type": "daterange",
       "Value": {
         "Timex": "(1995-01-04,1995-01-22,P18D)",
@@ -249,14 +249,14 @@
 }
 ,
 {
-  "Input": "I'll be out between september 4th through september 8th",
+  "Input": "Sarò fuori tra il 4 settembre e l'8 settembre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between september 4th through september 8th",
+      "Text": "tra il 4 settembre e l'8 settembre",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
@@ -274,14 +274,14 @@
 }
 ,
 {
-  "Input": "I'll be out on this week",
+  "Input": "Sarò fuori questa settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this week",
+      "Text": "questa settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45",
@@ -299,14 +299,14 @@
 }
 ,
 {
-  "Input": "I'll be out on the coming week",
+  "Input": "Sarò fuori la prossima settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "coming week",
+      "Text": "prossima settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W46",
@@ -324,14 +324,14 @@
 }
 ,
 {
-  "Input": "I'll be out on current week",
+  "Input": "Sarò fuori la settimana corrente",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "current week",
+      "Text": "settimana corrente",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45",
@@ -349,14 +349,14 @@
 }
 ,
 {
-  "Input": "I'll be out February",
+  "Input": "Sarò fuori a Febbraio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "February",
+      "Text": "Febbraio",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-02",
@@ -374,14 +374,14 @@
 }
 ,
 {
-  "Input": "I'll be out this September",
+  "Input": "Saò fuori questo Settembre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this September",
+      "Text": "questo Settembre",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-09",
@@ -399,14 +399,14 @@
 }
 ,
 {
-  "Input": "I'll be out last sept",
+  "Input": "Sono stato fuori lo scorso Set",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last sept",
+      "Text": "scorso Set",
       "Type": "daterange",
       "Value": {
         "Timex": "2015-09",
@@ -424,14 +424,14 @@
 }
 ,
 {
-  "Input": "I'll be out next june",
+  "Input": "Sarò fuori il prossimo Giugno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next june",
+      "Text": "prossimo Giugno",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-06",
@@ -449,14 +449,14 @@
 }
 ,
 {
-  "Input": "I'll be out the third week of this month",
+  "Input": "Sarò fuori la terza settimana di questo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the third week of this month",
+      "Text": "la terza settimana di questo mese",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-11-W03",
@@ -474,14 +474,14 @@
 }
 ,
 {
-  "Input": "I'll be out the last week of july",
+  "Input": "Sarò fuori l'ultima settimana di luglio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the last week of july",
+      "Text": "l'ultima settimana di luglio",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-07-W04",
@@ -499,14 +499,14 @@
 }
 ,
 {
-  "Input": "week of september.16th",
+  "Input": "settimana del 16 settembre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "week of september.16th",
+      "Text": "settimana del 16 settembre",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-09-16",
@@ -524,14 +524,14 @@
 }
 ,
 {
-  "Input": "month of september.16th",
+  "Input": "mese del 16 settembre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "month of september.16th",
+      "Text": "mese del 16 settembre",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-09-16",
@@ -549,7 +549,7 @@
 }
 ,
 {
-  "Input": "I'll be out 2015.3",
+  "Input": "Sarò fuori il 2015.3",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -574,7 +574,7 @@
 }
 ,
 {
-  "Input": "I'll be out 2015-3",
+  "Input": "Sarò fuori il 2015-3",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -599,7 +599,7 @@
 }
 ,
 {
-  "Input": "I'll be out 2015/3",
+  "Input": "Sarò fuori il 2015/3",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -624,7 +624,7 @@
 }
 ,
 {
-  "Input": "I'll be out 3/2015",
+  "Input": "Sarò fuori il 3/2015",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -649,14 +649,14 @@
 }
 ,
 {
-  "Input": "scheduel a meeting in two weeks",
+  "Input": "Organizza un appuntamento in due settimane",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in two weeks",
+      "Text": "in due settimane",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-15,2016-11-22,P1W)",
@@ -674,14 +674,14 @@
 }
 ,
 {
-  "Input": "next 2 days",
+  "Input": "i prossimi 2 giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next 2 days",
+      "Text": "prossimi 2 giorni",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-08,2016-11-10,P2D)",
@@ -699,14 +699,14 @@
 }
 ,
 {
-  "Input": "past few days",
+  "Input": "diversi giorni passati",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "past few days",
+      "Text": "diversi giorni passati",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-04,2016-11-07,P3D)",
@@ -724,14 +724,14 @@
 }
 ,
 {
-  "Input": "the week",
+  "Input": "la settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the week",
+      "Text": "la settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45",
@@ -749,14 +749,14 @@
 }
 ,
 {
-  "Input": "this week",
+  "Input": "questa settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this week",
+      "Text": "questa settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45",
@@ -774,14 +774,14 @@
 }
 ,
 {
-  "Input": "my week",
+  "Input": "la mia settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "my week",
+      "Text": "la mia settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45",
@@ -799,14 +799,14 @@
 }
 ,
 {
-  "Input": "the weekend",
+  "Input": "il weekend",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the weekend",
+      "Text": "il weekend",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45-WE",
@@ -824,14 +824,14 @@
 }
 ,
 {
-  "Input": "this weekend",
+  "Input": "questo weekend",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this weekend",
+      "Text": "questo weekend",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45-WE",
@@ -849,14 +849,14 @@
 }
 ,
 {
-  "Input": "my weekend",
+  "Input": "il mio weekend",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "my weekend",
+      "Text": "il mio weekend",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45-WE",
@@ -874,14 +874,14 @@
 }
 ,
 {
-  "Input": "I'll be out Oct. 2 to October 22",
+  "Input": "Sarò fuori dal 2 Ott al 22 Ottobre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Oct. 2 to October 22",
+      "Text": "dal 2 Ott al 22 Ottobre",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -899,14 +899,14 @@
 }
 ,
 {
-  "Input": "I'll be out January 12, 2016 - 01/22/2016",
+  "Input": "Sarò fuori dal 12 Gennaio 2016 - 01/22/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "January 12, 2016 - 01/22/2016",
+      "Text": "12 Gennaio 2016 - 01/22/2016",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-01-12,2016-01-22,P10D)",
@@ -924,14 +924,14 @@
 }
 ,
 {
-  "Input": "I'll be out 1st Jan until Wed, 22 of Jan",
+  "Input": "Sarò fuori dal 1 Gen fino a Mer, 22 di Gen",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1st Jan until Wed, 22 of Jan",
+      "Text": "dal 1 Gen fino a Mer, 22 di Gen",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
@@ -949,14 +949,14 @@
 }
 ,
 {
-  "Input": "I'll be out today till tomorrow",
+  "Input": "Sarò fuori da oggi fino a domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "today till tomorrow",
+      "Text": "da oggi fino a domani",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-11-08,P1D)",
@@ -974,14 +974,14 @@
 }
 ,
 {
-  "Input": "I'll be out from Oct. 2 to October 22",
+  "Input": "Sarò fuori tra il 2 Ott e il 22 Ottobre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from Oct. 2 to October 22",
+      "Text": "tra il 2 Ott e il 22 Ottobre",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -999,39 +999,14 @@
 }
 ,
 {
-  "Input": "I'll be out between Oct. 2 and October 22",
+  "Input": "Sarò fuori Novembre 19-20",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between Oct. 2 and October 22",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "FutureResolution": {
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
-        },
-        "PastResolution": {
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be out November 19-20",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "November 19-20",
+      "Text": "Novembre 19-20",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -1049,14 +1024,14 @@
 }
 ,
 {
-  "Input": "I'll be out November 19 to 20",
+  "Input": "Sarò fuori dal 19 al 20 Novembre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "November 19 to 20",
+      "Text": "dal 19 al 20 Novembre",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -1074,14 +1049,14 @@
 }
 ,
 {
-  "Input": "I'll be out November between 19 and 20",
+  "Input": "Sarò fuori tra il 19 e il 20 Novembre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "November between 19 and 20",
+      "Text": "tra il 19 e il 20 Novembre",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -1099,14 +1074,14 @@
 }
 ,
 {
-  "Input": "I'll be out rest of the week",
+  "Input": "Sarò fuori il resto della settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of the week",
+      "Text": "il resto della settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1124,14 +1099,14 @@
 }
 ,
 {
-  "Input": "I'll be out rest of week",
+  "Input": "Sarò fuori il resto di questa settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of week",
+      "Text": "il resto di questa settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1149,14 +1124,14 @@
 }
 ,
 {
-  "Input": "I'll be out rest the week",
+  "Input": "Sarò fuori il resto della mia settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest the week",
+      "Text": "il resto della mia settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1174,14 +1149,14 @@
 }
 ,
 {
-  "Input": "I'll be out rest this week",
+  "Input": "sarò fuori il resto della settimana corrente",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest this week",
+      "Text": "il resto della settimana corrente",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1199,64 +1174,14 @@
 }
 ,
 {
-  "Input": "I'll be out rest of my week",
+  "Input": "Sarò fuori il resto del mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of my week",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-07,2016-11-13,P6D)",
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-13"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-13"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be out rest of current week",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "rest of current week",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-07,2016-11-13,P6D)",
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-13"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-13"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be out rest of the month",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "rest of the month",
+      "Text": "il resto del mese",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-11-30,P24D)",
@@ -1274,14 +1199,14 @@
 }
 ,
 {
-  "Input": "I'll be out rest of the year",
+  "Input": "sarò fuori il resto dell'anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of the year",
+      "Text": "il resto dell'anno",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-12-31,P55D)",
@@ -1299,14 +1224,14 @@
 }
 ,
 {
-  "Input": "I'll be out rest of my week",
+  "Input": "Sarò fuori il resto della mia settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-13T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of my week",
+      "Text": "il resto della mia settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-13,2016-11-13,P0D)",
@@ -1324,7 +1249,7 @@
 }
 ,
 {
-  "Input": "I'll be out on weekend",
+  "Input": "sarò fuori nel weekend",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -1349,14 +1274,14 @@
 }
 ,
 {
-  "Input": "I'll be out on this weekend",
+  "Input": "Sarò fuori in questo weekend",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this weekend",
+      "Text": "questo weekend",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45-WE",
@@ -1374,14 +1299,14 @@
 }
 ,
 {
-  "Input": "I'll be out june 2016",
+  "Input": "Sarò fuori a giugno 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "june 2016",
+      "Text": "giugno 2016",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-06",
@@ -1399,14 +1324,14 @@
 }
 ,
 {
-  "Input": "I'll be out june next year",
+  "Input": "Sarò fuori a giugno del prossimo anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "june next year",
+      "Text": "giugno del prossimo anno",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-06",
@@ -1424,14 +1349,14 @@
 }
 ,
 {
-  "Input": "I'll be out next year",
+  "Input": "Sarò fuori il prossimo anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next year",
+      "Text": "prossimo anno",
       "Type": "daterange",
       "Value": {
         "Timex": "2017",
@@ -1449,14 +1374,14 @@
 }
 ,
 {
-  "Input": "I'll be out next 3 days",
+  "Input": "Sarò fuori i prossimi 3 giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next 3 days",
+      "Text": "prossimi 3 giorni",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-08,2016-11-11,P3D)",
@@ -1474,14 +1399,14 @@
 }
 ,
 {
-  "Input": "I'll be out next 3 months",
+  "Input": "Sarò fuori i prossimi 3 mesi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next 3 months",
+      "Text": "prossimi 3 mesi",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-08,2017-02-08,P3M)",
@@ -1499,14 +1424,14 @@
 }
 ,
 {
-  "Input": "I'll be out in 3 year",
+  "Input": "Sarò fuori tra 3 anni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 3 year",
+      "Text": "tra 3 anni",
       "Type": "daterange",
       "Value": {
         "Timex": "(2018-11-08,2019-11-08,P1Y)",
@@ -1524,14 +1449,14 @@
 }
 ,
 {
-  "Input": "I'll be out past 3 weeks",
+  "Input": "Sarò fuori le ultime 3 settimane",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "past 3 weeks",
+      "Text": "le ultime 3 settimane",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-10-17,2016-11-07,P3W)",
@@ -1549,14 +1474,14 @@
 }
 ,
 {
-  "Input": "I'll be out last 3year",
+  "Input": "Sono stato via per gli ultimi 3 anni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last 3year",
+      "Text": "gli ultimi 3 anni",
       "Type": "daterange",
       "Value": {
         "Timex": "(2013-11-07,2016-11-07,P3Y)",
@@ -1574,14 +1499,14 @@
 }
 ,
 {
-  "Input": "I'll be out previous 3 weeks",
+  "Input": "Sono stato fuori le 3 settimane precedenti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "previous 3 weeks",
+      "Text": "le 3 settimane precedenti",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-10-17,2016-11-07,P3W)",
@@ -1599,14 +1524,14 @@
 }
 ,
 {
-  "Input": "the first week of Oct",
+  "Input": "la prima settimana di Ott",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the first week of Oct",
+      "Text": "la prima settimana di Ott ",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-10-W01",
@@ -1624,14 +1549,14 @@
 }
 ,
 {
-  "Input": "I'll be out the third week of 2027",
+  "Input": "Sarò fuori la terza settimana del 2027",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the third week of 2027",
+      "Text": "la terza settimana del 2027",
       "Type": "daterange",
       "Value": {
         "Timex": "2027-01-W03",
@@ -1649,14 +1574,14 @@
 }
 ,
 {
-  "Input": "I'll be out the third week next year",
+  "Input": "Sarò fuori la terza settimana del prossimo anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the third week next year",
+      "Text": "la terza settimana del prossimo anno",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-01-W03",
@@ -1674,14 +1599,14 @@
 }
 ,
 {
-  "Input": "I'll be out the third quarter of 2016",
+  "Input": "Sarò fuori il terzo trimestre del 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the third quarter of 2016",
+      "Text": "il terzo trimestre del 2016",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1699,14 +1624,14 @@
 }
 ,
 {
-  "Input": "I'll be out the third quarter this year",
+  "Input": "Sarò fuori il terzo trimestre di quest'anno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the third quarter this year",
+      "Text": "il terzo trimestre di quest'anno",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1724,14 +1649,14 @@
 }
 ,
 {
-  "Input": "I'll be out 2016 the third quarter",
+  "Input": "Sarò fuori nel 2016 per il terzo trimestre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2016 the third quarter",
+      "Text": "nel 2016 per il terzo trimestre",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1749,14 +1674,14 @@
 }
 ,
 {
-  "Input": "I'll leave this summer",
+  "Input": "Partirò questa estate",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this summer",
+      "Text": "questa estate",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-SU",
@@ -1768,14 +1693,14 @@
 }
 ,
 {
-  "Input": "I'll leave next spring",
+  "Input": "Partirò la prossima primavera",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next spring",
+      "Text": "la prossima primavera",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-SP",
@@ -1787,14 +1712,14 @@
 }
 ,
 {
-  "Input": "I'll leave the summer",
+  "Input": "Partirò in estate",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the summer",
+      "Text": "in estate",
       "Type": "daterange",
       "Value": {
         "Timex": "SU",
@@ -1806,14 +1731,14 @@
 }
 ,
 {
-  "Input": "I'll leave summer",
+  "Input": "Partirò d'estate",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "summer",
+      "Text": "d'estate",
       "Type": "daterange",
       "Value": {
         "Timex": "SU",
@@ -1825,14 +1750,14 @@
 }
 ,
 {
-  "Input": "I'll leave summer 2016",
+  "Input": "Partirò l'estate 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "summer 2016",
+      "Text": "l'estate 2016",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-SU",
@@ -1844,14 +1769,14 @@
 }
 ,
 {
-  "Input": "I'll leave summer of 2016",
+  "Input": "Partirò l'estate del 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "summer of 2016",
+      "Text": "l'estate del 2016",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-SU",
@@ -1863,14 +1788,14 @@
 }
 ,
 {
-  "Input": "upcoming month holidays",
+  "Input": "vacanze del mese in arrivo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "upcoming month",
+      "Text": "mese in arrivo",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-12",
@@ -1888,14 +1813,14 @@
 }
 ,
 {
-  "Input": "next month holidays",
+  "Input": "vacanze del prossimo mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next month",
+      "Text": "prossimo mese",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-12",
@@ -1913,14 +1838,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet later this month",
+  "Input": "Vi preghiamo di trovare un momento per incontrarci a fine mese",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "later this month",
+      "Text": "a fine mese",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-11",
@@ -1938,14 +1863,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet later this week",
+  "Input": "Vi preghiamo di trovare un momento per incontrarci a fine settimana",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "later this week",
+      "Text": "a fine settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W45",
@@ -1963,14 +1888,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet later this year",
+  "Input": "Vi preghiamo di trovare un momento per incontrarci alla fine di quest'anno",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "later this year",
+      "Text": "alla fine di quest'anno",
       "Type": "daterange",
       "Value": {
         "Timex": "2017",
@@ -1988,14 +1913,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet early next year",
+  "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio del prossimo anno",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "early next year",
+      "Text": "all'inizio del prossimo anno",
       "Type": "daterange",
       "Value": {
         "Timex": "2018",
@@ -2013,14 +1938,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet early next week",
+  "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio della prossima settimana",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "early next week",
+      "Text": "all'inizio della prossima settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W46",
@@ -2038,14 +1963,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet early next month",
+  "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio del prossimo mese",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "early next month",
+      "Text": "all'inizio del prossimo mese",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-12",
@@ -2063,14 +1988,14 @@
 }
 ,
 {
-  "Input": "We had a meeting late last year",
+  "Input": "Abbiamo avuto un appuntamento alla fine dell'anno scorso",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "late last year",
+      "Text": "alla fine dell'anno scorso",
       "Type": "daterange",
       "Value": {
         "Timex": "2016",
@@ -2088,14 +2013,14 @@
 }
 ,
 {
-  "Input": "We had a meeting late last week",
+  "Input": "Abbiamo avuto un appuntamento alla fine della scorsa settimana",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "late last week",
+      "Text": "alla fine della scorsa settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W44",
@@ -2113,14 +2038,14 @@
 }
 ,
 {
-  "Input": "We had a meeting late last month",
+  "Input": "Abbiamo avuto un appuntamento alla fine dello scorso mese",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "late last month",
+      "Text": "alla fine dello scorso mese",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-10",
@@ -2138,14 +2063,14 @@
 }
 ,
 {
-  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week between Wednesday and Friday.",
+  "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio la prossima settimana tra mercoledì e venerdì.",
   "Context": {
     "ReferenceDateTime": "2017-11-14T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week between Wednesday and Friday",
+      "Text": "la prossima settimana tra mercoledì e venerdì",
       "Type": "daterange",
       "Value": {
         "Timex": "(2017-11-22,2017-11-24,P2D)",
@@ -2163,14 +2088,14 @@
 }
 ,
 {
-  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio last week between Friday and Sunday.",
+  "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio la scorsa settimana tra mercoledì e venerdì.",
   "Context": {
     "ReferenceDateTime": "2017-11-14T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last week between Friday and Sunday",
+      "Text": "la scorsa settimana tra mercoledì e venerdì",
       "Type": "daterange",
       "Value": {
         "Timex": "(2017-11-10,2017-11-12,P2D)",
@@ -2188,14 +2113,14 @@
 }
 ,
 {
-  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio this week from Tue to Thur.",
+  "Input": "Cortana, per favore organizza un appuntamento di 25 minuti con antonio questa settimana da mar a gio.",
   "Context": {
     "ReferenceDateTime": "2017-11-14T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this week from Tue to Thur",
+      "Text": "questa settimana da mar a gio",
       "Type": "daterange",
       "Value": {
         "Timex": "(2017-11-14,2017-11-16,P2D)",
@@ -2213,14 +2138,14 @@
 }
 ,
 {
-  "Input": "We had a meeting this week",
+  "Input": "Abbiamo avuto in appuntamento questa settimana",
   "Context": {
     "ReferenceDateTime": "2017-11-17T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this week",
+      "Text": "questa setttimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W46",
@@ -2238,14 +2163,14 @@
 }
 ,
 {
-  "Input": "We had a meeting first week of this year",
+  "Input": "Abbiamo avuto un appuntamento la prima settimana di quest'anno",
   "Context": {
     "ReferenceDateTime": "2017-11-17T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "first week of this year",
+      "Text": "la prima settimana di quest'anno",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-01-W01",
@@ -2263,14 +2188,14 @@
 }
 ,
 {
-  "Input": "first week of 2015",
+  "Input": "prima settimana del 2015",
   "Context": {
     "ReferenceDateTime": "2017-11-20T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "first week of 2015",
+      "Text": "prima settimana del 2015",
       "Type": "daterange",
       "Value": {
         "Timex": "2015-01-W01",
@@ -2288,14 +2213,14 @@
 }
 ,
 {
-  "Input": "second week of 2015",
+  "Input": "seconda settimana del 2015",
   "Context": {
     "ReferenceDateTime": "2017-11-20T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "second week of 2015",
+      "Text": "seconda settimana del 2015",
       "Type": "daterange",
       "Value": {
         "Timex": "2015-01-W02",
@@ -2313,14 +2238,14 @@
 }
 ,
 {
-  "Input": "this weekend",
+  "Input": "questo weekend",
   "Context": {
     "ReferenceDateTime": "2017-11-20T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this weekend",
+      "Text": "questo weekend",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W47-WE",
@@ -2338,14 +2263,14 @@
 }
 ,
 {
-  "Input": "last week of 2015",
+  "Input": "l'ultimo weekend del 2015",
   "Context": {
     "ReferenceDateTime": "2017-11-20T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last week of 2015",
+      "Text": "l'ultimo weekend del 2015",
       "Type": "daterange",
       "Value": {
         "Timex": "2015-12-W53",
@@ -2363,7 +2288,7 @@
 }
 ,
 {
-  "Input": "I'll be out year 247",
+  "Input": "Sarò fuori l'anno 247",
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
@@ -2371,7 +2296,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "year 247",
+      "Text": "l'anno 247",
       "Type": "daterange",
       "Value": {
         "Timex": "0247",
@@ -2389,7 +2314,7 @@
 }
 ,
 {
-  "Input": "In the 1970s",
+  "Input": "Negli anni 1970",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2397,7 +2322,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the 1970s",
+      "Text": "anni 1970",
       "Type": "daterange",
       "Value": {
         "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -2415,7 +2340,7 @@
 }
 ,
 {
-  "Input": "In the 2000s, he was born.",
+  "Input": "Negli anni 2000, è nato.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2423,7 +2348,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the 2000s",
+      "Text": "anni 2000",
       "Type": "daterange",
       "Value": {
         "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -2441,7 +2366,7 @@
 }
 ,
 {
-  "Input": "In the 1970's",
+  "Input": "Negli anni 70",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2449,7 +2374,85 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the 1970's",
+      "Text": "anni 70",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2080-01-01"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1980-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Negli anni '70",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "anni '70",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2080-01-01"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1980-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Negli anni settanta",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "anni settanta",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2080-01-01"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1980-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Negli anni millenovecentosettanta",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "anni millenovecentosettanta",
       "Type": "daterange",
       "Value": {
         "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -2467,7 +2470,7 @@
 }
 ,
 {
-  "Input": "In the 70s",
+  "Input": "Negli anni duemiladieci",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2475,163 +2478,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the 70s",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
-        "FutureResolution": {
-          "startDate": "2070-01-01",
-          "endDate": "2080-01-01"
-        },
-        "PastResolution": {
-          "startDate": "1970-01-01",
-          "endDate": "1980-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "In the 70's",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the 70's",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
-        "FutureResolution": {
-          "startDate": "2070-01-01",
-          "endDate": "2080-01-01"
-        },
-        "PastResolution": {
-          "startDate": "1970-01-01",
-          "endDate": "1980-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "In 70's",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "70's",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
-        "FutureResolution": {
-          "startDate": "2070-01-01",
-          "endDate": "2080-01-01"
-        },
-        "PastResolution": {
-          "startDate": "1970-01-01",
-          "endDate": "1980-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "In the '40s",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the '40s",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
-        "FutureResolution": {
-          "startDate": "2040-01-01",
-          "endDate": "2050-01-01"
-        },
-        "PastResolution": {
-          "startDate": "1940-01-01",
-          "endDate": "1950-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "In the seventies",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the seventies",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
-        "FutureResolution": {
-          "startDate": "2070-01-01",
-          "endDate": "2080-01-01"
-        },
-        "PastResolution": {
-          "startDate": "1970-01-01",
-          "endDate": "1980-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "In the nineteen seventies",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the nineteen seventies",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(1970-01-01,1980-01-01,P10Y)",
-        "FutureResolution": {
-          "startDate": "1970-01-01",
-          "endDate": "1980-01-01"
-        },
-        "PastResolution": {
-          "startDate": "1970-01-01",
-          "endDate": "1980-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "In the two thousand and tens",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the two thousand and tens",
+      "Text": "anni duemiladieci",
       "Type": "daterange",
       "Value": {
         "Timex": "(2010-01-01,2020-01-01,P10Y)",
@@ -2649,7 +2496,7 @@
 }
 ,
 {
-  "Input": "In the twenty-tens",
+  "Input": "Negli anni duemila",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2657,33 +2504,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the twenty-tens",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2010-01-01,2020-01-01,P10Y)",
-        "FutureResolution": {
-          "startDate": "2010-01-01",
-          "endDate": "2020-01-01"
-        },
-        "PastResolution": {
-          "startDate": "2010-01-01",
-          "endDate": "2020-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "In the two thousands",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the two thousands",
+      "Text": "anni duemila",
       "Type": "daterange",
       "Value": {
         "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -2701,7 +2522,7 @@
 }
 ,
 {
-  "Input": "In the noughties",
+  "Input": "Negli anni trenta",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2709,7 +2530,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the noughties",
+      "Text": "anni trenta",
       "Type": "daterange",
       "Value": {
         "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -2727,7 +2548,7 @@
 }
 ,
 {
-  "Input": "I'll be out from 2 to 7 Feb, two thousand and eighteen",
+  "Input": "Sarò fuori dal 2 al 7 Feb duemiladiciotto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2735,7 +2556,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 2 to 7 Feb, two thousand and eighteen",
+      "Text": " dal 2 al 7 Feb duemiladiciotto",
       "Type": "daterange",
       "Value": {
         "Timex": "(2018-02-02,2018-02-07,P5D)",
@@ -2753,7 +2574,7 @@
 }
 ,
 {
-  "Input": "I'll be out between 2 and 7 Feb two thousand and eighteen",
+  "Input": "Sarò fuori tra il 2 e il 7 Feb duemiladiciotto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2761,7 +2582,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 2 and 7 Feb two thousand and eighteen",
+      "Text": "tra il 2 e il 7 Feb duemiladiciotto",
       "Type": "daterange",
       "Value": {
         "Timex": "(2018-02-02,2018-02-07,P5D)",
@@ -2779,7 +2600,7 @@
 }
 ,
 {
-  "Input": "I'll be out Feb between 2-7 two thousand and eighteen",
+  "Input": "Sarò fuori a Feb tra il 2-7 duemiladiciotto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2787,7 +2608,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Feb between 2-7 two thousand and eighteen",
+      "Text": "a Feb tra il 2-7 duemiladiciotto",
       "Type": "daterange",
       "Value": {
         "Timex": "(2018-02-02,2018-02-07,P5D)",
@@ -2805,7 +2626,7 @@
 }
 ,
 {
-  "Input": "It happened in June of nineteen ninety nine",
+  "Input": "è successo a Giugno del millenovecentonovantanove",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2813,7 +2634,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "June of nineteen ninety nine",
+      "Text": "a Giugno del millenovecentonovantanove",
       "Type": "daterange",
       "Value": {
         "Timex": "1999-06",
@@ -2831,7 +2652,7 @@
 }
 ,
 {
-  "Input": "In nineteen twenty eight",
+  "Input": "Nel millenovecentoventotto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2839,7 +2660,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "nineteen twenty eight",
+      "Text": "millenovecentoventotto",
       "Type": "daterange",
       "Value": {
         "Timex": "1928",
@@ -2857,7 +2678,7 @@
 }
 ,
 {
-  "Input": "In one thousand seven hundred and eighty nine",
+  "Input": "Nel millesettecentottantanove",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2865,7 +2686,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "one thousand seven hundred and eighty nine",
+      "Text": "millesettecentottantanove",
       "Type": "daterange",
       "Value": {
         "Timex": "1789",
@@ -2883,7 +2704,7 @@
 }
 ,
 {
-  "Input": "I'll be out the third week of two thousand and twenty seven",
+  "Input": "Sarò fuori la terza settimana del duemilaventisette",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2891,7 +2712,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the third week of two thousand and twenty seven",
+      "Text": "la terza settimana del duemilaventisette",
       "Type": "daterange",
       "Value": {
         "Timex": "2027-01-W03",
@@ -2909,7 +2730,7 @@
 }
 ,
 {
-  "Input": "I'll be out the third quarter of two thousand and twenty",
+  "Input": "Sarò fuori il primo trimestre del duemilaventi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2917,7 +2738,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the third quarter of two thousand and twenty",
+      "Text": "il primo trimestre del duemilaventi",
       "Type": "daterange",
       "Value": {
         "Timex": "(2020-07-01,2020-10-01,P3M)",
@@ -2935,7 +2756,7 @@
 }
 ,
 {
-  "Input": "In the spring of nineteen seventy eight",
+  "Input": "Nella primavera del millenovecentosettantotto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2943,7 +2764,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the spring of nineteen seventy eight",
+      "Text": "primavera del millenovecentosettantotto",
       "Type": "daterange",
       "Value": {
         "Timex": "1978-SP",
@@ -2955,7 +2776,7 @@
 }
 ,
 {
-  "Input": "Year two hundred and sixty seven",
+  "Input": "Anno duecentosessantasette",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2963,7 +2784,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Year two hundred and sixty seven",
+      "Text": "anno duecentosessantasette",
       "Type": "daterange",
       "Value": {
         "Timex": "0267",
@@ -2981,7 +2802,7 @@
 }
 ,
 {
-  "Input": "I'll be out the week after next",
+  "Input": "Sarò fuori la settimana dopo la prossima",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2989,7 +2810,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the week after next",
+      "Text": "la settimana dopo la prossima",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W47",
@@ -3007,7 +2828,7 @@
 }
 ,
 {
-  "Input": "I'll be out the month after the next",
+  "Input": "sarò fuori il mese dopo il prossimo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3015,7 +2836,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the month after the next",
+      "Text": "il mese dopo il prossimo",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-01",
@@ -3033,7 +2854,7 @@
 }
 ,
 {
-  "Input": "I'll be out the year after next",
+  "Input": "sarò fuori l'anno dopo il prossimo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3041,7 +2862,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the year after next",
+      "Text": "l'anno dopo il prossimo",
       "Type": "daterange",
       "Value": {
         "Timex": "2018",
@@ -3059,7 +2880,7 @@
 }
 ,
 {
-  "Input": "I'll be out the weekend after the next",
+  "Input": "Sarò fuori il weekend dopo il prossimo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3067,7 +2888,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the weekend after the next",
+      "Text": "il weekend dopo il prossimo",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W47-WE",
@@ -3085,7 +2906,7 @@
 }
 ,
 {
-  "Input": "The range is 2014-2018.",
+  "Input": "L'intervallo è 2014-2018.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3111,7 +2932,7 @@
 }
 ,
 {
-  "Input": "The range is between 2014-2018.",
+  "Input": "L'intervallo è tra 2014-2018.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3119,7 +2940,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 2014-2018",
+      "Text": "tra 2014-2018",
       "Type": "daterange",
       "Value": {
         "Timex": "(2014-01-01,2018-01-01,P4Y)",
@@ -3137,7 +2958,7 @@
 }
 ,
 {
-  "Input": "The range is from 2014 to 2018.",
+  "Input": "L'ntervallo è dal 2014 al 2018.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3145,7 +2966,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 2014 to 2018",
+      "Text": "dal 2014 al 2018",
       "Type": "daterange",
       "Value": {
         "Timex": "(2014-01-01,2018-01-01,P4Y)",
@@ -3163,7 +2984,7 @@
 }
 ,
 {
-  "Input": "The range is in 2014 through 2018.",
+  "Input": "L'intervallo è nel 2014 fino al 2018.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3171,7 +2992,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 2014 through 2018",
+      "Text": "nel 2014 fino al 2018",
       "Type": "daterange",
       "Value": {
         "Timex": "(2014-01-01,2018-01-01,P4Y)",
@@ -3189,7 +3010,7 @@
 }
 ,
 {
-  "Input": "The range is from two thousand until two thousand and fourteen.",
+  "Input": "L'intervallo è dal duemila fino al duemilaquattordici.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3197,7 +3018,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from two thousand until two thousand and fourteen",
+      "Text": "dal duemila fino al duemilaquattordici",
       "Type": "daterange",
       "Value": {
         "Timex": "(2000-01-01,2014-01-01,P14Y)",
@@ -3215,7 +3036,7 @@
 }
 ,
 {
-  "Input": "It happened in the past 2 decades.",
+  "Input": "é successo nei 2 decenni passati.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3223,7 +3044,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the past 2 decades",
+      "Text": "2 decenni passati",
       "Type": "daterange",
       "Value": {
         "Timex": "(1990-01-01,2010-01-01,P20Y)",
@@ -3241,7 +3062,7 @@
 }
 ,
 {
-  "Input": "It happened in the last two decades.",
+  "Input": "è successo negli ultimi due decenni.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3249,7 +3070,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the last two decades",
+      "Text": "ultimi due decenni",
       "Type": "daterange",
       "Value": {
         "Timex": "(1990-01-01,2010-01-01,P20Y)",
@@ -3267,7 +3088,7 @@
 }
 ,
 {
-  "Input": "It happened in the next decade.",
+  "Input": "è successo nel prossimo decennio.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3275,7 +3096,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the next decade",
+      "Text": "prossimo decennio",
       "Type": "daterange",
       "Value": {
         "Timex": "(2020-01-01,2030-01-01,P10Y)",
@@ -3293,7 +3114,7 @@
 }
 ,
 {
-  "Input": "It happened in the next 3 decades.",
+  "Input": "è successo nei prossimi 3 decenni.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3301,7 +3122,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the next 3 decades",
+      "Text": "prossimi 3 decenni",
       "Type": "daterange",
       "Value": {
         "Timex": "(2020-01-01,2050-01-01,P30Y)",
@@ -3319,7 +3140,7 @@
 }
 ,
 {
-  "Input": "It will happen 4 weeks in the future.",
+  "Input": "Succederà 4 settimane in futuro.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3327,7 +3148,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4 weeks in the future",
+      "Text": "4 settimane in futuro",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-08,2016-12-06,P4W)",
@@ -3345,7 +3166,7 @@
 }
 ,
 {
-  "Input": "It will happen 2 days hence.",
+  "Input": "Succederà a due giorni da questo momento.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3353,7 +3174,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 days hence",
+      "Text": "due giorni da questo momento",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-08,2016-11-10,P2D)",
@@ -3371,7 +3192,7 @@
 }
 ,
 {
-  "Input": "Cortana can find us a time beginning of next week",
+  "Input": "Cortana puoi trovarci un momento a partire dalla settimana prossima",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
@@ -3379,7 +3200,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "beginning of next week",
+      "Text": "a partire dalla settimana prossima",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W46",
@@ -3398,7 +3219,7 @@
 }
 ,
 {
-  "Input": "Sure, let's get a Skype end of next week",
+  "Input": "Certo, facciamo uno Skype alla fine della prossima settimana",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
@@ -3406,7 +3227,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "end of next week",
+      "Text": "alla fine della prossima settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W46",
@@ -3425,7 +3246,7 @@
 }
 ,
 {
-  "Input": "Sure, let's get a Skype start of next week",
+  "Input": "Certo, facciamo uno Skype all'inizio dalla prossima settimana",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
@@ -3433,7 +3254,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "start of next week",
+      "Text": "all'inizio dalla prossima settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W46",
@@ -3452,7 +3273,7 @@
 }
 ,
 {
-  "Input": "Cortana, find us a time end of March",
+  "Input": "Cortana, trovaci un momento alla fine di Marzo",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
@@ -3460,7 +3281,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "end of March",
+      "Text": "alla fine di Marzo",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-03",
@@ -3479,7 +3300,7 @@
 }
 ,
 {
-  "Input": "Cortana, please find us a time mid next week",
+  "Input": "Cortana, per favore trovaci un momento a metà della prossima settimana",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
@@ -3487,7 +3308,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mid next week",
+      "Text": "a metà della prossima settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W46",
@@ -3506,7 +3327,7 @@
 }
 ,
 {
-  "Input": "I can find us a time beginning of next week",
+  "Input": "Posso trovarci un momento a partire dalla prossima settimana",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
@@ -3514,7 +3335,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "beginning of next week",
+      "Text": "a partire dalla prossima settimana",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W46",
@@ -3533,7 +3354,7 @@
 }
 ,
 {
-  "Input": "what about by mid summer?",
+  "Input": "Che ne dici di metà estate?",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
@@ -3541,7 +3362,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mid summer",
+      "Text": "metà estate",
       "Type": "daterange",
       "Value": {
         "Timex": "SU",

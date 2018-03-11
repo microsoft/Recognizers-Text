@@ -1,5 +1,5 @@
 [{
-  "Input": "at 715ampm",
+  "Input": "alle 715ampm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -27,14 +27,14 @@
 }
 ,
 {
-  "Input": "ADD LUNCH AT 12:30 PM ON FRI ",
+  "Input": "PRANZO ALLE 12.30 PM DI VEN",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12:30 PM ON FRI",
+      "Text": "12:30 PM DI VEN",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -55,14 +55,14 @@
 }
 ,
 {
-  "Input": "What do I have the week of November 30th",
+  "Input": "Cosa devo fare la settimana del 30 Novembre?",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the week of November 30th",
+      "Text": "la settimana del 30 Novembre",
       "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
@@ -85,14 +85,14 @@
 }
 ,
 {
-  "Input": "For four Monday at noon ",
+  "Input": "Per quattro lunedì a mezzogiorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Monday at noon",
+      "Text": "lunedì a mezzogiorno",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -113,14 +113,14 @@
 }
 ,
 {
-  "Input": "Add 649 midnight tonight",
+  "Input": "Aggiungi 649 stanotte a mezzanotte",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "midnight tonight",
+      "Text": "stanotte a mezzanotte",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -136,14 +136,14 @@
 }
 ,
 {
-  "Input": "i need a reserve for 3 peeps at a pizza joint in seattle for tonight around 8 pm",
+  "Input": "ho bisogno di prenotare per tre persone da pizza joint a seattle per stanotte verso le 8 pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tonight around 8 pm",
+      "Text": "stanotte verso 8 pm",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -159,14 +159,14 @@
 }
 ,
 {
-  "Input": "Set an appointment for Easter",
+  "Input": "Fissa un appuntamento per Pasqua",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Easter",
+      "Text": "pasqua",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -182,14 +182,14 @@
 }
 ,
 {
-  "Input": "day after tomorrow",
+  "Input": "dopodomani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "day after tomorrow",
+      "Text": "dopodomani",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -205,14 +205,14 @@
 }
 ,
 {
-  "Input": "day after tomorrow at 8am",
+  "Input": "dopodomani alle 8am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "day after tomorrow at 8am",
+      "Text": "dopodomani alle 8am",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -228,14 +228,14 @@
 }
 ,
 {
-  "Input": "on Friday in the afternoon",
+  "Input": "di venerdì pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday in the afternoon",
+      "Text": "venerdì pomeriggio",
       "Type": "datetimeV2.datetimerange",
       "Value": {
         "values": [
@@ -258,14 +258,14 @@
 }
 ,
 {
-  "Input": "on Friday for 3 in the afternoon",
+  "Input": "di venerdì per le 3 di pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday for 3 in the afternoon",
+      "Text": "venerdì per le 3 di pomeriggio",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -286,14 +286,14 @@
 }
 ,
 {
-  "Input": "Set appointment for tomorrow morning at 9 o'clock.",
+  "Input": "Fissa un appuntamento per domani mattina alle 9.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow morning at 9 o'clock",
+      "Text": "domani mattina alle 9",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -309,14 +309,14 @@
 }
 ,
 {
-  "Input": "put make cable's wedding in my calendar for wednesday the thirty first",
+  "Input": "metti il matrimonio di cable nel mio calendario per mercoledì trentuno",
   "Context": {
     "ReferenceDateTime": "2017-09-15T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "wednesday",
+      "Text": "mercoledì",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -337,14 +337,14 @@
 }
 ,
 {
-  "Input": "put make cable's wedding in my calendar for tuesday the thirty first",
+  "Input": "metti il matrimonio di cable nel mio calendario per martedì trentuno",
   "Context": {
     "ReferenceDateTime": "2017-10-15T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday the thirty first",
+      "Text": "martedì trentuno",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -360,14 +360,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting in 8 minutes",
+  "Input": "programma un appuntamento tra 8 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 8 minutes",
+      "Text": "tra 8 minuti",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -383,14 +383,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting in 10 hours",
+  "Input": "programma un appuntamento tra 10 ore",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 10 hours",
+      "Text": "tra 10 ore",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -406,14 +406,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting in 10 days",
+  "Input": "programma un appuntamento tra 10 giorni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 10 days",
+      "Text": "tra 10 giorni",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -429,14 +429,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting in 3 weeks",
+  "Input": "programma un appuntamento tra 3 settimane",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 3 weeks",
+      "Text": "tra 3 settimane",
       "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
@@ -453,14 +453,14 @@
 }
 ,
 {
-  "Input": "schedule a meeting in 3 months",
+  "Input": "programma un appuntamento tra 3 mesi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 3 months",
+      "Text": "tra 3 mesi",
       "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
@@ -477,14 +477,14 @@
 }
 ,
 {
-  "Input": "I'll be out in 3 year",
+  "Input": "Sarò fuori tra 3 anni",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 3 year",
+      "Text": "tra 3 anni",
       "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
@@ -501,14 +501,14 @@
 }
 ,
 {
-  "Input": "after 8pm",
+  "Input": "dopo le 8pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after 8pm",
+      "Text": "dopo le 8pm",
       "Type": "datetimeV2.timerange",
       "Value": {
         "values": [
@@ -525,14 +525,14 @@
 }
 ,
 {
-  "Input": "before 8pm",
+  "Input": "prima delle 8pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before 8pm",
+      "Text": "prima delle 8pm",
       "Type": "datetimeV2.timerange",
       "Value": {
         "values": [
@@ -549,14 +549,14 @@
 }
 ,
 {
-  "Input": "since 8pm",
+  "Input": "dalle 8pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "since 8pm",
+      "Text": "dalle 8pm",
       "Type": "datetimeV2.timerange",
       "Value": {
         "values": [
@@ -644,14 +644,14 @@
 }
 ,
 {
-  "Input": "add yoga to personal calendar on monday and wednesday at 3pm",
+  "Input": "aggiungi yoga al calendario personale di lunedì e mercoledì alle 3pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "monday",
+      "Text": "lunedì",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -669,7 +669,7 @@
       }
     },
     {
-      "Text": "wednesday at 3pm",
+      "Text": "mercoledì alle 3pm",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -690,7 +690,7 @@
 }
 ,
 {
-  "Input": "schedule a meeting at 8 am every week ",
+  "Input": "programma un appuntamento alle 8 am ogni settimana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -710,7 +710,7 @@
       }
     },
     {
-      "Text": "every week",
+      "Text": "ogni settimana",
       "Type": "datetimeV2.set",
       "Value": {
         "values": [
@@ -726,14 +726,14 @@
 }
 ,
 {
-  "Input": "schedule second saturday of each month",
+  "Input": "programma il secondo sabato di ogni mese",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "second saturday",
+      "Text": "secondo sabato",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -746,7 +746,7 @@
       }
     },
     {
-      "Text": "each month",
+      "Text": "ogni mese",
       "Type": "datetimeV2.set",
       "Value": {
         "values": [
@@ -762,14 +762,14 @@
 }
 ,
 {
-  "Input": "Set an appointment for Easter Sunday",
+  "Input": "Fissa un appuntamento per la domenica di Pasqua",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Easter",
+      "Text": "Pasqua",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -782,7 +782,7 @@
       }
     },
     {
-      "Text": "Sunday",
+      "Text": "domenica",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -803,14 +803,14 @@
 }
 ,
 {
-  "Input": "block 1 hour on my calendar tomorrow morning",
+  "Input": "blocca 1 ora sul mio calendario domani mattina",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 hour",
+      "Text": "1 ora",
       "Type": "datetimeV2.duration",
       "Value": {
         "values": [
@@ -823,7 +823,7 @@
       }
     },
     {
-      "Text": "tomorrow morning",
+      "Text": "domani mattina",
       "Type": "datetimeV2.datetimerange",
       "Value": {
         "values": [
@@ -840,14 +840,14 @@
 }
 ,
 {
-  "Input": "Change July 22nd meeting in Bellevue to August 22nd",
+  "Input": "Cambia l'appuntamento nel 22 Luglio a Bellavue al 22 Agosto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "July 22nd",
+      "Text": "22 Luglio",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -865,7 +865,7 @@
       }
     },
     {
-      "Text": "August 22nd",
+      "Text": "22 Agosto",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -886,14 +886,14 @@
 }
 ,
 {
-  "Input": "on Friday for 3 in Bellevue in the afternoon",
+  "Input": "di venerdì per 3 a Bellavue nel pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday",
+      "Text": "venerdì",
       "Type": "datetimeV2.date",
       "Value": {
         "values": [
@@ -911,7 +911,7 @@
       }
     },
     {
-      "Text": "in the afternoon",
+      "Text": "nel pomeriggio",
       "Type": "datetimeV2.timerange",
       "Value": {
         "values": [
@@ -927,14 +927,14 @@
   ]
 },
 {
-  "Input": "pick up jordan's medicine at the costco pharmacy on havana sometime before next tuesday at 12:00",
+  "Input": "ritira le medicine di jordan alla costco pharmacy sull' havana un po' prima del prossimo martedì alle 12:00",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before next tuesday at 12:00",
+      "Text": "prima del prossimo martedì alle 12:00",
       "Type": "datetimeV2.datetimerange",
       "Value": {
         "values": [
@@ -956,14 +956,14 @@
   ]
 },
 {
-  "Input": "schedule a meeting in advance of 2pm",
+  "Input": "programma un appuntamento prima delle 2pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in advance of 2pm",
+      "Text": "prima delle 2pm",
       "Type": "datetimeV2.timerange",
       "Value": {
         "values": [
@@ -977,62 +977,18 @@
       }
     }
   ]
-},
+}
+,
+
 {
-  "Input": "schedule a meeting in advance of 2pm",
+  "Input": "Cambierò l'appuntamento delle dieci am alle venti!",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in advance of 2pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-		  {
-			"timex": "T14",
-			"Mod": "before",
-			"type": "timerange",
-			"end": "14:00:00"
-		  }
-		]
-      }
-    }
-  ]
-},
-{
-  "Input": "schedule a meeting prior to 2pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prior to 2pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-		  {
-			"timex": "T14",
-			"Mod": "before",
-			"type": "timerange",
-			"end": "14:00:00"
-		  }
-		]
-      }
-    }
-  ]
-},
-{
-  "Input": "I'll change the ten am appointment to twenty!",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "datetimeV2.time",
       "Value": {
         "values": [
@@ -1045,7 +1001,7 @@
       }
     },
     {
-      "Text": "twenty",
+      "Text": "venti",
       "Type": "datetimeV2.time",
       "Value": {
         "values": [
@@ -1060,14 +1016,14 @@
   ]
 },
 {
-  "Input": "I'll change the ten am appointment to 20!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 20!",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "datetimeV2.time",
       "Value": {
         "values": [
@@ -1095,14 +1051,14 @@
   ]
 },
 {
-  "Input": "I'll change the ten am appointment to nine!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle nove!",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "datetimeV2.time",
       "Value": {
         "values": [
@@ -1115,7 +1071,7 @@
       }
     },
     {
-      "Text": "nine",
+      "Text": "nove",
       "Type": "datetimeV2.time",
       "Value": {
         "values": [
@@ -1135,14 +1091,14 @@
   ]
 },
 {
-  "Input": "I'll change the ten am appointment to 26!",
+  "Input": "Cambierò l'appuntamento delle dieci am alle 26!",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "datetimeV2.time",
       "Value": {
         "values": [
@@ -1157,14 +1113,14 @@
   ]
 },
 {
-  "Input": "I'll change the ten am appointment to twenty six.",
+  "Input": "Cambierò l'appuntamento delle dieci am alle ventisei.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ten am",
+      "Text": "dieci am",
       "Type": "datetimeV2.time",
       "Value": {
         "values": [
@@ -1179,14 +1135,14 @@
   ]
 },
 {
-  "Input": "I'll be back in 5 minutes",
+  "Input": "Tornerò tra 5 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 5 minutes",
+      "Text": "tra 5 minuti",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -1201,14 +1157,14 @@
   ]
 },
 {
-  "Input": "in 5 minutes",
+  "Input": "tra 5 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 5 minutes",
+      "Text": "tra 5 minuti",
       "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
@@ -1223,14 +1179,14 @@
   ]
 },
 {
-  "Input": "Schedule during the morning",
+  "Input": "Programma durante la mattinata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "morning",
+      "Text": "mattinata",
       "Type": "timerange",
       "Value": {
         "values": [
@@ -1247,14 +1203,14 @@
 }
 ,
 {
-  "Input": "I'll leave by tomorrow",
+  "Input": "Partirò entro domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "by tomorrow",
+      "Text": "entro domani",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1271,14 +1227,14 @@
 }
 ,
 {
-  "Input": "I'll leave before tomorrow",
+  "Input": "Partirò prima di domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "before tomorrow",
+      "Text": "prima di domani",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1295,14 +1251,14 @@
 }
 ,
 {
-  "Input": "I'll leave no later than tomorrow",
+  "Input": "Partitò non più tardi di domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "no later than tomorrow",
+      "Text": "non più tardi di domani",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1319,14 +1275,14 @@
 }
 ,
 {
-  "Input": "give me all open spots with dates after or equal to 1/1/2016",
+  "Input": "dammi tutti i luoghi aperti con data successiva o uguale al 1/1/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after or equal to 1/1/2016",
+      "Text": "successiva o uguale al 1/1/2016",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1343,14 +1299,14 @@
 }
 ,
 {
-  "Input": "I'll leave later than 1/1/2016",
+  "Input": "Partirò dopo il 1/1/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "later than 1/1/2016",
+      "Text": "dopo il 1/1/2016",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1367,14 +1323,14 @@
 }
 ,
 {
-  "Input": "I'll leave after 1/1/2016",
+  "Input": "Partirò prima del 1/1/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after 1/1/2016",
+      "Text": "prima del 1/1/2016",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1391,38 +1347,14 @@
 }
 ,
 {
-  "Input": "I'll leave earlier than 1/1/2016",
+  "Input": "Chiuderà a partire dal 1/1/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "earlier than 1/1/2016",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-01-01",
-            "Mod": "before",
-            "type": "daterange",
-            "end": "2016-01-01"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "It will close starting from 1/1/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "starting from 1/1/2016",
+      "Text": "a partire dal 1/1/2016",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1439,14 +1371,14 @@
 }
 ,
 {
-  "Input": "ending with 1/1/2016",
+  "Input": "termina con il 1/1/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ending with 1/1/2016",
+      "Text": "termina con il 1/1/2016",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1463,14 +1395,14 @@
 }
 ,
 {
-  "Input": "I'll leave sooner than 2020",
+  "Input": "Partirò prima del 2020",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "sooner than 2020",
+      "Text": "prima del 2020",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1487,14 +1419,14 @@
 }
 ,
 {
-  "Input": "The range is until 2012",
+  "Input": "L'intervallo è fino al 2012",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "until 2012",
+      "Text": "fino al 2012",
       "Type": "daterange",
       "Value": {
         "values": [
@@ -1511,7 +1443,7 @@
 }
 ,
 {
-  "Input": "The range is 2012 or after",
+  "Input": "L'intervallo è 2012 o dopo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -1519,7 +1451,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2012 or after",
+      "Text": "2012 o dopo",
       "Type": "daterange",
       "Value": {
         "values": [

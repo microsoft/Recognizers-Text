@@ -1,5 +1,5 @@
 [{
-  "Input": "I'll go back on 15",
+  "Input": "Tornerò il 15",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -10,84 +10,73 @@
 }
 ,
 {
-  "Input": "I'll go back April 22",
+  "Input": "Tornerò il 22 Aprile",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "April 22",
+      "Text": "22 Aprile",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Jan-1",
+  "Input": "Tornerò il 1 Gen",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Jan-1",
+      "Text": "1 Gen",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Jan/1",
+  "Input": "Tornerò il 2 Ottobre",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Jan/1",
+      "Text": "2 Ottobre",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back October. 2",
+  "Input": "Tornerò il 12 Gennaio 2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "October. 2",
+      "Text": "12 Gennaio 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back January 12, 2016",
+  "Input": "Tornerò il 12 Gennaio del 2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "January 12, 2016",
+      "Text": "12 Gennaio del 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back January 12 of 2016",
+  "Input": "Tornerò Lunedì 12 Gennaio 2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "January 12 of 2016",
+      "Text": "Lunedì 12 Gennaio 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Monday January 12th, 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Monday January 12th, 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 02/22/2016",
+  "Input": "Tornerò il 02/22/2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -98,7 +87,7 @@
 }
 ,
 {
-  "Input": "I'll go back 21/04/2016",
+  "Input": "Tornerò il 21/04/2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -109,7 +98,7 @@
 }
 ,
 {
-  "Input": "I'll go back 21/04/16",
+  "Input": "Tornerò il 21/04/16",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +109,7 @@
 }
 ,
 {
-  "Input": "I'll go back 9-18-15",
+  "Input": "Tornerò il 9-18-15",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -131,7 +120,7 @@
 }
 ,
 {
-  "Input": "I'll go back on 4.22",
+  "Input": "Tornerò il 4.22",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -142,7 +131,7 @@
 }
 ,
 {
-  "Input": "I'll go back on 4-22",
+  "Input": "Tornerò il 4-22",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -153,29 +142,7 @@
 }
 ,
 {
-  "Input": "I'll go back at 4.22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back in 4-22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on    4/22",
+  "Input": "Tornerò il    4/22",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -186,7 +153,7 @@
 }
 ,
 {
-  "Input": "I'll go back on 22/04",
+  "Input": "Tornerò il 22/04",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -197,18 +164,7 @@
 }
 ,
 {
-  "Input": "I'll go back       4/22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 22/04",
+  "Input": "Tornerò il 22/04",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -219,7 +175,7 @@
 }
 ,
 {
-  "Input": "I'll go back 2015/08/12",
+  "Input": "Tornerò il 2015/08/12",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -230,7 +186,7 @@
 }
 ,
 {
-  "Input": "I'll go back 11/12,2016",
+  "Input": "Tornerò il 11/12,2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -241,7 +197,7 @@
 }
 ,
 {
-  "Input": "I'll go back 11/12,16",
+  "Input": "Tornerò il 11/12,16",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -252,29 +208,29 @@
 }
 ,
 {
-  "Input": "I'll go back 1st Jan",
+  "Input": "Tornerò il 1 Gen",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1st Jan",
+      "Text": "1 Gen",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 1-Jan",
+  "Input": "Tornerò il 1-Gen",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1-Jan",
+      "Text": "1-Gen",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 28-Nov",
+  "Input": "Tornerò il 28-Nov",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -285,889 +241,834 @@
 }
 ,
 {
-  "Input": "I'll go back Wed, 22 of Jan",
+  "Input": "Tornerò Mer, 22 Gen",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Wed, 22 of Jan",
+      "Text": "Mer, 22 Gen",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the first friday of july",
+  "Input": "Tornerò il primo venerdì di luglio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the first friday of july",
+      "Text": "il primo venerdì di luglio",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the first friday in this month",
+  "Input": "Tornerò il primo venerdì di questo mese",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the first friday in this month",
+      "Text": "il primo venerdì di questo mese",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back two weeks from now",
+  "Input": "Tornerò tra due settimane da adesso",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two weeks from now",
+      "Text": "tra due settimane da adesso",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next week on Friday",
+  "Input": "Tornerò la prossima settimana il venerdì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week on Friday",
+      "Text": "prossima settimana il venerdì",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Friday next week",
+  "Input": "Tornerò il venerdì della prossima settimana",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on Friday next week",
+      "Text": "il venerdì della prossima settimana",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "past Monday",
+  "Input": "lo scorso Lunedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "past Monday",
+      "Text": "lo scorso Lunedì",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Tues.",
+  "Input": "Tornerò Mar.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tues",
+      "Text": "Mar",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Tues. good news.",
+  "Input": "Tornerò Mar. buone notizie.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tues",
+      "Text": "Mar",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Tues",
+  "Input": "Tornerò Mar",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tues",
+      "Text": "Mar",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Friday",
+  "Input": "Tornerò Venerdì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday",
+      "Text": "Venerdì",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Friday",
+  "Input": "Tornerò oggi",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday",
+      "Text": "oggi",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back today",
+  "Input": "Tornerò domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "today",
+      "Text": "domani",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow",
+  "Input": "Sono tornato ieri",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow",
+      "Text": "ieri",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back yesterday",
+  "Input": "Sono tornato l'altroieri",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "yesterday",
+      "Text": "l'altroieri",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the day before yesterday",
+  "Input": "Tornerò dopodomani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the day before yesterday",
+      "Text": "dopodomani",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the day after tomorrow",
+  "Input": "Tornerò il giorno dopo",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the day after tomorrow",
+      "Text": "il giorno dopo",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the next day",
+  "Input": "Tornerò questo Venerdì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the next day",
+      "Text": "questo Venerdì",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next day",
+  "Input": "Tornerò Domenica prossima",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next day",
+      "Text": "Domenica prossima",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this Friday",
+  "Input": "Sono tornato Domenica scorsa",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this Friday",
+      "Text": "Domenica scorsa",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next Sunday",
+  "Input": "Tornerò l'ultimo giorno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next Sunday",
+      "Text": "ultimo giorno",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back last Sunday",
+  "Input": "Tornerò in giornata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last Sunday",
+      "Text": "in giornata",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back last day",
+  "Input": "Tornerò questa settimana, di Venerdì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last day",
+      "Text": "questa settimana, di Venerdì",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the last day",
+  "Input": "Tornerò la prossima settimana, di Domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the last day",
+      "Text": "la prossima settimana, di Domenica",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the day",
+  "Input": "Sono tornato la scorsa settimana, di Domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the day",
+      "Text": "la scorsa settimana, di Domenica",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this week Friday",
+  "Input": "Tornerò il 15 Giugno 2016",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this week Friday",
+      "Text": "15 Giugno 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next week Sunday",
+  "Input": "baseball l'undici maggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week Sunday",
+      "Text": "l'undici maggio",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back last week Sunday",
+  "Input": "Tornerò il quattro maggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last week Sunday",
+      "Text": "il quattro maggio",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 15 June 2016",
+  "Input": "Tornerò il 4 marzo",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15 June 2016",
+      "Text": "4 marzo",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "a baseball on may the eleventh",
+  "Input": "Tornerò il primo Gen",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "may the eleventh",
+      "Text": "primo Gen",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back fourth of may",
+  "Input": "Tornerò il ventuno Maggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "fourth of may",
+      "Text": "ventuno Maggio",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 4th of march",
+  "Input": "Tornnerò il due Ago",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4th of march",
+      "Text": "due Ago",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Jan first",
+  "Input": "Tornerò il ventidue Giugno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Jan first",
+      "Text": "ventidue Giugno",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back May twenty-first",
+  "Input": "Sono tornato due mesi fa",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "May twenty-first",
+      "Text": "due mesi fa",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back May twenty one",
+  "Input": "Tornerò due giorni dopo",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "May twenty one",
+      "Text": "due giorni dopo",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back second of Aug",
+  "Input": "a chi ho mandato una email un mese fa",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "second of Aug",
+      "Text": "un mese fa",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back twenty second of June",
+  "Input": "Sono tornato per il 27",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "twenty second of June",
+      "Text": "per il 27",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back two months ago",
+  "Input": "Sono tornato per il 27.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two months ago",
+      "Text": "per il 27",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back two days later",
+  "Input": "Sono tornato per il 27!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two days later",
+      "Text": "per il 27",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "who did i email a month ago",
+  "Input": "Sono tornato per il 27 .",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a month ago",
+      "Text": "per il 27",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the 27",
+  "Input": "Sono tornato per il 21",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27",
+      "Text": "per il 21",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the 27th",
+  "Input": "Sono tornato per il 22",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27th",
+      "Text": "per il 22",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the 27.",
+  "Input": "Sono tornato per il due",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27",
+      "Text": "per il due",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the 27!",
+  "Input": "Sono tornato per il ventidue",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27",
+      "Text": "per il ventidue",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the 27 .",
+  "Input": "Sono tornato per il trentuno",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 27",
+      "Text": "per il trentuno",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the 21st",
+  "Input": "Sono tornato il 27",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 21st",
+      "Text": "il 27",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the 22nd",
+  "Input": "Sono tornato il 21",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the 22nd",
+      "Text": "il 21",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the second",
+  "Input": "Sono tornato il 22",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the second",
+      "Text": "il 22",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the twenty second",
+  "Input": "Sono tornato il due!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the twenty second",
+      "Text": "il due",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back for the thirty first",
+  "Input": "Sono tornato il ventidue?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "for the thirty first",
+      "Text": "il ventidue",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back on the 27th",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "on the 27th",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on the 21st",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "on the 21st",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on 22nd",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "on 22nd",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on the second!",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "on the second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on twenty second?",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "on twenty second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "the first prize",
+  "Input": "il primo premio",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
-  "Input": "I'll go to the 27th floor",
+  "Input": "Andrò al 27° piano",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
-  "Input": "Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China",
+  "Input": "L'evento commemorativo per il 25° anniversario delle relazioni diplomatiche tra Singapore e China",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
-  "Input": "Get tickets for the 17th Door Haunted Experience",
+  "Input": "Prendi i biglietti per il 17° Door Haunted Experience",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
-  "Input": "What do I have on Saturday the second",
+  "Input": "Cosa devo fare sabato due?",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Saturday the second",
+      "Text": "sabato due",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "A meeting for Wednesday the 27th with Joe Smith",
+  "Input": "Un appuntamento per Mercoledì 27 con Joe Smith",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Wednesday the 27th",
+      "Text": "Mercoledì 27",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Thursday the 21st",
+  "Input": "Tornerò Giovedì 21",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Thursday the 21st",
+      "Text": "Giovedì 21",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Friday the 22nd",
+  "Input": "Tornerò Venerdì 22",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday the 22nd",
+      "Text": "Venerdì 22",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Saturday the 23rd",
+  "Input": "Tornerò Sabato 23",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Saturday the 23rd",
+      "Text": "Sabato 23",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Friday the 15th",
+  "Input": "Tornerò Venerdì 15",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday the 15th",
+      "Text": "Venerdì 15",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Thursday the twenty first",
+  "Input": "Tornerò Giovedì ventuno",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Thursday the twenty first",
+      "Text": "Giovedì ventuno",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Friday the twenty second",
+  "Input": "Tornerò Venerdì ventidue",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday the twenty second",
+      "Text": "Venerdì ventidue",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Friday the fifteen",
+  "Input": "Tornerò Venerdì quindici",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday the fifteen",
+      "Text": "Venerdì quindici",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Thursday the seventh",
+  "Input": "Tornerò Giovedì sette",
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Thursday the seventh",
+      "Text": "Giovedì sette",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back second Sunday",
+  "Input": "Tornerò la seconda Domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "second Sunday",
+      "Text": "la seconda Domenica",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back first Sunday",
+  "Input": "Tornerò la prima Domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "first Sunday",
+      "Text": "la prima Domenica",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back third Tuesday",
+  "Input": "Tornerò il terzo Martedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "third Tuesday",
+      "Text": "il terzo Martedì",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back fifth Sunday",
+  "Input": "Tornerò la quinta Domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "fifth Sunday",
+      "Text": "quinta Domenica",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back sixth Sunday",
+  "Input": "Tornerò la sesta Domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Sunday",
+      "Text": "sesta Domenica",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tenth Monday",
+  "Input": "Tornerò il decimo Lunedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Monday",
+      "Text": "Lunedì",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 20th of next month",
+  "Input": "Tornerò il 20 del prossimo mese",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "20th of next month",
+      "Text": "il 20 del prossimo mese",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 31st of this month",
+  "Input": "Tornerò il 31 di questo mese",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "31st of this month",
+      "Text": "il 31 di questo mese",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Cortana could try to arrange a Skype call either Friday this week or Tuesday of next week",
+  "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o Martedì della prossima settimana",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday this week",
+      "Text": "Venerdì di questa settimana",
       "Type": "date"
     }
     ,
     {
-      "Text": "Tuesday of next week",
+      "Text": "Martedì della prossima settimana",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Cortana could try to arrange a Skype call either Friday of this week or this week on Saturday",
+  "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o questa settimana di Domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday of this week",
+      "Text": "Venerdì di questa settimana",
       "Type": "date"
     }
     ,
     {
-      "Text": "this week on Saturday",
+      "Text": "questa settimana di Domenica",
       "Type": "date"
     }
   ]
@@ -1185,131 +1086,131 @@
 }
 ,
 {
-  "Input": "We had a meeting 1 month 21 days ago",
+  "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 month 21 days ago",
+      "Text": "1 mese e 21 giorni fa",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I left here 2 years 1 month 21 days ago",
+  "Input": "Sono partito 2 anni 1 mese e 21 giorni fa",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 years 1 month 21 days ago",
+      "Text": "2 anni 1 mese e 21 giorni fa",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I will leve here 2 years 21 days later",
+  "Input": "Partirò 2 anni e 21 giorni dopo",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 years 21 days later",
+      "Text": "2 anni e 21 giorni dopo",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I left here 1 month 2 years 21 days ago",
+  "Input": "Sono partito 1 mese 2 anni e 21 giorni fa",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 month 2 years 21 days ago",
+      "Text": "1 mese 2 anni e 21 giorni fa",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I left here the 20th next month",
+  "Input": "Sono partito il 20 del prossimo mese",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the 20th next month",
+      "Text": "il 20 del prossimo mese",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I left here 5 December 1391",
+  "Input": "Sono partito il 5 Dicembre 1391",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5 December 1391",
+      "Text": "5 Dicembre 1391",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Monday, Jan twenty two, 2018",
+  "Input": "Lunedì, Gen ventidue, 2018",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Monday, Jan twenty two, 2018",
+      "Text": "Lunedì, Gen ventidue, 2018",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "on Sunday Jan twenty one two thousand and eighteen",
+  "Input": "Domenica ventuno Gen duemiladiciotto",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Sunday Jan twenty one two thousand and eighteen",
+      "Text": "Domenica ventuno Gen duemiladiciotto",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "on September the twenty-first nineteen seventy eight",
+  "Input": "a Settembre, il ventuno, millenovecentosettantatre",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "September the twenty-first nineteen seventy eight",
+      "Text": "Settembre, il ventuno, millenovecentosettantatre",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "on September 10, nineteen zero one",
+  "Input": "il 10 Settembre, millenovecentouno",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "September 10, nineteen zero one",
+      "Text": "10 Settembre, millenovecentouno",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "on the tenth of September, two thousand",
+  "Input": "il dieci di Settembre, duemila",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tenth of September, two thousand",
+      "Text": "dieci di Settembre, duemila",
       "Type": "date"
     }
   ]

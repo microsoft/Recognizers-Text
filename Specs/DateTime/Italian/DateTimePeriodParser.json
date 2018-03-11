@@ -1,12 +1,12 @@
 [{
-  "Input": "I'll be out five to seven today",
+  "Input": "Sarò fuori dalle cinque alle sette oggi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "five to seven today",
+      "Text": "dalle cinque alle sette oggi",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
@@ -24,14 +24,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 5 to 6 of 4/22/2016",
+  "Input": "Sarò fuori dalle 5 alle 6 del 4/22/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 5 to 6 of 4/22/2016",
+      "Text": "dalle 5 alle 6 del 4/22/2016",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
@@ -49,14 +49,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 5 to 6 of April 22",
+  "Input": "Sarò fuori dalle 5 alle 6 del 22 Aprile",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 5 to 6 of April 22",
+      "Text": "dalle 5 alle 6 del 22 aprile",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
@@ -74,14 +74,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 5 to 6pm of April 22",
+  "Input": "Sarò fuori dalle 5 alle 6pm del 22 Aprile",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 5 to 6pm of April 22",
+      "Text": "dalle 5 alle 6pm del 22 aprile",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
@@ -99,14 +99,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 5 to 6 on 1st Jan",
+  "Input": "Sarò fuori dalle 5 alle 6 del 1 Gen",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 5 to 6 on 1st Jan",
+      "Text": "dalle 5 alle 6 del 1 Gen",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
@@ -124,14 +124,14 @@
 }
 ,
 {
-  "Input": "I'll be out 3pm to 4pm tomorrow",
+  "Input": "Sarò fuori dalle 3pm alle 4pm di domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm to 4pm tomorrow",
+      "Text": "dalle 3pm alle 4pm di domani",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
@@ -149,14 +149,14 @@
 }
 ,
 {
-  "Input": "I'll be out 3:00 to 4:00 tomorrow",
+  "Input": "Sarò fuori dalle 3:00 alle 4:00 di domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3:00 to 4:00 tomorrow",
+      "Text": "3:00 di 4:00 domani",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
@@ -174,7 +174,7 @@
 }
 ,
 {
-  "Input": "I'll be out half past seven to 4pm tomorrow",
+  "Input": "Sarò fuori dalle sette e mezzo alle 4pm di domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -182,7 +182,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "half past seven to 4pm tomorrow",
+      "Text": "dalle sette e mezzo alle 4pm di domani",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
@@ -200,14 +200,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 4pm today to 5pm tomorrow",
+  "Input": "Sarò fuori dalle 4pm di oggi alle 5pm di domani",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 4pm today to 5pm tomorrow",
+      "Text": "dalle 4pm di oggi alle 5pm di domani",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
@@ -225,14 +225,14 @@
 }
 ,
 {
-  "Input": "I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+  "Input": "Sarò fuori dalle 2:00pm del 2016-2-21 alle 3:32 del 04/23/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+      "Text": "dalle 2:00pm del 2016-2-21 alle 3:32 del 04/23/2016",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
@@ -250,14 +250,14 @@
 }
 ,
 {
-  "Input": "I'll be out between 4pm and 5pm today",
+  "Input": "Sarò fuori tra le 4pm e le 5pm di oggi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 4pm and 5pm today",
+      "Text": "tra le 4pm e le 5pm di oggi",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
@@ -275,14 +275,14 @@
 }
 ,
 {
-  "Input": "I'll be out between 4pm on Jan 1, 2016 and 5pm today",
+  "Input": "Sarò fuori tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "between 4pm on Jan 1, 2016 and 5pm today",
+      "Text": "tra le 4pm del 1 Gen 2016 e le 5pm di oggi",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
@@ -300,14 +300,14 @@
 }
 ,
 {
-  "Input": "I'll go back tonight",
+  "Input": "Tornerò stanotte",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tonight",
+      "Text": "stanotte",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-07TNI",
@@ -325,14 +325,14 @@
 }
 ,
 {
-  "Input": "I'll go back tonight for 8",
+  "Input": "Tornerò stanotte per le 8",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tonight",
+      "Text": "stanotte",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-07TNI",
@@ -350,14 +350,14 @@
 }
 ,
 {
-  "Input": "I'll go back this night",
+  "Input": "Tornerò questa notte",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this night",
+      "Text": "questa notte",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-07TNI",
@@ -375,14 +375,14 @@
 }
 ,
 {
-  "Input": "I'll go back this evening",
+  "Input": "Tornerò questa sera",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this evening",
+      "Text": "questa sera",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-07TEV",
@@ -400,14 +400,14 @@
 }
 ,
 {
-  "Input": "I'll go back this morning",
+  "Input": "Tornerò questa mattina",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this morning",
+      "Text": "questa mattina",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-07TMO",
@@ -425,14 +425,14 @@
 }
 ,
 {
-  "Input": "I'll go back this afternoon",
+  "Input": "Tornerò questo pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this afternoon",
+      "Text": "questo pomeriggio",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-07TAF",
@@ -450,14 +450,14 @@
 }
 ,
 {
-  "Input": "I'll go back next night",
+  "Input": "Tornerò la prossima notte",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next night",
+      "Text": "prossima notte",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-08TNI",
@@ -475,14 +475,14 @@
 }
 ,
 {
-  "Input": "I'll go back last night",
+  "Input": "Sono tornato la scorsa notte",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last night",
+      "Text": "scorsa notte",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-06TNI",
@@ -500,14 +500,14 @@
 }
 ,
 {
-  "Input": "I'll go back tomorrow night",
+  "Input": "Tornerò domani sera",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow night",
+      "Text": "domani sera",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-08TNI",
@@ -525,14 +525,14 @@
 }
 ,
 {
-  "Input": "I'll go back next monday afternoon",
+  "Input": "Tornerò il prossimo lunedì pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next monday afternoon",
+      "Text": "prossimo lunedì pomeriggio",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-14TAF",
@@ -550,14 +550,14 @@
 }
 ,
 {
-  "Input": "I'll go back last 3 minute",
+  "Input": "Sono tornato negli ultimi 3 minuti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last 3 minute",
+      "Text": "ultimi tre minuti",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -575,14 +575,14 @@
 }
 ,
 {
-  "Input": "I'll go back past 3 minute",
+  "Input": "Sono tornato nei 3 minuti passati",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "past 3 minute",
+      "Text": "3 minuti passati",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -600,14 +600,14 @@
 }
 ,
 {
-  "Input": "I'll go back previous 3 minute",
+  "Input": "Sono tornato nei 3 minuti precedenti",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "previous 3 minute",
+      "Text": "3 minuti precedenti",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
@@ -625,39 +625,14 @@
 }
 ,
 {
-  "Input": "I'll go back previous 3mins",
+  "Input": "Tornerò nelle prossime 5 ore",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "previous 3mins",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back next 5 hrs",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "next 5 hrs",
+      "Text": "nelle prossime 5 ore",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
@@ -675,14 +650,14 @@
 }
 ,
 {
-  "Input": "I'll go back last minute",
+  "Input": "Tornerò nell'ultimo minuto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "last minute",
+      "Text": "nell'ultimo minuto",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
@@ -700,14 +675,14 @@
 }
 ,
 {
-  "Input": "I'll go back next hour",
+  "Input": "Tornerò nella prossima ora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next hour",
+      "Text": "prossima ora",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
@@ -725,14 +700,14 @@
 }
 ,
 {
-  "Input": "I'll go back next few hours",
+  "Input": "Tornerò nelle prossime ore",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next few hours",
+      "Text": "prossime ore",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
@@ -750,14 +725,14 @@
 }
 ,
 {
-  "Input": "I'll go back tuesday in the morning",
+  "Input": "Tornerò martedì mattina",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday in the morning",
+      "Text": "martedì mattina",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TMO",
@@ -775,14 +750,14 @@
 }
 ,
 {
-  "Input": "Can you help us find a time in the morning of this Tuesday please?",
+  "Input": "Puoi aiutarci a trovare un momento nella mattinata di martedì, per favore?",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the morning of this Tuesday",
+      "Text": "nella mattinata di martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2016-11-08TMO",
@@ -800,14 +775,14 @@
 }
 ,
 {
-  "Input": "Please organize a meeting for 30 minutes on Tuesday, in the morning.",
+  "Input": "Per favore, organizza una riunione di 30 minuti martedì, in mattinata.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday, in the morning",
+      "Text": "martedì, in mattinata",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TMO",
@@ -825,14 +800,14 @@
 }
 ,
 {
-  "Input": "I'll go back tuesday in the afternoon",
+  "Input": "Tornerò martedì nel pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday in the afternoon",
+      "Text": "martedì nel pomeriggio",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TAF",
@@ -850,14 +825,14 @@
 }
 ,
 {
-  "Input": "I'll go back tuesday in the evening",
+  "Input": "Tornerò martedì in serata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday in the evening",
+      "Text": "martedì in serata",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TEV",
@@ -875,14 +850,14 @@
 }
 ,
 {
-  "Input": "let's meet in the early-morning Tuesday",
+  "Input": "incontriamoci di mattina presto martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-morning Tuesday",
+      "Text": "di mattina presto martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TMO",
@@ -900,14 +875,14 @@
 }
 ,
 {
-  "Input": "let's meet in the early-morning on Tuesday",
+  "Input": "incontriamoci di prima mattina martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-morning on Tuesday",
+      "Text": "di prima mattina martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TMO",
@@ -925,14 +900,14 @@
 }
 ,
 {
-  "Input": "let's meet in the late-morning Tuesday",
+  "Input": "incontriamoci in tarda mattinata martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-morning Tuesday",
+      "Text": "in tarda mattinata martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TMO",
@@ -950,14 +925,14 @@
 }
 ,
 {
-  "Input": "let's meet in the early-afternoon Tuesday",
+  "Input": "incontriamoci nel primo pomeriggio martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-afternoon Tuesday",
+      "Text": "nel primo pomeriggio martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TAF",
@@ -975,14 +950,14 @@
 }
 ,
 {
-  "Input": "let's meet in the late-afternoon Tuesday",
+  "Input": "incontriamoci nel tardo pomeriggio martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-afternoon Tuesday",
+      "Text": "nel tardo pomeriggio martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TAF",
@@ -1000,14 +975,14 @@
 }
 ,
 {
-  "Input": "let's meet in the early-evening Tuesday",
+  "Input": "incontriamoci di sera presto martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-evening Tuesday",
+      "Text": "di sera presto martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TEV",
@@ -1025,14 +1000,14 @@
 }
 ,
 {
-  "Input": "let's meet in the late-evening Tuesday",
+  "Input": "incontriamoci in tarda serata martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-evening Tuesday",
+      "Text": "in tarda serata martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TEV",
@@ -1050,14 +1025,14 @@
 }
 ,
 {
-  "Input": "let's meet in the early-night Tuesday",
+  "Input": "incontriamoci in prima nottata martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early-night Tuesday",
+      "Text": "in prima nottata martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TNI",
@@ -1075,14 +1050,14 @@
 }
 ,
 {
-  "Input": "let's meet in the late-night Tuesday",
+  "Input": "incontriamoci in tarda nottata martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late-night Tuesday",
+      "Text": "in tarda nottata martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TNI",
@@ -1100,39 +1075,14 @@
 }
 ,
 {
-  "Input": "let's meet in the early night Tuesday",
+  "Input": "incontriamoci a tarda notte martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the early night Tuesday",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 22:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 20:00:00",
-          "endDateTime": "2016-11-01 22:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late night Tuesday",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late night Tuesday",
+      "Text": "a tarda notte martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TNI",
@@ -1150,14 +1100,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday early-morning",
+  "Input": "incontriamoci martedì in prima mattinata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early-morning",
+      "Text": "martedì in prima mattinata",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TMO",
@@ -1175,14 +1125,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday late-morning",
+  "Input": "incontriamoci martedì in tarda mattinata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late-morning",
+      "Text": "martedì in tarda mattinata",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TMO",
@@ -1200,14 +1150,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday early-afternoon",
+  "Input": "incontriamoci martedì nel primo pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early-afternoon",
+      "Text": "martedì nel primo pomeriggio",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TAF",
@@ -1225,14 +1175,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday late-afternoon",
+  "Input": "incontriamoci martedì nel tardo pomeriggio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late-afternoon",
+      "Text": "martedì nel tardo pomeriggio",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TAF",
@@ -1250,14 +1200,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday early-evening",
+  "Input": "incontriamoci martedì sera presto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early-evening",
+      "Text": "martedì sera presto",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TEV",
@@ -1275,14 +1225,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday late-evening",
+  "Input": "incontriamoci martedì sera tardi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late-evening",
+      "Text": "martedì sera tardi",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TEV",
@@ -1300,14 +1250,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday early-night",
+  "Input": "incontriamoci martedì notte presto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early-night",
+      "Text": "martedì notte presto",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TNI",
@@ -1325,14 +1275,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday late-night",
+  "Input": "incontriamoci martedì notte tardi",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday late-night",
+      "Text": "martedì notte tardi",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TNI",
@@ -1350,39 +1300,14 @@
 }
 ,
 {
-  "Input": "let's meet on Tuesday early night",
+  "Input": "incontriamoci martedì in tarda nottata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Tuesday early night",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 22:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 20:00:00",
-          "endDateTime": "2016-11-01 22:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday late night",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday late night",
+      "Text": "martedì in tarda nottata",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TNI",
@@ -1400,14 +1325,14 @@
 }
 ,
 {
-  "Input": "let's meet rest of the day",
+  "Input": "incontriamoci nel resto della giornata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of the day",
+      "Text": "nel resto della giornata",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -1425,14 +1350,14 @@
 }
 ,
 {
-  "Input": "let's meet rest of current day",
+  "Input": "incontriamoci nel resto del giorno corrente",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of current day",
+      "Text": "nel resto del giorno corrente",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -1450,14 +1375,14 @@
 }
 ,
 {
-  "Input": "let's meet rest of my day",
+  "Input": "incontriamoci nel resto della mia giornata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of my day",
+      "Text": "nel resto della mia giornata",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -1475,14 +1400,14 @@
 }
 ,
 {
-  "Input": "let's meet rest of this day",
+  "Input": "incontriamoci nel resto di questa giornata",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest of this day",
+      "Text": "nel resto di questa giornata",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -1500,14 +1425,14 @@
 }
 ,
 {
-  "Input": "let's meet rest the day",
+  "Input": "incontriamoci nel resto del giorno",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "rest the day",
+      "Text": "nel resto del giorno",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
@@ -1525,14 +1450,14 @@
 }
 ,
 {
-  "Input": "I'll be out I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+  "Input": "Sarò fuori dalle 2:00pm del 2016-2-21 alle 3:32 del 04/23/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+      "Text": "dalle 2:00pm del 2016-2-21 alle 3:32 del 04/23/2016",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
@@ -1550,14 +1475,14 @@
 }
 ,
 {
-  "Input": "let's meet in the late night on Tuesday",
+  "Input": "incontriamoci in tarda nottata martedì",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the late night on Tuesday",
+      "Text": "in tarda nottata martedì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TNI",
@@ -1575,14 +1500,14 @@
 }
 ,
 {
-  "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday between 1PM and 4 PM.",
+  "Input": "Cortana, per favore programma uno skype per una riunione d'affari con Wayne, venerdì tra le 1PM e le 4 PM.",
   "Context": {
     "ReferenceDateTime": "2017-11-09T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday between 1PM and 4 PM",
+      "Text": "venerdì tra le 1PM e le 4 PM",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
@@ -1600,14 +1525,14 @@
 }
 ,
 {
-  "Input": "Can you schedule us tomorrow between 8am and 2pm?",
+  "Input": "Puoi calendarizzarci domani tra le 8am e le 2pm?",
   "Context": {
     "ReferenceDateTime": "2017-11-09T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow between 8am and 2pm",
+      "Text": "domani tra le 8am e le 2pm",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
@@ -1625,14 +1550,14 @@
 }
 ,
 {
-  "Input": "Can you schedule us Dec 9th between 8am and 2pm?",
+  "Input": "Puoi calendarizzarci il 9 Dic tra le 8am e le 2pm?",
   "Context": {
     "ReferenceDateTime": "2017-11-09T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Dec 9th between 8am and 2pm",
+      "Text": "il 9 Dic tra le 8am e le 2pm",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
@@ -1650,14 +1575,14 @@
 }
 ,
 {
-  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting this Friday, in the afternoon.",
+  "Input": "Ciao Cortana- per favore programma un colloquio skype con Jennifer.  Ho bisogno di un colloquio di 30 minuti questo venerdì, nel pomeriggio.",
   "Context": {
     "ReferenceDateTime": "2017-11-13T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this Friday, in the afternoon",
+      "Text": "questo venerdì, nel pomeriggio",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2017-11-17TAF",
@@ -1675,14 +1600,14 @@
 }
 ,
 {
-  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, this Friday!",
+  "Input": "Ciao Cortana-  per favore programma un colloquio skype con Jennifer.  Ho bisogno di un colloquio di 30 minuti nel pomeriggio, questo venerdì!",
   "Context": {
     "ReferenceDateTime": "2017-11-13T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the afternoon, this Friday",
+      "Text": "nel pomeriggio, questo venerdì",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2017-11-17TAF",
@@ -1700,14 +1625,14 @@
 }
 ,
 {
-  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, next Friday!",
+  "Input": "Ciao Cortana-  per favore programma un colloquio skype con Jennifer.  Ho bisogno di un colloquio di 30 minuti nel pomeriggio, venerdì prossimo!",
   "Context": {
     "ReferenceDateTime": "2017-11-13T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the afternoon, next Friday",
+      "Text": "nel pomeriggio, venerdì prossimo",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2017-11-24TAF",
@@ -1725,14 +1650,14 @@
 }
 ,
 {
-  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, last Friday!",
+  "Input": "Ciao Cortana-  per favore programma un colloquio skype con Jennifer.  Ho bisogno di un colloquio di 30 minuti nel pomeriggio, venerdì scorso!",
   "Context": {
     "ReferenceDateTime": "2017-11-13T16:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the afternoon, last Friday",
+      "Text": "nel pomeriggio, venerdì scorso",
       "Type": "datetimerange",
       "Value": {
         "Timex": "2017-11-10TAF",
@@ -1750,14 +1675,14 @@
 }
 ,
 {
-  "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday afternoon between 1PM and 4 PM.",
+  "Input": "Cortana, per favore programma uno skype per una riunione d'affari con Wayne, venerdì pomeriggio tra le 1PM e le 4 PM.",
   "Context": {
     "ReferenceDateTime": "2017-11-14T19:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Friday afternoon between 1PM and 4 PM",
+      "Text": "venerdì pomeriggio tra le 1PM e le 4 PM",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H",
@@ -1775,14 +1700,14 @@
 }
 ,
 {
-  "Input": "Cortana, please schedule a skype for business meeting with Wayne, in the afternoon on Friday between 1PM and 4 PM.",
+  "Input": "Cortana, per favore programma uno skype per una riunione d'affari con Wayne, nel pomeriggio di venerdì tra le 1PM e le 4 PM.",
   "Context": {
     "ReferenceDateTime": "2017-11-14T19:12:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the afternoon on Friday between 1PM and 4 PM",
+      "Text": "nel pomeriggio di venerdì tra le 1PM e le 4 PM",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H",
@@ -1800,7 +1725,7 @@
 }
 ,
 {
-  "Input": "Cortana, please schedule a skype meeting 2018-09-23 1p.m. to 4",
+  "Input": "Cortana, per favore programma un colloquio skype il 2018-09-23 dalle 1p.m. alle 4",
   "Context": {
     "ReferenceDateTime": "2017-11-17T19:12:00"
   },
@@ -1808,7 +1733,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2018-09-23 1p.m. to 4",
+      "Text": "il 2018-09-23 dalle 1p.m. alle 4",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2018-09-23T13,2018-09-23T16,PT3H)",
@@ -1826,7 +1751,7 @@
 }
 ,
 {
-  "Input": "Cortana, please schedule a skype meeting 2018-09-23 1:30p.m. to 4.",
+  "Input": "Cortana, per favore programma un colloquio skype il 2018-09-23 dalle 1:30p.m. alle 4.",
   "Context": {
     "ReferenceDateTime": "2017-11-17T19:12:00"
   },
@@ -1834,7 +1759,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2018-09-23 1:30p.m. to 4",
+      "Text": "il 2018-09-23 dalle 1:30p.m. alle 4",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2018-09-23T13:30,2018-09-23T16,PT2H30M)",
@@ -1852,7 +1777,7 @@
 }
 ,
 {
-  "Input": "let's meet on Feb 5 AM",
+  "Input": "incontriamoci il 5 Feb AM",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -1860,7 +1785,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Feb 5 AM",
+      "Text": "5 Feb AM",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-02-05TMO",
@@ -1878,7 +1803,7 @@
 }
 ,
 {
-  "Input": "I'll go back tuesday AM",
+  "Input": "Tornerò martedì AM",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -1886,7 +1811,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday AM",
+      "Text": "martedì AM",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TMO",
@@ -1904,7 +1829,7 @@
 }
 ,
 {
-  "Input": "I'll go back tuesday PM",
+  "Input": "Tornerò martedì PM",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -1912,7 +1837,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tuesday PM",
+      "Text": "martedì PM",
       "Type": "datetimerange",
       "Value": {
         "Timex": "XXXX-WXX-2TAF",
@@ -1930,7 +1855,7 @@
 }
 ,
 {
-  "Input": "It will happen 2 hours in the future",
+  "Input": "Succederà 2 ore in futuro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -1938,7 +1863,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 hours in the future",
+      "Text": "2 ore in futuro",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",

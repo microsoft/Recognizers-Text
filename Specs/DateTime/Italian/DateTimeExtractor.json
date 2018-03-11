@@ -1,60 +1,60 @@
 [{
-  "Input": "I'll go back now",
+  "Input": "Tornerò adesso",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "now",
+      "Text": "adesso",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back as soon as possible",
+  "Input": "Tornerò il prima possibile",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "as soon as possible",
+      "Text": "il prima possibile",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back right now",
+  "Input": "Tornerò proprio adesso",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "right now",
+      "Text": "proprio adesso",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on 15 at 8:00",
+  "Input": "Tornerò il 15 alle 8:00",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15 at 8:00",
+      "Text": "15 alle 8:00",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on 15 at 8:00:30",
+  "Input": "Tornerò il 15 alle 8:00:30",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15 at 8:00:30",
+      "Text": "15 alle 8:00:30",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on 15, 8pm",
+  "Input": "Tornerò il 15, 8pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -65,7 +65,7 @@
 }
 ,
 {
-  "Input": "I'll go back 04/21/2016, 8:00pm",
+  "Input": "Tornerò il 04/21/2016, 8:00pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -76,7 +76,7 @@
 }
 ,
 {
-  "Input": "I'll go back 04/21/2016, 8:00:13pm",
+  "Input": "Tornerò 04/21/2016, 8:00:13pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -87,469 +87,436 @@
 }
 ,
 {
-  "Input": "I'll go back Oct. 23 at seven",
+  "Input": "Tornerò il 23 Ott alle sette",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Oct. 23 at seven",
+      "Text": "23 Ott alle sette",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back October 14 8:00am",
+  "Input": "Tornerò il 14 Ottobre 8:00am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "October 14 8:00am",
+      "Text": "14 Ottobre 8:00am",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back October 14 8:00:00am",
+  "Input": "Tornerò il 14 Ottobre 8:00:00am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "October 14 8:00:00am",
+      "Text": "14 Ottobre 8:00:00am",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back October 14, 8:00am",
+  "Input": "Tornerò il 14 Ottobre, 8:00:01am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "October 14, 8:00am",
+      "Text": "14 Ottobre, 8:00:01am",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back October 14, 8:00:01am",
+  "Input": "Tornerò domani 8:00am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "October 14, 8:00:01am",
+      "Text": "domani 8:00am",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow 8:00am",
+  "Input": "Tornerò domani verso le 8:00am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow 8:00am",
+      "Text": "domani verso le 8:00am",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow around 8:00am",
+  "Input": "Tornerò domani per le 8:00am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow around 8:00am",
+      "Text": "domani per le 8:00am",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow for 8:00am",
+  "Input": "Tornerò domani 8:00:05am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow for 8:00am",
+      "Text": "domani 8:00:05am",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow 8:00:05am",
+  "Input": "Tornerò il prossimo venerdì alle 3 e mezza",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow 8:00:05am",
+      "Text": "il prossimo venerdì alle 3 e mezza",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next friday at half past 3 ",
+  "Input": "Tornerò il 5 Maggio 2016, otto e 20 di sera",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next friday at half past 3",
+      "Text": "5 Maggio 2016, otto e 20 di sera",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back May 5, 2016, 20 min past eight in the evening",
+  "Input": "Tornerò alle 8pm del 15",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "May 5, 2016, 20 min past eight in the evening",
+      "Text": "8pm del 15",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 8pm on 15",
+  "Input": "Tornerò alle sette del 15",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm on 15",
+      "Text": "alle sette del 15",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back at seven on 15",
+  "Input": "Tornerò alle 8pm della prossima domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "seven on 15",
+      "Text": "8pm della prossima domenica",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 8pm next sunday",
+  "Input": "Tornerò alle 8pm di oggi"
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm next sunday",
+      "Text": "8pm di oggi",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 8pm today",
+  "Input": "Tornerò alle sette meno un quarto di domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm today",
+      "Text": "alle sette meno un quarto di domani",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back a quarter to seven tomorrow",
+  "Input": "Tornerò alle 19:00, il 2016-12-22",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a quarter to seven tomorrow",
+      "Text": "alle 19:00, il 2016-12-22",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 19:00, 2016-12-22",
+  "Input": "Tornerò alle sette domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "19:00, 2016-12-22",
+      "Text": "alle sette domani",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back seven o'clock tomorrow",
+  "Input": "Tornerò domani mattina alle 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "seven o'clock tomorrow",
+      "Text": "domani mattina alle 7",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow morning at 7",
+  "Input": "Tornerò alle 7:00 di domenica pomeriggio",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow morning at 7",
+      "Text": "alle 7:00 di domenica pomeriggio",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 7:00 on Sunday afternoon",
+  "Input": "Tornerò alle cinque e venti di domani mattina",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "7:00 on Sunday afternoon",
+      "Text": "alle cinque e venti di domani mattina",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back twenty minutes past five tomorrow morning",
+  "Input": "Tornerò il 14 8:00, Ottobre 14",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "twenty minutes past five tomorrow morning",
+      "Text": "14 Ottobre 8:00",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back October 14 8:00, October 14",
+  "Input": "Tornerò alle 7, stamattina",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "October 14 8:00",
+      "Text": "alle 7, stamattina",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 7, this morning",
+  "Input": "Tornerò alle 8pm di sera, Lunedì",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "7, this morning",
+      "Text": "alle 8pm di sera, lunedì",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 8pm in the evening, Monday",
+  "Input": "Tornerò alle 8pm di sera, 1 Gen",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm in the evening, Monday",
+      "Text": "alle 8pm di sera, 1 Gen",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 8pm in the evening, 1st Jan",
+  "Input": "Tornerò alle 10pm stanotte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm in the evening, 1st Jan",
+      "Text": "alle 10pm stanotte",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 8pm in the evening, 1 Jan",
+  "Input": "Tornerò alle 8am di stamattina",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm in the evening, 1 Jan",
+      "Text": "alle 8am di stamattina",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 10pm tonight",
+  "Input": "Tornerò alle 8pm di questa sera",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "10pm tonight",
+      "Text": "alle 8pm di questa sera",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 8am this morning",
+  "Input": "Tornerò stanotte verso le 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8am this morning",
+      "Text": "stanotte verso le 7",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 8pm this evening",
+  "Input": "Tornerò stamattina alle 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm this evening",
+      "Text": "stamattina alle 7",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tonight around 7",
+  "Input": "Tornerò stamattina alle 7pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tonight around 7",
+      "Text": "stamattina alle 7pm",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this morning at 7",
+  "Input": "Tornerò stamattina alle sette",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this morning at 7",
+      "Text": "stamattina alle sette",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this morning at 7pm",
+  "Input": "Tornerò stamattina alle 7:00",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this morning at 7pm",
+      "Text": "stamattina alle 7:00",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this morning at seven",
+  "Input": "Tornerò questa notte alle 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this morning at seven",
+      "Text": "questa notte alle 7",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this morning at 7:00",
+  "Input": "Tornerò stanotte alle 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this morning at 7:00",
+      "Text": "stanotte alle 7",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back this night at 7",
+  "Input": "per 2 persone stanotte alle 9:30 pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this night at 7",
+      "Text": "stanotte alle 9:30 pm",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tonight at 7",
+  "Input": "per 2 persone stanotte alle 9:30:31 pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tonight at 7",
+      "Text": "stanotte alle 9:30:31 pm",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "for 2 people tonight at 9:30 pm",
+  "Input": "Tornerò a fine giornata",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tonight at 9:30 pm",
+      "Text": "a fine giornata",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "for 2 people tonight at 9:30:31 pm",
+  "Input": "Tornerò alla fine di domani",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tonight at 9:30:31 pm",
+      "Text": "alla fine di domani",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the end of the day",
+  "Input": "Tornerò alla fine di domenica",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the end of the day",
+      "Text": "alla fine di domenica",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back end of tomorrow",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "end of tomorrow",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back end of the sunday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "end of the sunday",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back at 5th at 4 a.m.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5th at 4 a.m.",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 2016-12-16T12:23:59",
+  "Input": "Tornerò il 2016-12-16T12:23:59",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -560,165 +527,143 @@
 }
 ,
 {
-  "Input": "I'll go back in 5 hours",
+  "Input": "Tornerò in 5 ore",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in 5 hours",
+      "Text": "in 5 ore",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "see if I am available for 3pm on Sun",
+  "Input": "vedo se sono disponibile per le 3pm di dom",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm on Sun",
+      "Text": "le 3pm di dom",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "Set appointment for tomorrow morning at 9 o'clock.",
+  "Input": "Fissa un appuntamento per domani mattina alle 9.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow morning at 9 o'clock",
+      "Text": "domani mattina alle 9",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow morning at 9 o'clock",
+  "Input": "Tornerò domani mattina alle 9",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow morning at 9 o'clock",
+      "Text": "domani mattina alle 9",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow morning at 9 oclock",
+  "Input": "Tornerò domani alle 9",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow morning at 9 oclock",
+      "Text": "domani alle 9",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow at 9 o'clock",
+  "Input": "questo venerdì all'una pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow at 9 o'clock",
+      "Text": "questo venerdì all'una pm",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back tomorrow at 9 oclock",
+  "Input": "AGGIUNGI PRANZO ALLE 12:30 PM IL VEN",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tomorrow at 9 oclock",
+      "Text": "12:30 PM IL VEN",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "this friday at one o'clock pm",
+  "Input": "Aggiungi 649 stanotte a mezzanotte",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "this friday at one o'clock pm",
+      "Text": "stanotte a mezzanotte",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "ADD LUNCH AT 12:30 PM ON FRI",
+  "Input": "Tornerò il 1 Agosto alle 11 AM",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12:30 PM ON FRI",
+      "Text": "1 Agosto alle 11 AM",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "Add 649 midnight tonight",
+  "Input": "Tornerò il 1 Agosto alle 11 pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "midnight tonight",
+      "Text": "1 Agosto alle 11 pm",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back August 1st 11 AM",
+  "Input": "Tornerò il 1 Agosto alle 11 p.m.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "August 1st 11 AM",
+      "Text": "1 Agosto alle 11 p.m.",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back August 1st 11 pm",
+  "Input": "Tornerò il 25/02 alle 11 am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "August 1st 11 pm",
+      "Text": "25/02 alle 11 am",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back August 1st 11 p.m.",
+  "Input": "Tornerò il 6 Gen 2017 - 6:37am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "August 1st 11 p.m.",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 25/02 11 am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "25/02 11 am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 6 Jan 2017 - 6:37am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "6 Jan 2017 - 6:37am",
+      "Text": "6 Gen 2017 - 6:37am",
       "Type": "datetime"
     }
   ]
@@ -736,48 +681,36 @@
 }
 ,
 {
-  "Input": "I will leave 1 day 2 hours later",
+  "Input": "Partirò 1 giorno e 2 ore dopo",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1 day 2 hours later",
+      "Text": "1 giorno e 2 ore dopo",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I met him 2 months 1 day 2 hours ago",
+  "Input": "L'ho incontrato 2 mesi, 1 giorno e 2 ore fa",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 months 1 day 2 hours ago",
+      "Text": "2 mesi, 1 giorno e 2 ore fa",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "I met him 2 months 1 day 2 hours ago",
+  "Input": "Partirò 1 giorno e 30 minuti dopo",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 months 1 day 2 hours ago",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I will leave 1 day 30 minutes later",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 day 30 minutes later",
+      "Text": "1 giorno e 30 minuti dopo",
       "Type": "datetime"
     }
   ]

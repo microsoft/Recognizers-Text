@@ -1,12 +1,12 @@
 [{
-  "Input": "I'll leave weekly",
+  "Input": "Andrò via settimanalmente",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "weekly",
+      "Text": "settimanalmente",
       "Type": "set",
       "Value": {
         "Timex": "P1W",
@@ -22,14 +22,14 @@
 }
 ,
 {
-  "Input": "I'll leave biweekly",
+  "Input": "Andrò via ogni due settimane",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2754476+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "biweekly",
+      "Text": "ogni due settimane",
       "Type": "set",
       "Value": {
         "Timex": "P2W",
@@ -45,14 +45,14 @@
 }
 ,
 {
-  "Input": "I'll leave daily",
+  "Input": "Andrò via quotidianamente",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "daily",
+      "Text": "quotidianamente",
       "Type": "set",
       "Value": {
         "Timex": "P1D",
@@ -68,14 +68,14 @@
 }
 ,
 {
-  "Input": "I'll leave every day",
+  "Input": "Andrò via ogni giorno",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2794445+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every day",
+      "Text": "ogni giorno",
       "Type": "set",
       "Value": {
         "Timex": "P1D",
@@ -91,14 +91,14 @@
 }
 ,
 {
-  "Input": "I'll leave each month",
+  "Input": "Andrò via ogni mese",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2829445+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each month",
+      "Text": "ogni mese",
       "Type": "set",
       "Value": {
         "Timex": "P1M",
@@ -114,16 +114,14 @@
 }
 ,
 {
-  "Input": "I'll leave annually",
+  "Input": "Andrò via annualmente",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2844439+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "annually",
-      "Type": "set",
-      "Value": {
+      "Text": "annualmente"
         "Timex": "P1Y",
         "FutureResolution": {
           "set": "Set: P1Y"
@@ -137,14 +135,14 @@
 }
 ,
 {
-  "Input": "I'll leave annual",
+  "Input": "Andrò via una volta all'anno",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "annual",
+      "Text": "una volta all'anno",
       "Type": "set",
       "Value": {
         "Timex": "P1Y",
@@ -160,14 +158,14 @@
 }
 ,
 {
-  "Input": "I'll leave each two days",
+  "Input": "Andrò via ogni due giorni",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2909444+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each two days",
+      "Text": "ogni due giorni",
       "Type": "set",
       "Value": {
         "Timex": "P2D",
@@ -183,14 +181,14 @@
 }
 ,
 {
-  "Input": "I'll leave every three week",
+  "Input": "Andrò via ogni tre settimane",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2959472+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every three week",
+      "Text": "ogni tre settimane",
       "Type": "set",
       "Value": {
         "Timex": "P3W",
@@ -206,14 +204,14 @@
 }
 ,
 {
-  "Input": "I'll leave 3pm every day",
+  "Input": "Andrò via alle 3pm ogni giorno",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2989494+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm every day",
+      "Text": "alle 3pm ogni giorno",
       "Type": "set",
       "Value": {
         "Timex": "T15",
@@ -229,37 +227,14 @@
 }
 ,
 {
-  "Input": "I'll leave 3pm each day",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:54.3039501+08:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3pm each day",
-      "Type": "set",
-      "Value": {
-        "Timex": "T15",
-        "FutureResolution": {
-          "set": "Set: T15"
-        },
-        "PastResolution": {
-          "set": "Set: T15"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave each 4/15",
+  "Input": "Andrò via ogni 4/15",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3109498+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each 4/15",
+      "Text": "ogni 4/15",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-04-15",
@@ -275,14 +250,14 @@
 }
 ,
 {
-  "Input": "I'll leave every monday",
+  "Input": "Andrò via ogni lunedì",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3259514+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every monday",
+      "Text": "ogni lunedì",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-WXX-1",
@@ -298,14 +273,14 @@
 }
 ,
 {
-  "Input": "I'll leave each monday 4pm",
+  "Input": "Andrò via ogni lunedì alle 4pm",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3379507+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "each monday 4pm",
+      "Text": "ogni lunedì alle 4pm",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-WXX-1T16",
@@ -321,14 +296,14 @@
 }
 ,
 {
-  "Input": "I'll leave every morning",
+  "Input": "Andrò via ogni mattina",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3429518+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every morning",
+      "Text": "ogni mattina",
       "Type": "set",
       "Value": {
         "Timex": "TMO",
@@ -344,14 +319,14 @@
 }
 ,
 {
-  "Input": "I'll leave every morning at 9am",
+  "Input": "Andrò via ogni mattina alle 9am",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3609535+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every morning at 9am",
+      "Text": "ogni mattina alle 9am",
       "Type": "set",
       "Value": {
         "Timex": "T09",
@@ -367,14 +342,14 @@
 }
 ,
 {
-  "Input": "I'll leave every afternoon at 4pm",
+  "Input": "Andrò via ogni pomeriggio alle 4pm",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3730732+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every afternoon at 4pm",
+      "Text": "ogni pomeriggio alle 4pm",
       "Type": "set",
       "Value": {
         "Timex": "T16",
@@ -390,14 +365,14 @@
 }
 ,
 {
-  "Input": "I'll leave every night at 9pm",
+  "Input": "Andrò via ogni notte alle 9pm",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3840706+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every night at 9pm",
+      "Text": "ogni notte alle 9pm",
       "Type": "set",
       "Value": {
         "Timex": "T21",
@@ -413,14 +388,14 @@
 }
 ,
 {
-  "Input": "I'll leave every night at 9",
+  "Input": "Andrò via ogni notte alle 9",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3930718+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "every night at 9",
+      "Text": "ogni notte alle 9",
       "Type": "set",
       "Value": {
         "Timex": "T21",
@@ -436,14 +411,14 @@
 }
 ,
 {
-  "Input": "I'll leave mornings at 9am",
+  "Input": "Andrò via la mattina alle 9am",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4065719+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mornings at 9am",
+      "Text": "la mattina alle 9am",
       "Type": "set",
       "Value": {
         "Timex": "T09",
@@ -459,14 +434,14 @@
 }
 ,
 {
-  "Input": "I'll leave on mornings at 9",
+  "Input": "Andrò via di mattina alle 9",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on mornings at 9",
+      "Text": "di mattina alle 9",
       "Type": "set",
       "Value": {
         "Timex": "T09",
@@ -482,14 +457,14 @@
 }
 ,
 {
-  "Input": "I'll leave at 9am every Sunday",
+  "Input": "Andrò via alle 9am ogni domenica",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4295727+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "9am every Sunday",
+      "Text": "alle 9am ogni domenica",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-WXX-7T09",
@@ -505,37 +480,14 @@
 }
 ,
 {
-  "Input": "I'll leave at 9am on Sundays",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:54.438575+08:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9am on Sundays",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-7T09",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-7T09"
-        },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-7T09"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll leave at 9am Sundays",
+  "Input": "Andrò via alle 9am la domenica",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4505726+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "9am Sundays",
+      "Text": "alle 9am la domenica",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-WXX-7T09",
@@ -551,14 +503,14 @@
 }
 ,
 {
-  "Input": "I'll leave on Mondays",
+  "Input": "Andrò via il lunedì",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4570731+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on Mondays",
+      "Text": "il lunedì",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-WXX-1",
@@ -574,14 +526,14 @@
 }
 ,
 {
-  "Input": "I'll leave on Sundays",
+  "Input": "Andrò via la domenica",
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4635727+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on Sundays",
+      "Text": "la domenica",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-WXX-7",
@@ -595,27 +547,5 @@
     }
   ]
 }
-,
-{
-  "Input": "I'll leave Sundays",
-  "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:54.4710739+08:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Sundays",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-7",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-7"
-        },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-7"
-        }
-      }
-    }
-  ]
-}
+
 ]
