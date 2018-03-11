@@ -1,0 +1,29 @@
+{
+    "outputPath": "./src/resources/",
+    "configFiles": [
+        {
+            "input": [ "English", "English-Choice" ],
+            "output": "englishChoice",
+            "header": [
+                "export namespace EnglishChoice {"
+            ],
+            "footer": [ "}" ]
+        },
+		{
+            "input": [ "Japanese", "Japanese-Choice" ],
+            "output": "japaneseChoice",
+            "header": [
+                "export namespace JapaneseChoice {"
+            ],
+            "footer": [ "}" ]
+        },
+		{
+            "input": [ "Portuguese", "Portuguese-Choice" ],
+            "output": "portugueseChoice",
+            "header": [
+                "export namespace PortugueseChoice {"
+            ],
+            "footer": [ "}" ]
+        }
+    ]
+}

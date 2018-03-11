@@ -5,6 +5,11 @@ RoundNumberIntegerRegex: !simpleRegex
   def: (hundred|thousand|million|billion|trillion)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (three|seven|eight|four|five|zero|nine|one|two|six)
+NegativeNumberTermsRegex: !simpleRegex
+  def: ((minus|negative)\s+)
+NegativeNumberSignRegex: !nestedRegex
+  def: ^{NegativeNumberTermsRegex}.*
+  references: [ NegativeNumberTermsRegex ]
 AnIntRegex: !simpleRegex
   def: (an|a)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex

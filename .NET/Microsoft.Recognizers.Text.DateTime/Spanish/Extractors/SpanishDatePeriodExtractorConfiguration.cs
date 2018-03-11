@@ -41,6 +41,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex DateUnitRegex = 
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TimeUnitRegex =
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex PastRegex = 
             new Regex(DateTimeDefinitions.PastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -91,6 +94,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex QuarterRegexYearFront = 
             new Regex(DateTimeDefinitions.QuarterRegexYearFront, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AllHalfYearRegex = 
+            new Regex(DateTimeDefinitions.AllHalfYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex SeasonRegex = 
             new Regex(DateTimeDefinitions.SeasonRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -108,6 +114,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex InConnectorRegex = 
             new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex WithinNextPrefixRegex =
+            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex LaterEarlyPeriodRegex = 
             new Regex(DateTimeDefinitions.LaterEarlyPeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -193,6 +202,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDatePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
+        Regex IDatePeriodExtractorConfiguration.TimeUnitRegex => TimeUnitRegex;
+
         Regex IDatePeriodExtractorConfiguration.FollowedDateUnit => FollowedDateUnit;
 
         Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
@@ -210,6 +221,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDatePeriodExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDatePeriodExtractorConfiguration.InConnectorRegex => InConnectorRegex;
+
+        Regex IDatePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
 

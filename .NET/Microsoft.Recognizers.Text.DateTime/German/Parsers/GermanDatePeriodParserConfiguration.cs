@@ -50,11 +50,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex WeekOfYearRegex { get; }
         public Regex QuarterRegex { get; }
         public Regex QuarterRegexYearFront { get; }
+        public Regex AllHalfYearRegex { get; }
         public Regex SeasonRegex { get; }
         public Regex WhichWeekRegex { get; }
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
+        public Regex WithinNextPrefixRegex { get; }
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
@@ -130,6 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WeekOfYearRegex = GermanDatePeriodExtractorConfiguration.WeekOfYearRegex;
             QuarterRegex = GermanDatePeriodExtractorConfiguration.QuarterRegex;
             QuarterRegexYearFront = GermanDatePeriodExtractorConfiguration.QuarterRegexYearFront;
+            AllHalfYearRegex = GermanDatePeriodExtractorConfiguration.AllHalfYearRegex;
             SeasonRegex = GermanDatePeriodExtractorConfiguration.SeasonRegex;
             WhichWeekRegex = GermanDatePeriodExtractorConfiguration.WhichWeekRegex;
             WeekOfRegex= GermanDatePeriodExtractorConfiguration.WeekOfRegex;
@@ -142,6 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             YearPeriodRegex = GermanDatePeriodExtractorConfiguration.YearPeriodRegex;
             RelativeDecadeRegex = GermanDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
+            WithinNextPrefixRegex = GermanDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -202,7 +206,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsMonthOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("monat");
+            return (trimedText.EndsWith("monat") || trimedText.EndsWith("monate") || trimedText.EndsWith("monaten") || trimedText.EndsWith("monats"));
         }
 
         public bool IsMonthToDate(string text)
@@ -214,7 +218,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool IsWeekend(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("wochenende");
+            return (trimedText.EndsWith("wochenende") || trimedText.EndsWith("wochenendes"));
         }
 
         public bool IsWeekOnly(string text)

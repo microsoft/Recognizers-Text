@@ -47,6 +47,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
                 DateTimeDefinitions.RelativeMonthRegex, // this month, next month, last month
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TimeUnitRegex =
+           new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex EngMonthRegex =
             new Regex(
                 DateTimeDefinitions.EngMonthRegex,
@@ -144,7 +147,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex QuarterRegexYearFront =
             new Regex(
                 DateTimeDefinitions.QuarterRegexYearFront,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline); 
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AllHalfYearRegex =
+            new Regex(
+                DateTimeDefinitions.AllHalfYearRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SeasonRegex =
             new Regex(
@@ -176,6 +184,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             new Regex(
                 DateTimeDefinitions.InConnectorRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex WithinNextPrefixRegex =
+          new Regex(
+              DateTimeDefinitions.WithinNextPrefixRegex,
+              RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RestOfDateRegex =
             new Regex(DateTimeDefinitions.RestOfDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -277,6 +290,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
 
         Regex IDatePeriodExtractorConfiguration.RelativeDecadeRegex => RelativeDecadeRegex;
+
+        Regex IDatePeriodExtractorConfiguration.TimeUnitRegex => TimeUnitRegex;
+
+        Regex IDatePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

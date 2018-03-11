@@ -60,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex PmDescRegex { get; }
 
+        public Regex WithinNextPrefixRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -93,6 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             RestOfDateTimeRegex = ItalianDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
             AmDescRegex = ItalianDateTimePeriodExtractorConfiguration.AmDescRegex;
             PmDescRegex = ItalianDateTimePeriodExtractorConfiguration.PmDescRegex;
+            WithinNextPrefixRegex = ItalianDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

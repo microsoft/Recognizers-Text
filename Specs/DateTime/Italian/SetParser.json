@@ -121,7 +121,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "annualmente"
+      "Text": "annualmente",
+	  "Value": {
         "Timex": "P1Y",
         "FutureResolution": {
           "set": "Set: P1Y"

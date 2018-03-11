@@ -75,6 +75,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex PmDescRegex =
             new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WithinNextPrefixRegex =
+          new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public Regex FollowedUnit => TimeFollowedUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
@@ -102,6 +105,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IDateTimePeriodExtractorConfiguration.AmDescRegex => AmDescRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
         public IExtractor CardinalExtractor { get; }
 

@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex QuarterRegexYearFront { get; }
 
+        Regex AllHalfYearRegex { get; }
+
         Regex SeasonRegex { get; }
 
         Regex WhichWeekRegex { get; }
@@ -68,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex MonthOfRegex { get; }
 
         Regex InConnectorRegex { get; }
+
+        Regex WithinNextPrefixRegex { get; }
 
         Regex NextPrefixRegex { get; }
 

@@ -1,23 +1,22 @@
 var _ = require('lodash');
+var Recognizer = require('@microsoft/recognizers-text-suite');
+var NumberOptions = require('@microsoft/recognizers-text-suite').NumberOptions;
 var RecognizerTextNumber = require('@microsoft/recognizers-text-number');
-var NumberRecognizer = require('@microsoft/recognizers-text-number').NumberRecognizer;
 var SupportedCultures = require('./cultures.js');
 
-var modelGetters = {
-    'NumberModel': NumberRecognizer.instance.getNumberModel,
-    'OrdinalModel': NumberRecognizer.instance.getOrdinalModel,
-    'PercentModel': NumberRecognizer.instance.getPercentageModel,
+var modelFunctions = {
+    'NumberModel': (input, culture, options) => Recognizer.recognizeNumber(input, culture, options, false),
+    'OrdinalModel': (input, culture, options) => Recognizer.recognizeOrdinal(input, culture, options, false),
+    'PercentModel': (input, culture, options) => Recognizer.recognizePercentage(input, culture, options, false),
     // TODO: Implement number range model in javascript
-    'NumberRangeModel': NumberRecognizer.instance.getNumberModel,
-    'CustomNumberModel': getCustomNumberModel
+    'NumberRangeModel': (input, culture, options) => null
 };
 
 module.exports = function getNumberTestRunner(config) {
-    var model = getNumberModel(config);
     return function (t, testCase) {
 
         if (testCase.Debug) debugger;
-        var result = model.parse(testCase.Input);
+        var result = getResults(testCase.Input, config);
 
         t.is(result.length, testCase.Results.length, 'Result count');
         _.zip(result, testCase.Results).forEach(o => {
@@ -30,21 +29,9 @@ module.exports = function getNumberTestRunner(config) {
     };
 }
 
-function getCustomNumberModel(culture, fallbackToDefaultCulture) {
-    switch (culture) {
-        case SupportedCultures['Chinese'].cultureCode:
-            return new RecognizerTextNumber.NumberModel(
-                RecognizerTextNumber.AgnosticNumberParserFactory.getParser(RecognizerTextNumber.AgnosticNumberParserType.Number, new RecognizerTextNumber.ChineseNumberParserConfiguration()),
-                new RecognizerTextNumber.ChineseNumberExtractor(1)
-            );
-        break;
-    }
-    return null;
-}
-
-function getNumberModel(config) {
-    var getModel = modelGetters[config.subType];
-    if(!getModel) {
+function getResults(input, config) {
+    var modelFunction = modelFunctions[config.subType];
+    if(!modelFunction) {
         throw new Error(`Number model of ${config.subType} not supported.`);
     }
 
@@ -53,5 +40,5 @@ function getNumberModel(config) {
         throw new Error(`Number model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(NumberRecognizer.instance)(culture, false);
+    return modelFunction(input, culture, 0);
 }

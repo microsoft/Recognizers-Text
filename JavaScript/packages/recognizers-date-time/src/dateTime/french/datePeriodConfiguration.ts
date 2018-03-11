@@ -47,6 +47,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
             RegExpUtility.getSafeRegExp(FrenchDateTime.MonthFrontSimpleCasesRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegexYearFront),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.AllHalfYearRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.SeasonRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex),
@@ -110,6 +111,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     readonly weekOfYearRegex: RegExp;
     readonly quarterRegex: RegExp;
     readonly quarterRegexYearFront: RegExp;
+    readonly allHalfYearRegex: RegExp;
     readonly seasonRegex: RegExp;
     readonly weekOfRegex: RegExp;
     readonly monthOfRegex: RegExp;
@@ -156,6 +158,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
         this.weekOfYearRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfYearRegex);
         this.quarterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegex);
         this.quarterRegexYearFront = RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegexYearFront);
+        this.allHalfYearRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AllHalfYearRegex);
         this.seasonRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SeasonRegex);
         this.whichWeekRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WhichWeekRegex);
         this.weekOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfRegex);

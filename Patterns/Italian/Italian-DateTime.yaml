@@ -72,6 +72,9 @@ QuarterRegex: !nestedRegex
 QuarterRegexYearFront: !nestedRegex
   def: ({YearRegex}|l'anno\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\s+anno)\s+(le\s+)?(?<cardinal>primo|secondo|terzo|quarto)\s+trimestre
   references: [ YearRegex, RelativeRegex, PastSuffixRegex, NextSuffixRegex ]
+AllHalfYearRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SeasonRegex: !nestedRegex
   def: \b((<seas>primavera|estate|autunno|inverno)+\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\s+)?(?<seas>primavera|estate|autunno|inverno)((\s+del|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+l'anno))?)\b
   references: [ YearRegex, RelativeRegex, NextSuffixRegex, PastSuffixRegex ]
@@ -368,6 +371,9 @@ LaterRegex: !simpleRegex
   def: \b(dopo|da adesso)\b
 InConnectorRegex: !simpleRegex
   def: \b(di)\b
+WithinNextPrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AmDescRegex: !simpleRegex
   def: (h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)
 PmDescRegex: !simpleRegex

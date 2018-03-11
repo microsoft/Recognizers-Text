@@ -1,25 +1,19 @@
 var _ = require('lodash');
-var NumberWithUnitRecognizer = require('@microsoft/recognizers-text-number-with-unit').NumberWithUnitRecognizer;
+var Recognizer = require('@microsoft/recognizers-text-suite');
 var SupportedCultures = require('./cultures.js');
 
-var modelGetters = {
-    'AgeModel': NumberWithUnitRecognizer.instance.getAgeModel,
-    'CurrencyModel': NumberWithUnitRecognizer.instance.getCurrencyModel,
-    'TemperatureModel': NumberWithUnitRecognizer.instance.getTemperatureModel,
-    'DimensionModel': NumberWithUnitRecognizer.instance.getDimensionModel
+var modelFunctions = {
+    'AgeModel': (input, culture, options) => Recognizer.recognizeAge(input, culture, options, false),
+    'CurrencyModel': (input, culture, options) => Recognizer.recognizeCurrency(input, culture, options, false),
+    'TemperatureModel': (input, culture, options) => Recognizer.recognizeTemperature(input, culture, options, false),
+    'DimensionModel': (input, culture, options) => Recognizer.recognizeDimension(input, culture, options, false)
 };
 
 module.exports = function getNumberWithUnitTestRunner(config) {
-    try {
-        var model = getNumberWithUnitModel(config);
-    } catch (err) {
-        return null;
-    }
-
     return function (t, testCase) {
 
         if (testCase.Debug) debugger;
-        var result = model.parse(testCase.Input);
+        var result = getResults(testCase.Input, config);
 
         t.is(result.length, testCase.Results.length, 'Result count');
         _.zip(result, testCase.Results).forEach(o => {
@@ -38,9 +32,9 @@ module.exports = function getNumberWithUnitTestRunner(config) {
     };
 }
 
-function getNumberWithUnitModel(config) {
-    var getModel = modelGetters[config.subType];
-    if (!getModel) {
+function getResults(input, config) {
+    var modelFunction = modelFunctions[config.subType];
+    if(!modelFunction) {
         throw new Error(`NumberWithUnit model of ${config.subType} not supported.`);
     }
 
@@ -49,5 +43,5 @@ function getNumberWithUnitModel(config) {
         throw new Error(`NumberWithUnit model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(NumberWithUnitRecognizer.instance)(culture, false);
+    return modelFunction(input, culture, 0);
 }

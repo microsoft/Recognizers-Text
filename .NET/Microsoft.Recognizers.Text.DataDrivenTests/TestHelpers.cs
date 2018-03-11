@@ -1,22 +1,24 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DateObject = System.DateTime;
-using Newtonsoft.Json;
 
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
-using Microsoft.Recognizers.Text.DateTime.Italian;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.DateTime.French;
-using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.Sequence;
+using Microsoft.Recognizers.Text.Choice;
+
+using Newtonsoft.Json;
+using Microsoft.Recognizers.Text.DateTime.Italian;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -38,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizerLanguage[1];
                 var rawData = File.ReadAllText(specsFile);
                 var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
-                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine + 
+                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine +
                                   string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
                 resources.Add(Path.GetFileNameWithoutExtension(specsFile), specs);
             }
@@ -57,16 +59,18 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Ordinal,
         Percent,
         NumberRange,
+        CustomNumber,
         Age,
         Currency,
         Dimension,
         Temperature,
         DateTime,
         DateTimeSplitDateAndTime,
-        CustomNumber,
         DateTimeCalendarMode,
         DateTimeExtendedTypes,
         PhoneNumber,
+        IpAddress,
+        Boolean,
     }
 
     public enum DateTimeExtractors
@@ -100,51 +104,39 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
     public static class TestContextExtensions
     {
-        public static IModel GetModel(this TestContext context)
-        {
-            var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
-            var modelName = TestUtils.GetModel(context.TestName);
-            switch (modelName)
-            {
-                case Models.Number:
-                    return NumberRecognizer.Instance.GetNumberModel(language);
-                case Models.Ordinal:
-                    return NumberRecognizer.Instance.GetOrdinalModel(language);
-                case Models.Percent:
-                    return NumberRecognizer.Instance.GetPercentageModel(language);
-                case Models.NumberRange:
-                    return NumberRecognizer.Instance.GetNumberRangeModel(language);
-                case Models.Age:
-                    return NumberWithUnitRecognizer.Instance.GetAgeModel(language);
-                case Models.Currency:
-                    return NumberWithUnitRecognizer.Instance.GetCurrencyModel(language);
-                case Models.Dimension:
-                    return NumberWithUnitRecognizer.Instance.GetDimensionModel(language);
-                case Models.Temperature:
-                    return NumberWithUnitRecognizer.Instance.GetTemperatureModel(language);
-                case Models.DateTime:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.None).GetDateTimeModel(language);
-                case Models.DateTimeSplitDateAndTime:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.SplitDateAndTime).GetDateTimeModel(language);
-                case Models.CustomNumber:
-                    return GetCustomModelFor(language);
-                case Models.DateTimeCalendarMode:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
-                // DateTimeAlt function is only activated when ExtendedTypes is enabled
-                case Models.DateTimeExtendedTypes:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.ExtendedTypes).GetDateTimeModel(language);
-                case Models.PhoneNumber:
-                    return SequenceRecognizer.Instance.GetPhoneNumberModel(language);
-            }
+        private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>() {
+            { Models.Number, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
+            { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Currency, (test, culture) => NumberWithUnitRecognizer.RecognizeCurrency(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Dimension, (test, culture) => NumberWithUnitRecognizer.RecognizeDimension(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Temperature, (test, culture) => NumberWithUnitRecognizer.RecognizeTemperature(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.DateTime, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.DateTimeSplitDateAndTime, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.SplitDateAndTime, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.DateTimeCalendarMode, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.CalendarMode, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.DateTimeExtendedTypes, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.ExtendedTypes, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.PhoneNumber, (test, culture) => SequenceRecognizer.RecognizePhoneNumber(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.IpAddress, (test, culture) => SequenceRecognizer.RecognizeIpAddress(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Boolean, (test, culture) => ChoiceRecognizer.RecognizeBoolean(test.Input, culture, fallbackToDefaultCulture: false) }
+        };
 
-            throw new Exception($"Model '{modelName}' for '{language}' not supported");
+        public static IList<ModelResult> GetModelParseResults(this TestContext context, TestModel test)
+        {
+            var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
+            var modelName = TestUtils.GetModel(context.TestName);
+
+            var modelFunction = modelFunctions[modelName];
+
+            return modelFunction(test, culture);
         }
 
         public static IDateTimeExtractor GetExtractor(this TestContext context)
         {
-            var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
+            var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
             var extractorName = TestUtils.GetExtractor(context.TestName);
-            switch (language)
+            switch (culture)
             {
                 case Culture.English:
                     return GetEnglishExtractor(extractorName);
@@ -162,14 +154,14 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetItalianExtractor(extractorName);
             }
 
-            throw new Exception($"Extractor '{extractorName}' for '{language}' not supported");
+            throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
         }
 
         public static IDateTimeParser GetDateTimeParser(this TestContext context)
         {
-            var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
+            var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
             var parserName = TestUtils.GetParser(context.TestName);
-            switch (language)
+            switch (culture)
             {
                 case Culture.English:
                     return GetEnglishParser(parserName);
@@ -187,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetItalianParser(parserName);
             }
 
-            throw new Exception($"Parser '{parserName}' for '{language}' not supported");
+            throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
         }
 
         public static IDateTimeExtractor GetEnglishExtractor(DateTimeExtractors extractorName)
@@ -306,7 +298,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new DateTime.Chinese.SetParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Merged:
-                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration() );
+                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
@@ -615,18 +607,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for Italian not supported");
         }
 
-        private static IModel GetCustomModelFor(string language)
-        {
-            switch (language)
-            {
-                case Culture.Chinese:
-                    return new NumberModel(
-                        AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
-                        new NumberExtractor(ChineseNumberMode.ExtractAll));
-            }
-
-            throw new Exception($"Custom Model for '{language}' not supported");
-        }
     }
 
     public static class TestModelExtensions
@@ -725,6 +705,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Extractor '{extractor}' not supported");
+        }
+    }
+
+    public static class RecognizerExtensions
+    {
+        public static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> GetInternalCache<TRecognizerOptions>(this Recognizer<TRecognizerOptions> source) where TRecognizerOptions : struct
+        {
+            var modelFactoryProp = typeof(Recognizer<TRecognizerOptions>).GetField("factory", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var modelFactory = modelFactoryProp.GetValue(source);
+            var cacheProp = modelFactory.GetType().GetField("cache", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+            return cacheProp.GetValue(modelFactory) as ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>;
         }
     }
 }

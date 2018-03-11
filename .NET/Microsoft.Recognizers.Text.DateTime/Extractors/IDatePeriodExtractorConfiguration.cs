@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DateUnitRegex { get; }
 
+        Regex TimeUnitRegex { get; }
+
         Regex FollowedDateUnit { get; }
 
         Regex NumberCombinedWithDateUnit { get; }
@@ -36,6 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex RangeUnitRegex { get; }
 
         Regex InConnectorRegex { get; }
+
+        Regex WithinNextPrefixRegex { get; }
 
         Regex YearPeriodRegex { get; }
 

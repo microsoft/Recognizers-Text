@@ -50,11 +50,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex WeekOfYearRegex { get; }
         public Regex QuarterRegex { get; }
         public Regex QuarterRegexYearFront { get; }
+        public Regex AllHalfYearRegex { get; }
         public Regex SeasonRegex { get; }
         public Regex WhichWeekRegex { get; }
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
+        public Regex WithinNextPrefixRegex { get; }
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
@@ -135,6 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WeekOfYearRegex = EnglishDatePeriodExtractorConfiguration.WeekOfYearRegex;
             QuarterRegex = EnglishDatePeriodExtractorConfiguration.QuarterRegex;
             QuarterRegexYearFront = EnglishDatePeriodExtractorConfiguration.QuarterRegexYearFront;
+            AllHalfYearRegex = EnglishDatePeriodExtractorConfiguration.AllHalfYearRegex;
             SeasonRegex = EnglishDatePeriodExtractorConfiguration.SeasonRegex;
             WhichWeekRegex = EnglishDatePeriodExtractorConfiguration.WhichWeekRegex;
             WeekOfRegex= EnglishDatePeriodExtractorConfiguration.WeekOfRegex;
@@ -147,6 +150,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             YearPeriodRegex = EnglishDatePeriodExtractorConfiguration.YearPeriodRegex;
             RelativeDecadeRegex = EnglishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
+            WithinNextPrefixRegex = EnglishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

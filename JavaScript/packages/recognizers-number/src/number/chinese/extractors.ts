@@ -4,17 +4,17 @@ import { LongFormatType } from "../models";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
 import { RegExpUtility } from "@microsoft/recognizers-text"
 
-export enum ChineseNumberMode {
-    // for number with white list
+export enum ChineseNumberExtractorMode {
+    // Number extraction with an allow list that filters what numbers to extract.
     Default,
-    // for number without white list
+    // Extract all number-related terms aggressively.
     ExtractAll,
 }
 
 export class ChineseNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
 
-    constructor(mode: ChineseNumberMode = ChineseNumberMode.Default) {
+    constructor(mode: ChineseNumberExtractorMode = ChineseNumberExtractorMode.Default) {
         super();
         let regexes = new Array<RegExpValue>();
 
@@ -33,7 +33,7 @@ export class ChineseNumberExtractor extends BaseNumberExtractor {
 export class ChineseCardinalExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM_CARDINAL;
 
-    constructor(mode: ChineseNumberMode = ChineseNumberMode.Default) {
+    constructor(mode: ChineseNumberExtractorMode = ChineseNumberExtractorMode.Default) {
         super();
         let regexes = new Array<RegExpValue>();
 
@@ -52,7 +52,7 @@ export class ChineseCardinalExtractor extends BaseNumberExtractor {
 export class ChineseIntegerExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM_INTEGER;
 
-    constructor(mode: ChineseNumberMode = ChineseNumberMode.Default) {
+    constructor(mode: ChineseNumberExtractorMode = ChineseNumberExtractorMode.Default) {
         super();
 
         let regexes = new Array<RegExpValue>(
@@ -79,15 +79,16 @@ export class ChineseIntegerExtractor extends BaseNumberExtractor {
         );
 
         switch (mode) {
-            case ChineseNumberMode.Default:
-                regexes.push({ // 一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
-                    regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithoutPercent, "gi"),
+            case ChineseNumberExtractorMode.Default:
+                regexes.push({ // 一百五十五, 负一亿三百二十二. Uses an allow list to avoid extracting "四" from "四川"
+                    regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithAllowListRegex, "gi"),
                     value: "IntegerChs"
                 });
                 break;
-            case ChineseNumberMode.ExtractAll:
-                regexes.push({ // 一百五十五,  负一亿三百二十二, avoid 五十五点五个百分点
-                    regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithPercent, "gi"),
+
+            case ChineseNumberExtractorMode.ExtractAll:
+                regexes.push({ // 一百五十五, 负一亿三百二十二, "四" from "四川". Uses no allow lists and extracts all potential integers (useful in Units, for example).
+                    regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersAggressiveRegex, "gi"),
                     value: "IntegerChs"
                 });
                 break;

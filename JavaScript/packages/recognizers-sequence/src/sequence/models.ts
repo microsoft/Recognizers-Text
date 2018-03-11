@@ -1,0 +1,54 @@
+import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "@microsoft/recognizers-text";
+
+export abstract class AbstractSequenceModel implements IModel {
+    public abstract readonly modelTypeName: string;
+
+    protected readonly extractor: IExtractor;
+    protected readonly parser: IParser;
+
+    constructor(parser: IParser, extractor: IExtractor) {
+        this.extractor = extractor;
+        this.parser = parser;
+    }
+
+    parse(query: string): ModelResult[] {
+        let extractResults = this.extractor.extract(query);
+        let parseResults = extractResults.map(r => this.parser.parse(r));
+
+        return parseResults
+            .map(o => o as ParseResult)
+            .map(o => ({
+                start: o.start,
+                end: o.start + o.length - 1,
+                resolution: { "value": o.resolutionStr },
+                text: o.text,
+                typeName: this.modelTypeName
+            }));
+    }
+}
+
+export class PhoneNumberModel extends AbstractSequenceModel {
+    public modelTypeName: string = "phonenumber";
+}
+
+export class IpAddressModel extends AbstractSequenceModel {
+    public modelTypeName: string = "ip";
+
+    parse(query: string): ModelResult[] {
+        let extractResults = this.extractor.extract(query);
+        let parseResults = extractResults.map(r => this.parser.parse(r));
+
+        return parseResults
+            .map(o => o as ParseResult)
+            .map(o => ({
+                start: o.start,
+                end: o.start + o.length - 1,
+                resolution: { 
+                    "value": o.resolutionStr,
+                    "type": o.data 
+                },
+                text: o.text,
+                typeName: this.modelTypeName
+            }));
+    }
+}

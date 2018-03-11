@@ -54,6 +54,8 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
         public Regex DigitalNumberRegex { get; private set; }
 
+        public Regex NegativeNumberSignRegex { get; private set; }
+
         public string FractionMarkerToken { get; private set; }
 
         public Regex HalfADozenRegex { get; private set; }

@@ -1,0 +1,10 @@
+﻿---
+LangMarker: Por
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+#https://stackoverflow.com/questions/5436824/matching-accented-characters-with-javascript-regexes
+  def: '[^\w\d\u00E0-\u00FC]'
+TrueRegex: !simpleRegex
+  def: \b(verdade|verdadeir[oa]|sim|isso|claro|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(falso|n[aã]o|incorreto|nada disso)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)

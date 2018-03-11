@@ -1,7 +1,7 @@
 var NumberTestRunner = require('./runner-number');
 var NumberWithUnitTestRunner = require('./runner-numberWithUnit');
 var DateTimeTestRunner = require('./runner-datetime');
-var OptionsTestRunner = require('./runner-options');
+var ChoiceTestRunner = require('./runner-choice');
 var SequenceTestRunner = require('./runner-sequence');
 
 module.exports = function (describe, specs) {
@@ -39,11 +39,11 @@ function getTestRunner(config) {
             return NumberWithUnitTestRunner(config);
         case 'DateTime':
             return DateTimeTestRunner(config);
-        case 'Options':
-            return OptionsTestRunner(config);
+        case 'Choice':
+            return ChoiceTestRunner(config);
         case 'Sequence':
             return SequenceTestRunner(config);
         default:
-            throw new Error(`Extractor type unknown: ${JSON.stringify(config)}`);
+            throw new Error(`Recognizer type unknown: ${JSON.stringify(config)}`);
     }
 }

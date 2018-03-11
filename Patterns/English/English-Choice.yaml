@@ -1,0 +1,9 @@
+﻿---
+LangMarker: Eng
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
+TrueRegex: !simpleRegex
+  def: \b(true|yes|yep|y|sure|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(false|nope|nop|no)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)

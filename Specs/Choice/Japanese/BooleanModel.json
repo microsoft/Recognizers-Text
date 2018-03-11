@@ -1,0 +1,45 @@
+[{
+  "Input": "はい!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "はい",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "いいえ、駄目です.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "いいえ",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+		"score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌👌👌",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.6
+      }
+    }
+  ]
+}
+]

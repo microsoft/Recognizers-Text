@@ -47,6 +47,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
 		public static readonly string QuarterRegex = $@"(the\s+)?(?<cardinal>primo|secondo|terzo|quarto)\s+trimestre(\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year)";
 		public static readonly string QuarterRegexYearFront = $@"({YearRegex}|l'anno\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\s+anno)\s+(le\s+)?(?<cardinal>primo|secondo|terzo|quarto)\s+trimestre";
+		public const string AllHalfYearRegex = @"^[.]";
 		public static readonly string SeasonRegex = $@"\b((<seas>primavera|estate|autunno|inverno)+\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\s+)?(?<seas>primavera|estate|autunno|inverno)((\s+del|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+l'anno))?)\b";
 		public const string WhichWeekRegex = @"(settimana)(\s*)(?<number>\d\d|\d|0\d)";
 		public const string WeekOfRegex = @"(settimana)(\s*)(del)";
@@ -167,6 +168,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string AgoPrefixRegex = @"\b(di)\b";
 		public const string LaterRegex = @"\b(dopo|da adesso)\b";
 		public const string InConnectorRegex = @"\b(di)\b";
+		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string AmDescRegex = @"(h|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b)";
 		public const string PmDescRegex = @"(h|pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b)";
 		public const string AmPmDescRegex = @"(h|ampm)";

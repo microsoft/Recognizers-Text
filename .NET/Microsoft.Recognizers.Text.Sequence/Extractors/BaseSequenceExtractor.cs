@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected virtual string ExtractType { get; } = "";
 
-        public List<ExtractResult> Extract(string text)
+        public virtual List<ExtractResult> Extract(string text)
         {
             var result = new List<ExtractResult>();
 
