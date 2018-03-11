@@ -196,12 +196,12 @@ MorningRegex: !simpleRegex
 AfternoonRegex: !simpleRegex
   def: (?<afternoon>(d'|l')?pomeriggio)
 MidmorningRegex: !nestedRegex
-  def: (?<midmorning>metà\s*+{MorningRegex})
+  def: (?<midmorning>metà\s*{MorningRegex})
   references: [ MorningRegex ]
 MiddayRegex: !simpleRegex
   def: (?<midday>metà\s*(giornata|mattinata)|mezzogiorno)
 MidafternoonRegex: !nestedRegex
-  def: (?<midafternoon>metà\s*+{AfternoonRegex})
+  def: (?<midafternoon>metà\s*{AfternoonRegex})
   references: [ AfternoonRegex ]
 MidTimeRegex: !nestedRegex
   def: (?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))
@@ -422,9 +422,9 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(del\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 RestOfDateRegex: !simpleRegex
-  def: \Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b
+  def: Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b
 RestOfDateTimeRegex: !simpleRegex
-  def: \Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<unit>giorno)\b
+  def: Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<unit>giorno)\b
 LaterEarlyPeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

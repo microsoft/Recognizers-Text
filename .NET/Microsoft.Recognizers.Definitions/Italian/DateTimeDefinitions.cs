@@ -95,9 +95,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string CommonDatePrefixRegex = @"^[\.]";
 		public const string MorningRegex = @"(?<morning>mattin[oa])";
 		public const string AfternoonRegex = @"(?<afternoon>(d'|l')?pomeriggio)";
-		public static readonly string MidmorningRegex = $@"(?<midmorning>metà\s*+{MorningRegex})";
+		public static readonly string MidmorningRegex = $@"(?<midmorning>metà\s*{MorningRegex})";
 		public const string MiddayRegex = @"(?<midday>metà\s*(giornata|mattinata)|mezzogiorno)";
-		public static readonly string MidafternoonRegex = $@"(?<midafternoon>metà\s*+{AfternoonRegex})";
+		public static readonly string MidafternoonRegex = $@"(?<midafternoon>metà\s*{AfternoonRegex})";
 		public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
 		public static readonly string AtRegex = $@"\b(((?<=\b[àa]\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
 		public static readonly string IshRegex = $@"\b(poco\s*prima\s*{BaseDateTime.HourRegex}|porco\s*prima\s*{EngTimeRegex}|poco\s*prima\s*di\s*{BaseDateTime.HourRegex}|poco prima di mezzogiorno)\b";
@@ -190,8 +190,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
 		public static readonly string ForTheRegex = $@"\b(((dal {FlexibleDayRegex})|(di (il\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";
 		public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(del\s+{FlexibleDayRegex})\b";
-		public const string RestOfDateRegex = @"\Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b";
-		public const string RestOfDateTimeRegex = @"\Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<unit>giorno)\b";
+		public const string RestOfDateRegex = @"Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<duration>settimana|mese|anno)\b";
+		public const string RestOfDateTimeRegex = @"Fine\s+(di\s+)?((del|questo|questa|corrente)\s+)?(?<unit>giorno)\b";
 		public const string LaterEarlyPeriodRegex = @"^[.]";
 		public const string WeekWithWeekDayRangeRegex = @"^[.]";
 		public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
