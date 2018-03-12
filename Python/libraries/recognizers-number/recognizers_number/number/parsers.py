@@ -362,7 +362,9 @@ class BaseNumberParser(Parser):
                 cardinal = match in self.config.cardinal_number_map
                 ordinal = match in self.config.ordinal_number_map
                 if cardinal or ordinal:
-                    match_value = self.config.cardinal_number_map.get(match, self.config.ordinal_number_map.get[match])
+                    match_value = self.config.cardinal_number_map.get(match, None)
+                    if match_value is None:
+                        match_value = self.config.ordinal_number_map.get(match, None)
 
                     #This is just for ordinal now. Not for fraction ever.
                     if ordinal:

@@ -7,7 +7,12 @@ class ParseResult(ExtractResult):
         self.value: object=None
         self.resolution_str: str
         if source is not None:
-            self = source
+            self.start = source.start
+            self.length = source.length
+            self.text = source.text
+            self.type = source.type
+            self.data = source.data
+
 
 class Parser(ABC):
     @abstractmethod
