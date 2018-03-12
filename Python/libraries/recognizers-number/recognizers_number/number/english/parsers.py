@@ -66,7 +66,7 @@ class EnglishNumberParserConfiguration(NumberParserConfiguration):
         self._digital_number_regex = regex.compile(EnglishNumeric.DigitalNumberRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]: 
-        frac_words = List[str]
+        frac_words: List[str] = list()
         tokens_len = len(tokens)
         for i in range(tokens_len):
             if i < tokens_len - 2 and tokens[i + 1] == '-':
