@@ -445,6 +445,7 @@ class BaseNumberParser(Parser):
 
             if c == ' ' or c == '/':
                 call_stack.append(tmp)
+                tmp = 0
             elif c.isdigit():
                 if dot:
                     tmp = tmp + scale * int(c)
