@@ -2,7 +2,7 @@ from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
-from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishPercentageExtractor
+from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
 from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
@@ -24,7 +24,7 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         ))
         self.register_model("OrdinalModel", Culture.English, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(ParserType.ORDINAL, EnglishNumberParserConfiguration()),
-            None #TODO implement EnglishOrdinalExtractor
+            EnglishOrdinalExtractor()
         ))
         self.register_model("PercentModel", Culture.English, lambda options: PercentModel(
             AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, EnglishNumberParserConfiguration()),
@@ -47,9 +47,11 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         ))
         #endregion
         
-
     def get_number_model(self, culture: str=None, fallback_to_default_culture: bool=True) -> Model:
         return self.get_model("NumberModel", culture, fallback_to_default_culture)
+
+    def get_ordinal_model(self, culture: str=None, fallback_to_default_culture: bool=True) -> Model:
+        return self.get_model("OrdinalModel", culture, fallback_to_default_culture)
 
     def get_percentage_model(self, culture: str=None, fallback_to_default_culture: bool=True) -> Model:
         return self.get_model("PercentModel", culture, fallback_to_default_culture)
@@ -62,7 +64,9 @@ class NumberRecognizer(Recognizer[NumberOptions]):
 
     @staticmethod
     def recognize_ordinal(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        pass
+        recognizer = NumberRecognizer(culture, options)
+        model = recognizer.get_ordinal_model(culture, fallback_to_default_culture)
+        return model.parse(query)
 
     @staticmethod
     def recognize_percentage(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
