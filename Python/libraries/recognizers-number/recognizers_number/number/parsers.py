@@ -216,7 +216,7 @@ class BaseNumberParser(Parser):
                 else:
                     frac_part.append(frac_words[i])
 
-            frac_words = frac_words[:split_index] + frac_words[len(frac_words) - split_index + 1:]
+            frac_words = frac_words[:split_index] + frac_words[split_index + 1:]
 
             # denomi = denominator
             denomi_value = self.__get_int_value(frac_part)
