@@ -155,9 +155,9 @@ class BaseNumberParser(Parser):
         if regex.search(self.config.fraction_marker_token, result_text):
             over_index = result_text.find(self.config.fraction_marker_token)
             small_part = result_text[0:over_index].strip()
-            big_part = result_text[over_index + self.config.fraction_marker_token.length:len(result_text)].strip()
-            smallValue = self.__get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.__get_int_value(self.get_matches(small_part))
-            big_value = self.__get_digital_value(big_part, 1) if self._is_digit(big_part[0]) else self.__get_int_value(self.get_matches(big_part))
+            big_part = result_text[over_index + len(self.config.fraction_marker_token):len(result_text)].strip()
+            smallValue = self.__get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.__get_int_value(self.__get_matches(small_part))
+            big_value = self.__get_digital_value(big_part, 1) if self._is_digit(big_part[0]) else self.__get_int_value(self.__get_matches(big_part))
 
             result.value = smallValue / big_value
         else:
@@ -327,8 +327,8 @@ class BaseNumberParser(Parser):
         return source.split(tmp)
 
     def __get_matches(self, source: str) -> List[str]:
-        matches = list(regex.finditer(self._text_number_parse, source))
-        return filter(None, map(lambda m : m.group().lower(), matches))
+        matches = list(regex.finditer(self.text_number_regex, source))
+        return list(filter(None, map(lambda m : m.group().lower(), matches)))
 
     # Test if big and combine with small.
     # e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
