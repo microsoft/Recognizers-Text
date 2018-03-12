@@ -156,8 +156,8 @@ class BaseNumberParser(Parser):
             over_index = result_text.find(self.config.fraction_marker_token)
             small_part = result_text[0:over_index].strip()
             big_part = result_text[over_index + self.config.fraction_marker_token.length:len(result_text)].strip()
-            smallValue = self.__get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.get_intValue(self.get_matches(small_part))
-            big_value = self.__get_digital_value(big_part, 1) if self._is_digit(big_part[0]) else self.get_intValue(self.get_matches(big_part))
+            smallValue = self.__get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.__get_int_value(self.get_matches(small_part))
+            big_value = self.__get_digital_value(big_part, 1) if self._is_digit(big_part[0]) else self.__get_int_value(self.get_matches(big_part))
 
             result.value = smallValue / big_value
         else:
