@@ -31,7 +31,7 @@ class BaseNumberExtractor(Extractor):
         match_source: Dict[[Match], str]=dict()
         matched: List[bool]=[False] * len(source)
 
-        matches_list = list(map(lambda x : matches_val(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes))
+        matches_list = list(map(lambda x : matches_val(matches=list(regex.finditer(x.re, source, flags=regex.I)), val=x.val), self.regexes))
         matches_list = list(filter(lambda x : len(x.matches) > 0, matches_list))
 
         for ml in matches_list:
@@ -79,7 +79,7 @@ class BaseNumberExtractor(Extractor):
             re_definition = BaseNumbers.IntegerRegexDefinition(placeholder, format_type.thousands_mark)
         else:
             re_definition = BaseNumbers.DoubleRegexDefinition(placeholder, format_type.thousands_mark, format_type.decimals_mark)
-        return regex.compile(re_definition)
+        return re_definition
 
 source_position_results = namedtuple('source_position_results', ['source', 'position', 'results'])
 
