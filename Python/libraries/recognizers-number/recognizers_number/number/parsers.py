@@ -88,11 +88,7 @@ class BaseNumberParser(Parser):
             if is_negative:
                 # Recover to the original extracted Text
                 ret.text = match_negative[1] + source.text
-                # Check if ret.value is a BigNumber
-                if type(ret.value) is int:
-                    ret.value = -ret.value
-                else:
-                    ret.value.s = -1
+                ret.value = - ret.value
             # TODO use culture_into to format values
             ret.resolution_str = str(ret.value)
 
@@ -128,17 +124,17 @@ class BaseNumberParser(Parser):
                 # match.value = match.value.replace(/\d/g, '')
                 # match.length = match.value.length
 
-                rep = self.config.round_number_map.get(match.value)
+                rep = self.config.round_number_map.get(match.group())
                 # \\s+ for filter the spaces.
                 power *= rep
 
                 # tslint:disable-next-line:no-conditional-assignment
-                tmp_index = handle.index(match.value, start_index)
+                tmp_index = handle.find(match.group(), start_index)
                 while tmp_index >= 0:
                     front = handle[0:tmp_index].rstrip()
                     start_index = len(front)
                     handle = front + handle[tmp_index + len(match):]
-                    tmp_index = handle.index(match.value, start_index)
+                    tmp_index = handle.find(match.group(), start_index)
 
         # scale used in the calculate of double
         result.value = self.__get_digital_value(handle, power)
@@ -263,7 +259,7 @@ class BaseNumberParser(Parser):
         point_part_real = 0
         if len(num_group) == 2:
             point_part = num_group[1]
-            matches = list(map(lambda x : x.lower(), list(regex.finditer(self.text_number_regex, point_part))))
+            matches = list(map(lambda x : x.group().lower(), list(regex.finditer(self.text_number_regex, point_part))))
             point_part_real += self.__get_point_value(matches)
 
         result.value = int_part_real + point_part_real
