@@ -51,7 +51,7 @@ class BaseNumberParser(Parser):
         self.supported_types: List[str] = list()
 
         single_int_frac = f"{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}"
-        self.text_number_regex: Pattern = regex.compile(fr"(?=\b)(${single_int_frac})(?=\b)", flags=regex.I | regex.S)
+        self.text_number_regex: Pattern = regex.compile(fr"(?=\b)({single_int_frac})(?=\b)", flags=regex.I | regex.S)
         self.arabic_number_regex: Pattern = regex.compile(r"\d+", flags=regex.I | regex.S)
         self.round_number_set: List[str] = list(self.config.round_number_map.keys())
 
@@ -152,8 +152,8 @@ class BaseNumberParser(Parser):
         result.type = ext_result.type
 
         result_text = ext_result.text.lower()
-        if regex.search(self.config.fraction_marker_token, result_text.includes):
-            over_index = result_text.indexOf(self.config.fraction_marker_token)
+        if regex.search(self.config.fraction_marker_token, result_text):
+            over_index = result_text.find(self.config.fraction_marker_token)
             small_part = result_text[0:over_index].strip()
             big_part = result_text[over_index + self.config.fraction_marker_token.length:len(result_text)].strip()
             smallValue = self.__get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.get_intValue(self.get_matches(small_part))
@@ -165,13 +165,13 @@ class BaseNumberParser(Parser):
             frac_words = self.config.normalize_token_set(words, result)
 
             # Split fraction with integer
-            split_index = frac_words.length - 1
+            split_index = len(frac_words) - 1
             current_value = self.config.resolve_composite_number(frac_words[split_index])
             round_value = 1
 
-            for split_index in range(frac_words.length - 2, split_index, -1):
-                if (self.config.written_fraction_separator_texts.index(frac_words[split_index]) > -1
-                    or self.config.written_integer_separator_texts.index(frac_words[split_index]) > -1):
+            for split_index in range(len(frac_words) - 2, split_index, -1):
+                if (self.config.written_fraction_separator_texts.find(frac_words[split_index]) > -1
+                    or self.config.written_integer_separator_texts.find(frac_words[split_index]) > -1):
                     continue
                 previous_value = current_value
                 current_value = self.config.resolve_composite_number(frac_words[split_index])
@@ -192,7 +192,7 @@ class BaseNumberParser(Parser):
                     if split_index == 0:
                         # scan, skip the first word
                         split_index = 1
-                        while split_index <= frac_words.length - 2:
+                        while split_index <= len(frac_words) - 2:
                             # e.g. one hundred thousand
                             # frac[i+1] % 100 and frac[i] % 100 = 0
                             if (self.config.resolve_composite_number(frac_words[split_index]) >= sm_hundreds
@@ -207,8 +207,8 @@ class BaseNumberParser(Parser):
                 break
 
             frac_part = []
-            for i in range(split_index, frac_words.length):
-                if frac_words[i].index("-") > -1:
+            for i in range(split_index, len(frac_words)):
+                if frac_words[i].find("-") > -1:
                     split = frac_words[i].split('-')
                     frac_part.append(split[0])
                     frac_part.append("-")
@@ -216,7 +216,7 @@ class BaseNumberParser(Parser):
                 else:
                     frac_part.append(frac_words[i])
 
-            frac_words.splice(split_index, len(frac_words) - split_index)
+            frac_words[split_index:len(frac_words) - split_index]
 
             # denomi = denominator
             denomi_value = self.__get_int_value(frac_part)
@@ -224,10 +224,10 @@ class BaseNumberParser(Parser):
             numer_value = 0
             int_value = 0
 
-            mixedIndex = frac_words.length
-            for i in (frac_words.length - 1, 0, -1):
-                if (i < frac_words.length - 1 and self.config.written_fraction_separator_texts.indexOf(frac_words[i]) > -1):
-                    numerStr = " ".join(frac_words[i + 1:frac_words.length])
+            mixedIndex = len(frac_words)
+            for i in (len(frac_words) - 1, 0, -1):
+                if (i < len(frac_words) - 1 and frac_words[i] in self.config.written_fraction_separator_texts):
+                    numerStr = " ".join(frac_words[i + 1:len(frac_words)])
                     numer_value = self.__get_int_value(self.__get_matches(numerStr))
                     mixedIndex = i + 1
                     break
@@ -236,7 +236,7 @@ class BaseNumberParser(Parser):
             int_value = self.__get_int_value(self.__get_matches(int_str))
 
             # Find mixed number
-            if (mixedIndex != frac_words.length and numer_value < denomi_value):
+            if (mixedIndex != len(frac_words) and numer_value < denomi_value):
                 # int_value + numer_value / denomi_value
                 result.value = int_value + numer_value/ denomi_value
             else:
