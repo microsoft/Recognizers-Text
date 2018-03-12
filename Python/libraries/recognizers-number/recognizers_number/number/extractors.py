@@ -198,14 +198,14 @@ class BasePercentageExtractor(Extractor):
         dummy_token = BaseNumbers.NumberReplaceToken
         for i in range(len(results)):
             start = results[i].start
-            end = results[i].end-1
+            end = results[i].start + results[i].length - 1
             text = results[i].text
             if start in positionmap and end in positionmap:
                 original_start = positionmap[start]
                 original_length = positionmap[end] - original_start
                 results[i].start = original_start
                 results[i].length = original_length
-                results[i].text = source[positionmap[start]:positionmap[end]].strip()
+                results[i].text = source[original_start:original_start + original_length].strip()
                 num_start = text.find(dummy_token)
                 if num_start != -1:
                     num_original_start = start + num_start
