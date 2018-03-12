@@ -68,12 +68,14 @@ class EnglishNumberParserConfiguration(NumberParserConfiguration):
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]: 
         frac_words: List[str] = list()
         tokens_len = len(tokens)
-        for i in range(tokens_len):
+        i=0
+        while i < tokens_len:
             if i < tokens_len - 2 and tokens[i + 1] == '-':
                 frac_words.append(tokens[i] + tokens[i + 1] + tokens[i + 2])
                 i += 2
             else:
                 frac_words.append(tokens[i])
+            i += 1
 
         return frac_words
 
