@@ -179,18 +179,18 @@ class BasePercentageExtractor(Extractor):
             val_type = match[start]
             if val_type == -1:
                 string_result += source[start:end+1]
-                for i in range(start, end):
-                    index += 1
+                for i in range(start, end+1):
                     position_map[index] = i
+                    index += 1
             else:
                 original = source[start:end+1]
                 string_result += dummy_token
                 for i in range(0, len(dummy_token)):
-                    index += 1
                     position_map[index] = start
+                    index += 1
 
-        index += 1
         position_map[index] = len(source)
+        index += 1
 
         return source_position_results(source=string_result, position=position_map, results=extract_results)
 
@@ -198,7 +198,7 @@ class BasePercentageExtractor(Extractor):
         dummy_token = BaseNumbers.NumberReplaceToken
         for i in range(len(results)):
             start = results[i].start
-            end = results[i].start + results[i].length - 1
+            end = results[i].start + results[i].length
             text = results[i].text
             if start in positionmap and end in positionmap:
                 original_start = positionmap[start]
