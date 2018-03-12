@@ -4,8 +4,8 @@ from .extractor import ExtractResult
 
 class ParseResult(ExtractResult):
     def __init__(self, source: ExtractResult=None):
-        self.value: object=None
-        self.resolution_str: str
+        self.value: object= None
+        self.resolution_str: str= None
         if source is not None:
             self.start = source.start
             self.length = source.length

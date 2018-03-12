@@ -482,9 +482,9 @@ class BasePercentageParser(BaseNumberParser):
             source.text = source.data[0]
             source.data = source.data[1].data
         
-        result: ParseResult() = super().parse(source)
+        result: ParseResult = super().parse(source)
 
-        if len(result.resolution_str) > 0:
+        if not result.resolution_str is None and  len(result.resolution_str) > 0:
             if not result.resolution_str.strip().endswith('%'):
                 result.resolution_str = result.resolution_str.strip() + '%'
 
