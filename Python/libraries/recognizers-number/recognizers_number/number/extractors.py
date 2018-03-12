@@ -31,8 +31,8 @@ class BaseNumberExtractor(Extractor):
         match_source: Dict[[Match], str]=dict()
         matched: List[bool]=[False] * len(source)
 
-        matches_list = map(lambda x : matches_val(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes)
-        matches_list = filter(lambda x : x.matches is not None, matches_list)
+        matches_list = list(map(lambda x : matches_val(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes))
+        matches_list = list(filter(lambda x : len(x.matches) > 0, matches_list))
 
         for ml in matches_list:
             for m in ml.matches:
@@ -66,8 +66,7 @@ class BaseNumberExtractor(Extractor):
                         value.length = length
                         value.text = substr
                         value.type = self._extract_type
-                        if srcmatch in match_source:
-                            value.data = srcmatch
+                        value.data = match_source.get(srcmatch, None)
                         result.append(value)
         return result
 

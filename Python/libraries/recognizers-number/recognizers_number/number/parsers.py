@@ -77,7 +77,7 @@ class BaseNumberParser(Parser):
         
         if "Num" in extra:
             ret = self._digit_number_parse(source)
-        elif regex.search(fr'Frac${self.config.lang_marker}', extra): # Frac is a special number, parse via another method
+        elif regex.search(fr'Frac{self.config.lang_marker}', extra): # Frac is a special number, parse via another method
             ret = self._frac_like_number_parse(source)
         elif self.config.lang_marker in extra:
             ret = self._text_number_parse(source)
