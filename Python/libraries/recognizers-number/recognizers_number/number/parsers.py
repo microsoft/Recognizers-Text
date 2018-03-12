@@ -4,6 +4,7 @@ import regex
 
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
+from recognizers_number.culture import CultureInfo
 
 class NumberParserConfiguration(ABC):
     @abstractproperty
@@ -13,7 +14,7 @@ class NumberParserConfiguration(ABC):
     @abstractproperty
     def round_number_map(self) -> Dict[str, int]: pass
     @abstractproperty
-    def culture_info(self) -> str: pass
+    def culture_info(self) -> CultureInfo: pass
     @abstractproperty
     def digital_number_regex(self) -> Pattern: pass
     @abstractproperty
@@ -90,7 +91,7 @@ class BaseNumberParser(Parser):
                 ret.text = match_negative[1] + source.text
                 ret.value = - ret.value
             # TODO use culture_into to format values
-            ret.resolution_str = str(ret.value)
+            ret.resolution_str = self.config.culture_info.format(ret.value) if self.config.culture_info is not None else repr(ret.value)
 
         return ret
 

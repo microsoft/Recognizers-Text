@@ -1,7 +1,9 @@
 import regex
 from typing import Dict, Pattern, List
 
+from recognizers_text.culture import Culture
 from recognizers_text.parser import ParseResult
+from recognizers_number.culture import CultureInfo
 from recognizers_number.number.parsers import NumberParserConfiguration, BaseNumberParser
 from recognizers_number.resources.english_numeric import EnglishNumeric
 
@@ -43,7 +45,7 @@ class EnglishNumberParserConfiguration(NumberParserConfiguration):
 
     def __init__(self, culture_info=None):
         if culture_info is None:
-            culture_info = 'English'
+            culture_info = CultureInfo(Culture.English)
 
         self._culture_info = culture_info
         self._lang_marker = EnglishNumeric.LangMarker
