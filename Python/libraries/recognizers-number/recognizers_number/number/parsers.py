@@ -77,7 +77,7 @@ class BaseNumberParser(Parser):
         
         if "Num" in extra:
             ret = self._digit_number_parse(source)
-        elif regex.search(fr'Frac${self.config.langMarker}', extra): # Frac is a special number, parse via another method
+        elif regex.search(fr'Frac${self.config.lang_marker}', extra): # Frac is a special number, parse via another method
             ret = self._frac_like_number_parse(source)
         elif self.config.lang_marker in extra:
             ret = self._text_number_parse(source)
@@ -93,8 +93,8 @@ class BaseNumberParser(Parser):
                     ret.value = -ret.value
                 else:
                     ret.value.s = -1
-        
-            ret.resolution_str = self.config.culture_info.format(ret.value) if self.config.culture_info else str(ret.value)
+            # TODO use culture_into to format values
+            ret.resolution_str = str(ret.value)
 
         return ret
 
@@ -121,7 +121,7 @@ class BaseNumberParser(Parser):
         start_index = 0
         handle = ext_result.text.lower()
 
-        matches = regex.search(self.config.digital_number_regex, handle)
+        matches = list(regex.finditer(self.config.digital_number_regex, handle))
         if matches:
             for match in matches:
                 # TODO chek if it is necessary in python HACK: Matching regex may be buggy, may include a digit before the unit
@@ -251,12 +251,12 @@ class BaseNumberParser(Parser):
     def _text_number_parse(self, ext_result: ExtractResult) -> ParseResult:
         result = ParseResult(ext_result)
 
-        handle = regex.sub(self.config.half_a_dozen_regex, self.config.half_a_dozen_text, ext_result.text.lower().replace())
-        num_group = self.__split_multi(handle, filter(None, self.config.written_decimal_separator_texts))
+        handle = regex.sub(self.config.half_a_dozen_regex, self.config.half_a_dozen_text, ext_result.text.lower())
+        num_group = self.__split_multi(handle, list(filter(lambda x : x is not None, self.config.written_decimal_separator_texts)))
 
         int_part = num_group[0]
 
-        matches = list(map(lambda x : x.lower(), list(regex.finditer(self.text_number_regex, int_part)))) if len(int_part) > 0 else list()
+        matches = list(map(lambda x : x.group().lower(), list(regex.finditer(self.text_number_regex, int_part)))) if len(int_part) > 0 else list()
 
         int_part_real = self.__get_int_value(matches)
 
@@ -327,7 +327,7 @@ class BaseNumberParser(Parser):
         # We can use the first token as a temporary join character
         tmp = tokens[0]
         for token in tokens:
-            source = source.split(token).join(tmp)
+            source = tmp.join(source.split(token))
         return source.split(tmp)
 
     def __get_matches(self, source: str) -> List[str]:
@@ -362,7 +362,7 @@ class BaseNumberParser(Parser):
                 cardinal = match in self.config.cardinal_number_map
                 ordinal = match in self.config.ordinal_number_map
                 if cardinal or ordinal:
-                    match_value = self.config.cardinal_number_map.get(match, self.config.ordinal_number_map[match])
+                    match_value = self.config.cardinal_number_map.get(match, self.config.ordinal_number_map.get[match])
 
                     #This is just for ordinal now. Not for fraction ever.
                     if ordinal:
