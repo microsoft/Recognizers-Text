@@ -26,8 +26,6 @@ class TestInitializationNumberRecognizer():
         assert type(actual.parser.config) is not type(expected.parser.config)
 
     def test_without_culture_use_target_culture(self):
-        extractor = EnglishIntegerExtractor()
-        pepe=extractor.extract('number one and two')
         recognizer = NumberRecognizer(self.english_culture)
         self.assert_models_equal(self.control_model, recognizer.get_number_model())
 

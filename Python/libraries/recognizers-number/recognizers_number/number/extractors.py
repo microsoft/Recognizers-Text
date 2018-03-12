@@ -147,7 +147,6 @@ class BasePercentageExtractor(Extractor):
 
         return results
 
-
     def __preprocess_with_number_extracted(self, source: str) -> source_position_results:
         position_map = dict()
         extract_results = self.number_extractor.extract(source)

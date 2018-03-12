@@ -57,10 +57,10 @@ class BaseNumberParser(Parser):
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # check if the parser is configured to support specific types
-        if source.type not in self.supported_types:
+        if len(self.supported_types) > 0 and source.type not in self.supported_types:
             return None
         ret: Optional[ParseResult] = None
-        extra = source.data
+        extra = source.data if type(source.data) is str else None
         if not extra:
             if self.arabic_number_regex.search(source.text):
                 extra = "Num"
@@ -69,7 +69,7 @@ class BaseNumberParser(Parser):
         
         #Resolve symbol prefix
         is_negative = False
-        match_negative = source.text.search(self.config.negative_number_sign_regex)
+        match_negative = regex.search(self.config.negative_number_sign_regex, source.text)
 
         if match_negative:
             is_negative = True

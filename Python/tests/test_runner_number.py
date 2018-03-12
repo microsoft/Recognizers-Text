@@ -18,4 +18,4 @@ def test_number_recognizer(culture, model, source, expected_results):
     for expected, actual in zip(expected_results, results):
         assert expected["TypeName"] == actual.type_name
         assert expected["Text"] == actual.text
-        assert expected["Resultion"]["value"] == actual.resolution["value"]
+        assert expected["Resolution"]["value"] == actual.resolution["value"]

@@ -31,7 +31,10 @@ class AbstractNumberModel(Model):
 
     def parse(self, query: str) -> List[ModelResult]:
         extract_results=self.extractor.extract(query)
-        return map(self.__single_parse, extract_results)
+        results = list()
+        for r in extract_results:
+            results.append(self.__single_parse(r))
+        return results
 
     def __single_parse(self, source: ExtractResult) -> Optional[ModelResult]:
         parse_result=self.parser.parse(source)

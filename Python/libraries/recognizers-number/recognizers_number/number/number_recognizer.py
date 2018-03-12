@@ -53,7 +53,9 @@ class NumberRecognizer(Recognizer[NumberOptions]):
 
     @staticmethod
     def recognize_number(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        pass
+        recognizer = NumberRecognizer(culture, options)
+        model = recognizer.get_number_model(culture, fallback_to_default_culture)
+        return model.parse(query)
 
     @staticmethod
     def recognize_ordinal(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
