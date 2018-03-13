@@ -3,8 +3,10 @@ from typing import List
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
 from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor
+from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
+from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
 from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
 
 class NumberOptions(IntFlag):
@@ -44,6 +46,21 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model("PercentModel", Culture.Spanish, lambda options: PercentModel(
             AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, SpanishNumberParserConfiguration()),
             None #TODO implement SpanishPercentageExtractor
+        ))
+        #endregion
+
+        #region French
+        self.register_model("NumberModel", Culture.French, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, FrenchNumberParserConfiguration()),
+            FrenchNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model("OrdinalModel", Culture.French, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.ORDINAL, FrenchNumberParserConfiguration()),
+            FrenchOrdinalExtractor()
+        ))
+        self.register_model("PercentModel", Culture.French, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, FrenchNumberParserConfiguration()),
+            FrenchPercentageExtractor()
         ))
         #endregion
         
