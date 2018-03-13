@@ -2,6 +2,7 @@ import pytest
 import glob
 import os
 import json
+from recognizers_text.culture import Culture
 
 def splitall(path):
     allparts = []
@@ -40,9 +41,15 @@ def get_specs(spec_type):
             if "NotSupportedByDesign" in spec and "python" in spec["NotSupportedByDesign"]:
                 continue
             if "NotSupported" in spec and "python" in spec["NotSupported"]:
-                ret_specs.append(pytest.param(sp["config"]["language"], sp["config"]["sub_type"], spec["Input"], spec["Results"], marks=pytest.mark.skip(reason="Not supported")))
+                ret_specs.append(pytest.param(cultures[sp["config"]["language"]], sp["config"]["sub_type"], spec["Input"], spec["Results"], marks=pytest.mark.skip(reason="Not supported")))
                 continue
-            ret_specs.append((sp["config"]["language"], sp["config"]["sub_type"], spec["Input"], spec["Results"]))
+            ret_specs.append((cultures[sp["config"]["language"]], sp["config"]["sub_type"], spec["Input"], spec["Results"]))
     return ret_specs
+
+cultures = {
+    'English': Culture.English,
+    'Spanish': Culture.Spanish,
+    'French': Culture.French
+}
 
 specs = get_all_specs()
