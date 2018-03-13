@@ -1,7 +1,7 @@
 {
   "name": "@microsoft/recognizers-text-number-with-unit",
   "version": "1.0.0",
-  "description": "recognizers-text-number-with-unit provides robust recognition and resolution of numbers with units expressed in multiple languages. Support for English, Spanish, Chinese and Portuguese.",
+  "description": "recognizers-text-number-with-unit provides robust recognition and resolution of numbers with units expressed in multiple languages.",
   "author": "Microsoft Corp.",
   "license": "MIT",
   "keywords": [
