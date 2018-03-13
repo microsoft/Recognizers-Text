@@ -9,8 +9,8 @@
     "nlp-entity-extraction",
     "entity-extraction",
     "boolean",
-	"alternatives",
-	"choices",
+    "alternatives",
+    "choices",
     "parser-library"
   ],
   "main": "dist/recognizers-text-choice.umd.js",

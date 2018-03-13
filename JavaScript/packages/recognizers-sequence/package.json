@@ -9,7 +9,7 @@
     "nlp-entity-extraction",
     "entity-extraction",
     "phonenumber",
-	"ipaddress"
+    "ipaddress"
     "parser-library"
   ],
   "main": "dist/recognizers-text-sequence.umd.js",
