@@ -1,14 +1,15 @@
 {
   "name": "@microsoft/recognizers-text-sequence",
   "version": "1.0.0",
-  "description": "recognizers-text-sequence abstract",
+  "description": "recognizers-text-sequence provides robust recognition and resolution of series entities like phone numbers and IP addresses.",
   "author": "Microsoft Corp.",
   "license": "MIT",
   "keywords": [
     "nlp",
     "nlp-entity-extraction",
     "entity-extraction",
-    "numex",
+    "phonenumber",
+    "ipaddress",
     "parser-library"
   ],
   "main": "dist/recognizers-text-sequence.umd.js",

@@ -6,12 +6,12 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.Choice provides recognition of Boolean (yes/no) answers expressed in English, as well as base classes to support lists of alternative choices.</description>
+    <description>Microsoft.Recognizers.Text.Choice provides recognition of Boolean (yes/no) answers expressed in English, Portuguese, Spanish, and Japanese. As well as base classes to support lists of alternative choices.</description>
     <licenseUrl>https://github.com/Microsoft/Recognizers-Text/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <iconUrl>http://docs.botframework.com/images/bot_icon.png</iconUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>nlp entity-extraction parser-library recognizer boolean alternative choices netstandard2.0</tags>
+    <tags>nlp entity-extraction parser-library recognizer boolean alternatives choices netstandard2.0</tags>
     <dependencies>
       <dependency id="System.Collections.Immutable" version="1.4.0" />
       <dependency id="Unicode.net" version="0.1.2" />
