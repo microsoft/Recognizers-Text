@@ -1,6 +1,8 @@
 from abc import ABC, abstractproperty
 from typing import Dict, Pattern, Optional, List
 import regex
+from decimal import *
+getcontext().prec = 15
 
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
@@ -257,13 +259,13 @@ class BaseNumberParser(Parser):
 
         int_part_real = self.__get_int_value(matches)
 
-        point_part_real = 0
+        point_part_real = Decimal(0)
         if len(num_group) == 2:
             point_part = num_group[1]
             matches = list(map(lambda x : x.group().lower(), list(regex.finditer(self.text_number_regex, point_part))))
             point_part_real += self.__get_point_value(matches)
 
-        result.value = int_part_real + point_part_real
+        result.value = int_part_real + Decimal(point_part_real)
         return result
 
     def _power_number_parse(self, ext_result: ExtractResult) -> ParseResult:
@@ -310,10 +312,12 @@ class BaseNumberParser(Parser):
                 else:
                     call_stack.append(tmp)
         result_value = 0
+        a = Decimal(call_stack.pop(0))
+        b = Decimal(call_stack.pop(0))
         if exponent:
-            result_value = call_stack.pop(0) * pow(10, call_stack.pop(0))
+            result_value = getcontext().multiply(a, getcontext().power(Decimal(10), b))
         else:
-            result_value = pow(call_stack.pop(0), call_stack.pop(0))
+            result_value = getcontext().power(a, b)
 
         result.value = result_value
         result.resolution_str = str(result_value)
@@ -337,7 +341,7 @@ class BaseNumberParser(Parser):
         base_num = 100 if small > 10 else 10
         return big % base_num == 0 and big / base_num >=1
 
-    def __get_int_value(self, matches: List[str]) -> int:
+    def __get_int_value(self, matches: List[str]) -> Decimal:
         is_end = [False] * len(matches)
 
         tmp_val = 0
@@ -414,31 +418,31 @@ class BaseNumberParser(Parser):
             if last_index != len(is_end):
                 part_value = self.__get_int_value(matches[last_index:len(is_end)])
                 tmp_val += mul_value * part_value
-        return tmp_val
+        return Decimal(tmp_val)
 
-    def __get_point_value(self, matches: List[str]) -> float:
+    def __get_point_value(self, matches: List[str]) -> Decimal:
         result = 0
         first_match = matches[0]
         if first_match in self.config.cardinal_number_map and self.config.cardinal_number_map[first_match] >= 10:
             prefix = '0.'
             tmp_int = self.__get_int_value(matches)
-            result = float(prefix + str(tmp_int))
+            result = Decimal(prefix + str(tmp_int))
         else:
-            scale = 0.1
+            scale = Decimal(0.1)
             for match in matches:
-                result += scale * self.config.cardinal_number_map[match]
-                scale *= 0.1
+                result += scale * Decimal(self.config.cardinal_number_map[match])
+                scale *= Decimal(0.1)
 
         return result
 
-    def __get_digital_value(self, digitstr: str, power: int) -> float:
-        tmp: float = 0
-        scale: float = 10
+    def __get_digital_value(self, digitstr: str, power: int) -> Decimal:
+        tmp: Decimal = Decimal(0)
+        scale: Decimal = Decimal(10)
         dot: bool = False
         negative: bool = False
         fraction: bool = False
 
-        call_stack: List[int] = list()
+        call_stack: List[Decimal] = list()
 
         for c in digitstr:
             if c == '/':
@@ -446,32 +450,32 @@ class BaseNumberParser(Parser):
 
             if c == ' ' or c == '/':
                 call_stack.append(tmp)
-                tmp = 0
+                tmp = Decimal(0)
             elif c.isdigit():
                 if dot:
-                    tmp = tmp + scale * int(c)
-                    scale *= 0.1
+                    tmp = getcontext().add(tmp, getcontext().multiply(scale, Decimal(c)))
+                    scale = getcontext().multiply(scale, Decimal(0.1))
                 else:
-                    tmp = tmp * scale + int(c)
+                    tmp = getcontext().add(getcontext().multiply(tmp, scale), Decimal(c))
             elif c == self.config.decimal_separator_char:
                 dot = True
-                scale = 0.1
+                scale = Decimal(0.1)
             elif c == '-':
                 negative = True
 
         call_stack.append(tmp)
 
         # is the number is a fraction.
-        cal_result = 0
+        cal_result = Decimal(0)
         if fraction:
             deno = call_stack.pop()
             mole = call_stack.pop()
-            cal_result += mole / deno
+            cal_result = getcontext().add(cal_result, getcontext().divide(mole, deno))
         
         for n in call_stack:
-            cal_result += n
+            cal_result = getcontext().add(cal_result, n)
 
-        cal_result *= power
+        cal_result = getcontext().multiply(cal_result, Decimal(power))
 
         return cal_result if not negative else -cal_result
 
