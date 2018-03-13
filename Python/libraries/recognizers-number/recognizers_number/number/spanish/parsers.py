@@ -60,7 +60,7 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         self._written_integer_separator_texts = SpanishNumeric.WrittenIntegerSeparatorTexts
         self._written_fraction_separator_texts = SpanishNumeric.WrittenFractionSeparatorTexts
 
-        ordinal_number_map: Dict[str, int] = dict()
+        ordinal_number_map: Dict[str, int] = dict(SpanishNumeric.SimpleOrdinalNumberMap)
         for prefix_key in SpanishNumeric.PrefixCardinalDictionary:
             for suffix_key in SpanishNumeric.SufixOrdinalDictionary:
                 if not prefix_key+suffix_key in ordinal_number_map:
@@ -74,9 +74,8 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         self._half_a_dozen_regex = regex.compile(SpanishNumeric.HalfADozenRegex)
         self._digital_number_regex = regex.compile(SpanishNumeric.DigitalNumberRegex)
 
-    @property
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
-        result = List[str]()
+        result : List[str] = list()
         for token in tokens:
             temp_word = re.sub(r'^s+', '', token)
             temp_word = re.sub(r's+$', '', temp_word)
@@ -99,7 +98,6 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         
         return result
 
-    @property
     def resolve_composite_number(self, number_str: str) -> int:
         if number_str in self.ordinal_number_map:
             return self.ordinal_number_map[number_str]
@@ -110,17 +108,22 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         final_value = 0
         str_builder = ''
         last_good_char = 0
-        for i in range(len(number_str)):
+
+        number_str_len = len(number_str)
+        i=0
+        while i < number_str_len:
             str_builder += number_str[i]
             if (str_builder in self.cardinal_number_map and
                 self.cardinal_number_map[str_builder] > 0):
                 last_good_char = i
                 value = self.cardinal_number_map[str_builder]
-            if i+1 == len(number_str):
+            if i+1 == number_str_len:
                 final_value+=value
                 str_builder = ''
                 last_good_char+=1
                 i = last_good_char
                 value = 0
+            else:
+                i += 1
         
         return final_value
