@@ -20,9 +20,8 @@ class BaseNumberExtractor(Extractor):
     def _extract_type(self) -> str:
         raise NotImplementedError
 
-    @abstractproperty
-    def _negative_number_terms(self) -> Pattern:
-        raise NotImplementedError
+    @property
+    def _negative_number_terms(self) -> Pattern: pass
 
     def extract(self, source: str) -> List[ExtractResult]:
         if source is None or len(source.strip()) is 0:

@@ -22,7 +22,7 @@ class EnglishNumberExtractor(BaseNumberExtractor):
     def __init__(self, mode: NumberMode=NumberMode.DEFAULT):
         self.__negative_number_terms=regex.compile(EnglishNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[re_val] = list()
-        cardinal_ex=None
+        cardinal_ex:EnglishCardinalExtractor=None
 
         if mode is NumberMode.PURE_NUMBER:
             cardinal_ex=EnglishCardinalExtractor(EnglishNumeric.PlaceHolderPureNumber)
@@ -46,9 +46,6 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_CARDINAL
 
-    @property
-    def _negative_number_terms(self): pass
-
     def __init__(self, placeholder: str=EnglishNumeric.PlaceHolderDefault):
         self.__regexes: List[re_val] = list()
 
@@ -68,9 +65,6 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_INTEGER
-
-    @property
-    def _negative_number_terms(self): pass
 
     def __init__(self, placeholder: str=EnglishNumeric.PlaceHolderDefault):
         self.__regexes=[
@@ -105,9 +99,6 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_DOUBLE
-
-    @property
-    def _negative_number_terms(self): pass
 
     def __init__(self, placeholder):
         self.__regexes=[
@@ -146,9 +137,6 @@ class EnglishFractionExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_FRACTION
 
-    @property
-    def _negative_number_terms(self): pass
-
     def __init__(self):
         self.__regexes=[
             re_val(
@@ -176,9 +164,6 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_ORDINAL
-
-    @property
-    def _negative_number_terms(self): pass
 
     def __init__(self):
         self.__regexes=[
