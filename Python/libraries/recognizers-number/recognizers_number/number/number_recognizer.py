@@ -8,6 +8,8 @@ from recognizers_number.number.english.parsers import EnglishNumberParserConfigu
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
 from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
+from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor
+from recognizers_number.number.chinese.parsers import ChineseNumberParserConfiguration
 
 class NumberOptions(IntFlag):
     NONE = 0
@@ -31,6 +33,21 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model("PercentModel", Culture.English, lambda options: PercentModel(
             AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, EnglishNumberParserConfiguration()),
             EnglishPercentageExtractor()
+        ))
+        #endregion
+
+        #region Chinese
+        self.register_model("NumberModel", Culture.Chinese, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, ChineseNumberParserConfiguration()),
+            ChineseNumberExtractor()
+        ))
+        self.register_model("OrdinalModel", Culture.Chinese, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.ORDINAL, ChineseNumberParserConfiguration()),
+            ChineseOrdinalExtractor()
+        ))
+        self.register_model("PercentModel", Culture.Chinese, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, ChineseNumberParserConfiguration()),
+            ChinesePercentageExtractor()
         ))
         #endregion
 

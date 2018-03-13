@@ -2,6 +2,7 @@ from enum import Enum
 
 from recognizers_number.number.parsers import NumberParserConfiguration, BaseNumberParser, BasePercentageParser
 from recognizers_number.number.constants import Constants
+from recognizers_number.number.chinese.parsers import ChineseNumberParserConfiguration, ChineseNumberParser
 
 class ParserType(Enum):
     NUMBER=0
@@ -17,6 +18,11 @@ class AgnosticNumberParserFactory:
     def get_parser(parser_type: ParserType, language_config: NumberParserConfiguration) -> BaseNumberParser:
         parser = BaseNumberParser(language_config)
 
+        chinese = type(language_config) == ChineseNumberParserConfiguration
+
+        if chinese:
+            parser = ChineseNumberParser(language_config)
+
         if parser_type is ParserType.CARDINAL:
             parser.supported_types = [Constants.SYS_NUM_CARDINAL, Constants.SYS_NUM_INTEGER, Constants.SYS_NUM_DOUBLE]
         elif parser_type is ParserType.DOUBLE:
@@ -27,7 +33,7 @@ class AgnosticNumberParserFactory:
             parser.supported_types = [Constants.SYS_NUM_INTEGER]
         elif parser_type is ParserType.ORDINAL:
             parser.supported_types = [Constants.SYS_NUM_ORDINAL]
-        elif parser_type is ParserType.PERCENTAGE:
+        elif parser_type is ParserType.PERCENTAGE and not chinese:
             parser = BasePercentageParser(language_config)
         
         return parser
