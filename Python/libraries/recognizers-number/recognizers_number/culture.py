@@ -1,9 +1,7 @@
 from recognizers_text.culture import BaseCultureInfo, Culture
-from .number import LongFormatMode
-from decimal import *
+from .number import LongFormatMode, LongFormatType
 
-
-supported_cultures = {
+SUPPORTED_CULTURES = {
     Culture.English: LongFormatMode.DOUBLE_COMMA_DOT,
     Culture.Chinese: None,
     Culture.Spanish: LongFormatMode.DOUBLE_DOT_COMMA,
@@ -17,14 +15,21 @@ class CultureInfo(BaseCultureInfo):
         if '.' in result:
             result = result.rstrip('0').rstrip('.')
         if 'E-' in result:
-            p = result.split('E-')
-            p[1] = p[1].rjust(2, '0')
-            result = 'E-'.join(p)
+            parts = result.split('E-')
+            parts[1] = parts[1].rjust(2, '0')
+            result = 'E-'.join(parts)
         if 'E+' in result:
-            p = result.split('E+')
-            p[0] = p[0].rstrip('0')
-            result = 'E+'.join(p)
-        long_format = supported_cultures.get(self.code)
+            parts = result.split('E+')
+            parts[0] = parts[0].rstrip('0')
+            result = 'E+'.join(parts)
+        long_format = SUPPORTED_CULTURES.get(self.code)
         if long_format:
-            result = long_format.thousands_mark.join(list(map(lambda x: x.replace(".", long_format.decimals_mark),  result.split(","))))
+            result = ''.join(map(lambda x: self.change_mark(x, long_format), result))
         return result
+
+    def change_mark(self, source: str, long_format: LongFormatType) -> str:
+        if source == '.':
+            return long_format.decimals_mark
+        elif source == ',':
+            return long_format.thousands_mark
+        return source

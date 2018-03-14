@@ -5,7 +5,7 @@ from collections import namedtuple
 
 from .culture import Culture
 
-T_MODEL_OPTIONS = TypeVar('TModelOptions', bound=Flag)
+T_MODEL_OPTIONS = TypeVar('T_MODEL_OPTIONS', bound=Flag)
 
 class ModelResult():
     def __init__(self):
@@ -24,8 +24,8 @@ class Model(ABC):
     def parse(self, query: str) -> List[ModelResult]:
         raise NotImplementedError
 
-CacheKey = namedtuple('cache_key', ['model_type', 'culture', 'options'])
-ModelCtorKey = namedtuple('model_ctor_key', ['model_type', 'culture'])
+CacheKey = namedtuple('CacheKey', ['model_type', 'culture', 'options'])
+ModelCtorKey = namedtuple('ModelCtorKey', ['model_type', 'culture'])
 
 class ModelFactory(Generic[T_MODEL_OPTIONS]):
     __fallback_to_default_culture = Culture.English

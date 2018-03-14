@@ -3,7 +3,7 @@ from typing import List, Pattern, Dict, Match, NamedTuple
 from collections import namedtuple
 import regex
 
-from recognizers_number.number.models import long_format_type
+from recognizers_number.number.models import LongFormatType
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.resources.base_numbers import BaseNumbers
 from recognizers_number.number.constants import Constants
@@ -69,7 +69,7 @@ class BaseNumberExtractor(Extractor):
                         result.append(value)
         return result
 
-    def _generate_format_regex(self, format_type: long_format_type, placeholder: str=None) -> Pattern:
+    def _generate_format_regex(self, format_type: LongFormatType, placeholder: str=None) -> Pattern:
         if placeholder is None:
             placeholder = BaseNumbers.PlaceHolderDefault
         
