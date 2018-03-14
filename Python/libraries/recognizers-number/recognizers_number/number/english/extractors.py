@@ -3,12 +3,12 @@ from typing import Pattern, List, NamedTuple
 
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.english_numeric import EnglishNumeric
-from recognizers_number.number.extractors import re_val, BaseNumberExtractor, BasePercentageExtractor
+from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
 from recognizers_number.number.constants import Constants
 
 class EnglishNumberExtractor(BaseNumberExtractor):
     @property
-    def regexes(self) -> List[re_val]:
+    def regexes(self) -> List[ReVal]:
         return self.__regexes
 
     @property
@@ -21,13 +21,13 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
     def __init__(self, mode: NumberMode=NumberMode.DEFAULT):
         self.__negative_number_terms=regex.compile(EnglishNumeric.NegativeNumberTermsRegex)
-        self.__regexes: List[re_val] = list()
+        self.__regexes: List[ReVal] = list()
         cardinal_ex:EnglishCardinalExtractor=None
 
         if mode is NumberMode.PURE_NUMBER:
             cardinal_ex=EnglishCardinalExtractor(EnglishNumeric.PlaceHolderPureNumber)
         elif mode is NumberMode.CURRENCY:
-            self.__regexes.append(re_val(re=EnglishNumeric.CurrencyRegex, val="IntegerNum"))
+            self.__regexes.append(ReVal(re=EnglishNumeric.CurrencyRegex, val="IntegerNum"))
         
         if cardinal_ex is None:
             cardinal_ex=EnglishCardinalExtractor()
@@ -39,7 +39,7 @@ class EnglishNumberExtractor(BaseNumberExtractor):
 
 class EnglishCardinalExtractor(BaseNumberExtractor):
     @property
-    def regexes(self) -> List[re_val]:
+    def regexes(self) -> List[ReVal]:
         return self.__regexes
         
     @property
@@ -47,7 +47,7 @@ class EnglishCardinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_CARDINAL
 
     def __init__(self, placeholder: str=EnglishNumeric.PlaceHolderDefault):
-        self.__regexes: List[re_val] = list()
+        self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
         integer_ex=EnglishIntegerExtractor(placeholder)
@@ -68,25 +68,25 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
 
     def __init__(self, placeholder: str=EnglishNumeric.PlaceHolderDefault):
         self.__regexes=[
-            re_val(
+            ReVal(
                 re=EnglishNumeric.NumbersWithPlaceHolder(placeholder),
                 val='IntegerNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.NumbersWithSuffix,
                 val='IntegerNum'),
-            re_val(
+            ReVal(
                 re=self._generate_format_regex(LongFormatMode.INTEGER_COMMA, placeholder),
                 val='IntegerNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.RoundNumberIntegerRegexWithLocks,
                 val='IntegerNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.NumbersWithDozenSuffix,
                 val='IntegerNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.AllIntRegexWithLocks,
                 val='IntegerEng'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.AllIntRegexWithDozenSuffixLocks,
                 val='IntegerEng')
         ]
@@ -102,28 +102,28 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
 
     def __init__(self, placeholder):
         self.__regexes=[
-            re_val(
+            ReVal(
                 re=EnglishNumeric.DoubleDecimalPointRegex(placeholder),
                 val='DoubleNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.DoubleWithoutIntegralRegex(placeholder),
                 val='DoubleNum'),
-            re_val(
+            ReVal(
                 re=self._generate_format_regex(LongFormatMode.DOUBLE_COMMA_DOT, placeholder),
                 val='DoubleNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.DoubleWithMultiplierRegex,
                 val='DoubleNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.DoubleWithRoundNumber,
                 val='DoubleNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.DoubleAllFloatRegex,
                 val='DoubleEng'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.DoubleExponentialNotationRegex,
                 val='DoublePow'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.DoubleCaretExponentialNotationRegex,
                 val='DoublePow')
         ]
@@ -139,19 +139,19 @@ class EnglishFractionExtractor(BaseNumberExtractor):
 
     def __init__(self):
         self.__regexes=[
-            re_val(
+            ReVal(
                 re=EnglishNumeric.FractionNotationWithSpacesRegex,
                 val='FracNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.FractionNotationRegex,
                 val='FracNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.FractionNounRegex,
                 val='FracEng'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.FractionNounWithArticleRegex,
                 val='FracEng'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.FractionPrepositionRegex,
                 val='FracEng')
         ]
@@ -167,16 +167,16 @@ class EnglishOrdinalExtractor(BaseNumberExtractor):
 
     def __init__(self):
         self.__regexes=[
-            re_val(
+            ReVal(
                 re=EnglishNumeric.OrdinalSuffixRegex,
                 val='OrdinalNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.OrdinalNumericRegex,
                 val='OrdinalNum'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.OrdinalEnglishRegex,
                 val='OrdEng'),
-            re_val(
+            ReVal(
                 re=EnglishNumeric.OrdinalRoundNumberRegex,
                 val='OrdEng')
         ]

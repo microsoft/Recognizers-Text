@@ -1,44 +1,47 @@
-from abc import ABC, abstractmethod, abstractproperty
-from typing import List, Pattern, Dict, Match, NamedTuple
+from abc import abstractmethod
+from typing import List, Pattern, Dict, Match
 from collections import namedtuple
 import regex
 
-from recognizers_number.number.models import LongFormatType
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.resources.base_numbers import BaseNumbers
+from recognizers_number.number.models import LongFormatType
 from recognizers_number.number.constants import Constants
 
-re_val=namedtuple('re_val', ['re', 'val'])
-matches_val=namedtuple('matches_val', ['matches', 'val'])
+ReVal = namedtuple('ReVal', ['re', 'val'])
+MatchesVal = namedtuple('MatchesVal', ['matches', 'val'])
 
 class BaseNumberExtractor(Extractor):
-    @abstractproperty
-    def regexes(self) -> List[re_val]:
+    @property
+    @abstractmethod
+    def regexes(self) -> List[ReVal]:
         raise NotImplementedError
 
-    @abstractproperty
+    @property
+    @abstractmethod
     def _extract_type(self) -> str:
         raise NotImplementedError
 
     @property
-    def _negative_number_terms(self) -> Pattern: pass
+    def _negative_number_terms(self) -> Pattern:
+        pass
 
     def extract(self, source: str) -> List[ExtractResult]:
         if source is None or len(source.strip()) is 0:
             return list()
-        result: List[ExtractResult]=list()
-        match_source: Dict[[Match], str]=dict()
-        matched: List[bool]=[False] * len(source)
+        result: List[ExtractResult] = list()
+        match_source: Dict[[Match], str] = dict()
+        matched: List[bool] = [False] * len(source)
 
-        matches_list = list(map(lambda x : matches_val(matches=list(regex.finditer(x.re, source, flags=regex.I)), val=x.val), self.regexes))
-        matches_list = list(filter(lambda x : len(x.matches) > 0, matches_list))
+        matches_list = list(map(lambda x: MatchesVal(matches=list(regex.finditer(x.re, source, flags=regex.I)), val=x.val), self.regexes))
+        matches_list = list(filter(lambda x: len(x.matches) > 0, matches_list))
 
         for ml in matches_list:
             for m in ml.matches:
                 for j in range(len(m.group())):
-                    matched[m.start()+j]=True
+                    matched[m.start()+j] = True
                 # Keep Source Data for extra information
-                match_source[m]=ml.val
+                match_source[m] = ml.val
 
         last = -1
         for i in range(len(source)):
@@ -49,7 +52,7 @@ class BaseNumberExtractor(Extractor):
                     start = last+1
                     length = i-last
                     substr = source[start:start+length].strip()
-                    srcmatch = next((x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length)), None)
+                    src_match = next((x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length)), None)
 
                     # extract negative numbers
                     if self._negative_number_terms is not None:
@@ -59,20 +62,20 @@ class BaseNumberExtractor(Extractor):
                             length = length + match.end() - match.start()
                             substr = source[start:start+length].strip()
 
-                    if srcmatch is not None:
+                    if src_match is not None:
                         value = ExtractResult()
                         value.start = start
                         value.length = length
                         value.text = substr
                         value.type = self._extract_type
-                        value.data = match_source.get(srcmatch, None)
+                        value.data = match_source.get(src_match, None)
                         result.append(value)
         return result
 
-    def _generate_format_regex(self, format_type: LongFormatType, placeholder: str=None) -> Pattern:
+    def _generate_format_regex(self, format_type: LongFormatType, placeholder: str = None) -> Pattern:
         if placeholder is None:
             placeholder = BaseNumbers.PlaceHolderDefault
-        
+
         re_definition = None
         if format_type.decimals_mark is None:
             re_definition = BaseNumbers.IntegerRegexDefinition(placeholder, format_type.thousands_mark)
@@ -80,13 +83,13 @@ class BaseNumberExtractor(Extractor):
             re_definition = BaseNumbers.DoubleRegexDefinition(placeholder, format_type.thousands_mark, format_type.decimals_mark)
         return re_definition
 
-source_position_results = namedtuple('source_position_results', ['source', 'position', 'results'])
+SourcePositionResults = namedtuple('SourcePositionResults', ['source', 'position', 'results'])
 
 class BasePercentageExtractor(Extractor):
     @property
     def regexes(self) -> List[Pattern]:
         return self._regexes
-        
+
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_PERCENTAGE
@@ -95,6 +98,7 @@ class BasePercentageExtractor(Extractor):
         self.number_extractor = number_extractor
         self._regexes = self.generate_regexes()
 
+    @property
     @abstractmethod
     def get_definitions(self) -> List[str]:
         raise NotImplementedError
@@ -102,7 +106,7 @@ class BasePercentageExtractor(Extractor):
     def generate_regexes(self, ignore_case: bool = True) -> List[Pattern]:
         definitions = self.get_definitions()
         options = regex.DOTALL | (regex.IGNORECASE if ignore_case else 0)
-        return list(map(lambda d : regex.compile(d, options), definitions))
+        return list(map(lambda d: regex.compile(d, options), definitions))
 
     def extract(self, source: str) -> List[ExtractResult]:
         origin = source
@@ -113,13 +117,13 @@ class BasePercentageExtractor(Extractor):
         positionmap = preprocess.position
         extractresults = preprocess.results
 
-        allmatches = list(map(lambda p : list(regex.finditer(p, source)), self.regexes))
-        matched: List[bool]=[False] * len(source)
+        allmatches = list(map(lambda p: list(regex.finditer(p, source)), self.regexes))
+        matched: List[bool] = [False] * len(source)
 
         for matches in allmatches:
             for match in matches:
                 for j in range(len(match.group())):
-                    matched[match.start()+j]=True
+                    matched[match.start()+j] = True
 
         results = list()
 
@@ -145,17 +149,16 @@ class BasePercentageExtractor(Extractor):
 
         return results
 
-    def __preprocess_with_number_extracted(self, source: str) -> source_position_results:
+    def __preprocess_with_number_extracted(self, source: str) -> SourcePositionResults:
         position_map = dict()
         extract_results = self.number_extractor.extract(source)
 
         dummy_token = BaseNumbers.NumberReplaceToken
-        match: List[int]=[-1] * len(source)
+        match: List[int] = [-1] * len(source)
         string_parts = list()
 
         for i in range(len(extract_results)):
             extract_result = extract_results[i]
-            subtext = extract_result.text
             start = extract_result.start
             end = extract_result.end+1
             for j in range(start, end):
@@ -167,7 +170,7 @@ class BasePercentageExtractor(Extractor):
             if match[i] != match[i-1]:
                 string_parts.append([start, i-1])
                 start = i
-        
+
         string_parts.append([start, len(source)-1])
 
         string_result = ''
@@ -182,7 +185,6 @@ class BasePercentageExtractor(Extractor):
                     position_map[index] = i
                     index += 1
             else:
-                original = source[start:end+1]
                 string_result += dummy_token
                 for i in range(0, len(dummy_token)):
                     position_map[index] = start
@@ -191,7 +193,7 @@ class BasePercentageExtractor(Extractor):
         position_map[index] = len(source)
         index += 1
 
-        return source_position_results(source=string_result, position=position_map, results=extract_results)
+        return SourcePositionResults(source=string_result, position=position_map, results=extract_results)
 
     def __post_processing(self, results: List[ExtractResult], source: str, positionmap: Dict[int, int], extractresults: List[ExtractResult]) -> List[ExtractResult]:
         dummy_token = BaseNumbers.NumberReplaceToken
