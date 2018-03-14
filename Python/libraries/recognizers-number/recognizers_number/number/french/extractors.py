@@ -1,5 +1,5 @@
-import regex
 from typing import Pattern, List, NamedTuple
+import regex
 
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.french_numeric import FrenchNumeric
@@ -19,42 +19,42 @@ class FrenchNumberExtractor(BaseNumberExtractor):
     def _negative_number_terms(self) -> Pattern:
         return self.__negative_number_terms
 
-    def __init__(self, mode: NumberMode=NumberMode.DEFAULT):
-        self.__negative_number_terms=regex.compile(FrenchNumeric.NegativeNumberTermsRegex)
+    def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
+        self.__negative_number_terms = regex.compile(FrenchNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
-        cardinal_ex:FrenchCardinalExtractor=None
+        cardinal_ex: FrenchCardinalExtractor = None
 
         if mode is NumberMode.PURE_NUMBER:
-            cardinal_ex=FrenchCardinalExtractor(FrenchNumeric.PlaceHolderPureNumber)
+            cardinal_ex = FrenchCardinalExtractor(FrenchNumeric.PlaceHolderPureNumber)
         elif mode is NumberMode.CURRENCY:
-            self.__regexes.append(ReVal(re=FrenchNumeric.CurrencyRegex, val="IntegerNum"))
-        
+            self.__regexes.append(ReVal(re=FrenchNumeric.CurrencyRegex, val='IntegerNum'))
+
         if cardinal_ex is None:
-            cardinal_ex=FrenchCardinalExtractor()
+            cardinal_ex = FrenchCardinalExtractor()
 
         self.__regexes.extend(cardinal_ex.regexes)
-        
-        fraction_ex=FrenchFractionExtractor()
+
+        fraction_ex = FrenchFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
 
 class FrenchCardinalExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
-        
+
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_CARDINAL
 
-    def __init__(self, placeholder: str=FrenchNumeric.PlaceHolderDefault):
+    def __init__(self, placeholder: str = FrenchNumeric.PlaceHolderDefault):
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
-        integer_ex=FrenchIntegerExtractor(placeholder)
+        integer_ex = FrenchIntegerExtractor(placeholder)
         self.__regexes.extend(integer_ex.regexes)
-            
+
         # Add double regexes
-        double_ex=FrenchDoubleExtractor(placeholder)
+        double_ex = FrenchDoubleExtractor(placeholder)
         self.__regexes.extend(double_ex.regexes)
 
 class FrenchIntegerExtractor(BaseNumberExtractor):
@@ -66,8 +66,8 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_INTEGER
 
-    def __init__(self, placeholder: str=FrenchNumeric.PlaceHolderDefault):
-        self.__regexes=[
+    def __init__(self, placeholder: str = FrenchNumeric.PlaceHolderDefault):
+        self.__regexes = [
             ReVal(
                 re=FrenchNumeric.NumbersWithPlaceHolder(placeholder),
                 val='IntegerNum'),
@@ -101,7 +101,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_DOUBLE
 
     def __init__(self, placeholder):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=FrenchNumeric.DoubleDecimalPointRegex(placeholder),
                 val='DoubleNum'),
@@ -138,7 +138,7 @@ class FrenchFractionExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_FRACTION
 
     def __init__(self):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=FrenchNumeric.FractionNotationWithSpacesRegex,
                 val='FracNum'),
@@ -166,7 +166,7 @@ class FrenchOrdinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_ORDINAL
 
     def __init__(self):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=FrenchNumeric.OrdinalSuffixRegex,
                 val='OrdinalNum'),

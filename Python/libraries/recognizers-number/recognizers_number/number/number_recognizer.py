@@ -70,15 +70,15 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         #endregion
 
         #region Portuguese
-        self.register_model("NumberModel", Culture.Portuguese, lambda options: NumberModel(
+        self.register_model('NumberModel', Culture.Portuguese, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, PortugueseNumberParserConfiguration()),
             PortugueseNumberExtractor(NumberMode.PURE_NUMBER)
         ))
-        self.register_model("OrdinalModel", Culture.Portuguese, lambda options: OrdinalModel(
+        self.register_model('OrdinalModel', Culture.Portuguese, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(ParserType.ORDINAL, PortugueseNumberParserConfiguration()),
             PortugueseOrdinalExtractor()
         ))
-        self.register_model("PercentModel", Culture.Portuguese, lambda options: PercentModel(
+        self.register_model('PercentModel', Culture.Portuguese, lambda options: PercentModel(
             AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, PortugueseNumberParserConfiguration()),
             PortuguesePercentageExtractor()
         ))

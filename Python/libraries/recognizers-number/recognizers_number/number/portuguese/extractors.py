@@ -1,5 +1,5 @@
-import regex
 from typing import Pattern, List, NamedTuple
+import regex
 
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.portuguese_numeric import PortugueseNumeric
@@ -19,42 +19,42 @@ class PortugueseNumberExtractor(BaseNumberExtractor):
     def _negative_number_terms(self) -> Pattern:
         return self.__negative_number_terms
 
-    def __init__(self, mode: NumberMode=NumberMode.DEFAULT):
-        self.__negative_number_terms=regex.compile(PortugueseNumeric.NegativeNumberTermsRegex)
+    def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
+        self.__negative_number_terms = regex.compile(PortugueseNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
-        cardinal_ex:PortugueseCardinalExtractor=None
+        cardinal_ex: PortugueseCardinalExtractor = None
 
         if mode is NumberMode.PURE_NUMBER:
-            cardinal_ex=PortugueseCardinalExtractor(PortugueseNumeric.PlaceHolderPureNumber)
+            cardinal_ex = PortugueseCardinalExtractor(PortugueseNumeric.PlaceHolderPureNumber)
         elif mode is NumberMode.CURRENCY:
-            self.__regexes.append(ReVal(re=PortugueseNumeric.CurrencyRegex, val="IntegerNum"))
-        
+            self.__regexes.append(ReVal(re=PortugueseNumeric.CurrencyRegex, val='IntegerNum'))
+
         if cardinal_ex is None:
-            cardinal_ex=PortugueseCardinalExtractor()
+            cardinal_ex = PortugueseCardinalExtractor()
 
         self.__regexes.extend(cardinal_ex.regexes)
-        
-        fraction_ex=PortugueseFractionExtractor()
+
+        fraction_ex = PortugueseFractionExtractor()
         self.__regexes.extend(fraction_ex.regexes)
 
 class PortugueseCardinalExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
-        
+
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_CARDINAL
 
-    def __init__(self, placeholder: str=PortugueseNumeric.PlaceHolderDefault):
+    def __init__(self, placeholder: str = PortugueseNumeric.PlaceHolderDefault):
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
-        integer_ex=PortugueseIntegerExtractor(placeholder)
+        integer_ex = PortugueseIntegerExtractor(placeholder)
         self.__regexes.extend(integer_ex.regexes)
-            
+
         # Add double regexes
-        double_ex=PortugueseDoubleExtractor(placeholder)
+        double_ex = PortugueseDoubleExtractor(placeholder)
         self.__regexes.extend(double_ex.regexes)
 
 class PortugueseIntegerExtractor(BaseNumberExtractor):
@@ -66,8 +66,8 @@ class PortugueseIntegerExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_INTEGER
 
-    def __init__(self, placeholder: str=PortugueseNumeric.PlaceHolderDefault):
-        self.__regexes=[
+    def __init__(self, placeholder: str = PortugueseNumeric.PlaceHolderDefault):
+        self.__regexes = [
             ReVal(
                 re=PortugueseNumeric.NumbersWithPlaceHolder(placeholder),
                 val='IntegerNum'),
@@ -101,7 +101,7 @@ class PortugueseDoubleExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_DOUBLE
 
     def __init__(self, placeholder):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=PortugueseNumeric.DoubleDecimalPointRegex(placeholder),
                 val='DoubleNum'),
@@ -138,7 +138,7 @@ class PortugueseFractionExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_FRACTION
 
     def __init__(self):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=PortugueseNumeric.FractionNotationWithSpacesRegex,
                 val='FracNum'),
@@ -166,7 +166,7 @@ class PortugueseOrdinalExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_ORDINAL
 
     def __init__(self):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=PortugueseNumeric.OrdinalSuffixRegex,
                 val='OrdinalNum'),

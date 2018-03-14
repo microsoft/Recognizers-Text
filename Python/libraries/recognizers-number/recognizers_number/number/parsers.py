@@ -215,10 +215,10 @@ class BaseNumberParser(Parser):
             over_index = result_text.find(self.config.fraction_marker_token)
             small_part = result_text[0:over_index].strip()
             big_part = result_text[over_index + len(self.config.fraction_marker_token):len(result_text)].strip()
-            smallValue = self._get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.__get_int_value(self.__get_matches(small_part))
+            small_value = self._get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.__get_int_value(self.__get_matches(small_part))
             big_value = self._get_digital_value(big_part, 1) if self._is_digit(big_part[0]) else self.__get_int_value(self.__get_matches(big_part))
 
-            result.value = smallValue / big_value
+            result.value = small_value / big_value
         else:
             words = list(filter(lambda x: x, result_text.split(' ')))
             frac_words = self.config.normalize_token_set(words, result)
@@ -283,19 +283,19 @@ class BaseNumberParser(Parser):
             numer_value = 0
             int_value = 0
 
-            mixedIndex = len(frac_words)
+            mixed_index = len(frac_words)
             for i in range(len(frac_words) - 1, -1, -1):
                 if (i < len(frac_words) - 1 and frac_words[i] in self.config.written_fraction_separator_texts):
-                    numerStr = ' '.join(frac_words[i + 1:len(frac_words)])
-                    numer_value = self.__get_int_value(self.__get_matches(numerStr))
-                    mixedIndex = i + 1
+                    numer_str = ' '.join(frac_words[i + 1:len(frac_words)])
+                    numer_value = self.__get_int_value(self.__get_matches(numer_str))
+                    mixed_index = i + 1
                     break
 
-            int_str = ' '.join(frac_words[0:mixedIndex])
+            int_str = ' '.join(frac_words[0:mixed_index])
             int_value = self.__get_int_value(self.__get_matches(int_str))
 
             # Find mixed number
-            if (mixedIndex != len(frac_words) and numer_value < denomi_value):
+            if (mixed_index != len(frac_words) and numer_value < denomi_value):
                 # int_value + numer_value / denomi_value
                 result.value = int_value + numer_value / denomi_value
             else:

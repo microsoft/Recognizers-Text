@@ -1,14 +1,13 @@
+from typing import List
 from enum import Enum
-from typing import List, Pattern
 
-from recognizers_text.extractor import ExtractResult
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor
 from recognizers_number.number.constants import Constants
 from recognizers_number.resources.chinese_numeric import ChineseNumeric
 
 class ChineseNumberExtractorMode(Enum):
-    DEFAULT=0,
-    EXTRACT_ALL=1
+    DEFAULT = 0
+    EXTRACT_ALL = 1
 
 class ChineseNumberExtractor(BaseNumberExtractor):
     @property
@@ -18,9 +17,6 @@ class ChineseNumberExtractor(BaseNumberExtractor):
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM
-
-    @property
-    def _negative_number_terms(self) -> Pattern: pass
 
     def __init__(self, mode: ChineseNumberExtractorMode = ChineseNumberExtractorMode.DEFAULT):
         self.__regexes: List[ReVal] = list()
@@ -40,9 +36,6 @@ class ChineseCardinalExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_CARDINAL
 
-    @property
-    def _negative_number_terms(self) -> Pattern: pass
-
     def __init__(self, mode: ChineseNumberExtractorMode = ChineseNumberExtractorMode.DEFAULT):
         self.__regexes: List[ReVal] = list()
 
@@ -61,11 +54,8 @@ class ChineseIntegerExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_INTEGER
 
-    @property
-    def _negative_number_terms(self) -> Pattern: pass
-
     def __init__(self, mode: ChineseNumberExtractorMode = ChineseNumberExtractorMode.DEFAULT):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=ChineseNumeric.NumbersSpecialsChars,
                 val='IntegerNum'),
@@ -106,11 +96,8 @@ class ChineseDoubleExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_DOUBLE
 
-    @property
-    def _negative_number_terms(self) -> Pattern: pass
-
     def __init__(self):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=ChineseNumeric.DoubleSpecialsChars,
                 val='DoubleNum'),
@@ -145,11 +132,9 @@ class ChineseFractionExtractor(BaseNumberExtractor):
     @property
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_FRACTION
-    @property
-    def _negative_number_terms(self) -> Pattern: pass
 
     def __init__(self):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=ChineseNumeric.FractionNotationSpecialsCharsRegex,
                 val='FracNum'),
@@ -170,11 +155,8 @@ class ChineseOrdinalExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_ORDINAL
 
-    @property
-    def _negative_number_terms(self) -> Pattern: pass
-
     def __init__(self):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=ChineseNumeric.OrdinalRegexChs,
                 val='OrdinalChs'),
@@ -192,11 +174,8 @@ class ChinesePercentageExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_PERCENTAGE
 
-    @property
-    def _negative_number_terms(self) -> Pattern: pass
-
     def __init__(self):
-        self.__regexes=[
+        self.__regexes = [
             ReVal(
                 re=ChineseNumeric.PercentagePointRegex,
                 val='PerChs'),
