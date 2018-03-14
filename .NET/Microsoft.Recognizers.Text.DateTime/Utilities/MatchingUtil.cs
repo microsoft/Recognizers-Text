@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             index = -1;
             var match = regex.Match(text.TrimStart().ToLower());
-            if (match.Success)
+            if (match.Success && match.Index == 0)
             {
                 index = text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal) + match.Value.Length;
                 return true;
