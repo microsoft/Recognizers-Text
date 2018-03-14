@@ -1,6 +1,5 @@
 [{
   "Input": "2 mil millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 mil millones",
@@ -14,7 +13,6 @@
 ,
 {
   "Input": " 123456789101231",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "123456789101231",
@@ -28,7 +26,6 @@
 ,
 {
   "Input": "-123456789101231",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-123456789101231",
@@ -42,7 +39,6 @@
 ,
 {
   "Input": " -123456789101231",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-123456789101231",
@@ -56,7 +52,6 @@
 ,
 {
   "Input": " -1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1",
@@ -70,7 +65,6 @@
 ,
 {
   "Input": "1.234.567",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.234.567",
@@ -84,7 +78,6 @@
 ,
 {
   "Input": "3 docenas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 docenas",
@@ -98,7 +91,6 @@
 ,
 {
   "Input": "dos mil millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dos mil millones",
@@ -112,7 +104,6 @@
 ,
 {
   "Input": "una docena",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "una docena",
@@ -126,7 +117,6 @@
 ,
 {
   "Input": "quince docenas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quince docenas",
@@ -140,7 +130,6 @@
 ,
 {
   "Input": "dos mil y cuatro docenas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dos mil y cuatro docenas",
@@ -154,7 +143,6 @@
 ,
 {
   "Input": "siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "siete",
@@ -168,7 +156,6 @@
 ,
 {
   "Input": "cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cuarenta y siete",
@@ -182,7 +169,6 @@
 ,
 {
   "Input": "trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trescientos cuarenta y siete",
@@ -196,7 +182,6 @@
 ,
 {
   "Input": "dos mil trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dos mil trescientos cuarenta y siete",
@@ -210,7 +195,6 @@
 ,
 {
   "Input": "cincuenta y dos mil trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cincuenta y dos mil trescientos cuarenta y siete",
@@ -224,7 +208,6 @@
 ,
 {
   "Input": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
@@ -238,7 +221,6 @@
 ,
 {
   "Input": "tres millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones",
@@ -252,7 +234,6 @@
 ,
 {
   "Input": "tres millones siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones siete",
@@ -266,7 +247,6 @@
 ,
 {
   "Input": "tres millones cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones cuarenta y siete",
@@ -280,7 +260,6 @@
 ,
 {
   "Input": "tres millones trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones trescientos cuarenta y siete",
@@ -294,7 +273,6 @@
 ,
 {
   "Input": "tres millones dos mil trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones dos mil trescientos cuarenta y siete",
@@ -308,7 +286,6 @@
 ,
 {
   "Input": "tres millones cincuenta y dos mil trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones cincuenta y dos mil trescientos cuarenta y siete",
@@ -322,7 +299,6 @@
 ,
 {
   "Input": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
@@ -336,7 +312,6 @@
 ,
 {
   "Input": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
@@ -350,7 +325,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
@@ -364,7 +338,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta",
@@ -378,7 +351,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos",
@@ -392,7 +364,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil",
@@ -406,7 +377,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta mil",
@@ -420,7 +390,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos mil",
@@ -434,7 +403,6 @@
 ,
 {
   "Input": "quinientos trece millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones",
@@ -448,7 +416,6 @@
 ,
 {
   "Input": "quinientos diez millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos diez millones",
@@ -462,7 +429,6 @@
 ,
 {
   "Input": "quinientos millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos millones",
@@ -476,7 +442,6 @@
 ,
 {
   "Input": "mil quinientos veintitres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil quinientos veintitres",
@@ -490,7 +455,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos",
@@ -504,7 +468,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil",
@@ -518,7 +481,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones",
@@ -532,7 +494,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil millones",
@@ -546,7 +507,6 @@
 ,
 {
   "Input": "tres billones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones",
@@ -560,7 +520,6 @@
 ,
 {
   "Input": "dame un mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un mil",
@@ -574,7 +533,6 @@
 ,
 {
   "Input": "tirate un paso",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un",
@@ -588,7 +546,6 @@
 ,
 {
   "Input": "voy a comprar solo una vaca",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "una",
@@ -602,7 +559,6 @@
 ,
 {
   "Input": "voy a comprar doscientas vacas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "doscientas",
@@ -616,7 +572,6 @@
 ,
 {
   "Input": "tengo solamente mil cien pesos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil cien",
@@ -630,7 +585,6 @@
 ,
 {
   "Input": "tengo solamente siete mil doscientos treinta y cinco pesos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "siete mil doscientos treinta y cinco",
@@ -644,7 +598,6 @@
 ,
 {
   "Input": "no mucho, creo que voy a gastar algo asi como trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete bolivares en todo el proyecto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
@@ -658,7 +611,6 @@
 ,
 {
   "Input": " 101231,2353",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "101231,2353",
@@ -672,7 +624,6 @@
 ,
 {
   "Input": "-101231,4323",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-101231,4323",
@@ -686,7 +637,6 @@
 ,
 {
   "Input": " -89101231,5127",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-89101231,5127",
@@ -700,7 +650,6 @@
 ,
 {
   "Input": " -1,1234567",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1234567",
@@ -714,7 +663,6 @@
 ,
 {
   "Input": "1.234.567,51274",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.234.567,51274",
@@ -728,7 +676,6 @@
 ,
 {
   "Input": "192,",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "192",
@@ -742,7 +689,6 @@
 ,
 {
   "Input": ",23456000",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ",23456000",
@@ -756,7 +702,6 @@
 ,
 {
   "Input": "4,800",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4,800",
@@ -770,7 +715,6 @@
 ,
 {
   "Input": ",08",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ",08",
@@ -784,7 +728,6 @@
 ,
 {
   "Input": "9,2321312",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9,2321312",
@@ -798,7 +741,6 @@
 ,
 {
   "Input": " -9,2321312",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-9,2321312",
@@ -812,7 +754,6 @@
 ,
 {
   "Input": "1e10",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1e10",
@@ -826,7 +767,6 @@
 ,
 {
   "Input": "1,1^23",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,1^23",
@@ -840,7 +780,6 @@
 ,
 {
   "Input": "siete con cincuenta",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "siete con cincuenta",
@@ -854,7 +793,6 @@
 ,
 {
   "Input": "cuarenta y siete coma veintiocho",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cuarenta y siete coma veintiocho",
@@ -868,7 +806,6 @@
 ,
 {
   "Input": "trescientos cuarenta y siete con quinientos doce",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trescientos cuarenta y siete con quinientos doce",
@@ -882,7 +819,6 @@
 ,
 {
   "Input": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho",
@@ -896,7 +832,6 @@
 ,
 {
   "Input": "cincuenta y dos mil trescientos cuarenta y siete con doscientos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cincuenta y dos mil trescientos cuarenta y siete con doscientos",
@@ -910,7 +845,6 @@
 ,
 {
   "Input": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos",
@@ -924,7 +858,6 @@
 ,
 {
   "Input": "1,1^+23",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,1^+23",
@@ -938,7 +871,6 @@
 ,
 {
   "Input": "2,5^-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,5^-1",
@@ -952,7 +884,6 @@
 ,
 {
   "Input": "-2500^-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-2500^-1",
@@ -966,7 +897,6 @@
 ,
 {
   "Input": "-1,1^+23",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1^+23",
@@ -980,7 +910,6 @@
 ,
 {
   "Input": "-2,5^-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-2,5^-1",
@@ -994,7 +923,6 @@
 ,
 {
   "Input": "-1,1^--23",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1^--23",
@@ -1008,7 +936,6 @@
 ,
 {
   "Input": "-127,32e13",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-127,32e13",
@@ -1022,7 +949,6 @@
 ,
 {
   "Input": "12,32e+14",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12,32e+14",
@@ -1036,7 +962,6 @@
 ,
 {
   "Input": "-12e-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-12e-1",
@@ -1050,7 +975,6 @@
 ,
 {
   "Input": "192.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "192",
@@ -1064,7 +988,6 @@
 ,
 {
   "Input": "192.168.1.2",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "192.168",
@@ -1092,37 +1015,31 @@
 ,
 {
   "Input": "son 180,25ml liquidos",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "son 180ml liquidos",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": " 29km caminando ",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": " subamos al 4to piso ",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "son ,25ml liquidos",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "uno",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno",
@@ -1136,7 +1053,6 @@
 ,
 {
   "Input": "un",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un",
@@ -1150,7 +1066,6 @@
 ,
 {
   "Input": "ciento tres con dos tercios",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento tres con dos tercios",
@@ -1164,7 +1079,6 @@
 ,
 {
   "Input": "dieciseis",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dieciseis",
@@ -1178,7 +1092,6 @@
 ,
 {
   "Input": "dos tercios",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dos tercios",
@@ -1192,7 +1105,6 @@
 ,
 {
   "Input": "ciento dieciseis",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento dieciseis",
@@ -1206,7 +1118,6 @@
 ,
 {
   "Input": "ciento seis",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento seis",
@@ -1220,7 +1131,6 @@
 ,
 {
   "Input": "ciento sesenta y un",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento sesenta y un",
@@ -1234,7 +1144,6 @@
 ,
 {
   "Input": "un billonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un billonesimo",
@@ -1248,7 +1157,6 @@
 ,
 {
   "Input": "cien billonesimos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cien billonesimos",
@@ -1262,7 +1170,6 @@
 ,
 {
   "Input": " media   docena ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "media   docena",
@@ -1276,7 +1183,6 @@
 ,
 {
   "Input": " 3 docenas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 docenas",
@@ -1290,7 +1196,6 @@
 ,
 {
   "Input": " tres docenas ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres docenas",
@@ -1304,7 +1209,6 @@
 ,
 {
   "Input": "1. 234. 567",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1",
@@ -1332,7 +1236,6 @@
 ,
 {
   "Input": "-4/5",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-4/5",
@@ -1346,7 +1249,6 @@
 ,
 {
   "Input": "- 1 4/5",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 1 4/5",
@@ -1360,7 +1262,6 @@
 ,
 {
   "Input": "tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres",
@@ -1374,7 +1275,6 @@
 ,
 {
   "Input": "1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1",
@@ -1388,7 +1288,6 @@
 ,
 {
   "Input": "10k",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10k",
@@ -1402,7 +1301,6 @@
 ,
 {
   "Input": "10G",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10G",
@@ -1416,7 +1314,6 @@
 ,
 {
   "Input": "- 10  k",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 10  k",
@@ -1430,7 +1327,6 @@
 ,
 {
   "Input": "2 millones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 millones",
@@ -1444,7 +1340,6 @@
 ,
 {
   "Input": "1 billon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 billon",
@@ -1458,7 +1353,6 @@
 ,
 {
   "Input": " tres ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres",
@@ -1472,7 +1366,6 @@
 ,
 {
   "Input": "un billon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un billon",
@@ -1486,7 +1379,6 @@
 ,
 {
   "Input": "veintiun billones",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintiun billones",
@@ -1500,7 +1392,6 @@
 ,
 {
   "Input": "veintiun billones trescientos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintiun billones trescientos",
@@ -1514,7 +1405,6 @@
 ,
 {
   "Input": "cincuenta   y   dos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cincuenta   y   dos",
@@ -1528,7 +1418,6 @@
 ,
 {
   "Input": "trescientos   treinta  y   uno",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trescientos   treinta  y   uno",
@@ -1542,7 +1431,6 @@
 ,
 {
   "Input": "doscientos dos mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "doscientos dos mil",
@@ -1556,7 +1444,6 @@
 ,
 {
   "Input": "dos mil doscientos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dos mil doscientos",
@@ -1570,7 +1457,6 @@
 ,
 {
   "Input": " 2,33 k",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,33 k",
@@ -1584,7 +1470,6 @@
 ,
 {
   "Input": " doscientos coma cero tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "doscientos coma cero tres",
@@ -1598,7 +1483,6 @@
 ,
 {
   "Input": " doscientos con setenta y uno",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "doscientos con setenta y uno",
@@ -1612,7 +1496,6 @@
 ,
 {
   "Input": " 322 millones ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "322 millones",
@@ -1626,7 +1509,6 @@
 ,
 {
   "Input": "setenta",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "setenta",
@@ -1640,7 +1522,6 @@
 ,
 {
   "Input": "cincuenta y dos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cincuenta y dos",
@@ -1654,7 +1535,6 @@
 ,
 {
   "Input": "2  1/4",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2  1/4",
@@ -1668,7 +1548,6 @@
 ,
 {
   "Input": "3/4",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3/4",
@@ -1682,7 +1561,6 @@
 ,
 {
   "Input": "un octavo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un octavo",
@@ -1696,7 +1574,6 @@
 ,
 {
   "Input": "cinco octavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinco octavos",
@@ -1710,7 +1587,6 @@
 ,
 {
   "Input": "un medio",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un medio",
@@ -1724,7 +1600,6 @@
 ,
 {
   "Input": "tres cuartos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres cuartos",
@@ -1738,7 +1613,6 @@
 ,
 {
   "Input": "veinte con tres quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veinte con tres quintos",
@@ -1752,7 +1626,6 @@
 ,
 {
   "Input": "veintitres quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintitres quintos",
@@ -1766,7 +1639,6 @@
 ,
 {
   "Input": "veintitres con tres quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintitres con tres quintos",
@@ -1780,7 +1652,6 @@
 ,
 {
   "Input": "un millon dos mil doscientos tres quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un millon dos mil doscientos tres quintos",
@@ -1794,7 +1665,6 @@
 ,
 {
   "Input": "uno con un medio",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno con un medio",
@@ -1808,7 +1678,6 @@
 ,
 {
   "Input": "uno con un cuarto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno con un cuarto",
@@ -1822,7 +1691,6 @@
 ,
 {
   "Input": "cinco con un cuarto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinco con un cuarto",
@@ -1836,7 +1704,6 @@
 ,
 {
   "Input": "cien con tres cuartos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cien con tres cuartos",
@@ -1850,7 +1717,6 @@
 ,
 {
   "Input": "un centesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un centesimo",
@@ -1864,7 +1730,6 @@
 ,
 {
   "Input": "un quinto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un quinto",
@@ -1878,7 +1743,6 @@
 ,
 {
   "Input": "cien mil billonesima",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cien mil billonesima",
@@ -1892,7 +1756,6 @@
 ,
 {
   "Input": "tres quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres quintos",
@@ -1906,7 +1769,6 @@
 ,
 {
   "Input": "veinte quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veinte quintos",
@@ -1920,7 +1782,6 @@
 ,
 {
   "Input": "veintitres quintas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintitres quintas",
@@ -1934,7 +1795,6 @@
 ,
 {
   "Input": "tres con un quinto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres con un quinto",
@@ -1948,7 +1808,6 @@
 ,
 {
   "Input": "veintiun quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintiun quintos",
@@ -1962,7 +1821,6 @@
 ,
 {
   "Input": "un veintiunavo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un veintiunavo",
@@ -1976,7 +1834,6 @@
 ,
 {
   "Input": "ciento treinta y tres veintiunavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento treinta y tres veintiunavos",
@@ -1990,7 +1847,6 @@
 ,
 {
   "Input": "ciento treinta con tres veintiunavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento treinta con tres veintiunavos",
@@ -2004,7 +1860,6 @@
 ,
 {
   "Input": "veintidos treintavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintidos treintavos",
@@ -2018,7 +1873,6 @@
 ,
 {
   "Input": "un veinticincoavo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un veinticincoavo",
@@ -2032,7 +1886,6 @@
 ,
 {
   "Input": "veinte veinticincoavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veinte veinticincoavos",
@@ -2046,7 +1899,6 @@
 ,
 {
   "Input": "tres veintiunavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres veintiunavos",
@@ -2060,7 +1912,6 @@
 ,
 {
   "Input": "tres veinteavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres veinteavos",
@@ -2074,7 +1925,6 @@
 ,
 {
   "Input": "tres doscientosavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres doscientosavos",
@@ -2088,7 +1938,6 @@
 ,
 {
   "Input": "tres dosmilesimos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres dosmilesimos",
@@ -2102,7 +1951,6 @@
 ,
 {
   "Input": "tres veintemilesimos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres veintemilesimos",
@@ -2116,7 +1964,6 @@
 ,
 {
   "Input": "tres doscientosmilesimos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres doscientosmilesimos",
@@ -2130,7 +1977,6 @@
 ,
 {
   "Input": "tres dosmillonesimos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres dosmillonesimos",
@@ -2144,7 +1990,6 @@
 ,
 {
   "Input": "ciento treinta quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento treinta quintos",
@@ -2158,7 +2003,6 @@
 ,
 {
   "Input": "cien treintaicincoavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cien treintaicincoavos",
@@ -2172,7 +2016,6 @@
 ,
 {
   "Input": "ciento treinta y dos cincoavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento treinta y dos cincoavos",
@@ -2186,7 +2029,6 @@
 ,
 {
   "Input": "ciento treinta con dos cincoavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento treinta con dos cincoavos",
@@ -2200,7 +2042,6 @@
 ,
 {
   "Input": "ciento treinta y dos quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento treinta y dos quintos",
@@ -2214,7 +2055,6 @@
 ,
 {
   "Input": "ciento treinta con dos quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento treinta con dos quintos",
@@ -2228,7 +2068,6 @@
 ,
 {
   "Input": "un cientocincoavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un cientocincoavos",
@@ -2242,7 +2081,6 @@
 ,
 {
   "Input": "cien milcincoavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cien milcincoavos",
@@ -2256,7 +2094,6 @@
 ,
 {
   "Input": "uno sobre tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno sobre tres",
@@ -2270,7 +2107,6 @@
 ,
 {
   "Input": "1 sobre 21",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre 21",
@@ -2284,7 +2120,6 @@
 ,
 {
   "Input": "1 sobre tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre tres",
@@ -2298,7 +2133,6 @@
 ,
 {
   "Input": "1 sobre 3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre 3",
@@ -2312,7 +2146,6 @@
 ,
 {
   "Input": "uno sobre 3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno sobre 3",
@@ -2326,7 +2159,6 @@
 ,
 {
   "Input": "uno sobre 20",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno sobre 20",
@@ -2340,7 +2172,6 @@
 ,
 {
   "Input": "uno sobre veinte",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno sobre veinte",
@@ -2354,7 +2185,6 @@
 ,
 {
   "Input": "uno sobre cien",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno sobre cien",
@@ -2368,7 +2198,6 @@
 ,
 {
   "Input": "1 sobre ciento veintiuno",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre ciento veintiuno",
@@ -2382,7 +2211,6 @@
 ,
 {
   "Input": "uno sobre ciento treinta y cinco",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uno sobre ciento treinta y cinco",
@@ -2396,7 +2224,6 @@
 ,
 {
   "Input": "cinco medios",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinco medios",
@@ -2410,7 +2237,6 @@
 ,
 {
   "Input": "ciento treinta y cinco medios",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ciento treinta y cinco medios",
@@ -2424,7 +2250,6 @@
 ,
 {
   "Input": "once con uno y medio",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "once con uno y medio",
@@ -2438,7 +2263,6 @@
 ,
 {
   "Input": "diez con un medio",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "diez con un medio",
@@ -2452,7 +2276,6 @@
 ,
 {
   "Input": "diez con un cuarto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "diez con un cuarto",

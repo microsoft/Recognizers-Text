@@ -13,6 +13,7 @@ supported_cultures = {
 class CultureInfo(BaseCultureInfo):
     def format(self, value: object) -> str:
         result = str(value)
+        result = result.replace('e', 'E')
         if '.' in result:
             result = result.rstrip('0').rstrip('.')
         if 'E-' in result:

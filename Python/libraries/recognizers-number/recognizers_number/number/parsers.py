@@ -245,6 +245,9 @@ class BaseNumberParser(Parser):
             else:
                 # (int_value + numer_value) / denomi_value
                 result.value = (int_value + numer_value) / denomi_value
+
+            # Convert to float for fixed float point vs. exponential notation consistency /w C#/TS/JS
+            result.value = float(result.value)
         return result
     
     def _text_number_parse(self, ext_result: ExtractResult) -> ParseResult:
