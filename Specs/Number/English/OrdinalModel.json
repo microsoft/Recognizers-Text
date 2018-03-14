@@ -1,6 +1,5 @@
 [{
   "Input": "three trillionth",
-
   "Results": [
     {
       "Text": "three trillionth",
@@ -14,13 +13,11 @@
 ,
 {
   "Input": "a trillionth",
-
   "Results": []
 }
 ,
 {
   "Input": "a hundred trillionth",
-
   "Results": [
     {
       "Text": "a hundred trillionth",
@@ -34,7 +31,6 @@
 ,
 {
   "Input": "11th",
-
   "Results": [
     {
       "Text": "11th",
@@ -48,7 +44,6 @@
 ,
 {
   "Input": "21st",
-
   "Results": [
     {
       "Text": "21st",
@@ -62,7 +57,6 @@
 ,
 {
   "Input": "30th",
-
   "Results": [
     {
       "Text": "30th",
@@ -76,7 +70,6 @@
 ,
 {
   "Input": "2nd",
-
   "Results": [
     {
       "Text": "2nd",
@@ -90,7 +83,6 @@
 ,
 {
   "Input": "eleventh",
-
   "Results": [
     {
       "Text": "eleventh",
@@ -104,7 +96,6 @@
 ,
 {
   "Input": "twentieth",
-
   "Results": [
     {
       "Text": "twentieth",
@@ -118,7 +109,6 @@
 ,
 {
   "Input": "twenty-fifth",
-
   "Results": [
     {
       "Text": "twenty-fifth",
@@ -132,7 +122,6 @@
 ,
 {
   "Input": "twenty-first",
-
   "Results": [
     {
       "Text": "twenty-first",
@@ -146,7 +135,6 @@
 ,
 {
   "Input": "one hundred twenty fifth",
-
   "Results": [
     {
       "Text": "one hundred twenty fifth",
@@ -160,7 +148,6 @@
 ,
 {
   "Input": "one hundred twenty-fifth",
-
   "Results": [
     {
       "Text": "one hundred twenty-fifth",
@@ -174,7 +161,6 @@
 ,
 {
   "Input": "trillionth",
-
   "Results": [
     {
       "Text": "trillionth",
@@ -188,7 +174,6 @@
 ,
 {
   "Input": "twenty-one trillion and three hundred twenty second",
-
   "Results": [
     {
       "Text": "twenty-one trillion and three hundred twenty second",
@@ -202,7 +187,6 @@
 ,
 {
   "Input": "two hundredth",
-
   "Results": [
     {
       "Text": "two hundredth",
@@ -215,7 +199,6 @@
 },
 {
   "Input": "Book a first class seat to seattle",
-
   "Results": [
     {
       "Text": "first",

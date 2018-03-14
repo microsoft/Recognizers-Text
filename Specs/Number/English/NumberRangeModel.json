@@ -1,14 +1,12 @@
 [{
   "Input": "1995-01",
   "NotSupported": "javascript, python",
-
   "Results": []
 }
 ,
 {
   "Input": "This number is larger than twenty and less or equal than thirty five.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "larger than twenty and less or equal than thirty five",
@@ -23,7 +21,6 @@
 {
   "Input": "The number is between 20 and 30.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "between 20 and 30",
@@ -38,7 +35,6 @@
 {
   "Input": "He ranks between the tenth and the fifteenth.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "between the tenth and the fifteenth",
@@ -53,7 +49,6 @@
 {
   "Input": "He scores between negative ten and fifteen.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "between negative ten and fifteen",
@@ -68,7 +63,6 @@
 {
   "Input": "He ranks higher than the tenth but lower than the fifteenth.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "higher than the tenth but lower than the fifteenth",
@@ -83,7 +77,6 @@
 {
   "Input": "This is a number which is greater than 100 and smaller than 300",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "greater than 100 and smaller than 300",
@@ -98,7 +91,6 @@
 {
   "Input": "This number is higher or equal than one hundred, lower or equal than three hundred",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "higher or equal than one hundred, lower or equal than three hundred",
@@ -113,7 +105,6 @@
 {
   "Input": "There're at most 100 and at least 20 apples.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "at most 100 and at least 20",
@@ -128,7 +119,6 @@
 {
   "Input": "These apples are about 20~100",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "20~100",
@@ -143,7 +133,6 @@
 {
   "Input": "The number range is 20 through 100",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "20 through 100",
@@ -158,7 +147,6 @@
 {
   "Input": "The number range is from one thousand to one thousand and five hundred.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "from one thousand to one thousand and five hundred",
@@ -173,7 +161,6 @@
 {
   "Input": "The number is above 1000 and below 1500",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "above 1000 and below 1500",
@@ -188,7 +175,6 @@
 {
   "Input": "The number is above one quarter and below a half.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "above one quarter and below a half",
@@ -203,7 +189,6 @@
 {
   "Input": "This number is bigger or equal than three thousand nine hundred and sixty five.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "bigger or equal than three thousand nine hundred and sixty five",
@@ -218,7 +203,6 @@
 {
   "Input": "This number is greater than 4,565",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "greater than 4,565",
@@ -233,7 +217,6 @@
 {
   "Input": "He is more than thirty years old.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "more than thirty",
@@ -248,7 +231,6 @@
 {
   "Input": "He is over thirty years old.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "over thirty",
@@ -263,7 +245,6 @@
 {
   "Input": "His age is no less than thirty.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "no less than thirty",
@@ -278,7 +259,6 @@
 {
   "Input": "There're about five hundred and more in these products.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "five hundred and more",
@@ -293,7 +273,6 @@
 {
   "Input": "There're about five hundred or more in these products.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "five hundred or more",
@@ -308,7 +287,6 @@
 {
   "Input": "More than 1/2 of the people came here.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "More than 1/2",
@@ -323,7 +301,6 @@
 {
   "Input": "Find the prime numbers which are smaller or equal than 100",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "smaller or equal than 100",
@@ -338,7 +315,6 @@
 {
   "Input": "Find the prime numbers which are less than or equal to 100",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "less than or equal to 100",
@@ -353,7 +329,6 @@
 {
   "Input": "There're about five hundred or less in these products.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "five hundred or less",
@@ -368,7 +343,6 @@
 {
   "Input": "Find the prime numbers which are < = 100",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "< = 100",
@@ -383,7 +357,6 @@
 {
   "Input": "His height is below 170.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "below 170",
@@ -398,7 +371,6 @@
 {
   "Input": "His height is under 170.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "under 170",
@@ -413,7 +385,6 @@
 {
   "Input": "Fewer than a thousand giant pandas still live in the wild.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "Fewer than a thousand",
@@ -428,7 +399,6 @@
 {
   "Input": "x is equal to one hundred and seventy.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "equal to one hundred and seventy",
@@ -443,7 +413,6 @@
 {
   "Input": "x>10 and y<20",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": ">10",
@@ -465,7 +434,6 @@
 {
   "Input": "x is larger than 10 and smaller than 20. y is no more than 50 and no less than 20.",
   "NotSupported": "javascript, python",
-
   "Results": [
     {
       "Text": "larger than 10 and smaller than 20",
