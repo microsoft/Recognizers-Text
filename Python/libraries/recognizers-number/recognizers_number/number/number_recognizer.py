@@ -2,15 +2,17 @@ from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
+from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
 from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor
-from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
 from recognizers_number.number.spanish.extractors import SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor
-from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
-from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
-from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
 from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor
 from recognizers_number.number.chinese.parsers import ChineseNumberParserConfiguration
+from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
+from recognizers_number.number.portuguese.extractors import PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor
+from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration
+from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
+from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
 
 class NumberOptions(IntFlag):
     NONE = 0
@@ -64,6 +66,21 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('PercentModel', Culture.Spanish, lambda options: PercentModel(
             AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, SpanishNumberParserConfiguration()),
             SpanishPercentageExtractor()
+        ))
+        #endregion
+
+        #region Portuguese
+        self.register_model("NumberModel", Culture.Portuguese, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, PortugueseNumberParserConfiguration()),
+            PortugueseNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model("OrdinalModel", Culture.Portuguese, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.ORDINAL, PortugueseNumberParserConfiguration()),
+            PortugueseOrdinalExtractor()
+        ))
+        self.register_model("PercentModel", Culture.Portuguese, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, PortugueseNumberParserConfiguration()),
+            PortuguesePercentageExtractor()
         ))
         #endregion
 
