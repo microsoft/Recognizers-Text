@@ -1271,5 +1271,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             return firstWeekday.AddDays(7*(cadinal - 1));
         }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
     }
 }

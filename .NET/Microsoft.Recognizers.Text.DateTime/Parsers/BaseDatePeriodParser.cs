@@ -1469,6 +1469,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return InclusiveEndPeriod;
         }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
     }
 
     public enum CalculateRangeMode

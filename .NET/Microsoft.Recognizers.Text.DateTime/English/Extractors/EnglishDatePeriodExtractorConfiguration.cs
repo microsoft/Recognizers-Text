@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
         
-        // base regexes
+        // Base regexes
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

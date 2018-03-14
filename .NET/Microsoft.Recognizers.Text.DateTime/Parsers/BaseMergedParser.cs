@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 using DateObject = System.DateTime;
 
@@ -76,7 +77,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     modStr = match.Value;
                 }
             }
-                
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
@@ -164,8 +164,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hasSince = true;
             }
 
-            if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0
-                 && ((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
+            if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0 && 
+                ((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
             {
                 pr.Value = DateTimeResolutionForSplit(pr);
             }
@@ -177,10 +177,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             return pr;
         }
 
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+
+            if (candidateResults != null && candidateResults.Any())
+            { 
+
+                var matches = Config.AmbiguousMonthP0Regex.Matches(query);
+
+                foreach (Match match in matches) {
+
+                    // Check for intersections/overlaps
+                    candidateResults = candidateResults.Where(c => !( match.Index < c.Start + c.Length &&
+                                                                      c.Start < match.Index + match.Length )).ToList();
+                }
+
+            }
+
+            return candidateResults;
+        }
+
         public DateTimeParseResult SetParseResult(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
             slot.Value = DateTimeResolution(slot, hasBefore, hasAfter, hasSince);
-            // change the type at last for the after or before modes
+            // Change the type at last for the after or before modes
             slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, hasBefore, hasAfter, hasSince)}";
             return slot;
         }
@@ -236,6 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, false, false, false)}";
                 results.Add(slot);
             }
+
             return results;
         }
 
@@ -318,7 +339,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // if the WeekOf and in CalendarMode, modify the past part of our resolution
             if ((Config.Options & DateTimeOptions.CalendarMode) != 0 && 
-                    !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
+                !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
             {
                 ResolveWeekOf(res, Constants.ResolveToPast); 
             }
@@ -376,10 +397,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 case TimeTypeConstants.START_DATE:
                     return Constants.SYS_DATETIME_DATEPERIOD;
+
                 case TimeTypeConstants.START_DATETIME:
                     return Constants.SYS_DATETIME_DATETIMEPERIOD;
+
                 case TimeTypeConstants.START_TIME:
                     return Constants.SYS_DATETIME_TIMEPERIOD;
+
                 default:
                     return pastResolutionStr.Keys.First().ToLower();
             }
@@ -430,11 +454,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         resolutionPm[ResolutionKey.Value] = FormatUtil.ToPm(resolution[ResolutionKey.Value]);
                         resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.ToPm(timex);
                         break;
+
                     case Constants.SYS_DATETIME_DATETIME:
                         var splited = resolution[ResolutionKey.Value].Split(' ');
                         resolutionPm[ResolutionKey.Value] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
                         resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
                         break;
+
                     case Constants.SYS_DATETIME_TIMEPERIOD:
                         if (resolution.ContainsKey(DateTimeResolutionKey.START))
                         {
@@ -448,6 +474,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
                         break;
+
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
                         if (resolution.ContainsKey(DateTimeResolutionKey.START))
                         {
@@ -557,7 +584,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
             }
 
-            return;
         }
 
         public void AddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
@@ -576,7 +602,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.TIME, mod, res);
             }
 
-            return;
         }
 
         public void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, 

@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDateTimeParser : IDateTimeParser
@@ -360,6 +358,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceTime,
                 config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex, 
                 config.UtilityConfiguration);
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
     }

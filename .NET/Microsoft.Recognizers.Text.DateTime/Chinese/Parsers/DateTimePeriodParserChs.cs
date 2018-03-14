@@ -111,6 +111,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
         private DateTimeResolutionResult MergeDateAndTimePeriod(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
