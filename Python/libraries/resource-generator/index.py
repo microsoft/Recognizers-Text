@@ -23,10 +23,6 @@ class Startup:
 
 
 if __name__ == '__main__':
-    #TODO: Remove this dev code once implemented resource definitions
-    if len(sys.argv) < 2: sys.argv.append('../recognizers-number/resource-definitions.json')
-    #ENDTODO
-
     app = Startup()
     app.main(sys.argv)
 

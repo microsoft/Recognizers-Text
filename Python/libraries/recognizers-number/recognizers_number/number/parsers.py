@@ -149,7 +149,7 @@ class BaseNumberParser(Parser):
                 # Recover to the original extracted Text
                 ret.text = match_negative[1] + source.text
                 ret.value = ret.value * -1
-            # TODO use culture_into to format values
+            # Use culture_info to format values
             ret.resolution_str = self.config.culture_info.format(ret.value) if self.config.culture_info is not None else repr(ret.value)
 
         return ret
@@ -180,10 +180,6 @@ class BaseNumberParser(Parser):
         matches = list(regex.finditer(self.config.digital_number_regex, handle))
         if matches:
             for match in matches:
-                # TODO chek if it is necessary in python HACK: Matching regex may be buggy, may include a digit before the unit
-                # match.value = match.value.replace(/\d/g, '')
-                # match.length = match.value.length
-
                 rep = self.config.round_number_map.get(match.group())
                 # \\s+ for filter the spaces.
                 power *= rep
