@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // This is to understand if there is an ambiguous token in the text. For some languages (e.g. spanish),
                 // the same word could mean different things (e.g a time in the day or an specific day).
-                if (this.config.HaveAmbiguousToken(text, er1[0].Text))
+                if (this.config.ContainsAmbiguousToken(text, er1[0].Text))
                 {
                     return ret;
                 }
