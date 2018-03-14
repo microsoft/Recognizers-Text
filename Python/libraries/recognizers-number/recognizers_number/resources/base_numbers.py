@@ -6,8 +6,10 @@
 # </auto-generated>
 # ------------------------------------------------------------------------------
 
+# pylint: disable=line-too-long
 class BaseNumbers:
     NumberReplaceToken = '@builtin.num'
     IntegerRegexDefinition = lambda placeholder, thousandsmark: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({thousandsmark}\\d{{3}})+(?={placeholder})'
     DoubleRegexDefinition = lambda placeholder, thousandsmark, decimalmark: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({thousandsmark}\\d{{3}})+{decimalmark}\\d+(?={placeholder})'
     PlaceHolderDefault = '\\\\D|\\\\b'
+# pylint: enable=line-too-long

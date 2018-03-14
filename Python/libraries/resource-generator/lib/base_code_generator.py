@@ -28,3 +28,4 @@ def generate(yaml_file_path: str, py_file_name: str, header: str, footer: str):
             file.write(CLASS_INDENT + line.write() + EOL)
 
         file.write(footer)
+        file.write(EOL)
