@@ -1,5 +1,8 @@
 from typing import List, Dict, Pattern, Optional
 from collections import namedtuple
+from decimal import *
+getcontext().prec = 15
+
 import regex
 import copy
 
@@ -86,7 +89,7 @@ class ChineseNumberParser(BaseNumberParser):
     def __init__(self, config: ChineseNumberParserConfiguration):
         super().__init__(config)
         self.config = config
-    
+
     def __format(self, value: object) -> str:
         if self.config.culture_info is None:
             return str(value)
@@ -184,7 +187,7 @@ class ChineseNumberParser(BaseNumberParser):
                     else:
                         int_number = self.config.zero_to_nine_map_chs[int_number_char]
                     result.value = int_number * 10
-            
+
         elif 'Num' in source.data:
             double_match = regex.search(self.config.percentage_regex, source_text)
             double_text = double_match.group()
@@ -225,7 +228,7 @@ class ChineseNumberParser(BaseNumberParser):
         split_result = regex.split(self.config.frac_split_regex, source_text)
 
         parts = namedtuple('parts', ['intval', 'demo', 'num'])
-        
+
         result_part: parts
 
         if len(split_result) == 3:
@@ -240,10 +243,10 @@ class ChineseNumberParser(BaseNumberParser):
                 demo=split_result[0],
                 num=split_result[1]
             )
-        
-        int_value = self.get_value_from_part(result_part.intval)
-        num_value = self.get_value_from_part(result_part.num)
-        demo_value = self.get_value_from_part(result_part.demo)
+
+        int_value = Decimal(self.get_value_from_part(result_part.intval))
+        num_value = Decimal(self.get_value_from_part(result_part.num))
+        demo_value = Decimal(self.get_value_from_part(result_part.demo))
 
         if regex.search(self.config.negative_number_sign_regex, result_part.intval) is not None:
             result.value = int_value - num_value / demo_value
@@ -263,7 +266,7 @@ class ChineseNumberParser(BaseNumberParser):
 
         source_text = self.replace_unit(source.text)
 
-        if (regex.search(self.config.double_and_round_chs_regex, source_text)) is not None:
+        if (regex.search(self.config.double_and_round_chs_regex, source.text)) is not None:
             power = self.config.round_number_map_chs[source_text[-1:]]
             result.value = self.get_digit_value_chs(source_text[:-1], power)
         else:
@@ -332,7 +335,7 @@ class ChineseNumberParser(BaseNumberParser):
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
             negative = True
             result_str = result_str[1:]
-        
+
         for i in range(len(result_str)):
             c = result_str[i]
             if c in self.config.round_number_map_chs:
