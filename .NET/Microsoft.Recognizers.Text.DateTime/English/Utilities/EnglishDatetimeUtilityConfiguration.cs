@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
 {
-    public class EnlighDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
+    public class EnglishDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
         public static readonly Regex AgoRegex = new Regex(DateTimeDefinitions.AgoRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -16,7 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
         public static readonly Regex InConnectorRegex = new Regex(DateTimeDefinitions.InConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WithinNextPrefixRegex = new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WithinNextPrefixRegex = new Regex(DateTimeDefinitions.WithinNextPrefixRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);

@@ -32,18 +32,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
-        public static bool GetWithinIndex(string text, Regex regex, out int index)
-        {
-            index = -1;
-            var match = regex.Match(text.Trim().ToLower().Split(' ').Last());
-            if (match.Success)
-            {
-                index = text.Length - text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal);
-                return true;
-            }
-
-            return false;
-        }
 
         public static bool ContainsAgoLaterIndex(string text, Regex regex)
         {
