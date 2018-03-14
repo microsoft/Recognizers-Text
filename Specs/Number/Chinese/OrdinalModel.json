@@ -1,6 +1,6 @@
 [{
   "Input": "第二百五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "第二百五十",
@@ -14,7 +14,7 @@
 ,
 {
   "Input": "第２５０",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "第２５０",
@@ -28,7 +28,7 @@
 ,
 {
   "Input": "第一名第二名第三名第四名",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "第一",
@@ -63,7 +63,7 @@
 ,
 {
   "Input": "第十四",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "第十四",
@@ -77,7 +77,7 @@
 ,
 {
   "Input": "第三",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "第三",

@@ -140,7 +140,7 @@ class BaseNumberParser(Parser):
                     tmp_index = handle.find(match.group(), start_index)
 
         # scale used in the calculate of double
-        result.value = self.__get_digital_value(handle, power)
+        result.value = self._get_digital_value(handle, power)
 
         return result
     
@@ -159,8 +159,8 @@ class BaseNumberParser(Parser):
             over_index = result_text.find(self.config.fraction_marker_token)
             small_part = result_text[0:over_index].strip()
             big_part = result_text[over_index + len(self.config.fraction_marker_token):len(result_text)].strip()
-            smallValue = self.__get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.__get_int_value(self.__get_matches(small_part))
-            big_value = self.__get_digital_value(big_part, 1) if self._is_digit(big_part[0]) else self.__get_int_value(self.__get_matches(big_part))
+            smallValue = self._get_digital_value(small_part, 1) if self._is_digit(small_part[0]) else self.__get_int_value(self.__get_matches(small_part))
+            big_value = self._get_digital_value(big_part, 1) if self._is_digit(big_part[0]) else self.__get_int_value(self.__get_matches(big_part))
 
             result.value = smallValue / big_value
         else:
@@ -435,7 +435,7 @@ class BaseNumberParser(Parser):
 
         return result
 
-    def __get_digital_value(self, digitstr: str, power: int) -> Decimal:
+    def _get_digital_value(self, digitstr: str, power: int) -> Decimal:
         tmp: Decimal = Decimal(0)
         scale: Decimal = Decimal(10)
         dot: bool = False

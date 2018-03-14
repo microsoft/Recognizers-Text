@@ -1,6 +1,6 @@
 [{
   "Input": "两百点两",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "两百",
@@ -21,7 +21,7 @@
 ,
 {
   "Input": "一点两小时的会议",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一",
@@ -42,7 +42,7 @@
 ,
 {
   "Input": "一只",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一",
@@ -56,7 +56,7 @@
 ,
 {
   "Input": "十斤",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十",
@@ -70,13 +70,13 @@
 ,
 {
   "Input": "一切",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "九年八吨",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九",
@@ -97,7 +97,7 @@
 ,
 {
   "Input": "肆佰陸拾",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "肆佰陸拾",
@@ -111,7 +111,7 @@
 ,
 {
   "Input": "十 余 万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十 余 万",
@@ -125,7 +125,7 @@
 ,
 {
   "Input": "一百五十二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百五十二",
@@ -139,7 +139,7 @@
 ,
 {
   "Input": "壹佰伍拾",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹佰伍拾",
@@ -153,7 +153,7 @@
 ,
 {
   "Input": "两千四百五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "两千四百五",
@@ -167,7 +167,7 @@
 ,
 {
   "Input": "负三十二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "负三十二",
@@ -181,19 +181,19 @@
 ,
 {
   "Input": "万",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "万万",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二",
@@ -207,7 +207,7 @@
 ,
 {
   "Input": "10万万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "10万万",
@@ -221,7 +221,7 @@
 ,
 {
   "Input": "4.78万亿",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "4.78万亿",
@@ -235,7 +235,7 @@
 ,
 {
   "Input": "7 万5 千4 百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "7 万5 千4 百",
@@ -249,7 +249,7 @@
 ,
 {
   "Input": "40k",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "40k",
@@ -263,7 +263,7 @@
 ,
 {
   "Input": "二十 億",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二十 億",
@@ -277,7 +277,7 @@
 ,
 {
   "Input": "４，５６５",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "４，５６５",
@@ -291,7 +291,7 @@
 ,
 {
   "Input": "四百五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四百五十",
@@ -305,7 +305,7 @@
 ,
 {
   "Input": "四百五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四百五",
@@ -319,7 +319,7 @@
 ,
 {
   "Input": "一千零一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一千零一",
@@ -333,7 +333,7 @@
 ,
 {
   "Input": "一百零一万一千",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百零一万一千",
@@ -347,7 +347,7 @@
 ,
 {
   "Input": "一千两百三十四万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一千两百三十四万",
@@ -361,7 +361,7 @@
 ,
 {
   "Input": "五亿零六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五亿零六",
@@ -375,7 +375,7 @@
 ,
 {
   "Input": "七十八万五佰零六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "七十八万五佰零六",
@@ -389,7 +389,7 @@
 ,
 {
   "Input": "肆拾肆",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "肆拾肆",
@@ -403,7 +403,7 @@
 ,
 {
   "Input": "倆千两百贰拾二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "倆千两百贰拾二",
@@ -417,7 +417,7 @@
 ,
 {
   "Input": "5万4千6百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "5万4千6百",
@@ -431,7 +431,7 @@
 ,
 {
   "Input": "5亿1万4千6百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "5亿1万4千6百",
@@ -445,7 +445,7 @@
 ,
 {
   "Input": "-10000",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-10000",
@@ -459,7 +459,7 @@
 ,
 {
   "Input": "负10000",
-  "NotSupportedByDesign": "python",
+
   "NotSupported": "javascript",
   "Results": [
     {
@@ -474,7 +474,7 @@
 ,
 {
   "Input": "一打",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一打",
@@ -488,7 +488,7 @@
 ,
 {
   "Input": "拾万零五十六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "拾万零五十六",
@@ -502,7 +502,7 @@
 ,
 {
   "Input": "十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十",
@@ -516,7 +516,7 @@
 ,
 {
   "Input": "十五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十五",
@@ -530,7 +530,7 @@
 ,
 {
   "Input": "一百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百",
@@ -544,7 +544,7 @@
 ,
 {
   "Input": "九百九十九",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九百九十九",
@@ -558,7 +558,7 @@
 ,
 {
   "Input": "九百九",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九百九",
@@ -572,7 +572,7 @@
 ,
 {
   "Input": "二百五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二百五十",
@@ -586,7 +586,7 @@
 ,
 {
   "Input": "一千零五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一千零五十",
@@ -600,7 +600,7 @@
 ,
 {
   "Input": "一千零五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一千零五",
@@ -614,7 +614,7 @@
 ,
 {
   "Input": "一千陆",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一千陆",
@@ -628,7 +628,7 @@
 ,
 {
   "Input": "一万三",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一万三",
@@ -642,7 +642,7 @@
 ,
 {
   "Input": "一万二百五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一万二百五十",
@@ -656,7 +656,7 @@
 ,
 {
   "Input": "一万零二百五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一万零二百五十",
@@ -670,7 +670,7 @@
 ,
 {
   "Input": "九万四",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九万四",
@@ -684,7 +684,7 @@
 ,
 {
   "Input": "九十二万四",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九十二万四",
@@ -698,7 +698,7 @@
 ,
 {
   "Input": "九万零四百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九万零四百",
@@ -712,7 +712,7 @@
 ,
 {
   "Input": "九百万零四百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九百万零四百",
@@ -726,7 +726,7 @@
 ,
 {
   "Input": "四千零五万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千零五万",
@@ -740,7 +740,7 @@
 ,
 {
   "Input": "四千万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千万",
@@ -754,7 +754,7 @@
 ,
 {
   "Input": "四千万零六千",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千万零六千",
@@ -768,7 +768,7 @@
 ,
 {
   "Input": "四亿",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四亿",
@@ -782,7 +782,7 @@
 ,
 {
   "Input": "四亿五千六百四十二万零一十五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四亿五千六百四十二万零一十五",
@@ -796,7 +796,7 @@
 ,
 {
   "Input": "四万五千六百二十二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四万五千六百二十二",
@@ -810,7 +810,7 @@
 ,
 {
   "Input": "五兆六十二亿四万五千二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五兆六十二亿四万五千二",
@@ -824,7 +824,7 @@
 ,
 {
   "Input": "五十五兆一十二亿四万五千二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五十五兆一十二亿四万五千二",
@@ -838,7 +838,7 @@
 ,
 {
   "Input": "十万柒仟捌佰伍拾肆",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十万柒仟捌佰伍拾肆",
@@ -852,7 +852,7 @@
 ,
 {
   "Input": "半百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "半百",
@@ -866,7 +866,7 @@
 ,
 {
   "Input": "拾六万零五百零六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "拾六万零五百零六",
@@ -880,7 +880,7 @@
 ,
 {
   "Input": "拾亿零六万零五百零六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "拾亿零六万零五百零六",
@@ -894,7 +894,7 @@
 ,
 {
   "Input": "一百万零四",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百万零四",
@@ -908,7 +908,7 @@
 ,
 {
   "Input": "四十万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四十万",
@@ -922,7 +922,7 @@
 ,
 {
   "Input": "四千零四万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千零四万",
@@ -936,7 +936,7 @@
 ,
 {
   "Input": "四十五亿四千零四万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四十五亿四千零四万",
@@ -950,7 +950,7 @@
 ,
 {
   "Input": "负四十五亿零四百零四万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "负四十五亿零四百零四万",
@@ -964,7 +964,7 @@
 ,
 {
   "Input": "负四百零五亿零四百零四万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "负四百零五亿零四百零四万",
@@ -978,7 +978,7 @@
 ,
 {
   "Input": "四万万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四万万",
@@ -992,7 +992,7 @@
 ,
 {
   "Input": "五十打",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五十打",
@@ -1006,7 +1006,7 @@
 ,
 {
   "Input": "百三",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "百三",
@@ -1020,7 +1020,7 @@
 ,
 {
   "Input": "1, 234, 567",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1",
@@ -1048,7 +1048,7 @@
 ,
 {
   "Input": "二百五, 二百五, 还有二百五。",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二百五",
@@ -1076,7 +1076,7 @@
 ,
 {
   "Input": "1502222, 二百五, 还有二分之。",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1502222",
@@ -1104,7 +1104,7 @@
 ,
 {
   "Input": "199个",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "199",
@@ -1118,7 +1118,7 @@
 ,
 {
   "Input": "1,050,000,000",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1,050,000,000",
@@ -1132,7 +1132,7 @@
 ,
 {
   "Input": "两千三百五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "两千三百五",
@@ -1146,7 +1146,7 @@
 ,
 {
   "Input": "一百 五 十 二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百 五 十 二",
@@ -1160,7 +1160,7 @@
 ,
 {
   "Input": "两千 四 百 五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "两千 四 百 五",
@@ -1174,7 +1174,7 @@
 ,
 {
   "Input": "7万 5千 4百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "7万 5千 4百",
@@ -1188,7 +1188,7 @@
 ,
 {
   "Input": "三千 八百 九十六 万 四千 九百 六十五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三千 八百 九十六 万 四千 九百 六十五",
@@ -1202,7 +1202,7 @@
 ,
 {
   "Input": "三千 九百 六十五 ",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三千 九百 六十五",
@@ -1216,7 +1216,7 @@
 ,
 {
   "Input": "五百 余万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五百 余万",
@@ -1230,7 +1230,7 @@
 ,
 {
   "Input": "一千多万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一千多万",
@@ -1244,7 +1244,7 @@
 ,
 {
   "Input": "十多万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十多万",
@@ -1258,7 +1258,7 @@
 ,
 {
   "Input": "二十几万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二十几万",
@@ -1272,7 +1272,7 @@
 ,
 {
   "Input": "一百零几万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百零几万",
@@ -1286,7 +1286,7 @@
 ,
 {
   "Input": "一千五百零几万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一千五百零几万",
@@ -1300,7 +1300,7 @@
 ,
 {
   "Input": "一百 二 十 几亿",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百 二 十 几亿",
@@ -1314,7 +1314,7 @@
 ,
 {
   "Input": "三双",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三双",
@@ -1328,7 +1328,7 @@
 ,
 {
   "Input": "一百对",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百对",
@@ -1342,7 +1342,7 @@
 ,
 {
   "Input": "十双",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十双",
@@ -1356,7 +1356,7 @@
 ,
 {
   "Input": "一百五十对",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百五十对",
@@ -1370,7 +1370,7 @@
 ,
 {
   "Input": "十打苹果",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十打",
@@ -1384,7 +1384,7 @@
 ,
 {
   "Input": "１９９１年１月１６日晚巴黎时间２０点：法国总统密特朗发表电视讲话，宣布和平解决海湾危机已经让位于战争，法国已经作好一切战斗准备。",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "１９９１",
@@ -1419,7 +1419,7 @@
 ,
 {
   "Input": "500余万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "500余万",
@@ -1433,7 +1433,7 @@
 ,
 {
   "Input": "八千 三百 八十五 万 二千 三百 二十六 点三三",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "八千 三百 八十五 万 二千 三百 二十六 点三三",
@@ -1447,7 +1447,7 @@
 ,
 {
   "Input": "2^5",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "2^5",
@@ -1461,7 +1461,7 @@
 ,
 {
   "Input": "2e5",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "2e5",
@@ -1475,7 +1475,7 @@
 ,
 {
   "Input": "四百多",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四百",
@@ -1489,7 +1489,7 @@
 ,
 {
   "Input": "两双",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "两双",
@@ -1503,7 +1503,7 @@
 ,
 {
   "Input": "一百五     ",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百五",
@@ -1517,7 +1517,7 @@
 ,
 {
   "Input": "十 余 萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十 余 萬",
@@ -1531,7 +1531,7 @@
 ,
 {
   "Input": "壹百五十二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百五十二",
@@ -1545,7 +1545,7 @@
 ,
 {
   "Input": "兩千四百五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "兩千四百五",
@@ -1559,7 +1559,7 @@
 ,
 {
   "Input": "負三十二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "負三十二",
@@ -1573,19 +1573,19 @@
 ,
 {
   "Input": "萬",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "萬萬",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "10萬萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "10萬萬",
@@ -1599,7 +1599,7 @@
 ,
 {
   "Input": "4.78萬億",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "4.78萬億",
@@ -1613,7 +1613,7 @@
 ,
 {
   "Input": "7 萬5 千4 百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "7 萬5 千4 百",
@@ -1627,7 +1627,7 @@
 ,
 {
   "Input": "壹千零壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹千零壹",
@@ -1641,7 +1641,7 @@
 ,
 {
   "Input": "壹百零壹萬壹千",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百零壹萬壹千",
@@ -1655,7 +1655,7 @@
 ,
 {
   "Input": "壹千兩百三十四萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹千兩百三十四萬",
@@ -1669,7 +1669,7 @@
 ,
 {
   "Input": "五億零六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五億零六",
@@ -1683,7 +1683,7 @@
 ,
 {
   "Input": "七十八萬五佰零六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "七十八萬五佰零六",
@@ -1697,7 +1697,7 @@
 ,
 {
   "Input": "兩千兩百貳拾二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "兩千兩百貳拾二",
@@ -1711,7 +1711,7 @@
 ,
 {
   "Input": "5萬4千6百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "5萬4千6百",
@@ -1725,7 +1725,7 @@
 ,
 {
   "Input": "5億1萬4千6百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "5億1萬4千6百",
@@ -1739,7 +1739,7 @@
 ,
 {
   "Input": "壹打",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹打",
@@ -1753,7 +1753,7 @@
 ,
 {
   "Input": "拾萬零五十六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "拾萬零五十六",
@@ -1767,7 +1767,7 @@
 ,
 {
   "Input": "壹百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百",
@@ -1781,7 +1781,7 @@
 ,
 {
   "Input": "壹千零五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹千零五十",
@@ -1795,7 +1795,7 @@
 ,
 {
   "Input": "壹千零五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹千零五",
@@ -1809,7 +1809,7 @@
 ,
 {
   "Input": "壹千六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹千六",
@@ -1823,7 +1823,7 @@
 ,
 {
   "Input": "壹萬三",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹萬三",
@@ -1837,7 +1837,7 @@
 ,
 {
   "Input": "壹萬二百五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹萬二百五十",
@@ -1851,7 +1851,7 @@
 ,
 {
   "Input": "壹萬零二百五十",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹萬零二百五十",
@@ -1865,7 +1865,7 @@
 ,
 {
   "Input": "九萬四",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九萬四",
@@ -1879,7 +1879,7 @@
 ,
 {
   "Input": "九十二萬四",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九十二萬四",
@@ -1893,7 +1893,7 @@
 ,
 {
   "Input": "九萬零四百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九萬零四百",
@@ -1907,7 +1907,7 @@
 ,
 {
   "Input": "九百萬零四百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "九百萬零四百",
@@ -1921,7 +1921,7 @@
 ,
 {
   "Input": "四千零五萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千零五萬",
@@ -1935,7 +1935,7 @@
 ,
 {
   "Input": "四千萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千萬",
@@ -1949,7 +1949,7 @@
 ,
 {
   "Input": "四千萬零六千",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千萬零六千",
@@ -1963,7 +1963,7 @@
 ,
 {
   "Input": "四億",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四億",
@@ -1977,7 +1977,7 @@
 ,
 {
   "Input": "四億五千六百四十二萬零壹十五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四億五千六百四十二萬零壹十五",
@@ -1991,7 +1991,7 @@
 ,
 {
   "Input": "四萬五千六百二十二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四萬五千六百二十二",
@@ -2005,7 +2005,7 @@
 ,
 {
   "Input": "五兆六十二億四萬五千二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五兆六十二億四萬五千二",
@@ -2019,7 +2019,7 @@
 ,
 {
   "Input": "五十五兆壹十二億四萬五千二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五十五兆壹十二億四萬五千二",
@@ -2033,7 +2033,7 @@
 ,
 {
   "Input": "十萬柒仟捌佰伍拾肆",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十萬柒仟捌佰伍拾肆",
@@ -2047,7 +2047,7 @@
 ,
 {
   "Input": "拾六萬零五百零六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "拾六萬零五百零六",
@@ -2061,7 +2061,7 @@
 ,
 {
   "Input": "拾億零六萬零五百零六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "拾億零六萬零五百零六",
@@ -2075,7 +2075,7 @@
 ,
 {
   "Input": "壹百萬零四",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百萬零四",
@@ -2089,7 +2089,7 @@
 ,
 {
   "Input": "四十萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四十萬",
@@ -2103,7 +2103,7 @@
 ,
 {
   "Input": "四千零四萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千零四萬",
@@ -2117,7 +2117,7 @@
 ,
 {
   "Input": "四十五億四千零四萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四十五億四千零四萬",
@@ -2131,7 +2131,7 @@
 ,
 {
   "Input": "負四十五億零四百零四萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "負四十五億零四百零四萬",
@@ -2145,7 +2145,7 @@
 ,
 {
   "Input": "負四百零五億零四百零四萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "負四百零五億零四百零四萬",
@@ -2159,7 +2159,7 @@
 ,
 {
   "Input": "四萬萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四萬萬",
@@ -2173,7 +2173,7 @@
 ,
 {
   "Input": "5,236",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "5,236",
@@ -2187,7 +2187,7 @@
 ,
 {
   "Input": "二百五, 二百五, 還有二百五。",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二百五",
@@ -2215,7 +2215,7 @@
 ,
 {
   "Input": "1502222, 二百五, 還有二分之。",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1502222",
@@ -2243,7 +2243,7 @@
 ,
 {
   "Input": "199個",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "199",
@@ -2257,7 +2257,7 @@
 ,
 {
   "Input": "兩千三百五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "兩千三百五",
@@ -2271,7 +2271,7 @@
 ,
 {
   "Input": "壹百 五 十 二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百 五 十 二",
@@ -2285,7 +2285,7 @@
 ,
 {
   "Input": "兩千 四 百 五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "兩千 四 百 五",
@@ -2299,7 +2299,7 @@
 ,
 {
   "Input": "7萬 5千 4百",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "7萬 5千 4百",
@@ -2313,7 +2313,7 @@
 ,
 {
   "Input": "三千 八百 九十六 萬 四千 九百 六十五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三千 八百 九十六 萬 四千 九百 六十五",
@@ -2327,7 +2327,7 @@
 ,
 {
   "Input": "五百 余萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五百 余萬",
@@ -2341,7 +2341,7 @@
 ,
 {
   "Input": "壹千多萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹千多萬",
@@ -2355,7 +2355,7 @@
 ,
 {
   "Input": "十多萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十多萬",
@@ -2369,7 +2369,7 @@
 ,
 {
   "Input": "二十幾萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二十幾萬",
@@ -2383,7 +2383,7 @@
 ,
 {
   "Input": "壹百零幾萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百零幾萬",
@@ -2397,7 +2397,7 @@
 ,
 {
   "Input": "壹千五百零幾萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹千五百零幾萬",
@@ -2411,7 +2411,7 @@
 ,
 {
   "Input": "壹百 二 十 幾億",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百 二 十 幾億",
@@ -2425,7 +2425,7 @@
 ,
 {
   "Input": "三雙",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三雙",
@@ -2439,7 +2439,7 @@
 ,
 {
   "Input": "壹百對",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百對",
@@ -2453,7 +2453,7 @@
 ,
 {
   "Input": "十雙",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十雙",
@@ -2467,7 +2467,7 @@
 ,
 {
   "Input": "壹百五十對",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百五十對",
@@ -2481,7 +2481,7 @@
 ,
 {
   "Input": "十打蘋果",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十打",
@@ -2495,7 +2495,7 @@
 ,
 {
   "Input": "１９９１年１月１６日晚巴黎時間２０點：法國總統密特朗發表電視講話，宣布和平解抉海灣危機已經讓位於戰爭，法國已經作好壹切戰鬥準備。",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "１９９１",
@@ -2530,7 +2530,7 @@
 ,
 {
   "Input": "500余萬",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "500余萬",
@@ -2544,7 +2544,7 @@
 ,
 {
   "Input": "八千 三百 八十五 萬 二千 三百 二十六 點三三",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "八千 三百 八十五 萬 二千 三百 二十六 點三三",
@@ -2558,7 +2558,7 @@
 ,
 {
   "Input": "兩雙",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "兩雙",
@@ -2572,7 +2572,7 @@
 ,
 {
   "Input": "壹百五     ",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百五",
@@ -2586,31 +2586,31 @@
 ,
 {
   "Input": "百分之五十五点五七九",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "百分之十万零六百五十一",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "六千零五十一个百分点",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "六百一十一点二五五个百分点",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "负六点六",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "负六点六",
@@ -2624,7 +2624,7 @@
 ,
 {
   "Input": "十五点七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十五点七",
@@ -2638,7 +2638,7 @@
 ,
 {
   "Input": "１１.92亿",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "１１.92亿",
@@ -2652,7 +2652,7 @@
 ,
 {
   "Input": "２．２",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "２．２",
@@ -2666,7 +2666,7 @@
 ,
 {
   "Input": "２．２亿",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "２．２亿",
@@ -2680,7 +2680,7 @@
 ,
 {
   "Input": "1000  万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1000  万",
@@ -2694,7 +2694,7 @@
 ,
 {
   "Input": "21.2E0",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "21.2E0",
@@ -2708,7 +2708,7 @@
 ,
 {
   "Input": "2^-1",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "2^-1",
@@ -2722,7 +2722,7 @@
 ,
 {
   "Input": "四百 点 五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四百 点 五",
@@ -2736,7 +2736,7 @@
 ,
 {
   "Input": "零点五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "零点五",
@@ -2750,7 +2750,7 @@
 ,
 {
   "Input": "10.233",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "10.233",
@@ -2764,7 +2764,7 @@
 ,
 {
   "Input": "-1e1",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-1e1",
@@ -2778,7 +2778,7 @@
 ,
 {
   "Input": "-2.5 M",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-2.5 M",
@@ -2792,7 +2792,7 @@
 ,
 {
   "Input": "二点五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二点五",
@@ -2806,7 +2806,7 @@
 ,
 {
   "Input": "十点二三三",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "十点二三三",
@@ -2820,7 +2820,7 @@
 ,
 {
   "Input": "两千万点五五四四",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "两千万点五五四四",
@@ -2834,7 +2834,7 @@
 ,
 {
   "Input": "两千点零",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "两千点零",
@@ -2848,7 +2848,7 @@
 ,
 {
   "Input": "两千三点一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "两千三点一",
@@ -2862,7 +2862,7 @@
 ,
 {
   "Input": "10,000.233",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "10,000.233",
@@ -2876,7 +2876,7 @@
 ,
 {
   "Input": ".23456000",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": ".23456000",
@@ -2890,7 +2890,7 @@
 ,
 {
   "Input": "4.800",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "4.800",
@@ -2904,7 +2904,7 @@
 ,
 {
   "Input": "２.７８９０",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "２.７８９０",
@@ -2918,7 +2918,7 @@
 ,
 {
   "Input": "2.3",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "2.3",
@@ -2932,7 +2932,7 @@
 ,
 {
   "Input": "2.3万",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "2.3万",
@@ -2946,7 +2946,7 @@
 ,
 {
   "Input": "２.７８９０e－１",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "２.７８９０e－１",
@@ -2960,7 +2960,7 @@
 ,
 {
   "Input": ".5",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": ".5",
@@ -2974,7 +2974,7 @@
 ,
 {
   "Input": "-.5",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-.5",
@@ -2988,7 +2988,7 @@
 ,
 {
   "Input": "1, 234, 567.3",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1",
@@ -3016,7 +3016,7 @@
 ,
 {
   "Input": "１, 2４4, ６６7.123 五点八",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "１",
@@ -3051,7 +3051,7 @@
 ,
 {
   "Input": "二百三十三，五百七十七，一千六点五。",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二百三十三",
@@ -3142,7 +3142,7 @@
 ,
 {
   "Input": "1.1^+23",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1.1^+23",
@@ -3156,7 +3156,7 @@
 ,
 {
   "Input": "2.5^-1",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "2.5^-1",
@@ -3170,7 +3170,7 @@
 ,
 {
   "Input": "-1.1^+23",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-1.1^+23",
@@ -3184,7 +3184,7 @@
 ,
 {
   "Input": "-2.5^-1",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-2.5^-1",
@@ -3198,7 +3198,7 @@
 ,
 {
   "Input": "-1.1^--23",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-1.1^--23",
@@ -3212,7 +3212,7 @@
 ,
 {
   "Input": "-127.32e13",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-127.32e13",
@@ -3226,7 +3226,7 @@
 ,
 {
   "Input": "12.32e+14",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "12.32e+14",
@@ -3240,7 +3240,7 @@
 ,
 {
   "Input": "-12e-1",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-12e-1",
@@ -3254,7 +3254,7 @@
 ,
 {
   "Input": "五 分之 一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五 分之 一",
@@ -3268,7 +3268,7 @@
 ,
 {
   "Input": "三 百 五 又 三 分之 一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三 百 五 又 三 分之 一",
@@ -3282,7 +3282,7 @@
 ,
 {
   "Input": "４ ６／３",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "４ ６／３",
@@ -3296,7 +3296,7 @@
 ,
 {
   "Input": "-3/2",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "-3/2",
@@ -3310,7 +3310,7 @@
 ,
 {
   "Input": "五分之一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五分之一",
@@ -3324,7 +3324,7 @@
 ,
 {
   "Input": "一百万又五十万分之二十五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百万又五十万分之二十五",
@@ -3338,7 +3338,7 @@
 ,
 {
   "Input": "一百分之二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百分之二",
@@ -3352,7 +3352,7 @@
 ,
 {
   "Input": "四千二分之三",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "四千二分之三",
@@ -3366,7 +3366,7 @@
 ,
 {
   "Input": "一百分之2",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百分之2",
@@ -3380,7 +3380,7 @@
 ,
 {
   "Input": "五百分之2333",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五百分之2333",
@@ -3394,7 +3394,7 @@
 ,
 {
   "Input": "3又一千分之23",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "3又一千分之23",
@@ -3408,7 +3408,7 @@
 ,
 {
   "Input": "３／５",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "３／５",
@@ -3422,7 +3422,7 @@
 ,
 {
   "Input": "1 ３/5",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1 ３/5",
@@ -3436,7 +3436,7 @@
 ,
 {
   "Input": "１６/5",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "１６/5",
@@ -3450,7 +3450,7 @@
 ,
 {
   "Input": "１６分之5",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "１６分之5",
@@ -3464,7 +3464,7 @@
 ,
 {
   "Input": "１６分之2225",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "１６分之2225",
@@ -3478,7 +3478,7 @@
 ,
 {
   "Input": "负一又二分之一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "负一又二分之一",
@@ -3492,7 +3492,7 @@
 ,
 {
   "Input": "二分之一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二分之一",
@@ -3506,7 +3506,7 @@
 ,
 {
   "Input": "三百 五又三分之一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三百 五又三分之一",
@@ -3520,7 +3520,7 @@
 ,
 {
   "Input": "三百五十又3分之1",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三百五十又3分之1",
@@ -3534,7 +3534,7 @@
 ,
 {
   "Input": "３分之一百五十七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "３分之一百五十七",
@@ -3548,7 +3548,7 @@
 ,
 {
   "Input": "负３分之负一百五十七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "负３分之负一百五十七",
@@ -3562,7 +3562,7 @@
 ,
 {
   "Input": "一百四十四。一百五十万五千二百四十五,二千零四十五个,三千零五个,和四千万零五十,一百五十四点零,四百亿点零五零,二十五分之一百四十四,十一又十四分之一,1个",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "一百四十四",
@@ -3639,7 +3639,7 @@
 ,
 {
   "Input": "1 4/3的美梦,1/2的努力",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1 4/3",
@@ -3660,7 +3660,7 @@
 ,
 {
   "Input": "二分 之一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二分 之一",
@@ -3674,7 +3674,7 @@
 ,
 {
   "Input": "三百 五 又 三分  之一",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三百 五 又 三分  之一",
@@ -3688,7 +3688,7 @@
 ,
 {
   "Input": "三百五十 又 3分  之1",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三百五十 又 3分  之1",
@@ -3702,7 +3702,7 @@
 ,
 {
   "Input": "３ 分  之 一百五十七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "３ 分  之 一百五十七",
@@ -3716,7 +3716,7 @@
 ,
 {
   "Input": "负３ 分  之 负一百五十七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "负３ 分  之 负一百五十七",
@@ -3730,7 +3730,7 @@
 ,
 {
   "Input": "五 分之 壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五 分之 壹",
@@ -3744,7 +3744,7 @@
 ,
 {
   "Input": "三 百 五 又 三 分之 壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三 百 五 又 三 分之 壹",
@@ -3758,7 +3758,7 @@
 ,
 {
   "Input": "五分之壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "五分之壹",
@@ -3772,7 +3772,7 @@
 ,
 {
   "Input": "壹百萬又五十萬分之二十五",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百萬又五十萬分之二十五",
@@ -3786,7 +3786,7 @@
 ,
 {
   "Input": "壹百分之二",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百分之二",
@@ -3800,7 +3800,7 @@
 ,
 {
   "Input": "壹百分之2",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百分之2",
@@ -3814,7 +3814,7 @@
 ,
 {
   "Input": "3又壹千分之23",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "3又壹千分之23",
@@ -3828,7 +3828,7 @@
 ,
 {
   "Input": "負壹又二分之壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "負壹又二分之壹",
@@ -3842,7 +3842,7 @@
 ,
 {
   "Input": "二分之壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二分之壹",
@@ -3856,7 +3856,7 @@
 ,
 {
   "Input": "三百 五又三分之壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三百 五又三分之壹",
@@ -3870,7 +3870,7 @@
 ,
 {
   "Input": "３分之壹百五十七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "３分之壹百五十七",
@@ -3884,7 +3884,7 @@
 ,
 {
   "Input": "負３分之負壹百五十七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "負３分之負壹百五十七",
@@ -3898,7 +3898,7 @@
 ,
 {
   "Input": "壹百四十四。壹百五十萬五千二百四十五,二千零四十五個,三千零五個,和四千萬零五十,壹百五十四點零,四百億點零五零,二十五分之壹百四十四,十壹又十四分之壹,1個",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "壹百四十四",
@@ -3975,7 +3975,7 @@
 ,
 {
   "Input": "1 4/3的美夢,1/2的努力",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "1 4/3",
@@ -3996,7 +3996,7 @@
 ,
 {
   "Input": "二分 之壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "二分 之壹",
@@ -4010,7 +4010,7 @@
 ,
 {
   "Input": "三百 五 又 三分  之壹",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "三百 五 又 三分  之壹",
@@ -4024,7 +4024,7 @@
 ,
 {
   "Input": "３ 分  之 壹百五十七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "３ 分  之 壹百五十七",
@@ -4038,7 +4038,7 @@
 ,
 {
   "Input": "負３ 分  之 負壹百五十七",
-  "NotSupportedByDesign": "python",
+
   "Results": [
     {
       "Text": "負３ 分  之 負壹百五十七",
@@ -4052,31 +4052,31 @@
 ,
 {
   "Input": "一看",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "一美元",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "两美刀",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "四川",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ,
 {
   "Input": "陆地",
-  "NotSupportedByDesign": "python",
+
   "Results": []
 }
 ]

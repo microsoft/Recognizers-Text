@@ -49,7 +49,8 @@ def get_specs(spec_type):
 cultures = {
     'English': Culture.English,
     'Spanish': Culture.Spanish,
-    'French': Culture.French
+    'French': Culture.French,
+    'Chinese': Culture.Chinese
 }
 
 specs = get_all_specs()

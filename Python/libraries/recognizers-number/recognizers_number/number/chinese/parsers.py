@@ -24,7 +24,7 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
     @property
     def fraction_marker_token(self) -> str: return self._fraction_marker_token
     @property
-    def negative_number_sign_regex(self) -> Pattern: return None
+    def negative_number_sign_regex(self) -> Pattern: return self._negative_number_sign_regex
     @property
     def half_a_dozen_regex(self) -> Pattern: return None
     @property
@@ -73,7 +73,7 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self.percentage_regex = ChineseNumeric.PercentageRegex
         self.double_and_round_chs_regex = ChineseNumeric.DoubleAndRoundChsRegex
         self.frac_split_regex = ChineseNumeric.FracSplitRegex
-        self.negative_number_sign_regex = ChineseNumeric.NegativeNumberSignRegex
+        self._negative_number_sign_regex = ChineseNumeric.NegativeNumberSignRegex
         self.point_regex_chs = ChineseNumeric.PointRegexChs
         self.spe_get_number_regex = ChineseNumeric.SpeGetNumberRegex
         self.pair_regex = ChineseNumeric.PairRegex
@@ -224,28 +224,28 @@ class ChineseNumberParser(BaseNumberParser):
         source_text = source.text
         split_result = regex.split(self.config.frac_split_regex, source_text)
 
-        parts = namedtuple('parts', ['_int', '_demo', '_num'])
+        parts = namedtuple('parts', ['intval', 'demo', 'num'])
         
         result_part: parts
 
         if len(split_result) == 3:
             result_part = parts(
-                _int=split_result[0],
-                _demo=split_result[1],
-                _num=split_result[2]
+                intval=split_result[0],
+                demo=split_result[1],
+                num=split_result[2]
             )
         else:
             result_part = parts(
-                _int='零',
-                _demo=split_result[0],
-                _num=split_result[1]
+                intval='零',
+                demo=split_result[0],
+                num=split_result[1]
             )
         
-        int_value = self.get_value_from_part(result_part._int)
-        num_value = self.get_value_from_part(result_part._num)
-        demo_value = self.get_value_from_part(result_part._demo)
+        int_value = self.get_value_from_part(result_part.intval)
+        num_value = self.get_value_from_part(result_part.num)
+        demo_value = self.get_value_from_part(result_part.demo)
 
-        if regex.search(self.config.negative_number_sign_regex, result_part._int) is not None:
+        if regex.search(self.config.negative_number_sign_regex, result_part.intval) is not None:
             result.value = int_value - num_value / demo_value
         else:
             result.value = int_value + num_value / demo_value
@@ -303,7 +303,7 @@ class ChineseNumberParser(BaseNumberParser):
             negative = True
             result_str = result_str[1:]
         result_str = self.replace_full_with_half(result_str)
-        result = self.__get_digital_value(result_str, power)
+        result = float(super()._get_digital_value(result_str, power))
         if negative:
             result = - result
         return result
@@ -326,7 +326,7 @@ class ChineseNumberParser(BaseNumberParser):
         before_value = 1
         is_round_before = False
         round_before = -1
-        round_default = -1
+        round_default = 1
         negative = False
 
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
