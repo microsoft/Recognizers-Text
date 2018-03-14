@@ -119,7 +119,7 @@ class SpanishDoubleExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.DoubleCaretExponentialNotationRegex,
                 val='DoublePow'),
             re_val(
-                re=self._generate_format_regex(LongFormatMode.DOUBLE_COMMA_DOT, placeholder),
+                re=self._generate_format_regex(LongFormatMode.DOUBLE_DOT_COMMA, placeholder),
                 val='DoubleNum')
         ]
 

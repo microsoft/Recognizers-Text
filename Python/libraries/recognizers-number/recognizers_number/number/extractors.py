@@ -49,7 +49,7 @@ class BaseNumberExtractor(Extractor):
                     start = last+1
                     length = i-last
                     substr = source[start:start+length].strip()
-                    srcmatch = next(x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length))
+                    srcmatch = next((x for x in iter(match_source) if (x.start() == start and (x.end() - x.start()) == length)), None)
 
                     # extract negative numbers
                     if self._negative_number_terms is not None:
