@@ -1,6 +1,7 @@
 import regex
 from typing import Dict, Pattern, List
 
+from recognizers_text.utilities import RegExpUtility
 from recognizers_text.culture import Culture
 from recognizers_text.parser import ParseResult
 from recognizers_number.culture import CultureInfo
@@ -63,9 +64,9 @@ class FrenchNumberParserConfiguration(NumberParserConfiguration):
         self._cardinal_number_map = FrenchNumeric.CardinalNumberMap
         self._ordinal_number_map = FrenchNumeric.OrdinalNumberMap
         self._round_number_map = FrenchNumeric.RoundNumberMap
-        self._negative_number_sign_regex = regex.compile(FrenchNumeric.NegativeNumberSignRegex)
-        self._half_a_dozen_regex = regex.compile(FrenchNumeric.HalfADozenRegex)
-        self._digital_number_regex = regex.compile(FrenchNumeric.DigitalNumberRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(FrenchNumeric.NegativeNumberSignRegex)
+        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(FrenchNumeric.HalfADozenRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(FrenchNumeric.DigitalNumberRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         return tokens

@@ -1,6 +1,7 @@
 import regex, re
 from typing import Dict, Pattern, List
 
+from recognizers_text.utilities import RegExpUtility
 from recognizers_text.culture import Culture
 from recognizers_text.parser import ParseResult
 from recognizers_number.culture import CultureInfo
@@ -70,9 +71,9 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         self._cardinal_number_map = SpanishNumeric.CardinalNumberMap
         self._ordinal_number_map = ordinal_number_map
         self._round_number_map = SpanishNumeric.RoundNumberMap
-        self._negative_number_sign_regex = regex.compile(SpanishNumeric.NegativeNumberSignRegex)
-        self._half_a_dozen_regex = regex.compile(SpanishNumeric.HalfADozenRegex)
-        self._digital_number_regex = regex.compile(SpanishNumeric.DigitalNumberRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(SpanishNumeric.NegativeNumberSignRegex)
+        self._half_a_dozen_regex = RegExpUtility.get_safe_reg_exp(SpanishNumeric.HalfADozenRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(SpanishNumeric.DigitalNumberRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         result : List[str] = list()
