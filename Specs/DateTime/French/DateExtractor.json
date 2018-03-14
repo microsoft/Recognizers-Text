@@ -948,6 +948,7 @@
 {
   "Input": "Qui ai-je envoye un mois il y a",
   "NotSupportedByDesign": "python",
+  "NotSupported": "javascript,dotnet",
   "Results": [
     {
       "Text": "un mois il y a",

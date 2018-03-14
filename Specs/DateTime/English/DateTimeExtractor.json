@@ -748,6 +748,17 @@
 }
 ,
 {
+  "Input": "I will be busy in an hour, so call me later",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in an hour",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
   "Input": "I met him 2 months 1 day 2 hours ago",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
