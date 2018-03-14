@@ -5,6 +5,7 @@ from recognizers_number.number.models import NumberMode, NumberModel, OrdinalMod
 from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor
 from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
+from recognizers_number.number.spanish.extractors import SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
 from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
@@ -54,15 +55,15 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         #region Spanish
         self.register_model("NumberModel", Culture.Spanish, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, SpanishNumberParserConfiguration()),
-            None #TODO implement SpanishNumberExtractor
+            SpanishNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         self.register_model("OrdinalModel", Culture.Spanish, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(ParserType.ORDINAL, SpanishNumberParserConfiguration()),
-            None #TODO implement SpanishOrdinalExtractor
+            SpanishOrdinalExtractor()
         ))
         self.register_model("PercentModel", Culture.Spanish, lambda options: PercentModel(
             AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, SpanishNumberParserConfiguration()),
-            None #TODO implement SpanishPercentageExtractor
+            SpanishPercentageExtractor()
         ))
         #endregion
 
