@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
-        public static bool GetInIndex(string text, Regex regex, out int index)
+        public static bool GetTermIndex(string text, Regex regex, out int index)
         {
             index = -1;
             var match = regex.Match(text.Trim().ToLower().Split(' ').Last());
@@ -39,10 +39,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return GetAgoLaterIndex(text, regex, out index);
         }
 
-        public static bool ContainsInIndex(string text, Regex regex)
+        public static bool ContainsTermIndex(string text, Regex regex)
         {
             int index = -1;
-            return GetInIndex(text, regex, out index);
+            return GetTermIndex(text, regex, out index);
         }
     }
 }

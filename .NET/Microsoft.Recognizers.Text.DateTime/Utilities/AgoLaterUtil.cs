@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeString = text.Substring(0, (int)er.Start);
                 var index = -1;
 
-                if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
+                if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
                 {
                     // For range unit like "week, month, year", it should output dateRange or datetimeRange
                     if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
-                else if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.WithinNextPrefixRegex, out index))
+                else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.WithinNextPrefixRegex, out index))
                 {
                     // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
                     if (!utilityConfiguration.DateUnitRegex.IsMatch(er.Text) && !utilityConfiguration.TimeUnitRegex.IsMatch(er.Text))
@@ -116,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.BEFORE_MOD;
             }
             else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
-                     MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InConnectorRegex))
+                     MatchingUtil.ContainsTermIndex(beforeStr, utilityConfiguration.InConnectorRegex))
             {
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, true);
 
