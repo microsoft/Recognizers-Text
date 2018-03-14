@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -33,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceTime = refTime;
             DateTimeParseResult pr = null;
 
-            // push, save the MOD string
+            // Push, save the MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false, hasYearAfter = false;
             var modStr = string.Empty;
             var beforeMatch = Config.BeforeRegex.Match(er.Text);
@@ -66,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success)
             {
-                // This has to be put at the last, or cases like "before 2012" "after 2012" will fall into this
+                // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                 // 2012 or after/above
                 var match = Config.YearAfterRegex.Match(er.Text);
                 if (match.Success && er.Text.EndsWith(match.Value))
@@ -123,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return null;
             }
 
-            // pop, restore the MOD string
+            // Pop, restore the MOD string
             if (hasBefore && pr.Value != null)
             {
                 pr.Length += modStr.Length;
@@ -185,7 +184,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var matches = Config.AmbiguousMonthP0Regex.Matches(query);
 
-                foreach (Match match in matches) {
+                foreach (Match match in matches)
+                {
 
                     // Check for intersections/overlaps
                     candidateResults = candidateResults.Where(c => !( match.Index < c.Start + c.Length &&
@@ -200,6 +200,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public DateTimeParseResult SetParseResult(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
             slot.Value = DateTimeResolution(slot, hasBefore, hasAfter, hasSince);
+
             // Change the type at last for the after or before modes
             slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, hasBefore, hasAfter, hasSince)}";
             return slot;
@@ -301,7 +302,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var resolutionPast = GenerateResolution(type, pastResolutionStr, mod);
             var resolutionFuture = GenerateResolution(type, futureResolutionStr, mod);
 
-            // if past and future are same, keep only one
+            // If past and future are same, keep only one
             if (resolutionFuture.OrderBy(t => t.Key).Select(t => t.Value)
                 .SequenceEqual(resolutionPast.OrderBy(t => t.Key).Select(t => t.Value)))
             {
@@ -323,7 +324,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            // if ampm, double our resolution accordingly
+            // If 'ampm', double our resolution accordingly
             if (!string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_AmPm))
             {
                 if (res.ContainsKey(Constants.Resolve))
@@ -337,7 +338,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            // if the WeekOf and in CalendarMode, modify the past part of our resolution
+            // If WeekOf and in CalendarMode, modify the past part of our resolution
             if ((Config.Options & DateTimeOptions.CalendarMode) != 0 && 
                 !string.IsNullOrEmpty(comment) && comment.Equals(Constants.Comment_WeekOf))
             {
@@ -448,6 +449,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 resolutionDic.Add(keyName + "Am", resolution);
 
                 var resolutionPm = new Dictionary<string, string>();
+
                 switch ((string) resolutionDic[ResolutionKey.Type])
                 {
                     case Constants.SYS_DATETIME_TIME:
@@ -607,10 +609,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, 
             Dictionary<string, string> res)
         {
-            if (resolutionDic.ContainsKey(type) 
-                && !resolutionDic[type].Equals(DateMinString)
-                && !resolutionDic[type].Equals(DateTimeMinString))
+            if (resolutionDic.ContainsKey(type) && 
+                !resolutionDic[type].Equals(DateMinString) && !resolutionDic[type].Equals(DateTimeMinString))
             {
+
                 if (!string.IsNullOrEmpty(mod))
                 {
                     if (mod.Equals(Constants.BEFORE_MOD))
@@ -654,21 +656,21 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!string.IsNullOrEmpty(mod))
             {
-                //For before mode, the start of the period should be the end the new period, no start 
+                // For the 'before' mod, the start of the period should be the end the new period, not the start 
                 if (mod.Equals(Constants.BEFORE_MOD))
                 {
                     res.Add(DateTimeResolutionKey.END, start);
                     return;
                 }
 
-                //For after mode, the end of the period should be the start the new period, no end 
+                // For the 'after' mod, the end of the period should be the start the new period, not the end 
                 if (mod.Equals(Constants.AFTER_MOD))
                 {
                     res.Add(DateTimeResolutionKey.START, end);
                     return;
                 }
 
-                //For since mode, the start of the period should be the start the new period, no end 
+                // For the 'since' mod, the start of the period should be the start the new period, not the end 
                 if (mod.Equals(Constants.SINCE_MOD))
                 {
                     res.Add(DateTimeResolutionKey.START, start);
