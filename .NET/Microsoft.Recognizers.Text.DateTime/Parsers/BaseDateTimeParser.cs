@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDateTimeParser : IDateTimeParser
@@ -121,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // This is to understand if there is an ambiguous token in the text. For some languages (e.g. spanish),
                 // the same word could mean different things (e.g a time in the day or an specific day).
-                if (this.config.HaveAmbiguousToken(text, er1[0].Text))
+                if (this.config.ContainsAmbiguousToken(text, er1[0].Text))
                 {
                     return ret;
                 }
@@ -360,6 +358,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceTime,
                 config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex, 
                 config.UtilityConfiguration);
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
     }

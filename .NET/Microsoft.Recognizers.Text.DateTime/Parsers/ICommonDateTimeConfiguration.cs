@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -45,6 +45,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser DateTimePeriodParser { get; }
 
         IDateTimeParser DateTimeAltParser { get; }
+
+        Regex AmbiguousMonthP0Regex { get; }
 
         IImmutableDictionary<string, int> MonthOfYear { get; }
 

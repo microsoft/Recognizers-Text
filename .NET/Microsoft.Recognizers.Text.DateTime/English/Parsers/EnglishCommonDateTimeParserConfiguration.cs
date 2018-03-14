@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Definitions.English;
@@ -8,8 +9,12 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration
+    public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
+
+        public new static readonly Regex AmbiguousMonthP0Regex =
+            new Regex(DateTimeDefinitions.AmbiguousMonthP0Regex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public EnglishCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
         {
             UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
@@ -46,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
             DateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
         }
+
+        Regex ICommonDateTimeParserConfiguration.AmbiguousMonthP0Regex => AmbiguousMonthP0Regex;
 
         public override IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary().AddRange(DateTimeDefinitions.DayOfMonth);
     }

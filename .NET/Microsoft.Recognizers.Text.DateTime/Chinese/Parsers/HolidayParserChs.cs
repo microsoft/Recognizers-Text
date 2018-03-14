@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
-using Microsoft.Recognizers.Text.Number;
 
 using DateObject = System.DateTime;
 
@@ -123,7 +122,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         // parse if lunar contains

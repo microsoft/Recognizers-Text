@@ -1,8 +1,8 @@
 ﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -50,6 +50,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IDateTimeParser DateTimePeriodParser { get; protected set; }
 
         public virtual IDateTimeParser DateTimeAltParser { get; protected set; }
+
+        public virtual Regex AmbiguousMonthP0Regex { get; protected set; }
 
         public virtual IImmutableDictionary<string, int> MonthOfYear { get; protected set; }
 
