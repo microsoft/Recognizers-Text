@@ -7,7 +7,7 @@ class ExtractResult:
         self.length: int
         self.text: str
         self.type: str
-        self.data: object=None
+        self.data: object = None
 
     @property
     def end(self):
@@ -18,7 +18,7 @@ class ExtractResult:
 
     def cover(self, other: 'ExtractResult') -> bool:
         return (((other.start < self.start) and (other.end >= self.end))
-            or ((other.start <= self.start) and (other.end > self.end)))
+                or ((other.start <= self.start) and (other.end > self.end)))
 
 class Extractor(ABC):
     @abstractmethod

@@ -1,8 +1,8 @@
 class Culture:
-    English: str='en-us'
-    Chinese: str='zh-cn'
-    Spanish: str='es-es'
-    French: str='fr-fr'
+    English: str = 'en-us'
+    Chinese: str = 'zh-cn'
+    Spanish: str = 'es-es'
+    French: str = 'fr-fr'
 
 class BaseCultureInfo:
     def __init__(self, culture_code: str):
