@@ -167,9 +167,9 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string BeforeRegex = @"(vorher(ige(s|n|r)?)?|bevor|vor|vorige(s|n|r)?)";
 		public const string AfterRegex = @"(nach)";
 		public const string SinceRegex = @"\b(seit)\b";
-		public const string AgoRegex = @"(ago)";
-		public const string LaterRegex = @"(später|von jetzt an)";
-		public const string InConnectorRegex = @"(in)";
+		public const string AgoRegex = @"\b(ago)\b";
+		public const string LaterRegex = @"\b(später|von jetzt an)\b";
+		public const string InConnectorRegex = @"\b(in)\b";
 		public const string WithinNextPrefixRegex = @"^[.]";
 		public const string AmPmDescRegex = @"(ampm)";
 		public const string MorningStartEndRegex = @"(^(morgen(s)?))|((morgen(s)?)$)";

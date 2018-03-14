@@ -1,11 +1,11 @@
 ﻿using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
-namespace Microsoft.Recognizers.Text.DateTime.German.Utilities
+namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
 {
-    public class GermanDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
+    public class EnglishDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
         public static readonly Regex AgoRegex = new Regex(DateTimeDefinitions.AgoRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -16,7 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German.Utilities
         public static readonly Regex InConnectorRegex = new Regex(DateTimeDefinitions.InConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WithinNextPrefixRegex = new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WithinNextPrefixRegex = new Regex(DateTimeDefinitions.WithinNextPrefixRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -36,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German.Utilities
         public static readonly Regex DateUnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex CommonDatePrefixRegex =
+        public static readonly Regex CommonDatePrefixRegex = 
             new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;

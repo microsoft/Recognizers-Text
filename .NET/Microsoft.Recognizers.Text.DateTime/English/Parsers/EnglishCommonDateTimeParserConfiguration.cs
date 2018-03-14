@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
         {
-            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+            UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();

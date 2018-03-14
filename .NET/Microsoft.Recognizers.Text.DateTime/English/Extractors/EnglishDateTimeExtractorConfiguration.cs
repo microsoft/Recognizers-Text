@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+            UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
         }
 
         public IExtractor IntegerExtractor { get; }
