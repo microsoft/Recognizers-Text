@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Dict, Pattern, Optional, List
 from decimal import Decimal, getcontext
 import regex
+from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
 from recognizers_number.culture import CultureInfo
@@ -110,8 +111,8 @@ class BaseNumberParser(Parser):
         self.supported_types: List[str] = list()
 
         single_int_frac = f'{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}'
-        self.text_number_regex: Pattern = regex.compile(fr'(?=\b)({single_int_frac})(?=\b)', flags=regex.I | regex.S)
-        self.arabic_number_regex: Pattern = regex.compile(r'\d+', flags=regex.I | regex.S)
+        self.text_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(fr'(?=\b)({single_int_frac})(?=\b)', flags=regex.I | regex.S)
+        self.arabic_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(r'\d+', flags=regex.I | regex.S)
         self.round_number_set: List[str] = list(self.config.round_number_map.keys())
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:

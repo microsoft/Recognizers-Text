@@ -1,6 +1,6 @@
 from typing import Pattern, List, NamedTuple
-import regex
 
+from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.english_numeric import EnglishNumeric
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
@@ -20,14 +20,14 @@ class EnglishNumberExtractor(BaseNumberExtractor):
         return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
-        self.__negative_number_terms = regex.compile(EnglishNumeric.NegativeNumberTermsRegex)
+        self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(EnglishNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
         cardinal_ex: EnglishCardinalExtractor = None
 
         if mode is NumberMode.PURE_NUMBER:
             cardinal_ex = EnglishCardinalExtractor(EnglishNumeric.PlaceHolderPureNumber)
         elif mode is NumberMode.CURRENCY:
-            self.__regexes.append(ReVal(re=EnglishNumeric.CurrencyRegex, val='IntegerNum'))
+            self.__regexes.append(ReVal(re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.CurrencyRegex), val='IntegerNum'))
 
         if cardinal_ex is None:
             cardinal_ex = EnglishCardinalExtractor()
@@ -69,25 +69,25 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
     def __init__(self, placeholder: str = EnglishNumeric.PlaceHolderDefault):
         self.__regexes = [
             ReVal(
-                re=EnglishNumeric.NumbersWithPlaceHolder(placeholder),
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.NumbersWithPlaceHolder(placeholder)),
                 val='IntegerNum'),
             ReVal(
-                re=EnglishNumeric.NumbersWithSuffix,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.NumbersWithSuffix),
                 val='IntegerNum'),
             ReVal(
-                re=self._generate_format_regex(LongFormatMode.INTEGER_COMMA, placeholder),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_COMMA, placeholder)),
                 val='IntegerNum'),
             ReVal(
-                re=EnglishNumeric.RoundNumberIntegerRegexWithLocks,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.RoundNumberIntegerRegexWithLocks),
                 val='IntegerNum'),
             ReVal(
-                re=EnglishNumeric.NumbersWithDozenSuffix,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.NumbersWithDozenSuffix),
                 val='IntegerNum'),
             ReVal(
-                re=EnglishNumeric.AllIntRegexWithLocks,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.AllIntRegexWithLocks),
                 val='IntegerEng'),
             ReVal(
-                re=EnglishNumeric.AllIntRegexWithDozenSuffixLocks,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.AllIntRegexWithDozenSuffixLocks),
                 val='IntegerEng')
         ]
 
@@ -103,28 +103,28 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
     def __init__(self, placeholder):
         self.__regexes = [
             ReVal(
-                re=EnglishNumeric.DoubleDecimalPointRegex(placeholder),
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.DoubleDecimalPointRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=EnglishNumeric.DoubleWithoutIntegralRegex(placeholder),
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.DoubleWithoutIntegralRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=self._generate_format_regex(LongFormatMode.DOUBLE_COMMA_DOT, placeholder),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_COMMA_DOT, placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=EnglishNumeric.DoubleWithMultiplierRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.DoubleWithMultiplierRegex),
                 val='DoubleNum'),
             ReVal(
-                re=EnglishNumeric.DoubleWithRoundNumber,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.DoubleWithRoundNumber),
                 val='DoubleNum'),
             ReVal(
-                re=EnglishNumeric.DoubleAllFloatRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.DoubleAllFloatRegex),
                 val='DoubleEng'),
             ReVal(
-                re=EnglishNumeric.DoubleExponentialNotationRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.DoubleExponentialNotationRegex),
                 val='DoublePow'),
             ReVal(
-                re=EnglishNumeric.DoubleCaretExponentialNotationRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.DoubleCaretExponentialNotationRegex),
                 val='DoublePow')
         ]
 
@@ -140,19 +140,19 @@ class EnglishFractionExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=EnglishNumeric.FractionNotationWithSpacesRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.FractionNotationWithSpacesRegex),
                 val='FracNum'),
             ReVal(
-                re=EnglishNumeric.FractionNotationRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.FractionNotationRegex),
                 val='FracNum'),
             ReVal(
-                re=EnglishNumeric.FractionNounRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.FractionNounRegex),
                 val='FracEng'),
             ReVal(
-                re=EnglishNumeric.FractionNounWithArticleRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.FractionNounWithArticleRegex),
                 val='FracEng'),
             ReVal(
-                re=EnglishNumeric.FractionPrepositionRegex,
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.FractionPrepositionRegex),
                 val='FracEng')
         ]
 

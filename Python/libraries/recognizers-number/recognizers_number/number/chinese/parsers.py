@@ -4,6 +4,7 @@ from decimal import Decimal, getcontext
 import copy
 import regex
 
+from recognizers_text.utilities import RegExpUtility
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import ParseResult
@@ -95,7 +96,7 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._word_separator_token = ChineseNumeric.WordSeparatorToken
 
         self._round_number_map = ChineseNumeric.RoundNumberMap
-        self._digital_number_regex = regex.compile(ChineseNumeric.DigitalNumberRegex)
+        self._digital_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DigitalNumberRegex)
 
         self.zero_to_nine_map_chs = ChineseNumeric.ZeroToNineMapChs
         self.round_number_map_chs = ChineseNumeric.RoundNumberMapChs
@@ -107,12 +108,12 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self.digit_num_regex = ChineseNumeric.DigitNumRegex
         self.dozen_regex = ChineseNumeric.DozenRegex
         self.percentage_regex = ChineseNumeric.PercentageRegex
-        self.double_and_round_chs_regex = ChineseNumeric.DoubleAndRoundChsRegex
-        self.frac_split_regex = ChineseNumeric.FracSplitRegex
-        self._negative_number_sign_regex = ChineseNumeric.NegativeNumberSignRegex
+        self.double_and_round_chs_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleAndRoundChsRegex)
+        self.frac_split_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.FracSplitRegex)
+        self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.NegativeNumberSignRegex)
         self.point_regex_chs = ChineseNumeric.PointRegexChs
-        self.spe_get_number_regex = ChineseNumeric.SpeGetNumberRegex
-        self.pair_regex = ChineseNumeric.PairRegex
+        self.spe_get_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.SpeGetNumberRegex)
+        self.pair_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.PairRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         return tokens

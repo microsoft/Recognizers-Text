@@ -3,6 +3,7 @@ from typing import List, Pattern, Dict, Match
 from collections import namedtuple
 import regex
 
+from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.resources.base_numbers import BaseNumbers
 from recognizers_number.number.models import LongFormatType
@@ -33,7 +34,7 @@ class BaseNumberExtractor(Extractor):
         match_source: Dict[[Match], str] = dict()
         matched: List[bool] = [False] * len(source)
 
-        matches_list = list(map(lambda x: MatchesVal(matches=list(regex.finditer(x.re, source, flags=regex.I)), val=x.val), self.regexes))
+        matches_list = list(map(lambda x: MatchesVal(matches=list(regex.finditer(x.re, source)), val=x.val), self.regexes))
         matches_list = list(filter(lambda x: len(x.matches) > 0, matches_list))
 
         for ml in matches_list:
@@ -106,7 +107,7 @@ class BasePercentageExtractor(Extractor):
     def generate_regexes(self, ignore_case: bool = True) -> List[Pattern]:
         definitions = self.get_definitions()
         options = regex.DOTALL | (regex.IGNORECASE if ignore_case else 0)
-        return list(map(lambda d: regex.compile(d, options), definitions))
+        return list(map(lambda d: RegExpUtility.get_safe_reg_exp(d, options), definitions))
 
     def extract(self, source: str) -> List[ExtractResult]:
         origin = source

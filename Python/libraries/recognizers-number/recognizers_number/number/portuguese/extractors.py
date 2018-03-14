@@ -1,6 +1,6 @@
 from typing import Pattern, List, NamedTuple
-import regex
 
+from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources.portuguese_numeric import PortugueseNumeric
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor, BasePercentageExtractor
@@ -20,14 +20,14 @@ class PortugueseNumberExtractor(BaseNumberExtractor):
         return self.__negative_number_terms
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
-        self.__negative_number_terms = regex.compile(PortugueseNumeric.NegativeNumberTermsRegex)
+        self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(PortugueseNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
         cardinal_ex: PortugueseCardinalExtractor = None
 
         if mode is NumberMode.PURE_NUMBER:
             cardinal_ex = PortugueseCardinalExtractor(PortugueseNumeric.PlaceHolderPureNumber)
         elif mode is NumberMode.CURRENCY:
-            self.__regexes.append(ReVal(re=PortugueseNumeric.CurrencyRegex, val='IntegerNum'))
+            self.__regexes.append(ReVal(re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.CurrencyRegex), val='IntegerNum'))
 
         if cardinal_ex is None:
             cardinal_ex = PortugueseCardinalExtractor()
@@ -69,25 +69,25 @@ class PortugueseIntegerExtractor(BaseNumberExtractor):
     def __init__(self, placeholder: str = PortugueseNumeric.PlaceHolderDefault):
         self.__regexes = [
             ReVal(
-                re=PortugueseNumeric.NumbersWithPlaceHolder(placeholder),
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.NumbersWithPlaceHolder(placeholder)),
                 val='IntegerNum'),
             ReVal(
-                re=PortugueseNumeric.NumbersWithSuffix,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.NumbersWithSuffix),
                 val='IntegerNum'),
             ReVal(
-                re=self._generate_format_regex(LongFormatMode.INTEGER_DOT, placeholder),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_DOT, placeholder)),
                 val='IntegerNum'),
             ReVal(
-                re=PortugueseNumeric.RoundNumberIntegerRegexWithLocks,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.RoundNumberIntegerRegexWithLocks),
                 val='IntegerNum'),
             ReVal(
-                re=PortugueseNumeric.NumbersWithDozenSuffix,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.NumbersWithDozenSuffix),
                 val='IntegerNum'),
             ReVal(
-                re=PortugueseNumeric.AllIntRegexWithLocks,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.AllIntRegexWithLocks),
                 val='IntegerPor'),
             ReVal(
-                re=PortugueseNumeric.AllIntRegexWithDozenSuffixLocks,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.AllIntRegexWithDozenSuffixLocks),
                 val='IntegerPor')
         ]
 
@@ -103,28 +103,28 @@ class PortugueseDoubleExtractor(BaseNumberExtractor):
     def __init__(self, placeholder):
         self.__regexes = [
             ReVal(
-                re=PortugueseNumeric.DoubleDecimalPointRegex(placeholder),
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.DoubleDecimalPointRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=PortugueseNumeric.DoubleWithoutIntegralRegex(placeholder),
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.DoubleWithoutIntegralRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=PortugueseNumeric.DoubleWithMultiplierRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.DoubleWithMultiplierRegex),
                 val='DoubleNum'),
             ReVal(
-                re=PortugueseNumeric.DoubleWithRoundNumber,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.DoubleWithRoundNumber),
                 val='DoubleNum'),
             ReVal(
-                re=PortugueseNumeric.DoubleAllFloatRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.DoubleAllFloatRegex),
                 val='DoublePor'),
             ReVal(
-                re=PortugueseNumeric.DoubleExponentialNotationRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.DoubleExponentialNotationRegex),
                 val='DoublePow'),
             ReVal(
-                re=PortugueseNumeric.DoubleCaretExponentialNotationRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.DoubleCaretExponentialNotationRegex),
                 val='DoublePow'),
             ReVal(
-                re=self._generate_format_regex(LongFormatMode.DOUBLE_DOT_COMMA, placeholder),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_DOT_COMMA, placeholder)),
                 val='DoubleNum')
         ]
 
@@ -140,19 +140,19 @@ class PortugueseFractionExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=PortugueseNumeric.FractionNotationWithSpacesRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.FractionNotationWithSpacesRegex),
                 val='FracNum'),
             ReVal(
-                re=PortugueseNumeric.FractionNotationRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.FractionNotationRegex),
                 val='FracNum'),
             ReVal(
-                re=PortugueseNumeric.FractionNounRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.FractionNounRegex),
                 val='FracPor'),
             ReVal(
-                re=PortugueseNumeric.FractionNounWithArticleRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.FractionNounWithArticleRegex),
                 val='FracPor'),
             ReVal(
-                re=PortugueseNumeric.FractionPrepositionRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.FractionPrepositionRegex),
                 val='FracPor')
         ]
 
@@ -168,10 +168,10 @@ class PortugueseOrdinalExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=PortugueseNumeric.OrdinalSuffixRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.OrdinalSuffixRegex),
                 val='OrdinalNum'),
             ReVal(
-                re=PortugueseNumeric.OrdinalEnglishRegex,
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.OrdinalEnglishRegex),
                 val='OrdinalPor')
         ]
 

@@ -2,7 +2,7 @@ class Culture:
     English: str = 'en-us'
     Chinese: str = 'zh-cn'
     Spanish: str = 'es-es'
-    Portuguese: str='pt-br'
+    Portuguese: str = 'pt-br'
     French: str = 'fr-fr'
 
 class BaseCultureInfo:
