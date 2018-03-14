@@ -1,5 +1,5 @@
-import { RegExpUtility, ExtractResult } from "@microsoft/recognizers-text";
-import { CultureInfo, Culture } from "@microsoft/recognizers-text-number";
+import { RegExpUtility, ExtractResult, IExtractor } from "@microsoft/recognizers-text";
+import { CultureInfo, Culture, EnglishIntegerExtractor } from "@microsoft/recognizers-text-number";
 import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } from "@microsoft/recognizers-text-number-with-unit";
 import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { Constants, TimeTypeConstants } from "../constants"
@@ -29,14 +29,17 @@ export class ChineseTimePeriodExtractor extends BaseDateTimeExtractor<TimePeriod
 class ChineseTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
     timeExtractor: IDateTimeExtractor;
     timeParser: ChineseTimeParser;
+    integerExtractor: IExtractor;
     pureNumberFromToRegex: RegExp;
     pureNumberBetweenAndRegex: RegExp;
     timeOfDayRegex: RegExp;
+    tillRegex: RegExp;
     numbers: ReadonlyMap<string, number>;
     utilityConfiguration: any;
 
     constructor() {
         this.timeParser = new ChineseTimeParser();
+        this.integerExtractor = new EnglishIntegerExtractor();
     }
 
     getMatchedTimexRange(text: string): any { return null; }

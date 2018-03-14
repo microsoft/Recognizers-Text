@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText)
+        public bool ContainsAmbiguousToken(string text, string matchedText)
         {
             return false;
         }

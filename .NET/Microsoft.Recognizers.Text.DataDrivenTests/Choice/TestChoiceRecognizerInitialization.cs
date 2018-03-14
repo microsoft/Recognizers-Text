@@ -17,9 +17,9 @@ namespace Microsoft.Recognizers.Text.Choice.Tests
 
         public TestChoiceRecognizerInitialization()
         {
-            controlModel = new Models.BooleanModel(
-                new Parsers.BooleanParser(),
-                new Extractors.BooleanExtractor(new English.Extractors.EnglishBooleanExtractorConfiguration()));
+            controlModel = new BooleanModel(
+                new BooleanParser(),
+                new BooleanExtractor(new English.EnglishBooleanExtractorConfiguration()));
         }
 
         [TestMethod]

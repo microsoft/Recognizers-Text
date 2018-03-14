@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Choice.Extractors
+namespace Microsoft.Recognizers.Text.Choice
 {
     public interface IBooleanExtractorConfiguration : IChoiceExtractorConfiguration
     {

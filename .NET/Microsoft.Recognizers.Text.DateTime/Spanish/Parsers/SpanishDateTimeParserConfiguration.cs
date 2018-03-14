@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -145,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText)
+        public bool ContainsAmbiguousToken(string text, string matchedText)
         {
             return text.Contains("esta mañana") && matchedText.Contains("mañana");
         }

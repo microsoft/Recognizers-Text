@@ -38,16 +38,21 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 foreach (var result in extractResults)
                 {
-                    var parseResult = Parser.Parse(result, refTime);
-                    if (parseResult.Value is List<DateTimeParseResult>)
+                    var parseResults = Parser.Parse(result, refTime);
+
+                    if (parseResults.Value is List<DateTimeParseResult>)
                     {
-                        parsedDateTimes.AddRange((List<DateTimeParseResult>)parseResult.Value);
+                        parsedDateTimes.AddRange((List<DateTimeParseResult>)parseResults.Value);
                     }
                     else
                     {
-                        parsedDateTimes.Add(parseResult);
+                        parsedDateTimes.Add(parseResults);
                     }
                 }
+
+                // Filter out ambiguous cases. Naïve approach.
+                parsedDateTimes = Parser.FilterResults(query, parsedDateTimes);
+
             }
             catch (Exception)
             { 

@@ -5,13 +5,15 @@ export class Culture {
   static readonly Spanish: string = "es-es"
   static readonly Portuguese: string = "pt-br"
   static readonly French: string = "fr-fr"
+  static readonly Japanese: string = "ja-jp"
 
   static readonly supportedCultures: Array<Culture> = [
     new Culture("English", Culture.English),
     new Culture("Chinese", Culture.Chinese),
     new Culture("Spanish", Culture.Spanish),
     new Culture("Portuguese", Culture.Portuguese),
-    new Culture("French", Culture.French)
+    new Culture("French", Culture.French),
+    new Culture("Japanese", Culture.Japanese)
   ]
 
   readonly cultureName: string

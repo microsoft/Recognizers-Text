@@ -140,6 +140,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText) => false;
+        public bool ContainsAmbiguousToken(string text, string matchedText) => false;
     }
 }

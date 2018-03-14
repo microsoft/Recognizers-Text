@@ -375,11 +375,11 @@ AfterRegex: !simpleRegex
 SinceRegex: !simpleRegex
   def: \b(seit)\b
 AgoRegex: !simpleRegex
-  def: (ago)
+  def: \b(ago)\b
 LaterRegex: !simpleRegex
-  def: (später|von jetzt an)
+  def: \b(später|von jetzt an)\b
 InConnectorRegex: !simpleRegex
-  def: (in)
+  def: \b(in)\b
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
