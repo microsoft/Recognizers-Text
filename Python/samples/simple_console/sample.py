@@ -1,6 +1,8 @@
 import json
 from typing import List
 from recognizers_number import Culture, ModelResult, NumberRecognizer
+
+# Use English for the Recognizers culture
 DEFAULT_CULTURE = Culture.English
 
 def main():
