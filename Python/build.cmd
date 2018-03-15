@@ -9,9 +9,9 @@ REM Build Resources
 ECHO.
 ECHO # Building Resources
 CALL python index.py ..\recognizers-number\resource-definitions.json
+CALL python index.py ..\recognizers-number-with-unit\resource-definitions.json
 
 popd
-
 ECHO.
 ECHO # Installing recognizers-text
 CALL  pip install -e .\libraries\recognizers-text\
