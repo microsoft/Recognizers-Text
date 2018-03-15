@@ -190,6 +190,7 @@
   },
   {
     "Input": "Der hiernach folgende Text wird lang. Hier werden ein dutzend Zahlen benutzt um zu schauen wie sich das Programm bei längeren Strings verhält. Das Wort Ein wird als Zahl erkannt, was hier die erste wäre. Womit wir jetzt schon bei Zahl Nummer 3 wären. Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig ist mit Leerzeichen 74 Zeichen lang. Schon ist die Hälfte durch. Jetzt folgt nur noch ein halbes dutzend Zahlen. Die Summe aus 2 und 6 ist acht. Das hier ist momentan Zeile Nummer vierhundertachtundachtzig und der Test müsste 13 Zahlen angeben. Was noch nicht ganz stimmt, da sich hier zwei Ordinale eingeschlichen haben, es sind also erst jetzt dreizehn.",
+    "Comment": "Normal numbers are detected because they can also be used as ordinal with suffix if there is a dot behind it (1. = 1st for example). might need to figure out a better solution. 'acht' is falsely detected as ordinal because it can be either an ordinal or a number, depending on context",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
