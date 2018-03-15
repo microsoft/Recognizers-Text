@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseHolidayParser : IDateTimeParser
@@ -190,6 +188,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return value;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

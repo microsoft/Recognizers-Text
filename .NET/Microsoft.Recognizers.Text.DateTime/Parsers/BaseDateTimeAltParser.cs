@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Text.Number;
-using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -74,6 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 dateTimeEr.Text = er.Text;
             }
+
             var dateTimePr = new DateTimeParseResult();
 
             if (subType == Constants.SYS_DATETIME_DATE)
@@ -158,9 +157,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             string singlePointType = "";
             string startPointType = "";
             string endPointType = "";
-            if (type == Constants.SYS_DATETIME_DATEPERIOD
-                || type == Constants.SYS_DATETIME_TIMEPERIOD
-                || type == Constants.SYS_DATETIME_DATETIMEPERIOD)
+            if (type == Constants.SYS_DATETIME_DATEPERIOD || type == Constants.SYS_DATETIME_TIMEPERIOD || 
+                type == Constants.SYS_DATETIME_DATETIMEPERIOD)
             {
                 isPeriod = true;
                 switch (type)
@@ -173,6 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         futureStartPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
                         futureEndPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
                         break;
+
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
                         startPointType = TimeTypeConstants.START_DATETIME;
                         endPointType = TimeTypeConstants.END_DATETIME;
@@ -181,6 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         futureStartPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
                         futureEndPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
                         break;
+
                     case Constants.SYS_DATETIME_TIMEPERIOD:
                         startPointType = TimeTypeConstants.START_TIME;
                         endPointType = TimeTypeConstants.END_TIME;
@@ -200,10 +200,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                         singlePointType = TimeTypeConstants.DATE;
                         singlePointResolution = FormatUtil.FormatDate((DateObject)ret.FutureValue);
                         break;
+
                     case Constants.SYS_DATETIME_DATETIME:
                         singlePointType = TimeTypeConstants.DATETIME;
                         singlePointResolution = FormatUtil.FormatDateTime((DateObject)ret.FutureValue);
                         break;
+
                     case Constants.SYS_DATETIME_TIME:
                         singlePointType = TimeTypeConstants.TIME;
                         singlePointResolution = FormatUtil.FormatTime((DateObject)ret.FutureValue);
@@ -241,6 +243,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {ExtendedModelResult.ParentTextKey, parentText}
                 };
             }
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

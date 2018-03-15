@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, int> Numbers { get; }
 
-        bool HaveAmbiguousToken(string text, string matchedText);
+        bool ContainsAmbiguousToken(string text, string matchedText);
 
         bool GetMatchedNowTimex(string text, out string timex);
 

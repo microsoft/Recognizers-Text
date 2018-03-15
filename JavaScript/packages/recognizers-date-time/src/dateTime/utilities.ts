@@ -170,7 +170,7 @@ export class MatchingUtil {
     public static getAgoLaterIndex(source: string, regex: RegExp): MatchedIndex {
         let result: MatchedIndex = { matched: false, index: -1 };
         let referencedMatches = RegExpUtility.getMatches(regex, source.trim().toLowerCase());
-        if (referencedMatches && referencedMatches.length > 0) {
+        if (referencedMatches && referencedMatches.length > 0 && referencedMatches[0].index === 0) {
             result.index = source.toLowerCase().lastIndexOf(referencedMatches[0].value) + referencedMatches[0].length;
             result.matched = true;
         }
