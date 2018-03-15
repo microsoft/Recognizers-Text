@@ -1498,7 +1498,6 @@
 ,
 {
   "Input": "四點 五個百分點",
-  "Debug": true,
   "Results": [
     {
       "Text": "四點 五個百分點",
