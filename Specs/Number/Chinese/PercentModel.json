@@ -1,6 +1,5 @@
 [{
   "Input": "打对折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "对折",
@@ -14,13 +13,11 @@
 ,
 {
   "Input": "对折",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "陆 点 五 折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "陆 点 五 折",
@@ -34,7 +31,6 @@
 ,
 {
   "Input": "９成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "９成",
@@ -48,7 +44,6 @@
 ,
 {
   "Input": "七成 六",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七成 六",
@@ -62,7 +57,6 @@
 ,
 {
   "Input": "7.２成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7.２成",
@@ -76,7 +70,6 @@
 ,
 {
   "Input": "7 2 折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7 2 折",
@@ -90,7 +83,6 @@
 ,
 {
   "Input": "六 点 五 成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六 点 五 成",
@@ -104,7 +96,6 @@
 ,
 {
   "Input": "１０ 成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１０ 成",
@@ -118,7 +109,6 @@
 ,
 {
   "Input": "１0 成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１0 成",
@@ -132,7 +122,6 @@
 ,
 {
   "Input": "十 成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十 成",
@@ -146,7 +135,6 @@
 ,
 {
   "Input": "75折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75折",
@@ -160,7 +148,6 @@
 ,
 {
   "Input": "9.9折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9.9折",
@@ -174,7 +161,6 @@
 ,
 {
   "Input": "九 九 折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九 九 折",
@@ -188,7 +174,6 @@
 ,
 {
   "Input": "三点一折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三点一折",
@@ -202,7 +187,6 @@
 ,
 {
   "Input": "三成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三成",
@@ -216,7 +200,6 @@
 ,
 {
   "Input": "半成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "半成",
@@ -230,7 +213,6 @@
 ,
 {
   "Input": "半折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "半折",
@@ -244,7 +226,6 @@
 ,
 {
   "Input": "10成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10成",
@@ -258,7 +239,6 @@
 ,
 {
   "Input": "十成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十成",
@@ -272,13 +252,11 @@
 ,
 {
   "Input": "十折",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "9.5成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9.5成",
@@ -292,7 +270,6 @@
 ,
 {
   "Input": "九成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九成",
@@ -306,7 +283,6 @@
 ,
 {
   "Input": "三成半",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三成半",
@@ -320,7 +296,6 @@
 ,
 {
   "Input": "２.５成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２.５成",
@@ -334,7 +309,6 @@
 ,
 {
   "Input": "２成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２成",
@@ -348,7 +322,6 @@
 ,
 {
   "Input": "２折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２折",
@@ -362,7 +335,6 @@
 ,
 {
   "Input": "两折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "两折",
@@ -376,7 +348,6 @@
 ,
 {
   "Input": "两成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "两成",
@@ -390,7 +361,6 @@
 ,
 {
   "Input": "三八折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三八折",
@@ -404,7 +374,6 @@
 ,
 {
   "Input": "2成,2.5成,２．１成，２成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2成",
@@ -439,7 +408,6 @@
 ,
 {
   "Input": "九成,五成,八点五成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九成",
@@ -467,7 +435,6 @@
 ,
 {
   "Input": "2折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2折",
@@ -481,7 +448,6 @@
 ,
 {
   "Input": "2折,2.5折,２．１折，２折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2折",
@@ -516,7 +482,6 @@
 ,
 {
   "Input": "九折,五五折,八点五折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九折",
@@ -544,7 +509,6 @@
 ,
 {
   "Input": "五折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "五折",
@@ -558,7 +522,6 @@
 ,
 {
   "Input": "百分之２．４",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之２．４",
@@ -572,19 +535,16 @@
 ,
 {
   "Input": "二三十个百分点",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "百分之二三十",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "百分之五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之五",
@@ -598,7 +558,6 @@
 ,
 {
   "Input": "一百五十    个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一百五十    个百分点",
@@ -612,7 +571,6 @@
 ,
 {
   "Input": "六个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六个百分点",
@@ -626,7 +584,6 @@
 ,
 {
   "Input": "２．４个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２．４个百分点",
@@ -640,7 +597,6 @@
 ,
 {
   "Input": "-22.2%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-22.2%",
@@ -654,7 +610,6 @@
 ,
 {
   "Input": "２２％",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２２％",
@@ -668,7 +623,6 @@
 ,
 {
   "Input": "－1２２％",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "－1２２％",
@@ -682,7 +636,6 @@
 ,
 {
   "Input": "百分之22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之22",
@@ -696,7 +649,6 @@
 ,
 {
   "Input": "百分之１２０",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１２０",
@@ -710,7 +662,6 @@
 ,
 {
   "Input": "百分之15Ｋ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之15Ｋ",
@@ -724,7 +675,6 @@
 ,
 {
   "Input": "百分之1,111",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之1,111",
@@ -738,7 +688,6 @@
 ,
 {
   "Input": "百分之９，９９９",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之９，９９９",
@@ -752,7 +701,6 @@
 ,
 {
   "Input": "12个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12个百分点",
@@ -766,7 +714,6 @@
 ,
 {
   "Input": "2,123个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,123个百分点",
@@ -780,7 +727,6 @@
 ,
 {
   "Input": "二十个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "二十个百分点",
@@ -794,7 +740,6 @@
 ,
 {
   "Input": "四点 五个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "四点 五个百分点",
@@ -808,7 +753,6 @@
 ,
 {
   "Input": "百分之五 十",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之五 十",
@@ -822,7 +766,6 @@
 ,
 {
   "Input": "百分之一 点五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一 点五",
@@ -836,7 +779,6 @@
 ,
 {
   "Input": "百分之５６.２",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之５６.２",
@@ -850,7 +792,6 @@
 ,
 {
   "Input": "百分之１２",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１２",
@@ -864,7 +805,6 @@
 ,
 {
   "Input": "百分之3,000",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3,000",
@@ -878,7 +818,6 @@
 ,
 {
   "Input": "百分之１，１２３",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１，１２３",
@@ -892,7 +831,6 @@
 ,
 {
   "Input": "百分之3.2k",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3.2k",
@@ -906,7 +844,6 @@
 ,
 {
   "Input": "百分之3.2M",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3.2M",
@@ -920,7 +857,6 @@
 ,
 {
   "Input": "12.56个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12.56个百分点",
@@ -934,7 +870,6 @@
 ,
 {
   "Input": "０.４个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "０.４个百分点",
@@ -948,7 +883,6 @@
 ,
 {
   "Input": "15,123个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15,123个百分点",
@@ -962,7 +896,6 @@
 ,
 {
   "Input": "１１１，１１１个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１１１，１１１个百分点",
@@ -976,7 +909,6 @@
 ,
 {
   "Input": "25%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "25%",
@@ -990,7 +922,6 @@
 ,
 {
   "Input": "12k个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12k个百分点",
@@ -1004,7 +935,6 @@
 ,
 {
   "Input": "１５k个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１５k个百分点",
@@ -1018,7 +948,6 @@
 ,
 {
   "Input": "一百五十个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一百五十个百分点",
@@ -1032,7 +961,6 @@
 ,
 {
   "Input": "七十五万个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七十五万个百分点",
@@ -1046,7 +974,6 @@
 ,
 {
   "Input": "拾万零五十六点叁叁个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "拾万零五十六点叁叁个百分点",
@@ -1060,7 +987,6 @@
 ,
 {
   "Input": "75.2个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75.2个百分点",
@@ -1074,7 +1000,6 @@
 ,
 {
   "Input": "75个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75个百分点",
@@ -1088,7 +1013,6 @@
 ,
 {
   "Input": "1,075个百分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,075个百分点",
@@ -1102,7 +1026,6 @@
 ,
 {
   "Input": "百分之一百",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一百",
@@ -1116,7 +1039,6 @@
 ,
 {
   "Input": "百分之百",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之百",
@@ -1130,7 +1052,6 @@
 ,
 {
   "Input": "百分之一百二十点五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一百二十点五",
@@ -1144,7 +1065,6 @@
 ,
 {
   "Input": "百分之2.4",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2.4",
@@ -1158,7 +1078,6 @@
 ,
 {
   "Input": "百分之2",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2",
@@ -1172,7 +1091,6 @@
 ,
 {
   "Input": "百分之1,669",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之1,669",
@@ -1186,7 +1104,6 @@
 ,
 {
   "Input": "百分之５２.５",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之５２.５",
@@ -1200,13 +1117,11 @@
 ,
 {
   "Input": "五百分之2.2",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "上升了百分之2.2",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2.2",
@@ -1220,7 +1135,6 @@
 ,
 {
   "Input": "5％",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5％",
@@ -1234,7 +1148,6 @@
 ,
 {
   "Input": "５．５％",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "５．５％",
@@ -1248,7 +1161,6 @@
 ,
 {
   "Input": "一 百 五 十 个 百 分 点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一 百 五 十 个 百 分 点",
@@ -1262,7 +1174,6 @@
 ,
 {
   "Input": "六   个 百 分点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六   个 百 分点",
@@ -1276,7 +1187,6 @@
 ,
 {
   "Input": "２．４   个百分 点",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２．４   个百分 点",
@@ -1290,7 +1200,6 @@
 ,
 {
   "Input": "百 分之 一百二十点五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分之 一百二十点五",
@@ -1304,7 +1213,6 @@
 ,
 {
   "Input": "百 分 之2.4",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分 之2.4",
@@ -1318,7 +1226,6 @@
 ,
 {
   "Input": "百 分之 2",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分之 2",
@@ -1332,7 +1239,6 @@
 ,
 {
   "Input": "百  分 之 669",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百  分 之 669",
@@ -1346,7 +1252,6 @@
 ,
 {
   "Input": "百 分 之  ５２.５ k",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分 之  ５２.５ k",
@@ -1360,7 +1265,6 @@
 ,
 {
   "Input": "百 分 之 一 百二 十点 五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分 之 一 百二 十点 五",
@@ -1374,7 +1278,6 @@
 ,
 {
   "Input": "打對折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "對折",
@@ -1388,13 +1291,11 @@
 ,
 {
   "Input": "對折",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "陸 點 五 折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "陸 點 五 折",
@@ -1408,7 +1309,6 @@
 ,
 {
   "Input": "六 點 五 成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六 點 五 成",
@@ -1422,7 +1322,6 @@
 ,
 {
   "Input": "三點一折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三點一折",
@@ -1436,7 +1335,6 @@
 ,
 {
   "Input": "兩折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "兩折",
@@ -1450,7 +1348,6 @@
 ,
 {
   "Input": "兩成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "兩成",
@@ -1464,7 +1361,6 @@
 ,
 {
   "Input": "九成,五成,八點五成",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九成",
@@ -1492,7 +1388,6 @@
 ,
 {
   "Input": "九折,五五折,八點五折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九折",
@@ -1520,13 +1415,11 @@
 ,
 {
   "Input": "二三十個百分點",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "一百五十 個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一百五十 個百分點",
@@ -1540,7 +1433,6 @@
 ,
 {
   "Input": "六個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六個百分點",
@@ -1554,7 +1446,6 @@
 ,
 {
   "Input": "２．４個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２．４個百分點",
@@ -1568,7 +1459,6 @@
 ,
 {
   "Input": "12個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12個百分點",
@@ -1582,7 +1472,6 @@
 ,
 {
   "Input": "2,123個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,123個百分點",
@@ -1596,7 +1485,6 @@
 ,
 {
   "Input": "二十個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "二十個百分點",
@@ -1610,7 +1498,6 @@
 ,
 {
   "Input": "四點 五個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "四點 五個百分點",
@@ -1624,7 +1511,6 @@
 ,
 {
   "Input": "百分之一 點五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一 點五",
@@ -1638,7 +1524,6 @@
 ,
 {
   "Input": "12.56個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12.56個百分點",
@@ -1652,7 +1537,6 @@
 ,
 {
   "Input": "０.４個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "０.４個百分點",
@@ -1666,7 +1550,6 @@
 ,
 {
   "Input": "15,123個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15,123個百分點",
@@ -1680,7 +1563,6 @@
 ,
 {
   "Input": "１１１，１１１個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１１１，１１１個百分點",
@@ -1694,7 +1576,6 @@
 ,
 {
   "Input": "12k個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12k個百分點",
@@ -1708,7 +1589,6 @@
 ,
 {
   "Input": "１５k個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１５k個百分點",
@@ -1722,7 +1602,6 @@
 ,
 {
   "Input": "一百五十個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一百五十個百分點",
@@ -1736,7 +1615,6 @@
 ,
 {
   "Input": "七十五萬個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七十五萬個百分點",
@@ -1750,7 +1628,6 @@
 ,
 {
   "Input": "拾萬零五十六點叁叁個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "拾萬零五十六點叁叁個百分點",
@@ -1764,7 +1641,6 @@
 ,
 {
   "Input": "75.2個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75.2個百分點",
@@ -1778,7 +1654,6 @@
 ,
 {
   "Input": "75個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75個百分點",
@@ -1792,7 +1667,6 @@
 ,
 {
   "Input": "1,075個百分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,075個百分點",
@@ -1806,7 +1680,6 @@
 ,
 {
   "Input": "百分之一百二十點五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一百二十點五",
@@ -1820,7 +1693,6 @@
 ,
 {
   "Input": "一 百 五 十 個 百 分 點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一 百 五 十 個 百 分 點",
@@ -1834,7 +1706,6 @@
 ,
 {
   "Input": "六   個 百 分點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六   個 百 分點",
@@ -1848,7 +1719,6 @@
 ,
 {
   "Input": "２．４   個百分 點",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２．４   個百分 點",
@@ -1862,7 +1732,6 @@
 ,
 {
   "Input": "百 分之 一百二十點五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分之 一百二十點五",
@@ -1876,7 +1745,6 @@
 ,
 {
   "Input": "佰 分 之 一 百二 十點 五",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "佰 分 之 一 百二 十點 五",
@@ -1890,7 +1758,6 @@
 ,
 {
   "Input": "苹果折扣一折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一折",  

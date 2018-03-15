@@ -9,6 +9,7 @@ Microsoft.Recognizers.Text powers pre-built entities in both [**LUIS: Language U
 The Microsoft.Recognizers.Text packages currently target two platforms:
 * [C# version](https://github.com/Microsoft/Recognizers-Text/tree/master/.NET) - **NuGet packages** available at: https://www.nuget.org/profiles/Recognizers.Text
 * [JavaScript verison](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-text-suite) - **NPM packages** available at: https://www.npmjs.com/~recognizers.text
+* [Python version](https://github.com/Microsoft/Recognizers-Text/tree/master/Python)
 
 Contributions are greatly welcome! Both for fixes and extensions in the currently supported languages and for expansion to new ones.
 Especially for Japanese, Italian, Korean, and Dutch.
