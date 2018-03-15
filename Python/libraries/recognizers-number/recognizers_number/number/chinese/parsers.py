@@ -145,6 +145,8 @@ class ChineseNumberParser(BaseNumberParser):
         elif 'Num' in extra:
             simplified_source.text = self.replace_full_with_half(simplified_source.text)
             result = self._digit_number_parse(simplified_source)
+            if regex.search(self.config.negative_number_sign_regex, simplified_source.text) and result.value > 0:
+                result.value = result.value * -1
             result.resolution_str = self.__format(result.value)
         elif 'Pow' in extra:
             simplified_source.text = self.replace_full_with_half(simplified_source.text)
