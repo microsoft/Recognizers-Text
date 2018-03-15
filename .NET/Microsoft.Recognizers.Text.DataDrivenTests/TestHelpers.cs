@@ -200,9 +200,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new DateTime.BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new DateTime.BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             }
 
             throw new Exception($"Extractor '{extractorName}' for English not supported");
@@ -322,7 +322,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new SpanishSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new DateTime.BaseMergedExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Spanish not supported");
@@ -382,7 +382,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new PortugueseSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new DateTime.BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Portuguese not supported");
@@ -442,9 +442,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new FrenchSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new DateTime.BaseMergedExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.None));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new DateTime.BaseMergedExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             }
 
             throw new Exception($"Extractor '{extractorName}' for French not supported");
@@ -503,9 +503,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new GermanSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new GermanMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new DateTime.BaseMergedExtractor(new GermanMergedExtractorConfiguration(DateTimeOptions.None));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedExtractor(new GermanMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new DateTime.BaseMergedExtractor(new GermanMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             }
 
             throw new Exception($"Extractor '{extractorName}' for German not supported");

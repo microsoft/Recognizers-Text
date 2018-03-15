@@ -1,4 +1,7 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Globalization;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
@@ -10,6 +13,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         {
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencySuffixList);
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencyPrefixList);
+            this.CurrencyIsoCodeList = NumbersWithUnitDefinitions.CurrencyIsoCodeList.ToImmutableDictionary();
+            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.CurrencyFractionList.ToImmutableDictionary();
         }
+
     }
 }

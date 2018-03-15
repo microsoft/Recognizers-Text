@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
-
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+            this.CompoundUnitRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitRegex, RegexOptions.IgnoreCase);
         }
          
         public abstract string ExtractType { get; }
@@ -28,6 +29,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public string BuildSuffix { get; }
 
         public string ConnectorToken { get; }
+
+        public Regex CompoundUnitRegex { get; }
+
+        public IExtractor IntegerExtractor { get; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

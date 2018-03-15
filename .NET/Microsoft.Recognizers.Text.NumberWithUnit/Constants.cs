@@ -14,5 +14,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public const string SYS_UNIT_TEMPERATURE = "builtin.unit.temperature";
         public const string SYS_UNIT_VOLUME = "builtin.unit.volume";
         public const string SYS_UNIT_WEIGHT = "builtin.unit.weight";
+        public const string SYS_UNIT_COMPOUND = "builtin.unit.compound";
+        public const string SYS_NUM = "builtin.num";
+
+        public const string FAKE_ISO_CODE_PREFIX = "__";
     }
 }

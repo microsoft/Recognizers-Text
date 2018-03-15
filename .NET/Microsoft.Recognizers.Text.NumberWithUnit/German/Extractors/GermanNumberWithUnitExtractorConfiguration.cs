@@ -1,9 +1,8 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
-
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Number.German;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 {
@@ -16,6 +15,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = string.Empty;
+            this.CompoundUnitRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitRegex, RegexOptions.IgnoreCase);
         }
 
         public abstract string ExtractType { get; }
@@ -29,6 +29,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         public string BuildSuffix { get; }
 
         public string ConnectorToken { get; }
+
+        public Regex CompoundUnitRegex { get; set; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

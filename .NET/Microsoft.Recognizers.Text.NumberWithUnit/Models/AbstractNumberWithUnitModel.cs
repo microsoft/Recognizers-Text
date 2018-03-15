@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -20,7 +18,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public List<ModelResult> Parse(string query)
         {
-
             // Preprocess the query
             query = FormatUtility.Preprocess(query, false);
 
@@ -28,7 +25,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             try
             {
-
                 foreach (var p in ExtractorParserDic)
                 {
                     var extractor = p.Key;
@@ -40,22 +36,34 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     foreach (var result in extractedResults)
                     {
-                        parsedResults.Add(parser.Parse(result));
+                        var parseResult = parser.Parse(result);
+                        if (parseResult.Value is List<ParseResult>)
+                        {
+                            parsedResults.AddRange((List<ParseResult>) parseResult.Value);
+                        }
+                        else
+                        {
+                            parsedResults.Add(parseResult);
+                        }
                     }
 
                     var modelResults = parsedResults.Select(o => new ModelResult
                     {
                         Start = o.Start.Value,
                         End = o.Start.Value + o.Length.Value - 1,
-                        Resolution = (o.Value is UnitValue) ?
-                            new SortedDictionary<string, object>
+                        Resolution = (o.Value is UnitValue) ? new SortedDictionary<string, object>
                             {
-                                {ResolutionKey.Value, ((UnitValue)o.Value).Number},
-                                {ResolutionKey.Unit, ((UnitValue)o.Value).Unit}
+                                {ResolutionKey.Value, ((UnitValue) o.Value).Number},
+                                {ResolutionKey.Unit, ((UnitValue) o.Value).Unit}
                             }
-                            : new SortedDictionary<string, object>
+                            : (o.Value is CurrencyUnitValue) ? new SortedDictionary<string, object>
                             {
-                                {ResolutionKey.Value, (string)o.Value}
+                                {ResolutionKey.Value, ((CurrencyUnitValue) o.Value).Number},
+                                {ResolutionKey.Unit, ((CurrencyUnitValue) o.Value).Unit},
+                                {ResolutionKey.IsoCurrency, ((CurrencyUnitValue) o.Value).IsoCurrency}
+                            } : new SortedDictionary<string, object>
+                            {
+                                {ResolutionKey.Value, (string) o.Value}
                             },
                         Text = o.Text,
                         TypeName = ModelTypeName
@@ -79,7 +87,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         }
                     }
                 }
-
             }
             catch (Exception)
             {

@@ -1,13 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public interface INumberWithUnitParserConfiguration
     {
         IDictionary<string, string> UnitMap { get; }
+
+        IDictionary<string, long> CurrencyFractionNumMap { get; }
 
         #region Language settings
 
@@ -28,6 +32,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     {
         public IDictionary<string, string> UnitMap { get; }
 
+        public IDictionary<string, long> CurrencyFractionNumMap { get; }
+
+        public IDictionary<string, string> CurrencyFractionList { get; }
+
         public CultureInfo CultureInfo { get; }
 
         public abstract IParser InternalNumberParser { get; }
@@ -36,34 +44,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public abstract string ConnectorToken { get; }
 
+        public IDictionary<string, string> CurrencyIsoCodeList { get; set; }
+
+        public IDictionary<string, string> CurrencyFractionCodeList { get; set; }
+
         protected BaseNumberWithUnitParserConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
             this.UnitMap = new Dictionary<string, string>();
+            this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionNumList.ToImmutableDictionary();
+            this.CurrencyFractionList = BaseCurrency.CurrencyFractionList.ToImmutableDictionary();
+            this.CurrencyIsoCodeList = new Dictionary<string, string>();
+            this.CurrencyFractionCodeList = new Dictionary<string, string>();
         }
-        
+
         public void BindDictionary(IDictionary<string, string> dictionary)
         {
-            if (dictionary == null) return;
-
-            foreach (var pair in dictionary)
-            {
-                if (string.IsNullOrEmpty(pair.Key))
-                {
-                    continue;
-                }
-                var key = pair.Key;
-                var values = pair.Value.Trim().Split('|');
-
-                foreach (var token in values)
-                {
-                    if (string.IsNullOrWhiteSpace(token) || UnitMap.ContainsKey(token))
-                    {
-                        continue;
-                    }
-                    UnitMap.Add(token, key);
-                }
-            }
+           DictionaryUtils.BindDictionary(dictionary, UnitMap); 
         }
     }
 }

@@ -1,4 +1,65 @@
-[{
+[
+{
+  "Input": "it only cost 3 dollars 50 cents.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 dollars 50 cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "3.5",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "it only cost thirteen dollars and forty-five cents",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "thirteen dollars and forty-five cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "13.45",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "it only cost thirteen dollars forty-five cents",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "thirteen dollars forty-five cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "13.45",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "it only cost thirteen dollars forty five",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "thirteen dollars forty five",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "13.45",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "montgomery county , md . - - $ 75 million of general obligation , series b , consolidated public improvement bonds of 1989 , through a manufacturers hanover trust co . group .",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -1421,19 +1482,19 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "143.80 yen",
-      "TypeName": "currency",
-      "Resolution": {
-        "value": "143.8",
-        "unit": "Japanese yen"
-      }
-    },
-    {
       "Text": "dollar",
       "TypeName": "currency",
       "Resolution": {
         "value": null,
         "unit": "Dollar"
+      }
+    },
+    {
+      "Text": "143.80 yen",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "143.8",
+        "unit": "Japanese yen"
       }
     }
   ]
