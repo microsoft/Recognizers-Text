@@ -1,15 +1,15 @@
 # Microsoft Recognizers Text Overview
 
-Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, and Portuguese. Partial support for German. More on the way.
+Microsoft.Recognizers.Text provides robust recognition and resolution of entities like numbers, units, and date/time; expressed in multiple languages. Full support for Chinese, English, French, Spanish, and Portuguese. Partial support for German and Japanese. More on the way.
 
 # Utilizing the Project
 
 Microsoft.Recognizers.Text powers pre-built entities in both [**LUIS: Language Understanding Intelligent Service**](https://www.luis.ai/home) and [**Microsoft Bot Framework**](https://dev.botframework.com/); and is also available as standalone packages (for the base classes and the different entity recognizers).
 
-The Microsoft.Recognizers.Text packages currently target two platforms:
+The Microsoft.Recognizers.Text packages currently target three platforms:
 * [C# version](https://github.com/Microsoft/Recognizers-Text/tree/master/.NET) - **NuGet packages** available at: https://www.nuget.org/profiles/Recognizers.Text
 * [JavaScript verison](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-text-suite) - **NPM packages** available at: https://www.npmjs.com/~recognizers.text
-* [Python version](https://github.com/Microsoft/Recognizers-Text/tree/master/Python)
+* [Python version](https://github.com/Microsoft/Recognizers-Text/tree/master/Python) (in progress)
 
 Contributions are greatly welcome! Both for fixes and extensions in the currently supported languages and for expansion to new ones.
 Especially for Japanese, Italian, Korean, and Dutch.
