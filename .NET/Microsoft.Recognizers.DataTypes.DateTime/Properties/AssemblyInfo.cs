@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Microsoft.Recognizers.Text.DateTime")]
+[assembly: AssemblyTitle("Microsoft.Recognizers.DataTypes.DateTime")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Microsoft.Recognizers.Text.DateTime")]
+[assembly: AssemblyProduct("Microsoft.Recognizers.DataTypes.DateTime")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("19522b81-c63f-4dd5-ab4c-674cd44d67d6")]
+[assembly: Guid("6C1FE715-E09B-409A-920A-5BCC3C5AB2CD")]
 
 // Version information for an assembly consists of the following four values:
 //
