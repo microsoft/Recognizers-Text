@@ -1758,7 +1758,6 @@
 ,
 {
   "Input": "苹果折扣一折",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一折",  
