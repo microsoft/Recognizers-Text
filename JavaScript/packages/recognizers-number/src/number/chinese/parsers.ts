@@ -45,6 +45,9 @@ export class ChineseNumberParser extends BaseNumberParser {
         } else if (extra.includes("Num")) {
             simplifiedExtResult.text = this.replaceFullWithHalf(simplifiedExtResult.text);
             result = this.digitNumberParse(simplifiedExtResult);
+            if(this.config.negativeNumberSignRegex.test(simplifiedExtResult.text) && result.value > 0){
+                result.value = - result.value;
+            }
             result.resolutionStr = this.toString(result.value);
         } else if (extra.includes("Pow")) {
             simplifiedExtResult.text = this.replaceFullWithHalf(simplifiedExtResult.text);
