@@ -4,7 +4,7 @@
 from setuptools import setup, find_packages
 
 NAME = "recognizers_text"
-VERSION = "1.0.0"
+VERSION = "1.0.0.a0"
 REQUIRES = []
 
 setup(
