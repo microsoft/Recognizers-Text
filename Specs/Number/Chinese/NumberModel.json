@@ -3811,25 +3811,21 @@
 ,
 {
   "Input": "苹果折扣一美元",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "苹果折扣一折",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "这台电脑两美刀",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "小明有十个手指头",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十",
@@ -3845,19 +3841,16 @@
 ,
 {
   "Input": "我一看你就笑",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "我家在四川",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "陆地上有许多动物",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ]
