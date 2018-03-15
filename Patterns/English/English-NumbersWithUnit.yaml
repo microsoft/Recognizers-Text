@@ -459,7 +459,6 @@ CurrencyIsoCodeList: !dictionary
     Indonesian rupiah: IDR
     Danish krone: DKK
     Norwegian krone: NOK
-    Faroese króna: DKK
     Icelandic króna: ISK
     Swedish krona: SEK
     West African CFA franc: XOF
@@ -554,7 +553,7 @@ CurrencyIsoCodeList: !dictionary
     Micronesian dollar: _MD
     Kiribati dollar: _KID
     Guernsey pound: _GGP
-    Faroese crown: _FOK
+    Faroese króna: _FOK
     Cook Islands dollar: _CKD 
     British Virgin Islands dollar: _BD 
     Ascension pound: _AP 
@@ -563,9 +562,79 @@ CurrencyIsoCodeList: !dictionary
 CurrencyFractionList: !dictionary
   types: [ string, string ]
   entries:
-    Cent: Cent
-    Fen: Fen
     Jiao: Jiao
+    Kopek: Kopek
+    Pul: Pul
+    Cent: Cent
+    Qindarkë: Qindarkë
+    Penny: Penny
+    Santeem: Santeem
+    Cêntimo: Cêntimo
+    Centavo: Centavo
+    Luma: Luma
+    Qəpik: Qəpik
+    Fils: Fils
+    Poisha: Poisha
+    Kapyeyka: Kapyeyka
+    Centime: Centime
+    Chetrum: Chetrum
+    Paisa: Paisa
+    Fening: Fening
+    Thebe: Thebe
+    Sen: Sen
+    Stotinka: Stotinka
+    Fen: Fen
+    Céntimo: Céntimo
+    Lipa: Lipa
+    Haléř: Haléř
+    Øre: Øre
+    Piastre: Piastre
+    Santim: Santim
+    Oyra: Oyra
+    Butut: Butut
+    Tetri: Tetri
+    Pesewa: Pesewa
+    Fillér: Fillér
+    Eyrir: Eyrir
+    Dinar: Dinar
+    Agora: Agora
+    Tïın: Tïın
+    Chon: Chon
+    Jeon: Jeon
+    Tyiyn: Tyiyn
+    Att: Att
+    Sente: Sente
+    Dirham: Dirham
+    Rappen: Rappen
+    Avo: Avo
+    Deni: Deni
+    Iraimbilanja: Iraimbilanja
+    Tambala: Tambala
+    Laari: Laari
+    Khoums: Khoums
+    Ban: Ban
+    Möngö: Möngö
+    Pya: Pya
+    Kobo: Kobo
+    Kuruş: Kuruş
+    Baisa: Baisa
+    Centésimo: Centésimo
+    Toea: Toea
+    Sentimo: Sentimo
+    Grosz: Grosz
+    Sene: Sene
+    Halala: Halala
+    Para: Para
+    Öre: Öre
+    Diram: Diram
+    Satang: Satang
+    Seniti: Seniti
+    Millime: Millime
+    Tennesi: Tennesi
+    Kopiyka: Kopiyka
+    Tiyin: Tiyin
+    Hào: Hào
+    Ngwee: Ngwee
 CompoundUnitRegex: !simpleRegex
     def: (?<spacer>and)
 CurrencyPrefixList: !dictionary
