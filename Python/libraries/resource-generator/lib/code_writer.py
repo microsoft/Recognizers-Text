@@ -46,10 +46,13 @@ class DictionaryWriter(CodeWriter):
         key_quote = '\'' if key_type=='string' else ''
         value_quote = '\'' if value_type=='string' else ''
         for key, value in entries.items():
-            self.entries.append(f'({key_quote}{key}{key_quote}, {value_quote}{value}{value_quote})')
+            k = key.replace(r"\'", '\'').replace('\'', r"\'")
+            v = value.replace(r"\'", '\'').replace('\'', r"\'")
+            self.entries.append(f'({key_quote}{k}{key_quote}, {value_quote}{v}{value_quote})')
 
     def write(self):
-        joined_entries = ', '.join(self.entries)
+        spaces = ' ' * (len(f'{self.name} = dict([')+4)
+        joined_entries = f',\n{spaces}'.join(self.entries)
         return f'{self.name} = dict([{joined_entries}])'
 
 class ArrayWriter(CodeWriter):
