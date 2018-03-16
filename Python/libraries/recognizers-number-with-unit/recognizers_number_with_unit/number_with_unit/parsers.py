@@ -29,17 +29,28 @@ class NumberWithUnitParserConfiguration(ABC):
         self.unit_map: Dict[str, str] = dict()
 
     def add_dict_to_unit_map(self, dictionary: Dict[str, str]):
-        pass
+        if not dictionary: 
+            return
+        for key, value in dictionary.items():
+            if not key or len(key) == 0:
+                continue
+
+            values = value.strip().split('|')
+            for token in values:
+                if not token or len(token) == 0 or token in self.unit_map:
+                    return
+                
+                self.unit_map[token] = key
 
 class NumberWithUnitParser(Parser):
     def __init__(self, config: NumberWithUnitParserConfiguration):
         self.config: NumberWithUnitParserConfiguration = config
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
-        ret = ParseResult(ext_result)
+        ret = ParseResult(source)
         number_result = None
-        if ext_result.data and ext_result.data is ExtractResult:
-            number_result = ext_result.data
+        if source.data and source.data is ExtractResult:
+            number_result = source.data
         else: # if there is no unitResult, means there is just unit
             number_result = ExtractResult()
             number_result.start = -1
@@ -47,7 +58,7 @@ class NumberWithUnitParser(Parser):
             number_result.text = None
             number_result.type = None
         #key contains units
-        key = ext_result.text
+        key = source.text
         unit_key_build = ''
         unit_keys = []
         i = 0
@@ -67,7 +78,7 @@ class NumberWithUnitParser(Parser):
             i += 1
         
         #Unit type depends on last unit in suffix.
-        last_unit = unit_keys[-1].lower
+        last_unit = unit_keys[-1].lower()
         if self.config.connector_token and len(self.config.connector_token) and last_unit[0] == self.config.connector_token:
             last_unit = last_unit[len(self.config.connector_token):].strip()
         if key and len(key) and self.config.unit_map and last_unit in self.config.unit_map:
