@@ -6,6 +6,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
     public class DateRange
     {
         public System.DateTime Start { get; set; }
+
         public System.DateTime End { get; set; }
     }
 }

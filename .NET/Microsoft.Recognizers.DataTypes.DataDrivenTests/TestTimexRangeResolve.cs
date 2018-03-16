@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTimexRangeResolve
     {
         [TestMethod]
-        public void RangeResolve_daterange_definite()
+        public void DataTypes_RangeResolve_daterange_definite()
         {
             var candidates = new[] { "2017-09-28" };
             var constraints = new[] { (new Timex { Year = 2017, Month = 9, DayOfMonth = 27, Days = 2 }).TimexValue };
@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_definite_constrainst_as_timex()
+        public void DataTypes_RangeResolve_daterange_definite_constrainst_as_timex()
         {
             var candidates = new[] { "2017-09-28" };
             var constraints = new[] { "(2017-09-27,2017-09-29,P2D)" };
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_month_and_date()
+        public void DataTypes_RangeResolve_daterange_month_and_date()
         {
             var candidates = new[] { "XXXX-05-29" };
             var constraints = new[] { (new Timex { Year = 2006, Month = 1, DayOfMonth = 1, Years = 2 }).TimexValue };
@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_month_and_date_conditional()
+        public void DataTypes_RangeResolve_daterange_month_and_date_conditional()
         {
             var candidates = new[] { "XXXX-05-29" };
             var constraints = new[] { "(2006-01-01,2008-06-01,P882D)" };
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_Saturdays_in_September()
+        public void DataTypes_RangeResolve_daterange_Saturdays_in_September()
         {
             var candidates = new[] { "XXXX-WXX-6" };
             var constraints = new[] { "2017-09" };
@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_Saturdays_in_September_expressed_as_range()
+        public void DataTypes_RangeResolve_daterange_Saturdays_in_September_expressed_as_range()
         {
             var candidates = new[] { "XXXX-WXX-6" };
             var constraints = new[] { "(2017-09-01,2017-10-01,P30D)" };
@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_year()
+        public void DataTypes_RangeResolve_daterange_year()
         {
             var candidates = new[] { "XXXX-05-29" };
             var constraints = new[] { "2018" };
@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_expressed_as_range()
+        public void DataTypes_RangeResolve_daterange_expressed_as_range()
         {
             var candidates = new[] { "XXXX-05-29" };
             var constraints = new[] { "(2018-01-01,2019-01-01,P365D)" };
@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_multiple_constraints()
+        public void DataTypes_RangeResolve_daterange_multiple_constraints()
         {
             var candidates = new[] { "XXXX-WXX-3" };
             var constraints = new[] { "(2017-09-01,2017-09-08,P7D)", "(2017-10-01,2017-10-08,P7D)" };
@@ -140,7 +140,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_multiple_candidates_with_multiple_constraints()
+        public void DataTypes_RangeResolve_daterange_multiple_candidates_with_multiple_constraints()
         {
             var candidates = new[]
             {
@@ -164,7 +164,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_daterange_multiple_overlapping_constraints()
+        public void DataTypes_RangeResolve_daterange_multiple_overlapping_constraints()
         {
             var candidates = new[] { "XXXX-WXX-3" };
             var constraints = new[] { "(2017-09-03,2017-09-07,P4D)", "(2017-09-01,2017-09-08,P7D)", "(2017-09-01,2017-09-16,P15D)" };
@@ -177,7 +177,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_timerange_time_within_range()
+        public void DataTypes_RangeResolve_timerange_time_within_range()
         {
             var candidates = new[] { "T16" };
             var constraints = new[] { (new Timex { Hour = 14, Hours = 4 }).TimexValue };
@@ -190,7 +190,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_timerange_multiple_times_within_range()
+        public void DataTypes_RangeResolve_timerange_multiple_times_within_range()
         {
             var candidates = new[] { "T12", "T16", "T16:30", "T17", "T18" };
             var constraints = new[] { (new Timex { Hour = 14, Hours = 4 }).TimexValue };
@@ -205,7 +205,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_timerange_time_with_overlapping_ranges()
+        public void DataTypes_RangeResolve_timerange_time_with_overlapping_ranges()
         {
             var constraints = new List<string> { (new Timex { Hour = 16, Hours = 4 }).TimexValue };
 
@@ -230,7 +230,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_multiple_times_with_overlapping_ranges()
+        public void DataTypes_RangeResolve_multiple_times_with_overlapping_ranges()
         {
             var constraints = new List<string> { (new Timex { Hour = 16, Hours = 4 }).TimexValue };
 
@@ -257,7 +257,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_filter_duplicate()
+        public void DataTypes_RangeResolve_filter_duplicate()
         {
             var constraints = new List<string> { (new Timex { Hour = 16, Hours = 4 }).TimexValue };
 
@@ -269,7 +269,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_carry_through_time_definite()
+        public void DataTypes_RangeResolve_carry_through_time_definite()
         {
             var constraints = new List<string>
             {
@@ -284,7 +284,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_carry_through_time_definite_constrainst_expressed_as_timex()
+        public void DataTypes_RangeResolve_carry_through_time_definite_constrainst_expressed_as_timex()
         {
             var constraints = new List<string> { "(2017-09-27,2017-09-29,P2D)" };
 
@@ -296,7 +296,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_carry_through_time_month_and_date()
+        public void DataTypes_RangeResolve_carry_through_time_month_and_date()
         {
             var constraints = new List<string>
             {
@@ -312,7 +312,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_carry_through_time_month_and_date_conditional()
+        public void DataTypes_RangeResolve_carry_through_time_month_and_date_conditional()
         {
             var constraints = new List<string> { "(2006-01-01,2008-06-01,P882D)" };
 
@@ -326,7 +326,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_carry_through_time_Saturdays_in_September()
+        public void DataTypes_RangeResolve_carry_through_time_Saturdays_in_September()
         {
             var constraints = new List<string> { "(2017-09-01,2017-10-01,P30D)" };
 
@@ -342,7 +342,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_carry_through_time_multiple_constraints()
+        public void DataTypes_RangeResolve_carry_through_time_multiple_constraints()
         {
             var constraints = new List<string>
             {
@@ -359,7 +359,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_combined_daterange_and_timerange_next_week_and_any_time()
+        public void DataTypes_RangeResolve_combined_daterange_and_timerange_next_week_and_any_time()
         {
             var constraints = new List<string>
             {
@@ -376,7 +376,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_combined_daterange_and_timerange_next_week_and_business_hours()
+        public void DataTypes_RangeResolve_combined_daterange_and_timerange_next_week_and_business_hours()
         {
             var constraints = new List<string>
             {
@@ -392,7 +392,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_adding_times_add_specific_time_to_date()
+        public void DataTypes_RangeResolve_adding_times_add_specific_time_to_date()
         {
             var constraints = new List<string>
             {
@@ -408,7 +408,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_adding_times_add_specific_time_to_date_2()
+        public void DataTypes_RangeResolve_adding_times_add_specific_time_to_date_2()
         {
             var constraints = new List<string>
             {
@@ -426,7 +426,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_duration_specific_datetime()
+        public void DataTypes_RangeResolve_duration_specific_datetime()
         {
             var constraints = new List<string>
             {
@@ -441,7 +441,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_duration_specific_time()
+        public void DataTypes_RangeResolve_duration_specific_time()
         {
             var constraints = new List<string>
             {
@@ -456,7 +456,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_duration_no_constraints()
+        public void DataTypes_RangeResolve_duration_no_constraints()
         {
             var constraints = new List<string>
             {
@@ -470,7 +470,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RangeResolve_duration_no_time_component()
+        public void DataTypes_RangeResolve_duration_no_time_component()
         {
             var constraints = new List<string>
             {

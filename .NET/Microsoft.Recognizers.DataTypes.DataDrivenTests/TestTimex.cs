@@ -9,19 +9,19 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTimex
     {
         [TestMethod]
-        public void Timex_FromDate()
+        public void DataTypes_Timex_FromDate()
         {
             Assert.AreEqual("2017-12-05", Timex.FromDate(new System.DateTime(2017, 12, 5)).TimexValue);
         }
 
         [TestMethod]
-        public void Timex_FromDateTime()
+        public void DataTypes_Timex_FromDateTime()
         {
             Assert.AreEqual("2017-12-05T23:57:35", Timex.FromDateTime(new System.DateTime(2017, 12, 5, 23, 57, 35)).TimexValue);
         }
 
         [TestMethod]
-        public void Timex_FromTime()
+        public void DataTypes_Timex_FromTime()
         {
             Assert.AreEqual("T23:59:30", Timex.FromTime(new Time(23, 59, 30)).TimexValue);
         }
@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_Date()
+        public void DataTypes_Timex_Roundtrip_Date()
         {
             Roundtrip("2017-09-27");
             Roundtrip("XXXX-WXX-3");
@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_Time()
+        public void DataTypes_Timex_Roundtrip_Time()
         {
             Roundtrip("T17:30:45");
             Roundtrip("T05:06:07");
@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_Duration()
+        public void DataTypes_Timex_Roundtrip_Duration()
         {
             Roundtrip("P50Y");
             Roundtrip("P6M");
@@ -61,20 +61,20 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_Now()
+        public void DataTypes_Timex_Roundtrip_Now()
         {
             Roundtrip("PRESENT_REF");
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_DateTime()
+        public void DataTypes_Timex_Roundtrip_DateTime()
         {
             Roundtrip("XXXX-WXX-3T04");
             Roundtrip("2017-09-27T11:41:30");
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_DateRange()
+        public void DataTypes_Timex_Roundtrip_DateRange()
         {
             Roundtrip("2017");
             Roundtrip("SU");
@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_DateRange_Start_End_Duration()
+        public void DataTypes_Timex_Roundtrip_DateRange_Start_End_Duration()
         {
             Roundtrip("(XXXX-WXX-3,XXXX-WXX-6,P3D)");
             Roundtrip("(XXXX-01-01,XXXX-08-05,P216D)");
@@ -95,38 +95,38 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_TimeRange()
+        public void DataTypes_Timex_Roundtrip_TimeRange()
         {
             Roundtrip("TEV");
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_TimeRange_Start_End_Duration()
+        public void DataTypes_Timex_Roundtrip_TimeRange_Start_End_Duration()
         {
             Roundtrip("(T16,T19,PT3H)");
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_DateTimeRange()
+        public void DataTypes_Timex_Roundtrip_DateTimeRange()
         {
             Roundtrip("2017-09-27TEV");
         }
 
         [TestMethod]
-        public void Timex_Roundtrip_DateTimeRange_Start_End_Duration()
+        public void DataTypes_Timex_Roundtrip_DateTimeRange_Start_End_Duration()
         {
             Roundtrip("(2017-09-08T21:19:29,2017-09-08T21:24:29,PT5M)");
             Roundtrip("(XXXX-WXX-3T16,XXXX-WXX-6T15,PT71H)");
         }
 
         [TestMethod]
-        public void Timex_ToString()
+        public void DataTypes_Timex_ToString()
         {
             Assert.AreEqual("5th May", (new Timex("XXXX-05-05")).ToString());
         }
 
         [TestMethod]
-        public void Timex_ToNaturalLanguage()
+        public void DataTypes_Timex_ToNaturalLanguage()
         {
             var today = new System.DateTime(2017, 10, 16);
             Assert.AreEqual("tomorrow", (new Timex("2017-10-17")).ToNaturalLanguage(today));

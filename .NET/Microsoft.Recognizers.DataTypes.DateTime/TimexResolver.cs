@@ -13,9 +13,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             public class Entry
             {
                 public string Timex { get; set; }
+
                 public string Type { get; set; }
+
                 public string Value { get; set; }
+
                 public string Start { get; set; }
+
                 public string End { get; set; }
             }
 
@@ -36,6 +40,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 var r = ResolveTimex(t, date);
                 resolution.Values.AddRange(r);
             }
+
             return resolution;
         }
 
@@ -47,38 +52,47 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return ResolveDateTimeRange(timex);
             }
+
             if (types.Contains(Constants.TimexTypes.Definite) && types.Contains(Constants.TimexTypes.Time))
             {
                 return ResolveDefiniteTime(timex);
             }
+
             if (types.Contains(Constants.TimexTypes.Definite))
             {
                 return ResolveDefinite(timex);
             }
+
             if (types.Contains(Constants.TimexTypes.DateRange))
             {
                 return ResolveDateRange(timex, date);
             }
+
             if (types.Contains(Constants.TimexTypes.TimeRange))
             {
                 return ResolveTimeRange(timex);
             }
+
             if (types.Contains(Constants.TimexTypes.DateTime))
             {
                 return ResolveDateTime(timex, date);
             }
+
             if (types.Contains(Constants.TimexTypes.Duration))
             {
                 return ResolveDuration(timex);
             }
+
             if (types.Contains(Constants.TimexTypes.Date))
             {
                 return ResolveDate(timex, date);
             }
+
             if (types.Contains(Constants.TimexTypes.Time))
             {
                 return ResolveTime(timex);
             }
+
             return new List<Resolution.Entry>();
         }
 
@@ -137,6 +151,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     DayOfMonth = timex.DayOfMonth
                 });
             }
+
             if (timex.DayOfWeek != null)
             {
                 var day = timex.DayOfWeek == 7 ? DayOfWeek.Monday : (DayOfWeek)timex.DayOfWeek;
@@ -148,6 +163,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     DayOfMonth = result.Day
                 });
             }
+
             return string.Empty;
         }
 
@@ -162,6 +178,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     DayOfMonth = timex.DayOfMonth
                 });
             }
+
             if (timex.DayOfWeek != null)
             {
                 var day = timex.DayOfWeek == 7 ? DayOfWeek.Monday : (DayOfWeek)timex.DayOfWeek;
@@ -173,6 +190,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     DayOfMonth = result.Day
                 });
             }
+
             return string.Empty;
         }
 
@@ -239,6 +257,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                         }
                     };
                 }
+
                 if (timex.Month != null)
                 {
                     var y = date.Year;
@@ -263,6 +282,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                         }
                     };
                 }
+
                 return new List<Resolution.Entry>();
             }
         }
@@ -275,6 +295,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 case "AF": return new Tuple<string, string>("12:00:00", "16:00:00");
                 case "EV": return new Tuple<string, string>("16:00:00", "20:00:00");
             }
+
             return new Tuple<string, string>("not resolved", "not resolved");
         }
 
@@ -294,7 +315,8 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     }
                 };
             }
-            else {
+            else
+            {
                 var range = TimexHelpers.ExpandTimeRange(timex);
                 return new List<Resolution.Entry>
                 {
@@ -317,6 +339,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 resolved.Type = "datetime";
                 resolved.Value = $"{resolved.Value} {TimexValue.TimeValue(timex)}";
             }
+
             return resolvedDates;
         }
 

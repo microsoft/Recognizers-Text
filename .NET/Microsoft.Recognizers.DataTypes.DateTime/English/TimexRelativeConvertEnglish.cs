@@ -5,7 +5,7 @@ using System;
 
 namespace Microsoft.Recognizers.DataTypes.DateTime
 {
-    internal static class TimexRelativeConvertEn
+    internal static class TimexRelativeConvertEnglish
     {
         public static string ConvertTimexToStringRelative(Timex timex, System.DateTime date)
         {
@@ -15,14 +15,17 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return ConvertDateTimeRange(timex, date);
             }
+
             if (types.Contains(Constants.TimexTypes.DateRange))
             {
                 return ConvertDateRange(timex, date);
             }
+
             if (types.Contains(Constants.TimexTypes.DateTime))
             {
                 return ConvertDateTime(timex, date);
             }
+
             if (types.Contains(Constants.TimexTypes.Date))
             {
                 return ConvertDate(timex, date);
@@ -34,7 +37,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         private static string GetDateDay(DayOfWeek day)
         {
             var index = ((int)day == 0) ? 6 : (int)day - 1;
-            return TimexConstantsEn.Days[index];
+            return TimexConstantsEnglish.Days[index];
         }
 
         private static string ConvertDate(Timex timex, System.DateTime date)
@@ -47,35 +50,41 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 {
                     return "today";
                 }
+
                 var tomorrow = TimexDateHelpers.Tomorrow(date);
                 if (TimexDateHelpers.DatePartEquals(timexDate, tomorrow))
                 {
                     return "tomorrow";
                 }
+
                 var yesterday = TimexDateHelpers.Yesterday(date);
                 if (TimexDateHelpers.DatePartEquals(timexDate, yesterday))
                 {
                     return "yesterday";
                 }
+
                 if (TimexDateHelpers.IsThisWeek(timexDate, date))
                 {
                     return $"this {GetDateDay(timexDate.DayOfWeek)}";
                 }
+
                 if (TimexDateHelpers.IsNextWeek(timexDate, date))
                 {
                     return $"next {GetDateDay(timexDate.DayOfWeek)}";
                 }
+
                 if (TimexDateHelpers.IsLastWeek(timexDate, date))
                 {
                     return $"last {GetDateDay(timexDate.DayOfWeek)}";
                 }
             }
-            return TimexConvertEn.ConvertDate(timex);
+
+            return TimexConvertEnglish.ConvertDate(timex);
         }
 
         private static string ConvertDateTime(Timex timex, System.DateTime date)
         {
-            return $"{ConvertDate(timex, date)} {TimexConvertEn.ConvertTime(timex)}";
+            return $"{ConvertDate(timex, date)} {TimexConvertEnglish.ConvertTime(timex)}";
         }
 
         private static string ConvertDateRange(Timex timex, System.DateTime date)
@@ -91,38 +100,46 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                         {
                             return timex.Weekend != null ? "this weekend" : "this week";
                         }
+
                         if (thisWeek == timex.WeekOfYear + 1)
                         {
                             return timex.Weekend != null ? "last weekend" : "last week";
                         }
+
                         if (thisWeek == timex.WeekOfYear - 1) {
                             return timex.Weekend != null ? "next weekend" : "next week";
                         }
                     }
+
                     if (timex.Month != null)
                     {
                         if (timex.Month == date.Month)
                         {
                             return "this month";
                         }
+
                         if (timex.Month == date.Month + 1)
                         {
                             return "next month";
                         }
+
                         if (timex.Month == date.Month - 1)
                         {
                             return "last month";
                         }
                     }
-                    return (timex.Season != null) ? $"this {TimexConstantsEn.Seasons[timex.Season]}" : "this year";
+
+                    return (timex.Season != null) ? $"this {TimexConstantsEnglish.Seasons[timex.Season]}" : "this year";
                 }
+
                 if (timex.Year == year + 1)
                 {
-                    return (timex.Season != null) ? $"next {TimexConstantsEn.Seasons[timex.Season]}" : "next year";
+                    return (timex.Season != null) ? $"next {TimexConstantsEnglish.Seasons[timex.Season]}" : "next year";
                 }
+
                 if (timex.Year == year - 1)
                 {
-                    return (timex.Season != null) ? $"last {TimexConstantsEn.Seasons[timex.Season]}" : "last year";
+                    return (timex.Season != null) ? $"last {TimexConstantsEnglish.Seasons[timex.Season]}" : "last year";
                 }
             }
             return string.Empty;
@@ -142,32 +159,36 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                         {
                             return "tonight";
                         }
-                        else {
-                            return $"this {TimexConstantsEn.DayParts[timex.PartOfDay]}";
+                        else
+                        {
+                            return $"this {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                         }
                     }
+
                     var tomorrow = TimexDateHelpers.Tomorrow(date);
                     if (TimexDateHelpers.DatePartEquals(timexDate, tomorrow))
                     {
-                        return $"tomorrow {TimexConstantsEn.DayParts[timex.PartOfDay]}";
+                        return $"tomorrow {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                     }
+
                     var yesterday = TimexDateHelpers.Yesterday(date);
                     if (TimexDateHelpers.DatePartEquals(timexDate, yesterday))
                     {
-                        return $"yesterday {TimexConstantsEn.DayParts[timex.PartOfDay]}";
+                        return $"yesterday {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                     }
 
                     if (TimexDateHelpers.IsNextWeek(timexDate, date))
                     {
-                        return $"next {GetDateDay(timexDate.DayOfWeek)} {TimexConstantsEn.DayParts[timex.PartOfDay]}";
+                        return $"next {GetDateDay(timexDate.DayOfWeek)} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                     }
 
                     if (TimexDateHelpers.IsLastWeek(timexDate, date))
                     {
-                        return $"last {GetDateDay(timexDate.DayOfWeek)} {TimexConstantsEn.DayParts[timex.PartOfDay]}";
+                        return $"last {GetDateDay(timexDate.DayOfWeek)} {TimexConstantsEnglish.DayParts[timex.PartOfDay]}";
                     }
                 }
             }
+
             return string.Empty;
         }
     }

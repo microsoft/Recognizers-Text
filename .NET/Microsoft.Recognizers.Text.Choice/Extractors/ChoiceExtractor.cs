@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using NeoSmart.Unicode;
-
 namespace Microsoft.Recognizers.Text.Choice
 {
 
@@ -67,7 +65,7 @@ namespace Microsoft.Recognizers.Text.Choice
                                 Source = text,
                                 Score = topScore,
                                 OtherMatches = new List<ExtractResult>()
-                            } 
+                            }
                         });
                     }
                 }
@@ -144,20 +142,19 @@ namespace Microsoft.Recognizers.Text.Choice
             {
                 return -1;
             }
-            
+
             return tokens.FindIndex(startPos, x => x == token);
         }
 
         private IList<string> Tokenize(string text)
         {
             var tokens = new List<string>();
-            var letters = text.Letters();
+            var letters = Letters(text);
 
             var token = string.Empty;
             foreach (var letter in letters)
             {
-                var codePoint = letter.Codepoints().FirstOrDefault();
-                if (codePoint > 0xFFFF)
+                if (IsEmoji(letter))
                 {
                     // Character is in a Supplementary Unicode Plane. This is where emoji live so
                     // we're going to just break each character in this range out as its own token.
@@ -172,7 +169,7 @@ namespace Microsoft.Recognizers.Text.Choice
                 {
                     token = token + letter;
                 }
-                else if(!string.IsNullOrWhiteSpace(token))
+                else if (!string.IsNullOrWhiteSpace(token))
                 {
                     tokens.Add(token);
                     token = string.Empty;
@@ -186,6 +183,33 @@ namespace Microsoft.Recognizers.Text.Choice
             }
 
             return tokens;
+        }
+
+        private static bool IsEmoji(string letter)
+        {
+            const int WhereEmojiLive = 0xFFFF; // Supplementary Unicode Plane. This is where emoji live
+            return char.IsHighSurrogate(letter[0]) && char.ConvertToUtf32(letter, 0) > WhereEmojiLive;
+        }
+
+        private static IEnumerable<string> Letters(string text)
+        {
+            char? codePoint = null;
+            foreach (char c in text)
+            {
+                if (codePoint != null)
+                {
+                    yield return new string(new[] { codePoint.Value, c });
+                    codePoint = null;
+                }
+                else if (!char.IsHighSurrogate(c))
+                {
+                    yield return c.ToString();
+                }
+                else
+                {
+                    codePoint = c;
+                }
+            }
         }
     }
 }
