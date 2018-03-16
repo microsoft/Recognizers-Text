@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTimexResolver
     {
         [TestMethod]
-        public void Resolver_Date_Definite()
+        public void DataTypes_Resolver_Date_Definite()
         {
             var today = new System.DateTime(2017, 9, 26, 15, 30, 0);
             var resolution = TimexResolver.Resolve(new[] { "2017-09-28" }, today);
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Date_Saturday()
+        public void DataTypes_Resolver_Date_Saturday()
         {
             var today = new System.DateTime(2017, 9, 26, 15, 30, 0);
             var resolution = TimexResolver.Resolve(new[] { "XXXX-WXX-6" }, today);
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_DateTime_Wednesday_4()
+        public void DataTypes_Resolver_DateTime_Wednesday_4()
         {
             var today = new System.DateTime(2017, 9, 28, 15, 30, 0);
             var resolution = TimexResolver.Resolve(new[] { "XXXX-WXX-3T04", "XXXX-WXX-3T16" }, today);
@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_DateTime_Wednesday_4_am()
+        public void DataTypes_Resolver_DateTime_Wednesday_4_am()
         {
             var today = new System.DateTime(2017, 9, 28, 15, 30, 0);
             var resolution = TimexResolver.Resolve(new[] { "XXXX-WXX-3T04" }, today);
@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
             Assert.IsNull(resolution.Values[1].End);
         }
         [TestMethod]
-        public void Resolver_DateTime_Next_Wednesday_4_am()
+        public void DataTypes_Resolver_DateTime_Next_Wednesday_4_am()
         {
             var today = new System.DateTime(2017, 9, 7);
             var resolution = TimexResolver.Resolve(new [] { "2017-10-11T04" }, today);
@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Duration_2years()
+        public void DataTypes_Resolver_Duration_2years()
         {
             var resolution = TimexResolver.Resolve(new [] { "P2Y" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Duration_6months()
+        public void DataTypes_Resolver_Duration_6months()
         {
             var resolution = TimexResolver.Resolve(new [] { "P6M" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Duration_3weeks()
+        public void DataTypes_Resolver_Duration_3weeks()
         {
             var resolution = TimexResolver.Resolve(new [] { "P3W" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Duration_5days()
+        public void DataTypes_Resolver_Duration_5days()
         {
             var resolution = TimexResolver.Resolve(new [] { "P5D" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -160,7 +160,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Duration_8hours()
+        public void DataTypes_Resolver_Duration_8hours()
         {
             var resolution = TimexResolver.Resolve(new [] { "PT8H" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Duration_15minutes()
+        public void DataTypes_Resolver_Duration_15minutes()
         {
             var resolution = TimexResolver.Resolve(new [] { "PT15M" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -186,7 +186,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Duration_10seconds()
+        public void DataTypes_Resolver_Duration_10seconds()
         {
             var resolution = TimexResolver.Resolve(new [] { "PT10S" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_DateRange_September()
+        public void DataTypes_Resolver_DateRange_September()
         {
             var today = new System.DateTime(2017, 9, 28);
             var resolution = TimexResolver.Resolve(new [] { "XXXX-09" }, today);
@@ -219,7 +219,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_DateRange_Winter()
+        public void DataTypes_Resolver_DateRange_Winter()
         {
             var resolution = TimexResolver.Resolve(new [] { "WI" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_TimeRange_4am_to_8pm()
+        public void DataTypes_Resolver_TimeRange_4am_to_8pm()
         {
             var today = System.DateTime.Now;
             var resolution = TimexResolver.Resolve(new [] { "(T04,T20,PT16H)" }, today);
@@ -246,7 +246,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_TimeRange_Morning()
+        public void DataTypes_Resolver_TimeRange_Morning()
         {
             var today = System.DateTime.Now;
             var resolution = TimexResolver.Resolve(new [] { "TMO" }, today);
@@ -260,7 +260,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_TimeRange_Afternoon()
+        public void DataTypes_Resolver_TimeRange_Afternoon()
         {
             var today = System.DateTime.Now;
             var resolution = TimexResolver.Resolve(new [] { "TAF" }, today);
@@ -274,7 +274,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_TimeRange_Evening()
+        public void DataTypes_Resolver_TimeRange_Evening()
         {
             var today = System.DateTime.Now;
             var resolution = TimexResolver.Resolve(new [] { "TEV" }, today);
@@ -288,7 +288,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_DateTimeRange_This_Morning()
+        public void DataTypes_Resolver_DateTimeRange_This_Morning()
         {
             var resolution = TimexResolver.Resolve(new [] { "2017-10-07TMO" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -301,7 +301,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_DateTimeRange_next_monday_4am_to_next_thursday_3pm()
+        public void DataTypes_Resolver_DateTimeRange_next_monday_4am_to_next_thursday_3pm()
         {
             var today = System.DateTime.Now;
             var resolution = TimexResolver.Resolve(new [] { "(2017-10-09T04,2017-10-12T15,PT83H)" }, today);
@@ -315,7 +315,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Time_4am()
+        public void DataTypes_Resolver_Time_4am()
         {
             var resolution = TimexResolver.Resolve(new [] { "T04" });
             Assert.AreEqual(1, resolution.Values.Count);
@@ -328,7 +328,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Resolver_Time_4_oclock()
+        public void DataTypes_Resolver_Time_4_oclock()
         {
             var resolution = TimexResolver.Resolve(new [] { "T04", "T16" });
             Assert.AreEqual(2, resolution.Values.Count);

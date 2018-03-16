@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTimexDateHelpers
     {
         [TestMethod]
-        public void DateHelpers_tomorrow()
+        public void DataTypes_DateHelpers_tomorrow()
         {
             Assert.AreEqual(new System.DateTime(2017, 1, 1), TimexDateHelpers.Tomorrow(new System.DateTime(2016, 12, 31)));
             Assert.AreEqual(new System.DateTime(2017, 1, 2), TimexDateHelpers.Tomorrow(new System.DateTime(2017, 1, 1)));
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_yesterday()
+        public void DataTypes_DateHelpers_yesterday()
         {
             Assert.AreEqual(new System.DateTime(2016, 12, 31), TimexDateHelpers.Yesterday(new System.DateTime(2017, 1, 1)));
             Assert.AreEqual(new System.DateTime(2017, 1, 1), TimexDateHelpers.Yesterday(new System.DateTime(2017, 1, 2)));
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_datePartEquals()
+        public void DataTypes_DateHelpers_datePartEquals()
         {
             Assert.IsTrue(TimexDateHelpers.DatePartEquals(new System.DateTime(2017, 5, 29), new System.DateTime(2017, 5, 29)));
             Assert.IsTrue(TimexDateHelpers.DatePartEquals(new System.DateTime(2017, 5, 29, 19, 30, 0), new System.DateTime(2017, 5, 29)));
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_isNextWeek()
+        public void DataTypes_DateHelpers_isNextWeek()
         {
             var today = new System.DateTime(2017, 9, 25);
             Assert.IsTrue(TimexDateHelpers.IsNextWeek(new System.DateTime(2017, 10, 4), today));
@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_isLastWeek()
+        public void DataTypes_DateHelpers_isLastWeek()
         {
             var today = new System.DateTime(2017, 9, 25);
             Assert.IsTrue(TimexDateHelpers.IsLastWeek(new System.DateTime(2017, 9, 20), today));
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_weekOfyear()
+        public void DataTypes_DateHelpers_weekOfyear()
         {
             Assert.AreEqual(1, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 1, 1)));
             Assert.AreEqual(2, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 1, 2)));
@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_invariance()
+        public void DataTypes_DateHelpers_invariance()
         {
             var d = new System.DateTime(2017, 8, 25);
             var before = d;
@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_dateOfLastDay_Friday_last_week()
+        public void DataTypes_DateHelpers_dateOfLastDay_Friday_last_week()
         {
             var day = DayOfWeek.Friday;
             var date = new System.DateTime(2017, 9, 28);
@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_dateOfNextDay_Wednesday_next_week()
+        public void DataTypes_DateHelpers_dateOfNextDay_Wednesday_next_week()
         {
             var day = DayOfWeek.Wednesday;
             var date = new System.DateTime(2017, 9, 28);
@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_dateOfNextDay_today()
+        public void DataTypes_DateHelpers_dateOfNextDay_today()
         {
             var day = DayOfWeek.Thursday;
             var date = new System.DateTime(2017, 9, 28);
@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void DateHelpers_datesMatchingDay()
+        public void DataTypes_DateHelpers_datesMatchingDay()
         {
             var day = DayOfWeek.Thursday;
             var start = new System.DateTime(2017, 3, 1);

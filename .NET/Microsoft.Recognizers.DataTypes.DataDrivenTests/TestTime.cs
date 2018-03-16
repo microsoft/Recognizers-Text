@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTime
     {
         [TestMethod]
-        public void Time_Constructor()
+        public void DataTypes_Time_Constructor()
         {
             var t = new Time(23, 45, 32);
             Assert.AreEqual(23, t.Hour);
@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Time_GetTime()
+        public void DataTypes_Time_GetTime()
         {
             var t = new Time(23, 45, 32);
             Assert.AreEqual(85532000, t.GetTime());

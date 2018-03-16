@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTimexRelativeConvert
     {
         [TestMethod]
-        public void RelativeConvert_Date_Today()
+        public void DataTypes_RelativeConvert_Date_Today()
         {
             var timex = new Timex("2017-09-25");
             var today = new System.DateTime(2017, 9, 25);
@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_Tomorrow()
+        public void DataTypes_RelativeConvert_Date_Tomorrow()
         {
             var timex = new Timex("2017-09-23");
             var today = new System.DateTime(2017, 9, 22);
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_tomorrow_cross_year_month_boundary()
+        public void DataTypes_RelativeConvert_Date_tomorrow_cross_year_month_boundary()
         {
             var timex = new Timex("2018-01-01");
             var today = new System.DateTime(2017, 12, 31);
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_yesterday()
+        public void DataTypes_RelativeConvert_Date_yesterday()
         {
             var timex = new Timex("2017-09-21");
             var today = new System.DateTime(2017, 9, 22);
@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_yesterday_cross_year_month_boundary()
+        public void DataTypes_RelativeConvert_Date_yesterday_cross_year_month_boundary()
         {
             var timex = new Timex("2017-12-31");
             var today = new System.DateTime(2018, 1, 1);
@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_this_week()
+        public void DataTypes_RelativeConvert_Date_this_week()
         {
             var timex = new Timex("2017-10-18");
             var today = new System.DateTime(2017, 10, 16);
@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_this_week_cross_year_month_boundary()
+        public void DataTypes_RelativeConvert_Date_this_week_cross_year_month_boundary()
         {
             var timex = new Timex("2017-11-03");
             var today = new System.DateTime(2017, 10, 31);
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_next_week()
+        public void DataTypes_RelativeConvert_Date_next_week()
         {
             var timex = new Timex("2017-09-27");
             var today = new System.DateTime(2017, 9, 22);
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_next_week_cross_year_month_boundary()
+        public void DataTypes_RelativeConvert_Date_next_week_cross_year_month_boundary()
         {
             var timex = new Timex("2018-01-05");
             var today = new System.DateTime(2017, 12, 28);
@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_last_week()
+        public void DataTypes_RelativeConvert_Date_last_week()
         {
             var timex = new Timex("2017-09-14");
             var today = new System.DateTime(2017, 9, 22);
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_last_week_cross_year_month_boundary()
+        public void DataTypes_RelativeConvert_Date_last_week_cross_year_month_boundary()
         {
             var timex = new Timex("2017-12-25");
             var today = new System.DateTime(2018, 1, 4);
@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_this_week_2()
+        public void DataTypes_RelativeConvert_Date_this_week_2()
         {
             var timex = new Timex("2017-10-25");
             var today = new System.DateTime(2017, 9, 9);
@@ -105,7 +105,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_next_week_2()
+        public void DataTypes_RelativeConvert_Date_next_week_2()
         {
             var timex = new Timex("2017-10-04");
             var today = new System.DateTime(2017, 9, 22);
@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Date_last_week_2()
+        public void DataTypes_RelativeConvert_Date_last_week_2()
         {
             var timex = new Timex("2017-09-07");
             var today = new System.DateTime(2017, 9, 22);
@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_DateTime_today()
+        public void DataTypes_RelativeConvert_DateTime_today()
         {
             var timex = new Timex("2017-09-25T16:00:00");
             var today = new System.DateTime(2017, 9, 25);
@@ -129,7 +129,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_DateTime_tomorrow()
+        public void DataTypes_RelativeConvert_DateTime_tomorrow()
         {
             var timex = new Timex("2017-09-23T16:00:00");
             var today = new System.DateTime(2017, 9, 22);
@@ -137,7 +137,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_DateTime_yesterday()
+        public void DataTypes_RelativeConvert_DateTime_yesterday()
         {
             var timex = new Timex("2017-09-21T16:00:00");
             var today = new System.DateTime(2017, 9, 22);
@@ -145,21 +145,21 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_DateRange_this_week(){
+        public void DataTypes_RelativeConvert_DateRange_this_week(){
             var timex = new Timex("2017-W40");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("this week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
 
         [TestMethod]
-        public void RelativeConvert_DateRange_next_week(){
+        public void DataTypes_RelativeConvert_DateRange_next_week(){
             var timex = new Timex("2017-W41");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("next week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
 
         [TestMethod]
-        public void RelativeConvert_DateRange_last_week()
+        public void DataTypes_RelativeConvert_DateRange_last_week()
         {
             var timex = new Timex("2017-W39");
             var today = new System.DateTime(2017, 9, 25);
@@ -167,7 +167,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_DateRange_this_week_2()
+        public void DataTypes_RelativeConvert_DateRange_this_week_2()
         {
             var timex = new Timex("2017-W41");
             var today = new System.DateTime(2017, 10, 4);
@@ -175,7 +175,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_DateRange_next_week_2()
+        public void DataTypes_RelativeConvert_DateRange_next_week_2()
         {
             var timex = new Timex("2017-W42");
             var today = new System.DateTime(2017, 10, 4);
@@ -183,7 +183,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_DateRange_last_week_2()
+        public void DataTypes_RelativeConvert_DateRange_last_week_2()
         {
             var timex = new Timex("2017-W40");
             var today = new System.DateTime(2017, 10, 4);
@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Weekend_this_weekend()
+        public void DataTypes_RelativeConvert_Weekend_this_weekend()
         {
             var timex = new Timex("2017-W40-WE");
             var today = new System.DateTime(2017, 9, 25);
@@ -199,14 +199,14 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Weekend_next_weekend()
+        public void DataTypes_RelativeConvert_Weekend_next_weekend()
         {
             var timex = new Timex("2017-W41-WE");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("next weekend", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
         [TestMethod]
-        public void RelativeConvert_Weekend_last_weekend()
+        public void DataTypes_RelativeConvert_Weekend_last_weekend()
         {
             var timex = new Timex("2017-W39-WE");
             var today = new System.DateTime(2017, 9, 25);
@@ -214,7 +214,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Month_this_month()
+        public void DataTypes_RelativeConvert_Month_this_month()
         {
             var timex = new Timex("2017-09");
             var today = new System.DateTime(2017, 9, 25);
@@ -222,7 +222,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Month_next_month()
+        public void DataTypes_RelativeConvert_Month_next_month()
         {
             var timex = new Timex("2017-10");
             var today = new System.DateTime(2017, 9, 25);
@@ -230,14 +230,14 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Month_last_month()
+        public void DataTypes_RelativeConvert_Month_last_month()
         {
             var timex = new Timex("2017-08");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("last month", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
         [TestMethod]
-        public void RelativeConvert_Year_this_year()
+        public void DataTypes_RelativeConvert_Year_this_year()
         {
             var timex = new Timex("2017");
             var today = new System.DateTime(2017, 9, 25);
@@ -245,7 +245,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Year_next_year()
+        public void DataTypes_RelativeConvert_Year_next_year()
         {
             var timex = new Timex("2018");
             var today = new System.DateTime(2017, 9, 25);
@@ -253,7 +253,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Year_last_year()
+        public void DataTypes_RelativeConvert_Year_last_year()
         {
             var timex = new Timex("2016");
             var today = new System.DateTime(2017, 9, 25);
@@ -261,7 +261,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Season_this_summer()
+        public void DataTypes_RelativeConvert_Season_this_summer()
         {
             var timex = new Timex("2017-SU");
             var today = new System.DateTime(2017, 9, 25);
@@ -269,7 +269,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Season_next_summer()
+        public void DataTypes_RelativeConvert_Season_next_summer()
         {
             var timex = new Timex("2018-SU");
             var today = new System.DateTime(2017, 9, 25);
@@ -277,7 +277,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_Season_last_summer()
+        public void DataTypes_RelativeConvert_Season_last_summer()
         {
             var timex = new Timex("2016-SU");
             var today = new System.DateTime(2017, 9, 25);
@@ -285,7 +285,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_PartOfDay_this_evening()
+        public void DataTypes_RelativeConvert_PartOfDay_this_evening()
         {
             var timex = new Timex("2017-09-25TEV");
             var today = new System.DateTime(2017, 9, 25);
@@ -293,7 +293,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_PartOfDay_tonight()
+        public void DataTypes_RelativeConvert_PartOfDay_tonight()
         {
             var timex = new Timex("2017-09-25TNI");
             var today = new System.DateTime(2017, 9, 25);
@@ -301,7 +301,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_PartOfDay_tomorrow_morning()
+        public void DataTypes_RelativeConvert_PartOfDay_tomorrow_morning()
         {
             var timex = new Timex("2017-09-26TMO");
             var today = new System.DateTime(2017, 9, 25);
@@ -309,7 +309,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_PartOfDay_yesterday_afternoon()
+        public void DataTypes_RelativeConvert_PartOfDay_yesterday_afternoon()
         {
             var timex = new Timex("2017-09-24TAF");
             var today = new System.DateTime(2017, 9, 25);
@@ -317,7 +317,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void RelativeConvert_PartOfDay_next_wednesday_evening()
+        public void DataTypes_RelativeConvert_PartOfDay_next_wednesday_evening()
         {
             var timex = new Timex("2017-10-04TEV");
             var today = new System.DateTime(2017, 9, 25);
