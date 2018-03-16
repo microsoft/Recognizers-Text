@@ -57,10 +57,77 @@ class EnglishAgeExtractorConfiguration(EnglishNumberWithUnitExtractorConfigurati
         self._ambiguous_unit_list = list()
 
 class EnglishCurrencyExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
-    pass
+    @property
+    def extract_type(self) -> str:
+        return Constants.SYS_UNIT_CURRENCY
+
+    @property
+    def suffix_list(self) -> Dict[str, str]:
+        return self._suffix_list
+
+    @property
+    def prefix_list(self) -> Dict[str, str]:
+        return self._prefix_list
+
+    @property
+    def ambiguous_unit_list(self) -> List[str]:
+        return self._ambiguous_unit_list
+
+    def __init__(self, culture_info: CultureInfo = None):
+        super().__init__(culture_info)
+        self._suffix_list = EnglishNumericWithUnit.CurrencySuffixList
+        self._prefix_list = EnglishNumericWithUnit.CurrencyPrefixList
+        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousCurrencyUnitList
 
 class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
-    pass
+    @property
+    def extract_type(self) -> str:
+        return Constants.SYS_UNIT_DIMENSION
+
+    @property
+    def suffix_list(self) -> Dict[str, str]:
+        return self._suffix_list
+
+    @property
+    def prefix_list(self) -> Dict[str, str]:
+        return self._prefix_list
+
+    @property
+    def ambiguous_unit_list(self) -> List[str]:
+        return self._ambiguous_unit_list
+
+    def __init__(self, culture_info: CultureInfo = None):
+        super().__init__(culture_info)
+        self._suffix_list = {
+            **EnglishNumericWithUnit.InformationSuffixList,
+            **EnglishNumericWithUnit.AreaSuffixList,
+            **EnglishNumericWithUnit.LenghtSuffixList,
+            **EnglishNumericWithUnit.SpeedSuffixList,
+            **EnglishNumericWithUnit.VolumeSuffixList,
+            **EnglishNumericWithUnit.WeightSuffixList
+        }
+        self._prefix_list = dict()
+        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousDimensionUnitList
 
 class EnglishTemperatureExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):
-    pass
+    @property
+    def extract_type(self) -> str:
+        return Constants.SYS_UNIT_TEMPERATURE
+
+    @property
+    def suffix_list(self) -> Dict[str, str]:
+        return self._suffix_list
+
+    @property
+    def prefix_list(self) -> Dict[str, str]:
+        return self._prefix_list
+
+    @property
+    def ambiguous_unit_list(self) -> List[str]:
+        return self._ambiguous_unit_list
+
+    def __init__(self, culture_info: CultureInfo = None):
+        super().__init__(culture_info)
+        self._suffix_list = EnglishNumericWithUnit.TemperatureSuffixList
+        self._prefix_list = dict()
+        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousTemperatureUnitList

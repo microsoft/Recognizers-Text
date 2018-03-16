@@ -1,5 +1,3 @@
-
-
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
 from recognizers_number.culture import CultureInfo
@@ -36,10 +34,22 @@ class EnglishAgeParserConfiguration(EnglishNumberWithUnitParserConfiguration):
         self.add_dict_to_unit_map(EnglishNumericWithUnit.AgeSuffixList)
 
 class EnglishCurrencyParserConfiguration(EnglishNumberWithUnitParserConfiguration):
-    pass
+    def __init__(self, culture_info: CultureInfo = None):
+        super().__init__(culture_info)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.CurrencySuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.CurrencyPrefixList)
 
 class EnglishDimensionParserConfiguration(EnglishNumberWithUnitParserConfiguration):
-    pass
+    def __init__(self, culture_info: CultureInfo = None):
+        super().__init__(culture_info)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.InformationSuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.AreaSuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.LenghtSuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.SpeedSuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.VolumeSuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.WeightSuffixList)
 
 class EnglishTemperatureParserConfiguration(EnglishNumberWithUnitParserConfiguration):
-    pass
+    def __init__(self, culture_info: CultureInfo = None):
+        super().__init__(culture_info)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.TemperatureSuffixList)

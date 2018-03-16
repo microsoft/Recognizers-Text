@@ -7,6 +7,11 @@ from recognizers_number.culture import CultureInfo
 class NumberWithUnitExtractorConfiguration(ABC):
     @property
     @abstractmethod
+    def extract_type(self) -> str:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def suffix_list(self) -> Dict[str, str]:
         raise NotImplementedError
 
@@ -19,15 +24,6 @@ class NumberWithUnitExtractorConfiguration(ABC):
     @abstractmethod
     def ambiguous_unit_list(self) -> List[str]:
         raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def extract_type(self) -> str:
-        raise NotImplementedError
-
-    @property
-    def culture_info(self) -> CultureInfo:
-        return self._culture_info
 
     @property
     @abstractmethod
@@ -48,6 +44,10 @@ class NumberWithUnitExtractorConfiguration(ABC):
     @abstractmethod
     def connector_token(self) -> str:
         raise NotImplementedError
+
+    @property
+    def culture_info(self) -> CultureInfo:
+        return self._culture_info
 
     def __init__(self, culture_info: CultureInfo):
         self._culture_info = culture_info
