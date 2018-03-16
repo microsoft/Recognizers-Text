@@ -324,6 +324,11 @@
     ]
   },
   {
+    "Input": "the train arrives at 10:00",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
     "Input": "wrong IPV6 address FE06::1::2",
     "NotSupportedByDesign": "python",
     "Results": []
