@@ -17,6 +17,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public const string SYS_UNIT_COMPOUND = "builtin.unit.compound";
         public const string SYS_NUM = "builtin.num";
 
-        public const string FAKE_ISO_CODE_PREFIX = "__";
+        public const string FAKE_ISO_CODE_PREFIX = "_";
     }
 }
