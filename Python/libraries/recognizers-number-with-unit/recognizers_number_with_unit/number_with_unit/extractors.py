@@ -3,6 +3,7 @@ from typing import List, Dict, Set, Pattern, Match
 from copy import deepcopy
 from collections import namedtuple
 import regex
+from itertools import chain
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
@@ -61,11 +62,20 @@ class NumberWithUnitExtractorConfiguration(ABC):
 class NumberWithUnitExtractor(Extractor):
     def __init__(self, config: NumberWithUnitExtractorConfiguration):
         self.config: NumberWithUnitExtractorConfiguration = config
-        #TODO generate regexes
-        self.suffix_regex: Set[Pattern] = set()
-        self.prefix_regex: Set[Pattern] = set()
-        self.separate_regex: Pattern = regex.compile('')
-        self.max_prefix_match_len: int = 2
+        if self.config.suffix_list:
+            self.suffix_regex: Set[Pattern] = self._build_regex_from_set(self.config.suffix_list.values())
+        else:
+            self.suffix_regex: Set[Pattern] = set()
+        
+        if self.config.prefix_list:
+            max_length = max(map(lambda x: len(x),('|'.join(self.config.prefix_list.values()).split('|'))))
+
+            self.max_prefix_match_len = max_length + 2
+            self.prefix_regex: Set[Pattern] = self._build_regex_from_set(self.config.prefix_list.values())
+        else:
+            self.max_prefix_match_len = 2
+            self.prefix_regex: Set[Pattern] = set()
+        self.separate_regex = self._build_separate_regex_from_config()
 
     def extract(self, source: str) -> List[ExtractResult]:
         if not self._pre_check_str(source):
@@ -110,9 +120,9 @@ class NumberWithUnitExtractor(Extractor):
 
             if max_find_len > 0:
                 right = source[start + length:start + length + max_find_len]
-                unit_match = map(lambda x: list(regex.finditer(x, right)), self.suffix_regex)
-                unit_match = [item for sublist in unit_match for item in sublist]
-                unit_match = filter(lambda x: x.length > 0, unit_match)
+                unit_match_list = map(lambda x: list(regex.finditer(x, right)), self.suffix_regex)
+                unit_match = chain.from_iterable(unit_match_list)
+                unit_match = list(filter(lambda x: x.group(), unit_match))
 
                 max_len = 0
                 for match in unit_match:
@@ -138,6 +148,7 @@ class NumberWithUnitExtractor(Extractor):
 
                     num.start = start - ex_result.start
                     ex_result.data = num
+                    result.append(ex_result)
                     continue
             if prefix_unit:
                 ex_result = ExtractResult()
