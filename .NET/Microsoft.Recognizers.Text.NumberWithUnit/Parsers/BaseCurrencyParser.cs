@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
             ParseResult pr;
 
-            if (extResult.Type.Equals(Constants.SYS_UNIT_COMPOUND))
+            if (extResult.Data is List<ExtractResult>)
             {
                 pr = MergeCompoundUnit(extResult);
             }

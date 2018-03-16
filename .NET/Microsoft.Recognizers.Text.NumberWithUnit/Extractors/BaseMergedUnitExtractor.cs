@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     result[group].Length = periodEnd - periodBegin;
                     result[group].Text = source.Substring(periodBegin, periodEnd - periodBegin);
-                    result[group].Type = Constants.SYS_UNIT_COMPOUND;
+                    result[group].Type = Constants.SYS_UNIT_CURRENCY;
                     (result[group].Data as List<ExtractResult>)?.Add(ers[idx + 1]);
                 }
             }

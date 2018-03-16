@@ -16,11 +16,7 @@
             ParseResult pr;
 
             // For now only currency model recognizes compound units.
-            if (extResult.Type.Equals(Constants.SYS_UNIT_COMPOUND))
-            {
-                pr = new BaseCurrencyParser(config).Parse(extResult);
-            }
-            else if (extResult.Type.Equals(Constants.SYS_UNIT_CURRENCY))
+            if (extResult.Type.Equals(Constants.SYS_UNIT_CURRENCY))
             {
                 pr = new BaseCurrencyParser(config).Parse(extResult);
             }
