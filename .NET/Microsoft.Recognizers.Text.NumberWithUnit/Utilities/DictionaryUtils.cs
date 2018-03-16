@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
 {
     public class DictionaryUtils
     {
+        // Safely bind dictionary which contains several key-value pairs to the destination dictionary.
+        // This function is used to bind all the prefix and suffix for units.
         public static void BindDictionary(IDictionary<string, string> dictionary,
             IDictionary<string, string> sourceDictionary)
         {
@@ -23,6 +25,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
             }
         }
 
+        // Bind keys in a string which contains words separated by '|'.
         public static void BindUnitsString(IDictionary<string, string> sourceDictionary, string key, string source)
         {
             var values = source.Trim().Split('|');

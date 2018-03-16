@@ -1523,5 +1523,23 @@
       }
     } 
   ]
+},
+{
+  "Input": "It may need one kuai and five mao five.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "one kuai and five mao five",
+      "Start": 12,
+      "End": 37,
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "CNY",
+        "unit": "Chinese yuan",
+        "value": "1.55"
+      }
+    } 
+  ]
 }
 ]
