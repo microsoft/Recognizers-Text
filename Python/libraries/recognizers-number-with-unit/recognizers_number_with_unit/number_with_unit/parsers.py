@@ -29,7 +29,18 @@ class NumberWithUnitParserConfiguration(ABC):
         self.unit_map: Dict[str, str] = dict()
 
     def add_dict_to_unit_map(self, dictionary: Dict[str, str]):
-        pass
+        if not dictionary: 
+            return
+        for key, value in dictionary.items():
+            if not key or len(key) == 0:
+                continue
+
+            values = value.strip().split('|')
+            for token in values:
+                if not token or len(token) == 0 or token in self.unit_map:
+                    return
+                
+                self.unit_map[token] = key
 
 class NumberWithUnitParser(Parser):
     def __init__(self, config: NumberWithUnitParserConfiguration):
