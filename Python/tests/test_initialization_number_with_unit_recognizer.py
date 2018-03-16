@@ -21,17 +21,16 @@ class TestInitializationNumberRecognizer():
         assert len(actual.extractor_parser_dict) == len(expected.extractor_parser_dict)
 
         # deep comparison
-        for actual_extractor in actual.extractor_parser_dict:
-            expected_extractor = [x for x in expected.extractor_parser_dict.keys()
-                                                           if type(actual_extractor) == type(x)]
-            assert expected_extractor is not None
-            actual_parser = actual.extractor_parser_dict[actual_extractor]
-            expected_parser = expected.extractor_parser_dict[expected_extractor]
-            assert type(actual_parser) is type(expected_parser)
+        for actual_key in actual.extractor_parser_dict:
+            assert actual_key in expected.extractor_parser_dict
+
+            actual_item = actual.extractor_parser_dict[actual_key]
+            expected_item = expected.extractor_parser_dict[actual_key]
+            assert type(actual_item.parser) is type(expected_item.parser)
 
             # configs
-            assert type(actual_extractor.config) is (expected_extractor.config)
-            assert type(actual_parser.config) is (expected_parser.config)
+            assert type(actual_item.extractor.config) is type(expected_item.extractor.config)
+            assert type(actual_item.parser.config) is type(expected_item.parser.config)
         
     def assert_models_distinct(self, expected, actual):
         assert actual.model_type_name == expected.model_type_name

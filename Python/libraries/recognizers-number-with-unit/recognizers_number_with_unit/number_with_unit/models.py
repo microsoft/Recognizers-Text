@@ -6,6 +6,7 @@ from recognizers_text.model import Model, ModelResult
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser
 
+ExtractorParserItem = namedtuple('ExtractorParserItem', ['extractor', 'parser'])
 class AbstractNumberWithUnitModel(Model):
     @property
     @abstractmethod
@@ -13,7 +14,9 @@ class AbstractNumberWithUnitModel(Model):
         raise NotImplementedError
 
     def __init__(self, extractor_parser_dict: Dict[Extractor, Parser]):
-        self.extractor_parser_dict = extractor_parser_dict
+        self.extractor_parser_dict: Dict[str, ExtractorParserItem] = dict()
+        for extractor in extractor_parser_dict:
+            self.extractor_parser_dict[type(extractor).__name__] = ExtractorParserItem(extractor, extractor_parser_dict[extractor])
 
     def parse(self, query: str) -> List[ModelResult]:
         #TODO parse code
