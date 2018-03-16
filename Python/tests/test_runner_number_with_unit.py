@@ -19,7 +19,9 @@ def test_number_with_unit_recognizer(culture, model, source, expected_results):
     for expected, actual in zip(expected_results, results):
         assert expected["Text"] == actual.text
         assert expected["TypeName"] == actual.type_name
-        assert expected["Resolution"] is None == actual.resolution is None
-        if actual.resolution:
-            assert expected["Resolution"]["value"] == actual.resolution["value"]
-            assert expected["Resolution"]["unit"] == actual.resolution["unit"]
+        if expected["Resolution"] is None:
+            assert actual.resolution is None
+        else:
+            expected_resolution = expected["Resolution"]
+            assert expected_resolution["value"] == actual.resolution.value
+            assert expected_resolution["unit"] == actual.resolution.unit
