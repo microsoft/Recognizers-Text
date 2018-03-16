@@ -1,17 +1,18 @@
 import pytest
 from recognizers_text import Culture
 from recognizers_number_with_unit.number_with_unit import NumberWithUnitRecognizer, NumberWithUnitOptions
-from recognizers_number_with_unit.number_with_unit.models import CurrencyModel, AbstractNumberWithUnitModel
+from recognizers_number_with_unit.number_with_unit.models import CurrencyModel, AbstractNumberWithUnitModel, ExtractorParserModel
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractor
 from recognizers_number_with_unit.number_with_unit.english.extractors import EnglishCurrencyExtractorConfiguration
 from recognizers_number_with_unit.number_with_unit.parsers import NumberWithUnitParser
 from recognizers_number_with_unit.number_with_unit.english.parsers import EnglishCurrencyParserConfiguration
 
 class TestInitializationNumberRecognizer():
-    control_model = CurrencyModel(dict([(
-        NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()),
-        NumberWithUnitParser(EnglishCurrencyParserConfiguration())
-    )]))
+    control_model = CurrencyModel(
+        dict([('NumberWithUnitExtractor',
+               ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()),
+                                   NumberWithUnitParser(EnglishCurrencyParserConfiguration()))
+               )]))
     english_culture = Culture.English
     spanish_culture = Culture.Spanish
     invalid_culture = "vo-id"
@@ -34,8 +35,22 @@ class TestInitializationNumberRecognizer():
         
     def assert_models_distinct(self, expected, actual):
         assert actual.model_type_name == expected.model_type_name
-        assert type(actual.extractor) is not type(expected.extractor)
-        assert type(actual.parser.config) is not type(expected.parser.config)
+        assert len(actual.extractor_parser_dict) == len(expected.extractor_parser_dict)
+
+        # deep comparison
+        any_config_is_different = False
+        for actual_key in actual.extractor_parser_dict:
+            assert actual_key in expected.extractor_parser_dict
+
+            actual_item = actual.extractor_parser_dict[actual_key]
+            expected_item = expected.extractor_parser_dict[actual_key]
+            assert type(actual_item.parser) is type(expected_item.parser)
+
+            # configs
+            any_config_is_different = any_config_is_different or type(actual_item.extractor.config) is not type(expected_item.extractor.config)
+            any_config_is_different = any_config_is_different or type(actual_item.parser.config) is not type(expected_item.parser.config)
+
+        assert any_config_is_different
 
     def test_without_culture_use_target_culture(self):
         recognizer = NumberWithUnitRecognizer(self.english_culture)
@@ -64,8 +79,8 @@ class TestInitializationNumberRecognizer():
         self.assert_models_equal(self.control_model, recognizer.get_currency_model())
     
     def test_initialization_with_int_option_resolve_options_enum(self):
-        recognizer = NumberWithUnitRecognizer(self.english_culture, NumberOptions.NONE, False)
-        assert (recognizer.options & NumberOptions.NONE) == NumberOptions.NONE
+        recognizer = NumberWithUnitRecognizer(self.english_culture, NumberWithUnitOptions.NONE, False)
+        assert (recognizer.options & NumberWithUnitOptions.NONE) == NumberWithUnitOptions.NONE
     
     def test_initialization_with_invalid_options_throw_error(self):
         with pytest.raises(ValueError):

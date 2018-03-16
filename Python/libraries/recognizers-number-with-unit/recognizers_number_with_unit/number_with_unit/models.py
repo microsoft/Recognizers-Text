@@ -1,22 +1,23 @@
 from abc import abstractmethod
 from typing import List, Optional, Dict
-from collections import namedtuple
 
 from recognizers_text.model import Model, ModelResult
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser
 
-ExtractorParserItem = namedtuple('ExtractorParserItem', ['extractor', 'parser'])
+class ExtractorParserModel:
+    def __init__(self, extractor:Extractor, parser: Parser):
+        self.extractor = extractor
+        self.parser = parser
+
 class AbstractNumberWithUnitModel(Model):
     @property
     @abstractmethod
     def model_type_name(self) -> str:
         raise NotImplementedError
 
-    def __init__(self, extractor_parser_dict: Dict[Extractor, Parser]):
-        self.extractor_parser_dict: Dict[str, ExtractorParserItem] = dict()
-        for extractor in extractor_parser_dict:
-            self.extractor_parser_dict[type(extractor).__name__] = ExtractorParserItem(extractor, extractor_parser_dict[extractor])
+    def __init__(self, extractor_parser_dict: Dict[str, ExtractorParserModel]):
+        self.extractor_parser_dict: Dict[str, ExtractorParserModel] = extractor_parser_dict
 
     def parse(self, query: str) -> List[ModelResult]:
         #TODO parse code

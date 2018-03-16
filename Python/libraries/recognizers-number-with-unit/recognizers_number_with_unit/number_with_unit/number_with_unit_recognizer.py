@@ -2,7 +2,7 @@ from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer
 from recognizers_text.model import Model, ModelResult
-from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel
+from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel, ExtractorParserModel
 from .extractors import NumberWithUnitExtractor
 from .english.extractors import (EnglishCurrencyExtractorConfiguration,
                                 EnglishTemperatureExtractorConfiguration,
@@ -28,21 +28,25 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
     def initialize_configuration(self):
         #region English
         self.register_model('CurrencyModel', Culture.English, lambda options: CurrencyModel(
-            dict([(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()),
-                   NumberWithUnitParser(EnglishCurrencyParserConfiguration()))])
-        ))
+            dict([('NumberWithUnitExtractor',
+                   ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()),
+                                       NumberWithUnitParser(EnglishCurrencyParserConfiguration()))
+                   )])))
         self.register_model('TemperatureModel', Culture.English, lambda options: TemperatureModel(
-            dict([(NumberWithUnitExtractor(EnglishTemperatureExtractorConfiguration()),
-                   NumberWithUnitParser(EnglishTemperatureParserConfiguration()))])
-        ))
+            dict([('NumberWithUnitExtractor',
+                   ExtractorParserModel(NumberWithUnitExtractor(EnglishTemperatureExtractorConfiguration()),
+                                       NumberWithUnitParser(EnglishTemperatureParserConfiguration()))
+                   )])))
         self.register_model('DimensionModel', Culture.English, lambda options: DimensionModel(
-            dict([(NumberWithUnitExtractor(EnglishDimensionExtractorConfiguration()),
-                   NumberWithUnitParser(EnglishDimensionParserConfiguration()))])
-        ))
+            dict([('NumberWithUnitExtractor',
+                   ExtractorParserModel(NumberWithUnitExtractor(EnglishDimensionExtractorConfiguration()),
+                                       NumberWithUnitParser(EnglishDimensionParserConfiguration()))
+                   )])))
         self.register_model('AgeModel', Culture.English, lambda options: AgeModel(
-            dict([(NumberWithUnitExtractor(EnglishAgeExtractorConfiguration()),
-                   NumberWithUnitParser(EnglishAgeParserConfiguration()))])
-        ))
+            dict([('NumberWithUnitExtractor',
+                   ExtractorParserModel(NumberWithUnitExtractor(EnglishAgeExtractorConfiguration()),
+                                       NumberWithUnitParser(EnglishAgeParserConfiguration()))
+                   )])))
         #endregion
 
 
