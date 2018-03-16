@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTimexCreator
     {
         [TestMethod]
-        public void Creator_Today()
+        public void DataTypes_Creator_Today()
         {
             var d = System.DateTime.Now;
             var expected = TimexFormat.Format(new Timex
@@ -23,13 +23,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Creator_Today_Relative()
+        public void DataTypes_Creator_Today_Relative()
         {
             Assert.AreEqual("2017-10-05", TimexCreator.Today(new System.DateTime(2017, 10, 5)));
         }
 
         [TestMethod]
-        public void Creator_Tomorrow()
+        public void DataTypes_Creator_Tomorrow()
         {
             var d = System.DateTime.Now;
             d = d.AddDays(1);
@@ -43,13 +43,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Creator_Tomorrow_Relative()
+        public void DataTypes_Creator_Tomorrow_Relative()
         {
             Assert.AreEqual("2017-10-06", TimexCreator.Tomorrow(new System.DateTime(2017, 10, 5)));
         }
 
         [TestMethod]
-        public void Creator_Yesterday()
+        public void DataTypes_Creator_Yesterday()
         {
             var d = System.DateTime.Now;
             d = d.AddDays(-1);
@@ -63,13 +63,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Creator_Yesterday_Relative()
+        public void DataTypes_Creator_Yesterday_Relative()
         {
             Assert.AreEqual("2017-10-04", TimexCreator.Yesterday(new System.DateTime(2017, 10, 5)));
         }
 
         [TestMethod]
-        public void Creator_WeekFromToday()
+        public void DataTypes_Creator_WeekFromToday()
         {
             var d = System.DateTime.Now;
             var expected = TimexFormat.Format(new Timex
@@ -83,13 +83,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Creator_WeekFromToday_Relative()
+        public void DataTypes_Creator_WeekFromToday_Relative()
         {
             Assert.AreEqual("(2017-10-05,2017-10-12,P7D)", TimexCreator.WeekFromToday(new System.DateTime(2017, 10, 5)));
         }
 
         [TestMethod]
-        public void Creator_WeekBackFromToday()
+        public void DataTypes_Creator_WeekBackFromToday()
         {
             var d = System.DateTime.Now;
             d = d.AddDays(-7);
@@ -104,13 +104,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Creator_WeekBackFromToday_Relative()
+        public void DataTypes_Creator_WeekBackFromToday_Relative()
         {
             Assert.AreEqual("(2017-09-28,2017-10-05,P7D)", TimexCreator.WeekBackFromToday(new System.DateTime(2017, 10, 5)));
         }
 
         [TestMethod]
-        public void Creator_nextWeek()
+        public void DataTypes_Creator_nextWeek()
         {
             var start = TimexDateHelpers.DateOfNextDay(DayOfWeek.Monday, System.DateTime.Now);
             var t = Timex.FromDate(start);
@@ -120,13 +120,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Creator_NextWeek_Relative()
+        public void DataTypes_Creator_NextWeek_Relative()
         {
             Assert.AreEqual("(2017-10-09,2017-10-16,P7D)", TimexCreator.NextWeek(new System.DateTime(2017, 10, 5)));
         }
         
         [TestMethod]
-        public void Creator_lastWeek()
+        public void DataTypes_Creator_lastWeek()
         {
             var start = TimexDateHelpers.DateOfLastDay(DayOfWeek.Monday, System.DateTime.Now);
             start = start.AddDays(-7);
@@ -137,13 +137,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Creator_LastWeek_Relative()
+        public void DataTypes_Creator_LastWeek_Relative()
         {
             Assert.AreEqual("(2017-09-25,2017-10-02,P7D)", TimexCreator.LastWeek(new System.DateTime(2017, 10, 5)));
         }
 
         [TestMethod]
-        public void Creator_NextWeeksFromToday()
+        public void DataTypes_Creator_NextWeeksFromToday()
         {
             var d = System.DateTime.Now;
             var expected = TimexFormat.Format(new Timex
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Creator_NextWeeksFromToday_Relative()
+        public void DataTypes_Creator_NextWeeksFromToday_Relative()
         {
             Assert.AreEqual("(2017-10-05,2017-10-19,P14D)", TimexCreator.NextWeeksFromToday(2, new System.DateTime(2017, 10, 5)));
         }

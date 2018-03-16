@@ -7,12 +7,12 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
     {
         public static string ConvertTimexToString(Timex timex)
         {
-            return TimexConvertEn.ConvertTimexToString(timex);
+            return TimexConvertEnglish.ConvertTimexToString(timex);
         }
 
         public static string ConvertTimexSetToString(TimexSet timexSet)
         {
-            return TimexConvertEn.ConvertTimexSetToString(timexSet);
+            return TimexConvertEnglish.ConvertTimexSetToString(timexSet);
         }
     }
 }

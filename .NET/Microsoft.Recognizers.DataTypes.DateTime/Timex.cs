@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
 {
     public class Timex
     {
-        private Time _time;
+        private Time time;
 
         public Timex()
         {
@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 DayOfMonth = date.Day
             };
         }
+		
         public static Timex FromDateTime(System.DateTime datetime)
         {
             var timex = FromDate(datetime);
@@ -35,6 +36,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             timex.Second = datetime.Second;
             return timex;
         }
+		
         public static Timex FromTime(Time time)
         {
             return new Timex
@@ -45,21 +47,9 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             };
         }
 
-        public string TimexValue
-        {
-            get
-            {
-                return TimexFormat.Format(this);
-            }
-        }
+        public string TimexValue => TimexFormat.Format(this);
 
-        public HashSet<string> Types
-        {
-            get
-            {
-                return TimexInference.Infer(this);
-            }
-        }
+        public HashSet<string> Types => TimexInference.Infer(this);
 
         public override string ToString()
         {
@@ -132,69 +122,72 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
 
         public int? Hour
         {
-            get { return _time?.Hour; }
+            get { return time?.Hour; }
+
             set
             {
                 if (value.HasValue)
                 {
-                    if (_time == null)
+                    if (time == null)
                     {
-                        _time = new Time(value.Value, 0, 0);
+                        time = new Time(value.Value, 0, 0);
                     }
                     else
                     {
-                        _time.Hour = value.Value;
+                        time.Hour = value.Value;
                     }
                 }
                 else
                 {
-                    _time = null;
+                    time = null;
                 }
             }
         }
 
         public int? Minute
         {
-            get { return _time?.Minute; }
+            get { return time?.Minute; }
+
             set
             {
                 if (value.HasValue)
                 {
-                    if (_time == null)
+                    if (time == null)
                     {
-                        _time = new Time(0, value.Value, 0);
+                        time = new Time(0, value.Value, 0);
                     }
                     else
                     {
-                        _time.Minute = value.Value;
+                        time.Minute = value.Value;
                     }
                 }
                 else
                 {
-                    _time = null;
+                    time = null;
                 }
             }
         }
 
         public int? Second
         {
-            get { return _time?.Second; }
+            get { return time?.Second; }
+
             set
             {
                 if (value.HasValue)
                 {
-                    if (_time == null)
+                    if (time == null)
                     {
-                        _time = new Time(0, 0, value.Value);
+                        time = new Time(0, 0, value.Value);
                     }
                     else
                     {
-                        _time.Second = value.Value;
+                        time.Second = value.Value;
                     }
                 }
                 else
                 {
-                    _time = null;
+                    time = null;
                 }
             }
         }
@@ -210,42 +203,54 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     case "year":
                         Year = int.Parse(item.Value);
                         break;
+
                     case "month":
                         Month = int.Parse(item.Value);
                         break;
+
                     case "dayOfMonth":
                         DayOfMonth = int.Parse(item.Value);
                         break;
+
                     case "dayOfWeek":
                         DayOfWeek = int.Parse(item.Value);
                         break;
+
                     case "season":
                         Season = item.Value;
                         break;
+
                     case "weekOfYear":
                         WeekOfYear = int.Parse(item.Value);
                         break;
+
                     case "weekend":
                         Weekend = true;
                         break;
+
                     case "weekOfMonth":
                         WeekOfMonth = int.Parse(item.Value);
                         break;
+
                     case "hour":
                         Hour = int.Parse(item.Value);
                         break;
+
                     case "minute":
                         Minute = int.Parse(item.Value);
                         break;
                     case "second":
                         Second = int.Parse(item.Value);
                         break;
+
                     case "partOfDay":
                         PartOfDay = item.Value;
                         break;
+
                     case "dateUnit":
                         AssignDateDuration(source);
                         break;
+
                     case "timeUnit":
                         AssignTimeDuration(source);
                         break;
@@ -260,12 +265,15 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 case "Y":
                     Years = decimal.Parse(source["amount"]);
                     break;
+
                 case "M":
                     Months = decimal.Parse(source["amount"]);
                     break;
+
                 case "W":
                     Weeks = decimal.Parse(source["amount"]);
                     break;
+
                 case "D":
                     Days = decimal.Parse(source["amount"]);
                     break;
@@ -279,9 +287,11 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 case "H":
                     Hours = decimal.Parse(source["amount"]);
                     break;
+
                 case "M":
                     Minutes = decimal.Parse(source["amount"]);
                     break;
+
                 case "S":
                     Seconds = decimal.Parse(source["amount"]);
                     break;

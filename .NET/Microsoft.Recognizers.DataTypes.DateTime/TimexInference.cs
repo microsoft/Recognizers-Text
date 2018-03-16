@@ -15,55 +15,68 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 types.Add(Constants.TimexTypes.Present);
             }
+
             if (IsDefinite(obj))
             {
                 types.Add(Constants.TimexTypes.Definite);
             }
+
             if (IsDate(obj))
             {
                 types.Add(Constants.TimexTypes.Date);
             }
+
             if (IsDateRange(obj))
             {
                 types.Add(Constants.TimexTypes.DateRange);
             }
+
             if (IsDuration(obj))
             {
                 types.Add(Constants.TimexTypes.Duration);
             }
+
             if (IsTime(obj))
             {
                 types.Add(Constants.TimexTypes.Time);
             }
+
             if (IsTimeRange(obj))
             {
                 types.Add(Constants.TimexTypes.TimeRange);
             }
+
             if (types.Contains(Constants.TimexTypes.Present))
             {
                 types.Add(Constants.TimexTypes.Date);
                 types.Add(Constants.TimexTypes.Time);
             }
+
             if (types.Contains(Constants.TimexTypes.Time) && types.Contains(Constants.TimexTypes.Duration))
             {
                 types.Add(Constants.TimexTypes.TimeRange);
             }
+
             if (types.Contains(Constants.TimexTypes.Date) && types.Contains(Constants.TimexTypes.Time))
             {
                 types.Add(Constants.TimexTypes.DateTime);
             }
+
             if (types.Contains(Constants.TimexTypes.Date) && types.Contains(Constants.TimexTypes.Duration))
             {
                 types.Add(Constants.TimexTypes.DateRange);
             }
+
             if (types.Contains(Constants.TimexTypes.DateTime) && types.Contains(Constants.TimexTypes.Duration))
             {
                 types.Add(Constants.TimexTypes.DateTimeRange);
             }
+
             if (types.Contains(Constants.TimexTypes.Date) && types.Contains(Constants.TimexTypes.TimeRange))
             {
                 types.Add(Constants.TimexTypes.DateTimeRange);
             }
+
             return types;
         }
 
@@ -74,13 +87,8 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
 
         private static bool IsDuration(Timex obj)
         {
-            return obj.Years != null
-                || obj.Months != null
-                || obj.Weeks != null
-                || obj.Days != null
-                || obj.Hours != null
-                || obj.Minutes != null
-                || obj.Seconds != null;
+            return obj.Years != null || obj.Months != null || obj.Weeks != null || obj.Days != null ||
+                   obj.Hours != null || obj.Minutes != null || obj.Seconds != null;
         }
 
         private static bool IsTime(Timex obj)
@@ -100,12 +108,10 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
 
         private static bool IsDateRange(Timex obj)
         {
-            return (obj.Year != null && obj.DayOfMonth == null)
-                || (obj.Year != null && obj.Month != null && obj.DayOfMonth == null)
-                || (obj.Month != null && obj.DayOfMonth == null)
-                || obj.Season != null
-                || obj.WeekOfYear != null
-                || obj.WeekOfMonth != null;
+            return (obj.Year != null && obj.DayOfMonth == null) || 
+                   (obj.Year != null && obj.Month != null && obj.DayOfMonth == null) || 
+                   (obj.Month != null && obj.DayOfMonth == null) || 
+                   obj.Season != null || obj.WeekOfYear != null || obj.WeekOfMonth != null;
         }
 
         private static bool IsDefinite(Timex obj)

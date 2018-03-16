@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)-(?<dayOfMonth>\d\d)$"),
                     new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)$"),
                     new Regex(@"^XXXX-(?<month>\d\d)-(?<dayOfMonth>\d\d)$"),
+
                     // daterange
                     new Regex(@"^(?<year>\d\d\d\d)$"),
                     new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)$"),
@@ -36,6 +37,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     new Regex(@"^T(?<hour>\d\d)$"),
                     new Regex(@"^T(?<hour>\d\d):(?<minute>\d\d)$"),
                     new Regex(@"^T(?<hour>\d\d):(?<minute>\d\d):(?<second>\d\d)$"),
+
                     // timerange
                     new Regex(@"^T(?<partOfDay>DT|NI|MO|AF|EV)$")
                 }
@@ -56,10 +58,12 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return false;
             }
+
             foreach (var groupName in regex.GetGroupNames())
             {
                 result[groupName] = regexResult.Groups[groupName].Value;
             }
+
             return true;
         }
 
@@ -72,6 +76,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     return true;
                 }
             }
+
             return false;
         }
     }

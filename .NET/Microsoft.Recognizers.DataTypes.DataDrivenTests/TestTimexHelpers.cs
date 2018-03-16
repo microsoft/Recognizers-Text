@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTimexHelpers
     {
         [TestMethod]
-        public void Helpers_ExpandDateTimeRange_Short()
+        public void DataTypes_Helpers_ExpandDateTimeRange_Short()
         {
             var timex = new Timex("(2017-09-27,2017-09-29,P2D)");
             var range = TimexHelpers.ExpandDateTimeRange(timex);
@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_ExpandDateTimeRange_Long()
+        public void DataTypes_Helpers_ExpandDateTimeRange_Long()
         {
             var timex = new Timex("(2006-01-01,2008-06-01,P882D)");
             var range = TimexHelpers.ExpandDateTimeRange(timex);
@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_ExpandDateTimeRange_Include_Time()
+        public void DataTypes_Helpers_ExpandDateTimeRange_Include_Time()
         {
             var timex = new Timex("(2017-10-10T16:02:04,2017-10-10T16:07:04,PT5M)");
             var range = TimexHelpers.ExpandDateTimeRange(timex);
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_ExpandDateTimeRange_Month()
+        public void DataTypes_Helpers_ExpandDateTimeRange_Month()
         {
             var timex = new Timex("2017-05");
             var range = TimexHelpers.ExpandDateTimeRange(timex);
@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_ExpandDateTimeRange_Year()
+        public void DataTypes_Helpers_ExpandDateTimeRange_Year()
         {
             var timex = new Timex("1999");
             var range = TimexHelpers.ExpandDateTimeRange(timex);
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_ExpandTimeRange()
+        public void DataTypes_Helpers_ExpandTimeRange()
         {
             var timex = new Timex("(T14,T16,PT2H)");
             var range = TimexHelpers.ExpandTimeRange(timex);
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_DateRangeFromTimex()
+        public void DataTypes_Helpers_DateRangeFromTimex()
         {
             var timex = new Timex("(2017-09-27,2017-09-29,P2D)");
             var range = TimexHelpers.DateRangeFromTimex(timex);
@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_TimeRangeFromTimex()
+        public void DataTypes_Helpers_TimeRangeFromTimex()
         {
             var timex = new Timex("(T14,T16,PT2H)");
             var range = TimexHelpers.TimeRangeFromTimex(timex);
@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_DateFromTimex()
+        public void DataTypes_Helpers_DateFromTimex()
         {
             var timex = new Timex("2017-09-27");
             var date = TimexHelpers.DateFromTimex(timex);
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Helpers_TimeFromTimex()
+        public void DataTypes_Helpers_TimeFromTimex()
         {
             var timex = new Timex("T00:05:00");
             var time = TimexHelpers.TimeFromTimex(timex);

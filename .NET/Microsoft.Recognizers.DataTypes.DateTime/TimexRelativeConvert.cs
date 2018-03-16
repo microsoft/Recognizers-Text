@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
     {
         public static string ConvertTimexToStringRelative(Timex timex, System.DateTime referenceDate)
         {
-            return TimexRelativeConvertEn.ConvertTimexToStringRelative(timex, referenceDate);
+            return TimexRelativeConvertEnglish.ConvertTimexToStringRelative(timex, referenceDate);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
     public class TestTimexFormat
     {
         [TestMethod]
-        public void Format_Date()
+        public void DataTypes_Format_Date()
         {
             Assert.AreEqual("2017-09-27", (new Timex { Year = 2017, Month = 9, DayOfMonth = 27 }).TimexValue);
             Assert.AreEqual("XXXX-WXX-3", (new Timex { DayOfWeek = 3 }).TimexValue);
@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Format_Time()
+        public void DataTypes_Format_Time()
         {
             Assert.AreEqual("T17:30:45", (new Timex { Hour = 17, Minute = 30, Second = 45 }).TimexValue);
             Assert.AreEqual("T05:06:07", (new Timex { Hour = 5, Minute = 6, Second = 7 }).TimexValue);
@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Format_Duration()
+        public void DataTypes_Format_Duration()
         {
             Assert.AreEqual("P50Y", (new Timex { Years = 50 }).TimexValue);
             Assert.AreEqual("P6M", (new Timex { Months = 6 }).TimexValue);
@@ -38,20 +38,20 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Format_Present()
+        public void DataTypes_Format_Present()
         {
             Assert.AreEqual("PRESENT_REF", (new Timex { Now = true }).TimexValue);
         }
 
         [TestMethod]
-        public void Format_DateTime()
+        public void DataTypes_Format_DateTime()
         {
             Assert.AreEqual("XXXX-WXX-3T04", (new Timex { DayOfWeek = 3, Hour = 4, Minute = 0, Second = 0 }).TimexValue);
             Assert.AreEqual("2017-09-27T11:41:30", (new Timex { Year = 2017, Month = 9, DayOfMonth = 27, Hour = 11, Minute = 41, Second = 30 }).TimexValue);
         }
 
         [TestMethod]
-        public void Format_DateRange()
+        public void DataTypes_Format_DateRange()
         {
             Assert.AreEqual("2017", (new Timex { Year = 2017 }).TimexValue);
             Assert.AreEqual("SU", (new Timex { Season = "SU" }).TimexValue);
@@ -63,13 +63,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
-        public void Format_TimeRange()
+        public void DataTypes_Format_TimeRange()
         {
             Assert.AreEqual("TEV", (new Timex { PartOfDay = "EV" }).TimexValue);
         }
 
         [TestMethod]
-        public void Format_DateTimeRange()
+        public void DataTypes_Format_DateTimeRange()
         {
             Assert.AreEqual("2017-09-27TEV", (new Timex { Year = 2017, Month = 9, DayOfMonth = 27, PartOfDay = "EV" }).TimexValue);
         }
