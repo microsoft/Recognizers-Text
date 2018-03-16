@@ -41,7 +41,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             groups[0] = 0;
             for (var idx = 0; idx < ers.Count - 1; idx++)
             {
-                if (ers[idx].Type != ers[idx + 1].Type)
+                if (ers[idx].Type != ers[idx + 1].Type && !ers[idx].Type.Equals(Constants.SYS_NUM) &&
+                    !ers[idx + 1].Type.Equals(Constants.SYS_NUM))
                 {
                     continue;
                 }

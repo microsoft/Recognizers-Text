@@ -1448,5 +1448,80 @@
       }
     }
   ]
+},
+{
+  "Input": "It costs one dollar and one and one point of your credit points.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "one dollar and one",
+      "Start": 9,
+      "End": 26,
+      "TypeName": "currency",
+      "Resolution": {
+        "unit": "Dollar",
+        "value": "1.01"
+      }
+    } 
+  ]
+},
+{
+  "Input": "It costs you 10 us dollar and me 100 chinese yuan.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "10 us dollar",
+      "Start": 13,
+      "End": 24,
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "USD",
+        "unit": "United States dollar",
+        "value": "10"
+      }
+    },
+    {
+      "Text": "100 chinese yuan",
+      "Start": 33,
+      "End": 48,
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "CNY",
+        "unit": "Chinese yuan",
+        "value": "100"
+      }
+    } 
+  ]
+},
+{
+  "Input": "It costs you 10 us dollar and me c $ 100.34 and fifty.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "10 us dollar",
+      "Start": 13,
+      "End": 24,
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "USD",
+        "unit": "United States dollar",
+        "value": "10"
+      }
+    },
+    {
+      "Text": "c $ 100.34 and fifty",
+      "Start": 33,
+      "End": 52,
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "CAD",
+        "unit": "Canadian dollar",
+        "value": "100.84"
+      }
+    } 
+  ]
 }
 ]
