@@ -1,6 +1,11 @@
 ﻿---
 #JapaneseNumberParserConfiguration
 LangMarker: 'Jpn'
+DecimalSeparatorChar: !char '.'
+FractionMarkerToken: ''
+NonDecimalSeparatorChar: !char ' '
+HalfADozenText: ''
+WordSeparatorToken: ''
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
