@@ -11,6 +11,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return $"{TimexDateHelpers.FixedFormatNumber(obj.Year, 4)}-{TimexDateHelpers.FixedFormatNumber(obj.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(obj.DayOfMonth, 2)}";
             }
+
             return string.Empty;
         }
 
@@ -20,6 +21,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return $"{TimexDateHelpers.FixedFormatNumber(obj.Hour, 2)}:{TimexDateHelpers.FixedFormatNumber(obj.Minute, 2)}:{TimexDateHelpers.FixedFormatNumber(obj.Second, 2)}";
             }
+
             return string.Empty;
         }
 
@@ -34,24 +36,37 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return (31536000 * obj.Years).ToString();
             }
-            if (obj.Months != null) {
+
+            if (obj.Months != null)
+            {
                 return (2592000 * obj.Months).ToString();
             }
-            if (obj.Weeks != null) {
+
+            if (obj.Weeks != null)
+            {
                 return (604800 * obj.Weeks).ToString();
             }
-            if (obj.Days != null) {
+
+            if (obj.Days != null)
+            {
                 return (86400 * obj.Days).ToString();
             }
-            if (obj.Hours != null) {
+
+            if (obj.Hours != null)
+            {
                 return (3600 * obj.Hours).ToString();
             }
-            if (obj.Minutes != null) {
+
+            if (obj.Minutes != null)
+            {
                 return (60 * obj.Minutes).ToString();
             }
-            if (obj.Seconds != null) {
+
+            if (obj.Seconds != null)
+            {
                 return obj.Seconds.ToString();
             }
+
             return string.Empty;
         }
     }

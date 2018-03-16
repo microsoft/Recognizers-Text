@@ -43,9 +43,11 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                         range.End.Month = 1;
                         range.End.DayOfMonth = 1;
                     }
+
                     return range;
                 }
             }
+
             return new TimexRange { Start = new Timex(), End = new Timex() };
         }
 
@@ -53,6 +55,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         {
             var start = new Timex { Hour = timex.Hour, Minute = timex.Minute, Second = timex.Second };
             var duration = CloneDuration(timex);
+
             return new TimexRange
             {
                 Start = start,
@@ -69,8 +72,10 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 {
                     end.DayOfWeek += (int)duration.Days;
                 }
+
                 return end;
             }
+
             if (start.Month != null && start.DayOfMonth != null)
             {
                 if (duration.Days != null)
@@ -79,6 +84,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     {
                         var d = new System.DateTime(start.Year.Value, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
                         d = d.AddDays((double)duration.Days.Value);
+
                         return new Timex {
                             Year = d.Year,
                             Month = d.Month,
@@ -89,6 +95,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     {
                         var d = new System.DateTime(2001, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
                         d = d.AddDays((double)duration.Days.Value);
+
                         return new Timex
                         {
                             Month = d.Month,
@@ -96,6 +103,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                         };
                     }
                 }
+
                 if (duration.Years != null)
                 {
                     if (start.Year != null)
@@ -108,6 +116,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                         };
                     }
                 }
+
                 if (duration.Month != null)
                 {
                     if (start.Month != null)
@@ -144,14 +153,17 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                         result.Year = d.Year;
                         result.Month = d.Month;
                         result.DayOfMonth = d.Day;
+
                         return result;
                     }
+
                     if (result.DayOfWeek != null)
                     {
                         result.DayOfWeek += (int)days;
                         return result;
                     }
                 }
+
                 return result;
             }
 
@@ -159,13 +171,16 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 var result = start.Clone();
                 result.Minute += (int)duration.Minutes.Value;
+
                 if (result.Minute.Value > 59)
                 {
                     result.Hour++;
                     result.Minute = 0;
                 }
+
                 return result;
             }
+
             return start;
         }
 
@@ -178,11 +193,11 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         {
             return new System.DateTime(timex.Year ?? 2001, timex.Month ?? 1, timex.DayOfMonth ?? 1, timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
         }
+
         public static Time TimeFromTimex(Timex timex)
         {
             return new Time(timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
         }
-
 
         public static DateRange DateRangeFromTimex(Timex timex)
         {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.DataTypes.DateTime
 {
-    internal static class TimexConstantsEn
+    internal static class TimexConstantsEnglish
     {
         public static readonly string[] Days =
         {

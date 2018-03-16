@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("2017-05-29");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Definite, Constants.TimexTypes.Date }, timex.Types.ToList());
+
             Assert.AreEqual(2017, timex.Year);
             Assert.AreEqual(5, timex.Month);
             Assert.AreEqual(29, timex.DayOfMonth);
@@ -41,6 +42,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("XXXX-12-05");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Date }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.AreEqual(12, timex.Month);
             Assert.AreEqual(5, timex.DayOfMonth);
@@ -68,6 +70,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("XXXX-WXX-3");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Date }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -95,6 +98,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("T17:30:05");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Time }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -122,6 +126,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("T17:30");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Time }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -149,6 +154,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("T17");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Time }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -180,6 +186,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Time,
                 Constants.TimexTypes.DateTime }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -211,6 +218,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Time,
                 Constants.TimexTypes.DateTime }, timex.Types.ToList());
+
             Assert.AreEqual(1984, timex.Year);
             Assert.AreEqual(1, timex.Month);
             Assert.AreEqual(3, timex.DayOfMonth);
@@ -237,7 +245,9 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         public void DataTypes_Parsing_ParicularTimeOnParticularDayOfWeek()
         {
             var timex = new Timex("XXXX-WXX-3T16");
-            CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Time, Constants.TimexTypes.Date, Constants.TimexTypes.DateTime }, timex.Types.ToList());
+            CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Time, Constants.TimexTypes.Date, Constants.TimexTypes.DateTime }, 
+                                           timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -265,6 +275,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("2016");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.AreEqual(2016, timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -292,6 +303,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("1999-SU");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.AreEqual(1999, timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -319,6 +331,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("2017-W37");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.AreEqual(2017, timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -346,6 +359,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("SU");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -373,6 +387,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("WI");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -400,6 +415,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("2017-W37-WE");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.AreEqual(2017, timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -427,6 +443,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("XXXX-05");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.AreEqual(5, timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -454,6 +471,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("2020-07");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.AreEqual(2020, timex.Year);
             Assert.AreEqual(7, timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -481,6 +499,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("XXXX-01-W01");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.AreEqual(1, timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -511,6 +530,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Duration,
                 Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -541,6 +561,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Duration,
                 Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.AreEqual(1, timex.Month);
             Assert.AreEqual(1, timex.DayOfMonth);
@@ -572,6 +593,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.Duration,
                 Constants.TimexTypes.DateRange }, timex.Types.ToList());
+
             Assert.AreEqual(2015, timex.Year);
             Assert.AreEqual(1, timex.Month);
             Assert.AreEqual(1, timex.DayOfMonth);
@@ -599,6 +621,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("TDT");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.TimeRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -626,6 +649,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("TNI");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.TimeRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -653,6 +677,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("TMO");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.TimeRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -680,6 +705,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("TAF");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.TimeRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -707,6 +733,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("TEV");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.TimeRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -737,6 +764,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Time,
                 Constants.TimexTypes.Duration,
                 Constants.TimexTypes.TimeRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -767,6 +795,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.TimeRange,
                 Constants.TimexTypes.DateTimeRange }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -798,6 +827,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Date,
                 Constants.TimexTypes.TimeRange,
                 Constants.TimexTypes.DateTimeRange }, timex.Types.ToList());
+
             Assert.AreEqual(2017, timex.Year);
             Assert.AreEqual(9, timex.Month);
             Assert.AreEqual(7, timex.DayOfMonth);
@@ -834,6 +864,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.DateRange,
                 Constants.TimexTypes.Definite
             }, timex.Types.ToList());
+
             Assert.AreEqual(2017, timex.Year);
             Assert.AreEqual(9, timex.Month);
             Assert.AreEqual(8, timex.DayOfMonth);
@@ -869,6 +900,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
                 Constants.TimexTypes.Duration,
                 Constants.TimexTypes.DateRange,
             }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -896,6 +928,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("P2Y");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -923,6 +956,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("P4M");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -950,6 +984,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("P6W");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -977,6 +1012,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("P2.5W");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -1004,6 +1040,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("P1D");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -1031,6 +1068,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("PT5H");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -1058,6 +1096,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("PT30M");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);
@@ -1085,6 +1124,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         {
             var timex = new Timex("PT45S");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
+
             Assert.IsNull(timex.Year);
             Assert.IsNull(timex.Month);
             Assert.IsNull(timex.DayOfMonth);

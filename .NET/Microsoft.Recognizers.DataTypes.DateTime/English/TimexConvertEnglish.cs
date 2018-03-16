@@ -5,7 +5,7 @@ using System;
 
 namespace Microsoft.Recognizers.DataTypes.DateTime
 {
-    internal static class TimexConvertEn
+    internal static class TimexConvertEnglish
     {
         public static string ConvertTimexToString(Timex timex)
         {
@@ -15,10 +15,12 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return "now";
             }
+
             if (types.Contains(Constants.TimexTypes.DateTimeRange))
             {
                 return ConvertDateTimeRange(timex);
             }
+
             if (types.Contains(Constants.TimexTypes.DateRange))
             {
                 return ConvertDateRange(timex);
@@ -50,6 +52,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return ConvertTime(timex);
             }
+
             return string.Empty;
         }
 
@@ -60,7 +63,8 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return $"every {ConvertTimexDurationToString(timex, false)}";
             }
-            else {
+            else
+            {
                 return $"every {ConvertTimexToString(timex)}";
             }
         }
@@ -71,6 +75,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return "midnight";
             }
+
             if (timex.Hour == 12 && timex.Minute == 0 && timex.Second == 0)
             {
                 return "midday";
@@ -88,12 +93,12 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         {
             if (timex.DayOfWeek != null)
             {
-                return TimexConstantsEn.Days[timex.DayOfWeek.Value - 1];
+                return TimexConstantsEnglish.Days[timex.DayOfWeek.Value - 1];
             }
 
-            var month = TimexConstantsEn.Months[timex.Month.Value - 1];
+            var month = TimexConstantsEnglish.Months[timex.Month.Value - 1];
             var date = timex.DayOfMonth.ToString();
-            var abbreviation = TimexConstantsEn.DateAbbreviation[int.Parse(date[date.Length - 1].ToString())];
+            var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString())];
 
             if (timex.Year != null)
             {
@@ -121,30 +126,37 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return ConvertDurationPropertyToString(timex.Years.Value, "year", includeSingleCount);
             }
+
             if (timex.Months != null)
             {
                 return ConvertDurationPropertyToString(timex.Months.Value, "month", includeSingleCount);
             }
+
             if (timex.Weeks != null)
             {
                 return ConvertDurationPropertyToString(timex.Weeks.Value, "week", includeSingleCount);
             }
+
             if (timex.Days != null)
             {
                 return ConvertDurationPropertyToString(timex.Days.Value, "day", includeSingleCount);
             }
+
             if (timex.Hours != null)
             {
                 return ConvertDurationPropertyToString(timex.Hours.Value, "hour", includeSingleCount);
             }
+
             if (timex.Minutes != null)
             {
                 return ConvertDurationPropertyToString(timex.Minutes.Value, "minute", includeSingleCount);
             }
+
             if (timex.Seconds != null)
             {
                 return ConvertDurationPropertyToString(timex.Seconds.Value, "second", includeSingleCount);
             }
+
             return string.Empty;
         }
 
@@ -155,7 +167,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
 
         private static string ConvertDateRange(Timex timex)
         {
-            var season = (timex.Season != null) ? TimexConstantsEn.Seasons[timex.Season] : string.Empty;
+            var season = (timex.Season != null) ? TimexConstantsEnglish.Seasons[timex.Season] : string.Empty;
 
             var year = (timex.Year != null) ? timex.Year.ToString() : string.Empty;
 
@@ -169,22 +181,23 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
 
             if (timex.Month != null)
             {
-                var month = $"{TimexConstantsEn.Months[timex.Month.Value - 1]}";
+                var month = $"{TimexConstantsEnglish.Months[timex.Month.Value - 1]}";
                 if (timex.WeekOfMonth != null)
                 {
-                    return $"{TimexConstantsEn.Weeks[timex.WeekOfMonth.Value - 1]} week of {month}";
+                    return $"{TimexConstantsEnglish.Weeks[timex.WeekOfMonth.Value - 1]} week of {month}";
                 }
                 else
                 {
                     return $"{month} {year}".Trim();
                 }
             }
+
             return $"{season} {year}".Trim();
         }
 
         private static string ConvertTimeRange(Timex timex)
         {
-            return TimexConstantsEn.DayParts[timex.PartOfDay];
+            return TimexConstantsEnglish.DayParts[timex.PartOfDay];
         }
 
         private static string ConvertDateTime(Timex timex)

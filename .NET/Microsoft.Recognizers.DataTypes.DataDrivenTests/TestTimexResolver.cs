@@ -93,6 +93,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
             Assert.IsNull(resolution.Values[1].Start);
             Assert.IsNull(resolution.Values[1].End);
         }
+
         [TestMethod]
         public void DataTypes_Resolver_DateTime_Next_Wednesday_4_am()
         {

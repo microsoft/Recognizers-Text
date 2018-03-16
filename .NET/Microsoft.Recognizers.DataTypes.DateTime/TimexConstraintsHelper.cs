@@ -12,8 +12,9 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         public static IEnumerable<TimeRange> Collapse(IEnumerable<TimeRange> ranges)
         {
             var r = ranges.ToList();
-            while (InnerCollapse(r))
-                ;
+
+            while (InnerCollapse(r)) { }
+
             r.Sort((a, b) => a.Start.GetTime() - b.Start.GetTime());
             return r;
         }
@@ -21,16 +22,17 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         public static IEnumerable<DateRange> Collapse(IEnumerable<DateRange> ranges)
         {
             var r = ranges.ToList();
-            while (InnerCollapse(r))
-                ;
+
+            while (InnerCollapse(r)) { }
+
             r.Sort((a, b) => System.DateTime.Compare(a.Start, b.Start));
             return r;
         }
 
         private static bool IsOverlapping(TimeRange r1, TimeRange r2)
         {
-            return r1.End.GetTime() > r2.Start.GetTime() && r1.Start.GetTime() <= r2.Start.GetTime()
-                || r1.Start.GetTime() < r2.End.GetTime() && r1.Start.GetTime() >= r2.Start.GetTime();
+            return r1.End.GetTime() > r2.Start.GetTime() && r1.Start.GetTime() <= r2.Start.GetTime() || 
+                   r1.Start.GetTime() < r2.End.GetTime() && r1.Start.GetTime() >= r2.Start.GetTime();
         }
 
         private static TimeRange CollapseOverlapping(TimeRange r1, TimeRange r2) 
@@ -48,6 +50,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return false;
             }
+
             for (int i = 0; i < ranges.Count; i++)
             {
                 var r1 = ranges[i];
@@ -63,12 +66,13 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     }
                 }
             }
+
             return false;
         }
         private static bool IsOverlapping(DateRange r1, DateRange r2)
         {
-            return r1.End > r2.Start && r1.Start <= r2.Start
-                || r1.Start < r2.End && r1.Start >= r2.Start;
+            return r1.End > r2.Start && r1.Start <= r2.Start || 
+                   r1.Start < r2.End && r1.Start >= r2.Start;
         }
 
         private static DateRange CollapseOverlapping(DateRange r1, DateRange r2)
@@ -86,6 +90,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return false;
             }
+
             for (int i = 0; i < ranges.Count; i++)
             {
                 var r1 = ranges[i];
@@ -101,6 +106,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     }
                 }
             }
+
             return false;
         }
     }

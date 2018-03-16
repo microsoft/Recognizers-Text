@@ -16,9 +16,11 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             var candidatesAccordingToDate = ResolveByDateRangeConstraints(candidatesWithDurationsResolved, timexConstraints);
             var candidatesWithAddedTime = ResolveByTimeConstraints(candidatesAccordingToDate, timexConstraints);
             var candidatesFilteredByTime = ResolveByTimeRangeConstraints(candidatesWithAddedTime, timexConstraints);
+
             var timexResults = candidatesFilteredByTime
                 .Select((x) => { return new Timex(x); })
                 .ToList();
+
             return timexResults;
         }
         private static List<string> ResolveDurations(IEnumerable<string> candidates, IEnumerable<Timex> constraints)
@@ -40,6 +42,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     results.Add(candidate);
                 }
             }
+
             return results;
         }
 
@@ -57,6 +60,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     results.Add(TimexHelpers.TimexTimeAdd(constraint, candidate));
                 }
             }
+
             return results;
         }
 
@@ -94,6 +98,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 result.AddRange(ResolveDateAgainstConstraint(timex, constraint));
             }
+
             return result;
         }
 
@@ -132,6 +137,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 result.AddRange(ResolveTimeAgainstConstraint(timex, constraint));
             }
+
             return result;
         }
 
@@ -142,6 +148,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return new [] { timex.TimexValue };
             }
+
             return Enumerable.Empty<string>();
         }
 
@@ -157,6 +164,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 return new[] { timex.TimexValue };
             }
+
             return Enumerable.Empty<string>();
         }
 
@@ -171,13 +179,16 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     t.Year = year;
                     result.AddRange(ResolveDefiniteAgainstConstraint(t, constraint));
                 }
+
                 return result;
             }
+
             if (timex.DayOfWeek != null)
             {
                 var day = timex.DayOfWeek == 7 ? DayOfWeek.Monday : (DayOfWeek)timex.DayOfWeek;
                 var dates = TimexDateHelpers.DatesMatchingDay(day, constraint.Start, constraint.End);
                 var result = new List<string>();
+
                 foreach (var d in dates)
                 {
                     var t = timex.Clone();
@@ -187,8 +198,10 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     t.DayOfMonth = d.Day;
                     result.Add(t.TimexValue);
                 }
+
                 return result;
             }
+
             return Enumerable.Empty<string>();
         }
 
@@ -224,6 +237,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                     resolution.Add(timex.TimexValue);
                 }
             }
+
             return RemoveDuplicates(resolution);
         }
     }

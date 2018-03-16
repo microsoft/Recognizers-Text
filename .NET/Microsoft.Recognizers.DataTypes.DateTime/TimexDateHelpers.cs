@@ -20,9 +20,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
 
         public static bool DatePartEquals(System.DateTime dateX, System.DateTime dateY)
         {
-            return (dateX.Year == dateY.Year)
-                && (dateX.Month == dateY.Month)
-                && (dateX.Day == dateY.Day);
+            return (dateX.Year == dateY.Year) && (dateX.Month == dateY.Month) && (dateX.Day == dateY.Day);
         }
 
         public static bool IsDateInWeek(System.DateTime date, System.DateTime startOfWeek)
@@ -34,8 +32,10 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 {
                     return true;
                 }
+
                 d = d.AddDays(1);
             }
+
             return false;
         }
 
@@ -47,6 +47,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 startOfWeek = startOfWeek.AddDays(-1);
             }
+
             return IsDateInWeek(date, startOfWeek);
         }
 
@@ -67,16 +68,20 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             var ds = new System.DateTime(date.Year, 1, 1);
             var de = new System.DateTime(date.Year, date.Month, date.Day);
             int weeks = 1;
+
             while (ds < de)
             {
                 var csDayOfWeek = ds.DayOfWeek;
+
                 var isoDayOfWeek = (csDayOfWeek == 0) ? 7 : (int)csDayOfWeek;
                 if (isoDayOfWeek == 7)
                 {
                     weeks++;
                 }
+
                 ds = ds.AddDays(1);
             }
+
             return weeks;
         }
 
@@ -89,10 +94,12 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         {
             var result = referenceDate;
             result = result.AddDays(-1);
+
             while (result.DayOfWeek != day)
             {
                 result = result.AddDays(-1);
             }
+
             return result;
         }
 
@@ -100,10 +107,12 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         {
             var result = referenceDate;
             result = result.AddDays(1);
+
             while (result.DayOfWeek != day)
             {
                 result = result.AddDays(1);
             }
+
             return result;
         }
 
@@ -111,14 +120,17 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         {
             var result = new List<System.DateTime>();
             var d = start;
+
             while (!DatePartEquals(d, end))
             {
                 if (d.DayOfWeek == day)
                 {
                     result.Add(d);
                 }
+
                 d = d.AddDays(1);
             }
+
             return result;
         }
     }

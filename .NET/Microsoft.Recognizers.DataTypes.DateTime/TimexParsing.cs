@@ -14,19 +14,16 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
             {
                 obj.Now = true;
             }
-            // duration
             else if (timex.StartsWith("P"))
-            {
+            { // duration 
                 ExtractDuration(timex, obj);
             }
-            // range indicated with start and end dates and a duration
             else if (timex.StartsWith("(") && timex.EndsWith(")"))
-            {
+            { // range indicated with start and end dates and a duration
                 ExtractStartEndRange(timex, obj);
             }
-            // date and time and their respective ranges
             else
-            {
+            { // date and time and their respective ranges
                 ExtractDateTime(timex, obj);
             }
         }
