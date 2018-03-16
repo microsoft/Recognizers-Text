@@ -29,7 +29,7 @@ class NumberWithUnitParserConfiguration(ABC):
         self.unit_map: Dict[str, str] = dict()
 
     def add_dict_to_unit_map(self, dictionary: Dict[str, str]):
-        if not dictionary: 
+        if not dictionary:
             return
         for key, value in dictionary.items():
             if not key or len(key) == 0:
@@ -39,7 +39,7 @@ class NumberWithUnitParserConfiguration(ABC):
             for token in values:
                 if not token or len(token) == 0 or token in self.unit_map:
                     return
-                
+
                 self.unit_map[token] = key
 
 class NumberWithUnitParser(Parser):
@@ -49,7 +49,7 @@ class NumberWithUnitParser(Parser):
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         ret = ParseResult(source)
         number_result = None
-        if source.data and source.data is ExtractResult:
+        if source.data and isinstance(source.data, ExtractResult):
             number_result = source.data
         else: # if there is no unitResult, means there is just unit
             number_result = ExtractResult()
@@ -62,13 +62,13 @@ class NumberWithUnitParser(Parser):
         unit_key_build = ''
         unit_keys = []
         i = 0
-        while i < len(key):
+        while i <= len(key):
             if i == len(key):
                 if len(unit_key_build) != 0:
                     self.__add_if_not_contained(unit_keys, unit_key_build.strip())
             # number_result.start is a relative position
             elif i == number_result.start:
-                if len(unit_key_build).length != 0:
+                if len(unit_key_build) != 0:
                     self.__add_if_not_contained(unit_keys, unit_key_build.strip())
                     unit_key_build = ''
                 if number_result.length:
@@ -76,7 +76,7 @@ class NumberWithUnitParser(Parser):
             else:
                 unit_key_build += key[i]
             i += 1
-        
+
         #Unit type depends on last unit in suffix.
         last_unit = unit_keys[-1].lower()
         if self.config.connector_token and len(self.config.connector_token) and last_unit[0] == self.config.connector_token:
