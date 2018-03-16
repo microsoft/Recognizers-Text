@@ -329,6 +329,41 @@
     "Results": []
   },
   {
+    "Input": "wrong IPV6 address :",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "I say:",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "I said :",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "lync:",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "lync: :",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": ":as you say",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": ": as you say",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
     "Input": "wrong IPV6 address 12::44:f:45::1",
     "NotSupportedByDesign": "python",
     "Results": []
