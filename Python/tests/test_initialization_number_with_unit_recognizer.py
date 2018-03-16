@@ -7,7 +7,7 @@ from recognizers_number_with_unit.number_with_unit.english.extractors import Eng
 from recognizers_number_with_unit.number_with_unit.parsers import NumberWithUnitParser
 from recognizers_number_with_unit.number_with_unit.english.parsers import EnglishCurrencyParserConfiguration
 
-class TestInitializationNumberRecognizer():
+class TestInitializationNumberWithUnitRecognizer():
     control_model = CurrencyModel(
         dict([('EnglishCurrencyExtractorConfiguration',
                ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()),
