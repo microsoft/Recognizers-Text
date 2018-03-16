@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -27,7 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 pr = numberWithUnitParser.Parse(extResult);
                 var value = pr.Value as UnitValue;
 
-                config.CurrencyIsoCodeList.TryGetValue(value?.Unit, out var mainUnitIsoCode);
+                config.CurrencyNameToIsoCodeMap.TryGetValue(value?.Unit, out var mainUnitIsoCode);
                 if (string.IsNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX))
                 {
                     pr.Value = new UnitValue
@@ -90,8 +91,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     numberValue = double.Parse(parseResultValue?.Number);
                     result.ResolutionStr = parseResult.ResolutionStr;
 
-                    config.CurrencyIsoCodeList.TryGetValue(unitValue, out mainUnitIsoCode);
-                    // If the main unit can't be recognize, finish process this group.
+                    config.CurrencyNameToIsoCodeMap.TryGetValue(unitValue, out mainUnitIsoCode);
+                    // If the main unit can't be recognized, finish process this group.
                     if (string.IsNullOrEmpty(mainUnitIsoCode))
                     {
                         result.Value = new UnitValue
@@ -104,7 +105,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         continue;
                     }
 
-                    config.CurrencyFractionList.TryGetValue(mainUnitIsoCode, out fractionUnitsString);
+                    config.CurrencyFractionMapping.TryGetValue(mainUnitIsoCode, out fractionUnitsString);
                 }
                 else
                 {
@@ -129,9 +130,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         result.ResolutionStr += ' ' + parseResult.ResolutionStr;
                         result.Length = parseResult.Start + parseResult.Length - result.Start;
                     }
-                    // If the fraction unit doesn't match the main unit, finish process this group.
                     else
                     {
+                        // If the fraction unit doesn't match the main unit, finish process this group.
                         if (result != null)
                         {
                             if (string.IsNullOrEmpty(mainUnitIsoCode) ||

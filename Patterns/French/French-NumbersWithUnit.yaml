@@ -349,7 +349,7 @@ CurrencySuffixList: !dictionary
     Jiao: jiao
 #Additional
     Mark Finlandais: marks finlandais|mark finlandais|fim|mark
-CompoundUnitRegex: !simpleRegex
+CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>[^.])
 CurrencyPrefixList: !dictionary
   types: [ string, string ]

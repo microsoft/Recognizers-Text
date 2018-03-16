@@ -290,7 +290,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka" },
 			{ "Penni", "penniä|penni" }
 		};
-		public static readonly Dictionary<string, string> CurrencyIsoCodeList = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> CurrencyNameToIsoCodeMap = new Dictionary<string, string>
 		{
 			{ "Afghan afghani", "AFN" },
 			{ "Euro", "EUR" },
@@ -478,7 +478,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Alderney pound", "_ALP" },
 			{ "Abkhazian apsar", "_AA" }
 		};
-		public static readonly Dictionary<string, string> CurrencyFractionList = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> FractionalCodeToUnitNameMap = new Dictionary<string, string>
 		{
 			{ "Jiao", "Jiao" },
 			{ "Kopek", "Kopek" },
@@ -554,7 +554,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "Hào", "Hào" },
 			{ "Ngwee", "Ngwee" }
 		};
-		public const string CompoundUnitRegex = @"(?<spacer>and)";
+		public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
 			{ "Dollar", "$" },

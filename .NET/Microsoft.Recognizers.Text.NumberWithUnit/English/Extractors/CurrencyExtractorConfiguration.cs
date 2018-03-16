@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableDictionary();
 
-        public static readonly ImmutableDictionary<string, string> CurrencyFractionList = NumbersWithUnitDefinitions.CurrencyFractionList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> FractionalCodeToUnitNameMap = NumbersWithUnitDefinitions.FractionalCodeToUnitNameMap.ToImmutableDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousCurrencyUnitList.ToImmutableList();
     }

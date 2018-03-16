@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
-            this.CompoundUnitRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitRegex, RegexOptions.IgnoreCase);
+            this.CompoundUnitConnectorRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.IgnoreCase);
         }
 
         public abstract string ExtractType { get; }
@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 
         public string ConnectorToken { get; }
 
-        public Regex CompoundUnitRegex { get; set; }
+        public Regex CompoundUnitConnectorRegex { get; set; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

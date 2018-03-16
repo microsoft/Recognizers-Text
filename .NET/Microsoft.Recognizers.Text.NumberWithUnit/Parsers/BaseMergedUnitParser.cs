@@ -1,11 +1,11 @@
 ﻿namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
-    class BaseMergedParser : IParser
+    class BaseMergedUnitParser : IParser
     {
         protected readonly BaseNumberWithUnitParserConfiguration config;
         private readonly NumberWithUnitParser numberWithUnitParser;
 
-        public BaseMergedParser(BaseNumberWithUnitParserConfiguration config)
+        public BaseMergedUnitParser(BaseNumberWithUnitParserConfiguration config)
         {
             this.config = config;
             numberWithUnitParser = new NumberWithUnitParser(config);
@@ -15,7 +15,7 @@
         {
             ParseResult pr;
 
-            // For now only currency model recognize compound units.
+            // For now only currency model recognizes compound units.
             if (extResult.Type.Equals(Constants.SYS_UNIT_COMPOUND))
             {
                 pr = new BaseCurrencyParser(config).Parse(extResult);

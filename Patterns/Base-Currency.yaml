@@ -1,4 +1,4 @@
-CurrencyFractionList: !dictionary
+CurrencyFractionMapping: !dictionary
   types: [ string, string ]
   entries:
     CNY: Fen|Jiao
@@ -170,7 +170,7 @@ CurrencyFractionList: !dictionary
     YER: Fils
     ZMW: Ngwee
 
-CurrencyFractionNumList: !dictionary
+CurrencyFractionalRatios: !dictionary
   types: [ string, long ]
   entries:
     Kopek: 100

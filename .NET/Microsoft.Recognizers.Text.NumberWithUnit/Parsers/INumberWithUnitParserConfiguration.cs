@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
@@ -34,7 +35,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public IDictionary<string, long> CurrencyFractionNumMap { get; }
 
-        public IDictionary<string, string> CurrencyFractionList { get; }
+        public IDictionary<string, string> CurrencyFractionMapping { get; }
 
         public CultureInfo CultureInfo { get; }
 
@@ -44,7 +45,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public abstract string ConnectorToken { get; }
 
-        public IDictionary<string, string> CurrencyIsoCodeList { get; set; }
+        public IDictionary<string, string> CurrencyNameToIsoCodeMap { get; set; }
 
         public IDictionary<string, string> CurrencyFractionCodeList { get; set; }
 
@@ -52,9 +53,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
             this.CultureInfo = ci;
             this.UnitMap = new Dictionary<string, string>();
-            this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionNumList.ToImmutableDictionary();
-            this.CurrencyFractionList = BaseCurrency.CurrencyFractionList.ToImmutableDictionary();
-            this.CurrencyIsoCodeList = new Dictionary<string, string>();
+            this.CurrencyFractionNumMap = BaseCurrency.CurrencyFractionalRatios.ToImmutableDictionary();
+            this.CurrencyFractionMapping = BaseCurrency.CurrencyFractionMapping.ToImmutableDictionary();
+            this.CurrencyNameToIsoCodeMap = new Dictionary<string, string>();
             this.CurrencyFractionCodeList = new Dictionary<string, string>();
         }
 

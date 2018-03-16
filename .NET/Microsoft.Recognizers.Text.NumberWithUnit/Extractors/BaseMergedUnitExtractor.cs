@@ -5,11 +5,11 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
-    public class BaseMergedExtractor : IExtractor
+    public class BaseMergedUnitExtractor : IExtractor
     {
         private readonly INumberWithUnitExtractorConfiguration config;
 
-        public BaseMergedExtractor(INumberWithUnitExtractorConfiguration config)
+        public BaseMergedUnitExtractor(INumberWithUnitExtractorConfiguration config)
         {
             this.config = config;
         }
@@ -58,8 +58,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     continue;
                 }
 
-                // Separated by separators
-                var match = config.CompoundUnitRegex.Match(middleStr);
+                // Separated by connectors
+                var match = config.CompoundUnitConnectorRegex.Match(middleStr);
                 if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
                 {
                     groups[idx + 1] = groups[idx];
@@ -129,7 +129,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     j++;
                 }
 
-                if (!hasBehindExtraction) continue;
+                if (!hasBehindExtraction)
+                {
+                    continue;
+                }
 
                 var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;
                 var middleEnd = numErs[i].Start ?? 0;
@@ -143,8 +146,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     continue;
                 }
 
-                // Separated by separators
-                var match = config.CompoundUnitRegex.Match(middleStr);
+                // Separated by connectors
+                var match = config.CompoundUnitConnectorRegex.Match(middleStr);
                 if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
                 {
                     unitNumbers.Add(numErs[i]);

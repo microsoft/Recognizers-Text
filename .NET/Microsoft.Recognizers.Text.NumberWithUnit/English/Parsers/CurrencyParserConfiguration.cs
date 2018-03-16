@@ -13,8 +13,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         {
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencySuffixList);
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencyPrefixList);
-            this.CurrencyIsoCodeList = NumbersWithUnitDefinitions.CurrencyIsoCodeList.ToImmutableDictionary();
-            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.CurrencyFractionList.ToImmutableDictionary();
+            this.CurrencyNameToIsoCodeMap = NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.ToImmutableDictionary();
+            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.FractionalCodeToUnitNameMap.ToImmutableDictionary();
         }
 
     }

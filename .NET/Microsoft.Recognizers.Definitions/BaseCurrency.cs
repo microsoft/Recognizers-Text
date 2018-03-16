@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BaseCurrency
 	{
-		public static readonly Dictionary<string, string> CurrencyFractionList = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> CurrencyFractionMapping = new Dictionary<string, string>
 		{
 			{ "CNY", "Fen|Jiao" },
 			{ "__D", "Cent" },
@@ -188,7 +188,7 @@ namespace Microsoft.Recognizers.Definitions
 			{ "YER", "Fils" },
 			{ "ZMW", "Ngwee" }
 		};
-		public static readonly Dictionary<string, long> CurrencyFractionNumList = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> CurrencyFractionalRatios = new Dictionary<string, long>
 		{
 			{ "Kopek", 100 },
 			{ "Pul", 100 },

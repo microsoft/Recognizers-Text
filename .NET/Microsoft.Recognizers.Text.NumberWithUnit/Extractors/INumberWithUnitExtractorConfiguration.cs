@@ -25,6 +25,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         string ConnectorToken { get; }
 
-        Regex CompoundUnitRegex { get; }
+        Regex CompoundUnitConnectorRegex { get; }
     }
 }

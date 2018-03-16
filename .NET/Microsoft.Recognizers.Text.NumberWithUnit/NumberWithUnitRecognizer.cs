@@ -80,8 +80,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new BaseMergedExtractor(new English.CurrencyExtractorConfiguration()),
-                        new BaseMergedParser(new English.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new English.CurrencyParserConfiguration())
                     }
                 }));
             RegisterModel<TemperatureModel>(

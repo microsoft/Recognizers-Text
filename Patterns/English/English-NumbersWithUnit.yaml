@@ -368,7 +368,7 @@ CurrencySuffixList: !dictionary
 #Additional
     Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka
     Penni: penniä|penni
-CurrencyIsoCodeList: !dictionary
+CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
   entries:
     Afghan afghani: AFN
@@ -559,7 +559,7 @@ CurrencyIsoCodeList: !dictionary
     Ascension pound: _AP 
     Alderney pound: _ALP 
     Abkhazian apsar: _AA
-CurrencyFractionList: !dictionary
+FractionalCodeToUnitNameMap: !dictionary
   types: [ string, string ]
   entries:
     Jiao: Jiao
@@ -635,7 +635,7 @@ CurrencyFractionList: !dictionary
     Tiyin: Tiyin
     Hào: Hào
     Ngwee: Ngwee
-CompoundUnitRegex: !simpleRegex
+CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>and)
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
