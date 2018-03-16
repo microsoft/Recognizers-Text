@@ -1,9 +1,13 @@
 from abc import abstractmethod
 from typing import List, Optional, Dict
+from collections import namedtuple
 
 from recognizers_text.model import Model, ModelResult
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser
+from recognizers_number_with_unit.number_with_unit.parsers import UnitValue
+
+ValueUnit = namedtuple('ValueUnit', ['value', 'unit'])
 
 class ExtractorParserModel:
     def __init__(self, extractor:Extractor, parser: Parser):
@@ -29,16 +33,24 @@ class AbstractNumberWithUnitModel(Model):
             for parse_result in parse_results:
                 model_result = ModelResult()
                 model_result.start = parse_result.start
-                model_result.end = parse_result.start + result.end - 1
+                model_result.end = parse_result.start + parse_result.end - 1
                 model_result.text = parse_result.text
                 model_result.type_name = self.model_type_name
+                model_result.resolution = self.get_resolution(parse_result.value)
                 
                 b_add = not [x for x in extraction_results if x.start == model_result.start and x.end == model_result.end]
 
                 if b_add:
-                    extraction_results.push(result)
+                    extraction_results.append(model_result)
 
         return extraction_results
+
+    def get_resolution(self, data):
+        if isinstance(data, str):
+            return ValueUnit(value=data)
+        elif isinstance(data, UnitValue):
+            return ValueUnit(value=data.number, unit=data.unit)
+        return None
 
 class AgeModel(AbstractNumberWithUnitModel):
     @property

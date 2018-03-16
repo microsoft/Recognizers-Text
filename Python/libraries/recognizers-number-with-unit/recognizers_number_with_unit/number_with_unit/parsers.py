@@ -86,7 +86,9 @@ class NumberWithUnitParser(Parser):
             num_value = self.config.internal_number_parser.parse(number_result) if number_result.text and len(number_result.text) else None
             resolution_str = num_value.resolution_str if num_value else None
 
-            ret.value = UnitValue(resolution_str, unit_value)
+            ret.value = UnitValue(
+                number=resolution_str,
+                unit=unit_value)
             ret.resolution_str = (f'{resolution_str} {unit_value}').strip()
 
         return ret
