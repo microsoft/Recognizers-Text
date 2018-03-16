@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
         public static readonly string[] Months =
         {
             "January",
-            "Februrary",
+            "February",
             "March",
             "April",
             "May",

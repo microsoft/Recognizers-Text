@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         public void Convert_MonthAndDayOfMonth()
         {
             Assert.AreEqual("5th January", TimexConvert.ConvertTimexToString(new Timex("XXXX-01-05")));
-            Assert.AreEqual("5th Februrary", TimexConvert.ConvertTimexToString(new Timex("XXXX-02-05")));
+            Assert.AreEqual("5th February", TimexConvert.ConvertTimexToString(new Timex("XXXX-02-05")));
             Assert.AreEqual("5th March", TimexConvert.ConvertTimexToString(new Timex("XXXX-03-05")));
             Assert.AreEqual("5th April", TimexConvert.ConvertTimexToString(new Timex("XXXX-04-05")));
             Assert.AreEqual("5th May", TimexConvert.ConvertTimexToString(new Timex("XXXX-05-05")));
