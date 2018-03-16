@@ -9,24 +9,18 @@ from recognizers_number_with_unit.number_with_unit.english.parsers import Englis
 
 class TestInitializationNumberWithUnitRecognizer():
     control_model = CurrencyModel(
-        dict([('EnglishCurrencyExtractorConfiguration',
-               ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()),
-                                   NumberWithUnitParser(EnglishCurrencyParserConfiguration()))
-               )]))
+        [ ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()), NumberWithUnitParser(EnglishCurrencyParserConfiguration())) ]
+        )
     english_culture = Culture.English
     spanish_culture = Culture.Spanish
     invalid_culture = "vo-id"
 
     def assert_models_equal(self, expected:AbstractNumberWithUnitModel, actual:AbstractNumberWithUnitModel):
         assert actual.model_type_name == expected.model_type_name
-        assert len(actual.extractor_parser_dict) == len(expected.extractor_parser_dict)
+        assert len(actual.extractor_parser) == len(expected.extractor_parser)
 
         # deep comparison
-        for actual_key in actual.extractor_parser_dict:
-            assert actual_key in expected.extractor_parser_dict
-
-            actual_item = actual.extractor_parser_dict[actual_key]
-            expected_item = expected.extractor_parser_dict[actual_key]
+        for actual_item, expected_item in zip(actual.extractor_parser, expected.extractor_parser):
             assert type(actual_item.parser) is type(expected_item.parser)
 
             # configs
@@ -35,17 +29,11 @@ class TestInitializationNumberWithUnitRecognizer():
         
     def assert_models_distinct(self, expected, actual):
         assert actual.model_type_name == expected.model_type_name
-        assert len(actual.extractor_parser_dict) == len(expected.extractor_parser_dict)
+        assert len(actual.extractor_parser) == len(expected.extractor_parser)
 
         # deep comparison
         any_config_is_different = False
-        for actual_key in actual.extractor_parser_dict:
-            if not actual_key in expected.extractor_parser_dict:
-                assert True
-                return
-
-            actual_item = actual.extractor_parser_dict[actual_key]
-            expected_item = expected.extractor_parser_dict[actual_key]
+        for actual_item, expected_item in zip(actual.extractor_parser, expected.extractor_parser):
             assert type(actual_item.parser) is type(expected_item.parser)
 
             # configs

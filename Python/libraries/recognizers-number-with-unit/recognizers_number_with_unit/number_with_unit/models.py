@@ -16,8 +16,8 @@ class AbstractNumberWithUnitModel(Model):
     def model_type_name(self) -> str:
         raise NotImplementedError
 
-    def __init__(self, extractor_parser_dict: Dict[str, ExtractorParserModel]):
-        self.extractor_parser_dict: Dict[str, ExtractorParserModel] = extractor_parser_dict
+    def __init__(self, extractor_parser: List[ExtractorParserModel]):
+        self.extractor_parser: List[ExtractorParserModel] = extractor_parser
 
     def parse(self, query: str) -> List[ModelResult]:
         #TODO parse code
