@@ -1,9 +1,12 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List, Optional
+from collections import namedtuple
 
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_text.parser import Parser, ParseResult
 from recognizers_number.culture import CultureInfo
+
+UnitValue = namedtuple('UnitValue', ['number', 'unit'])
 
 class NumberWithUnitParserConfiguration(ABC):
     @property
@@ -33,7 +36,50 @@ class NumberWithUnitParser(Parser):
         self.config: NumberWithUnitParserConfiguration = config
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
-        pass
+        ret = ParseResult(ext_result)
+        number_result = None
+        if ext_result.data and ext_result.data is ExtractResult:
+            number_result = ext_result.data
+        else: # if there is no unitResult, means there is just unit
+            number_result = ExtractResult()
+            number_result.start = -1
+            number_result.length = 0
+            number_result.text = None
+            number_result.type = None
+        #key contains units
+        key = ext_result.text
+        unit_key_build = ''
+        unit_keys = []
+        i = 0
+        while i < len(key):
+            if i == len(key):
+                if len(unit_key_build) != 0:
+                    self.__add_if_not_contained(unit_keys, unit_key_build.strip())
+            # number_result.start is a relative position
+            elif i == number_result.start:
+                if len(unit_key_build).length != 0:
+                    self.__add_if_not_contained(unit_keys, unit_key_build.strip())
+                    unit_key_build = ''
+                if number_result.length:
+                    i = number_result.start + number_result.length - 1
+            else:
+                unit_key_build += key[i]
+            i += 1
+        
+        #Unit type depends on last unit in suffix.
+        last_unit = unit_keys[-1].lower
+        if self.config.connector_token and len(self.config.connector_token) and last_unit[0] == self.config.connector_token:
+            last_unit = last_unit[len(self.config.connector_token):].strip()
+        if key and len(key) and self.config.unit_map and last_unit in self.config.unit_map:
+            unit_value = self.config.unit_map[last_unit]
+            num_value = self.config.internal_number_parser.parse(number_result) if number_result.text and len(number_result.text) else None
+            resolution_str = num_value.resolution_str if num_value else None
+
+            ret.value = UnitValue(resolution_str, unit_value)
+            ret.resolution_str = (f'{resolution_str} {unit_value}').strip()
+
+        return ret
 
     def __add_if_not_contained(self, keys: List[str], new_key: str):
-        pass
+        if not [x for x in keys if new_key in x]:
+            keys.append(new_key)
