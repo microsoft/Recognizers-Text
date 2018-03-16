@@ -63,7 +63,6 @@ FullToHalfMapJpn: !dictionary
     －: '-'
     ，: \'
     Ｇ: G
-	ｇ: g
     Ｍ: M
     Ｔ: T
     Ｋ: K
@@ -262,7 +261,7 @@ TillRegex: !simpleRegex
 MoreRegex: !simpleRegex
   def: (大なり|より大きい|より高い|>)
 LessRegex: !simpleRegex
-  def: (大なり|より小さい|<)
+  def: (小なり|より小さい|<)
 EqualRegex: !simpleRegex
   def: (等しい|イコール|=)
 MoreOrEqual: !nestedRegex

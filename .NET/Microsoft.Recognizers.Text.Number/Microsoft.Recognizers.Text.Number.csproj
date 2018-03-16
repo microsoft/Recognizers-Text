@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Japanese\" />
-  </ItemGroup>
-
 </Project>
