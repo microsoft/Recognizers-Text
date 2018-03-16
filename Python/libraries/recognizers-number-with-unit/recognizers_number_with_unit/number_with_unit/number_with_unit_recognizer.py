@@ -8,11 +8,13 @@ from .english.extractors import (EnglishCurrencyExtractorConfiguration,
                                 EnglishTemperatureExtractorConfiguration,
                                 EnglishDimensionExtractorConfiguration,
                                 EnglishAgeExtractorConfiguration)
+from .spanish.extractors import SpanishCurrencyExtractorConfiguration
 from .parsers import NumberWithUnitParser
 from .english.parsers import (EnglishCurrencyParserConfiguration,
                              EnglishTemperatureParserConfiguration,
                              EnglishDimensionParserConfiguration,
                              EnglishAgeParserConfiguration)
+from .spanish.parsers import SpanishCurrencyParserConfiguration
 
 class NumberWithUnitOptions(IntFlag):
     NONE = 0
@@ -49,6 +51,13 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
                    )])))
         #endregion
 
+        #region English
+        self.register_model('CurrencyModel', Culture.Spanish, lambda options: CurrencyModel(
+            dict([('NumberWithUnitExtractor',
+                   ExtractorParserModel(NumberWithUnitExtractor(SpanishCurrencyExtractorConfiguration()),
+                                       NumberWithUnitParser(SpanishCurrencyParserConfiguration()))
+                   )])))
+        #endregion
 
     def get_age_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
         return self.get_model('AgeModel', culture, fallback_to_default_culture)
