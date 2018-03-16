@@ -217,11 +217,27 @@ class NumberWithUnitExtractor(Extractor):
         if not tokens:
             return None
 
-        #TODO: sort using dino comparer
+        tokens = sorted(tokens, key=len)
         definition = '|'.join(tokens)
         definition = f'{self.config.build_prefix}({definition}){self.config.build_suffix}'
         flags = regex.S + regex.I if ignore_case else regex.S
         return RegExpUtility.get_safe_reg_exp(definition, flags)
 
     def _dino_comparer(self, x: str, y: str) -> int:
-        pass
+        if not x:
+            if not y:
+                return 0
+            else:
+                return 1
+        else:
+            if not y:
+                return -1
+            else:
+                if len(x) != len(y):
+                    return len(y) - len(x)
+                else:
+                    if x.lower() < y.lower():
+                        return -1
+                    if y.lower() < x.lower():
+                        return 1
+                    return 0
