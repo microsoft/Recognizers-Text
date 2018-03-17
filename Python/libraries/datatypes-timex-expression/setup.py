@@ -3,9 +3,9 @@
 
 from setuptools import setup, find_packages
 
-NAME = "datatypes-timex-expression"
+NAME = "datatypes_timex_expression"
 VERSION = "1.0.0.a0"
-REQUIRES = [regex']
+REQUIRES = []
 
 setup(
     name=NAME,
