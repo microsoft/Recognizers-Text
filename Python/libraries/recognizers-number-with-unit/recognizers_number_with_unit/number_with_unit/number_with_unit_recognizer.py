@@ -22,13 +22,13 @@ from .chinese.parsers import (ChineseCurrencyParserConfiguration,
                               ChineseDimensionParserConfiguration,
                               ChineseAgeParserConfiguration)
 from .spanish.extractors import (SpanishCurrencyExtractorConfiguration,
-                                SpanishTemperatureExtractorConfiguration,
-                                SpanishDimensionExtractorConfiguration,
-                                SpanishAgeExtractorConfiguration)
+                                 SpanishTemperatureExtractorConfiguration,
+                                 SpanishDimensionExtractorConfiguration,
+                                 SpanishAgeExtractorConfiguration)
 from .spanish.parsers import (SpanishCurrencyParserConfiguration,
-                             SpanishTemperatureParserConfiguration,
-                             SpanishDimensionParserConfiguration,
-                             SpanishAgeParserConfiguration)
+                              SpanishTemperatureParserConfiguration,
+                              SpanishDimensionParserConfiguration,
+                              SpanishAgeParserConfiguration)
 from .french.extractors import (FrenchCurrencyExtractorConfiguration,
                                 FrenchTemperatureExtractorConfiguration,
                                 FrenchDimensionExtractorConfiguration,
@@ -37,6 +37,14 @@ from .french.parsers import (FrenchCurrencyParserConfiguration,
                              FrenchTemperatureParserConfiguration,
                              FrenchDimensionParserConfiguration,
                              FrenchAgeParserConfiguration)
+from .portuguese.extractors import (PortugueseCurrencyExtractorConfiguration,
+                                    PortugueseTemperatureExtractorConfiguration,
+                                    PortugueseDimensionExtractorConfiguration,
+                                    PortugueseAgeExtractorConfiguration)
+from .portuguese.parsers import (PortugueseCurrencyParserConfiguration,
+                                 PortugueseTemperatureParserConfiguration,
+                                 PortugueseDimensionParserConfiguration,
+                                 PortugueseAgeParserConfiguration)
 
 class NumberWithUnitOptions(IntFlag):
     NONE = 0
@@ -120,6 +128,29 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
             ExtractorParserModel(
                 NumberWithUnitExtractor(FrenchAgeExtractorConfiguration()),
                 NumberWithUnitParser(FrenchAgeParserConfiguration()))
+            ]))
+        #endregion
+
+        #region Portuguese
+        self.register_model('CurrencyModel', Culture.Portuguese, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                NumberWithUnitExtractor(PortugueseCurrencyExtractorConfiguration()),
+                NumberWithUnitParser(PortugueseCurrencyParserConfiguration()))
+            ]))
+        self.register_model('TemperatureModel', Culture.Portuguese, lambda options: TemperatureModel([
+            ExtractorParserModel(
+                NumberWithUnitExtractor(PortugueseTemperatureExtractorConfiguration()),
+                NumberWithUnitParser(PortugueseTemperatureParserConfiguration()))
+            ]))
+        self.register_model('DimensionModel', Culture.Portuguese, lambda options: DimensionModel([
+            ExtractorParserModel(
+                NumberWithUnitExtractor(PortugueseDimensionExtractorConfiguration()),
+                NumberWithUnitParser(PortugueseDimensionParserConfiguration()))
+            ]))
+        self.register_model('AgeModel', Culture.Portuguese, lambda options: AgeModel([
+            ExtractorParserModel(
+                NumberWithUnitExtractor(PortugueseAgeExtractorConfiguration()),
+                NumberWithUnitParser(PortugueseAgeParserConfiguration()))
             ]))
         #endregion
 

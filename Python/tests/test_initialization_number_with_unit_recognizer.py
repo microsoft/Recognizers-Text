@@ -77,5 +77,5 @@ class TestInitializationNumberWithUnitRecognizer():
             NumberWithUnitRecognizer(self.invalid_culture, -1)
 
 if __name__ == '__main__':
-    tests = TestInitializationNumberRecognizer()
-    tests.test_without_culture_use_target_culture()
+    tests = TestInitializationNumberWithUnitRecognizer()
+    tests.test_withOtherCulture_not_use_target_culture()
