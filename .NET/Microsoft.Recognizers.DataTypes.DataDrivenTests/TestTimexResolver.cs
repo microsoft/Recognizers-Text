@@ -302,6 +302,19 @@ namespace Microsoft.Recognizers.DataTypes.DateTime.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Resolver_DateTimeRange_Tonight()
+        {
+            var resolution = TimexResolver.Resolve(new[] { "2018-03-18TNI" });
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2018-03-18TNI", resolution.Values[0].Timex);
+            Assert.AreEqual("datetimerange", resolution.Values[0].Type);
+            Assert.AreEqual("2018-03-18 20:00:00", resolution.Values[0].Start);
+            Assert.AreEqual("2018-03-18 24:00:00", resolution.Values[0].End);
+            Assert.IsNull(resolution.Values[0].Value);
+        }
+
+        [TestMethod]
         public void DataTypes_Resolver_DateTimeRange_next_monday_4am_to_next_thursday_3pm()
         {
             var today = System.DateTime.Now;
