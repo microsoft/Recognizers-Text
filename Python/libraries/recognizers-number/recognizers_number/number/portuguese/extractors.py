@@ -1,3 +1,4 @@
+import regex
 from typing import Pattern, List, NamedTuple
 
 from recognizers_text.utilities import RegExpUtility
@@ -72,7 +73,7 @@ class PortugueseIntegerExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.NumbersWithPlaceHolder(placeholder)),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.NumbersWithSuffix),
+                re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.NumbersWithSuffix, regex.S),
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_DOT, placeholder)),
