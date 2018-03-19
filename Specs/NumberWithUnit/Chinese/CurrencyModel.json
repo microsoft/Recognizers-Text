@@ -1,7 +1,6 @@
 [
 {
   "Input": "江苏彩民15元中大乐透1600万 奖池36.57亿",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15元",
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "其中，四川彩友中得1注1000万元基本头奖；",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1000万元",
@@ -31,7 +29,6 @@
 ,
 {
   "Input": "本期开奖结束后，奖池金额攀升至36.57亿元。",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "36.57亿元",
@@ -46,7 +43,6 @@
 ,
 {
   "Input": "１欧元可以",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1欧元",
@@ -61,7 +57,6 @@
 ,
 {
   "Input": "兑换１．０７５３美元",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.0753美元",
@@ -76,7 +71,6 @@
 ,
 {
   "Input": "兑换1.0092瑞士法郎",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.0092瑞士法郎",
@@ -91,7 +85,6 @@
 ,
 {
   "Input": "2016年由于并购等直接投资，中国资金净流出1200亿美元",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1200亿美元",
@@ -106,7 +99,6 @@
 ,
 {
   "Input": "宝安科技公司与国际精密的15位股东签署收购协议，以每股1.95港元",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.95港元",
@@ -121,7 +113,6 @@
 ,
 {
   "Input": "央行到期定存单5306亿台币",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5306亿台币",
@@ -136,7 +127,6 @@
 ,
 {
   "Input": "东芝重组另需1万亿日元 已向交易银行申请贷款",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1万亿日元",
@@ -151,7 +141,6 @@
 ,
 {
   "Input": "达到445奈拉兑换",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "445奈拉",
@@ -166,7 +155,6 @@
 ,
 {
   "Input": "十五美元",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十五美元",
@@ -181,7 +169,6 @@
 ,
 {
   "Input": "十美元",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十美元",
@@ -196,7 +183,6 @@
 ,
 {
   "Input": "苹果折扣一美元",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一美元",
@@ -211,7 +197,6 @@
 ,
 {
   "Input": "这台电脑两美元",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "两美元",

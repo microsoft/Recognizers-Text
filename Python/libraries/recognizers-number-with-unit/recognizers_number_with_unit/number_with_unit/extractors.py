@@ -178,7 +178,7 @@ class NumberWithUnitExtractor(Extractor):
         for ex_result in num_depend_source:
             for i in range(ex_result.start, ex_result.end):
                 match_result[i] = True
-        match_collection = list(regex.finditer(self.separate_regex, source))
+        match_collection = list(filter(lambda x: x.group(), regex.finditer(self.separate_regex, source)))
         for match in match_collection:
             i = 0
             while i < len(match.group()) and not match_result[match.start()+i]:

@@ -42,7 +42,7 @@ class ChineseCurrencyParserConfiguration(ChineseNumberWithUnitParserConfiguratio
 class ChineseDimensionParserConfiguration(ChineseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
-        self.add_dict_to_unit_map(ChineseNumericWithUnit.DimensionAmbiguousValues)
+        self.add_dict_to_unit_map(ChineseNumericWithUnit.DimensionSuffixList)
 
 class ChineseTemperatureParserConfiguration(ChineseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
