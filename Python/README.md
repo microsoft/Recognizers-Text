@@ -16,6 +16,7 @@ Open a terminal and run the following commands:
     cd python/libraries/resource-generator
     pip install -r .\requirements.txt
     python index.py ..\recognizers-number\resource-definitions.json
+    python index.py ..\recognizers-number-with-unit\resource-definitions.json
 
 ### Automatized Build
 
@@ -33,7 +34,8 @@ Install Recognizer's by launching the following commands:
 Once the proper package is installed, you'll need to reference the package:
 
 ````Python
-from recognizers_number import Culture, ModelResult, NumberRecognizer
+from recognizers_text import Culture, ModelResult
+from recognizers_number import NumberRecognizer
 ````
 
 ### Recognizer's Models
@@ -85,6 +87,52 @@ Internally, both methods will cache the instance models to avoid extra costs.
     Or you can obtain a model instance using:
 
     `NumberRecognizer(Culture.English).get_percentage_model()`
+
+### Microsoft.Recognizers.Text.NumberWithUnit
+
+* **Ages**
+
+    This recognizer will find any age number presented. E.g. _"After ninety five years of age, perspectives change"_ will return _"95 Year"_.
+
+    `NumberWithUnitRecognizers.recognize_age('After ninety five years of age, perspectives change', Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `NumberWithUnitRecognizer(Culture.English).get_age_model()`
+
+
+* **Currencies**
+
+    This recognizer will find any currency presented. E.g. _"Interest expense in the 1988 third quarter was $ 75.3 million"_ will return _"75300000 Dollar"_.
+
+    `NumberWithUnitRecognizers.recognize_currency('Interest expense in the 1988 third quarter was $ 75.3 million', Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `NumberWithUnitRecognizer(Culture.English).get_currency_model()`
+
+
+* **Dimensions**
+
+    This recognizer will find any dimension presented. E.g. _"The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours."_ will return _"6 Mile"_.
+
+    `NumberWithUnitRecognizers.recognize_dimension('The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.', Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `NumberWithUnitRecognizer(Culture.English).get_dimension_model()`
+
+
+* **Temperatures**
+
+    This recognizer will find any temperature presented. E.g. _"Set the temperature to 30 degrees celsius"_ will return _"30 C"_.
+
+    `NumberWithUnitRecognizers.recognize_temperature('Set the temperature to 30 degrees celsius', Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `NumberWithUnitRecognizer(Culture.English).get_temperature_model()`
+
 
 ## Samples
 
