@@ -5,6 +5,7 @@ from collections import namedtuple
 from recognizers_text.model import Model, ModelResult
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser
+from recognizers_text.utilities import FormatUtility
 from recognizers_number_with_unit.number_with_unit.parsers import UnitValue
 
 ValueUnit = namedtuple('ValueUnit', ['value', 'unit'])
@@ -24,6 +25,7 @@ class AbstractNumberWithUnitModel(Model):
         self.extractor_parser: List[ExtractorParserModel] = extractor_parser
 
     def parse(self, query: str) -> List[ModelResult]:
+        query = FormatUtility.preprocess(query)
         #query = FormatUtility.preProcess(query, false) TODO: for chinese characters
         extraction_results = []
         for item in self.extractor_parser:

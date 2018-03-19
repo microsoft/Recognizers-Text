@@ -176,7 +176,7 @@ class NumberWithUnitExtractor(Extractor):
         result = deepcopy(num_depend_source)
         match_result: List[bool] = [False] * len(source)
         for ex_result in num_depend_source:
-            for i in range(ex_result.start, ex_result.end):
+            for i in range(ex_result.start, ex_result.end+1):
                 match_result[i] = True
         match_collection = list(filter(lambda x: x.group(), regex.finditer(self.separate_regex, source)))
         for match in match_collection:
