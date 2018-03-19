@@ -217,7 +217,7 @@ class NumberWithUnitExtractor(Extractor):
         if not tokens:
             return None
 
-        tokens = sorted(tokens, key=len)
+        tokens = sorted(tokens, key=len, reverse=True)
         definition = '|'.join(tokens)
         definition = f'{self.config.build_prefix}({definition}){self.config.build_suffix}'
         flags = regex.S + regex.I if ignore_case else regex.S
