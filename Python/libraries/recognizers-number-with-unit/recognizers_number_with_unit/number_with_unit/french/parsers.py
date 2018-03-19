@@ -53,4 +53,5 @@ class FrenchDimensionParserConfiguration(FrenchNumberWithUnitParserConfiguration
 class FrenchTemperatureParserConfiguration(FrenchNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
+        self._connector_token = None
         self.add_dict_to_unit_map(FrenchNumericWithUnit.TemperatureSuffixList)

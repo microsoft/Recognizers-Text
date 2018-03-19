@@ -73,7 +73,7 @@ class NumberWithUnitExtractor(Extractor):
             self.max_prefix_match_len = max_length + 2
             self.prefix_regex: Set[Pattern] = self._build_regex_from_set(self.config.prefix_list.values())
         else:
-            self.max_prefix_match_len = 2
+            self.max_prefix_match_len = 0
             self.prefix_regex: Set[Pattern] = set()
         self.separate_regex = self._build_separate_regex_from_config()
 
