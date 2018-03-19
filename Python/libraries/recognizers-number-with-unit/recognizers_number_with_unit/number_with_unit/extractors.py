@@ -89,7 +89,7 @@ class NumberWithUnitExtractor(Extractor):
 
         if self.max_prefix_match_len != 0:
             for num in numbers:
-                if not num.start or not num.length:
+                if num.start == None or num.length == None:
                     break
                 max_find_prefix = min(self.max_prefix_match_len, num.start)
                 if max_find_prefix == 0:
@@ -110,7 +110,7 @@ class NumberWithUnitExtractor(Extractor):
                         unit=left[best_match.start():last_index]
                     )
         for num in numbers:
-            if not num.start or not num.length:
+            if num.start == None or num.length == None:
                 break
             start = num.start
             length = num.length
