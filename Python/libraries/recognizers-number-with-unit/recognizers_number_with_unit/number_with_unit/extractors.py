@@ -90,10 +90,10 @@ class NumberWithUnitExtractor(Extractor):
         if self.max_prefix_match_len != 0:
             for num in numbers:
                 if num.start == None or num.length == None:
-                    break
+                    continue
                 max_find_prefix = min(self.max_prefix_match_len, num.start)
                 if max_find_prefix == 0:
-                    break
+                    continue
                 
                 left: str = source[num.start - max_find_prefix:num.start]
                 last_index = len(left)
@@ -111,7 +111,7 @@ class NumberWithUnitExtractor(Extractor):
                     )
         for num in numbers:
             if num.start == None or num.length == None:
-                break
+                continue
             start = num.start
             length = num.length
             max_find_len = source_len - start - length
