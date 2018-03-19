@@ -19,7 +19,7 @@ class FrenchNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration)
 
     @property
     def connector_token(self) -> str:
-        return ''
+        return self._connector_token
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -27,6 +27,7 @@ class FrenchNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration)
         super().__init__(culture_info)
         self._internal_number_extractor = FrenchNumberExtractor(NumberMode.DEFAULT)
         self._internal_number_parser = AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, FrenchNumberParserConfiguration(culture_info))
+        self._connector_token = FrenchNumericWithUnit.ConnectorToken
 
 class FrenchAgeParserConfiguration(FrenchNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):

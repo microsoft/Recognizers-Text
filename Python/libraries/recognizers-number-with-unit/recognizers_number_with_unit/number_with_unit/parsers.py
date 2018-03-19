@@ -77,7 +77,7 @@ class NumberWithUnitParser(Parser):
 
         #Unit type depends on last unit in suffix.
         last_unit = unit_keys[-1].lower()
-        if self.config.connector_token and len(self.config.connector_token) and last_unit[0] == self.config.connector_token:
+        if self.config.connector_token and last_unit.startswith(self.config.connector_token):
             last_unit = last_unit[len(self.config.connector_token):].strip()
         if key and len(key) and self.config.unit_map and last_unit in self.config.unit_map:
             unit_value = self.config.unit_map[last_unit]
