@@ -19,7 +19,7 @@ class SpanishNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration
 
     @property
     def connector_token(self) -> str:
-        return ''
+        return SpanishNumericWithUnit.ConnectorToken
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -42,12 +42,7 @@ class SpanishCurrencyParserConfiguration(SpanishNumberWithUnitParserConfiguratio
 class SpanishDimensionParserConfiguration(SpanishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
-        self.add_dict_to_unit_map(SpanishNumericWithUnit.InformationSuffixList)
-        self.add_dict_to_unit_map(SpanishNumericWithUnit.AreaSuffixList)
-        self.add_dict_to_unit_map(SpanishNumericWithUnit.LenghtSuffixList)
-        self.add_dict_to_unit_map(SpanishNumericWithUnit.SpeedSuffixList)
-        self.add_dict_to_unit_map(SpanishNumericWithUnit.VolumeSuffixList)
-        self.add_dict_to_unit_map(SpanishNumericWithUnit.WeightSuffixList)
+        self.add_dict_to_unit_map(SpanishNumericWithUnit.DimensionSuffixList)
 
 class SpanishTemperatureParserConfiguration(SpanishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
