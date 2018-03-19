@@ -32,15 +32,13 @@ class NumberWithUnitParserConfiguration(ABC):
         if not dictionary:
             return
         for key, value in dictionary.items():
-            if not key or len(key) == 0:
+            if not key:
                 continue
 
             values = value.strip().split('|')
             for token in values:
-                if not token or len(token) == 0 or token in self.unit_map:
-                    return
-
-                self.unit_map[token] = key
+                if token and token not in self.unit_map:
+                    self.unit_map[token] = key
 
 class NumberWithUnitParser(Parser):
     def __init__(self, config: NumberWithUnitParserConfiguration):
