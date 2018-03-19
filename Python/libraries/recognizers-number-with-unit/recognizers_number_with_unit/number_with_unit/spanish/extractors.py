@@ -23,7 +23,7 @@ class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
 
     @property
     def connector_token(self) -> str:
-        return ''
+        return SpanishNumericWithUnit.ConnectorToken
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
@@ -98,14 +98,7 @@ class SpanishDimensionExtractorConfiguration(SpanishNumberWithUnitExtractorConfi
 
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
-        self._suffix_list = {
-            **SpanishNumericWithUnit.InformationSuffixList,
-            **SpanishNumericWithUnit.AreaSuffixList,
-            **SpanishNumericWithUnit.LenghtSuffixList,
-            **SpanishNumericWithUnit.SpeedSuffixList,
-            **SpanishNumericWithUnit.VolumeSuffixList,
-            **SpanishNumericWithUnit.WeightSuffixList
-        }
+        self._suffix_list = SpanishNumericWithUnit.DimensionSuffixList
         self._prefix_list = dict()
         self._ambiguous_unit_list = SpanishNumericWithUnit.AmbiguousDimensionUnitList
 
@@ -130,4 +123,4 @@ class SpanishTemperatureExtractorConfiguration(SpanishNumberWithUnitExtractorCon
         super().__init__(culture_info)
         self._suffix_list = SpanishNumericWithUnit.TemperatureSuffixList
         self._prefix_list = dict()
-        self._ambiguous_unit_list = SpanishNumericWithUnit.AmbiguousTemperatureUnitList
+        self._ambiguous_unit_list = []
