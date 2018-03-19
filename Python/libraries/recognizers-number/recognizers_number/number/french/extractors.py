@@ -110,7 +110,7 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleWithoutIntegralRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_COMMA_DOT, placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_DOT_COMMA, placeholder)),
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleWithMultiplierRegex),
