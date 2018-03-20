@@ -56,9 +56,12 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
 * **Numbers**
 
-    This recognizer will find any number from the input. E.g. _"I have two apples"_ will return _"2"_.
+    This recognizer will find any number from the input. E.g. _"I have two apples"_ will output `Received "two", resolution is: {'value': '2'}`.
 
-    `NumberRecognizer.recognize_number('I have two apples', Culture.English)`
+    ```
+    result = NumberRecognizer.recognize_number('I have two apples', Culture.English)
+    print(f'Received "{result[0].text}", resolution is: {result[0].resolution}')
+    ```
 
     Or you can obtain a model instance using:
 
@@ -67,9 +70,12 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
 * **Ordinal Numbers**
 
-    This recognizer will find any ordinal number. E.g. _"eleventh"_ will return _"11"_.
+    This recognizer will find any ordinal number. E.g. _"eleventh"_ will output `Received "eleventh", resolution is: {'value': '11'}`.
 
-    `NumberRecognizer.recognize_ordinal('eleventh', Culture.English)`
+    ```
+    result = NumberRecognizer.recognize_ordinal('eleventh', Culture.English)
+    print(f'Received "{result[0].text}", resolution is: {result[0].resolution}')
+    ```
 
     Or you can obtain a model instance using:
 
@@ -78,9 +84,12 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
 * **Percentages**
 
-    This recognizer will find any number presented as percentage. E.g. _"one hundred percents"_ will return _"100%"_.
+    This recognizer will find any number presented as percentage. E.g. _"one hundred percents"_ will output `Received "one hundred percents", resolution is: {'value': '100%'}`.
 
-    `NumberRecognizer.recognize_percentage('one hundred percents', Culture.English)`
+    ```
+    result = NumberRecognizer.recognize_percentage('one hundred percents', Culture.English)
+    print(f'Received "{result[0].text}", resolution is: {result[0].resolution}')
+    ```
 
     Or you can obtain a model instance using:
 
