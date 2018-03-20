@@ -88,6 +88,7 @@ const partOfDayTimeRange = function (timex) {
         case 'MO': return { start: '08:00:00', end: '12:00:00' };
         case 'AF': return { start: '12:00:00', end: '16:00:00' };
         case 'EV': return { start: '16:00:00', end: '20:00:00' };
+        case 'NI': return { start: '20:00:00', end: '24:00:00' };
     }
     return { start: 'not resolved', end: 'not resolved' };
 };

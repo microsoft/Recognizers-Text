@@ -294,6 +294,7 @@ namespace Microsoft.Recognizers.DataTypes.DateTime
                 case "MO": return new Tuple<string, string>("08:00:00", "12:00:00");
                 case "AF": return new Tuple<string, string>("12:00:00", "16:00:00");
                 case "EV": return new Tuple<string, string>("16:00:00", "20:00:00");
+                case "NI": return new Tuple<string, string>("20:00:00", "24:00:00");
             }
 
             return new Tuple<string, string>("not resolved", "not resolved");
