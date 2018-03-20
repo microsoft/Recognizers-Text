@@ -4,9 +4,9 @@ Microsoft.Recognizers.Text.Number for Python
 
 Installation
 ------------
-Install Recognizer's by launching the following command:
+Install NumberRecognizer by launching the following command:
 
-   ``pip install recognizers-text-number``
+``pip install recognizers-text-number``
 
 API Documentation
 -----------------
