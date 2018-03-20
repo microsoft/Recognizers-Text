@@ -71,9 +71,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Choice", "Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj", "{9318EA22-C36A-48C8-9882-8A0D2D74C356}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.DataTypes.DateTime", "Microsoft.Recognizers.DataTypes.DateTime\Microsoft.Recognizers.DataTypes.DateTime.csproj", "{E4FCBDE9-D436-4D39-A67F-707E6CBD45CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.DataTypes.TimexExpression", "Microsoft.Recognizers.Text.DataTypes.TimexExpression\Microsoft.Recognizers.Text.DataTypes.TimexExpression.csproj", "{E4FCBDE9-D436-4D39-A67F-707E6CBD45CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.DataTypes.DataDrivenTests", "Microsoft.Recognizers.DataTypes.DataDrivenTests\Microsoft.Recognizers.DataTypes.DataDrivenTests.csproj", "{32A4593C-3D2D-412E-8EC5-07346266A358}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.DataTypes.DataDrivenTests", "Microsoft.Recognizers.Text.DataTypes.DataDrivenTests\Microsoft.Recognizers.Text.DataTypes.DataDrivenTests.csproj", "{32A4593C-3D2D-412E-8EC5-07346266A358}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
