@@ -17,9 +17,14 @@ Open a terminal and run the following commands:
     pip install -r .\requirements.txt
     python index.py ..\recognizers-number\resource-definitions.json
 
+You can then install each of the local packages:
+
+    pip install -e .\libraries\recognizers-text\
+    pip install -e .\libraries\recognizers-number\
+
 ### Automatized Build
 
-Launch `Build.cmd` file.
+Launch `Build.cmd` file to install requiements, generate resources, install local packages and run all tests.
 
 ## Installation
 
