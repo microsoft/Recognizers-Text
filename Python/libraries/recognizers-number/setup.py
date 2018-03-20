@@ -1,7 +1,11 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
+import os
 from setuptools import setup, find_packages
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 NAME = "recognizers-text-number"
 VERSION = "1.0.0.a0"
@@ -14,7 +18,7 @@ setup(
     author='Microsoft',
     description='recognizers-text-number README',
     keywords=[ 'nlp', 'nlp-entity-extraction', 'entity-extraction', 'parser-library' ],
-    long_description='recognizers-text-number long README.',
+    long_description=read('README.rst'),
     license='MIT',
     packages=find_packages(),
     install_requires=REQUIRES,

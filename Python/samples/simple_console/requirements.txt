@@ -1,1 +1,2 @@
-../../libraries/recognizers-number/
+-e ../../libraries/recognizers-text/
+-e ../../libraries/recognizers-number/

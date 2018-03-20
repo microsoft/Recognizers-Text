@@ -8,7 +8,10 @@ This sample demonstrate the combination of all Recognizers to extract possible v
 
 First, install its dependencies:
 
-```pip install -r .\requirements.txt```
+```
+cd .\samples\simple_console\
+pip install -r .\requirements.txt
+```
 
 And then start the sample:
 
