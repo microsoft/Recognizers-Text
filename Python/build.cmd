@@ -10,6 +10,7 @@ ECHO.
 ECHO # Building Resources
 CALL python index.py ..\recognizers-number\resource-definitions.json
 CALL python index.py ..\recognizers-number-with-unit\resource-definitions.json
+CALL python index.py ..\recognizers-date-time\resource-definitions.json
 
 popd
 ECHO.
