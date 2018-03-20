@@ -92,7 +92,11 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
 ## Integration tips
 
-The recognizers were designed to disjoint language's logic from the recognizer's core in order to grow without the obligation of change the supported platforms.
+The Recognizers aim to bridge people's spoken language and machine's programming languages.
+As such, Recognizers were designed to facilitate growing the number of supported _cultures_ (i.e. spoken languages) and _platforms_ (i.e. programming languages.)
+ 
+With this goal in mind, they are designed to disjoint the specific culture's logic from the recognizer's core implementation. A shared set of tools are available at the heart of a *cross-culture & cross-platform* approach that will help extending the number and range of the recognizers.
+
 
 To achieve this, the recognizers contains the following folders:
 
