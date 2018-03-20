@@ -8,7 +8,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 NAME = "recognizers-text-number"
-VERSION = "1.0.0.6"
+VERSION = "1.0.0.a0"
 REQUIRES = ['recognizers-text', 'regex']
 
 setup(
