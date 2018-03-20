@@ -70,13 +70,13 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
     def __init__(self, placeholder: str = FrenchNumeric.PlaceHolderDefault):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.NumbersWithPlaceHolder(placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.NumbersWithPlaceHolder(placeholder), regex.I),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.NumbersWithSuffix),
+                re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.NumbersWithSuffix, regex.S),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_DOT, placeholder)),
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_DOT, placeholder), regex.V1),
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.RoundNumberIntegerRegexWithLocks),
