@@ -2355,4 +2355,76 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll see you the first Friday of next month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-20T09:58:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the first Friday of next month",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-04-WXX-5-#1",
+        "FutureResolution": {
+          "date": "2018-04-06"
+        },
+        "PastResolution": {
+          "date": "2018-04-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "So, make it the second Monday of next month?",
+  "Context": {
+    "ReferenceDateTime": "2018-03-20T10:45:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the second Monday of next month",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-04-WXX-1-#2",
+        "FutureResolution": {
+          "date": "2018-04-09"
+        },
+        "PastResolution": {
+          "date": "2018-04-09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I came back the third Wednesday of previous month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-20T10:45:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third Wednesday of previous month",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-02-WXX-3-#3",
+        "FutureResolution": {
+          "date": "2018-02-21"
+        },
+        "PastResolution": {
+          "date": "2018-02-21"
+        }
+      }
+    }
+  ]
+}
 ]
