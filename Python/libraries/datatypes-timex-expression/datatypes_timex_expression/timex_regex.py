@@ -6,20 +6,20 @@ class TimexRegex:
     timexRegex = {
         'date': [
             # date
-            re.compile(r"^(?P<year>\d\d\d\d)-(?P<month>\d\d)-(?P<dayOfMonth>\d\d)$"),
-            re.compile(r"^XXXX-WXX-(?P<dayOfWeek>\d)$"),
-            re.compile(r"^XXXX-(?P<month>\d\d)-(?P<dayOfMonth>\d\d)$"),
+            re.compile(r"^(?P<year>\d\d\d\d)-(?P<month>\d\d)-(?P<day_of_month>\d\d)$"),
+            re.compile(r"^XXXX-WXX-(?P<day_of_week>\d)$"),
+            re.compile(r"^XXXX-(?P<month>\d\d)-(?P<day_of_month>\d\d)$"),
 
             # daterange
             re.compile(r"^(?P<year>\d\d\d\d)$"),
             re.compile(r"^(?P<year>\d\d\d\d)-(?P<month>\d\d)$"),
             re.compile(r"^(?P<season>SP|SU|FA|WI)$"),
             re.compile(r"^(?P<year>\d\d\d\d)-(?P<season>SP|SU|FA|WI)$"),
-            re.compile(r"^(?P<year>\d\d\d\d)-W(?P<weekOfYear>\d\d)$"),
-            re.compile(r"^(?P<year>\d\d\d\d)-W(?P<weekOfYear>\d\d)-(?P<weekend>WE)$"),
+            re.compile(r"^(?P<year>\d\d\d\d)-W(?P<week_of_year>\d\d)$"),
+            re.compile(r"^(?P<year>\d\d\d\d)-W(?P<week_of_year>\d\d)-(?P<weekend>WE)$"),
             re.compile(r"^XXXX-(?P<month>\d\d)$"),
-            re.compile(r"^XXXX-(?P<month>\d\d)-W(?P<weekOfMonth>\d\d)$"),
-            re.compile(r"^XXXX-(?P<month>\d\d)-WXX-(?P<weekOfMonth>\d)-(?P<dayOfWeek>\d)$")        
+            re.compile(r"^XXXX-(?P<month>\d\d)-W(?P<week_of_month>\d\d)$"),
+            re.compile(r"^XXXX-(?P<month>\d\d)-WXX-(?P<week_of_month>\d)-(?P<day_of_week>\d)$")        
         ],
         'time': [
             # time
@@ -28,11 +28,11 @@ class TimexRegex:
             re.compile(r"^T(?P<hour>\d\d):(?P<minute>\d\d):(?P<second>\d\d)$"),
 
             # timerange
-            re.compile(r"^T(?P<partOfDay>DT|NI|MO|AF|EV)$")
+            re.compile(r"^T(?P<part_of_day>DT|NI|MO|AF|EV)$")
         ],
         'period': [
-            re.compile(r"^P(?P<amount>\d*\.?\d+)(?P<dateUnit>Y|M|W|D)$"),
-            re.compile(r"^PT(?P<amount>\d*\.?\d+)(?P<timeUnit>H|M|S)$")
+            re.compile(r"^P(?P<amount>\d*\.?\d+)(?P<date_unit>Y|M|W|D)$"),
+            re.compile(r"^PT(?P<amount>\d*\.?\d+)(?P<time_unit>H|M|S)$")
         ]
     }
 
@@ -45,7 +45,6 @@ class TimexRegex:
 
     @staticmethod
     def try_extract(regex, timex, result):
-        print('try_extract...')
         regexResult = regex.match(timex)
         if regexResult == None:
             return False

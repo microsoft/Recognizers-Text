@@ -6,7 +6,7 @@ class TimexParsing:
     def parse_string(timex, obj):
         # a reference to the present
         if timex == 'PRESENT_REF':
-            obj.Now = True
+            obj.now = True
         elif timex.startswith('P'):
             # duration
             TimexParsing.extract_duration(timex, obj)
@@ -21,15 +21,11 @@ class TimexParsing:
     def extract_duration(s, obj):
         extracted = {}
         TimexRegex.extract('period', s, extracted)
-        if 'dateUnit' in extracted:
-            obj[{ Y: 'years', M: 'months', W: 'weeks', D: 'days' }[extracted.dateUnit]] = extracted.amount
-        elif 'timeout' in extracted:
-            obj[{ H: 'hours', M: 'minutes', S: 'seconds' }[extracted.timeUnit]] = extracted.amount
+        obj.assign_properties(extracted)
 
     @staticmethod
     def extract_start_end_range(s, obj):
-        parts = s[1:s.Length - 2].split(',')
-
+        parts = s[1:len(s)-1].split(',')
         if len(parts) == 3:
             TimexParsing.extract_date_time(parts[0], obj)
             TimexParsing.extract_duration(parts[2], obj)
@@ -38,7 +34,11 @@ class TimexParsing:
     def extract_date_time(s, obj):
         indexOfT = s.find('T')
         if indexOfT == -1:
-            TimexRegex.extract('date', s, obj)
+            extracted = {}
+            TimexRegex.extract('date', s, extracted)
+            obj.assign_properties(extracted)
         else:
-            TimexRegex.extract('date', s[0:indexOfT], obj)
-            TimexRegex.extract('time', s[indexOfT:], obj)
+            extracted = {}
+            TimexRegex.extract('date', s[0:indexOfT], extracted)
+            TimexRegex.extract('time', s[indexOfT:], extracted)
+            obj.assign_properties(extracted)
