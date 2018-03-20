@@ -39,7 +39,7 @@ Microsoft.Recognizers.Text.Number
 -  **Numbers**
 
    This recognizer will find any number from the input. E.g. *"I have
-   two apples"* will return *"2"*.
+   two apples"* will output ``Received "two", resolution is: {'value': '2'}``.
 
    .. code-block:: python 
 
@@ -53,7 +53,7 @@ Microsoft.Recognizers.Text.Number
 -  **Ordinal Numbers**
 
    This recognizer will find any ordinal number. E.g. *"eleventh"* will
-   return *"11"*.
+   output ``Received "eleventh", resolution is: {'value': '11'}``.
 
    .. code-block:: python 
 
@@ -67,7 +67,7 @@ Microsoft.Recognizers.Text.Number
 -  **Percentages**
 
    This recognizer will find any number presented as percentage. E.g.
-   *"one hundred percents"* will return *"100%"*.
+   *"one hundred percents"* will output ``Received "one hundred percents", resolution is: {'value': '100%'}``.
 
    .. code-block:: python 
 
