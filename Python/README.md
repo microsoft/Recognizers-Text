@@ -24,7 +24,7 @@ You can then install each of the local packages:
 
 ### Automatized Build
 
-Launch `Build.cmd` file to install requiements, generate resources, install local packages and run all tests.
+Launch `Build.cmd` file to install requirements, generate resources, install local packages and run all tests.
 
 ## Installation
 
