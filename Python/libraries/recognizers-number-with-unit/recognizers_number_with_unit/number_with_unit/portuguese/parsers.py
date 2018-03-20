@@ -1,7 +1,7 @@
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
-from recognizers_number.culture import CultureInfo
 from recognizers_text.parser import Parser
+from recognizers_number.culture import CultureInfo
 from recognizers_number.number.portuguese.extractors import PortugueseNumberExtractor, NumberMode
 from recognizers_number.number.parser_factory import AgnosticNumberParserFactory, ParserType
 from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration

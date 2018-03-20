@@ -8,6 +8,7 @@ from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.portuguese_numeric_with_unit import PortugueseNumericWithUnit
 
+# pylint: disable=abstract-method
 class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
     def unit_num_extractor(self) -> Extractor:
@@ -33,6 +34,7 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
         self._build_prefix = PortugueseNumericWithUnit.BuildPrefix
         self._build_suffix = PortugueseNumericWithUnit.BuildSuffix
         self._connector_token = PortugueseNumericWithUnit.ConnectorToken
+# pylint: enable=abstract-method
 
 class PortugueseAgeExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):
     @property

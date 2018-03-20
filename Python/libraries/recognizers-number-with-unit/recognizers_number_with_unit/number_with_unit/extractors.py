@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List, Dict, Set, Pattern, Match
 from copy import deepcopy
 from collections import namedtuple
-import regex
 from itertools import chain
+import regex
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
@@ -66,9 +66,9 @@ class NumberWithUnitExtractor(Extractor):
             self.suffix_regex: Set[Pattern] = self._build_regex_from_set(self.config.suffix_list.values())
         else:
             self.suffix_regex: Set[Pattern] = set()
-        
+
         if self.config.prefix_list:
-            max_length = max(map(lambda x: len(x),('|'.join(self.config.prefix_list.values()).split('|'))))
+            max_length = max(map(len, ('|'.join(self.config.prefix_list.values()).split('|'))))
 
             self.max_prefix_match_len = max_length + 2
             self.prefix_regex: Set[Pattern] = self._build_regex_from_set(self.config.prefix_list.values())
@@ -80,7 +80,7 @@ class NumberWithUnitExtractor(Extractor):
     def extract(self, source: str) -> List[ExtractResult]:
         if not self._pre_check_str(source):
             return list()
-        
+
         mapping_prefix: Dict[float, PrefixUnitResult] = dict()
         matched: List[bool] = [False] * len(source)
         numbers: List[ExtractResult] = self.config.unit_num_extractor.extract(source)
@@ -89,12 +89,12 @@ class NumberWithUnitExtractor(Extractor):
 
         if self.max_prefix_match_len != 0:
             for num in numbers:
-                if num.start == None or num.length == None:
+                if num.start is None or num.length is None:
                     continue
                 max_find_prefix = min(self.max_prefix_match_len, num.start)
                 if max_find_prefix == 0:
                     continue
-                
+
                 left: str = source[num.start - max_find_prefix:num.start]
                 last_index = len(left)
                 best_match: Match = None
@@ -110,7 +110,7 @@ class NumberWithUnitExtractor(Extractor):
                         unit=left[best_match.start():last_index]
                     )
         for num in numbers:
-            if num.start == None or num.length == None:
+            if num.start is None or num.length is None:
                 continue
             start = num.start
             length = num.length

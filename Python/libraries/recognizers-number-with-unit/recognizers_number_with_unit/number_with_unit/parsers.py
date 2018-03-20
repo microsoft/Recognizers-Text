@@ -62,11 +62,11 @@ class NumberWithUnitParser(Parser):
         i = 0
         while i <= len(key):
             if i == len(key):
-                if len(unit_key_build) != 0:
+                if unit_key_build:
                     self.__add_if_not_contained(unit_keys, unit_key_build.strip())
             # number_result.start is a relative position
             elif i == number_result.start:
-                if len(unit_key_build) != 0:
+                if unit_key_build:
                     self.__add_if_not_contained(unit_keys, unit_key_build.strip())
                     unit_key_build = ''
                 if number_result.length:
@@ -79,9 +79,9 @@ class NumberWithUnitParser(Parser):
         last_unit = unit_keys[-1].lower()
         if self.config.connector_token and last_unit.startswith(self.config.connector_token):
             last_unit = last_unit[len(self.config.connector_token):].strip()
-        if key and len(key) and self.config.unit_map and last_unit in self.config.unit_map:
+        if key and self.config.unit_map and last_unit in self.config.unit_map:
             unit_value = self.config.unit_map[last_unit]
-            num_value = self.config.internal_number_parser.parse(number_result) if number_result.text and len(number_result.text) else None
+            num_value = self.config.internal_number_parser.parse(number_result) if number_result.text else None
             resolution_str = num_value.resolution_str if num_value else None
 
             ret.value = UnitValue(

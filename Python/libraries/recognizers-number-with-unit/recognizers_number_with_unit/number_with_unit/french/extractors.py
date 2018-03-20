@@ -8,6 +8,7 @@ from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.french_numeric_with_unit import FrenchNumericWithUnit
 
+# pylint: disable=abstract-method
 class FrenchNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
     def unit_num_extractor(self) -> Extractor:
@@ -33,6 +34,7 @@ class FrenchNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigur
         self._build_prefix = FrenchNumericWithUnit.BuildPrefix
         self._build_suffix = FrenchNumericWithUnit.BuildSuffix
         self._connector_token = FrenchNumericWithUnit.ConnectorToken
+# pylint: enable=abstract-method
 
 class FrenchAgeExtractorConfiguration(FrenchNumberWithUnitExtractorConfiguration):
     @property

@@ -8,6 +8,7 @@ from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.chinese_numeric_with_unit import ChineseNumericWithUnit
 
+# pylint: disable=abstract-method
 class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
     def unit_num_extractor(self) -> Extractor:
@@ -32,6 +33,7 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._unit_num_extractor = ChineseNumberExtractor(ChineseNumberExtractorMode.EXTRACT_ALL)
         self._build_prefix = ChineseNumericWithUnit.BuildPrefix
         self._build_suffix = ChineseNumericWithUnit.BuildSuffix
+# pylint: enable=abstract-method
 
 class ChineseAgeExtractorConfiguration(ChineseNumberWithUnitExtractorConfiguration):
     @property

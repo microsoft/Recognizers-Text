@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from typing import List, Optional, Dict
+from typing import List
 from collections import namedtuple
 
 from recognizers_text.model import Model, ModelResult
@@ -11,7 +11,7 @@ from recognizers_number_with_unit.number_with_unit.parsers import UnitValue
 ValueUnit = namedtuple('ValueUnit', ['value', 'unit'])
 
 class ExtractorParserModel:
-    def __init__(self, extractor:Extractor, parser: Parser):
+    def __init__(self, extractor: Extractor, parser: Parser):
         self.extractor = extractor
         self.parser = parser
 
@@ -39,7 +39,7 @@ class AbstractNumberWithUnitModel(Model):
                 model_result.text = parse_result.text
                 model_result.type_name = self.model_type_name
                 model_result.resolution = self.get_resolution(parse_result.value)
-                
+
                 b_add = not [x for x in extraction_results if x.start == model_result.start and x.end == model_result.end]
 
                 if b_add:

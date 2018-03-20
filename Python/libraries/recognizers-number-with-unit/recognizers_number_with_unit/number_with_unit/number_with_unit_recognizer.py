@@ -60,16 +60,16 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
     def initialize_configuration(self):
         #region English
         self.register_model('CurrencyModel', Culture.English, lambda options: CurrencyModel(
-            [ ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()), NumberWithUnitParser(EnglishCurrencyParserConfiguration())) ]
+            [ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()), NumberWithUnitParser(EnglishCurrencyParserConfiguration()))]
             ))
         self.register_model('TemperatureModel', Culture.English, lambda options: TemperatureModel(
-            [ ExtractorParserModel(NumberWithUnitExtractor(EnglishTemperatureExtractorConfiguration()), NumberWithUnitParser(EnglishTemperatureParserConfiguration())) ]
+            [ExtractorParserModel(NumberWithUnitExtractor(EnglishTemperatureExtractorConfiguration()), NumberWithUnitParser(EnglishTemperatureParserConfiguration()))]
             ))
         self.register_model('DimensionModel', Culture.English, lambda options: DimensionModel(
-            [ ExtractorParserModel(NumberWithUnitExtractor(EnglishDimensionExtractorConfiguration()), NumberWithUnitParser(EnglishDimensionParserConfiguration())) ]
+            [ExtractorParserModel(NumberWithUnitExtractor(EnglishDimensionExtractorConfiguration()), NumberWithUnitParser(EnglishDimensionParserConfiguration()))]
             ))
         self.register_model('AgeModel', Culture.English, lambda options: AgeModel(
-            [ ExtractorParserModel(NumberWithUnitExtractor(EnglishAgeExtractorConfiguration()), NumberWithUnitParser(EnglishAgeParserConfiguration())) ]
+            [ExtractorParserModel(NumberWithUnitExtractor(EnglishAgeExtractorConfiguration()), NumberWithUnitParser(EnglishAgeParserConfiguration()))]
             ))
         #endregion
 
@@ -156,16 +156,16 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
 
         #region Spanish
         self.register_model('CurrencyModel', Culture.Spanish, lambda options: CurrencyModel(
-            [ ExtractorParserModel(NumberWithUnitExtractor(SpanishCurrencyExtractorConfiguration()), NumberWithUnitParser(SpanishCurrencyParserConfiguration())) ]
+            [ExtractorParserModel(NumberWithUnitExtractor(SpanishCurrencyExtractorConfiguration()), NumberWithUnitParser(SpanishCurrencyParserConfiguration()))]
             ))
         self.register_model('TemperatureModel', Culture.Spanish, lambda options: TemperatureModel(
-            [ ExtractorParserModel(NumberWithUnitExtractor(SpanishTemperatureExtractorConfiguration()), NumberWithUnitParser(SpanishTemperatureParserConfiguration())) ]
+            [ExtractorParserModel(NumberWithUnitExtractor(SpanishTemperatureExtractorConfiguration()), NumberWithUnitParser(SpanishTemperatureParserConfiguration()))]
             ))
         self.register_model('DimensionModel', Culture.Spanish, lambda options: DimensionModel(
-            [ ExtractorParserModel(NumberWithUnitExtractor(SpanishDimensionExtractorConfiguration()), NumberWithUnitParser(SpanishDimensionParserConfiguration())) ]
+            [ExtractorParserModel(NumberWithUnitExtractor(SpanishDimensionExtractorConfiguration()), NumberWithUnitParser(SpanishDimensionParserConfiguration()))]
             ))
         self.register_model('AgeModel', Culture.Spanish, lambda options: AgeModel(
-            [ ExtractorParserModel(NumberWithUnitExtractor(SpanishAgeExtractorConfiguration()), NumberWithUnitParser(SpanishAgeParserConfiguration())) ]
+            [ExtractorParserModel(NumberWithUnitExtractor(SpanishAgeExtractorConfiguration()), NumberWithUnitParser(SpanishAgeParserConfiguration()))]
             ))
         #endregion
 

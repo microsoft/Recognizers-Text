@@ -8,6 +8,7 @@ from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.spanish_numeric_with_unit import SpanishNumericWithUnit
 
+# pylint: disable=abstract-method
 class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
     @property
     def unit_num_extractor(self) -> Extractor:
@@ -32,6 +33,7 @@ class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._unit_num_extractor = SpanishNumberExtractor()
         self._build_prefix = SpanishNumericWithUnit.BuildPrefix
         self._build_suffix = SpanishNumericWithUnit.BuildSuffix
+# pylint: enable=abstract-method
 
 class SpanishAgeExtractorConfiguration(SpanishNumberWithUnitExtractorConfiguration):
     @property
