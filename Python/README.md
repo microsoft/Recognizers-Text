@@ -30,70 +30,7 @@ Install Recognizer's by launching the following commands:
 
 ## API Documentation
 
-Once the proper package is installed, you'll need to reference the package:
-
-````Python
-from recognizers_number import Culture, ModelResult, NumberRecognizer
-````
-
-### Recognizer's Models
-
-This is the preferred way if you need to parse multiple inputs based on the same context (e.g.: language and options):
-
-```Python
-recognizer = NumberRecognizer(Culture.English)
-model = recognizer.get_number_model()
-result = model.parse('Twelve')
-```
-
-Or, for less verbosity, you use the helper methods:
-
-`result = NumberRecognizer.recognize_number("Twelve", Culture.English);`
-
-Internally, both methods will cache the instance models to avoid extra costs.
-
-### Microsoft.Recognizers.Text.Number
-
-* **Numbers**
-
-    This recognizer will find any number from the input. E.g. _"I have two apples"_ will output `Received "two", resolution is: {'value': '2'}`.
-
-    ```
-    result = NumberRecognizer.recognize_number('I have two apples', Culture.English)
-    print(f'Received "{result[0].text}", resolution is: {result[0].resolution}')
-    ```
-
-    Or you can obtain a model instance using:
-
-    `NumberRecognizer(Culture.English).get_number_model()`
-
-
-* **Ordinal Numbers**
-
-    This recognizer will find any ordinal number. E.g. _"eleventh"_ will output `Received "eleventh", resolution is: {'value': '11'}`.
-
-    ```
-    result = NumberRecognizer.recognize_ordinal('eleventh', Culture.English)
-    print(f'Received "{result[0].text}", resolution is: {result[0].resolution}')
-    ```
-
-    Or you can obtain a model instance using:
-
-    `NumberRecognizer(Culture.English).get_ordinal_model()`
-
-
-* **Percentages**
-
-    This recognizer will find any number presented as percentage. E.g. _"one hundred percents"_ will output `Received "one hundred percents", resolution is: {'value': '100%'}`.
-
-    ```
-    result = NumberRecognizer.recognize_percentage('one hundred percents', Culture.English)
-    print(f'Received "{result[0].text}", resolution is: {result[0].resolution}')
-    ```
-
-    Or you can obtain a model instance using:
-
-    `NumberRecognizer(Culture.English).get_percentage_model()`
+### [Microsoft.Recognizers.Text.Number](https://github.com/Microsoft/Recognizers-Text/tree/master/Python/libraries/recognizers-number)
 
 ## Samples
 
