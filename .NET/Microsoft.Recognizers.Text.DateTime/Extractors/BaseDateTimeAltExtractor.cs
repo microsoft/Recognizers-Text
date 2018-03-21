@@ -81,7 +81,83 @@ namespace Microsoft.Recognizers.Text.DateTime
                 i = j;
             }
 
+            ResolveImplicitRelativeDatePeriod(ers, text);
+
             return ers;
+        }
+
+        // Resolve cases like "this week or next".
+        private void ResolveImplicitRelativeDatePeriod(List<ExtractResult> ers, string text)
+        {
+            var relativeTermsMatches = new List<Match>();
+            foreach (var regex in config.RelativePrefixList)
+            {
+                relativeTermsMatches.AddRange(regex.Matches(text).Cast<Match>());
+            }
+
+            var relativeDatePeriodErs = new List<ExtractResult>();
+            foreach (var result in ers)
+            {
+                if (!result.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
+                {
+                    var resultEnd = result.Start + result.Length;
+                    foreach (var relativeTermsMatch in relativeTermsMatches)
+                    {
+                        if (relativeTermsMatch.Index > resultEnd)
+                        {
+                            // check whether middle string is a connector
+                            var middleBegin = resultEnd ?? 0;
+                            var middleEnd = relativeTermsMatch.Index;
+                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                            var orTermMatches = config.OrRegex.Matches(middleStr);
+                            if (orTermMatches.Count == 1 && orTermMatches[0].Index == 0)
+                            {
+                                var parentTextStart = result.Start;
+                                var parentTextLen = relativeTermsMatch.Index + relativeTermsMatch.Length - result.Start;
+                                var parentText = text.Substring(parentTextStart ?? 0, parentTextLen ?? 0);
+
+                                var contextErs = new ExtractResult();
+                                foreach (var regex in config.RelativePrefixList)
+                                {
+                                    var match = regex.Match(result.Text);
+                                    if (match.Success)
+                                    {
+                                        var matchEnd = match.Index + match.Length;
+                                        contextErs.Start = matchEnd;
+                                        contextErs.Length = result.Length - matchEnd;
+                                        contextErs.Text = result.Text.Substring((int) contextErs.Start, (int) contextErs.Length);
+                                        contextErs.Type = Constants.ContextType_RelativeSuffix;
+                                        break;
+                                    }
+                                }
+
+                                relativeDatePeriodErs.Add(new ExtractResult
+                                {
+                                    Text = relativeTermsMatch.Value,
+                                    Start = relativeTermsMatch.Index,
+                                    Length = relativeTermsMatch.Length,
+                                    Type = Constants.SYS_DATETIME_DATETIMEALT,
+                                    Data = new Dictionary<string, object>
+                                    {
+                                        {Constants.SubType, result.Type},
+                                        {ExtendedModelResult.ParentTextKey, parentText},
+                                        {Constants.Context, contextErs}
+                                    }
+                                });
+
+                                result.Data = new Dictionary<string, object>
+                                {
+                                    {Constants.SubType, result.Type},
+                                    {ExtendedModelResult.ParentTextKey, parentText}
+                                };
+                                result.Type = Constants.SYS_DATETIME_DATETIMEALT;
+                            }
+                        }
+                    }
+                }
+            }
+            ers.AddRange(relativeDatePeriodErs);
+            ers.Sort((a, b) => a.Start - b.Start ?? 0);
         }
 
         private Dictionary<string, object> ExtractAlt(ExtractResult former, ExtractResult latter)

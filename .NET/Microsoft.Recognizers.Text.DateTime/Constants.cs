@@ -31,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // In the ExtractResult data
         public const string Context = "context";
         public const string ContextType_RelativePrefix = "relativePrefix";
+        public const string ContextType_RelativeSuffix = "relativeSuffix";
         public const string ContextType_AmPm = "AmPm";
         public const string SubType = "subType";
 

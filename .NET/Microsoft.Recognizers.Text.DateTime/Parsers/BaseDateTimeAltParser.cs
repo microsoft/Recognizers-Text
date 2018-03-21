@@ -64,8 +64,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             ExtractResult contextEr = null;
             if (((Dictionary<string, object>)er.Data).ContainsKey(Constants.Context))
             {
-                contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context];
-                dateTimeEr.Text = $"{contextEr.Text} {er.Text}";
+                contextEr = (ExtractResult) ((Dictionary<string, object>) er.Data)[Constants.Context];
+                if (contextEr.Type.Equals(Constants.ContextType_RelativeSuffix))
+                {
+                    dateTimeEr.Text = $"{er.Text} {contextEr.Text}";
+                }
+                else
+                {
+                    dateTimeEr.Text = $"{contextEr.Text} {er.Text}";
+                }
                 hasContext = true;
             }
             else
@@ -128,6 +135,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
                     dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
                 }
+            }
+            else if (subType == Constants.SYS_DATETIME_DATEPERIOD)
+            {
+                dateTimeEr.Type = Constants.SYS_DATETIME_DATEPERIOD;
+                dateTimePr = this.config.DatePeriodParser.Parse(dateTimeEr, referenceTime);
             }
 
             if (dateTimePr.Value != null)
