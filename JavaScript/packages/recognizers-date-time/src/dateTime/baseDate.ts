@@ -621,8 +621,10 @@ export class BaseDateParser implements IDateTimeParser {
     private computeDate(cardinal: number, weekday: number, month: number, year: number) {
         let firstDay = new Date(year, month, 1);
         let firstWeekday = DateUtils.this(firstDay, weekday);
+        let dayOfWeekOfFirstDay = firstDay.getDay();
         if (weekday === 0) weekday = 7;
-        if (weekday < firstDay.getDay()) firstWeekday = DateUtils.next(firstDay, weekday);
+        if (dayOfWeekOfFirstDay === 0) dayOfWeekOfFirstDay = 7;
+        if (weekday < dayOfWeekOfFirstDay) firstWeekday = DateUtils.next(firstDay, weekday);
         firstWeekday.setDate(firstWeekday.getDate() + (7 * (cardinal - 1)));
         return firstWeekday;
     }
