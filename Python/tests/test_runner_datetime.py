@@ -34,7 +34,6 @@ def test_datetime_parser(culture, model, options, context, source, expected_resu
     for actual, expected in zip(result, expected_results):
         assert actual.text == expected['Text']
         assert actual.type == expected['Type']
-
         if actual.value and 'Value' in expected:
             assert actual.value.timex == expected['Value']['Timex']
             #TODO: assert FutureResolution and PastResolution
@@ -50,7 +49,6 @@ def test_datetime_model(culture, model, options, context, source, expected_resul
     for actual, expected in zip(result, expected_results):
         assert actual.text == expected['Text']
         assert actual.type == expected['Type']
-
         if actual.resolution:
             values = actual.resolution.values
             assert len(values) == len(expected_results['Resolution']['Values'])
@@ -72,12 +70,12 @@ def create_extractor(language, model):
 def create_parser(language, model):
     parser = get_class(f'recognizers_date_time.date_time.{language.lower()}.parsers', f'{language}{model}Parser')
     if not parser:
-        parser = get_class(f'recognizers_date_time.date_time.base_{model.lower()}', 
+        parser = get_class(f'recognizers_date_time.date_time.base_{model.lower()}',
                            f'Base{model}Parser')
-    
+
     configuration = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_configs',
                               f'{language}{model}ParserConfiguration')
-    
+
     return parser(configuration())
 
 def get_class(module_name, class_name):
@@ -99,7 +97,7 @@ def get_results(culture, model, source, options, reference):
 def get_option(option):
     if not option:
         option = 'NONE'
-    option = re.sub('\\B[A-Z]',f'_\g<0>' , option).upper()
+    option = re.sub('\\B[A-Z]', r'_\g<0>', option).upper()
     module = importlib.import_module('recognizers_date_time.date_time.date_time_recognizer')
     option_class = getattr(module, 'DateTimeOptions')
 
