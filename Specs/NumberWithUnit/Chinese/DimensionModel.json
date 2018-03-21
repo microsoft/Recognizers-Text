@@ -1,6 +1,5 @@
 [{
   "Input": "去年，潜江虾稻产业综合产值突破180亿元，带动就业超10万人，龙虾养殖户户平增收16000元，带动全省养殖小龙虾387万亩。",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "387万亩",
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "阳西辣椒火辣上市日均20万公斤远销珠三角",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20万公斤",
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "如今身高168公分",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "168公分",
@@ -45,7 +42,6 @@
 ,
 {
   "Input": "澳联邦警察与维州警方在墨尔本缴获近一吨冰毒，为澳洲史上最大冰毒走私案。（澳洲联邦警察局 ...",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一吨",

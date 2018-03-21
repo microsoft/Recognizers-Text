@@ -35,7 +35,7 @@ class TestInitializationNumberRecognizer():
 
     def test_with_invalid_culture_use_target_culture(self):
         recognizer = NumberRecognizer(self.spanish_culture)
-        self.assert_models_equal(self.control_model, recognizer.get_number_model(self.english_culture))
+        self.assert_models_equal(self.control_model, recognizer.get_number_model(self.invalid_culture))
 
     def test_with_invalid_culture_and_without_fallback_throw_error(self):
         recognizer = NumberRecognizer()

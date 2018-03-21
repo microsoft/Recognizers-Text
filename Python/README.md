@@ -16,6 +16,7 @@ Open a terminal and run the following commands:
     cd python/libraries/resource-generator
     pip install -r .\requirements.txt
     python index.py ..\recognizers-number\resource-definitions.json
+    python index.py ..\recognizers-number-with-unit\resource-definitions.json
 
 You can then install each of the local packages:
 
@@ -46,7 +47,7 @@ Install Recognizer's by launching the following commands:
 The Recognizers aim to bridge people's spoken language and machine's programming languages.
 As such, Recognizers were designed to facilitate growing the number of supported _cultures_ (i.e. spoken languages) and _platforms_ (i.e. programming languages.)
  
-With this goal in mind, they are designed to disjoint the specific culture's logic from the recognizer's core implementation. A shared set of tools are available at the heart of a *cross-culture & cross-platform* approach that will help extending the number and range of the recognizers.
+With this goal in mind, they are designed to disjoint the specific culture's logic from the recognizer's core implementation. A shared set of tools are available at the heart of a *cross-culture & cross-platform* approach that will help with extending the number and range of the recognizers.
 
 
 To achieve this, the recognizers contains the following folders:

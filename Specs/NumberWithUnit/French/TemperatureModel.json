@@ -1,6 +1,5 @@
 [{
   "Input": "La température l'extérieur est 40 deg celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 deg celsius",
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "C'est 90 fahrenheit au texas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "90 fahrenheit",
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "-5 degrés fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-5 degrés fahrenheit",
@@ -45,7 +42,6 @@
 ,
 {
   "Input": "6 deg c",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "6 deg c",
@@ -59,7 +55,6 @@
 },
 {
   "Input": "25 deg f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "25 deg f",
@@ -74,7 +69,6 @@
 ,
 {
   "Input": "200 centigrade",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 centigrade",
@@ -89,7 +83,6 @@
 ,
 {
   "Input": "250 deg centigrade",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "250 deg centigrade",
@@ -104,7 +97,6 @@
 ,
 {
   "Input": "98,6 degrés f est normal température",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98,6 degrés f",
@@ -119,7 +111,6 @@
 ,
 {
   "Input": "régler la température à 30 degrés celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30 degrés celsius",
@@ -134,7 +125,6 @@
 ,
 {
   "Input": "la température normale est de 98,6 degrés fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98,6 degrés fahrenheit",
@@ -149,7 +139,6 @@
 ,
 {
   "Input": "100 degrés f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 degrés f",
@@ -164,7 +153,6 @@
 ,
 {
   "Input": "20 degrés c",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 degrés c",
@@ -179,7 +167,6 @@
 ,
 {
   "Input": "100,2 degrés fahrenheit est bas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100,2 degrés fahrenheit",
@@ -194,7 +181,6 @@
 ,
 {
   "Input": "10,5 celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10,5 celsius",
@@ -209,7 +195,6 @@
 ,
 {
   "Input": "20 degrés celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 degrés celsius",
@@ -224,7 +209,6 @@
 ,
 {
   "Input": "20,3 celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20,3 celsius",
@@ -239,7 +223,6 @@
 ,
 {
   "Input": "34,5 celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34,5 celsius",
@@ -254,7 +237,6 @@
 ,
 {
   "Input": "the température outside is 98 degrés",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98 degrés",
@@ -269,7 +251,6 @@
 ,
 {
   "Input": "régler le thermostat à 85 °",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85 °",
@@ -284,7 +265,6 @@
 ,
 {
   "Input": "augmenter la température de 5 degrés",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 degrés",
@@ -299,7 +279,6 @@
 ,
 {
   "Input": "régler la température à 70 degrés f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "70 degrés f",
@@ -314,7 +293,6 @@
 ,
 {
   "Input": "augmenter la température de 20 degrés",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 degrés",
@@ -329,7 +307,6 @@
 ,
 {
   "Input": "régler la température à 100 degrés",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 degrés",
@@ -344,7 +321,6 @@
 ,
 {
   "Input": "garder la température à 75 degrés f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75 degrés f",
@@ -359,7 +335,6 @@
 ,
 {
   "Input": "laissez la température à 40 degrés celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 degrés celsius",
@@ -374,7 +349,6 @@
 ,
 {
   "Input": "Laisser la température à 50 deg.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 deg.",
@@ -389,7 +363,6 @@
 ,
 {
   "Input": "convertir 10 celsius en fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10 celsius",
@@ -412,7 +385,6 @@
 ,
 {
   "Input": "34,9 centigrade à fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34,9 centigrade",
@@ -435,7 +407,6 @@
 ,
 {
   "Input": "convertir 200 celsius celsius en fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 celsius",
@@ -466,7 +437,6 @@
 ,
 {
   "Input": "fahrenheit à celsius 101 fahrenheit est combien celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "101 fahrenheit",
@@ -505,7 +475,6 @@
 ,
 {
   "Input": "50 degrés celsius celsius à fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 degrés celsius",
@@ -536,7 +505,6 @@
 ,
 {
   "Input": "pourriez-vous convertir 51 fahrenheit en degrés celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "51 fahrenheit",
@@ -559,7 +527,6 @@
 ,
 {
   "Input": "convertir 106 degrés fahrenheit en degrés celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 degrés fahrenheit",
@@ -582,7 +549,6 @@
 ,
 {
   "Input": "convertir 45 degrés fahrenheit en degrés celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "45 degrés fahrenheit",
@@ -605,7 +571,6 @@
 ,
 {
   "Input": "comment convertir - 20 degrés fahrenheit en degrés celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 20 degrés fahrenheit",
@@ -628,7 +593,6 @@
 ,
 {
   "Input": "Convertir 106 Kelvin",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 Kelvin",
@@ -642,7 +606,6 @@
 },
 {
   "Input": "Convertir 106 kelvin a degrés celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 kelvin",
@@ -664,7 +627,6 @@
 },
 {
   "Input": "convertir 200k K en degrés fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200k K",
