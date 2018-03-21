@@ -47,7 +47,7 @@ def get_specs(recognizer, entity):
                 CULTURES[sp['config']['language']],
                 sp['config']['model'],
                 sp['config']['options'],
-                spec.get('context'),
+                spec.get('Context'),
                 spec['Input'],
                 spec['Results'],
                 marks=pytest.mark.skipif(not_suppoted, reason='Not supported')))
