@@ -16,12 +16,12 @@ def get_results(culture, model, source):
 def test_number_with_unit_recognizer(culture, model, options, source, expected_results):
     results = get_results(culture, model, source)
     assert len(results) == len(expected_results)
-    for expected, actual in zip(expected_results, results):
-        assert expected['Text'] == actual.text
-        assert expected['TypeName'] == actual.type_name
+    for actual, expected in zip(results, expected_results):
+        assert actual.text == expected['Text']
+        assert actual.type_name == expected['TypeName']
         if expected['Resolution'] is None:
             assert actual.resolution is None
         else:
             expected_resolution = expected['Resolution']
-            assert expected_resolution['value'] == actual.resolution.value
-            assert expected_resolution['unit'] == actual.resolution.unit
+            assert actual.resolution.value == expected_resolution['value']
+            assert actual.resolution.unit == expected_resolution['unit']
