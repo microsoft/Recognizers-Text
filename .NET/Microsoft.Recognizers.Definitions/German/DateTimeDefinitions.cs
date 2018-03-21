@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string RelativeDayRegex = $@"((((der|dem|den|des)\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
 		public const string SetWeekDayRegex = @"\b(?<prefix>(am|an dem|in der)\s+)?(?<weekday>morgen|nachmittag|abend|nacht|sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s)?\b";
         public static readonly string WeekDayOfMonthRegex = $@"\b(?<wom>((dem|der|des|am|an dem)\s+)?(?<cardinal>erst(er|en|e)|1.|zweit(er|en|e)|2.|dritt(er|en|e)|3.|viert(er|en|e)|4.|fünft(er|en|e)|5.|letzt(er|en|e))\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b";
-        public static readonly string WeekDayOfYearRegex = $@"\b(?<wom>)\b";
+        public static readonly string WeekDayOfYearRegex = $@"(?<woy>(\b\b))";
         public static readonly string SpecialDate = $@"(?=\b(an|am|an dem)\s+){DayRegex}\b";
 		public static readonly string DateExtractor1 = $@"\b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex})((\s*){MonthRegex})((\s+|\s*,\s*)({DateYearRegex}))?\b";
 		public static readonly string DateExtractor2 = $@"\b({DayRegex}((\s*){MonthRegex})((\,\s*|\s*){DateYearRegex})?)\b";

@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string ForTheRegex = @"^[.]";
 		public const string WeekDayAndDayOfMonthRegex = @"^[.]";
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
-        public static readonly string WeekDayOfYearRegex = $@"(?<woy>(under development))";
+        public static readonly string WeekDayOfYearRegex = $@"(?<woy>(\b\b))";
         public const string NumberEndingPattern = @"^[.]";
 		public static readonly string SpecialDateRegex = $@"(?<=\bno\s+){DayRegex}\b";
 		public static readonly string OfMonthRegex = $@"^\s*de\s*{MonthSuffixRegex}";
