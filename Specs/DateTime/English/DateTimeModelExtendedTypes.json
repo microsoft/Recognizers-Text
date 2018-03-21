@@ -1,4 +1,5 @@
-[{
+[
+{
   "Input": "schedule me a meeting next week Mon 9 am or 1 pm",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
@@ -279,7 +280,8 @@
       }
     }
   ]
-},
+}
+,
 {
   "Input": "Cortana could try to arrange a Skype call this week or next please?",
   "Context": {
@@ -323,7 +325,8 @@
       }
     }
   ]
-},
+}
+,
 {
   "Input": "Cortana could you please help me find out which is better last year or next?",
   "Context": {
