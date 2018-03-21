@@ -1,10 +1,10 @@
-﻿using System.Linq;
+using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
-using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -31,8 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             return extractResult;
         }
 
-        // modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
-        // modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
+        // Modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
+        // or "Thursday" in "next week on Tuesday or Thursday"
         public List<ExtractResult> ExtractAlt(List<ExtractResult> extractResult, string text, DateObject reference)
         {
             var ers = extractResult;
@@ -52,10 +52,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                 var middleEnd = ers[j].Start ?? 0;
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                
                 var matches = this.config.OrRegex.Matches(middleStr);
+                
                 if (matches.Count == 1)
                 {
-                    // extract different data accordingly
+                    // Extract different data accordingly
                     var data = ExtractAlt(ers[i], ers[j]);
                     if (data.Count > 0)
                     {
@@ -81,7 +83,85 @@ namespace Microsoft.Recognizers.Text.DateTime
                 i = j;
             }
 
+            ResolveImplicitRelativeDatePeriod(ers, text);
+
             return ers;
+        }
+
+        // Resolve cases like "this week or next".
+        private void ResolveImplicitRelativeDatePeriod(List<ExtractResult> ers, string text)
+        {
+            var relativeTermsMatches = new List<Match>();
+            foreach (var regex in config.RelativePrefixList)
+            {
+                relativeTermsMatches.AddRange(regex.Matches(text).Cast<Match>());
+            }
+
+            var relativeDatePeriodErs = new List<ExtractResult>();
+            foreach (var result in ers)
+            {
+                if (!result.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
+                {
+                    var resultEnd = result.Start + result.Length;
+                    foreach (var relativeTermsMatch in relativeTermsMatches)
+                    {
+                        if (relativeTermsMatch.Index > resultEnd)
+                        {
+                            // Check whether middle string is a connector
+                            var middleBegin = resultEnd ?? 0;
+                            var middleEnd = relativeTermsMatch.Index;
+                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                        
+                            var orTermMatches = config.OrRegex.Matches(middleStr);
+                            if (orTermMatches.Count == 1 && orTermMatches[0].Index == 0)
+                            {
+                                var parentTextStart = result.Start;
+                                var parentTextLen = relativeTermsMatch.Index + relativeTermsMatch.Length - result.Start;
+                                var parentText = text.Substring(parentTextStart ?? 0, parentTextLen ?? 0);
+
+                                var contextErs = new ExtractResult();
+                                foreach (var regex in config.RelativePrefixList)
+                                {
+                                    var match = regex.Match(result.Text);
+                                    if (match.Success)
+                                    {
+                                        var matchEnd = match.Index + match.Length;
+                                        contextErs.Start = matchEnd;
+                                        contextErs.Length = result.Length - matchEnd;
+                                        contextErs.Text = result.Text.Substring((int)contextErs.Start, (int)contextErs.Length);
+                                        contextErs.Type = Constants.ContextType_RelativeSuffix;
+                                        break;
+                                    }
+                                }
+
+                                relativeDatePeriodErs.Add(new ExtractResult
+                                {
+                                    Text = relativeTermsMatch.Value,
+                                    Start = relativeTermsMatch.Index,
+                                    Length = relativeTermsMatch.Length,
+                                    Type = Constants.SYS_DATETIME_DATETIMEALT,
+                                    Data = new Dictionary<string, object>
+                                    {
+                                        {Constants.SubType, result.Type},
+                                        {ExtendedModelResult.ParentTextKey, parentText},
+                                        {Constants.Context, contextErs}
+                                    }
+                                });
+
+                                result.Data = new Dictionary<string, object>
+                                {
+                                    {Constants.SubType, result.Type},
+                                    {ExtendedModelResult.ParentTextKey, parentText}
+                                };
+                                result.Type = Constants.SYS_DATETIME_DATETIMEALT;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            ers.AddRange(relativeDatePeriodErs);
+            ers.Sort((a, b) => a.Start - b.Start ?? 0);
         }
 
         private Dictionary<string, object> ExtractAlt(ExtractResult former, ExtractResult latter)
@@ -114,7 +194,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private Dictionary<string, object> ExtractDateTime_Time(ExtractResult former, ExtractResult latter)
         {
             var data = new Dictionary<string, object>();
-            // modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
+            // Modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
             if (former.Type == Constants.SYS_DATETIME_DATETIME && latter.Type == Constants.SYS_DATETIME_TIME)
             {
                 var ers = config.DateExtractor.Extract(former.Text);
@@ -124,13 +204,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
                 }
             }
+            
             return data;
         }
 
         private Dictionary<string, object> ExtractDate_Date(ExtractResult former, ExtractResult latter)
         {
             var data = new Dictionary<string, object>();
-            // modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
+            
+            // Modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
             if (former.Type == Constants.SYS_DATETIME_DATE && latter.Type == Constants.SYS_DATETIME_DATE)
             {
                 var ers = config.DatePeriodExtractor.Extract(former.Text);
@@ -158,6 +240,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+            
             return data;
         }
 
@@ -182,13 +265,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+            
             return data;
         }
 
         private Dictionary<string, object> ExtractDateTimeRange_TimeRange(ExtractResult former, ExtractResult latter)
         {
             var data = new Dictionary<string, object>();
-            // modify time entity to an alternative DateTimeRange expression, such as "9-10 am" in "Monday 7-8 am or 9-10 am"
+            
+            // Modify time entity to an alternative DateTimeRange expression, such as "9-10 am" in "Monday 7-8 am or 9-10 am"
             if (former.Type == Constants.SYS_DATETIME_DATETIMEPERIOD && latter.Type == Constants.SYS_DATETIME_TIMEPERIOD)
             {
                 var ers = config.DateExtractor.Extract(former.Text);
@@ -198,13 +283,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_TIMEPERIOD);
                 }
             }
+            
             return data;
         }
 
         private Dictionary<string, object> ExtractDateTime_DateTime(ExtractResult former, ExtractResult latter)
         {
             var data = new Dictionary<string, object>();
-            // modify time entity to an alternative DateTime expression, such as "Tue 1 pm" in "next week Mon 9 am or Tue 1 pm"
+            
+            // Modify time entity to an alternative DateTime expression, such as "Tue 1 pm" in "next week Mon 9 am or Tue 1 pm"
             if (former.Type == Constants.SYS_DATETIME_DATETIME && latter.Type == Constants.SYS_DATETIME_DATETIME)
             {
                 var ers = config.DatePeriodExtractor.Extract(former.Text);
@@ -214,6 +301,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIME);
                 }
             }
+            
             return data;
         }
     }
