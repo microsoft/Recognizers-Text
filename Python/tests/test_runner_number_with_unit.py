@@ -12,8 +12,8 @@ MODELFUNCTION = {
 def get_results(culture, model, source):
     return MODELFUNCTION[model](source, culture)
 
-@pytest.mark.parametrize('culture, model, source, expected_results', get_specs('NumberWithUnit'))
-def test_number_with_unit_recognizer(culture, model, source, expected_results):
+@pytest.mark.parametrize('culture, model, options, source, expected_results', get_specs(recognizer='NumberWithUnit', entity='Model'))
+def test_number_with_unit_recognizer(culture, model, options, source, expected_results):
     results = get_results(culture, model, source)
     assert len(results) == len(expected_results)
     for expected, actual in zip(expected_results, results):

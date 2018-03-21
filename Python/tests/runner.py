@@ -1,7 +1,8 @@
-import pytest
 import glob
 import os
 import json
+import re
+import pytest
 from recognizers_text.culture import Culture
 
 def splitall(path):
@@ -22,7 +23,8 @@ def splitall(path):
 def get_suite_config(json_path):
     parts = splitall(json_path)
     filename = os.path.splitext(parts[4])[0]
-    return {'type': parts[2], 'sub_type': filename, 'language': parts[3]}
+    entity, options = ENTITYPATTERN.search(filename).groups()
+    return {'recognizer': parts[2], 'model': filename, 'entity': entity, 'options': options, 'language': parts[3]}
 
 def get_suite(json_path):
     print(json_path)
@@ -33,16 +35,18 @@ def get_all_specs():
     result = list(map(get_suite, files))
     return result
 
-def get_specs(spec_type):
+def get_specs(recognizer, entity):
     ret_specs = []
-    filtered_specs = list(filter(lambda x: x['config']['type'] == spec_type, SPECS))
+    filtered_specs = list(filter(lambda x: x['config']['recognizer'] == recognizer and x['config']['entity'] == entity, SPECS))
     for sp in filtered_specs:
         for spec in sp['specs']:
             if 'NotSupportedByDesign' in spec and 'python' in spec['NotSupportedByDesign']:
                 continue
             not_suppoted = 'NotSupported' in spec and 'python' in spec['NotSupported']
-            ret_specs.append(pytest.param(CULTURES[sp['config']['language']], sp['config']['sub_type'], spec['Input'], spec['Results'], marks=pytest.mark.skipif(not_suppoted, reason='Not supported')))
+            ret_specs.append(pytest.param(CULTURES[sp['config']['language']], sp['config']['model'], sp['config']['options'], spec['Input'], spec['Results'], marks=pytest.mark.skipif(not_suppoted, reason='Not supported')))
     return ret_specs
+
+ENTITYPATTERN = re.compile('(Model|Parser|Extractor)(.*)')
 
 CULTURES = {
     'English': Culture.English,
