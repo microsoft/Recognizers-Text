@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 
 from recognizers_text.extractor import ExtractResult
 
@@ -38,3 +38,16 @@ def __token_to_result(token: Token, source: str, name: str) -> ExtractResult:
     result.text = source[token.start:token.end]
     result.type = name
     return result
+
+class DateTimeResolutionResult:
+    def __init__(self):
+        self.success: bool = False
+        self.timex: str
+        self.is_lunar: bool
+        self.mod: str
+        self.comment: str
+        self.future_resolution: Dict[str, str]
+        self.past_resolution: Dict[str, str]
+        self.future_value: object
+        self.past_value: object
+        self.sub_date_time_entities: List[object]
