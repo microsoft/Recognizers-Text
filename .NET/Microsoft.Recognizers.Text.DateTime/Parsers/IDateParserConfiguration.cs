@@ -39,9 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex UnitRegex { get; }
         Regex WeekDayRegex { get; }
         Regex MonthRegex { get; }
-        Regex YearRegex { get; }
         Regex WeekDayOfMonthRegex { get; }
-        Regex WeekDayOfYearRegex { get; }
         Regex ForTheRegex { get; }
         Regex WeekDayAndDayOfMothRegex { get; }
         Regex RelativeMonthRegex { get; }
@@ -51,7 +49,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         #region Dictionaries
         IImmutableDictionary<string, string> UnitMap { get; }
-        IImmutableDictionary<string, int> DayOfYear { get; }
         IImmutableDictionary<string, int> DayOfMonth { get; }
         IImmutableDictionary<string, int> DayOfWeek { get; }
         IImmutableDictionary<string, int> MonthOfYear { get; }
@@ -62,8 +59,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         int GetSwiftDay(string text);
 
         int GetSwiftMonth(string text);
-
-        int GetSwiftYear(string text);
 
         bool IsCardinalLast(string text);
 

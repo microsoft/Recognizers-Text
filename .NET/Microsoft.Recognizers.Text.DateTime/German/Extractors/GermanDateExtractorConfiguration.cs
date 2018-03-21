@@ -54,9 +54,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex WeekDayOfMonthRegex =
             new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex WeekDayOfYearRegex =
-            new Regex(DateTimeDefinitions.WeekDayOfYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         public static readonly Regex SpecialDate = 
             new Regex(DateTimeDefinitions.SpecialDate, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

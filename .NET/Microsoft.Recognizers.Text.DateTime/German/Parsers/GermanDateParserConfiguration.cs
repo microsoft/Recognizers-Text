@@ -46,11 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex MonthRegex { get; }
 
-        public Regex YearRegex { get; }
-
         public Regex WeekDayOfMonthRegex { get; }
-
-        public Regex WeekDayOfYearRegex { get; }
 
         public Regex ForTheRegex { get; }
 
@@ -75,8 +71,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
-
-        public IImmutableDictionary<string, int> DayOfYear { get; }
 
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
@@ -104,7 +98,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WeekDayRegex = GermanDateExtractorConfiguration.WeekDayRegex;
             MonthRegex = GermanDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = GermanDateExtractorConfiguration.WeekDayOfMonthRegex;
-            WeekDayOfYearRegex = GermanDateExtractorConfiguration.WeekDayOfYearRegex;
             ForTheRegex = GermanDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = GermanDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = GermanDateExtractorConfiguration.RelativeMonthRegex;
@@ -154,12 +147,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public int GetSwiftMonth(string text)
         {
             return GetSwift(text);
-        }
-
-        public int GetSwiftYear(string text)
-        {
-            // under development
-            return 0;
         }
 
         public int GetSwift(string text)

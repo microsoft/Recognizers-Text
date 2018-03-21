@@ -48,11 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex MonthRegex { get; }
 
-        public Regex YearRegex { get; }
-
         public Regex WeekDayOfMonthRegex { get; }
-
-        public Regex WeekDayOfYearRegex { get; }
 
         public Regex ForTheRegex { get; }
 
@@ -65,8 +61,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
-
-        public IImmutableDictionary<string, int> DayOfYear { get; }
 
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
@@ -95,7 +89,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             StrictWeekDay = FrenchDateExtractorConfiguration.StrictWeekDay;
             MonthRegex = FrenchDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = FrenchDateExtractorConfiguration.WeekDayOfMonthRegex;
-            WeekDayOfYearRegex = FrenchDateExtractorConfiguration.WeekDayOfYearRegex;
             ForTheRegex = FrenchDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
@@ -159,13 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return swift;
         }
 
-        public int GetSwiftYear(string text)
-        {
-            // under development
-            return 0;
-        }
-
-            public bool IsCardinalLast(string text)
+        public bool IsCardinalLast(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
             return (trimedText.Equals("dernière") || trimedText.Equals("dernières") ||
