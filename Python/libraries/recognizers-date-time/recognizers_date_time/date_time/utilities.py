@@ -1,4 +1,5 @@
-from typing import List, Dict
+from abc import ABC, abstractmethod
+from typing import List, Dict, Pattern
 
 from recognizers_text.extractor import ExtractResult
 
@@ -51,3 +52,39 @@ class DateTimeResolutionResult:
         self.future_value: object
         self.past_value: object
         self.sub_date_time_entities: List[object] = list()
+
+class DateTimeUtilityConfiguration(ABC):
+    @property
+    @abstractmethod
+    def ago_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def later_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def in_connector_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def range_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def am_desc_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def pm_desc__regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def am_pm_desc_regex(self) -> Pattern:
+        raise NotImplementedError
