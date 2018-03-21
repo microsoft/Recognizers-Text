@@ -42,11 +42,17 @@ SingleWeekDayRegex: !simpleRegex
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>(of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
+RelativeYearRegex: !nestedRegex
+  def: (?<relyear>(of\s+)?{RelativeRegex}\s+year)\b
+  references: [RelativeRegex]
 EngMonthRegex: !simpleRegex
   def: (((the\s+)?month of\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(in\s+|of\s+|on\s+)?({RelativeMonthRegex}|{EngMonthRegex}))
   references: [ RelativeMonthRegex, EngMonthRegex ]
+YearSuffixRegex: !nestedRegex
+  def: (?<ysuf>(in\s+|of\s+|on\s+)?({RelativeYearRegex}))
+  references: [ RelativeYearRegex ]
 DateUnitRegex: !simpleRegex
   def: (?<unit>years|year|months|month|weeks|week|days|day)\b
 SimpleCasesRegex: !nestedRegex
@@ -166,6 +172,9 @@ SetWeekDayRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
+WeekDayOfYearRegex: !nestedRegex
+  def: (?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{YearSuffixRegex})
+  references: [ WeekDayRegex, YearSuffixRegex ]
 SpecialDate: !nestedRegex
   def: (?=\b(on|at)\s+the\s+){DayRegex}\b
   references: [ DayRegex ]

@@ -2361,7 +2361,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-20T09:58:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2385,7 +2384,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-20T10:45:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2409,7 +2407,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-20T10:45:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2422,6 +2419,75 @@
         },
         "PastResolution": {
           "date": "2018-02-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll come back the third Sunday of coming month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-21T10:45:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third Sunday of coming month",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-04-WXX-0-#3",
+        "FutureResolution": {
+          "date": "2018-04-15"
+        },
+        "PastResolution": {
+          "date": "2018-04-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go travelling Tuesday next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-21T09:23:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday next week",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-03-27",
+        "FutureResolution": {
+          "date": "2018-03-27"
+        },
+        "PastResolution": {
+          "date": "2018-03-27"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go home Sunday of next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-21T09:23:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sunday of next week",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-04-01",
+        "FutureResolution": {
+          "date": "2018-04-01"
+        },
+        "PastResolution": {
+          "date": "2018-04-01"
         }
       }
     }
