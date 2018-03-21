@@ -22,8 +22,12 @@ ECHO # Installing recognizers-number
 CALL  pip install -e .\libraries\recognizers-number\
 
 ECHO.
-ECHO # Installing recognizers-number
+ECHO # Installing recognizers-number-with-unit
 CALL  pip install -e .\libraries\recognizers-number-with-unit\
+
+ECHO.
+ECHO # Installing recognizers-date-time
+CALL  pip install -e .\libraries\recognizers-date-time\
 
 ECHO.
 ECHO # Installing Test Dependencies
