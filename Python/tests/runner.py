@@ -23,8 +23,8 @@ def splitall(path):
 def get_suite_config(json_path):
     parts = splitall(json_path)
     filename = os.path.splitext(parts[4])[0]
-    entity, options = ENTITYPATTERN.search(filename).groups()
-    return {'recognizer': parts[2], 'model': filename, 'entity': entity, 'options': options, 'language': parts[3]}
+    model, entity, options = ENTITYPATTERN.search(filename).groups()
+    return {'recognizer': parts[2], 'model': model, 'entity': entity, 'options': options, 'language': parts[3]}
 
 def get_suite(json_path):
     print(json_path)
@@ -53,7 +53,7 @@ def get_specs(recognizer, entity):
                 marks=pytest.mark.skipif(not_suppoted, reason='Not supported')))
     return ret_specs
 
-ENTITYPATTERN = re.compile('(Model|Parser|Extractor)(.*)')
+ENTITYPATTERN = re.compile('(.*)(Model|Parser|Extractor)(.*)')
 
 CULTURES = {
     'English': Culture.English,

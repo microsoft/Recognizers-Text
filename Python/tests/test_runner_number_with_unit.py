@@ -3,10 +3,10 @@ from runner import get_specs
 from recognizers_number_with_unit.number_with_unit import NumberWithUnitRecognizer
 
 MODELFUNCTION = {
-    'AgeModel': NumberWithUnitRecognizer.recognize_age,
-    'CurrencyModel': NumberWithUnitRecognizer.recognize_currency,
-    'TemperatureModel': NumberWithUnitRecognizer.recognize_temperature,
-    'DimensionModel': NumberWithUnitRecognizer.recognize_dimension,
+    'Age': NumberWithUnitRecognizer.recognize_age,
+    'Currency': NumberWithUnitRecognizer.recognize_currency,
+    'Temperature': NumberWithUnitRecognizer.recognize_temperature,
+    'Dimension': NumberWithUnitRecognizer.recognize_dimension,
 }
 
 def get_results(culture, model, source):

@@ -3,9 +3,9 @@ from runner import get_specs
 from recognizers_number.number import NumberRecognizer
 
 MODELFUNCTION = {
-    'NumberModel': NumberRecognizer.recognize_number,
-    'OrdinalModel': NumberRecognizer.recognize_ordinal,
-    'PercentModel': NumberRecognizer.recognize_percentage,
+    'Number': NumberRecognizer.recognize_number,
+    'Ordinal': NumberRecognizer.recognize_ordinal,
+    'Percent': NumberRecognizer.recognize_percentage,
 }
 
 def get_results(culture, model, source):
