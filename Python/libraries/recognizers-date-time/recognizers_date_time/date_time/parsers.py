@@ -11,6 +11,11 @@ class DateTimeParseResult(ParseResult):
         self.timex_str: str
 
 class DateTimeParser(Parser):
+    @property
+    @abstractmethod
+    def parser_type_name(self) -> str:
+        raise NotImplementedError
+
     @abstractmethod
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:#pylint: disable=W0221
         raise NotImplementedError
