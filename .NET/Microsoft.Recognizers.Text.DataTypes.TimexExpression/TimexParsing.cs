@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexParsing
     {
-        public static void ParseString(string timex, TimexProperties obj)
+        public static void ParseString(string timex, TimexProperty obj)
         {
             // a reference to the present
             if (timex == "PRESENT_REF")
@@ -28,14 +28,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
         }
 
-        private static void ExtractDuration(string s, TimexProperties obj)
+        private static void ExtractDuration(string s, TimexProperty obj)
         {
             var extracted = new Dictionary<string, string>();
             TimexRegex.Extract("period", s, extracted);
             obj.AssignProperties(extracted);
         }
 
-        private static void ExtractStartEndRange(string s, TimexProperties obj)
+        private static void ExtractStartEndRange(string s, TimexProperty obj)
         {
             var parts = s.Substring(1, s.Length - 2).Split(',');
 
@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
         }
 
-        private static void ExtractDateTime(string s, TimexProperties obj)
+        private static void ExtractDateTime(string s, TimexProperty obj)
         {
             var indexOfT = s.IndexOf('T');
 

@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     internal static class TimexConvertEnglish
     {
-        public static string ConvertTimexToString(TimexProperties timex)
+        public static string ConvertTimexToString(TimexProperty timex)
         {
             var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
 
@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
         }
 
-        public static string ConvertTime(TimexProperties timex)
+        public static string ConvertTime(TimexProperty timex)
         {
             if (timex.Hour == 0 && timex.Minute == 0 && timex.Second == 0)
             {
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return $"{hour}{minute}{second}{period}";
         }
 
-        public static string ConvertDate(TimexProperties timex)
+        public static string ConvertDate(TimexProperty timex)
         {
             if (timex.DayOfWeek != null)
             {
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
         }
 
-        private static string ConvertTimexDurationToString(TimexProperties timex, bool includeSingleCount)
+        private static string ConvertTimexDurationToString(TimexProperty timex, bool includeSingleCount)
         {
             if (timex.Years != null)
             {
@@ -160,12 +160,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static string ConvertDuration(TimexProperties timex)
+        private static string ConvertDuration(TimexProperty timex)
         {
             return ConvertTimexDurationToString(timex, true);
         }
 
-        private static string ConvertDateRange(TimexProperties timex)
+        private static string ConvertDateRange(TimexProperty timex)
         {
             var season = (timex.Season != null) ? TimexConstantsEnglish.Seasons[timex.Season] : string.Empty;
 
@@ -195,17 +195,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return $"{season} {year}".Trim();
         }
 
-        private static string ConvertTimeRange(TimexProperties timex)
+        private static string ConvertTimeRange(TimexProperty timex)
         {
             return TimexConstantsEnglish.DayParts[timex.PartOfDay];
         }
 
-        private static string ConvertDateTime(TimexProperties timex)
+        private static string ConvertDateTime(TimexProperty timex)
         {
             return $"{ConvertTime(timex)} {ConvertDate(timex)}";
         }
 
-        private static string ConvertDateTimeRange(TimexProperties timex)
+        private static string ConvertDateTimeRange(TimexProperty timex)
         {
             if (timex.Types.Contains(Constants.TimexTypes.TimeRange))
             {

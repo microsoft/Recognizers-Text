@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexInference
     {
-        public static HashSet<string> Infer(TimexProperties obj)
+        public static HashSet<string> Infer(TimexProperty obj)
         {
             var types = new HashSet<string>();
 
@@ -80,33 +80,33 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return types;
         }
 
-        private static bool IsPresent(TimexProperties obj) 
+        private static bool IsPresent(TimexProperty obj) 
         {
             return obj.Now == true;
         }
 
-        private static bool IsDuration(TimexProperties obj)
+        private static bool IsDuration(TimexProperty obj)
         {
             return obj.Years != null || obj.Months != null || obj.Weeks != null || obj.Days != null ||
                    obj.Hours != null || obj.Minutes != null || obj.Seconds != null;
         }
 
-        private static bool IsTime(TimexProperties obj)
+        private static bool IsTime(TimexProperty obj)
         {
             return obj.Hour != null && obj.Minute != null && obj.Second != null;
         }
 
-        private static bool IsDate(TimexProperties obj)
+        private static bool IsDate(TimexProperty obj)
         {
             return (obj.Month != null && obj.DayOfMonth != null) || obj.DayOfWeek != null;
         }
 
-        private static bool IsTimeRange(TimexProperties obj)
+        private static bool IsTimeRange(TimexProperty obj)
         {
             return obj.PartOfDay != null;
         }
 
-        private static bool IsDateRange(TimexProperties obj)
+        private static bool IsDateRange(TimexProperty obj)
         {
             return (obj.Year != null && obj.DayOfMonth == null) || 
                    (obj.Year != null && obj.Month != null && obj.DayOfMonth == null) || 
@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                    obj.Season != null || obj.WeekOfYear != null || obj.WeekOfMonth != null;
         }
 
-        private static bool IsDefinite(TimexProperties obj)
+        private static bool IsDefinite(TimexProperty obj)
         {
             return obj.Year != null && obj.Month != null && obj.DayOfMonth != null;
         }

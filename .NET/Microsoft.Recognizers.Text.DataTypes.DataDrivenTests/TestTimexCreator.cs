@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_Creator_Today()
         {
             var d = System.DateTime.Now;
-            var expected = TimexFormat.Format(new TimexProperties
+            var expected = TimexFormat.Format(new TimexProperty
             {
                 Year = d.Year,
                 Month = d.Month,
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var d = System.DateTime.Now;
             d = d.AddDays(1);
-            var expected = TimexFormat.Format(new TimexProperties
+            var expected = TimexFormat.Format(new TimexProperty
             {
                 Year = d.Year,
                 Month = d.Month,
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var d = System.DateTime.Now;
             d = d.AddDays(-1);
-            var expected = TimexFormat.Format(new TimexProperties
+            var expected = TimexFormat.Format(new TimexProperty
             {
                 Year = d.Year,
                 Month = d.Month,
@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_Creator_WeekFromToday()
         {
             var d = System.DateTime.Now;
-            var expected = TimexFormat.Format(new TimexProperties
+            var expected = TimexFormat.Format(new TimexProperty
             {
                 Year = d.Year,
                 Month = d.Month,
@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var d = System.DateTime.Now;
             d = d.AddDays(-7);
-            var expected = TimexFormat.Format(new TimexProperties
+            var expected = TimexFormat.Format(new TimexProperty
             {
                 Year = d.Year,
                 Month = d.Month,
@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_Creator_nextWeek()
         {
             var start = TimexDateHelpers.DateOfNextDay(DayOfWeek.Monday, System.DateTime.Now);
-            var t = TimexProperties.FromDate(start);
+            var t = TimexProperty.FromDate(start);
             t.Days = 7;
             var expected = t.TimexValue;
             Assert.AreEqual(expected, TimexCreator.NextWeek());
@@ -130,7 +130,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         {
             var start = TimexDateHelpers.DateOfLastDay(DayOfWeek.Monday, System.DateTime.Now);
             start = start.AddDays(-7);
-            var t = TimexProperties.FromDate(start);
+            var t = TimexProperty.FromDate(start);
             t.Days = 7;
             var expected = t.TimexValue;
             Assert.AreEqual(expected, TimexCreator.LastWeek());
@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_Creator_NextWeeksFromToday()
         {
             var d = System.DateTime.Now;
-            var expected = TimexFormat.Format(new TimexProperties
+            var expected = TimexFormat.Format(new TimexProperty
             {
                 Year = d.Year,
                 Month = d.Month,

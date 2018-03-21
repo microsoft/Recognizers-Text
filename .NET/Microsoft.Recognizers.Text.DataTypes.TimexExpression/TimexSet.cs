@@ -7,9 +7,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
     {
         public TimexSet(string timex)
         {
-            Timex = new TimexProperties(timex);
+            Timex = new TimexProperty(timex);
         }
 
-        public TimexProperties Timex { get; set; }
+        public TimexProperty Timex { get; set; }
     }
 }

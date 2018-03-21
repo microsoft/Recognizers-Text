@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexConvert
     {
-        public static string ConvertTimexToString(TimexProperties timex)
+        public static string ConvertTimexToString(TimexProperty timex)
         {
             return TimexConvertEnglish.ConvertTimexToString(timex);
         }

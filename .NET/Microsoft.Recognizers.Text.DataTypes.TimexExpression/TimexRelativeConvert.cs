@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexRelativeConvert
     {
-        public static string ConvertTimexToStringRelative(TimexProperties timex, System.DateTime referenceDate)
+        public static string ConvertTimexToStringRelative(TimexProperty timex, System.DateTime referenceDate)
         {
             return TimexRelativeConvertEnglish.ConvertTimexToStringRelative(timex, referenceDate);
         }

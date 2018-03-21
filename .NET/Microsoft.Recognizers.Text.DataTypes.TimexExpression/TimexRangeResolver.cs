@@ -9,26 +9,26 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public class TimexRangeResolver
     {
-        public static List<TimexProperties> Evaluate(IEnumerable<string> candidates, IEnumerable<string> constraints)
+        public static List<TimexProperty> Evaluate(IEnumerable<string> candidates, IEnumerable<string> constraints)
         {
-            var timexConstraints = constraints.Select((x) => { return new TimexProperties(x); });
+            var timexConstraints = constraints.Select((x) => { return new TimexProperty(x); });
             var candidatesWithDurationsResolved = ResolveDurations(candidates, timexConstraints);
             var candidatesAccordingToDate = ResolveByDateRangeConstraints(candidatesWithDurationsResolved, timexConstraints);
             var candidatesWithAddedTime = ResolveByTimeConstraints(candidatesAccordingToDate, timexConstraints);
             var candidatesFilteredByTime = ResolveByTimeRangeConstraints(candidatesWithAddedTime, timexConstraints);
 
             var timexResults = candidatesFilteredByTime
-                .Select((x) => { return new TimexProperties(x); })
+                .Select((x) => { return new TimexProperty(x); })
                 .ToList();
 
             return timexResults;
         }
-        private static List<string> ResolveDurations(IEnumerable<string> candidates, IEnumerable<TimexProperties> constraints)
+        private static List<string> ResolveDurations(IEnumerable<string> candidates, IEnumerable<TimexProperty> constraints)
         {
             var results = new List<string>();
             foreach (var candidate in candidates)
             {
-                var timex = new TimexProperties(candidate);
+                var timex = new TimexProperty(candidate);
                 if (timex.Types.Contains(Constants.TimexTypes.Duration))
                 {
                     var r = ResolveDuration(timex, constraints);
@@ -46,9 +46,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return results;
         }
 
-        private static List<TimexProperties> ResolveDuration(TimexProperties candidate, IEnumerable<TimexProperties> constraints)
+        private static List<TimexProperty> ResolveDuration(TimexProperty candidate, IEnumerable<TimexProperty> constraints)
         {
-            var results = new List<TimexProperties>();
+            var results = new List<TimexProperty>();
             foreach (var constraint in constraints)
             {
                 if (constraint.Types.Contains(Constants.TimexTypes.DateTime))
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return results;
         }
 
-        private static IEnumerable<string> ResolveByDateRangeConstraints(IEnumerable<string> candidates, IEnumerable<TimexProperties> timexConstraints)
+        private static IEnumerable<string> ResolveByDateRangeConstraints(IEnumerable<string> candidates, IEnumerable<TimexProperty> timexConstraints)
         {
             var dateRangeconstraints = timexConstraints
                 .Where((timex) => {
@@ -84,14 +84,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var resolution = new List<string>();
             foreach (var timex in candidates)
             {
-                var r = ResolveDate(new TimexProperties(timex), collapsedDateRanges);
+                var r = ResolveDate(new TimexProperty(timex), collapsedDateRanges);
                 resolution.AddRange(r);        
             }
 
             return RemoveDuplicates(resolution);
         }
 
-        private static IEnumerable<string> ResolveDate(TimexProperties timex, IEnumerable<DateRange> constraints)
+        private static IEnumerable<string> ResolveDate(TimexProperty timex, IEnumerable<DateRange> constraints)
         {
             var result = new List<string>();
             foreach (var constraint in constraints)
@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return result;
         }
 
-        private static IEnumerable<string> ResolveByTimeRangeConstraints(IEnumerable<string> candidates, IEnumerable<TimexProperties> timexConstraints)
+        private static IEnumerable<string> ResolveByTimeRangeConstraints(IEnumerable<string> candidates, IEnumerable<TimexProperty> timexConstraints)
         {
 
             var timeRangeConstraints = timexConstraints
@@ -123,14 +123,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var resolution = new List<string>();
             foreach (var timex in candidates)
             {
-                var r = ResolveTime(new TimexProperties(timex), collapsedTimeRanges);
+                var r = ResolveTime(new TimexProperty(timex), collapsedTimeRanges);
                 resolution.AddRange(r);
             }
 
             return RemoveDuplicates(resolution);
         }
 
-        private static IEnumerable<string> ResolveTime(TimexProperties timex, IEnumerable<TimeRange> constraints)
+        private static IEnumerable<string> ResolveTime(TimexProperty timex, IEnumerable<TimeRange> constraints)
         {
             var result = new List<string>();
             foreach (var constraint in constraints)
@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return result;
         }
 
-        private static IEnumerable<string> ResolveTimeAgainstConstraint(TimexProperties timex, TimeRange constraint)
+        private static IEnumerable<string> ResolveTimeAgainstConstraint(TimexProperty timex, TimeRange constraint)
         {
             var t = new Time(timex.Hour.Value, timex.Minute.Value, timex.Second.Value);
             if (t.GetTime() >= constraint.Start.GetTime() && t.GetTime() < constraint.End.GetTime())
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return new HashSet<string>(original);
         }
 
-        private static IEnumerable<string> ResolveDefiniteAgainstConstraint(TimexProperties timex, DateRange constraint)
+        private static IEnumerable<string> ResolveDefiniteAgainstConstraint(TimexProperty timex, DateRange constraint)
         {
             var timexDate = TimexHelpers.DateFromTimex(timex);
             if (timexDate >= constraint.Start && timexDate < constraint.End)
@@ -168,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return Enumerable.Empty<string>();
         }
 
-        private static IEnumerable<string> ResolveDateAgainstConstraint(TimexProperties timex, DateRange constraint)
+        private static IEnumerable<string> ResolveDateAgainstConstraint(TimexProperty timex, DateRange constraint)
         {
             if (timex.Month != null && timex.DayOfMonth != null)
             {
@@ -205,7 +205,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return Enumerable.Empty<string>();
         }
 
-        private static IEnumerable<string> ResolveByTimeConstraints(IEnumerable<string> candidates, IEnumerable<TimexProperties> timexConstraints)
+        private static IEnumerable<string> ResolveByTimeConstraints(IEnumerable<string> candidates, IEnumerable<TimexProperty> timexConstraints)
         {
             var times = timexConstraints
                 .Where((timex) => {
@@ -220,7 +220,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
 
             var resolution = new List<string>();
-            foreach (var timex in candidates.Select(t => new TimexProperties(t))) 
+            foreach (var timex in candidates.Select(t => new TimexProperty(t))) 
             {
                 if (timex.Types.Contains(Constants.TimexTypes.Date) && !timex.Types.Contains(Constants.TimexTypes.Time))
                 {

@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var resolution = new Resolution();
             foreach (var timex in timexArray)
             {
-                var t = new TimexProperties(timex);
+                var t = new TimexProperty(timex);
                 var r = ResolveTimex(t, date);
                 resolution.Values.AddRange(r);
             }
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return resolution;
         }
 
-        private static List<Resolution.Entry> ResolveTimex(TimexProperties timex, System.DateTime date)
+        private static List<Resolution.Entry> ResolveTimex(TimexProperty timex, System.DateTime date)
         {
             var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
 
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return new List<Resolution.Entry>();
         }
 
-        private static List<Resolution.Entry> ResolveDefiniteTime(TimexProperties timex)
+        private static List<Resolution.Entry> ResolveDefiniteTime(TimexProperty timex)
         {
             return new List<Resolution.Entry>
             {
@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 
-        private static List<Resolution.Entry> ResolveDefinite(TimexProperties timex)
+        private static List<Resolution.Entry> ResolveDefinite(TimexProperty timex)
         {
             return new List<Resolution.Entry>
             {
@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 }
             };
         }
-        private static List<Resolution.Entry> ResolveDate(TimexProperties timex, System.DateTime date)
+        private static List<Resolution.Entry> ResolveDate(TimexProperty timex, System.DateTime date)
         {
             return new List<Resolution.Entry>
             {
@@ -140,11 +140,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 
-        private static string LastDateValue(TimexProperties timex, System.DateTime date)
+        private static string LastDateValue(TimexProperty timex, System.DateTime date)
         {
             if (timex.Month != null && timex.DayOfMonth != null)
             {
-                return TimexValue.DateValue(new TimexProperties
+                return TimexValue.DateValue(new TimexProperty
                 {
                     Year = date.Year - 1,
                     Month = timex.Month,
@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 var day = timex.DayOfWeek == 7 ? DayOfWeek.Monday : (DayOfWeek)timex.DayOfWeek;
                 var result = TimexDateHelpers.DateOfLastDay(day, date);
-                return TimexValue.DateValue(new TimexProperties
+                return TimexValue.DateValue(new TimexProperty
                 {
                     Year = result.Year,
                     Month = result.Month,
@@ -167,11 +167,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static string NextDateValue(TimexProperties timex, System.DateTime date)
+        private static string NextDateValue(TimexProperty timex, System.DateTime date)
         {
             if (timex.Month != null && timex.DayOfMonth != null)
             {
-                return TimexValue.DateValue(new TimexProperties
+                return TimexValue.DateValue(new TimexProperty
                 {
                     Year = date.Year,
                     Month = timex.Month,
@@ -183,7 +183,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 var day = timex.DayOfWeek == 7 ? DayOfWeek.Monday : (DayOfWeek)timex.DayOfWeek;
                 var result = TimexDateHelpers.DateOfNextDay(day, date);
-                return TimexValue.DateValue(new TimexProperties
+                return TimexValue.DateValue(new TimexProperty
                 {
                     Year = result.Year,
                     Month = result.Month,
@@ -194,7 +194,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static List<Resolution.Entry> ResolveTime(TimexProperties timex)
+        private static List<Resolution.Entry> ResolveTime(TimexProperty timex)
         {
             return new List<Resolution.Entry>
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 
-        private static List<Resolution.Entry> ResolveDuration(TimexProperties timex)
+        private static List<Resolution.Entry> ResolveDuration(TimexProperty timex)
         {
             return new List<Resolution.Entry>
             {
@@ -222,12 +222,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static Tuple<string, string> MonthDateRange(int year, int month) {
             return new Tuple<string, string>(
-                TimexValue.DateValue(new TimexProperties { Year = year, Month = month, DayOfMonth = 1 }),
-                TimexValue.DateValue(new TimexProperties { Year = year, Month = month + 1, DayOfMonth = 1 })
+                TimexValue.DateValue(new TimexProperty { Year = year, Month = month, DayOfMonth = 1 }),
+                TimexValue.DateValue(new TimexProperty { Year = year, Month = month + 1, DayOfMonth = 1 })
             );
         }
 
-        private static List<Resolution.Entry> ResolveDateRange(TimexProperties timex, System.DateTime date)
+        private static List<Resolution.Entry> ResolveDateRange(TimexProperty timex, System.DateTime date)
         {
             if (timex.Season != null)
             {
@@ -287,7 +287,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
         }
 
-        private static Tuple<string, string> PartOfDayTimeRange(TimexProperties timex)
+        private static Tuple<string, string> PartOfDayTimeRange(TimexProperty timex)
         {
             switch (timex.PartOfDay)
             {
@@ -300,7 +300,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return new Tuple<string, string>("not resolved", "not resolved");
         }
 
-        private static List<Resolution.Entry> ResolveTimeRange(TimexProperties timex)
+        private static List<Resolution.Entry> ResolveTimeRange(TimexProperty timex)
         {
             if (timex.PartOfDay != null)
             {
@@ -332,7 +332,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
         }
 
-        private static List<Resolution.Entry> ResolveDateTime(TimexProperties timex, System.DateTime date)
+        private static List<Resolution.Entry> ResolveDateTime(TimexProperty timex, System.DateTime date)
         {
             var resolvedDates = ResolveDate(timex, date);
             foreach (var resolved in resolvedDates)
@@ -344,7 +344,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return resolvedDates;
         }
 
-        private static List<Resolution.Entry> ResolveDateTimeRange(TimexProperties timex)
+        private static List<Resolution.Entry> ResolveDateTimeRange(TimexProperty timex)
         {
             if (timex.PartOfDay != null)
             {

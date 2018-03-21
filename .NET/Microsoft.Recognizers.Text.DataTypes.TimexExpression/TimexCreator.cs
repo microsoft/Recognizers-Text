@@ -22,26 +22,26 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static string Today(System.DateTime date = default(System.DateTime))
         {
-            return TimexProperties.FromDate(date == default(System.DateTime) ? System.DateTime.Now : date).TimexValue;
+            return TimexProperty.FromDate(date == default(System.DateTime) ? System.DateTime.Now : date).TimexValue;
         }
 
         public static string Tomorrow(System.DateTime date = default(System.DateTime))
         {
             var d = (date == default(System.DateTime)) ? System.DateTime.Now : date;
             d = d.AddDays(1);
-            return TimexProperties.FromDate(d).TimexValue;
+            return TimexProperty.FromDate(d).TimexValue;
         }
         public static string Yesterday(System.DateTime date = default(System.DateTime))
         {
             var d = (date == default(System.DateTime)) ? System.DateTime.Now : date;
             d = d.AddDays(-1);
-            return TimexProperties.FromDate(d).TimexValue;
+            return TimexProperty.FromDate(d).TimexValue;
         }
 
         public static string WeekFromToday(System.DateTime date = default(System.DateTime))
         {
             var d = (date == default(System.DateTime)) ? System.DateTime.Now : date;
-            var t = TimexProperties.FromDate(d);
+            var t = TimexProperty.FromDate(d);
             t.Days = 7;
             return t.TimexValue;
         }
@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             var d = (date == default(System.DateTime)) ? System.DateTime.Now : date;
             d = d.AddDays(-7);
-            var t = TimexProperties.FromDate(d);
+            var t = TimexProperty.FromDate(d);
             t.Days = 7;
             return t.TimexValue;
         }
@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var d = (date == default(System.DateTime)) ? System.DateTime.Now : date;
             d = d.AddDays(-7);
             var start = TimexDateHelpers.DateOfNextDay(DayOfWeek.Monday, d);
-            var t = TimexProperties.FromDate(start);
+            var t = TimexProperty.FromDate(start);
             t.Days = 7;
             return t.TimexValue;
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             var d = (date == default(System.DateTime)) ? System.DateTime.Now : date;
             var start = TimexDateHelpers.DateOfNextDay(DayOfWeek.Monday, d);
-            var t = TimexProperties.FromDate(start);
+            var t = TimexProperty.FromDate(start);
             t.Days = 7;
             return t.TimexValue;
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var d = (date == default(System.DateTime)) ? System.DateTime.Now : date;
             var start = TimexDateHelpers.DateOfLastDay(DayOfWeek.Monday, d);
             start = start.AddDays(-7);
-            var t = TimexProperties.FromDate(start);
+            var t = TimexProperty.FromDate(start);
             t.Days = 7;
             return t.TimexValue;
         }
@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public static string NextWeeksFromToday(int n, System.DateTime date = default(System.DateTime)) 
         {
             var d = (date == default(System.DateTime)) ? System.DateTime.Now : date;
-            var t = TimexProperties.FromDate(d);
+            var t = TimexProperty.FromDate(d);
             t.Days = n * 7;
             return t.TimexValue;
         }

@@ -5,22 +5,22 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
-    public class TimexProperties
+    public class TimexProperty
     {
         private Time time;
 
-        public TimexProperties()
+        public TimexProperty()
         {
         }
 
-        public TimexProperties(string timex)
+        public TimexProperty(string timex)
         {
             TimexParsing.ParseString(timex, this);
         }
 
-        public static TimexProperties FromDate(System.DateTime date)
+        public static TimexProperty FromDate(System.DateTime date)
         {
-            return new TimexProperties
+            return new TimexProperty
             {
                 Year = date.Year,
                 Month = date.Month,
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 		
-        public static TimexProperties FromDateTime(System.DateTime datetime)
+        public static TimexProperty FromDateTime(System.DateTime datetime)
         {
             var timex = FromDate(datetime);
             timex.Hour = datetime.Hour;
@@ -37,9 +37,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return timex;
         }
 		
-        public static TimexProperties FromTime(Time time)
+        public static TimexProperty FromTime(Time time)
         {
-            return new TimexProperties
+            return new TimexProperty
             {
                 Hour = time.Hour,
                 Minute = time.Minute,
@@ -61,9 +61,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return TimexRelativeConvert.ConvertTimexToStringRelative(this, referenceDate);
         }
 
-        public TimexProperties Clone()
+        public TimexProperty Clone()
         {
-            return new TimexProperties
+            return new TimexProperty
             {
                 Now = Now,
                 Years = Years,

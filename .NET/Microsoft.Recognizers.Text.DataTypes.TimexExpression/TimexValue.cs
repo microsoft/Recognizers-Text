@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexValue
     {
-        public static string DateValue(TimexProperties obj)
+        public static string DateValue(TimexProperty obj)
         {
             if (obj.Year != null && obj.Month != null && obj.DayOfMonth != null)
             {
@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        public static string TimeValue(TimexProperties obj)
+        public static string TimeValue(TimexProperty obj)
         {
             if (obj.Hour != null && obj.Minute != null && obj.Second != null)
             {
@@ -25,12 +25,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        public static string DatetimeValue(TimexProperties obj)
+        public static string DatetimeValue(TimexProperty obj)
         {
             return $"{DateValue(obj)} {TimeValue(obj)}";
         }
 
-        public static string DurationValue(TimexProperties obj)
+        public static string DurationValue(TimexProperty obj)
         {
             if (obj.Years != null)
             {

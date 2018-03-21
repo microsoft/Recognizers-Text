@@ -11,24 +11,24 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Timex_FromDate()
         {
-            Assert.AreEqual("2017-12-05", TimexProperties.FromDate(new System.DateTime(2017, 12, 5)).TimexValue);
+            Assert.AreEqual("2017-12-05", TimexProperty.FromDate(new System.DateTime(2017, 12, 5)).TimexValue);
         }
 
         [TestMethod]
         public void DataTypes_Timex_FromDateTime()
         {
-            Assert.AreEqual("2017-12-05T23:57:35", TimexProperties.FromDateTime(new System.DateTime(2017, 12, 5, 23, 57, 35)).TimexValue);
+            Assert.AreEqual("2017-12-05T23:57:35", TimexProperty.FromDateTime(new System.DateTime(2017, 12, 5, 23, 57, 35)).TimexValue);
         }
 
         [TestMethod]
         public void DataTypes_Timex_FromTime()
         {
-            Assert.AreEqual("T23:59:30", TimexProperties.FromTime(new Time(23, 59, 30)).TimexValue);
+            Assert.AreEqual("T23:59:30", TimexProperty.FromTime(new Time(23, 59, 30)).TimexValue);
         }
 
         private static void Roundtrip(string timex)
         {
-            Assert.AreEqual(timex, (new TimexProperties(timex)).TimexValue);
+            Assert.AreEqual(timex, (new TimexProperty(timex)).TimexValue);
         }
 
         [TestMethod]
@@ -122,14 +122,14 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Timex_ToString()
         {
-            Assert.AreEqual("5th May", (new TimexProperties("XXXX-05-05")).ToString());
+            Assert.AreEqual("5th May", (new TimexProperty("XXXX-05-05")).ToString());
         }
 
         [TestMethod]
         public void DataTypes_Timex_ToNaturalLanguage()
         {
             var today = new System.DateTime(2017, 10, 16);
-            Assert.AreEqual("tomorrow", (new TimexProperties("2017-10-17")).ToNaturalLanguage(today));
+            Assert.AreEqual("tomorrow", (new TimexProperty("2017-10-17")).ToNaturalLanguage(today));
         }
     }
 }

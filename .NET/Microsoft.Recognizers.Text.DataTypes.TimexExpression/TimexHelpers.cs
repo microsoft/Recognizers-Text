@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexHelpers
     {
-        public static TimexRange ExpandDateTimeRange(TimexProperties timex)
+        public static TimexRange ExpandDateTimeRange(TimexProperty timex)
         {
             var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
 
@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 if (timex.Year != null)
                 {
-                    var range = new TimexRange { Start = new TimexProperties { Year = timex.Year }, End = new TimexProperties() };
+                    var range = new TimexRange { Start = new TimexProperty { Year = timex.Year }, End = new TimexProperty() };
                     if (timex.Month != null)
                     {
                         range.Start.Month = timex.Month;
@@ -48,12 +48,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 }
             }
 
-            return new TimexRange { Start = new TimexProperties(), End = new TimexProperties() };
+            return new TimexRange { Start = new TimexProperty(), End = new TimexProperty() };
         }
 
-        public static TimexRange ExpandTimeRange(TimexProperties timex)
+        public static TimexRange ExpandTimeRange(TimexProperty timex)
         {
-            var start = new TimexProperties { Hour = timex.Hour, Minute = timex.Minute, Second = timex.Second };
+            var start = new TimexProperty { Hour = timex.Hour, Minute = timex.Minute, Second = timex.Second };
             var duration = CloneDuration(timex);
 
             return new TimexRange
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 Duration = duration
             };
         }
-        public static TimexProperties TimexDateAdd(TimexProperties start, TimexProperties duration)
+        public static TimexProperty TimexDateAdd(TimexProperty start, TimexProperty duration)
         {
             if (start.DayOfWeek != null)
             {
@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         var d = new System.DateTime(start.Year.Value, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
                         d = d.AddDays((double)duration.Days.Value);
 
-                        return new TimexProperties {
+                        return new TimexProperty {
                             Year = d.Year,
                             Month = d.Month,
                             DayOfMonth = d.Day
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         var d = new System.DateTime(2001, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
                         d = d.AddDays((double)duration.Days.Value);
 
-                        return new TimexProperties
+                        return new TimexProperty
                         {
                             Month = d.Month,
                             DayOfMonth = d.Day
@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     if (start.Year != null)
                     {
-                        return new TimexProperties
+                        return new TimexProperty
                         {
                             Year = (int)(start.Year.Value + duration.Years.Value),
                             Month = start.Month,
@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     if (start.Month != null)
                     {
-                        return new TimexProperties
+                        return new TimexProperty
                         {
                             Year = start.Year,
                             Month = (int)(start.Month + duration.Months),
@@ -133,7 +133,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return start;
         }
 
-        public static TimexProperties TimexTimeAdd(TimexProperties start, TimexProperties duration)
+        public static TimexProperty TimexTimeAdd(TimexProperty start, TimexProperty duration)
         {
             if (duration.Hours != null)
             {
@@ -184,22 +184,22 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return start;
         }
 
-        public static TimexProperties TimexDateTimeAdd(TimexProperties start, TimexProperties duration)
+        public static TimexProperty TimexDateTimeAdd(TimexProperty start, TimexProperty duration)
         {
             return TimexTimeAdd(TimexDateAdd(start, duration), duration);
         }
 
-        public static System.DateTime DateFromTimex(TimexProperties timex)
+        public static System.DateTime DateFromTimex(TimexProperty timex)
         {
             return new System.DateTime(timex.Year ?? 2001, timex.Month ?? 1, timex.DayOfMonth ?? 1, timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
         }
 
-        public static Time TimeFromTimex(TimexProperties timex)
+        public static Time TimeFromTimex(TimexProperty timex)
         {
             return new Time(timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
         }
 
-        public static DateRange DateRangeFromTimex(TimexProperties timex)
+        public static DateRange DateRangeFromTimex(TimexProperty timex)
         {
             var expanded = ExpandDateTimeRange(timex);
             return new DateRange
@@ -209,7 +209,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 
-        public static TimeRange TimeRangeFromTimex(TimexProperties timex)
+        public static TimeRange TimeRangeFromTimex(TimexProperty timex)
         {
             var expanded = ExpandTimeRange(timex);
             return new TimeRange
@@ -219,9 +219,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 
-        private static TimexProperties TimeAdd(TimexProperties start, TimexProperties duration)
+        private static TimexProperty TimeAdd(TimexProperty start, TimexProperty duration)
         {
-            return new TimexProperties
+            return new TimexProperty
             {
                 Hour = (int)(start.Hour.Value + duration.Hours ?? 0),
                 Minute = (int)(start.Minute + duration.Minutes ?? 0),
@@ -229,7 +229,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 
-        private static TimexProperties CloneDateTime(TimexProperties timex)
+        private static TimexProperty CloneDateTime(TimexProperty timex)
         {
             var result = timex.Clone();
             result.Years = null;
@@ -242,7 +242,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return result;
         }
 
-        private static TimexProperties CloneDuration(TimexProperties timex)
+        private static TimexProperty CloneDuration(TimexProperty timex)
         {
             var result = timex.Clone();
             result.Year = null;

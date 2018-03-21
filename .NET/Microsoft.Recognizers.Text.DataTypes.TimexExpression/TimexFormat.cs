@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexFormat
     {
-        public static string Format(TimexProperties timex)
+        public static string Format(TimexProperty timex)
         {
             var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
 
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static string FormatDuration(TimexProperties timex)
+        private static string FormatDuration(TimexProperty timex)
         {
             if (timex.Years != null)
             {
@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static string FormatTime(TimexProperties timex)
+        private static string FormatTime(TimexProperty timex)
         {
             if (timex.Minute == 0 && timex.Second == 0)
             {
@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return $"T{TimexDateHelpers.FixedFormatNumber(timex.Hour, 2)}:{TimexDateHelpers.FixedFormatNumber(timex.Minute, 2)}:{TimexDateHelpers.FixedFormatNumber(timex.Second, 2)}";
         }
 
-        private static string FormatDate(TimexProperties timex)
+        private static string FormatDate(TimexProperty timex)
         {
             if (timex.Year != null && timex.Month != null && timex.DayOfMonth != null)
             {
@@ -132,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static string FormatDateRange(TimexProperties timex)
+        private static string FormatDateRange(TimexProperty timex)
         {
             if (timex.Year != null && timex.WeekOfYear != null && timex.Weekend != null)
             {
@@ -181,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return string.Empty;
         }
 
-        private static string FormatTimeRange(TimexProperties timex)
+        private static string FormatTimeRange(TimexProperty timex)
         {
             if (timex.PartOfDay != null)
             {
