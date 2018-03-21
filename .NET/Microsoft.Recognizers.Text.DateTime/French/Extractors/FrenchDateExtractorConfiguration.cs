@@ -88,6 +88,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.WeekDayOfMonthRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WeekDayOfYearRegex =
+            new Regex(
+                DateTimeDefinitions.WeekDayOfYearRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex SpecialDate = 
             new Regex(
                 DateTimeDefinitions.SpecialDate,

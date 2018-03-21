@@ -29,6 +29,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceDate = reference;
 
             object value = null;
+
+            ///////////
+            Console.WriteLine("er"+er.Text);
+
             if (er.Type.Equals(ParserName))
             {
                 var innerResult = ParseBasicRegexMatch(er.Text, referenceDate);
@@ -40,6 +44,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWeekdayOfMonth(er.Text, referenceDate);
+                    Console.WriteLine(innerResult.FutureResolution);
+                    Console.WriteLine(innerResult.FutureValue);
+                    Console.WriteLine(innerResult.PastValue);
+                    Console.WriteLine(innerResult.Timex);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseWeekdayOfYear(er.Text, referenceDate);
+                    Console.WriteLine(innerResult.FutureResolution);
+                    Console.WriteLine(innerResult.FutureValue);
+                    Console.WriteLine(innerResult.PastValue);
+                    Console.WriteLine(innerResult.Timex);
                 }
 
                 if (!innerResult.Success)
@@ -579,6 +596,88 @@ namespace Microsoft.Recognizers.Text.DateTime
                 month = this.config.MonthOfYear[monthStr];
                 year = referenceDate.Year;
                 noYear = true;
+            }
+
+            var value = ComputeDate(cardinal, weekday, month, year);
+            if (value.Month != month)
+            {
+                cardinal -= 1;
+                value = value.AddDays(-7);
+            }
+
+            var futureDate = value;
+            var pastDate = value;
+            if (noYear && futureDate < referenceDate)
+            {
+                futureDate = ComputeDate(cardinal, weekday, month, year + 1);
+                if (futureDate.Month != month)
+                {
+                    futureDate = futureDate.AddDays(-7);
+                }
+            }
+
+            if (noYear && pastDate >= referenceDate)
+            {
+                pastDate = ComputeDate(cardinal, weekday, month, year - 1);
+                if (pastDate.Month != month)
+                {
+                    pastDate = pastDate.AddDays(-7);
+                }
+            }
+
+            // here is a very special case, timeX followe future date
+            ret.Timex = $@"XXXX-{month.ToString("D2")}-WXX-{weekday}-#{cardinal}";
+            ret.FutureValue = futureDate;
+            ret.PastValue = pastDate;
+            ret.Success = true;
+
+            return ret;
+        }
+
+        // parse weekday of year
+        private DateTimeResolutionResult ParseWeekdayOfYear(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var trimedText = text.Trim().ToLowerInvariant();
+            var match = this.config.WeekDayOfYearRegex.Match(trimedText);
+            if (!match.Success)
+            {
+                return ret;
+            }
+
+            Console.WriteLine("parsed : "+text);
+
+            var cardinalStr = match.Groups["cardinal"].Value;
+            var weekdayStr = match.Groups["weekday"].Value;
+            var yearStr = match.Groups["year"].Value;
+            var noYear = false;
+            int year;
+
+            int cardinal;
+            if (this.config.IsCardinalLast(cardinalStr))
+            {
+                cardinal = 5;
+            }
+            else
+            {
+                cardinal = this.config.CardinalMap[cardinalStr];
+            }
+
+            var weekday = this.config.DayOfWeek[weekdayStr];
+            int month;
+            if (string.IsNullOrEmpty(yearStr))
+            {
+                var swift = this.config.GetSwiftYear(trimedText);
+
+                month = 1;
+                year = referenceDate.AddYears(swift).Year;
+            }
+            else
+            {
+                month = 1;
+                year = referenceDate.Year;
+                noYear = false;
             }
 
             var value = ComputeDate(cardinal, weekday, month, year);

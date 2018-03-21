@@ -46,7 +46,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex MonthRegex { get; }
 
+        public Regex YearRegex { get; }
+
         public Regex WeekDayOfMonthRegex { get; }
+
+        public Regex WeekDayOfYearRegex { get; }
 
         public Regex ForTheRegex { get; }
 
@@ -75,6 +79,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
 
+        public IImmutableDictionary<string, int> DayOfYear { get; }
+
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
@@ -101,6 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WeekDayRegex = EnglishDateExtractorConfiguration.WeekDayRegex;
             MonthRegex = EnglishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayOfMonthRegex;
+            WeekDayOfYearRegex = EnglishDateExtractorConfiguration.WeekDayOfYearRegex;
             ForTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
@@ -149,6 +156,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         }
 
         public int GetSwiftMonth(string text)
+        {
+            return GetSwift(text);
+        }
+
+        public int GetSwiftYear(string text)
         {
             return GetSwift(text);
         }

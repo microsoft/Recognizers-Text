@@ -46,7 +46,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex MonthRegex { get; }
 
+        public Regex YearRegex { get; }
+
         public Regex WeekDayOfMonthRegex { get; }
+
+        public Regex WeekDayOfYearRegex { get; }
 
         public Regex ForTheRegex { get; }
 
@@ -67,6 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
 
+        public IImmutableDictionary<string, int> DayOfYear { get; }
+
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
@@ -86,6 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekDayRegex = SpanishDateExtractorConfiguration.WeekDayRegex;
             MonthRegex = SpanishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayOfMonthRegex;
+            WeekDayOfYearRegex = SpanishDateExtractorConfiguration.WeekDayOfYearRegex;
             ForTheRegex = SpanishDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
@@ -160,6 +167,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             }
 
             return swift;
+        }
+
+        public int GetSwiftYear(string text)
+        {
+            // under development
+            return 0;
         }
 
         public bool IsCardinalLast(string text)
