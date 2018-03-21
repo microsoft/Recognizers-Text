@@ -30,7 +30,7 @@ popd
 pushd Microsoft.Recognizers.Text.Choice
 call CreatePackage.cmd
 popd
-pushd Microsoft.Recognizers.DataTypes.DateTime
+pushd Microsoft.Recognizers.Text.DataTypes.TimexExpression
 call CreatePackage.cmd
 popd
 rem Exit .NET dir

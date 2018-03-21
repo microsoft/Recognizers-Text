@@ -18,7 +18,7 @@ export namespace BaseIp {
 	export const Ipv6EllipsisRegex6 = `((${BasicIpv6Element}:){5}((:${BasicIpv6Element}){1,2}))`;
 	export const Ipv6EllipsisRegex7 = `((${BasicIpv6Element}:){6}((:${BasicIpv6Element}){1}))`;
 	export const Ipv6EllipsisRegex8 = `((${BasicIpv6Element}:){7}(:))`;
-	export const Ipv6EllipsisRegexOther = `\\B::\\B|\\B:(:${BasicIpv6Element}){0,7}\\b|\\b(${BasicIpv6Element}:){0,7}:\\B`;
+	export const Ipv6EllipsisRegexOther = `\\B::\\B|\\B:(:${BasicIpv6Element}){1,7}\\b|\\b(${BasicIpv6Element}:){1,7}:\\B`;
 	export const MergedIpv6Regex = `(${BasicIpv6Regex}|${Ipv6EllipsisRegex1}|${Ipv6EllipsisRegex2}|${Ipv6EllipsisRegex3}|${Ipv6EllipsisRegex4}|${Ipv6EllipsisRegex5}|${Ipv6EllipsisRegex6}|${Ipv6EllipsisRegex7}|${Ipv6EllipsisRegex8})`;
 	export const Ipv6Regex = `(\\b${MergedIpv6Regex}\\b)|(${Ipv6EllipsisRegexOther})`;
 }

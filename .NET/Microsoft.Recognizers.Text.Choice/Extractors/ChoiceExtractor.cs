@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Choice.Utilities;
+
 namespace Microsoft.Recognizers.Text.Choice
 {
 
@@ -149,12 +151,12 @@ namespace Microsoft.Recognizers.Text.Choice
         private IList<string> Tokenize(string text)
         {
             var tokens = new List<string>();
-            var letters = Letters(text);
+            var letters = UnicodeUtils.Letters(text);
 
             var token = string.Empty;
             foreach (var letter in letters)
             {
-                if (IsEmoji(letter))
+                if (UnicodeUtils.IsEmoji(letter))
                 {
                     // Character is in a Supplementary Unicode Plane. This is where emoji live so
                     // we're going to just break each character in this range out as its own token.
@@ -183,33 +185,6 @@ namespace Microsoft.Recognizers.Text.Choice
             }
 
             return tokens;
-        }
-
-        private static bool IsEmoji(string letter)
-        {
-            const int WhereEmojiLive = 0xFFFF; // Supplementary Unicode Plane. This is where emoji live
-            return char.IsHighSurrogate(letter[0]) && char.ConvertToUtf32(letter, 0) > WhereEmojiLive;
-        }
-
-        private static IEnumerable<string> Letters(string text)
-        {
-            char? codePoint = null;
-            foreach (char c in text)
-            {
-                if (codePoint != null)
-                {
-                    yield return new string(new[] { codePoint.Value, c });
-                    codePoint = null;
-                }
-                else if (!char.IsHighSurrogate(c))
-                {
-                    yield return c.ToString();
-                }
-                else
-                {
-                    codePoint = c;
-                }
-            }
         }
     }
 }
