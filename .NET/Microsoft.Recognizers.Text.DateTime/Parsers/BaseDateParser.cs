@@ -628,7 +628,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 weekday = 7;
             }
 
-            if(dayOfWeekOfFirstDay == 0)
+            if (dayOfWeekOfFirstDay == 0)
             {
                 dayOfWeekOfFirstDay = 7;
             }
