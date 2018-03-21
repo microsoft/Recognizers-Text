@@ -46,8 +46,8 @@ class DateTimeResolutionResult:
         self.is_lunar: bool
         self.mod: str
         self.comment: str
-        self.future_resolution: Dict[str, str]
-        self.past_resolution: Dict[str, str]
+        self.future_resolution: Dict[str, str] = dict()
+        self.past_resolution: Dict[str, str] = dict()
         self.future_value: object
         self.past_value: object
-        self.sub_date_time_entities: List[object]
+        self.sub_date_time_entities: List[object] = list()

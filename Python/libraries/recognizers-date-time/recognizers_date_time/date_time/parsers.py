@@ -6,8 +6,8 @@ from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
 
 class DateTimeParseResult(ParseResult):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, source: ExtractResult = None):
+        super().__init__(source)
         self.timex_str: str
 
 class DateTimeParser(Parser):
