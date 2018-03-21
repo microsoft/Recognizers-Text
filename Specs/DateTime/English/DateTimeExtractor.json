@@ -796,6 +796,7 @@
 ,
 {
   "Input": "I will leave in 2 minutes",  
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in 2 minutes",
