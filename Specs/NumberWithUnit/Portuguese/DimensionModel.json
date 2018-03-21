@@ -546,7 +546,7 @@
 ,
 {
   "Input": "En 1995 Cannon introdujo la primera lente SLR comercialmente disponible con estabilización de imagen interna, 75 -300 mm f / 4 - 5. 6 es usm.",
-  "NotSupportedByDesign": "javascript, python",
+  "NotSupportedByDesign": "javascript, python, dotNet",
   "Results": [
     {
       "Text": "300mm",
