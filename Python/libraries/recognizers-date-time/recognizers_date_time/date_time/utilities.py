@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Pattern, Union
 from datetime import datetime
+import calendar
 import regex
 
 from recognizers_text.extractor import ExtractResult
@@ -42,6 +43,9 @@ def __token_to_result(token: Token, source: str, name: str) -> ExtractResult:
     result.text = source[token.start:token.end]
     result.type = name
     return result
+
+def get_tokens_from_regex(pattern: Pattern, source: str) -> List[Token]:
+    return list(map(lambda x: Token(x.start(), x.end()), regex.finditer(pattern, source)))
 
 class DateTimeResolutionResult:
     def __init__(self):
@@ -94,6 +98,8 @@ class DateTimeUtilityConfiguration(ABC):
 
 class FormatUtil:
     HourTimeRegex = RegExpUtility.get_safe_reg_exp(r'(?<!P)T\d{2}')
+
+    @staticmethod
 
     @staticmethod
     def to_str(num: Union[int, float], size: int) -> str:
@@ -160,3 +166,30 @@ class FormatUtil:
         hour = 0 if hour == 12 else hour + 12
         split[0] = f'{hour:02d}'
         return result + ':'.join(split)
+
+class DateUtils:
+    min_value = datetime(1, 1, 1, 0, 0, 0, 0)
+
+    @staticmethod
+    def safe_create_from_value(seed: datetime, year: int, month: int, day: int,
+                               hour: int = 0, minute: int = 0, second: int = 0) -> datetime:
+        if DateUtils.is_valid_date(year, month, day) and DateUtils.is_valid_time(hour, minute, second):
+            return datetime(year, month, day, hour, minute, second)
+        return seed
+
+    @staticmethod
+    def safe_create_from_min_value(year: int, month: int, day: int,
+                                   hour: int = 0, minute: int = 0, second: int = 0) -> datetime:
+        return DateUtils.safe_create_from_value(DateUtils.min_value, year, month, day, hour, minute, second)
+
+    @staticmethod
+    def is_valid_date(year: int, month: int, day: int) -> bool:
+        try:
+            datetime(year, month, day)
+            return True
+        except ValueError:
+            return False
+
+    @staticmethod
+    def is_valid_time(hour: int, minute: int, second: int) -> bool:
+        return hour >= 0 and hour < 24 and minute >= 0 and minute < 60 and second >= 0 and minute < 60
