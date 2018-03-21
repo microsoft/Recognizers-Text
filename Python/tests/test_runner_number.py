@@ -8,9 +8,6 @@ MODELFUNCTION = {
     'Percent': NumberRecognizer.recognize_percentage,
 }
 
-def get_results(culture, model, source):
-    return MODELFUNCTION[model](source, culture)
-
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='Number', entity='Model'))
 def test_number_recognizer(culture, model, options, context, source, expected_results):
     results = get_results(culture, model, source)
@@ -19,3 +16,6 @@ def test_number_recognizer(culture, model, options, context, source, expected_re
         assert actual.type_name == expected['TypeName']
         assert actual.text == expected['Text']
         assert actual.resolution['value'] == expected['Resolution']['value']
+
+def get_results(culture, model, source):
+    return MODELFUNCTION[model](source, culture)
