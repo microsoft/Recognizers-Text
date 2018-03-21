@@ -43,7 +43,14 @@ def get_specs(recognizer, entity):
             if 'NotSupportedByDesign' in spec and 'python' in spec['NotSupportedByDesign']:
                 continue
             not_suppoted = 'NotSupported' in spec and 'python' in spec['NotSupported']
-            ret_specs.append(pytest.param(CULTURES[sp['config']['language']], sp['config']['model'], sp['config']['options'], spec['Input'], spec['Results'], marks=pytest.mark.skipif(not_suppoted, reason='Not supported')))
+            ret_specs.append(pytest.param(
+                CULTURES[sp['config']['language']],
+                sp['config']['model'],
+                sp['config']['options'],
+                spec.get('context'),
+                spec['Input'],
+                spec['Results'],
+                marks=pytest.mark.skipif(not_suppoted, reason='Not supported')))
     return ret_specs
 
 ENTITYPATTERN = re.compile('(Model|Parser|Extractor)(.*)')
