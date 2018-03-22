@@ -45,14 +45,45 @@ def test_datetime_model(culture, model, options, context, source, expected_resul
 
     result = get_results(culture, model, source, option_obj, reference_datetime)
 
+    assert_resolution = get_assert_model_resolution(options)
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
         assert actual.text == expected['Text']
         assert actual.type == expected['Type']
-        if actual.resolution:
-            values = actual.resolution.values
-            assert len(values) == len(expected_results['Resolution']['Values'])
-            #TODO: assert Values
+        assert len(actual.resolution.values) == len(expected_results['Resolution']['Values'])
+        for actual_resilution_value, expected_resoulution_value in zip(actual.resolution.values, expected_results['Resolution']['Values']):
+            assert_resolution(actual_resilution_value, expected_resoulution_value)
+
+def get_assert_model_resolution(option):
+    assert_resolutions = {
+        None: assert_model_resolution_option_none,
+        'CalendarMode': assert_model_resolution_option_calendar_mode,
+        'ExtendedTypes': assert_model_resolution_option_extended_types,
+        'SplitDateAndTime': assert_model_resolution_option_split_date_and_time
+    }
+    return assert_resolutions.get(option)
+
+def assert_model_resolution_option_none(actual, expected):
+    assert actual.timex == expected['timex']
+    assert actual.type == expected['type']
+    assert actual.value == expected['value']
+
+def assert_model_resolution_option_calendar_mode(actual, expected):
+    assert actual.timex == expected['timex']
+    assert actual.type == expected['type']
+    assert actual.start == expected['start']
+    assert actual.end == expected['end']
+
+def assert_model_resolution_option_extended_types(actual, expected):
+    assert actual.timex == expected['timex']
+    assert actual.type == expected['type']
+    assert actual.value == expected['value']
+
+def assert_model_resolution_option_split_date_and_time(actual, expected):
+    assert actual.timex == expected['timex']
+    assert actual.type == expected['type']
+    assert actual.value == expected['value']
+    assert actual.mod == expected['Mod']
 
 def create_extractor(language, model):
     extractor = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
