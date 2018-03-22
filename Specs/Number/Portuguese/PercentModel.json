@@ -1,6 +1,5 @@
 [{
   "Input": "100%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100%",
@@ -14,7 +13,6 @@
 ,
 {
   "Input": " 100% ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100%",
@@ -28,7 +26,6 @@
 ,
 {
   "Input": " 100 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 por cento",
@@ -42,7 +39,6 @@
 ,
 {
   "Input": " cem por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cem por cento",
@@ -56,7 +52,6 @@
 ,
 {
   "Input": "243 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "243 por cento",
@@ -70,7 +65,6 @@
 ,
 {
   "Input": "vinte por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte por cento",
@@ -84,7 +78,6 @@
 ,
 {
   "Input": "trinta e cinco por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trinta e cinco por cento",
@@ -98,7 +91,6 @@
 ,
 {
   "Input": "quinhentos e trinta e cinco por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos e trinta e cinco por cento",
@@ -112,7 +104,6 @@
 ,
 {
   "Input": "10 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10 por cento",
@@ -126,7 +117,6 @@
 ,
 {
   "Input": "dez por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dez por cento",
@@ -140,7 +130,6 @@
 ,
 {
   "Input": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete por cento",
@@ -154,7 +143,6 @@
 ,
 {
   "Input": "algo como uns 11%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11%",
@@ -168,7 +156,6 @@
 ,
 {
   "Input": "claro, somente uns 15 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15 por cento",
@@ -182,7 +169,6 @@
 ,
 {
   "Input": "sim, nada mais que vinte e cinco por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte e cinco por cento",
@@ -196,7 +182,6 @@
 ,
 {
   "Input": "derrame cem por cento do liquido",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cem por cento",
@@ -210,7 +195,6 @@
 ,
 {
   "Input": "um percentual de 25%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "25%",
@@ -224,7 +208,6 @@
 ,
 {
   "Input": "uma percentagem de trinta e seis por cento do total",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trinta e seis por cento",
@@ -238,7 +221,6 @@
 ,
 {
   "Input": "um percentual de oitenta e quatro por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "oitenta e quatro por cento",
@@ -252,7 +234,6 @@
 ,
 {
   "Input": " 101231,2353%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "101231,2353%",
@@ -266,7 +247,6 @@
 ,
 {
   "Input": "-101231,4323%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-101231,4323%",
@@ -280,7 +260,6 @@
 ,
 {
   "Input": " -89101231,5127%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-89101231,5127%",
@@ -294,7 +273,6 @@
 ,
 {
   "Input": " - 89101231,5127%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 89101231,5127%",
@@ -308,7 +286,6 @@
 ,
 {
   "Input": ",23456000%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ",23456000%",
@@ -322,7 +299,6 @@
 ,
 {
   "Input": "4,800%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4,800%",
@@ -336,7 +312,6 @@
 ,
 {
   "Input": "4,8 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4,8 por cento",
@@ -350,7 +325,6 @@
 ,
 {
   "Input": " -89101231,5127 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-89101231,5127 por cento",
@@ -364,7 +338,6 @@
 ,
 {
   "Input": "-89101231,5127 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-89101231,5127 por cento",
@@ -378,7 +351,6 @@
 ,
 {
   "Input": " - 89101231,5127 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 89101231,5127 por cento",
@@ -392,7 +364,6 @@
 ,
 {
   "Input": " -1,1234567 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1234567 por cento",
@@ -406,7 +377,6 @@
 ,
 {
   "Input": "1.234.567,51274 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.234.567,51274 por cento",
@@ -420,7 +390,6 @@
 ,
 {
   "Input": ",08 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ",08 por cento",
@@ -434,7 +403,6 @@
 ,
 {
   "Input": "9,2321312%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9,2321312%",
@@ -448,7 +416,6 @@
 ,
 {
   "Input": " -9,2321312 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-9,2321312 por cento",
@@ -462,7 +429,6 @@
 ,
 {
   "Input": "1e10%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1e10%",
@@ -476,7 +442,6 @@
 ,
 {
   "Input": "1,1^23 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,1^23 por cento",
@@ -490,7 +455,6 @@
 ,
 {
   "Input": "quarenta e sete virgula vinte e oito por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quarenta e sete virgula vinte e oito por cento",
@@ -504,7 +468,6 @@
 ,
 {
   "Input": "tres quintos por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres quintos por cento",
@@ -518,7 +481,6 @@
 ,
 {
   "Input": "dois virgula cinco por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois virgula cinco por cento",
@@ -532,7 +494,6 @@
 ,
 {
   "Input": "um quinto por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um quinto por cento",
@@ -546,7 +507,6 @@
 ,
 {
   "Input": "um bilionesimo por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um bilionesimo por cento",
@@ -560,7 +520,6 @@
 ,
 {
   "Input": "um vinte e um avos por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um vinte e um avos por cento",
@@ -574,7 +533,6 @@
 ,
 {
   "Input": "cento e trinta e tres vinte e um avos por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e trinta e tres vinte e um avos por cento",
@@ -588,7 +546,6 @@
 ,
 {
   "Input": "vinte e dois trinta avos por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte e dois trinta avos por cento",
@@ -602,7 +559,6 @@
 ,
 {
   "Input": "tres dois milesimos por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres dois milesimos por cento",
@@ -616,7 +572,6 @@
 ,
 {
   "Input": "cento e trinta quintos por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e trinta quintos por cento",
@@ -630,7 +585,6 @@
 ,
 {
   "Input": "cento e trinta e dois quintos por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e trinta e dois quintos por cento",
@@ -644,7 +598,6 @@
 ,
 {
   "Input": "um sobre tres por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um sobre tres por cento",
@@ -658,7 +611,6 @@
 ,
 {
   "Input": "1 sobre 3 por cento",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre 3 por cento",
@@ -672,7 +624,6 @@
 ,
 {
   "Input": "3/4%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3/4%",
@@ -686,7 +637,6 @@
 ,
 {
   "Input": "2/3%",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2/3%",

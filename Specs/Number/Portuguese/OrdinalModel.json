@@ -1,6 +1,5 @@
 [{
   "Input": "setimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "setimo",
@@ -14,7 +13,6 @@
 ,
 {
   "Input": "quadragesimo setimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quadragesimo setimo",
@@ -28,7 +26,6 @@
 ,
 {
   "Input": "tricentésimo quadragésima sétima",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tricentésimo quadragésima sétima",
@@ -42,7 +39,6 @@
 ,
 {
   "Input": "dois milesimo tricentesimo quadragesimo setimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois milesimo tricentesimo quadragesimo setimo",
@@ -56,7 +52,6 @@
 ,
 {
   "Input": "cinquenta e dois milesimo tricentesimo quadragesimo setimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinquenta e dois milesimo tricentesimo quadragesimo setimo",
@@ -70,7 +65,6 @@
 ,
 {
   "Input": "milesimo quingentesimo vigesimo terceiro",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "milesimo quingentesimo vigesimo terceiro",
@@ -84,7 +78,6 @@
 ,
 {
   "Input": "vigesimo quinto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo quinto",
@@ -98,7 +91,6 @@
 ,
 {
   "Input": "vigesimo primeiro",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo primeiro",
@@ -112,7 +104,6 @@
 ,
 {
   "Input": "centesimo vigesimo quinto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "centesimo vigesimo quinto",
@@ -126,7 +117,6 @@
 ,
 {
   "Input": "ducentesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ducentesimo",
@@ -140,7 +130,6 @@
 ,
 {
   "Input": "21o",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21o",
@@ -154,7 +143,6 @@
 ,
 {
   "Input": "30a",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30a",
@@ -168,7 +156,6 @@
 ,
 {
   "Input": "2a",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2a",
@@ -182,7 +169,6 @@
 ,
 {
   "Input": "undecimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "undecimo",
@@ -196,7 +182,6 @@
 ,
 {
   "Input": "décimo primeiro",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "décimo primeiro",
@@ -210,7 +195,6 @@
 ,
 {
   "Input": "vigesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo",
@@ -224,7 +208,6 @@
 ,
 {
   "Input": "centesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "centesimo",
@@ -238,7 +221,6 @@
 ,
 {
   "Input": "vinte e dois milesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte e dois milesimo",
@@ -252,7 +234,6 @@
 ,
 {
   "Input": "quatrocentos e cinquenta e dois milesimo tricentesimo quadragesimo setimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quatrocentos e cinquenta e dois milesimo tricentesimo quadragesimo setimo",
@@ -266,7 +247,6 @@
 ,
 {
   "Input": "três milhões quatrocentos e cinquenta e dois milésimo tricentesimo quadragesimo setimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "três milhões quatrocentos e cinquenta e dois milésimo tricentesimo quadragesimo setimo",
@@ -280,7 +260,6 @@
 ,
 {
   "Input": "tres mil quinhentos e vinte e quatro milhoes seiscentos e noventa e quatro milesimo sexcentesimo septuagesimo terceiro",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinhentos e vinte e quatro milhoes seiscentos e noventa e quatro milesimo sexcentesimo septuagesimo terceiro",
