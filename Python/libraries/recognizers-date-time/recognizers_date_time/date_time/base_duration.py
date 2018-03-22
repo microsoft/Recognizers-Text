@@ -103,7 +103,7 @@ class BaseDurationExtractor(DateTimeExtractor):
 
     def __base_to_token(self, token: Token, source: str) -> Optional[Token]:
         after = source[token.start + token.length:]
-        match = regex.match(self.config.followed_unit, after)
+        match = regex.match(self.config.suffix_and_regex, after)
         if match is not None:
             return Token(token.start, token.start + token.length + len(match.group()))
         return None
@@ -232,10 +232,11 @@ class BaseDurationParser(DateTimeParser):
         if match is None:
             return result
 
-        source_unit: str = match.group('unit')
+        source_unit: str = match.group('unit') or ''
         if source_unit not in self.config.unit_map:
             return result
 
+        num = float(num) if num % 1 else int(num)
         unit = self.config.unit_map[source_unit]
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
@@ -254,12 +255,12 @@ class BaseDurationParser(DateTimeParser):
         source_unit = ''
         er = ers[0]
         pr = self.config.number_parser.parse(er)
-        no_num = source[:pr.start + pr.length].strip().lower()
+        no_num = source[pr.start + pr.length:].strip().lower()
         match = regex.search(self.config.followed_unit, no_num)
 
         if match is not None:
-            suffix = match.group('suffix')
-            source_unit = match.group('unit')
+            suffix = match.group('suffix') or ''
+            source_unit = match.group('unit') or ''
 
         if source_unit not in self.config.unit_map:
             return result
@@ -267,6 +268,7 @@ class BaseDurationParser(DateTimeParser):
         num = float(pr.value) + self.parse_number_with_unit_and_suffix(suffix)
         unit = self.config.unit_map[source_unit]
 
+        num = float(num) if num % 1 else int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = num * self.config.unit_value_map[source_unit]
@@ -274,10 +276,10 @@ class BaseDurationParser(DateTimeParser):
         result.success = True
         return result
 
-    def parse_number_with_unit_and_suffix(self, source: str) -> int:
+    def parse_number_with_unit_and_suffix(self, source: str) -> float:
         match = regex.search(self.config.suffix_and_regex, source)
         if match is not None:
-            num = match.group('suffix_num')
+            num = match.group('suffix_num') or ''
             return self.config.double_numbers.get(num, 0)
         return 0
 
@@ -288,7 +290,7 @@ class BaseDurationParser(DateTimeParser):
             return result
 
         num = float(match.group('num')) + self.parse_number_with_unit_and_suffix(source)
-        source_unit = match.group('unit')
+        source_unit = match.group('unit') or ''
         if source_unit not in self.config.unit_map:
             return result
 
@@ -296,6 +298,7 @@ class BaseDurationParser(DateTimeParser):
         if num > 1000 and unit in ['Y', 'MON', 'W']:
             return result
 
+        num = float(num) if num % 1 else int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = num * self.config.unit_value_map[source_unit]
@@ -312,10 +315,11 @@ class BaseDurationParser(DateTimeParser):
             return result
 
         num = (0.5 if match.group('half') else 1) + self.parse_number_with_unit_and_suffix(source)
-        source_unit = match.group('unit')
+        source_unit = match.group('unit') or ''
         if source_unit not in self.config.unit_map:
             return result
 
+        num = float(num) if num % 1 else int(num)
         unit = self.config.unit_map[source_unit]
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
@@ -331,8 +335,8 @@ class BaseDurationParser(DateTimeParser):
             return result
 
         # set the inexact number "few", "some" to 3 for now
-        num = 3
-        source_unit = match.group('unit')
+        num = float(3)
+        source_unit = match.group('unit') or ''
         if source_unit not in self.config.unit_map:
             return result
 
@@ -340,6 +344,7 @@ class BaseDurationParser(DateTimeParser):
         if num > 1000 and unit in ['Y', 'MON', 'W']:
             return result
 
+        num = float(num) if num % 1 else int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
         result.future_value = num * self.config.unit_value_map[source_unit]
