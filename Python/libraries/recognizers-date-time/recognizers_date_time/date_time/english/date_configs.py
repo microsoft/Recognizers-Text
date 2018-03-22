@@ -7,9 +7,9 @@ from recognizers_date_time.date_time.base_date import DateExtractorConfiguration
 from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
+from recognizers_date_time.date_time.english.duration_configs import EnglishDurationExtractorConfiguration
+from recognizers_date_time.date_time.english.base_configs import EnglishDateTimeUtilityConfiguration
 from recognizers_date_time.resources.english_date_time import EnglishDateTime
-from duration_configs import EnglishDurationExtractorConfiguration
-from base_configs import EnglishDateTimeUtilityConfiguration
 
 class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     @property
