@@ -213,10 +213,9 @@ class MatchingUtil:
     @staticmethod
     def get_in_index(source: str, regexp: Pattern) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
-        referenced_match = regex.match(regexp, source.strip().lower().split().pop())
-        if referenced_match and referenced_match.length > 0:
-            result.index = source.length - source.lower().rfind(referenced_match.value)
-            result.matched = True
+        referenced_match = regex.search(regexp, source.strip().lower().split().pop())
+        if referenced_match:
+            result = MatchedIndex(matched=True, index=len(source) - source.lower().rfind(referenced_match.group()))
 
         return result
 
