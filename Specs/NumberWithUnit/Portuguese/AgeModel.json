@@ -221,4 +221,21 @@
     }
   ]
 }
+,
+{
+  "Input": "Ele tem cerca de 40 - 50 anos",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "50 anos",
+      "Start": 22,
+      "End": 28,
+      "TypeName": "age",
+      "Resolution": {
+        "unit": "Ano",
+        "value": "50"
+      }
+    } 
+  ]
+}
 ]

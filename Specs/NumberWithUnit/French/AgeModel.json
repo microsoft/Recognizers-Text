@@ -207,4 +207,21 @@
     }
   ]
 }
+,
+{
+  "Input": "Il a environ 40 - 50 ans",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "50 ans",
+      "Start": 18,
+      "End": 23,
+      "TypeName": "age",
+      "Resolution": {
+        "unit": "Ans",
+        "value": "50"
+      }
+    }
+  ]
+}
 ]
