@@ -60,42 +60,6 @@ class DateTimeResolutionResult:
         self.past_value: object
         self.sub_date_time_entities: List[object] = list()
 
-class DateTimeUtilityConfiguration(ABC):
-    @property
-    @abstractmethod
-    def ago_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def later_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def in_connector_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def range_unit_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def am_desc_regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def pm_desc__regex(self) -> Pattern:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def am_pm_desc_regex(self) -> Pattern:
-        raise NotImplementedError
-
 class FormatUtil:
     HourTimeRegex = RegExpUtility.get_safe_reg_exp(r'(?<!P)T\d{2}')
 
@@ -193,3 +157,89 @@ class DateUtils:
     @staticmethod
     def is_valid_time(hour: int, minute: int, second: int) -> bool:
         return hour >= 0 and hour < 24 and minute >= 0 and minute < 60 and second >= 0 and minute < 60
+
+
+class DateTimeUtilityConfiguration(ABC):
+    @property
+    @abstractmethod
+    def ago_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def later_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def in_connector_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def range_unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def am_desc_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def pm_desc__regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def am_pm_desc_regex(self) -> Pattern:
+        raise NotImplementedError
+
+class MatchedIndex:
+    def __init__(self, matched: bool, index: int):
+        self.matched = matched
+        self.index = index
+
+class MatchingUtil:
+    @staticmethod
+    def get_ago_later_index(source: str, regexp: Pattern) -> MatchedIndex:
+        result = MatchedIndex(matched=False, index=-1)
+        referenced_matches = regex.findall(regexp, source.strip().lower())
+        if referenced_matches and referenced_matches[0].start == 0:
+            result.index = source.lower().rfind(referenced_matches[0].value) + referenced_matches[0].length
+            result.matched = True
+
+        return result
+
+    @staticmethod
+    def get_in_index(source: str, regexp: Pattern) -> MatchedIndex:
+        result = MatchedIndex(matched=False, index=-1)
+        referenced_match = regex.match(regexp, source.strip().lower().split().pop())
+        if referenced_match and referenced_match.length > 0:
+            result.index = source.length - source.lower().rfind(referenced_match.value)
+            result.matched = True
+
+        return result
+
+class AgoLaterUtil:
+    @staticmethod
+    def extractor_duration_with_before_and_after(source: str, extract_result: ExtractResult, ret: List[Token], config: DateTimeUtilityConfiguration) -> List[Token]:
+        pos = extract_result.start + extract_result.length
+        if pos <= len(source):
+            after_string = source[pos:]
+            before_string = source[0: extract_result.start]
+            value = MatchingUtil.get_ago_later_index(after_string, config.ago_regex)
+            if value.matched:
+                ret.append(Token(extract_result.start, extract_result.start + extract_result.length + value.index))
+            else:
+                value = MatchingUtil.get_ago_later_index(after_string, config.later_regex)
+                if value.matched:
+                    ret.append(Token(extract_result.start, extract_result.start + extract_result.length + value.index))
+                else:
+                    value = MatchingUtil.get_in_index(before_string, config.in_connector_regex)
+                    # for range unit like "week, month, year", it should output dateRange or datetimeRange
+                    if regex.match(config.range_unit_regex, extract_result.text):
+                        return ret
+                    if (value.matched and extract_result.start and extract_result.length and extract_result.start >= value.index):
+                        ret.append(Token(extract_result.start - value.index, extract_result.start + extract_result.length))
+        return ret

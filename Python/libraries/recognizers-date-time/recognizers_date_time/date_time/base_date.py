@@ -10,7 +10,7 @@ from recognizers_number.number import Constants as NumberConstants
 from .constants import Constants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import DateTimeUtilityConfiguration, Token, merge_all_tokens, get_tokens_from_regex, DateUtils
+from .utilities import DateTimeUtilityConfiguration, Token, merge_all_tokens, get_tokens_from_regex, DateUtils, AgoLaterUtil
 
 class DateExtractorConfiguration(ABC):
     @property
@@ -213,7 +213,7 @@ class BaseDateExtractor(DateTimeExtractor):
             match = regex.match(self.config.date_unit_regex, result.text)
             if match is None:
                 continue
-            # TODO: ret = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, ret, this.config.utilityConfiguration);
+            ret = AgoLaterUtil.extractor_duration_with_before_and_after(source, duration_results, ret, self.config.utility_configuration)
         
         return ret
 
