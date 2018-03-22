@@ -753,40 +753,4 @@
     }
   ]
 }
-,
-{
-  "Input": "2 hours next week",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 hours",
-	  "TypeName": "datetimeV2.duration",
-      "Value": {
-        "values": [
-          {
-            "timex": "PT2H",
-			"type": "duration",
-            "value": "7200"
-          }
-        ]
-      }
-    }
-    ,
-    {
-      "Text": "next week",
-      "TypeName": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2018-W13",
-            "type": "daterange",
-            "start": "2018-03-26",
-            "end": "2018-04-02"
-          }
-        ]
-      }
-    }
-  ]
-}
 ]
