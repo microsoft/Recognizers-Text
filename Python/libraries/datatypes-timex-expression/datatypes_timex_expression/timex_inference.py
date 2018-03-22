@@ -56,29 +56,29 @@ class TimexInference:
 
     @staticmethod
     def __is_duration(obj):
-        return (obj.years != None or obj.months != None or obj.weeks != None or 
-            obj.days != None or obj.hours != None or obj.minutes != None or obj.seconds != None)
+        return (obj.years or obj.months or obj.weeks or 
+            obj.days or obj.hours or obj.minutes or obj.seconds)
 
     @staticmethod
     def __is_time(obj):
-        return obj.hour != None and obj.minute != None and obj.second != None
+        return obj.hour is not None and obj.minute is not None and obj.second is not None
 
     @staticmethod
     def __is_date(obj):
-        return (obj.month != None and obj.day_of_month != None) or obj.day_of_week != None
+        return (obj.month is not None and obj.day_of_month is not None) or obj.day_of_week
 
     @staticmethod
     def __is_time_range(obj):
-        return obj.part_of_day != None
+        return obj.part_of_day is not None
 
     @staticmethod
     def __is_date_range(obj):
-        return ((obj.year != None and obj.day_of_month == None) or
-                (obj.year != None and obj.month != None and obj.day_of_month == None) or
-                (obj.month != None and obj.day_of_month == None) or
-                obj.season != None or obj.week_of_year != None or obj.week_of_month != None)
+        return ((obj.year is not None and obj.day_of_month is None) or
+                (obj.year is not None and obj.month is not None and obj.day_of_month is None) or
+                (obj.month is not None and obj.day_of_month is None) or
+                obj.season or obj.week_of_year or obj.week_of_month)
 
     @staticmethod
     def __is_definite(obj):
-        return obj.year != None and obj.month != None and obj.day_of_month != None
+        return obj.year is not None and obj.month is not None and obj.day_of_month is not None
 

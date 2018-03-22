@@ -46,7 +46,7 @@ class TimexRegex:
     @staticmethod
     def try_extract(regex, timex, result):
         regexResult = regex.match(timex)
-        if regexResult == None:
+        if regexResult is None:
             return False
         groups = regexResult.groupdict()
         for k in groups:
