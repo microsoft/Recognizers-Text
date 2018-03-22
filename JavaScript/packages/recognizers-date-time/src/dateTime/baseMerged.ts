@@ -119,8 +119,15 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
             let firstIndex = -1;
             destination.forEach((dest, index) => {
                 if (ExtractResult.isOverlap(dest, value)) {
+					let nextCursor = index + 1;
+                    let isCrossOverlap = false;
+                    if (nextCursor < destination.length){
+                        if(ExtractResult.isCrossOverlap(destination.indexOf(nextCursor), value)){
+                            isCrossOverlap = true;
+                        }
+                    }
                     isFound = true;
-                    if (ExtractResult.isCover(dest, value)) {
+                    if (ExtractResult.isCover(dest, value) && !isCrossOverlap) {
                         if (firstIndex === -1) {
                             firstIndex = index;
                         }
