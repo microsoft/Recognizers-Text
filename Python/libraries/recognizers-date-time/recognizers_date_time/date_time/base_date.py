@@ -100,32 +100,32 @@ class BaseDateExtractor(DateTimeExtractor):
         if reference is None:
             reference = datetime.now()
 
-        tokens: List[Token] = list()
-        tokens.append(self.basic_regex_match(source))
-        tokens.append(self.implicit_date(source))
-        tokens.append(self.number_with_month(source, reference))
-        tokens.append(self.duration_with_before_and_after(source, reference))
+        tokens = self.basic_regex_match(source)
+        tokens.extend(self.implicit_date(source))
+        tokens.extend(self.number_with_month(source, reference))
+        tokens.extend(self.duration_with_before_and_after(source, reference))
+
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
 
     def basic_regex_match(self, source: str) -> List[Token]:
         ret: List[Token] = list()
         for regexp in self.config.date_regex_list:
-            ret.append(get_tokens_from_regex(regexp, source))
+            ret.extend(get_tokens_from_regex(regexp, source))
 
         return ret
 
     def implicit_date(self, source: str) -> List[Token]:
         ret: List[Token] = list()
         for regexp in self.config.implicit_date_list:
-            ret.append(get_tokens_from_regex(regexp, source))
+            ret.extend(get_tokens_from_regex(regexp, source))
 
         return ret
 
     def number_with_month(self, source: str, reference: datetime) -> List[Token]:
         ret: List[Token] = list()
-        extract_results: List[ExtractResult] = self.config.ordinal_extractor.extract(source).extend(
-            self.config.integer_extractor.extract(source))
+        extract_results = self.config.ordinal_extractor.extract(source)
+        extract_results.extend(self.config.integer_extractor.extract(source))
 
         for result in extract_results:
             num = int(self.config.number_parser.parse(result).value)
@@ -196,13 +196,13 @@ class BaseDateExtractor(DateTimeExtractor):
                     week_day_str: str = match.group('weekday') or ''
                     if week_day_str in self.config.day_of_week:
                         ret.append(
-                            Token(result.start, result.start + result.length + space_len + (match.end - match.start)))
+                            Token(result.start, result.start + result.length + space_len + len(match.group())))
 
             if result.start + result.length < len(source):
                 after_string = source[result.start + result.length:]
                 match = regex.match(self.config.of_month, after_string)
                 if match is not None:
-                    ret.append(Token(result.start, result.start + result.length + (match.end + match.start)))
+                    ret.append(Token(result.start, result.start + result.length + len(match.group())))
 
         return ret
 
@@ -213,7 +213,8 @@ class BaseDateExtractor(DateTimeExtractor):
             match = regex.match(self.config.date_unit_regex, result.text)
             if match is None:
                 continue
-            ret = AgoLaterUtil.extractor_duration_with_before_and_after(source, duration_results, ret, self.config.utility_configuration)
+
+            ret = AgoLaterUtil.extractor_duration_with_before_and_after(source, result, ret, self.config.utility_configuration)
         
         return ret
 
