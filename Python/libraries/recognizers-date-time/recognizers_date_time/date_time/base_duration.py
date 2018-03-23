@@ -3,6 +3,7 @@ from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime
 import regex
 
+from recognizers_text.utilities import FormatUtility
 from recognizers_text.extractor import ExtractResult
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
@@ -236,11 +237,11 @@ class BaseDurationParser(DateTimeParser):
         if source_unit not in self.config.unit_map:
             return result
 
-        num = float(num) if num % 1 else int(num)
+        num = FormatUtility.float_or_int(num)
         unit = self.config.unit_map[source_unit]
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = num * self.config.unit_value_map[source_unit]
+        result.future_value = FormatUtility.float_or_int(num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
@@ -268,10 +269,10 @@ class BaseDurationParser(DateTimeParser):
         num = float(pr.value) + self.parse_number_with_unit_and_suffix(suffix)
         unit = self.config.unit_map[source_unit]
 
-        num = float(num) if num % 1 else int(num)
+        num = FormatUtility.float_or_int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = num * self.config.unit_value_map[source_unit]
+        result.future_value = FormatUtility.float_or_int(num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
@@ -298,10 +299,10 @@ class BaseDurationParser(DateTimeParser):
         if num > 1000 and unit in ['Y', 'MON', 'W']:
             return result
 
-        num = float(num) if num % 1 else int(num)
+        num = FormatUtility.float_or_int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = num * self.config.unit_value_map[source_unit]
+        result.future_value = FormatUtility.float_or_int(num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
@@ -319,11 +320,11 @@ class BaseDurationParser(DateTimeParser):
         if source_unit not in self.config.unit_map:
             return result
 
-        num = float(num) if num % 1 else int(num)
+        num = FormatUtility.float_or_int(num)
         unit = self.config.unit_map[source_unit]
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = num * self.config.unit_value_map[source_unit]
+        result.future_value = FormatUtility.float_or_int(num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
@@ -344,10 +345,10 @@ class BaseDurationParser(DateTimeParser):
         if num > 1000 and unit in ['Y', 'MON', 'W']:
             return result
 
-        num = float(num) if num % 1 else int(num)
+        num = FormatUtility.float_or_int(num)
         is_time = 'T' if self.is_less_than_day(unit) else ''
         result.timex = f'P{is_time}{num}{unit[0]}'
-        result.future_value = num * self.config.unit_value_map[source_unit]
+        result.future_value = FormatUtility.float_or_int(num * self.config.unit_value_map[source_unit])
         result.past_value = result.future_value
         result.success = True
         return result
