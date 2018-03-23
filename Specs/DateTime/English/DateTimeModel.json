@@ -2371,4 +2371,130 @@
   "NotSupportedByDesign": "python",
   "Results": []
 }
+,
+{
+  "Input":"I will handle all the stuff within 9 months and be back within next 10 months.",
+  "Context":{
+    "ReferenceDateTime":"2018-03-23T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "within 9 months",
+      "Start": 28,
+      "End": 42,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2018-03-23,2018-12-23,P9M)",
+            "type": "daterange",
+            "start": "2018-03-23",
+            "end": "2018-12-23"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "within next 10 months",
+      "Start": 56,
+      "End": 76,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2018-03-23,2019-01-23,P10M)",
+            "type": "daterange",
+            "start": "2018-03-23",
+            "end": "2019-01-23"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input":"Tom and I will have a meeting in 2 weeks, so please help me schedule a meeting in 2 weeks.",
+  "Context":{
+    "ReferenceDateTime":"2018-03-23T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "in 2 weeks",
+      "Start": 30,
+      "End": 39,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2018-03-31,2018-04-07,P1W)",
+            "type": "daterange",
+            "start": "2018-03-31",
+            "end": "2018-04-07"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "in 2 weeks",
+      "Start": 79,
+      "End": 88,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2018-03-31,2018-04-07,P1W)",
+            "type": "daterange",
+            "start": "2018-03-31",
+            "end": "2018-04-07"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input":"I will go to China next five days or next forty days.",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "next five days",
+      "Start": 19,
+      "End": 32,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2018-03-24,2018-03-29,P5D)",
+            "type": "daterange",
+            "start": "2018-03-24",
+            "end": "2018-03-29"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "next forty days",
+      "Start": 37,
+      "End": 51,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2018-03-24,2018-05-03,P40D)",
+            "type": "daterange",
+            "start": "2018-03-24",
+            "end": "2018-05-03"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]
