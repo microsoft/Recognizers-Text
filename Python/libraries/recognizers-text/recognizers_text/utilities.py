@@ -1,4 +1,4 @@
-from typing import Pattern, Match
+from typing import Pattern, Match, Union
 import regex
 
 class RegExpUtility:
@@ -37,3 +37,7 @@ class FormatUtility:
         result = result.replace('（', '(')
         result = result.replace('）', ')')
         return result
+
+    @staticmethod
+    def float_or_int(source: Union[float, int]) -> Union[float, int]:
+        return float(source) if source % 1 else int(source)

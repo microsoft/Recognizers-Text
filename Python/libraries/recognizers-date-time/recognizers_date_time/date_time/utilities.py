@@ -18,7 +18,7 @@ class Token:
 
 def merge_all_tokens(tokens: List[Token], source: str, extractor_name: str) -> List[ExtractResult]:
     merged_tokens: List[Token] = list()
-    tokens_ = sorted(filter(None, tokens), key=lambda x: x.start, reverse=True)
+    tokens_ = sorted(filter(None, tokens), key=lambda x: x.start)
     for token in tokens_:
         add = True
         for index, m_token in enumerate(merged_tokens):
@@ -96,7 +96,7 @@ class FormatUtil:
 
     @staticmethod
     def format_time(time: datetime) -> str:
-        return f'{time.hour:02d}:{time.minute:02d}-{time.second:02d}'
+        return f'{time.hour:02d}:{time.minute:02d}:{time.second:02d}'
 
     @staticmethod
     def format_date_time(date_time: datetime) -> str:
