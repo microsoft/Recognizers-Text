@@ -3,10 +3,10 @@ from typing import List
 
 class ExtractResult:
     def __init__(self):
-        self.start: int
-        self.length: int
-        self.text: str
-        self.type: str
+        self.start: int = None
+        self.length: int = None
+        self.text: str = None
+        self.type: str = None
         self.data: object = None
 
     @property
