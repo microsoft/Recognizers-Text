@@ -220,8 +220,148 @@ class BaseDateExtractor(DateTimeExtractor):
         
         return ret
 
-class DateParserConfiguration:
-    pass
+class DateParserConfiguration(ABC):
+    @property
+    @abstractmethod
+    def ordinal_extractor(self) -> BaseNumberExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def integer_extractor(self) -> BaseNumberExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def cardinal_extractor(self) -> BaseNumberExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def duration_extractor(self) -> IDateTimeExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def duration_parser(self) -> IDateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def number_parser(self) -> BaseNumberParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def month_of_year(self) -> Dict[str, int]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def day_of_month(self) -> Dict[str, int]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def day_of_week(self) -> Dict[str, int]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def unit_map(self) -> Dict[str, str]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def cardinal_map(self) -> Dict[str, int]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def date_regex(self) -> List[Pattern]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def on_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def special_day_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def next_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def month_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def week_day_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def last_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def this_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def week_day_of_monthRegex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def forTheRegex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def weekDayAndDayOfMonthRegex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def relativeMonthRegex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def utilityConfiguration(self) -> DateTimeUtilityConfiguration:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def dateTokenPrefix(self) -> str:
+        raise NotImplementedError
+
+    @abstractmethod
+    def getSwiftDay(self, source: str) -> int:
+        raise NotImplementedError
+        
+    @abstractmethod
+    def getSwiftMonth(self, source: str) -> int:
+        raise NotImplementedError
+
+    @abstractmethod
+    def isCardinalLast(self, source: str) -> bool
+        raise NotImplementedError
 
 class BaseDateParser(DateTimeParser):
     @property
