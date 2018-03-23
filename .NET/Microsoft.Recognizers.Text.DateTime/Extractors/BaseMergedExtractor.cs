@@ -110,8 +110,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     //}
                     if (dst[i].IsOverlap(result))
                     {
+                        int nextCursor = i + 1;
+                        var isCrossOverlap = false;
+                        if (nextCursor < dst.Count)
+                        {
+                            if (dst[nextCursor].IsCrossOverlap(result))
+                            {
+                                isCrossOverlap = true;
+                            }
+                        }
                         isFound = true;
-                        if (dst[i].IsCover(result))
+                        if (dst[i].IsCover(result) && !isCrossOverlap)
                         {
                             if (firstIndex == -1)
                             {
