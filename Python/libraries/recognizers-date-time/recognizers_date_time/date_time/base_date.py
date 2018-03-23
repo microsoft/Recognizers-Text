@@ -238,12 +238,12 @@ class DateParserConfiguration(ABC):
 
     @property
     @abstractmethod
-    def duration_extractor(self) -> IDateTimeExtractor:
+    def duration_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def duration_parser(self) -> IDateTimeParser:
+    def duration_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
