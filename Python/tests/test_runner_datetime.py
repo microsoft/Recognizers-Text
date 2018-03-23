@@ -38,7 +38,6 @@ def test_datetime_parser(culture, model, options, context, source, expected_resu
             assert actual.value.timex == expected['Value']['Timex']
             assert actual.value.future_resolution == expected['Value']['FutureResolution']
             assert actual.value.past_resolution == expected['Value']['PastResolution']
-            #TODO: assert FutureResolution and PastResolution
 
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='DateTime', entity='Model'))
 def test_datetime_model(culture, model, options, context, source, expected_results):

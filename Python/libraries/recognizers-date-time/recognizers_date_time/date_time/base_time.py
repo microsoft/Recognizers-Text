@@ -4,6 +4,7 @@ from datetime import datetime
 from collections import namedtuple
 import regex
 
+from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import ExtractResult
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
@@ -67,7 +68,13 @@ class BaseTimeExtractor(DateTimeExtractor):
         result.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return result
 
-AdjustParams = namedtuple('AdjustParams', ['hour', 'min', 'has_min', 'has_am', 'has_pm'])
+class AdjustParams:
+    def __init__(self, hour: int = 0, minute: int = 0, has_minute: bool = False, has_am: bool = False, has_pm: bool = False):
+        self.hour = hour
+        self.minute = minute
+        self.has_minute = has_minute
+        self.has_am = has_am
+        self.has_pm = has_pm
 
 class TimeParserConfiguration:
     @property
@@ -100,7 +107,7 @@ class TimeParserConfiguration:
         raise NotImplementedError
 
     @abstractmethod
-    def adjust_by_suffix(self, prefix: str, adjust: AdjustParams):
+    def adjust_by_suffix(self, suffix: str, adjust: AdjustParams):
         raise NotImplementedError
 
 class BaseTimeParser(DateTimeParser):
@@ -166,86 +173,89 @@ class BaseTimeParser(DateTimeParser):
         return DateTimeResolutionResult()
 
     def match_to_time(self, match: Match, reference: datetime) -> DateTimeResolutionResult:
-        HasValues = namedtuple('HasValues', ['minute', 'seconds', 'am', 'pm', 'mid'])
-        result: DateTimeResolutionResult = DateTimeResolutionResult
+        result: DateTimeResolutionResult = DateTimeResolutionResult()
         hour = 0
         minute = 0
         second = 0
         day = reference.day
         month = reference.month
         year = reference.year
-        has = HasValues(False, False, False, False, False)
+        has_minute = False
+        has_seconds = False
+        has_am = False
+        has_pm = False
+        has_mid = False
 
-        eng_time_str = match.group('engtime') or ''
+        eng_time_str = RegExpUtility.get_group(match, 'engtime')
         if eng_time_str.strip():
             #get hour
-            hour_str = match.group('hournum') or ''
+            hour_str = RegExpUtility.get_group(match, 'hournum')
             hour_str = hour_str.lower()
             hour = self.config.numbers[hour_str]
 
             #get minute
-            min_str = match.group('minnum') or ''
-            tens_str = match.group('tens') or ''
+            min_str = RegExpUtility.get_group(match, 'minnum')
+            tens_str = RegExpUtility.get_group(match, 'tens')
 
             if min_str.strip():
                 minute = self.config.numbers[min_str]
                 if tens_str.strip():
                     minute += self.config.numbers[tens_str]
-                has.minute = True
-        elif str.strip(match.group('mid')):
-            has.mid = True
-            if str.strip(match.group('midnight')):
+                has_minute = True
+        elif str.strip(RegExpUtility.get_group(match, 'mid')):
+            has_mid = True
+            if str.strip(RegExpUtility.get_group(match, 'midnight')):
                 hour = 0
                 minute = 0
                 second = 0
-            elif str.strip(match.group('midmorning')):
+            elif str.strip(RegExpUtility.get_group(match, 'midmorning')):
                 hour = 10
                 minute = 0
                 second = 0
-            elif str.strip(match.group('midafternoon')):
+            elif str.strip(RegExpUtility.get_group(match, 'midafternoon')):
                 hour = 14
                 minute = 0
                 second = 0
-            elif str.strip(match.group('midday')):
+            elif str.strip(RegExpUtility.get_group(match, 'midday')):
                 hour = 12
                 minute = 0
                 second = 0
         else:
             #get hour
-            hour_str = match.group('hour') or ''
+            hour_str = RegExpUtility.get_group(match, 'hour')
             if hour_str.strip() == '':
-                hour_str = match.group('hournum') or ''
+                hour_str = RegExpUtility.get_group(match, 'hournum')
                 hour_str = hour_str.lower()
                 hour = self.config.numbers.get(hour_str, None)
                 if hour is None:
                     return result
             else:
-                hour = int(hour_str)
+                hour = int(hour_str) if hour_str.isnumeric() else None
                 if hour is None:
                     return result
             #get minute
-            min_str = match.group('min') or ''
+            min_str = RegExpUtility.get_group(match, 'min')
             min_str = min_str.lower()
             if min_str.strip() == '':
-                min_str = match.group('minnum') or ''
+                min_str = RegExpUtility.get_group(match, 'minnum')
                 if min_str.strip():
                     minute = self.config.numbers[min_str]
-                    has.minute = True
-                tens_str = match.group('tens') or ''
+                    has_minute = True
+                tens_str = RegExpUtility.get_group(match, 'tens')
                 if tens_str.strip():
                     minute += self.config.numbers[tens_str]
-                    has.minute = True
+                    has_minute = True
             else:
                 minute = int(min_str)
-                has.minute = True
+                has_minute = True
             #get second
-            sec_str = match.group('sec') or ''
+            sec_str = RegExpUtility.get_group(match, 'sec')
             sec_str = sec_str.lower()
             if sec_str.strip():
                 second = int(sec_str)
-                has.seconds = True
+                has_seconds = True
         #adjust by desc string
-        desc_str = match.group('desc') or ''
+        desc_str = RegExpUtility.get_group(match, 'desc')
         desc_str = desc_str.lower()
         if desc_str.strip():
             if any([regex.search(self.config.utility_configuration.am_desc_regex, desc_str),
@@ -253,48 +263,48 @@ class BaseTimeParser(DateTimeParser):
                 if hour >= 12:
                     hour -= 12
                 if regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str) is not None:
-                    has.am = True
+                    has_am = True
             elif regex.search(self.config.utility_configuration.pm_desc__regex, desc_str) is not None:
                 if hour < 12:
                     hour += 12
-                has.pm = True
+                has_pm = True
 
         #adjust min by prefix
-        time_prefix = match.group('prefix') or ''
+        time_prefix = RegExpUtility.get_group(match, 'prefix')
         time_prefix = time_prefix.lower()
         if time_prefix.strip():
-            adjust = AdjustParams(hour=hour, min=min, has_min=has.minute)
+            adjust = AdjustParams(hour, minute, has_minute)
             self.config.adjust_by_prefix(time_prefix, adjust)
             hour = adjust.hour
-            minute = adjust.min
-            has.minute = adjust.has_min
+            minute = adjust.minute
+            has_minute = adjust.has_minute
 
         #adjust min by suffix
-        time_suffix = match.group('suffix') or ''
+        time_suffix = RegExpUtility.get_group(match, 'suffix')
         time_suffix = time_suffix.lower()
         if time_suffix.strip():
-            adjust = AdjustParams(hour=hour, min=min, has_min=has.minute, has_am=has.am, has_pm=has.pm)
+            adjust = AdjustParams(hour, minute, has_minute, has_am, has_pm)
             self.config.adjust_by_suffix(time_suffix, adjust)
             hour = adjust.hour
-            minute = adjust.min
-            has.minute = adjust.has_min
-            has.am = adjust.has_am
-            has.pm = adjust.has_pm
+            minute = adjust.minute
+            has_minute = adjust.has_minute
+            has_am = adjust.has_am
+            has_pm = adjust.has_pm
 
         if hour == 24:
             hour = 0
 
         result.timex = f'T{hour:02d}'
-        if has.minute:
+        if has_minute:
             result.timex += f':{minute:02d}'
 
-        if has.seconds:
+        if has_seconds:
             result.timex += f':{second:02d}'
 
-        if hour <= 12 and not has.pm and not has.am and not has.mid:
+        if hour <= 12 and not has_pm and not has_am and not has_mid:
             result.comment = 'ampm'
 
-        result.future_value = datetime(year, month, day, hour, min, second)
+        result.future_value = datetime(year, month, day, hour, minute, second)
         result.past_value = result.future_value
         result.success = True
 
