@@ -753,4 +753,152 @@
     }
   ]
 }
+,
+{
+  "Input": "2 hours next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T08:30:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "three hours next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "4 hours coming week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "coming week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "4 hours upcoming week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "upcoming week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "4 hours last week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "last week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "five hours past week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "five hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "past week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "five hours previous week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "five hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "previous week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 hours next",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours next",
+      "Type": "datetimerange"
+    }
+  ]
+}
 ]
