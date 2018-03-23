@@ -203,9 +203,9 @@ class MatchingUtil:
     @staticmethod
     def get_ago_later_index(source: str, regexp: Pattern) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
-        referenced_matches = regex.findall(regexp, source.strip().lower())
-        if referenced_matches and referenced_matches[0].start == 0:
-            result.index = source.lower().rfind(referenced_matches[0].value) + referenced_matches[0].length
+        referenced_matches = regex.match(regexp, source.strip().lower())
+        if referenced_matches and referenced_matches.start() == 0:
+            result.index = source.lower().rfind(referenced_matches.group()) + len(referenced_matches.group())
             result.matched = True
 
         return result

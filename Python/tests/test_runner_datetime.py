@@ -1,5 +1,6 @@
 import importlib
 import re
+import datetime
 import pytest
 from runner import get_specs, CULTURES
 from recognizers_date_time.date_time import DateTimeRecognizer
@@ -10,10 +11,13 @@ MODELFUNCTION = {
 
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='DateTime', entity='Extractor'))
 def test_datetime_extractor(culture, model, options, context, source, expected_results):
+    reference_datetime: datetime = None
+    if get_reference_date(context) is not None:
+        reference_datetime = datetime.datetime.strptime(get_reference_date(context), '%Y-%m-%dT%H:%M:%S')
     language = get_language(culture)
     extractor = create_extractor(language, model)
 
-    result = extractor.extract(source, context)
+    result = extractor.extract(source, reference_datetime)
 
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
