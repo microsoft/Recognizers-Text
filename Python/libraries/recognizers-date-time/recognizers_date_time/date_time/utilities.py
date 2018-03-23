@@ -158,7 +158,6 @@ class DateUtils:
     def is_valid_time(hour: int, minute: int, second: int) -> bool:
         return hour >= 0 and hour < 24 and minute >= 0 and minute < 60 and second >= 0 and minute < 60
 
-
 class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod

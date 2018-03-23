@@ -1,10 +1,14 @@
-from typing import Pattern
+from typing import Pattern, Match
 import regex
 
 class RegExpUtility:
     @staticmethod
     def get_safe_reg_exp(source: str, flags: int = regex.I | regex.S) -> Pattern:
         return regex.compile(source, flags=flags)
+
+    @staticmethod
+    def get_group(match: Match, group: str) -> str:
+        return match.groupdict().get(group, '') or ''
 
 class FormatUtility:
     @staticmethod
