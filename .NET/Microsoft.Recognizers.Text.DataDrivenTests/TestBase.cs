@@ -107,17 +107,30 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
+                var actualHelper = tuple.Item2;
                 var actual = tuple.Item2 as ExtendedModelResult;
 
-                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
-                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                if (actual == null)
+                {
+                    Assert.AreEqual(expected.TypeName, actualHelper.TypeName, GetMessage(TestSpec));
+                    Assert.AreEqual(expected.Text, actualHelper.Text, GetMessage(TestSpec));
+                }
+                else
+                {
+                    Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
+                    Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                }
 
                 if (expected.ParentText != null)
                 {
                     Assert.AreEqual(expected.ParentText, actual.ParentText, GetMessage(TestSpec));
                 }
 
-                var values = actual.Resolution as IDictionary<string, object>;
+                var values = actualHelper.Resolution as IDictionary<string, object>;
+                if (actual != null)
+                {
+                    values = actual.Resolution as IDictionary<string, object>;
+                }
                 var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
                 var actualValues = listValues.FirstOrDefault();
 
