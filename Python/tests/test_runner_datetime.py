@@ -11,9 +11,7 @@ MODELFUNCTION = {
 
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='DateTime', entity='Extractor'))
 def test_datetime_extractor(culture, model, options, context, source, expected_results):
-    reference_datetime: datetime = None
-    if get_reference_date(context) is not None:
-        reference_datetime = datetime.datetime.strptime(get_reference_date(context), '%Y-%m-%dT%H:%M:%S')
+    reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model)
 
@@ -125,7 +123,8 @@ def get_language(culture):
     return [x for x in CULTURES if CULTURES[x] == culture][0]
 
 def get_reference_date(context):
-    return context.get('ReferenceDateTime') if context else None
+    reference_datetime = context.get('ReferenceDateTime') if context else None
+    return datetime.datetime.strptime(reference_datetime, '%Y-%m-%dT%H:%M:%S') if reference_datetime and not isinstance(reference_datetime, datetime.datetime) else None
 
 def get_results(culture, model, source, options, reference):
     return MODELFUNCTION[model](source, culture, options, reference)
