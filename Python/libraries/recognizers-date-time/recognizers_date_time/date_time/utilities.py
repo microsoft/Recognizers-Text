@@ -47,17 +47,22 @@ def __token_to_result(token: Token, source: str, name: str) -> ExtractResult:
 def get_tokens_from_regex(pattern: Pattern, source: str) -> List[Token]:
     return list(map(lambda x: Token(x.start(), x.end()), regex.finditer(pattern, source)))
 
+class ResolutionStartEnd:
+    def __init__(self, start = None, end = None):
+        self.start = start
+        self.end = end
+
 class DateTimeResolutionResult:
     def __init__(self):
         self.success: bool = False
-        self.timex: str
-        self.is_lunar: bool
-        self.mod: str
-        self.comment: str
+        self.timex: str = ''
+        self.is_lunar: bool = False
+        self.mod: str = ''
+        self.comment: str = ''
         self.future_resolution: Dict[str, str] = dict()
         self.past_resolution: Dict[str, str] = dict()
-        self.future_value: object
-        self.past_value: object
+        self.future_value: object = None
+        self.past_value: object = None
         self.sub_date_time_entities: List[object] = list()
 
 class FormatUtil:
