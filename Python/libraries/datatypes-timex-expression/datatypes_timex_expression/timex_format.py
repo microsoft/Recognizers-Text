@@ -52,25 +52,25 @@ class TimexFormat:
 
     @staticmethod
     def format_duration(timex):
-        if timex.years != None:
+        if timex.years:
             return 'P{}Y'.format(timex.years)
 
-        if timex.months != None:
+        if timex.months:
             return 'P{}M'.format(timex.months)
 
-        if timex.weeks != None:
+        if timex.weeks:
             return 'P{}W'.format(timex.weeks)
 
-        if timex.days != None:
+        if timex.days:
             return 'P{}D'.format(timex.days)
 
-        if timex.hours != None:
+        if timex.hours:
             return 'PT{}H'.format(timex.hours)
 
-        if timex.minutes != None:
+        if timex.minutes:
             return 'PT{}M'.format(timex.minutes)
 
-        if timex.seconds != None:
+        if timex.seconds:
             return 'PT{}S'.format(timex.seconds)
 
         return ''
@@ -92,25 +92,52 @@ class TimexFormat:
             
     @staticmethod
     def format_date(timex):
-        if timex.year != None and timex.month != None and timex.day_of_month != None:
+        if timex.year is not None and timex.month is not None and timex.day_of_month is not None:
             return '{}-{}-{}'.format(
                 TimexDateHelpers.fixed_format_number(timex.Year, 4),
                 TimexDateHelpers.fixed_format_number(timex.Month, 2),
                 TimexDateHelpers.fixed_format_number(timex.DayOfMonth, 2))
 
-        if timex.month != None and timex.day_of_month != None:
+        if timex.month is not None and timex.day_of_month is not None:
             return 'XXXX-{}-{}'.format(
                 TimexDateHelpers.fixed_format_number(timex.month, 2),
                 TimexDateHelpers.fixed_format_number(timex.day_of_month, 2))
 
-        if timex.day_of_week != None:
+        if timex.day_of_week is not None:
             return 'XXXX-WXX-{}'.format(timex.day_of_week)
 
         return ''
 
     @staticmethod
     def format_date_range(timex):
-        pass
+        if timex.year is not None and timex.week_of_year is not None and timex.weekend is not None:
+            return '{}-W{}-WE'.format(TimexDateHelpers.fixed_format_number(timex.year, 4), TimexDateHelpers.fixed_format_number(timex.week_of_year, 2))
+
+        if timex.year is not None and timex.week_of_year is not None:
+            return '{}-W{}'.format(TimexDateHelpers.fixed_format_number(timex.year, 4), TimexDateHelpers.fixed_format_number(timex.week_of_year, 2))
+
+        if timex.year is not None and timex.season is not None:
+            return '{}-{}'.format(TimexDateHelpers.fixed_format_number(timex.year, 4), timex.season)
+
+        if timex.season:
+            return '{}'.format(timex.season)
+
+        if timex.year is not None and timex.month is not None:
+            return '{}-{}'.format(TimexDateHelpers.fixed_format_number(timex.year, 4), TimexDateHelpers.fixed_format_number(timex.Month, 2))
+
+        if timex.year:
+            return '{}'.format(TimexDateHelpers.fixed_format_number(timex.year, 4))
+
+        if timex.month is not None and timex.week_of_month is not None and timex.day_of_week is not None:
+            return 'XXXX-{}-WXX-{}-{}'.format(TimexDateHelpers.fixed_format_number(timex.month, 2), timex.week_of_month, timex.day_of_week)
+
+        if timex.month is not None and timex.week_of_month is not None:
+            return 'XXXX-{}-WXX-{}'.format(TimexDateHelpers.fixed_format_number(timex.month, 2), timex.week_of_month)
+
+        if timex.month:
+            return 'XXXX-{}'.format(TimexDateHelpers.fixed_format_number(timex.month, 2))
+
+        return ''
 
     @staticmethod
     def format_time_range(timex):
