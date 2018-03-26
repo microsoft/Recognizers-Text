@@ -1,4 +1,4 @@
-from typing import Pattern, Match, Union
+from typing import Pattern, Match, Union, List
 import regex
 
 class RegExpUtility:
@@ -9,6 +9,10 @@ class RegExpUtility:
     @staticmethod
     def get_group(match: Match, group: str) -> str:
         return match.groupdict().get(group, '') or ''
+
+    @staticmethod
+    def get_group_list(match: Match, group: str) -> List[str]:
+        return match.captures(group)
 
 class FormatUtility:
     @staticmethod
