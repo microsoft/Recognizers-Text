@@ -323,44 +323,44 @@ class DateParserConfiguration(ABC):
 
     @property
     @abstractmethod
-    def week_day_of_monthRegex(self) -> Pattern:
+    def week_day_of_month_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def forTheRegex(self) -> Pattern:
+    def for_the_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def weekDayAndDayOfMonthRegex(self) -> Pattern:
+    def week_day_and_day_of_month_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def relativeMonthRegex(self) -> Pattern:
+    def relative_month_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def utilityConfiguration(self) -> DateTimeUtilityConfiguration:
+    def utility_configuration(self) -> DateTimeUtilityConfiguration:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def dateTokenPrefix(self) -> str:
+    def date_token_prefix(self) -> str:
         raise NotImplementedError
 
     @abstractmethod
-    def getSwiftDay(self, source: str) -> int:
-        raise NotImplementedError
-        
-    @abstractmethod
-    def getSwiftMonth(self, source: str) -> int:
+    def get_swift_day(self, source: str) -> int:
         raise NotImplementedError
 
     @abstractmethod
-    def isCardinalLast(self, source: str) -> bool:
+    def get_swift_month(self, source: str) -> int:
+        raise NotImplementedError
+
+    @abstractmethod
+    def is_cardinal_last(self, source: str) -> bool:
         raise NotImplementedError
 
 class BaseDateParser(DateTimeParser):
