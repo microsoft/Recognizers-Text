@@ -1,68 +1,16 @@
-from typing import List, Pattern, Dict
+from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
 from recognizers_number.number.english.extractors import EnglishIntegerExtractor
-from recognizers_date_time.date_time.extractors import DateTimeExtractor
-from recognizers_date_time.date_time.base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex, TimePeriodParserConfiguration, MatchedTimeRegex
+from recognizers_date_time.date_time.base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
 from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTimeParser
-from recognizers_date_time.date_time.english.time_configs import EnglishTimeExtractorConfiguration, EnglishTimeParserConfiguration
+from recognizers_date_time.date_time.english.time_parser_config import EnglishTimeParserConfiguration
 from recognizers_date_time.date_time.english.base_configs import EnglishDateTimeUtilityConfiguration
 from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
 from recognizers_date_time.resources.english_date_time import EnglishDateTime
-
-class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
-    @property
-    def simple_cases_regex(self) -> List[Pattern]:
-        return self._simple_cases_regex
-
-    @property
-    def till_regex(self) -> Pattern:
-        return self._till_regex
-
-    @property
-    def time_of_day_regex(self) -> Pattern:
-        return self._time_of_day_regex
-
-    @property
-    def general_ending_regex(self) -> Pattern:
-        return self._general_ending_regex
-
-    @property
-    def single_time_extractor(self) -> DateTimeExtractor:
-        return self._single_time_extractor
-
-    @property
-    def integer_extractor(self) -> Extractor:
-        return self._integer_extractor
-
-    def __init__(self):
-        self._simple_cases_regex: List[Pattern] = [
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
-        ]
-        self._till_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TillRegex)
-        self._time_of_day_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeOfDayRegex)
-        self._general_ending_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.GeneralEndingRegex)
-        self._single_time_extractor = BaseTimeExtractor(EnglishTimeExtractorConfiguration())
-        self._integer_extractor = EnglishIntegerExtractor()
-
-    def get_from_token_index(self, source: str) -> MatchedIndex:
-        index = -1
-        if source.endswith('from'):
-            index = source.rfind('from')
-            return MatchedIndex(matched=True, index=index)
-        return MatchedIndex(matched=False, index=index)
-
-    def get_between_token_index(self, source: str) -> MatchedIndex:
-        index = -1
-        if source.endswith('between'):
-            index = source.rfind('between')
-            return MatchedIndex(matched=True, index=index)
-        return MatchedIndex(matched=False, index=index)
-
-    def has_connector_token(self, source: str) -> bool:
-        return source == 'and'
+from recognizers_date_time.date_time.english.time_extractor_config import EnglishTimeExtractorConfiguration
+from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
 
 class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
@@ -101,9 +49,9 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
-    def __init__(self):
+    def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
         self._time_extractor = BaseTimeExtractor(EnglishTimeExtractorConfiguration())
-        self._time_parser = BaseTimeParser(EnglishTimeParserConfiguration())
+        self._time_parser = BaseTimeParser(EnglishTimeParserConfiguration(None))
         self._integer_extractor = EnglishIntegerExtractor()
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)
