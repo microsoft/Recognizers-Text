@@ -262,7 +262,7 @@ class BaseTimeParser(DateTimeParser):
                     regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str)]):
                 if hour >= 12:
                     hour -= 12
-                if regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str) is not None:
+                if regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str) is None:
                     has_am = True
             elif regex.search(self.config.utility_configuration.pm_desc__regex, desc_str) is not None:
                 if hour < 12:
