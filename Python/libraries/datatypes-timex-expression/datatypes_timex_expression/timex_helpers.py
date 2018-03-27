@@ -1,35 +1,40 @@
-
+from datetime import date, time, timedelta
+from .time import Time
+from .timex import Timex
+from .date_range import DateRange
+from .time_range import TimeRange
 from .timex_range import TimexRange
+from .timex_constants import Constants
 
 class TimexHelpers:
     
     @staticmethod
-    def expand_date_time_tange(timex):
+    def expand_datetime_range(timex):
         types = timex.types
         
         if Constants.TIMEX_TYPES_DURATION in types:
-            start = clone_datetime(timex)
-            duration = clone_duration(timex)
+            start = TimexHelpers.clone_datetime(timex)
+            duration = TimexHelpers.clone_duration(timex)
             return TimexRange(start, TimexHelpers.timex_datetime_add(start, duration), duration)
 
         else:
             if timex.year:
                 start = Timex()
                 start.year = timex.year
-                range = TimexRange(start, Timex())
+                result = TimexRange(start, Timex())
                 if timex.month is not None:
-                    range.start.month = timex.month
-                    range.start.day_of_month = 1
-                    range.end.year = timex.year
-                    range.end.month = timex.month + 1
-                    range.end.day_of_month = 1
+                    result.start.month = timex.month
+                    result.start.day_of_month = 1
+                    result.end.year = timex.year
+                    result.end.month = timex.month + 1
+                    result.end.day_of_month = 1
                 else:
-                    range.start.month = 1
-                    range.start.day_of_month = 1
-                    range.end.year = timex.year + 1
-                    range.end.month = 1
-                    range.end.day_of_month = 1
-                return range
+                    result.start.month = 1
+                    result.start.day_of_month = 1
+                    result.end.year = timex.year + 1
+                    result.end.month = 1
+                    result.end.day_of_month = 1
+                return result
 
         return TimexRange(Timex(), Timex())
 
@@ -37,36 +42,51 @@ class TimexHelpers:
     def expand_time_range(timex):
         start = Timex()
         start.hour, start.minute, start.second = timex.hour, timex.minute, timex.second
-        duration = TimexHelpers.clone_duration()
+        duration = TimexHelpers.clone_duration(start)
         return TimexRange(start, TimexHelpers.add_time(start, duration), duration)
 
     @staticmethod
     def timex_date_add(start, duration):
-        pass
+        if start.day_of_week is not None:
+            end = start.clone()
+            if duration.days is not None:
+                end.day_of_week += duration.days
+            return end
+
+        if start.month is not None and start.day_of_month is not None:
+            if duration.days is not None:
+                pass
+
+        # TODO: finish this function:-)
+
+        return start + timedelta
 
     @staticmethod
     def timex_time_add(start, duration):
         pass
-        
+
     @staticmethod
     def timex_datetime_add(start, duration):
         pass
 
     @staticmethod
     def date_from_timex(timex):
-        pass
+        return date(
+            timex.year if timex.year is not None else 0,
+            timex.month if timex.month is not None else 0,
+            timex.day_of_month if timex.day_of_month is not None else 0)
 
     @staticmethod
     def time_from_timex(timex):
         return Time(
-            timex.hour if timex.hour is not null else 0,
-            timex.minute if timex.minute is not null else 0,
-            timex.second if timex.second is not null else 0)
+            timex.hour if timex.hour is not None else 0,
+            timex.minute if timex.minute is not None else 0,
+            timex.second if timex.second is not None else 0)
 
     @staticmethod
     def daterange_from_timex(timex):
-        expanded = TimexHelpers.expand_date_range(timex)
-        return TimeRange(
+        expanded = TimexHelpers.expand_datetime_range(timex)
+        return DateRange(
             TimexHelpers.date_from_timex(expanded.start),
             TimexHelpers.date_from_timex(expanded.end))
 
@@ -80,9 +100,9 @@ class TimexHelpers:
     @staticmethod
     def add_time(start, duration):
         result = Timex()
-        result.hour = start.hour + duration.hours if duration.hours is not None else 0
-        result.minute = start.minute + duration.minue if duration.minutes is not None else 0
-        result.second = start.second + duration.second if duration.seconds is not None else 0
+        result.hour = start.hour + (duration.hours if duration.hours is not None else 0)
+        result.minute = start.minute + (duration.minue if duration.minutes is not None else 0)
+        result.second = start.second + (duration.second if duration.seconds is not None else 0)
 
     @staticmethod
     def clone_datetime(timex):
@@ -97,7 +117,7 @@ class TimexHelpers:
         return result
 
     @staticmethod
-    def clone_cloneduration(timex):
+    def clone_duration(timex):
         result = timex.clone()
         result.year = None
         result.month = None

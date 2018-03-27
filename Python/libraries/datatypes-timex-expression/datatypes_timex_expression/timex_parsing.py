@@ -1,4 +1,3 @@
-
 from .timex_regex import TimexRegex
 
 class TimexParsing:

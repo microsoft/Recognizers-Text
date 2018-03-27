@@ -17,11 +17,11 @@ class TimexFormat:
             Constants.TIMEX_TYPES_DATERANGE in types or
             Constants.TIMEX_TYPES_TIMERANGE in types) and
             Constants.TIMEX_TYPES_DURATION in types):
-            range = TimexHelpers.expand_date_time_tange(timex)
+            timex_range = TimexHelpers.expand_date_time_tange(timex)
             return '({},{},{})'.format(
-                TimexFormat.format(range.start),
-                TimexFormat.format(range.end),
-                TimexFormat.format(range.duration))
+                TimexFormat.format(timex_range.start),
+                TimexFormat.format(timex_range.end),
+                TimexFormat.format(timex_range.duration))
 
         if Constants.TIMEX_TYPES_DATETIMERANGE in types:
             return '{}{}'.format(
@@ -89,7 +89,7 @@ class TimexFormat:
             TimexDateHelpers.fixed_format_number(timex.hour, 2),
             TimexDateHelpers.fixed_format_number(timex.minute, 2),
             TimexDateHelpers.fixed_format_number(timex.second, 2))
-            
+
     @staticmethod
     def format_date(timex):
         if timex.year is not None and timex.month is not None and timex.day_of_month is not None:
