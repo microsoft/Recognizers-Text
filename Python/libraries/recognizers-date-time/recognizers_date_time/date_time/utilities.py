@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Pattern, Union
-from datetime import datetime
+from enum import IntEnum
+from datetime import datetime, timedelta
 import calendar
 import regex
 
@@ -69,8 +70,6 @@ class FormatUtil:
     HourTimeRegex = RegExpUtility.get_safe_reg_exp(r'(?<!P)T\d{2}')
 
     @staticmethod
-
-    @staticmethod
     def to_str(num: Union[int, float], size: int) -> str:
         format_ = f'{{0:0{size}d}}'
         return str.format(format_, num)
@@ -136,6 +135,16 @@ class FormatUtil:
         split[0] = f'{hour:02d}'
         return result + ':'.join(split)
 
+# ISO weekday
+class DayOfWeek(IntEnum):
+    Monday = 1,
+    Tuesday = 2,
+    Wednesday = 3,
+    Thursday = 4,
+    Friday = 5,
+    Saturday = 6
+    Sunday = 7
+
 class DateUtils:
     min_value = datetime(1, 1, 1, 0, 0, 0, 0)
 
@@ -162,6 +171,21 @@ class DateUtils:
     @staticmethod
     def is_valid_time(hour: int, minute: int, second: int) -> bool:
         return hour >= 0 and hour < 24 and minute >= 0 and minute < 60 and second >= 0 and minute < 60
+
+    @staticmethod
+    def this(from_date: datetime, day_of_week: DayOfWeek)-> datetime:
+        start = from_date.isoweekday()
+        target = day_of_week if day_of_week >= DayOfWeek.Monday else DayOfWeek.Sunday
+        result = from_date + timedelta(days=target-start)
+        return result
+
+    @staticmethod
+    def next(from_date: datetime, day_of_week: DayOfWeek)-> datetime:
+        return DateUtils.this(from_date, day_of_week) + timedelta(weeks=1)
+
+    @staticmethod
+    def last(from_date: datetime, day_of_week: DayOfWeek)-> datetime:
+        return DateUtils.this(from_date, day_of_week) - timedelta(weeks=1)
 
 class DateTimeUtilityConfiguration(ABC):
     @property

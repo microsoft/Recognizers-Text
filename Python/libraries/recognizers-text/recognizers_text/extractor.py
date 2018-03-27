@@ -20,6 +20,15 @@ class ExtractResult:
         return (((other.start < self.start) and (other.end >= self.end))
                 or ((other.start <= self.start) and (other.end > self.end)))
 
+    @staticmethod
+    def get_from_text(source: str):
+        result = ExtractResult()
+        result.start = 0
+        result.length = len(source)
+        result.text = source
+        result.type = 'custom'
+        return result
+
 class Extractor(ABC):
     @abstractmethod
     def extract(self, source: str) -> List[ExtractResult]:
