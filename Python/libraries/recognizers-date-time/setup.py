@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 NAME = 'recognizers-text-date-time'
 VERSION = '1.0.0.a0'
-REQUIRES = ['recognizers-text', 'recognizers-text-number', 'recognizers-text-number-with-unit', 'regex']
+REQUIRES = ['recognizers-text', 'recognizers-text-number', 'recognizers-text-number-with-unit', 'regex', 'datedelta']
 
 setup(
     name=NAME,

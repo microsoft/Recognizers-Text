@@ -3,10 +3,11 @@ from typing import Pattern, Dict
 from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time import DateTimeExtractor, BaseDateParser
 from recognizers_date_time.date_time.base_duration import BaseDurationParser
+from recognizers_date_time.date_time.base_dateperiod import DatePeriodParserConfiguration
 from recognizers_date_time.resources.english_date_time import EnglishDateTime
 from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
 
-class EnglishDatePeriodParserConfiguration():
+class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def date_extractor(self) -> DateTimeExtractor:
         return self._date_extractor
@@ -104,6 +105,18 @@ class EnglishDatePeriodParserConfiguration():
         return self._which_week_regex
 
     @property
+    def next_prefix_regex(self) -> Pattern:
+        return self._next_prefix_regex
+
+    @property
+    def past_prefix_regex(self) -> Pattern:
+        return self._past_prefix_regex
+
+    @property
+    def this_prefix_regex(self) -> Pattern:
+        return self._this_prefix_regex
+
+    @property
     def rest_of_date_regex(self) -> Pattern:
         return self._rest_of_date_regex
 
@@ -154,7 +167,7 @@ class EnglishDatePeriodParserConfiguration():
         self._year_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.YearRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PastPrefixRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
-        self._in_connector_regex = config.utilityConfiguration.in_connector_regex
+        self._in_connector_regex = config.utility_configuration.in_connector_regex
         self._week_of_month_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekOfMonthRegex)
         self._week_of_year_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekOfYearRegex)
         self._quarter_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.QuarterRegex)
@@ -176,3 +189,55 @@ class EnglishDatePeriodParserConfiguration():
         self._cardinal_map = config.cardinal_map
         self._season_map = config.season_map
         self._unit_map = config.unit_map
+
+    def get_swift_day_or_month(self, source: str) -> int:
+        trimmed_source = source.strip().lower()
+        swift = 0
+        if self.next_prefix_regex.search(trimmed_source):
+            swift = 1
+        elif self.past_prefix_regex.search(trimmed_source):
+            swift = -1
+        return swift
+
+    def get_swift_year(self, source: str) -> int:
+        trimmed_source = source.strip().lower()
+        swift = -10
+        if self.next_prefix_regex.search(trimmed_source):
+            swift = 1
+        elif self.past_prefix_regex.search(trimmed_source):
+            swift = -1
+        elif self.this_prefix_regex.search(trimmed_source):
+            swift = 0
+        return swift
+
+    def is_future(self, source: str) -> bool:
+        trimmed_source = source.strip().lower()
+        return trimmed_source.startswith('this') or trimmed_source.startswith('next')
+
+    def is_year_to_date(self, source: str) -> bool:
+        trimmed_source = source.strip().lower()
+        return trimmed_source == 'year to date'
+
+    def is_month_to_date(self, source: str) -> bool:
+        trimmed_source = source.strip().lower()
+        return trimmed_source == 'month to date'
+
+    def is_week_only(self, source: str) -> bool:
+        trimmed_source = source.strip().lower()
+        return trimmed_source.endswith('week')
+
+    def is_weekend(self, source: str) -> bool:
+        trimmed_source = source.strip().lower()
+        return trimmed_source.endswith('weekend')
+
+    def is_month_only(self, source: str) -> bool:
+        trimmed_source = source.strip().lower()
+        return trimmed_source.endswith('month')
+
+    def is_last_cardinal(self, source: str) -> bool:
+        trimmed_source = source.strip().lower()
+        return trimmed_source == 'last'
+
+    def is_year_only(self, source: str) -> bool:
+        trimmed_source = source.strip().lower()
+        return trimmed_source.endswith('year')

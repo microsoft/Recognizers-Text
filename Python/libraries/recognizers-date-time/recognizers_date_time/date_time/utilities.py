@@ -190,6 +190,21 @@ class DateUtils:
     def last(from_date: datetime, day_of_week: DayOfWeek)-> datetime:
         return DateUtils.this(from_date, day_of_week) - timedelta(weeks=1)
 
+    @staticmethod
+    def safe_create_date_resolve_overflow(year: int, month: int, day: int) -> datetime:
+        if month > 12:
+            year = year + month // 12
+            month = month % 12
+        return DateUtils.safe_create_from_min_value(year, month, day)
+
+    @staticmethod
+    def day_of_year(seed: datetime) -> int:
+        return seed.timetuple().tm_yday
+    
+    @staticmethod
+    def last_day_of_month(year: int, month:int) -> int:
+        return calendar.monthrange(year,month)[1]
+
 class DateTimeUtilityConfiguration(ABC):
     @property
     @abstractmethod
