@@ -6,6 +6,7 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.base_date import DateExtractorConfiguration, DateParserConfiguration
 from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser
 from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
 from recognizers_date_time.date_time.english.duration_configs import EnglishDurationExtractorConfiguration
 from recognizers_date_time.date_time.english.base_configs import EnglishDateTimeUtilityConfiguration
