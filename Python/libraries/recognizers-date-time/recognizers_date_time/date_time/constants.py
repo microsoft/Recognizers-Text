@@ -39,6 +39,6 @@ class TimeTypeConstants:
     START: str = 'start'
     END: str = 'end'
 
-    BeforeMod: str = 'before'
-    AfterMod: str = 'after'
-    SinceMod: str = 'since'
+    BEFORE_MOD: str = 'before'
+    AFTER_MOD: str = 'after'
+    SINCE_MOD: str = 'since'

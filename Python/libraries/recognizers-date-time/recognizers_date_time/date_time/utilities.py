@@ -1,12 +1,15 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Pattern, Union
-from enum import IntEnum
+from enum import Enum, IntEnum
 from datetime import datetime, timedelta
 import calendar
 import regex
 
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.utilities import RegExpUtility
+from recognizers_date_time.date_time.constants import TimeTypeConstants
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
 
 class Token:
     def __init__(self, start: int, end: int):
@@ -240,6 +243,10 @@ class MatchingUtil:
         return result
 
     @staticmethod
+    def contains_ago_later_index(source: str, regexp: Pattern) -> bool:
+        return MatchingUtil.get_ago_later_index(source, regexp).matched
+
+    @staticmethod
     def get_in_index(source: str, regexp: Pattern) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
         referenced_match = regex.search(regexp, source.strip().lower().split().pop())
@@ -247,6 +254,14 @@ class MatchingUtil:
             result = MatchedIndex(matched=True, index=len(source) - source.lower().rfind(referenced_match.group()))
 
         return result
+
+    @staticmethod
+    def contains_in_index(source: str, regexp: Pattern) -> bool:
+        return MatchingUtil.get_in_index(source, regexp).matched
+
+class AgoLaterMode(Enum):
+    DATE = 0
+    DATETIME = 1
 
 class AgoLaterUtil:
     @staticmethod
@@ -270,3 +285,91 @@ class AgoLaterUtil:
                     if (value.matched and extract_result.start and extract_result.length and extract_result.start >= value.index):
                         ret.append(Token(extract_result.start - value.index, extract_result.start + extract_result.length))
         return ret
+
+    @staticmethod
+    def parse_duration_with_ago_and_later(source: str, reference: datetime,
+                                          duration_extractor: DateTimeExtractor,
+                                          duration_parser: DateTimeParser,
+                                          unit_map: Dict[str, str] ,
+                                          unit_regex: Pattern,
+                                          utility_configuration: DateTimeUtilityConfiguration,
+                                          mode: AgoLaterMode) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+        duration_extract = duration_extractor.extract(source, reference)
+        if not duration_extract:
+            return result
+        duration = next(iter(duration_extract))
+        pr = duration_parser.parse(duration, reference)
+        if not pr:
+            return result
+        match = regex.match(unit_regex, source)
+        if not match:
+            return result
+        after_str = source[duration.start + duration.length]
+        before_str = source[0, duration.start]
+        src_unit = match.group('unit')
+        duration_result: DateTimeResolutionResult = pr.value
+        num_str = duration_result.timex[0, len(duration_result.timex) - 1].replace('P', '').replace('T', '')
+        num = int(num_str)
+        if not num:
+            return result
+        return AgoLaterUtil.get_ago_later_result(
+            pr, num, unit_map, src_unit, after_str, before_str, reference,
+            utility_configuration, mode)
+
+    @staticmethod
+    def get_ago_later_result(
+            duration_parse_result: DateTimeParseResult, num: int,
+            unit_map: Dict[str, str], src_unit: str, after_str: str,
+            before_str: str, reference: datetime,
+            utility_configuration: DateTimeUtilityConfiguration, mode: AgoLaterMode):
+        result = DateTimeResolutionResult()
+        unit_str = unit_map.get(src_unit)
+        if not unit_str:
+            return result
+        contains_ago = MatchingUtil.contains_ago_later_index(after_str, utility_configuration.ago_regex)
+        contains_later_or_in = MatchingUtil.contains_ago_later_index(after_str, utility_configuration.later_regex) or MatchingUtil.contains_in_index(before_str, utility_configuration.in_connector_regex)
+        if contains_ago:
+            result = AgoLaterUtil.get_date_result(unit_str, num, reference, False, mode)
+            duration_parse_result.value.mod = TimeTypeConstants.BEFORE_MOD
+            result.sub_date_time_entities = [duration_parse_result]
+            return result
+
+        if contains_later_or_in:
+            result = AgoLaterUtil.get_date_result(unit_str, num, reference, True, mode)
+            duration_parse_result.value.mod = TimeTypeConstants.AFTER_MOD
+            result.sub_date_time_entities = [duration_parse_result]
+            return result
+
+        return result
+
+    @staticmethod
+    def get_date_result(
+            unit_str: str, num: int, reference: datetime, is_future: bool,
+            mode: AgoLaterMode) -> DateTimeResolutionResult:
+        value = reference
+        result = DateTimeResolutionResult()
+        swift = 1 if is_future else -1
+
+        if unit_str == 'D':
+            value += timedelta(days=num * swift)
+        elif unit_str == 'W':
+            value += timedelta(days=num * swift * 7)
+        elif unit_str == 'MON':
+            value += timedelta(months=num * swift)
+        elif unit_str == 'Y':
+            value += timedelta(years=num * swift)
+        elif unit_str == 'H':
+            value += timedelta(hours=num * swift)
+        elif unit_str == 'M':
+            value += timedelta(minutes=num * swift)
+        elif unit_str == 'S':
+            value += timedelta(seconds=num * swift)
+        else: return result
+
+        result.timex = FormatUtil.luis_date_from_datetime(
+            value) if mode == AgoLaterMode.DATE else FormatUtil.format_date_time(value)
+        result.future_value = value
+        result.past_value = value
+        result.success = True
+        return result
