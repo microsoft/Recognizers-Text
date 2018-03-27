@@ -1,5 +1,5 @@
-import com.microsoft.recognizers.text.IModel;
-import com.microsoft.recognizers.text.ModelFactory;
+package com.microsoft.recognizers.text;
+
 import org.javatuples.Pair;
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,7 +11,7 @@ public class ModelFactoryTest {
             ModelFactory<TestOptionsEnum> factory = new ModelFactory<>();
             factory.getModel(TestModel.class, "xx-xx", false, TestOptionsEnum.None);
         } catch(IllegalArgumentException e) {
-            Assert.assertEquals("Could not find Model with the specified configuration: xx-xx, TestModel", e.getMessage());
+            Assert.assertEquals("Could not find Model with the specified configuration: xx-xx, com.microsoft.recognizers.text.TestModel", e.getMessage());
         }
     }
 
