@@ -4,8 +4,7 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.utilities import DateTimeResolutionResult
 from recognizers_date_time.date_time.base_time import BaseTimeParser
-from recognizers_date_time.date_time.english.time_configs import EnglishTimeParserConfiguration
-
+from recognizers_date_time.date_time.english.time_extractor_config import EnglishTimeParserConfiguration
 
 class EnglishTimeParser(BaseTimeParser):
     def __init__(self, config: EnglishTimeParserConfiguration):

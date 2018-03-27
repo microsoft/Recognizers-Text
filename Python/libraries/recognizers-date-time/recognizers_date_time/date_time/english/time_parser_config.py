@@ -3,38 +3,10 @@ import regex
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.english.base_configs import EnglishDateTimeUtilityConfiguration
-from recognizers_date_time.date_time.base_time import TimeExtractorConfiguration, TimeParserConfiguration, AdjustParams
+from recognizers_date_time.date_time.base_time import TimeParserConfiguration, AdjustParams
 from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
 from recognizers_date_time.resources.english_date_time import EnglishDateTime
-
-class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
-    @property
-    def time_regex_list(self) -> List[Pattern]:
-        return self._time_regex_list
-
-    @property
-    def at_regex(self) -> Pattern:
-        return self._at_regex
-
-    @property
-    def ish_regex(self) -> Pattern:
-        return self._ish_regex
-
-    def __init__(self):
-        self._time_regex_list: List[Pattern] = [
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex1),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex2),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex3),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex4),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex5),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex6),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex7),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex8),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex9),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.ConnectNumRegex)
-        ]
-        self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AtRegex)
-        self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.IshRegex)
+from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
 
 class EnglishTimeParserConfiguration(TimeParserConfiguration):
     @property
@@ -57,7 +29,7 @@ class EnglishTimeParserConfiguration(TimeParserConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
-    def __init__(self):
+    def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
         self._time_token_prefix: str = EnglishDateTime.TimeTokenPrefix
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AtRegex)
         self._time_regexes: List[Pattern] = [

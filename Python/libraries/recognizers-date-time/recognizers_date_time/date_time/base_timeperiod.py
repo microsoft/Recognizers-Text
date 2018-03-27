@@ -335,8 +335,8 @@ class BaseTimePeriodParser(DateTimeParser):
         result.timex = f'({begin},{end},PT{difference}H)'
         result.future_value = ResolutionStartEnd()
         result.past_value = ResolutionStartEnd()
-        result.future_value.start = datetime(year, month, day, begin_hour, 0, 0)
-        result.future_value.end = datetime(year, month, day, end_hour, 0, 0)
+        result.future_value.start = datetime(year, month, day) + timedelta(hours=begin_hour)
+        result.future_value.end = datetime(year, month, day) + timedelta(hours=end_hour)
         result.past_value.start = result.future_value.start
         result.past_value.end = result.future_value.end
         result.success = True
@@ -364,7 +364,7 @@ class BaseTimePeriodParser(DateTimeParser):
                         middle_end = time_er.start - middle_begin
 
                     # check if the middle string between the time point and the valid number is a connect string.
-                    middle_str = source[middle_begin:middle_end]
+                    middle_str = source[middle_begin:middle_begin + middle_end]
                     if regex.search(self.config.till_regex, middle_str) is not None:
                         num.type = Constants.SYS_DATETIME_TIME
                         ers.append(num)
@@ -402,11 +402,11 @@ class BaseTimePeriodParser(DateTimeParser):
             if begin_time.minute > 0:
                 pr1.timex_str = f'{pr1.timex_str}:{begin_time.minute}'
 
-            if end_time < begin_time:
-                end_time = end_time + timedelta(days=1)
+        if end_time < begin_time:
+            end_time = end_time + timedelta(days=1)
 
-        hours = FormatUtility.float_or_int((end_time - begin_time).total_seconds() / 3600)
-        minutes = FormatUtility.float_or_int((end_time - begin_time).total_seconds() / 60)
+        hours = FormatUtility.float_or_int((end_time - begin_time).total_seconds() // 3600)
+        minutes = FormatUtility.float_or_int((end_time - begin_time).total_seconds() / 60 % 60)
 
         hours_str = f'{hours}H' if hours > 0 else ''
         minutes_str = f'{minutes}M' if minutes > 0 and minutes < 60 else ''
