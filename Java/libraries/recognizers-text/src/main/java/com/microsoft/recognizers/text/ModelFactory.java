@@ -17,13 +17,13 @@ public class ModelFactory<TModelOptions> extends HashMap<Pair<String, Type>, Fun
     private static final String fallbackCulture = Culture.English;
 
     public <T extends IModel> T getModel(Class<T> modelType, String culture, boolean fallbackToDefaultCulture, TModelOptions options) throws IllegalArgumentException {
-        IModel model = this.getModel(modelType.getClass(), culture, options);
+        IModel model = this.getModel(modelType, culture, options);
         if (model != null) {
             return (T) model;
         }
 
         if (fallbackToDefaultCulture) {
-            model = this.getModel(modelType.getClass(), fallbackCulture, options);
+            model = this.getModel(modelType, fallbackCulture, options);
             if (model != null) {
                 return (T) model;
             }
