@@ -131,7 +131,7 @@ class BaseSetExtractor(DateTimeExtractor):
 
     def time_everyday(self, source: str, reference: datetime) -> List[Token]:
         for extract_result in self.config.time_extractor.extract(source, reference):
-            after_str = source[extract_result.start + extract_result.length]
+            after_str = source[extract_result.start + extract_result.length:]
             if not after_str and self.config.before_each_day_regex is not None:
                 before_str = source[0:extract_result.start]
                 before_match = regex.match(self.config.before_each_day_regex, before_str)
@@ -144,7 +144,7 @@ class BaseSetExtractor(DateTimeExtractor):
 
     def match_each(self, extractor: DateTimeExtractor, source: str, reference: datetime) -> List[Token]:
         for match in regex.finditer(self.config.set_each_regex, source):
-            trimmed_source = source[0:match.start()] + source[match.end()]
+            trimmed_source = source[0:match.start()] + source[match.end():]
             for extract_result in extractor.extract(trimmed_source, reference):
                 if extract_result.start <= match.start() and extract_result.start + extract_result.length > match.start():
                     yield Token(extract_result.start, extract_result.start + extract_result.length + len(match.group()))
