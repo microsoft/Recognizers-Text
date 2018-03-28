@@ -7,6 +7,17 @@
     <groupId>com.microsoft.recognizers.text.number</groupId>
     <artifactId>recognizers-number</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
+    <parent>
+        <groupId>com.microsoft.recognizers.text</groupId>
+        <artifactId>recognizers-text-java</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../</relativePath>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     
 </project>
