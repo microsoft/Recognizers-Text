@@ -15,6 +15,7 @@ from recognizers_date_time.date_time.english.base_configs import EnglishDateTime
 from recognizers_date_time.date_time.english.date_extractor_config import EnglishDateExtractorConfiguration
 from recognizers_date_time.date_time.english.time_extractor_config import EnglishTimeExtractorConfiguration
 from recognizers_date_time.date_time.english.duration_extractor_config import EnglishDurationExtractorConfiguration
+from recognizers_date_time.date_time.english.duration_parser_config import EnglishDurationParserConfiguration
 from recognizers_date_time.date_time.english.dateperiod_extractor_config import EnglishDatePeriodExtractorConfiguration
 from recognizers_date_time.date_time.english.timeperiod_extractor_config import EnglishTimePeriodExtractorConfiguration
 from recognizers_date_time.resources.english_date_time import EnglishDateTime, BaseDateTime
@@ -154,7 +155,7 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._date_period_extractor = BaseDatePeriodExtractor(EnglishDatePeriodExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(EnglishTimePeriodExtractorConfiguration())
         self._date_time_period_extractor = None #BaseDateTimePeriodExtractor(EnglishDateTimePeriodExtractorConfiguration())
-        self._duration_parser = None #BaseDurationParser(EnglishDurationParserConfiguration()) #BaseDurationParser(EnglishDurationParserConfiguration(self))
+        self._duration_parser = BaseDurationParser(EnglishDurationParserConfiguration(self))
         self._date_parser = None #BaseDateParser(EnglishDateParserConfiguration(self))
         self._time_parser = None #EnglishTimeParser(EnglishTimeParserConfiguration(self))
         self._date_time_parser = None #BaseDateTimeParser(EnglishDateTimeParserConfiguration(self))

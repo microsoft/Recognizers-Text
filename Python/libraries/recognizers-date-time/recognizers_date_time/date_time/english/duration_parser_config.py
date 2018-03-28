@@ -7,7 +7,6 @@ from recognizers_number.number.english.extractors import EnglishCardinalExtracto
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
 from recognizers_date_time.date_time.base_duration import DurationParserConfiguration
 from recognizers_date_time.resources.english_date_time import EnglishDateTime
-from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
 
 class EnglishDurationParserConfiguration(DurationParserConfiguration):
     @property
@@ -58,7 +57,7 @@ class EnglishDurationParserConfiguration(DurationParserConfiguration):
     def double_numbers(self) -> Dict[str, float]:
         return self._double_numbers
 
-    def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
+    def __init__(self, config):
         self._cardinal_extractor: BaseNumberExtractor = EnglishCardinalExtractor()
         self._number_parser: BaseNumberParser = BaseNumberParser(EnglishNumberParserConfiguration())
         self._followed_unit: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.DurationFollowedUnit)

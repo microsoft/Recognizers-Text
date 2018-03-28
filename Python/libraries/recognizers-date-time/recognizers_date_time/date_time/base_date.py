@@ -541,16 +541,18 @@ class BaseDateParser(DateTimeParser):
 
         # handle "Friday"
         match = regex.match(self.config.week_day_regex, trimmed_source)
-        if match and match.index == 0 and len(match.group()) == len(trimmed_source):
-            weekday_str = match.groups('weekday')
+        if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
+            weekday_str = match.group('weekday')
             weekday = self.config.day_of_week.get(weekday_str)
-            value = DateUtils.this(reference, self.config.day_of_week.get(weekday_str))
+            print(f'weekday_str = {weekday_str}')
+            print(f'weekday = {weekday}')
+            value = DateUtils.this(reference, weekday)
 
             if weekday < DayOfWeek.Monday:
                 weekday = DayOfWeek.Sunday
             if weekday < reference.isoweekday():
                 value = DateUtils.next(reference, weekday)
-            result.timex = 'XXXX-WXX-' + weekday
+            result.timex = 'XXXX-WXX-' + str(weekday)
             future_date = value
             past_date = value
             if future_date < reference:
@@ -641,7 +643,7 @@ class BaseDateParser(DateTimeParser):
             if past_date.month != month:
                 past_date = past_date.replace(day=past_date.date - 7)
 
-        result.timex = '-'.join(['XXXX', FormatUtil.to_str(month + 1, 2), 'WXX', weekday, '#' + cardinal])
+        result.timex = '-'.join(['XXXX', FormatUtil.to_str(month + 1, 2), 'WXX', str(weekday), '#' + str(cardinal)])
         result.future_value = future_date
         result.past_value = past_date
         result.success = True

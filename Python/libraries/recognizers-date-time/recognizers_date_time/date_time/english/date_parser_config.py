@@ -187,9 +187,9 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
         swift = 0
         next_prefix_matches = regex.search(EnglishDateParserConfiguration._next_prefix_regex, trimmed_text)
         past_prefix_matches = regex.search(EnglishDateParserConfiguration._past_prefix_regex, trimmed_text)
-        if next_prefix_matches.length:
+        if next_prefix_matches:
             swift = 1
-        elif past_prefix_matches.length:
+        elif past_prefix_matches:
             swift = -1
 
         return swift
