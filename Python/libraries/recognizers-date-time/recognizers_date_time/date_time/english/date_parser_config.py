@@ -171,7 +171,7 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
             swift = -1
         elif trimmed_text.endswith("day after tomorrow") or trimmed_text.endswith("day after tmr"):
             swift = 2
-        elif trimmed_text.endsWith("day before yesterday"):
+        elif trimmed_text.endswith("day before yesterday"):
             swift = -2
         elif matches:
             swift = self.get_swift(source)
