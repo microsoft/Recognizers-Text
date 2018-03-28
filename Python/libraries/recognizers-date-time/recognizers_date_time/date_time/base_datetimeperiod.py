@@ -19,7 +19,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         #TODO: code
-        pass
+        return list()
 
 class DateTimePeriodParserConfiguration:
     pass

@@ -108,7 +108,7 @@ class BaseSetExtractor(DateTimeExtractor):
         tokens.extend(self.match_each(self.config.date_time_extractor, source, reference))
         tokens.extend(self.match_each(self.config.date_period_extractor, source, reference))
         tokens.extend(self.match_each(self.config.time_period_extractor, source, reference))
-        # tokens.extend(self.match_each(self.config.date_time_period_extractor, source, reference))
+        tokens.extend(self.match_each(self.config.date_time_period_extractor, source, reference))
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
 
@@ -122,10 +122,10 @@ class BaseSetExtractor(DateTimeExtractor):
 
     def match_each_duration(self, source: str, reference: datetime) -> List[Token]:
         for extract_result in self.config.duration_extractor.extract(source, reference):
-            if regex.match(self.config.last_regex, extract_result.text):
+            if regex.search(self.config.last_regex, extract_result.text):
                 continue
             before_str = source[0:extract_result.start]
-            match = regex.match(self.config.each_prefix_regex, before_str)
+            match = regex.search(self.config.each_prefix_regex, before_str)
             if match:
                 yield Token(match.start(), extract_result.start + extract_result.length)
 
