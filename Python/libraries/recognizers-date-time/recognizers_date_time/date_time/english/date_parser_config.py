@@ -5,7 +5,6 @@ from recognizers_date_time.date_time.base_date import DateParserConfiguration
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser
 from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
-from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
 from recognizers_date_time.resources.english_date_time import EnglishDateTime
 from recognizers_text.utilities import RegExpUtility
 
@@ -121,7 +120,7 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
     _next_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
     _past_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PastPrefixRegex)
 
-    def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
+    def __init__(self, config: any):
         self._ordinal_extractor = config.ordinal_extractor
         self._integer_extractor = config.integer_extractor
         self._cardinal_extractor = config.cardinal_extractor
