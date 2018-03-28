@@ -13,10 +13,6 @@ public abstract class BaseRecognizer<TRecognizerOptions extends Enum<TRecognizer
     private final ModelFactory<TRecognizerOptions> factory;
 
     protected BaseRecognizer(String targetCulture, TRecognizerOptions options, boolean lazyInitialization) {
-        if (!this.isValidOptions(options)) {
-            throw new IllegalArgumentException(String.format("%s is not a valid options value.", options));
-        }
-
         this.targetCulture = targetCulture;
         this.options = options;
 
@@ -43,8 +39,6 @@ public abstract class BaseRecognizer<TRecognizerOptions extends Enum<TRecognizer
     private void initializeModels(String targetCulture, TRecognizerOptions options) {
         this.factory.initializeModels(targetCulture, options);
     }
-
-    protected abstract boolean isValidOptions(TRecognizerOptions options);
 
     protected abstract void initializeConfiguration();
 }
