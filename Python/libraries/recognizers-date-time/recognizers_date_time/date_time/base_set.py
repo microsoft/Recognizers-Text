@@ -1,11 +1,13 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern
 from datetime import datetime
+import regex
 
 from recognizers_text.extractor import ExtractResult
 from .constants import Constants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
+from .utilities import Token, merge_all_tokens
 
 class SetExtractorConfiguration(ABC):
     @property
@@ -92,8 +94,31 @@ class BaseSetExtractor(DateTimeExtractor):
         self.config = config
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
-        #TODO: code
-        pass
+        if reference is None:
+            reference = datetime.now()
+
+        tokens: List[Token] = list()
+        tokens.extend(self.match_each_unit(source))
+        tokens.extend(self.match_periodic(source))
+        # tokens.extend(self.match_each_duration(source, reference))
+        # tokens.extend(self.time_everyday(source, reference))
+        # tokens.extend(self.match_each(self.config.date_extractor, source, reference))
+        # tokens.extend(self.match_each(self.config.time_extractor, source, reference))
+        # tokens.extend(self.match_each(self.config.date_time_extractor, source, reference))
+        # tokens.extend(self.match_each(self.config.date_period_extractor, source, reference))
+        # tokens.extend(self.match_each(self.config.time_period_extractor, source, reference))
+        # tokens.extend(self.match_each(self.config.date_time_period_extractor, source, reference))
+        result = merge_all_tokens(tokens, source, self.extractor_type_name)
+        return result
+
+    def match_each_unit(self, source: str) -> List[Token]:
+        for match in regex.finditer(self.config.each_unit_regex, source):
+            yield Token(match.start(), match.end())
+
+    def match_periodic(self, source: str) -> List[Token]:
+        for match in regex.finditer(self.config.periodic_regex, source):
+            yield Token(match.start(), match.end())
+
 
 class SetParserConfiguration:
     pass
