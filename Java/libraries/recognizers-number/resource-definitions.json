@@ -1,0 +1,15 @@
+{
+  "outputPath": "./src/main/java/com/microsoft/recognizers/text/number/resources/",
+  "configFiles": [
+    {
+      "input": [
+        "Base-Numbers"
+      ],
+      "output": "BaseNumbers",
+      "header": [
+        "package com.microsoft.recognizers.text.number.resources;"
+      ],
+      "footer": []
+    }
+  ]
+}
