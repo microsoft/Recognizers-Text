@@ -505,7 +505,7 @@ class BaseDateParser(DateTimeParser):
 
         # handle "next Sunday"
         match = regex.match(self.config.next_regex, trimmed_source)
-        if match and match.start == 0 and len(match.group()) == len(trimmed_source):
+        if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
             weekday_str = match.group('weekday')
             value = DateUtils.next(reference, self.config.day_of_week.get(weekday_str))
 
@@ -517,7 +517,7 @@ class BaseDateParser(DateTimeParser):
 
         # handle "this Friday"
         match = regex.match(self.config.this_regex, trimmed_source)
-        if match and match.start == 0 and len(match.group()) == len(trimmed_source):
+        if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
             weekday_str = match.group('weekday')
             value = DateUtils.this(reference, self.config.day_of_week.get(weekday_str))
 
@@ -529,7 +529,7 @@ class BaseDateParser(DateTimeParser):
 
         # handle "last Friday", "last mon"
         match = regex.match(self.config.last_regex, trimmed_source)
-        if match and match.start == 0 and len(match.group()) == len(trimmed_source):
+        if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
             weekday_str = match.group('weekday')
             value = DateUtils.last(reference, self.config.day_of_week.get(weekday_str))
 
