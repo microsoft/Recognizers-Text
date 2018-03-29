@@ -51,7 +51,7 @@ class EnglishNumeric:
     DoubleWithRoundNumber = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
     DoubleAllFloatRegex = f'((?<=\\b){AllFloatRegex}(?=\\b))'
     CurrencyRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)'
-    NumberWithSuffixPercentage = f'({BaseNumbers.NumberReplaceToken})(\\s*)(%|per cents|per cent|cents|cent|percentage|percents|percent)'
+    NumberWithSuffixPercentage = f'({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per cents|per cent|cents|cent|percentage|percents|percent)\\b)'
     NumberWithPrefixPercentage = f'(per cent of|percent of|percents of)(\\s*)({BaseNumbers.NumberReplaceToken})'
     TillRegex = f'(to|through|--|-|—|——|~)'
     MoreRegex = f'((bigger|greater|more|higher|larger)(\\s+than)?|above|over|>)'

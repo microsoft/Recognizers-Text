@@ -288,7 +288,7 @@ NumbersFractionPercentageRegex: !nestedRegex
   def: '{ZeroToNineChsFullHalfRegexChs}{1,3}([,，]{ZeroToNineChsFullHalfRegexChs}{3})+\s*[个個]\s*[百佰]\s*分\s*[点點]'
   references: [ZeroToNineChsFullHalfRegexChs]
 SimpleIntegerPercentageRegex: !nestedRegex
-  def: '{NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?(\s*)[％%]'
+  def: '(?<=(\s|^)){NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?(\s*)[％%]'
   references: [NegativeNumberTermsRegexNum, ZeroToNineChsFullHalfRegexChs]
 NumbersFoldsPercentageRegex: !nestedRegex
   def: '{ZeroToNineChsFullHalfRegexChs}(([\.．]?|\s*){ZeroToNineChsFullHalfRegexChs})?\s*折'
