@@ -47,19 +47,43 @@ class TimexHelpers:
 
     @staticmethod
     def timex_date_add(start, duration):
-        if start.day_of_week is not None:
+        if start.day_of_week:
             end = start.clone()
-            if duration.days is not None:
+            if duration.days:
                 end.day_of_week += duration.days
             return end
 
         if start.month is not None and start.day_of_month is not None:
-            if duration.days is not None:
-                pass
-
-        # TODO: finish this function:-)
-
-        return start + timedelta
+            if duration.days:
+                if start.year:
+                    d = date(start.year, start.month, start.day_of_month)
+                    d = d + timedelta(days=duration.days)
+                    result = Timex()
+                    result.year = d.year
+                    result.month = d.month
+                    result.day_of_month = d.day
+                    return result
+                else:
+                    d = date(2001, start.month, start.day_of_month)
+                    d = d + timedelta(duration.days)
+                    result = Timex()
+                    result.month = d.month
+                    result.day_of_month = d.day_of_month
+                    return result
+            if duration.years:
+                if start.year:
+                    result = Timex()
+                    result.year = start.year + duration.years
+                    result.month = start.month
+                    return result
+            if duration.month:
+                if start.month:
+                    result = Timex()
+                    result.year = start.year
+                    result.month = start.month + duration.months
+                    result.day_of_month = start.day_of_month
+                    return result
+        return start
 
     @staticmethod
     def timex_time_add(start, duration):
