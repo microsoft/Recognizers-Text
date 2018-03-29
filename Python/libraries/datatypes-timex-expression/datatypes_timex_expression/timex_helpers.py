@@ -87,11 +87,38 @@ class TimexHelpers:
 
     @staticmethod
     def timex_time_add(start, duration):
-        pass
+        if duration.hours:
+            result = start.clone()
+            result.hour += duration.hours
+            if result.hour > 23:
+                days = math.floor(result.hour / 24)
+                hour = result.hour % 24
+                result.hour = hour
+                if result.year is not None and result.month is not None and result.day_of_month is not None:
+                    d = date(result.year, result.month, result.day_of_month)
+                    d = d + timedelta(days=days)
+                    result.year = d.year
+                    result.month = d.month
+                    result.day_of_month = d.day
+                    return result
+                if result.day_of_week:
+                    result.Day_of_week += days
+                    return result
+            return result
+
+        if duration.minutes:
+            result = start.clone()
+            result.minute += duration.minutes
+            if result.minute > 59:
+                result.hour += 1
+                result.minute = 0
+            return result
+        return start
 
     @staticmethod
     def timex_datetime_add(start, duration):
-        pass
+        return TimexHelpers.timex_time_add(
+            TimexHelpers.timex_date_add(start, duration), duration)
 
     @staticmethod
     def date_from_timex(timex):
