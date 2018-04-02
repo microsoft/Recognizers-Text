@@ -50,7 +50,7 @@ MonthSuffixRegex: !nestedRegex
 DateUnitRegex: !simpleRegex
   def: (?<unit>years|year|months|month|weeks|week|days|day)\b
 SimpleCasesRegex: !nestedRegex
-  def: \b((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
+  def: \b((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
 MonthFrontSimpleCasesRegex: !nestedRegex
   def: \b((from|between)\s+)?{MonthSuffixRegex}\s+((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
