@@ -76,7 +76,7 @@ export namespace ChineseNumeric {
 	export const IntegerPercentageRegex = `${ZeroToNineChsFullHalfRegexChs}+\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]`;
 	export const IntegerPercentageWithMultiplierRegex = `${ZeroToNineChsFullHalfRegexChs}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]`;
 	export const NumbersFractionPercentageRegex = `${ZeroToNineChsFullHalfRegexChs}{1,3}([,，]${ZeroToNineChsFullHalfRegexChs}{3})+\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]`;
-	export const SimpleIntegerPercentageRegex = `${NegativeNumberTermsRegexNum}?${ZeroToNineChsFullHalfRegexChs}+([\\.．]${ZeroToNineChsFullHalfRegexChs}+)?(\\s*)[％%]`;
+	export const SimpleIntegerPercentageRegex = `(?<=(\\s|^))${NegativeNumberTermsRegexNum}?${ZeroToNineChsFullHalfRegexChs}+([\\.．]${ZeroToNineChsFullHalfRegexChs}+)?(\\s*)[％%]`;
 	export const NumbersFoldsPercentageRegex = `${ZeroToNineChsFullHalfRegexChs}(([\\.．]?|\\s*)${ZeroToNineChsFullHalfRegexChs})?\\s*折`;
 	export const FoldsPercentageRegex = `${ZeroToNineIntegerRegexChs}(\\s*[点點]?\\s*${ZeroToNineIntegerRegexChs})?\\s*折`;
 	export const SimpleFoldsPercentageRegex = `${ZeroToNineChsFullHalfRegexChs}\\s*成(\\s*(半|${ZeroToNineChsFullHalfRegexChs}))?`;

@@ -68,8 +68,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
 		public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)";
-		public static readonly string NumberWithSuffixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(%|pourcentages|pourcents|pourcentage|pourcent)";
-		public static readonly string NumberWithPrefixPercentage = $@"(%|pourcent|pourcent des|pourcentage de)(\s*)({BaseNumbers.NumberReplaceToken})";
+		public static readonly string NumberWithSuffixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(pourcentages|pourcents|pourcentage|pourcent)\b)";
+		public static readonly string NumberWithPrefixPercentage = $@"((?<!{BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\s*)({BaseNumbers.NumberReplaceToken})(?=\s|$)";
 		public const char DecimalSeparatorChar = ',';
 		public const string FractionMarkerToken = "sur";
 		public const char NonDecimalSeparatorChar = '.';

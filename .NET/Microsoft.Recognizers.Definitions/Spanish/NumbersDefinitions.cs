@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-		public static readonly string NumberWithPrefixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(%|por ciento|por cien)";
+		public static readonly string NumberWithPrefixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por ciento|por cien)\b)";
 		public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)";
 		public const char DecimalSeparatorChar = ',';
 		public const string FractionMarkerToken = "sobre";

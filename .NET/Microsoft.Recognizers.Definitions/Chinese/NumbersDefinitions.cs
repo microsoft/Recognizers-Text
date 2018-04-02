@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string IntegerPercentageRegex = $@"{ZeroToNineChsFullHalfRegexChs}+\s*[个個]\s*[百佰]\s*分\s*[点點]";
 		public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\s*[个個]\s*[百佰]\s*分\s*[点點]";
 		public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineChsFullHalfRegexChs}{{1,3}}([,，]{ZeroToNineChsFullHalfRegexChs}{{3}})+\s*[个個]\s*[百佰]\s*分\s*[点點]";
-		public static readonly string SimpleIntegerPercentageRegex = $@"{NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?(\s*)[％%]";
+		public static readonly string SimpleIntegerPercentageRegex = $@"(?<=(\s|^)){NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?(\s*)[％%]";
 		public static readonly string NumbersFoldsPercentageRegex = $@"{ZeroToNineChsFullHalfRegexChs}(([\.．]?|\s*){ZeroToNineChsFullHalfRegexChs})?\s*折";
 		public static readonly string FoldsPercentageRegex = $@"{ZeroToNineIntegerRegexChs}(\s*[点點]?\s*{ZeroToNineIntegerRegexChs})?\s*折";
 		public static readonly string SimpleFoldsPercentageRegex = $@"{ZeroToNineChsFullHalfRegexChs}\s*成(\s*(半|{ZeroToNineChsFullHalfRegexChs}))?";
