@@ -1920,6 +1920,9 @@
 ,
 {
   "Input": "I'll be out from Friday the 2nd until Tuesday the 6th",
+  "Context": {
+    "ReferenceDateTime": "2018-03-01T00:00:00"
+  },
   "Results": [
     {
       "Text": "from Friday the 2nd until Tuesday the 6th",
