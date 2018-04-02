@@ -32,7 +32,7 @@ export namespace EnglishDateTime {
 	export const EngMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))`;
 	export const MonthSuffixRegex = `(?<msuf>(in\\s+|of\\s+|on\\s+)?(${RelativeMonthRegex}|${EngMonthRegex}))`;
 	export const DateUnitRegex = `(?<unit>years|year|months|month|weeks|week|days|day)\\b`;
-	export const SimpleCasesRegex = `\\b((from|between)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
+	export const SimpleCasesRegex = `\\b((from|between)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex}\\s+${MonthSuffixRegex}|${MonthSuffixRegex}\\s+${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthFrontSimpleCasesRegex = `\\b((from|between)\\s+)?${MonthSuffixRegex}\\s+((from|between)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;

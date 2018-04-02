@@ -3967,4 +3967,54 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out from 4 to January 22, 1995",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 4 to January 22, 1995",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1995-01-04,1995-01-22,P18D)",
+        "FutureResolution": {
+          "startDate": "1995-01-04",
+          "endDate": "1995-01-22"
+        },
+        "PastResolution": {
+          "startDate": "1995-01-04",
+          "endDate": "1995-01-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I want a room from 02 to April 07",
+  "Context": {
+    "ReferenceDateTime": "2018-04-02T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 02 to April 07",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XXXX-04-02,XXXX-04-07,P5D)",
+        "FutureResolution": {
+          "startDate": "2018-04-02",
+          "endDate": "2018-04-07"
+        },
+        "PastResolution": {
+          "startDate": "2017-04-02",
+          "endDate": "2017-04-07"
+        }
+      }
+    }
+  ]
+}
 ]
