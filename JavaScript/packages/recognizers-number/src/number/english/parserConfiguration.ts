@@ -56,8 +56,25 @@ export class EnglishNumberParserConfiguration implements INumberParserConfigurat
         let tokenList = Array.from(tokens);
         let tokenLen = tokenList.length;
         for (let i = 0; i < tokenLen; i++) {
-            if ((i < tokenLen - 2) && tokenList[i + 1] === "-") {
-                fracWords.push(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+            if (tokenList[i].includes("-")) {
+                let spiltedTokens = tokenList[i].split("-");
+                if (spiltedTokens.length === 2 && this.ordinalNumberMap.has(spiltedTokens[1])) {
+                    fracWords.push(spiltedTokens[0]);
+                    fracWords.push(spiltedTokens[1]);
+                }
+                else {
+                    fracWords.push(tokenList[i]);
+                }
+            }
+            else if ((i < tokenLen - 2) && tokenList[i + 1] === "-") {
+                if (this.ordinalNumberMap.has(tokenList[i + 2])) {
+                    fracWords.push(tokenList[i]);
+                    fracWords.push(tokenList[i + 2]);
+                }
+                else {
+                    fracWords.push(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+                }
+
                 i += 2;
             }
             else {
