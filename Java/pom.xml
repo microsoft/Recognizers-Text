@@ -19,6 +19,7 @@
         <module>libraries/resource-generator</module>
         <module>libraries/recognizers-text</module>
         <module>libraries/recognizers-number</module>
+        <module>tests</module>
     </modules>
 
     <build>
