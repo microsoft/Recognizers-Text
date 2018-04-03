@@ -1606,4 +1606,56 @@
     }
   ]
 }
+,
+{
+  "Input": "one - fourth",
+  "Results": [
+    {
+      "Text": "one - fourth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one-eighth",
+  "Results": [
+    {
+      "Text": "one-eighth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "five - eighths",
+  "Results": [
+    {
+      "Text": "five - eighths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.625"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ninety - five hundred-fifths",
+  "Results": [
+    {
+      "Text": "ninety - five hundred-fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1900"
+      }
+    }
+  ]
+}
 ]
