@@ -1658,4 +1658,30 @@
     }
   ]
 }
+,
+{
+  "Input": "one out of three",
+  "Results": [
+    {
+      "Text": "one out of three",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 in twenty-one",
+  "Results": [
+    {
+      "Text": "1 in twenty-one",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0476190476190476"
+      }
+    }
+  ]
+}
 ]

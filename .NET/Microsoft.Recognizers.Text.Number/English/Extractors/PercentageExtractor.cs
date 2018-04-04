@@ -8,14 +8,20 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
-        public PercentageExtractor() : base(NumberExtractor.GetInstance()) { }
+        protected override NumberOptions Options { get; }
+
+        public PercentageExtractor(NumberOptions options = NumberOptions.None) : base(NumberExtractor.GetInstance(options: options))
+        {
+            Options = options;
+        }
 
         protected override ImmutableHashSet<Regex> InitRegexes()
         {
             HashSet<string> regexStrs = new HashSet<string>
             {
                 NumbersDefinitions.NumberWithSuffixPercentage,
-                NumbersDefinitions.NumberWithPrefixPercentage
+                NumbersDefinitions.NumberWithPrefixPercentage,
+                NumbersDefinitions.NumberWithPrepositionPercentage
             };
 
             return BuildRegexes(regexStrs);

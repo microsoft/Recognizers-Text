@@ -10,7 +10,10 @@ namespace Microsoft.Recognizers.Text.Number
     {
         private readonly BaseNumberExtractor numberExtractor;
 
+        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+
         protected static readonly string NumExtType = Constants.SYS_NUM; //@sys.num
+
         protected string ExtractType = Constants.SYS_NUM_PERCENTAGE;
 
         private ImmutableHashSet<Regex> Regexes { get; }
@@ -32,38 +35,38 @@ namespace Microsoft.Recognizers.Text.Number
         public List<ExtractResult> Extract(string source)
         {
             string originSource = source;
-            var positionMap = default(Dictionary<int, int>);
-            var numExtResults = default(IList<ExtractResult>);
+            Dictionary<int, int> positionMap;
+            IList<ExtractResult> numExtResults;
 
             // preprocess the source sentence via extracting and replacing the numbers in it
             source = this.PreprocessStrWithNumberExtracted(originSource, out positionMap, out numExtResults);
 
-            List<MatchCollection> allMatches = new List<MatchCollection>();
+            var allMatches = new List<MatchCollection>();
             // match percentage with regexes
-            foreach (Regex regex in Regexes)
+            foreach (var regex in Regexes)
             {
                 allMatches.Add(regex.Matches(source));
             }
 
             bool[] matched = new bool[source.Length];
-            for (int i = 0; i < source.Length; i++)
+            for (var i = 0; i < source.Length; i++)
             {
                 matched[i] = false;
             }
 
-            for (int i = 0; i < allMatches.Count; i++)
+            for (var i = 0; i < allMatches.Count; i++)
             {
                 foreach (Match match in allMatches[i])
                 {
-                    for (int j = 0; j < match.Length; j++)
+                    for (var j = 0; j < match.Length; j++)
                     {
                         matched[j + match.Index] = true;
                     }
                 }
             }
 
-            List<ExtractResult> result = new List<ExtractResult>();
-            int last = -1;
+            var result = new List<ExtractResult>();
+            var last = -1;
 
             //get index of each matched results
             for (int i = 0; i < source.Length; i++)
@@ -144,6 +147,7 @@ namespace Microsoft.Recognizers.Text.Number
                     results[i].Start = originStart;
                     results[i].Length = originLenth;
                     results[i].Text = originSource.Substring(originStart, originLenth);
+                    results[i].Data = new List<KeyValuePair<string, ExtractResult>>();
 
                     int numStart = str.IndexOf(replaceText, StringComparison.Ordinal);
                     if (numStart != -1)
@@ -156,10 +160,13 @@ namespace Microsoft.Recognizers.Text.Number
 
                             for (int j = i; j < numExtResults.Count; j++)
                             {
-                                if (results[i].Start.Equals(numExtResults[j].Start) && results[i].Text.Contains(numExtResults[j].Text))
+                                if ((results[i].Start.Equals(numExtResults[j].Start) ||
+                                     results[i].Start + results[i].Length ==
+                                     numExtResults[j].Start + numExtResults[j].Length) &&
+                                    results[i].Text.Contains(numExtResults[j].Text))
                                 {
-                                    results[i].Data = new KeyValuePair<string, ExtractResult>(dataKey, numExtResults.ElementAt(j));
-                                    break;
+                                    (results[i].Data as List<KeyValuePair<string, ExtractResult>>)?.Add(
+                                        new KeyValuePair<string, ExtractResult>(numExtResults[j].Text, numExtResults.ElementAt(j)));
                                 }
                             }
                         }

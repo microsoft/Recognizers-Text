@@ -1,0 +1,27 @@
+[
+{
+  "Input": "one out of three",
+  "Results": [
+    {
+      "Text": "one out of three",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "33.3333333333333%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one in two",
+  "Results": [
+    {
+      "Text": "one in two",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+]

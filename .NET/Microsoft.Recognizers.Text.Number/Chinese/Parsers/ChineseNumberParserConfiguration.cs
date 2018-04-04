@@ -51,13 +51,18 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             PointRegexChs = new Regex(NumbersDefinitions.PointRegexChs, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline | RegexOptions.IgnoreCase);
             PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            FractionPrepositionRegex = null;
         }
+
+        public NumberOptions Options { get; }
 
         public CultureInfo CultureInfo { get; private set; }
 
         public char DecimalSeparatorChar { get; private set; }
 
         public Regex DigitalNumberRegex { get; private set; }
+
+        public Regex FractionPrepositionRegex { get; }
 
         public string FractionMarkerToken { get; private set; }
 

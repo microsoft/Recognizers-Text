@@ -6,5 +6,6 @@ namespace Microsoft.Recognizers.Text.Number
     public enum NumberOptions
     {
         None = 0,
+        PercentageMode = 1
     }
 }

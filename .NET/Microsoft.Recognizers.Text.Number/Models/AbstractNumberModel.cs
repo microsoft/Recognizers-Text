@@ -29,7 +29,11 @@ namespace Microsoft.Recognizers.Text.Number
 
                 foreach (var result in extractResults)
                 {
-                    parsedNumbers.Add(Parser.Parse(result));
+                    var parsedResult = Parser.Parse(result);
+                    if (parsedResult != null)
+                    {
+                        parsedNumbers.Add(parsedResult);
+                    }
                 }
 
             }
