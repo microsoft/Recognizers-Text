@@ -99,6 +99,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 int utcMinuteShift = TimeZoneDefinitions.AbbrToMinMapping[text];
                 result.Value = GetDateTimeResolutionResult(utcMinuteShift);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
+
+                // TODO: Temporary solution for ambigious data
+                if (text == "ast" || text == "cet" || text == "cst" || text == "eet" ||
+                    text == "kst" || text == "west" || text == "sst" || text == "wast")
+                {
+                    ((DateTimeResolutionResult)result.Value).TimeZoneResolution.Value = "UTC+XX:XX";
+                    ((DateTimeResolutionResult)result.Value).TimeZoneResolution.UtcOffsetMins = Constants.InvalidOffsetValue;
+                    result.ResolutionStr = Constants.UtcOffsetMinsKey + ": XX:XX";
+                }
             }
             else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(text))
             {

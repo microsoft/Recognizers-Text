@@ -35,15 +35,12 @@ AbbrToMinMapping: !dictionary
    cvt: -60
    amt: 240
    amst: 240
-   acst: 570
    acdt: 570
    cast: -360
    cadt: -360
    btt: 360
    cbt: -240
    cbst: -240
-   cet: 60
-   cest: 60
    cet: 60
    cest: 60
    sbt: 660
@@ -54,7 +51,6 @@ AbbrToMinMapping: !dictionary
    cst: 480
    bit: -720
    eat: 180
-   aest: 600
    eet: 120
    eest: 120
    esat: -180
@@ -124,7 +120,6 @@ AbbrToMinMapping: !dictionary
    pyt: -240
    pyst: -240
    rst: 60
-   cest: 60
    msk: 180
    saest: -180
    sapst: -300
@@ -146,8 +141,6 @@ AbbrToMinMapping: !dictionary
    trt: 180
    eet: 180
    ulat: 480
-   mst: -420
-   mdt: -420
    utc: 0
    vet: -240
    vlat: 600
