@@ -14,13 +14,13 @@ AbbrToMinMapping: !dictionary
    akst: -540
    akdt: -540
    abst: 180
-   ast: 180
+   #ast: 180
+   ast: -10000
    arbst: 240
-   ast: 240
+   #ast: 240
    arst: 180
-   ast: 180
    art: -180
-   ast: -240
+   #ast: -240
    adt: -240
    acst: 570
    aest: 600
@@ -41,17 +41,20 @@ AbbrToMinMapping: !dictionary
    btt: 360
    cbt: -240
    cbst: -240
-   cet: 60
+   #cet: 60
+   cet: -10000
    cest: 60
    sbt: 660
-   cst: -360
+   #cst: -360
+   cst: -10000
    cdt: -360
    cstm: -360
    cdtm: -360
-   cst: 480
+   #cst: 480
    bit: -720
    eat: 180
-   eet: 120
+   #eet: 120
+   eet: -10000
    eest: 120
    esat: -180
    esast: -180
@@ -63,7 +66,6 @@ AbbrToMinMapping: !dictionary
    yekt: 300
    fjt: 720
    fjst: 720
-   eet: 120
    get: 240
    gmt: 0
    gnst: -180
@@ -83,8 +85,9 @@ AbbrToMinMapping: !dictionary
    jdt: 120
    eest: 120
    pett: 720
-   kst: 540
-   cet: 120
+   #kst: 540
+   kst: -10000
+   #cet: 120
    lint: 840
    magt: 660
    magst: 660
@@ -93,7 +96,8 @@ AbbrToMinMapping: !dictionary
    mest: 120
    mvst: -180
    most: 0
-   west: 0
+   #west: 0
+   west: -10000
    mst: -420
    mdt: -420
    mstm: -420
@@ -109,7 +113,7 @@ AbbrToMinMapping: !dictionary
    ndt: -210
    irkt: 480
    krat: 420
-   kst: 510
+   #kst: 510
    psat: -240
    psast: -240
    pst: -480
@@ -124,14 +128,15 @@ AbbrToMinMapping: !dictionary
    saest: -180
    sapst: -300
    sawst: -240
-   sst: 780
+   #sst: 780
+   sst: -10000
    smst: 780
    tha: 420
-   sst: 480
+   #sst: 480
    snst: 480
    sast: 120
    slt: 330
-   sst: 120
+   #sst: 120
    tist: 480
    tast: 600
    tadt: 600
@@ -139,7 +144,7 @@ AbbrToMinMapping: !dictionary
    tot: 780
    tost: 780
    trt: 180
-   eet: 180
+   #eet: 180
    ulat: 480
    utc: 0
    vet: -240
@@ -147,10 +152,11 @@ AbbrToMinMapping: !dictionary
    awst: 480
    wat: 60
    ect: 60
-   wast: 60
+   #wast: 60
+   wast: -10000
    wet: 60
-   west: 60
-   wast: 300
+   #west: 60
+   #wast: 300
    wpst: 600
    yakt: 540
 FullToMinMapping: !dictionary

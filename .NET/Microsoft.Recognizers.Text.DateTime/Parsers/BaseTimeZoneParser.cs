@@ -97,16 +97,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             else if (TimeZoneDefinitions.AbbrToMinMapping.ContainsKey(text))
             {
                 int utcMinuteShift = TimeZoneDefinitions.AbbrToMinMapping[text];
-                result.Value = GetDateTimeResolutionResult(utcMinuteShift);
-                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
 
-                // TODO: Temporary solution for ambigious data
-                if (text == "ast" || text == "cet" || text == "cst" || text == "eet" ||
-                    text == "kst" || text == "west" || text == "sst" || text == "wast")
+                // TODO: Temporary solution for ambiguous data
+                if (utcMinuteShift == Constants.InvalidOffsetValue)
                 {
-                    ((DateTimeResolutionResult)result.Value).TimeZoneResolution.Value = "UTC+XX:XX";
-                    ((DateTimeResolutionResult)result.Value).TimeZoneResolution.UtcOffsetMins = Constants.InvalidOffsetValue;
+                    result.Value = new DateTimeResolutionResult()
+                    {
+                        Success = true,
+                        TimeZoneResolution = new TimeZoneResolutionResult()
+                        {
+                            Value = "UTC+XX:XX",
+                            UtcOffsetMins = Constants.InvalidOffsetValue
+                        }
+                    };
                     result.ResolutionStr = Constants.UtcOffsetMinsKey + ": XX:XX";
+                }
+                else
+                {
+                    result.Value = GetDateTimeResolutionResult(utcMinuteShift);
+                    result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
                 }
             }
             else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(text))
