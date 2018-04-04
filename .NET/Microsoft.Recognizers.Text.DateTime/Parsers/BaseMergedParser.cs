@@ -121,7 +121,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
             {
                 // Commented out for now to not affect the output.
-                // pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
+                /*
+                if ((Config.Options & DateTimeOptions.EnablePreview) != 0)
+                {
+                    pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
+                }
+                */
             }
             else
             {

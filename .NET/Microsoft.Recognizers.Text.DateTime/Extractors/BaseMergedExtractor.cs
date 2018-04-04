@@ -35,7 +35,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.SetExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
-            AddTo(ret, this.config.TimeZoneExtractor.Extract(text, reference), text);
+
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                AddTo(ret, this.config.TimeZoneExtractor.Extract(text, reference), text);
+            }
 
             // This should be at the end since if need the extractor to determine the previous text contains time or not
             AddTo(ret, NumberEndingRegexMatch(text, ret), text);
