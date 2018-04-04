@@ -45,6 +45,7 @@ FOR /R %%f IN (*Tests.dll) DO (
 		SET testcontainer=!testcontainer! "%%f"
 	)
 )
+ECHO "!VsTestDir!\vstest.console"
 CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer%
 
 ECHO.

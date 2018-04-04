@@ -1,6 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
-
-using Microsoft.Recognizers.Text.Number;
+using System.Collections.Generic;
 
 using DateObject = System.DateTime;
 
@@ -9,6 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     public interface IDateTimeParser : IParser
     {
         DateTimeParseResult Parse(ExtractResult er, DateObject reference);
+
+        List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults);
     }
     
     public class DateTimeParseResult : ParseResult

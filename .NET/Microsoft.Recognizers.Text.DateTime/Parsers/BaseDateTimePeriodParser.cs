@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDateTimePeriodParser : IDateTimeParser
@@ -833,6 +831,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

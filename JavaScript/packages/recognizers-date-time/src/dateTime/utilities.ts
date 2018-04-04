@@ -170,7 +170,7 @@ export class MatchingUtil {
     public static getAgoLaterIndex(source: string, regex: RegExp): MatchedIndex {
         let result: MatchedIndex = { matched: false, index: -1 };
         let referencedMatches = RegExpUtility.getMatches(regex, source.trim().toLowerCase());
-        if (referencedMatches && referencedMatches.length > 0) {
+        if (referencedMatches && referencedMatches.length > 0 && referencedMatches[0].index === 0) {
             result.index = source.toLowerCase().lastIndexOf(referencedMatches[0].value) + referencedMatches[0].length;
             result.matched = true;
         }
@@ -322,6 +322,7 @@ export enum DayOfWeek {
 export class DateUtils {
     private static readonly oneDay = 24 * 60 * 60 * 1000;
     private static readonly oneHour = 60 * 60 * 1000;
+    private static readonly oneMinute = 60 * 1000;
     private static readonly oneSecond = 1000;
 
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
@@ -366,6 +367,18 @@ export class DateUtils {
         let fromEpoch = from.getTime() - (from.getTimezoneOffset() * 60 * 1000);
         let toEpoch = to.getTime() - (to.getTimezoneOffset() * 60 * 1000);
         return Math.round(Math.abs(fromEpoch - toEpoch - 0.00001) / this.oneHour);
+    }
+
+    static totalHoursFloor(from: Date, to: Date): number {
+        let fromEpoch = from.getTime() - (from.getTimezoneOffset() * this.oneMinute);
+        let toEpoch = to.getTime() - (to.getTimezoneOffset() * this.oneMinute);
+        return Math.floor(Math.abs(fromEpoch - toEpoch) / this.oneHour);
+    }
+
+    static totalMinutesFloor(from: Date, to: Date): number {
+        let fromEpoch = from.getTime() - (from.getTimezoneOffset() * this.oneMinute);
+        let toEpoch = to.getTime() - (to.getTimezoneOffset() * this.oneMinute);
+        return Math.floor(Math.abs(fromEpoch - toEpoch) / this.oneMinute);
     }
 
     static totalSeconds(from: Date, to: Date): number {
@@ -463,6 +476,15 @@ export class DateUtils {
 
     static safeCreateFromMinValue(year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {
         return this.safeCreateFromValue(this.minValue(), year, month, day, hour, minute, second);
+    }
+
+    // Resolve month overflow
+    static safeCreateDateResolveOverflow(year: number, month: number, day: number): Date {
+        if (month >= 12) {
+            year += (month + 1) / 12;
+            month %= 12;
+        }       
+        return this.safeCreateFromMinValue(year, month, day);
     }
 
     static safeCreateFromMinValueWithDateAndTime(date: Date, time?: Date): Date {

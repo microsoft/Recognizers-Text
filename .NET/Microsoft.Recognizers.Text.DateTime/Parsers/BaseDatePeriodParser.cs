@@ -66,6 +66,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
+                    innerResult = ParseHalfYear(er.Text, referenceDate);
+                }
+
+                if (!innerResult.Success)
+                {
                     innerResult = ParseQuarter(er.Text, referenceDate);
                 }
 
@@ -988,6 +993,51 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        private DateTimeResolutionResult ParseHalfYear(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var match = this.config.AllHalfYearRegex.Match(text);
+
+            if (!(match.Success && match.Length == text.Length))
+            {
+                return ret;
+            }
+
+            var cardinalStr = match.Groups["cardinal"].Value.ToLower();
+            var orderStr = match.Groups["order"].Value.ToLower();
+            var numberStr = match.Groups["number"].Value;
+
+            int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+
+            if (year == Constants.InvalidYear)
+            {
+                var swift = this.config.GetSwiftYear(orderStr);
+                if (swift < -1)
+                {
+                    return ret;
+                }
+                year = referenceDate.Year + swift;
+            }
+
+            int halfNum;
+            if (!string.IsNullOrEmpty(numberStr))
+            {
+                halfNum = int.Parse(numberStr);
+            }
+            else
+            {
+                halfNum = this.config.CardinalMap[cardinalStr];
+            }
+
+            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, (halfNum - 1) * Constants.SemesterMonthCount + 1, 1);
+            var endDate = DateObject.MinValue.SafeCreateFromValue(year, halfNum * Constants.SemesterMonthCount, 1).AddMonths(1);
+            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+            ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P6M)";
+            ret.Success = true;
+
+            return ret;
+        }
+
         private DateTimeResolutionResult ParseQuarter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -1005,22 +1055,63 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var cardinalStr = match.Groups["cardinal"].Value.ToLower();
             var orderStr = match.Groups["order"].Value.ToLower();
+            var numberStr = match.Groups["number"].Value;
 
+            bool noSpecificYear = false;
             int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+
             if (year == Constants.InvalidYear)
             {
                 var swift = this.config.GetSwiftYear(orderStr);
                 if (swift < -1)
                 {
-                    return ret;
+                    swift = 0;
+                    noSpecificYear = true;
                 }
                 year = referenceDate.Year + swift;
             }
 
-            var quarterNum = this.config.CardinalMap[cardinalStr];
-            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * 3 - 2, 1);
-            var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * 3 + 1, 1);
-            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+            int quarterNum;
+            if (!string.IsNullOrEmpty(numberStr))
+            {
+                quarterNum = int.Parse(numberStr);
+            }
+            else
+            {
+                quarterNum = this.config.CardinalMap[cardinalStr];
+            }
+
+            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, (quarterNum - 1) * Constants.TrimesterMonthCount + 1, 1);
+            var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * Constants.TrimesterMonthCount, 1).AddMonths(1);
+
+            if (noSpecificYear)
+            {
+                if (endDate.CompareTo(referenceDate) < 0)
+                {
+                    ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+
+                    var futureBeginDate = DateObject.MinValue.SafeCreateFromValue(year + 1, (quarterNum - 1) * Constants.TrimesterMonthCount + 1, 1);
+                    var futureEndDate = DateObject.MinValue.SafeCreateFromValue(year + 1, quarterNum * Constants.TrimesterMonthCount, 1).AddMonths(1);
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(futureBeginDate, futureEndDate);
+                }
+                else if (endDate.CompareTo(referenceDate) > 0)
+                {
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+
+                    var pastBeginDate = DateObject.MinValue.SafeCreateFromValue(year - 1, (quarterNum - 1) * Constants.TrimesterMonthCount + 1, 1);
+                    var pastEndDate = DateObject.MinValue.SafeCreateFromValue(year - 1, quarterNum * Constants.TrimesterMonthCount, 1).AddMonths(1);
+                    ret.PastValue = new Tuple<DateObject, DateObject>(pastBeginDate, pastEndDate);
+                }
+                else
+                {
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+                }
+            } 
+            else
+            {
+                ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+            }
+
             ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
 
@@ -1377,6 +1468,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public bool GetInclusiveEndPeriodFlag()
         {
             return InclusiveEndPeriod;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

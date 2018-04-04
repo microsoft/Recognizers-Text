@@ -30,7 +30,7 @@ export namespace ChineseNumeric {
 	export const FracSplitRegex = `又|分\\s*之`;
 	export const ZeroToNineIntegerRegexChs = `[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]`;
 	export const NegativeNumberTermsRegexChs = `[负負]`;
-	export const NegativeNumberTermsRegexNum = `(?<![-－])[-－]`;
+	export const NegativeNumberTermsRegexNum = `(?<!(\\d+\\s*)|[-－])[-－]`;
 	export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegexChs}.*|^${NegativeNumberTermsRegexNum}.*`;
 	export const SpeGetNumberRegex = `${ZeroToNineChsFullHalfRegexChs}|${ZeroToNineIntegerRegexChs}|[十拾半对對]`;
 	export const PairRegex = '.*[双对雙對]$';
@@ -46,8 +46,8 @@ export namespace ChineseNumeric {
 	export const NumbersWithDozen = `${AllIntRegexChs}[双雙对對打](?!${AllIntRegexChs})`;
 	export const PointRegexChsStr = `[点點\\.．]`;
 	export const AllFloatRegexChs = `${NegativeNumberTermsRegexChs}?${AllIntRegexChs}\\s*${PointRegexChsStr}\\s*[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇](\\s*${ZeroToNineIntegerRegexChs})*`;
-	export const NumbersWithoutPercent = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegexChs}[点點]*|${AllFloatRegexChs})*)${NegativeNumberTermsRegexChs}?(${NotSingleRegexChs}|${SingleRegexChs})(?!(${AllIntRegexChs}*([点點]${ZeroToNineIntegerRegexChs}+)*|${AllFloatRegexChs})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
-	export const NumbersWithPercent = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegexChs}[点點]*|${AllFloatRegexChs})*)${NegativeNumberTermsRegexChs}?${AllIntRegexChs}(?!(${AllIntRegexChs}*([点點]${ZeroToNineIntegerRegexChs}+)*|${AllFloatRegexChs})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
+	export const NumbersWithAllowListRegex = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegexChs}[点點]*|${AllFloatRegexChs})*)${NegativeNumberTermsRegexChs}?(${NotSingleRegexChs}|${SingleRegexChs})(?!(${AllIntRegexChs}*([点點]${ZeroToNineIntegerRegexChs}+)*|${AllFloatRegexChs})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
+	export const NumbersAggressiveRegex = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegexChs}[点點]*|${AllFloatRegexChs})*)${NegativeNumberTermsRegexChs}?${AllIntRegexChs}(?!(${AllIntRegexChs}*([点點]${ZeroToNineIntegerRegexChs}+)*|${AllFloatRegexChs})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
 	export const PointRegexChs = `${PointRegexChsStr}`;
 	export const DoubleSpecialsChars = `(?<!(${ZeroToNineChsFullHalfRegexChs}+[\\.．]${ZeroToNineChsFullHalfRegexChs}*))(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineChsFullHalfRegexChs}+[\\.．]${ZeroToNineChsFullHalfRegexChs}+(?!${ZeroToNineChsFullHalfRegexChs}*[\\.．]${ZeroToNineChsFullHalfRegexChs}+)`;
 	export const DoubleSpecialsCharsWithNegatives = `(?<!(${ZeroToNineChsFullHalfRegexChs}+|\\.\\.|．．))(${NegativeNumberTermsRegexNum}\\s*)?[\\.．]${ZeroToNineChsFullHalfRegexChs}+(?!${ZeroToNineChsFullHalfRegexChs}*([\\.．]${ZeroToNineChsFullHalfRegexChs}+))`;
@@ -76,7 +76,7 @@ export namespace ChineseNumeric {
 	export const IntegerPercentageRegex = `${ZeroToNineChsFullHalfRegexChs}+\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]`;
 	export const IntegerPercentageWithMultiplierRegex = `${ZeroToNineChsFullHalfRegexChs}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]`;
 	export const NumbersFractionPercentageRegex = `${ZeroToNineChsFullHalfRegexChs}{1,3}([,，]${ZeroToNineChsFullHalfRegexChs}{3})+\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]`;
-	export const SimpleIntegerPercentageRegex = `${NegativeNumberTermsRegexNum}?${ZeroToNineChsFullHalfRegexChs}+([\\.．]${ZeroToNineChsFullHalfRegexChs}+)?(\\s*)[％%]`;
+	export const SimpleIntegerPercentageRegex = `(?<=(\\s|^))${NegativeNumberTermsRegexNum}?${ZeroToNineChsFullHalfRegexChs}+([\\.．]${ZeroToNineChsFullHalfRegexChs}+)?(\\s*)[％%]`;
 	export const NumbersFoldsPercentageRegex = `${ZeroToNineChsFullHalfRegexChs}(([\\.．]?|\\s*)${ZeroToNineChsFullHalfRegexChs})?\\s*折`;
 	export const FoldsPercentageRegex = `${ZeroToNineIntegerRegexChs}(\\s*[点點]?\\s*${ZeroToNineIntegerRegexChs})?\\s*折`;
 	export const SimpleFoldsPercentageRegex = `${ZeroToNineChsFullHalfRegexChs}\\s*成(\\s*(半|${ZeroToNineChsFullHalfRegexChs}))?`;

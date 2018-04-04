@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -35,9 +35,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\German\German-DateTime.yaml = ..\Patterns\German\German-DateTime.yaml
 		..\Patterns\German\German-Numbers.yaml = ..\Patterns\German\German-Numbers.yaml
 		..\Patterns\German\German-NumbersWithUnit.yaml = ..\Patterns\German\German-NumbersWithUnit.yaml
+		..\Patterns\Japanese\Japanese-Choice.yaml = ..\Patterns\Japanese\Japanese-Choice.yaml
+		..\Patterns\Japanese\Japanese-Numbers.yaml = ..\Patterns\Japanese\Japanese-Numbers.yaml
+		..\Patterns\Portuguese\Portuguese-Choice.yaml = ..\Patterns\Portuguese\Portuguese-Choice.yaml
 		..\Patterns\Portuguese\Portuguese-DateTime.yaml = ..\Patterns\Portuguese\Portuguese-DateTime.yaml
 		..\Patterns\Portuguese\Portuguese-Numbers.yaml = ..\Patterns\Portuguese\Portuguese-Numbers.yaml
 		..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml = ..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml
+		..\Patterns\Spanish\Spanish-Choice.yaml = ..\Patterns\Spanish\Spanish-Choice.yaml
 		..\Patterns\Spanish\Spanish-DateTime.yaml = ..\Patterns\Spanish\Spanish-DateTime.yaml
 		..\Patterns\Spanish\Spanish-Numbers.yaml = ..\Patterns\Spanish\Spanish-Numbers.yaml
 		..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml = ..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml
@@ -67,6 +71,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Sequence", "Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj", "{A5F60D50-81F7-44F8-A2B4-A63606376EE7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.Choice", "Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj", "{9318EA22-C36A-48C8-9882-8A0D2D74C356}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.DataTypes.TimexExpression", "Microsoft.Recognizers.Text.DataTypes.TimexExpression\Microsoft.Recognizers.Text.DataTypes.TimexExpression.csproj", "{E4FCBDE9-D436-4D39-A67F-707E6CBD45CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.DataTypes.DataDrivenTests", "Microsoft.Recognizers.Text.DataTypes.DataDrivenTests\Microsoft.Recognizers.Text.DataTypes.DataDrivenTests.csproj", "{32A4593C-3D2D-412E-8EC5-07346266A358}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,6 +126,14 @@ Global
 		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9318EA22-C36A-48C8-9882-8A0D2D74C356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4FCBDE9-D436-4D39-A67F-707E6CBD45CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4FCBDE9-D436-4D39-A67F-707E6CBD45CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4FCBDE9-D436-4D39-A67F-707E6CBD45CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4FCBDE9-D436-4D39-A67F-707E6CBD45CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32A4593C-3D2D-412E-8EC5-07346266A358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A4593C-3D2D-412E-8EC5-07346266A358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A4593C-3D2D-412E-8EC5-07346266A358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A4593C-3D2D-412E-8EC5-07346266A358}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +145,7 @@ Global
 		{8FD9E85D-D0BF-4DEA-959A-7449D5AD0F4A} = {452C724B-66C1-4F67-A718-E7733F79961D}
 		{E6BAD17F-2FB0-4A3C-B897-BA9331DEB88A} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
 		{9A4EED9D-A3CE-4BA2-9021-042768D14A48} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
+		{32A4593C-3D2D-412E-8EC5-07346266A358} = {ED7B6456-AB0A-48CE-8F85-711FE87F09C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA9AFA-4914-4449-A66D-AE20900F0AA5}

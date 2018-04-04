@@ -3,7 +3,6 @@ using System.Globalization;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 
@@ -100,5 +99,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             return ret;
         }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
     }
 }

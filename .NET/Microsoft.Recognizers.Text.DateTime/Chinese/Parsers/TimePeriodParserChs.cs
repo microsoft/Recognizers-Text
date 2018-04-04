@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class TimePeriodParserChs : IDateTimeParser
@@ -77,6 +75,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             return null;
         }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
     }
 
     public static class TimePeriodFunctions
@@ -235,5 +239,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             return spanTimex.ToString();
         }
+
     }
 }

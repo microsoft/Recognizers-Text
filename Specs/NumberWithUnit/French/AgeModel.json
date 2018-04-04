@@ -1,6 +1,5 @@
 [{
   "Input": "Quand elle avait cinq ans, elle a appris à aller à une bicyclette",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinq ans",
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "Cette saga a dix ans.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dix ans",
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "J'ai seulement 29 ans!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "29 ans",
@@ -45,7 +42,6 @@
 ,
 {
   "Input": "Maintenant, après trente cinq ans, mes perspectives changent",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trente cinq ans",
@@ -60,7 +56,6 @@
 ,
 {
   "Input": "La Grande Muraille de Chine a plus de 500 ans et prolonge au-dessus de 5000 miles",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "500 ans",
@@ -75,7 +70,6 @@
 ,
 {
   "Input": "Elle est 60 ans; elle est née dans le 8 mai 1945",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "60 ans",
@@ -90,7 +84,6 @@
 ,
 {
   "Input": "25 % de cas ne sont pas diagnostiqués jusqu'à autour de 3 ans.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 ans",
@@ -105,7 +98,6 @@
 ,
 {
   "Input": "Quand sera là la pression pour accomplir une promesse qui est un ans?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un ans",
@@ -120,7 +112,6 @@
 ,
 {
   "Input": "C'est arrivé quand le bébé était seulement dix mois.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dix mois",
@@ -135,7 +126,6 @@
 ,
 {
   "Input": "La proposition de comité est 8 mois.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "8 mois",
@@ -150,7 +140,6 @@
 ,
 {
   "Input": "50 % de cas sont diagnostiqués a peus peu près dix-huit mois d'âge",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dix-huit mois d'âge",
@@ -165,7 +154,6 @@
 ,
 {
   "Input": "C'est possible, mais en 2006 95 % d'entre eux étaient plus jeunes que trois mois.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois mois",
@@ -180,7 +168,6 @@
 ,
 {
   "Input": "Si nous avançons en décembre ce sera trois semaines vieilles",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois semaines",
@@ -195,7 +182,6 @@
 ,
 {
   "Input": "à l'âge de 6 semaines, on peut déjà fêter Noël",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "6 semaines",
@@ -210,7 +196,6 @@
 ,
 {
   "Input": "Un 90 jour la vieille facture est tres tard",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "90 jour",
@@ -218,6 +203,23 @@
       "Resolution": {
         "value": "90",
         "unit": "Jour"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Il a environ 40 - 50 ans",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "50 ans",
+      "Start": 18,
+      "End": 23,
+      "TypeName": "age",
+      "Resolution": {
+        "unit": "Ans",
+        "value": "50"
       }
     }
   ]

@@ -148,6 +148,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText) => false;
+        public bool ContainsAmbiguousToken(string text, string matchedText) => false;
     }
 }

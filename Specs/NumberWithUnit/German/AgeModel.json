@@ -189,4 +189,22 @@
     }
   ]
 }
+,
+{
+  "Input": "Er ist ungefähr 40 - 50 Jahre alt.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "50 Jahre alt",
+      "Start": 21,
+      "End": 32,
+      "TypeName": "age",
+      "Resolution": {
+        "unit": "Year",
+        "value": "50"
+      }
+    }
+  ]
+}
 ]

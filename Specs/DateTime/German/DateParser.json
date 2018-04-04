@@ -7,7 +7,7 @@
     "NotSupported":"javascript",
     "Results": [
       {
-        "Text": "15. ",
+        "Text": "15.",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-15",
@@ -195,12 +195,12 @@
         "Text": "Freitag",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-WXX-5",
+          "Timex": "2016-11-11",
           "FutureResolution": {
             "date": "2016-11-11"
           },
           "PastResolution": {
-            "date": "2016-11-04"
+            "date": "2016-11-11"
           }
         }
       }
@@ -224,6 +224,72 @@
           },
           "PastResolution": {
             "date": "2016-11-07"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am 2015/08/12 zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am ersten Januar wieder da.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "ersten Januar",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am ersten Januar 2018 wieder da.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "ersten Januar 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-01",
+          "FutureResolution": {
+            "date": "2018-01-01"
+          },
+          "PastResolution": {
+            "date": "2018-01-01"
           }
         }
       }

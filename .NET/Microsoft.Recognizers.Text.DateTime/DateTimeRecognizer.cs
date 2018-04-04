@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+
 using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
+using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 
@@ -33,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
         }
-        
+
         public static List<ModelResult> RecognizeDateTime(string query, string culture, DateTimeOptions options = DateTimeOptions.None, System.DateTime? refTime = null, bool fallbackToDefaultCulture = true)
         {
             var recognizer = new DateTimeRecognizer(options);
@@ -72,6 +74,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 (options) => new DateTimeModel(
                     new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
                     new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))));
+
+            RegisterModel<DateTimeModel>(
+                Culture.German,
+                (options) => new DateTimeModel(
+                    new BaseMergedParser(new GermanMergedParserConfiguration(options)),
+                    new BaseMergedExtractor(new GermanMergedExtractorConfiguration(options))));
         }
     }
 }

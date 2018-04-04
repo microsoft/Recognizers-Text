@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+            UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
 

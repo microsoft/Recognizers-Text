@@ -114,5 +114,385 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Bin für 3 Stunden weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 Stunden",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bin für 3 Tage weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 Tage",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Bin für 3 Monate weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 Monate",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "duration": "7776000"
+          },
+          "PastResolution": {
+            "duration": "7776000"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Bin für 3 Minuten weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 Minuten",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Bin für 3,5 Sekunden weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3,5 Sekunden",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3.5S",
+          "FutureResolution": {
+            "duration": "3.5"
+          },
+          "PastResolution": {
+            "duration": "3.5"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "123,45 sek",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "123,45 sek",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT123.45S",
+          "FutureResolution": {
+            "duration": "123.45"
+          },
+          "PastResolution": {
+            "duration": "123.45"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Bin für zwei Wochen weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "zwei Wochen",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Bin für zwanzig min weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "zwanzig min",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT20M",
+          "FutureResolution": {
+            "duration": "1200"
+          },
+          "PastResolution": {
+            "duration": "1200"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das geht den ganzen Tag lang schon so.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ganzen Tag",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das geht die ganze Woche lang schon so.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ganze Woche",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das geht den ganzen Monat lang schon so.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ganzen Monat",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das geht das ganze Jahr lang schon so.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "ganze Jahr",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "halbes Jahr",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "halbes Jahr",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P0.5Y",
+          "FutureResolution": {
+            "duration": "15768000"
+          },
+          "PastResolution": {
+            "duration": "15768000"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich mach das in 3 min",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "30 Minuten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "30 Minuten",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT30M",
+          "FutureResolution": {
+            "duration": "1800"
+          },
+          "PastResolution": {
+            "duration": "1800"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe für zwei Stunden",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "zwei Stunden",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2H",
+          "FutureResolution": {
+            "duration": "7200"
+          },
+          "PastResolution": {
+            "duration": "7200"
+          }
+        }
+      }
+    ]
   }
 ]

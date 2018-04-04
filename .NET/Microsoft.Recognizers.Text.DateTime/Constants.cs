@@ -32,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // In the ExtractResult data
         public const string Context = "context";
         public const string ContextType_RelativePrefix = "relativePrefix";
+        public const string ContextType_RelativeSuffix = "relativeSuffix";
         public const string ContextType_AmPm = "AmPm";
         public const string SubType = "subType";
 
@@ -65,5 +66,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ResolveTimeZone = "resolveTimeZone";
         public const int PositiveSign = 1;
         public const int NegativeSign = -1;
+
+        public const int TrimesterMonthCount = 3;
+        public const int SemesterMonthCount = 6;
     }
 }

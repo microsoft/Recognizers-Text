@@ -28,11 +28,11 @@ export namespace PortugueseNumeric {
 	export const PlaceHolderPureNumber = `\\b`;
 	export const AllIntRegexWithLocks = `((?<=\\b)${AllIntRegex}(?=\\b))`;
 	export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(((meia)?\\s+(d[úu]zia))|(${AllIntRegex}\\s+(e|com)\\s+)?(${AllIntRegex}\\s+(d[úu]zia(s)?|dezena(s)?)))(?=\\b)`;
-	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }
+	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }
 	export const NumbersWithSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(k|M|T|G)(?=\\b)`;
 	export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)(${DigitsNumberRegex})+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
 	export const NumbersWithDozenSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dezena(s)?(?=\\b)`;
-	export const NumbersWithDozen2Suffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+(\\s+d[úu]zia(s))?(?=\\b)`;
+	export const NumbersWithDozen2Suffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+d[úu]zia(s)(?=\\b)`;
 	export const SimpleRoundOrdinalRegex = `(mil[eé]sim[oa]|milion[eé]sim[oa]|bilion[eé]sim[oa]|trilion[eé]sim[oa]|quatrilion[eé]sim[oa]|quintilion[eé]sim[oa])`;
 	export const OneToNineOrdinalRegex = `(primeir[oa]|segund[oa]|terceir[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])`;
 	export const TensOrdinalRegex = `(nonag[eé]sim[oa]|octog[eé]sim[oa]|setuag[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quinquag[eé]sim[oa]|quadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])`;
@@ -61,7 +61,7 @@ export namespace PortugueseNumeric {
 	export const DoubleWithRoundNumber = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
 	export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
 	export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)`;
-	export const NumberWithSuffixPercentage = `(${BaseNumbers.NumberReplaceToken})(\\s*)(%|por cento|pontos percentuais)`;
+	export const NumberWithSuffixPercentage = `(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)`;
 	export const DecimalSeparatorChar = ',';
 	export const FractionMarkerToken = 'sobre';
 	export const NonDecimalSeparatorChar = '.';

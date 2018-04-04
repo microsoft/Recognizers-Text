@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Choice.Extractors;
 
-namespace Microsoft.Recognizers.Text.Choice.English.Extractors
+using Microsoft.Recognizers.Definitions.English;
+
+namespace Microsoft.Recognizers.Text.Choice.English
 {
     public class EnglishBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex = 
-            new Regex(OptionsDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex FalseRegex = 
-            new Regex(OptionsDefinitions.FalseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(ChoiceDefinitions.FalseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TokenRegex = 
-            new Regex(OptionsDefinitions.TokenizerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly IDictionary<Regex, string> MapRegexes =  new Dictionary<Regex, string>()
         {

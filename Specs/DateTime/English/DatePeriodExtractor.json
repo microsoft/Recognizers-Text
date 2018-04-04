@@ -2112,6 +2112,9 @@
 ,
 {
   "Input": "I'll be out from Friday the 2nd until Tuesday the 6th",
+  "Context": {
+    "ReferenceDateTime": "2018-03-01T00:00:00"
+  },
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2215,6 +2218,28 @@
   "Results": [
     {
       "Text": "2016 the third quarter",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back during Q1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Q1",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Q3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Q3",
       "Type": "daterange"
     }
   ]

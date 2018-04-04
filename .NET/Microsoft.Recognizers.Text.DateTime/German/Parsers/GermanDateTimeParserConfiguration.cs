@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if ((trimedText.EndsWith("morgen")|| trimedText.EndsWith("morgens")) && hour >= 12)
+            if ((trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour >= 12)
             {
                 result -= 12;
             }
@@ -143,6 +143,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText) => false;
+        public bool ContainsAmbiguousToken(string text, string matchedText) => false;
     }
 }

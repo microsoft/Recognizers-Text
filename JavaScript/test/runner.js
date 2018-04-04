@@ -44,6 +44,6 @@ function getTestRunner(config) {
         case 'Sequence':
             return SequenceTestRunner(config);
         default:
-            throw new Error(`Extractor type unknown: ${JSON.stringify(config)}`);
+            throw new Error(`Recognizer type unknown: ${JSON.stringify(config)}`);
     }
 }

@@ -1,4 +1,4 @@
-import { RegExpUtility } from "@microsoft/recognizers-text";
+import { RegExpUtility, IExtractor } from "@microsoft/recognizers-text";
 import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { IDateTimeUtilityConfiguration } from "../utilities";
@@ -7,12 +7,15 @@ import { FrenchDateTimeUtilityConfiguration } from "./baseConfiguration";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeExtractor } from "../baseDateTime";
+import { EnglishIntegerExtractor, NumberMode } from "@microsoft/recognizers-text-number";
 
 export class FrenchTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
     readonly tillRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
+    readonly generalEndingRegex: RegExp;
     readonly singleTimeExtractor: IDateTimeExtractor;
+    readonly integerExtractor: IExtractor;
     readonly utilityConfiguration: FrenchDateTimeUtilityConfiguration;
 
     readonly fromRegex: RegExp;
@@ -21,6 +24,7 @@ export class FrenchTimePeriodExtractorConfiguration implements ITimePeriodExtrac
 
     constructor() {
         this.singleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
+        this.integerExtractor = new EnglishIntegerExtractor();
         this.utilityConfiguration = new FrenchDateTimeUtilityConfiguration();
 
         this.simpleCasesRegex = [
@@ -32,6 +36,7 @@ export class FrenchTimePeriodExtractorConfiguration implements ITimePeriodExtrac
 
         this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex, "gis");
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeOfDayRegex, "gis");
+        this.generalEndingRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.GeneralEndingRegex, "gis");
 
         this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex2, "gis");
         this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex, "gis");
@@ -54,20 +59,24 @@ export class FrenchTimePeriodExtractorConfiguration implements ITimePeriodExtrac
 export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
     readonly timeExtractor: IDateTimeExtractor;
     readonly timeParser: BaseTimeParser;
+    readonly integerExtractor: IExtractor;
     readonly pureNumberFromToRegex: RegExp;
     readonly pureNumberBetweenAndRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
+    readonly tillRegex: RegExp;
     readonly numbers: ReadonlyMap<string, number>;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.timeExtractor = config.timeExtractor;
         this.timeParser = config.timeParser;
+        this.integerExtractor = config.integerExtractor;
         this.numbers = config.numbers;
         this.utilityConfiguration = config.utilityConfiguration;
         this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis");
         this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis");
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeOfDayRegex, "gis");
+        this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex, "gis");
     }
 
     getMatchedTimexRange(text: string): { matched: boolean; timex: string; beginHour: number; endHour: number; endMin: number; } {

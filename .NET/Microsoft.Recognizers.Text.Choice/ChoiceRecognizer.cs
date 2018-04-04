@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Choice.English.Extractors;
-using Microsoft.Recognizers.Text.Choice.Extractors;
-using Microsoft.Recognizers.Text.Choice.Models;
-using Microsoft.Recognizers.Text.Choice.Parsers;
+
+using Microsoft.Recognizers.Text.Choice.English;
+using Microsoft.Recognizers.Text.Choice.Japanese;
+using Microsoft.Recognizers.Text.Choice.Portuguese;
+using Microsoft.Recognizers.Text.Choice.Spanish;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
@@ -45,6 +46,18 @@ namespace Microsoft.Recognizers.Text.Choice
             RegisterModel<BooleanModel>(
                 Culture.English,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new EnglishBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Japanese,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new JapaneseBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Portuguese,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new PortugueseBooleanExtractorConfiguration())));
+
+            RegisterModel<BooleanModel>(
+                Culture.Spanish,
+                (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new SpanishBooleanExtractorConfiguration())));
         }
     }
 }
