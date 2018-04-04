@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(AtRegexMatch(text));
             tokens.AddRange(BeforeAfterRegexMatch(text));
-            tokens.AddRange(SpecialsRegexMatch(text, reference));
+            tokens.AddRange(SpecialCasesRegexMatch(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> SpecialsRegexMatch(string text, DateObject reference)
+        private List<Token> SpecialCasesRegexMatch(string text, DateObject reference)
         {
             var ret = new List<Token>();
             // handle "ish"

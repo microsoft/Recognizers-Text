@@ -176,6 +176,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expectedValue.Timex, actualValue.Timex, GetMessage(TestSpec));
                 CollectionAssert.AreEqual(expectedValue.FutureResolution, actualValue.FutureResolution, GetMessage(TestSpec));
                 CollectionAssert.AreEqual(expectedValue.PastResolution, actualValue.PastResolution, GetMessage(TestSpec));
+
+                if (expectedValue.TimeZoneResolution != null)
+                {
+                    Assert.IsNotNull(actualValue.TimeZoneResolution, GetMessage(TestSpec));
+                    Assert.AreEqual(expectedValue.TimeZoneResolution.Value, actualValue.TimeZoneResolution.Value, GetMessage(TestSpec));
+                    Assert.AreEqual(expectedValue.TimeZoneResolution.UtcOffsetMins, actualValue.TimeZoneResolution.UtcOffsetMins, GetMessage(TestSpec));
+                }
             }
         }
 

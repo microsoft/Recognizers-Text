@@ -1475,10 +1475,4 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
     }
-
-    public enum CalculateRangeMode
-    {
-        Week,
-        Month
-    }
 }

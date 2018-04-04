@@ -1,0 +1,287 @@
+---
+# Direct UTC Expression
+DirectUtcRegex: !simpleRegex
+  def: (utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?
+AbbreviationsRegex: !simpleRegex
+  def: (\b)(AFT|AKST|AKDT|ABST|AST|ARBST|ARST|ART|ADT|ACST|AEST|AEDT|AZT|AZST|AZOT|AZOST|BST|CCST|CT|CVT|AMT|AMST|ACDT|CAST|CADT|BTT|CBT|CBST|CET|CEST|SBT|CST|CDT|CSTM|CDTM|BIT|EAT|EET|EEST|ESAT|ESAST|EST|EDT|ESTM|EDTM|EGST|YEKT|FJT|FJST|GET|GMT|GNST|GNDT|GST|GTBST|HAST|HST|HADT|HDT|IST|IRST|IRDT|ISST|ISDT|JST|JDT|PETT|KST|LINT|MAGT|MAGST|MUT|MAT|MEST|MVST|MOST|WEST|MST|MDT|MSTM|MDTM|MYST|NCAST|NMST|NMDT|NPT|NZST|NZDT|NST|NDT|IRKT|KRAT|PSAT|PSAST|PST|PDT|PSTM|PDTM|PKT|PYT|PYST|RST|MSK|SAEST|SAPST|SAWST|SST|SMST|THA|SNST|SAST|SLT|TIST|TAST|TADT|TST|TOT|TOST|TRT|ULAT|UTC|VET|VLAT|AWST|WAT|ECT|WAST|WET|WPST|YAKT)(\b)
+FullNameRegex: !simpleRegex
+  def: (Afghanistan Standard Time|Alaskan Standard Time|Arab Standard Time|Arabian Standard Time|Arabic Standard Time|Argentina Standard Time|Atlantic Standard Time|AUS Central Standard Time|AUS Eastern Standard Time|Azerbaijan Standard Time|Azores Standard Time|Bahia Standard Time|Bangladesh Standard Time|Belarus Standard Time|Canada Central Standard Time|Cape Verde Standard Time|Caucasus Standard Time|Cen. Australia Standard Time|Central America Standard Time|Central Asia Standard Time|Central Brazilian Standard Time|Central Europe Standard Time|Central European Standard Time|Central Pacific Standard Time|Central Standard Time|Central Standard Time|China Standard Time|Beijing time|Shanghai time|Shenzhen time|Suzhou time|Tianjian time|Chengdu time|Guangzhou time|Wuxi time|Xiamen time|Chongqing time|Shenyang time|China Time|Dateline Standard Time|E. Africa Standard Time|E. Australia Standard Time|E. Europe Standard Time|E. South America Standard Time|Eastern Standard Time|Eastern Standard Time|Egypt Standard Time|Ekaterinburg Standard Time|Fiji Standard Time|FLE Standard Time|Georgian Standard Time|GMT Standard Time|Greenland Standard Time|Greenwich Standard Time|GTB Standard Time|Hawaiian Standard Time|India Standard Time|Iran Standard Time|Israel Standard Time|Jordan Standard Time|Kaliningrad Standard Time|Kamchatka Standard Time|Korea Standard Time|Libya Standard Time|Line Islands Standard Time|Magadan Standard Time|Mauritius Standard Time|Mid-Atlantic Standard Time|Middle East Standard Time|Montevideo Standard Time|Morocco Standard Time|Mountain Standard Time|Mountain Standard Time|Myanmar Standard Time|N. Central Asia Standard Time|Namibia Standard Time|Nepal Standard Time|New Zealand Standard Time|Newfoundland Standard Time|North Asia East Standard Time|North Asia Standard Time|North Korea Standard Time|Pacific SA Standard Time|Pacific Standard Time|Redmond time|Seattle time|Bellevue time|Pacific Daylight Time|Pacific Time|Pacific Standard Time|Pakistan Standard Time|Paraguay Standard Time|Romance Standard Time|Russia Time Zone 10|Russia Time Zone 11|Russia Time Zone 3|Russian Standard Time|SA Eastern Standard Time|SA Pacific Standard Time|SA Western Standard Time|Samoa Standard Time|SE Asia Standard Time|Singapore Standard Time|South Africa Standard Time|Sri Lanka Standard Time|Syria Standard Time|Taipei Standard Time|Tasmania Standard Time|Tokyo Standard Time|Tonga Standard Time|Turkey Standard Time|Ulaanbaatar Standard Time|US Eastern Standard Time|US Mountain Standard Time|UTC|UTC+12|UTC-02|UTC-11á|Venezuela Standard Time|Vladivostok Standard Time|W. Australia Standard Time|W. Central Africa Standard Time|W. Europe Standard Time|West Asia Standard Time|West Pacific Standard Time|Yakutsk Standard Time)
+#parser
+AbbrToMinMapping: !dictionary
+ types: [ string , int ]
+ entries:
+   aft: 270
+   akst: -540
+   akdt: -540
+   abst: 180
+   #ast: 180
+   ast: -10000
+   arbst: 240
+   #ast: 240
+   arst: 180
+   art: -180
+   #ast: -240
+   adt: -240
+   acst: 570
+   aest: 600
+   aedt: 600
+   azt: 240
+   azst: 240
+   azot: -60
+   azost: -60
+   bst: 360
+   ccst: -360
+   ct: -360
+   cvt: -60
+   amt: 240
+   amst: 240
+   acdt: 570
+   cast: -360
+   cadt: -360
+   btt: 360
+   cbt: -240
+   cbst: -240
+   #cet: 60
+   cet: -10000
+   cest: 60
+   sbt: 660
+   #cst: -360
+   cst: -10000
+   cdt: -360
+   cstm: -360
+   cdtm: -360
+   #cst: 480
+   bit: -720
+   eat: 180
+   #eet: 120
+   eet: -10000
+   eest: 120
+   esat: -180
+   esast: -180
+   est: -300
+   edt: -300
+   estm: -300
+   edtm: -300
+   egst: 120
+   yekt: 300
+   fjt: 720
+   fjst: 720
+   get: 240
+   gmt: 0
+   gnst: -180
+   gndt: -180
+   gst: 0
+   gtbst: 120
+   hast: -600
+   hst: -600
+   hadt: -600
+   hdt: -600
+   ist: 330
+   irst: 210
+   irdt: 210
+   isst: 120
+   isdt: 120
+   jst: 120
+   jdt: 120
+   eest: 120
+   pett: 720
+   #kst: 540
+   kst: -10000
+   #cet: 120
+   lint: 840
+   magt: 660
+   magst: 660
+   mut: 240
+   mat: -120
+   mest: 120
+   mvst: -180
+   most: 0
+   #west: 0
+   west: -10000
+   mst: -420
+   mdt: -420
+   mstm: -420
+   mdtm: -420
+   myst: 390
+   ncast: 420
+   nmst: 60
+   nmdt: 60
+   npt: 345
+   nzst: 720
+   nzdt: 720
+   nst: -210
+   ndt: -210
+   irkt: 480
+   krat: 420
+   #kst: 510
+   psat: -240
+   psast: -240
+   pst: -480
+   pdt: -480
+   pstm: -480
+   pdtm: -480
+   pkt: 300
+   pyt: -240
+   pyst: -240
+   rst: 60
+   msk: 180
+   saest: -180
+   sapst: -300
+   sawst: -240
+   #sst: 780
+   sst: -10000
+   smst: 780
+   tha: 420
+   #sst: 480
+   snst: 480
+   sast: 120
+   slt: 330
+   #sst: 120
+   tist: 480
+   tast: 600
+   tadt: 600
+   tst: 540
+   tot: 780
+   tost: 780
+   trt: 180
+   #eet: 180
+   ulat: 480
+   utc: 0
+   vet: -240
+   vlat: 600
+   awst: 480
+   wat: 60
+   ect: 60
+   #wast: 60
+   wast: -10000
+   wet: 60
+   #west: 60
+   #wast: 300
+   wpst: 600
+   yakt: 540
+FullToMinMapping: !dictionary
+ types: [ string , int ]
+ entries:
+   beijing time: 480
+   shanghai time: 480
+   shenzhen time: 480
+   suzhou time: 480
+   tianjian time: 480
+   chengdu time: 480
+   guangzhou time: 480
+   wuxi time: 480
+   xiamen time: 480
+   chongqing time: 480
+   shenyang time: 480
+   china time: 480
+   redmond time: -480
+   seattle time: -480
+   bellevue time: -480
+   pacific daylight time: -480
+   pacific time: -480 
+   afghanistan standard time: 270
+   alaskan standard time: -540
+   arab standard time: 180
+   arabian standard time: 240
+   arabic standard time: 180
+   argentina standard time: -180
+   atlantic standard time: -240
+   aus central standard time: 570
+   aus eastern standard time: 600
+   azerbaijan standard time: 240
+   azores standard time: -60
+   bahia standard time: -180
+   bangladesh standard time: 360
+   belarus standard time: 180
+   canada central standard time: -360
+   cape verde standard time: -60
+   caucasus standard time: 240
+   cen. australia standard time: 570
+   central america standard time: -360
+   central asia standard time: 360
+   central brazilian standard time: -240
+   central europe standard time: 60
+   central european standard time: 60
+   central pacific standard time: 660
+   central standard time: -360
+   central standard time (mexico): -360
+   china standard time: 480
+   dateline standard time: -720
+   e. africa standard time: 180
+   e. australia standard time: 600
+   e. europe standard time: 120
+   e. south america standard time: -180
+   eastern standard time: -300
+   eastern standard time (mexico): -300
+   egypt standard time: 120
+   ekaterinburg standard time: 300
+   fiji standard time: 720
+   fle standard time: 120
+   georgian standard time: 240
+   gmt standard time: 0
+   greenland standard time: -180
+   greenwich standard time: 0
+   gtb standard time: 120
+   hawaiian standard time: -600
+   india standard time: 330
+   iran standard time: 210
+   israel standard time: 120
+   jordan standard time: 120
+   kaliningrad standard time: 120
+   kamchatka standard time: 720
+   korea standard time: 540
+   libya standard time: 120
+   line islands standard time: 840
+   magadan standard time: 660
+   mauritius standard time: 240
+   mid-atlantic standard time: -120
+   middle east standard time: 120
+   montevideo standard time: -180
+   morocco standard time: 0
+   mountain standard time: -420
+   mountain standard time (mexico): -420
+   myanmar standard time: 390
+   n. central asia standard time: 420
+   namibia standard time: 60
+   nepal standard time: 345
+   new zealand standard time: 720
+   newfoundland standard time: -210
+   north asia east standard time: 480
+   north asia standard time: 420
+   north korea standard time: 510
+   pacific sa standard time: -240
+   pacific standard time: -480
+   pacific standard time (mexico): -480
+   pakistan standard time: 300
+   paraguay standard time: -240
+   romance standard time: 60
+   russia time zone 10: 660
+   russia time zone 11: 720
+   russia time zone 3: 240
+   russian standard time: 180
+   sa eastern standard time: -180
+   sa pacific standard time: -300
+   sa western standard time: -240
+   samoa standard time: 780
+   se asia standard time: 420
+   singapore standard time: 480
+   south africa standard time: 120
+   sri lanka standard time: 330
+   syria standard time: 120
+   taipei standard time: 480
+   tasmania standard time: 600
+   tokyo standard time: 540
+   tonga standard time: 780
+   turkey standard time: 180
+   ulaanbaatar standard time: 480
+   us eastern standard time: -300
+   us mountain standard time: -420
+   venezuela standard time: -240
+   vladivostok standard time: 600
+   w. australia standard time: 480
+   w. central africa standard time: 60
+   w. europe standard time: 60
+   west asia standard time: 300
+   west pacific standard time: 600
+   yakutsk standard time: 540
+   
