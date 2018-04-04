@@ -752,27 +752,5 @@
       "Type": "daterange"
     }
   ]
-},
-{
-  "Input": "This is beijing time",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "beijing time",
-      "Type": "timezone"
-    }
-  ]
-},
-{
-  "Input": "This is afghanistan standard time",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "afghanistan standard time",
-      "Type": "timezone"
-    }
-  ]
 }
 ]

@@ -21,6 +21,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return this.Parse(result, DateObject.Now);
         }
 
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
         // Compute UTC offset in minutes from matched timezone offset in text. e.g. "-4:30" -> -270; "+8"-> 480.
         public int ComputeMinutes(string utcOffset)
         {
