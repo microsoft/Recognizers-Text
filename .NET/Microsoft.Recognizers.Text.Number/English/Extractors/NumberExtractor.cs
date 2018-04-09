@@ -16,19 +16,19 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override Regex NegativeNumberTermsRegex { get; }
 
-        private static readonly ConcurrentDictionary<string, NumberExtractor> Instances = new ConcurrentDictionary<string, NumberExtractor>();
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
-        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None) {
-
-            var placeholder = mode.ToString();
-
-            if (!Instances.ContainsKey(placeholder))
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
+        {
+            var cacheKey = (mode, options);
+            if (!Instances.ContainsKey(cacheKey))
             {
                 var instance = new NumberExtractor(mode, options);
-                Instances.TryAdd(placeholder, instance);
+                Instances.TryAdd(cacheKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[cacheKey];
         }
 
         private NumberExtractor(NumberMode mode, NumberOptions options)

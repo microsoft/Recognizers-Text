@@ -14,15 +14,15 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected static readonly string NumExtType = Constants.SYS_NUM; //@sys.num
 
+        protected static readonly string FracNumExtType = Constants.SYS_NUM_FRACTION;
+
         protected string ExtractType = Constants.SYS_NUM_PERCENTAGE;
 
-        private ImmutableHashSet<Regex> Regexes { get; }
+        protected ImmutableHashSet<Regex> Regexes;
 
         public BasePercentageExtractor(BaseNumberExtractor numberExtractor)
         {
             this.numberExtractor = numberExtractor;
-
-            Regexes = InitRegexes();
         }
 
         protected abstract ImmutableHashSet<Regex> InitRegexes();
@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.Number
             IList<ExtractResult> numExtResults;
 
             // preprocess the source sentence via extracting and replacing the numbers in it
-            source = this.PreprocessStrWithNumberExtracted(originSource, out positionMap, out numExtResults);
+            source = PreprocessStrWithNumberExtracted(originSource, out positionMap, out numExtResults);
 
             var allMatches = new List<MatchCollection>();
             // match percentage with regexes
@@ -48,15 +48,15 @@ namespace Microsoft.Recognizers.Text.Number
                 allMatches.Add(regex.Matches(source));
             }
 
-            bool[] matched = new bool[source.Length];
+            var matched = new bool[source.Length];
             for (var i = 0; i < source.Length; i++)
             {
                 matched[i] = false;
             }
 
-            for (var i = 0; i < allMatches.Count; i++)
+            foreach (var matches in allMatches)
             {
-                foreach (Match match in allMatches[i])
+                foreach (Match match in matches)
                 {
                     for (var j = 0; j < match.Length; j++)
                     {
@@ -68,7 +68,7 @@ namespace Microsoft.Recognizers.Text.Number
             var result = new List<ExtractResult>();
             var last = -1;
 
-            //get index of each matched results
+            // get index of each matched results
             for (int i = 0; i < source.Length; i++)
             {
                 if (matched[i])
@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // post-processing, restoring the extracted numbers
-            this.PostProcessing(result, originSource, positionMap, numExtResults);
+            PostProcessing(result, originSource, positionMap, numExtResults);
 
             return result;
         }
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 Regex regex = new Regex(regexStr, options);
-                
+
                 regexes.Add(regex);
             }
 
@@ -132,14 +132,29 @@ namespace Microsoft.Recognizers.Text.Number
         /// </summary>
         /// <param name="results">extract results after number extractor</param>
         /// <param name="originSource">the sentense after replacing the @sys.num, Example: @sys.num %</param>
-        private void PostProcessing(List<ExtractResult> results, string originSource, Dictionary<int, int> positionMap, IList<ExtractResult> numExtResults)
+        private void PostProcessing(List<ExtractResult> results, string originSource, Dictionary<int, int> positionMap,
+            IList<ExtractResult> numExtResults)
         {
-            string replaceText = "@" + NumExtType;
+            string replaceNumText = "@" + NumExtType;
+            string replaceFracNumText = "@" + FracNumExtType;
+
             for (int i = 0; i < results.Count; i++)
             {
-                int start = (int)results[i].Start;
-                int end = start + (int)results[i].Length;
+                int start = (int) results[i].Start;
+                int end = start + (int) results[i].Length;
                 string str = results[i].Text;
+                var data = new List<(string, ExtractResult)>();
+
+                string replaceText;
+                if (str.Contains(replaceFracNumText) && (Options & NumberOptions.PercentageMode) != 0)
+                {
+                    replaceText = replaceFracNumText;
+                }
+                else
+                {
+                    replaceText = replaceNumText;
+                }
+
                 if (positionMap.ContainsKey(start) && positionMap.ContainsKey(end))
                 {
                     int originStart = positionMap[start];
@@ -147,17 +162,12 @@ namespace Microsoft.Recognizers.Text.Number
                     results[i].Start = originStart;
                     results[i].Length = originLenth;
                     results[i].Text = originSource.Substring(originStart, originLenth);
-                    results[i].Data = new List<KeyValuePair<string, ExtractResult>>();
 
                     int numStart = str.IndexOf(replaceText, StringComparison.Ordinal);
                     if (numStart != -1)
                     {
-                        int numOriginStart = start + numStart;
                         if (positionMap.ContainsKey(numStart))
                         {
-                            var dataKey = originSource.Substring(positionMap[numOriginStart],
-                                positionMap[numOriginStart + replaceText.Length] - positionMap[numOriginStart]);
-
                             for (int j = i; j < numExtResults.Count; j++)
                             {
                                 if ((results[i].Start.Equals(numExtResults[j].Start) ||
@@ -165,12 +175,28 @@ namespace Microsoft.Recognizers.Text.Number
                                      numExtResults[j].Start + numExtResults[j].Length) &&
                                     results[i].Text.Contains(numExtResults[j].Text))
                                 {
-                                    (results[i].Data as List<KeyValuePair<string, ExtractResult>>)?.Add(
-                                        new KeyValuePair<string, ExtractResult>(numExtResults[j].Text, numExtResults.ElementAt(j)));
+                                    data.Add((numExtResults[j].Text, numExtResults.ElementAt(j)));
                                 }
                             }
                         }
                     }
+                }
+
+                if ((Options & NumberOptions.PercentageMode) != 0)
+                {
+                    // deal with special cases like "<fraction number> of" and "one in two" in percentageMode 
+                    if (str.Contains(replaceFracNumText) || data.Count > 1)
+                    {
+                        results[i].Data = data;
+                    }
+                    else if (data.Count == 1)
+                    {
+                        results[i].Data = data.First();
+                    }
+                }
+                else if (data.Count == 1)
+                {
+                    results[i].Data = data.First();
                 }
             }
         }
@@ -180,12 +206,15 @@ namespace Microsoft.Recognizers.Text.Number
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        private string PreprocessStrWithNumberExtracted(string str, out Dictionary<int, int> positionMap, out IList<ExtractResult> numExtResults)
+        private string PreprocessStrWithNumberExtracted(string str, out Dictionary<int, int> positionMap,
+            out IList<ExtractResult> numExtResults)
         {
             positionMap = new Dictionary<int, int>();
 
             numExtResults = numberExtractor.Extract(str);
             string replaceText = "@" + NumExtType;
+            string replaceFracText = "@" + FracNumExtType;
+            bool fracFlag = (Options & NumberOptions.PercentageMode) != 0;
 
             //@TODO pontential cause of GC
             int[] match = new int[str.Length];
@@ -193,20 +222,22 @@ namespace Microsoft.Recognizers.Text.Number
             int start, end;
             for (int i = 0; i < str.Length; i++)
             {
-                match[i] = -1;
+                match[i] = 0;
             }
 
             for (int i = 0; i < numExtResults.Count; i++)
             {
                 var extraction = numExtResults[i];
-                string subtext = extraction.Text;
-                start = (int)extraction.Start;
-                end = (int)extraction.Length + start;
+                start = (int) extraction.Start;
+                end = (int) extraction.Length + start;
                 for (int j = start; j < end; j++)
                 {
-                    if (match[j] == -1)
+                    if (match[j] == 0)
                     {
-                        match[j] = i;
+                        if (fracFlag && extraction.Data.ToString().StartsWith("Frac"))
+                            match[j] = -(i + 1);
+                        else
+                            match[j] = i + 1;
                     }
                 }
             }
@@ -220,6 +251,7 @@ namespace Microsoft.Recognizers.Text.Number
                     start = i;
                 }
             }
+
             strParts.Add(new Tuple<int, int>(start, str.Length - 1));
 
             string ret = "";
@@ -229,7 +261,7 @@ namespace Microsoft.Recognizers.Text.Number
                 start = strPart.Item1;
                 end = strPart.Item2;
                 int type = match[start];
-                if (type == -1)
+                if (type == 0)
                 {
                     ret += str.Substring(start, end - start + 1);
                     for (int i = start; i <= end; i++)
@@ -239,11 +271,21 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else
                 {
-                    string originalText = str.Substring(start, end - start + 1);
-                    ret += replaceText;
-                    for (int i = 0; i < replaceText.Length; i++)
+                    if (type > 0)
                     {
-                        positionMap.Add(index++, start);
+                        ret += replaceText;
+                        for (int i = 0; i < replaceText.Length; i++)
+                        {
+                            positionMap.Add(index++, start);
+                        }
+                    }
+                    else
+                    {
+                        ret += replaceFracText;
+                        for (int i = 0; i < replaceFracText.Length; i++)
+                        {
+                            positionMap.Add(index++, start);
+                        }
                     }
                 }
             }

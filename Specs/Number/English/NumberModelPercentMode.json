@@ -1,6 +1,7 @@
 [
 {
   "Input": "one out of three",
+  "NotSupported": "javascript,python",
   "Results": [
     {
     "Text": "one",
@@ -21,6 +22,7 @@
 ,
 {
   "Input": "1 in twenty-one",
+  "NotSupported": "javascript,python",
   "Results": [
     {
       "Text": "1",

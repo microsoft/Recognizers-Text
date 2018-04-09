@@ -51,7 +51,7 @@ class SpanishNumeric:
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((y|con)\\s+)?)?({AllIntRegex})(\\s+((y|con)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)(?=\\b)'
     FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(y\\s+)?)?(un|un[oa])(\\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex})|(y\\s+)?medi[oa]s?)(?=\\b)'
-    FractionPrepositionRegex = f'(?<=\\b)(({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
+    FractionPrepositionRegex = f'(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{AllIntRegex}))'
     AllFloatRegex = f'{AllIntRegex}(\\s+(coma|con)){AllPointRegex}'
     DoubleDecimalPointRegex = lambda placeholder: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?={placeholder})'

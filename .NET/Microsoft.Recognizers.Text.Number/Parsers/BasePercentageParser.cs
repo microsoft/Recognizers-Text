@@ -13,34 +13,45 @@ namespace Microsoft.Recognizers.Text.Number
             string originText = extResult.Text;
             ParseResult ret = null;
 
-            // do replace text & data from extended info
-            if (extResult.Data is List<KeyValuePair<string, ExtractResult>>)
+            // replace text & data from extended info
+            if (extResult.Data is List<(string, ExtractResult)> extendedData1)
             {
-                var extendedData = (List<KeyValuePair<string, ExtractResult>>) extResult.Data;
-                if (extendedData.Count == 2)
+                if (extendedData1.Count == 2)
                 {
-                    extResult.Text = $"{extendedData[0].Key} {Config.FractionMarkerToken} {extendedData[1].Key}";
+                    extResult.Text = $"{extendedData1[0].Item1} {Config.FractionMarkerToken} {extendedData1[1].Item1}";
                     extResult.Data = $"Frac{Config.LangMarker}";
 
                     ret = base.Parse(extResult);
-                    ret.Value = (double)ret.Value * 100;
-                    ret.ResolutionStr = Config.CultureInfo != null
-                        ? ((double)ret.Value).ToString(Config.CultureInfo) + "%"
-                        : ret.Value + "%";
+                    ret.Value = (double) ret.Value * 100;
                 }
-                else if (extendedData.Count == 1)
+                else if (extendedData1.Count == 1)
                 {
-                    extResult.Text = extendedData[0].Key;
-                    extResult.Data = extendedData[0].Value.Data;
+                    extResult.Text = extendedData1[0].Item1;
+                    extResult.Data = extendedData1[0].Item2.Data;
 
                     ret = base.Parse(extResult);
 
-                    if (!string.IsNullOrWhiteSpace(ret.ResolutionStr))
+                    if (extResult.Data.ToString().StartsWith("Frac"))
                     {
-                        if (!ret.ResolutionStr.Trim().EndsWith("%"))
-                        {
-                            ret.ResolutionStr = ret.ResolutionStr.Trim() + "%";
-                        }
+                        ret.Value = (double) ret.Value * 100;
+                    }
+                }
+                ret.ResolutionStr = Config.CultureInfo != null
+                    ? ((double) ret.Value).ToString(Config.CultureInfo) + "%"
+                    : ret.Value + "%";
+            }
+            else 
+            {
+                var extendedData = ((string, ExtractResult)) extResult.Data;
+                extResult.Text = extendedData.Item1;
+                extResult.Data = extendedData.Item2.Data;
+                ret = base.Parse(extResult);
+
+                if (!string.IsNullOrWhiteSpace(ret.ResolutionStr))
+                {
+                    if (!ret.ResolutionStr.Trim().EndsWith("%"))
+                    {
+                        ret.ResolutionStr = ret.ResolutionStr.Trim() + "%";
                     }
                 }
             }

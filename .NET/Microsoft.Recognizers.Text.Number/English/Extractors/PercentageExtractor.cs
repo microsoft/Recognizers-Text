@@ -10,9 +10,12 @@ namespace Microsoft.Recognizers.Text.Number.English
     {
         protected override NumberOptions Options { get; }
 
-        public PercentageExtractor(NumberOptions options = NumberOptions.None) : base(NumberExtractor.GetInstance(options: options))
+
+        public PercentageExtractor(NumberOptions options = NumberOptions.None) : base(
+            NumberExtractor.GetInstance(options: options))
         {
             Options = options;
+            Regexes = InitRegexes();
         }
 
         protected override ImmutableHashSet<Regex> InitRegexes()
@@ -21,8 +24,13 @@ namespace Microsoft.Recognizers.Text.Number.English
             {
                 NumbersDefinitions.NumberWithSuffixPercentage,
                 NumbersDefinitions.NumberWithPrefixPercentage,
-                NumbersDefinitions.NumberWithPrepositionPercentage
             };
+
+            if ((Options & NumberOptions.PercentageMode) != 0)
+            {
+                regexStrs.Add(NumbersDefinitions.FractionNumberWithSuffixPercentage);
+                regexStrs.Add(NumbersDefinitions.NumberWithPrepositionPercentage);
+            }
 
             return BuildRegexes(regexStrs);
         }

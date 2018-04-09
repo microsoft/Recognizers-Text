@@ -14,18 +14,19 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
-        private static readonly ConcurrentDictionary<string, FractionExtractor> Instances =
-            new ConcurrentDictionary<string, FractionExtractor>();
+        private static readonly ConcurrentDictionary<(NumberOptions, string), FractionExtractor> Instances =
+            new ConcurrentDictionary<(NumberOptions, string), FractionExtractor>();
 
         public static FractionExtractor GetInstance(NumberOptions options = NumberOptions.None, string placeholder = "")
         {
-            if (!Instances.ContainsKey(placeholder))
+            var cacheKey = (options, placeholder);
+            if (!Instances.ContainsKey(cacheKey))
             {
                 var instance = new FractionExtractor(options);
-                Instances.TryAdd(placeholder, instance);
+                Instances.TryAdd(cacheKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[cacheKey];
         }
 
         private FractionExtractor(NumberOptions options)
