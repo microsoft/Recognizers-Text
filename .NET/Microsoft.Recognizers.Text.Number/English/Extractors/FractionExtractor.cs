@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.Number.English
@@ -64,8 +65,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                 regexes.Add(
                     new Regex(
                         NumbersDefinitions.FractionPrepositionWithinPercentModeRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracEng"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    "FracEng"
                 );
             }
             else
@@ -73,8 +74,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                 regexes.Add(
                     new Regex(
                         NumbersDefinitions.FractionPrepositionRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracEng"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    "FracEng"
                 );
             }
 

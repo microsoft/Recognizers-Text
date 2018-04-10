@@ -10,7 +10,6 @@ namespace Microsoft.Recognizers.Text.Number.English
     {
         protected override NumberOptions Options { get; }
 
-
         public PercentageExtractor(NumberOptions options = NumberOptions.None) : base(
             NumberExtractor.GetInstance(options: options))
         {

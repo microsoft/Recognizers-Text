@@ -18,6 +18,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 if (extendedData1.Count == 2)
                 {
+                    // for case like "2 out of 5".
                     extResult.Text = $"{extendedData1[0].Item1} {Config.FractionMarkerToken} {extendedData1[1].Item1}";
                     extResult.Data = $"Frac{Config.LangMarker}";
 
@@ -26,6 +27,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (extendedData1.Count == 1)
                 {
+                    // for case like "one third of".
                     extResult.Text = extendedData1[0].Item1;
                     extResult.Data = extendedData1[0].Item2.Data;
 
@@ -42,6 +44,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else 
             {
+                // for case like "one percent" or "1%".
                 var extendedData = ((string, ExtractResult)) extResult.Data;
                 extResult.Text = extendedData.Item1;
                 extResult.Data = extendedData.Item2.Data;

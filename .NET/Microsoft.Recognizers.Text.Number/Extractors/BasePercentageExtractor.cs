@@ -140,13 +140,13 @@ namespace Microsoft.Recognizers.Text.Number
 
             for (int i = 0; i < results.Count; i++)
             {
-                int start = (int) results[i].Start;
-                int end = start + (int) results[i].Length;
+                int start = (int)results[i].Start;
+                int end = start + (int)results[i].Length;
                 string str = results[i].Text;
                 var data = new List<(string, ExtractResult)>();
 
                 string replaceText;
-                if (str.Contains(replaceFracNumText) && (Options & NumberOptions.PercentageMode) != 0)
+                if ((Options & NumberOptions.PercentageMode) != 0 && str.Contains(replaceFracNumText))
                 {
                     replaceText = replaceFracNumText;
                 }
@@ -212,13 +212,13 @@ namespace Microsoft.Recognizers.Text.Number
             positionMap = new Dictionary<int, int>();
 
             numExtResults = numberExtractor.Extract(str);
-            string replaceText = "@" + NumExtType;
+            string replaceNumText = "@" + NumExtType;
             string replaceFracText = "@" + FracNumExtType;
-            bool fracFlag = (Options & NumberOptions.PercentageMode) != 0;
+            bool percentModeEnabled = (Options & NumberOptions.PercentageMode) != 0;
 
             //@TODO pontential cause of GC
-            int[] match = new int[str.Length];
-            List<Tuple<int, int>> strParts = new List<Tuple<int, int>>();
+            var match = new int[str.Length];
+            var strParts = new List<Tuple<int, int>>();
             int start, end;
             for (int i = 0; i < str.Length; i++)
             {
@@ -228,16 +228,20 @@ namespace Microsoft.Recognizers.Text.Number
             for (int i = 0; i < numExtResults.Count; i++)
             {
                 var extraction = numExtResults[i];
-                start = (int) extraction.Start;
-                end = (int) extraction.Length + start;
-                for (int j = start; j < end; j++)
+                start = (int)extraction.Start;
+                end = (int)extraction.Length + start;
+                for (var j = start; j < end; j++)
                 {
                     if (match[j] == 0)
                     {
-                        if (fracFlag && extraction.Data.ToString().StartsWith("Frac"))
+                        if (percentModeEnabled && extraction.Data.ToString().StartsWith("Frac"))
+                        {
                             match[j] = -(i + 1);
+                        }
                         else
+                        {
                             match[j] = i + 1;
+                        }
                     }
                 }
             }
@@ -261,8 +265,10 @@ namespace Microsoft.Recognizers.Text.Number
                 start = strPart.Item1;
                 end = strPart.Item2;
                 int type = match[start];
+
                 if (type == 0)
                 {
+                    // subsequence which won't be extracted
                     ret += str.Substring(start, end - start + 1);
                     for (int i = start; i <= end; i++)
                     {
@@ -271,26 +277,17 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else
                 {
-                    if (type > 0)
+                    // subsequence which will be extracted as number, type is negative for fraction number extraction
+                    var replaceText = type > 0 ? replaceNumText : replaceFracText;
+                    ret += replaceText;
+                    for (int i = 0; i < replaceText.Length; i++)
                     {
-                        ret += replaceText;
-                        for (int i = 0; i < replaceText.Length; i++)
-                        {
-                            positionMap.Add(index++, start);
-                        }
-                    }
-                    else
-                    {
-                        ret += replaceFracText;
-                        for (int i = 0; i < replaceFracText.Length; i++)
-                        {
-                            positionMap.Add(index++, start);
-                        }
+                        positionMap.Add(index++, start);
                     }
                 }
             }
 
-            positionMap.Add(index++, str.Length);
+            positionMap.Add(index, str.Length);
 
             return ret;
         }

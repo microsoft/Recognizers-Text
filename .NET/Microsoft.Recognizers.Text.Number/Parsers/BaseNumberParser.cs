@@ -397,7 +397,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 var intStr = string.Join(" ", fracWords.GetRange(0, mixedIndex));
-                    intValue = GetIntValue(GetMatches(intStr));
+                intValue = GetIntValue(GetMatches(intStr));
 
                 // Find mixed number
                 if (mixedIndex != fracWords.Count && numerValue < denomiValue)

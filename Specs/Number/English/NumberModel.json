@@ -1685,4 +1685,17 @@
     }
   ]
 }
+,
+{
+  "Input": "five eighths of",
+  "Results": [
+    {
+      "Text": "five eighths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.625"
+      }
+    }
+  ]
+}
 ]
