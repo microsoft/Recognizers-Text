@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DateObject = System.DateTime;
-using Newtonsoft.Json;
 
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
@@ -12,12 +12,12 @@ using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.DateTime.French;
-using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.Recognizers.Text.Choice;
-using System.Collections.Concurrent;
+
+using Newtonsoft.Json;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -82,6 +82,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimePeriod,
         Duration,
         Holiday,
+        TimeZone,
         Set,
         Merged,
         MergedSkipFromTo
@@ -97,6 +98,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimePeriod,
         Duration,
         Holiday,
+        TimeZone,
         Set,
         Merged
     }
@@ -108,7 +110,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
-            { Models.CustomNumber, (test, culture) => GetCustomModelFor(culture).Parse(test.Input) },
             { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Currency, (test, culture) => NumberWithUnitRecognizer.RecognizeCurrency(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Dimension, (test, culture) => NumberWithUnitRecognizer.RecognizeDimension(test.Input, culture, fallbackToDefaultCulture: false) },
@@ -198,6 +199,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
                 case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration());
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
@@ -230,6 +233,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseDurationParser(new EnglishDurationParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
@@ -542,18 +547,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for German not supported");
         }
 
-        private static IModel GetCustomModelFor(string culture)
-        {
-            switch (culture)
-            {
-                case Culture.Chinese:
-                    return new NumberModel(
-                        AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
-                        new NumberExtractor(ChineseNumberExtractorMode.ExtractAll));
-            }
-
-            throw new Exception($"Custom Model for '{culture}' not supported");
-        }
     }
 
     public static class TestModelExtensions

@@ -4,7 +4,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "NotSupported":"javascript",
     "Results": [
       {
         "Text": "heute von fünf bis sieben ",
@@ -29,7 +29,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "NotSupported":"javascript",
     "Results": [
       {
         "Text": "von 5 bis 6 am 22/4/2016",
@@ -48,11 +48,12 @@
       }
     ]
   },
-  {//Parser returns NULL as value. The Parser Returns Null as value. Should not be different to the one above
+  {
     "Input": "Ich bin am 22/4/2016 von 5 bis 6 weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment" : "Parser returns NULL as value. The Parser Returns Null as value. Should not be different to the one above",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript,dotnet",
     "Results": [

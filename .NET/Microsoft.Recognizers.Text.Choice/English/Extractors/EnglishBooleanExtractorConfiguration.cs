@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Choice.Extractors;
 
-namespace Microsoft.Recognizers.Text.Choice.English.Extractors
+using Microsoft.Recognizers.Definitions.English;
+
+namespace Microsoft.Recognizers.Text.Choice.English
 {
     public class EnglishBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {

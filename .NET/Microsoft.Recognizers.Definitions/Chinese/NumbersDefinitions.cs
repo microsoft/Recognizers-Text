@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string FracSplitRegex = @"又|分\s*之";
 		public const string ZeroToNineIntegerRegexChs = @"[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]";
 		public const string NegativeNumberTermsRegexChs = @"[负負]";
-		public const string NegativeNumberTermsRegexNum = @"(?<![-－])[-－]";
+		public const string NegativeNumberTermsRegexNum = @"(?<!(\d+\s*)|[-－])[-－]";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegexChs}.*|^{NegativeNumberTermsRegexNum}.*";
 		public static readonly string SpeGetNumberRegex = $@"{ZeroToNineChsFullHalfRegexChs}|{ZeroToNineIntegerRegexChs}|[十拾半对對]";
 		public const string PairRegex = ".*[双对雙對]$";
@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string IntegerPercentageRegex = $@"{ZeroToNineChsFullHalfRegexChs}+\s*[个個]\s*[百佰]\s*分\s*[点點]";
 		public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\s*[个個]\s*[百佰]\s*分\s*[点點]";
 		public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineChsFullHalfRegexChs}{{1,3}}([,，]{ZeroToNineChsFullHalfRegexChs}{{3}})+\s*[个個]\s*[百佰]\s*分\s*[点點]";
-		public static readonly string SimpleIntegerPercentageRegex = $@"{NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?(\s*)[％%]";
+		public static readonly string SimpleIntegerPercentageRegex = $@"(?<=(\s|^)){NegativeNumberTermsRegexNum}?{ZeroToNineChsFullHalfRegexChs}+([\.．]{ZeroToNineChsFullHalfRegexChs}+)?(\s*)[％%]";
 		public static readonly string NumbersFoldsPercentageRegex = $@"{ZeroToNineChsFullHalfRegexChs}(([\.．]?|\s*){ZeroToNineChsFullHalfRegexChs})?\s*折";
 		public static readonly string FoldsPercentageRegex = $@"{ZeroToNineIntegerRegexChs}(\s*[点點]?\s*{ZeroToNineIntegerRegexChs})?\s*折";
 		public static readonly string SimpleFoldsPercentageRegex = $@"{ZeroToNineChsFullHalfRegexChs}\s*成(\s*(半|{ZeroToNineChsFullHalfRegexChs}))?";

@@ -32,7 +32,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "NotSupported":"javascript",
     "Results": [
       {
         "Text": "22/04",
@@ -54,11 +54,12 @@
       }
     ]
   },
-  {//Problem with capital letters on the extracted/parsed text
+  {
     "Input": "Ich gehe am neunundzwanzig Mai zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Problem with capital letters on the extracted/parsed text",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript",
     "Results": [
@@ -82,11 +83,12 @@
       }
     ]
   },
-  {//Problem with capital letters on the extracted/parsed text
+  {
     "Input": "Ich gehe am zweiten Mai zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Problem with capital letters on the extracted/parsed text",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript",
     "Results": [
@@ -138,11 +140,12 @@
       }
     ]
   },
-  {// Falsely detected as Set
+  {
     "Input": "Ich komme dann Freitag zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Falsely detected as Set",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript,dotnet",
     "Results": [
@@ -167,11 +170,12 @@
     ]
   }
   ,
-  {//Problem with capital letters on the extracted/parsed text
+  {
     "Input": "Ich bin nächsten Monat vom 4. bis zum 23. weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Problem with capital letters on the extracted/parsed text",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -191,11 +195,12 @@
     ]
   }
   ,
-  {//Problem with capital letters on the extracted/parsed text
+  {
     "Input": "Ich bin zwischen dem 3. und dem 12. september nicht da",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Problem with capital letters on the extracted/parsed text",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -221,11 +226,12 @@
     ]
   }
   ,
-  {//Problem with capital letters on the extracted/parsed text
+  {
     "Input": "Diesen September fahre ich in Urlaub.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Problem with capital letters on the extracted/parsed text",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -244,11 +250,12 @@
       }
     ]
   },
-  {//Problem with capital letters on the extracted/parsed text
+  {
     "Input": "Ich bin vom 12. Januar 2016 bis zum 22.01.2016 weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Problem with capital letters on the extracted/parsed text",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -267,11 +274,12 @@
       }
     ]
   },
-  {//Problem with capital letters on the extracted/parsed text
+  {
     "Input": "Ich bin für die nächsten 3 Tage weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Problem with capital letters on the extracted/parsed text",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -291,11 +299,12 @@
     ]
   }
   ,
-  {//Problem with capital letters on the extracted/parsed text
+  {
     "Input": "Das wäre dann in der letzten Woche im Juli",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment" : "Problem with capital letters on the extracted/parsed text",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -399,11 +408,12 @@
       }
     ]
   },
-  {// Falsely detected as Set
+  {
     "Input": "Dieser Abend wird schön.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment" : "Falsely detected as Set",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript,dotnet",
     "Results": [
@@ -423,11 +433,12 @@
       }
     ]
   },
-  {// Falsely detected as Set
+  {
     "Input": "Das ist dann nächsten Montag Nachmittag.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment" : "Falsely detected as Set",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript,dotnet",
     "Results": [
@@ -447,11 +458,12 @@
       }
     ]
   },
-  {// Falsely detected as Set
+  {
     "Input": "Ich gehe dann Dienstag morgen zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment" : "Falsely detected as Set",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript,dotnet",
     "Results": [
@@ -752,11 +764,12 @@
     ]
   }
   ,
-  {// Falsely detected as Set
+  {
     "Input": "Ich bin dann morgens von 5 bis sieben weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment" : "Falsely detected as Set",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript,dotnet",
     "Results": [
@@ -828,11 +841,12 @@
       }
     ]
   },
-  {// Falsely detected as Set
+  {
     "Input": "Lass uns mal gegen Abend treffen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "Comment": "Falsely detected as Set",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript,dotnet",
     "Results": [
@@ -920,11 +934,12 @@
       }
     ]
   },
-  {// Falsely detected as Set
+  {
     "Input": "Setzen wir das Meeting nun für nächste Woche Montag um 9 Uhr morgens oder ein Uhr Nachmittags an?",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
+    "Comment" : "Falsely detected as Set",
     "NotSupported": "javascript,dotnet",
     "NotSupportedByDesign": "python",
     "Results": [

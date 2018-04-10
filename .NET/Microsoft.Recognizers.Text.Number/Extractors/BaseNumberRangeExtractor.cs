@@ -107,6 +107,12 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (type.Contains(NumberRangeConstants.TWONUMTILL))
                     {
+                        // num1 must have same type with num2
+                        if (extractNumList1[0].Type != extractNumList2[0].Type)
+                        {
+                            return;
+                        }
+
                         // num1 must less than num2
                         var num1 = (double)(numberParser.Parse(extractNumList1[0]).Value ?? 0);
                         var num2 = (double)(numberParser.Parse(extractNumList2[0]).Value ?? 0);

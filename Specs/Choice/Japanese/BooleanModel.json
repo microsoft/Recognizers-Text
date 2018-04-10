@@ -22,7 +22,22 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.5
+		"score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌👌👌",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.6
       }
     }
   ]

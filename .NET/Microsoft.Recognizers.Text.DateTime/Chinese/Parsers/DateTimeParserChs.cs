@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -78,6 +78,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ResolutionStr = ""
             };
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults) {
+            return candidateResults;
         }
 
         // parse if lunar contains

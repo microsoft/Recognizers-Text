@@ -324,7 +324,47 @@
     ]
   },
   {
+    "Input": "the train arrives at 10:00",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
     "Input": "wrong IPV6 address FE06::1::2",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "wrong IPV6 address :",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "I say:",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "I said :",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "lync:",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "lync: :",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": ":as you say",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": ": as you say",
     "NotSupportedByDesign": "python",
     "Results": []
   },

@@ -36,6 +36,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.SetExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
 
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                AddTo(ret, this.config.TimeZoneExtractor.Extract(text, reference), text);
+            }
+
             // This should be at the end since if need the extractor to determine the previous text contains time or not
             AddTo(ret, NumberEndingRegexMatch(text, ret), text);
 
@@ -96,18 +101,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 int firstIndex = -1;
                 for (var i = 0; i < dst.Count; i++)
                 {
-                    //if (dst[i].IsOverlap(result))
-                    //{
-                    //    if (firstIndex == -1)
-                    //    {
-                    //        firstIndex = i;
-                    //    }
-                    //    isFound = true;
-                    //    if (result.Length > dst[i].Length)
-                    //    {
-                    //        overlapIndexes.Add(i);
-                    //    }
-                    //}
                     if (dst[i].IsOverlap(result))
                     {
                         isFound = true;

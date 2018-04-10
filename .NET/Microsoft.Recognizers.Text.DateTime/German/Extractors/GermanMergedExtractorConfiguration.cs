@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
 using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Number;
+
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
@@ -54,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
@@ -69,6 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
             SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration());
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration());
         }

@@ -1,6 +1,5 @@
 [{
   "Input": "La temperatura exterior es de 40 grados Celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 grados Celsius",
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "Hace 90 fahrenheit en Texas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "90 fahrenheit",
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "Convertir 10 celsius a fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10 celsius",
@@ -53,7 +50,6 @@
 ,
 {
   "Input": "-5 grados Fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-5 grados Fahrenheit",
@@ -68,7 +64,6 @@
 ,
 {
   "Input": "6 grados centígrados",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "6 grados centígrados",
@@ -83,7 +78,6 @@
 ,
 {
   "Input": "98,6 grados f es temperatura normal",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98,6 grados f",
@@ -98,7 +92,6 @@
 ,
 {
   "Input": "Ajuste la temperatura a 30 grados celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30 grados celsius",
@@ -113,7 +106,6 @@
 ,
 {
   "Input": "La temperatura normal es 98,6 grados Fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98,6 grados Fahrenheit",
@@ -128,7 +120,6 @@
 ,
 {
   "Input": "100 grados f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 grados f",
@@ -143,7 +134,6 @@
 ,
 {
   "Input": "20 Grados c",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 Grados c",
@@ -158,7 +148,6 @@
 ,
 {
   "Input": "100 °f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 °f",
@@ -173,7 +162,6 @@
 ,
 {
   "Input": "20 °c",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 °c",
@@ -188,7 +176,6 @@
 ,
 {
   "Input": "100,2 Grados Fahrenheit es bajo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100,2 Grados Fahrenheit",
@@ -203,7 +190,6 @@
 ,
 {
   "Input": "34,9 centígrado a fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34,9 centígrado",
@@ -226,7 +212,6 @@
 ,
 {
   "Input": "convertir 200 celsius celsius en fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 celsius",
@@ -257,7 +242,6 @@
 ,
 {
   "Input": "convertir 200 K en fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 K",
@@ -280,7 +264,6 @@
 ,
 {
   "Input": "fahrenheit a celsius, cuantos celsius son 101 fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "101 fahrenheit",
@@ -319,7 +302,6 @@
 ,
 {
   "Input": "50 grados centígrados celsius a fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 grados centígrados",
@@ -350,7 +332,6 @@
 ,
 {
   "Input": "Podría convertir 51 fahrenheit en grados celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "51 fahrenheit",
@@ -373,7 +354,6 @@
 ,
 {
   "Input": "Convertir 106 grados Fahrenheit a grados centígrados",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 grados Fahrenheit",
@@ -396,7 +376,6 @@
 ,
 {
   "Input": "Convertir 106 K a grados centígrados",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 K",
@@ -419,7 +398,6 @@
 ,
 {
   "Input": "Convertir 45 grados Fahrenheit a Celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "45 grados Fahrenheit",
@@ -442,7 +420,6 @@
 ,
 {
   "Input": "Cómo convertir - 20 grados Fahrenheit a Celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 20 grados Fahrenheit",
@@ -465,7 +442,6 @@
 ,
 {
   "Input": "10,5 celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10,5 celsius",
@@ -480,7 +456,6 @@
 ,
 {
   "Input": "20 grados celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 grados celsius",
@@ -495,7 +470,6 @@
 ,
 {
   "Input": "20,3 celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20,3 celsius",
@@ -510,7 +484,6 @@
 ,
 {
   "Input": "34,5 celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34,5 celsius",
@@ -525,7 +498,6 @@
 ,
 {
   "Input": "La temperatura exterior es de 98 grados",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98 grados",
@@ -540,7 +512,6 @@
 ,
 {
   "Input": "Ajuste el termostato a 85 °",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85 °",
@@ -555,7 +526,6 @@
 ,
 {
   "Input": "Ajuste el termostato a 85°",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85°",
@@ -570,7 +540,6 @@
 ,
 {
   "Input": "Aumentar la temperatura en 5 grados",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 grados",
@@ -585,7 +554,6 @@
 ,
 {
   "Input": "Ajuste la temperatura a 70 grados f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "70 grados f",
@@ -600,7 +568,6 @@
 ,
 {
   "Input": "Aumentar la temperatura en 20 grados",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 grados",
@@ -615,7 +582,6 @@
 ,
 {
   "Input": "Ajuste la temperatura a 100 grados",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 grados",
@@ -630,7 +596,6 @@
 ,
 {
   "Input": "Ajuste la temperatura a 100 Kelvin",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 Kelvin",
@@ -645,7 +610,6 @@
 ,
 {
   "Input": "Mantener la temperatura a 75 grados f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75 grados f",
@@ -660,7 +624,6 @@
 ,
 {
   "Input": "Deje que la temperatura esté a 40 centígrados",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 centígrados",
@@ -675,7 +638,6 @@
 ,
 {
   "Input": "Deje que la temperatura esté a 50 grados.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 grados",

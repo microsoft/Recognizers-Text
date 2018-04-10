@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class SetParserChs : IDateTimeParser
@@ -83,6 +81,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ResolutionStr = ""
             };
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
         private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)

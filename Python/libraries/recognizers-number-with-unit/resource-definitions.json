@@ -1,0 +1,64 @@
+{
+    "outputPath": "./recognizers_number_with_unit/resources/",
+    "configFiles": [
+        {
+            "input": [ "Base-Numbers" ],
+            "output": "base_numbers",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseNumbers:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "English", "English-NumbersWithUnit" ],
+            "output": "english_numeric_with_unit",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "class EnglishNumericWithUnit:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Spanish", "Spanish-NumbersWithUnit" ],
+            "output": "spanish_numeric_with_unit",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "class SpanishNumericWithUnit:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Portuguese", "Portuguese-NumbersWithUnit" ],
+            "output": "portuguese_numeric_with_unit",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "class PortugueseNumericWithUnit:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-NumbersWithUnit" ],
+            "output": "chinese_numeric_with_unit",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "class ChineseNumericWithUnit:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "French", "French-NumbersWithUnit" ],
+            "output": "french_numeric_with_unit",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "class FrenchNumericWithUnit:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        }
+    ]
+}

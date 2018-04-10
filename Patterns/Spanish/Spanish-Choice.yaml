@@ -1,0 +1,9 @@
+﻿---
+LangMarker: Spa
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
+TrueRegex: !simpleRegex
+  def: \b(verdad|verdadero|sí|sip|s|si|cierto|por supuesto|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(falso|no|nop|n|no)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)

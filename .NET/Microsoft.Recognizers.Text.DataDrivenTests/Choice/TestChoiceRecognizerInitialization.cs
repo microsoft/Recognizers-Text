@@ -10,7 +10,6 @@ namespace Microsoft.Recognizers.Text.Choice.Tests
         private const string TestInput = "true";
 
         private const string EnglishCulture = Culture.English;
-        private const string JapaneseCulture = Culture.Japanese;
         //private const string SpanishCulture = Culture.Spanish;
         private const string InvalidCulture = "vo-id";
 
@@ -18,9 +17,9 @@ namespace Microsoft.Recognizers.Text.Choice.Tests
 
         public TestChoiceRecognizerInitialization()
         {
-            controlModel = new Models.BooleanModel(
-                new Parsers.BooleanParser(),
-                new Extractors.BooleanExtractor(new English.Extractors.EnglishBooleanExtractorConfiguration()));
+            controlModel = new BooleanModel(
+                new BooleanParser(),
+                new BooleanExtractor(new English.EnglishBooleanExtractorConfiguration()));
         }
 
         [TestMethod]

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Number.Chinese;
-using Microsoft.Recognizers.Text.Number;
 
 using DateObject = System.DateTime;
 
@@ -39,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public virtual DateTimeParseResult Parse(ExtractResult er, DateObject referenceDate)
         {
             object value = null;
+
             if (er.Type.Equals(ParserName))
             {
                 value = InnerParser(er.Text, referenceDate);
@@ -55,12 +55,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
 
         protected DateTimeResolutionResult InnerParser(string text, DateObject reference)
         {
             var innerResult = ParseBasicRegexMatch(text, reference);
+
             if (!innerResult.Success)
             {
                 innerResult = ParseImplicitDate(text, reference);
@@ -688,6 +690,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             year = num;
 
             return year < 10 ? -1 : year;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

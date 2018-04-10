@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Definitions
 		public static readonly string Ipv6EllipsisRegex6 = $@"(({BasicIpv6Element}:){{5}}((:{BasicIpv6Element}){{1,2}}))";
 		public static readonly string Ipv6EllipsisRegex7 = $@"(({BasicIpv6Element}:){{6}}((:{BasicIpv6Element}){{1}}))";
 		public static readonly string Ipv6EllipsisRegex8 = $@"(({BasicIpv6Element}:){{7}}(:))";
-		public static readonly string Ipv6EllipsisRegexOther = $@"\B::\B|\B:(:{BasicIpv6Element}){{0,7}}\b|\b({BasicIpv6Element}:){{0,7}}:\B";
+		public static readonly string Ipv6EllipsisRegexOther = $@"\B::\B|\B:(:{BasicIpv6Element}){{1,7}}\b|\b({BasicIpv6Element}:){{1,7}}:\B";
 		public static readonly string MergedIpv6Regex = $@"({BasicIpv6Regex}|{Ipv6EllipsisRegex1}|{Ipv6EllipsisRegex2}|{Ipv6EllipsisRegex3}|{Ipv6EllipsisRegex4}|{Ipv6EllipsisRegex5}|{Ipv6EllipsisRegex6}|{Ipv6EllipsisRegex7}|{Ipv6EllipsisRegex8})";
 		public static readonly string Ipv6Regex = $@"(\b{MergedIpv6Regex}\b)|({Ipv6EllipsisRegexOther})";
 	}

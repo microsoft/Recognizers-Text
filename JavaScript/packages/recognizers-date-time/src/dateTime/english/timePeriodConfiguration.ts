@@ -1,17 +1,20 @@
 import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod"
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
-import { RegExpUtility } from "@microsoft/recognizers-text";
+import { RegExpUtility, IExtractor } from "@microsoft/recognizers-text";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers"
 import { IDateTimeUtilityConfiguration } from "../utilities"
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
 import { IDateTimeExtractor } from "../baseDateTime"
+import { EnglishIntegerExtractor } from "@microsoft/recognizers-text-number";
 
 export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
     readonly tillRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
+    readonly generalEndingRegex: RegExp;
     readonly singleTimeExtractor: IDateTimeExtractor;
+    readonly integerExtractor: IExtractor;
 
     constructor() {
         this.simpleCasesRegex = [
@@ -20,7 +23,9 @@ export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtra
         ];
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex, "gis");
+        this.generalEndingRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.GeneralEndingRegex, "gis");
         this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        this.integerExtractor = new EnglishIntegerExtractor();
     }
 
     public getFromTokenIndex(source: string): { matched: boolean, index: number } {
@@ -49,18 +54,22 @@ export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtra
 export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
     timeExtractor: IDateTimeExtractor;
     timeParser: BaseTimeParser;
+    integerExtractor: IDateTimeExtractor;
     pureNumberFromToRegex: RegExp;
     pureNumberBetweenAndRegex: RegExp;
     timeOfDayRegex: RegExp;
+    tillRegex: RegExp;
     numbers: ReadonlyMap<string, number>;
     utilityConfiguration: IDateTimeUtilityConfiguration;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.timeExtractor = config.timeExtractor;
         this.timeParser = config.timeParser;
+        this.integerExtractor = config.integerExtractor;
         this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo);
         this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd);
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex);
+        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
         this.numbers = config.numbers;
         this.utilityConfiguration = config.utilityConfiguration;
     }

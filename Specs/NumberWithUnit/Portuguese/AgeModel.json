@@ -1,6 +1,5 @@
 [{
   "Input": "Quando tinha cinco anos, aprendeu a andar de bicicleta.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinco anos",
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "Esta saga remonta a quase dez anos atrás.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dez anos",
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "Só tenho 29 anos!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "29 anos",
@@ -45,7 +42,6 @@
 ,
 {
   "Input": "Agora com noventa e cinco anos tens perspectiva das coisas.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "noventa e cinco anos",
@@ -60,7 +56,6 @@
 ,
 {
   "Input": "A Grande Muralha da China tem mais de 500 anos e se extende por mais de 5,000 milhas.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "500 anos",
@@ -75,7 +70,6 @@
 ,
 {
   "Input": "Já tem 60 anos, pois nasceu em 8 de maio de 1945.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "60 anos",
@@ -90,7 +84,6 @@
 ,
 {
   "Input": "25% dos casos não são diagnosticados até por volta dos tres anos.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres anos",
@@ -105,7 +98,6 @@
 ,
 {
   "Input": "Quando haverá pressão para comprir essa promessa feita há um ano?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um ano",
@@ -120,7 +112,6 @@
 ,
 {
   "Input": "Aconteceu quando era um bebê e tinha apenas dez meses.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dez meses",
@@ -135,7 +126,6 @@
 ,
 {
   "Input": "A proposta da comissão já tem 8 meses de idade.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "8 meses",
@@ -150,7 +140,6 @@
 ,
 {
   "Input": "Aproximadamente 50% dos casos são diagnosticados aos dezoito meses de idade.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dezoito meses",
@@ -165,7 +154,6 @@
 ,
 {
   "Input": "É possível, mas em 2006 95% delas tinham menos de tres meses de vida.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres meses",
@@ -180,7 +168,6 @@
 ,
 {
   "Input": "Se seguirmos adiante no período de dezembro, terão tres semanas de existência.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres semanas",
@@ -195,7 +182,6 @@
 ,
 {
   "Input": "Às 6 semanas de idade já comemora o Natal.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "6 semanas",
@@ -210,7 +196,6 @@
 ,
 {
   "Input": "Outras matérias primas devem ser usadas num prazo de cinco dias.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinco dias",
@@ -225,7 +210,6 @@
 ,
 {
   "Input": "Uma conta vencida a 90 dias está bem atrasada.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "90 dias",
@@ -235,6 +219,23 @@
         "unit": "Dia"
       }
     }
+  ]
+}
+,
+{
+  "Input": "Ele tem cerca de 40 - 50 anos",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "50 anos",
+      "Start": 22,
+      "End": 28,
+      "TypeName": "age",
+      "Resolution": {
+        "unit": "Ano",
+        "value": "50"
+      }
+    } 
   ]
 }
 ]

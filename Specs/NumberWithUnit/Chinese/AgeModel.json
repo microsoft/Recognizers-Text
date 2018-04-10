@@ -1,6 +1,5 @@
 [{
   "Input": "当她五岁的时候，她学会了骑自行车",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "五岁",
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "我只有29岁！",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "29岁",
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "这件事发生在宝宝只有十个月大的时候.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十个月大",
@@ -45,7 +42,6 @@
 ,
 {
   "Input": "十二月初出生的话已经三周大了",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三周大",
@@ -60,7 +56,6 @@
 ,
 {
   "Input": "她出生于1945年5月8号，现在60岁了",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "60岁",
@@ -75,7 +70,6 @@
 ,
 {
   "Input": "她已经满七周岁了，可以上小学了",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七周岁",
@@ -90,7 +84,21 @@
 ,
 {
   "Input": "90天大的小孩应该去医院做检查",
-  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "90天大",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "90",
+        "unit": "Day"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "70 - 90天大的小孩应该去医院做检查",
+  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "90天大",

@@ -1,4 +1,4 @@
-import { RegExpUtility } from "@microsoft/recognizers-text";
+import { RegExpUtility, IExtractor } from "@microsoft/recognizers-text";
 import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { IDateTimeUtilityConfiguration } from "../utilities";
@@ -7,12 +7,15 @@ import { SpanishDateTimeUtilityConfiguration } from "./baseConfiguration";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeExtractor } from "../baseDateTime";
+import { EnglishIntegerExtractor, NumberMode } from "@microsoft/recognizers-text-number";
 
 export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
     readonly tillRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
+    readonly generalEndingRegex: RegExp;
     readonly singleTimeExtractor: IDateTimeExtractor;
+    readonly integerExtractor: IExtractor;
     readonly utilityConfiguration: SpanishDateTimeUtilityConfiguration;
 
     readonly fromRegex: RegExp;
@@ -21,6 +24,7 @@ export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtra
 
     constructor() {
         this.singleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
+        this.integerExtractor = new EnglishIntegerExtractor();
         this.utilityConfiguration = new SpanishDateTimeUtilityConfiguration();
 
         this.simpleCasesRegex = [
@@ -30,6 +34,7 @@ export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtra
 
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex, "gis");
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex, "gis");
+        this.generalEndingRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.GeneralEndingRegex, "gis");
 
         this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex, "gis");
         this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex, "gis");
@@ -52,20 +57,24 @@ export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtra
 export class SpanishTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
     readonly timeExtractor: IDateTimeExtractor;
     readonly timeParser: BaseTimeParser;
+    readonly integerExtractor: IExtractor;
     readonly pureNumberFromToRegex: RegExp;
     readonly pureNumberBetweenAndRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
+    readonly tillRegex: RegExp;
     readonly numbers: ReadonlyMap<string, number>;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.timeExtractor = config.timeExtractor;
         this.timeParser = config.timeParser;
+        this.integerExtractor = config.integerExtractor;
         this.numbers = config.numbers;
         this.utilityConfiguration = config.utilityConfiguration;
         this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo, "gis");
         this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd, "gis");
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex, "gis");
+        this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex, "gis");
     }
 
     getMatchedTimexRange(text: string): { matched: boolean; timex: string; beginHour: number; endHour: number; endMin: number; } {

@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.German;
 using System.Collections.Generic;
+
+using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -13,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         }
 
         public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeExtractor DatePeriodExtractor { get; }
 
         private static readonly Regex OrRegex =

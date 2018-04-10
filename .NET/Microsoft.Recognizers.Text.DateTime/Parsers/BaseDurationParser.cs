@@ -3,9 +3,6 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-using System;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDurationParser : IDateTimeParser
@@ -36,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 innerResult = ParseMergedDuration(er.Text, referenceTime);
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseNumerWithUnit(er.Text, referenceTime);
+                    innerResult = ParseNumberWithUnit(er.Text, referenceTime);
                 }
 
                 if (!innerResult.Success)
@@ -91,17 +88,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // simple cases made by a number followed an unit
-        private DateTimeResolutionResult ParseNumerWithUnit(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceTime)
         {
 
             DateTimeResolutionResult ret;
 
-            if ((ret = ParseNumeberSpaceUnit(text)).Success)
+            if ((ret = ParseNumberSpaceUnit(text)).Success)
             {
                 return ret;
             }
 
-            if ((ret = ParseNumeberCombinedUnit(text)).Success)
+            if ((ret = ParseNumberCombinedUnit(text)).Success)
             {
                 return ret;
             }
@@ -119,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseNumeberSpaceUnit(string text)
+        private DateTimeResolutionResult ParseNumberSpaceUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
             double numVal;
@@ -160,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseNumeberCombinedUnit(string text)
+        private DateTimeResolutionResult ParseNumberCombinedUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
             double numVal = 0;
@@ -392,6 +389,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.Success = true;
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

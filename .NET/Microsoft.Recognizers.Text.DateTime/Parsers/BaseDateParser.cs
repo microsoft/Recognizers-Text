@@ -621,18 +621,29 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            int dayOfWeekOfFirstDay = (int)firstDay.DayOfWeek;
 
             if (weekday == 0)
             {
                 weekday = 7;
             }
 
-            if (weekday < (int)firstDay.DayOfWeek)
+            if (dayOfWeekOfFirstDay == 0)
+            {
+                dayOfWeekOfFirstDay = 7;
+            }
+
+            if (weekday < dayOfWeekOfFirstDay)
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
 
             return firstWeekday.AddDays(7 * (cardinal - 1));
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

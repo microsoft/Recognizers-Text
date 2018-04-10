@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return Extract(text, DateObject.Now);
         }
 
-            public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var ret = DateExtractor.Extract(text, referenceTime);
 

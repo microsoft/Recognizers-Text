@@ -135,7 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+            UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
         }
 
         public IExtractor IntegerExtractor { get; }

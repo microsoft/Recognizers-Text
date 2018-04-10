@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.Japanese;
-using Microsoft.Recognizers.Text.Choice.Extractors;
 
-namespace Microsoft.Recognizers.Text.Choice.Japanese.Extractors
+using Microsoft.Recognizers.Definitions.Japanese;
+
+namespace Microsoft.Recognizers.Text.Choice.Japanese
 {
     public class JapaneseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {

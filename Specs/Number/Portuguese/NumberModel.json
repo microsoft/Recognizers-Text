@@ -1,6 +1,5 @@
 [{
   "Input": " 123456789101231",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "123456789101231",
@@ -14,7 +13,6 @@
 ,
 {
   "Input": "-123456789101231",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-123456789101231",
@@ -28,7 +26,6 @@
 ,
 {
   "Input": " -123456789101231",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-123456789101231",
@@ -42,7 +39,6 @@
 ,
 {
   "Input": " -1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1",
@@ -56,7 +52,6 @@
 ,
 {
   "Input": "1.234.567",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.234.567",
@@ -70,7 +65,6 @@
 ,
 {
   "Input": "sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "sete",
@@ -84,7 +78,6 @@
 ,
 {
   "Input": "dezessete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dezessete",
@@ -98,7 +91,6 @@
 ,
 {
   "Input": "dezassete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dezassete",
@@ -112,7 +104,6 @@
 ,
 {
   "Input": "mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil",
@@ -126,7 +117,6 @@
 ,
 {
   "Input": "cem",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cem",
@@ -140,7 +130,6 @@
 ,
 {
   "Input": "mil e cem",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil e cem",
@@ -154,7 +143,6 @@
 ,
 {
   "Input": "mil cento e dez",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil cento e dez",
@@ -168,7 +156,6 @@
 ,
 {
   "Input": "mil e duzentos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil e duzentos",
@@ -182,7 +169,6 @@
 ,
 {
   "Input": "mil duzentos e vinte",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil duzentos e vinte",
@@ -196,7 +182,6 @@
 ,
 {
   "Input": "vinte e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte e sete",
@@ -210,7 +195,6 @@
 ,
 {
   "Input": "quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quarenta e sete",
@@ -224,7 +208,6 @@
 ,
 {
   "Input": "trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trezentos e quarenta e sete",
@@ -238,7 +221,6 @@
 ,
 {
   "Input": "dois mil trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois mil trezentos e quarenta e sete",
@@ -252,7 +234,6 @@
 ,
 {
   "Input": "duas mil trezentas e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "duas mil trezentas e quarenta e sete",
@@ -266,7 +247,6 @@
 ,
 {
   "Input": "cinquenta e dois mil trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinquenta e dois mil trezentos e quarenta e sete",
@@ -280,7 +260,6 @@
 ,
 {
   "Input": "quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
@@ -294,7 +273,6 @@
 ,
 {
   "Input": "mil quinhentos e vinte e três",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil quinhentos e vinte e três",
@@ -308,7 +286,6 @@
 ,
 {
   "Input": "mil quinhentos e vinte e tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil quinhentos e vinte e tres",
@@ -322,7 +299,6 @@
 ,
 {
   "Input": "dois bilhoes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois bilhoes",
@@ -336,7 +312,6 @@
 ,
 {
   "Input": "treze milhoes quatrocentos e cinquenta e dois mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "treze milhoes quatrocentos e cinquenta e dois mil",
@@ -350,7 +325,6 @@
 ,
 {
   "Input": "dois bilhões",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois bilhões",
@@ -364,7 +338,6 @@
 ,
 {
   "Input": "três milhões",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "três milhões",
@@ -378,7 +351,6 @@
 ,
 {
   "Input": "tres milhoes e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres milhoes e sete",
@@ -392,7 +364,6 @@
 ,
 {
   "Input": "tres milhoes e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres milhoes e quarenta e sete",
@@ -406,7 +377,6 @@
 ,
 {
   "Input": "tres milhoes trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres milhoes trezentos e quarenta e sete",
@@ -420,7 +390,6 @@
 ,
 {
   "Input": "tres milhoes dois mil trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres milhoes dois mil trezentos e quarenta e sete",
@@ -434,7 +403,6 @@
 ,
 {
   "Input": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete",
@@ -448,7 +416,6 @@
 ,
 {
   "Input": "tres milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
@@ -462,7 +429,6 @@
 ,
 {
   "Input": "treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
@@ -476,7 +442,6 @@
 ,
 {
   "Input": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
@@ -490,7 +455,6 @@
 ,
 {
   "Input": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta",
@@ -504,7 +468,6 @@
 ,
 {
   "Input": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos",
@@ -518,7 +481,6 @@
 ,
 {
   "Input": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil",
@@ -532,7 +494,6 @@
 ,
 {
   "Input": "quinhentos e treze milhoes quatrocentos e cinquenta mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos e treze milhoes quatrocentos e cinquenta mil",
@@ -546,7 +507,6 @@
 ,
 {
   "Input": "quinhentos e treze milhoes e quatrocentos mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos e treze milhoes e quatrocentos mil",
@@ -560,7 +520,6 @@
 ,
 {
   "Input": "quinhentos e treze milhoes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos e treze milhoes",
@@ -574,7 +533,6 @@
 ,
 {
   "Input": "quinhentos milhoes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinhentos milhoes",
@@ -588,7 +546,6 @@
 ,
 {
   "Input": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes duzentos e vinte e oito milhoes e quinhentos e cinquenta e seis mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes duzentos e vinte e oito milhoes e quinhentos e cinquenta e seis mil",
@@ -602,7 +559,6 @@
 ,
 {
   "Input": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes duzentos e vinte e oito milhoes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes duzentos e vinte e oito milhoes",
@@ -616,7 +572,6 @@
 ,
 {
   "Input": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes",
@@ -630,7 +585,6 @@
 ,
 {
   "Input": "três trilhões",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "três trilhões",
@@ -644,7 +598,6 @@
 ,
 {
   "Input": "me dê mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil",
@@ -658,7 +611,6 @@
 ,
 {
   "Input": "tirasse um fino",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um",
@@ -672,7 +624,6 @@
 ,
 {
   "Input": "compre só uma vaca",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uma",
@@ -686,7 +637,6 @@
 ,
 {
   "Input": "vá e compre duzentas vacas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "duzentas",
@@ -700,7 +650,6 @@
 ,
 {
   "Input": "só tenho mil e cem reais",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil e cem",
@@ -714,7 +663,6 @@
 ,
 {
   "Input": "so tenho sete mil duzentos e trinta e cinco euros",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "sete mil duzentos e trinta e cinco",
@@ -728,7 +676,6 @@
 ,
 {
   "Input": "creio que vou gastar algo em torno de treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete escudos no projeto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
@@ -742,7 +689,6 @@
 ,
 {
   "Input": "meia duzia",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "meia duzia",
@@ -756,7 +702,6 @@
 ,
 {
   "Input": "meia dúzia",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "meia dúzia",
@@ -770,7 +715,6 @@
 ,
 {
   "Input": "três",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "três",
@@ -784,7 +728,6 @@
 ,
 {
   "Input": "tres duzias",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres duzias",
@@ -798,7 +741,6 @@
 ,
 {
   "Input": "uma dúzia",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uma dúzia",
@@ -812,7 +754,6 @@
 ,
 {
   "Input": "quinze dúzias",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinze dúzias",
@@ -826,7 +767,6 @@
 ,
 {
   "Input": "uma dezena",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uma dezena",
@@ -840,7 +780,6 @@
 ,
 {
   "Input": " 101231,2353",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "101231,2353",
@@ -854,7 +793,6 @@
 ,
 {
   "Input": "-101231,4323",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-101231,4323",
@@ -868,7 +806,6 @@
 ,
 {
   "Input": " -89101231,5127",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-89101231,5127",
@@ -882,7 +819,6 @@
 ,
 {
   "Input": " -1,1234567",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1234567",
@@ -896,7 +832,6 @@
 ,
 {
   "Input": "1.234.567,51274",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.234.567,51274",
@@ -910,7 +845,6 @@
 ,
 {
   "Input": "192,",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "192",
@@ -924,7 +858,6 @@
 ,
 {
   "Input": ",23456000",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ",23456000",
@@ -938,7 +871,6 @@
 ,
 {
   "Input": "4,800",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4,800",
@@ -952,7 +884,6 @@
 ,
 {
   "Input": ",08",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ",08",
@@ -966,7 +897,6 @@
 ,
 {
   "Input": "9,2321312",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9,2321312",
@@ -980,7 +910,6 @@
 ,
 {
   "Input": " -9,2321312",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-9,2321312",
@@ -994,7 +923,6 @@
 ,
 {
   "Input": "1e10",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1e10",
@@ -1008,7 +936,6 @@
 ,
 {
   "Input": "1,1^23",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,1^23",
@@ -1022,7 +949,6 @@
 ,
 {
   "Input": "sete vírgula cinco",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "sete vírgula cinco",
@@ -1036,7 +962,6 @@
 ,
 {
   "Input": "quarenta e sete vírgula vinte e oito",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quarenta e sete vírgula vinte e oito",
@@ -1050,7 +975,6 @@
 ,
 {
   "Input": "dois mil trezentos e quarenta e sete virgula mil quinhentos e setenta e oito",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois mil trezentos e quarenta e sete virgula mil quinhentos e setenta e oito",
@@ -1064,7 +988,6 @@
 ,
 {
   "Input": "cinquenta e dois mil trezentos e quarenta e sete virgula duzentos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinquenta e dois mil trezentos e quarenta e sete virgula duzentos",
@@ -1078,7 +1001,6 @@
 ,
 {
   "Input": "quatrocentos e cinquenta e dois mil trezentos e quarenta e sete virgula vinte e dois",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quatrocentos e cinquenta e dois mil trezentos e quarenta e sete virgula vinte e dois",
@@ -1092,7 +1014,6 @@
 ,
 {
   "Input": "1,1^+23",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,1^+23",
@@ -1106,7 +1027,6 @@
 ,
 {
   "Input": "2,5^-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,5^-1",
@@ -1120,7 +1040,6 @@
 ,
 {
   "Input": "-2500^-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-2500^-1",
@@ -1134,7 +1053,6 @@
 ,
 {
   "Input": "-1,1^+23",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1^+23",
@@ -1148,7 +1066,6 @@
 ,
 {
   "Input": "-2,5^-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-2,5^-1",
@@ -1162,7 +1079,6 @@
 ,
 {
   "Input": "-1,1^--23",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1^--23",
@@ -1176,7 +1092,6 @@
 ,
 {
   "Input": "-127,32e13",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-127,32e13",
@@ -1190,7 +1105,6 @@
 ,
 {
   "Input": "12,32e+14",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12,32e+14",
@@ -1204,7 +1118,6 @@
 ,
 {
   "Input": "-12e-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-12e-1",
@@ -1218,7 +1131,6 @@
 ,
 {
   "Input": "hum mil e três",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mil e três",
@@ -1232,7 +1144,6 @@
 ,
 {
   "Input": "192.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "192",
@@ -1246,7 +1157,6 @@
 ,
 {
   "Input": "192.168.1.2",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "192.168",
@@ -1274,13 +1184,11 @@
 ,
 {
   "Input": " subimos ao 4o piso ",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "um décimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um décimo",
@@ -1294,7 +1202,6 @@
 ,
 {
   "Input": "um milésimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um milésimo",
@@ -1308,7 +1215,6 @@
 ,
 {
   "Input": "um  centesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um  centesimo",
@@ -1322,7 +1228,6 @@
 ,
 {
   "Input": "um",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um",
@@ -1336,7 +1241,6 @@
 ,
 {
   "Input": "uma",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uma",
@@ -1350,7 +1254,6 @@
 ,
 {
   "Input": "dezesseis",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dezesseis",
@@ -1364,7 +1267,6 @@
 ,
 {
   "Input": "cento e dezesseis",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e dezesseis",
@@ -1378,7 +1280,6 @@
 ,
 {
   "Input": "cento e seis",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e seis",
@@ -1392,7 +1293,6 @@
 ,
 {
   "Input": "cento e sessenta e um",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e sessenta e um",
@@ -1406,7 +1306,6 @@
 ,
 {
   "Input": "um milionésimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um milionésimo",
@@ -1420,7 +1319,6 @@
 ,
 {
   "Input": " meia   duzia ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "meia   duzia",
@@ -1434,7 +1332,6 @@
 ,
 {
   "Input": "uma duzia",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "uma duzia",
@@ -1448,7 +1345,6 @@
 ,
 {
   "Input": " tres duzias ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres duzias",
@@ -1462,7 +1358,6 @@
 ,
 {
   "Input": "1. 234. 567",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1",
@@ -1490,7 +1385,6 @@
 ,
 {
   "Input": "-4/5",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-4/5",
@@ -1504,7 +1398,6 @@
 ,
 {
   "Input": "- 1 4/5",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 1 4/5",
@@ -1518,7 +1411,6 @@
 ,
 {
   "Input": "tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres",
@@ -1532,7 +1424,6 @@
 ,
 {
   "Input": "1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1",
@@ -1546,7 +1437,6 @@
 ,
 {
   "Input": "10k",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10k",
@@ -1560,7 +1450,6 @@
 ,
 {
   "Input": "10G",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10G",
@@ -1574,7 +1463,6 @@
 ,
 {
   "Input": "- 10  k",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 10  k",
@@ -1588,7 +1476,6 @@
 ,
 {
   "Input": "2 milhoes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 milhoes",
@@ -1602,7 +1489,6 @@
 ,
 {
   "Input": " tres ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres",
@@ -1616,7 +1502,6 @@
 ,
 {
   "Input": "cinquenta   e   dois",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinquenta   e   dois",
@@ -1630,7 +1515,6 @@
 ,
 {
   "Input": "trezentos  e trinta  e   um",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trezentos  e trinta  e   um",
@@ -1644,7 +1528,6 @@
 ,
 {
   "Input": "duzentos e dois mil",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "duzentos e dois mil",
@@ -1658,7 +1541,6 @@
 ,
 {
   "Input": "dois mil e duzentos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois mil e duzentos",
@@ -1672,7 +1554,6 @@
 ,
 {
   "Input": " 2,33 k",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,33 k",
@@ -1686,7 +1567,6 @@
 ,
 {
   "Input": " duzentos virgula zero tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "duzentos virgula zero tres",
@@ -1700,7 +1580,6 @@
 ,
 {
   "Input": " 322 milhoes ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "322 milhoes",
@@ -1714,7 +1593,6 @@
 ,
 {
   "Input": "setenta",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "setenta",
@@ -1728,7 +1606,6 @@
 ,
 {
   "Input": "cinquenta e dois",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinquenta e dois",
@@ -1742,7 +1619,6 @@
 ,
 {
   "Input": "2  1/4",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2  1/4",
@@ -1756,7 +1632,6 @@
 ,
 {
   "Input": "3/4",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3/4",
@@ -1770,7 +1645,6 @@
 ,
 {
   "Input": "um oitavo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um oitavo",
@@ -1784,7 +1658,6 @@
 ,
 {
   "Input": "cinco oitavos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinco oitavos",
@@ -1798,7 +1671,6 @@
 ,
 {
   "Input": "tres quartos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres quartos",
@@ -1812,7 +1684,6 @@
 ,
 {
   "Input": "vinte e tres quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte e tres quintos",
@@ -1826,7 +1697,6 @@
 ,
 {
   "Input": "um centesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um centesimo",
@@ -1840,7 +1710,6 @@
 ,
 {
   "Input": "um quinto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um quinto",
@@ -1854,7 +1723,6 @@
 ,
 {
   "Input": "um bilionesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um bilionesimo",
@@ -1868,7 +1736,6 @@
 ,
 {
   "Input": "cem mil bilionesimos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cem mil bilionesimos",
@@ -1882,7 +1749,6 @@
 ,
 {
   "Input": "tres quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres quintos",
@@ -1896,7 +1762,6 @@
 ,
 {
   "Input": "vinte quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte quintos",
@@ -1910,7 +1775,6 @@
 ,
 {
   "Input": "dois sobre onze",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois sobre onze",
@@ -1924,7 +1788,6 @@
 ,
 {
   "Input": "um vinte e um avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um vinte e um avos",
@@ -1938,7 +1801,6 @@
 ,
 {
   "Input": "dois onze avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dois onze avos",
@@ -1952,7 +1814,6 @@
 ,
 {
   "Input": "cento e trinta e tres vinte e um avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e trinta e tres vinte e um avos",
@@ -1966,7 +1827,6 @@
 ,
 {
   "Input": "vinte e dois trinta avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte e dois trinta avos",
@@ -1980,7 +1840,6 @@
 ,
 {
   "Input": "um vinte e cinco avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um vinte e cinco avos",
@@ -1994,7 +1853,6 @@
 ,
 {
   "Input": "um sobre vinte e cinco",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um sobre vinte e cinco",
@@ -2008,7 +1866,6 @@
 ,
 {
   "Input": "vinte vinte e cinco avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte vinte e cinco avos",
@@ -2022,7 +1879,6 @@
 ,
 {
   "Input": "tres vinte e um avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres vinte e um avos",
@@ -2036,7 +1892,6 @@
 ,
 {
   "Input": "tres vinte avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres vinte avos",
@@ -2050,7 +1905,6 @@
 ,
 {
   "Input": "tres duzentos avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres duzentos avos",
@@ -2064,7 +1918,6 @@
 ,
 {
   "Input": "tres dois milesimos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres dois milesimos",
@@ -2078,7 +1931,6 @@
 ,
 {
   "Input": "tres vinte milesimos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres vinte milesimos",
@@ -2092,7 +1944,6 @@
 ,
 {
   "Input": "cento e trinta quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e trinta quintos",
@@ -2106,7 +1957,6 @@
 ,
 {
   "Input": "vinte e um quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vinte e um quintos",
@@ -2120,7 +1970,6 @@
 ,
 {
   "Input": "cento e trinta e dois cinco avos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e trinta e dois cinco avos",
@@ -2134,7 +1983,6 @@
 ,
 {
   "Input": "cento e trinta e dois quintos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cento e trinta e dois quintos",
@@ -2148,7 +1996,6 @@
 ,
 {
   "Input": "um sobre tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um sobre tres",
@@ -2162,7 +2009,6 @@
 ,
 {
   "Input": "1 sobre 21",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre 21",
@@ -2176,7 +2022,6 @@
 ,
 {
   "Input": "1 sobre tres",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre tres",
@@ -2190,7 +2035,6 @@
 ,
 {
   "Input": "1 sobre 3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre 3",
@@ -2204,7 +2048,6 @@
 ,
 {
   "Input": "um sobre 3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um sobre 3",
@@ -2218,7 +2061,6 @@
 ,
 {
   "Input": "1/3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1/3",
@@ -2232,7 +2074,6 @@
 ,
 {
   "Input": "um sobre 20",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um sobre 20",
@@ -2246,7 +2087,6 @@
 ,
 {
   "Input": "um sobre vinte",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um sobre vinte",
@@ -2260,7 +2100,6 @@
 ,
 {
   "Input": "um sobre cem",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um sobre cem",
@@ -2274,7 +2113,6 @@
 ,
 {
   "Input": "1 sobre cento e vinte e um",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sobre cento e vinte e um",
@@ -2288,7 +2126,6 @@
 ,
 {
   "Input": "um sobre cento e trinta e cinco",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "um sobre cento e trinta e cinco",

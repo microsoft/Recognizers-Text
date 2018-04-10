@@ -16,6 +16,7 @@ module.exports = function getChoiceTestRunner(config) {
         _.zip(result, testCase.Results).forEach(o => {
             var actual = o[0];
             var expected = o[1];
+
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
@@ -32,12 +33,12 @@ module.exports = function getChoiceTestRunner(config) {
 function getResults(input, config) {
     var modelFunction = modelFunctions[config.subType];
     if(!modelFunction) {
-        throw new Error(`NumberWithUnit model of ${config.subType} not supported.`);
+        throw new Error(`Choice model of ${config.subType} not supported.`);
     }
 
     var culture = SupportedCultures[config.language].cultureCode;
     if (!culture) {
-        throw new Error(`NumberWithUnit model of ${config.subType} with culture ${config.language} not supported.`);
+        throw new Error(`Choice model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
     return modelFunction(input, culture, 0);

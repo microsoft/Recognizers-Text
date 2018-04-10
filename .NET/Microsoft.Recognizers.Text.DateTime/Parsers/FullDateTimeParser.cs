@@ -503,5 +503,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 res.Add(DateTimeResolutionKey.END, end);
             }
         }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
     }
 }

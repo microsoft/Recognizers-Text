@@ -1,6 +1,5 @@
 [{
   "Input": "tierce",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tierce",
@@ -14,7 +13,6 @@
 ,
 {
   "Input": "trois billionieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois billionieme",
@@ -28,13 +26,11 @@
 ,
 {
   "Input": "un trillion",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "11eme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11eme",
@@ -48,7 +44,6 @@
 ,
 {
   "Input": "trois millieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois millieme",
@@ -62,7 +57,6 @@
 ,
 {
   "Input": "neuf milliardieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "neuf milliardieme",
@@ -76,7 +70,6 @@
 ,
 {
   "Input": "22e",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "22e",
@@ -90,7 +83,6 @@
 ,
 {
   "Input": "30e",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30e",
@@ -104,7 +96,6 @@
 ,
 {
   "Input": "155e",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "155e",
@@ -118,7 +109,6 @@
 ,
 {
   "Input": "255eme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "255eme",
@@ -132,7 +122,6 @@
 ,
 {
   "Input": "500000eme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "500000eme",
@@ -146,7 +135,6 @@
 ,
 {
   "Input": "2eme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2eme",
@@ -160,7 +148,6 @@
 ,
 {
   "Input": "onzieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "onzieme",
@@ -174,7 +161,6 @@
 ,
 {
   "Input": "vingtieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingtieme",
@@ -188,7 +174,6 @@
 ,
 {
   "Input": "vingt-cinquieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt-cinquieme",
@@ -202,7 +187,6 @@
 ,
 {
   "Input": "octantieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "octantieme",
@@ -216,7 +200,6 @@
 ,
 {
   "Input": "deux centieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "deux centieme",
@@ -230,7 +213,6 @@
 ,
 {
   "Input": "cent vingt cinquieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent vingt cinquieme",
@@ -244,7 +226,6 @@
 ,
 {
   "Input": "cent vingt-cinquieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent vingt-cinquieme",
@@ -258,7 +239,6 @@
 ,
 {
   "Input": "soixante-dixieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "soixante-dixieme",
@@ -272,7 +252,6 @@
 ,
 {
   "Input": "quatre-vingtieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quatre-vingtieme",
@@ -286,7 +265,6 @@
 ,
 {
   "Input": "septante-huitieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "septante-huitieme",
@@ -300,7 +278,6 @@
 ,
 {
   "Input": "nonante-deuxieme",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "nonante-deuxieme",
@@ -314,7 +291,6 @@
 ,
 {
   "Input": "trois cent vingt seconde",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois cent vingt seconde",

@@ -1,6 +1,5 @@
 [{
   "Input": "the temperature outside is 40 deg celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 deg celsius",
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "its 90 fahrenheit in texas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "90 fahrenheit",
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "-5 degree fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-5 degree fahrenheit",
@@ -45,7 +42,6 @@
 ,
 {
   "Input": "6 deg c",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "6 deg c",
@@ -60,7 +56,6 @@
 ,
 {
   "Input": "98.6 degrees f is normal temperature",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98.6 degrees f",
@@ -75,7 +70,6 @@
 ,
 {
   "Input": "set the temperature to 30 degrees celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30 degrees celsius",
@@ -90,7 +84,6 @@
 ,
 {
   "Input": "normal temperature is 98.6 degrees fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98.6 degrees fahrenheit",
@@ -105,7 +98,6 @@
 ,
 {
   "Input": "100 degrees f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 degrees f",
@@ -120,7 +112,6 @@
 ,
 {
   "Input": "20 degrees c",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 degrees c",
@@ -135,7 +126,6 @@
 ,
 {
   "Input": "100.2 degrees farenheit is low",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100.2 degrees farenheit",
@@ -150,7 +140,6 @@
 ,
 {
   "Input": "10.5 celcius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10.5 celcius",
@@ -165,7 +154,6 @@
 ,
 {
   "Input": "20 degrees celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 degrees celsius",
@@ -180,7 +168,6 @@
 ,
 {
   "Input": "20.3 celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20.3 celsius",
@@ -195,7 +182,6 @@
 ,
 {
   "Input": "34.5 celcius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34.5 celcius",
@@ -210,7 +196,6 @@
 ,
 {
   "Input": "the temperature outside is 98 degrees",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98 degrees",
@@ -225,7 +210,6 @@
 ,
 {
   "Input": "set the thermostat to 85°",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85°",
@@ -240,7 +224,6 @@
 ,
 {
   "Input": "raise the temperature by 5 degrees",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 degrees",
@@ -255,7 +238,6 @@
 ,
 {
   "Input": "set the temperature to 70 degrees f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "70 degrees f",
@@ -270,7 +252,6 @@
 ,
 {
   "Input": "raise the temperature by 20 degrees",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 degrees",
@@ -285,7 +266,6 @@
 ,
 {
   "Input": "set the temperature to 100 degrees",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 degrees",
@@ -300,7 +280,6 @@
 ,
 {
   "Input": "keep the temperature at 75 degrees f",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75 degrees f",
@@ -315,7 +294,6 @@
 ,
 {
   "Input": "let the temperature be at 40 celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 celsius",
@@ -330,7 +308,6 @@
 ,
 {
   "Input": "let the temperature be at 50 deg. ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 deg.",
@@ -345,7 +322,6 @@
 ,
 {
   "Input": "convert 10 celsius to fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10 celsius",
@@ -368,7 +344,6 @@
 ,
 {
   "Input": "34.9 centigrate to farenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34.9 centigrate",
@@ -391,7 +366,6 @@
 ,
 {
   "Input": "convert 200 celsius celsius into fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 celsius",
@@ -422,7 +396,6 @@
 ,
 {
   "Input": "fahrenheit to celsius 101 fahrenheit is how much celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "101 fahrenheit",
@@ -461,7 +434,6 @@
 ,
 {
   "Input": "50 degrees celsius celsius to fahrenheit",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 degrees celsius",
@@ -492,7 +464,6 @@
 ,
 {
   "Input": "could you convert 51 fahrenheit to degrees celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "51 fahrenheit",
@@ -515,7 +486,6 @@
 ,
 {
   "Input": "convert 106 degree fahrenheit to degrees celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 degree fahrenheit",
@@ -538,7 +508,6 @@
 ,
 {
   "Input": "convert 45 degrees fahrenheit to celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "45 degrees fahrenheit",
@@ -561,7 +530,6 @@
 ,
 {
   "Input": "how to convert - 20 degrees fahrenheit to celsius",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 20 degrees fahrenheit",

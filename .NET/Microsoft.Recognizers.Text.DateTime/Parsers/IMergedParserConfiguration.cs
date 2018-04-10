@@ -18,5 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser GetParser { get; }
 
         IDateTimeParser HolidayParser { get; }
+
+        IDateTimeParser TimeZoneParser { get; }
     }
 }
