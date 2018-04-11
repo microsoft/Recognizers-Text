@@ -1,0 +1,90 @@
+[
+  {
+    "Input": "@BotSys, let's go for the meeting.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@BotSys",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@BotSys"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@Alice, please respond.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Alice",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Alice"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You can contact @Bob for more information",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Bob",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Bob"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This is @Carol_2.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Carol_2",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Carol_2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@DaveDaveDaveDaveDave can be longer",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@DaveDaveDaveDaveDave",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@DaveDaveDaveDaveDave"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@! is not a valid mention",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "use @ before username is not a mention",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "abc@efg.com, which is an email rather than a mention",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  }
+]

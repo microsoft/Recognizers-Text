@@ -1,0 +1,4 @@
+---
+HashtagRegex: !simpleRegex
+  def: ((?<=\s|^)#([a-zA-Z0-9_]+))
+...

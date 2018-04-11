@@ -232,6 +232,30 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             ValidateResults();
         }
 
+        public void TestMention()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
+        public void TestHashtag()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
+        public void TestEmail()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
+        public void TestURL()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
         public void TestChoice()
         {
             TestPreValidation();

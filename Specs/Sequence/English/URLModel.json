@@ -1,0 +1,208 @@
+[
+  {
+    "Input": "https://abc.com",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ftp://abc.com",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "ftp://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "ftp://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "www.abc.com",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "www.abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "www.abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "www.abc.com.cn",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "www.abc.com.cn",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "www.abc.com.cn"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "abc.com",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "abc.com",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "abc.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_name",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_name",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_name"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_path/",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_path/",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_path/"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/file_path/123.html",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/file_path/123.html",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/file_path/123.html"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/search?id=123",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/search?id=123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/search?id=123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/search?id=123&name=Alice",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/search?id=123&name=Alice",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/search?id=123&name=Alice"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com/123#cite_1",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com/123#cite_1",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com/123#cite_1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "http://abc.com:8080",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://abc.com:8080",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://abc.com:8080"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Alice@abc.com is an email rather than url",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "https:// is invalid",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "http://# is invalid",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "httt://abc.com is invalid, no such protocol",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  }
+]
