@@ -17,6 +17,6 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BaseEmail
 	{
-		public const string EmailRegex = @"(([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6}))";
+		public const string EmailRegex = @"(([-a-zA-Z0-9_\.]+)@([-a-zA-Z\d\.]+)\.([a-zA-Z\.]{2,6}))";
 	}
 }

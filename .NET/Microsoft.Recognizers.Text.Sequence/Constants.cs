@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public const string MENTION_REGEX = "Mention";
 
-        public const string HASHTAG_REGEX = "HashTag";
+        public const string HASHTAG_REGEX = "Hashtag";
 
         public const string EMAIL_REGEX = "Email";
 

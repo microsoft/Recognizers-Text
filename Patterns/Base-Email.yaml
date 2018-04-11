@@ -1,4 +1,4 @@
 ---
 EmailRegex: !simpleRegex
-  def: (([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6}))
+  def: (([-a-zA-Z0-9_\.]+)@([-a-zA-Z\d\.]+)\.([a-zA-Z\.]{2,6}))
 ...

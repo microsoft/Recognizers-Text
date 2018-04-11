@@ -211,7 +211,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseEmail.cs</LastGenOutput>
     </None>
-    <None Update="BaseHashTag.tt">
+    <None Update="BaseHashtag.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseHashTag.cs</LastGenOutput>
     </None>

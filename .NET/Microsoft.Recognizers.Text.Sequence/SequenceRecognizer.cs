@@ -42,9 +42,9 @@ namespace Microsoft.Recognizers.Text.Sequence
             return GetModel<MentionModel>(Culture.English, fallbackToDefaultCulture);
         }
 
-        public IModel GetHashTagModel(string culture = null, bool fallbackToDefaultCulture = true)
+        public IModel GetHashtagModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<HashTagModel>(Culture.English, fallbackToDefaultCulture);
+            return GetModel<HashtagModel>(Culture.English, fallbackToDefaultCulture);
         }
 
         public IModel GetEmailModel(string culture = null, bool fallbackToDefaultCulture = true)
@@ -72,9 +72,9 @@ namespace Microsoft.Recognizers.Text.Sequence
             return RecognizeByModel(recognizer => recognizer.GetMentionModel(culture, fallbackToDefaultCulture), query, options);
         }
 
-        public static List<ModelResult> RecognizeHashTag(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        public static List<ModelResult> RecognizeHashtag(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetHashTagModel(culture, fallbackToDefaultCulture), query, options);
+            return RecognizeByModel(recognizer => recognizer.GetHashtagModel(culture, fallbackToDefaultCulture), query, options);
         }
 
         public static List<ModelResult> RecognizeEmail(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
@@ -108,9 +108,9 @@ namespace Microsoft.Recognizers.Text.Sequence
                 Culture.English,
                 (options) => new MentionModel(new MentionParser(), new MentionExtractor()));
 
-            RegisterModel<HashTagModel>(
+            RegisterModel<HashtagModel>(
                 Culture.English,
-                (options) => new HashTagModel(new HashTagParser(), new HashTagExtractor()));
+                (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
 
             RegisterModel<EmailModel>(
                 Culture.English,

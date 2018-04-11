@@ -5,9 +5,9 @@
 //     the code is regenerated.
 //     
 //     Generation parameters:
-//     - DataFilename: Patterns\Base-HashTag.yaml
+//     - DataFilename: Patterns\Base-Hashtag.yaml
 //     - Language: NULL
-//     - ClassName: BaseHashTag
+//     - ClassName: BaseHashtag
 // </auto-generated>
 //------------------------------------------------------------------------------
 namespace Microsoft.Recognizers.Definitions
@@ -15,8 +15,8 @@ namespace Microsoft.Recognizers.Definitions
 	using System;
 	using System.Collections.Generic;
 
-	public static class BaseHashTag
+	public static class BaseHashtag
 	{
-		public const string HashTagRegex = @"(#([a-zA-Z0-9_]+))";
+		public const string HashtagRegex = @"((?<=\s|^)#([a-zA-Z0-9_]+))";
 	}
 }

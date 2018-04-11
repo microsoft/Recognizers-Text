@@ -1,4 +1,4 @@
 ---
-HashTagRegex: !simpleRegex
-  def: (\B#([a-zA-Z0-9_]+))
+HashtagRegex: !simpleRegex
+  def: ((?<=\s|^)#([a-zA-Z0-9_]+))
 ...

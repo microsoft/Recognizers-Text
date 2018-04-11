@@ -1,0 +1,69 @@
+[
+  {
+    "Input": "This is task number #123",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "#123",
+        "TypeName": "hashtag",
+        "Resolution": {
+          "value": "#123"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This is topic #basketball.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "#basketball",
+        "TypeName": "hashtag",
+        "Resolution": {
+          "value": "#basketball"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This is challenge #Ice_Bucket.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "#Ice_Bucket",
+        "TypeName": "hashtag",
+        "Resolution": {
+          "value": "#Ice_Bucket"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Try #lero-lero",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "#lero",
+        "TypeName": "hashtag",
+        "Resolution": {
+          "value": "#lero"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "abc@efg.com/hij#cite_1, which is a URL rather than a hashtag",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "C# is cool but is not a hashtag",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "# is comment sign in python",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  }
+]

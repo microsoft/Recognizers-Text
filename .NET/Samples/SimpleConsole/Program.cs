@@ -104,9 +104,9 @@ namespace SimpleConsole
                 // E.g "@Cicero"
                 SequenceRecognizer.RecognizeMention(query, culture),
 
-                // HashTag recognizer will find all the hash tag usages
+                // Hashtag recognizer will find all the hash tag usages
                 // E.g "task #123"
-                SequenceRecognizer.RecognizeHashTag(query, culture),
+                SequenceRecognizer.RecognizeHashtag(query, culture),
                 
                 // Email recognizer will find all the emails
                 // E.g "a@b.com"

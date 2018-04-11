@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Recognizers.Text.Sequence
 {
-    public class HashTagModel : AbstractSequenceModel
+    public class HashtagModel : AbstractSequenceModel
     {
-        public HashTagModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public HashtagModel(IParser parser, IExtractor extractor) : base(parser, extractor)
         {
         }
 
