@@ -1,6 +1,7 @@
 [
   {
     "Input": "v-abc@microsoft.com",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -14,6 +15,7 @@
   },
   {
     "Input": "abc@google.com",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -27,6 +29,7 @@
   },
   {
     "Input": "a_b.c@163.com",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -40,6 +43,7 @@
   },
   {
     "Input": "123456789@tx.com",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -53,6 +57,7 @@
   },
   {
     "Input": "Alice_1@outlook.com",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -66,6 +71,7 @@
   },
   {
     "Input": "Bob@try1989.com",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -79,16 +85,19 @@
   },
   {
     "Input": "Alice@abc is invalid",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Bob@abc.c is invalid",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "Carol@new_type.com is invalid because _ is not allowed in the host name",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": []
   }

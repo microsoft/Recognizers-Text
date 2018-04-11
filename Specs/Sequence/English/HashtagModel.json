@@ -1,6 +1,7 @@
 [
   {
     "Input": "This is task number #123",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -14,6 +15,7 @@
   },
   {
     "Input": "This is topic #basketball.",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -27,6 +29,7 @@
   },
   {
     "Input": "This is challenge #Ice_Bucket.",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -40,6 +43,7 @@
   },
   {
     "Input": "Try #lero-lero",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -53,16 +57,19 @@
   },
   {
     "Input": "abc@efg.com/hij#cite_1, which is a URL rather than a hashtag",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "C# is cool but is not a hashtag",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
     "Input": "# is comment sign in python",
+    "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": []
   }
