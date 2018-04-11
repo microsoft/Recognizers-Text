@@ -55,8 +55,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     public enum Models
     {
         Number,
+        NumberPercentMode,
         Ordinal,
         Percent,
+        PercentPercentMode,
         NumberRange,
         CustomNumber,
         Age,
@@ -82,6 +84,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimePeriod,
         Duration,
         Holiday,
+        TimeZone,
         Set,
         Merged,
         MergedSkipFromTo
@@ -97,6 +100,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimePeriod,
         Duration,
         Holiday,
+        TimeZone,
         Set,
         Merged
     }
@@ -105,8 +109,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     {
         private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>() {
             { Models.Number, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.NumberPercentMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
+            { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false)},
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Currency, (test, culture) => NumberWithUnitRecognizer.RecognizeCurrency(test.Input, culture, fallbackToDefaultCulture: false) },
@@ -197,6 +203,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
                 case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration());
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
@@ -229,6 +237,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseDurationParser(new EnglishDurationParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:

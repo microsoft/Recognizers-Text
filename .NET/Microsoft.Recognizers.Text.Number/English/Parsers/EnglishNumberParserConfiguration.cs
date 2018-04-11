@@ -10,6 +10,11 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public class EnglishNumberParserConfiguration : INumberParserConfiguration
     {
+        public EnglishNumberParserConfiguration(NumberOptions options) : this()
+        {
+            this.Options = options;
+        }
+
         public EnglishNumberParserConfiguration() : this(new CultureInfo(Culture.English)) { }
 
         public EnglishNumberParserConfiguration(CultureInfo ci)
@@ -34,15 +39,20 @@ namespace Microsoft.Recognizers.Text.Number.English
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            this.FractionPrepositionRegex  = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
+
+        public NumberOptions Options { get; }
 
         public CultureInfo CultureInfo { get; private set; }
 
         public char DecimalSeparatorChar { get; private set; }
 
         public Regex DigitalNumberRegex { get; private set; }
+
+        public Regex FractionPrepositionRegex { get; }
 
         public Regex NegativeNumberSignRegex { get; private set; }
 
@@ -80,9 +90,31 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             for (var i = 0; i < tokenLen; i++)
             {
-                if ((i < tokenLen - 2) && tokenList[i + 1] == "-")
+                if (tokenList[i].Contains("-"))
                 {
-                    fracWords.Add(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+                    var splitedTokens = tokenList[i].Split('-');
+                    if (splitedTokens.Length == 2 && OrdinalNumberMap.ContainsKey(splitedTokens[1]))
+                    {
+                        fracWords.Add(splitedTokens[0]);
+                        fracWords.Add(splitedTokens[1]);
+                    }
+                    else
+                    {
+                        fracWords.Add(tokenList[i]);
+                    }
+                }
+                else if (i < tokenLen - 2 && tokenList[i + 1] == "-")
+                {
+                    if (OrdinalNumberMap.ContainsKey(tokenList[i + 2]))
+                    {
+                        fracWords.Add(tokenList[i]);
+                        fracWords.Add(tokenList[i + 2]);
+                    }
+                    else
+                    {
+                        fracWords.Add(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+                    }
+
                     i += 2;
                 }
                 else

@@ -1606,4 +1606,96 @@
     }
   ]
 }
+,
+{
+  "Input": "one - fourth",
+  "Results": [
+    {
+      "Text": "one - fourth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one-eighth",
+  "Results": [
+    {
+      "Text": "one-eighth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "five - eighths",
+  "Results": [
+    {
+      "Text": "five - eighths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.625"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ninety - five hundred-fifths",
+  "Results": [
+    {
+      "Text": "ninety - five hundred-fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1900"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one out of three",
+  "Results": [
+    {
+      "Text": "one out of three",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 in twenty-one",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "1 in twenty-one",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "five eighths of",
+  "Results": [
+    {
+      "Text": "five eighths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.625"
+      }
+    }
+  ]
+}
 ]

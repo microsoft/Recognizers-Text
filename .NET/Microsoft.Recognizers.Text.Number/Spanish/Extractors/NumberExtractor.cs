@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
-        public NumberExtractor(NumberMode mode = NumberMode.Default)
+        public NumberExtractor(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 

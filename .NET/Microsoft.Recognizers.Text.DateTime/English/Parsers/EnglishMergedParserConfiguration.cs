@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeParser HolidayParser { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public EnglishMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
@@ -32,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
             GetParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+            TimeZoneParser = new BaseTimeZoneParser();
         }
     }
 }

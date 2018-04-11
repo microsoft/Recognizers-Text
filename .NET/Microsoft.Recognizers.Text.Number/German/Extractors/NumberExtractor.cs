@@ -12,19 +12,21 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
-        private static readonly ConcurrentDictionary<string, NumberExtractor> Instances = new ConcurrentDictionary<string, NumberExtractor>();
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
-        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default) {
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default,
+            NumberOptions options = NumberOptions.None)
+        {
 
-            var placeholder = mode.ToString();
-
-            if (!Instances.ContainsKey(placeholder))
+            var cacheKey = (mode, options);
+            if (!Instances.ContainsKey(cacheKey))
             {
                 var instance = new NumberExtractor(mode);
-                Instances.TryAdd(placeholder, instance);
+                Instances.TryAdd(cacheKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[cacheKey];
         }
 
         private NumberExtractor(NumberMode mode = NumberMode.Default)

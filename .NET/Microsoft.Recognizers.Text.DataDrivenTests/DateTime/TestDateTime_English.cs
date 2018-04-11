@@ -82,6 +82,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeZoneExtractor-English.csv", "TimeZoneExtractor-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void TimeZoneExtractor()
+        {
+            base.ExtractorInitialize(Extractors);
+            base.TestDateTimeExtractor();
+        }
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationExtractor-English.csv", "DurationExtractor-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DurationExtractor()
@@ -171,6 +179,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayParser-English.csv", "HolidayParser-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void HolidayParser()
+        {
+            base.ExtractorInitialize(Extractors);
+            base.ParserInitialize(Parsers);
+            base.TestDateTimeParser();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeZoneParser-English.csv", "TimeZoneParser-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void TimeZoneParser()
         {
             base.ExtractorInitialize(Extractors);
             base.ParserInitialize(Parsers);

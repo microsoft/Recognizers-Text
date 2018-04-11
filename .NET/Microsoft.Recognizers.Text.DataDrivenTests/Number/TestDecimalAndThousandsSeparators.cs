@@ -16,9 +16,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public ImmutableDictionary<string, long> RoundNumberMap { get; }
 
+        public NumberOptions Options { get; }
+
         public CultureInfo CultureInfo { get; }
 
         public Regex DigitalNumberRegex { get; }
+
+        public Regex FractionPrepositionRegex { get; }
 
         public string FractionMarkerToken { get; }
 
