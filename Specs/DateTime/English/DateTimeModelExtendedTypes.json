@@ -371,4 +371,172 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana, please book 2 hours next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-25T01:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Start": 21,
+      "End": 27,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT2H",
+            "type": "duration",
+            "value": "7200"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "next week",
+      "Start": 29,
+      "End": 37,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-W13",
+            "type": "daterange",
+            "start": "2018-03-26",
+            "end": "2018-04-02"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please book 2 hours next month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-25T01:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Start": 21,
+      "End": 27,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT2H",
+            "type": "duration",
+            "value": "7200"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "next month",
+      "Start": 29,
+      "End": 38,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-04",
+            "type": "daterange",
+            "start": "2018-04-01",
+            "end": "2018-05-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please check my work 2 hours last week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-25T01:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Start": 30,
+      "End": 36,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT2H",
+            "type": "duration",
+            "value": "7200"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "last week",
+      "Start": 38,
+      "End": 46,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-W11",
+            "type": "daterange",
+            "start": "2018-03-12",
+            "end": "2018-03-19"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, I'd like to take a break 10 minutes coming week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-25T01:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10 minutes",
+      "Start": 34,
+      "End": 43,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT10M",
+            "type": "duration",
+            "value": "600"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "coming week",
+      "Start": 45,
+      "End": 55,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-W13",
+            "type": "daterange",
+            "start": "2018-03-26",
+            "end": "2018-04-02"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

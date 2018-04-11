@@ -753,4 +753,589 @@
     }
   ]
 }
+,
+{
+  "Input": "2 hours next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T08:30:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "three hours next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "4 hours coming week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "coming week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "4 hours upcoming week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "upcoming week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "4 hours last week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "last week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "five hours past week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "five hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "past week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "five hours previous week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "five hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "previous week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 hours next",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours next",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "8 hours next month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 hours next day",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2 hours next year",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "1 hour next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 hour",
+      "Type": "duration"
+    },
+    {
+      "Text": "next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 hours next two years",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two years",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 hours next two months",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two months",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 hours next two days",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 minutes next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "Type": "duration"
+    },
+    {
+      "Text": "next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 minutes next two weeks",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 minutes next day",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "Type": "duration"
+    },
+    {
+      "Text": "next day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2 minutes next two days",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 minutes next month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "Type": "duration"
+    },
+    {
+      "Text": "next month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 minutes next two months",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two months",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 minutes next year",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "Type": "duration"
+    },
+    {
+      "Text": "next year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 minutes next two years",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 minutes",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two years",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 seconds next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 seconds",
+      "Type": "duration"
+    },
+    {
+      "Text": "next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 seconds next two weeks",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 seconds",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 seconds next day",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 seconds",
+      "Type": "duration"
+    },
+    {
+      "Text": "next day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2 seconds next two days",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 seconds",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 seconds next month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 seconds",
+      "Type": "duration"
+    },
+    {
+      "Text": "next month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 seconds next two months",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 seconds",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two months",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 seconds next year",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 seconds",
+      "Type": "duration"
+    },
+    {
+      "Text": "next year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2 seconds next two years",
+  "Context": {
+    "ReferenceDateTime": "2018-03-23T11:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 seconds",
+      "Type": "duration"
+    },
+    {
+      "Text": "next two years",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
