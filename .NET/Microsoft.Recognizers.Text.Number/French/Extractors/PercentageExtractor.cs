@@ -8,7 +8,14 @@ namespace Microsoft.Recognizers.Text.Number.French
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
-        public PercentageExtractor() : base(new NumberExtractor()) { }
+        protected override NumberOptions Options { get; }
+
+        public PercentageExtractor(NumberOptions options = NumberOptions.None) : base(
+            NumberExtractor.GetInstance(options: options))
+        {
+            Options = options;
+            Regexes = InitRegexes();
+        }
         
         protected override ImmutableHashSet<Regex> InitRegexes()
         {

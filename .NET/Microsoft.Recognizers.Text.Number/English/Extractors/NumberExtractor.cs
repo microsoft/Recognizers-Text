@@ -10,28 +10,32 @@ namespace Microsoft.Recognizers.Text.Number.English
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
+        protected sealed override NumberOptions Options { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
         protected sealed override Regex NegativeNumberTermsRegex { get; }
 
-        private static readonly ConcurrentDictionary<string, NumberExtractor> Instances = new ConcurrentDictionary<string, NumberExtractor>();
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
-        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default) {
-
-            var placeholder = mode.ToString();
-
-            if (!Instances.ContainsKey(placeholder))
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
+        {
+            var cacheKey = (mode, options);
+            if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new NumberExtractor(mode);
-                Instances.TryAdd(placeholder, instance);
+                var instance = new NumberExtractor(mode, options);
+                Instances.TryAdd(cacheKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[cacheKey];
         }
 
-        private NumberExtractor(NumberMode mode = NumberMode.Default)
+        private NumberExtractor(NumberMode mode, NumberOptions options)
         {
             NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+            Options = options;
 
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
             
@@ -57,7 +61,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             builder.AddRange(cardExtract.Regexes);
             
             //Add Fraction
-            var fracExtract = FractionExtractor.GetInstance();
+            var fracExtract = FractionExtractor.GetInstance(Options);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();

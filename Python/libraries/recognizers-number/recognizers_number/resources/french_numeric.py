@@ -49,7 +49,7 @@ class FrenchNumeric:
     FractionNotationRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demis?|tiers?|quarts?)(?=\\b)'
     FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(et\\s+)?)?(un|une)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demis?)(?=\\b)'
-    FractionPrepositionRegex = f'(?<=\\b)(({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
+    FractionPrepositionRegex = f'(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
     AllFloatRegex = f'({AllIntRegex}(\\s+(virgule|point)){AllPointRegex})'
     DoubleDecimalPointRegex = lambda placeholder: f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?={placeholder})'
