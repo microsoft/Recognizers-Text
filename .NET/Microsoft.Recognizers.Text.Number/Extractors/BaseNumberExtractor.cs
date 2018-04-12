@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual string ExtractType { get; } = "";
 
+        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+
         protected virtual Regex NegativeNumberTermsRegex { get; } = null;
 
         public virtual List<ExtractResult> Extract(string source)

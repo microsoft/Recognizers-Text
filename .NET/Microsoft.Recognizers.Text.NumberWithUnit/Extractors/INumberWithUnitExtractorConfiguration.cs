@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
-
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -24,5 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         string BuildSuffix { get; }
 
         string ConnectorToken { get; }
+
+        Regex CompoundUnitConnectorRegex { get; }
     }
 }

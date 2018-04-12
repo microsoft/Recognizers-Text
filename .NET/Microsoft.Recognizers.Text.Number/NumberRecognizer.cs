@@ -63,7 +63,9 @@ namespace Microsoft.Recognizers.Text.Number
 
         public static List<ModelResult> RecognizePercentage(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
         {
-            return RecognizeByModel(recognizer => recognizer.GetPercentageModel(culture, fallbackToDefaultCulture), query, options);
+            var recognizer = new NumberRecognizer(options);
+            var model = recognizer.GetPercentageModel(culture, fallbackToDefaultCulture);
+            return model.Parse(query);
         }
 
         public static List<ModelResult> RecognizeNumberRange(string query, string culture, NumberOptions options = NumberOptions.None, bool fallbackToDefaultCulture = true)
@@ -84,18 +86,18 @@ namespace Microsoft.Recognizers.Text.Number
             RegisterModel<NumberModel>(
                 Culture.English,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()),
-                    English.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(options)),
+                    English.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
             RegisterModel<OrdinalModel>(
                 Culture.English,
                 (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration()),
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration(options)),
                     English.OrdinalExtractor.GetInstance()));
             RegisterModel<PercentModel>(
                 Culture.English,
                 (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()),
-                    new English.PercentageExtractor()));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration(options)),
+                    new English.PercentageExtractor(options)));
             RegisterModel<NumberRangeModel>(
                 Culture.English,
                 (options) => new NumberRangeModel(

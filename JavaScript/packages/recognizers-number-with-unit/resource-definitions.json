@@ -10,6 +10,14 @@
             "footer": [ "}" ]
         },
         {
+            "input": [ "Base-Currency" ],
+            "output": "baseCurrency",
+            "header": [
+                "export namespace BaseCurrency {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
             "input": [ "English", "English-NumbersWithUnit" ],
             "output": "englishNumericWithUnit",
             "header": [
