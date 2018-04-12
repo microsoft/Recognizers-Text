@@ -244,6 +244,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "Finnish markka", "芬兰马克" },
 			{ "Penni", "盆尼" }
 		};
+		public const string CompoundUnitConnectorRegex = @"(?<spacer>又|再)";
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
 			{ "Dollar", "$" },

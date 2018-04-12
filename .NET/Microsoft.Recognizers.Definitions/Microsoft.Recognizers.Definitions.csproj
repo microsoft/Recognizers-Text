@@ -26,6 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="BaseCurrency.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseCurrency.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseDateTime.cs">
       <DependentUpon>BaseDateTime.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -203,6 +208,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="BaseCurrency.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseCurrency.cs</LastGenOutput>
+    </None>
     <None Update="BaseDateTime.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseDateTime.cs</LastGenOutput>

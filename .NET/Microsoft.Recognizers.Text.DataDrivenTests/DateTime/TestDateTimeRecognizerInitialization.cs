@@ -20,8 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         public TestDateTimeRecognizerInitialization()
         {
             controlModel = new DateTimeModel(
-                    new BaseMergedParser(new EnglishMergedParserConfiguration(DateTimeOptions.None)),
-                    new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None)));
+                    new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None)),
+                    new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None)));
         }
 
         [TestMethod]

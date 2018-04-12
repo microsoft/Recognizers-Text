@@ -65,6 +65,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             ValidateResults(new string[] { ResolutionKey.Unit });
         }
 
+        public void TestCurrency()
+        {
+            TestPreValidation();
+            ValidateResults(new string[] { ResolutionKey.Unit, ResolutionKey.IsoCurrency });
+        }
+
         public void TestDateTime()
         {
             TestPreValidation();
@@ -294,6 +300,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 
                 foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
                 {
+                    if (!actual.Resolution.ContainsKey(key) && !expected.Resolution.ContainsKey(key))
+                    {
+                        continue;
+                    }
+
                     Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
                 }
             }

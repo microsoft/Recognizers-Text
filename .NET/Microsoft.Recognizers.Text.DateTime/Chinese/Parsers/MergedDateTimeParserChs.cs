@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class MergedParserChs : BaseMergedParser
+    public class MergedDateTimeParserChs : BaseMergedDateTimeParser
     {
         private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         //TODO implement SinceRegex
         private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public MergedParserChs(IMergedParserConfiguration configuration) : base(configuration) { }
+        public MergedDateTimeParserChs(IMergedParserConfiguration configuration) : base(configuration) { }
 
         public new ParseResult Parse(ExtractResult er)
         {

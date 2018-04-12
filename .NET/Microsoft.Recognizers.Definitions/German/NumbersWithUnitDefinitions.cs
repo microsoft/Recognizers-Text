@@ -290,6 +290,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka|finnische mark|finnischen mark" },
 			{ "Penni", "penniä|penni" }
 		};
+		public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
 			{ "Dollar", "$" },

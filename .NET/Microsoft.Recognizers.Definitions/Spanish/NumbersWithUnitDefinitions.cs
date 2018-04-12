@@ -354,6 +354,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			{ "Kwacha zambiano", "kwacha zambiano|kwacha zambianos|zmw" },
 			{ "Ngwee zambiano", "ngwee zambiano|ngwee zambianos" }
 		};
+		public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
 			{ "Dólar", "$" },
