@@ -5,7 +5,7 @@ export { BaseSequenceExtractor, BasePhoneNumberExtractor, BaseIpExtractor, BaseM
 export { PhoneNumberExtractor, IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, URLExtractor } from "./sequence/english/extractors";
 export { BaseSequenceParser, BaseIpParser } from "./sequence/parsers"
 export { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser } from "./sequence/english/parsers";
-export { PhoneNumbers } from "./resources/phoneNumbers";
+export { BasePhoneNumbers } from "./resources/basePhoneNumbers";
 export { BaseIp } from "./resources/baseIp";
 export { BaseMention } from "./resources/baseMention";
 export { BaseHashtag } from "./resources/baseHashtag";
