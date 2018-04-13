@@ -52,3 +52,19 @@ export class IpAddressModel extends AbstractSequenceModel {
             }));
     }
 }
+
+export class MentionModel extends AbstractSequenceModel {
+    public modelTypeName: string = "mention";
+}
+
+export class HashtagModel extends AbstractSequenceModel {
+    public modelTypeName: string = "hashtag";
+}
+
+export class EmailModel extends AbstractSequenceModel {
+    public modelTypeName: string = "email";
+}
+
+export class URLModel extends AbstractSequenceModel {
+    public modelTypeName: string = "url";
+}

@@ -1,6 +1,10 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { BasePhoneNumbers } from "../resources/basePhoneNumbers";
 import { BaseIp } from "../resources/baseIp";
+import { BaseMention } from "../resources/baseMention";
+import { BaseHashtag } from "../resources/baseHashtag";
+import { BaseEmail } from "../resources/baseEmail";
+import { BaseURL } from "../resources/baseURL";
 import { Constants } from "./constants";
 
 export abstract class BaseSequenceExtractor implements IExtractor {
@@ -146,5 +150,45 @@ export class BaseIpExtractor extends BaseSequenceExtractor {
 
     isLetterOrDigit(c: string): boolean{
         return new RegExp("[0-9a-zA-z]").test(c);
+    }
+}
+
+export class BaseMentionExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor(){
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseMention.MentionRegex), Constants.MENTION_REGEX)
+    }
+}
+
+export class BaseHashtagExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor(){
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseHashtag.HashtagRegex), Constants.HASHTAG_REGEX)
+    }
+}
+
+export class BaseEmailExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor(){
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX)
+    }
+}
+
+export class BaseURLExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor(){
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseURL.URLRegex), Constants.URL_REGEX)
     }
 }
