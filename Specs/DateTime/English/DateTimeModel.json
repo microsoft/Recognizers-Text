@@ -2497,4 +2497,34 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll go back July 1st, 17th times.",
+  "Context": {
+    "ReferenceDateTime": "2018-04-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "july 1st",
+      "Start": 13,
+      "End": 20,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-07-01",
+            "type": "date",
+            "value": "2017-07-01"
+          },
+          {
+            "timex": "XXXX-07-01",
+            "type": "date",
+            "value": "2018-07-01"
+          }
+        ]
+      }
+    } 
+  ]
+}
 ]

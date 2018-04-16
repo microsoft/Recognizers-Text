@@ -64,7 +64,7 @@ export namespace EnglishDateTime {
 	export const AmbiguousMonthP0Regex = `\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b`;
 	export const AmDescRegex = `(am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b)`;
 	export const PmDescRegex = `(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p m\\b)`;
-	export const DateYearRegex = `(?<year>((1\\d|20)\\d{2})|2100|((9\\d|0\\d|1\\d|2\\d)(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex})))))`;
+	export const DateYearRegex = `(?<year>((1\\d|20)\\d{2})|2100|((9\\d|0\\d|1\\d|2\\d)\\b(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex})))))`;
 	export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
 	export const OnRegex = `(?<=\\bon\\s+)(${DayRegex}s?)\\b`;
 	export const RelaxedOnRegex = `(?<=\\b(on|at|in)\\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|22nd|23rd|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\\b`;
@@ -205,7 +205,7 @@ export namespace EnglishDateTime {
 	export const MiddlePauseRegex = `\\s*(,)\\s*`;
 	export const DurationConnectorRegex = `^\\s*(?<connector>\\s+|and|,)\\s*$`;
 	export const PrefixArticleRegex = `\\bthe\\s+`;
-	export const OrRegex = `\\s*(or)\\s*`;
+	export const OrRegex = `\\s*((\\b|,\\s*)(or|and)\\b|,)\\s*`;
 	export const YearPlusNumberRegex = `\\b(Year\\s+((?<year>(\\d{3,4}))|${FullTextYearRegex}))\\b`;
 	export const NumberAsTimeRegex = `\\b(${EngTimeRegex}|${PeriodHourNumRegex}|${BaseDateTime.HourRegex})\\b`;
 	export const TimeBeforeAfterRegex = `\\b(((?<=\\b(before|no later than|by|after)\\s+)(${EngTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
