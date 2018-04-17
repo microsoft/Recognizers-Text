@@ -333,6 +333,7 @@ class SpanishNumericWithUnit:
                                ('Dinar yugoslavo', 'dinar yugoslavo|dinares yugoslavos|yud'),
                                ('Kwacha zambiano', 'kwacha zambiano|kwacha zambianos|zmw'),
                                ('Ngwee zambiano', 'ngwee zambiano|ngwee zambianos')])
+    CompoundUnitConnectorRegex = f'(?<spacer>[^.])'
     CurrencyPrefixList = dict([('Dólar', '$'),
                                ('Dólar estadounidense', 'us$|u$d|usd'),
                                ('Dólar del Caribe Oriental', 'ec$|xcd'),
