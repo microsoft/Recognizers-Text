@@ -113,14 +113,14 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
-                var actual = tuple.Item2 as ExtendedModelResult;
+                var actual = tuple.Item2;
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
                 if (expected.ParentText != null)
                 {
-                    Assert.AreEqual(expected.ParentText, actual.ParentText, GetMessage(TestSpec));
+                    Assert.AreEqual(expected.ParentText, ((ExtendedModelResult)actual).ParentText, GetMessage(TestSpec));
                 }
 
                 var values = actual.Resolution as IDictionary<string, object>;
