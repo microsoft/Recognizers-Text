@@ -11,19 +11,19 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             this.Config = config;
         }
 
-        public override ParseResult Parse(ExtractResult extResultChs)
+        public override ParseResult Parse(ExtractResult extResult)
         {
             string extra = null;
             ParseResult ret = null;
-            extra = extResultChs.Data as string;
+            extra = extResult.Data as string;
 
-            var simplifiedExtResultChs = new ExtractResult()
+            var simplifiedExtResult = new ExtractResult()
             {
-                Start = extResultChs.Start,
-                Length = extResultChs.Length,
-                Data = extResultChs.Data,
-                Text = ReplaceTraWithSim(extResultChs.Text),
-                Type = extResultChs.Type
+                Start = extResult.Start,
+                Length = extResult.Length,
+                Data = extResult.Data,
+                Text = ReplaceTraWithSim(extResult.Text),
+                Type = extResult.Type
             };
 
             if (extra == null) {
@@ -32,13 +32,13 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             if (extra.Contains("Per"))
             {
-                ret = PerParseChs(simplifiedExtResultChs);
+                ret = PerParseChs(simplifiedExtResult);
             }
             else if (extra.Contains("Num"))
             {
-                simplifiedExtResultChs.Text = ReplaceFullWithHalf(simplifiedExtResultChs.Text);
-                ret = DigitNumberParse(simplifiedExtResultChs);
-                if (Config.NegativeNumberSignRegex.IsMatch(simplifiedExtResultChs.Text) && (double)ret.Value > 0)
+                simplifiedExtResult.Text = PatternUtil.NormalizeCharWidth(simplifiedExtResult.Text, Culture.Chinese);
+                ret = DigitNumberParse(simplifiedExtResult);
+                if (Config.NegativeNumberSignRegex.IsMatch(simplifiedExtResult.Text) && (double)ret.Value > 0)
                 {
                     ret.Value = -(double)ret.Value;
                 }
@@ -46,46 +46,32 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             }
             else if (extra.Contains("Pow"))
             {
-                simplifiedExtResultChs.Text = ReplaceFullWithHalf(simplifiedExtResultChs.Text);
-                ret = PowerNumberParse(simplifiedExtResultChs);
+                simplifiedExtResult.Text = PatternUtil.NormalizeCharWidth(simplifiedExtResult.Text, Culture.Chinese);
+                ret = PowerNumberParse(simplifiedExtResult);
                 ret.ResolutionStr = ret.Value.ToString();
             }
             else if (extra.Contains("Frac"))
             {
-                ret = FracParseChs(simplifiedExtResultChs);
+                ret = FracParseChs(simplifiedExtResult);
             }
             else if (extra.Contains("Dou"))
             {
-                ret = DouParseChs(simplifiedExtResultChs);
+                ret = DouParseChs(simplifiedExtResult);
             }
             else if (extra.Contains("Integer"))
             {
-                ret = IntParseChs(simplifiedExtResultChs);
+                ret = IntParseChs(simplifiedExtResult);
             }
             else if (extra.Contains("Ordinal"))
             {
-                ret = OrdParseChs(simplifiedExtResultChs);
+                ret = OrdParseChs(simplifiedExtResult);
             }
 
             if (ret != null) {
-                ret.Text = extResultChs.Text;
+                ret.Text = extResult.Text;
             }
 
             return ret;
-        }
-
-        private string ReplaceFullWithHalf(string text)
-        {
-            if (string.IsNullOrWhiteSpace(text))
-            {
-                return text;
-            }
-
-            var builder = new StringBuilder();
-            foreach (char c in text) {
-                builder.Append(Config.FullToHalfMapChs.ContainsKey(c) ? Config.FullToHalfMapChs[c] : c);
-            }
-            return builder.ToString();
         }
 
         private string ReplaceTraWithSim(string text)
@@ -102,17 +88,17 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             return builder.ToString();
         }
 
-        protected ParseResult FracParseChs(ExtractResult extResultChs)
+        protected ParseResult FracParseChs(ExtractResult extResult)
         {
             var result = new ParseResult
             {
-                Start = extResultChs.Start,
-                Length = extResultChs.Length,
-                Text = extResultChs.Text,
-                Type = extResultChs.Type
+                Start = extResult.Start,
+                Length = extResult.Length,
+                Text = extResult.Text,
+                Type = extResult.Type
             };
 
-            var resultText = extResultChs.Text;
+            var resultText = extResult.Text;
             var splitResult = Config.FracSplitRegex.Split(resultText);
             string intPart = "", demoPart = "", numPart = "";
             if (splitResult.Length == 3)
@@ -130,15 +116,15 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             var intValue = Config.DigitNumRegex.IsMatch(intPart)
                 ? GetDigitValueChs(intPart, 1.0)
-                : GetIntValueChs(intPart);
+                : PatternUtil.GetIntValue(intPart, Culture.Chinese);
 
             var numValue = Config.DigitNumRegex.IsMatch(numPart)
                 ? GetDigitValueChs(numPart, 1.0)
-                : GetIntValueChs(numPart);
+                : PatternUtil.GetIntValue(numPart, Culture.Chinese);
 
             var demoValue = Config.DigitNumRegex.IsMatch(demoPart)
                 ? GetDigitValueChs(demoPart, 1.0)
-                : GetIntValueChs(demoPart);
+                : PatternUtil.GetIntValue(demoPart, Culture.Chinese);
 
             if (Config.NegativeNumberSignRegex.IsMatch(intPart))
             {
@@ -153,27 +139,27 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             return result;
         }
 
-        protected ParseResult DouParseChs(ExtractResult extResultChs)
+        protected ParseResult DouParseChs(ExtractResult extResult)
         {
             var result = new ParseResult
             {
-                Start = extResultChs.Start,
-                Length = extResultChs.Length,
-                Text = extResultChs.Text,
-                Type = extResultChs.Type
+                Start = extResult.Start,
+                Length = extResult.Length,
+                Text = extResult.Text,
+                Type = extResult.Type
             };
 
-            var resultText = extResultChs.Text;
+            var resultText = extResult.Text;
 
             if (Config.DoubleAndRoundChsRegex.IsMatch(resultText))
             {
-                resultText = ReplaceUnit(resultText);
+                resultText = PatternUtil.ReplaceUnit(resultText, Culture.Chinese);
                 result.Value = GetDigitValueChs(resultText.Substring(0, resultText.Length - 1),
                     Config.RoundNumberMapChs[resultText[resultText.Length - 1]]);
             }
             else
             {
-                resultText = ReplaceUnit(resultText);
+                resultText = PatternUtil.ReplaceUnit(resultText, Culture.Chinese);
                 var splitResult = Config.PointRegexChs.Split(resultText);
 
                 if (splitResult[0] == "")
@@ -183,11 +169,11 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
                 if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
                 {
-                    result.Value = GetIntValueChs(splitResult[0]) - GetPointValue(splitResult[1]);
+                    result.Value = PatternUtil.GetIntValue(splitResult[0], Culture.Chinese) - PatternUtil.GetPointValue(splitResult[1], Culture.Chinese);
                 }
                 else
                 {
-                    result.Value = GetIntValueChs(splitResult[0]) + GetPointValue(splitResult[1]);
+                    result.Value = PatternUtil.GetIntValue(splitResult[0], Culture.Chinese) + PatternUtil.GetPointValue(splitResult[1], Culture.Chinese);
                 }
             }
 
@@ -195,47 +181,38 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             return result;
         }
 
-        private string ReplaceUnit(string resultText)
-        {
-            foreach (var unit in Config.UnitMapChs.Keys)
-            {
-                resultText = resultText.Replace(unit, Config.UnitMapChs[unit]);
-            }
-            return resultText;
-        }
-
-        protected ParseResult IntParseChs(ExtractResult extResultChs)
+        protected ParseResult IntParseChs(ExtractResult extResult)
         {
             var result = new ParseResult
             {
-                Start = extResultChs.Start,
-                Length = extResultChs.Length,
-                Text = extResultChs.Text,
-                Type = extResultChs.Type,
-                Value = GetIntValueChs(extResultChs.Text)
+                Start = extResult.Start,
+                Length = extResult.Length,
+                Text = extResult.Text,
+                Type = extResult.Type,
+                Value = PatternUtil.GetIntValue(extResult.Text, Culture.Chinese)
             };
 
             result.ResolutionStr = result.Value.ToString();
             return result;
         }
 
-        protected ParseResult PerParseChs(ExtractResult extResultChs)
+        protected ParseResult PerParseChs(ExtractResult extResult)
         {
             var result = new ParseResult
             {
-                Start = extResultChs.Start,
-                Length = extResultChs.Length,
-                Text = extResultChs.Text,
-                Type = extResultChs.Type
+                Start = extResult.Start,
+                Length = extResult.Length,
+                Text = extResult.Text,
+                Type = extResult.Type
             };
 
-            var resultText = extResultChs.Text;
+            var resultText = extResult.Text;
             long power = 1;
 
-            if (extResultChs.Data.ToString().Contains("Spe"))
+            if (extResult.Data.ToString().Contains("Spe"))
             {
-                resultText = ReplaceFullWithHalf(resultText);
-                resultText = ReplaceUnit(resultText);
+                resultText = PatternUtil.NormalizeCharWidth(resultText, Culture.Chinese);
+                resultText = PatternUtil.ReplaceUnit(resultText, Culture.Chinese);
 
                 if (resultText == "半折")
                 {
@@ -301,7 +278,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     }
                 }
             }
-            else if (extResultChs.Data.ToString().Contains("Num"))
+            else if (extResult.Data.ToString().Contains("Num"))
             {
                 var doubleText = Config.PercentageRegex.Match(resultText).Value;
 
@@ -331,7 +308,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             else
             {
                 var doubleText = Config.PercentageRegex.Match(resultText).Value;
-                doubleText = ReplaceUnit(doubleText);
+                doubleText = PatternUtil.ReplaceUnit(doubleText, Culture.Chinese);
 
                 var splitResult = Config.PointRegexChs.Split(doubleText);
                 if (splitResult[0] == "")
@@ -339,16 +316,16 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     splitResult[0] = "零";
                 }
 
-                var doubleValue = GetIntValueChs(splitResult[0]);
+                var doubleValue = PatternUtil.GetIntValue(splitResult[0], Culture.Chinese);
                 if (splitResult.Length == 2)
                 {
                     if (Config.NegativeNumberSignRegex.IsMatch(splitResult[0]))
                     {
-                        doubleValue -= GetPointValue(splitResult[1]);
+                        doubleValue -= PatternUtil.GetPointValue(splitResult[1], Culture.Chinese);
                     }
                     else
                     {
-                        doubleValue += GetPointValue(splitResult[1]);
+                        doubleValue += PatternUtil.GetPointValue(splitResult[1], Culture.Chinese);
                     }
                 }
 
@@ -359,22 +336,22 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             return result;
         }
 
-        protected ParseResult OrdParseChs(ExtractResult extResultChs)
+        protected ParseResult OrdParseChs(ExtractResult extResult)
         {
             var result = new ParseResult
             {
-                Start = extResultChs.Start,
-                Length = extResultChs.Length,
-                Text = extResultChs.Text,
-                Type = extResultChs.Type
+                Start = extResult.Start,
+                Length = extResult.Length,
+                Text = extResult.Text,
+                Type = extResult.Type
             };
 
-            var resultText = extResultChs.Text;
+            var resultText = extResult.Text;
             resultText = resultText.Substring(1);
 
             result.Value = Config.DigitNumRegex.IsMatch(resultText)
                 ? GetDigitValueChs(resultText, 1)
-                : GetIntValueChs(resultText);
+                : PatternUtil.GetIntValue(resultText, Culture.Chinese);
 
             result.ResolutionStr = result.Value.ToString();
             return result;
@@ -389,7 +366,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                 intStr = intStr.Substring(1);
             }
 
-            intStr = ReplaceFullWithHalf(intStr);
+            intStr = PatternUtil.NormalizeCharWidth(intStr, Culture.Chinese);
             var intValue = GetDigitalValue(intStr, power);
             if (isNegative)
             {
@@ -397,121 +374,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             }
 
             return intValue;
-        }
-
-        private double GetIntValueChs(string intStr)
-        {
-            var isDozen = false;
-            var isPair = false;
-            if (Config.DozenRegex.IsMatch(intStr))
-            {
-                isDozen = true;
-                intStr = intStr.Substring(0, intStr.Length - 1);
-            }
-            else if (Config.PairRegex.IsMatch(intStr))
-            {
-                isPair = true;
-                intStr = intStr.Substring(0, intStr.Length - 1);
-            }
-
-            intStr = ReplaceUnit(intStr);
-            double intValue = 0, partValue = 0, beforeValue = 1;
-            var isRoundBefore = false;
-            long roundBefore = -1, roundDefault = 1;
-            var isNegative = false;
-
-            if (Config.NegativeNumberSignRegex.IsMatch(intStr))
-            {
-                isNegative = true;
-                intStr = intStr.Substring(1);
-            }
-
-            for (var i = 0; i < intStr.Length; i++)
-            {
-                if (Config.RoundNumberMapChs.ContainsKey(intStr[i]))
-                {
-
-                    var roundRecent = Config.RoundNumberMapChs[intStr[i]];
-                    if (roundBefore != -1 && roundRecent > roundBefore)
-                    {
-                        if (isRoundBefore)
-                        {
-                            intValue += partValue * roundRecent;
-                            isRoundBefore = false;
-                        }
-                        else
-                        {
-                            partValue += beforeValue * roundDefault;
-                            intValue += partValue * roundRecent;
-                        }
-                        roundBefore = -1;
-                        partValue = 0;
-                    }
-                    else
-                    {
-                        isRoundBefore = true;
-                        partValue += beforeValue * roundRecent;
-                        roundBefore = roundRecent;
-
-                        if (i == intStr.Length - 1 || Config.RoundDirectListChs.Contains(intStr[i]))
-                        {
-                            intValue += partValue;
-                            partValue = 0;
-                        }
-                    }
-
-                    roundDefault = roundRecent / 10;
-                }
-                else if (Config.ZeroToNineMapChs.ContainsKey(intStr[i]))
-                {
-                    if (i != intStr.Length - 1)
-                    {
-                        if (intStr[i] == '零' && !Config.RoundNumberMapChs.ContainsKey(intStr[i + 1]))
-                        {
-                            beforeValue = 1;
-                            roundDefault = 1;
-                        }
-                        else
-                        {
-                            beforeValue = Config.ZeroToNineMapChs[intStr[i]];
-                            isRoundBefore = false;
-                        }
-                    }
-                    else
-                    {
-                        partValue += Config.ZeroToNineMapChs[intStr[i]] * roundDefault;
-                        intValue += partValue;
-                        partValue = 0;
-                    }
-                }
-            }
-
-            if (isNegative)
-            {
-                intValue = -intValue;
-            }
-
-            if (isDozen)
-            {
-                intValue = intValue * 12;
-            }
-            else if (isPair)
-            {
-                intValue = intValue * 2;
-            }
-
-            return intValue;
-        }
-
-        private double GetPointValue(string pointStr)
-        {
-            double pointValue = 0;
-            var scale = 0.1;
-            foreach (char c in pointStr) {
-                pointValue += scale * Config.ZeroToNineMapChs[c];
-                scale *= 0.1;
-            }
-            return pointValue;
         }
     }
 }

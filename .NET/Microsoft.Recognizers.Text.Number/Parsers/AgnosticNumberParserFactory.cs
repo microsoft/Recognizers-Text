@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Number.Japanese;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -20,12 +21,17 @@ namespace Microsoft.Recognizers.Text.Number
         public static BaseNumberParser GetParser(AgnosticNumberParserType type, INumberParserConfiguration languageConfiguration)
         {
             var isChinese = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Chinese;
+            var isJapanese = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Japanese;
 
             BaseNumberParser parser;
 
             if (isChinese)
             {
                 parser = new ChineseNumberParser(languageConfiguration as ChineseNumberParserConfiguration);
+            }
+            else if (isJapanese)
+            {
+                parser = new JapaneseNumberParser(languageConfiguration as JapaneseNumberParserConfiguration);
             }
             else
             {
@@ -50,7 +56,7 @@ namespace Microsoft.Recognizers.Text.Number
                     parser.SupportedTypes = new List<string> { Constants.SYS_NUM_ORDINAL };
                     break;
                 case AgnosticNumberParserType.Percentage:
-                    if (!isChinese)
+                    if (!isChinese && !isJapanese)
                     {
                         parser = new BasePercentageParser(languageConfiguration);
                     }

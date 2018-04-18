@@ -1,0 +1,378 @@
+[
+{
+  "Input": "西九条",
+  "NotSupported": "javascript, python",
+  "Results": []
+}
+,
+{
+  "Input": "40k",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "40k",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "６、５４４",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "6、544",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "6544"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5、450",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "5、450",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5450"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "マイナス10000",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "マイナス10000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-10000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "マイナス8452",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "マイナス8452",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-8452"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-10000",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-10000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-10000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一ダース",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "一ダース",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "12"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五十ダース",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "五十ダース",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "600"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "半ダース",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "半ダース",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１２/３",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "12/3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "6/5",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "6/5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-3/2",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-3/2",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12.32e+14",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "12.32e+14",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1.232E+15"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-12e-1",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-12e-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-1.1^--23",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-1.1^--23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2.5^-1",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "2.5^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-1.1^+23",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-1.1^+23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-2.5^-1",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-2.5^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-0.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2222.2222.22222.222",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "22222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "22222"
+      }
+    },
+    {
+      "Text": "222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "222"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "4.800",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "4.800",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4.8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-1e1",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-1e1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-10"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-2.5 M",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-2.5 M",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-2500000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10.233",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "10.233",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10.233"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2^-1",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "2^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "21.2E0",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "21.2E0",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "21.2"
+      }
+    }
+  ]
+}
+]
