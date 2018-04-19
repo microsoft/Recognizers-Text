@@ -391,11 +391,11 @@ EveningStartEndRegex: !simpleRegex
   def: (^(soir[ée]e|soir))|((soir[ée]e|soir)$)
 NightStartEndRegex: !simpleRegex
   def: (^(nuit))|((nuit)$)
-InExactNumberRegex: !simpleRegex
+InexactNumberRegex: !simpleRegex
   def: \b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\b
-InExactNumberUnitRegex: !nestedRegex
-  def: ({InExactNumberRegex})\s+({DurationUnitRegex})
-  references: [InExactNumberRegex, DurationUnitRegex]
+InexactNumberUnitRegex: !nestedRegex
+  def: ({InexactNumberRegex})\s+({DurationUnitRegex})
+  references: [InexactNumberRegex, DurationUnitRegex]
 RelativeTimeUnitRegex: !nestedRegex
   def: (((({ThisPrefixRegex})?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))
   references: [NextSuffixRegex, PastSuffixRegex, ThisPrefixRegex, TimeUnitRegex, RestrictedTimeUnitRegex]

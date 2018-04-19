@@ -27,9 +27,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex ConjunctionRegex { get; }
 
-        public Regex InExactNumberRegex { get; }
+        public Regex InexactNumberRegex { get; }
 
-        public Regex InExactNumberUnitRegex { get; }
+        public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 
@@ -51,8 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             SuffixAndRegex = GermanDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = GermanDurationExtractorConfiguration.DurationFollowedUnit;
             ConjunctionRegex = GermanDurationExtractorConfiguration.ConjunctionRegex;
-            InExactNumberRegex = GermanDurationExtractorConfiguration.InExactNumberRegex;
-            InExactNumberUnitRegex = GermanDurationExtractorConfiguration.InExactNumberUnitRegex;
+            InexactNumberRegex = GermanDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = GermanDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = GermanDurationExtractorConfiguration.DurationUnitRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;

@@ -168,8 +168,8 @@ export namespace FrenchDateTime {
 	export const AfternoonStartEndRegex = `(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)`;
 	export const EveningStartEndRegex = `(^(soir[ée]e|soir))|((soir[ée]e|soir)$)`;
 	export const NightStartEndRegex = `(^(nuit))|((nuit)$)`;
-	export const InExactNumberRegex = `\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\\b`;
-	export const InExactNumberUnitRegex = `(${InExactNumberRegex})\\s+(${DurationUnitRegex})`;
+	export const InexactNumberRegex = `\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\\b`;
+	export const InexactNumberUnitRegex = `(${InexactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `((((${ThisPrefixRegex})?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const RelativeDurationUnitRegex = `(((?<=(${ThisPrefixRegex})\\s+)?\\b(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ConnectorRegex = `^(,|pour|t|vers)$`;

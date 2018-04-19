@@ -32,11 +32,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex ConjunctionRegex = 
             new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex InExactNumberRegex = 
-            new Regex(DateTimeDefinitions.InExactNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex InexactNumberRegex = 
+            new Regex(DateTimeDefinitions.InexactNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex InExactNumberUnitRegex = 
-            new Regex(DateTimeDefinitions.InExactNumberUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex InexactNumberUnitRegex = 
+            new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RelativeDurationUnitRegex =
             new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -71,9 +71,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;
 
-        Regex IDurationExtractorConfiguration.InExactNumberRegex => InExactNumberRegex;
+        Regex IDurationExtractorConfiguration.InexactNumberRegex => InexactNumberRegex;
 
-        Regex IDurationExtractorConfiguration.InExactNumberUnitRegex => InExactNumberUnitRegex;
+        Regex IDurationExtractorConfiguration.InexactNumberUnitRegex => InexactNumberUnitRegex;
 
         Regex IDurationExtractorConfiguration.RelativeDurationUnitRegex => RelativeDurationUnitRegex;
 

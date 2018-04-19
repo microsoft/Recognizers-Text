@@ -48,14 +48,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.ConjunctionRegex, 
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex InExactNumberRegex = 
+        public static readonly Regex InexactNumberRegex = 
             new Regex(
-                DateTimeDefinitions.InExactNumberRegex, //quelques = "a few, some," etc 
+                DateTimeDefinitions.InexactNumberRegex, //quelques = "a few, some," etc 
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex InExactNumberUnitRegex = 
+        public static readonly Regex InexactNumberUnitRegex = 
             new Regex(
-                DateTimeDefinitions.InExactNumberUnitRegex,
+                DateTimeDefinitions.InexactNumberUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RelativeDurationUnitRegex =
@@ -91,9 +91,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;
 
-        Regex IDurationExtractorConfiguration.InExactNumberRegex => InExactNumberRegex;
+        Regex IDurationExtractorConfiguration.InexactNumberRegex => InexactNumberRegex;
 
-        Regex IDurationExtractorConfiguration.InExactNumberUnitRegex => InExactNumberUnitRegex;
+        Regex IDurationExtractorConfiguration.InexactNumberUnitRegex => InexactNumberUnitRegex;
 
         Regex IDurationExtractorConfiguration.RelativeDurationUnitRegex => RelativeDurationUnitRegex;
 

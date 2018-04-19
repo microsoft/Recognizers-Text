@@ -27,9 +27,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex ConjunctionRegex { get; }
 
-        public Regex InExactNumberRegex { get; }
+        public Regex InexactNumberRegex { get; }
 
-        public Regex InExactNumberUnitRegex { get; }
+        public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 
@@ -54,8 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DoubleNumbers = config.DoubleNumbers;
             FollowedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
             ConjunctionRegex = SpanishDurationExtractorConfiguration.ConjunctionRegex;
-            InExactNumberRegex = SpanishDurationExtractorConfiguration.InExactNumberRegex;
-            InExactNumberUnitRegex = SpanishDurationExtractorConfiguration.InExactNumberUnitRegex;
+            InexactNumberRegex = SpanishDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = SpanishDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = SpanishDurationExtractorConfiguration.DurationUnitRegex;
         }
     }

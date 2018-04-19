@@ -10,7 +10,7 @@ export class EnglishDurationExtractorConfiguration implements IDurationExtractor
     readonly followedUnit: RegExp
     readonly numberCombinedWithUnit: RegExp
     readonly anUnitRegex: RegExp
-    readonly inExactNumberUnitRegex: RegExp
+    readonly inexactNumberUnitRegex: RegExp
     readonly suffixAndRegex: RegExp
     readonly relativeDurationUnitRegex: RegExp
     readonly cardinalExtractor: EnglishCardinalExtractor
@@ -21,7 +21,7 @@ export class EnglishDurationExtractorConfiguration implements IDurationExtractor
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationFollowedUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit);
         this.anUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex);
-        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InExactNumberUnitRegex);
+        this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberUnitRegex);
         this.suffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex);
         this.relativeDurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDurationUnitRegex)
         this.cardinalExtractor = new EnglishCardinalExtractor();
@@ -37,7 +37,7 @@ export class EnglishDurationParserConfiguration implements IDurationParserConfig
     readonly anUnitRegex: RegExp
     readonly allDateUnitRegex: RegExp
     readonly halfDateUnitRegex: RegExp
-    readonly inExactNumberUnitRegex: RegExp
+    readonly inexactNumberUnitRegex: RegExp
     readonly unitMap: ReadonlyMap<string, string>
     readonly unitValueMap: ReadonlyMap<string, number>
     readonly doubleNumbers: ReadonlyMap<string, number>
@@ -51,7 +51,7 @@ export class EnglishDurationParserConfiguration implements IDurationParserConfig
         this.anUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex);
         this.allDateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllRegex);
         this.halfDateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HalfRegex);
-        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InExactNumberUnitRegex);
+        this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberUnitRegex);
         this.unitMap = config.unitMap;
         this.unitValueMap = config.unitValueMap;
         this.doubleNumbers = config.doubleNumbers;
