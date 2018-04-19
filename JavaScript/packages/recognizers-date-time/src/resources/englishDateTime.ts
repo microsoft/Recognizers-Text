@@ -183,8 +183,8 @@ export namespace EnglishDateTime {
 	export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;
 	export const EveningStartEndRegex = `(^(evening))|((evening)$)`;
 	export const NightStartEndRegex = `(^(overnight|tonight|night))|((overnight|tonight|night)$)`;
-	export const InExactNumberRegex = `\\b(a few|few|some|several|(?<NumTwoTerm>couple of))\\b`;
-	export const InExactNumberUnitRegex = `(${InExactNumberRegex})\\s+(${DurationUnitRegex})`;
+	export const InexactNumberRegex = `\\b(a few|few|some|several|(?<NumTwoTerm>(a\\s+)?couple of))\\b`;
+	export const InexactNumberUnitRegex = `(${InexactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `(((${NextPrefixRegex}|${PastPrefixRegex}|${ThisPrefixRegex})\\s+(${TimeUnitRegex}))|((the|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const RelativeDurationUnitRegex = `(((?<=(${NextPrefixRegex}|${PastPrefixRegex}|${ThisPrefixRegex})\\s+)(${DurationUnitRegex}))|((the|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ConnectorRegex = `^(-|,|for|t|around)$`;

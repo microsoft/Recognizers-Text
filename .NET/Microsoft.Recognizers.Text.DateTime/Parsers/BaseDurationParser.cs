@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            if ((ret = ParseInExactNumberUnit(text)).Success)
+            if ((ret = ParseInexactNumberUnit(text)).Success)
             {
                 return ret;
             }
@@ -228,14 +228,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseInExactNumberUnit(string text)
+        private DateTimeResolutionResult ParseInexactNumberUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
             double numVal = 0;
             string numStr, unitStr;
             Match match;
 
-            match = config.InExactNumberUnitRegex.Match(text);
+            match = config.InexactNumberUnitRegex.Match(text);
             if (match.Success)
             {
                 if (match.Groups["NumTwoTerm"].Success)

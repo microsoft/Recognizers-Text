@@ -339,9 +339,9 @@ AllRegex: !simpleRegex
   def: \b(?<all>tod[oa]?\s+(el|la)\s+(?<unit>año|mes|semana|d[ií]a))\b
 HalfRegex: !simpleRegex
   def: \b(?<half>medi[oa]\s+(?<unit>ano|mes|semana|d[íi]a|hora))\b
-InExactNumberRegex: !simpleRegex
+InexactNumberRegex: !simpleRegex
   def: \b(pocos|poco|algo|varios)\b
-InExactNumberUnitRegex: !nestedRegex
+InexactNumberUnitRegex: !nestedRegex
   def: \b(pocos|poco|algo|varios)\s+{UnitRegex}
   references: [ UnitRegex ]
 # SpanishHolidayExtractorConfiguration

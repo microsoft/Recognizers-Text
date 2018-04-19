@@ -176,8 +176,8 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AfternoonStartEndRegex = @"(^(nachmittag(s)?))|((nachmittag(s)?)$)";
 		public const string EveningStartEndRegex = @"(^(abend(s)?))|((abend(s)?)$)";
 		public const string NightStartEndRegex = @"(^(über nacht|heute nacht|nacht(s)?|nächtens|in der nacht))|((über nacht|heute nacht|nacht(s)?|nächtens)$)";
-		public const string InExactNumberRegex = @"\b((ein )?paar|einige|wenige|einige wenige)\b";
-		public static readonly string InExactNumberUnitRegex = $@"({InExactNumberRegex})\s+({DurationUnitRegex})";
+		public const string InexactNumberRegex = @"\b((ein )?paar|einige|wenige|einige wenige)\b";
+		public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly string RelativeTimeUnitRegex = $@"((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s*({TimeUnitRegex})))";
 		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s*)({DurationUnitRegex})))";
 		public const string ConnectorRegex = @"^(-|,|für|t|gegen)$";

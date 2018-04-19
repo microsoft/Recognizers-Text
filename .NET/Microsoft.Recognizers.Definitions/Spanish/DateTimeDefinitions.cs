@@ -138,8 +138,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string AnUnitRegex = $@"\b(un(a)?)\s+{UnitRegex}";
 		public const string AllRegex = @"\b(?<all>tod[oa]?\s+(el|la)\s+(?<unit>año|mes|semana|d[ií]a))\b";
 		public const string HalfRegex = @"\b(?<half>medi[oa]\s+(?<unit>ano|mes|semana|d[íi]a|hora))\b";
-		public const string InExactNumberRegex = @"\b(pocos|poco|algo|varios)\b";
-		public static readonly string InExactNumberUnitRegex = $@"\b(pocos|poco|algo|varios)\s+{UnitRegex}";
+		public const string InexactNumberRegex = @"\b(pocos|poco|algo|varios)\b";
+		public static readonly string InexactNumberUnitRegex = $@"\b(pocos|poco|algo|varios)\s+{UnitRegex}";
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|noche vieja|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|noche buena|d[ií]a de acci[oó]n de gracias|acci[oó]n de gracias|yuandan|halloween|noches de brujas|pascuas)(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
 		public static readonly string HolidayRegex3 = $@"\b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";

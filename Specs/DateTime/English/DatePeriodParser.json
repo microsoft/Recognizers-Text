@@ -649,7 +649,7 @@
 }
 ,
 {
-  "Input": "scheduel a meeting in two weeks",
+  "Input": "schedule a meeting in two weeks",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -4019,7 +4019,7 @@
 }
 ,
 {
-  "Input": "scheduel a meeting in couple of weeks",
+  "Input": "schedule a meeting in couple of weeks",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },

@@ -11,7 +11,7 @@ export interface IDurationExtractorConfiguration {
     followedUnit: RegExp,
     numberCombinedWithUnit: RegExp,
     anUnitRegex: RegExp,
-    inExactNumberUnitRegex: RegExp,
+    inexactNumberUnitRegex: RegExp,
     suffixAndRegex: RegExp,
     relativeDurationUnitRegex: RegExp,
     cardinalExtractor: BaseNumberExtractor
@@ -49,7 +49,7 @@ export class BaseDurationExtractor implements IDateTimeExtractor {
         }).filter(o => o !== undefined)
         .concat(this.getTokensFromRegex(this.config.numberCombinedWithUnit, source))
         .concat(this.getTokensFromRegex(this.config.anUnitRegex, source))
-        .concat(this.getTokensFromRegex(this.config.inExactNumberUnitRegex, source));
+        .concat(this.getTokensFromRegex(this.config.inexactNumberUnitRegex, source));
     }
 
     private numberWithUnitAndSuffix(source: string, ers: Token[]): Array<Token> {
@@ -86,7 +86,7 @@ export interface IDurationParserConfiguration {
     anUnitRegex: RegExp
     allDateUnitRegex: RegExp
     halfDateUnitRegex: RegExp
-    inExactNumberUnitRegex: RegExp
+    inexactNumberUnitRegex: RegExp
     unitMap: ReadonlyMap<string, string>
     unitValueMap: ReadonlyMap<string, number>
     doubleNumbers: ReadonlyMap<string, number>
@@ -135,7 +135,7 @@ export class BaseDurationParser implements IDateTimeParser {
             result = this.parseAnUnit(trimmedSource);
         }
         if (!result.success) {
-            result = this.parseInExactNumberUnit(trimmedSource);
+            result = this.parseInexactNumberUnit(trimmedSource);
         }
         return result;
     }
@@ -256,9 +256,9 @@ export class BaseDurationParser implements IDateTimeParser {
         return result;
     }
 
-    private parseInExactNumberUnit(source: string): DateTimeResolutionResult {
+    private parseInexactNumberUnit(source: string): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        let match = RegExpUtility.getMatches(this.config.inExactNumberUnitRegex, source).pop();
+        let match = RegExpUtility.getMatches(this.config.inexactNumberUnitRegex, source).pop();
         if (!match) return result;
 
         let num: number;

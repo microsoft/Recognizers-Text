@@ -10,7 +10,7 @@ export class SpanishDurationExtractorConfiguration implements IDurationExtractor
     readonly followedUnit: RegExp;
     readonly numberCombinedWithUnit: RegExp;
     readonly anUnitRegex: RegExp;
-    readonly inExactNumberUnitRegex: RegExp;
+    readonly inexactNumberUnitRegex: RegExp;
     readonly suffixAndRegex: RegExp;
     readonly relativeDurationUnitRegex: RegExp;
     readonly cardinalExtractor: BaseNumberExtractor;
@@ -21,7 +21,7 @@ export class SpanishDurationExtractorConfiguration implements IDurationExtractor
         this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedUnit, "gis");
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DurationNumberCombinedWithUnit, "gis");
         this.anUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AnUnitRegex, "gis");
-        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.InExactNumberUnitRegex, "gis");
+        this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.InexactNumberUnitRegex, "gis");
         this.suffixAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SuffixAndRegex, "gis");
         this.relativeDurationUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeDurationUnitRegex, "gis");
         this.cardinalExtractor = new SpanishCardinalExtractor();
@@ -37,7 +37,7 @@ export class SpanishDurationParserConfiguration implements IDurationParserConfig
     readonly anUnitRegex: RegExp;
     readonly allDateUnitRegex: RegExp;
     readonly halfDateUnitRegex: RegExp;
-    readonly inExactNumberUnitRegex: RegExp;
+    readonly inexactNumberUnitRegex: RegExp;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly unitValueMap: ReadonlyMap<string, number>;
     readonly doubleNumbers: ReadonlyMap<string, number>;
@@ -51,7 +51,7 @@ export class SpanishDurationParserConfiguration implements IDurationParserConfig
         this.anUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AnUnitRegex);
         this.allDateUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AllRegex);
         this.halfDateUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.HalfRegex);
-        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.InExactNumberUnitRegex);
+        this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.InexactNumberUnitRegex);
         this.unitMap = config.unitMap;
         this.unitValueMap = config.unitValueMap;
         this.doubleNumbers = config.doubleNumbers;

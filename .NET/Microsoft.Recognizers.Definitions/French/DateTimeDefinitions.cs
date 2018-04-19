@@ -177,8 +177,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string AfternoonStartEndRegex = @"(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)";
 		public const string EveningStartEndRegex = @"(^(soir[ée]e|soir))|((soir[ée]e|soir)$)";
 		public const string NightStartEndRegex = @"(^(nuit))|((nuit)$)";
-		public const string InExactNumberRegex = @"\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\b";
-		public static readonly string InExactNumberUnitRegex = $@"({InExactNumberRegex})\s+({DurationUnitRegex})";
+		public const string InexactNumberRegex = @"\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\b";
+		public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly string RelativeTimeUnitRegex = $@"(((({ThisPrefixRegex})?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))";
 		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({ThisPrefixRegex})\s+)?\b({DurationUnitRegex})(\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\s+({RestrictedTimeUnitRegex}))";
 		public const string ConnectorRegex = @"^(,|pour|t|vers)$";
