@@ -4042,4 +4042,54 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out 2016 june",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 june",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-06",
+        "FutureResolution": {
+          "startDate": "2016-06-01",
+          "endDate": "2016-07-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-06-01",
+          "endDate": "2016-07-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016, nov",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016, nov",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
 ]
