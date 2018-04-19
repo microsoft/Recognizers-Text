@@ -200,7 +200,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 match = this.Config.PureNumberBetweenAndRegex.Match(trimedText);
             }
 
-            if (match.Success && match.Index == 0)
+            if (match.Success && (match.Index == 0 || match.Index + match.Length == trimedText.Length))
             {
                 // This "from .. to .." pattern is valid if followed by a Date OR "pm"
                 var hasAm = false;
@@ -603,7 +603,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var hasSpecificTimePeriod = false;
                 if (timePeriodErs.Count > 0)
                 {
-                    var timePr = this.Config.TimePeriodParser.Parse(timePeriodErs[0]);
+                    var timePr = this.Config.TimePeriodParser.Parse(timePeriodErs[0], referenceTime);
                     if (timePr != null)
                     {
                         var periodFuture = (Tuple<DateObject, DateObject>)(((DateTimeResolutionResult)timePr.Value).FutureValue);
@@ -642,7 +642,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    ret.Timex = string.Format("{0}T{1},{0}T{2},PT{3}H", pr.TimexStr, beginHour, endHour, endHour - beginHour);
+                    ret.Timex = string.Format("({0}T{1},{0}T{2},PT{3}H)", pr.TimexStr, beginHour, endHour, endHour - beginHour);
                 }
 
                 ret.FutureValue =

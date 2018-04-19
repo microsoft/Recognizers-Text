@@ -445,7 +445,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         if (!match) {
             match = RegExpUtility.getMatches(this.config.pureNumberBetweenAndRegex, source).pop();
         }
-        if (!match || match.index !== 0) return result;
+        if (!match || (match.index !== 0 && match.index + match.length !== source.length)) return result;
 
         let hourGroup = match.groups('hour');
         let beginHour = this.config.numbers.get(hourGroup.captures[0]) || Number.parseInt(hourGroup.captures[0], 10) || 0;
@@ -666,7 +666,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         let hasSpecificTimePeriod = false;
         if (timePeriodErs.length > 0)
         {
-            let TimePr = this.config.timePeriodParser.parse(timePeriodErs[0]);
+            let TimePr = this.config.timePeriodParser.parse(timePeriodErs[0], referenceDate);
             if (TimePr != null)
             {
                 let periodFuture = TimePr.value.futureValue;
@@ -705,7 +705,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             result.timex = pr.timexStr + matched.timeStr;
         }
         else {
-            result.timex = `${pr.timexStr}T${matched.beginHour},${pr.timexStr}T${matched.endHour},PT${matched.endHour - matched.beginHour}H`;
+            result.timex = `(${pr.timexStr}T${matched.beginHour},${pr.timexStr}T${matched.endHour},PT${matched.endHour - matched.beginHour}H)`;
         }
 
         result.futureValue = [
