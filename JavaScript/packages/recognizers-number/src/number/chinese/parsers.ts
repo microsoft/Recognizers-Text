@@ -77,7 +77,7 @@ export class ChineseNumberParser extends BaseNumberParser {
 
         let result = '';
         for(let index = 0; index < value.length; index++) {
-            result = result.concat(this.config.tratoSimMapChs.get(value.charAt(index)) || value.charAt(index));
+            result = result.concat(this.config.tratoSimMap.get(value.charAt(index)) || value.charAt(index));
         }
         return result;
     }
@@ -89,7 +89,7 @@ export class ChineseNumberParser extends BaseNumberParser {
 
         let result = '';
         for(let index = 0; index < value.length; index++) {
-            result = result.concat(this.config.fullToHalfMapChs.get(value.charAt(index)) || value.charAt(index));
+            result = result.concat(this.config.fullToHalfMap.get(value.charAt(index)) || value.charAt(index));
         }
         return result;
     }
@@ -97,7 +97,7 @@ export class ChineseNumberParser extends BaseNumberParser {
     private replaceUnit(value: string): string {
         if (StringUtility.isNullOrEmpty(value)) return value;
         let result = value;
-        this.config.unitMapChs.forEach((value: string, key: string) => {
+        this.config.unitMap.forEach((value: string, key: string) => {
             result = result.replace(new RegExp(key, 'g'), value);
         });
         return result;
@@ -129,7 +129,7 @@ export class ChineseNumberParser extends BaseNumberParser {
                     } else if (intNumberChar === "十" || intNumberChar === "拾") {
                         intNumber = 10;
                     } else {
-                        intNumber = this.config.zeroToNineMapChs.get(intNumberChar);
+                        intNumber = this.config.zeroToNineMap.get(intNumberChar);
                     }
 
                     let pointNumberChar = matches[1].value.charAt(0);
@@ -138,7 +138,7 @@ export class ChineseNumberParser extends BaseNumberParser {
                     if (pointNumberChar === "半") {
                         pointNumber = 0.5;
                     } else {
-                        pointNumber = this.config.zeroToNineMapChs.get(pointNumberChar) * 0.1;
+                        pointNumber = this.config.zeroToNineMap.get(pointNumberChar) * 0.1;
                     }
 
                     result.value = (intNumber + pointNumber) * 10;
@@ -150,7 +150,7 @@ export class ChineseNumberParser extends BaseNumberParser {
                     } else if (intNumberChar === "十" || intNumberChar === "拾") {
                         intNumber = 10;
                     } else {
-                        intNumber = this.config.zeroToNineMapChs.get(intNumberChar);
+                        intNumber = this.config.zeroToNineMap.get(intNumberChar);
                     }
                     result.value = intNumber * 10;
                 }
@@ -180,7 +180,7 @@ export class ChineseNumberParser extends BaseNumberParser {
             let doubleMatch = RegExpUtility.getMatches(this.config.percentageRegex, resultText).pop();
             let doubleText = this.replaceUnit(doubleMatch.value);
 
-            let splitResult = RegExpUtility.split(this.config.pointRegexChs, doubleText);
+            let splitResult = RegExpUtility.split(this.config.pointRegex, doubleText);
             if (splitResult[0] === "") {
                 splitResult[0] = "零"
             }
@@ -246,13 +246,13 @@ export class ChineseNumberParser extends BaseNumberParser {
         
         let resultText = extResult.text;
 
-        if (RegExpUtility.isMatch(this.config.doubleAndRoundChsRegex, resultText)) {
+        if (RegExpUtility.isMatch(this.config.doubleAndRoundRegex, resultText)) {
             resultText = this.replaceUnit(resultText);
-            let power = this.config.roundNumberMapChs.get(resultText.charAt(resultText.length - 1));
+            let power = this.config.roundNumberMapChar.get(resultText.charAt(resultText.length - 1));
             result.value = this.getDigitValueChs(resultText.substr(0, resultText.length - 1), power);
         } else {
             resultText = this.replaceUnit(resultText);
-            let splitResult = RegExpUtility.split(this.config.pointRegexChs, resultText);
+            let splitResult = RegExpUtility.split(this.config.pointRegex, resultText);
 
             if (splitResult[0] === "") {
                 splitResult[0] = "零";
@@ -338,8 +338,8 @@ export class ChineseNumberParser extends BaseNumberParser {
 
         for(let index = 0; index < resultStr.length; index++) {
             let resultChar = resultStr.charAt(index);
-            if (this.config.roundNumberMapChs.has(resultChar)) {
-                let roundRecent = this.config.roundNumberMapChs.get(resultChar);
+            if (this.config.roundNumberMapChar.has(resultChar)) {
+                let roundRecent = this.config.roundNumberMapChar.get(resultChar);
                 if (roundBefore !== -1 && roundRecent > roundBefore) {
                     if (isRoundBefore) {
                         intValue += partValue * roundRecent;
@@ -356,24 +356,24 @@ export class ChineseNumberParser extends BaseNumberParser {
                     partValue += beforeValue * roundRecent;
                     roundBefore = roundRecent;
 
-                    if ((index === resultStr.length - 1) || this.config.roundDirectListChs.some(o => o === resultChar)) {
+                    if ((index === resultStr.length - 1) || this.config.roundDirectList.some(o => o === resultChar)) {
                         intValue += partValue;
                         partValue = 0;
                     }
                 }
 
                 roundDefault = roundRecent / 10;
-            } else if (this.config.zeroToNineMapChs.has(resultChar)) {
+            } else if (this.config.zeroToNineMap.has(resultChar)) {
                 if (index !== resultStr.length - 1) {
-                    if ((resultChar === "零") && !this.config.roundNumberMapChs.has(resultStr.charAt(index + 1))) {
+                    if ((resultChar === "零") && !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))) {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {
-                        beforeValue = this.config.zeroToNineMapChs.get(resultChar);
+                        beforeValue = this.config.zeroToNineMap.get(resultChar);
                         isRoundBefore = false;
                     }
                 } else {
-                    partValue += this.config.zeroToNineMapChs.get(resultChar) * roundDefault;
+                    partValue += this.config.zeroToNineMap.get(resultChar) * roundDefault;
                     intValue += partValue;
                     partValue = 0;
                 }
@@ -399,7 +399,7 @@ export class ChineseNumberParser extends BaseNumberParser {
         let result = 0;
         let scale = 0.1;
         for(let index = 0; index < value.length; index++) {
-            result += scale * this.config.zeroToNineMapChs.get(value.charAt(index));
+            result += scale * this.config.zeroToNineMap.get(value.charAt(index));
             scale *= 0.1;
         }
 
