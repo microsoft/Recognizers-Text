@@ -770,7 +770,7 @@ AmbiguousDimensionUnitList: !list
     - \"
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
-  def: (?<=(\s|^|\W))
+  def: (?<=(\s|^))
 BuildSuffix: !simpleRegex
   def: (?=(\s|\W|$))
 #LengthExtractorConfiguration

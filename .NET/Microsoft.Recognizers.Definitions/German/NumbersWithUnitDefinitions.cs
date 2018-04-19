@@ -419,7 +419,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			"in",
 			"\""
 		};
-		public const string BuildPrefix = @"(?<=(\s|^|\W))";
+		public const string BuildPrefix = @"(?<=(\s|^))";
 		public const string BuildSuffix = @"(?=(\s|\W|$))";
 		public static readonly Dictionary<string, string> LenghtSuffixList = new Dictionary<string, string>
 		{
