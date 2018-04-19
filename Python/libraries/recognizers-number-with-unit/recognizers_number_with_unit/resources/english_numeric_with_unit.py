@@ -586,7 +586,7 @@ class EnglishNumericWithUnit:
                                   ('Terabyte', '-terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte'),
                                   ('Petabyte', '-petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte')])
     AmbiguousDimensionUnitList = ['barrel', 'barrels', 'grain', 'pound', 'stone', 'yards', 'yard', 'cord', 'dram', 'feet', 'foot', 'gill', 'knot', 'peck', 'cup', 'fps', 'pts', 'in', '\"']
-    BuildPrefix = f'(?<=(\\s|^|\\W))'
+    BuildPrefix = f'(?<=(\\s|^))'
     BuildSuffix = f'(?=(\\s|\\W|$))'
     LenghtSuffixList = dict([('Kilometer', 'km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre'),
                              ('Hectometer', 'hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre'),
