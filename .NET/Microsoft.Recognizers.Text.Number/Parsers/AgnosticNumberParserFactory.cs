@@ -25,13 +25,9 @@ namespace Microsoft.Recognizers.Text.Number
 
             BaseNumberParser parser;
 
-            if (isChinese)
+            if (isChinese || isJapanese)
             {
-                parser = new ChineseNumberParser(languageConfiguration as ChineseNumberParserConfiguration);
-            }
-            else if (isJapanese)
-            {
-                parser = new JapaneseNumberParser(languageConfiguration as JapaneseNumberParserConfiguration);
+                parser = new BaseCJKNumberParser(languageConfiguration);
             }
             else
             {

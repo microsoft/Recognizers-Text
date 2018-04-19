@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.Number.Japanese
 {
-    public class JapaneseNumberParserConfiguration : INumberParserConfiguration
+    public class JapaneseNumberParserConfiguration : INumberParserConfiguration, ICJKNumberParserConfiguration
     {
         public JapaneseNumberParserConfiguration() : this(new CultureInfo(Culture.Japanese))
         {

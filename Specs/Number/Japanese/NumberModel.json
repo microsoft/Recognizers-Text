@@ -24,7 +24,7 @@
   "NotSupported": "javascript, python",
   "Results": [
     {
-      "Text": "6、544",
+      "Text": "６、５４４",
       "TypeName": "number",
       "Resolution": {
         "value": "6544"
@@ -136,7 +136,7 @@
   "NotSupported": "javascript, python",
   "Results": [
     {
-      "Text": "12/3",
+      "Text": "１２/３",
       "TypeName": "number",
       "Resolution": {
         "value": "4"

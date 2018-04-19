@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             {
                 {
                     //第一百五十四
-                    new Regex(NumbersDefinitions.OrdinalRegexChs, RegexOptions.Singleline)
+                    new Regex(NumbersDefinitions.OrdinalRegex, RegexOptions.Singleline)
                     , "OrdinalChs"
                 },
                 {
