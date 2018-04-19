@@ -1058,4 +1058,27 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll leave for couple of weeks",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "couple of weeks",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P2W",
+        "FutureResolution": {
+          "duration": "1209600"
+        },
+        "PastResolution": {
+          "duration": "1209600"
+        }
+      }
+    }
+  ]
+}
 ]

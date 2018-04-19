@@ -233,14 +233,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             double numVal = 0;
             string numStr, unitStr;
-            var suffixStr = text;
             Match match;
 
             match = config.InExactNumberUnitRegex.Match(text);
             if (match.Success)
             {
-                // set the inexact number "few", "some" to 3 for now
-                numVal = 3;
+                if (match.Groups["NumTwoTerm"].Success)
+                {
+                    numVal = 2;
+                }
+                else
+                {
+                    // set the inexact number "few", "some" to 3 for now
+                    numVal = 3;
+                }
+
                 numStr = numVal.ToString(CultureInfo.InvariantCulture);
 
                 var srcUnit = match.Groups["unit"].Value.ToLower();
