@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
             NumberExtractor = new NumberExtractor();
             OrdinalExtractor = new OrdinalExtractor();
-            NumberParser =  new ChineseNumberParser(new ChineseNumberParserConfiguration());
+            NumberParser =  new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);

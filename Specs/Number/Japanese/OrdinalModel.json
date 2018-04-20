@@ -1,0 +1,65 @@
+[
+{
+  "Input": "だい12",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい12",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "12"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "だい一億",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい一億",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第一億",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第一億",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "だい一万回だい十万回",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい一万",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "10000"
+      }
+    }
+    ,
+    {
+      "Text": "だい十万",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100000"
+      }
+    }
+  ]
+}
+]

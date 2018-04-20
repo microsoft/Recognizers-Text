@@ -4,17 +4,17 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Japanese;
 
-namespace Microsoft.Recognizers.Text.Number.Chinese
+namespace Microsoft.Recognizers.Text.Number.Japanese
 {
-    public class ChineseNumberParserConfiguration : INumberParserConfiguration, ICJKNumberParserConfiguration
+    public class JapaneseNumberParserConfiguration : INumberParserConfiguration, ICJKNumberParserConfiguration
     {
-        public ChineseNumberParserConfiguration() : this(new CultureInfo(Culture.Chinese))
+        public JapaneseNumberParserConfiguration() : this(new CultureInfo(Culture.Japanese))
         {
         }
 
-        public ChineseNumberParserConfiguration(CultureInfo ci)
+        public JapaneseNumberParserConfiguration(CultureInfo ci)
         {
             LangMarker = NumbersDefinitions.LangMarker;
             CultureInfo = ci;
@@ -34,24 +34,22 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             OrdinalNumberMap = new Dictionary<string, long>().ToImmutableDictionary();
             RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
-            RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
             FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
-            TratoSimMap = NumbersDefinitions.TratoSimMap.ToImmutableDictionary();
+            RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
             UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
             RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
 
             HalfADozenRegex = null;
             DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            FractionPrepositionRegex = null;
         }
 
         public NumberOptions Options { get; }

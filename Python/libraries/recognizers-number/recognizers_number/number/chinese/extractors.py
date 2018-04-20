@@ -159,7 +159,7 @@ class ChineseOrdinalExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.OrdinalRegexChs),
+                re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.OrdinalRegex),
                 val='OrdinalChs'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(ChineseNumeric.OrdinalNumbersRegex),
