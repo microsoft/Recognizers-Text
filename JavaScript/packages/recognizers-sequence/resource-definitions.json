@@ -37,6 +37,7 @@
             "input": ["Base-URL" ],
             "output": "baseURL",
             "header": [
+                "import { BaseIp } from \"./baseIp\";",
                 "export namespace BaseURL {"
             ],
             "footer": [ "}" ]

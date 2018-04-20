@@ -1,4 +1,5 @@
 ---
-URLRegex: !simpleRegex
-  def: (?<=\s|^)((https?|ftp):\/\/)?(www\.)?[-a-zA-Z0-9:%._\+~#=]{2,256}\.[a-zA-Z]{2,6}\b([-a-zA-Z0-9:%_\+.~#?&//=]*)
+URLRegex: !nestedRegex
+  def: (?<=\s|^)((https?|ftp):\/\/)?(((www\.)?[-a-zA-Z0-9:%._\+~#=]{2,256}\.[a-zA-Z]{2,6})|localhost|{BaseIp.Ipv4Regex})\b(:\d{1,5})?([/#][-a-zA-Z0-9:%_\+.~#?&//=]*)?
+  references: [ BaseIp.Ipv4Regex ]
 ...
