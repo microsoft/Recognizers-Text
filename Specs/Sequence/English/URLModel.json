@@ -206,4 +206,74 @@
     "NotSupportedByDesign": "python",
     "Results": []
   }
+  ,
+  {
+    "Input": "http://127.0.0.1:8080",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://127.0.0.1:8080",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://127.0.0.1:8080"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "http://localhost:8080",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://localhost:8080",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://localhost:8080"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "http://localhost:8080#123",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://localhost:8080#123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://localhost:8080#123"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "http://localhost:8080/#/123",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://localhost:8080/#/123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://localhost:8080/#/123"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "http://127.0.0.1:8080/#/123",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://127.0.0.1:8080/#/123",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://127.0.0.1:8080/#/123"
+        }
+      }
+    ]
+  }
 ]

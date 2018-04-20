@@ -17,6 +17,6 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BaseURL
 	{
-		public const string URLRegex = @"(?<=\s|^)((https?|ftp):\/\/)?(www\.)?[-a-zA-Z0-9:%._\+~#=]{2,256}\.[a-zA-Z]{2,6}\b([-a-zA-Z0-9:%_\+.~#?&//=]*)";
+		public static readonly string URLRegex = $@"(?<=\s|^)((https?|ftp):\/\/)?(((www\.)?[-a-zA-Z0-9:%._\+~#=]{{2,256}}\.[a-zA-Z]{{2,6}})|localhost|{BaseIp.Ipv4Regex})\b(:\d{{1,5}})?([/#][-a-zA-Z0-9:%_\+.~#?&//=]*)?";
 	}
 }
