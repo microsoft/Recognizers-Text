@@ -190,6 +190,7 @@ export interface IDateParserConfiguration {
     dateRegex: RegExp[]
     onRegex: RegExp
     specialDayRegex: RegExp
+    specialDayWithNumRegex: RegExp
     nextRegex: RegExp
     unitRegex: RegExp
     monthRegex: RegExp
@@ -315,6 +316,21 @@ export class BaseDateParser implements IDateTimeParser {
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let swift = this.config.getSwiftDay(match.value);
             let value = DateUtils.addDays(referenceDate, swift);
+            result.timex = FormatUtil.luisDateFromDate(value);
+            result.futureValue = value;
+            result.pastValue = value;
+            result.success = true;
+            return result;
+        }
+
+        // handle "two days from tomorrow"
+        match = RegExpUtility.getMatches(this.config.specialDayWithNumRegex, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
+            let swift = this.config.getSwiftDay(match.groups('day').value);
+            let numErs = this.config.integerExtractor.extract(trimmedSource);
+            let numOfDays = Number.parseInt(this.config.numberParser.parse(numErs[0]).value);
+
+            let value = DateUtils.addDays(referenceDate, swift + numOfDays);
             result.timex = FormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;

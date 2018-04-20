@@ -54,6 +54,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex SpecialDateRegex = 
             new Regex(DateTimeDefinitions.SpecialDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecialDayWithNumRegex = 
+            new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         //TODO: modify below regex according to the counterpart in English
         public static readonly Regex ForTheRegex = new Regex($@"^[.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);

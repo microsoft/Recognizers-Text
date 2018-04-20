@@ -34,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -91,6 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DateRegexes = GermanDateExtractorConfiguration.DateRegexList;
             OnRegex = GermanDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = GermanDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = GermanDateExtractorConfiguration.NextDateRegex;
             ThisRegex = GermanDateExtractorConfiguration.ThisRegex;
             LastRegex = GermanDateExtractorConfiguration.LastDateRegex;

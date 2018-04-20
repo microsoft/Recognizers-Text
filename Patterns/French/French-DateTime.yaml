@@ -104,6 +104,9 @@ NextDateRegex: !nestedRegex
   references: [ NextSuffixRegex, WeekDayRegex ]
 SpecialDayRegex: !simpleRegex
   def: \b(avant[\s|-]hier|apr[eè]s(-demain|\s*demain)|(le\s)?jour suivant|(le\s+)?dernier jour|hier|lendemain|demain|de la journ[ée]e|aujourd'hui)\b
+SpecialDayWithNumRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 StrictWeekDay: !simpleRegex
   def: \b(?<weekday>Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)s?\b
 SetWeekDayRegex: !simpleRegex
