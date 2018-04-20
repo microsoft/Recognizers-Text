@@ -34,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -81,6 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateRegexes = FrenchDateExtractorConfiguration.DateRegexList;
             OnRegex = FrenchDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = FrenchDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = FrenchDateExtractorConfiguration.NextRegex;
             ThisRegex = FrenchDateExtractorConfiguration.ThisRegex;
             LastRegex = FrenchDateExtractorConfiguration.LastRegex;

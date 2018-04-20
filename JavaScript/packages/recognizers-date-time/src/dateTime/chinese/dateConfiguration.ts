@@ -101,6 +101,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     readonly dateRegex: RegExp[]
     readonly onRegex: RegExp
     readonly specialDayRegex: RegExp
+    readonly specialDayWithNumRegex: RegExp
     readonly nextRegex: RegExp
     readonly unitRegex: RegExp
     readonly monthRegex: RegExp
@@ -169,6 +170,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         this.dayOfMonth = ChineseDateTime.ParserConfigurationDayOfMonth;
         this.dayOfWeek = ChineseDateTime.ParserConfigurationDayOfWeek;
         this.specialDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SpecialDayRegex);
+        this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SpecialDayWithNumRegex);
         this.thisRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateThisRegex);
         this.nextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateNextRegex);
         this.lastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateLastRegex);

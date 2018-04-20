@@ -81,6 +81,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     readonly dateRegex: RegExp[];
     readonly onRegex: RegExp;
     readonly specialDayRegex: RegExp;
+    readonly specialDayWithNumRegex: RegExp;
     readonly nextRegex: RegExp;
     readonly unitRegex: RegExp;
     readonly monthRegex: RegExp;
@@ -125,6 +126,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         ];
         this.onRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecialDayRegex, "gis");
+        this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecialDayWithNumRegex, "gis");
         this.nextRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextDateRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateUnitRegex, "gis");
         this.monthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthRegex, "gis");

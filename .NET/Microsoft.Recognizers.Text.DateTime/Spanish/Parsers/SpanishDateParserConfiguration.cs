@@ -34,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -79,6 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateRegexes = SpanishDateExtractorConfiguration.DateRegexList;
             OnRegex = SpanishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = SpanishDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = SpanishDateExtractorConfiguration.NextDateRegex;
             ThisRegex = SpanishDateExtractorConfiguration.ThisRegex;
             LastRegex = SpanishDateExtractorConfiguration.LastDateRegex;

@@ -34,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -79,6 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DateRegexes = PortugueseDateExtractorConfiguration.DateRegexList;
             OnRegex = PortugueseDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = PortugueseDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = PortugueseDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = PortugueseDateExtractorConfiguration.NextDateRegex;
             ThisRegex = PortugueseDateExtractorConfiguration.ThisRegex;
             LastRegex = PortugueseDateExtractorConfiguration.LastDateRegex;
