@@ -183,7 +183,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     result.Value = 50;
                 }
-                else if (resultText == "10成")
+                else if (resultText == "10成" || resultText == "10割" || resultText == "十割")
                 {
                     result.Value = 100;
                 }
