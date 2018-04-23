@@ -62,6 +62,7 @@ FullToHalfMap: !dictionary
     ／: '/'
     －: '-'
     ，: \'
+    、: \'
     Ｇ: G
     Ｍ: M
     Ｔ: T
@@ -75,6 +76,7 @@ UnitMap: !dictionary
     億万: 兆
     万億: 兆
     万万: 億
+    ' ' : ''
 RoundDirectList: !list
   types: [char]
   entries:
@@ -96,11 +98,11 @@ DoubleAndRoundRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*[万億]{1,2}(\s*(以上))?'
   references: [ZeroToNineFullHalfRegex]
 FracSplitRegex: !simpleRegex
-  def: 'は|分\s*の'
+  def: '[はと]|分\s*の'
 ZeroToNineIntegerRegex: !simpleRegex
   def: '[一二三四五六七八九]'
 NegativeNumberTermsRegex: !simpleRegex
-  def: マ\s*イ\s*ナ\s*ス
+  def: (マ\s*イ\s*ナ\s*ス)
 NegativeNumberTermsRegexNum: !simpleRegex
   def: (?<!(\d+\s*)|[-－])[-－]
 NegativeNumberSignRegex: !nestedRegex
@@ -109,17 +111,17 @@ NegativeNumberSignRegex: !nestedRegex
 SpeGetNumberRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]'
   references: [ZeroToNineFullHalfRegex, ZeroToNineIntegerRegex]
-PairRegex: .*[対膳]$
+PairRegex: .*[対膳足]$
 #IntegerExtractor
 RoundNumberIntegerRegex: !simpleRegex
   def: '[十百千万億兆]'
 WhiteListRegex: !simpleRegex
-  def: (。|，|、|（|）|”｜国|週間|時間|時|匹|\s|$)
+  def: (。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|\s|$)
 NotSingleRegex: !nestedRegex
-  def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十])\s*{RoundNumberIntegerRegex}){1,2}\s*(\s*[以上]?)
+  def: (?<!(第|だい))(({RoundNumberIntegerRegex}+({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*({RoundNumberIntegerRegex}\s*){1,2})\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*{RoundNumberIntegerRegex}{0,1})\s*)*\s*(\s*(以上)?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 SingleRegex: !nestedRegex
-  def: (?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?={WhiteListRegex})
+  def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={WhiteListRegex}))
   references: [ZeroToNineIntegerRegex, WhiteListRegex]
 AllIntRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十百千])\s*{RoundNumberIntegerRegex}*){1,2}\s*(\s*[以上]?)
@@ -145,7 +147,7 @@ AllFloatRegex: !nestedRegex
   def: '{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[一二三四五六七八九](\s*{ZeroToNineIntegerRegex})*'
   references: [NegativeNumberTermsRegex, AllIntRegex, PointRegexStr, ZeroToNineIntegerRegex]
 NumbersWithAllowListRegex: !nestedRegex
-  def: (?<!({AllIntRegex}*|{AllFloatRegex})*パーセント){NegativeNumberTermsRegex}?({NotSingleRegex})
+  def: (({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}*))
   references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, ZeroToNineIntegerRegex]
 NumbersAggressiveRegex: !nestedRegex
   def: (?<!({AllIntRegex}*|{AllFloatRegex})*パーセント){NegativeNumberTermsRegex}?({NotSingleRegex})
@@ -167,7 +169,7 @@ DoubleWithMultiplierRegex: !nestedRegex
   def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
 DoubleWithThousandsRegex: !nestedRegex
-  def: '{NegativeNumberTermsRegex}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?\s*[万亿萬億]{1,2}\s*(以上)*'
+  def: '{NegativeNumberTermsRegex}{0,1}\s*({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?\s*[万亿萬億]{1,2})'
   references: [NegativeNumberTermsRegex, ZeroToNineFullHalfRegex]
 DoubleAllFloatRegex: !nestedRegex
   def: (?<!(({AllIntRegex}[.]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*パーセント)

@@ -14,6 +14,62 @@
 }
 ,
 {
+  "Input": "第二百五十",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第二百五十",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "だい二百五十",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい二百五十",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第２５０",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第２５０",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "だい２５０",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい２５０",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "だい一億",
   "NotSupported": "javascript, python",
   "Results": [
@@ -58,6 +114,76 @@
       "TypeName": "ordinal",
       "Resolution": {
         "value": "100000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第一位第二位第三位第四位",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第一",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "第二",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "2"
+      }
+    },
+    {
+      "Text": "第三",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3"
+      }
+    },
+    {
+      "Text": "第四",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第1位第2位第3位第4位",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第1",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "第2",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "2"
+      }
+    },
+    {
+      "Text": "第3",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3"
+      }
+    },
+    {
+      "Text": "第4",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "4"
       }
     }
   ]
