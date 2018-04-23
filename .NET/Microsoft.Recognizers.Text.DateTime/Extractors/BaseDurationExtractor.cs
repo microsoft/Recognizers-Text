@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.AddRange(GetTokenFromRegex(config.AnUnitRegex, text));
 
             // handle "few" related cases
-            ret.AddRange(GetTokenFromRegex(config.InExactNumberUnitRegex, text));
+            ret.AddRange(GetTokenFromRegex(config.InexactNumberUnitRegex, text));
 
             return ret;
         }

@@ -62,8 +62,8 @@ BetweenRegex: !nestedRegex
   def: \b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
 MonthWithYear: !nestedRegex
-  def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({YearRegex}|(?<order>next|last|this)\s+year))
-  references: [ YearRegex ]
+  def: \b(({EngMonthRegex},?(\s+of)?\s+({YearRegex}|(?<order>next|last|this)\s+year))|(({YearRegex}|(?<order>next|last|this)\s+year)\s*,?\s+{EngMonthRegex}))\b
+  references: [ EngMonthRegex, YearRegex ]
 OneWordPeriodRegex: !nestedRegex
   def: \b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(weekend|week|month|year)(\s+{AfterNextSuffixRegex})?)\b
   references: [ RelativeRegex, AfterNextSuffixRegex ]
@@ -136,7 +136,7 @@ PmDescRegex: !simpleRegex
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>((1\d|20)\d{2})|2100|((9\d|0\d|1\d|2\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
+  def: (?<year>((1\d|20)\d{2})|2100|((9\d|0\d|1\d|2\d)\b(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
   references: [ DescRegex, AmDescRegex, PmDescRegex ]
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
@@ -158,6 +158,9 @@ NextDateRegex: !nestedRegex
 SpecialDayRegex: !nestedRegex
   def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?{RelativeRegex}\s+day)|yesterday|tomorrow|tmr|today)\b
   references: [ RelativeRegex]
+SpecialDayWithNumRegex: !nestedRegex
+  def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b
+  references: [ WrittenNumRegex ]
 RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+day))\b
   references: [ RelativeRegex]
@@ -434,11 +437,11 @@ EveningStartEndRegex: !simpleRegex
   def: (^(evening))|((evening)$)
 NightStartEndRegex: !simpleRegex
   def: (^(overnight|tonight|night))|((overnight|tonight|night)$)
-InExactNumberRegex: !simpleRegex
-  def: \b(a few|few|some|several)\b
-InExactNumberUnitRegex: !nestedRegex
-  def: ({InExactNumberRegex})\s+({DurationUnitRegex})
-  references: [InExactNumberRegex, DurationUnitRegex]
+InexactNumberRegex: !simpleRegex
+  def: \b(a few|few|some|several|(?<NumTwoTerm>(a\s+)?couple of))\b
+InexactNumberUnitRegex: !nestedRegex
+  def: ({InexactNumberRegex})\s+({DurationUnitRegex})
+  references: [InexactNumberRegex, DurationUnitRegex]
 RelativeTimeUnitRegex: !nestedRegex
   def: ((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
   references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, TimeUnitRegex, RestrictedTimeUnitRegex]
@@ -487,7 +490,7 @@ DurationConnectorRegex: !simpleRegex
 PrefixArticleRegex: !simpleRegex
   def: \bthe\s+
 OrRegex: !simpleRegex
-  def: \s*(or)\s*
+  def: \s*((\b|,\s*)(or|and)\b|,)\s*
 YearPlusNumberRegex: !nestedRegex
   def: \b(Year\s+((?<year>(\d{3,4}))|{FullTextYearRegex}))\b
   references: [ FullTextYearRegex ]

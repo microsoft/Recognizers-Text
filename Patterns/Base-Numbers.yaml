@@ -1,5 +1,6 @@
 ---
 NumberReplaceToken: '@builtin.num'
+FractionNumberReplaceToken: '@builtin.num.fraction'
 IntegerRegexDefinition: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{1,3}({thousandsmark}\d{3})+(?={placeholder})
   params: [ placeholder, thousandsmark  ]

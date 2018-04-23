@@ -51,7 +51,7 @@ export namespace PortugueseNumeric {
 	export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
 	export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((e|com)\\s+)?)?(${AllIntRegex})(\\s+((e|com)\\s)?)(((${AllOrdinalRegex})s?|(${SpecialFractionInteger})|(${SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\\b)`;
 	export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(e\\s+)?)?(um|um[as])(\\s+)((${AllOrdinalRegex})|(${SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)(?=\\b)`;
-	export const FractionPrepositionRegex = `(?<=\\b)((${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+((${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
+	export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
 	export const AllFloatRegex = `${AllIntRegex}(\\s+(vírgula|virgula|e|ponto))${AllPointRegex}`;
 	export const DoubleWithMultiplierRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*(K|k|M|G|T)(?=\\b)`;
 	export const DoubleExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)`;

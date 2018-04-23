@@ -111,7 +111,7 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SuffixRoundOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(({AllIntRegex})|((\d+)(?!\.)))(?=\b)
+  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
   references: [ AllIntRegex ]
 #Double Regex
 AllFloatRegex: !nestedRegex

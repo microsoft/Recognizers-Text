@@ -1,0 +1,191 @@
+[
+{
+  "Input": "だい12",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい12",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "12"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第二百五十",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第二百五十",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "だい二百五十",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい二百五十",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第２５０",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第２５０",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "だい２５０",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい２５０",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "だい一億",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい一億",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第一億",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第一億",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "だい一万回だい十万回",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "だい一万",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "10000"
+      }
+    }
+    ,
+    {
+      "Text": "だい十万",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第一位第二位第三位第四位",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第一",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "第二",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "2"
+      }
+    },
+    {
+      "Text": "第三",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3"
+      }
+    },
+    {
+      "Text": "第四",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第1位第2位第3位第4位",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第1",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "第2",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "2"
+      }
+    },
+    {
+      "Text": "第3",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3"
+      }
+    },
+    {
+      "Text": "第4",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+]

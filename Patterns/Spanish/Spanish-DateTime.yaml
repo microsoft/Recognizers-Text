@@ -107,6 +107,9 @@ NextDateRegex: !nestedRegex
   references: [ WeekDayRegex ]
 SpecialDayRegex: !simpleRegex
   def: \b((el\s+)?(d[ií]a\s+antes\s+de\s+ayer|anteayer)|((el\s+)?d[ií]a\s+(despu[eé]s\s+)?de\s+mañana|pasado\s+mañana)|(el\s)?d[ií]a siguiente|(el\s)?pr[oó]ximo\s+d[ií]a|(el\s+)?[uú]ltimo d[ií]a|(d)?el d[ií]a|ayer|mañana|hoy)\b
+SpecialDayWithNumRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 ForTheRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -339,9 +342,9 @@ AllRegex: !simpleRegex
   def: \b(?<all>tod[oa]?\s+(el|la)\s+(?<unit>año|mes|semana|d[ií]a))\b
 HalfRegex: !simpleRegex
   def: \b(?<half>medi[oa]\s+(?<unit>ano|mes|semana|d[íi]a|hora))\b
-InExactNumberRegex: !simpleRegex
+InexactNumberRegex: !simpleRegex
   def: \b(pocos|poco|algo|varios)\b
-InExactNumberUnitRegex: !nestedRegex
+InexactNumberUnitRegex: !nestedRegex
   def: \b(pocos|poco|algo|varios)\s+{UnitRegex}
   references: [ UnitRegex ]
 # SpanishHolidayExtractorConfiguration

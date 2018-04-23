@@ -53,6 +53,7 @@ export namespace SpanishDateTime {
 	export const LastDateRegex = `\\b(([uú]ltimo)\\s*${WeekDayRegex})|(${WeekDayRegex}(\\s+((de\\s+)?(esta|la)\\s+([uú]ltima\\s+)?semana)))\\b`;
 	export const NextDateRegex = `\\b(((pr[oó]ximo|siguiente)\\s*)${WeekDayRegex})|(${WeekDayRegex}(\\s+(de\\s+)?(la\\s+)?(pr[oó]xima|siguiente)(\\s*semana)))\\b`;
 	export const SpecialDayRegex = `\\b((el\\s+)?(d[ií]a\\s+antes\\s+de\\s+ayer|anteayer)|((el\\s+)?d[ií]a\\s+(despu[eé]s\\s+)?de\\s+mañana|pasado\\s+mañana)|(el\\s)?d[ií]a siguiente|(el\\s)?pr[oó]ximo\\s+d[ií]a|(el\\s+)?[uú]ltimo d[ií]a|(d)?el d[ií]a|ayer|mañana|hoy)\\b`;
+	export const SpecialDayWithNumRegex = `^[.]`;
 	export const ForTheRegex = `^[.]`;
 	export const WeekDayAndDayOfMonthRegex = `^[.]`;
 	export const WeekDayOfMonthRegex = `(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
@@ -129,8 +130,8 @@ export namespace SpanishDateTime {
 	export const AnUnitRegex = `\\b(un(a)?)\\s+${UnitRegex}`;
 	export const AllRegex = `\\b(?<all>tod[oa]?\\s+(el|la)\\s+(?<unit>año|mes|semana|d[ií]a))\\b`;
 	export const HalfRegex = `\\b(?<half>medi[oa]\\s+(?<unit>ano|mes|semana|d[íi]a|hora))\\b`;
-	export const InExactNumberRegex = `\\b(pocos|poco|algo|varios)\\b`;
-	export const InExactNumberUnitRegex = `\\b(pocos|poco|algo|varios)\\s+${UnitRegex}`;
+	export const InexactNumberRegex = `\\b(pocos|poco|algo|varios)\\b`;
+	export const InexactNumberUnitRegex = `\\b(pocos|poco|algo|varios)\\s+${UnitRegex}`;
 	export const HolidayRegex1 = `\\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|noche vieja|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|noche buena|d[ií]a de acci[oó]n de gracias|acci[oó]n de gracias|yuandan|halloween|noches de brujas|pascuas)(\\s+(del?\\s+)?(${FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;
 	export const HolidayRegex2 = `\\b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\\s+(del?\\s+)?(${FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;
 	export const HolidayRegex3 = `\\b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\\s+(del?\\s+)?(${FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;

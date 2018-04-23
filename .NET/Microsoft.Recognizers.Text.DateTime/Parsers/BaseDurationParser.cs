@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            if ((ret = ParseInExactNumberUnit(text)).Success)
+            if ((ret = ParseInexactNumberUnit(text)).Success)
             {
                 return ret;
             }
@@ -228,19 +228,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseInExactNumberUnit(string text)
+        private DateTimeResolutionResult ParseInexactNumberUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
             double numVal = 0;
             string numStr, unitStr;
-            var suffixStr = text;
             Match match;
 
-            match = config.InExactNumberUnitRegex.Match(text);
+            match = config.InexactNumberUnitRegex.Match(text);
             if (match.Success)
             {
-                // set the inexact number "few", "some" to 3 for now
-                numVal = 3;
+                if (match.Groups["NumTwoTerm"].Success)
+                {
+                    numVal = 2;
+                }
+                else
+                {
+                    // set the inexact number "few", "some" to 3 for now
+                    numVal = 3;
+                }
+
                 numStr = numVal.ToString(CultureInfo.InvariantCulture);
 
                 var srcUnit = match.Groups["unit"].Value.ToLower();

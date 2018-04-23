@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IEnumerable<Regex> DateRegexes { get; }
         Regex OnRegex { get; }
         Regex SpecialDayRegex { get; }
+        Regex SpecialDayWithNumRegex { get; }
         Regex NextRegex { get; }
         Regex ThisRegex { get; }
         Regex LastRegex { get; }

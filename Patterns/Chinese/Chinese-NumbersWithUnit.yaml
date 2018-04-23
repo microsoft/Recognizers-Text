@@ -310,6 +310,8 @@ CurrencySuffixList: !dictionary
 #Additional
     Finnish markka: 芬兰马克
     Penni: 盆尼
+CompoundUnitConnectorRegex: !simpleRegex
+    def: (?<spacer>又|再)
 CurrencyPrefixList: !dictionary
   types: [string, string]
   entries:

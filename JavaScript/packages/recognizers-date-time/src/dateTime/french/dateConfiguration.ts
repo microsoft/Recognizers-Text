@@ -83,6 +83,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly dateRegex: RegExp[];
     readonly onRegex: RegExp;
     readonly specialDayRegex: RegExp;
+    readonly specialDayWithNumRegex: RegExp;
     readonly nextRegex: RegExp;
     readonly unitRegex: RegExp;
     readonly strictWeekDay : RegExp;
@@ -123,6 +124,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         ];
         this.onRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayRegex, "gis");
+        this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayWithNumRegex, "gis");
         this.nextRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextDateRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.DateUnitRegex, "gis");
         this.monthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthRegex, "gis");

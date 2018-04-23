@@ -50,7 +50,7 @@ export namespace SpanishNumeric {
 	export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
 	export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((y|con)\\s+)?)?(${AllIntRegex})(\\s+((y|con)\\s)?)(((${AllOrdinalRegex})s?|(${SpecialFractionInteger})|(${SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)(?=\\b)`;
 	export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(y\\s+)?)?(un|un[oa])(\\s+)((${AllOrdinalRegex})|(${SufixRoundOrdinalRegex})|(y\\s+)?medi[oa]s?)(?=\\b)`;
-	export const FractionPrepositionRegex = `(?<=\\b)((${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+((${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
+	export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
 	export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${AllIntRegex}))`;
 	export const AllFloatRegex = `${AllIntRegex}(\\s+(coma|con))${AllPointRegex}`;
 	export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?=${placeholder})`; }

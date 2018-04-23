@@ -39,7 +39,8 @@ export namespace EnglishNumeric {
 	export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
 	export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)`;
 	export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(a|an|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|half|quarter)(?=\\b)`;
-	export const FractionPrepositionRegex = `(?<=\\b)((${AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+((${AllIntRegex})|(\\d+)(?!\\.))(?=\\b)`;
+	export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?!\\.))(?=\\b)`;
+	export const FractionPrepositionWithinPercentModeRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?!\\.))(?=\\b)`;
 	export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;
 	export const AllFloatRegex = `${AllIntRegex}(\\s+point)${AllPointRegex}`;
 	export const DoubleWithMultiplierRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+\\s*(K|k|M|G|T|B|b)(?=\\b)`;
@@ -51,7 +52,9 @@ export namespace EnglishNumeric {
 	export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
 	export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)`;
 	export const NumberWithSuffixPercentage = `(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(per cents|per cent|cents|cent|percentage|percents|percent)\\b)`;
+	export const FractionNumberWithSuffixPercentage = `((${BaseNumbers.FractionNumberReplaceToken})\\s+of)`;
 	export const NumberWithPrefixPercentage = `(per cent of|percent of|percents of)(\\s*)(${BaseNumbers.NumberReplaceToken})`;
+	export const NumberWithPrepositionPercentage = `(${BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*(${BaseNumbers.NumberReplaceToken})`;
 	export const TillRegex = `(to|through|--|-|—|——|~)`;
 	export const MoreRegex = `((bigger|greater|more|higher|larger)(\\s+than)?|above|over|>)`;
 	export const LessRegex = `((less|lower|smaller|fewer)(\\s+than)?|below|under|<)`;

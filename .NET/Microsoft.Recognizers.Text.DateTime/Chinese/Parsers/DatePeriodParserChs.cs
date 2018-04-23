@@ -4,6 +4,7 @@ using System.Globalization;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -15,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
 
-        private static readonly IParser IntegerParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
+        private static readonly IParser IntegerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
 
         private static readonly IDateTimeExtractor Durationextractor = new DurationExtractorChs();
 

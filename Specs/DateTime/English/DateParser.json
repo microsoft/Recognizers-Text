@@ -2470,4 +2470,50 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll go back two days from tomorrow.",
+  "Context": {
+    "ReferenceDateTime": "2018-04-20T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days from tomorrow",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-04-23",
+        "FutureResolution": {
+          "date": "2018-04-23"
+        },
+        "PastResolution": {
+          "date": "2018-04-23"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back four days from yesterday.",
+  "Context": {
+    "ReferenceDateTime": "2018-04-20T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "four days from yesterday",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-04-23",
+        "FutureResolution": {
+          "date": "2018-04-23"
+        },
+        "PastResolution": {
+          "date": "2018-04-23"
+        }
+      }
+    }
+  ]
+}
 ]

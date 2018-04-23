@@ -7,11 +7,11 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseMergedExtractor : IDateTimeExtractor
+    public class BaseMergedDateTimeExtractor : IDateTimeExtractor
     {
         private readonly IMergedExtractorConfiguration config;
 
-        public BaseMergedExtractor(IMergedExtractorConfiguration config)
+        public BaseMergedDateTimeExtractor(IMergedExtractorConfiguration config)
         {
             this.config = config;
         }

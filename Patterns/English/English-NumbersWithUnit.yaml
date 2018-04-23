@@ -362,12 +362,281 @@ CurrencySuffixList: !dictionary
     Tuvaluan dollar: tuvaluan dollars|tuvaluan dollar|tuvaluan $
     Dollar: dollars|dollar|$
 #Chinese yuan
-    Chinese yuan: yuan|chinese yuan|renminbi|cny|rmb|￥
+    Chinese yuan: yuan|kuai|chinese yuan|renminbi|cny|rmb|￥
     Fen: fen
-    Jiao: jiao
+    Jiao: jiao|mao
 #Additional
     Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka
     Penni: penniä|penni
+CurrencyNameToIsoCodeMap: !dictionary
+  types: [ string, string ]
+  entries:
+    Afghan afghani: AFN
+    Euro: EUR
+    Albanian lek: ALL
+    Angolan kwanza: AOA
+    Armenian dram: AMD
+    Aruban florin: AWG
+    Bangladeshi taka: BDT
+    Bhutanese ngultrum: BTN
+    Bolivian boliviano: BOB
+    Bosnia and Herzegovina convertible mark: BAM
+    Botswana pula: BWP
+    Brazilian real: BRL
+    Bulgarian lev: BGN
+    Cambodian riel: KHR
+    Cape Verdean escudo: CVE
+    Costa Rican colón: CRC
+    Croatian kuna: HRK
+    Czech koruna: CZK
+    Eritrean nakfa: ERN
+    Ethiopian birr: ETB
+    Gambian dalasi: GMD
+    Georgian lari: GEL
+    Ghanaian cedi: GHS
+    Guatemalan quetzal: GTQ
+    Haitian gourde: HTG
+    Honduran lempira: HNL
+    Hungarian forint: HUF
+    Iranian rial: IRR
+    Yemeni rial: YER
+    Israeli new shekel: ILS
+    Japanese yen: JPY
+    Kazakhstani tenge: KZT
+    Kenyan shilling: KES
+    North Korean won: KPW
+    South Korean won: KRW
+    Kyrgyzstani som: KGS
+    Lao kip: LAK
+    Lesotho loti: LSL
+    South African rand: ZAR
+    Macanese pataca: MOP
+    Macedonian denar: MKD
+    Malagasy ariary: MGA
+    Malawian kwacha: MWK
+    Malaysian ringgit: MYR
+    Mauritanian ouguiya: MRO
+    Mongolian tögrög: MNT
+    Mozambican metical: MZN
+    Burmese kyat: MMK
+    Nicaraguan córdoba: NIO
+    Nigerian naira: NGN
+    Turkish lira: TRY
+    Omani rial: OMR
+    Panamanian balboa: PAB
+    Papua New Guinean kina: PGK
+    Paraguayan guaraní: PYG
+    Peruvian sol: PEN
+    Polish złoty: PLN
+    Qatari riyal: QAR
+    Saudi riyal: SAR
+    Samoan tālā: WST
+    São Tomé and Príncipe dobra: STD
+    Sierra Leonean leone: SLL
+    Swazi lilangeni: SZL
+    Tajikistani somoni: TJS
+    Thai baht: THB
+    Ukrainian hryvnia: UAH
+    Vanuatu vatu: VUV
+    Venezuelan bolívar: VEF
+    Zambian kwacha: ZMW
+    Moroccan dirham: MAD
+    United Arab Emirates dirham: AED
+    Azerbaijani manat: AZN
+    Turkmenistan manat: TMT
+    Somali shilling: SOS
+    Tanzanian shilling: TZS
+    Ugandan shilling: UGX
+    Romanian leu: RON
+    Moldovan leu: MDL
+    Nepalese rupee: NPR
+    Pakistani rupee: PKR
+    Indian rupee: INR
+    Seychellois rupee: SCR
+    Mauritian rupee: MUR
+    Maldivian rufiyaa: MVR
+    Sri Lankan rupee: LKR
+    Indonesian rupiah: IDR
+    Danish krone: DKK
+    Norwegian krone: NOK
+    Icelandic króna: ISK
+    Swedish krona: SEK
+    West African CFA franc: XOF
+    Central African CFA franc: XAF
+    Comorian franc: KMF
+    Congolese franc: CDF
+    Burundian franc: BIF
+    Djiboutian franc: DJF
+    CFP franc: XPF
+    Guinean franc: GNF
+    Swiss franc: CHF
+    Rwandan franc: RWF
+    Russian ruble: RUB
+    Transnistrian ruble: PRB
+    Belarusian ruble: BYN
+    Algerian dinar: DZD
+    Bahraini dinar: BHD
+    Iraqi dinar: IQD
+    Jordanian dinar: JOD
+    Kuwaiti dinar: KWD
+    Libyan dinar: LYD
+    Serbian dinar: RSD
+    Tunisian dinar: TND
+    Argentine peso: ARS
+    Chilean peso: CLP
+    Colombian peso: COP
+    Cuban convertible peso: CUC
+    Cuban peso: CUP
+    Dominican peso: DOP
+    Mexican peso: MXN
+    Uruguayan peso: UYU
+    British pound: GBP
+    Saint Helena pound: SHP
+    Egyptian pound: EGP
+    Falkland Islands pound: FKP
+    Gibraltar pound: GIP
+    Manx pound: IMP
+    Jersey pound: JEP
+    Lebanese pound: LBP
+    South Sudanese pound: SSP
+    Sudanese pound: SDG
+    Syrian pound: SYP
+    United States dollar: USD
+    Australian dollar: AUD
+    Bahamian dollar: BSD
+    Barbadian dollar: BBD
+    Belize dollar: BZD
+    Bermudian dollar: BMD
+    Brunei dollar: BND
+    Singapore dollar: SGD
+    Canadian dollar: CAD
+    Cayman Islands dollar: KYD
+    New Zealand dollar: NZD
+    Fijian dollar: FJD
+    Guyanese dollar: GYD
+    Hong Kong dollar: HKD
+    Jamaican dollar: JMD
+    Liberian dollar: LRD
+    Namibian dollar: NAD
+    Solomon Islands dollar: SBD
+    Surinamese dollar: SRD
+    New Taiwan dollar: TWD
+    Trinidad and Tobago dollar: TTD
+    Tuvaluan dollar: TVD
+    Chinese yuan: CNY
+    # Fake ISO code
+    # Special main unit
+    Rial: __RI
+    Shiling: __S
+    Som: __SO
+    Dirham: __DR
+    Dinar: _DN
+    Dollar: __D
+    Manat: __MA
+    Rupee: __R
+    Krone: __K
+    Krona: __K
+    Crown: __K
+    Frank: __F
+    Mark: __M
+    Ruble: __RB
+    Peso: __PE
+    Pound: __P
+    # Currencies we extract, but that don't have an official ISO code
+    Tristan da Cunha pound: _TP
+    South Georgia and the South Sandwich Islands pound: _SP
+    Somaliland shilling: _SS
+    Pitcairn Islands dollar: _PND
+    Palauan dollar: _PD
+    Niue dollar: _NID
+    Nauruan dollar: _ND
+    Micronesian dollar: _MD
+    Kiribati dollar: _KID
+    Guernsey pound: _GGP
+    Faroese króna: _FOK
+    Cook Islands dollar: _CKD 
+    British Virgin Islands dollar: _BD 
+    Ascension pound: _AP 
+    Alderney pound: _ALP 
+    Abkhazian apsar: _AA
+FractionalUnitNameToCodeMap: !dictionary
+  types: [ string, string ]
+  entries:
+    Jiao: JIAO
+    Kopek: KOPEK
+    Pul: PUL
+    Cent: CENT
+    Qindarkë: QINDARKE
+    Penny: PENNY
+    Santeem: SANTEEM
+    Cêntimo: CENTIMO
+    Centavo: CENTAVO
+    Luma: LUMA
+    Qəpik: QƏPIK
+    Fils: FILS
+    Poisha: POISHA
+    Kapyeyka: KAPYEYKA
+    Centime: CENTIME
+    Chetrum: CHETRUM
+    Paisa: PAISA
+    Fening: FENING
+    Thebe: THEBE
+    Sen: SEN
+    Stotinka: STOTINKA
+    Fen: FEN
+    Céntimo: CENTIMO
+    Lipa: LIPA
+    Haléř: HALER
+    Øre: ØRE
+    Piastre: PIASTRE
+    Santim: SANTIM
+    Oyra: OYRA
+    Butut: BUTUT
+    Tetri: TETRI
+    Pesewa: PESEWA
+    Fillér: FILLER
+    Eyrir: EYRIR
+    Dinar: DINAR
+    Agora: AGORA
+    Tïın: TIIN
+    Chon: CHON
+    Jeon: JEON
+    Tyiyn: TYIYN
+    Att: ATT
+    Sente: SENTE
+    Dirham: DIRHAM
+    Rappen: RAPPEN
+    Avo: AVO
+    Deni: DENI
+    Iraimbilanja: IRAIMBILANJA
+    Tambala: TAMBALA
+    Laari: LAARI
+    Khoums: KHOUMS
+    Ban: BAN
+    Möngö: MONGO
+    Pya: PYA
+    Kobo: KOBO
+    Kuruş: KURUS
+    Baisa: BAISA
+    Centésimo: CENTESIMO
+    Toea: TOEA
+    Sentimo: SENTIMO
+    Grosz: GROSZ
+    Sene: SENE
+    Halala: HALALA
+    Para: PARA
+    Öre: ORE
+    Diram: DIRAM
+    Satang: SATANG
+    Seniti: SENITI
+    Millime: MILLIME
+    Tennesi: TENNESI
+    Kopiyka: KOPIYKA
+    Tiyin: TIYIN
+    Hào: HAO
+    Ngwee: NGWEE
+CompoundUnitConnectorRegex: !simpleRegex
+    def: (?<spacer>and)
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
@@ -501,7 +770,7 @@ AmbiguousDimensionUnitList: !list
     - \"
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
-  def: (?<=(\s|^|\W))
+  def: (?<=(\s|^))
 BuildSuffix: !simpleRegex
   def: (?=(\s|\W|$))
 #LengthExtractorConfiguration

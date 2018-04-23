@@ -250,6 +250,7 @@ class FrenchNumericWithUnit:
                                ('Fen', 'fen'),
                                ('Jiao', 'jiao'),
                                ('Mark Finlandais', 'marks finlandais|mark finlandais|fim|mark')])
+    CompoundUnitConnectorRegex = f'(?<spacer>[^.])'
     CurrencyPrefixList = dict([('Dollar', '$'),
                                ('Dollar États-Unis', '$us|usd|us$'),
                                ('Dollar Caraïbes orientales', 'xcd|$ec'),

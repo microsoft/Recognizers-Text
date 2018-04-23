@@ -27,9 +27,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ConjunctionRegex { get; }
 
-        Regex InExactNumberRegex { get; }
+        Regex InexactNumberRegex { get; }
 
-        Regex InExactNumberUnitRegex { get; }
+        Regex InexactNumberUnitRegex { get; }
 
         Regex DurationUnitRegex { get; }
 

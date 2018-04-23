@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SubType = "subType";
 
         // Comment - internal tag used during entity processing, never exposed to users. 
-        // Tags are filtered out in BaseMergedParser DateTimeResolution()
+        // Tags are filtered out in BaseMergedDateTimeParser DateTimeResolution()
         public const string Comment = "Comment";
         // AmPm time representation for time parser
         public const string Comment_AmPm = "ampm";

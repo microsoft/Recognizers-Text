@@ -45,6 +45,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SpecialDayRegex = 
             new Regex(DateTimeDefinitions.SpecialDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecialDayWithNumRegex = 
+            new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex DateUnitRegex = 
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

@@ -1,0 +1,7 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Base-Hashtag.yaml";
+	this.Language = null;
+	this.ClassName = "BaseHashtag";
+#>
+<#@ include file=".\CommonDefinitions.ttinclude"#>

@@ -4,7 +4,11 @@ var SupportedCultures = require('./cultures.js');
 
 var modelFunctions = {
     'PhoneNumberModel': (input, culture, options) => Recognizer.recognizePhoneNumber(input, culture, options),
-    'IpAddressModel': (input, culture, options) => Recognizer.recognizeIpAddress(input, culture, options)
+    'IpAddressModel': (input, culture, options) => Recognizer.recognizeIpAddress(input, culture, options),
+    'MentionModel': (input, culture, options) => Recognizer.recognizeMention(input, culture, options),
+    'HashtagModel': (input, culture, options) => Recognizer.recognizeHashtag(input, culture, options),
+    'EmailModel': (input, culture, options) => Recognizer.recognizeEmail(input, culture, options),
+    'URLModel': (input, culture, options) => Recognizer.recognizeURL(input, culture, options),
 };
 
 module.exports = function getSequenceTestRunner(config) {

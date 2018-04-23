@@ -53,6 +53,7 @@ export namespace PortugueseDateTime {
 	export const LastDateRegex = `\\b(([uú]ltim[ao])\\s*${WeekDayRegex})|(${WeekDayRegex}(\\s+(([nd]?es[st]a|na|da)\\s+([uú]ltima\\s+)?semana)))\\b`;
 	export const NextDateRegex = `\\b(((pr[oó]xim[oa]|seguinte)\\s*)${WeekDayRegex})|(${WeekDayRegex}(\\s+(da\\s+)?(pr[oó]xima|seguinte)?(\\s*semana\\s+seguinte|\\s*semana)?))\\b`;
 	export const SpecialDayRegex = `\\b((d?o\\s+)?(dia\\s+antes\\s+de\\s+ontem|antes\\s+de\\s+ontem|anteontem)|((d?o\\s+)?(dia\\s+|depois\\s+|dia\\s+depois\\s+)?de\\s+amanh[aã])|(o\\s)?dia\\s+seguinte|(o\\s)?pr[oó]ximo\\s+dia|(o\\s+)?[uú]ltimo\\s+dia|ontem|amanh[ãa]|hoje)|(do\\s+dia$)\\b`;
+	export const SpecialDayWithNumRegex = `^[.]`;
 	export const ForTheRegex = `^[.]`;
 	export const WeekDayAndDayOfMonthRegex = `^[.]`;
 	export const WeekDayOfMonthRegex = `(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
@@ -130,8 +131,8 @@ export namespace PortugueseDateTime {
 	export const AnUnitRegex = `\\b(um(a)?)\\s+${UnitRegex}`;
 	export const AllRegex = `\\b(?<all>tod[oa]?\\s+(o|a)\\s+(?<unit>ano|m[êe]s|semana|dia))\\b`;
 	export const HalfRegex = `\\b(?<half>mei[oa]\\s+(?<unit>ano|m[êe]s|semana|dia|hora))\\b`;
-	export const InExactNumberRegex = `\\b(poucos|pouco|algum|alguns|v[áa]rios)\\b`;
-	export const InExactNumberUnitRegex = `\\b(poucos|pouco|algum|alguns|v[áa]rios)\\s+${UnitRegex}`;
+	export const InexactNumberRegex = `\\b(poucos|pouco|algum|alguns|v[áa]rios)\\b`;
+	export const InexactNumberUnitRegex = `\\b(poucos|pouco|algum|alguns|v[áa]rios)\\s+${UnitRegex}`;
 	export const HolidayRegex1 = `\\b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia (de|de los) presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\\s+(d[eo]?\\s+)?(${FullYearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b`;
 	export const HolidayRegex2 = `\\b(?<holiday>(dia( d[eoa]s?)? )?(martin luther king|todos os santos|trabalho|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia|trabalhador|trabalho))(\\s+(d[eo]?\\s+)?(${FullYearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b`;
 	export const HolidayRegex3 = `\\b(?<holiday>(dia( d[eoa]s?)? )(trabalhador|trabalhadores|trabalho|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor|professores))(\\s+(d[eo]?\\s+)?(${FullYearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b`;

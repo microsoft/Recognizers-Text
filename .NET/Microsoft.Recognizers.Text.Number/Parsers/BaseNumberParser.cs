@@ -276,20 +276,19 @@ namespace Microsoft.Recognizers.Text.Number
             };
 
             var resultText = extResult.Text.ToLower();
-            if (resultText.Contains($@"{Config.FractionMarkerToken}"))
+            if (Config.FractionPrepositionRegex.IsMatch(resultText))
             {
-                var overIndex = resultText.IndexOf(Config.FractionMarkerToken, StringComparison.Ordinal);
-                var smallPart = resultText.Substring(0, overIndex).Trim();
-                var bigPart = resultText.Substring(overIndex + Config.FractionMarkerToken.Length,
-                    resultText.Length - overIndex - Config.FractionMarkerToken.Length).Trim();
+                var match = Config.FractionPrepositionRegex.Match(resultText);
+                var numerator = match.Groups["numerator"].Value;
+                var denominator = match.Groups["denominator"].Value;
 
-                var smallValue = char.IsDigit(smallPart[0])
-                    ? GetDigitalValue(smallPart, 1)
-                    : GetIntValue(GetMatches(smallPart));
+                var smallValue = char.IsDigit(numerator[0])
+                    ? GetDigitalValue(numerator, 1)
+                    : GetIntValue(GetMatches(numerator));
 
-                var bigValue = char.IsDigit(bigPart[0])
-                    ? GetDigitalValue(bigPart, 1)
-                    : GetIntValue(GetMatches(bigPart));
+                var bigValue = char.IsDigit(denominator[0])
+                    ? GetDigitalValue(denominator, 1)
+                    : GetIntValue(GetMatches(denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -355,6 +354,11 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                     splitIndex++;
                     break;
+                }
+
+                if (splitIndex < 0)
+                {
+                    splitIndex = 0;
                 }
 
                 var fracPart = new List<string>();

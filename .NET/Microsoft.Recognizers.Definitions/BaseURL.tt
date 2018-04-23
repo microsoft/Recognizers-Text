@@ -1,0 +1,7 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Base-URL.yaml";
+	this.Language = null;
+	this.ClassName = "BaseURL";
+#>
+<#@ include file=".\CommonDefinitions.ttinclude"#>

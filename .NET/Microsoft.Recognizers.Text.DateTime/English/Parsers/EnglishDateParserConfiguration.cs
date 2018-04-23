@@ -34,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -94,6 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateRegexes = EnglishDateExtractorConfiguration.DateRegexList;
             OnRegex = EnglishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = EnglishDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = EnglishDateExtractorConfiguration.NextDateRegex;
             ThisRegex = EnglishDateExtractorConfiguration.ThisRegex;
             LastRegex = EnglishDateExtractorConfiguration.LastDateRegex;

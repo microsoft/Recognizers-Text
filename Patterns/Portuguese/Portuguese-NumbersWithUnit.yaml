@@ -504,6 +504,8 @@ CurrencySuffixList: !dictionary
 #Zâmbia
     Kwacha zambiano: kwacha zambiano|kwacha zambianos|kwachas zambianos|zmw
     Ngwee zambiano: ngwee zambiano|ngwee zambianos|ngwees zambianos
+CompoundUnitConnectorRegex: !simpleRegex
+    def: (?<spacer>[^.])
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:

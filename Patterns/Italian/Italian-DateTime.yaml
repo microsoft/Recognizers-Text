@@ -107,6 +107,9 @@ NextDateRegex: !nestedRegex
 SpecialDayRegex: !nestedRegex
   def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?{RelativeRegex}\s+day)|yesterday|tomorrow|tmr|today)\b
   references: [ RelativeRegex]
+SpecialDayWithNumRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+day))\b
   references: [ RelativeRegex]
@@ -375,11 +378,11 @@ EveningStartEndRegex: !simpleRegex
   def: (^(evening))|((evening)$)
 NightStartEndRegex: !simpleRegex
   def: (^(overnight|tonight|night))|((overnight|tonight|night)$)
-InExactNumberRegex: !simpleRegex
+InexactNumberRegex: !simpleRegex
   def: \b(a few|few|some|several)\b
-InExactNumberUnitRegex: !nestedRegex
-  def: ({InExactNumberRegex})\s+({DurationUnitRegex})
-  references: [InExactNumberRegex, DurationUnitRegex]
+InexactNumberUnitRegex: !nestedRegex
+  def: ({InexactNumberRegex})\s+({DurationUnitRegex})
+  references: [InexactNumberRegex, DurationUnitRegex]
 RelativeTimeUnitRegex: !nestedRegex
   def: ((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
   references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, TimeUnitRegex, RestrictedTimeUnitRegex]

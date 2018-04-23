@@ -107,6 +107,9 @@ NextDateRegex: !nestedRegex
   references: [ WeekDayRegex ]
 SpecialDayRegex: !simpleRegex
   def: \b((d?o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((d?o\s+)?(dia\s+|depois\s+|dia\s+depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|ontem|amanh[ãa]|hoje)|(do\s+dia$)\b
+SpecialDayWithNumRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 ForTheRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -343,9 +346,9 @@ AllRegex: !simpleRegex
   def: \b(?<all>tod[oa]?\s+(o|a)\s+(?<unit>ano|m[êe]s|semana|dia))\b
 HalfRegex: !simpleRegex
   def: \b(?<half>mei[oa]\s+(?<unit>ano|m[êe]s|semana|dia|hora))\b
-InExactNumberRegex: !simpleRegex
+InexactNumberRegex: !simpleRegex
   def: \b(poucos|pouco|algum|alguns|v[áa]rios)\b
-InExactNumberUnitRegex: !nestedRegex
+InexactNumberUnitRegex: !nestedRegex
   def: \b(poucos|pouco|algum|alguns|v[áa]rios)\s+{UnitRegex}
   references: [ UnitRegex ]
 # PortugueseHolidayExtractorConfiguration

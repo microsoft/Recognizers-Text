@@ -1,0 +1,108 @@
+[
+  {
+    "Input": "@BotSys, let's go for the meeting.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@BotSys",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@BotSys"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@Alice, please respond.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Alice",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Alice"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You can contact @Bob for more information",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Bob",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Bob"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This is @Carol_2.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Carol_2",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Carol_2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@DaveDaveDaveDaveDave can be longer",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@DaveDaveDaveDaveDave",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@DaveDaveDaveDaveDave"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Carol",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Carol"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hi, @Eve, you can find my CV at https://frank.website.com/CV/#cite_2",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Eve",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Eve"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "@! is not a valid mention",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "use @ before username is not a mention",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "abc@efg.com, which is an email rather than a mention",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  }
+]

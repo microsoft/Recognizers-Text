@@ -227,6 +227,7 @@ class ChineseNumericWithUnit:
                                ('Jiao', '毛钱|毛|角钱|角'),
                                ('Finnish markka', '芬兰马克'),
                                ('Penni', '盆尼')])
+    CompoundUnitConnectorRegex = f'(?<spacer>又|再)'
     CurrencyPrefixList = dict([('Dollar', '$'),
                                ('United States dollar', 'us$'),
                                ('British Virgin Islands dollar', 'bvi$'),

@@ -1760,7 +1760,7 @@
       "Text": "Friday afternoon between 1PM and 4 PM",
       "Type": "datetimerange",
       "Value": {
-        "Timex": "XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H",
+        "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
         "FutureResolution": {
           "startDateTime": "2017-11-17 13:00:00",
           "endDateTime": "2017-11-17 16:00:00"
@@ -1785,7 +1785,7 @@
       "Text": "in the afternoon on Friday between 1PM and 4 PM",
       "Type": "datetimerange",
       "Value": {
-        "Timex": "XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H",
+        "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
         "FutureResolution": {
           "startDateTime": "2017-11-17 13:00:00",
           "endDateTime": "2017-11-17 16:00:00"
@@ -2157,6 +2157,31 @@
         "PastResolution": {
           "startDateTime": "2016-11-07 16:12:00",
           "endDateTime": "2016-11-07 21:12:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I will be back monday 8 to 9.",
+  "Context": {
+    "ReferenceDateTime": "2018-04-19T08:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "monday 8 to 9",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+        "FutureResolution": {
+          "startDateTime": "2018-04-23 08:00:00",
+          "endDateTime": "2018-04-23 09:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2018-04-16 08:00:00",
+          "endDateTime": "2018-04-16 09:00:00"
         }
       }
     }

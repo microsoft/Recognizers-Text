@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
 using DateObject = System.DateTime;
@@ -16,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
 
-        private static readonly IParser IntegerParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
+        private static readonly IParser IntegerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
 
         public static readonly Dictionary<string, Func<int, DateObject>> FixedHolidaysDict = new Dictionary<string, Func<int, DateObject>>
         {

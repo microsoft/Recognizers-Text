@@ -60,6 +60,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string LastDateRegex = $@"\b(({WeekDayRegex}(\s*(de)?\s*la\s*semaine\s+{PastSuffixRegex}))|({WeekDayRegex}(\s+{PastSuffixRegex})))\b";
 		public static readonly string NextDateRegex = $@"\b(({WeekDayRegex}(\s+{NextSuffixRegex}))|({WeekDayRegex}(\s*(de)?\s*la\s*semaine\s+{NextSuffixRegex})))\b";
 		public const string SpecialDayRegex = @"\b(avant[\s|-]hier|apr[eè]s(-demain|\s*demain)|(le\s)?jour suivant|(le\s+)?dernier jour|hier|lendemain|demain|de la journ[ée]e|aujourd'hui)\b";
+		public const string SpecialDayWithNumRegex = @"^[.]";
 		public const string StrictWeekDay = @"\b(?<weekday>Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)s?\b";
 		public const string SetWeekDayRegex = @"\b(?<prefix>le\s+)?(?<weekday>matin|matin[ée]e|apres-midi|soir[ée]e|soir|Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi)s\b";
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
@@ -177,8 +178,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string AfternoonStartEndRegex = @"(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)";
 		public const string EveningStartEndRegex = @"(^(soir[ée]e|soir))|((soir[ée]e|soir)$)";
 		public const string NightStartEndRegex = @"(^(nuit))|((nuit)$)";
-		public const string InExactNumberRegex = @"\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\b";
-		public static readonly string InExactNumberUnitRegex = $@"({InExactNumberRegex})\s+({DurationUnitRegex})";
+		public const string InexactNumberRegex = @"\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\b";
+		public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly string RelativeTimeUnitRegex = $@"(((({ThisPrefixRegex})?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))";
 		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({ThisPrefixRegex})\s+)?\b({DurationUnitRegex})(\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\s+({RestrictedTimeUnitRegex}))";
 		public const string ConnectorRegex = @"^(,|pour|t|vers)$";

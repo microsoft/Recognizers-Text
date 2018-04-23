@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
 using DateObject = System.DateTime;
@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             integerExtractor = new IntegerExtractor();
             ordinalExtractor = new OrdinalExtractor();
             durationExtractor = new DurationExtractorChs();
-            numberParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
+            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
         }
         
         public ParseResult Parse(ExtractResult extResult)

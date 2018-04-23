@@ -36,7 +36,7 @@ export namespace EnglishDateTime {
 	export const MonthFrontSimpleCasesRegex = `\\b((from|between)\\s+)?${MonthSuffixRegex}\\s+((from|between)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
-	export const MonthWithYear = `\\b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\\s+of)?\\s+(${YearRegex}|(?<order>next|last|this)\\s+year))`;
+	export const MonthWithYear = `\\b((${EngMonthRegex},?(\\s+of)?\\s+(${YearRegex}|(?<order>next|last|this)\\s+year))|((${YearRegex}|(?<order>next|last|this)\\s+year)\\s*,?\\s+${EngMonthRegex}))\\b`;
 	export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${RelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|(${RelativeRegex}\\s+)?(weekend|week|month|year)(\\s+${AfterNextSuffixRegex})?)\\b`;
 	export const MonthNumWithYear = `(${YearNumRegex}[/\\-\\.]${MonthNumRegex})|(${MonthNumRegex}[/\\-]${YearNumRegex})`;
 	export const WeekOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex})`;
@@ -64,7 +64,7 @@ export namespace EnglishDateTime {
 	export const AmbiguousMonthP0Regex = `\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b`;
 	export const AmDescRegex = `(am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b)`;
 	export const PmDescRegex = `(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p m\\b)`;
-	export const DateYearRegex = `(?<year>((1\\d|20)\\d{2})|2100|((9\\d|0\\d|1\\d|2\\d)(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex})))))`;
+	export const DateYearRegex = `(?<year>((1\\d|20)\\d{2})|2100|((9\\d|0\\d|1\\d|2\\d)\\b(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex})))))`;
 	export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
 	export const OnRegex = `(?<=\\bon\\s+)(${DayRegex}s?)\\b`;
 	export const RelaxedOnRegex = `(?<=\\b(on|at|in)\\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|22nd|23rd|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\\b`;
@@ -72,6 +72,7 @@ export namespace EnglishDateTime {
 	export const LastDateRegex = `\\b(${PastPrefixRegex}(\\s*week)?\\s+${WeekDayRegex})|(${WeekDayRegex}(\\s+last\\s*week))\\b`;
 	export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week(\\s*on)?)?\\s+${WeekDayRegex})|((on\\s+)?${WeekDayRegex}((\\s+of)?\\s+next\\s*week))\\b`;
 	export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|((the\\s+)?${RelativeRegex}\\s+day)|yesterday|tomorrow|tmr|today)\\b`;
+	export const SpecialDayWithNumRegex = `\\b((?<number>${WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b`;
 	export const RelativeDayRegex = `\\b(((the\\s+)?${RelativeRegex}\\s+day))\\b`;
 	export const SetWeekDayRegex = `\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)s\\b`;
 	export const WeekDayOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
@@ -183,8 +184,8 @@ export namespace EnglishDateTime {
 	export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;
 	export const EveningStartEndRegex = `(^(evening))|((evening)$)`;
 	export const NightStartEndRegex = `(^(overnight|tonight|night))|((overnight|tonight|night)$)`;
-	export const InExactNumberRegex = `\\b(a few|few|some|several)\\b`;
-	export const InExactNumberUnitRegex = `(${InExactNumberRegex})\\s+(${DurationUnitRegex})`;
+	export const InexactNumberRegex = `\\b(a few|few|some|several|(?<NumTwoTerm>(a\\s+)?couple of))\\b`;
+	export const InexactNumberUnitRegex = `(${InexactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `(((${NextPrefixRegex}|${PastPrefixRegex}|${ThisPrefixRegex})\\s+(${TimeUnitRegex}))|((the|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const RelativeDurationUnitRegex = `(((?<=(${NextPrefixRegex}|${PastPrefixRegex}|${ThisPrefixRegex})\\s+)(${DurationUnitRegex}))|((the|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ConnectorRegex = `^(-|,|for|t|around)$`;
@@ -205,7 +206,7 @@ export namespace EnglishDateTime {
 	export const MiddlePauseRegex = `\\s*(,)\\s*`;
 	export const DurationConnectorRegex = `^\\s*(?<connector>\\s+|and|,)\\s*$`;
 	export const PrefixArticleRegex = `\\bthe\\s+`;
-	export const OrRegex = `\\s*(or)\\s*`;
+	export const OrRegex = `\\s*((\\b|,\\s*)(or|and)\\b|,)\\s*`;
 	export const YearPlusNumberRegex = `\\b(Year\\s+((?<year>(\\d{3,4}))|${FullTextYearRegex}))\\b`;
 	export const NumberAsTimeRegex = `\\b(${EngTimeRegex}|${PeriodHourNumRegex}|${BaseDateTime.HourRegex})\\b`;
 	export const TimeBeforeAfterRegex = `\\b(((?<=\\b(before|no later than|by|after)\\s+)(${EngTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;

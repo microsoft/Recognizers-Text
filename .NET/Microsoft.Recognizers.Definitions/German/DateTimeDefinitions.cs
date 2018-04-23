@@ -63,6 +63,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string LastDateRegex = $@"({{LastPrefixRegex}}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{{LastPrefixRegex}}\s*woche))";
 		public static readonly string NextDateRegex = $@"({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))";
 		public static readonly string SpecialDayRegex = $@"(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+tag)|gestern|morgen|heute)";
+		public const string SpecialDayWithNumRegex = @"^[.]";
 		public static readonly string RelativeDayRegex = $@"((((der|dem|den|des)\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
 		public const string SetWeekDayRegex = @"\b(?<prefix>(am|an dem|in der)\s+)?(?<weekday>morgen|nachmittag|abend|nacht|sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s)?\b";
 		public static readonly string WeekDayOfMonthRegex = $@"\b(?<wom>((dem|der|des|am|an dem)\s+)?(?<cardinal>erst(er|en|e)|1.|zweit(er|en|e)|2.|dritt(er|en|e)|3.|viert(er|en|e)|4.|fünft(er|en|e)|5.|letzt(er|en|e))\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b";
@@ -176,8 +177,8 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AfternoonStartEndRegex = @"(^(nachmittag(s)?))|((nachmittag(s)?)$)";
 		public const string EveningStartEndRegex = @"(^(abend(s)?))|((abend(s)?)$)";
 		public const string NightStartEndRegex = @"(^(über nacht|heute nacht|nacht(s)?|nächtens|in der nacht))|((über nacht|heute nacht|nacht(s)?|nächtens)$)";
-		public const string InExactNumberRegex = @"\b((ein )?paar|einige|wenige|einige wenige)\b";
-		public static readonly string InExactNumberUnitRegex = $@"({InExactNumberRegex})\s+({DurationUnitRegex})";
+		public const string InexactNumberRegex = @"\b((ein )?paar|einige|wenige|einige wenige)\b";
+		public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly string RelativeTimeUnitRegex = $@"((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s*({TimeUnitRegex})))";
 		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s*)({DurationUnitRegex})))";
 		public const string ConnectorRegex = @"^(-|,|für|t|gegen)$";

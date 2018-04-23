@@ -51,6 +51,7 @@ export namespace FrenchDateTime {
 	export const LastDateRegex = `\\b((${WeekDayRegex}(\\s*(de)?\\s*la\\s*semaine\\s+${PastSuffixRegex}))|(${WeekDayRegex}(\\s+${PastSuffixRegex})))\\b`;
 	export const NextDateRegex = `\\b((${WeekDayRegex}(\\s+${NextSuffixRegex}))|(${WeekDayRegex}(\\s*(de)?\\s*la\\s*semaine\\s+${NextSuffixRegex})))\\b`;
 	export const SpecialDayRegex = `\\b(avant[\\s|-]hier|apr[eè]s(-demain|\\s*demain)|(le\\s)?jour suivant|(le\\s+)?dernier jour|hier|lendemain|demain|de la journ[ée]e|aujourd'hui)\\b`;
+	export const SpecialDayWithNumRegex = `^[.]`;
 	export const StrictWeekDay = `\\b(?<weekday>Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)s?\\b`;
 	export const SetWeekDayRegex = `\\b(?<prefix>le\\s+)?(?<weekday>matin|matin[ée]e|apres-midi|soir[ée]e|soir|Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi)s\\b`;
 	export const WeekDayOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
@@ -168,8 +169,8 @@ export namespace FrenchDateTime {
 	export const AfternoonStartEndRegex = `(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)`;
 	export const EveningStartEndRegex = `(^(soir[ée]e|soir))|((soir[ée]e|soir)$)`;
 	export const NightStartEndRegex = `(^(nuit))|((nuit)$)`;
-	export const InExactNumberRegex = `\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\\b`;
-	export const InExactNumberUnitRegex = `(${InExactNumberRegex})\\s+(${DurationUnitRegex})`;
+	export const InexactNumberRegex = `\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\\b`;
+	export const InexactNumberUnitRegex = `(${InexactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `((((${ThisPrefixRegex})?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const RelativeDurationUnitRegex = `(((?<=(${ThisPrefixRegex})\\s+)?\\b(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ConnectorRegex = `^(,|pour|t|vers)$`;
