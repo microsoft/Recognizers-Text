@@ -29,10 +29,30 @@ namespace Microsoft.Recognizers.Text.Sequence
                 },
                 {
                     new Regex(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US
+                },
+                {
+                    new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL
                 }
             };
 
             Regexes = regexes.ToImmutableDictionary();
+        }
+
+        public override List<ExtractResult> Extract(string text)
+        {
+            var ers = base.Extract(text);
+            foreach (var er in ers)
+            {
+                if (er.Start != 0)
+                {
+                    char ch = text[(int)(er.Start - 1)];
+                    if (ch == '-' || ch == '.')
+                    {
+                        ers.Remove(er);
+                    }
+                }
+            }
+            return ers;
         }
     }
 }
