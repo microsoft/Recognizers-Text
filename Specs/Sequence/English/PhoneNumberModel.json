@@ -958,5 +958,40 @@
         }
       }
     ]
+  },
+  {
+    "Input": "-2208960000 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "-77.034040723966 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "0.000000012 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "P0-001-000016155-9 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "16/04/2010 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "16-04-2010 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "2009/2010 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
   }
 ]

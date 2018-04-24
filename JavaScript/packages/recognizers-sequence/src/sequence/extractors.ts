@@ -77,6 +77,17 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.UkPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK)
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.GermanyPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GERMANY)
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US)
+            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL)
+    }
+    extract(source: string): Array<ExtractResult> {
+        let ers = super.extract(source)
+        let ret = new Array<ExtractResult>()
+        for (let er of ers) {
+            if (er.start === 0 || (source[er.start - 1] !== '-' && source[er.start - 1] !== '.')) {
+                ret.push(er); 
+            }
+        }
+        return ret;
     }
 }
 
