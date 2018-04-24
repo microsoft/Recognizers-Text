@@ -993,5 +993,15 @@
     "Input": "2009/2010 doesn't look like a phone number.",
     "NotSupportedByDesign": "python",
     "Results": []
+  },
+  {
+    "Input": "http://twitter.com/#!/mstrohm/stus/87057367204202896 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "T005-2333-100731-SW-2 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
   }
 ]

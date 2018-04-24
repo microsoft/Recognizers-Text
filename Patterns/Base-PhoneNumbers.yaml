@@ -5,7 +5,7 @@ GeneralPhoneNumberRegex: !simpleRegex
 BrazilPhoneNumberRegex: !simpleRegex
   def: (((\B\(\s?))\d{2,3}(\s?\))|(\b\d{2,3}))\s?\d{4,5}-?\d{3,5}\b
 UkPhoneNumberRegex: !simpleRegex
-  def: (((\b(00)|\B\+)\s?)?\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3})\b)
+  def: (((\b(00)|\B\+)\s?)?\b\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3})\b)
 GermanyPhoneNumberRegex: !simpleRegex
   def: (\b(\d{4}\s?[-/]?(\s?\d){7,8})\b)
 USPhoneNumberRegex: !simpleRegex
