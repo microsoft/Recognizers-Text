@@ -1698,4 +1698,30 @@
     }
   ]
 }
+,
+{
+  "Input": "1 234 567",
+  "Results": [
+    {
+      "Text": "1 234 567",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1234567"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "40 000",
+  "Results": [
+    {
+      "Text": "40 000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000"
+      }
+    }
+  ]
+}
 ]

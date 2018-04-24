@@ -78,6 +78,9 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_COMMA, placeholder)),
                 val='IntegerNum'),
             ReVal(
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_BLANK, placeholder)),
+                val='IntegerNum'),
+            ReVal(
                 re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.RoundNumberIntegerRegexWithLocks),
                 val='IntegerNum'),
             ReVal(

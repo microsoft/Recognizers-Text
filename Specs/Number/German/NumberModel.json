@@ -625,5 +625,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "1 234 567",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "1 234 567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "40 000",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        }
+      }
+    ]
   }
 ]

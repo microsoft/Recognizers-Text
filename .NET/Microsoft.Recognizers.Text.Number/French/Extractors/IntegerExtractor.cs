@@ -43,6 +43,9 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {
                     new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerFr"
+                },
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum"
                 }
             }.ToImmutableDictionary();
         }

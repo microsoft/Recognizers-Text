@@ -496,13 +496,13 @@ class BaseNumberParser(Parser):
         scale: Decimal = Decimal(10)
         dot: bool = False
         negative: bool = False
-        fraction: bool = False
+        fraction: bool = '/' in digitstr
 
         call_stack: List[Decimal] = list()
 
         for c in digitstr:
-            if c == '/':
-                fraction = True
+            if not fraction and (c == self.config.non_decimal_separator_char or c == ' '):
+                continue
 
             if c == ' ' or c == '/':
                 call_stack.append(tmp)

@@ -77,6 +77,10 @@ export class FrenchIntegerExtractor extends BaseNumberExtractor {
                 value: "IntegerNum"
             },
             {
+                regExp: this.generateLongFormatNumberRegexes(LongFormatType.integerNumBlank, placeholder),
+                value: "IntegerNum"
+            },
+            {
                 regExp: RegExpUtility.getSafeRegExp(FrenchNumeric.RoundNumberIntegerRegexWithLocks),
                 value: "IntegerNum"
             },

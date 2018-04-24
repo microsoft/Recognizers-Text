@@ -47,6 +47,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                               RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerEng"
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum"
                 }
             };
 

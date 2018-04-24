@@ -72,6 +72,9 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
                 re=self._generate_format_regex(LongFormatMode.INTEGER_DOT, placeholder),
                 val='IntegerNum'),
             ReVal(
+                re=self._generate_format_regex(LongFormatMode.INTEGER_BLANK, placeholder),
+                val='IntegerNum'),
+            ReVal(
                 re=SpanishNumeric.RoundNumberIntegerRegexWithLocks,
                 val='IntegerNum'),
             ReVal(
