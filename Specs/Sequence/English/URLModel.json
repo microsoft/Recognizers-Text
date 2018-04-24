@@ -276,4 +276,18 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "['http://twitter.com/#!/KCGtechnoly/status/9042443475840', None]",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "http://twitter.com/#!/KCGtechnoly/status/9042443475840",
+        "TypeName": "url",
+        "Resolution": {
+          "value": "http://twitter.com/#!/KCGtechnoly/status/9042443475840"
+        }
+      }
+    ]
+  }
 ]
