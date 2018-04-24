@@ -79,6 +79,9 @@ class PortugueseIntegerExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_DOT, placeholder)),
                 val='IntegerNum'),
             ReVal(
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_BLANK, placeholder)),
+                val='IntegerNum'),
+            ReVal(
                 re=RegExpUtility.get_safe_reg_exp(PortugueseNumeric.RoundNumberIntegerRegexWithLocks),
                 val='IntegerNum'),
             ReVal(

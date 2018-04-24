@@ -81,6 +81,10 @@ export class EnglishIntegerExtractor extends BaseNumberExtractor {
                 value: "IntegerNum"
             },
             {
+                regExp: this.generateLongFormatNumberRegexes(LongFormatType.integerNumBlank, placeholder),
+                value: "IntegerNum"
+            },
+            {
                 regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.RoundNumberIntegerRegexWithLocks, "gis"),
                 value: "IntegerNum"
             },

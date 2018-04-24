@@ -591,14 +591,14 @@ export class BaseNumberParser implements IParser {
         let scale = new BigNumber(10);
         let dot = false;
         let isNegative = false;
-        let isFrac = false;
+        let isFrac = digitStr.includes('/');
 
         let calStack = new Array<BigNumber>();
 
         for (let i = 0; i < digitStr.length; i++) {
             let ch = digitStr[i];
-            if (ch === '/') {
-                isFrac = true;
+            if (!isFrac && (ch === this.config.nonDecimalSeparatorChar || ch === ' ')) {
+                continue;
             }
 
             if (ch === ' ' || ch === '/') {

@@ -47,6 +47,8 @@ namespace Microsoft.Recognizers.Text.Number.German
                               RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerGer"
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum"
                 }
             };
 

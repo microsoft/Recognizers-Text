@@ -77,6 +77,10 @@ export class PortugueseIntegerExtractor extends BaseNumberExtractor {
                 value: "IntegerNum"
             },
             {
+                regExp: this.generateLongFormatNumberRegexes(LongFormatType.integerNumBlank, placeholder),
+                value: "IntegerNum"
+            },
+            {
                 regExp: RegExpUtility.getSafeRegExp(PortugueseNumeric.RoundNumberIntegerRegexWithLocks),
                 value: "IntegerNum"
             },

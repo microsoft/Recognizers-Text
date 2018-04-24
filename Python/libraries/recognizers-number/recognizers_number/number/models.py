@@ -17,6 +17,7 @@ LongFormatType = namedtuple('LongFormatType', ['thousands_mark', 'decimals_mark'
 class LongFormatMode:
     INTEGER_COMMA = LongFormatType(thousands_mark=',', decimals_mark=None)
     INTEGER_DOT = LongFormatType(thousands_mark='.', decimals_mark=None)
+    INTEGER_BLANK = LongFormatType(thousands_mark=' ', decimals_mark=None)
     DOUBLE_COMMA_DOT = LongFormatType(thousands_mark=',', decimals_mark='.')
     DOUBLE_DOT_COMMA = LongFormatType(thousands_mark='.', decimals_mark=',')
 

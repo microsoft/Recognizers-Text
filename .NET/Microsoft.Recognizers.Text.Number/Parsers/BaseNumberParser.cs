@@ -670,10 +670,10 @@ namespace Microsoft.Recognizers.Text.Number
 
             var calStack = new Stack<double>();
 
-            for (var i = 0; i < digitStr.Count(); i++)
+            for (var i = 0; i < digitStr.Length; i++)
             {
                 var ch = digitStr[i];
-                if (!isFrac && ch == Config.NonDecimalSeparatorChar)
+                if (!isFrac && (ch == Config.NonDecimalSeparatorChar || ch == ' '))
                 {
                     continue;
                 }
