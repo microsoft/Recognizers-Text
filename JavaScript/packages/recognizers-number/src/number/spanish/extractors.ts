@@ -81,6 +81,10 @@ export class SpanishIntegerExtractor extends BaseNumberExtractor {
                 value: "IntegerNum"
             },
             {
+                regExp: this.generateLongFormatNumberRegexes(LongFormatType.integerNumNoBreakSpace, placeholder),
+                value: "IntegerNum"
+            },
+            {
                 regExp: RegExpUtility.getSafeRegExp(SpanishNumeric.RoundNumberIntegerRegexWithLocks),
                 value: "IntegerNum"
             },
@@ -139,6 +143,10 @@ export class SpanishDoubleExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: this.generateLongFormatNumberRegexes(LongFormatType.doubleNumDotComma, placeholder),
+                value: "DoubleNum"
+            },
+            {
+                regExp: this.generateLongFormatNumberRegexes(LongFormatType.doubleNumNoBreakSpaceComma, placeholder),
                 value: "DoubleNum"
             }
         );

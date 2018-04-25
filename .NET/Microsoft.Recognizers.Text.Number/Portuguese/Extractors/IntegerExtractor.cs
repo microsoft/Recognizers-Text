@@ -35,6 +35,10 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                     "IntegerNum"
                 },
                 {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder),
+                    "IntegerNum"
+                },
+                {
                     new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"

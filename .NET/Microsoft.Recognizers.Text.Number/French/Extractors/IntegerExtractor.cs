@@ -46,6 +46,9 @@ namespace Microsoft.Recognizers.Text.Number.French
                 },
                 {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum"
+                },
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum"
                 }
             }.ToImmutableDictionary();
         }

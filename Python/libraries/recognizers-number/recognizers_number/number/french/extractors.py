@@ -82,6 +82,9 @@ class FrenchIntegerExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_BLANK, placeholder)),
                 val='IntegerNum'),
             ReVal(
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_NO_BREAK_SPACE, placeholder)),
+                val='IntegerNum'),
+            ReVal(
                 re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.RoundNumberIntegerRegexWithLocks),
                 val='IntegerNum'),
             ReVal(
@@ -114,6 +117,9 @@ class FrenchDoubleExtractor(BaseNumberExtractor):
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_DOT_COMMA, placeholder)),
+                val='DoubleNum'),
+            ReVal(
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_NO_BREAK_SPACE_COMMA, placeholder)),
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(FrenchNumeric.DoubleWithMultiplierRegex),

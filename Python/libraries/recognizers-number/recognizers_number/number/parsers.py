@@ -501,7 +501,7 @@ class BaseNumberParser(Parser):
         call_stack: List[Decimal] = list()
 
         for c in digitstr:
-            if not fraction and (c == self.config.non_decimal_separator_char or c == ' '):
+            if not fraction and (c == self.config.non_decimal_separator_char or c == ' ' or c == ' '):
                 continue
 
             if c == ' ' or c == '/':

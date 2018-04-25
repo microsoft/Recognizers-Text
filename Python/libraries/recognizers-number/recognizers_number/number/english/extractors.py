@@ -81,6 +81,9 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_BLANK, placeholder)),
                 val='IntegerNum'),
             ReVal(
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_NO_BREAK_SPACE, placeholder)),
+                val='IntegerNum'),
+            ReVal(
                 re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.RoundNumberIntegerRegexWithLocks),
                 val='IntegerNum'),
             ReVal(
@@ -113,6 +116,9 @@ class EnglishDoubleExtractor(BaseNumberExtractor):
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_COMMA_DOT, placeholder)),
+                val='DoubleNum'),
+            ReVal(
+                re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.DOUBLE_NO_BREAK_SPACE_DOT, placeholder)),
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.DoubleWithMultiplierRegex),

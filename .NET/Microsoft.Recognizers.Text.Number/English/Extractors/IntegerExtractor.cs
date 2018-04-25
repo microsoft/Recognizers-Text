@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum"
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum"
                 }
             };
 
