@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 const timexConstraintsHelper = require('../src/timexConstraintsHelper.js');
-const { Time, Timex } = require('../index.js');
+const { Time, TimexProperty } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;

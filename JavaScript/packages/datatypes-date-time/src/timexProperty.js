@@ -6,7 +6,7 @@ const timexFormat = require('./timexFormat.js');
 const timexConvert = require('./timexConvert.js');
 const timexRelativeConvert = require('./timexRelativeConvert.js');
 
-class Timex {
+class TimexProperty {
     constructor (timex) {
         if (typeof timex === 'string') {
             timexParsing.parseString(timex, this);
@@ -35,7 +35,7 @@ class Timex {
     }
 
     static fromDate (date) {
-        return new Timex({
+        return new TimexProperty({
             year: date.getFullYear(),
             month: date.getMonth() + 1,
             dayOfMonth: date.getDate()
@@ -43,7 +43,7 @@ class Timex {
     }
     
     static fromDateTime (date) {
-        return new Timex({
+        return new TimexProperty({
             year: date.getFullYear(),
             month: date.getMonth() + 1,
             dayOfMonth: date.getDate(),
@@ -54,8 +54,8 @@ class Timex {
     }
     
     static fromTime (time) {
-        return new Timex(time);
+        return new TimexProperty(time);
     }
 }
 
-module.exports.Timex = Timex;
+module.exports.TimexProperty = TimexProperty;

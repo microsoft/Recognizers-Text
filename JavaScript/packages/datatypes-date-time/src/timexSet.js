@@ -1,10 +1,10 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
-const Timex = require('./timex.js').Timex;
+const TimexProperty = require('./timexProperty.js').TimexProperty;
 
 class TimexSet {
     constructor (timex) {
-        this.timex = new Timex(timex);
+        this.timex = new TimexProperty(timex);
     }
 }
 

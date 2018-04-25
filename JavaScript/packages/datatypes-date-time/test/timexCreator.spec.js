@@ -4,7 +4,7 @@ const chai = require('chai');
 const timexCreator = require('../src/timexCreator.js');
 const timexFormat = require('../src/timexFormat.js');
 const timexDateHelpers = require('../src/timexDateHelpers.js');
-const { Timex } = require('../index.js');
+const { TimexProperty } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;
@@ -60,7 +60,7 @@ describe('No Network', () => {
                 });
                 it('nextWeek', () => {
                     const start = timexDateHelpers.dateOfNextDay(1, new Date());
-                    const expected = timexFormat.format(Object.assign(Timex.fromDate(start), { days: 7 }));
+                    const expected = timexFormat.format(Object.assign(TimexProperty.fromDate(start), { days: 7 }));
                     timexCreator.nextWeek().should.equal(expected);
                 });
                 it('nextWeek (today)', () => {
@@ -69,7 +69,7 @@ describe('No Network', () => {
                 it('lastWeek', () => {
                     const start = timexDateHelpers.dateOfLastDay(1, new Date());
                     start.setDate(start.getDate() - 7);
-                    const expected = timexFormat.format(Object.assign(Timex.fromDate(start), { days: 7 }));
+                    const expected = timexFormat.format(Object.assign(TimexProperty.fromDate(start), { days: 7 }));
                     timexCreator.lastWeek().should.equal(expected);
                 });
                 it('lastWeek (today)', () => {

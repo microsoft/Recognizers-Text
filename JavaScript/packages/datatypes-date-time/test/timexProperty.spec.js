@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
 const chai = require('chai');
-const { Time, Timex } = require('../index.js');
+const { Time, TimexProperty } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;
@@ -12,19 +12,19 @@ describe('No Network', () => {
         describe('Timex', () => {
             describe('making from JavaScript Date', () => {
                 it('fromDate', () => {
-                    Timex.fromDate(new Date(2017, 11, 5)).timex.should.equal('2017-12-05');
+                    TimexProperty.fromDate(new Date(2017, 11, 5)).timex.should.equal('2017-12-05');
                 });
                 it('fromDateTime', () => {
-                    Timex.fromDateTime(new Date(2017, 11, 5, 23, 57, 35)).timex.should.equal('2017-12-05T23:57:35');
+                    TimexProperty.fromDateTime(new Date(2017, 11, 5, 23, 57, 35)).timex.should.equal('2017-12-05T23:57:35');
                 });
             });
             describe('making from Time class', () => {
                 it('fromTime', () => {
-                    Timex.fromTime(new Time(23, 59, 30)).timex.should.equal('T23:59:30');
+                    TimexProperty.fromTime(new Time(23, 59, 30)).timex.should.equal('T23:59:30');
                 });
             });
             describe('roundtrip', () => {
-                const roundtrip = function (timex) { (new Timex(timex)).timex.should.equal(timex); };
+                const roundtrip = function (timex) { (new TimexProperty(timex)).timex.should.equal(timex); };
                 describe('date', () => {
                     it('various examples', () => {
                         roundtrip('2017-09-27');
@@ -109,13 +109,13 @@ describe('No Network', () => {
             });
             describe('toString', () => {
                 it ('veryify call is delegated', () => {
-                    (new Timex('XXXX-05-05')).toString().should.equal('5th May');
+                    (new TimexProperty('XXXX-05-05')).toString().should.equal('5th May');
                 });
             });
             describe('toNaturalLanguage', () => {
                 it ('veryify call is delegated', () => {
                     const today = new Date(2017, 9, 16);
-                    (new Timex('2017-10-17')).toNaturalLanguage(today).should.equal('tomorrow');
+                    (new TimexProperty('2017-10-17')).toNaturalLanguage(today).should.equal('tomorrow');
                 });
             });
         });
