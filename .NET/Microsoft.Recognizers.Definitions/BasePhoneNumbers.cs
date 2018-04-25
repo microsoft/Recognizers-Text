@@ -21,8 +21,8 @@ namespace Microsoft.Recognizers.Definitions
 		public const string GeneralPhoneNumberRegex = @"(\b((\d[\s]?){7,15}\d)\b)";
 		public const string BrazilPhoneNumberRegex = @"(((\B\(\s?))\d{2,3}(\s?\))|(\b\d{2,3}))\s?\d{4,5}-?\d{3,5}\b";
 		public const string UkPhoneNumberRegex = @"(((\b(00)|\B\+)\s?)?\b\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3})\b)";
-		public const string GermanyPhoneNumberRegex = @"(\b(\d{4}\s?[-/]?(\s?\d){7,8})\b)";
+		public const string GermanyPhoneNumberRegex = @"(\b(\d{3,4}\s?[-/]?(\s?\d){7,8})\b)";
 		public const string USPhoneNumberRegex = @"((((\B\+)|\b)1(\s|-)?)|\b)?(\B\(|\b)\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{4}\b";
-		public const string SpecialPhoneNumberRegex = @"\b(\d{4}[/-]\d[/-]\d{3,4})\b";
+		public const string SpecialPhoneNumberRegex = @"\b(\d{3,4}[/-]\d{1,4}[/-]\d{3,4})\b";
 	}
 }
