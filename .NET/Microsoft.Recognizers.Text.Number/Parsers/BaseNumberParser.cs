@@ -673,7 +673,7 @@ namespace Microsoft.Recognizers.Text.Number
             for (var i = 0; i < digitStr.Length; i++)
             {
                 var ch = digitStr[i];
-                if (!isFrac && (ch == Config.NonDecimalSeparatorChar || ch == ' '))
+                if (!isFrac && (ch == Config.NonDecimalSeparatorChar || ch == ' ' || ch == ' '))
                 {
                     continue;
                 }

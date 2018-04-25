@@ -56,7 +56,14 @@ namespace Microsoft.Recognizers.Text.Number.English
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }, {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder), "DoubleNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder),
+                    "DoubleNum"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankDot, placeholder),
+                    "DoubleNum"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceDot, placeholder),
+                    "DoubleNum"
                 }
             };
 

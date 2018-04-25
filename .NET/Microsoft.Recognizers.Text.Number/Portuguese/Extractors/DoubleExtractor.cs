@@ -40,6 +40,9 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder),
                     "DoubleNum"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder),
+                    "DoubleNum"
                 }
             };
 

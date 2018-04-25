@@ -21,6 +21,9 @@ export class LongFormatType {
     // 1 234 567
     static readonly integerNumBlank = new LongFormatType(' ', '\0');
 
+    // 1 234 567
+    static readonly integerNumNoBreakSpace = new LongFormatType(' ', '\0');
+
     // 1'234'567
     static readonly integerNumQuote = new LongFormatType('\'', '\0');
 
@@ -33,8 +36,14 @@ export class LongFormatType {
     // 1 234 567,89
     static readonly doubleNumBlankComma = new LongFormatType(' ', ',');
 
+    // 1 234 567,89
+    static readonly doubleNumNoBreakSpaceComma = new LongFormatType(' ', ',');
+
     // 1 234 567.89
     static readonly doubleNumBlankDot = new LongFormatType(' ', '.');
+
+    // 1 234 567.89
+    static readonly doubleNumNoBreakSpaceDot = new LongFormatType(' ', '.');
 
     // 1.234.567,89
     static readonly doubleNumDotComma = new LongFormatType('.', ',');
