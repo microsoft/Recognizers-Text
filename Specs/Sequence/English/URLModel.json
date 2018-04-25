@@ -290,4 +290,10 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "The DNS server is 8.8.8.8",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  }
 ]
