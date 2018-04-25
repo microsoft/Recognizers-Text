@@ -51,7 +51,7 @@ export namespace EnglishNumeric {
 	export const DoubleWithRoundNumber = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))\\d+\\.\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
 	export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
 	export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)`;
-	export const NumberWithSuffixPercentage = `(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(per cents|per cent|cents|cent|percentage|percents|percent)\\b)`;
+	export const NumberWithSuffixPercentage = `(?<!%)(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(per cents|per cent|cents|cent|percentage|percents|percent)\\b)`;
 	export const FractionNumberWithSuffixPercentage = `((${BaseNumbers.FractionNumberReplaceToken})\\s+of)`;
 	export const NumberWithPrefixPercentage = `(per cent of|percent of|percents of)(\\s*)(${BaseNumbers.NumberReplaceToken})`;
 	export const NumberWithPrepositionPercentage = `(${BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*(${BaseNumbers.NumberReplaceToken})`;
