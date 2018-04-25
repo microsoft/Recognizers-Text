@@ -1,5 +1,5 @@
 {
-  "name": "@microsoft/recognizer-datatypes-date-time",
+  "name": "@microsoft/recognizers-text-data-types-timex-expression",
   "version": "1.0.0-rc.1",
   "description": "Support for TIMEX representation of data time",
   "author": "Microsoft",

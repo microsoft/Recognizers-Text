@@ -2,7 +2,7 @@
 
 module.exports = {
     Time: require('./src/time.js').Time,
-    Timex: require('./src/timex.js').Timex,
+    TimexProperty: require('./src/timexProperty.js').TimexProperty,
     TimexSet: require('./src/timexSet.js').TimexSet,
     creator: require('./src/timexCreator.js'),
     resolver: require('./src/timexRangeResolver.js')

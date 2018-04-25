@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
 const chai = require('chai');
-const { Timex, resolver } = require('../index.js');
+const { TimexProperty, resolver } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;
@@ -129,16 +129,16 @@ describe('No Network', () => {
             describe('adding times', () => {
                 it('add specific time to date', () => {
                     const constraints = [
-                        new Timex('2017'),
-                        new Timex('T19:30:00')
+                        new TimexProperty('2017'),
+                        new TimexProperty('T19:30:00')
                     ];
                     resolver.evaluate(['XXXX-05-29'], constraints).map(t => t.timex).should.have.members(['2017-05-29T19:30']);
                 });
                 it('add specific times to date', () => {
                     const constraints = [
-                        new Timex('2017'),
-                        new Timex('T19:30:00'),
-                        new Timex('T20:01:01'),
+                        new TimexProperty('2017'),
+                        new TimexProperty('T19:30:00'),
+                        new TimexProperty('T20:01:01'),
                     ];
                     resolver.evaluate(['XXXX-05-29'], constraints).map(t => t.timex).should.have.members(['2017-05-29T19:30', '2017-05-29T20:01:01']);
                 });
@@ -146,13 +146,13 @@ describe('No Network', () => {
             describe('duration', () => {
                 it('duration evaluated with a specific datetime results in that datetime plus the duration', () => {
                     const constraints = [
-                        new Timex('2017-12-05T19:30:00')
+                        new TimexProperty('2017-12-05T19:30:00')
                     ];
                     resolver.evaluate(['PT5M'], constraints).map(t => t.timex).should.have.members(['2017-12-05T19:35']);
                 });
                 it('duration evaluated with a specific time results in that time plus the duration', () => {
                     const constraints = [
-                        new Timex('T19:30:00')
+                        new TimexProperty('T19:30:00')
                     ];
                     resolver.evaluate(['PT5M'], constraints).map(t => t.timex).should.have.members(['T19:35']);
                 });

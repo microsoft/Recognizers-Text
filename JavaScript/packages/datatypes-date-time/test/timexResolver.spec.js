@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
 const chai = require('chai');
-const { Timex } = require('../index.js');
+const { TimexProperty } = require('../index.js');
 const resolver = require('../src/timexResolver.js');
 
 const assert = chai.assert;

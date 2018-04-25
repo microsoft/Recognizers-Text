@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 
-const { Timex, resolver, creator } = require('../index.js');
+const { TimexProperty, resolver, creator } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;
@@ -26,7 +26,7 @@ describe('No Network', () => {
             describe('date + year (daterange) + time (time)', () => {
                 const today = new Date(2017, 9, 5);
                 it('day of week constrained by next year and adding a specific time', () => {
-                    const constraints = [ new Timex('T17:00:00'), new Timex('2018') ];
+                    const constraints = [ new TimexProperty('T17:00:00'), new TimexProperty('2018') ];
                     const resolutions = resolver.evaluate(['XXXX-03-15'], constraints);
                     resolutions.map(t => t.timex).should.be.an('array').lengthOf(1).members(['2018-03-15T17']);
                     const text = resolutions[0].toNaturalLanguage(today);

@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
-const Timex = require('./timex.js').Timex;
+const TimexProperty = require('./timexProperty.js').TimexProperty;
 const timexValue = require('./timexValue.js');
 const timexInference = require('./timexInference.js');
 const timexHelpers = require('./timexHelpers.js');
@@ -178,7 +178,7 @@ const resolveTimex = function (timex, date) {
 const resolve = function (timexArray, date) {
     const resolution = { values: [] };
     for (const timex of timexArray) {
-        const t = new Timex(timex);
+        const t = new TimexProperty(timex);
         const r = resolveTimex(t, date);
         Array.prototype.push.apply(resolution.values, r);        
     }
