@@ -3116,4 +3116,244 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out 11 -2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 -2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11- 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11- 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 / 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 / 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11/2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 -2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 -2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11- 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11- 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 - 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 - 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11-2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11-2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 /11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 /11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016/ 11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/ 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 / 11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 / 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016/11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 -11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 -11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016- 11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016- 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 - 11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 - 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016-11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016-11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 November",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 November",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out November , 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November , 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 , nov",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 , nov",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016, nov",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016, nov",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

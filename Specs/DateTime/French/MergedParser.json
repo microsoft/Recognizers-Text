@@ -282,4 +282,268 @@
     }
   ]
 }
+,
+{
+  "Input": "Je serais sorti 11 / 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 / 2016",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11/ 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/ 2016",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11 /2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 /2016",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11-2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11-2016",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11  - 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11  - 2016",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016 / 11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 / 11",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016/11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/11",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016 - 11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 - 11",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016-11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016-11",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016  -11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016  -11",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11",
+            "type": "daterange",
+            "start": "2016-11-01",
+            "end": "2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti Septembre 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Septembre 2016",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-09",
+            "type": "daterange",
+            "start": "2016-09-01",
+            "end": "2016-10-01"
+          }
+        ]
+      }
+    }
+  ]
+}	
 ]

@@ -1367,4 +1367,279 @@
     }
   ]
 }
+,
+{
+  "Input": "Je serais sorti 11 / 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 / 2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11/ 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/ 2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11 /2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 /2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11-2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11-2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11  - 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11  - 2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016 / 11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 / 11",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016/11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/11",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016 - 11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 - 11",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016-11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016-11",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016  -11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016  -11",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti Septembre 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Septembre 2016",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-09",
+        "FutureResolution": {
+          "startDate": "2016-09-01",
+          "endDate": "2016-10-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-09-01",
+          "endDate": "2016-10-01"
+        }
+      }
+    }
+  ]
+}	
 ]
