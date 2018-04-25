@@ -1774,4 +1774,10 @@
   "NotSupported": "javascript",
   "Results": []
 }
+,
+{
+  "NotSupported": "javascript",
+  "Input": "你可以访问一下 https://www.test.com/search?q=30%25%2020%",
+  "Results": []
+}
 ]
