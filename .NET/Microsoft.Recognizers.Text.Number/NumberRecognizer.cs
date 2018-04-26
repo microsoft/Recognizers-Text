@@ -217,6 +217,11 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new JapaneseNumberParserConfiguration()),
                     new Japanese.PercentageExtractor()));
+            RegisterModel<NumberRangeModel>(
+                Culture.Japanese,
+                (options) => new NumberRangeModel(
+                            new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration()),
+                            new Japanese.NumberRangeExtractor()));
             #endregion
         }
     }
