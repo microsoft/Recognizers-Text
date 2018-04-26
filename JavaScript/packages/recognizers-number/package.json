@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/recognizers-text-number",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "recognizers-text-number provides robust recognition and resolution of numbers expressed in multiple languages.",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "lodash.escaperegexp": "^4.1.2",
     "lodash.sortby": "^4.7.0",
     "lodash.trimend": "^4.5.1",
-    "@microsoft/recognizers-text": "^1.0.0",
+    "@microsoft/recognizers-text": "~1.0.1",
     "xregexp": "^3.2.0"
   }
 }
