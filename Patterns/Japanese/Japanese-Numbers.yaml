@@ -265,38 +265,56 @@ SpecialsFoldsPercentageRegex: !simpleRegex
   def: 半\s*分|(?<=ダース)
 #NumberRangeExtractor
 TillRegex: !simpleRegex
-  def: (--|-|—|——|~)
+  def: (から|--|-|—|——|~)
 MoreRegex: !simpleRegex
-  def: (大なり|より大きい|より高い|>)
+  def: (大なり|大きい|高い|大きく|>)
 LessRegex: !simpleRegex
-  def: (小なり|より小さい|<)
+  def: (小なり|小さい|低い|<)
 EqualRegex: !simpleRegex
   def: (等しい|イコール|=)
 MoreOrEqual: !nestedRegex
-  def: 大なりイコール|小さくない
+  def: ((大なりかイコール)|(大きいかイコール)|(大なりか等しい)|(大きいか等しい)|小さくない|以上|最低)
   references: []
 MoreOrEqualSuffix: !simpleRegex
-  def: より(大なりイコール|小さくない)
+  def: (より(大なりイコール|小さくない))
 LessOrEqual: !nestedRegex
-  def: 小なりイコール|小さくない
-  references: []
+  def: (({LessRegex}\s*(或|或者)?\s*{EqualRegex})|(小なりかイコール)|(小なりか等しい)|(小さいかイコール)|(小さいか等しい)|(小さいか等しい)|大さくない|以下|最大)
+  references: [ LessRegex, EqualRegex ]
 LessOrEqualSuffix: !simpleRegex
-  def: より(小なりイコール|小さくない)
+  def: (小なりイコール|大さくない)
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ({MoreOrEqual}|{MoreRegex})\s*(?<number1>((?!(((，|、)(?!\d+))|((,|、)(?!\d+))|。)).)+)
+  def: (?<number1>((?!(((，|、)(?!\d+))|((,|、)(?!\d+))|。)).)+)\s*((より)\s*(({MoreOrEqual}|{MoreRegex}))|超える|を超える)
   references: [ MoreOrEqual, MoreRegex ]
 OneNumberRangeMoreRegex2: !simpleRegex
-  def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(より)?(大なり)
+  def: (?<number1>((?!((，|、(?!\d+))|(,|、(?!\d+))|。)).)+)\s*(より)?(大なり)
 OneNumberRangeMoreRegex3: !simpleRegex
-  def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(以上)(?![万億]{1,2})
+  def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(以上|最低)(?![万億]{1,2})
+OneNumberRangeMoreRegex4: !nestedRegex
+  def: ({MoreOrEqual}|{MoreRegex})\s*(?<number1>((?!(と|は|((と)?同時に)|((と)?そして)|が|，|、|,|(，(?!\d+))|(,(?!\d+))|。)).)+)
+  references: [ MoreOrEqual, MoreRegex ]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ({LessOrEqual}|{LessRegex})\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)
+  def: (?<number2>((?!(((，|、)(?!\d+))|((,|、)(?!\d+))|。)).)+)\s*(より)\s*({LessOrEqual}|{LessRegex})
   references: [ LessOrEqual, LessRegex ]
 OneNumberRangeLessRegex2: !simpleRegex
-  def: 比\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(より)?(小なり)
+  def: (?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(より)?(小な)
 OneNumberRangeLessRegex3: !simpleRegex
-  def: (?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(以下)
+  def: (?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(以下|未満)(?![万億]{1,2})
+OneNumberRangeLessRegex4: !nestedRegex
+  def: ({LessOrEqual}|{LessRegex})\s*(?<number2>((?!(と|は|((と)?同時に)|((と)?そして)|が|，|、|,|(，(?!\d+))|(,(?!\d+))|。)).)+)
+  references: [ LessOrEqual, LessRegex ]
 OneNumberRangeEqualRegex: !nestedRegex
-  def: '{EqualRegex}\s*(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)'
+  def: (((?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(に)\s*{EqualRegex})|({EqualRegex}\s*(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)))
   references: [ EqualRegex ]
+TwoNumberRangeRegex1: !nestedRegex
+  def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(と|{TillRegex})\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(の間)
+  references: [ TillRegex ]
+TwoNumberRangeRegex2: !nestedRegex
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3}|{OneNumberRangeMoreRegex4})\s*(と|は|((と)?同時に)|((と)?そして)|が|，|、|,)?\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3}|{OneNumberRangeLessRegex4})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeMoreRegex3, OneNumberRangeMoreRegex4, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2, OneNumberRangeLessRegex3, OneNumberRangeLessRegex4 ]
+TwoNumberRangeRegex3: !nestedRegex
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3}|{OneNumberRangeLessRegex4})\s*(と|は|((と)?同時に)|((と)?そして)|が|，|、|,)?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3}|{OneNumberRangeMoreRegex4})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeMoreRegex3, OneNumberRangeMoreRegex4, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2, OneNumberRangeLessRegex3, OneNumberRangeLessRegex4 ]
+TwoNumberRangeRegex4: !nestedRegex
+  def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)
+  references: [ TillRegex ]
 ...
