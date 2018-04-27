@@ -2,7 +2,6 @@
   {
     "Input": "¡Por supuesto!",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Por supuesto",
@@ -17,7 +16,6 @@
   {
     "Input": "No lo creo. no.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "No",
@@ -47,7 +45,6 @@
   {
     "Input": "No. Dije el 4 de Julio",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "No",
@@ -62,7 +59,6 @@
   {
     "Input": "Sí ... dije sin cebollas",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Sí",
@@ -77,7 +73,6 @@
   {
     "Input": "¡Dije que NO, en vez de sí!",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "NO",
@@ -107,7 +102,6 @@
   {
     "Input": "👌 Está bien",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "👌",
@@ -122,7 +116,6 @@
   {
     "Input": "👌👌👌",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "👌",
