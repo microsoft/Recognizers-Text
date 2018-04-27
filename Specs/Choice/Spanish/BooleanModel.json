@@ -29,7 +29,8 @@
   },
   {
     "Input": "Creo que eso funcionaría así que sí lo haré.",
-    "NotSupportedByDesign": "javascript,python",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "sí",
@@ -85,7 +86,8 @@
   },
   {
     "Input": "Sí. dije que no",
-    "NotSupportedByDesign": "javascript,python",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Sí",
