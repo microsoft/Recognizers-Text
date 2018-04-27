@@ -74,6 +74,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex WithinNextPrefixRegex =
             new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DateUnitRegex =
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        Regex IDateTimePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
         public Regex FollowedUnit => TimeFollowedUnit;
 
