@@ -116,6 +116,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string TimeRegex7 = $@"\b{TimeSuffix}\s+[àa]\s+{BasicTime}((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex8 = $@"\b{TimeSuffix}\s+{BasicTime}((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)";
+		public static readonly string TimeRegex10 = $@"\b{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?(\s+{TimePrefix})?";
 		public const string HourRegex = @"(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
 		public const string PeriodDescRegex = @"(?<desc>pm|am|p\.m\.|a\.m\.|p)";
 		public const string PeriodPmRegex = @"(?<pm>dans l'apr[eè]s-midi|ce soir|d[eu] soir|dans l[ea] soir[eé]e|dans la nuit|d[eu] soir[ée]e)s?";

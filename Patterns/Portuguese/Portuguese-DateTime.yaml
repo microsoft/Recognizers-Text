@@ -241,7 +241,7 @@ TimeRegex2: !nestedRegex
   def: (\b{TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex, DescRegex ]
 TimeRegex3: !nestedRegex
-  # (tres min depois das)? 3.00 (pm)?
+  # (tres min depois das)? 3.00 (pm)
   def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex4: !nestedRegex
@@ -274,6 +274,10 @@ TimeRegex11: !nestedRegex
   # (tres menos vinte) (pm)?
   def: \b({LangTimeRegex})({DescRegex}?)\b
   references: [ LangTimeRegex, DescRegex ]
+TimeRegex12: !nestedRegex
+  # (tres min depois das)? 3.00 (pm)?
+  def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?
+  references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 # PortugueseDateTimeExtractorConfiguration
 PrepositionRegex: !simpleRegex
   def: (?<prep>([àa]s?|em|por|pelo|pela|no|na|de|d[oa]?)?$)

@@ -123,6 +123,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string TimeRegex7 = $@"(({AmPmPrefixRegex})?({BasicTime})((\s*{DescRegex}))?)";
 		public static readonly string TimeRegex8 = $@"({TimeSuffixFull}(\s*(um|gegen)\s*){BasicTime}((\s*{DescRegex})?))";
 		public static readonly string TimeRegex9 = $@"({PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})))";
+		public static readonly string TimeRegex10 = $@"({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
 		public static readonly string PureNumFromTo = $@"((von|vom|zwischen)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?";
 		public static readonly string PureNumBetweenAnd = $@"\b(zwischen\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?\b";
 		public const string PrepositionRegex = @"(?<prep>^(um|am|vom|von|in)(\s+(der|dem|den))?$)";

@@ -130,6 +130,7 @@ export namespace EnglishDateTime {
 	export const TimeRegex7 = `\\b${TimeSuffixFull}\\s+at\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
 	export const TimeRegex8 = `\\b${TimeSuffixFull}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
 	export const TimeRegex9 = `\\b${PeriodHourNumRegex}\\s+${FivesRegex}((\\s*${DescRegex})|\\b)`;
+	export const TimeRegex10 = `(\\b${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
 	export const PureNumFromTo = `((from|between)\\s+)?(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${TillRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
 	export const PureNumBetweenAnd = `(between\\s+)(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${RangeConnectorRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
 	export const PrepositionRegex = `(?<prep>^(at|on|of)(\\s+the)?$)`;

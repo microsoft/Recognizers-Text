@@ -2217,4 +2217,44 @@
     }
   ]
 }
+,
+{
+  "Input": "Je serai de retour à 7h01",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7h01",
+      "Type": "time",
+      "Value": {
+        "Timex": "T07:01",
+        "FutureResolution": {
+          "time": "07:01:00"
+        },
+        "PastResolution": {
+          "time": "07:01:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serai de retour à 10 H 10 pm.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10 H 10 pm",
+      "Type": "time",
+      "Value": {
+        "Timex": "T22:10",
+        "FutureResolution": {
+          "time": "22:10:00"
+        },
+        "PastResolution": {
+          "time": "22:10:00"
+        }
+      }
+    }
+  ]
+}
 ]

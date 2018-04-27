@@ -174,6 +174,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.TimeRegex9,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
+            new Regex(DateTimeDefinitions.TimeRegex10,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
             // 340pm
             ConnectNumRegex
         };
