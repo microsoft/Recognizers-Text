@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/recognizers-text-data-types-timex-expression",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.1",
   "description": "Support for TIMEX representation of data time",
   "author": "Microsoft",
   "license": "MIT",
@@ -9,7 +9,9 @@
     "timex",
     "luis"
   ],
-  "main": "index.js",
+  "main": "dist/recognizers-text-data-types-timex-expression.umd.js",
+  "module": "dist/recognizers-text-data-types-timex-expression.es5.js",
+  "browser": "dist/recognizers-text-data-types-timex-expression.browser.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Microsoft/Recognizers-Text"
@@ -19,9 +21,11 @@
   },
   "engines": {
     "node": ">=6.0.0"
-  },  
+  },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "clean-build": "rimraf dist",
+    "prepare": "npm run clean-build && rollup -c"
   },
   "devDependencies": {
     "chai": "^4.1.2",

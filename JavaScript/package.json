@@ -2,6 +2,13 @@
 	"name": "recognizers",
 	"version": "1.0.0",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/Recognizers-Text"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/Recognizers-Text/issues"
+	},
 	"scripts": {
 		"build": "lerna bootstrap",
 		"lint": "tslint -t codeFrame ./packages/**/*.ts",
@@ -77,6 +84,7 @@
 		"@microsoft/recognizers-text-number": "file:./packages/recognizers-number",
 		"@microsoft/recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
 		"@microsoft/recognizers-text-sequence": "file:./packages/recognizers-sequence",
-		"@microsoft/recognizers-text-suite": "file:./packages/recognizers-text-suite"
+		"@microsoft/recognizers-text-suite": "file:./packages/recognizers-text-suite",
+		"@microsoft/recognizers-text-data-types-timex-expression": "file:./packages/datatypes-date-time"
 	}
 }
