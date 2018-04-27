@@ -1901,5 +1901,483 @@
     }
   ]
 }
-
+,
+{
+  "Input": "I'll be out 2016, nov",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results":[
+    {
+      "Text": "2016, nov",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 , nov",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 , nov",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out November , 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November , 2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 November",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 November",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016-11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016-11",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 - 11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 - 11",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016- 11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016- 11",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 -11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 -11",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016/11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/11",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 / 11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 / 11",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016/ 11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/ 11",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 /11",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 /11",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11-2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11-2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 - 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 - 2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11- 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11- 2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 -2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 -2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "Input": "I'll be out 11/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 / 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 / 2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11- 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11- 2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 -2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 -2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11",
+            "type":"daterange",
+            "start":"2016-11-01",
+            "end":"2016-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

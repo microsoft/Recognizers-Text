@@ -44,7 +44,7 @@ MonthWithYearRegex: !nestedRegex
   def: \b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\s+)?(?<month><month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)\s+((de|do|da|o|a)\s+)?({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano))\b
   references: [ FullYearRegex ]
 MonthNumWithYearRegex: !nestedRegex
-  def: ({FullYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{FullYearRegex})
+  def: ({FullYearRegex}(\s*?)[/\-\.](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-](\s*?){FullYearRegex})
   references: [ FullYearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>(a|na\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima)\s+semana\s+{MonthSuffixRegex})

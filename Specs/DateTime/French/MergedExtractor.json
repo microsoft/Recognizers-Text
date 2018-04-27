@@ -233,4 +233,125 @@
     }
   ]
 }
+,
+{
+  "Input": "Je serais sorti 11 / 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 / 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11/ 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/ 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11 /2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 /2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11-2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11-2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 11  - 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11  - 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016 / 11",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 / 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016/11",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016 - 11",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 - 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016-11",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016-11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti 2016  -11",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016  -11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serais sorti Septembre 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Septembre 2016",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

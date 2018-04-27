@@ -512,5 +512,85 @@
         "Type": "daterange"
       }
     ]
-  }
+  },{
+    "Input": "Ich würde 2016-05 nicht hier",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "2016-05",
+        "Type": "daterange"
+      }
+    ]
+  },{
+    "Input": "Ich würde 2016/05 nicht hier",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "2016/05",
+        "Type": "daterange"
+      }
+    ]
+  },{
+    "Input": "Ich würde 05-2016 nicht hier",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "05-2016",
+        "Type": "daterange"
+      }
+    ]
+  },{
+    "Input": "Ich würde 05/2016 nicht hier",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "05/2016",
+        "Type": "daterange"
+      }
+    ]
+  },{
+    "Input": "Ich würde 2016 - 05 nicht hier",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "2016 - 05",
+        "Type": "daterange"
+      }
+    ]
+  },{
+    "Input": "Ich würde 2016  /05 nicht hier",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "2016  /05",
+        "Type": "daterange"
+      }
+    ]
+  },{
+    "Input": "Ich würde 05-  2016 nicht hier",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "05-  2016",
+        "Type": "daterange"
+      }
+    ]
+  },{
+    "Input": "Ich würde 05 /  2016 nicht hier",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "05 /  2016",
+        "Type": "daterange"
+      }
+    ]
+  }  
 ]

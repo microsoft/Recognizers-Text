@@ -903,5 +903,205 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Ich würde 2016-05 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2016-05",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 2016/05 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2016/05",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 05/2016 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "05/2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 05-2016 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "05-2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 2016 -  05 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2016 -  05",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 2016  /05 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2016  /05",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 05/  2016 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "05/  2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 05 -  2016 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "05 -  2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-05",
+          "FutureResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-05-01",
+            "endDate": "2016-06-01"
+          }
+        }
+      }
+    ]
   }
 ]
