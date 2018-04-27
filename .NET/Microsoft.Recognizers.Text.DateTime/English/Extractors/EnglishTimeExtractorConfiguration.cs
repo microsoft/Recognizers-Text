@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(
                 DateTimeDefinitions.TimeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (three min past)? 3.00 (pm)?
+            // (three min past)? 3.00 (pm)
             new Regex(DateTimeDefinitions.TimeRegex3,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
@@ -138,6 +138,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             new Regex(DateTimeDefinitions.TimeRegex9,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            // (three min past)? 3h00 (pm)?
+            new Regex(DateTimeDefinitions.TimeRegex10,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 340pm

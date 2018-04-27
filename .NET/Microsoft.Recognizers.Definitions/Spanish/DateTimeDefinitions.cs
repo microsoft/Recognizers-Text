@@ -112,6 +112,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string TimeRegex9 = $@"\b(?<engtime>{HourNumRegex}\s+({TensTimeRegex}\s*)?(y\s+)?{MinuteNumRegex}?)\b";
 		public const string TimeRegex10 = @"(a\s+la|al)\s+(madrugada|mañana|medio\s*d[ií]a|tarde|noche)";
 		public static readonly string TimeRegex11 = $@"\b({SpaTimeRegex})({DescRegex}?)\b";
+		public static readonly string TimeRegex12 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
 		public const string PrepositionRegex = @"(?<prep>(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)";
 		public const string NowRegex = @"\b(?<now>(justo\s+)?ahora(\s+mismo)?|en\s+este\s+momento|tan\s+pronto\s+como\s+sea\s+posible|tan\s+pronto\s+como\s+(pueda|puedas|podamos|puedan)|lo\s+m[aá]s\s+pronto\s+posible|recientemente|previamente)\b";
 		public const string SuffixRegex = @"^\s*(((y|a|en|por)\s+la|al)\s+)?(mañana|madrugada|medio\s*d[ií]a|tarde|noche)\b";

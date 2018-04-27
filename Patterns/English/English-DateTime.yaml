@@ -311,6 +311,9 @@ TimeRegex8: !nestedRegex
 TimeRegex9: !nestedRegex
   def: \b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)
   references: [ PeriodHourNumRegex, FivesRegex, DescRegex ]
+TimeRegex10: !nestedRegex
+  def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?
+  references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 PureNumFromTo: !nestedRegex
   def: ((from|between)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
   references: [ HourRegex, PeriodHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex ]

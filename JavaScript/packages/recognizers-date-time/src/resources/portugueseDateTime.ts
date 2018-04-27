@@ -104,6 +104,7 @@ export namespace PortugueseDateTime {
 	export const TimeRegex9 = `\\b(?<engtime>${HourNumRegex}\\s+(${TensTimeRegex}\\s*)?(e\\s+)?${MinuteNumRegex}?)\\b`;
 	export const TimeRegex10 = `(\\b([àa]|ao?)|na|de|da|pela)\\s+(madrugada|manh[ãa]|meio\\s*dia|meia\\s*noite|tarde|noite)`;
 	export const TimeRegex11 = `\\b(${LangTimeRegex})(${DescRegex}?)\\b`;
+	export const TimeRegex12 = `(\\b${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
 	export const PrepositionRegex = `(?<prep>([àa]s?|em|por|pelo|pela|no|na|de|d[oa]?)?$)`;
 	export const NowRegex = `\\b(?<now>((logo|exatamente)\\s+)?agora(\\s+mesmo)?|neste\\s+momento|(assim\\s+que|t[ãa]o\\s+cedo\\s+quanto)\\s+(poss[ií]vel|possas?|possamos)|o\\s+mais\\s+(cedo|r[aá]pido)\\s+poss[íi]vel|recentemente|previamente)\\b`;
 	export const SuffixRegex = `^\\s*((e|a|em|por|pelo|pela|no|na|de)\\s+)?(manh[ãa]|madrugada|meio\\s*dia|tarde|noite)\\b`;

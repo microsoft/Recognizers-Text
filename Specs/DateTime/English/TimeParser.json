@@ -1557,4 +1557,64 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be back at 7h01",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7h01",
+      "Type": "time",
+      "Value": {
+        "Timex": "T07:01",
+        "FutureResolution": {
+          "time": "07:01:00"
+        },
+        "PastResolution": {
+          "time": "07:01:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back at 10 H 10 pm.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10 H 10 pm",
+      "Type": "time",
+      "Value": {
+        "Timex": "T22:10",
+        "FutureResolution": {
+          "time": "22:10:00"
+        },
+        "PastResolution": {
+          "time": "22:10:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back at three min past 10 H 10 pm.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three min past 10 H 10 pm",
+      "Type": "time",
+      "Value": {
+        "Timex": "T22:13",
+        "FutureResolution": {
+          "time": "22:13:00"
+        },
+        "PastResolution": {
+          "time": "22:13:00"
+        }
+      }
+    }
+  ]
+}
 ]

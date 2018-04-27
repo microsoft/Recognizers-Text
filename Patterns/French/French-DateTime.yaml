@@ -253,6 +253,9 @@ TimeRegex8: !nestedRegex
 TimeRegex9: !nestedRegex
   def: \b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)
   references: [ PeriodHourNumRegex, FivesRegex, DescRegex ]
+TimeRegex10: !nestedRegex
+  def: \b{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?(\s+{TimePrefix})?
+  references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 HourRegex: !simpleRegex
   def: (?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)
 PeriodDescRegex: !simpleRegex
