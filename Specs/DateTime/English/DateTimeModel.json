@@ -2527,4 +2527,86 @@
     } 
   ]
 }
+,
+{
+  "Input": "Cortana, please book 2 hours next month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-25T01:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Start": 21,
+      "End": 27,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT2H",
+            "type": "duration",
+            "value": "7200"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "next month",
+      "Start": 29,
+      "End": 38,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-04",
+            "type": "daterange",
+            "start": "2018-04-01",
+            "end": "2018-05-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please check my work 2 hours last week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-25T01:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "2 hours",
+      "Start": 30,
+      "End": 36,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT2H",
+            "type": "duration",
+            "value": "7200"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "last week",
+      "Start": 38,
+      "End": 46,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-W11",
+            "type": "daterange",
+            "start": "2018-03-12",
+            "end": "2018-03-19"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

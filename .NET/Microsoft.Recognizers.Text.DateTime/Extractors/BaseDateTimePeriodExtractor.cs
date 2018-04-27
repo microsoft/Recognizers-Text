@@ -398,24 +398,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
-                
-                match = this.config.PastPrefixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
-                {
-                    ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
-                    continue;
-                }
 
-                match = this.config.NextPrefixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                var matchDateUnit = this.config.DateUnitRegex.Match(afterStr);
+                if (!matchDateUnit.Success)
                 {
-                    ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
-                }
+                    match = this.config.PastPrefixRegex.Match(afterStr);
+                    if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                    {
+                        ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                        continue;
+                    }
 
-                match = this.config.FutureSuffixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
-                {
-                    ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                    match = this.config.NextPrefixRegex.Match(afterStr);
+                    if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                    {
+                        ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                    }
+
+                    match = this.config.FutureSuffixRegex.Match(afterStr);
+                    if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                    {
+                        ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                    }
                 }
             }
 
