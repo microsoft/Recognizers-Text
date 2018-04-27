@@ -264,7 +264,7 @@
   "Context": {
     "ReferenceDateTime": "2018-03-25T01:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "2 hours",
@@ -305,7 +305,7 @@
   "Context": {
     "ReferenceDateTime": "2018-03-25T01:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "2 hours",
