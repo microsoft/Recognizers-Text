@@ -50,6 +50,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline | RegexOptions.IgnoreCase);
             PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public NumberOptions Options { get; }
@@ -91,6 +92,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
         public Regex SpeGetNumberRegex { get; private set; }
 
         public Regex PairRegex { get; private set; }
+
+        public Regex RoundNumberIntegerRegex { get; private set; }
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
 

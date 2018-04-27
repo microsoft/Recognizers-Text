@@ -51,6 +51,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexOptions.Singleline | RegexOptions.IgnoreCase);
             PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             FractionPrepositionRegex = null;
         }
 
@@ -93,6 +94,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public Regex SpeGetNumberRegex { get; private set; }
 
         public Regex PairRegex { get; private set; }
+
+        public Regex RoundNumberIntegerRegex { get; private set; }
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
 
