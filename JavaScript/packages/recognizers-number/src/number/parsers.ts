@@ -96,7 +96,7 @@ export class BaseNumberParser implements IParser {
             ret = this.powerNumberParse(extResult);
         }
 
-        if (ret && ret.value) {
+        if (ret && ret.value !== null) {
             if (isNegative)
             {
                 // Recover to the original extracted Text
