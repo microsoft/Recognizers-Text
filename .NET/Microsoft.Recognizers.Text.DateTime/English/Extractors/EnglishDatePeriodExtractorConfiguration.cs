@@ -36,8 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex RelativeMonthRegex = 
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EngMonthRegex =
-            new Regex(DateTimeDefinitions.EngMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WrittenMonthRegex =
+            new Regex(DateTimeDefinitions.WrittenMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthSuffixRegex =
             new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

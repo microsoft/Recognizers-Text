@@ -53,9 +53,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.LessThanOneHour,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EngTimeRegex =
+        public static readonly Regex WrittenTimeRegex =
             new Regex(
-                DateTimeDefinitions.EngTimeRegex,
+                DateTimeDefinitions.WrittenTimeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // TODO - will have change below

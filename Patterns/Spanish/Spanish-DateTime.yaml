@@ -208,9 +208,9 @@ LessThanOneHour: !nestedRegex
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 TensTimeRegex: !simpleRegex
   def: (?<tens>diez|veint(i|e)|treinta|cuarenta|cincuenta)
-SpaTimeRegex: !nestedRegex
+WrittenTimeRegex: !nestedRegex
   # "seis treinta", "seis veintiuno", "seis menos diez"
-  def: (?<engtime>{HourNumRegex}\s*((y|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*y\s+)?{MinuteNumRegex})?)))
+  def: (?<writtentime>{HourNumRegex}\s*((y|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*y\s+)?{MinuteNumRegex})?)))
   references: [ HourNumRegex, MinuteNumRegex, TensTimeRegex ]
 TimePrefix: !nestedRegex
   def: (?<prefix>{LessThanOneHour}(\s+(pasad[ao]s)\s+(de\s+las|las)?|\s+(para|antes\s+de)?\s+(las?))?)
@@ -219,19 +219,19 @@ TimeSuffix: !nestedRegex
   def: (?<suffix>({LessThanOneHour}\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))
   references: [ LessThanOneHour, AmRegex, PmRegex, OclockRegex ]
 BasicTime: !nestedRegex
-  def: (?<basictime>{SpaTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})
-  references: [ SpaTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
+  def: (?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})
+  references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 AtRegex: !nestedRegex
   # "a las cuatro" "a las 3"
-  def: \b(?<=\b(a las?)\s+)({SpaTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b
-  references: [ HourNumRegex, BaseDateTime.HourRegex, SpaTimeRegex ]
+  def: \b(?<=\b(a las?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b
+  references: [ HourNumRegex, BaseDateTime.HourRegex, WrittenTimeRegex ]
 ConnectNumRegex: !nestedRegex
   def: ({BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex})
   references: [ BaseDateTime.HourRegex, DescRegex ]
 TimeRegex1: !nestedRegex
   # (tres min pasadas las)? siete|7|(siete treinta) pm
-  def: (\b{TimePrefix}\s+)?({SpaTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex})
-  references: [ TimePrefix, SpaTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
+  def: (\b{TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex})
+  references: [ TimePrefix, WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, DescRegex ]
 TimeRegex2: !nestedRegex
   # (tres min pasadas las)? 3:00(:00)? (pm)?
   def: (\b{TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)
@@ -262,14 +262,14 @@ TimeRegex8: !nestedRegex
   references: [ TimeSuffix, BasicTime, DescRegex ]
 TimeRegex9: !nestedRegex
   # once (y)? veinticinco
-  def: \b(?<engtime>{HourNumRegex}\s+({TensTimeRegex}\s*)?(y\s+)?{MinuteNumRegex}?)\b
+  def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)?(y\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
 TimeRegex10: !simpleRegex
   def: (a\s+la|al)\s+(madrugada|mañana|medio\s*d[ií]a|tarde|noche)
 TimeRegex11: !nestedRegex
   # (tres menos veinte) (pm)?
-  def: \b({SpaTimeRegex})({DescRegex}?)\b
-  references: [ SpaTimeRegex, DescRegex ]
+  def: \b({WrittenTimeRegex})({DescRegex}?)\b
+  references: [ WrittenTimeRegex, DescRegex ]
 TimeRegex12: !nestedRegex
   # (tres min pasadas las)? 3h00 (pm)?
   def: (\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?

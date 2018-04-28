@@ -129,16 +129,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult Match2Time(Match match, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
+            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
             int hour = 0,
                 min = 0,
                 second = 0,
                 day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
-            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
 
-            var engTimeStr = match.Groups["engtime"].Value;
-            if (!string.IsNullOrEmpty(engTimeStr))
+            var writtenTimeStr = match.Groups["writtentime"].Value;
+
+            if (!string.IsNullOrEmpty(writtenTimeStr))
             {
                 // get hour
                 var hourStr = match.Groups["hournum"].Value.ToLower();
