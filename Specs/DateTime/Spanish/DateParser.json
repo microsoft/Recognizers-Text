@@ -1560,5 +1560,27 @@
       }
     }
   ]
+},
+{
+  "Input": "volveré el 3-7-2017",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-7-2017",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-07-03",
+        "FutureResolution": {
+          "date": "2017-07-03"
+        },
+        "PastResolution": {
+          "date": "2017-07-03"
+        }
+      }
+    }
+  ]
 }
 ]

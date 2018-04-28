@@ -220,4 +220,5 @@ export namespace FrenchDateTime {
 	export const NightRegex = `\\b(minuit|nuit)\\b`;
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
+	export const DefaultLanguageFallback = 'DMY';
 }

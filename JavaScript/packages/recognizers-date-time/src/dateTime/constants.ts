@@ -20,6 +20,9 @@ export class Constants {
 
     static readonly SemesterMonthCount: number = 6;
     static readonly TrimesterMonthCount: number = 3;
+
+    static readonly DefaultLanguageFallback_MDY: string = 'MDY';
+    static readonly DefaultLanguageFallback_DMY: string = 'DMY';
 }
 
 export class TimeTypeConstants {

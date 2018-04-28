@@ -1006,4 +1006,5 @@ SpecialDecadeCases: !dictionary
   types: [ string, int ]
   entries:
     'zweitausender': 2000
+DefaultLanguageFallback: DMY
 ...

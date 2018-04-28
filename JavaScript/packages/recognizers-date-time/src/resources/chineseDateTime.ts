@@ -162,4 +162,5 @@ export namespace ChineseDateTime {
 	export const MergedAfterRegex = `(后|之后)$`;
 	export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
 	export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18]]);
+	export const DefaultLanguageFallback = 'DMY';
 }
