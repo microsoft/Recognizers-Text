@@ -781,4 +781,5 @@ TimeLowBoundDesc: !dictionary
     深夜: 18
     傍晚: 18
     晚: 18
+DefaultLanguageFallback: DMY
 ...

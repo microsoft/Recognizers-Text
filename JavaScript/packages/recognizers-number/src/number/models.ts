@@ -1,4 +1,5 @@
 import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "@microsoft/recognizers-text";
+import { Constants } from "./constants";
 
 export enum NumberMode {
     // Default is for unit and datetime
@@ -22,7 +23,7 @@ export class LongFormatType {
     static readonly integerNumBlank = new LongFormatType(' ', '\0');
 
     // 1 234 567
-    static readonly integerNumNoBreakSpace = new LongFormatType(' ', '\0');
+    static readonly integerNumNoBreakSpace = new LongFormatType(Constants.NO_BREAK_SPACE, '\0');
 
     // 1'234'567
     static readonly integerNumQuote = new LongFormatType('\'', '\0');
@@ -37,13 +38,13 @@ export class LongFormatType {
     static readonly doubleNumBlankComma = new LongFormatType(' ', ',');
 
     // 1 234 567,89
-    static readonly doubleNumNoBreakSpaceComma = new LongFormatType(' ', ',');
+    static readonly doubleNumNoBreakSpaceComma = new LongFormatType(Constants.NO_BREAK_SPACE, ',');
 
     // 1 234 567.89
     static readonly doubleNumBlankDot = new LongFormatType(' ', '.');
 
     // 1 234 567.89
-    static readonly doubleNumNoBreakSpaceDot = new LongFormatType(' ', '.');
+    static readonly doubleNumNoBreakSpaceDot = new LongFormatType(Constants.NO_BREAK_SPACE, '.');
 
     // 1.234.567,89
     static readonly doubleNumDotComma = new LongFormatType('.', ',');

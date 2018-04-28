@@ -132,15 +132,29 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.DateExtractor3,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 3-23-2017
-            new Regex(
-                DateTimeDefinitions.DateExtractor4,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
+                ?
+                // 23-3-2015
+                new Regex(
+                    DateTimeDefinitions.DateExtractor5,
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                :
+                // 3-23-2017
+                new Regex(
+                    DateTimeDefinitions.DateExtractor4,
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 23-3-2015
-            new Regex(
-                DateTimeDefinitions.DateExtractor5,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
+                ?
+                // 3-23-2017
+                new Regex(
+                    DateTimeDefinitions.DateExtractor4,
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                :
+                // 23-3-2015
+                new Regex(
+                    DateTimeDefinitions.DateExtractor5,
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // on 1.3
             new Regex(

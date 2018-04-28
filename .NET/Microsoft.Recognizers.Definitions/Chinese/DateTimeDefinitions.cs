@@ -588,5 +588,6 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "傍晚", 18 },
 			{ "晚", 18 }
 		};
+		public const string DefaultLanguageFallback = "DMY";
 	}
 }

@@ -588,5 +588,6 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "noughties", 2000 },
 			{ "two thousands", 2000 }
 		};
+		public const string DefaultLanguageFallback = "MDY";
 	}
 }

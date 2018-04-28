@@ -881,4 +881,5 @@ SpecialDecadeCases: !dictionary
   entries:
     'noughties': 2000
     'two thousands': 2000
+DefaultLanguageFallback: 'MDY'
 ...

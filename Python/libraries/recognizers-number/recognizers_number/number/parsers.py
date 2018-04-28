@@ -6,6 +6,7 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
 from recognizers_number.culture import CultureInfo
+from recognizers_number.number.constants import Constants
 
 getcontext().prec = 15
 
@@ -501,7 +502,7 @@ class BaseNumberParser(Parser):
         call_stack: List[Decimal] = list()
 
         for c in digitstr:
-            if not fraction and (c == self.config.non_decimal_separator_char or c == ' ' or c == ' '):
+            if not fraction and (c == self.config.non_decimal_separator_char or c == ' ' or c == Constants.NO_BREAK_SPACE):
                 continue
 
             if c == ' ' or c == '/':

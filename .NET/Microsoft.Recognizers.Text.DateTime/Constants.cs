@@ -69,5 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const int TrimesterMonthCount = 3;
         public const int SemesterMonthCount = 6;
+
+        public const string DefaultLanguageFallback_MDY = "MDY";
+        public const string DefaultLanguageFallback_DMY = "DMY";
     }
 }

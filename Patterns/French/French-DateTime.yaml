@@ -937,4 +937,5 @@ SpecialDecadeCases: !dictionary
   # TODO: modify below dictionary there're special cases for written decades
   entries:
     '': 0
+DefaultLanguageFallback: DMY
 ...

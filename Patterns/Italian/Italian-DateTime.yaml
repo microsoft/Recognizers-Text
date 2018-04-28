@@ -758,4 +758,5 @@ HolidayNames: !dictionary
     veteransday: [ veteransday ]
     christmaseve: [ christmaseve ]
     newyeareve: [ newyearseve, newyeareve ]
+DefaultLanguageFallback: DMY
 ...

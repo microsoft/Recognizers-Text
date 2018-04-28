@@ -33,8 +33,15 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList3),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
+
+            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7):
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
+
+            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6):
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
+
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
         ];
         this.implicitDateList = [
@@ -156,16 +163,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     }
 
     constructor() {
-        this.dateRegex = [
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList3),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
-        ];
+        this.dateRegex = new ChineseDateExtractorConfiguration().dateRegexList;
         this.monthOfYear = ChineseDateTime.ParserConfigurationMonthOfYear;
         this.dayOfMonth = ChineseDateTime.ParserConfigurationDayOfMonth;
         this.dayOfWeek = ChineseDateTime.ParserConfigurationDayOfWeek;

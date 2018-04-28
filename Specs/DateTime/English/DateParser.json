@@ -2516,4 +2516,27 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll go back 3-7-2017",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-7-2017",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-03-07",
+        "FutureResolution": {
+          "date": "2017-03-07"
+        },
+        "PastResolution": {
+          "date": "2017-03-07"
+        }
+      }
+    }
+  ]
+}
 ]

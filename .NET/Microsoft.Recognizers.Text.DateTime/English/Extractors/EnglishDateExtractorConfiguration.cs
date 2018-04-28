@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Collections.Immutable;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.English;
@@ -87,11 +87,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             // (Sunday,)? 6th of April
             new Regex(DateTimeDefinitions.DateExtractor3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 3-23-2017
-            new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_MDY? 
+                // 3-23-2017
+                new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline):
+                // 23-3-2015
+                new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 23-3-2015
-            new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_MDY? 
+                // 23-3-2015
+                new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline):
+                // 3-23-2017
+                new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // on 1.3
             new Regex(DateTimeDefinitions.DateExtractor6, RegexOptions.IgnoreCase | RegexOptions.Singleline),

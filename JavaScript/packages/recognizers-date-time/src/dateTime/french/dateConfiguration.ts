@@ -6,7 +6,8 @@ import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { FrenchDateTimeUtilityConfiguration, FrenchCommonDateTimeParserConfiguration } from "./baseConfiguration";
 import { FrenchDurationExtractorConfiguration } from "./durationConfiguration";
-import { IDateTimeExtractor } from "../baseDateTime"
+import { IDateTimeExtractor } from "../baseDateTime";
+import { Constants } from "../constants";
 
 export class FrenchDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -31,8 +32,15 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor1, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor2, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor3, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"),
+            
+            FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"):
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"),
+
+            FrenchDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"):
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"),
+
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor8, "gis"),
@@ -110,18 +118,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = [
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor1, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor2, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor3, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor8, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor9, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractorA, "gis"),
-        ];
+        this.dateRegex = new FrenchDateExtractorConfiguration().dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayRegex, "gis");
         this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayWithNumRegex, "gis");

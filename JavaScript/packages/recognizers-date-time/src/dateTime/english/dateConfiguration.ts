@@ -8,6 +8,7 @@ import { EnglishCommonDateTimeParserConfiguration, EnglishDateTimeUtilityConfigu
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
 import { IDateTimeParser } from "../parsers"
 import { IDateTimeExtractor } from "../baseDateTime";
+import { Constants } from "../constants";
 
 export class EnglishDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -31,8 +32,15 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor2),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
+
+            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
+
+            EnglishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_MDY?
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5):
+                RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4),
+
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7),
             RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
@@ -115,18 +123,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor2),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractorA),
-        ];
+        this.dateRegex = new EnglishDateExtractorConfiguration().dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OnRegex);
         this.specialDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayRegex);
         this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayWithNumRegex);

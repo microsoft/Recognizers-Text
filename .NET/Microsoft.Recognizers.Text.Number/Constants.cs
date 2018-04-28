@@ -18,5 +18,8 @@ namespace Microsoft.Recognizers.Text.Number
         public const string MODEL_NUMBERRANGE = "numberrange";
         public const string MODEL_ORDINAL = "ordinal";
         public const string MODEL_PERCENTAGE = "percentage";
+
+        // NARROW NO-BREAK SPACE
+        public const char NO_BREAK_SPACE = '\u202f';
     }
 }
