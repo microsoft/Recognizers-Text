@@ -6,4 +6,7 @@ export class Constants {
     static readonly SYS_NUM: string = "builtin.num";
     static readonly SYS_NUM_ORDINAL: string = "builtin.num.ordinal";
     static readonly SYS_NUM_PERCENTAGE: string = "builtin.num.percentage";
+    
+     // NARROW NO-BREAK SPACE
+    static readonly NO_BREAK_SPACE = '\u202f';
 }
