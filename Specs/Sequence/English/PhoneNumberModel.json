@@ -963,20 +963,6 @@
     ]
   },
   {
-    "Input": "My phone number is 123)456.0987.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "123)456.0987",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "123)456.0987"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is 1-444-555-1234.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -1012,20 +998,6 @@
         "TypeName": "phonenumber",
         "Resolution": {
           "value": "1(123)456-7890"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is +1 246.555-8888.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "+1 246.555-8888",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "+1 246.555-8888"
         }
       }
     ]
@@ -1478,20 +1450,6 @@
     ]
   },
   {
-    "Input": "My phone number is 0800.000.00.00.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "0800.000.00.00",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "0800.000.00.00"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is 0800-000-00-00.",
     "NotSupportedByDesign": "python",
     "NotSupported": "dotnet,javascript",
@@ -1533,20 +1491,6 @@
     ]
   },
   {
-    "Input": "My phone number is 0800.00.00.00.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "0800.00.00.00",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "0800.00.00.00"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is 0800 00 00 00.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -1581,20 +1525,6 @@
         "TypeName": "phonenumber",
         "Resolution": {
           "value": "0800 000 0000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 0800.000.0000.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "0800.000.0000",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "0800.000.0000"
         }
       }
     ]
@@ -2283,20 +2213,6 @@
     ]
   },
   {
-    "Input": "My phone number is 06.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "06.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "06.44.44.44.44"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is +33644444444.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -2310,34 +2226,6 @@
     ]
   },
   {
-    "Input": "My phone number is +336.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "+336.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "+336.44.44.44.44"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is +33 6.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "+33 6.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "+33 6.44.44.44.44"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is 0033644444444.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -2346,34 +2234,6 @@
         "TypeName": "phonenumber",
         "Resolution": {
           "value": "0033644444444"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 00336.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "00336.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "00336.44.44.44.44"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 0033 6.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "0033 6.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "0033 6.44.44.44.44"
         }
       }
     ]
@@ -2618,34 +2478,6 @@
     ]
   },
   {
-    "Input": "My phone number is 06.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "06.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "06.44.44.44.44"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 06 44.44-44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "06 44.44-44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "06 44.44-44.44"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is 0528254856.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -2685,48 +2517,6 @@
     ]
   },
   {
-    "Input": "My phone number is 05-28-44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "05-28-44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "05-28-44.44.44"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 05.28.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "05.28.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "05.28.44.44.44"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 05 28.44-44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "05 28.44-44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "05 28.44-44.44"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is +212644444444.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -2740,34 +2530,6 @@
     ]
   },
   {
-    "Input": "My phone number is +2126.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "+2126.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "+2126.44.44.44.44"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is +212 6.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "+212 6.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "+212 6.44.44.44.44"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is 00212644444444.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -2776,34 +2538,6 @@
         "TypeName": "phonenumber",
         "Resolution": {
           "value": "00212644444444"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 002126.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "002126.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "002126.44.44.44.44"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is 00212 6.44.44.44.44.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "00212 6.44.44.44.44",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "00212 6.44.44.44.44"
         }
       }
     ]
@@ -3078,20 +2812,6 @@
     ]
   },
   {
-    "Input": "My phone number is +40213.564.864.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "+40213.564.864",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "+40213.564.864"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is +40213 564 864.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -3204,20 +2924,6 @@
         "TypeName": "phonenumber",
         "Resolution": {
           "value": "+40750512346"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is +40750.512.346.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
-    "Results": [
-      {
-        "Text": "+40750.512.346",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "+40750.512.346"
         }
       }
     ]

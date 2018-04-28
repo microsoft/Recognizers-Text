@@ -47,9 +47,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.RelativeMonthRegex, // this month, next month, last month
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EngMonthRegex =
+        public static readonly Regex WrittenMonthRegex =
             new Regex(
-                DateTimeDefinitions.EngMonthRegex,
+                DateTimeDefinitions.WrittenMonthRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthSuffixRegex =

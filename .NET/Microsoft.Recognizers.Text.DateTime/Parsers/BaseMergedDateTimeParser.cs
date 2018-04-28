@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var afterMatch = Config.AfterRegex.Match(er.Text);
             var sinceMatch = Config.SinceRegex.Match(er.Text);
             
-            if (beforeMatch.Success && beforeMatch.Index==0)
+            if (beforeMatch.Success && beforeMatch.Index == 0)
             {
                 hasBefore = true;
                 er.Start += beforeMatch.Length;
@@ -185,20 +185,22 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
-
-            if (candidateResults != null && candidateResults.Any())
-            { 
-
-                var matches = Config.AmbiguousMonthP0Regex.Matches(query);
-
-                foreach (Match match in matches)
+            if (Config.AmbiguousMonthP0Regex != null)
+            {
+                if (candidateResults != null && candidateResults.Any())
                 {
 
-                    // Check for intersections/overlaps
-                    candidateResults = candidateResults.Where(c => !( match.Index < c.Start + c.Length &&
-                                                                      c.Start < match.Index + match.Length )).ToList();
-                }
+                    var matches = Config.AmbiguousMonthP0Regex.Matches(query);
 
+                    foreach (Match match in matches)
+                    {
+
+                        // Check for intersections/overlaps
+                        candidateResults = candidateResults.Where(c => !(match.Index < c.Start + c.Length &&
+                                                                         c.Start < match.Index + match.Length)).ToList();
+                    }
+
+                }
             }
 
             return candidateResults;
@@ -274,6 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return null;
             }
+
             var resolutions = new List<Dictionary<string, string>>();
             var res = new Dictionary<string, object>();
 

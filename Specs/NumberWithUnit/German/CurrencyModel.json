@@ -256,9 +256,8 @@
 ,
 {
   "Input": "Der Haushalt beläuft sich auf 12 500 EUR.",
-  "Comment": "DIN 1333",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "12 500 EUR",
@@ -289,16 +288,15 @@
 ,
 {
   "Input": "Der Umsatz sank in der zweiten Jahreshälfte um 27% auf 300 000 GBP",
-  "Comment": "Age-Model currently does not work with ordinals",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "300 000 GBP",
       "TypeName": "currency",
       "Resolution": {
         "value": "300000",
-        "unit": "Pound"
+        "unit": "British pound"
       }
     }
   ]

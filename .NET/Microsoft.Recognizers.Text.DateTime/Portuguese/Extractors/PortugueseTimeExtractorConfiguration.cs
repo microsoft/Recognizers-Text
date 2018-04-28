@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex TensTimeRegex = new Regex(DateTimeDefinitions.TensTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // handle "seis treinta", "seis veintiuno", "seis menos diez"
-        public static readonly Regex LangTimeRegex = new Regex(DateTimeDefinitions.LangTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WrittenTimeRegex = new Regex(DateTimeDefinitions.WrittenTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimePrefix = new Regex(DateTimeDefinitions.TimePrefix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             // (tres min pasadas las)? 3h00 (pm)?
             new Regex(DateTimeDefinitions.TimeRegex12, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            LangTimeRegex,
+            WrittenTimeRegex,
 
             // 340pm
             ConnectNumRegex

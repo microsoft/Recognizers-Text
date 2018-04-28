@@ -118,6 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
             if (MorningStartEndRegex.IsMatch(trimedText))
             {
                 timeStr = "TMO";
@@ -157,6 +158,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
+
             if (trimedText.StartsWith("prochain") || trimedText.EndsWith("prochain") ||
                 trimedText.StartsWith("prochaine") || trimedText.EndsWith("prochaine"))
             {
@@ -167,6 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 swift = -1;
             }
+
             return swift;
         }
     }

@@ -43,9 +43,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 DateTimeDefinitions.LessThanOneHour, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // handle "six thirty", "six twenty one" 
-        public static readonly Regex EngTimeRegex =
+        public static readonly Regex WrittenTimeRegex =
             new Regex(
-                DateTimeDefinitions.EngTimeRegex,
+                DateTimeDefinitions.WrittenTimeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimePrefix =
