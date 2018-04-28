@@ -282,7 +282,7 @@ export class ChineseNumberParser extends BaseNumberParser {
         
         let resultText = extResult.text.substr(1);
 
-        if (RegExpUtility.isMatch(this.config.digitNumRegex, resultText)) {
+        if (RegExpUtility.isMatch(this.config.digitNumRegex, resultText) && !RegExpUtility.isMatch(this.config.roundNumberIntegerRegex, resultText)) {
             result.value = this.getDigitValueChs(resultText, 1);
         } else {
             result.value = this.getIntValueChs(resultText);

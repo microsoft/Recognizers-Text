@@ -86,7 +86,7 @@
 ,
 {
   "Input": "第3万回",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第3万",
@@ -100,7 +100,7 @@
 ,
 {
   "Input": "第三万回",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第三万",
