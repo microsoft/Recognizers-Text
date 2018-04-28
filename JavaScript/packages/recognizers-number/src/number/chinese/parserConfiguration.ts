@@ -38,6 +38,7 @@ export class ChineseNumberParserConfiguration implements INumberParserConfigurat
     readonly pointRegex: RegExp;
     readonly speGetNumberRegex: RegExp;
     readonly pairRegex: RegExp;
+    readonly roundNumberIntegerRegex: RegExp;
 
     constructor(ci?: CultureInfo) {
         if (!ci) {
@@ -79,6 +80,7 @@ export class ChineseNumberParserConfiguration implements INumberParserConfigurat
         this.pointRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PointRegex, "gis");
         this.speGetNumberRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.SpeGetNumberRegex, "gis");
         this.pairRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PairRegex, "gis");
+        this.roundNumberIntegerRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.RoundNumberIntegerRegex, "gis");
     }
 
     normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {

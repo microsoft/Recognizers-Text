@@ -315,7 +315,7 @@ namespace Microsoft.Recognizers.Text.Number
             var resultText = extResult.Text;
             resultText = resultText.Substring(1);
 
-            result.Value = Config.DigitNumRegex.IsMatch(resultText)
+            result.Value = (Config.DigitNumRegex.IsMatch(resultText) && !Config.RoundNumberIntegerRegex.IsMatch(resultText))
                 ? GetDigitValue(resultText, 1)
                 : GetIntValue(resultText);
             result.ResolutionStr = result.Value.ToString();

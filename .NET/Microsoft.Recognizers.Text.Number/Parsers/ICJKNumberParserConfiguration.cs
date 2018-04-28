@@ -42,7 +42,9 @@ namespace Microsoft.Recognizers.Text.Number
         Regex PairRegex { get; }
 
         Regex DozenRegex { get; }
-        
+
+        Regex RoundNumberIntegerRegex { get; }
+
         #endregion
     }
 }

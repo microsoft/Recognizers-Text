@@ -188,4 +188,32 @@
     }
   ]
 }
+,
+{
+  "Input": "第3万回",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第3万",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "30000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第三万回",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "第三万",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "30000"
+      }
+    }
+  ]
+}
 ]
