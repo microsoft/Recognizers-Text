@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string TimeOfTodayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
 		public const string DateTimePeriodTillRegex = @"(?<till>到|直到|--|-|—|——)";
 		public const string DateTimePeriodPrepositionRegex = @"(?<prep>^\s*的|在\s*$)";
-		public const string HourRegex = @"(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
+		public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
 		public const string HourNumRegex = @"(?<hour>[零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
 		public const string ZhijianRegex = @"^\s*(之间|之内|期间|中间|间)";
 		public const string DateTimePeriodThisRegex = @"这个|这一个|这|这一";
