@@ -1784,5 +1784,24 @@
       }
     }
   ]
+},
+{
+  "Input": "zero is 0",
+  "Results": [
+    {
+      "Text": "zero",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    },
+    {
+      "Text": "0",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    }
+  ]
 }
 ]

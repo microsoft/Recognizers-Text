@@ -145,7 +145,7 @@ class BaseNumberParser(Parser):
         elif 'Pow' in extra:
             ret = self._power_number_parse(source)
 
-        if ret and ret.value:
+        if ret and ret.value is not None:
             if is_negative:
                 # Recover to the original extracted Text
                 ret.text = match_negative[1] + source.text
