@@ -327,6 +327,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }));
             #endregion
+
+            #region Japanese
+            RegisterModel<AgeModel>(
+                Culture.Japanese,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Japanese.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Japanese.AgeParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
+                    }
+                }));
+            #endregion
         }
     }
 }

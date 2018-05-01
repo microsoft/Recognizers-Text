@@ -1,0 +1,18 @@
+﻿---
+#AgeExtractorConfiguration
+AgeAmbiguousValues: !list
+  types: [string]
+  entries:
+    - 歳
+AgeSuffixList: !dictionary
+  types: [string, string]
+  entries:
+    Year: 歳
+    Month: ヶ月
+    Week: 週間|週
+    Day: 日間|日齢|日大
+#JapaneseNumberWithUnitExtractorConfiguration
+BuildPrefix: ''
+BuildSuffix: ''
+ConnectorToken: ''
+...

@@ -150,7 +150,7 @@ NumbersWithAllowListRegex: !nestedRegex
   def: (({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}*))
   references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, ZeroToNineIntegerRegex]
 NumbersAggressiveRegex: !nestedRegex
-  def: (?<!({AllIntRegex}*|{AllFloatRegex})*パーセント){NegativeNumberTermsRegex}?({NotSingleRegex})
+  def: (({AllIntRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}*))
   references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex]
 #DoubleExtractor
 PointRegex: !nestedRegex
