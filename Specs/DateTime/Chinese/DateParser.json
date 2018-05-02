@@ -738,11 +738,10 @@
 }
 ,
 {
-  "Input": "13.5.2015",
+  "Input": "你13.5.2015有时间吗？",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -762,11 +761,10 @@
 }
 ,
 {
-  "Input": "2015.5.13",
+  "Input": "你2015.5.13那天在哪儿",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

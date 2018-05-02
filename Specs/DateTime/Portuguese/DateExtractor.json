@@ -697,8 +697,7 @@
 }
 ,
 {
-  "Input": "13.5.2015",
-  "NotSupported": "javascript",
+  "Input": "Você está livre em 13.5.2015",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -709,8 +708,7 @@
 }
 ,
 {
-  "Input": "2015.5.13",
-  "NotSupported": "javascript",
+  "Input": "Você está livre em 2015.5.13",
   "NotSupportedByDesign": "python",
   "Results": [
     {

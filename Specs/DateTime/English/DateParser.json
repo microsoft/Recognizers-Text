@@ -2518,11 +2518,10 @@
 }
 ,
 {
-  "Input": "13.5.2015",
+  "Input": "Are you free on 13.5.2015?",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2542,11 +2541,10 @@
 }
 ,
 {
-  "Input": "2015.5.13",
+  "Input": "Are you available on 2015.5.13?",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

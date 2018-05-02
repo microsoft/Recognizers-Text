@@ -399,8 +399,7 @@
 }
 ,
 {
-  "Input": "13.5.2015",
-  "NotSupported": "javascript",
+  "Input": "你13.5.2015有没有空",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -411,8 +410,7 @@
 }
 ,
 {
-  "Input": "2015.5.13",
-  "NotSupported": "javascript",
+  "Input": "你2015.5.13有没有时间",
   "NotSupportedByDesign": "python",
   "Results": [
     {

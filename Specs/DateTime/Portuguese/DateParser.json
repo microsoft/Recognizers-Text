@@ -1508,7 +1508,7 @@
   ]
 },
 {
-  "Input": "13.5.2015",
+  "Input": "Você está livre em 13.5.2015",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -1530,7 +1530,7 @@
   ]
 },
 {
-  "Input": "2015.5.13",
+  "Input": "Você está livre em 2015.5.13",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },

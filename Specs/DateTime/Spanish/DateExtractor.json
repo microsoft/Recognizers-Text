@@ -615,8 +615,7 @@
 }
 ,
 {
-  "Input": "13.5.2015",
-  "NotSupported": "javascript",
+  "Input": "¿Estás libre el 13.5.2015",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -627,8 +626,7 @@
 }
 ,
 {
-  "Input": "2015.5.13",
-  "NotSupported": "javascript",
+  "Input": "¿Estás libre el 2015.5.13",
   "NotSupportedByDesign": "python",
   "Results": [
     {
