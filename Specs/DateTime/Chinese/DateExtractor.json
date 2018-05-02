@@ -351,12 +351,12 @@
 }
 ,
 {
-  "Input": "789-01-29",
+  "Input": "1789-01-29",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "789-01-29",
+      "Text": "1789-01-29",
       "Type": "date"
     }
   ]

@@ -666,7 +666,7 @@
 }
 ,
 {
-  "Input": "789-01-29",
+  "Input": "1789-01-29",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
   },
@@ -674,15 +674,15 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "789-01-29",
+      "Text": "1789-01-29",
       "Type": "date",
       "Value": {
-        "Timex": "0789-01-29",
+        "Timex": "1789-01-29",
         "FutureResolution": {
-          "date": "0789-01-29"
+          "date": "1789-01-29"
         },
         "PastResolution": {
-          "date": "0789-01-29"
+          "date": "1789-01-29"
         }
       }
     }
