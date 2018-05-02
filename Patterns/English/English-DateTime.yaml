@@ -185,7 +185,7 @@ DateExtractor4: !nestedRegex
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DateYearRegex}
+  def: \b{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DateYearRegex}
   references: [ DayRegex, MonthNumRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<=\b(on|in|at)\s+){MonthNumRegex}[\-\.]{DayRegex}\b
@@ -200,7 +200,7 @@ DateExtractor9: !nestedRegex
   def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})?\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex ]
 DateExtractorA: !nestedRegex
-  def: \b{DateYearRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}
+  def: \b{DateYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}
   references: [ DateYearRegex, MonthNumRegex, DayRegex ]
 OfMonth: !nestedRegex
   def: ^\s*of\s*{MonthRegex}

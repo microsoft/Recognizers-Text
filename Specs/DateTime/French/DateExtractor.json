@@ -956,4 +956,26 @@
     }
   ]
 }
+,
+{
+  "Input": "Êtes-vous libre le 13.5.2015",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "13.5.2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Êtes-vous libre le 2015.5.13",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015.5.13",
+      "Type": "date"
+    }
+  ]
+}
 ]

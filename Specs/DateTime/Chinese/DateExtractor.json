@@ -351,12 +351,12 @@
 }
 ,
 {
-  "Input": "789-01-29",
+  "Input": "1789-01-29",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "789-01-29",
+      "Text": "1789-01-29",
       "Type": "date"
     }
   ]
@@ -393,6 +393,28 @@
   "Results": [
     {
       "Text": "三六七年一月一日",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "你13.5.2015有没有空",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "13.5.2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "你2015.5.13有没有时间",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015.5.13",
       "Type": "date"
     }
   ]

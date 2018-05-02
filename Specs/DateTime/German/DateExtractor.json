@@ -202,4 +202,25 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "Bist du am 13.5.2015 frei?",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Bist du am 2015.5.13 frei?",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date"
+      }
+    ]
+  }
 ]

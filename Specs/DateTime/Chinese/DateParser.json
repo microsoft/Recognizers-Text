@@ -666,7 +666,7 @@
 }
 ,
 {
-  "Input": "789-01-29",
+  "Input": "1789-01-29",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
   },
@@ -674,15 +674,15 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "789-01-29",
+      "Text": "1789-01-29",
       "Type": "date",
       "Value": {
-        "Timex": "0789-01-29",
+        "Timex": "1789-01-29",
         "FutureResolution": {
-          "date": "0789-01-29"
+          "date": "1789-01-29"
         },
         "PastResolution": {
-          "date": "0789-01-29"
+          "date": "1789-01-29"
         }
       }
     }
@@ -731,6 +731,52 @@
         },
         "PastResolution": {
           "date": "0367-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "你13.5.2015有时间吗？",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "13.5.2015",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-05-13",
+        "FutureResolution": {
+          "date": "2015-05-13"
+        },
+        "PastResolution": {
+          "date": "2015-05-13"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "你2015.5.13那天在哪儿",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015.5.13",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-05-13",
+        "FutureResolution": {
+          "date": "2015-05-13"
+        },
+        "PastResolution": {
+          "date": "2015-05-13"
         }
       }
     }

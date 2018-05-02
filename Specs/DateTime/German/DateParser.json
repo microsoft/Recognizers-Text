@@ -316,5 +316,49 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Bist du am 13.5.2015 frei?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bist du am 2015.5.13 frei?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        }
+      }
+    ]
   }
 ]
