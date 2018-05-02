@@ -80,7 +80,7 @@ DateRegexList6: !nestedRegex
   references: [DayRegex, MonthNumRegex, YearRegex]
 # 23-3-2015
 DateRegexList7: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{YearRegex}
+  def: \b{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{YearRegex}
   references: [DayRegex, MonthNumRegex, YearRegex]
 # 2015-12-23
 DateRegexList8: !nestedRegex

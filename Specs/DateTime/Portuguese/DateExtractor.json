@@ -695,4 +695,28 @@
     }
   ]
 }
+,
+{
+  "Input": "13.5.2015",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "13.5.2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2015.5.13",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015.5.13",
+      "Type": "date"
+    }
+  ]
+}
 ]
