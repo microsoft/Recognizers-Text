@@ -140,6 +140,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string PeriodTimeOfDayRegex = @"\b((dans\s+(le)?\s+)?((?<early>d[eé]but(\s+|-|d[ue]|de la)|t[oô]t)|(?<late>tard\s*|fin(\s+|-|d[eu])?))?(?<timeOfDay>matin|((d|l)?'?)apr[eè]s-midi|nuit|soir[eé]e|soir))\b";
 		public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(ce|cette\s+)(soir|nuit))\b";
 		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}))\b";
+		public const string LessThanRegex = @"^[.]";
+		public const string MoreThanRegex = @"^[.]";
 		public const string DurationUnitRegex = @"(?<unit>ans|ann[eé]e|mois|semaines|semaine|jour|jours|heures|heure|hrs|hr|h|minutes|minute|mins|min|secondes|seconde|secs|sec|ann[eé]es|journ[eé]e)\b";
 		public const string SuffixAndRegex = @"(?<suffix>\s*(et)\s+((un|une)\s+)?(?<suffix_num>demi|quart))";
 		public const string PeriodicRegex = @"\b(?<periodic>quotidienne|quotidien|journellement|mensuel|mensuelle|jour|jours|hebdomadaire|bihebdomadaire|annuellement|annuel)\b";

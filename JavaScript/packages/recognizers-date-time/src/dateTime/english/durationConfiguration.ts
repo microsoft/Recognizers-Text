@@ -13,6 +13,8 @@ export class EnglishDurationExtractorConfiguration implements IDurationExtractor
     readonly inexactNumberUnitRegex: RegExp
     readonly suffixAndRegex: RegExp
     readonly relativeDurationUnitRegex: RegExp
+    readonly moreThanRegex: RegExp;
+    readonly lessThanRegex: RegExp;
     readonly cardinalExtractor: EnglishCardinalExtractor
 
     constructor() {
@@ -23,7 +25,9 @@ export class EnglishDurationExtractorConfiguration implements IDurationExtractor
         this.anUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex);
         this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InexactNumberUnitRegex);
         this.suffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex);
-        this.relativeDurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDurationUnitRegex)
+        this.relativeDurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDurationUnitRegex);
+        this.moreThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MoreThanRegex);
+        this.lessThanRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanRegex);
         this.cardinalExtractor = new EnglishCardinalExtractor();
     }
 }

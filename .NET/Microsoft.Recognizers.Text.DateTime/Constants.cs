@@ -57,6 +57,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MID_MOD = "mid";
         public const string LATE_MOD = "end";
 
+        public const string MORE_THAN_MOD = "more than";
+        public const string LESS_THAN_MOD = "less than";
+
         // Invalid year
         public const int InvalidYear = int.MinValue;
 

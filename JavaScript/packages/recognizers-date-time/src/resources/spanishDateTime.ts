@@ -125,6 +125,8 @@ export namespace SpanishDateTime {
 	export const DateTimePeriodNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)\\s*${TimeUnitRegex}`;
 	export const PeriodTimeOfDayWithDateRegex = `\\b(((y|a|en|por)\\s+la|al)\\s+)?(?<timeOfDay>mañana|madrugada|(pasado\\s+(el\\s+)?)?medio\\s?d[ií]a|tarde|noche|anoche)\\b`;
 	export const RelativeTimeUnitRegex = `(${PastRegex}|${FutureRegex})\\s+${UnitRegex}`;
+	export const LessThanRegex = `^[.]`;
+	export const MoreThanRegex = `^[.]`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(y)\\s+((un|uno|una)\\s+)?(?<suffix_num>media|cuarto))`;
 	export const FollowedUnit = `^\\s*${UnitRegex}`;
 	export const DurationNumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)${UnitRegex}`;

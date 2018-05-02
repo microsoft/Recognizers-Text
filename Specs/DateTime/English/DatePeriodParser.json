@@ -2183,6 +2183,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2017-11",
+        "Mod": "end",
         "FutureResolution": {
           "startDate": "2017-11-16",
           "endDate": "2017-12-01"
@@ -2208,6 +2209,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W45",
+        "Mod": "end",
         "FutureResolution": {
           "startDate": "2017-11-09",
           "endDate": "2017-11-13"
@@ -2233,6 +2235,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2017",
+        "Mod": "end",
         "FutureResolution": {
           "startDate": "2017-07-01",
           "endDate": "2018-01-01"
@@ -2258,6 +2261,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2018",
+        "Mod": "start",
         "FutureResolution": {
           "startDate": "2018-01-01",
           "endDate": "2018-07-01"
@@ -2283,6 +2287,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W46",
+        "Mod": "start",
         "FutureResolution": {
           "startDate": "2017-11-13",
           "endDate": "2017-11-16"
@@ -2308,6 +2313,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2017-12",
+        "Mod": "start",
         "FutureResolution": {
           "startDate": "2017-12-01",
           "endDate": "2017-12-16"
@@ -2333,6 +2339,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2016",
+        "Mod": "end",
         "FutureResolution": {
           "startDate": "2016-07-01",
           "endDate": "2017-01-01"
@@ -2358,6 +2365,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W44",
+        "Mod": "end",
         "FutureResolution": {
           "startDate": "2017-11-02",
           "endDate": "2017-11-06"
@@ -2383,6 +2391,7 @@
       "Type": "daterange",
       "Value": {
         "Timex": "2017-10",
+        "Mod": "end",
         "FutureResolution": {
           "startDate": "2017-10-16",
           "endDate": "2017-11-01"

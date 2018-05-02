@@ -315,6 +315,12 @@ PeriodSpecificTimeOfDayRegex: !nestedRegex
 PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(({TimeOfDayRegex}))\b
  references: [ TimeOfDayRegex]
+LessThanRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+MoreThanRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 DurationUnitRegex: !simpleRegex
   def: (?<unit>ans|ann[eé]e|mois|semaines|semaine|jour|jours|heures|heure|hrs|hr|h|minutes|minute|mins|min|secondes|seconde|secs|sec|ann[eé]es|journ[eé]e)\b
 SuffixAndRegex: !simpleRegex

@@ -13,6 +13,8 @@ export class SpanishDurationExtractorConfiguration implements IDurationExtractor
     readonly inexactNumberUnitRegex: RegExp;
     readonly suffixAndRegex: RegExp;
     readonly relativeDurationUnitRegex: RegExp;
+    readonly moreThanRegex: RegExp;
+    readonly lessThanRegex: RegExp;
     readonly cardinalExtractor: BaseNumberExtractor;
 
     constructor() {
@@ -24,6 +26,8 @@ export class SpanishDurationExtractorConfiguration implements IDurationExtractor
         this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.InexactNumberUnitRegex, "gis");
         this.suffixAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SuffixAndRegex, "gis");
         this.relativeDurationUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeDurationUnitRegex, "gis");
+        this.moreThanRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MoreThanRegex, "gis");
+        this.lessThanRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.LessThanOneHour, "gis");
         this.cardinalExtractor = new SpanishCardinalExtractor();
     }
 }

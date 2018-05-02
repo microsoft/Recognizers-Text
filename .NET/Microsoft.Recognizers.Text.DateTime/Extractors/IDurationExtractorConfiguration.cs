@@ -31,6 +31,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DurationConnectorRegex { get; }
 
+        Regex LessThanRegex { get; }
+
+        Regex MoreThanRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }

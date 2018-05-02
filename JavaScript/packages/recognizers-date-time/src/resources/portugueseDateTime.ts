@@ -128,6 +128,8 @@ export namespace PortugueseDateTime {
 	export const RelativeTimeUnitRegex = `(${PastRegex}|${FutureRegex})\\s+${UnitRegex}|${UnitRegex}\\s+(${PastRegex}|${FutureRegex})`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(e)\\s+(?<suffix_num>meia|(um\\s+)?quarto))`;
 	export const FollowedUnit = `^\\s*${UnitRegex}`;
+	export const LessThanRegex = `^[.]`;
+	export const MoreThanRegex = `^[.]`;
 	export const DurationNumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)${UnitRegex}`;
 	export const AnUnitRegex = `\\b(um(a)?)\\s+${UnitRegex}`;
 	export const AllRegex = `\\b(?<all>tod[oa]?\\s+(o|a)\\s+(?<unit>ano|m[êe]s|semana|dia))\\b`;

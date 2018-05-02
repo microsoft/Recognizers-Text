@@ -1,8 +1,8 @@
-import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
+import { ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants"
 import { Constants as NumberConstants } from "@microsoft/recognizers-text-number"
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek, StringMap } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
