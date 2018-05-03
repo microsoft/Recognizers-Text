@@ -1116,7 +1116,7 @@
       "Text": "less than a couple of days",
       "Type": "duration",
       "Value": {
-        "Mod": "less than",
+        "Mod": "less",
         "Timex": "P2D",
         "FutureResolution": {
           "duration": "172800"
@@ -1141,7 +1141,7 @@
       "Type": "duration",
       "Value": {
         "Timex": "PT1H",
-        "Mod": "more than",
+        "Mod": "more",
         "FutureResolution": {
           "duration": "3600"
         },
