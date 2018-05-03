@@ -134,6 +134,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?)\s*{TimeUnitRegex}";
 		public const string PeriodTimeOfDayWithDateRegex = @"\b(((y|a|en|por)\s+la|al)\s+)?(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b";
 		public static readonly string RelativeTimeUnitRegex = $@"({PastRegex}|{FutureRegex})\s+{UnitRegex}";
+		public const string LessThanRegex = @"^[.]";
+		public const string MoreThanRegex = @"^[.]";
 		public const string SuffixAndRegex = @"(?<suffix>\s*(y)\s+((un|uno|una)\s+)?(?<suffix_num>media|cuarto))";
 		public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
 		public static readonly string DurationNumberCombinedWithUnit = $@"\b(?<num>\d+(\,\d*)?){UnitRegex}";

@@ -131,6 +131,8 @@ export namespace FrenchDateTime {
 	export const PeriodTimeOfDayRegex = `\\b((dans\\s+(le)?\\s+)?((?<early>d[eé]but(\\s+|-|d[ue]|de la)|t[oô]t)|(?<late>tard\\s*|fin(\\s+|-|d[eu])?))?(?<timeOfDay>matin|((d|l)?'?)apr[eè]s-midi|nuit|soir[eé]e|soir))\\b`;
 	export const PeriodSpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\b(ce|cette\\s+)(soir|nuit))\\b`;
 	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}))\\b`;
+	export const LessThanRegex = `^[.]`;
+	export const MoreThanRegex = `^[.]`;
 	export const DurationUnitRegex = `(?<unit>ans|ann[eé]e|mois|semaines|semaine|jour|jours|heures|heure|hrs|hr|h|minutes|minute|mins|min|secondes|seconde|secs|sec|ann[eé]es|journ[eé]e)\\b`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(et)\\s+((un|une)\\s+)?(?<suffix_num>demi|quart))`;
 	export const PeriodicRegex = `\\b(?<periodic>quotidienne|quotidien|journellement|mensuel|mensuelle|jour|jours|hebdomadaire|bihebdomadaire|annuellement|annuel)\\b`;

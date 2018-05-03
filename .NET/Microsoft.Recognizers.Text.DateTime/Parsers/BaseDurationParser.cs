@@ -56,6 +56,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            var res = (DateTimeResolutionResult)value;
+            if (res != null && er.Data != null)
+            {
+                if (er.Data.Equals(Constants.MORE_THAN_MOD))
+                {
+                    res.Mod = Constants.MORE_THAN_MOD;
+                }
+                else if (er.Data.Equals(Constants.LESS_THAN_MOD))
+                {
+                    res.Mod = Constants.LESS_THAN_MOD;
+                }
+            }
+
             var ret = new DateTimeParseResult
             {
                 Text = er.Text,

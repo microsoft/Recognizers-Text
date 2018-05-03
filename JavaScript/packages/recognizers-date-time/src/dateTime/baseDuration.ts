@@ -1,8 +1,8 @@
-import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
+import { ExtractResult, RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { Token, DateTimeResolutionResult, StringMap } from "./utilities";
+import { Token, DateTimeResolutionResult } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime";
 
 export interface IDurationExtractorConfiguration {
@@ -14,6 +14,8 @@ export interface IDurationExtractorConfiguration {
     inexactNumberUnitRegex: RegExp,
     suffixAndRegex: RegExp,
     relativeDurationUnitRegex: RegExp,
+    moreThanRegex: RegExp,
+    lessThanRegex: RegExp,
     cardinalExtractor: BaseNumberExtractor
 }
 
@@ -27,7 +29,6 @@ export class BaseDurationExtractor implements IDateTimeExtractor {
 
     extract(source: string, refDate: Date): Array<ExtractResult> {
         if (!refDate) refDate = new Date();
-        let referenceDate = refDate;
 
         let baseTokens = this.numberWithUnit(source);
         let tokens: Array<Token> = new Array<Token>()
@@ -35,7 +36,39 @@ export class BaseDurationExtractor implements IDateTimeExtractor {
         .concat(this.numberWithUnitAndSuffix(source, baseTokens))
         .concat(this.implicitDuration(source))
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
+
+        this.resolveMoreThanOrLessThanPrefix(source, result);
+
         return result;
+    }
+
+    // handle cases look like: {more than | less than} {duration}?
+    private resolveMoreThanOrLessThanPrefix(text: string, ers: Array<ExtractResult>) {
+        for (let er of ers)
+        {
+            var beforeString = text.substr(0, er.start);
+            let match = RegExpUtility.getMatches(this.config.moreThanRegex, beforeString);
+            if (match && match.length)
+            {
+                er.data = TimeTypeConstants.moreThanMod;
+            }
+
+            if (!match || match.length === 0)
+            {
+                match = RegExpUtility.getMatches(this.config.lessThanRegex, beforeString);
+                if (match && match.length)
+                {
+                    er.data = TimeTypeConstants.lessThanMod;
+                }
+            }
+
+            if (match && match.length)
+            {
+                er.length += er.start - match[0].index;
+                er.start = match[0].index;
+                er.text = text.substr(er.start, er.length);
+            }
+        }
     }
 
     private numberWithUnit(source: string): Array<Token> {
@@ -117,6 +150,16 @@ export class BaseDurationParser implements IDateTimeParser {
                 resultValue = innerResult;
             }
         }
+        
+        var value = resultValue as DateTimeResolutionResult;
+
+        if (value && extractorResult.data) {
+            if (extractorResult.data === TimeTypeConstants.moreThanMod ||
+                extractorResult.data === TimeTypeConstants.lessThanMod) {
+                value.mod = extractorResult.data;
+            }
+        }
+
         let result = new DateTimeParseResult(extractorResult);
         result.value = resultValue;
         result.timexStr = resultValue ? resultValue.timex : '';
@@ -241,7 +284,6 @@ export class BaseDurationParser implements IDateTimeParser {
         if (!match) return result;
         let num = StringUtility.isNullOrEmpty(match.groups('half').value) ? 1 : 0.5
         num += this.parseNumberWithUnitAndSuffix(source);
-        let numStr = num.toString();
 
         let sourceUnit = match.groups('unit').value;
         if (this.config.unitMap.has(sourceUnit)) {
@@ -269,8 +311,6 @@ export class BaseDurationParser implements IDateTimeParser {
             num = 3;
         }
         
-        let numStr = num.toString();
-
         let sourceUnit = match.groups('unit').value;
         if (this.config.unitMap.has(sourceUnit)) {
             let unitStr = this.config.unitMap.get(sourceUnit);

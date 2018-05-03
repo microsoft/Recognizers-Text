@@ -137,6 +137,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public static readonly string RelativeTimeUnitRegex = $@"({PastRegex}|{FutureRegex})\s+{UnitRegex}|{UnitRegex}\s+({PastRegex}|{FutureRegex})";
 		public const string SuffixAndRegex = @"(?<suffix>\s*(e)\s+(?<suffix_num>meia|(um\s+)?quarto))";
 		public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
+		public const string LessThanRegex = @"^[.]";
+		public const string MoreThanRegex = @"^[.]";
 		public static readonly string DurationNumberCombinedWithUnit = $@"\b(?<num>\d+(\,\d*)?){UnitRegex}";
 		public static readonly string AnUnitRegex = $@"\b(um(a)?)\s+{UnitRegex}";
 		public const string AllRegex = @"\b(?<all>tod[oa]?\s+(o|a)\s+(?<unit>ano|m[êe]s|semana|dia))\b";

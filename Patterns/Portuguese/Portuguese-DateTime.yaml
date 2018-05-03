@@ -340,6 +340,12 @@ SuffixAndRegex: !simpleRegex
 FollowedUnit: !nestedRegex
   def: ^\s*{UnitRegex}
   references: [ UnitRegex ]
+LessThanRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+MoreThanRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 DurationNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\,\d*)?){UnitRegex}
   references: [ UnitRegex ]

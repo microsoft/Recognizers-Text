@@ -331,6 +331,12 @@ RelativeTimeUnitRegex: !nestedRegex
   def: ({PastRegex}|{FutureRegex})\s+{UnitRegex}
   references: [ PastRegex, FutureRegex, UnitRegex ]
 # SpanishDurationExtractorConfiguration
+LessThanRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+MoreThanRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(y)\s+((un|uno|una)\s+)?(?<suffix_num>media|cuarto))
 FollowedUnit: !nestedRegex

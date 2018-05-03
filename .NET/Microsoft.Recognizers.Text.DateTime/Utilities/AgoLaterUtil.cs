@@ -109,6 +109,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             var resultDateTime = referenceTime;
             var timex = durationParseResult.TimexStr;
 
+            if (((DateTimeResolutionResult)durationParseResult.Value).Mod == Constants.MORE_THAN_MOD)
+            {
+                ret.Mod = Constants.MORE_THAN_MOD;
+            }
+            else if (((DateTimeResolutionResult)durationParseResult.Value).Mod == Constants.LESS_THAN_MOD)
+            {
+                ret.Mod = Constants.LESS_THAN_MOD;
+            }
+
             if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoRegex))
             {
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, false);

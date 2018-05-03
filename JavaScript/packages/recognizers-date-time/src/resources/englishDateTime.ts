@@ -150,6 +150,8 @@ export namespace EnglishDateTime {
 	export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b`;
 	export const PeriodSpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;
 	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}(\\s+(on|of))?))\\b`;
+	export const LessThanRegex = `\\b(less\\s+than)\\s+$`;
+	export const MoreThanRegex = `\\b(more\\s+than)\\s+$`;
 	export const DurationUnitRegex = `(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(and)\\s+((an|a)\\s+)?(?<suffix_num>half|quarter))`;
 	export const PeriodicRegex = `\\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annually|annual)\\b`;

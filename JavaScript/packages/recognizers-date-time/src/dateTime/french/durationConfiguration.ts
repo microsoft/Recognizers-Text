@@ -13,6 +13,8 @@ export class FrenchDurationExtractorConfiguration implements IDurationExtractorC
     readonly inexactNumberUnitRegex: RegExp;
     readonly suffixAndRegex: RegExp;
     readonly relativeDurationUnitRegex: RegExp;
+    readonly moreThanRegex: RegExp;
+    readonly lessThanRegex: RegExp;
     readonly cardinalExtractor: BaseNumberExtractor;
 
     constructor() {
@@ -24,6 +26,8 @@ export class FrenchDurationExtractorConfiguration implements IDurationExtractorC
         this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InexactNumberUnitRegex, "gis");
         this.suffixAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SuffixAndRegex, "gis");
         this.relativeDurationUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeDurationUnitRegex, "gis");
+        this.moreThanRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MoreThanRegex, "gis");
+        this.lessThanRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.LessThanOneHour, "gis");
         this.cardinalExtractor = new FrenchCardinalExtractor();
     }
 }

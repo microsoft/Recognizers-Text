@@ -180,12 +180,20 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.IsNotNull(actualValue, GetMessage(TestSpec));
                 Assert.AreEqual(expectedValue.Timex, actualValue.Timex, GetMessage(TestSpec));
+                if (expectedValue.Mod != null || actualValue.Mod != null)
+                {
+                    Assert.IsNotNull(expectedValue.Mod, GetMessage(TestSpec));
+                    Assert.IsNotNull(actualValue.Mod, GetMessage(TestSpec));
+                    Assert.AreEqual(expectedValue.Mod, actualValue.Mod, GetMessage(TestSpec));
+                }
+
                 CollectionAssert.AreEqual(expectedValue.FutureResolution, actualValue.FutureResolution, GetMessage(TestSpec));
                 CollectionAssert.AreEqual(expectedValue.PastResolution, actualValue.PastResolution, GetMessage(TestSpec));
 
-                if (expectedValue.TimeZoneResolution != null)
+                if (expectedValue.TimeZoneResolution != null || actualValue.TimeZoneResolution != null)
                 {
                     Assert.IsNotNull(actualValue.TimeZoneResolution, GetMessage(TestSpec));
+                    Assert.IsNotNull(expectedValue.TimeZoneResolution, GetMessage(TestSpec));
                     Assert.AreEqual(expectedValue.TimeZoneResolution.Value, actualValue.TimeZoneResolution.Value, GetMessage(TestSpec));
                     Assert.AreEqual(expectedValue.TimeZoneResolution.UtcOffsetMins, actualValue.TimeZoneResolution.UtcOffsetMins, GetMessage(TestSpec));
                 }

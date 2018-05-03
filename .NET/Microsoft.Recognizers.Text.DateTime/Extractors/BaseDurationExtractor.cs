@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -28,11 +27,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
-            tokens.AddRange(NumberWithUnit(text));
-            tokens.AddRange(NumberWithUnitAndSuffix(text, NumberWithUnit(text)));
+            var numberWithUnitTokens = NumberWithUnit(text);
+
+            tokens.AddRange(numberWithUnitTokens);
+            tokens.AddRange(NumberWithUnitAndSuffix(text, numberWithUnitTokens));
             tokens.AddRange(ImplicitDuration(text));
 
             var rets = Token.MergeAllTokens(tokens, text, ExtractorName);
+
+            ResolveMoreThanOrLessThanPrefix(text, rets);
 
             if (this.merge)
             {
@@ -40,6 +43,36 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return rets;
+        }
+
+        // handle cases look like: {more than | less than} {duration}?
+        private void ResolveMoreThanOrLessThanPrefix(string text, List<ExtractResult> ers)
+        {
+            foreach (var er in ers)
+            {
+                var beforeString = text.Substring(0, (int)er.Start);
+                var match = config.MoreThanRegex.Match(beforeString);
+                if (match.Success)
+                {
+                    er.Data = Constants.MORE_THAN_MOD;
+                }
+
+                if (!match.Success)
+                {
+                    match = config.LessThanRegex.Match(beforeString);
+                    if (match.Success)
+                    {
+                        er.Data = Constants.LESS_THAN_MOD;
+                    }
+                }
+
+                if (match.Success)
+                {
+                    er.Length += er.Start - match.Index;
+                    er.Start = match.Index;
+                    er.Text = text.Substring((int)er.Start, (int)er.Length);
+                }
+            }
         }
         
         // handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
