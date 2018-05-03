@@ -157,6 +157,7 @@ export namespace PortugueseDateTime {
 	export const NumberAsTimeRegex = `^[.]`;
 	export const TimeBeforeAfterRegex = `^[.]`;
 	export const DateNumberConnectorRegex = `^[.]`;
+	export const ComplexDatePeriodRegex = `^[.]`;
 	export const AgoRegex = `\\b(antes|atr[áa]s|no passado)\\b`;
 	export const LaterRegex = `\\b(depois d[eoa]s?|ap[óo]s (as)?|desde (as|o)|desde|no futuro|mais tarde)\\b`;
 	export const Tomorrow = 'amanh[ãa]';

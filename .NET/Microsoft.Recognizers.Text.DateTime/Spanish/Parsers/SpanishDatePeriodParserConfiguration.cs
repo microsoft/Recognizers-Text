@@ -63,6 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
+        public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
 
         //TODO: config this according to English
@@ -134,6 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             YearPlusNumberRegex = SpanishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = SpanishDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             YearPeriodRegex = SpanishDatePeriodExtractorConfiguration.YearPeriodRegex;
+            ComplexDatePeriodRegex = SpanishDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
             RelativeDecadeRegex = SpanishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = SpanishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
