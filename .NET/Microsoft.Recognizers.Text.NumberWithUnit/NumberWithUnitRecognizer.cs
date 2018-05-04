@@ -119,8 +119,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Chinese.CurrencyParserConfiguration())
                     },
                     {
                         new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
