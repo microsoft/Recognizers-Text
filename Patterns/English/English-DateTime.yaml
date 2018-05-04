@@ -28,8 +28,6 @@ WrittenNumRegex: !simpleRegex
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
-MinYearNum: '1500'
-MaxYearNum: '2100'
 YearNumRegex: !simpleRegex
   def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
 YearRegex: !nestedRegex
@@ -136,7 +134,7 @@ PmDescRegex: !simpleRegex
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>((1\d|20)\d{2})|2100|((9\d|0\d|1\d|2\d)\b(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
+  def: (?<year>((1\d|20)\d{2})|2100|(([0-27-9]\d)\b(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
   references: [ DescRegex, AmDescRegex, PmDescRegex ]
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))

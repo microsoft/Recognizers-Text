@@ -107,8 +107,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = SpanishDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = SpanishDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = SpanishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = SpanishDatePeriodExtractorConfiguration.DayBetweenRegex;
             MonthFrontSimpleCasesRegex = SpanishDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;

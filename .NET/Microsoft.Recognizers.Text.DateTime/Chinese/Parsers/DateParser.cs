@@ -598,11 +598,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
-                    if (year < 100 && year >= 30)
+                    if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 30)
+                    else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
                         year += 2000;
                     }

@@ -115,8 +115,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = FrenchDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = FrenchDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = FrenchDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;

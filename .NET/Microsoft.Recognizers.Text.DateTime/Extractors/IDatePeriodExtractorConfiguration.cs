@@ -5,10 +5,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDatePeriodExtractorConfiguration : IOptionsConfiguration
     {
-        int MinYearNum { get; }
-
-        int MaxYearNum { get; }
-
         IEnumerable<Regex> SimpleCasesRegexes { get; }
 
         Regex YearRegex { get; }

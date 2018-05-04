@@ -282,10 +282,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var dayStr = match.Groups["DayOfMonth"].Value.ToLower();
 
                 // create a extract result which content ordinal string of text
-                ExtractResult er = new ExtractResult();
-                er.Text = dayStr;
-                er.Start = match.Groups["DayOfMonth"].Index;
-                er.Length = match.Groups["DayOfMonth"].Length;
+                ExtractResult er = new ExtractResult
+                {
+                    Text = dayStr,
+                    Start = match.Groups["DayOfMonth"].Index,
+                    Length = match.Groups["DayOfMonth"].Length
+                };
 
                 day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
 
@@ -293,7 +295,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 DateObject futureDate;
                 var tryStr = FormatUtil.LuisDate(year, month, day);
-                if (DateObject.TryParse(tryStr, out DateObject temp))
+                if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                 }
@@ -315,11 +317,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 int month = referenceDate.Month, year = referenceDate.Year;
                 // create a extract result which content ordinal string of text
-                ExtractResult erTmp = new ExtractResult();
-                erTmp.Text = match.Groups["DayOfMonth"].Value.ToString();
-                erTmp.Start = match.Groups["DayOfMonth"].Index;
-                erTmp.Length = match.Groups["DayOfMonth"].Length;
-                
+                ExtractResult erTmp = new ExtractResult
+                {
+                    Text = match.Groups["DayOfMonth"].Value,
+                    Start = match.Groups["DayOfMonth"].Index,
+                    Length = match.Groups["DayOfMonth"].Length
+                };
+
                 // parse the day in text into number
                 var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
                 
@@ -403,8 +407,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var firstDate = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, 1);
                     var firstWeekDay = (int)firstDate.DayOfWeek;
                     var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
-                    var AnswerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
-                    day = AnswerDay;
+                    var answerDay = firstWantedWeekDay.Day + (num - 1) * 7;
+                    day = answerDay;
                     ambiguous = false;
                 }
             }
@@ -512,11 +516,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
-                    if (year < 100 && year >= 90)
+                    if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 30)
+                    else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
                         year += 2000;
                     }
@@ -572,15 +576,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var noYear = false;
             int year;
 
-            int cardinal;
-            if (this.config.IsCardinalLast(cardinalStr))
-            {
-                cardinal = 5;
-            }
-            else
-            {
-                cardinal = this.config.CardinalMap[cardinalStr];
-            }
+            var cardinal = this.config.IsCardinalLast(cardinalStr) ? 5 : this.config.CardinalMap[cardinalStr];
 
             var weekday = this.config.DayOfWeek[weekdayStr];
             int month;

@@ -608,8 +608,8 @@ export class BaseDateParser implements IDateTimeParser {
             day = this.config.dayOfMonth.get(dayStr);
             if (!StringUtility.isNullOrEmpty(yearStr)) {
                 year = Number.parseInt(yearStr, 10);
-                if (year < 100 && year >= 90) year += 1900;
-                else if (year < 100 && year < 20) year += 2000;
+                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) year += 1900;
+                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum) year += 2000;
             }
         }
         let noYear = false;

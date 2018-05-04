@@ -7,10 +7,8 @@ DayRegex: !simpleRegex
   def: (?<day>01|02|03|04|05|06|07|08|09|1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|4|5|6|7|8|9)(?=\b|t)
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
-MinYearNum: '1500'
-MaxYearNum: '2100'
 YearRegex: !simpleRegex
-  def: (?<year>((1[5-9]|20)\d{2})|9\d|0\d|1\d|2\d)
+  def: (?<year>((1[5-9]|20)\d{2})|[0-27-9]\d)
 FullYearRegex: !simpleRegex
   def: \b(?<year>19\d{2}|20\d{2})\b
 RelativeMonthRegex: !simpleRegex

@@ -1,5 +1,7 @@
 ﻿// ReSharper disable InconsistentNaming
 
+using Microsoft.Recognizers.Definitions;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class Constants
@@ -62,6 +64,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
+
+        public static readonly int MinYearNum = int.Parse(BaseDateTime.MinYearNum);
+        public static readonly int MaxYearNum = int.Parse(BaseDateTime.MaxYearNum);
+
+        public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
+        public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
 
         // special value for timezone
         public const int InvalidOffsetValue = -10000;
