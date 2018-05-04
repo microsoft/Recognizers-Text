@@ -114,8 +114,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = GermanDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = GermanDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = GermanDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = GermanDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = GermanDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;

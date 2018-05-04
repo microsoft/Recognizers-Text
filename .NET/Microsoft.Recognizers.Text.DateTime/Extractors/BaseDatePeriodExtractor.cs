@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (matchYear.Success && matchYear.Length == match.Value.Length)
                     {
                         var year = ((BaseDateExtractor)this.config.DatePointExtractor).GetYearFromText(matchYear);
-                        if (!(year >= this.config.MinYearNum && year <= this.config.MaxYearNum))
+                        if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
                         {
                             continue;
                         }

@@ -1,3 +1,5 @@
+import { BaseDateTime } from "../resources/baseDateTime";
+
 export class Constants {
     static readonly SYS_DATETIME_DATE: string = "date";
     static readonly SYS_DATETIME_TIME: string = "time";
@@ -23,6 +25,12 @@ export class Constants {
 
     static readonly DefaultLanguageFallback_MDY: string = 'MDY';
     static readonly DefaultLanguageFallback_DMY: string = 'DMY';
+
+    static readonly MinYearNum: number = parseInt(BaseDateTime.MinYearNum);
+    static readonly MaxYearNum: number = parseInt(BaseDateTime.MaxYearNum);
+
+    static readonly MaxTwoDigitYearFutureNum: number = parseInt(BaseDateTime.MaxTwoDigitYearFutureNum);
+    static readonly MinTwoDigitYearPastNum: number = parseInt(BaseDateTime.MinTwoDigitYearPastNum);
 }
 
 export class TimeTypeConstants {

@@ -1627,4 +1627,96 @@
     }
   ]
 }
+,
+{
+  "Input": "volveré el 3-7-07",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-7-07",
+      "Type": "date",
+      "Value": {
+        "Timex": "2007-07-03",
+        "FutureResolution": {
+          "date": "2007-07-03"
+        },
+        "PastResolution": {
+          "date": "2007-07-03"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "volveré el 3-7-27",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-7-27",
+      "Type": "date",
+      "Value": {
+        "Timex": "2027-07-03",
+        "FutureResolution": {
+          "date": "2027-07-03"
+        },
+        "PastResolution": {
+          "date": "2027-07-03"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "volveré el 05/05/89",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "05/05/89",
+      "Type": "date",
+      "Value": {
+        "Timex": "1989-05-05",
+        "FutureResolution": {
+          "date": "1989-05-05"
+        },
+        "PastResolution": {
+          "date": "1989-05-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "volveré el 05/05/71",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "05/05/71",
+      "Type": "date",
+      "Value": {
+        "Timex": "1971-05-05",
+        "FutureResolution": {
+          "date": "1971-05-05"
+        },
+        "PastResolution": {
+          "date": "1971-05-05"
+        }
+      }
+    }
+  ]
+}
 ]

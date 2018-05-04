@@ -7,10 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDatePeriodParserConfiguration : IOptionsConfiguration
     {
-        int MinYearNum { get; }
-
-        int MaxYearNum { get; }
-
         string TokenBeforeDate { get; }
 
         IDateTimeExtractor DateExtractor { get; }

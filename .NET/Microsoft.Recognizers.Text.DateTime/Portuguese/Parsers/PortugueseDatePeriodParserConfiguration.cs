@@ -106,8 +106,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = PortugueseDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = PortugueseDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = PortugueseDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = PortugueseDatePeriodExtractorConfiguration.DayBetweenRegex;
             MonthFrontSimpleCasesRegex = PortugueseDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;

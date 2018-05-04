@@ -10,10 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodExtractorConfiguration : IDatePeriodExtractorConfiguration
     {
-        public static readonly int MinYearNum = int.Parse(DateTimeDefinitions.MinYearNum);
-
-        public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
-        
         // Base regexes
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -184,10 +180,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
-
-        int IDatePeriodExtractorConfiguration.MinYearNum => MinYearNum;
-
-        int IDatePeriodExtractorConfiguration.MaxYearNum => MaxYearNum;
 
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 

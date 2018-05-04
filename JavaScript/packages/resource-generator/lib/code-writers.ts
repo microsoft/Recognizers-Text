@@ -106,6 +106,7 @@ class DictionaryWriter extends CodeWriter {
 
 
 function sanitize(value: string, valueType: string = null) : string {
+    if (!valueType) valueType = typeof value;
     if(valueType === 'number') return value;
 
     let stringified = JSON.stringify(value);

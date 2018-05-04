@@ -581,7 +581,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (matches[0].Success)
                     {
                         beginYear = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matches[0]);
-                        if (!(beginYear >= this.config.MinYearNum && beginYear <= this.config.MaxYearNum))
+                        if (!(beginYear >= Constants.MinYearNum && beginYear <= Constants.MaxYearNum))
                         {
                             beginYear = Constants.InvalidYear;
                         }
@@ -590,7 +590,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (matches[1].Success)
                     {
                         endYear = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matches[1]);
-                        if (!(endYear >= this.config.MinYearNum && endYear <= this.config.MaxYearNum))
+                        if (!(endYear >= Constants.MinYearNum && endYear <= Constants.MaxYearNum))
                         {
                             endYear = Constants.InvalidYear;
                         }
@@ -618,7 +618,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success && match.Length == text.Trim().Length)
                 {
                     year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
-                    if (!(year >= this.config.MinYearNum && year <= this.config.MaxYearNum))
+                    if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
                     {
                         year = Constants.InvalidYear;
                     }
