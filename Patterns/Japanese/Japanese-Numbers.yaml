@@ -109,7 +109,7 @@ NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
 SpeGetNumberRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]'
+  def: '{ZeroToNineFullHalfRegex}+|{ZeroToNineIntegerRegex}+|[半対]'
   references: [ZeroToNineFullHalfRegex, ZeroToNineIntegerRegex]
 PairRegex: .*[対膳足]$
 #IntegerExtractor
@@ -124,7 +124,7 @@ SingleRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={WhiteListRegex}))
   references: [ZeroToNineIntegerRegex, WhiteListRegex]
 AllIntRegex: !nestedRegex
-  def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}+|[十百千])\s*{RoundNumberIntegerRegex}*){1,2}\s*(\s*[以上]?)
+  def: (({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|[十百千])\s*{RoundNumberIntegerRegex}*){1,2}\s*(\s*[以上]?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 NumbersSpecialsChars: !nestedRegex
   def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+
@@ -150,8 +150,8 @@ NumbersWithAllowListRegex: !nestedRegex
   def: (({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}*))
   references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, ZeroToNineIntegerRegex]
 NumbersAggressiveRegex: !nestedRegex
-  def: (({AllIntRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}*))
-  references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex]
+  def: ({AllIntRegex}(?!({AllIntRegex}*(\.{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}))
+  references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex, PercentageRegex]
 #DoubleExtractor
 PointRegex: !nestedRegex
   def: '{PointRegexStr}'

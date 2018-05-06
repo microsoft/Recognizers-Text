@@ -17,6 +17,7 @@
 {
   "Input": "私は29歳です。",
   "NotSupported": "javascript,python",
+  "Debug":true,
   "Results": [
     {
       "Text": "29歳",
