@@ -74,6 +74,7 @@
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerCache.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_French.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_German.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnit_Japanese.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Spanish.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Portuguese.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Chinese.cs" />
