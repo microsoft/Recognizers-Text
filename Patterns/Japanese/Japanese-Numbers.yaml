@@ -124,7 +124,7 @@ SingleRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={WhiteListRegex}))
   references: [ZeroToNineIntegerRegex, WhiteListRegex]
 AllIntRegex: !nestedRegex
-  def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十百千])\s*{RoundNumberIntegerRegex}*){1,2}\s*(\s*[以上]?)
+  def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}+|[十百千])\s*{RoundNumberIntegerRegex}*){1,2}\s*(\s*[以上]?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 NumbersSpecialsChars: !nestedRegex
   def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+
