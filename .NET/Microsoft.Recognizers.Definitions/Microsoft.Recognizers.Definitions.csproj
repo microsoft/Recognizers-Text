@@ -28,6 +28,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </None>
+    <None Include="Japanese\NumbersWithUnitDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -170,6 +175,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Japanese\NumbersWithUnitDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Portuguese\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -317,6 +327,10 @@
     <None Update="Japanese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Japanese\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\ChoiceDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

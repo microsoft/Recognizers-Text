@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public const string PointRegexStr = @"[\.．]";
 		public static readonly string AllFloatRegex = $@"{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[一二三四五六七八九](\s*{ZeroToNineIntegerRegex})*";
 		public static readonly string NumbersWithAllowListRegex = $@"(({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{{PercentageRegex}}*))";
-		public static readonly string NumbersAggressiveRegex = $@"(?<!({AllIntRegex}*|{AllFloatRegex})*パーセント){NegativeNumberTermsRegex}?({{NotSingleRegex}})";
+		public static readonly string NumbersAggressiveRegex = $@"(({AllIntRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageRegex}*))";
 		public static readonly string PointRegex = $@"{PointRegexStr}";
 		public static readonly string DoubleSpecialsChars = $@"(?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+)";
 		public static readonly string DoubleSpecialsCharsWithNegatives = $@"(?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))";
