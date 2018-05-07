@@ -126,15 +126,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.OnRegex.Match(this.config.DateTokenPrefix + trimedText);
             if (match.Success && match.Index == 3 && match.Length == trimedText.Length)
             {
-                int day = 0, month = referenceDate.Month, year = referenceDate.Year;
+                int month = referenceDate.Month, year = referenceDate.Year;
                 var dayStr = match.Groups["day"].Value.ToLower();
-                day = this.config.DayOfMonth[dayStr];
+                var day = this.config.DayOfMonth[dayStr];
 
                 ret.Timex = FormatUtil.LuisDate(-1, -1, day);
 
                 DateObject futureDate, pastDate;
                 var tryStr = FormatUtil.LuisDate(year, month, day);
-                if (DateObject.TryParse(tryStr, out DateObject temp))
+                if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                     pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -186,6 +186,33 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var numOfDays = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
 
                 var value = referenceDate.AddDays(numOfDays + swift);
+
+                ret.Timex = FormatUtil.LuisDate(value);
+                ret.FutureValue = ret.PastValue = value;
+                ret.Success = true;
+
+                return ret;
+            }
+            
+            // handle "two sundays from now"
+            match = this.config.RelativeWeekDayRegex.Match(trimedText);
+            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            {
+                var numErs = this.config.IntegerExtractor.Extract(trimedText);
+                var num = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
+                var weekdayStr = match.Groups["weekday"].Value.ToLower();
+                var value = referenceDate;
+
+                // Check whether the determined day of this week has passed.
+                if (value.DayOfWeek > (DayOfWeek)this.config.DayOfWeek[weekdayStr])
+                {
+                    num--;
+                }
+
+                while (num-- > 0)
+                {
+                    value = value.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
+                }
 
                 ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;

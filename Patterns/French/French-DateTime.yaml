@@ -112,6 +112,9 @@ SetWeekDayRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
+RelativeWeekDayRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

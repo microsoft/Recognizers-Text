@@ -34,7 +34,7 @@ YearRegex: !nestedRegex
   def: ({YearNumRegex}|{FullTextYearRegex})
   references: [ YearNumRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\b
+  def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\b
 SingleWeekDayRegex: !simpleRegex
   def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\s+(Sat|Sun)))\b
 RelativeMonthRegex: !nestedRegex
@@ -167,6 +167,9 @@ SetWeekDayRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
+RelativeWeekDayRegex: !nestedRegex
+  def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b
+  references: [ WrittenNumRegex, WeekDayRegex ]
 SpecialDate: !nestedRegex
   def: (?=\b(on|at)\s+the\s+){DayRegex}\b
   references: [ DayRegex ]

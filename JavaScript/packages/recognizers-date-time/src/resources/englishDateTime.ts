@@ -24,7 +24,7 @@ export namespace EnglishDateTime {
 	export const FullTextYearRegex = `\\b((?<firsttwoyearnum>${CenturyRegex})\\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\\s+${WrittenNumRegex})|${WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>${CenturyRegex})\\b`;
 	export const YearNumRegex = `\\b(?<year>((1[5-9]|20)\\d{2})|2100)\\b`;
 	export const YearRegex = `(${YearNumRegex}|${FullTextYearRegex})`;
-	export const WeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\\b`;
+	export const WeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\\b`;
 	export const SingleWeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\\s+(Sat|Sun)))\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>(of\\s+)?${RelativeRegex}\\s+month)\\b`;
 	export const WrittenMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))`;
@@ -74,6 +74,7 @@ export namespace EnglishDateTime {
 	export const RelativeDayRegex = `\\b(((the\\s+)?${RelativeRegex}\\s+day))\\b`;
 	export const SetWeekDayRegex = `\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)s\\b`;
 	export const WeekDayOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
+	export const RelativeWeekDayRegex = `\\b(${WrittenNumRegex}\\s+${WeekDayRegex}\\s+(from\\s+now|later))\\b`;
 	export const SpecialDate = `(?=\\b(on|at)\\s+the\\s+)${DayRegex}\\b`;
 	export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}(\\.)?\\s*[/\\\\\\.\\-]?\\s*${DayRegex}(\\.)?\\b`;
 	export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}(\\.)?\\s*[\\.\\-]?\\s*${DayRegex}(\\.)?(\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex}\\b`;

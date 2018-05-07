@@ -100,6 +100,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
 
@@ -134,6 +135,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         this.forTheRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeMonthRegex, "gis");
+        this.relativeWeekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeWeekDayRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = SpanishDateTime.DateTokenPrefix;
     }

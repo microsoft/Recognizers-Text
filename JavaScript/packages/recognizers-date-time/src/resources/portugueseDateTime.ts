@@ -55,6 +55,7 @@ export namespace PortugueseDateTime {
 	export const ForTheRegex = `^[.]`;
 	export const WeekDayAndDayOfMonthRegex = `^[.]`;
 	export const WeekDayOfMonthRegex = `(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
+	export const RelativeWeekDayRegex = `^[.]`;
 	export const NumberEndingPattern = `^[.]`;
 	export const SpecialDateRegex = `(?<=\\bno\\s+)${DayRegex}\\b`;
 	export const OfMonthRegex = `^\\s*de\\s*${MonthSuffixRegex}`;
