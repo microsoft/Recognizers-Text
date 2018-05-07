@@ -314,4 +314,37 @@
     }
   ]
 }
+,
+{
+  "Input": "2009 年 到 2010 年，小麦产量翻了一番",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009 年 到 2010 年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "近 三 年，犯罪数量逐步下降",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "近 三 年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "比 较 一 下 2009年，我们可以看出变化是很明显的",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009年",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
