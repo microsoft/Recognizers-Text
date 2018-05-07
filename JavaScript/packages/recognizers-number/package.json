@@ -26,7 +26,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "build-resources": "ts-node --project ../resource-generator/ ../resource-generator/ ../recognizers-number/resource-definitions.json",
+    "build-resources": "ts-node --project ../resource-generator/tsconfig.json ../resource-generator/ ../recognizers-number/resource-definitions.json",
     "clean-build": "rimraf dist && rimraf compiled",
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
