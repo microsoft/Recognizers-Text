@@ -98,6 +98,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.SpecialDate,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RelativeWeekDayRegex = 
+            new Regex(
+                DateTimeDefinitions.RelativeWeekDayRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex ForTheRegex =
             new Regex(DateTimeDefinitions.ForTheRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
