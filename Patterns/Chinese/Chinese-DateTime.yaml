@@ -103,9 +103,9 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
 DatePeriodYearRegex: !simpleRegex
-  def: (?<year>(\d{2,4}))年?
+  def: (?<year>(\d{2,4}))\s*年?
 StrictYearRegex: !simpleRegex
-  def: (?<year>(\d{3,4}))年?
+  def: (?<year>(\d{3,4}))\s*年?
 YearRegexInNumber: !simpleRegex
   def: (?<year>(\d{3,4}))
 DatePeriodYearInChineseRegex: !nestedRegex
@@ -138,7 +138,7 @@ NumberCombinedWithUnit: !nestedRegex
   def: (?<num>\d+(\.\d*)?){UnitRegex}
   references: [UnitRegex]
 YearToYear: !nestedRegex
-  def: ((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex}){DatePeriodTillRegex}({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})
+  def: ((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})
   references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillRegex]
 MonthToMonth: !nestedRegex
   def: ({MonthRegex}){DatePeriodTillRegex}({MonthRegex})
@@ -146,7 +146,7 @@ MonthToMonth: !nestedRegex
 PastRegex: !simpleRegex
   def: (?<past>(前|上|之前|近))
 FutureRegex: !simpleRegex
-  def: (?<future>(后|(?<![一两几])下|之后|未来(的)?))
+  def: (?<future>(后|(?<![一两几]\s*)下|之后|未来(的)?))
 SeasonRegex: !simpleRegex
   def: (?<season>春|夏|秋|冬)(天|季)?
 SeasonWithYear: !nestedRegex
