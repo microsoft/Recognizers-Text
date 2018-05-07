@@ -1338,7 +1338,7 @@
 }
 ,
 {
-  "Input": "Are you available on two sundays from now?",
+  "Input": "Are you available two sundays from now?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1349,7 +1349,7 @@
 }
 ,
 {
-  "Input": "Are you available on two monday later?",
+  "Input": "Are you available two monday later?",
   "NotSupportedByDesign": "python",
   "Results": [
     {

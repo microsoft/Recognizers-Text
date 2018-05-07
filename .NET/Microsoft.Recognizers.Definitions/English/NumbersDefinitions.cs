@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string TillRegex = @"(to|through|--|-|—|——|~)";
 		public const string MoreRegex = @"((bigger|greater|more|higher|larger)(\s+than)?|above|over|>)";
 		public const string LessRegex = @"((less|lower|smaller|fewer)(\s+than)?|below|under|<)";
-		public const string EqualRegex = @"(equal(\s+(to|than))?|=)";
+		public const string EqualRegex = @"(equal(s|ing)?(\s+(to|than))?|=)";
 		public static readonly string MoreOrEqual = $@"(({MoreRegex}\s+or\s+{EqualRegex})|at\s+least|no\s+{LessRegex}|>\s*=)";
 		public const string MoreOrEqualSuffix = @"(and|or)\s+(more|greater|higher|larger|bigger)(?!\s+than)";
 		public static readonly string LessOrEqual = $@"(({LessRegex}\s+or\s+{EqualRegex})|at\s+most|no\s+{MoreRegex}|<\s*=)";

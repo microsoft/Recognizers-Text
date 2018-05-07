@@ -59,7 +59,7 @@ class EnglishNumeric:
     TillRegex = f'(to|through|--|-|—|——|~)'
     MoreRegex = f'((bigger|greater|more|higher|larger)(\\s+than)?|above|over|>)'
     LessRegex = f'((less|lower|smaller|fewer)(\\s+than)?|below|under|<)'
-    EqualRegex = f'(equal(\\s+(to|than))?|=)'
+    EqualRegex = f'(equal(s|ing)?(\\s+(to|than))?|=)'
     MoreOrEqual = f'(({MoreRegex}\\s+or\\s+{EqualRegex})|at\\s+least|no\\s+{LessRegex}|>\\s*=)'
     MoreOrEqualSuffix = f'(and|or)\\s+(more|greater|higher|larger|bigger)(?!\\s+than)'
     LessOrEqual = f'(({LessRegex}\\s+or\\s+{EqualRegex})|at\\s+most|no\\s+{MoreRegex}|<\\s*=)'

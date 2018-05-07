@@ -2679,7 +2679,7 @@
 }
 ,
 {
-  "Input": "Are you available on two sundays from now?",
+  "Input": "Are you available two sundays from now?",
   "Context": {
     "ReferenceDateTime": "2018-05-07T00:00:00"
   },
@@ -2702,7 +2702,7 @@
 }
 ,
 {
-  "Input": "Are you available on two monday later?",
+  "Input": "Are you available two monday later?",
   "Context": {
     "ReferenceDateTime": "2018-05-07T00:00:00"
   },

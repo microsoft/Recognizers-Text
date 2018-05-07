@@ -58,7 +58,7 @@ export namespace EnglishNumeric {
 	export const TillRegex = `(to|through|--|-|—|——|~)`;
 	export const MoreRegex = `((bigger|greater|more|higher|larger)(\\s+than)?|above|over|>)`;
 	export const LessRegex = `((less|lower|smaller|fewer)(\\s+than)?|below|under|<)`;
-	export const EqualRegex = `(equal(\\s+(to|than))?|=)`;
+	export const EqualRegex = `(equal(s|ing)?(\\s+(to|than))?|=)`;
 	export const MoreOrEqual = `((${MoreRegex}\\s+or\\s+${EqualRegex})|at\\s+least|no\\s+${LessRegex}|>\\s*=)`;
 	export const MoreOrEqualSuffix = `(and|or)\\s+(more|greater|higher|larger|bigger)(?!\\s+than)`;
 	export const LessOrEqual = `((${LessRegex}\\s+or\\s+${EqualRegex})|at\\s+most|no\\s+${MoreRegex}|<\\s*=)`;
