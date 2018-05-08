@@ -63,6 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
+        public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
@@ -146,6 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             YearPlusNumberRegex = EnglishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = EnglishDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             YearPeriodRegex = EnglishDatePeriodExtractorConfiguration.YearPeriodRegex;
+            ComplexDatePeriodRegex = EnglishDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
             RelativeDecadeRegex = EnglishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = EnglishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;

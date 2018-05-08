@@ -4,6 +4,7 @@ using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
 using System;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -27,11 +28,36 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
+            var simpleCasesResults = Token.MergeAllTokens(tokens, text, ExtractorName);
             tokens.AddRange(MergeTwoTimePoints(text, reference));
             tokens.AddRange(MatchDuration(text, reference));
             tokens.AddRange(SingleTimePointWithPatterns(text, reference));
+            tokens.AddRange(MatchComplexCases(text, simpleCasesResults, reference));
+            tokens.AddRange(MatchYearPeriod(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        private List<Token> MatchYearPeriod(string text, DateObject referece)
+        {
+            var ret = new List<Token>();
+
+            var matches = this.config.YearPeriodRegex.Matches(text);
+            foreach (Match match in matches)
+            {
+                var matchYear = this.config.YearRegex.Match(match.Value);
+                if (matchYear.Success && matchYear.Length == match.Value.Length)
+                {
+                    var year = ((BaseDateExtractor)this.config.DatePointExtractor).GetYearFromText(matchYear);
+                    if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
+                    {
+                        continue;
+                    }
+                }
+                ret.Add(new Token(match.Index, match.Index + match.Length));
+            }
+
+            return ret;
         }
 
         private List<Token> MatchSimpleCases(string text)
@@ -57,21 +83,44 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // Complex cases refer to the combination of daterange and datepoint
+        // For Example: from|between {DateRange|DatePoint} to|till|and {DateRange|DatePoint}
+        private List<Token> MatchComplexCases(string text, List<ExtractResult> simpleDateRangeResults, DateObject reference)
+        {
+            var er = this.config.DatePointExtractor.Extract(text, reference);
+
+            // Filter out DateRange results that are part of DatePoint results
+            // For example, "Feb 1st 2018" => "Feb" and "2018" should be filtered out here
+            er.AddRange(simpleDateRangeResults
+                .Where(simpleDateRange => !er.Any(datePoint => (datePoint.Start <= simpleDateRange.Start && datePoint.Start + datePoint.Length >= simpleDateRange.Start + simpleDateRange.Length))));
+
+            er = er.OrderBy(t => t.Start).ToList();
+
+            return MergeMultipleExtractions(text, er);
+        }
+
         private List<Token> MergeTwoTimePoints(string text, DateObject reference)
         {
-            var ret = new List<Token>();
             var er = this.config.DatePointExtractor.Extract(text, reference);
-            if (er.Count <= 1)
+
+            return MergeMultipleExtractions(text, er);
+        }
+
+        private List<Token> MergeMultipleExtractions(string text, List<ExtractResult> extractionResults)
+        {
+            var ret = new List<Token>();
+
+            if (extractionResults.Count <= 1)
             {
                 return ret;
             }
 
-            // merge '{TimePoint} to {TimePoint}'
             var idx = 0;
-            while (idx < er.Count - 1)
+
+            while (idx < extractionResults.Count - 1)
             {
-                var middleBegin = er[idx].Start + er[idx].Length ?? 0;
-                var middleEnd = er[idx + 1].Start ?? 0;
+                var middleBegin = extractionResults[idx].Start + extractionResults[idx].Length ?? 0;
+                var middleEnd = extractionResults[idx + 1].Start ?? 0;
                 if (middleBegin >= middleEnd)
                 {
                     idx++;
@@ -82,10 +131,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var match = this.config.TillRegex.Match(middleStr);
                 if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
                 {
-                    var periodBegin = er[idx].Start ?? 0;
-                    var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
+                    var periodBegin = extractionResults[idx].Start ?? 0;
+                    var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
 
-                    // handle "desde"
+                    // handle "from/between" together with till words (till/until/through...)
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex)
                         || this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
@@ -94,21 +143,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret.Add(new Token(periodBegin, periodEnd));
+
+                    // merge two tokens here, increase the index by two
                     idx += 2;
                     continue;
                 }
 
                 if (this.config.HasConnectorToken(middleStr))
                 {
-                    var periodBegin = er[idx].Start ?? 0;
-                    var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
+                    var periodBegin = extractionResults[idx].Start ?? 0;
+                    var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
 
-                    // handle "entre"
+                    // handle "between...and..." case
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     if (this.config.GetBetweenTokenIndex(beforeStr, out int beforeIndex))
                     {
                         periodBegin = beforeIndex;
                         ret.Add(new Token(periodBegin, periodEnd));
+
+                        // merge two tokens here, increase the index by two
                         idx += 2;
                         continue;
                     }
@@ -131,7 +184,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var extractionResult in er)
             {
-                if (extractionResult.Start != null && extractionResult.Length!=null)
+                if (extractionResult.Start != null && extractionResult.Length != null)
                 {
                     string beforeString = text.Substring(0, (int)extractionResult.Start);
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.WeekOfRegex, extractionResult));
@@ -260,11 +313,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool MatchPrefixRegexInSegment(string beforeStr, Match match)
         {
-            var result =  match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
+            var result = match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
             return result;
         }
 
     }
 
-    
+
 }

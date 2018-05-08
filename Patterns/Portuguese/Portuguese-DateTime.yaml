@@ -429,6 +429,9 @@ TimeBeforeAfterRegex: !simpleRegex
 DateNumberConnectorRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+ComplexDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # PortugueseDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
   def: \b(antes|atr[áa]s|no passado)\b

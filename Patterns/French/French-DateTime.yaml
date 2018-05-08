@@ -502,6 +502,9 @@ YearPeriodRegex: !simpleRegex
 FutureSuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+ComplexDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

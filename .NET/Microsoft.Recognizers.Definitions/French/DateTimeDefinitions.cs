@@ -216,6 +216,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string YearAfterRegex = @"^[.]";
 		public const string YearPeriodRegex = @"^[.]";
 		public const string FutureSuffixRegex = @"^[.]";
+		public const string ComplexDatePeriodRegex = @"^[.]";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "annees", "Y" },

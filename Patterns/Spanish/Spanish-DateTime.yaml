@@ -437,6 +437,9 @@ DecadeWithCenturyRegex: !simpleRegex
 RelativeDecadeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+ComplexDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 FullTextYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\*]

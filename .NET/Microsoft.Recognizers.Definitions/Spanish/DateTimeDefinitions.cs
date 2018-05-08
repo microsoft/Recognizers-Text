@@ -170,6 +170,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string DecadeRegex = @"^[.]";
 		public const string DecadeWithCenturyRegex = @"^[.]";
 		public const string RelativeDecadeRegex = @"^[.]";
+		public const string ComplexDatePeriodRegex = @"^[.]";
 		public const string FullTextYearRegex = @"^[\*]";
 		public static readonly string YearSuffix = $@"(,?\s*({YearRegex}|{FullTextYearRegex}))";
 		public const string AgoRegex = @"\b(antes)\b";
