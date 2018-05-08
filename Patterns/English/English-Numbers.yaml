@@ -132,7 +132,7 @@ MoreRegex: !simpleRegex
 LessRegex: !simpleRegex
   def: ((less|lower|smaller|fewer)(\s+than)?|below|under|<)
 EqualRegex: !simpleRegex
-  def: (equal(\s+(to|than))?|=)
+  def: (equal(s|ing)?(\s+(to|than))?|=)
 MoreOrEqual: !nestedRegex
   def: (({MoreRegex}\s+or\s+{EqualRegex})|at\s+least|no\s+{LessRegex}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex ]
