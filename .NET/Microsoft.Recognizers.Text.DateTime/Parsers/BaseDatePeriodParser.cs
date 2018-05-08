@@ -170,23 +170,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                             pastEnd = futureEnd;
                         }
 
+                        // If both begin/end are date ranges in "Month", the Timex should be ByMonth
+                        // The year period case should already be handled in Basic Cases
+                        var datePeriodTimexType = DatePeriodTimexType.ByMonth;
+
                         if (isSpecificDate)
                         {
-                            // If at least one of the begin/end is specific date, the Timex should be PXD
-                            ret.Timex = $"({FormatUtil.LuisDate(futureBegin)},{FormatUtil.LuisDate(futureEnd)},P{(futureEnd - futureBegin).Days}D)";
+                            // If at least one of the begin/end is specific date, the Timex should be    ByDay
+                            datePeriodTimexType = DatePeriodTimexType.ByDay;
                         }
                         else if (isStartByWeek && isEndByWeek)
                         {
-                            // If both begin/end are date ranges in "Week", the Timex should be PXW
-                            ret.Timex = $"({FormatUtil.LuisDate(futureBegin)},{FormatUtil.LuisDate(futureEnd)},P{(futureEnd - futureBegin).Days / 7}W)";
+                            // If both begin/end are date ranges in "Week", the Timex should be ByWeek
+                            datePeriodTimexType = DatePeriodTimexType.ByWeek;
                         }
-                        else
-                        {
-                            // If both begin/end are date ranges in "Month", the Timex should be PXM
-                            // The year period case should already be handled in Basic Cases
-                            var monthDiff = ((futureEnd.Year - futureBegin.Year) * 12) + futureEnd.Month - futureBegin.Month;
-                            ret.Timex = $"({FormatUtil.LuisDate(futureBegin)},{FormatUtil.LuisDate(futureEnd)},P{monthDiff}M)";
-                        }
+
+                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType);
 
                         ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
                         ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
@@ -196,7 +195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
+        }      
 
         private DateTimeResolutionResult ParseBaseDatePeriod(string text, DateObject referenceDate)
         {
@@ -859,7 +858,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastEnd = futureEnd;
             }
 
-            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).Days}D)";
+            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;

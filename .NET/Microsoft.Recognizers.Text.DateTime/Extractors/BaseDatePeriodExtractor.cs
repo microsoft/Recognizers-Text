@@ -87,7 +87,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         // For Example: from|between {DateRange|DatePoint} to|till|and {DateRange|DatePoint}
         private List<Token> MatchComplexCases(string text, List<ExtractResult> simpleDateRangeResults, DateObject reference)
         {
-            var ret = new List<Token>();
             var er = this.config.DatePointExtractor.Extract(text, reference);
 
             // Filter out DateRange results that are part of DatePoint results
@@ -97,81 +96,31 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             er = er.OrderBy(t => t.Start).ToList();
 
-            if (er.Count <= 1)
-            {
-                return ret;
-            }
-
-            var idx = 0;
-
-            while (idx < er.Count - 1)
-            {
-                var middleBegin = er[idx].Start + er[idx].Length ?? 0;
-                var middleEnd = er[idx + 1].Start ?? 0;
-                if (middleBegin >= middleEnd)
-                {
-                    idx++;
-                    continue;
-                }
-
-                var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
-                var match = this.config.TillRegex.Match(middleStr);
-                if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
-                {
-                    var periodBegin = er[idx].Start ?? 0;
-                    var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
-
-                    // handle "desde"
-                    var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
-                    if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex)
-                        || this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
-                    {
-                        periodBegin = fromIndex;
-                    }
-
-                    ret.Add(new Token(periodBegin, periodEnd));
-                    idx += 2;
-                    continue;
-                }
-
-                if (this.config.HasConnectorToken(middleStr))
-                {
-                    var periodBegin = er[idx].Start ?? 0;
-                    var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
-
-                    // handle "entre"
-                    var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
-                    if (this.config.GetBetweenTokenIndex(beforeStr, out int beforeIndex))
-                    {
-                        periodBegin = beforeIndex;
-                        ret.Add(new Token(periodBegin, periodEnd));
-                        idx += 2;
-                        continue;
-                    }
-                }
-                idx++;
-            }
-
-            return ret;
+            return MergeMultipleExtractions(text, er);
         }
 
         private List<Token> MergeTwoTimePoints(string text, DateObject reference)
         {
-            var ret = new List<Token>();
             var er = this.config.DatePointExtractor.Extract(text, reference);
 
-            if (er.Count <= 1)
+            return MergeMultipleExtractions(text, er);
+        }
+
+        private List<Token> MergeMultipleExtractions(string text, List<ExtractResult> extractionResults)
+        {
+            var ret = new List<Token>();
+
+            if (extractionResults.Count <= 1)
             {
                 return ret;
             }
 
-            // merge '{TimePoint} to {TimePoint}'
             var idx = 0;
 
-            while (idx < er.Count - 1)
+            while (idx < extractionResults.Count - 1)
             {
-                var middleBegin = er[idx].Start + er[idx].Length ?? 0;
-                var middleEnd = er[idx + 1].Start ?? 0;
+                var middleBegin = extractionResults[idx].Start + extractionResults[idx].Length ?? 0;
+                var middleEnd = extractionResults[idx + 1].Start ?? 0;
                 if (middleBegin >= middleEnd)
                 {
                     idx++;
@@ -182,10 +131,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var match = this.config.TillRegex.Match(middleStr);
                 if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
                 {
-                    var periodBegin = er[idx].Start ?? 0;
-                    var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
+                    var periodBegin = extractionResults[idx].Start ?? 0;
+                    var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
 
-                    // handle "desde"
+                    // handle "from/between" together with till words (till/until/through...)
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex)
                         || this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
@@ -194,21 +143,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret.Add(new Token(periodBegin, periodEnd));
+
+                    // merge two tokens here, increase the index by two
                     idx += 2;
                     continue;
                 }
 
                 if (this.config.HasConnectorToken(middleStr))
                 {
-                    var periodBegin = er[idx].Start ?? 0;
-                    var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
+                    var periodBegin = extractionResults[idx].Start ?? 0;
+                    var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
 
-                    // handle "entre"
+                    // handle "between...and..." case
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     if (this.config.GetBetweenTokenIndex(beforeStr, out int beforeIndex))
                     {
                         periodBegin = beforeIndex;
                         ret.Add(new Token(periodBegin, periodEnd));
+
+                        // merge two tokens here, increase the index by two
                         idx += 2;
                         continue;
                     }

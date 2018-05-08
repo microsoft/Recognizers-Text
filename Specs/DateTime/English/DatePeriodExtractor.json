@@ -3536,4 +3536,16 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll stay here from today to two and half days later",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from today to two and half days later",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
