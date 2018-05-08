@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void CurrencyModel()
         {
-            base.TestNumberWithUnit();
+            base.TestCurrency();
         }
     }
 }

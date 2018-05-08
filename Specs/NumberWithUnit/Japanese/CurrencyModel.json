@@ -224,22 +224,6 @@
 }
 ,
 {
-  "Input": "このパソコンは2ドルです",
-  "NotSupported": "javascript,python",
-  "Results": [
-    {
-      "Text": "2ドル",
-      "TypeName": "currency",
-      "Resolution": {
-        "isoCurrency": "USD",
-        "value": "2",
-        "unit": "United States dollar"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "このパソコンは2ドル3セントです。",
   "NotSupported": "javascript,python",
   "Results": [
@@ -256,16 +240,174 @@
 }
 ,
 {
-  "Input": "このパソコンは2ドル3セントです。",
+  "Input": "中国移動の年間収入は$ 48.2 万で、とてもすごいです",
   "NotSupported": "javascript,python",
   "Results": [
     {
-      "Text": "2ドル3セント",
+      "Text": "$ 48.2 万",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "482000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "中国移動の年間収入はus$ 48.2 万で、とてもすごいです",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "us$ 48.2 万",
       "TypeName": "currency",
       "Resolution": {
         "isoCurrency": "USD",
-        "value": "2.03",
+        "value": "482000",
         "unit": "United States dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "高田は毎日€ 1.5 かかります",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "€ 1.5",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "EUR",
+        "value": "1.5",
+        "unit": "Euro"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "彼女がいた後、小山は毎月£ 512.5を多く支出しています。",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "£ 512.5",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "512.5",
+        "unit": "Pound"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "彼女がいた後、小山は毎月545パナマ・バルボアを多く支出しています。",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "545パナマ・バルボア",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "PAB",
+        "value": "545",
+        "unit": "Panamanian balboa"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "小山は毎月545ドルと5セントを多く支出しています。",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "545ドルと5セント",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "USD",
+        "value": "545.05",
+        "unit": "United States dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "小山は毎月545ドルと5セントを多く支出しています。",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "545ドルと5セント",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "USD",
+        "value": "545.05",
+        "unit": "United States dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "この本は5人民元と3角です",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "5人民元と3角",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "CNY",
+        "value": "5.3",
+        "unit": "Chinese yuan"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ドルはアメリカの通貨です。",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "ドル",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "USD",
+        "value": null,
+        "unit": "United States dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ユーロはEU圏の通貨です。",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "ユーロ",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "EUR",
+        "value": null,
+        "unit": "Euro"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "この自転車は100ユーロと30です。",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "100ユーロと30",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "EUR",
+        "value": "100.3",
+        "unit": "Euro"
       }
     }
   ]
