@@ -1803,5 +1803,66 @@
       }
     }
   ]
+},
+{
+  "Input": "Any time to meet on 5/17/2018?",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5"
+      }
+    },
+    {
+      "Text": "17",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "17"
+      }
+    },
+    {
+      "Text": "2018",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2018"
+      }
+    }
+  ]
+},
+{
+  "Input": "My phone number is +1-222-2222/2222",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "222"
+      }
+    },
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    }
+  ]
 }
 ]
