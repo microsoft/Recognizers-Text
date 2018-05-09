@@ -2380,4 +2380,129 @@
     }
   ]
 }
+,
+{
+  "Input": "He will arrive later than or at 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later than or at 1/1/2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-01-01",
+            "Mod":"since",
+			"type":"daterange",
+            "start":"2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "He will leave before or on 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before or on 1/1/2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-01-01",
+			"Mod":"until",
+            "type":"daterange",
+            "end":"2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task will complete on or earlier than 1/1/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or earlier than 1/1/2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-01-01",
+            "Mod":"until",
+			"type":"daterange",
+            "end":"2016-01-01" 
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task will complete before or in Feb 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before or in Feb 2018",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-02",
+            "Mod":"until",
+			"type":"daterange",
+            "end":"2018-03-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "You can't leave later than or in 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "leave later than or in 2016",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016",
+            "Mod":"since",
+			"type":"daterange",
+            "start":"2016-01-01"         
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

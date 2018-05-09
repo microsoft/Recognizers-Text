@@ -174,9 +174,9 @@ export namespace EnglishDateTime {
 	export const TokenBeforeTime = 'at ';
 	export const AMTimeRegex = `(?<am>morning)`;
 	export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
-	export const BeforeRegex = `\\b(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)\\b`;
-	export const AfterRegex = `\\b(after(?!\\s+or equal to)|(?<!no\\s+)later than)\\b`;
-	export const SinceRegex = `\\b(since|after or equal to|starting (from|on|with))\\b`;
+	export const BeforeRegex = `\\b(?<include>(on|in|at)\\s+or\\s+)?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)(?<include>\\s+or\\s+(on|in|at))?\\b\\s*`;
+	export const AfterRegex = `\\b(?<include>(on|in|at)\\s+or\\s+)?(after(?!\\s+or equal to)|(?<!no\\s+)later than)(?<include>\\s+or\\s+(on|in|at))?\\b\\s*`;
+	export const SinceRegex = `\\b(since|after or equal to|starting (from|on|with))\\b\\s*`;
 	export const AgoRegex = `\\b(ago)\\b`;
 	export const LaterRegex = `\\b(later|from now)\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;

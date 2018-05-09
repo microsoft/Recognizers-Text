@@ -420,11 +420,11 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>afternoon|evening|night)\b
 BeforeRegex: !simpleRegex
-  def: \b(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)\b
+  def: \b(?<include>(on|in|at)\s+or\s+)?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)(?<include>\s+or\s+(on|in|at))?\b\s*
 AfterRegex: !simpleRegex
-  def: \b(after(?!\s+or equal to)|(?<!no\s+)later than)\b
+  def: \b(?<include>(on|in|at)\s+or\s+)?(after(?!\s+or equal to)|(?<!no\s+)later than)(?<include>\s+or\s+(on|in|at))?\b\s*
 SinceRegex: !simpleRegex
-  def: \b(since|after or equal to|starting (from|on|with))\b
+  def: \b(since|after or equal to|starting (from|on|with))\b\s*
 AgoRegex: !simpleRegex
   def: \b(ago)\b
 LaterRegex: !simpleRegex

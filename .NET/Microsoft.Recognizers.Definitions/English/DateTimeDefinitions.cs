@@ -183,9 +183,9 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string TokenBeforeTime = "at ";
 		public const string AMTimeRegex = @"(?<am>morning)";
 		public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
-		public const string BeforeRegex = @"\b(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)\b";
-		public const string AfterRegex = @"\b(after(?!\s+or equal to)|(?<!no\s+)later than)\b";
-		public const string SinceRegex = @"\b(since|after or equal to|starting (from|on|with))\b";
+		public const string BeforeRegex = @"\b(?<include>(on|in|at)\s+or\s+)?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)(?<include>\s+or\s+(on|in|at))?\b\s*";
+		public const string AfterRegex = @"\b(?<include>(on|in|at)\s+or\s+)?(after(?!\s+or equal to)|(?<!no\s+)later than)(?<include>\s+or\s+(on|in|at))?\b\s*";
+		public const string SinceRegex = @"\b(since|after or equal to|starting (from|on|with))\b\s*";
 		public const string AgoRegex = @"\b(ago)\b";
 		public const string LaterRegex = @"\b(later|from now)\b";
 		public const string InConnectorRegex = @"\b(in)\b";

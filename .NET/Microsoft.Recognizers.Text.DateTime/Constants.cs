@@ -54,6 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string BEFORE_MOD = "before";
         public const string AFTER_MOD = "after";
         public const string SINCE_MOD = "since";
+        public const string UNTIL_MOD = "until";
 
         public const string EARLY_MOD = "start";
         public const string MID_MOD = "mid";

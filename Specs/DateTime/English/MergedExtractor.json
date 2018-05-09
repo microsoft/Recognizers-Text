@@ -993,4 +993,59 @@
     }
   ]
 }
+,
+{
+  "Input": "He will arrive later than or at 1/1/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later than or at 1/1/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "He will leave before or on 1/1/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before or on 1/1/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "This task will complete on or earlier than 1/1/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or earlier than 1/1/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "This task will complete before or in Feb 2018",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before or in Feb 2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "You can't leave earlier than or in 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "earlier than or in 2016",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
