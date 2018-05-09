@@ -47,6 +47,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     continue;
                 }
 
+                if (ers[idx].Data is ExtractResult er && !er.Data.ToString().StartsWith("Integer"))
+                {
+                    groups[idx + 1] = groups[idx] + 1;
+                    continue;
+                }
+
                 var middleBegin = ers[idx].Start + ers[idx].Length ?? 0;
                 var middleEnd = ers[idx + 1].Start ?? 0;
 
@@ -113,6 +119,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     result[idx] = innerData[0];
                 }
             }
+
+            result.RemoveAll(o => o.Type == Constants.SYS_NUM);
 
             return result;
         }
