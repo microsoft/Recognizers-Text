@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void CurrencyModel()
         {
-            base.TestCurrency();
+            base.TestNumberWithUnit();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-Chinese.csv", "DimensionModel-Chinese#csv", DataAccessMethod.Sequential)]

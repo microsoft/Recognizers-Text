@@ -248,12 +248,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         {
             base.TestDateTimeAlt();
         }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelComplexCalendar-English.csv", "DateTimeModelComplexCalendar-English#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void DateTimeModelComplexCalendar()
-        {
-            base.TestDateTimeAlt();
-        }
     }
 }

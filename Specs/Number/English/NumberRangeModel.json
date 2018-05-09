@@ -485,16 +485,4 @@
     }
   ]
 }
-,
-{
-  "Input": "+1-222-2222/2222 is a phone number.",
-  "NotSupported": "javascript, python",
-  "Results": []
-}
-,
-{
-  "Input": "+1-222-2222-2222 is a phone number.",
-  "NotSupported": "javascript, python",
-  "Results": []
-}
 ]
