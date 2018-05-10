@@ -34,8 +34,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Push, save the MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false, hasYearAfter = false;
-            // "Include" means MOD string like "on or later than", "earlier than or in"
-            bool hasInclude = false;
+
+            // "InclusieModifier" means MOD should include the start/end time
+            // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
+            bool hasInclusiveModifier = false;
             var modStr = string.Empty;
             var beforeMatch = Config.BeforeRegex.Match(er.Text);
             var afterMatch = Config.AfterRegex.Match(er.Text);
@@ -51,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!string.IsNullOrEmpty(beforeMatch.Groups["include"].Value))
                 {
-                    hasInclude = true;
+                    hasInclusiveModifier = true;
                 }
             }
             else if (afterMatch.Success && afterMatch.Index == 0)
@@ -64,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!string.IsNullOrEmpty(afterMatch.Groups["include"].Value))
                 {
-                    hasInclude = true;
+                    hasInclusiveModifier = true;
                 }
             }
             else if (sinceMatch.Success && sinceMatch.Index == 0)
@@ -149,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult) pr.Value;
 
-                if (!hasInclude)
+                if (!hasInclusiveModifier)
                 {
                     val.Mod = Constants.BEFORE_MOD;
                 }
@@ -168,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult) pr.Value;
 
-                if (!hasInclude)
+                if (!hasInclusiveModifier)
                 {
                     val.Mod = Constants.AFTER_MOD;
                 }
@@ -207,7 +209,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                pr = SetParseResult(pr, hasBefore || hasAfter || hasSince);
+                var hasModifier = hasBefore || hasAfter || hasSince;
+                pr = SetParseResult(pr, hasModifier);
             }
 
             return pr;
@@ -293,7 +296,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 slot.Value = DateTimeResolution(slot);
-                slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, false)}";
+                slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, hasMod: false)}";
                 results.Add(slot);
             }
 
@@ -321,6 +324,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var islunar = val.IsLunar;
             var mod = val.Mod;
+
+            // With modifier, output Type might not be the same with type in resolution result 
+            // For example, if the resolution type is "date", with modifier the output type should be "daterange"
             var typeOutput = DetermineDateTimeType(slot.Type, hasMod: !string.IsNullOrEmpty(mod));
             var comment = val.Comment;
 

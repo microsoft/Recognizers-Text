@@ -1048,4 +1048,48 @@
     }
   ]
 }
+,
+{
+  "Input": "You can't leave earlier than or in 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "earlier than or in 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "You can leave office at or after 6:30PM today",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "at or after 6:30PM today",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "You need to leave on or before the day after tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or before the day after tomorrow",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "You need to leave on or earlier than 3pm 5/15/2018",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or earlier than 3pm 5/15/2018",
+      "Type": "datetime"
+    }
+  ]
+}
 ]

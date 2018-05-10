@@ -2505,4 +2505,79 @@
     }
   ]
 }
+,
+{
+  "Input": "You can leave office at or after 6:30PM today",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "at or after 6:30PM today",
+      "Type": "datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11-07T18:30",
+            "Mod":"since",
+			"type":"datetimerange",
+            "start":"2016-11-07 18:30:00"         
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "You need to leave on or before the day after tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or before the day after tomorrow",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2016-11-09",
+            "Mod":"until",
+			"type":"daterange",
+            "end":"2016-11-09"         
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "You need to leave on or earlier than 3pm 5/15/2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or earlier than 3pm 5/15/2018",
+      "Type": "datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-05-15T15",
+            "Mod":"until",
+			"type":"datetimerange",
+            "end":"2018-05-15 15:00:00"         
+          }
+        ]
+      }
+    }
+  ]
+}
 ]
