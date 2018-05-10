@@ -169,7 +169,7 @@ class ChineseNumeric:
     IntegerPercentageRegex = f'{ZeroToNineFullHalfRegex}+\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]'
     IntegerPercentageWithMultiplierRegex = f'{ZeroToNineFullHalfRegex}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]'
     NumbersFractionPercentageRegex = f'{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\\s*[个個]\\s*[百佰]\\s*分\\s*[点點]'
-    SimpleIntegerPercentageRegex = f'(?<=(\\s|^)){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?(\\s*)[％%]'
+    SimpleIntegerPercentageRegex = f'(?<!%|\\d){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\\.．]{ZeroToNineFullHalfRegex}+)?(\\s*)[％%](?!\\d)'
     NumbersFoldsPercentageRegex = f'{ZeroToNineFullHalfRegex}(([\\.．]?|\\s*){ZeroToNineFullHalfRegex})?\\s*折'
     FoldsPercentageRegex = f'{ZeroToNineIntegerRegex}(\\s*[点點]?\\s*{ZeroToNineIntegerRegex})?\\s*折'
     SimpleFoldsPercentageRegex = f'{ZeroToNineFullHalfRegex}\\s*成(\\s*(半|{ZeroToNineFullHalfRegex}))?'
