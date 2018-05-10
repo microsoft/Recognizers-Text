@@ -47,8 +47,8 @@ export namespace ChineseDateTime {
 	export const DatePeriodLastRegex = `上个|上一个|上|上一`;
 	export const DatePeriodNextRegex = `下个|下一个|下|下一`;
 	export const RelativeMonthRegex = `(?<relmonth>(${DatePeriodThisRegex}|${DatePeriodLastRegex}|${DatePeriodNextRegex})\\s*月)`;
-	export const DatePeriodYearRegex = `(?<year>(\\d{2,4}))\\s*年?`;
-	export const StrictYearRegex = `(?<year>(\\d{3,4}))\\s*年?`;
+	export const DatePeriodYearRegex = `((${YearNumRegex})(\\s*年)?|(${YearRegex})\\s*年)(?=[\\u4E00-\\u9FFF]|\\s|$|\\W)`;
+	export const StrictYearRegex = `${DatePeriodYearRegex}`;
 	export const YearRegexInNumber = `(?<year>(\\d{3,4}))`;
 	export const DatePeriodYearInChineseRegex = `(?<yearchs>(${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}))年`;
 	export const MonthSuffixRegex = `(?<msuf>(${RelativeMonthRegex}|${MonthRegex}))`;

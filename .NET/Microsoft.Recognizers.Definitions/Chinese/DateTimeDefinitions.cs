@@ -56,8 +56,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
 		public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
-		public const string DatePeriodYearRegex = @"(?<year>(\d{2,4}))\s*年?";
-		public const string StrictYearRegex = @"(?<year>(\d{3,4}))\s*年?";
+		public static readonly string DatePeriodYearRegex = $@"(({YearNumRegex})(\s*年)?|({YearRegex})\s*年)(?=[\u4E00-\u9FFF]|\s|$|\W)";
+		public static readonly string StrictYearRegex = $@"{DatePeriodYearRegex}";
 		public const string YearRegexInNumber = @"(?<year>(\d{3,4}))";
 		public static readonly string DatePeriodYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";

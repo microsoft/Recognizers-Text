@@ -347,4 +347,55 @@
     }
   ]
 }
+,
+{
+  "Input": "100只是一个数字",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "1499只是一个数字",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "2101只是一个数字",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "2018看起来是一个年份",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2100看起来是一个年份",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2100",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "1500看起来是一个年份",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1500",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
