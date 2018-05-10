@@ -419,10 +419,14 @@ AMTimeRegex: !simpleRegex
   def: (?<am>morning)
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>afternoon|evening|night)\b
-BeforeRegex: !simpleRegex
-  def: \b(?<include>(on|in|at)\s+or\s+)?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)(?<include>\s+or\s+(on|in|at))?\b\s*
-AfterRegex: !simpleRegex
-  def: \b(?<include>(on|in|at)\s+or\s+)?(after(?!\s+or equal to)|(?<!no\s+)later than)(?<include>\s+or\s+(on|in|at))?\b\s*
+InclusiveModPrepositions: !simpleRegex
+  def: (?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))
+BeforeRegex: !nestedRegex
+  def: \b{InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until){InclusiveModPrepositions}?\b\s*
+  references: [ InclusiveModPrepositions ]
+AfterRegex: !nestedRegex
+  def: \b{InclusiveModPrepositions}?(after(?!\s+or equal to)|(?<!no\s+)later than){InclusiveModPrepositions}?\b\s*
+  references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
   def: \b(since|after or equal to|starting (from|on|with))\b\s*
 AgoRegex: !simpleRegex
