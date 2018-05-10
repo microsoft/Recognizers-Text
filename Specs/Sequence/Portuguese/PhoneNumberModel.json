@@ -934,10 +934,10 @@
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "19) 35831647",
+        "Text": "35831647",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "19) 35831647"
+          "value": "35831647"
         }
       }
     ]
@@ -947,10 +947,10 @@
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "(19 35831647",
+        "Text": "19 35831647",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(19 35831647"
+          "value": "19 35831647"
         }
       }
     ]

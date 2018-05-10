@@ -7,6 +7,7 @@ export class Constants {
     static readonly PHONE_NUMBER_REGEX_UK: string = "UKPhoneNumber";
     static readonly PHONE_NUMBER_REGEX_GERMANY: string = "GermanyPhoneNumber";
     static readonly PHONE_NUMBER_REGEX_US: string = "USPhoneNumber";
+    static readonly PHONE_NUMBER_REGEX_CN: string = "CNPhoneNumber";
     static readonly PHONE_NUMBER_REGEX_SPECIAL: string = "SpecialPhoneNumber";
     static readonly MENTION_REGEX = "Mention";
     static readonly HASHTAG_REGEX = "Hashtag";
