@@ -901,4 +901,29 @@
     }
   ]
 }
+,
+{
+  "Input": "2018 看起来是一个年份",
+  "NotSupported": "python,javascript",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "Results": [
+    {
+      "Text": "2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018",
+        "FutureResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2019-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2019-01-01"
+        }
+      }
+    }
+  ]
+}
 ]
