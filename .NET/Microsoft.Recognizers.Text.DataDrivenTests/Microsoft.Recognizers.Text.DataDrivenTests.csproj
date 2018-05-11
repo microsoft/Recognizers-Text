@@ -93,6 +93,7 @@
     <Compile Include="Number\TestParserFactory.cs" />
     <Compile Include="Sequence\TestSequenceRecognizerCache.cs" />
     <Compile Include="Sequence\TestSequenceRecognizerInitialization.cs" />
+    <Compile Include="Sequence\TestSequence_Portuguese.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="TestHelpers.cs" />

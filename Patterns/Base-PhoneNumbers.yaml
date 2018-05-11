@@ -9,7 +9,9 @@ UkPhoneNumberRegex: !simpleRegex
 GermanyPhoneNumberRegex: !simpleRegex
   def: (\b(\d{3,4}\s?[-/]?(\s?\d){7,8})\b)
 USPhoneNumberRegex: !simpleRegex
-  def: ((((\B\+)|\b)1(\s|-)?)|\b)?(\B\(|\b)\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{4}\b
+  def: ((((\B\+)|\b)1(\s|-)?)|\b)?(\(\d{3}\)|\b\d{3})\s?-?\s?\d{3}\s?-?\s?\d{4}\b
+CNPhoneNumberRegex: !simpleRegex
+  def: ((\b00\s?)?\+?86\s?-?\s?)?((\d{2,5}|\(\d{2,5}\))\s?-?\s?\d{4}\s?-?\s?\d{4}(\s?-?\s?\d{4})?|\d{3}\s?-?\s?\d{4}\s?-?\s?\d{4})(?!-)\b
 SpecialPhoneNumberRegex: !simpleRegex
   def: \b(\d{3,4}[/-]\d{1,4}[/-]\d{3,4})\b
 ...
