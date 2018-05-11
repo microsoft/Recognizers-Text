@@ -51,7 +51,7 @@ export namespace EnglishDateTime {
 	export const AllHalfYearRegex = `(${HalfYearFrontRegex})|(${HalfYearBackRegex})|(${HalfYearRelativeRegex})`;
 	export const EarlyPrefixRegex = `?<EarlyPrefix>early|beginning of|start of`;
 	export const MidPrefixRegex = `?<MidPrefix>mid|middle of`;
-	export const LaterPrefixRegex = `?<LatePrefix>late|later|end of`;
+	export const LaterPrefixRegex = `?<LatePrefix>late|later(\\s+in)?|end of`;
 	export const PrefixPeriodRegex = `((${EarlyPrefixRegex})|(${MidPrefixRegex})|(${LaterPrefixRegex}))`;
 	export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
 	export const SeasonRegex = `\\b(?<season>(${PrefixPeriodRegex}\\s+)?(${RelativeRegex}\\s+)?${SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)\\b`;
