@@ -1017,7 +1017,6 @@
   {
     "Input": "My phone number is +1(123)456-7890.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "+1(123)456-7890",
