@@ -107,7 +107,7 @@ EarlyPrefixRegex: !simpleRegex
 MidPrefixRegex: !simpleRegex
   def: ?<MidPrefix>mid|middle of
 LaterPrefixRegex: !simpleRegex
-  def: ?<LatePrefix>late|later|end of
+  def: ?<LatePrefix>late|later(\s+in)?|end of
 PrefixPeriodRegex: !nestedRegex
   def: (({EarlyPrefixRegex})|({MidPrefixRegex})|({LaterPrefixRegex}))
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
