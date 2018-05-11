@@ -5,7 +5,7 @@
         "ReferenceDateTime": "2016-11-07T00:00:00"
       },
       "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
+      "NotSupported":"dotnet,javascript",
       "Results": [
         {
           "Text": "morgen Abend gegen 8 Uhr",
@@ -32,7 +32,7 @@
       "NotSupported":"javascript",
       "Results": [
         {
-          "Text": "Urlaub",
+          "Text": "Ostern",
           "Type": "datetimeV2.date",
           "Value": {
             "values": [
@@ -75,7 +75,7 @@
         "ReferenceDateTime": "2016-11-07T00:00:00"
       },
       "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
+      "NotSupported":"dotnet,javascript",
       "Results": [
         {
           "Text": "Freitag Nachmittag",
