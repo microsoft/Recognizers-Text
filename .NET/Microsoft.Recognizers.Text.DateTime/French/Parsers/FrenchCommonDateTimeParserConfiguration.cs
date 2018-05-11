@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Number.French;
@@ -45,5 +46,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateTimePeriodParser = new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(this));
             DateTimeAltParser = new BaseDateTimeAltParser(new FrenchDateTimeAltParserConfiguration(this));
         }
+        public override IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary().AddRange(DateTimeDefinitions.DayOfMonth);
     }
 }

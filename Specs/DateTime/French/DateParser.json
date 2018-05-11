@@ -1,5 +1,5 @@
 [
-  {
+{
   "Input": "Je reviendrai Mercredi",
   "Context": {
     "ReferenceDateTime": "2016-09-07T00:00:00"
@@ -1396,6 +1396,52 @@
         },
         "PastResolution": {
           "date": "1971-05-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 1er avril 2005",
+  "Context": {
+    "ReferenceDateTime": "2016-09-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1er avril 2005",
+      "Type": "date",
+      "Value": {
+        "Timex": "2005-04-01",
+        "FutureResolution": {
+          "date": "2005-04-01"
+        },
+        "PastResolution": {
+          "date": "2005-04-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 1er avril 78",
+  "Context": {
+    "ReferenceDateTime": "2016-09-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1er avril 78",
+      "Type": "date",
+      "Value": {
+        "Timex": "1978-04-01",
+        "FutureResolution": {
+          "date": "1978-04-01"
+        },
+        "PastResolution": {
+          "date": "1978-04-01"
         }
       }
     }

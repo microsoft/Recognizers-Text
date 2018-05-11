@@ -73,5 +73,6 @@ export class FrenchCommonDateTimeParserConfiguration extends BaseDateParserConfi
         this.datePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));
         this.timePeriodParser = new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(this));
         this.dateTimePeriodParser = new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(this));
+        this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...FrenchDateTime.DayOfMonth]);
     }
 }
