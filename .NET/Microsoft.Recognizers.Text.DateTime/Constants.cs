@@ -51,9 +51,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Comment_MonthOf = "MonthOf";
 
         // Mod Value
+        // "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
         public const string BEFORE_MOD = "before";
+
+        // "after" -> To mean "following in time". I.e. Does not include the extracted datetime entity in the resolution's starting point. Equivalent to ">"
         public const string AFTER_MOD = "after";
+
+        // "since" -> Same as "after", but including the extracted datetime entity. Equivalent to ">="
         public const string SINCE_MOD = "since";
+
+        // "until" -> Same as "before", but including the extracted datetime entity. Equivalent to "<="
+        public const string UNTIL_MOD = "until";
 
         public const string EARLY_MOD = "start";
         public const string MID_MOD = "mid";

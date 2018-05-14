@@ -218,6 +218,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
 
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Type, actual.Type, GetMessage(TestSpec));
+
                 var values = actual.Value as IDictionary<string, object>;
                 if (values != null)
                 {
