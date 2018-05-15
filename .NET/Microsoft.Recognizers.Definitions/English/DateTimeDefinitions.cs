@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Definitions.English
 	{
 		public const string TillRegex = @"(?<till>to|till|til|until|thru|through|--|-|—|——|~)";
 		public const string RangeConnectorRegex = @"(?<and>and|through|to|--|-|—|——)";
-		public const string RelativeRegex = @"(?<order>next|coming|upcoming|this|last|past|previous|current|the|my)";
+		public const string RelativeRegex = @"(?<order>next|coming|upcoming|this|last|past|previous|current|the)";
 		public const string StrictRelativeRegex = @"(?<order>next|coming|upcoming|this|last|past|previous|current)";
 		public const string NextPrefixRegex = @"(next|coming|upcoming)\b";
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
 		public static readonly string BetweenRegex = $@"\b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
 		public static readonly string MonthWithYear = $@"\b(({WrittenMonthRegex}(\s*),?(\s+of)?(\s*)({YearRegex}|(?<order>next|last|this)\s+year))|(({YearRegex}|(?<order>next|last|this)\s+year)(\s*),?(\s*){WrittenMonthRegex}))\b";
-		public static readonly string OneWordPeriodRegex = $@"\b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(weekend|week|month|year)(\s+{AfterNextSuffixRegex})?)\b";
+		public static readonly string OneWordPeriodRegex = $@"\b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(my\s+)?(weekend|week|month|year)(\s+{AfterNextSuffixRegex})?)\b";
 		public static readonly string MonthNumWithYear = $@"({YearNumRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){YearNumRegex})";
 		public static readonly string WeekOfMonthRegex = $@"(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex})";
 		public static readonly string WeekOfYearRegex = $@"(?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week(\s+of)?\s+({YearRegex}|{RelativeRegex}\s+year))";
@@ -78,7 +78,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string ThisRegex = $@"\b((this(\s*week)?(\s*on)?\s+){WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b";
 		public static readonly string LastDateRegex = $@"\b({PastPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+last\s*week))\b";
 		public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week(\s*on)?)?\s+{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+next\s*week))\b";
-		public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?{RelativeRegex}\s+day)|yesterday|tomorrow|tmr|today)\b";
+		public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b";
 		public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b";
 		public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
 		public const string SetWeekDayRegex = @"\b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)s\b";
