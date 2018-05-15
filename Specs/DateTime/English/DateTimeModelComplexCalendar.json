@@ -127,6 +127,11 @@
               "timex": "2017-12-19T03",
               "type": "datetime",
               "value": "2017-12-19 03:00:00"
+            },
+            {
+              "timex": "2017-12-19T15",
+              "type": "datetime",
+              "value": "2017-12-19 15:00:00"
             }
           ]
         }
@@ -150,6 +155,11 @@
               "timex": "2017-12-19T03",
               "type": "datetime",
               "value": "2017-12-19 03:00:00"
+            },
+            {
+              "timex": "2017-12-19T15",
+              "type": "datetime",
+              "value": "2017-12-19 15:00:00"
             }
           ]
         }
@@ -173,6 +183,11 @@
               "timex": "2017-12-17T12",
               "type": "datetime",
               "value": "2017-12-17 12:00:00"
+            },
+            {
+              "timex": "2017-12-17T00",
+              "type": "datetime",
+              "value": "2017-12-17 00:00:00"
             }
           ]
         }
@@ -197,6 +212,12 @@
               "Mod": "before",
               "type": "timerange",
               "end": "04:00:00"
+            },
+            {
+              "timex": "T16",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "16:00:00"
             }
           ]
         }
@@ -221,6 +242,12 @@
               "Mod": "after",
               "type": "timerange",
               "start": "03:00:00"
+            },
+            {
+              "timex": "T15",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "15:00:00"
             }
           ]
         }
@@ -245,6 +272,12 @@
               "Mod": "before",
               "type": "timerange",
               "end": "04:00:00"
+            },
+            {
+              "timex": "T16",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "16:00:00"
             }
           ]
         }
@@ -1295,6 +1328,51 @@
               "timex": "XXXX-05-17",
               "type": "date",
               "value": "2018-05-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back my day.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-15T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "my day",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-15",
+              "type": "date",
+              "value": "2018-05-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What is my april 2017 bonus?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "april 2017",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-04",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-05-01"
             }
           ]
         }

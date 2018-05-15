@@ -197,7 +197,7 @@ function getModelFunction(config) {
 
     var options = DateTimeOptions.None + 
         config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None +
-        config.subType.includes('CalendarMode') ? DateTimeOptions.Calendar : DateTimeOptions.None;
+        config.subType.includes('Calendar') ? DateTimeOptions.Calendar : DateTimeOptions.None;
 
     var culture = SupportedCultures[config.language].cultureCode;
 
