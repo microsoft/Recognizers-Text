@@ -314,4 +314,88 @@
     }
   ]
 }
+,
+{
+  "Input": "2009 年 到 2010 年，小麦产量翻了一番",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009 年 到 2010 年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "近 三 年，犯罪数量逐步下降",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "近 三 年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "比 较 一 下 2009年，我们可以看出变化是很明显的",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "100只是一个数字",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "1499只是一个数字",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "2101只是一个数字",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "2018看起来是一个年份",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2100看起来是一个年份",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2100",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "1500看起来是一个年份",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1500",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

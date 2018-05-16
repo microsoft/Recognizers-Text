@@ -55,6 +55,7 @@ export namespace SpanishDateTime {
 	export const ForTheRegex = `^[.]`;
 	export const WeekDayAndDayOfMonthRegex = `^[.]`;
 	export const WeekDayOfMonthRegex = `(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
+	export const RelativeWeekDayRegex = `^[.]`;
 	export const NumberEndingPattern = `^[.]`;
 	export const SpecialDateRegex = `(?<=\\b(en)\\s+el\\s+)${DayRegex}\\b`;
 	export const OfMonthRegex = `^\\s*de\\s*${MonthSuffixRegex}`;
@@ -160,6 +161,7 @@ export namespace SpanishDateTime {
 	export const DecadeRegex = `^[.]`;
 	export const DecadeWithCenturyRegex = `^[.]`;
 	export const RelativeDecadeRegex = `^[.]`;
+	export const ComplexDatePeriodRegex = `^[.]`;
 	export const FullTextYearRegex = `^[\\*]`;
 	export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
 	export const AgoRegex = `\\b(antes)\\b`;

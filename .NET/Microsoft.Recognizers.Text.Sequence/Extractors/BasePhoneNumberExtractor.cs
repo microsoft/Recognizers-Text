@@ -31,6 +31,9 @@ namespace Microsoft.Recognizers.Text.Sequence
                     new Regex(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US
                 },
                 {
+                    new Regex(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN
+                },
+                {
                     new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL
                 }
             };
@@ -46,7 +49,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 if (er.Start != 0)
                 {
                     char ch = text[(int)(er.Start - 1)];
-                    if (ch == '-' || ch == '.')
+                    if (ch == '-' || ch == '.' || ch == '/')
                     {
                         ers.Remove(er);
                     }

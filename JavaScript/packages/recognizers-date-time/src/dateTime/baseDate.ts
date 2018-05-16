@@ -201,6 +201,7 @@ export interface IDateParserConfiguration {
     forTheRegex: RegExp
     weekDayAndDayOfMonthRegex: RegExp
     relativeMonthRegex: RegExp
+    relativeWeekDayRegex: RegExp
     utilityConfiguration: IDateTimeUtilityConfiguration
     dateTokenPrefix: string
     getSwiftDay(source: string): number
@@ -331,6 +332,30 @@ export class BaseDateParser implements IDateTimeParser {
             let numOfDays = Number.parseInt(this.config.numberParser.parse(numErs[0]).value);
 
             let value = DateUtils.addDays(referenceDate, swift + numOfDays);
+            result.timex = FormatUtil.luisDateFromDate(value);
+            result.futureValue = value;
+            result.pastValue = value;
+            result.success = true;
+            return result;
+        }
+        
+        // handle "two sundays from now"
+        match = RegExpUtility.getMatches(this.config.relativeWeekDayRegex, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
+            let numErs = this.config.integerExtractor.extract(trimmedSource);
+            let num = Number.parseInt(this.config.numberParser.parse(numErs[0]).value);
+            let weekdayStr = match.groups('weekday').value.toLowerCase();
+            let value = referenceDate;
+
+            // Check whether the determined day of this week has passed.
+            if (value.getDay() > this.config.dayOfWeek.get(weekdayStr)) {
+                num--;
+            }
+
+            while (num-- > 0) {
+                value = DateUtils.next(value, this.config.dayOfWeek.get(weekdayStr));
+            }
+
             result.timex = FormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;

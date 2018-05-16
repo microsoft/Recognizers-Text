@@ -12,6 +12,7 @@ export namespace BasePhoneNumbers {
 	export const BrazilPhoneNumberRegex = `(((\\B\\(\\s?))\\d{2,3}(\\s?\\))|(\\b\\d{2,3}))\\s?\\d{4,5}-?\\d{3,5}\\b`;
 	export const UkPhoneNumberRegex = `(((\\b(00)|\\B\\+)\\s?)?\\b\\d{2}\\s?(\\(0\\))?\\d{3,5}[/-]?\\s?(\\d{7,8}|\\d{3}\\s?\\d{3})\\b)`;
 	export const GermanyPhoneNumberRegex = `(\\b(\\d{3,4}\\s?[-/]?(\\s?\\d){7,8})\\b)`;
-	export const USPhoneNumberRegex = `((((\\B\\+)|\\b)1(\\s|-)?)|\\b)?(\\B\\(|\\b)\\d{3}\\)?\\s?-?\\s?\\d{3}\\s?-?\\s?\\d{4}\\b`;
+	export const USPhoneNumberRegex = `((((\\B\\+)|\\b)1(\\s|-)?)|\\b)?(\\(\\d{3}\\)|\\b\\d{3})\\s?-?\\s?\\d{3}\\s?-?\\s?\\d{4}\\b`;
+	export const CNPhoneNumberRegex = `((\\b00\\s?)?\\+?86\\s?-?\\s?)?((\\d{2,5}|\\(\\d{2,5}\\))\\s?-?\\s?\\d{4}\\s?-?\\s?\\d{4}(\\s?-?\\s?\\d{4})?|\\d{3}\\s?-?\\s?\\d{4}\\s?-?\\s?\\d{4})(?!-)\\b`;
 	export const SpecialPhoneNumberRegex = `\\b(\\d{3,4}[/-]\\d{1,4}[/-]\\d{3,4})\\b`;
 }

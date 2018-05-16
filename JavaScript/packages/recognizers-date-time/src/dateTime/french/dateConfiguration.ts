@@ -103,6 +103,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
 
@@ -133,6 +134,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
         this.forTheRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeMonthRegex, "gis");
+        this.relativeWeekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeWeekDayRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = FrenchDateTime.DateTokenPrefix;
     }

@@ -47,8 +47,8 @@ export namespace ChineseDateTime {
 	export const DatePeriodLastRegex = `上个|上一个|上|上一`;
 	export const DatePeriodNextRegex = `下个|下一个|下|下一`;
 	export const RelativeMonthRegex = `(?<relmonth>(${DatePeriodThisRegex}|${DatePeriodLastRegex}|${DatePeriodNextRegex})\\s*月)`;
-	export const DatePeriodYearRegex = `(?<year>(\\d{2,4}))年?`;
-	export const StrictYearRegex = `(?<year>(\\d{3,4}))年?`;
+	export const DatePeriodYearRegex = `((${YearNumRegex})(\\s*年)?|(${YearRegex})\\s*年)(?=[\\u4E00-\\u9FFF]|\\s|$|\\W)`;
+	export const StrictYearRegex = `${DatePeriodYearRegex}`;
 	export const YearRegexInNumber = `(?<year>(\\d{3,4}))`;
 	export const DatePeriodYearInChineseRegex = `(?<yearchs>(${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}))年`;
 	export const MonthSuffixRegex = `(?<msuf>(${RelativeMonthRegex}|${MonthRegex}))`;
@@ -60,10 +60,10 @@ export namespace ChineseDateTime {
 	export const UnitRegex = `(?<unit>年|(个)?月|周|日|天)`;
 	export const FollowedUnit = `^\\s*${UnitRegex}`;
 	export const NumberCombinedWithUnit = `(?<num>\\d+(\\.\\d*)?)${UnitRegex}`;
-	export const YearToYear = `((从|在|自)\\s*)?(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})${DatePeriodTillRegex}(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})`;
+	export const YearToYear = `((从|在|自)\\s*)?(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})\\s*${DatePeriodTillRegex}\\s*(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})`;
 	export const MonthToMonth = `(${MonthRegex})${DatePeriodTillRegex}(${MonthRegex})`;
 	export const PastRegex = `(?<past>(前|上|之前|近))`;
-	export const FutureRegex = `(?<future>(后|(?<![一两几])下|之后|未来(的)?))`;
+	export const FutureRegex = `(?<future>(后|(?<![一两几]\\s*)下|之后|未来(的)?))`;
 	export const SeasonRegex = `(?<season>春|夏|秋|冬)(天|季)?`;
 	export const SeasonWithYear = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?${SeasonRegex}`;
 	export const QuarterRegex = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)`;

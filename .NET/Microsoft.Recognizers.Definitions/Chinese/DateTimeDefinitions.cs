@@ -56,8 +56,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
 		public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
-		public const string DatePeriodYearRegex = @"(?<year>(\d{2,4}))年?";
-		public const string StrictYearRegex = @"(?<year>(\d{3,4}))年?";
+		public static readonly string DatePeriodYearRegex = $@"(({YearNumRegex})(\s*年)?|({YearRegex})\s*年)(?=[\u4E00-\u9FFF]|\s|$|\W)";
+		public static readonly string StrictYearRegex = $@"{DatePeriodYearRegex}";
 		public const string YearRegexInNumber = @"(?<year>(\d{3,4}))";
 		public static readonly string DatePeriodYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";
@@ -69,10 +69,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string UnitRegex = @"(?<unit>年|(个)?月|周|日|天)";
 		public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
 		public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";
-		public static readonly string YearToYear = $@"((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex}){DatePeriodTillRegex}({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})";
+		public static readonly string YearToYear = $@"((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})";
 		public static readonly string MonthToMonth = $@"({MonthRegex}){DatePeriodTillRegex}({MonthRegex})";
 		public const string PastRegex = @"(?<past>(前|上|之前|近))";
-		public const string FutureRegex = @"(?<future>(后|(?<![一两几])下|之后|未来(的)?))";
+		public const string FutureRegex = @"(?<future>(后|(?<![一两几]\s*)下|之后|未来(的)?))";
 		public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?";
 		public static readonly string SeasonWithYear = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}";
 		public static readonly string QuarterRegex = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)";

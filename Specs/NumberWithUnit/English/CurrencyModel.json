@@ -1429,8 +1429,6 @@
   "Results": [
     {
       "Text": "one dollar and one",
-      "Start": 9,
-      "End": 26,
       "TypeName": "currency",
       "Resolution": {
         "unit": "Dollar",
@@ -1446,8 +1444,6 @@
   "Results": [
     {
       "Text": "10 us dollar",
-      "Start": 13,
-      "End": 24,
       "TypeName": "currency",
       "Resolution": {
         "isoCurrency": "USD",
@@ -1458,8 +1454,6 @@
     ,
     {
       "Text": "100 chinese yuan",
-      "Start": 33,
-      "End": 48,
       "TypeName": "currency",
       "Resolution": {
         "isoCurrency": "CNY",
@@ -1471,13 +1465,11 @@
 }
 ,
 {
-  "Input": "It costs you 10 us dollar and me c $ 100.34 and fifty.",
+  "Input": "It costs you 10 us dollar and me c $ 100 and fifty.",
   "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "10 us dollar",
-      "Start": 13,
-      "End": 24,
       "TypeName": "currency",
       "Resolution": {
         "isoCurrency": "USD",
@@ -1487,14 +1479,12 @@
     }
     ,
     {
-      "Text": "c $ 100.34 and fifty",
-      "Start": 33,
-      "End": 52,
+      "Text": "c $ 100 and fifty",
       "TypeName": "currency",
       "Resolution": {
         "isoCurrency": "CAD",
         "unit": "Canadian dollar",
-        "value": "100.84"
+        "value": "100.5"
       }
     } 
   ]
@@ -1502,18 +1492,45 @@
 ,
 {
   "Input": "It may need one kuai and five mao five.",
-  "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
+  "NotSupported": "javascript,python",
   "Results": [
     {
       "Text": "one kuai and five mao five",
-      "Start": 12,
-      "End": 37,
       "TypeName": "currency",
       "Resolution": {
         "isoCurrency": "CNY",
         "unit": "Chinese yuan",
         "value": "1.55"
+      }
+    } 
+  ]
+}
+,
+{
+  "Input": "It costs one dollar and two and three points of your credit points.",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "one dollar and two",
+      "TypeName": "currency",
+      "Resolution": {
+        "unit": "Dollar",
+        "value": "1.02"
+      }
+    } 
+  ]
+}
+,
+{
+  "Input": "Hey, the cost is $4.25 and 32 is the quantity!",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "$4.25",
+      "TypeName": "currency",
+      "Resolution": {
+        "unit": "Dollar",
+        "value": "4.25"
       }
     } 
   ]

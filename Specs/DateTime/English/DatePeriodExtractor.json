@@ -3356,4 +3356,207 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out between January 1st and April 5th",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between January 1st and April 5th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between January 1st 2015 and Feb 5th 2018",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between January 1st 2015 and Feb 5th 2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between January 1st 2015 and Feb 2018",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between January 1st 2015 and Feb 2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2015 and Feb 2018",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 2015 and Feb 2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from Feb 1st to March 2019",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from Feb 1st to March 2019",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between Feb 1st and March 2019",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between Feb 1st and March 2019",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2015 June and 2018 May",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 2015 June and 2018 May",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2015 May and 2018",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 2015 May and 2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between May 2015 and 2018",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between May 2015 and 2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between May 2015 and 2018 June",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between May 2015 and 2018 June",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2015 and January 5th 2018",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 2015 and January 5th 2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 2015 to May 5th, 2017",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 2015 to May 5th, 2017",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from last Monday April to 2019",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from last Monday April to 2019",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from Week 31 to Week 35",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from Week 31 to Week 35",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between Week 31 and Week 35",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between Week 31 and Week 35",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll stay here from today to two and half days later",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from today to two and half days later",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "What is my april 2017 bonus?",
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "april 2017",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

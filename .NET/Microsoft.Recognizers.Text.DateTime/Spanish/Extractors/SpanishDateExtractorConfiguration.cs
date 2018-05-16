@@ -57,6 +57,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SpecialDateRegex = 
             new Regex(DateTimeDefinitions.SpecialDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RelativeWeekDayRegex =
+            new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         //TODO: modify below regex according to the counterpart in English
         public static readonly Regex ForTheRegex = new Regex($@"^[.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);

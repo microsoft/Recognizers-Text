@@ -175,7 +175,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         private void PruneInvalidImplicitDate(List<ExtractResult> ers)
         {
             ers.RemoveAll(er =>
-                er.Data == null && er.Type.Equals(Constants.SYS_DATETIME_DATE) && config.DayRegex.IsMatch(er.Text));
+            {
+                if (er.Data != null || !er.Type.Equals(Constants.SYS_DATETIME_DATE))
+                {
+                    return false;
+                }
+
+                var match = config.DayRegex.Match(er.Text);
+                return match.Success && match.Index == 0 && match.Length == er.Length;
+            });
         }
 
         // Resolve cases like "this week or next".

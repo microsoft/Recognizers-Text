@@ -54,6 +54,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex WeekDayOfMonthRegex =
             new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RelativeWeekDayRegex =
+            new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex SpecialDate = 
             new Regex(DateTimeDefinitions.SpecialDate, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -119,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex[] ImplicitDateList =
         {
             OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
-            SingleWeekDayRegex, WeekDayOfMonthRegex, SpecialDate, SpecialDayWithNumRegex
+            SingleWeekDayRegex, WeekDayOfMonthRegex, SpecialDate, SpecialDayWithNumRegex, RelativeWeekDayRegex
         };
 
         public static readonly Regex OfMonth = 

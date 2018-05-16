@@ -115,10 +115,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 pr.Value = val;
             }
 
-            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
+            pr.Value = DateTimeResolution(pr);
 
+            var hasModifier = hasBefore || hasAfter || hasSince;
             //change the type at last for the after or before mode
-            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
+            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasModifier)}";
 
             return pr;
         }

@@ -327,6 +327,35 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }));
             #endregion
+
+            #region Japanese
+            RegisterModel<CurrencyModel>(
+                Culture.Japanese,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Japanese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Japanese.CurrencyParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
+                    }
+                }));
+            RegisterModel<AgeModel>(
+                Culture.Japanese,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Japanese.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Japanese.AgeParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
+                    }
+                }));
+            #endregion
         }
     }
 }

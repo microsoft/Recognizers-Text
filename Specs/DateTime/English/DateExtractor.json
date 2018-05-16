@@ -1336,4 +1336,26 @@
     }
   ]
 }
+,
+{
+  "Input": "Are you available two sundays from now?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two sundays from now",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two monday later?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two monday later",
+      "Type": "date"
+    }
+  ]
+}
 ]

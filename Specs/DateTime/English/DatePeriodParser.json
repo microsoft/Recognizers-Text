@@ -4575,4 +4575,446 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out between January 1st and April 5th",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between January 1st and April 5th",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XXXX-01-01,XXXX-04-05,P94D)",
+        "FutureResolution": {
+          "startDate": "2017-01-01",
+          "endDate": "2017-04-05"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2016-04-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between January 1st 2015 and Feb 5th 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between January 1st 2015 and Feb 5th 2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-01-01,2018-02-05,P1131D)",
+        "FutureResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2018-02-05"
+        },
+        "PastResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2018-02-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between January 1st 2015 and Feb 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between January 1st 2015 and Feb 2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-01-01,2018-02-01,P1127D)",
+        "FutureResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2018-02-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2018-02-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2015 and Feb 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between 2015 and Feb 2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-01-01,2018-02-01,P37M)",
+        "FutureResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2018-02-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2018-02-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from Feb 1st to March 2019",
+  "Context": {
+    "ReferenceDateTime": "2018-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "from Feb 1st to March 2019",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2019-02-01,2019-03-01,P28D)",
+        "FutureResolution": {
+          "startDate": "2019-02-01",
+          "endDate": "2019-03-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-02-01",
+          "endDate": "2019-03-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between Feb 1st and March 2019",
+  "Context": {
+    "ReferenceDateTime": "2018-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between Feb 1st and March 2019",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2019-02-01,2019-03-01,P28D)",
+        "FutureResolution": {
+          "startDate": "2019-02-01",
+          "endDate": "2019-03-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-02-01",
+          "endDate": "2019-03-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2015 June and 2018 May",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between 2015 June and 2018 May",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-06-01,2018-05-01,P35M)",
+        "FutureResolution": {
+          "startDate": "2015-06-01",
+          "endDate": "2018-05-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-06-01",
+          "endDate": "2018-05-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2015 May and 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between 2015 May and 2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-05-01,2018-01-01,P32M)",
+        "FutureResolution": {
+          "startDate": "2015-05-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-05-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between May 2015 and 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between May 2015 and 2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-05-01,2018-01-01,P32M)",
+        "FutureResolution": {
+          "startDate": "2015-05-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-05-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between May 2015 and 2018 June",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between May 2015 and 2018 June",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-05-01,2018-06-01,P37M)",
+        "FutureResolution": {
+          "startDate": "2015-05-01",
+          "endDate": "2018-06-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-05-01",
+          "endDate": "2018-06-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2015 and January 5th 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between 2015 and January 5th 2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-01-01,2018-01-05,P1100D)",
+        "FutureResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2018-01-05"
+        },
+        "PastResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2018-01-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 2015 to May 5th, 2017",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "from 2015 to May 5th, 2017",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-01-01,2017-05-05,P855D)",
+        "FutureResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2017-05-05"
+        },
+        "PastResolution": {
+          "startDate": "2015-01-01",
+          "endDate": "2017-05-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from last Monday April to 2019",
+  "Context": {
+    "ReferenceDateTime": "2018-05-04T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "from last Monday April to 2019",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-04-30,2019-01-01,P246D)",
+        "FutureResolution": {
+          "startDate": "2018-04-30",
+          "endDate": "2019-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-04-30",
+          "endDate": "2019-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from Week 31 to Week 35",
+  "Context": {
+    "ReferenceDateTime": "2018-05-04T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "from Week 31 to Week 35",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-08-06,2018-09-03,P4W)",
+        "FutureResolution": {
+          "startDate": "2018-08-06",
+          "endDate": "2018-09-03"
+        },
+        "PastResolution": {
+          "startDate": "2018-08-06",
+          "endDate": "2018-09-03"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between Week 31 and Week 35",
+  "Context": {
+    "ReferenceDateTime": "2018-05-04T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between Week 31 and Week 35",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-08-06,2018-09-03,P4W)",
+        "FutureResolution": {
+          "startDate": "2018-08-06",
+          "endDate": "2018-09-03"
+        },
+        "PastResolution": {
+          "startDate": "2018-08-06",
+          "endDate": "2018-09-03"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll stay here from today to two and half days later",
+  "Context": {
+    "ReferenceDateTime": "2018-05-04T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "from today to two and half days later",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-05-04,2018-05-06,P2.5D)",
+        "FutureResolution": {
+          "startDate": "2018-05-04",
+          "endDate": "2018-05-06"
+        },
+        "PastResolution": {
+          "startDate": "2018-05-04",
+          "endDate": "2018-05-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet later in the year",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later in the year",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017",
+        "Mod": "end",
+        "FutureResolution": {
+          "startDate": "2017-07-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-07-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
 ]
