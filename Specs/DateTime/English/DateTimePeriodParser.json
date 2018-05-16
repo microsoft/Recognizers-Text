@@ -2187,4 +2187,54 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana can help us find a time Monday 12-4.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T08:12:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "Monday 12-4",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(XXXX-WXX-1T00,XXXX-WXX-1T04,PT4H)",
+        "FutureResolution": {
+          "startDateTime": "2018-05-21 00:00:00",
+          "endDateTime": "2018-05-21 04:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2018-05-14 00:00:00",
+          "endDateTime": "2018-05-14 04:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana can help us find a time Monday 11-4.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T08:12:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "Monday 11-4",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(XXXX-WXX-1T11,XXXX-WXX-1T16,PT5H)",
+        "FutureResolution": {
+          "startDateTime": "2018-05-21 11:00:00",
+          "endDateTime": "2018-05-21 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2018-05-14 11:00:00",
+          "endDateTime": "2018-05-14 16:00:00"
+        }
+      }
+    }
+  ]
+}
 ]
