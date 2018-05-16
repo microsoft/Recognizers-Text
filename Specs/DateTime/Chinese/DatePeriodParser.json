@@ -826,4 +826,104 @@
     }
   ]
 }
+,
+{
+  "Input": "2009 年 到 2010 年，小麦产量翻了一番",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009 年 到 2010 年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2009-01-01,2010-01-01,P1Y)",
+        "FutureResolution": {
+          "startDate": "2009-01-01",
+          "endDate": "2010-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2009-01-01",
+          "endDate": "2010-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "近 三 年，犯罪数量逐步下降",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "近 三 年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2014-03-22,2017-03-22,P3Y)",
+        "FutureResolution": {
+          "startDate": "2014-03-22",
+          "endDate": "2017-03-22"
+        },
+        "PastResolution": {
+          "startDate": "2014-03-22",
+          "endDate": "2017-03-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "比 较 一 下 2009年，我们可以看出变化是很明显的",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2009",
+        "FutureResolution": {
+          "startDate": "2009-01-01",
+          "endDate": "2010-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2009-01-01",
+          "endDate": "2010-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2018 看起来是一个年份",
+  "NotSupported": "python,javascript",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "Results": [
+    {
+      "Text": "2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018",
+        "FutureResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2019-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2019-01-01"
+        }
+      }
+    }
+  ]
+}
 ]

@@ -121,9 +121,12 @@ namespace Microsoft.Recognizers.Text.Number
                         {
                             return;
                         }
+
+                        extractNumList1.RemoveRange(1, extractNumList1.Count - 1);
+                        extractNumList2.RemoveRange(1, extractNumList2.Count - 1);
                     }
 
-                    bool validNum1 = false, validNum2 = false;
+                    bool validNum1, validNum2;
                     start = match.Index;
                     length = match.Length;
 
@@ -197,17 +200,15 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 return extractOrdinal.Count == 0 ? null : extractOrdinal;
             }
-            else
-            {
-                if (extractOrdinal.Count == 0)
-                {
-                    return extractNumber;
-                }
 
-                extractNumber.AddRange(extractOrdinal);
-                extractNumber = extractNumber.OrderBy(num => num.Start).ThenByDescending(num => num.Length).ToList();
+            if (extractOrdinal.Count == 0)
+            {
                 return extractNumber;
             }
+
+            extractNumber.AddRange(extractOrdinal);
+            extractNumber = extractNumber.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
+            return extractNumber;
         }
     }
 

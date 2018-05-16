@@ -125,12 +125,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 var values = actual.Resolution as IDictionary<string, object>;
                 var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
-                var actualValues = listValues.FirstOrDefault();
+                var actualValues = listValues;
 
                 var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
-                var expectedValues = expectedObj.FirstOrDefault();
+                var expectedValues = expectedObj;
 
-                CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
+                Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(TestSpec));
+
+                foreach (var value in Enumerable.Zip(expectedValues, actualValues, Tuple.Create))
+                {
+                    CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
+                }
             }
         }
 
@@ -217,6 +222,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
+
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Type, actual.Type, GetMessage(TestSpec));
 
                 var values = actual.Value as IDictionary<string, object>;
                 if (values != null)

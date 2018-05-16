@@ -2609,4 +2609,88 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana can help us find a time Monday 12-4.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T16:12:00"
+  },
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "monday 12-4",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(XXXX-WXX-1T00,XXXX-WXX-1T04,PT4H)",
+            "type": "datetimerange",
+            "start": "2018-05-14 00:00:00",
+            "end": "2018-05-14 04:00:00"
+          },
+          {
+            "timex": "(XXXX-WXX-1T00,XXXX-WXX-1T04,PT4H)",
+            "type": "datetimerange",
+            "start": "2018-05-21 00:00:00",
+            "end": "2018-05-21 04:00:00"
+          },
+          {
+            "timex": "(XXXX-WXX-1T12,XXXX-WXX-1T16,PT4H)",
+            "type": "datetimerange",
+            "start": "2018-05-14 12:00:00",
+            "end": "2018-05-14 16:00:00"
+          },
+          {
+            "timex": "(XXXX-WXX-1T12,XXXX-WXX-1T16,PT4H)",
+            "type": "datetimerange",
+            "start": "2018-05-21 12:00:00",
+            "end": "2018-05-21 16:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana can help us find a time Monday 11-4.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T16:12:00"
+  },
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "monday 11-4",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(XXXX-WXX-1T11,XXXX-WXX-1T16,PT5H)",
+            "type": "datetimerange",
+            "start": "2018-05-14 11:00:00",
+            "end": "2018-05-14 16:00:00"
+          },
+          {
+            "timex": "(XXXX-WXX-1T11,XXXX-WXX-1T16,PT5H)",
+            "type": "datetimerange",
+            "start": "2018-05-21 11:00:00",
+            "end": "2018-05-21 16:00:00"
+          },
+          {
+            "timex": "(XXXX-WXX-1T23,XXXX-WXX-2T04,PT5H)",
+            "type": "datetimerange",
+            "start": "2018-05-14 23:00:00",
+            "end": "2018-05-15 04:00:00"
+          },
+          {
+            "timex": "(XXXX-WXX-1T23,XXXX-WXX-2T04,PT5H)",
+            "type": "datetimerange",
+            "start": "2018-05-21 23:00:00",
+            "end": "2018-05-22 04:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

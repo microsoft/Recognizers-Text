@@ -457,4 +457,44 @@
   "NotSupported": "javascript, python",
   "Results": []
 }
+,
+{
+  "Input": "The number equals 20.",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equals 20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,20]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Equaling to 20, the number of students in our class is not significant.",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "Equaling to 20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,20]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "+1-222-2222/2222 is a phone number.",
+  "NotSupported": "javascript, python",
+  "Results": []
+}
+,
+{
+  "Input": "+1-222-2222-2222 is a phone number.",
+  "NotSupported": "javascript, python",
+  "Results": []
+}
 ]

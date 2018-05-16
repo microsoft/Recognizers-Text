@@ -39,6 +39,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeDecadeRegex { get; }
 
+        Regex ComplexDatePeriodRegex { get; }
+
         IDateTimeExtractor DatePointExtractor { get; }
 
         IExtractor CardinalExtractor { get; }

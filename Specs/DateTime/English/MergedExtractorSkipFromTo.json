@@ -29,9 +29,9 @@
     },
     {
       "Start": 35,
-      "Length": 3,
-      "Text": "Nov",
-      "Type": "daterange"
+      "Length": 8,
+      "Text": "Nov.23th",
+      "Type": "date"
     }
   ]
 }

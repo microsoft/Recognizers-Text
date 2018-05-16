@@ -1,343 +1,367 @@
 [
-{
-  "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of April 10?",
-  "Context": {
-    "ReferenceDateTime": "2018-02-08T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the week of april 10",
-      "Start": 71,
-      "End": 90,
-      "TypeName": "datetimeV2.daterange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2017-W15",
-            "type": "daterange",
-            "start": "2017-04-10",
-            "end": "2017-04-17"
-          },
-          {
-            "timex": "2018-W15",
-            "type": "daterange",
-            "start": "2018-04-09",
-            "end": "2018-04-16"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of july 23?",
-  "Context": {
-    "ReferenceDateTime": "2018-02-08T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the week of july 23",
-      "Start": 71,
-      "End": 89,
-      "TypeName": "datetimeV2.daterange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2017-W29",
-            "type": "daterange",
-            "start": "2017-07-17",
-            "end": "2017-07-24"
-          },
-          {
-            "timex": "2018-W30",
-            "type": "daterange",
-            "start": "2018-07-23",
-            "end": "2018-07-30"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "schedule me a one on one meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-},
-{
-  "Input": "schedule me a 1:1 meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-},
-{
-  "Input": "schedule me a 1-1 meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-},
-{
-  "Input": "schedule me a one:one meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "Input": "schedule me a one-one meeting",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "Input": "I will leave tmr 3",
-  "Context": {
-    "ReferenceDateTime": "2017-12-18T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tmr 3",
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2017-12-19T03",
-            "type": "datetime",
-            "value": "2017-12-19 03:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I will leave tomorrow three",
-  "Context": {
-    "ReferenceDateTime": "2017-12-18T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tomorrow three",
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2017-12-19T03",
-            "type": "datetime",
-            "value": "2017-12-19 03:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I will leave yesterday at 12",
-  "Context": {
-    "ReferenceDateTime": "2017-12-18T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "yesterday at 12",
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2017-12-17T12",
-            "type": "datetime",
-            "value": "2017-12-17 12:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Schedule a meeting before 4",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "before 4",
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T04",
-            "Mod": "before",
-            "type": "timerange",
-            "end": "04:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Schedule a meeting after three",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "after three",
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T03",
-            "Mod": "after",
-            "type": "timerange",
-            "start": "03:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Schedule a meeting no later than 4",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "no later than 4",
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T04",
-            "Mod": "before",
-            "type": "timerange",
-            "end": "04:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please book 2 hours next month",
-  "Context": {
-    "ReferenceDateTime": "2018-03-25T01:00:00"
-  },
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "2 hours",
-      "Start": 21,
-      "End": 27,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "PT2H",
-            "type": "duration",
-            "value": "7200"
-          }
-        ]
-      }
+  {
+    "Input":
+      "Could you help me and Joan find a time to meet in my office (112/2108) the week of April 10?",
+    "Context": {
+      "ReferenceDateTime": "2018-02-08T00:00:00"
     },
-    {
-      "Text": "next month",
-      "Start": 29,
-      "End": 38,
-      "TypeName": "datetimeV2.daterange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2018-04",
-            "type": "daterange",
-            "start": "2018-04-01",
-            "end": "2018-05-01"
-          }
-        ]
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "the week of april 10",
+        "Start": 71,
+        "End": 90,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W15",
+              "type": "daterange",
+              "start": "2017-04-10",
+              "end": "2017-04-17"
+            },
+            {
+              "timex": "2018-W15",
+              "type": "daterange",
+              "start": "2018-04-09",
+              "end": "2018-04-16"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please check my work 2 hours last week",
-  "Context": {
-    "ReferenceDateTime": "2018-03-25T01:00:00"
+    ]
   },
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "2 hours",
-      "Start": 30,
-      "End": 36,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "PT2H",
-            "type": "duration",
-            "value": "7200"
-          }
-        ]
-      }
+  {
+    "Input":
+      "Could you help me and Joan find a time to meet in my office (112/2108) the week of july 23?",
+    "Context": {
+      "ReferenceDateTime": "2018-02-08T00:00:00"
     },
-    {
-      "Text": "last week",
-      "Start": 38,
-      "End": 46,
-      "TypeName": "datetimeV2.daterange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2018-W11",
-            "type": "daterange",
-            "start": "2018-03-12",
-            "end": "2018-03-19"
-          }
-        ]
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "the week of july 23",
+        "Start": 71,
+        "End": 89,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W29",
+              "type": "daterange",
+              "start": "2017-07-17",
+              "end": "2017-07-24"
+            },
+            {
+              "timex": "2018-W30",
+              "type": "daterange",
+              "start": "2018-07-23",
+              "end": "2018-07-30"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
+    ]
+  },
+  {
+    "Input": "schedule me a one on one meeting",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "schedule me a 1:1 meeting",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "schedule me a 1-1 meeting",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "schedule me a one:one meeting",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "schedule me a one-one meeting",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "I will leave tmr 3",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "tmr 3",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-19T03",
+              "type": "datetime",
+              "value": "2017-12-19 03:00:00"
+            },
+            {
+              "timex": "2017-12-19T15",
+              "type": "datetime",
+              "value": "2017-12-19 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I will leave tomorrow three",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "tomorrow three",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-19T03",
+              "type": "datetime",
+              "value": "2017-12-19 03:00:00"
+            },
+            {
+              "timex": "2017-12-19T15",
+              "type": "datetime",
+              "value": "2017-12-19 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I left yesterday at 12",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "yesterday at 12",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-12-17T12",
+              "type": "datetime",
+              "value": "2017-12-17 12:00:00"
+            },
+            {
+              "timex": "2017-12-17T00",
+              "type": "datetime",
+              "value": "2017-12-17 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Schedule a meeting before 4",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "before 4",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T04",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "04:00:00"
+            },
+            {
+              "timex": "T16",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Schedule a meeting after three",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "after three",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "03:00:00"
+            },
+            {
+              "timex": "T15",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Schedule a meeting no later than 4",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "no later than 4",
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T04",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "04:00:00"
+            },
+            {
+              "timex": "T16",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please book 2 hours next month",
+    "Context": {
+      "ReferenceDateTime": "2018-03-25T01:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 hours",
+        "Start": 21,
+        "End": 27,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "next month",
+        "Start": 29,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04",
+              "type": "daterange",
+              "start": "2018-04-01",
+              "end": "2018-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please check my work 2 hours last week",
+    "Context": {
+      "ReferenceDateTime": "2018-03-25T01:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 hours",
+        "Start": 30,
+        "End": 36,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "last week",
+        "Start": 38,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W11",
+              "type": "daterange",
+              "start": "2018-03-12",
+              "end": "2018-03-19"
+            }
+          ]
+        }
+      }
+    ]
+  }
 ]

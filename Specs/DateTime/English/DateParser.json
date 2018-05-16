@@ -2677,4 +2677,50 @@
     }
   ]
 }
+,
+{
+  "Input": "Are you available two sundays from now?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two sundays from now",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-05-20",
+        "FutureResolution": {
+          "date": "2018-05-20"
+        },
+        "PastResolution": {
+          "date": "2018-05-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two monday later?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two monday later",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-05-21",
+        "FutureResolution": {
+          "date": "2018-05-21"
+        },
+        "PastResolution": {
+          "date": "2018-05-21"
+        }
+      }
+    }
+  ]
+}
 ]
