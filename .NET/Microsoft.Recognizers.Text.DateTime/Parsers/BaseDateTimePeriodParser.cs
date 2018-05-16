@@ -205,12 +205,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // This "from .. to .." pattern is valid if followed by a Date OR "pm"
                 var hasAm = false;
                 var hasPm = false;
-                var dateStr = "XXXX-XX-XX";
+                string dateStr;
 
                 // Get hours
                 var hourGroup = match.Groups["hour"];
                 var hourStr = hourGroup.Captures[0].Value;
-                var beginHour = 0;
+                int beginHour;
 
                 if (this.Config.Numbers.ContainsKey(hourStr))
                 {
@@ -222,7 +222,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 hourStr = hourGroup.Captures[1].Value;
-                var endHour = 0;
+                int endHour;
 
                 if (this.Config.Numbers.ContainsKey(hourStr))
                 {
@@ -236,8 +236,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // Parse following date
                 var er = this.Config.DateExtractor.Extract(trimedText.Replace(match.Value, ""), referenceTime);
 
-                DateObject futureTime;
-                DateObject pastTime;
+                DateObject futureTime, pastTime;
                 if (er.Count > 0)
                 {
                     var pr = this.Config.DateParser.Parse(er[0], referenceTime);
@@ -293,13 +292,25 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!hasAm && !hasPm && beginHour <= 12 && endHour <= 12)
                 {
+                    if (beginHour > endHour)
+                    {
+                        if (beginHour == 12)
+                        {
+                            beginHour = 0;
+                        }
+                        else
+                        {
+                            endHour += 12;
+                        }
+                    }
                     ret.Comment = Constants.Comment_AmPm;
                 }
 
+                int pastHours = endHour - beginHour;
                 var beginStr = dateStr + "T" + beginHour.ToString("D2");
                 var endStr = dateStr + "T" + endHour.ToString("D2");
 
-                ret.Timex = $"({beginStr},{endStr},PT{endHour - beginHour}H)";
+                ret.Timex = $"({beginStr},{endStr},PT{pastHours}H)";
 
                 ret.FutureValue = new Tuple<DateObject, DateObject>(
                     DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, beginHour, 0, 0),

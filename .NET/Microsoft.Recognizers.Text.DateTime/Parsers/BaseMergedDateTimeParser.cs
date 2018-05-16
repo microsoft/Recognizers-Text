@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
@@ -535,21 +536,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
                         if (resolution.ContainsKey(DateTimeResolutionKey.START))
                         {
-                            splited = resolution[DateTimeResolutionKey.START].Split(' ');
-                            if (resolution.ContainsKey(DateTimeResolutionKey.START))
-                            {
-                                resolutionPm[DateTimeResolutionKey.START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
-                            }
+                            var start = Convert.ToDateTime(resolution[DateTimeResolutionKey.START]);
+                            start = start.Hour == 12 ? start.AddHours(-12) : start.AddHours(12);
+
+                            resolutionPm[DateTimeResolutionKey.START] = FormatUtil.FormatDateTime(start);
                         }
 
                         if (resolution.ContainsKey(DateTimeResolutionKey.END))
                         {
-                            splited = resolution[DateTimeResolutionKey.END].Split(' ');
+                            var end = Convert.ToDateTime(resolution[DateTimeResolutionKey.END]);
+                            end = end.Hour == 12 ? end.AddHours(-12) : end.AddHours(12);
 
-                            if (resolution.ContainsKey(DateTimeResolutionKey.END))
-                            {
-                                resolutionPm[DateTimeResolutionKey.END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
-                            }
+                            resolutionPm[DateTimeResolutionKey.END] = FormatUtil.FormatDateTime(end);
                         }
 
                         resolutionPm[DateTimeResolutionKey.Timex] = FormatUtil.AllStringToPm(timex);
