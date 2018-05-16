@@ -1,135 +1,128 @@
-[{
-  "Input": "Prima!",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Prima",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": true,
-		"score": 1.0
+[
+  {
+    "Input": "Prima!",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Prima",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
       }
-    } 
-  ]
-}
-,
-{
-  "Input": "Ik denk het niet.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "niet",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": false,
-		"score": 0.55
+    ]
+  },
+  {
+    "Input": "Ik denk het niet.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "niet",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.55
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Ik denk dat het wel gaat werken, dus ja ik zal het doen.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ja",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": true,
-		"score": 0.4461538461538466
+    ]
+  },
+  {
+    "Input": "Ik denk dat het wel gaat werken, dus ja ik zal het doen.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.4461538461538466
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Nee, ik zei 4 juli.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Nee",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": false,
-		"score": 0.52
+    ]
+  },
+  {
+    "Input": "Nee, ik zei 4 juli.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Nee",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.52
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Ja... Ik heb dat nooit gezegd",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Ja",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": true,
-		"score": 0.5
+    ]
+  },
+  {
+    "Input": "Ja... Ik heb dat nooit gezegd",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.5
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Ik zei NEE in plaats van ja!",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "NEE",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": false,
-		"score": 0.485714285714286
+    ]
+  },
+  {
+    "Input": "Ik zei NEE in plaats van ja!",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "NEE",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.485714285714286
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Ja. Ik zei nee",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Ja",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": true,
-		"score": 0.55
+    ]
+  },
+  {
+    "Input": "Ja. Ik zei nee",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Ja",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "👌 Dat is ok",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "👌",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": true,
-		"score": 0.55
+    ]
+  },
+  {
+    "Input": "👌 Dat is ok",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.55
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "👌👌👌",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "👌",
-      "TypeName": "boolean",
-      "Resolution": {
-        "value": true,
-		"score": 0.6
+    ]
+  },
+  {
+    "Input": "👌👌👌",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
       }
-    }
-  ]
-}
+    ]
+  }
 ]
