@@ -4,7 +4,7 @@ LangMarker: Nl
 RoundNumberIntegerRegex: !simpleRegex
   def: (honderd|duizend|miljoen|miljard|biljoen)
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (drie|zeven|acht|vier|vijf|nul|negen|een|twee|zes)
+  def: (drie|zeven|acht|vier|vijf|nul|negen|een|één|twee|zes)
 NegativeNumberTermsRegex: !simpleRegex
   def: ((min|negatief)\s+)
 NegativeNumberSignRegex: !nestedRegex
