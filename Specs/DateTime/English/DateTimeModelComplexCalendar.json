@@ -167,7 +167,7 @@
     ]
   },
   {
-    "Input": "I will leave yesterday at 12",
+    "Input": "I left yesterday at 12",
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
@@ -1335,7 +1335,7 @@
     ]
   },
   {
-    "Input": "I'll go back my day.",
+    "Input": "What does my day look like?",
     "Context": {
       "ReferenceDateTime": "2018-05-15T00:00:00"
     },

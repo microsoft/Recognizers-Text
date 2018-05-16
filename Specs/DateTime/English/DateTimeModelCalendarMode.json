@@ -167,7 +167,7 @@
     ]
   },
   {
-    "Input": "I will leave yesterday at 12",
+    "Input": "I left yesterday at 12",
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
