@@ -239,7 +239,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void DateTimeModelCalendarMode()
         {
-            base.TestDateTime();
+            base.TestDateTimeAlt();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelExtendedTypes-English.csv", "DateTimeModelExtendedTypes-English#csv", DataAccessMethod.Sequential)]

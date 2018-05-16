@@ -3548,4 +3548,15 @@
     }
   ]
 }
+,
+{
+  "Input": "What is my april 2017 bonus?",
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "april 2017",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
