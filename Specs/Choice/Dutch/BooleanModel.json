@@ -22,7 +22,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.5
+		"score": 0.55
       }
     }
   ]
@@ -37,7 +37,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.4666666666666667
+		"score": 0.4461538461538466
       }
     }
   ]
@@ -48,11 +48,11 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "nee",
+      "Text": "Nee",
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.4857142857142857
+		"score": 0.52
       }
     }
   ]
@@ -63,18 +63,18 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ja",
+      "Text": "Ja",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.52
+		"score": 0.5
       }
     }
   ]
 }
 ,
 {
-  "Input": "I zei NEE in plaats van ja!",
+  "Input": "Ik zei NEE in plaats van ja!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -82,7 +82,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.52
+		"score": 0.485714285714286
       }
     }
   ]
@@ -93,7 +93,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Yes",
+      "Text": "Ja",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
