@@ -1152,4 +1152,73 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll leave for another hour",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "another hour",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT1H",
+        "FutureResolution": {
+          "duration": "3600"
+        },
+        "PastResolution": {
+          "duration": "3600"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I realized that you are out for another week.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "another week",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1W",
+        "FutureResolution": {
+          "duration": "604800"
+        },
+        "PastResolution": {
+          "duration": "604800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Can we wait another month?",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "another month",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1M",
+        "FutureResolution": {
+          "duration": "2592000"
+        },
+        "PastResolution": {
+          "duration": "2592000"
+        }
+      }
+    }
+  ]
+}
 ]

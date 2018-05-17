@@ -161,7 +161,7 @@ export namespace EnglishDateTime {
 	export const EachDayRegex = `^\\s*(each|every)\\s*day\\b`;
 	export const DurationFollowedUnit = `^\\s*${SuffixAndRegex}?(\\s+|-)?${DurationUnitRegex}`;
 	export const NumberCombinedWithDurationUnit = `\\b(?<num>\\d+(\\.\\d*)?)(-)?${DurationUnitRegex}`;
-	export const AnUnitRegex = `\\b(((?<half>half\\s+)?(an|a))|(an|a))\\s+${DurationUnitRegex}`;
+	export const AnUnitRegex = `\\b((?<half>half\\s+)?(an|a)|another)\\s+${DurationUnitRegex}`;
 	export const AllRegex = `\\b(?<all>(all|full|whole)(\\s+|-)(?<unit>year|month|week|day))\\b`;
 	export const HalfRegex = `(((a|an)\\s*)|\\b)(?<half>half\\s+(?<unit>year|month|week|day|hour))\\b`;
 	export const ConjunctionRegex = `\\b((and(\\s+for)?)|with)\\b`;
