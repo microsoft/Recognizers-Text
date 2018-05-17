@@ -59,7 +59,7 @@ AllOrdinalRegex: !nestedRegex
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)((\d*(1ste|1e|2de|2e|3de|3e|4de|4e|5de|5e|6de|6e|7de|7e|8ste|8e|9de|9e|0de|0e))|(11de|11e|12de|12e))(?=\b)
 OrdinalNumericRegex: !simpleRegex
-  def: (?<=\b)(\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)
+  def: (?<=\b)(\d{1,3}(\s*.\s*\d{3})*\s*e)(?=\b)
 OrdinalRoundNumberRegex: !nestedRegex
   def: (?<!(a|an)\s+){RoundNumberOrdinalRegex}
   references: [ RoundNumberOrdinalRegex ]
