@@ -497,4 +497,144 @@
   "NotSupported": "javascript, python",
   "Results": []
 }
+,
+{
+  "Input": "His score is 200 or greater than",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "200 or greater than",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[200,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is 200 or greater",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "200 or greater",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[200,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is less than or equal to 30",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "less than or equal to 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,30]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to or less than 30",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to or less than 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,30]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is at least or equal to 30",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "at least or equal to 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[30,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to or more than 30",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to or more than 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[30,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or less",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000 or less",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,5000]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or more than",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000 or more than",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is less than 5000 or equal",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "less than 5000 or equal",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,5000]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is more than 5000 or equal to",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "more than 5000 or equal to",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,)"
+      }
+    }
+  ]
+}
 ]

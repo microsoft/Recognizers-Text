@@ -59,6 +59,16 @@ namespace Microsoft.Recognizers.Text.Number.English
                     // equal to ...
                     new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , NumberRangeConstants.EQUAL
+                },
+                {
+                    // equal to 30 or more than, larger than 30 or equal to ...
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    , NumberRangeConstants.MORE
+                },
+                {
+                    // equal to 30 or less, smaller than 30 or equal
+                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    , NumberRangeConstants.LESS
                 }
             };
 

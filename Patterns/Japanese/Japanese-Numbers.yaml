@@ -292,6 +292,12 @@ OneNumberRangeMoreRegex3: !simpleRegex
 OneNumberRangeMoreRegex4: !nestedRegex
   def: ({MoreOrEqual}|{MoreRegex})\s*(?<number1>((?!(と|は|((と)?同時に)|((と)?そして)|が|，|、|,|(，(?!\d+))|(,(?!\d+))|。)).)+)
   references: [ MoreOrEqual, MoreRegex ]
+OneNumberRangeMoreSeparateRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+OneNumberRangeLessSeparateRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 OneNumberRangeLessRegex1: !nestedRegex
   def: (?<number2>((?!(((，|、)(?!\d+))|((,|、)(?!\d+))|。)).)+)\s*(より)\s*({LessOrEqual}|{LessRegex})
   references: [ LessOrEqual, LessRegex ]
