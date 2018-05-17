@@ -513,6 +513,20 @@
 }
 ,
 {
+  "Input": "His score is 200 or greater than 190",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "greater than 190",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(190,)"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "His score is 200 or greater",
   "NotSupported": "javascript, python",
   "Results": [
@@ -597,6 +611,27 @@
 }
 ,
 {
+  "Input": "His score is equal to 5000 or less than 6000",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,5000]"
+      }
+    },
+	{
+      "Text": "less than 6000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,6000)"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "His score is equal to 5000 or more than",
   "NotSupported": "javascript, python",
   "Results": [
@@ -605,6 +640,27 @@
       "TypeName": "numberrange",
       "Resolution": {
         "value": "[5000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or more than 4500",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,5000]"
+      }
+    },
+	{
+      "Text": "more than 4500",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(4500,)"
       }
     }
   ]
@@ -633,6 +689,62 @@
       "TypeName": "numberrange",
       "Resolution": {
         "value": "[5000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is more than 5000 or equal to it",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "more than 5000 or equal to",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is more than 5000 or equal to 6000",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "more than 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(5000,)"
+      }
+    },
+	{
+      "Text": "equal to 6000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[6000,6000]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or less than 5000",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,5000]"
+      }
+    },
+	{
+      "Text": "less than 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,5000)"
       }
     }
   ]
