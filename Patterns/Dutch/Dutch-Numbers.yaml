@@ -61,7 +61,7 @@ OrdinalSuffixRegex: !simpleRegex
 OrdinalNumericRegex: !simpleRegex
   def: (?<=\b)(\d{1,3}(\s*.\s*\d{3})*\s*e)(?=\b)
 OrdinalRoundNumberRegex: !nestedRegex
-  def: (?<!(a|an)\s+){RoundNumberOrdinalRegex}
+  def: (?<!(de|een)\s+){RoundNumberOrdinalRegex}
   references: [ RoundNumberOrdinalRegex ]
 OrdinalDutchRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
