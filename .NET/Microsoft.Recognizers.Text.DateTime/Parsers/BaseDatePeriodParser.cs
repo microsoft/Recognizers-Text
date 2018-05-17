@@ -442,6 +442,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var earlyPrefix = false;
             var latePrefix = false;
             var midPrefix = false;
+            var isRef = false;
 
             var trimedText = text.Trim().ToLower();
             var match = this.config.OneWordPeriodRegex.Match(trimedText);
@@ -449,6 +450,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!(match.Success && match.Index == 0 && match.Length == trimedText.Length))
             {
                 match = this.config.LaterEarlyPeriodRegex.Match(trimedText);
+            }
+
+            // For cases "that week|month|year"
+            if (!(match.Success && match.Index == 0 && match.Length == trimedText.Length))
+            {
+                match = this.config.ReferenceDatePeriodRegex.Match(trimedText);
+                isRef = true;
+                ret.Mod = Constants.REF_UNDEF_MOD;
             }
 
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
@@ -528,7 +537,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
 
-                        ret.Timex = FormatUtil.ToIsoWeekTimex(monday);
+                        ret.Timex = isRef ? "XXXX-WXX" : FormatUtil.ToIsoWeekTimex(monday);
                         var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         var endDate = InclusiveEndPeriod
                                         ? referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift)
@@ -565,7 +574,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
-                        ret.Timex = beginDate.Year.ToString("D4") + "-W" +
+                        ret.Timex = isRef ? "XXXX-WXX-WE" : beginDate.Year.ToString("D4") + "-W" +
                                     Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
                                         .ToString("D2") + "-WE";
 
@@ -582,7 +591,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         month = referenceDate.AddMonths(swift).Month;
                         year = referenceDate.AddMonths(swift).Year;
-                        ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+                        ret.Timex = isRef ? "XXXX-XX" : year.ToString("D4") + "-" + month.ToString("D2");
                         futureYear = pastYear = year;
                     }
                     else if (this.config.IsYearOnly(trimedText))
@@ -611,7 +620,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             beginDate = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                         }
 
-                        ret.Timex = year.ToString("D4");
+                        ret.Timex = isRef ? "XXXX" : year.ToString("D4");
 
                         ret.FutureValue =
                             ret.PastValue =

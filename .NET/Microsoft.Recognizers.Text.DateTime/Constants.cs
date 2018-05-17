@@ -70,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MORE_THAN_MOD = "more";
         public const string LESS_THAN_MOD = "less";
 
+        public const string REF_UNDEF_MOD = "ref_undef";
+
         // Invalid year
         public const int InvalidYear = int.MinValue;
 

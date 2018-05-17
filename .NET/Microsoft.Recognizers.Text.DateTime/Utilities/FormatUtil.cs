@@ -16,6 +16,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (month == -1)
                 {
+                    if (day == -1)
+                    {
+                        return string.Join("-", "XXXX", "XX", "XX");
+                    }
+                    
                     return string.Join("-", "XXXX", "XX", day.ToString("D2"));
                 }
 

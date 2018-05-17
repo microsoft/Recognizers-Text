@@ -65,6 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex YearPeriodRegex { get; }
         public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
+        public Regex ReferenceDatePeriodRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -151,6 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             RelativeDecadeRegex = EnglishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = EnglishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            ReferenceDatePeriodRegex = EnglishDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
