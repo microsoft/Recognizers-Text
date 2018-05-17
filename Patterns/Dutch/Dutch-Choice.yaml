@@ -1,0 +1,9 @@
+﻿---
+LangMarker: Nl
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
+TrueRegex: !simpleRegex
+  def: \b(ja|jawel|jazeker|natuurlijk|prima|jep|yes|yep|y|ok|oke)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(nee|neen|nope|nein|nop|no|niet)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
