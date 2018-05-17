@@ -1460,5 +1460,27 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll leave for another week",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "another week",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

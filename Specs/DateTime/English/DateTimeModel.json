@@ -2693,4 +2693,27 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll leave for another day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "another day",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1D",
+            "type": "duration",
+            "value": "86400"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]
