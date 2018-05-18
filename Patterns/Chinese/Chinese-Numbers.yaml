@@ -343,6 +343,12 @@ OneNumberRangeLessRegex2: !simpleRegex
   def: 比\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*更?[小少低]
 OneNumberRangeLessRegex3: !simpleRegex
   def: (?<number2>((?!((，(?!\d+))|(,(?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*(以下|之下|更[小少低])
+OneNumberRangeMoreSeparateRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+OneNumberRangeLessSeparateRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 OneNumberRangeEqualRegex: !nestedRegex
   def: '{EqualRegex}\s*(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)'
   references: [ EqualRegex ]
