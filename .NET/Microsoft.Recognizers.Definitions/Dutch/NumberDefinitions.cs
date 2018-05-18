@@ -60,7 +60,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
 		public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)";
 		public static readonly string NumberWithSuffixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(%|procent|percentage)";
+		public static readonly string FractionNumberWithSuffixPercentage = $@"(({BaseNumbers.FractionNumberReplaceToken})\s+of)";
 		public static readonly string NumberWithPrefixPercentage = $@"(percentage van|procent van|procenten van)(\s*)({BaseNumbers.NumberReplaceToken})";
+		public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(in|out\s+of)\s*({BaseNumbers.NumberReplaceToken})";
 		public const string TillRegex = @"(tot|--|-|—|——|~)";
 		public const string MoreRegex = @"((groter|hoger|meer)(\s+dan|\s+als)?|boven|over|>)";
 		public const string LessRegex = @"((minder|lager|kleiner)(\s+dan|\s+als)?|beneden|onder|<)";
