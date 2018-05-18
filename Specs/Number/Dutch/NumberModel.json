@@ -77,11 +77,7 @@
     ]
   },
   {
-    "Input": "an",
-    "Results": []
-  },
-  {
-    "Input": "a",
+    "Input": "en",
     "Results": []
   },
   {
@@ -91,7 +87,7 @@
         "Text": ",23456000",
         "TypeName": "number",
         "Resolution": {
-          "value": "0.23456"
+          "value": "0,23456"
         }
       }
     ]
@@ -103,7 +99,7 @@
         "Text": "4,800",
         "TypeName": "number",
         "Resolution": {
-          "value": "4.8"
+          "value": "4,8"
         }
       }
     ]
@@ -115,7 +111,7 @@
         "Text": "honderddrie en twee derde",
         "TypeName": "number",
         "Resolution": {
-          "value": "103.666666666667"
+          "value": "103,666666666667"
         }
       }
     ]
@@ -127,7 +123,7 @@
         "Text": "honderdendrie en twee derde",
         "TypeName": "number",
         "Resolution": {
-          "value": "103.666666666667"
+          "value": "103,666666666667"
         }
       }
     ]
@@ -152,7 +148,7 @@
         "Text": "twee derde",
         "TypeName": "number",
         "Resolution": {
-          "value": "0.666666666666667"
+          "value": "0,666666666666667"
         }
       }
     ]
@@ -189,30 +185,6 @@
         "TypeName": "number",
         "Resolution": {
           "value": "161"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "a trillionth",
-    "Results": [
-      {
-        "Text": "a trillionth",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1E-12"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "a hundred trillionths",
-    "Results": [
-      {
-        "Text": "a hundred trillionths",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1E-10"
         }
       }
     ]
@@ -266,10 +238,10 @@
     ]
   },
   {
-    "Input": " three hundred and two dozens",
+    "Input": " driehonderd en twee dozijn",
     "Results": [
       {
-        "Text": "three hundred and two dozens",
+        "Text": "driehonderd en twee dozijn",
         "TypeName": "number",
         "Resolution": {
           "value": "324"
@@ -278,13 +250,13 @@
     ]
   },
   {
-    "Input": "1,234,567",
+    "Input": "1.234,567",
     "Results": [
       {
-        "Text": "1,234,567",
+        "Text": "1.234,567",
         "TypeName": "number",
         "Resolution": {
-          "value": "1234567"
+          "value": "1234,567"
         }
       }
     ]
@@ -322,7 +294,7 @@
         "Text": "9,2321312",
         "TypeName": "number",
         "Resolution": {
-          "value": "9.2321312"
+          "value": "9,2321312"
         }
       }
     ]
@@ -334,7 +306,7 @@
         "Text": "-9,2321312",
         "TypeName": "number",
         "Resolution": {
-          "value": "-9.2321312"
+          "value": "-9,2321312"
         }
       }
     ]
@@ -358,7 +330,7 @@
         "Text": "-4/5",
         "TypeName": "number",
         "Resolution": {
-          "value": "-0.8"
+          "value": "-0,8"
         }
       }
     ]
@@ -370,7 +342,7 @@
         "Text": "- 1 4/5",
         "TypeName": "number",
         "Resolution": {
-          "value": "-1.8"
+          "value": "-1,8"
         }
       }
     ]
@@ -532,30 +504,6 @@
     ]
   },
   {
-    "Input": "twenty-one trillion three hundred",
-    "Results": [
-      {
-        "Text": "twenty-one trillion three hundred",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "21000000000300"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "twenty-one trillion and three hundred",
-    "Results": [
-      {
-        "Text": "twenty-one trillion and three hundred",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "21000000000300"
-        }
-      }
-    ]
-  },
-  {
     "Input": "fifty - two",
     "Results": [
       {
@@ -568,10 +516,10 @@
     ]
   },
   {
-    "Input": "fifty   two",
+    "Input": "tweeënvijftig",
     "Results": [
       {
-        "Text": "fifty   two",
+        "Text": "tweeënvijftig",
         "TypeName": "number",
         "Resolution": {
           "value": "52"
@@ -580,25 +528,13 @@
     ]
   },
   {
-    "Input": "Three hundred  and  thirty one",
+    "Input": "tweeenvijftig",
     "Results": [
       {
-        "Text": "Three hundred  and  thirty one",
+        "Text": "tweeenvijftig",
         "TypeName": "number",
         "Resolution": {
-          "value": "331"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "two hundred and two thousand",
-    "Results": [
-      {
-        "Text": "two hundred and two thousand",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "202000"
+          "value": "52"
         }
       }
     ]
@@ -640,37 +576,13 @@
     ]
   },
   {
-    "Input": " 2.33 k",
+    "Input": " 2,33 k",
     "Results": [
       {
-        "Text": "2.33 k",
+        "Text": "2,33 k",
         "TypeName": "number",
         "Resolution": {
           "value": "2330"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " two hundred point zero three",
-    "Results": [
-      {
-        "Text": "two hundred point zero three",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "200.03"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " two hundred point seventy-one",
-    "Results": [
-      {
-        "Text": "two hundred point seventy-one",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "200.71"
         }
       }
     ]
@@ -688,13 +600,13 @@
     ]
   },
   {
-    "Input": "1.1^23",
+    "Input": "1,1^23",
     "Results": [
       {
-        "Text": "1.1^23",
+        "Text": "1,1^23",
         "TypeName": "number",
         "Resolution": {
-          "value": "8.95430243255239"
+          "value": "8,95430243255239"
         }
       }
     ]
@@ -742,7 +654,7 @@
         "Text": "2  1/4",
         "TypeName": "number",
         "Resolution": {
-          "value": "2.25"
+          "value": "2,25"
         }
       }
     ]
@@ -754,7 +666,7 @@
         "Text": "3/4",
         "TypeName": "number",
         "Resolution": {
-          "value": "0.75"
+          "value": "0,75"
         }
       }
     ]
