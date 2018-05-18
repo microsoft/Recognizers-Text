@@ -166,10 +166,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 			{ "miljardste", 1000000000 },
 			{ "biljoenste", 1000000000000 },
 			{ "biljardste", 1000000000000000 },
-			{ "triljoenste", 1000000000000000000 },
-			{ "triljardste", 1000000000000000000000 },
-			{ "quadriljoenste", 1000000000000000000000000 },
-			{ "quadriljardste", 1000000000000000000000000000 }
+			{ "triljoenste", 1000000000000000000 }
 		};
 		public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
 		{
@@ -187,9 +184,6 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 			{ "biljoenste", 1000000000000 },
 			{ "biljardste", 1000000000000000 },
 			{ "triljoenste", 1000000000000000000 },
-			{ "triljardste", 1000000000000000000000 },
-			{ "quadriljoenste", 1000000000000000000000000 },
-			{ "quadriljardste", 1000000000000000000000000000 },
 			{ "honderdsten", 100 },
 			{ "duizendsten", 1000 },
 			{ "miljoensten", 1000000 },
