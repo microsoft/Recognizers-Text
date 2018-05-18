@@ -254,9 +254,6 @@ OrdinalNumberMap: !dictionary
     biljoenste: 1000000000000
     biljardste: 1000000000000000
     triljoenste: 1000000000000000000
-    triljardste: 1000000000000000000000
-    quadriljoenste: 1000000000000000000000000
-    quadriljardste: 1000000000000000000000000000
 RoundNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -274,9 +271,6 @@ RoundNumberMap: !dictionary
     biljoenste: 1000000000000
     biljardste: 1000000000000000
     triljoenste: 1000000000000000000
-    triljardste: 1000000000000000000000
-    quadriljoenste: 1000000000000000000000000
-    quadriljardste: 1000000000000000000000000000
     honderdsten: 100
     duizendsten: 1000
     miljoensten: 1000000
