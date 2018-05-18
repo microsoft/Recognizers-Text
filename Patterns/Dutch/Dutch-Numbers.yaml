@@ -78,7 +78,7 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(een)(\s+|\s*-\s*)(?!\beerste\b|\btweede\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|vierde)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
+  def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+op\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
   references: [ AllIntRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex
