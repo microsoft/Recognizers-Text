@@ -2,9 +2,9 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Definitions.Dutch;
 
-namespace Microsoft.Recognizers.Text.Number.English
+namespace Microsoft.Recognizers.Text.Number.Dutch
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
