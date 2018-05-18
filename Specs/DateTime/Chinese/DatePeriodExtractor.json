@@ -398,4 +398,59 @@
     }
   ]
 }
+,
+{
+  "Input": "他07年以后就没再来过学校",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "07年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "他07 年以前就毕业了",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "07 年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "08年奥运会在北京举办",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "08年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "零八年奥运会在北京举办",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "零八年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "2008 年 奥运会在北京举办",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2008 年",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

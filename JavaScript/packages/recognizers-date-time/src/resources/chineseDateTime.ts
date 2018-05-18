@@ -90,7 +90,7 @@ export namespace ChineseDateTime {
 	export const DateTimePeriodUnitRegex = `(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))`;
 	export const DateTimePeriodFollowedUnit = `^\\s*${DateTimePeriodUnitRegex}`;
 	export const DateTimePeriodNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateTimePeriodUnitRegex}`;
-	export const DurationYearRegex = `((\\d{3,4})|两千)年`;
+	export const DurationYearRegex = `((\\d{3,4})|0\\d|两千)\\s*年`;
 	export const DurationHalfSuffixRegex = `半`;
 	export const DurationSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["M", "分钟"],["S", "秒钟|秒"],["H", "个小时|小时"],["D", "天"],["W", "星期|个星期|周"],["Mon", "个月"],["Y", "年"]]);
 	export const DurationAmbiguousUnits = [ '分钟','秒钟','秒','个小时','小时','天','星期','个星期','周','个月','年' ];

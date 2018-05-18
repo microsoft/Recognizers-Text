@@ -213,7 +213,7 @@ DateTimePeriodNumberCombinedWithUnit: !nestedRegex
   references: [DateTimePeriodUnitRegex]
 #DurationExtractorChs
 DurationYearRegex: !simpleRegex
-  def: ((\d{3,4})|两千)年
+  def: ((\d{3,4})|0\d|两千)\s*年
 DurationHalfSuffixRegex: !simpleRegex
   def: 半
 DurationSuffixList: !dictionary
