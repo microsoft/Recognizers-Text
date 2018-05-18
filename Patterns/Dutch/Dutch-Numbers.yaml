@@ -130,7 +130,7 @@ MoreOrEqual: !nestedRegex
 MoreOrEqualSuffix: !simpleRegex
   def: (en|of)\s+(meer|groter|hoger|grotere)(?!\s+dan|?!\s+als)
 LessOrEqual: !nestedRegex
-  def: (({LessRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{MoreRegex}|<\s*=)
+  def: (({LessRegex}\s+of\s+{EqualRegex})|maximum|niet\s+{MoreRegex}|<\s*=)
   references: [ LessRegex, EqualRegex, MoreRegex ]
 LessOrEqualSuffix: !simpleRegex
   def: (en|of)\s+(minder|lager|kleiner)(?!\s+dan|?!\s+als)
