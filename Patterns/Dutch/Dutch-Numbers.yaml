@@ -80,6 +80,9 @@ FractionNounWithArticleRegex: !nestedRegex
 FractionPrepositionRegex: !nestedRegex
   def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+op\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
   references: [ AllIntRegex ]
+FractionPrepositionWithinPercentModeRegex: !nestedRegex
+  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
+  references: [ AllIntRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex
   def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
