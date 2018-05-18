@@ -926,4 +926,129 @@
     }
   ]
 }
+,
+{
+  "Input": "他07年以后就没再来过学校",
+  "NotSupported": "python",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "Results": [
+    {
+      "Text": "07年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2007",
+        "FutureResolution": {
+          "startDate": "2007-01-01",
+          "endDate": "2008-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2007-01-01",
+          "endDate": "2008-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "他07 年以前就毕业了",
+  "NotSupported": "python",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "Results": [
+    {
+      "Text": "07 年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2007",
+        "FutureResolution": {
+          "startDate": "2007-01-01",
+          "endDate": "2008-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2007-01-01",
+          "endDate": "2008-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "08年奥运会在北京举办",
+  "NotSupported": "python",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "Results": [
+    {
+      "Text": "08年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2008",
+        "FutureResolution": {
+          "startDate": "2008-01-01",
+          "endDate": "2009-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2008-01-01",
+          "endDate": "2009-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "零八年奥运会在北京举办",
+  "NotSupported": "python,javascript",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "Results": [
+    {
+      "Text": "零八年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2008",
+        "FutureResolution": {
+          "startDate": "2008-01-01",
+          "endDate": "2009-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2008-01-01",
+          "endDate": "2009-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2008 年 奥运会在北京举办",
+  "NotSupported": "python",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "Results": [
+    {
+      "Text": "2008 年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2008",
+        "FutureResolution": {
+          "startDate": "2008-01-01",
+          "endDate": "2009-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2008-01-01",
+          "endDate": "2009-01-01"
+        }
+      }
+    }
+  ]
+}
 ]

@@ -1637,4 +1637,127 @@
     }
   ]
 }
+,
+{
+  "Input": "他07年以后就没再来过学校",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "07年以后",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2007",
+            "Mod": "after",
+            "type": "daterange",
+            "start": "2008-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "他07 年以前就毕业了",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "07 年以前",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2007",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2007-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "08年奥运会在北京举办",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "08年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2008",            
+            "type": "daterange",
+            "start": "2008-01-01",
+			"end": "2009-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "零八年奥运会在北京举办",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "零八年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2008",            
+            "type": "daterange",
+            "start": "2008-01-01",
+			"end": "2009-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2008 年 奥运会在北京举办",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2008 年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2008",            
+            "type": "daterange",
+            "start": "2008-01-01",
+			"end": "2009-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]
