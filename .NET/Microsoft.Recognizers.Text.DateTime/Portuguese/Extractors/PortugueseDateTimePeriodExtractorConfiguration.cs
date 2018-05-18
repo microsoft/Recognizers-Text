@@ -2,7 +2,6 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -88,6 +87,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex DateUnitRegex =
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PrefixPeriodRegex =
+            new Regex(DateTimeDefinitions.PrefixPeriodRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
+
+        Regex IDateTimePeriodExtractorConfiguration.PrefixPeriodRegex => PrefixPeriodRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 

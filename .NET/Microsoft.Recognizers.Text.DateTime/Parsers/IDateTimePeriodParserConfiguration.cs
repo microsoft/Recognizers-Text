@@ -61,6 +61,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WithinNextPrefixRegex { get; }
 
+        Regex PrefixPeriodRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

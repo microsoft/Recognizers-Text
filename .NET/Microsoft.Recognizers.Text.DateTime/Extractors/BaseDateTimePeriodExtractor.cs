@@ -31,8 +31,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchDuration(text, reference));
             tokens.AddRange(MatchTimeOfDay(text, reference));
             tokens.AddRange(MatchRelativeUnit(text));
+            tokens.AddRange(MatchDateWithPeriodPrefix(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        private IEnumerable<Token> MatchDateWithPeriodPrefix(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+            var dateErs = config.SingleDateExtractor.Extract(text, reference);
+
+            foreach (var dateEr in dateErs)
+            {
+                var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
+                var beforeStr = text.Substring(0, (int)dateEr.Start).TrimEnd();
+                var match = this.config.PrefixPeriodRegex.Match(beforeStr);
+                if (match.Success && match.Index + match.Length == beforeStr.Length)
+                {
+                    ret.Add(new Token(match.Index, dateStrEnd));
+                }
+            }
+
+            return ret;
         }
 
         private List<Token> MatchSimpleCases(string text, DateObject reference)

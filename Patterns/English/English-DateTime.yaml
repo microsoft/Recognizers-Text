@@ -34,9 +34,9 @@ YearRegex: !nestedRegex
   def: ({YearNumRegex}|{FullTextYearRegex})
   references: [ YearNumRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\b
+  def: \b(in\s+the\s+day\s+)?(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\b
 SingleWeekDayRegex: !simpleRegex
-  def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\s+(Sat|Sun)))\b
+  def: \b(in\s+the\s+day\s+)?(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\s+(Sat|Sun)))\b
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>(of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
@@ -103,13 +103,13 @@ AllHalfYearRegex: !nestedRegex
   def: ({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})
   references: [ HalfYearFrontRegex, HalfYearBackRegex, HalfYearRelativeRegex ]
 EarlyPrefixRegex: !simpleRegex
-  def: ?<EarlyPrefix>early|beginning of|start of
+  def: (?<EarlyPrefix>early|beginning of|start of)
 MidPrefixRegex: !simpleRegex
-  def: ?<MidPrefix>mid|middle of
+  def: (?<MidPrefix>mid|middle of)
 LaterPrefixRegex: !simpleRegex
-  def: ?<LatePrefix>late|later(\s+in)?|end of
+  def: (?<LatePrefix>late|later(\s+in)?|end of)
 PrefixPeriodRegex: !nestedRegex
-  def: (({EarlyPrefixRegex})|({MidPrefixRegex})|({LaterPrefixRegex}))
+  def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
 SeasonDescRegex: !simpleRegex
   def: (?<seas>spring|summer|fall|autumn|winter)

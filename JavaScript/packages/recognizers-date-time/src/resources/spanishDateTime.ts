@@ -34,6 +34,7 @@ export namespace SpanishDateTime {
 	export const QuarterRegex = `(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|cuarto|4to)\\s+cuatrimestre(\\s+de|\\s*,\\s*)?\\s+(${FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año)`;
 	export const QuarterRegexYearFront = `(${FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año)\\s+(el\\s+)?(?<cardinal>(primer|primero)|1er|segundo|2do|(tercer|terceo)|3ro|cuarto|4to)\\s+cuatrimestre`;
 	export const AllHalfYearRegex = `^[.]`;
+	export const PrefixPeriodRegex = `^[.]`;
 	export const SeasonRegex = `\\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente))\\s+)?(?<seas>primavera|verano|otoño|invierno)((\\s+del?|\\s*,\\s*)?\\s+(${FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))?)\\b`;
 	export const WhichWeekRegex = `(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
 	export const WeekOfRegex = `(semana)(\\s*)((do|da|de))`;

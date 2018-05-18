@@ -132,9 +132,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string ToIsoWeekTimex(System.DateTime monday)
         {
-            Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+            var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
             return monday.Year.ToString("D4") + "-W" + 
-                Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+                cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
                 .ToString("D2");
         }
     }

@@ -75,6 +75,9 @@ QuarterRegexYearFront: !nestedRegex #Not needed in german
 AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+PrefixPeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SeasonRegex: !nestedRegex
   def: \b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b
   references: [ YearRegex, RelativeRegex ]

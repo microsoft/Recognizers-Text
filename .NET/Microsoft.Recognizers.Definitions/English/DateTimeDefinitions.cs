@@ -33,8 +33,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b";
 		public const string YearNumRegex = @"\b(?<year>((1[5-9]|20)\d{2})|2100)\b";
 		public static readonly string YearRegex = $@"({YearNumRegex}|{FullTextYearRegex})";
-		public const string WeekDayRegex = @"\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\b";
-		public const string SingleWeekDayRegex = @"\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\s+(Sat|Sun)))\b";
+		public const string WeekDayRegex = @"\b(in\s+the\s+day\s+)?(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\b";
+		public const string SingleWeekDayRegex = @"\b(in\s+the\s+day\s+)?(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\s+(Sat|Sun)))\b";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>(of\s+)?{RelativeRegex}\s+month)\b";
 		public const string WrittenMonthRegex = @"(((the\s+)?month of\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>(in\s+|of\s+|on\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
@@ -58,10 +58,10 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string HalfYearBackRegex = $@"(the\s+)?(H(?<number>[1-2])|({HalfYearTermRegex}))(\s+of|\s*,\s*)?\s+({YearRegex})";
 		public static readonly string HalfYearRelativeRegex = $@"(the\s+)?{HalfYearTermRegex}(\s+of|\s*,\s*)?\s+({RelativeRegex}\s+year)";
 		public static readonly string AllHalfYearRegex = $@"({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})";
-		public const string EarlyPrefixRegex = @"?<EarlyPrefix>early|beginning of|start of";
-		public const string MidPrefixRegex = @"?<MidPrefix>mid|middle of";
-		public const string LaterPrefixRegex = @"?<LatePrefix>late|later(\s+in)?|end of";
-		public static readonly string PrefixPeriodRegex = $@"(({EarlyPrefixRegex})|({MidPrefixRegex})|({LaterPrefixRegex}))";
+		public const string EarlyPrefixRegex = @"(?<EarlyPrefix>early|beginning of|start of)";
+		public const string MidPrefixRegex = @"(?<MidPrefix>mid|middle of)";
+		public const string LaterPrefixRegex = @"(?<LatePrefix>late|later(\s+in)?|end of)";
+		public static readonly string PrefixPeriodRegex = $@"({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})";
 		public const string SeasonDescRegex = @"(?<seas>spring|summer|fall|autumn|winter)";
 		public static readonly string SeasonRegex = $@"\b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b";
 		public const string WhichWeekRegex = @"(week)(\s*)(?<number>\d\d|\d|0\d)";

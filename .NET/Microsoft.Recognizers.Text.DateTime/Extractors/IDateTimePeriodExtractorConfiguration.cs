@@ -47,6 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DateUnitRegex { get; }
 
+        Regex PrefixPeriodRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IDateTimeExtractor SingleDateExtractor { get; }

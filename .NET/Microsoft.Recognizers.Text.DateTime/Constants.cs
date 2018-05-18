@@ -89,6 +89,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int TrimesterMonthCount = 3;
         public const int SemesterMonthCount = 6;
         public const int WeekDayCount = 7;
+        public const int HalfDayHourCount = 12;
+        public const int HalfMidDayDurationHourCount = 2;
 
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";

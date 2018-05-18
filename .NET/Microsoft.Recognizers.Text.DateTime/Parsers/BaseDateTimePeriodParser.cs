@@ -48,6 +48,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseRelativeUnit(er.Text, referenceTime);
                 }
 
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseDateWithPeriodPrefix(er.Text, referenceTime);
+                }
+
                 if (innerResult.Success)
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
@@ -90,6 +95,58 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ResolutionStr = ""
             };
 
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseDateWithPeriodPrefix(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var dateResult = this.Config.DateExtractor.Extract(text);
+            if (dateResult.Count == 1)
+            {
+                var match = Config.PrefixPeriodRegex.Match(text.Substring(0, (int)dateResult[0].Start));
+                if (match.Success)
+                {
+                    var pr = this.Config.DateParser.Parse(dateResult[0], referenceTime);
+                    if (pr.Value != null)
+                    {
+                        var startTime = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                        startTime = new DateObject(startTime.Year, startTime.Month, startTime.Day);
+                        var endTime = startTime;
+
+
+                        if (match.Groups["EarlyPrefix"].Success)
+                        {
+                            endTime = endTime.AddHours(Constants.HalfDayHourCount);
+                            ret.Mod = Constants.EARLY_MOD;
+                        }
+                        else if (match.Groups["MidPrefix"].Success)
+                        {
+                            startTime = startTime.AddHours(Constants.HalfDayHourCount - Constants.HalfMidDayDurationHourCount);
+                            endTime = endTime.AddHours(Constants.HalfDayHourCount + Constants.HalfMidDayDurationHourCount);
+                            ret.Mod = Constants.MID_MOD;
+                        }
+                        else if (match.Groups["LatePrefix"].Success)
+                        {
+                            startTime = startTime.AddHours(Constants.HalfDayHourCount);
+                            endTime = startTime.AddHours(Constants.HalfDayHourCount);
+                            ret.Mod = Constants.LATE_MOD;
+                        }
+                        else
+                        {
+                            return ret;
+                        }
+
+                        ret.Timex = pr.TimexStr;
+
+                        ret.PastValue = ret.FutureValue = new Tuple<DateObject, DateObject>(startTime, endTime);
+
+                        ret.Success = true;
+                    }
+                }
+            }
+            
             return ret;
         }
 
@@ -306,7 +363,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Comment = Constants.Comment_AmPm;
                 }
 
-                int pastHours = endHour - beginHour;
+                var pastHours = endHour - beginHour;
                 var beginStr = dateStr + "T" + beginHour.ToString("D2");
                 var endStr = dateStr + "T" + endHour.ToString("D2");
 
