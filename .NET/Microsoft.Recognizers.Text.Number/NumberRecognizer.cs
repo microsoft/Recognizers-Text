@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Number.Dutch;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
@@ -222,6 +223,29 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberRangeModel(
                             new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration()),
                             new Japanese.NumberRangeExtractor()));
+            #endregion
+
+            #region Dutch
+            RegisterModel<NumberModel>(
+                Culture.Dutch,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration(options)),
+                    Dutch.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+            RegisterModel<OrdinalModel>(
+                Culture.Dutch,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration(options)),
+                    Dutch.OrdinalExtractor.GetInstance()));
+            RegisterModel<PercentModel>(
+                Culture.Dutch,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration(options)),
+                    new Dutch.PercentageExtractor(options)));
+            RegisterModel<NumberRangeModel>(
+                Culture.Dutch,
+                (options) => new NumberRangeModel(
+                            new BaseNumberRangeParser(new DutchNumberRangeParserConfiguration()),
+                            new Dutch.NumberRangeExtractor()));
             #endregion
         }
     }
