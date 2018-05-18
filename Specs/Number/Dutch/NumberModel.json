@@ -65,13 +65,13 @@
     "Results": []
   },
   {
-    "Input": ".08",
+    "Input": ",08",
     "Results": [
       {
-        "Text": ".08",
+        "Text": ",08",
         "TypeName": "number",
         "Resolution": {
-          "value": "0.08"
+          "value": "0,08"
         }
       }
     ]
@@ -85,10 +85,10 @@
     "Results": []
   },
   {
-    "Input": ".23456000",
+    "Input": ",23456000",
     "Results": [
       {
-        "Text": ".23456000",
+        "Text": ",23456000",
         "TypeName": "number",
         "Resolution": {
           "value": "0.23456"
@@ -97,10 +97,10 @@
     ]
   },
   {
-    "Input": "4.800",
+    "Input": "4,800",
     "Results": [
       {
-        "Text": "4.800",
+        "Text": "4,800",
         "TypeName": "number",
         "Resolution": {
           "value": "4.8"
@@ -134,6 +134,7 @@
   },
   {
     "Input": "zestien",
+    "Debug": true,
     "Results": [
       {
         "Text": "zestien",
@@ -315,10 +316,10 @@
     ]
   },
   {
-    "Input": "9.2321312",
+    "Input": "9,2321312",
     "Results": [
       {
-        "Text": "9.2321312",
+        "Text": "9,2321312",
         "TypeName": "number",
         "Resolution": {
           "value": "9.2321312"
@@ -327,10 +328,10 @@
     ]
   },
   {
-    "Input": " -9.2321312",
+    "Input": " -9,2321312",
     "Results": [
       {
-        "Text": "-9.2321312",
+        "Text": "-9,2321312",
         "TypeName": "number",
         "Resolution": {
           "value": "-9.2321312"
