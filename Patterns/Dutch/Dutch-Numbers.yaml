@@ -150,16 +150,16 @@ OneNumberRangeEqualRegex: !nestedRegex
   def: '{EqualRegex}\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)'
   references: [ EqualRegex ]
 TwoNumberRangeRegex1: !nestedRegex
-  def: between\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*and\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  def: tussen\s*(de\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*en\s*(de\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ TillRegex ]
 TwoNumberRangeRegex2: !nestedRegex
-  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(en|maar|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex3: !nestedRegex
-  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(en|maar|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex4: !nestedRegex
-  def: (from\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\bfrom\b)).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  def: (van\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\van\b)).)+)\s*{TillRegex}\s*(de\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ TillRegex ]
 #Parser
 DecimalSeparatorChar: !char ','
