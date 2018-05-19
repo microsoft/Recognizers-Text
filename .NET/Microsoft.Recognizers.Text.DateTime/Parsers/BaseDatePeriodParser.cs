@@ -537,7 +537,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
 
-                        ret.Timex = isRef ? "XXXX-WXX" : FormatUtil.ToIsoWeekTimex(monday);
+                        ret.Timex = isRef ? TimexUtility.GenerateWeekTimex() : TimexUtility.GenerateWeekTimex(monday);
                         var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         var endDate = InclusiveEndPeriod
                                         ? referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift)
@@ -574,9 +574,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
-                        ret.Timex = isRef ? "XXXX-WXX-WE" : beginDate.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                        .ToString("D2") + "-WE";
+                        ret.Timex = isRef ? TimexUtility.GenerateWeekendTimex() : TimexUtility.GenerateWeekendTimex(beginDate);
 
                         endDate = InclusiveEndPeriod ? endDate : endDate.AddDays(1);
 
@@ -589,14 +587,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (this.config.IsMonthOnly(trimedText))
                     {
-                        month = referenceDate.AddMonths(swift).Month;
-                        year = referenceDate.AddMonths(swift).Year;
-                        ret.Timex = isRef ? "XXXX-XX" : year.ToString("D4") + "-" + month.ToString("D2");
+                        var date = referenceDate.AddMonths(swift);
+                        month = date.Month;
+                        year = date.Year;
+                        ret.Timex = isRef
+                            ? TimexUtility.GenerateMonthTimex() :
+                                TimexUtility.GenerateMonthTimex(date);
                         futureYear = pastYear = year;
                     }
                     else if (this.config.IsYearOnly(trimedText))
                     {
-                        year = referenceDate.AddYears(swift).Year;
+                        var date = referenceDate.AddYears(swift);
+                        year = date.Year;
 
                         var beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                         var endDate = InclusiveEndPeriod
@@ -620,7 +622,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             beginDate = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                         }
 
-                        ret.Timex = isRef ? "XXXX" : year.ToString("D4");
+                        ret.Timex = isRef ? TimexUtility.GenerateYearTimex() : TimexUtility.GenerateYearTimex(date);
 
                         ret.FutureValue =
                             ret.PastValue =
