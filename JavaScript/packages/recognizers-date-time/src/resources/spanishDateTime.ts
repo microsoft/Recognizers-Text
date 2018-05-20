@@ -188,6 +188,7 @@ export namespace SpanishDateTime {
 	export const RelativeDayRegex = `^[\\.]`;
 	export const RestOfDateRegex = `^[\\.]`;
 	export const RelativeDurationUnitRegex = `^[\\.]`;
+	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
 	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;

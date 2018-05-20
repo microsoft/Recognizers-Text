@@ -2828,4 +2828,104 @@
     }
   ]
 }
+,
+{
+  "Input": "I was not there the same week that it happened.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-17T00:00:00"
+  },
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "same week",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-WXX",
+            "Mod": "ref_undef",
+            "type": "daterange",
+            "start": "2017-11-13",
+            "end": "2017-11-20"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I was not there the same month that it happened.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "same month",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-XX",
+            "Mod": "ref_undef",
+            "type": "daterange",
+            "start": "2017-11-01",
+            "end": "2017-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I was not there that weekend.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-11T00:00:00"
+  },
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "that weekend",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-WE",
+            "Mod": "ref_undef",
+            "type": "daterange",
+            "start": "2016-11-12",
+            "end": "2016-11-14"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I was not there the same year that it happened. ",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "same year",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX",
+            "Mod": "ref_undef",
+            "type": "daterange",
+            "start": "2017-01-01",
+            "end": "2018-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

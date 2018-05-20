@@ -175,6 +175,7 @@ export namespace FrenchDateTime {
 	export const InexactNumberUnitRegex = `(${InexactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `((((${ThisPrefixRegex})?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const RelativeDurationUnitRegex = `(((?<=(${ThisPrefixRegex})\\s+)?\\b(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
+	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const ConnectorRegex = `^(,|pour|t|vers)$`;
 	export const ConnectorAndRegex = `\\b(et\\s*(le|la(s)?)?)\\b.+`;
 	export const FromRegex = `((de|du)?)$`;

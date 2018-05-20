@@ -418,6 +418,9 @@ RelativeTimeUnitRegex: !nestedRegex
 RelativeDurationUnitRegex: !nestedRegex
   def: (((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s*)({DurationUnitRegex})))
   references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
+ReferenceDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|für|t|gegen)$
 FromToRegex: !simpleRegex
