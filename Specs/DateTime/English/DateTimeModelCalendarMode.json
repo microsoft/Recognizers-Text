@@ -363,5 +363,123 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Each week and another thing this week",
+    "Context": {
+      "ReferenceDateTime": "2018-05-20T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "each week",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 28,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W20",
+              "type": "daterange",
+              "start": "2018-05-14",
+              "end": "2018-05-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The notes are shared out in the LT working session notes attached each week and highlights are shared in the Data insights section. For this week’s special topic the data team has written an overview of some of the new features the dashboard supports and how it is built. If you have not seen the dashboard, this may be a great opportunity to learn something new.I would like to ask Cortana to schedule 45 minutes in November. I would also like to share news that Skype integration with our OWA Rea",
+    "Context": {
+      "ReferenceDateTime": "2018-05-20T00:00:00"
+    },
+    "NotSupported": "python,javascript",
+    "Results": [
+      {
+        "Text": "each week",
+        "Start": 66,
+        "End": 75,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "this week",
+        "Start": 136,
+        "End": 145,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W20",
+              "type": "daterange",
+              "start": "2018-05-14",
+              "end": "2018-05-21"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "45 minutes",
+        "Start": 403,
+        "End": 413,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT45M",
+              "type": "duration",
+              "value": "2700"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "november",
+        "Start": 417,
+        "End": 425,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11",
+              "type": "daterange",
+              "start": "2017-11-01",
+              "end": "2017-12-01"
+            }
+			,
+			{
+              "timex": "XXXX-11",
+              "type": "daterange",
+              "start": "2018-11-01",
+              "end": "2018-12-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
