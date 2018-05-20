@@ -184,6 +184,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly string RelativeTimeUnitRegex = $@"((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s*({TimeUnitRegex})))";
 		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s*)({DurationUnitRegex})))";
+		public const string ReferenceDatePeriodRegex = @"^[.]";
 		public const string ConnectorRegex = @"^(-|,|für|t|gegen)$";
 		public const string FromToRegex = @"\b(vom|von).+(bis(\s*zum)?)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";

@@ -185,6 +185,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly string RelativeTimeUnitRegex = $@"(((({ThisPrefixRegex})?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))";
 		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({ThisPrefixRegex})\s+)?\b({DurationUnitRegex})(\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\s+({RestrictedTimeUnitRegex}))";
+		public const string ReferenceDatePeriodRegex = @"^[.]";
 		public const string ConnectorRegex = @"^(,|pour|t|vers)$";
 		public const string ConnectorAndRegex = @"\b(et\s*(le|la(s)?)?)\b.+";
 		public const string FromRegex = @"((de|du)?)$";

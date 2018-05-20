@@ -443,6 +443,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string RelativeDayRegex = @"^[\.]";
 		public const string RestOfDateRegex = @"^[\.]";
 		public const string RelativeDurationUnitRegex = @"^[\.]";
+		public const string ReferenceDatePeriodRegex = @"^[.]";
 		public const string FromToRegex = @"\b(from).+(to)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
 		public const string PrepositionSuffixRegex = @"\b(on|in|at|around|from|to)$";

@@ -91,6 +91,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeDecadeRegex { get; }
 
+        Regex ReferenceDatePeriodRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

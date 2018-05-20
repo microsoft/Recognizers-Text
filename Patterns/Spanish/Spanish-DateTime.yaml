@@ -719,6 +719,9 @@ RestOfDateRegex: !simpleRegex
 RelativeDurationUnitRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: ^[\.]
+ReferenceDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 FromToRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: \b(from).+(to)\b.+
