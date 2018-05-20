@@ -48,8 +48,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                    var matches = config.OrRegex.Matches(middleStr);
 
-                    if (config.OrRegex.Matches(middleStr).Count != 1)
+                    if (matches.Count != 1 || matches[0].Index != 0 || matches[0].Length != middleStr.Length)
                     {
                         break;
                     }
@@ -211,7 +212,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
                         
                             var orTermMatches = config.OrRegex.Matches(middleStr);
-                            if (orTermMatches.Count == 1 && orTermMatches[0].Index == 0)
+                            if (orTermMatches.Count == 1 && orTermMatches[0].Index == 0 && orTermMatches[0].Length == middleStr.Length)
                             {
                                 var parentTextStart = result.Start;
                                 var parentTextLen = relativeTermsMatch.Index + relativeTermsMatch.Length - result.Start;
