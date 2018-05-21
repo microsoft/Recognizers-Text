@@ -130,6 +130,7 @@ export namespace SpanishDateTime {
 	export const FollowedUnit = `^\\s*${UnitRegex}`;
 	export const DurationNumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)${UnitRegex}`;
 	export const AnUnitRegex = `\\b(un(a)?)\\s+${UnitRegex}`;
+	export const DuringRegex = `^[.]`;
 	export const AllRegex = `\\b(?<all>tod[oa]?\\s+(el|la)\\s+(?<unit>año|mes|semana|d[ií]a))\\b`;
 	export const HalfRegex = `\\b(?<half>medi[oa]\\s+(?<unit>ano|mes|semana|d[íi]a|hora))\\b`;
 	export const InexactNumberRegex = `\\b(pocos|poco|algo|varios)\\b`;

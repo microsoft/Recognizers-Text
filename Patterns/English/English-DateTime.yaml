@@ -398,6 +398,8 @@ NumberCombinedWithDurationUnit: !nestedRegex
 AnUnitRegex: !nestedRegex
   def: \b((?<half>half\s+)?(an|a)|another)\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
+DuringRegex: !simpleRegex
+  def: \b(for|during)\s+the\s+(?<unit>year|month|week|day)\b
 AllRegex: !simpleRegex
   def: \b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b
 HalfRegex: !simpleRegex

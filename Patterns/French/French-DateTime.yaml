@@ -348,6 +348,9 @@ NumberCombinedWithDurationUnit: !nestedRegex
 AnUnitRegex: !nestedRegex
   def: \b(((?<half>demi\s+)?(-)\s+{DurationUnitRegex}))
   references: [ DurationUnitRegex ]
+DuringRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AllRegex: !simpleRegex
   def: \b(?<all>toute\s(l['ea])\s?(?<unit>ann[eé]e|mois|semaine|semaines|jour|jours|journ[eé]e))\b
 HalfRegex: !simpleRegex

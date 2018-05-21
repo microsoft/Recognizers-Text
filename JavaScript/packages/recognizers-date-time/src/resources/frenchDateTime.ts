@@ -143,6 +143,7 @@ export namespace FrenchDateTime {
 	export const DurationFollowedUnit = `^\\s*${SuffixAndRegex}?(\\s+|-)?${DurationUnitRegex}`;
 	export const NumberCombinedWithDurationUnit = `\\b(?<num>\\d+(\\.\\d*)?)(-)?${DurationUnitRegex}`;
 	export const AnUnitRegex = `\\b(((?<half>demi\\s+)?(-)\\s+${DurationUnitRegex}))`;
+	export const DuringRegex = `^[.]`;
 	export const AllRegex = `\\b(?<all>toute\\s(l['ea])\\s?(?<unit>ann[eé]e|mois|semaine|semaines|jour|jours|journ[eé]e))\\b`;
 	export const HalfRegex = `(((un|une)\\s*)|\\b)(?<half>demi?(\\s*|-)+(?<unit>ann[eé]e|ans|mois|semaine|jour|heure))\\b`;
 	export const ConjunctionRegex = `\\b((et(\\s+de|pour)?)|avec)\\b`;

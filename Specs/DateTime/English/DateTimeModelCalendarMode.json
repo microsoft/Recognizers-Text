@@ -480,5 +480,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'm blocked for the day",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "for the day",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'm away for the month",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "for the month",
+        "Start": 9,
+        "End": 21,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "duration",
+              "value": "2592000"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

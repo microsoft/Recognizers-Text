@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
@@ -131,6 +130,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // handle "next day", "last year"
             ret.AddRange(GetTokenFromRegex(config.RelativeDurationUnitRegex, text));
+
+            if ((config.Options & DateTimeOptions.CalendarMode) != 0)
+            {
+                ret.AddRange(GetTokenFromRegex(config.DuringRegex, text));
+            }
 
             return ret;
         }
