@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex AnUnitRegex { get; }
 
+        public Regex DuringRegex { get; }
+
         public Regex AllDateUnitRegex { get; }
 
         public Regex HalfDateUnitRegex { get; }
@@ -46,6 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(), false);
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = EnglishDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = EnglishDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = EnglishDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = EnglishDurationExtractorConfiguration.SuffixAndRegex;

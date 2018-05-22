@@ -353,6 +353,9 @@ DurationNumberCombinedWithUnit: !nestedRegex
 AnUnitRegex: !nestedRegex
   def: \b(um(a)?)\s+{UnitRegex}
   references: [ UnitRegex ]
+DuringRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AllRegex: !simpleRegex
   def: \b(?<all>tod[oa]?\s+(o|a)\s+(?<unit>ano|m[êe]s|semana|dia))\b
 HalfRegex: !simpleRegex

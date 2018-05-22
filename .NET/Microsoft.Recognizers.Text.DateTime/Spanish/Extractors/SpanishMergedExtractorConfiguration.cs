@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
             TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(options));
             SetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
