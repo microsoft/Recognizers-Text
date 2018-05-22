@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         //TODO: add half in AnUnitRegex
         public static readonly Regex AnUnitRegex = new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DuringRegex = new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex AllRegex = new Regex(DateTimeDefinitions.AllRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex HalfRegex = new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -40,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 
-        public SpanishDurationExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishDurationExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
@@ -58,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         Regex IDurationExtractorConfiguration.AnUnitRegex => AnUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DuringRegex => DuringRegex;
 
         Regex IDurationExtractorConfiguration.AllRegex => AllRegex;
 

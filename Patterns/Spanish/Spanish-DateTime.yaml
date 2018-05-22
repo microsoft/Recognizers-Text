@@ -352,6 +352,9 @@ DurationNumberCombinedWithUnit: !nestedRegex
 AnUnitRegex: !nestedRegex
   def: \b(un(a)?)\s+{UnitRegex}
   references: [ UnitRegex ]
+DuringRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AllRegex: !simpleRegex
   def: \b(?<all>tod[oa]?\s+(el|la)\s+(?<unit>año|mes|semana|d[ií]a))\b
 HalfRegex: !simpleRegex
@@ -719,6 +722,9 @@ RestOfDateRegex: !simpleRegex
 RelativeDurationUnitRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: ^[\.]
+ReferenceDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 FromToRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: \b(from).+(to)\b.+

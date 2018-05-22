@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AnUnitRegex { get; }
 
+        Regex DuringRegex { get; }
+
         Regex AllRegex { get; }
 
         Regex HalfRegex { get; }

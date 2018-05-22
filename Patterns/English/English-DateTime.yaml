@@ -15,6 +15,8 @@ PastPrefixRegex: !simpleRegex
   def: (last|past|previous)\b
 ThisPrefixRegex: !simpleRegex
   def: (this|current)\b
+ReferencePrefixRegex: !simpleRegex
+  def: (that|same)\b
 FutureSuffixRegex: !simpleRegex
   def: \b(in\s+the\s+)?(future|hence)\b
 DayRegex: !simpleRegex
@@ -396,6 +398,8 @@ NumberCombinedWithDurationUnit: !nestedRegex
 AnUnitRegex: !nestedRegex
   def: \b((?<half>half\s+)?(an|a)|another)\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
+DuringRegex: !simpleRegex
+  def: \b(for|during)\s+the\s+(?<unit>year|month|week|day)\b
 AllRegex: !simpleRegex
   def: \b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b
 HalfRegex: !simpleRegex
@@ -461,6 +465,9 @@ RelativeTimeUnitRegex: !nestedRegex
 RelativeDurationUnitRegex: !nestedRegex
   def: (((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
   references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
+ReferenceDatePeriodRegex: !nestedRegex
+  def: \b{ReferencePrefixRegex}\s+(?<duration>week|month|year|weekend)\b
+  references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|for|t|around)$
 FromToRegex: !simpleRegex

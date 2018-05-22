@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex AnUnitRegex { get; }
 
+        public Regex DuringRegex { get; }
+
         public Regex AllDateUnitRegex { get; }
 
         public Regex HalfDateUnitRegex { get; }
@@ -46,6 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(), false);
             NumberCombinedWithUnit = FrenchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = FrenchDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = FrenchDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = FrenchDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = FrenchDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = FrenchDurationExtractorConfiguration.SuffixAndRegex;

@@ -141,6 +141,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex RelativeDecadeRegex =
             new Regex(DateTimeDefinitions.RelativeDecadeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex ReferenceDatePeriodRegex =
+            new Regex(DateTimeDefinitions.ReferenceDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -217,6 +220,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDatePeriodExtractorConfiguration.ComplexDatePeriodRegex => ComplexDatePeriodRegex;
 
         Regex IDatePeriodExtractorConfiguration.RelativeDecadeRegex => RelativeDecadeRegex;
+
+        Regex IDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex => ReferenceDatePeriodRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

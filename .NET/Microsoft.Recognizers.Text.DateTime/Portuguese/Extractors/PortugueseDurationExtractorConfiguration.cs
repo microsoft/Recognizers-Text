@@ -18,6 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         //TODO: add half in AnUnitRegex
         public static readonly Regex AnUnitRegex = new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex AllRegex = new Regex(DateTimeDefinitions.AllRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DuringRegex = new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex HalfRegex = new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: change to Portuguese according to corresponding Regex
@@ -39,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public PortugueseDurationExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseDurationExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
@@ -57,6 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         Regex IDurationExtractorConfiguration.AnUnitRegex => AnUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DuringRegex => DuringRegex;
 
         Regex IDurationExtractorConfiguration.AllRegex => AllRegex;
 

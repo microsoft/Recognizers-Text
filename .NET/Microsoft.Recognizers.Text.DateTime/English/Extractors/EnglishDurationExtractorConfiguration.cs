@@ -23,6 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex AnUnitRegex = 
             new Regex(DateTimeDefinitions.AnUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DuringRegex = 
+            new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex AllRegex = 
             new Regex(DateTimeDefinitions.AllRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -50,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public EnglishDurationExtractorConfiguration() : base(DateTimeOptions.None)
+        public EnglishDurationExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
@@ -68,6 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithDurationUnit;
 
         Regex IDurationExtractorConfiguration.AnUnitRegex => AnUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DuringRegex => DuringRegex;
 
         Regex IDurationExtractorConfiguration.AllRegex => AllRegex;
 
