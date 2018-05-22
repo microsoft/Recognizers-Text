@@ -131,6 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // handle "next day", "last year"
             ret.AddRange(GetTokenFromRegex(config.RelativeDurationUnitRegex, text));
 
+            // handle "during/for the day/week/month/year"
             if ((config.Options & DateTimeOptions.CalendarMode) != 0)
             {
                 ret.AddRange(GetTokenFromRegex(config.DuringRegex, text));

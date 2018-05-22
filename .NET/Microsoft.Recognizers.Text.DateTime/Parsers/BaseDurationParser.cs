@@ -295,6 +295,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = result;
             }
 
+            // handle "during/for the day/week/month/year"
             if ((config.Options & DateTimeOptions.CalendarMode) != 0 &&
                 TryGetResultFromRegex(config.DuringRegex, text, "1", out result))
             {
