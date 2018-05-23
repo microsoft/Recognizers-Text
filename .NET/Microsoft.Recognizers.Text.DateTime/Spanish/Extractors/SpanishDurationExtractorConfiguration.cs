@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
-using Microsoft.Recognizers.Text.Number;
 using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -21,14 +20,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AllRegex = new Regex(DateTimeDefinitions.AllRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex HalfRegex = new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: change to Spanish according to corresponding Regex
-        public static readonly Regex ConjunctionRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ConjunctionRegex = new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex InexactNumberRegex = new Regex(DateTimeDefinitions.InexactNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex InexactNumberUnitRegex = new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: change to Spanish according to corresponding Regex
-        public static readonly Regex RelativeDurationUnitRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RelativeDurationUnitRegex = new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DurationUnitRegex = new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

@@ -144,6 +144,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string DuringRegex = @"^[.]";
 		public const string AllRegex = @"\b(?<all>tod[oa]?\s+(o|a)\s+(?<unit>ano|m[êe]s|semana|dia))\b";
 		public const string HalfRegex = @"\b(?<half>mei[oa]\s+(?<unit>ano|m[êe]s|semana|dia|hora))\b";
+		public const string ConjunctionRegex = @"^[.]";
 		public const string InexactNumberRegex = @"\b(poucos|pouco|algum|alguns|v[áa]rios)\b";
 		public static readonly string InexactNumberUnitRegex = $@"\b(poucos|pouco|algum|alguns|v[áa]rios)\s+{UnitRegex}";
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia (de|de los) presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\s+(d[eo]?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";

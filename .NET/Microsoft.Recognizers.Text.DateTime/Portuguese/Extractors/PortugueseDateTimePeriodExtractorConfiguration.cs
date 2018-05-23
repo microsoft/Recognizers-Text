@@ -60,11 +60,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex FutureSuffixRegex => PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
 
-        //TODO: add this
-        public static readonly Regex WeekDayRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WeekDayRegex = new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: add this according to the related part in English
-        public static readonly Regex RestOfDateTimeRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RestOfDateTimeRegex = new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex = new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

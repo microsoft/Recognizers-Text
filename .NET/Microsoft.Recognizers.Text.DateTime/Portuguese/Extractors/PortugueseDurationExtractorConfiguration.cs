@@ -21,14 +21,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex DuringRegex = new Regex(DateTimeDefinitions.DuringRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex HalfRegex = new Regex(DateTimeDefinitions.HalfRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: change to Portuguese according to corresponding Regex
-        public static readonly Regex ConjunctionRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ConjunctionRegex = new Regex(DateTimeDefinitions.ConjunctionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex InexactNumberRegex = new Regex(DateTimeDefinitions.InexactNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex InexactNumberUnitRegex = new Regex(DateTimeDefinitions.InexactNumberUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: change to Portuguese according to corresponding Regex
-        public static readonly Regex RelativeDurationUnitRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RelativeDurationUnitRegex = new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DurationUnitRegex = new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

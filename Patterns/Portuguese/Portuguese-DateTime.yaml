@@ -363,6 +363,9 @@ AllRegex: !simpleRegex
   def: \b(?<all>tod[oa]?\s+(o|a)\s+(?<unit>ano|m[êe]s|semana|dia))\b
 HalfRegex: !simpleRegex
   def: \b(?<half>mei[oa]\s+(?<unit>ano|m[êe]s|semana|dia|hora))\b
+ConjunctionRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 InexactNumberRegex: !simpleRegex
   def: \b(poucos|pouco|algum|alguns|v[áa]rios)\b
 InexactNumberUnitRegex: !nestedRegex
