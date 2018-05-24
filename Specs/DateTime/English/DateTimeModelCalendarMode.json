@@ -560,5 +560,29 @@
     },
     "NotSupported": "javascript,python",
     "Results": []
+  },
+  {
+    "Input": "Have a great month.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Nice day.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Have a great week!",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
   }
 ]
