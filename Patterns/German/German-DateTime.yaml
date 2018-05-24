@@ -75,7 +75,7 @@ QuarterRegexYearFront: !nestedRegex #Not needed in german
 AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-PrefixPeriodRegex: !simpleRegex
+PrefixDayRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 SeasonRegex: !nestedRegex

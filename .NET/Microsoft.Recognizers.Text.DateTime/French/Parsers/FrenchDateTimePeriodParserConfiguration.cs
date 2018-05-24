@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex WithinNextPrefixRegex { get; }
 
-        public Regex PrefixPeriodRegex { get; }
+        public Regex PrefixDayRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             AmDescRegex = FrenchDateTimePeriodExtractorConfiguration.AmDescRegex;
             PmDescRegex = FrenchDateTimePeriodExtractorConfiguration.PmDescRegex;
             WithinNextPrefixRegex = FrenchDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
-            PrefixPeriodRegex = FrenchDateTimePeriodExtractorConfiguration.PrefixPeriodRegex;
+            PrefixDayRegex = FrenchDateTimePeriodExtractorConfiguration.PrefixDayRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

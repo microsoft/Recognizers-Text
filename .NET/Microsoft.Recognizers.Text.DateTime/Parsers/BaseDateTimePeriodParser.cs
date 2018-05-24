@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -103,12 +104,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var dateResult = this.Config.DateExtractor.Extract(text);
-            if (dateResult.Count == 1)
+            if (dateResult.Count > 0)
             {
-                var match = Config.PrefixPeriodRegex.Match(text.Substring(0, (int)dateResult[0].Start));
+                var beforeString = text.Substring(0, (int)dateResult.Last().Start).TrimEnd();
+                var match = Config.PrefixDayRegex.Match(beforeString);
                 if (match.Success)
                 {
-                    var pr = this.Config.DateParser.Parse(dateResult[0], referenceTime);
+                    var pr = this.Config.DateParser.Parse(dateResult.Last(), referenceTime);
                     if (pr.Value != null)
                     {
                         var startTime = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;

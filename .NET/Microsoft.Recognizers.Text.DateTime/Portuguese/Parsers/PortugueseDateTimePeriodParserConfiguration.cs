@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex WithinNextPrefixRegex { get; }
 
-        public Regex PrefixPeriodRegex { get; }
+        public Regex PrefixDayRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             AmDescRegex = PortugueseDateTimePeriodExtractorConfiguration.AmDescRegex;
             PmDescRegex = PortugueseDateTimePeriodExtractorConfiguration.PmDescRegex;
             WithinNextPrefixRegex = PortugueseDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
-            PrefixPeriodRegex = PortugueseDateTimePeriodExtractorConfiguration.PrefixPeriodRegex;
+            PrefixDayRegex = PortugueseDateTimePeriodExtractorConfiguration.PrefixDayRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

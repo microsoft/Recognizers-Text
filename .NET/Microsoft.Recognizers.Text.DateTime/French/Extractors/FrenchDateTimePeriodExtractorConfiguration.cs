@@ -79,8 +79,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex DateUnitRegex =
             new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PrefixPeriodRegex =
-            new Regex(DateTimeDefinitions.PrefixPeriodRegex,
+        public static readonly Regex PrefixDayRegex =
+            new Regex(DateTimeDefinitions.PrefixDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor TimePeriodExtractor { get; }
 
-        Regex IDateTimePeriodExtractorConfiguration.PrefixPeriodRegex => PrefixPeriodRegex;
+        Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 

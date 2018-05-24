@@ -45,8 +45,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
                 var beforeStr = text.Substring(0, (int)dateEr.Start).TrimEnd();
-                var match = this.config.PrefixPeriodRegex.Match(beforeStr);
-                if (match.Success && match.Index + match.Length == beforeStr.Length)
+                var match = this.config.PrefixDayRegex.Match(beforeStr);
+                if (match.Success)
                 {
                     ret.Add(new Token(match.Index, dateStrEnd));
                 }

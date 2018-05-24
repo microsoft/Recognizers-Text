@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex WithinNextPrefixRegex { get; }
 
-        public Regex PrefixPeriodRegex { get; }
+        public Regex PrefixDayRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             AmDescRegex = GermanDateTimePeriodExtractorConfiguration.AmDescRegex;
             PmDescRegex = GermanDateTimePeriodExtractorConfiguration.PmDescRegex;
             WithinNextPrefixRegex = GermanDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
-            PrefixPeriodRegex = GermanDateTimePeriodExtractorConfiguration.PrefixPeriodRegex;
+            PrefixDayRegex = GermanDateTimePeriodExtractorConfiguration.PrefixDayRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
