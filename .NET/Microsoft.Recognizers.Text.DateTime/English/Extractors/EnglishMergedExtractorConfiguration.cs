@@ -36,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             // one on one
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            // (the)? (day|week|month|year)
+            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
         };
 
         public DateTimeOptions Options { get; }
