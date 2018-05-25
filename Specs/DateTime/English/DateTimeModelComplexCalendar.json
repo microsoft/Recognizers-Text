@@ -1816,5 +1816,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Hey, we got Cloud partner of the year.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Hey, we got a partner of the month.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Hey, we got a partner of the week.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Hey, we got a partner of the day.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Have a great month.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Nice day.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Have a great week!",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
   }
 ]
