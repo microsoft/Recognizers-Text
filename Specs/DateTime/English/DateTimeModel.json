@@ -2974,4 +2974,77 @@
     }  
   ]
 }
+,
+{
+  "Input": "I'll leave for Beijing early in the day Wednesday.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-18T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "early in the day wednesday",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-3",
+            "Mod": "start",
+            "type": "datetimerange",
+            "start": "2018-05-23 00:00:00",
+            "end": "2018-05-23 12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "Input": "I'll leave for Beijing mid today.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-18T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "mid today",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-05-18",
+            "Mod": "mid",
+            "type": "datetimerange",
+            "start": "2018-05-18 10:00:00",
+            "end": "2018-05-18 14:00:00"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "Input": "I'll leave for Beijing later in today.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-18T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "later in today",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-05-18",
+            "Mod": "end",
+            "type": "datetimerange",
+            "start": "2018-05-18 12:00:00",
+            "end": "2018-05-19 00:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

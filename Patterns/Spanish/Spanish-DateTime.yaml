@@ -65,6 +65,9 @@ QuarterRegexYearFront: !nestedRegex
 AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+PrefixDayRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SeasonRegex: !nestedRegex
   def: \b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente))\s+)?(?<seas>primavera|verano|otoño|invierno)((\s+del?|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))?)\b
   references: [ FullYearRegex ]
@@ -356,6 +359,9 @@ AllRegex: !simpleRegex
   def: \b(?<all>tod[oa]?\s+(el|la)\s+(?<unit>año|mes|semana|d[ií]a))\b
 HalfRegex: !simpleRegex
   def: \b(?<half>medi[oa]\s+(?<unit>ano|mes|semana|d[íi]a|hora))\b
+ConjunctionRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 InexactNumberRegex: !simpleRegex
   def: \b(pocos|poco|algo|varios)\b
 InexactNumberUnitRegex: !nestedRegex
