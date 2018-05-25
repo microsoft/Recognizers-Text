@@ -105,14 +105,16 @@ AllHalfYearRegex: !nestedRegex
   def: ({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})
   references: [ HalfYearFrontRegex, HalfYearBackRegex, HalfYearRelativeRegex ]
 EarlyPrefixRegex: !simpleRegex
-  def: ?<EarlyPrefix>early|beginning of|start of
+  def: (?<EarlyPrefix>early|beginning of|start of)
 MidPrefixRegex: !simpleRegex
-  def: ?<MidPrefix>mid|middle of
+  def: (?<MidPrefix>mid|middle of)
 LaterPrefixRegex: !simpleRegex
-  def: ?<LatePrefix>late|later(\s+in)?|end of
+  def: (?<LatePrefix>late|later(\s+in)?|end of)
 PrefixPeriodRegex: !nestedRegex
-  def: (({EarlyPrefixRegex})|({MidPrefixRegex})|({LaterPrefixRegex}))
+  def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
+PrefixDayRegex: !simpleRegex
+  def: ((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\s+in)?(\s+the\s+day)?$
 SeasonDescRegex: !simpleRegex
   def: (?<seas>spring|summer|fall|autumn|winter)
 SeasonRegex: !nestedRegex

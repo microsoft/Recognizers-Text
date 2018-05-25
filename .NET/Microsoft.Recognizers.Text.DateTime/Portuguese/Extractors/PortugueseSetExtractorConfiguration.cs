@@ -13,10 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.EachPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.EachDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex BeforeEachDayRegex = new Regex(DateTimeDefinitions.BeforeEachDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        //TODO: write the below regex according to the corresponding one of English
-        public static readonly Regex SetWeekDayRegex = new Regex($@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
+        public static readonly Regex SetWeekDayRegex = new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex SetEachRegex = new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public PortugueseSetExtractorConfiguration() : base(DateTimeOptions.None)

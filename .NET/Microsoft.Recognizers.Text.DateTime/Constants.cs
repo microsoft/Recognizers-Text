@@ -92,6 +92,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int SemesterMonthCount = 6;
         public const int WeekDayCount = 7;
 
+        // hours of one half day
+        public const int HalfDayHourCount = 12;
+        // hours of a half mid-day-duration
+        public const int HalfMidDayDurationHourCount = 2;
+
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
     }

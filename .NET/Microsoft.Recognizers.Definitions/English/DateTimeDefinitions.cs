@@ -59,10 +59,11 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string HalfYearBackRegex = $@"(the\s+)?(H(?<number>[1-2])|({HalfYearTermRegex}))(\s+of|\s*,\s*)?\s+({YearRegex})";
 		public static readonly string HalfYearRelativeRegex = $@"(the\s+)?{HalfYearTermRegex}(\s+of|\s*,\s*)?\s+({RelativeRegex}\s+year)";
 		public static readonly string AllHalfYearRegex = $@"({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})";
-		public const string EarlyPrefixRegex = @"?<EarlyPrefix>early|beginning of|start of";
-		public const string MidPrefixRegex = @"?<MidPrefix>mid|middle of";
-		public const string LaterPrefixRegex = @"?<LatePrefix>late|later(\s+in)?|end of";
-		public static readonly string PrefixPeriodRegex = $@"(({EarlyPrefixRegex})|({MidPrefixRegex})|({LaterPrefixRegex}))";
+		public const string EarlyPrefixRegex = @"(?<EarlyPrefix>early|beginning of|start of)";
+		public const string MidPrefixRegex = @"(?<MidPrefix>mid|middle of)";
+		public const string LaterPrefixRegex = @"(?<LatePrefix>late|later(\s+in)?|end of)";
+		public static readonly string PrefixPeriodRegex = $@"({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})";
+		public const string PrefixDayRegex = @"((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\s+in)?(\s+the\s+day)?$";
 		public const string SeasonDescRegex = @"(?<seas>spring|summer|fall|autumn|winter)";
 		public static readonly string SeasonRegex = $@"\b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b";
 		public const string WhichWeekRegex = @"(week)(\s*)(?<number>\d\d|\d|0\d)";
