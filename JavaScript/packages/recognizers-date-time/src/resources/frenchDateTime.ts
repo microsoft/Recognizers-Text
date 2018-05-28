@@ -37,7 +37,7 @@ export namespace FrenchDateTime {
 	export const QuarterRegex = `(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quart(\\s+de|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+l'ann[eé]e)`;
 	export const QuarterRegexYearFront = `(${YearRegex}|l'année\\s+(${PastSuffixRegex}|${NextSuffixRegex})|${RelativeRegex}\\s+ann[eé]e)\\s+(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quarts`;
 	export const AllHalfYearRegex = `^[.]`;
-	export const PrefixPeriodRegex = `^[.]`;
+	export const PrefixDayRegex = `^[.]`;
 	export const SeasonRegex = `\\b((<seas>printemps|été|automne|hiver)+\\s*(${NextSuffixRegex}|${PastSuffixRegex}))|(?<season>(${RelativeRegex}\\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\\s+de|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+l'ann[eé]e))?)\\b`;
 	export const WhichWeekRegex = `(semaine)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
 	export const WeekOfRegex = `(semaine)(\\s*)(de)`;

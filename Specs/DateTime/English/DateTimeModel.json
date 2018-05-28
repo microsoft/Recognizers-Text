@@ -3198,4 +3198,172 @@
     }
   }]
 }
+,
+{
+  "Input": "Please find us a time to meet earlier in the week",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "earlier in the week",
+    "Start": 30,
+    "End": 48,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018-W22",
+          "type": "daterange",
+          "start": "2018-05-28",
+          "end": "2018-05-28"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Please find us a time to meet earlier this month",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "earlier this month",
+    "Start": 30,
+    "End": 47,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018-05",
+          "type": "daterange",
+          "start": "2018-05-01",
+          "end": "2018-05-16"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Please find us a time to meet earlier this year",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "earlier this year",
+    "Start": 30,
+    "End": 46,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018",
+          "type": "daterange",
+          "start": "2018-01-01",
+          "end": "2018-05-28"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Please find us a time to meet later this week",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "later this week",
+    "Start": 30,
+    "End": 44,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018-W22",
+          "type": "daterange",
+          "start": "2018-05-31",
+          "end": "2018-06-04"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Please find us a time to meet later this month",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "later this month",
+    "Start": 30,
+    "End": 45,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018-05",
+          "type": "daterange",
+          "start": "2018-05-28",
+          "end": "2018-06-01"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Please find us a time to meet later this year",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "later this year",
+    "Start": 30,
+    "End": 44,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018",
+          "type": "daterange",
+          "start": "2018-07-01",
+          "end": "2019-01-01"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Please find us a time to meet later in the year",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "later in the year",
+    "Start": 30,
+    "End": 46,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018",
+          "type": "daterange",
+          "start": "2018-07-01",
+          "end": "2019-01-01"
+        }
+      ]
+    }
+  }]
+}
 ]

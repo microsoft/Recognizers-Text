@@ -25,8 +25,8 @@ export namespace EnglishDateTime {
 	export const FullTextYearRegex = `\\b((?<firsttwoyearnum>${CenturyRegex})\\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\\s+${WrittenNumRegex})|${WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>${CenturyRegex})\\b`;
 	export const YearNumRegex = `\\b(?<year>((1[5-9]|20)\\d{2})|2100)\\b`;
 	export const YearRegex = `(${YearNumRegex}|${FullTextYearRegex})`;
-	export const WeekDayRegex = `\\b(in\\s+the\\s+day\\s+)?(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\\b`;
-	export const SingleWeekDayRegex = `\\b(in\\s+the\\s+day\\s+)?(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\\s+(Sat|Sun)))\\b`;
+	export const WeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\\b`;
+	export const SingleWeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\\s+(Sat|Sun)))\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>(of\\s+)?${RelativeRegex}\\s+month)\\b`;
 	export const WrittenMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))`;
 	export const MonthSuffixRegex = `(?<msuf>(in\\s+|of\\s+|on\\s+)?(${RelativeMonthRegex}|${WrittenMonthRegex}))`;
@@ -50,10 +50,11 @@ export namespace EnglishDateTime {
 	export const HalfYearBackRegex = `(the\\s+)?(H(?<number>[1-2])|(${HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+(${YearRegex})`;
 	export const HalfYearRelativeRegex = `(the\\s+)?${HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+(${RelativeRegex}\\s+year)`;
 	export const AllHalfYearRegex = `(${HalfYearFrontRegex})|(${HalfYearBackRegex})|(${HalfYearRelativeRegex})`;
-	export const EarlyPrefixRegex = `(?<EarlyPrefix>early|beginning of|start of)`;
+	export const EarlyPrefixRegex = `(?<EarlyPrefix>early|beginning of|start of|(?<RelEarly>earlier(\\s+in)?))`;
 	export const MidPrefixRegex = `(?<MidPrefix>mid|middle of)`;
-	export const LaterPrefixRegex = `(?<LatePrefix>late|later(\\s+in)?|end of)`;
+	export const LaterPrefixRegex = `(?<LatePrefix>late|end of|(?<RelLate>later(\\s+in)?))`;
 	export const PrefixPeriodRegex = `(${EarlyPrefixRegex}|${MidPrefixRegex}|${LaterPrefixRegex})`;
+	export const PrefixDayRegex = `((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\\s+in)?(\\s+the\\s+day)?$`;
 	export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
 	export const SeasonRegex = `\\b(?<season>(${PrefixPeriodRegex}\\s+)?(${RelativeRegex}\\s+)?${SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)\\b`;
 	export const WhichWeekRegex = `(week)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;

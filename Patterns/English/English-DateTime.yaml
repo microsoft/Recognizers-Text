@@ -105,11 +105,11 @@ AllHalfYearRegex: !nestedRegex
   def: ({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})
   references: [ HalfYearFrontRegex, HalfYearBackRegex, HalfYearRelativeRegex ]
 EarlyPrefixRegex: !simpleRegex
-  def: (?<EarlyPrefix>early|beginning of|start of)
+  def: (?<EarlyPrefix>early|beginning of|start of|(?<RelEarly>earlier(\s+in)?))
 MidPrefixRegex: !simpleRegex
   def: (?<MidPrefix>mid|middle of)
 LaterPrefixRegex: !simpleRegex
-  def: (?<LatePrefix>late|later(\s+in)?|end of)
+  def: (?<LatePrefix>late|end of|(?<RelLate>later(\s+in)?))
 PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
