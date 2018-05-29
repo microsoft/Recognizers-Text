@@ -1,6 +1,6 @@
 import { Culture as BaseCulture, CultureInfo as BaseCultureInfo } from "@microsoft/recognizers-text";
 import trimEnd = require("lodash.trimend");
-import { BigNumber } from 'bignumber.js';
+import { BigNumber } from 'bignumber.js/bignumber';
 import { LongFormatType } from "./number/models";
 
 export class Culture extends BaseCulture {
@@ -28,7 +28,7 @@ export class CultureInfo extends BaseCultureInfo {
     let bigNumber = new BigNumber(value);
     let s: string;
     if (bigNumber.decimalPlaces()) {
-      s = bigNumber.toDigits(15, BigNumber.ROUND_HALF_UP).toString();
+      s = bigNumber.precision(15, BigNumber.ROUND_HALF_UP).toString();
     } else {
       s = bigNumber.toString().toUpperCase();
     }
