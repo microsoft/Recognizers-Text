@@ -1872,5 +1872,80 @@
     },
     "NotSupported": "javascript,python",
     "Results": []
+  },
+  {
+    "Input": "What is the april 2017 bonus.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [{
+      "Text": "the april 2017",
+      "Start": 8,
+      "End": 21,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2017-04",
+            "type": "daterange",
+            "start": "2017-04-01",
+            "end": "2017-05-01"
+          }
+        ]
+      }
+    }]
+  },
+  {
+    "Input": "I went back to China in 2017 the april.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [{
+      "Text": "2017 the april",
+      "Start": 24,
+      "End": 37,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2017-04",
+            "type": "daterange",
+            "start": "2017-04-01",
+            "end": "2017-05-01"
+          }
+        ]
+      }
+    }]
+  },
+  {
+    "Input": "I went back to China in the april.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-24T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [{
+      "Text": "april",
+      "Start": 28,
+      "End": 32,
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-04",
+            "type": "daterange",
+            "start": "2018-04-01",
+            "end": "2018-05-01"
+          },
+          {
+            "timex": "XXXX-04",
+            "type": "daterange",
+            "start": "2019-04-01",
+            "end": "2019-05-01"
+          }
+        ]
+      }
+    }]
   }
 ]
