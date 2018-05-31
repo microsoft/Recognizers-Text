@@ -38,7 +38,7 @@ public abstract class BaseRecognizerTest {
 
     public static Collection<TestCase> testCases(String recognizerType) {
 
-        String recognizerTypePath = String.format("\\%s\\", recognizerType);
+        String recognizerTypePath = String.format(File.separator + recognizerType + File.separator);
 
         // Deserializer
         ObjectMapper mapper = new ObjectMapper();
