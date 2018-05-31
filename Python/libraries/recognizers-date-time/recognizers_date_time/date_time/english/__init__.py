@@ -6,3 +6,5 @@ from .date_extractor_config import *
 from .date_parser_config import *
 from .timeperiod_extractor_config import *
 from .timeperiod_parser_config import *
+from .datetime_extractor_config import *
+from .datetime_parser_config import *

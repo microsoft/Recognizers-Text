@@ -50,8 +50,8 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         return self._utility_configuration
 
     def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
-        self._time_extractor = BaseTimeExtractor(EnglishTimeExtractorConfiguration())
-        self._time_parser = BaseTimeParser(EnglishTimeParserConfiguration(None))
+        self._time_extractor = config.time_extractor
+        self._time_parser = config.time_parser
         self._integer_extractor = EnglishIntegerExtractor()
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PureNumBetweenAnd)

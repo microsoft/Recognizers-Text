@@ -6,7 +6,7 @@ from recognizers_date_time.date_time.english.base_configs import EnglishDateTime
 from recognizers_date_time.date_time.base_time import TimeParserConfiguration, AdjustParams
 from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
 from recognizers_date_time.resources.english_date_time import EnglishDateTime
-from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
+from recognizers_date_time.date_time.base_configs import BaseDateParserConfiguration
 
 class EnglishTimeParserConfiguration(TimeParserConfiguration):
     @property
@@ -29,7 +29,7 @@ class EnglishTimeParserConfiguration(TimeParserConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
-    def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
+    def __init__(self, config: BaseDateParserConfiguration):
         self._time_token_prefix: str = EnglishDateTime.TimeTokenPrefix
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AtRegex)
         self._time_regexes: List[Pattern] = [
@@ -45,7 +45,7 @@ class EnglishTimeParserConfiguration(TimeParserConfiguration):
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.ConnectNumRegex)
         ]
         self._numbers: Dict[str, int] = EnglishDateTime.Numbers
-        self._utility_configuration: DateTimeUtilityConfiguration = EnglishDateTimeUtilityConfiguration()
+        self._utility_configuration = config.utility_configuration
         self.less_than_one_hour = RegExpUtility.get_safe_reg_exp(EnglishDateTime.LessThanOneHour)
         self.time_suffix_full = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeSuffixFull)
         self.lunch_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.LunchRegex)
