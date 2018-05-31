@@ -1,13 +1,16 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime
+from collections import namedtuple
 import regex
 
 from recognizers_text.extractor import ExtractResult
-from .constants import Constants
+from recognizers_number.number.extractors import BaseNumberExtractor
+from recognizers_number.number.parsers import BaseNumberParser
+from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, FormatUtil
 
 class DateTimeExtractorConfiguration:
     @property
@@ -125,7 +128,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
                 if middle_begin > middle_end:
                     i = j + 1
                     continue
-                
+
                 middle = source[middle_begin:middle_end].strip().lower()
                 if self.config.is_connector_token(middle):
                     begin = ers[i].start
@@ -134,7 +137,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
                     i = j + 1
                     continue
             i = j
-        
+
         tokens = list(map(lambda x: self.verify_end_token(source, x), tokens))
         return tokens
 
@@ -210,8 +213,129 @@ class BaseDateTimeExtractor(DateTimeExtractor):
                 tokens = AgoLaterUtil.extractor_duration_with_before_and_after(source, er, tokens, self.config.utility_configuration)
         return tokens
 
+MatchedTimex = namedtuple('MatchedTimex', ['matched', 'timex'])
+
 class DateTimeParserConfiguration:
-    pass
+    @property
+    @abstractmethod
+    def token_before_date(self) -> str:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def token_before_time(self) -> str:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def date_extractor(self) -> DateTimeExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def time_extractor(self) -> DateTimeExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def date_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def time_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def cardinal_extractor(self) -> BaseNumberExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def number_parser(self) -> BaseNumberParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def duration_extractor(self) -> DateTimeExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def duration_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def now_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def am_time_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def pm_time_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def simple_time_of_today_after_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def simple_time_of_today_before_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def specific_time_of_day_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def the_end_of_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def unit_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def unit_map(self) -> Dict[str, str]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def numbers(self) -> Dict[str, int]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def utility_configuration(self) -> DateTimeUtilityConfiguration:
+        raise NotImplementedError
+
+    @abstractmethod
+    def have_ambiguous_token(self, source: str, matched_text: str) -> bool:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_matched_now_timex(self, source: str) -> MatchedTimex:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_swift_day(self, source: str) -> int:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_hour(self, source: str, hour: int) -> int:
+        raise NotImplementedError
 
 class BaseDateTimeParser(DateTimeParser):
     @property
@@ -222,5 +346,85 @@ class BaseDateTimeParser(DateTimeParser):
         self.config = config
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
-        #TODO: code
+        if reference is None:
+            reference = datetime.now()
+
+        result = DateTimeParseResult(source)
+
+        if source.type is self.parser_type_name:
+            source_text = source.text.lower()
+
+            inner_result = self.merge_date_and_time(source_text, reference)
+            if not inner_result.success:
+                inner_result = self.parse_basic_regex(source_text, reference)
+            if not inner_result.success:
+                inner_result = self.parse_time_of_today(source_text, reference)
+            if not inner_result.success:
+                inner_result = self.parse_special_time_of_date(source_text, reference)
+            if not inner_result.success:
+                inner_result = self.parser_duration_with_ago_and_later(source_text, reference)
+
+            if inner_result.success:
+                inner_result.future_resolution[TimeTypeConstants.DATETIME] = FormatUtil.format_date_time(inner_result.future_value)
+                inner_result.past_resolution[TimeTypeConstants.DATETIME] = FormatUtil.format_date_time(inner_result.past_value)
+                result.value = inner_result
+                result.timex_str = inner_result.timex if inner_result is not None else ''
+                result.resolution_str = ''
+
+        return result
+
+    # merge a Date entity and a Time entity
+    def merge_date_and_time(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+        er1: ExtractResult = next(self.config.date_extractor.extract(source, reference), None)
+        if er1 is None:
+            ers = self.config.date_extractor.extract(self.config.token_before_date + source, reference)
+            if len(ers) == 1:
+                er1: ExtractResult = next(ers)
+                er1.start -= len(self.config.token_before_date)
+            else:
+                return result
+        else:
+            # this is to understand if there is an ambiguous token in the text. For some languages (e.g. spanish)
+            # the same word could mean different things (e.g a time in the day or an specific day).
+            if self.config.have_ambiguous_token(source, er1.text):
+                return result
+
+        er2: ExtractResult = next(self.config.time_extractor.extract(source, reference))
+        if er2 is None:
+            # here we filter out "morning, afternoon, night..." time entities
+            ers = self.config.time_extractor.extract(self.config.token_before_time + source, reference)
+            if len(ers) == 1:
+                er2: ExtractResult = next(ers, None)
+                er2.start -= len(self.config.token_before_time)
+            else:
+                return result
+        
+        # handle case "Oct. 5 in the afternoon at 7:00"
+        # in this case "5 in the afternoon" will be extract as a Time entity
+        
+            
+        return result
+
+    def parse_basic_regex(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+        source = source.strip().lower()
+
+        # handle "now"
+        match = regex.search(self.config.now_regex, source)
+        if match is not None and match.start() == 0 and match.group() == source:
+            matched_now_timex = self.config.get_matched_now_timex(source)
+            result.timex = matched_now_timex.timex
+            result.future_value = reference
+            result.past_value = reference
+            result.success = matched_now_timex.matched
+        return result
+
+    def parse_time_of_today(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        pass
+
+    def parse_special_time_of_date(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+        pass
+
+    def parser_duration_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         pass
