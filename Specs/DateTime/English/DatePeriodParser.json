@@ -5123,9 +5123,9 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet earlier in the week",
+  "Input": "We could have scheduled a time to meet earlier in the week.",
   "Context": {
-    "ReferenceDateTime": "2018-05-28T00:00:00"
+    "ReferenceDateTime": "2018-05-31T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
@@ -5136,11 +5136,11 @@
         "Timex": "2018-W22",
         "FutureResolution": {
           "startDate": "2018-05-28",
-          "endDate": "2018-05-28"
+          "endDate": "2018-05-31"
         },
         "PastResolution": {
           "startDate": "2018-05-28",
-          "endDate": "2018-05-28"
+          "endDate": "2018-05-31"
         }
       }
     }
@@ -5148,7 +5148,7 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet earlier this month",
+  "Input": "We could have scheduled a time to meet earlier this month.",
   "Context": {
     "ReferenceDateTime": "2018-05-13T00:00:00"
   },
@@ -5173,7 +5173,7 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet earlier this year",
+  "Input": "We could have scheduled a time to meet earlier this year.",
   "Context": {
     "ReferenceDateTime": "2018-05-28T00:00:00"
   },

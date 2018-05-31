@@ -1874,16 +1874,16 @@
     "Results": []
   },
   {
-    "Input": "Please find us a time to meet earlier in the week",
+    "Input": "We could have scheduled a time to meet earlier in the week.",
     "Context": {
-      "ReferenceDateTime": "2018-05-28T00:00:00"
+      "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupported": "python",
     "Results": [
       {
         "Text": "earlier in the week",
-        "Start": 30,
-        "End": 48,
+        "Start": 39,
+        "End": 57,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -1891,7 +1891,7 @@
               "timex": "2018-W22",
               "type": "daterange",
               "start": "2018-05-28",
-              "end": "2018-05-28"
+              "end": "2018-05-31"
             }
           ]
         }
@@ -1899,7 +1899,7 @@
     ]
   },
   {
-    "Input": "Please find us a time to meet earlier this month",
+    "Input": "We could have scheduled a time to meet earlier this month.",
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
@@ -1907,8 +1907,8 @@
     "Results": [
       {
         "Text": "earlier this month",
-        "Start": 30,
-        "End": 47,
+        "Start": 39,
+        "End": 56,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -1924,7 +1924,7 @@
     ]
   },
   {
-    "Input": "Please find us a time to meet earlier this year",
+    "Input": "We could have scheduled a time to meet earlier this year.",
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
@@ -1932,8 +1932,8 @@
     "Results": [
       {
         "Text": "earlier this year",
-        "Start": 30,
-        "End": 46,
+        "Start": 39,
+        "End": 55,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [

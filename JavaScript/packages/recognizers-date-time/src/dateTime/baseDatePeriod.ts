@@ -140,6 +140,7 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 idx += 2;
                 continue;
             }
+
             if (this.config.hasConnectorToken(middleStr)) {
                 let periodBegin = er[idx].start || 0;
                 let periodEnd = (er[idx + 1].start || 0) + (er[idx + 1].length || 0);
@@ -603,6 +604,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 if (latePrefix) {
                     beginDate = DateUtils.safeCreateFromMinValue(year, 6, 1);
                 }
+
                 if (earlierPrefix && swift === 0) {
                     if (endDate > referenceDate) {
                         endDate = referenceDate;
