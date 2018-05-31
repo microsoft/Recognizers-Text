@@ -357,7 +357,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceTime,
                 config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex, 
-                config.UtilityConfiguration);
+                config.UtilityConfiguration, config.GetSwiftDay);
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
