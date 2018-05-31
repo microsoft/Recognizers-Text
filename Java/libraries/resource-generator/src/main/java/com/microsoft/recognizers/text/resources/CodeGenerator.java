@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.resources.datatypes.*;
 import com.microsoft.recognizers.text.resources.writters.*;
 import org.yaml.snakeyaml.TypeDescription;
 import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.Constructor;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -24,15 +25,18 @@ public class CodeGenerator {
 
     public static void Generate(Path yamlFilePath, Path outputFilePath, String header, String footer) throws IOException {
 
+        // Config YAML parser
+        Constructor constructor = new Constructor();
+        constructor.addTypeDescription(new TypeDescription(ParamsRegex.class, "!paramsRegex"));
+        constructor.addTypeDescription(new TypeDescription(SimpleRegex.class, "!simpleRegex"));
+        constructor.addTypeDescription(new TypeDescription(NestedRegex.class, "!nestedRegex"));
+        constructor.addTypeDescription(new TypeDescription(String.class, "!char"));
+        constructor.addTypeDescription(new TypeDescription(Dictionary.class, "!dictionary"));
+        constructor.addTypeDescription(new TypeDescription(List.class, "!list"));
+
         // Read and Parse YAML
-        Yaml yaml = new Yaml();
-        yaml.addTypeDescription(new TypeDescription(ParamsRegex.class, "!paramsRegex"));
-        yaml.addTypeDescription(new TypeDescription(SimpleRegex.class, "!simpleRegex"));
-        yaml.addTypeDescription(new TypeDescription(NestedRegex.class, "!nestedRegex"));
-        yaml.addTypeDescription(new TypeDescription(String.class, "!char"));
-        yaml.addTypeDescription(new TypeDescription(Dictionary.class, "!dictionary"));
-        yaml.addTypeDescription(new TypeDescription(List.class, "!list"));
-        Map<String, Object> raw = yaml.load(new FileReader(yamlFilePath.toString()));
+        Yaml yaml = new Yaml(constructor);
+        Map<String, Object> raw = (Map<String, Object>)yaml.load(new FileReader(yamlFilePath.toString()));
 
         // Transform
         String[] lines = GenerateCodeLines(raw);

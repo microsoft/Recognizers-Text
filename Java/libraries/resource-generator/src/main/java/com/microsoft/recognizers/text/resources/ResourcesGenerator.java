@@ -10,26 +10,32 @@ import java.nio.file.Path;
 
 public class ResourcesGenerator {
 
-    private static final String ResourcesPath = "../../../Patterns";
+    private static final String ResourcesPath = "../Patterns";
 
-    public static void main(String[] args) throws IOException {
-        String resourceDefinitionFile = args[0];
-        ResourceDefinitions definition = Parse(resourceDefinitionFile);
-        Path output = FileSystems.getDefault().getPath(definition.outputPath);
-        definition.configFiles.forEach(config -> {
-            Path inputPath = FileSystems.getDefault().getPath(ResourcesPath, String.join(File.separator, config.input) + ".yaml");
-            Path outputPath = FileSystems.getDefault().getPath(definition.outputPath, config.output + ".java");
-            System.out.println(String.format("%s => %s", inputPath.toString(), outputPath.toString()));
+    public static void main(String[] args) throws Exception {
+        if (args.length == 0) {
+            throw new Exception("Please specify path to pattern/resource file.");
+        }
 
-            String header = String.join(System.lineSeparator(), config.header);
-            String footer = String.join(System.lineSeparator(), config.footer);
+        for(String resourceDefinitionFilePath : args) {
 
-            try {
-                CodeGenerator.Generate(inputPath, outputPath, header, footer);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+            ResourceDefinitions definition = Parse(resourceDefinitionFilePath);
+            Path output = FileSystems.getDefault().getPath(definition.outputPath);
+            definition.configFiles.forEach(config -> {
+                Path inputPath = FileSystems.getDefault().getPath(ResourcesPath, String.join(File.separator, config.input) + ".yaml");
+                Path outputPath = FileSystems.getDefault().getPath(definition.outputPath, config.output + ".java");
+                System.out.println(String.format("%s => %s", inputPath.toString(), outputPath.toString()));
+
+                String header = String.join(System.lineSeparator(), config.header);
+                String footer = String.join(System.lineSeparator(), config.footer);
+
+                try {
+                    CodeGenerator.Generate(inputPath, outputPath, header, footer);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 
     private static ResourceDefinitions Parse(String resourceDefinitionFile) throws IOException {
