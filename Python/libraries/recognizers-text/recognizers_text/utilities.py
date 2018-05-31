@@ -7,8 +7,8 @@ class RegExpUtility:
         return regex.compile(source, flags=flags)
 
     @staticmethod
-    def get_group(match: Match, group: str) -> str:
-        return match.groupdict().get(group, '') or ''
+    def get_group(match: Match, group: str, default_val: str = '') -> str:
+        return match.groupdict().get(group, default_val) or default_val
 
     @staticmethod
     def get_group_list(match: Match, group: str) -> List[str]:

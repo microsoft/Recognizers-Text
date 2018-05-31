@@ -546,8 +546,8 @@ class BaseDateParser(DateTimeParser):
             weekday = self.config.day_of_week.get(weekday_str)
             value = DateUtils.this(reference, weekday)
 
-            if weekday < DayOfWeek.Monday:
-                weekday = DayOfWeek.Sunday
+            if weekday < int(DayOfWeek.Monday):
+                weekday = int(DayOfWeek.Sunday)
             if weekday < reference.isoweekday():
                 value = DateUtils.next(reference, weekday)
             result.timex = 'XXXX-WXX-' + str(weekday)
@@ -653,7 +653,7 @@ class BaseDateParser(DateTimeParser):
         first_day = datetime(year, month, 1)
         first_weekday = DateUtils.this(first_day, weekday)
         if weekday == 0:
-            weekday = DayOfWeek.Sunday
+            weekday = int(DayOfWeek.Sunday)
         if weekday < first_day.isoweekday():
             first_weekday = DateUtils.next(first_day, weekday)
         first_weekday = first_weekday.replace(day=first_weekday.day + (7 * (cardinal - 1)))

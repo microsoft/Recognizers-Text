@@ -107,7 +107,7 @@ class FormatUtil:
 
     @staticmethod
     def format_date_time(date_time: datetime) -> str:
-        return FormatUtil.format_date(date_time) + FormatUtil.format_time(date_time)
+        return FormatUtil.format_date(date_time) + ' ' + FormatUtil.format_time(date_time)
 
     @staticmethod
     def all_str_to_pm(source: str) -> str:
@@ -178,7 +178,7 @@ class DateUtils:
     @staticmethod
     def this(from_date: datetime, day_of_week: DayOfWeek)-> datetime:
         start = from_date.isoweekday()
-        target = day_of_week if day_of_week >= DayOfWeek.Monday else DayOfWeek.Sunday
+        target = day_of_week if day_of_week >= int(DayOfWeek.Monday) else int(DayOfWeek.Sunday)
         result = from_date + timedelta(days=target-start)
         return result
 
@@ -249,7 +249,7 @@ class MatchingUtil:
     @staticmethod
     def get_in_index(source: str, regexp: Pattern) -> MatchedIndex:
         result = MatchedIndex(matched=False, index=-1)
-        referenced_match = regex.search(regexp, source.strip().lower().split().pop())
+        referenced_match = regex.search(regexp, source.strip().lower().split(' ').pop())
         if referenced_match:
             result = MatchedIndex(matched=True, index=len(source) - source.lower().rfind(referenced_match.group()))
 
@@ -306,10 +306,10 @@ class AgoLaterUtil:
         if not match:
             return result
         after_str = source[duration.start + duration.length]
-        before_str = source[0, duration.start]
+        before_str = source[0:duration.start]
         src_unit = match.group('unit')
         duration_result: DateTimeResolutionResult = pr.value
-        num_str = duration_result.timex[0, len(duration_result.timex) - 1].replace('P', '').replace('T', '')
+        num_str = duration_result.timex[0:len(duration_result.timex) - 1].replace('P', '').replace('T', '')
         num = int(num_str)
         if not num:
             return result
