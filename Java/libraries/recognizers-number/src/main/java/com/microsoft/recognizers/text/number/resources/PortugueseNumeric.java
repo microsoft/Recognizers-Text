@@ -149,7 +149,7 @@ public class PortugueseNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex);
 
-    public static final String FractionPrepositionRegex = "(?<=\\b)(({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
+    public static final String FractionPrepositionRegex = "(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex);
 
     public static final String AllFloatRegex = "{AllIntRegex}(\\s+(vírgula|virgula|e|ponto)){AllPointRegex}"
@@ -180,7 +180,7 @@ public class PortugueseNumeric {
 
     public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)";
 
-    public static final String NumberWithSuffixPercentage = "({BaseNumbers.NumberReplaceToken})(\\s*)(%|por cento|pontos percentuais)"
+    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String DecimalSeparatorChar = ",";

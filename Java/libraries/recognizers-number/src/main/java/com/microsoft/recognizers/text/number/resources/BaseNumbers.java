@@ -12,6 +12,8 @@ public class BaseNumbers {
 
     public static final String NumberReplaceToken = "@builtin.num";
 
+    public static final String FractionNumberReplaceToken = "@builtin.num.fraction";
+
     public static String IntegerRegexDefinition(String placeholder, String thousandsmark) {
         return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{1,3}({thousandsmark}\\d{3})+(?={placeholder})"
 			.replace("{placeholder}", placeholder)

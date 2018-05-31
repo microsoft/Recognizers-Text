@@ -147,7 +147,7 @@ public class FrenchNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SuffixOrdinalRegex}", SuffixOrdinalRegex);
 
-    public static final String FractionPrepositionRegex = "(?<=\\b)(({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
+    public static final String FractionPrepositionRegex = "(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex);
 
     public static final String AllPointRegex = "((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))"
@@ -182,10 +182,10 @@ public class FrenchNumeric {
 
     public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)";
 
-    public static final String NumberWithSuffixPercentage = "({BaseNumbers.NumberReplaceToken})(\\s*)(%|pourcentages|pourcents|pourcentage|pourcent)"
+    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(pourcentages|pourcents|pourcentage|pourcent)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
-    public static final String NumberWithPrefixPercentage = "(%|pourcent|pourcent des|pourcentage de)(\\s*)({BaseNumbers.NumberReplaceToken})"
+    public static final String NumberWithPrefixPercentage = "((?<!{BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\\s*)({BaseNumbers.NumberReplaceToken})(?=\\s|$)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String DecimalSeparatorChar = ",";

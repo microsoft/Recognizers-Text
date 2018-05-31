@@ -146,7 +146,7 @@ public class SpanishNumeric {
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SufixRoundOrdinalRegex}", SufixRoundOrdinalRegex);
 
-    public static final String FractionPrepositionRegex = "(?<=\\b)(({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
+    public static final String FractionPrepositionRegex = "(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex);
 
     public static final String AllPointRegex = "((\\s+{ZeroToNineIntegerRegex})+|(\\s+{AllIntRegex}))"
@@ -179,7 +179,7 @@ public class SpanishNumeric {
 
     public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)";
 
-    public static final String NumberWithPrefixPercentage = "({BaseNumbers.NumberReplaceToken})(\\s*)(%|por ciento|por cien)"
+    public static final String NumberWithPrefixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por ciento|por cien)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)";
