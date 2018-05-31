@@ -7,7 +7,6 @@ import java.util.Collection;
 public class NumberWithUnitRecognizerTest extends BaseRecognizerTest {
 
     public NumberWithUnitRecognizerTest(TestCase currentCase) {
-
         super(currentCase);
     }
 

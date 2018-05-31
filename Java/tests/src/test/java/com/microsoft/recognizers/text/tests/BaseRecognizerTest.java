@@ -23,7 +23,7 @@ public abstract class BaseRecognizerTest {
 
     private static final String SpecsPath = "../../Specs";
 
-    private final TestCase currentCase;
+    protected final TestCase currentCase;
 
     public BaseRecognizerTest(TestCase currentCase) {
         this.currentCase = currentCase;
