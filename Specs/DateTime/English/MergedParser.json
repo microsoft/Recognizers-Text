@@ -2397,7 +2397,7 @@
           {
             "timex":"2016-01-01",
             "Mod":"since",
-			"type":"daterange",
+            "type":"daterange",
             "start":"2016-01-01"
           }
         ]
@@ -2422,7 +2422,7 @@
           {
             "timex":"2016-01-01",
             "Mod":"after",
-			"type":"daterange",
+            "type":"daterange",
             "start":"2016-01-01"
           }
         ]
@@ -2446,7 +2446,7 @@
         "values":[
           {
             "timex":"2016-01-01",            
-			"type":"date",
+            "type":"date",
             "value":"2016-01-01"
           }
         ]
@@ -2470,7 +2470,7 @@
         "values":[
           {
             "timex":"2016-01-01",
-			"Mod":"until",
+            "Mod":"until",
             "type":"daterange",
             "end":"2016-01-01"
           }
@@ -2495,7 +2495,7 @@
         "values":[
           {
             "timex":"2016-01-01",
-			"Mod":"before",
+            "Mod":"before",
             "type":"daterange",
             "end":"2016-01-01"
           }
@@ -2521,7 +2521,7 @@
           {
             "timex":"2016-01-01",
             "Mod":"until",
-			"type":"daterange",
+            "type":"daterange",
             "end":"2016-01-01" 
           }
         ]
@@ -2545,7 +2545,7 @@
         "values":[
           {
             "timex":"2016-01-01",
-			"type":"date",
+            "type":"date",
             "value":"2016-01-01" 
           }
         ]
@@ -2570,7 +2570,7 @@
           {
             "timex":"2016-01-01",
             "Mod":"before",
-			"type":"daterange",
+            "type":"daterange",
             "end":"2016-01-01" 
           }
         ]
@@ -2595,7 +2595,7 @@
           {
             "timex":"2018-02",
             "Mod":"until",
-			"type":"daterange",
+            "type":"daterange",
             "end":"2018-03-01"
           }
         ]
@@ -2620,7 +2620,7 @@
           {
             "timex":"2018-02",
             "Mod":"before",
-			"type":"daterange",
+            "type":"daterange",
             "end":"2018-02-01"
           }
         ]
@@ -2644,8 +2644,8 @@
         "values":[
           {
             "timex":"2018-02",
-			"type":"daterange",
-			"start":"2018-02-01",
+            "type":"daterange",
+            "start":"2018-02-01",
             "end":"2018-03-01"
           }
         ]
@@ -2670,7 +2670,7 @@
           {
             "timex":"2016",
             "Mod":"since",
-			"type":"daterange",
+            "type":"daterange",
             "start":"2016-01-01"         
           }
         ]
@@ -2695,7 +2695,7 @@
           {
             "timex":"2016",
             "Mod":"after",
-			"type":"daterange",
+            "type":"daterange",
             "start":"2017-01-01"         
           }
         ]
@@ -2719,7 +2719,7 @@
         "values":[
           {
             "timex":"2016",
-			"type":"daterange",
+            "type":"daterange",
             "start":"2016-01-01",
             "end":"2017-01-01" 			
           }
@@ -2745,7 +2745,7 @@
           {
             "timex":"2016-11-07T18:30",
             "Mod":"since",
-			"type":"datetimerange",
+            "type":"datetimerange",
             "start":"2016-11-07 18:30:00"         
           }
         ]
@@ -2770,7 +2770,7 @@
           {
             "timex":"2016-11-07T18:30",
             "Mod":"after",
-			"type":"datetimerange",
+            "type":"datetimerange",
             "start":"2016-11-07 18:30:00"         
           }
         ]
@@ -2794,7 +2794,7 @@
         "values":[
           {
             "timex":"2016-11-07T18:30",
-			"type":"datetime",
+            "type":"datetime",
             "value":"2016-11-07 18:30:00"         
           }
         ]
@@ -2819,7 +2819,7 @@
           {
             "timex":"2016-11-09",
             "Mod":"until",
-			"type":"daterange",
+            "type":"daterange",
             "end":"2016-11-09"         
           }
         ]
@@ -2843,7 +2843,7 @@
         "values":[
           {
             "timex":"2016-11-09",
-			"type":"date",
+            "type":"date",
             "value":"2016-11-09"         
           }
         ]
@@ -2868,7 +2868,7 @@
           {
             "timex":"2016-11-09",
             "Mod":"before",
-			"type":"daterange",
+            "type":"daterange",
             "end":"2016-11-09"         
           }
         ]
@@ -2893,7 +2893,7 @@
           {
             "timex":"2018-05-15T15",
             "Mod":"until",
-			"type":"datetimerange",
+            "type":"datetimerange",
             "end":"2018-05-15 15:00:00"         
           }
         ]
@@ -2918,7 +2918,7 @@
           {
             "timex":"2018-05-15T15",
             "Mod":"before",
-			"type":"datetimerange",
+            "type":"datetimerange",
             "end":"2018-05-15 15:00:00"         
           }
         ]
@@ -2942,7 +2942,7 @@
         "values":[
           {
             "timex":"2018-05-15T15",
-			"type":"datetime",
+            "type":"datetime",
             "value":"2018-05-15 15:00:00"         
           }
         ]
@@ -2966,7 +2966,7 @@
         "values":[
           {
             "timex":"2018-06-02",
-			"type":"date",
+            "type":"date",
             "value":"2018-06-02"         
           }
         ]
@@ -2990,7 +2990,7 @@
         "values":[
           {
             "timex":"2018-06-22",
-			"type":"date",
+            "type":"date",
             "value":"2018-06-22"         
           }
         ]
@@ -3014,7 +3014,7 @@
         "values":[
           {
             "timex":"2018-05-28",
-			"type":"date",
+            "type":"date",
             "value":"2018-05-28"         
           }
         ]
