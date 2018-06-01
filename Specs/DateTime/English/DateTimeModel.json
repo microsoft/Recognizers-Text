@@ -3206,8 +3206,8 @@
   },
   "NotSupported": "python",
   "Results": [{
-    "Text": "the april 2017",
-    "Start": 8,
+    "Text": "april 2017",
+    "Start": 12,
     "End": 21,
     "TypeName": "datetimeV2.daterange",
     "Resolution": {
@@ -3224,15 +3224,15 @@
 }
 ,
 {
-  "Input": "I went back to China in 2017 the april.",
+  "Input": "I went back to China in 2017 april.",
   "Context": {
     "ReferenceDateTime": "2018-05-24T00:00:00"
   },
   "NotSupported": "python",
   "Results": [{
-    "Text": "2017 the april",
+    "Text": "2017 april",
     "Start": 24,
-    "End": 37,
+    "End": 33,
     "TypeName": "datetimeV2.daterange",
     "Resolution": {
       "values": [
