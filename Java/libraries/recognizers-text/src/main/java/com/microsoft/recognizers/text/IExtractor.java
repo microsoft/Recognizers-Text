@@ -1,5 +1,7 @@
 package com.microsoft.recognizers.text;
 
+import java.util.List;
+
 public interface IExtractor {
-    ExtractResult extract(String input);
+    List<ExtractResult> extract(String input);
 }

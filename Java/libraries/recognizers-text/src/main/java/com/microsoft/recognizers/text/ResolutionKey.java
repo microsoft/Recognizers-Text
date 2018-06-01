@@ -6,4 +6,5 @@ public class ResolutionKey {
     public static final String Type = "type";
     public static final String Unit = "unit";
     public static final String Score = "score";
+    public static final String IsoCurrency = "isoCurrency";
 }

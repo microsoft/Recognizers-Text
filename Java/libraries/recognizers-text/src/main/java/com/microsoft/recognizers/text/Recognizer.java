@@ -5,14 +5,14 @@ import org.javatuples.Pair;
 
 import java.util.function.Function;
 
-public abstract class BaseRecognizer<TRecognizerOptions extends Enum<TRecognizerOptions>> {
+public abstract class Recognizer<TRecognizerOptions extends Enum<TRecognizerOptions>> {
 
     public final String targetCulture;
     public final TRecognizerOptions options;
 
     private final ModelFactory<TRecognizerOptions> factory;
 
-    protected BaseRecognizer(String targetCulture, TRecognizerOptions options, boolean lazyInitialization) {
+    protected Recognizer(String targetCulture, TRecognizerOptions options, boolean lazyInitialization) {
         this.targetCulture = targetCulture;
         this.options = options;
 

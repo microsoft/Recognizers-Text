@@ -8,15 +8,19 @@ public class Culture {
     public static final String Spanish = "es-es";
     public static final String Portuguese = "pt-br";
     public static final String French = "fr-fr";
+    public static final String German = "de-de";
     public static final String Japanese = "ja-jp";
+    public static final String Dutch = "nl-nl";
 
     private static final Culture[] SupportedCultures = new Culture[]{
-            new Culture("English", Culture.English),
-            new Culture("Chinese", Culture.Chinese),
-            new Culture("Spanish", Culture.Spanish),
-            new Culture("Portuguese", Culture.Portuguese),
-            new Culture("French", Culture.French),
-            new Culture("Japanese", Culture.Japanese)
+            new Culture("English", English),
+            new Culture("Chinese", Chinese),
+            new Culture("Spanish", Spanish),
+            new Culture("Portuguese", Portuguese),
+            new Culture("French", French),
+            new Culture("German", German),
+            new Culture("Japanese", Japanese),
+            new Culture("Dutch", Dutch)
     };
 
 

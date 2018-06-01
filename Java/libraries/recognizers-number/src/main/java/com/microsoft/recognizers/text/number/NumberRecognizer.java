@@ -1,8 +1,8 @@
 package com.microsoft.recognizers.text.number;
 
-import com.microsoft.recognizers.text.BaseRecognizer;
+import com.microsoft.recognizers.text.Recognizer;
 
-public class NumberRecognizer extends BaseRecognizer<NumberOptions> {
+public class NumberRecognizer extends Recognizer<NumberOptions> {
 
     public NumberRecognizer() {
         this(null, NumberOptions.None, true);
