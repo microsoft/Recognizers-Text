@@ -34,6 +34,7 @@ export namespace SpanishDateTime {
 	export const QuarterRegex = `(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|cuarto|4to)\\s+cuatrimestre(\\s+de|\\s*,\\s*)?\\s+(${FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año)`;
 	export const QuarterRegexYearFront = `(${FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año)\\s+(el\\s+)?(?<cardinal>(primer|primero)|1er|segundo|2do|(tercer|terceo)|3ro|cuarto|4to)\\s+cuatrimestre`;
 	export const AllHalfYearRegex = `^[.]`;
+	export const PrefixDayRegex = `^[.]`;
 	export const SeasonRegex = `\\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente))\\s+)?(?<seas>primavera|verano|otoño|invierno)((\\s+del?|\\s*,\\s*)?\\s+(${FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))?)\\b`;
 	export const WhichWeekRegex = `(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
 	export const WeekOfRegex = `(semana)(\\s*)((do|da|de))`;
@@ -130,8 +131,10 @@ export namespace SpanishDateTime {
 	export const FollowedUnit = `^\\s*${UnitRegex}`;
 	export const DurationNumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)${UnitRegex}`;
 	export const AnUnitRegex = `\\b(un(a)?)\\s+${UnitRegex}`;
+	export const DuringRegex = `^[.]`;
 	export const AllRegex = `\\b(?<all>tod[oa]?\\s+(el|la)\\s+(?<unit>año|mes|semana|d[ií]a))\\b`;
 	export const HalfRegex = `\\b(?<half>medi[oa]\\s+(?<unit>ano|mes|semana|d[íi]a|hora))\\b`;
+	export const ConjunctionRegex = `^[.]`;
 	export const InexactNumberRegex = `\\b(pocos|poco|algo|varios)\\b`;
 	export const InexactNumberUnitRegex = `\\b(pocos|poco|algo|varios)\\s+${UnitRegex}`;
 	export const HolidayRegex1 = `\\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|noche vieja|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|noche buena|d[ií]a de acci[oó]n de gracias|acci[oó]n de gracias|yuandan|halloween|noches de brujas|pascuas)(\\s+(del?\\s+)?(${FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;
@@ -188,6 +191,7 @@ export namespace SpanishDateTime {
 	export const RelativeDayRegex = `^[\\.]`;
 	export const RestOfDateRegex = `^[\\.]`;
 	export const RelativeDurationUnitRegex = `^[\\.]`;
+	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
 	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;

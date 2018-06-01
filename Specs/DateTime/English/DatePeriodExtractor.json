@@ -3559,4 +3559,37 @@
     }
   ]
 }
+,
+{
+  "Input": "I was not there the same month that it happened.",
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "same month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was not there the same week that it happened.",
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "same week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I weren't there that year.",
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "that year",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

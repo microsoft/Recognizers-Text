@@ -43,6 +43,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string QuarterRegex = $@"(el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3ro|cuarto|4to)\s+cuatrimestre(\s+de|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)";
 		public static readonly string QuarterRegexYearFront = $@"({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)\s+(el\s+)?(?<cardinal>(primer|primero)|1er|segundo|2do|(tercer|terceo)|3ro|cuarto|4to)\s+cuatrimestre";
 		public const string AllHalfYearRegex = @"^[.]";
+		public const string PrefixDayRegex = @"^[.]";
 		public static readonly string SeasonRegex = $@"\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente))\s+)?(?<seas>primavera|verano|otoño|invierno)((\s+del?|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))?)\b";
 		public const string WhichWeekRegex = @"(semana)(\s*)(?<number>\d\d|\d|0\d)";
 		public const string WeekOfRegex = @"(semana)(\s*)((do|da|de))";
@@ -139,8 +140,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
 		public static readonly string DurationNumberCombinedWithUnit = $@"\b(?<num>\d+(\,\d*)?){UnitRegex}";
 		public static readonly string AnUnitRegex = $@"\b(un(a)?)\s+{UnitRegex}";
+		public const string DuringRegex = @"^[.]";
 		public const string AllRegex = @"\b(?<all>tod[oa]?\s+(el|la)\s+(?<unit>año|mes|semana|d[ií]a))\b";
 		public const string HalfRegex = @"\b(?<half>medi[oa]\s+(?<unit>ano|mes|semana|d[íi]a|hora))\b";
+		public const string ConjunctionRegex = @"^[.]";
 		public const string InexactNumberRegex = @"\b(pocos|poco|algo|varios)\b";
 		public static readonly string InexactNumberUnitRegex = $@"\b(pocos|poco|algo|varios)\s+{UnitRegex}";
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|noche vieja|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|noche buena|d[ií]a de acci[oó]n de gracias|acci[oó]n de gracias|yuandan|halloween|noches de brujas|pascuas)(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
@@ -427,6 +430,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string RelativeDayRegex = @"^[\.]";
 		public const string RestOfDateRegex = @"^[\.]";
 		public const string RelativeDurationUnitRegex = @"^[\.]";
+		public const string ReferenceDatePeriodRegex = @"^[.]";
 		public const string FromToRegex = @"\b(from).+(to)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
 		public const string PrepositionSuffixRegex = @"\b(on|in|at|around|from|to)$";

@@ -70,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MORE_THAN_MOD = "more";
         public const string LESS_THAN_MOD = "less";
 
+        public const string REF_UNDEF_MOD = "ref_undef";
+
         // Invalid year
         public const int InvalidYear = int.MinValue;
 
@@ -89,6 +91,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int TrimesterMonthCount = 3;
         public const int SemesterMonthCount = 6;
         public const int WeekDayCount = 7;
+
+        // hours of one half day
+        public const int HalfDayHourCount = 12;
+        // hours of a half mid-day-duration
+        public const int HalfMidDayDurationHourCount = 2;
 
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";

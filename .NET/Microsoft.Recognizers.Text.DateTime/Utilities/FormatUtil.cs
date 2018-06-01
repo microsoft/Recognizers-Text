@@ -16,6 +16,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (month == -1)
                 {
+                    if (day == -1)
+                    {
+                        return string.Join("-", "XXXX", "XX", "XX");
+                    }
+                    
                     return string.Join("-", "XXXX", "XX", day.ToString("D2"));
                 }
 
@@ -132,9 +137,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string ToIsoWeekTimex(System.DateTime monday)
         {
-            Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+            var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
             return monday.Year.ToString("D4") + "-W" + 
-                Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+                cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
                 .ToString("D2");
         }
     }

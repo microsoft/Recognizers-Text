@@ -33,6 +33,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.AnUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DuringRegex = 
+            new Regex(
+                DateTimeDefinitions.DuringRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex AllRegex = 
             new Regex(
                 DateTimeDefinitions.AllRegex,
@@ -70,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDurationExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchDurationExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
@@ -88,6 +93,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithDurationUnit;
 
         Regex IDurationExtractorConfiguration.AnUnitRegex => AnUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DuringRegex => DuringRegex;
 
         Regex IDurationExtractorConfiguration.AllRegex => AllRegex;
 

@@ -644,9 +644,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (match.Success && match.Length == text.Length)
             {
                 var tmp = match.Value;
+
+                // Trim() to handle extra whitespaces like '07 年'
                 if (tmp.EndsWith("年"))
                 {
-                    tmp = tmp.Substring(0, tmp.Length - 1);
+                    tmp = tmp.Substring(0, tmp.Length - 1).Trim();
                 }
 
                 var num = 0;

@@ -65,6 +65,9 @@ QuarterRegexYearFront: !nestedRegex
 AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+PrefixDayRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.] 
 SeasonRegex: !nestedRegex
   def: \b(?<season>(([uú]ltim[oa]|[nd]?es[st][ea]|n?[oa]|(pr[oó]xim[oa]s?|seguinte))\s+)?(?<seas>primavera|ver[ãa]o|outono|inverno)((\s+)?(seguinte|((de\s+|,)?\s*{FullYearRegex})|((do\s+)?(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\s+ano)))?)\b
   references: [ FullYearRegex ]
@@ -353,10 +356,16 @@ DurationNumberCombinedWithUnit: !nestedRegex
 AnUnitRegex: !nestedRegex
   def: \b(um(a)?)\s+{UnitRegex}
   references: [ UnitRegex ]
+DuringRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AllRegex: !simpleRegex
   def: \b(?<all>tod[oa]?\s+(o|a)\s+(?<unit>ano|m[êe]s|semana|dia))\b
 HalfRegex: !simpleRegex
   def: \b(?<half>mei[oa]\s+(?<unit>ano|m[êe]s|semana|dia|hora))\b
+ConjunctionRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 InexactNumberRegex: !simpleRegex
   def: \b(poucos|pouco|algum|alguns|v[áa]rios)\b
 InexactNumberUnitRegex: !nestedRegex
@@ -722,6 +731,9 @@ RestOfDateRegex: !simpleRegex
 RelativeDurationUnitRegex: !simpleRegex
   # TODO: change to Portuguese according to corresponding Regex
   def: ^[\.]
+ReferenceDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 FromToRegex: !simpleRegex
   # TODO: change to Portuguese according to corresponding Regex
   def: \b(from).+(to)\b.+

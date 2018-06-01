@@ -37,6 +37,7 @@ export namespace FrenchDateTime {
 	export const QuarterRegex = `(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quart(\\s+de|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+l'ann[eé]e)`;
 	export const QuarterRegexYearFront = `(${YearRegex}|l'année\\s+(${PastSuffixRegex}|${NextSuffixRegex})|${RelativeRegex}\\s+ann[eé]e)\\s+(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quarts`;
 	export const AllHalfYearRegex = `^[.]`;
+	export const PrefixDayRegex = `^[.]`;
 	export const SeasonRegex = `\\b((<seas>printemps|été|automne|hiver)+\\s*(${NextSuffixRegex}|${PastSuffixRegex}))|(?<season>(${RelativeRegex}\\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\\s+de|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+l'ann[eé]e))?)\\b`;
 	export const WhichWeekRegex = `(semaine)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
 	export const WeekOfRegex = `(semaine)(\\s*)(de)`;
@@ -143,6 +144,7 @@ export namespace FrenchDateTime {
 	export const DurationFollowedUnit = `^\\s*${SuffixAndRegex}?(\\s+|-)?${DurationUnitRegex}`;
 	export const NumberCombinedWithDurationUnit = `\\b(?<num>\\d+(\\.\\d*)?)(-)?${DurationUnitRegex}`;
 	export const AnUnitRegex = `\\b(((?<half>demi\\s+)?(-)\\s+${DurationUnitRegex}))`;
+	export const DuringRegex = `^[.]`;
 	export const AllRegex = `\\b(?<all>toute\\s(l['ea])\\s?(?<unit>ann[eé]e|mois|semaine|semaines|jour|jours|journ[eé]e))\\b`;
 	export const HalfRegex = `(((un|une)\\s*)|\\b)(?<half>demi?(\\s*|-)+(?<unit>ann[eé]e|ans|mois|semaine|jour|heure))\\b`;
 	export const ConjunctionRegex = `\\b((et(\\s+de|pour)?)|avec)\\b`;
@@ -175,6 +177,7 @@ export namespace FrenchDateTime {
 	export const InexactNumberUnitRegex = `(${InexactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `((((${ThisPrefixRegex})?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const RelativeDurationUnitRegex = `(((?<=(${ThisPrefixRegex})\\s+)?\\b(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
+	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const ConnectorRegex = `^(,|pour|t|vers)$`;
 	export const ConnectorAndRegex = `\\b(et\\s*(le|la(s)?)?)\\b.+`;
 	export const FromRegex = `((de|du)?)$`;

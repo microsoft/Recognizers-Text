@@ -174,6 +174,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public const string OneNumberRangeMoreRegex2 = @"(?<number1>((?!((，|、(?!\d+))|(,|、(?!\d+))|。)).)+)\s*(より)?(大なり)";
 		public const string OneNumberRangeMoreRegex3 = @"(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(以上|最低)(?![万億]{1,2})";
 		public static readonly string OneNumberRangeMoreRegex4 = $@"({MoreOrEqual}|{MoreRegex})\s*(?<number1>((?!(と|は|((と)?同時に)|((と)?そして)|が|，|、|,|(，(?!\d+))|(,(?!\d+))|。)).)+)";
+		public const string OneNumberRangeMoreSeparateRegex = @"^[.]";
+		public const string OneNumberRangeLessSeparateRegex = @"^[.]";
 		public static readonly string OneNumberRangeLessRegex1 = $@"(?<number2>((?!(((，|、)(?!\d+))|((,|、)(?!\d+))|。)).)+)\s*(より)\s*({LessOrEqual}|{LessRegex})";
 		public const string OneNumberRangeLessRegex2 = @"(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(より)?(小な)";
 		public const string OneNumberRangeLessRegex3 = @"(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(以下|未満)(?![万億]{1,2})";

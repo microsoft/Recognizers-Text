@@ -4,10 +4,8 @@ import { Constants } from "./constants";
 import trimEnd = require("lodash.trimend");
 import sortBy = require("lodash.sortby");
 import { RegExpUtility } from "@microsoft/recognizers-text";
-import { BigNumber } from 'bignumber.js';
+import { BigNumber } from 'bignumber.js/bignumber';
 
-// Disable BigNumber errors when passing number with more than 15 significant digits
-BigNumber.config({ ERRORS: false });
 // The exponent value(s) at which toString returns exponential notation.
 BigNumber.config({ EXPONENTIAL_AT: [-5, 15] });
 
