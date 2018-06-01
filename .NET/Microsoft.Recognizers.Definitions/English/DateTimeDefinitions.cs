@@ -190,8 +190,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string BeforeRegex = $@"\b{InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until){InclusiveModPrepositions}?\b\s*";
 		public static readonly string AfterRegex = $@"\b{InclusiveModPrepositions}?(after(?!\s+or equal to)|(?<!no\s+)later than){InclusiveModPrepositions}?\b\s*";
 		public const string SinceRegex = @"\b(since|after or equal to|starting (from|on|with))\b\s*";
-		public const string AgoRegex = @"\b(ago|before\s+(?<day>yesterday|tomorrow|tmr|today))\b";
-		public const string LaterRegex = @"\b(later|from\s+now|(from|after)\s+(?<day>yesterday|tomorrow|tmr|today))\b";
+		public const string AgoRegex = @"\b(ago|before (?<day>yesterday|today))\b";
+		public const string LaterRegex = @"\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\b";
 		public const string InConnectorRegex = @"\b(in)\b";
 		public static readonly string WithinNextPrefixRegex = $@"\b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b";
 		public const string AmPmDescRegex = @"(ampm)";
