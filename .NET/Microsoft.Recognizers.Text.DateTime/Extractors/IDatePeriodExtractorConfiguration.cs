@@ -43,6 +43,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ReferenceDatePeriodRegex { get; }
 
+        Regex AgoRegex { get; }
+
+        Regex LaterRegex { get; }
+
+        Regex LessThanRegex { get; }
+
+        Regex MoreThanRegex { get; }
+
         IDateTimeExtractor DatePointExtractor { get; }
 
         IExtractor CardinalExtractor { get; }

@@ -917,9 +917,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handle the "within two weeks" case which means from today to the end of next two weeks
+                    // Cases like "within 3 days before/after today" is not handled here (4th condition)
                     prefixMatch = config.WithinNextPrefixRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
-                        DurationParsingUtil.IsDateDuration(durationResult.Timex))
+                        DurationParsingUtil.IsDateDuration(durationResult.Timex) &&
+                        string.IsNullOrEmpty(afterStr))
                     {
                         GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, future: true, mod: out mod);
 

@@ -23,7 +23,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeString = text.Substring(0, (int)er.Start);
                 var index = -1;
 
-                if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
+                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
+                {
+                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                }
+                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
+                {
+                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                }
+                else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
                 {
                     // For range unit like "week, month, year", it should output dateRange or datetimeRange
                     if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
@@ -33,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
                         }
                     }
-                }
+                }                
                 else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.WithinNextPrefixRegex, out index))
                 {
                     // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange
@@ -44,14 +52,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
                         }
                     }
-                }
-                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
-                {
-                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
-                }
-                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
-                {
-                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                 }                
             }
 

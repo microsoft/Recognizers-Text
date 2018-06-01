@@ -172,7 +172,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        //Extract the month of date, week of date to a date range
+        // 1. Extract the month of date, week of date to a date range
+        // 2. Extract cases like within two weeks from/before today/tomorrow/yesterday
         private List<Token> SingleTimePointWithPatterns(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -189,6 +190,32 @@ namespace Microsoft.Recognizers.Text.DateTime
                     string beforeString = text.Substring(0, (int)extractionResult.Start);
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.WeekOfRegex, extractionResult));
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.MonthOfRegex, extractionResult));
+
+                    // Cases like "2 days from/before today/tomorrow"
+                    var isAgo = this.config.AgoRegex.Match(extractionResult.Text).Success;
+                    var isLater = this.config.LaterRegex.Match(extractionResult.Text).Success;
+
+                    if (isAgo || isLater)
+                    {
+                        ret.AddRange(GetTokenForRegexMatching(beforeString, config.LessThanRegex, extractionResult));
+                        ret.AddRange(GetTokenForRegexMatching(beforeString, config.MoreThanRegex, extractionResult));
+
+                        // cases like "within 3 days from yesterday/tomorrow" does not make any sense
+                        if (extractionResult.Text.Contains("today") || extractionResult.Text.Contains("now"))
+                        {
+                            var match = this.config.WithinNextPrefixRegex.Match(beforeString);
+                            if (match.Success)
+                            {
+                                var isNext = !string.IsNullOrEmpty(match.Groups["next"].Value);
+
+                                // cases like "within the next 5 days before today" is not acceptable
+                                if (!(isNext && isAgo))
+                                {
+                                    ret.AddRange(GetTokenForRegexMatching(beforeString, config.WithinNextPrefixRegex, extractionResult));
+                                }
+                            }
+                        }
+                    }
                 }
             }
 

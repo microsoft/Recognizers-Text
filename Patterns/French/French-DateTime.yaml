@@ -392,6 +392,9 @@ AgoPrefixRegex: !simpleRegex
   def: \b(y a)\b
 LaterRegex: !simpleRegex
   def: \b(plus tard)\b
+AgoRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(dans|en|sur)\b
 WithinNextPrefixRegex: !simpleRegex

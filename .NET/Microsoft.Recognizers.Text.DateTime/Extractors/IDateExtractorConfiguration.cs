@@ -33,6 +33,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearSuffix { get; }
 
+        Regex MoreThanRegex { get; }
+
+        Regex LessThanRegex { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }
