@@ -181,8 +181,8 @@ export namespace EnglishDateTime {
 	export const BeforeRegex = `\\b${InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)${InclusiveModPrepositions}?\\b\\s*`;
 	export const AfterRegex = `\\b${InclusiveModPrepositions}?(after(?!\\s+or equal to)|(?<!no\\s+)later than)${InclusiveModPrepositions}?\\b\\s*`;
 	export const SinceRegex = `\\b(since|after or equal to|starting (from|on|with))\\b\\s*`;
-	export const AgoRegex = `\\b(ago|before\\s+(?<day>yesterday|tomorrow|tmr|today))\\b`;
-	export const LaterRegex = `\\b(later|from\\s+now|(from|after)\\s+(?<day>yesterday|tomorrow|tmr|today))\\b`;
+	export const AgoRegex = `\\b(ago|before (?<day>yesterday|today))\\b`;
+	export const LaterRegex = `\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
 	export const WithinNextPrefixRegex = `\\b(within(\\s+the)?(\\s+${NextPrefixRegex})?)\\b`;
 	export const AmPmDescRegex = `(ampm)`;
