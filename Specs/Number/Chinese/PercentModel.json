@@ -1829,4 +1829,18 @@
     }
   ]
 }
+,
+{
+  "Input": "找出酒精量在5-20%之间的产品",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "20%",  
+      "TypeName": "percentage",
+        "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
 ]

@@ -151,7 +151,7 @@ ZeroToNineIntegerRegex: !simpleRegex
 NegativeNumberTermsRegex: !simpleRegex
   def: '[负負]'
 NegativeNumberTermsRegexNum: !simpleRegex
-  def: (?<!(\d+\s*)|[-－])[-－]
+  def: ((?<!(\d+\s*)|[-－])[-－])
 NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
