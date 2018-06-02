@@ -19,13 +19,13 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @RunWith(Parameterized.class)
-public abstract class RecognizerTest {
+public abstract class AbstractRecognizerTest {
 
     private static final String SpecsPath = "../../Specs";
 
     protected final TestCase currentCase;
 
-    public RecognizerTest(TestCase currentCase) {
+    public AbstractRecognizerTest(TestCase currentCase) {
         this.currentCase = currentCase;
     }
 
