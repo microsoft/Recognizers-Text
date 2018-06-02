@@ -4,9 +4,9 @@ import org.junit.runners.Parameterized;
 
 import java.util.Collection;
 
-public class NumberRecognizerTest extends AbstractRecognizerTest {
+public class NumberTest extends AbstractTest {
 
-    public NumberRecognizerTest(TestCase currentCase) {
+    public NumberTest(TestCase currentCase) {
         super(currentCase);
     }
 
@@ -14,6 +14,6 @@ public class NumberRecognizerTest extends AbstractRecognizerTest {
 
     @Parameterized.Parameters(name = "{0}")
     public static Collection<TestCase> testCases() {
-        return AbstractRecognizerTest.testCases(recognizerType);
+        return AbstractTest.testCases(recognizerType);
     }
 }
