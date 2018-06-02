@@ -1,674 +1,1501 @@
 [
-  {
-    "Input": "192.",
-    "Results": [
-      {
-        "Text": "192",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "192"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "192.168.1.2",
-    "Results": [
-      {
-        "Text": "192",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "192"
-        }
-      },
-      {
-        "Text": "168",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "168"
-        }
-      },
-      {
-        "Text": "1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "the 180.25ml liquid",
-    "Results": []
-  },
-  {
-    "Input": "the 180ml liquid",
-    "Results": []
-  },
-  {
-    "Input": " 29km Road ",
-    "Results": []
-  },
-  {
-    "Input": " the May 4th ",
-    "Results": []
-  },
-  {
-    "Input": "the .25ml liquid",
-    "Results": []
-  },
-  {
-    "Input": ",08",
-    "Results": [
-      {
-        "Text": ",08",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,08"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "en",
-    "Results": []
-  },
-  {
-    "Input": ",23456000",
-    "Results": [
-      {
-        "Text": ",23456000",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,23456"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "4,800",
-    "Results": [
-      {
-        "Text": "4,800",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "4,8"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "honderddrie en twee derde",
-    "Results": [
-      {
-        "Text": "honderddrie en twee derde",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "103,666666666667"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "honderdendrie en twee derde",
-    "Results": [
-      {
-        "Text": "honderdendrie en twee derde",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "103,666666666667"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "zestien",
-    "Debug": true,
-    "Results": [
-      {
-        "Text": "zestien",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "16"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "twee derde",
-    "Results": [
-      {
-        "Text": "twee derde",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,666666666666667"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "honderdzestien",
-    "Results": [
-      {
-        "Text": "honderdzestien",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "116"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "honderdzes",
-    "Results": [
-      {
-        "Text": "honderdzes",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "106"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "honderdeenenzestig",
-    "Results": [
-      {
-        "Text": "honderdeenenzestig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "161"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "een half  dozijn",
-    "Results": [
-      {
-        "Text": "een half dozijn",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "6"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " 3 dozijn",
-    "Results": [
-      {
-        "Text": "3 dozijn",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "36"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "een dozijn",
-    "Results": [
-      {
-        "Text": "een dozijn",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "12"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " drie dozijnen ",
-    "Results": [
-      {
-        "Text": "drie dozijnen",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "36"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " driehonderd en twee dozijn",
-    "Results": [
-      {
-        "Text": "driehonderd en twee dozijn",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "324"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "1.234,567",
-    "Results": [
-      {
-        "Text": "1.234,567",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1234,567"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "1, 234, 567",
-    "Results": [
-      {
-        "Text": "1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      },
-      {
-        "Text": "234",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "234"
-        }
-      },
-      {
-        "Text": "567",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "567"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "9,2321312",
-    "Results": [
-      {
-        "Text": "9,2321312",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "9,2321312"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " -9,2321312",
-    "Results": [
-      {
-        "Text": "-9,2321312",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-9,2321312"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " -1",
-    "Results": [
-      {
-        "Text": "-1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-1"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "-4/5",
-    "Results": [
-      {
-        "Text": "-4/5",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-0,8"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "- 1 4/5",
-    "Results": [
-      {
-        "Text": "- 1 4/5",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-1,8"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "drie",
-    "Results": [
-      {
-        "Text": "drie",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "3"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " 123456789101231",
-    "Results": [
-      {
-        "Text": "123456789101231",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "123456789101231"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "-123456789101231",
-    "Results": [
-      {
-        "Text": "-123456789101231",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-123456789101231"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " -123456789101231",
-    "Results": [
-      {
-        "Text": "-123456789101231",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-123456789101231"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "1",
-    "Results": [
-      {
-        "Text": "1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "10k",
-    "Results": [
-      {
-        "Text": "10k",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "10G",
-    "Results": [
-      {
-        "Text": "10G",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10000000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "- 10  k",
-    "Results": [
-      {
-        "Text": "- 10  k",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "-10000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "2 miljoen",
-    "Results": [
-      {
-        "Text": "2 miljoen",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "1 biljoen",
-    "Results": [
-      {
-        "Text": "1 biljoen",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000000000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " drie ",
-    "Results": [
-      {
-        "Text": "drie",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "3"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "een biljoen",
-    "Results": [
-      {
-        "Text": "een biljoen",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1000000000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "eenentwintig biljoen",
-    "Results": [
-      {
-        "Text": "eenentwintig biljoen",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "21000000000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "fifty - two",
-    "Results": [
-      {
-        "Text": "fifty - two",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "tweeënvijftig",
-    "Results": [
-      {
-        "Text": "tweeënvijftig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "tweeenvijftig",
-    "Results": [
-      {
-        "Text": "tweeenvijftig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "tweeduizend tweehonderd",
-    "Results": [
-      {
-        "Text": "tweeduizend tweehonderd",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2200"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "tweeduizend tweehonderdtwintig",
-    "Results": [
-      {
-        "Text": "tweeduizend tweehonderdtwintig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2220"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "tweeëntwintighonderd",
-    "Results": [
-      {
-        "Text": "tweeëntwintighonderd",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2200"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " 2,33 k",
-    "Results": [
-      {
-        "Text": "2,33 k",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2330"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "1e10",
-    "Results": [
-      {
-        "Text": "1e10",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "10000000000"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "1,1^23",
-    "Results": [
-      {
-        "Text": "1,1^23",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "8,95430243255239"
-        }
-      }
-    ]
-  },
-  {
-    "Input": " tweeendertigduizend tweehonderd  ",
-    "Results": [
-      {
-        "Text": "tweeendertigduizend tweehonderd ",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "32200"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "zeventig",
-    "Results": [
-      {
-        "Text": "zeventig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "70"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "tweeenvijftig",
-    "Results": [
-      {
-        "Text": "tweeenvijftig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "2  1/4",
-    "Results": [
-      {
-        "Text": "2  1/4",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2,25"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "3/4",
-    "Results": [
-      {
-        "Text": "3/4",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,75"
-        }
-      }
-    ]
-  }
+    {
+        "Input": "192.",
+        "Results": [
+            {
+                "Text": "192",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "192"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "192.168.1.2",
+        "Results": [
+            {
+                "Text": "192",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "192"
+                }
+            },
+            {
+                "Text": "168",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "168"
+                }
+            },
+            {
+                "Text": "1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1"
+                }
+            },
+            {
+                "Text": "2",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "180,25ml vloeistof",
+        "Results": []
+    },
+    {
+        "Input": "180ml vloeistof",
+        "Results": []
+    },
+    {
+        "Input": " 29km weg ",
+        "Results": []
+    },
+    {
+        "Input": " 4 mei ",
+        "Results": []
+    },
+    {
+        "Input": ",25ml vloeistof",
+        "Results": []
+    },
+    {
+        "Input": ",08",
+        "Results": [
+            {
+                "Text": ",08",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,08"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "en",
+        "Results": []
+    },
+    {
+        "Input": ",23456000",
+        "Results": [
+            {
+                "Text": ",23456000",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,23456"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "4,800",
+        "Results": [
+            {
+                "Text": "4,800",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "4,8"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "honderddrie en twee derde",
+        "Results": [
+            {
+                "Text": "honderddrie en twee derde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "103,666666666667"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "honderdendrie en twee derde",
+        "Results": [
+            {
+                "Text": "honderdendrie en twee derde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "103,666666666667"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "zestien",
+        "Debug": true,
+        "Results": [
+            {
+                "Text": "zestien",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "16"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "twee derde",
+        "Results": [
+            {
+                "Text": "twee derde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,666666666666667"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "honderdzestien",
+        "Results": [
+            {
+                "Text": "honderdzestien",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "116"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "honderdzes",
+        "Results": [
+            {
+                "Text": "honderdzes",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "106"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "honderdeenenzestig",
+        "Results": [
+            {
+                "Text": "honderdeenenzestig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "161"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een half  dozijn",
+        "Results": [
+            {
+                "Text": "een half dozijn",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "6"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " 3 dozijn",
+        "Results": [
+            {
+                "Text": "3 dozijn",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "36"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een dozijn",
+        "Results": [
+            {
+                "Text": "een dozijn",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "12"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " drie dozijnen ",
+        "Results": [
+            {
+                "Text": "drie dozijnen",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "36"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " driehonderd en twee dozijn",
+        "Results": [
+            {
+                "Text": "driehonderd en twee dozijn",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "324"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1.234,567",
+        "Results": [
+            {
+                "Text": "1.234,567",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1234,567"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1, 234, 567",
+        "Results": [
+            {
+                "Text": "1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1"
+                }
+            },
+            {
+                "Text": "234",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "234"
+                }
+            },
+            {
+                "Text": "567",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "567"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "9,2321312",
+        "Results": [
+            {
+                "Text": "9,2321312",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "9,2321312"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " -9,2321312",
+        "Results": [
+            {
+                "Text": "-9,2321312",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-9,2321312"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " -1",
+        "Results": [
+            {
+                "Text": "-1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-1"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "-4/5",
+        "Results": [
+            {
+                "Text": "-4/5",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-0,8"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "- 1 4/5",
+        "Results": [
+            {
+                "Text": "- 1 4/5",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-1,8"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "drie",
+        "Results": [
+            {
+                "Text": "drie",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "3"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " 123456789101231",
+        "Results": [
+            {
+                "Text": "123456789101231",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "123456789101231"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "-123456789101231",
+        "Results": [
+            {
+                "Text": "-123456789101231",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-123456789101231"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " -123456789101231",
+        "Results": [
+            {
+                "Text": "-123456789101231",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-123456789101231"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1",
+        "Results": [
+            {
+                "Text": "1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "10k",
+        "Results": [
+            {
+                "Text": "10k",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "10000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "10G",
+        "Results": [
+            {
+                "Text": "10G",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "10000000000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "- 10  k",
+        "Results": [
+            {
+                "Text": "- 10  k",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-10000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "2 miljoen",
+        "Results": [
+            {
+                "Text": "2 miljoen",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2000000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1 biljoen",
+        "Results": [
+            {
+                "Text": "1 biljoen",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1000000000000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " drie ",
+        "Results": [
+            {
+                "Text": "drie",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "3"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een biljoen",
+        "Results": [
+            {
+                "Text": "een biljoen",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1000000000000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "eenentwintig biljoen",
+        "Results": [
+            {
+                "Text": "eenentwintig biljoen",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "21000000000000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "fifty - two",
+        "Results": [
+            {
+                "Text": "fifty - two",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "52"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "tweeënvijftig",
+        "Results": [
+            {
+                "Text": "tweeënvijftig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "52"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "tweeenvijftig",
+        "Results": [
+            {
+                "Text": "tweeenvijftig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "52"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "tweeduizend tweehonderd",
+        "Results": [
+            {
+                "Text": "tweeduizend tweehonderd",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2200"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "tweeduizend tweehonderdtwintig",
+        "Results": [
+            {
+                "Text": "tweeduizend tweehonderdtwintig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2220"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "tweeëntwintighonderd",
+        "Results": [
+            {
+                "Text": "tweeëntwintighonderd",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2200"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " 2,33 k",
+        "Results": [
+            {
+                "Text": "2,33 k",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2330"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1e10",
+        "Results": [
+            {
+                "Text": "1e10",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "10000000000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1,1^23",
+        "Results": [
+            {
+                "Text": "1,1^23",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "8,95430243255239"
+                }
+            }
+        ]
+    },
+    {
+        "Input": " tweeendertigduizend tweehonderd  ",
+        "Results": [
+            {
+                "Text": "tweeendertigduizend tweehonderd ",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "32200"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "zeventig",
+        "Results": [
+            {
+                "Text": "zeventig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "70"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "tweeenvijftig",
+        "Results": [
+            {
+                "Text": "tweeenvijftig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "52"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "2  1/4",
+        "Results": [
+            {
+                "Text": "2  1/4",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2,25"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "3/4",
+        "Results": [
+            {
+                "Text": "3/4",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,75"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een achtste",
+        "Results": [
+            {
+                "Text": "een achtste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,125"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "vijf achtste",
+        "Results": [
+            {
+                "Text": "vijf achtste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,625"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een halve",
+        "Results": [
+            {
+                "Text": "een halve",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,5"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "drie kwart",
+        "Results": [
+            {
+                "Text": "drie kwart",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,75"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "twintig drie vijfde",
+        "Results": [
+            {
+                "Text": "twintig drie vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "20,6"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "drieëntwintig vijfde",
+        "Results": [
+            {
+                "Text": "drieëntwintig vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "4,6"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "drieëntwintig en drie vijfde",
+        "Results": [
+            {
+                "Text": "drieëntwintig en drie vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "23,6"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een miljoen tweeduizend tweehonderd drie vijfde",
+        "Results": [
+            {
+                "Text": "een miljoen tweeduizend tweehonderd drie vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "200440,6"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "anderhalf",
+        "Results": [
+            {
+                "Text": "anderhalf",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1,5"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een en een vierde",
+        "Results": [
+            {
+                "Text": "een en een vierde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1,25"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "vijf en een kwart",
+        "Results": [
+            {
+                "Text": "vijf en een kwart",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "5,25"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "honderd driekwart",
+        "Results": [
+            {
+                "Text": "honderd driekwart",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "100,75"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een honderdste",
+        "Results": [
+            {
+                "Text": "een honderdste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,01"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1,1^+23",
+        "Results": [
+            {
+                "Text": "1,1^+23",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "8,95430243255239"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "2,5^-1",
+        "Results": [
+            {
+                "Text": "2,5^-1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,4"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "-2500^-1",
+        "Results": [
+            {
+                "Text": "-2500^-1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-0,0004"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "-1,1^+23",
+        "Results": [
+            {
+                "Text": "-1,1^+23",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-8,95430243255239"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "-2,5^-1",
+        "Results": [
+            {
+                "Text": "-2,5^-1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-0,4"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "-1,1^--23",
+        "Results": [
+            {
+                "Text": "-1,1^--23",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-8,95430243255239"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "-127,32e13",
+        "Results": [
+            {
+                "Text": "-127,32e13",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-1,2732E+15"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "12,32e+14",
+        "Results": [
+            {
+                "Text": "12,32e+14",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1,232E+15"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "-12e-1",
+        "Results": [
+            {
+                "Text": "-12e-1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-1,2"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1,2b",
+        "Results": [
+            {
+                "Text": "1,2b",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1200000000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een vijfde",
+        "Results": [
+            {
+                "Text": "een vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,2"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "honderdduizend biljoensten",
+        "Results": [
+            {
+                "Text": "honderdduizend biljoensten",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1E-07"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "drie vijfde",
+        "Results": [
+            {
+                "Text": "drie vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,6"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "twintig vijfde",
+        "Results": [
+            {
+                "Text": "twintig vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "4"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "drie een vijfde",
+        "Results": [
+            {
+                "Text": "drie een vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "3,2"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "eenentwintig vijfde",
+        "Results": [
+            {
+                "Text": "eenentwintig vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "4,2"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een eenentwintigste",
+        "Results": [
+            {
+                "Text": "een eenentwintigste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,0476190476190476"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een vijfentwintigste",
+        "Results": [
+            {
+                "Text": "een vijfentwintigste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,04"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "drie eenentwintigste",
+        "Results": [
+            {
+                "Text": "drie eenentwintigste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,142857142857143"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "twintig vijventwintigste",
+        "Results": [
+            {
+                "Text": "twintig vijventwintigste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,8"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "honderd en dertig vijfde",
+        "Results": [
+            {
+                "Text": "honderd en dertig vijfde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "35"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een van de drie",
+        "Results": [
+            {
+                "Text": "een van de drie",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,333333333333333"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1 uit eenentwintig",
+        "Results": [
+            {
+                "Text": "1 uit eenentwintig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,0476190476190476"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1 uit drie",
+        "Results": [
+            {
+                "Text": "1 uit drie",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,333333333333333"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1 op de 3",
+        "Results": [
+            {
+                "Text": "1 op de 3",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,333333333333333"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1 van de 3",
+        "Results": [
+            {
+                "Text": "1 van de 3",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0.333333333333333"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "één uit de 20",
+        "Results": [
+            {
+                "Text": "één uit de 20",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,05"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "één van de twintig",
+        "Results": [
+            {
+                "Text": "één van de twintig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,05"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Boek een eerste klas ticket naar Amsterdam",
+        "Results": []
+    },
+    {
+        "Input": "Het antwoord is min een",
+        "Results": [
+            {
+                "Text": "min een",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-1"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Een op de twintig is hier niet tevreden mee",
+        "Results": [
+            {
+                "Text": "Een op de twintig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-0.05"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Het antwoord is vijf en een half",
+        "Results": [
+            {
+                "Text": "vijf en een half",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "5,5"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Het antwoord is min 5 punt vijf",
+        "Results": [
+            {
+                "Text": "min 5 punt vijf",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-5,5"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Het antwoord is min 5",
+        "Results": [
+            {
+                "Text": "min 5",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "-5"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een - vierde",
+        "Results": [
+            {
+                "Text": "een - vierde",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,25"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een-achtste",
+        "Results": [
+            {
+                "Text": "een-achtste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,125"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "vijf / achtste",
+        "Results": [
+            {
+                "Text": "vijf / achtste",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,625"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "een van de drie",
+        "Results": [
+            {
+                "Text": "een van de drie",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,333333333333333"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1 van de eenentwintig",
+        "NotSupported": "javascript,python",
+        "Results": [
+            {
+                "Text": "1 van de eenentwintig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,0476190476190476"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "vijf achtsten van",
+        "Results": [
+            {
+                "Text": "vijf achtsten",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0,625"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1 234 567",
+        "Results": [
+            {
+                "Text": "1 234 567",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1234567"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "40 000 is hetzelfde als 40 000",
+        "Results": [
+            {
+                "Text": "40 000",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "40000"
+                }
+            },
+            {
+                "Text": "40 000",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "40000"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Op dit moment de populatie van China is 1 414 021 100.",
+        "Results": [
+            {
+                "Text": "1 414 021 100",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1414021100"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "423 0000 zal worden herkend als twee nummers.",
+        "NotSupported": "javascript,python",
+        "Results": [
+            {
+                "Text": "423",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "423"
+                }
+            },
+            {
+                "Text": "0000",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0"
+                }
+            },
+            {
+                "Text": "twee",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "1 234 567,89 is een geldig nummer.",
+        "Results": [
+            {
+                "Text": "1 234 567,89",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1234567,89"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Nul is hetzelfde als 0",
+        "Results": [
+            {
+                "Text": "nul",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0"
+                }
+            },
+            {
+                "Text": "0",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "0"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Heb je op 17/5/2018 tijd om af te spreken?",
+        "NotSupported": "javascript",
+        "Results": [
+            {
+                "Text": "17",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "17"
+                }
+            },
+            {
+                "Text": "5",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "5"
+                }
+            },
+            {
+                "Text": "2018",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2018"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "Mijn telefoonnummer is +1-222-2222/2222",
+        "NotSupported": "javascript",
+        "Results": [
+            {
+                "Text": "1",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1"
+                }
+            },
+            {
+                "Text": "222",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "222"
+                }
+            },
+            {
+                "Text": "2222",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2222"
+                }
+            },
+            {
+                "Text": "2222",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "2222"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "tweeentwintig",
+        "Results": [
+            {
+                "Text": "tweeentwintig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "22"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "tweeëntwintig",
+        "Results": [
+            {
+                "Text": "tweeëntwintig",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "22"
+                }
+            }
+        ]
+    },
+    {
+        "Input": "één",
+        "Results": [
+            {
+                "Text": "één",
+                "TypeName": "number",
+                "Resolution": {
+                    "value": "1"
+                }
+            }
+        ]
+    }
 ]

@@ -1,0 +1,144 @@
+[
+  {
+    "Input": "100%",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 100 procent",
+    "Results": [
+      {
+        "Text": "100 procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " percentage van 100",
+    "Results": [
+      {
+        "Text": "percentage van 100",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "240 procent",
+    "Results": [
+      {
+        "Text": "240 procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twintig procent",
+    "Results": [
+      {
+        "Text": "twenty percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "percentage van 30 procent",
+    "Results": [
+      {
+        "Text": "30 procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "honderd procent",
+    "Results": [
+      {
+        "Text": "honderd procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "210 percent",
+    "Results": [
+      {
+        "Text": "210 percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 percent",
+    "Results": [
+      {
+        "Text": "10 percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dit is een korting van min vijf procent",
+    "Results": [
+      {
+        "Text": "min vijf procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        }
+      }
+    ]
+  },
+  {
+    "NotSupported": "javascript",
+    "Input": "Bezoek http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 voor meer informatie.",
+    "Results": []
+  },
+  {
+    "NotSupported": "javascript",
+    "Input": "Bezoek https://www.test.com/search?q=30%25%2020%",
+    "Results": []
+  }
+]

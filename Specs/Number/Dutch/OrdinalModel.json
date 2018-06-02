@@ -1,0 +1,198 @@
+[
+  {
+    "Input": "drie biljoenste",
+    "Results": [
+      {
+        "Text": "drie biljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "een biljoenste",
+    "Results": []
+  },
+  {
+    "Input": "honderd biljoenste",
+    "Results": [
+      {
+        "Text": "honderd biljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "11e",
+    "Results": [
+      {
+        "Text": "11e",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "derde",
+    "Results": [
+      {
+        "Text": "derde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30ste",
+    "Results": [
+      {
+        "Text": "30ste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tweede",
+    "Results": [
+      {
+        "Text": "tweede",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "elfde",
+    "Results": [
+      {
+        "Text": "elfde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nulde",
+    "Results": [
+      {
+        "Text": "nulde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twintigste",
+    "Results": [
+      {
+        "Text": "twintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vijfentwintigste",
+    "Results": [
+      {
+        "Text": "vijfentwintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eenentwintigste",
+    "Results": [
+      {
+        "Text": "eenentwintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "honderdvijfentwintigste",
+    "Results": [
+      {
+        "Text": "honderdvijfentwintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "biljoenste",
+    "Results": [
+      {
+        "Text": "biljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eerste",
+    "Results": [
+      {
+        "Text": "eerste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tweehonderdste",
+    "Results": [
+      {
+        "Text": "tweehonderdste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Boek een eerste klas ticket naar Amsterdam",
+    "Results": [
+      {
+        "Text": "eerste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  }
+]
