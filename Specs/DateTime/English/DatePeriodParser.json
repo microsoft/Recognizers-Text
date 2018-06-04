@@ -2172,14 +2172,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet later this month",
+  "Input": "Please find us a time to meet late this month",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "later this month",
+      "Text": "late this month",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-11",
@@ -2198,14 +2198,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet later this week",
+  "Input": "Please find us a time to meet late this week",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "later this week",
+      "Text": "late this week",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-W45",
@@ -2224,14 +2224,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet later this year",
+  "Input": "Please find us a time to meet late this year",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "later this year",
+      "Text": "late this year",
       "Type": "daterange",
       "Value": {
         "Timex": "2017",
@@ -4993,14 +4993,14 @@
 }
 ,
 {
-  "Input": "Please find us a time to meet later in the year",
+  "Input": "Please find us a time to meet late this year",
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "later in the year",
+      "Text": "late this year",
       "Type": "daterange",
       "Value": {
         "Timex": "2017",
@@ -5116,6 +5116,205 @@
         "PastResolution": {
           "startDate": "2017-01-01",
           "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We could have scheduled a time to meet earlier in the week.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "earlier in the week",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018-W22",
+        "FutureResolution": {
+          "startDate": "2018-05-28",
+          "endDate": "2018-05-31"
+        },
+        "PastResolution": {
+          "startDate": "2018-05-28",
+          "endDate": "2018-05-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We could have scheduled a time to meet earlier this month.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-13T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "earlier this month",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018-05",
+        "FutureResolution": {
+          "startDate": "2018-05-01",
+          "endDate": "2018-05-13"
+        },
+        "PastResolution": {
+          "startDate": "2018-05-01",
+          "endDate": "2018-05-13"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We could have scheduled a time to meet earlier this year.",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "earlier this year",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018",
+        "FutureResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2018-05-28"
+        },
+        "PastResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2018-05-28"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet later this week",
+  "Context": {
+    "ReferenceDateTime": "2017-11-10T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later this week",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-W45",
+        "FutureResolution": {
+          "startDate": "2017-11-10",
+          "endDate": "2017-11-13"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-10",
+          "endDate": "2017-11-13"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet later this month",
+  "Context": {
+    "ReferenceDateTime": "2018-05-28T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later this month",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018-05",
+        "FutureResolution": {
+          "startDate": "2018-05-28",
+          "endDate": "2018-06-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-05-28",
+          "endDate": "2018-06-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet later this year",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later this year",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017",
+        "FutureResolution": {
+          "startDate": "2017-11-08",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-08",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet later in the year",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later in the year",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017",
+        "FutureResolution": {
+          "startDate": "2017-11-08",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-08",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task will start more than 2 weeks after today",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "more than 2 weeks after today",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018-06-12",
+        "Mod": "after",
+        "FutureResolution": {
+          "startDate": "2018-06-12"
+        },
+        "PastResolution": {
+          "startDate": "2018-06-12"
         }
       }
     }
@@ -5239,30 +5438,6 @@
         "PastResolution": {
           "startDate": "2018-05-30",
           "endDate": "2018-06-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "This task will start more than 2 weeks after today",
-  "Context": {
-    "ReferenceDateTime": "2018-05-29T00:00:00"
-  },
-  "NotSupportedByDesign": "python,javascript",
-  "Results": [
-    {
-      "Text": "more than 2 weeks after today",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2018-06-12",
-        "Mod": "after",
-        "FutureResolution": {
-          "startDate": "2018-06-12"
-        },
-        "PastResolution": {
-          "startDate": "2018-06-12"
         }
       }
     }

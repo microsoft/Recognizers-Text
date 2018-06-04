@@ -36,7 +36,7 @@ export namespace EnglishDateTime {
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthWithYear = `\\b((${WrittenMonthRegex}(\\s*),?(\\s+of)?(\\s*)(${YearRegex}|(?<order>next|last|this)\\s+year))|((${YearRegex}|(?<order>next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
-	export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${RelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(weekend|week|month|year)(\\s+${AfterNextSuffixRegex})?)\\b`;
+	export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(weekend|week|month|year)(\\s+${AfterNextSuffixRegex})?)\\b`;
 	export const MonthNumWithYear = `(${YearNumRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${YearNumRegex})`;
 	export const WeekOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex})`;
 	export const WeekOfYearRegex = `(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))`;
@@ -50,9 +50,9 @@ export namespace EnglishDateTime {
 	export const HalfYearBackRegex = `(the\\s+)?(H(?<number>[1-2])|(${HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+(${YearRegex})`;
 	export const HalfYearRelativeRegex = `(the\\s+)?${HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+(${RelativeRegex}\\s+year)`;
 	export const AllHalfYearRegex = `(${HalfYearFrontRegex})|(${HalfYearBackRegex})|(${HalfYearRelativeRegex})`;
-	export const EarlyPrefixRegex = `(?<EarlyPrefix>early|beginning of|start of)`;
+	export const EarlyPrefixRegex = `(?<EarlyPrefix>early|beginning of|start of|(?<RelEarly>earlier(\\s+in)?))`;
 	export const MidPrefixRegex = `(?<MidPrefix>mid|middle of)`;
-	export const LaterPrefixRegex = `(?<LatePrefix>late|later(\\s+in)?|end of)`;
+	export const LaterPrefixRegex = `(?<LatePrefix>late|end of|(?<RelLate>later(\\s+in)?))`;
 	export const PrefixPeriodRegex = `(${EarlyPrefixRegex}|${MidPrefixRegex}|${LaterPrefixRegex})`;
 	export const PrefixDayRegex = `((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\\s+in)?(\\s+the\\s+day)?$`;
 	export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
