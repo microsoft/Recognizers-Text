@@ -3047,4 +3047,166 @@
     }
   ]
 }
+,
+{
+  "Input": "I have already finished all my work more than 2 weeks before today",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "more than 2 weeks before today",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-05-15",
+            "Mod":"before",
+            "type":"daterange",
+            "end":"2018-05-15"         
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task should have been done more than 2 days before yesterday",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "more than 2 days before yesterday",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-05-26",
+            "Mod":"before",
+            "type":"daterange",
+            "end":"2018-05-26"         
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task will be done less than 3 days after tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "less than 3 days after tomorrow",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"(2018-05-30,2018-06-02,P3D)",
+            "type":"daterange",
+            "start":"2018-05-30",
+            "end":"2018-06-02"         
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task will start more than 2 weeks after today",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "more than 2 weeks after today",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-06-12",
+            "Mod":"after",
+            "type":"daterange",
+            "start":"2018-06-12"       
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Let's start 3 minutes from now",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutes from now",
+      "Type": "datetimeV2.datetime",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-05-29T00:03:00",
+            "type":"datetime",
+            "value":"2018-05-29 00:03:00"         
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Let's start 3 minutes from today",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutes",
+      "Type": "datetimeV2.duration",
+      "Value":{
+        "values":[
+          {
+            "timex":"PT3M",
+            "type":"duration",
+            "value":"180"         
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "today",
+      "Type": "datetimeV2.date",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-05-29",
+            "type":"date",
+            "value":"2018-05-29"         
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

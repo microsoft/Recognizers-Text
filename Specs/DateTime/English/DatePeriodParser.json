@@ -5171,4 +5171,101 @@
     }
   ]
 }
+,
+{
+  "Input": "I have already finished all my work more than 2 weeks before today",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "more than 2 weeks before today",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018-05-15",
+        "Mod": "before",
+        "FutureResolution": {          
+          "endDate": "2018-05-15"
+        },
+        "PastResolution": {
+          "endDate": "2018-05-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task should have been done more than 2 days before yesterday",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "more than 2 days before yesterday",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018-05-26",
+        "Mod": "before",
+        "FutureResolution": {
+          "endDate": "2018-05-26"
+        },
+        "PastResolution": {
+          "endDate": "2018-05-26"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task will be done less than 3 days after tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "less than 3 days after tomorrow",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-05-30,2018-06-02,P3D)",
+        "FutureResolution": {
+          "startDate": "2018-05-30",
+          "endDate": "2018-06-02"
+        },
+        "PastResolution": {
+          "startDate": "2018-05-30",
+          "endDate": "2018-06-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This task will start more than 2 weeks after today",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "more than 2 weeks after today",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018-06-12",
+        "Mod": "after",
+        "FutureResolution": {
+          "startDate": "2018-06-12"
+        },
+        "PastResolution": {
+          "startDate": "2018-06-12"
+        }
+      }
+    }
+  ]
+}
 ]

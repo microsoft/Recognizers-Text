@@ -22,14 +22,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterString = text.Substring(pos);
                 var beforeString = text.Substring(0, (int)er.Start);
                 var index = -1;
+                var isTimeDuration = utilityConfiguration.TimeUnitRegex.Match(er.Text).Success;
 
                 if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
                 {
-                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                    // We don't support cases like "5 minutes from today" for now
+                    // Cases like "5 minutes ago" or "5 minutes from now" are supported
+                    // Cases like "2 days before today" or "2 weeks from today" are also supported
+                    var isDayMatchInAfterString = utilityConfiguration.AgoRegex.Match(afterString).Groups["day"].Success;
+
+                    if (!(isTimeDuration && isDayMatchInAfterString))
+                    {
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                    }
                 }
                 else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
                 {
-                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                    var isDayMatchInAfterString = utilityConfiguration.LaterRegex.Match(afterString).Groups["day"].Success;
+
+                    if (!(isTimeDuration && isDayMatchInAfterString))
+                    {
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                    }
                 }
                 else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
                 {

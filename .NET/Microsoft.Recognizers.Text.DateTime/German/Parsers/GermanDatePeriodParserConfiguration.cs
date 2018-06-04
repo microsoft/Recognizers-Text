@@ -66,6 +66,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
         public Regex ReferenceDatePeriodRegex { get; }
+        public Regex AgoRegex { get; }
+        public Regex LaterRegex { get; }
+        public Regex LessThanRegex { get; }
+        public Regex MoreThanRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -148,6 +152,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = GermanDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             ReferenceDatePeriodRegex = GermanDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            AgoRegex = GermanDatePeriodExtractorConfiguration.AgoRegex;
+            LaterRegex = GermanDatePeriodExtractorConfiguration.LaterRegex;
+            LessThanRegex = GermanDatePeriodExtractorConfiguration.LessThanRegex;
+            MoreThanRegex = GermanDatePeriodExtractorConfiguration.MoreThanRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

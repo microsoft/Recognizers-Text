@@ -164,6 +164,7 @@ export namespace FrenchDateTime {
 	export const SinceRegex = `\\b(depuis)\\b`;
 	export const AgoPrefixRegex = `\\b(y a)\\b`;
 	export const LaterRegex = `\\b(plus tard)\\b`;
+	export const AgoRegex = `^[.]`;
 	export const InConnectorRegex = `\\b(dans|en|sur)\\b`;
 	export const WithinNextPrefixRegex = `^[.]`;
 	export const AmDescRegex = `(h|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b)`;

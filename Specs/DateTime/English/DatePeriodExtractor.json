@@ -3625,4 +3625,26 @@
     }
   ]
 }
+,
+{
+  "Input": "This task should have been done more than 2 days before yesterday",
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "more than 2 days before yesterday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "This task will be done less than 3 days after tomorrow",
+  "NotSupported": "python,javascript",
+  "Results": [
+    {
+      "Text": "less than 3 days after tomorrow",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

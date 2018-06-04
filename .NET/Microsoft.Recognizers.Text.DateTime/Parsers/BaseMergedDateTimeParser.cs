@@ -715,28 +715,50 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!string.IsNullOrEmpty(mod))
             {
-                // For the 'before' mod, the start of the period should be the end the new period, not the start 
+
+
+                // For the 'before' mod
+                // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
+                // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
                 if (mod.Equals(Constants.BEFORE_MOD))
                 {
-                    res.Add(DateTimeResolutionKey.END, start);
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    {
+                        res.Add(DateTimeResolutionKey.END, start);
+                    }
+                    else
+                    {
+                        res.Add(DateTimeResolutionKey.END, end);
+                    }
+
                     return;
                 }
 
-                // For the 'after' mod, the end of the period should be the start the new period, not the end 
+                // For the 'after' mod
+                // 1. Cases like "After January", the end of the period should be the start of the new period, not the end 
+                // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
                 if (mod.Equals(Constants.AFTER_MOD))
                 {
-                    res.Add(DateTimeResolutionKey.START, end);
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    {
+                        res.Add(DateTimeResolutionKey.START, end);
+                    }
+                    else
+                    {
+                        res.Add(DateTimeResolutionKey.START, start);
+                    }
+
                     return;
                 }
 
-                // For the 'since' mod, the start of the period should be the start the new period, not the end 
+                // For the 'since' mod, the start of the period should be the start of the new period, not the end 
                 if (mod.Equals(Constants.SINCE_MOD))
                 {
                     res.Add(DateTimeResolutionKey.START, start);
                     return;
                 }
 
-                // For the 'until' mod, the end of the period should be the end the new period, not the start 
+                // For the 'until' mod, the end of the period should be the end of the new period, not the start 
                 if (mod.Equals(Constants.UNTIL_MOD))
                 {
                     res.Add(DateTimeResolutionKey.END, end);
