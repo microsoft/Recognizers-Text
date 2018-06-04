@@ -50,9 +50,9 @@ export namespace EnglishDateTime {
 	export const HalfYearBackRegex = `(the\\s+)?(H(?<number>[1-2])|(${HalfYearTermRegex}))(\\s+of|\\s*,\\s*)?\\s+(${YearRegex})`;
 	export const HalfYearRelativeRegex = `(the\\s+)?${HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+(${RelativeRegex}\\s+year)`;
 	export const AllHalfYearRegex = `(${HalfYearFrontRegex})|(${HalfYearBackRegex})|(${HalfYearRelativeRegex})`;
-	export const EarlyPrefixRegex = `(?<EarlyPrefix>early|beginning of|start of)`;
+	export const EarlyPrefixRegex = `(?<EarlyPrefix>early|beginning of|start of|(?<RelEarly>earlier(\\s+in)?))`;
 	export const MidPrefixRegex = `(?<MidPrefix>mid|middle of)`;
-	export const LaterPrefixRegex = `(?<LatePrefix>late|later(\\s+in)?|end of)`;
+	export const LaterPrefixRegex = `(?<LatePrefix>late|end of|(?<RelLate>later(\\s+in)?))`;
 	export const PrefixPeriodRegex = `(${EarlyPrefixRegex}|${MidPrefixRegex}|${LaterPrefixRegex})`;
 	export const PrefixDayRegex = `((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\\s+in)?(\\s+the\\s+day)?$`;
 	export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
