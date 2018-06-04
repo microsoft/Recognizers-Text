@@ -315,7 +315,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the March",
+      "Text": "March",
       "Type": "daterange"
     }
   ]
@@ -326,7 +326,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the May",
+      "Text": "May",
       "Type": "daterange"
     }
   ]

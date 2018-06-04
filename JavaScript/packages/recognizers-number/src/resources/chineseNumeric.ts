@@ -30,7 +30,7 @@ export namespace ChineseNumeric {
 	export const FracSplitRegex = `又|分\\s*之`;
 	export const ZeroToNineIntegerRegex = `[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]`;
 	export const NegativeNumberTermsRegex = `[负負]`;
-	export const NegativeNumberTermsRegexNum = `(?<!(\\d+\\s*)|[-－])[-－]`;
+	export const NegativeNumberTermsRegexNum = `((?<!(\\d+\\s*)|[-－])[-－])`;
 	export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*|^${NegativeNumberTermsRegexNum}.*`;
 	export const SpeGetNumberRegex = `${ZeroToNineFullHalfRegex}|${ZeroToNineIntegerRegex}|[十拾半对對]`;
 	export const PairRegex = '.*[双对雙對]$';
