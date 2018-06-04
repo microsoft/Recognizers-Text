@@ -12,7 +12,7 @@ public class Culture {
     public static final String Japanese = "ja-jp";
     public static final String Dutch = "nl-nl";
 
-    private static final Culture[] SupportedCultures = new Culture[]{
+    public static final Culture[] SupportedCultures = new Culture[]{
             new Culture("English", English),
             new Culture("Chinese", Chinese),
             new Culture("Spanish", Spanish),
