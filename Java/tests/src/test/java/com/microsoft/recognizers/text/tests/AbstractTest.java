@@ -2,8 +2,8 @@ package com.microsoft.recognizers.text.tests;
 
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsoft.recognizers.text.tests.TestCase;
 import org.apache.commons.io.FileUtils;
+import org.junit.AssumptionViolatedException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -30,13 +30,21 @@ public abstract class AbstractTest {
     }
 
     @Test
-    public void Recognize() {
-        if(this.currentCase.debug) {
+    public void testPreValidate() {
+        if (!isJavaSupported(this.currentCase.notSupported)) {
+            throw new AssumptionViolatedException("input '" + this.currentCase.input + "' not supported");
+        }
+
+        if (this.currentCase.debug) {
             // Add breakpoint here to stop on those TestCases marked with "debug": true
         }
+
+        test();
     }
 
-    public static Collection<TestCase> testCases(String recognizerType) {
+    abstract void test();
+
+    public static Collection<TestCase> enumerateTestCases(String recognizerType) {
 
         String recognizerTypePath = String.format(File.separator + recognizerType + File.separator);
 
@@ -47,12 +55,14 @@ public abstract class AbstractTest {
         // Map json to TestCases
         return FileUtils.listFiles(new File(SpecsPath), new String[]{"json"}, true)
                 .stream().filter(f -> f.getPath().contains(recognizerTypePath))
-                .map(f -> ReadTestSpec(f, mapper))
+                .map(f -> parseSpecFile(f, mapper))
                 .flatMap(ts -> Arrays.stream(ts))
+                // Ignore tests with NotSupportedByDesign = Java
+                .filter(ts -> isJavaSupported(ts.notSupportedByDesign))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    private static TestCase[] ReadTestSpec(File f, ObjectMapper mapper) {
+    private static TestCase[] parseSpecFile(File f, ObjectMapper mapper) {
         List<String> paths = Arrays.asList(f.toPath().toString().split(Pattern.quote(File.separator)));
         List<String> testInfo = paths.subList(paths.size() - 3, paths.size());
 
@@ -69,5 +79,11 @@ public abstract class AbstractTest {
             System.out.println("Error reading Spec file: " + f.toString() + " | " + ex.getMessage());
             return new TestCase[0];
         }
+    }
+
+    private static boolean isJavaSupported(String notSupported) {
+        // definition for "not supported" missing, should be supported then
+        if(notSupported == null) return true;
+        return !Arrays.asList(notSupported.toLowerCase().split(Pattern.quote(","))).contains("java");
     }
 }
