@@ -360,8 +360,8 @@ class BaseSetParser(DateTimeParser):
                 if not get_matched_unit_timex.matched:
                     return result
 
-                if not RegExpUtility.get_group(match, 'other'):
-                    get_matched_unit_timex.timex = get_matched_unit_timex.timex.replace('1', '2')
+                if RegExpUtility.get_group(match, 'other'):
+                    get_matched_unit_timex = MatchedTimex(matched=get_matched_unit_timex.matched, timex=get_matched_unit_timex.timex.replace('1', '2'))
 
                 result.timex = get_matched_unit_timex.timex
                 result.future_value = result.past_value = 'Set: ' + result.timex
@@ -395,7 +395,7 @@ class BaseSetParser(DateTimeParser):
         if matches:
             pr = self.config.time_parser.parse(ers[0], datetime.now())
             result.timex = pr.timex_str
-            result.future_value = result.past_value = 'Set: ' + pr.timex
+            result.future_value = result.past_value = 'Set: ' + result.timex
             result.success = True
 
         return result

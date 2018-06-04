@@ -128,7 +128,7 @@ def get_language(culture):
 
 def get_reference_date(context):
     reference_datetime = context.get('ReferenceDateTime') if context else None
-    return datetime.datetime.strptime(reference_datetime, '%Y-%m-%dT%H:%M:%S') if reference_datetime and not isinstance(reference_datetime, datetime.datetime) else None
+    return datetime.datetime.strptime(reference_datetime[0:19], '%Y-%m-%dT%H:%M:%S') if reference_datetime and not isinstance(reference_datetime, datetime.datetime) else None
 
 def get_results(culture, model, source, options, reference):
     return MODELFUNCTION[model](source, culture, options, reference)

@@ -130,7 +130,7 @@ class EnglishSetParserConfiguration(SetParserConfiguration):
         elif trimmed_text == 'weekly':
             timex = 'P1W'
         elif trimmed_text == 'biweekly':
-            timex == 'P2W'
+            timex = 'P2W'
         elif trimmed_text == 'monthly':
             timex = 'P1M'
         elif trimmed_text in ('yearly', 'annually', 'annual'):
