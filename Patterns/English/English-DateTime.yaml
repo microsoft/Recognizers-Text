@@ -436,9 +436,9 @@ AfterRegex: !nestedRegex
 SinceRegex: !simpleRegex
   def: \b(since|after or equal to|starting (from|on|with))\b\s*
 AgoRegex: !simpleRegex
-  def: \b(ago)\b
+  def: \b(ago|before (?<day>yesterday|today))\b
 LaterRegex: !simpleRegex
-  def: \b(later|from now)\b
+  def: \b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 WithinNextPrefixRegex: !nestedRegex

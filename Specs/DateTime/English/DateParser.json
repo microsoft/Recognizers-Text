@@ -2723,4 +2723,76 @@
     }
   ]
 }
+,
+{
+  "Input": "Are you available two days after today?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days after today",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-06-02",
+        "FutureResolution": {
+          "date": "2018-06-02"
+        },
+        "PastResolution": {
+          "date": "2018-06-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available three weeks from tomorrow?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three weeks from tomorrow",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-06-22",
+        "FutureResolution": {
+          "date": "2018-06-22"
+        },
+        "PastResolution": {
+          "date": "2018-06-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Where were you two days before yesterday?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days before yesterday",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-05-28",
+        "FutureResolution": {
+          "date": "2018-05-28"
+        },
+        "PastResolution": {
+          "date": "2018-05-28"
+        }
+      }
+    }
+  ]
+}
 ]

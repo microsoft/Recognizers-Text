@@ -1092,4 +1092,40 @@
     }
   ]
 }
+,
+{
+  "Input": "Are you available two days after today?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days after today",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available three weeks from tomorrow?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three weeks from tomorrow",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Where were you two days before yesterday?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days before yesterday",
+      "Type": "date"
+    }
+  ]
+}
 ]
