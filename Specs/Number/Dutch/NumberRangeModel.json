@@ -1,0 +1,706 @@
+[
+  {
+    "Input": "10-1995",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Dit nummer is hoger dan twintig en kleiner of gelijk dan vijfendertig.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "hoger dan twintig en kleiner of gelijk dan vijfendertig",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,35]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het nummer ligt tussen de 20 en 30.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "tussen de 20 en 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,30)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He ranks between the tenth and the fifteenth.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "between the tenth and the fifteenth",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,15)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hij scoort tussen min tien en vijftien.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "tussen min tien en vijftien",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(-10,15)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He ranks higher than the tenth but lower than the fifteenth.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "higher than the tenth but lower than the fifteenth",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,15)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This is a number which is greater than 100 and smaller than 300",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "greater than 100 and smaller than 300",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(100,300)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This number is higher or equal than one hundred, lower or equal than three hundred",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "higher or equal than one hundred, lower or equal than three hundred",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[100,300]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "There're at most 100 and at least 20 apples.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "at most 100 and at least 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "These apples are about 20~100",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "20~100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The number range is 20 through 100",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "20 through 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The number range is from one thousand to one thousand and five hundred.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "from one thousand to one thousand and five hundred",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,1500)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The number is above 1000 and below 1500",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "above 1000 and below 1500",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(1000,1500)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The number is above one quarter and below a half.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "above one quarter and below a half",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.25,0.5)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This number is bigger or equal than three thousand nine hundred and sixty five.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "bigger or equal than three thousand nine hundred and sixty five",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[3965,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This number is greater than 4,565",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "greater than 4,565",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4565,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He is more than thirty years old.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "more than thirty",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He is over thirty years old.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "over thirty",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His age is no less than thirty.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "no less than thirty",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "There're about five hundred and more in these products.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "five hundred and more",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "There're about five hundred or more in these products.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "five hundred or more",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "More than 1/2 of the people came here.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "More than 1/2",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Find the prime numbers which are smaller or equal than 100",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "smaller or equal than 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Find the prime numbers which are less than or equal to 100",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "less than or equal to 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "There're about five hundred or less in these products.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "five hundred or less",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,500]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Find the prime numbers which are < = 100",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "< = 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His height is below 170.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "below 170",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His height is under 170.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "under 170",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Fewer than a thousand giant pandas still live in the wild.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "Fewer than a thousand",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,1000)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "x is equal to one hundred and seventy.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "equal to one hundred and seventy",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[170,170]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "x>10 and y<20",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": ">10",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,)"
+        }
+      },
+      {
+        "Text": "<20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,20)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "x is larger than 10 and smaller than 20. y is no more than 50 and no less than 20.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "larger than 10 and smaller than 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,20)"
+        }
+      },
+      {
+        "Text": "no more than 50 and no less than 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,50]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "One-fourth is a fraction number.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "The number equals 20.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "equals 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,20]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Equaling to 20, the number of students in our class is not significant.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "Equaling to 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,20]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "0612345678 is een telefoonnummer.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "+31612345678 is een telefoonnummer.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "+31 6 12 34 56 78 is een telefoonnummer.",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "His score is 200 or greater than",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "200 or greater than",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is 200 or greater than 190",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "greater than 190",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(190,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is 200 or greater",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "200 or greater",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is less than or equal to 30",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "less than or equal to 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is equal to or less than 30",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "equal to or less than 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is at least or equal to 30",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "at least or equal to 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is equal to or more than 30",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "equal to or more than 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is equal to 5000 or less",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "equal to 5000 or less",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is equal to 5000 or less than 6000",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "equal to 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "less than 6000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,6000)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is equal to 5000 or more than",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "equal to 5000 or more than",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "His score is equal to 5000 or more than 4500",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "equal to 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "more than 4500",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4500,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het resultaat is minder dan 5000 of gelijk aan",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "minder dan 5000 of gelijk aan",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het kost meer dan 5000 of evenveel",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "meer dan 5000 of evenveel",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn resultaat is meer dan 5000 of gelijk aan",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "meer dan 5000 of gelijk aan",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het resultaat is meer dan 5000 of gelijk aan 6000",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "meer dan 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(5000,)"
+        }
+      },
+      {
+        "Text": "gelijk aan 6000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[6000,6000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het resultaat is gelijk aan 5000 of minder dan 5000",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "gelijk aan 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "minder dan 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000)"
+        }
+      }
+    ]
+  }
+]

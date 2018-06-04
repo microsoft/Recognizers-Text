@@ -1,6 +1,7 @@
 [
   {
     "Input": "drie biljoenste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "drie biljoenste",
@@ -13,10 +14,12 @@
   },
   {
     "Input": "een biljoenste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": []
   },
   {
     "Input": "honderd biljoenste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "honderd biljoenste",
@@ -29,6 +32,7 @@
   },
   {
     "Input": "11e",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "11e",
@@ -41,6 +45,7 @@
   },
   {
     "Input": "derde",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "derde",
@@ -53,6 +58,7 @@
   },
   {
     "Input": "30ste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "30ste",
@@ -65,6 +71,7 @@
   },
   {
     "Input": "tweede",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "tweede",
@@ -77,6 +84,7 @@
   },
   {
     "Input": "elfde",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "elfde",
@@ -89,6 +97,7 @@
   },
   {
     "Input": "nulde",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "nulde",
@@ -101,6 +110,7 @@
   },
   {
     "Input": "twintigste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "twintigste",
@@ -113,6 +123,7 @@
   },
   {
     "Input": "vijfentwintigste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "vijfentwintigste",
@@ -125,6 +136,7 @@
   },
   {
     "Input": "eenentwintigste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "eenentwintigste",
@@ -137,6 +149,7 @@
   },
   {
     "Input": "honderdvijfentwintigste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "honderdvijfentwintigste",
@@ -149,6 +162,7 @@
   },
   {
     "Input": "biljoenste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "biljoenste",
@@ -161,6 +175,7 @@
   },
   {
     "Input": "eerste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "eerste",
@@ -173,6 +188,7 @@
   },
   {
     "Input": "tweehonderdste",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "tweehonderdste",
@@ -185,6 +201,7 @@
   },
   {
     "Input": "Boek een eerste klas ticket naar Amsterdam",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "eerste",
