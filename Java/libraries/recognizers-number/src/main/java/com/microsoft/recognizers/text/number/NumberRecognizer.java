@@ -78,7 +78,7 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
 
         registerModel(NumberModel.class, Culture.English, (options) -> new NumberModel(
                 null,
-                null));
+                com.microsoft.recognizers.text.number.english.extractors.NumberExtractor.getInstance(NumberMode.PureNumber, options)));
 //        registerModel(OrdinalModel.class, Culture.English, (options) -> new OrdinalModel(
 //                null,
 //                null));
