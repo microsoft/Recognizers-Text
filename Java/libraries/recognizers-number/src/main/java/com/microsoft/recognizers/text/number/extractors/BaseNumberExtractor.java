@@ -5,7 +5,6 @@ import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.resources.BaseNumbers;
-import com.microsoft.recognizers.text.utilities.RegexUtility;
 
 import java.util.*;
 import java.util.regex.MatchResult;
@@ -33,13 +32,18 @@ public abstract class BaseNumberExtractor implements IExtractor {
         List<Boolean> matched = Arrays.asList(new Boolean[source.length()]);
 
         getRegexes().forEach((k, value) -> {
-            for (MatchResult m : RegexUtility.allMatches(k, source)) {
-                for (int j = 0; j < m.end(); j++) {
-                    matched.set(m.start() + j, true);
+            Matcher matcher = k.matcher(source);
+            while (matcher.find()) {
+                MatchResult r = matcher.toMatchResult();
+                int start = r.start();
+                int end = r.end();
+                String text = r.group();
+                for (int j = 0; j < text.length(); j++) {
+                    matched.set(start + j, true);
                 }
 
                 // Keep Source Data for extra information
-                matchSource.put(m, value);
+                matchSource.put(r, value);
             }
         });
 
@@ -53,7 +57,7 @@ public abstract class BaseNumberExtractor implements IExtractor {
 
                     int finalStart = start;
                     int finalLength = length;
-                    Optional<MatchResult> srcMatches = matchSource.keySet().stream().filter(o -> o.start() == finalStart && (o.end() - o.start()) == finalLength).findFirst();
+                    Optional<MatchResult> srcMatches = matchSource.keySet().stream().filter(o -> o.start() == finalStart && o.group().length() == finalLength).findFirst();
                     if (srcMatches.isPresent()) {
                         MatchResult srcMatch = srcMatches.get();
 

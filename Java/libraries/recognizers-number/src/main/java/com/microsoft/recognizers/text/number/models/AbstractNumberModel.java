@@ -30,6 +30,7 @@ public abstract class AbstractNumberModel implements IModel {
         } catch (Exception ex) {
             // Nothing to do. Exceptions in parse should not break users of recognizers.
             // No result.
+            ex.printStackTrace();
         }
 
         return parsedNumbers.stream().map(o -> new ModelResult(

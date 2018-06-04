@@ -37,7 +37,7 @@ public class NumberExtractor extends BaseNumberExtractor {
 
     @Override
     protected Optional<Pattern> getNegativeNumberTermsRegex() {
-        return null;
+        return Optional.of(this.negativeNumberTermsRegex);
     }
 
     private static final ConcurrentHashMap<Pair<NumberMode, NumberOptions>, NumberExtractor> instances = new ConcurrentHashMap<>();

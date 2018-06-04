@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.NumberRecognizer;
+import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
 
@@ -20,12 +21,36 @@ public class NumberTest extends AbstractTest {
     @Override
     void test() {
         // parse
-        List<ModelResult> results = Recognize(this.currentCase);
+        List<ModelResult> results = recognize(this.currentCase);
 
         // assert
+        List<ModelResult> expected = readExpectedResults(ModelResult.class, this.currentCase.results);
+
+        Assert.assertEquals("Result count does not match.", expected.size(), results.size());
+
+//        foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+//        {
+//            var expected = tuple.Item1;
+//            var actual = tuple.Item2;
+//
+//            Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
+//            Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+//
+//            Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
+//
+//            foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
+//            {
+//                if (!actual.Resolution.ContainsKey(key) && !expected.Resolution.ContainsKey(key))
+//                {
+//                    continue;
+//                }
+//
+//                Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
+//            }
+//        }
     }
 
-    private static List<ModelResult> Recognize(TestCase currentCase) {
+    private static List<ModelResult> recognize(TestCase currentCase) {
         try {
             switch (currentCase.modelName) {
                 case "NumberModel":

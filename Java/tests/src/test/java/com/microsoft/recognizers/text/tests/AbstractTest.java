@@ -1,7 +1,11 @@
 package com.microsoft.recognizers.text.tests;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.microsoft.recognizers.text.IModel;
+import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.tests.helpers.ModelResultMixIn;
 import org.apache.commons.io.FileUtils;
 import org.junit.AssumptionViolatedException;
 import org.junit.Test;
@@ -81,9 +85,36 @@ public abstract class AbstractTest {
         }
     }
 
+    protected <T extends ModelResult> List<T> readExpectedResults(Class<T> modelResultClass, List<Object> results) {
+        return results.stream().map(r -> this.parseResult(modelResultClass, r))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    private <T extends ModelResult> T parseResult(Class<T> modelResultClass, Object result) {
+        // Deserializer
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+        mapper.addMixIn(ModelResult.class, ModelResultMixIn.class);
+
+        try {
+            String json = mapper.writeValueAsString(result);
+            return mapper.readValue(json, modelResultClass);
+
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return null;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+
+        }
+    }
+
     private static boolean isJavaSupported(String notSupported) {
         // definition for "not supported" missing, should be supported then
-        if(notSupported == null) return true;
+        if (notSupported == null) return true;
+
         return !Arrays.asList(notSupported.toLowerCase().split(Pattern.quote(","))).contains("java");
     }
 }
