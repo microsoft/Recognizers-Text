@@ -2,15 +2,19 @@ package com.microsoft.recognizers.text.tests;
 
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.NumberRecognizer;
 import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
+import org.javatuples.Pair;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class NumberTest extends AbstractTest {
 
@@ -21,33 +25,27 @@ public class NumberTest extends AbstractTest {
     @Override
     void test() {
         // parse
-        List<ModelResult> results = recognize(this.currentCase);
+        List<ModelResult> results = recognize(currentCase);
 
         // assert
-        List<ModelResult> expected = readExpectedResults(ModelResult.class, this.currentCase.results);
+        List<ModelResult> expectedResults = readExpectedResults(ModelResult.class, currentCase.results);
+        Assert.assertEquals("Result count does not match.", expectedResults.size(), results.size());
 
-        Assert.assertEquals("Result count does not match.", expected.size(), results.size());
+        IntStream.range(0, Math.min(results.size(), expectedResults.size()))
+            .mapToObj(i -> Pair.with(expectedResults.get(i), results.get(i)))
+            .forEach(t -> {
+                ModelResult expected = t.getValue0();
+                ModelResult actual = t.getValue1();
 
-//        foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
-//        {
-//            var expected = tuple.Item1;
-//            var actual = tuple.Item2;
-//
-//            Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
-//            Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
-//
-//            Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
-//
-//            foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
-//            {
-//                if (!actual.Resolution.ContainsKey(key) && !expected.Resolution.ContainsKey(key))
-//                {
-//                    continue;
-//                }
-//
-//                Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
-//            }
-//        }
+                Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
+                Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
+
+                Assert.assertEquals(getMessage(currentCase, "resolution.value"), expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
+            });
+    }
+
+    private String getMessage(TestCase testCase, String propName) {
+        return "Does not match " + propName + " on Input: \"" + testCase.input + "\"";
     }
 
     private static List<ModelResult> recognize(TestCase currentCase) {

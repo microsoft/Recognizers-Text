@@ -1,11 +1,16 @@
 package com.microsoft.recognizers.text.utilities;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 public class FormatUtility {
-    public static String Preprocess(String query) {
-        return FormatUtility.Preprocess(query, true);
+    public static String preprocess(String query) {
+        return FormatUtility.preprocess(query, true);
     }
 
-    public static String Preprocess(String query, boolean toLower) {
+    public static String preprocess(String query, boolean toLower) {
         if(toLower) {
             query = query.toLowerCase();
         }
@@ -33,5 +38,20 @@ public class FormatUtility {
                 .replace('．', '.')
                 .replace('（', '(')
                 .replace('）', ')');
+    }
+
+    public static String trimEnd(String input) {
+        return input.replaceAll("\\s+$", "");
+    }
+
+    public static List<String> split(String input, List<String> delimiters) {
+        String delimitersRegex = String.join(
+                "|",
+                delimiters.stream()
+                        .map(s -> Pattern.quote(s))
+                        .collect(Collectors.toList()));
+
+        return Arrays.stream(input.split(delimitersRegex)).filter(s -> !s.isEmpty())
+                .collect(Collectors.toList());
     }
 }

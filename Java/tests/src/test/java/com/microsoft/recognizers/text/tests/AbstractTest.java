@@ -3,7 +3,6 @@ package com.microsoft.recognizers.text.tests;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.tests.helpers.ModelResultMixIn;
 import org.apache.commons.io.FileUtils;
@@ -40,7 +39,7 @@ public abstract class AbstractTest {
         }
 
         if (this.currentCase.debug) {
-            // Add breakpoint here to stop on those TestCases marked with "debug": true
+            // Add breakpoint here to stop on those TestCases marked with "Debug": true
         }
 
         test();
