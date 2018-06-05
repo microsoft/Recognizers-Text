@@ -8,6 +8,9 @@ import com.microsoft.recognizers.text.number.models.NumberModel;
 import com.microsoft.recognizers.text.number.models.NumberRangeModel;
 import com.microsoft.recognizers.text.number.models.OrdinalModel;
 import com.microsoft.recognizers.text.number.models.PercentModel;
+import com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserFactory;
+import com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserType;
+import com.microsoft.recognizers.text.number.parsers.EnglishNumberParserConfiguration;
 
 import java.util.List;
 import java.util.function.Function;
@@ -77,7 +80,7 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         //region English
 
         registerModel(NumberModel.class, Culture.English, (options) -> new NumberModel(
-                null,
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(options)),
                 com.microsoft.recognizers.text.number.english.extractors.NumberExtractor.getInstance(NumberMode.PureNumber, options)));
 //        registerModel(OrdinalModel.class, Culture.English, (options) -> new OrdinalModel(
 //                null,

@@ -75,7 +75,7 @@ public class NumberTest extends AbstractTest {
 
     private static String getCultureCode(String language) {
         return Arrays.stream(Culture.SupportedCultures)
-                .filter(c -> c.cultureName.toLowerCase().equals(language.toLowerCase()))
+                .filter(c -> c.cultureName.equalsIgnoreCase(language))
                 .findFirst().get().cultureCode;
     }
 

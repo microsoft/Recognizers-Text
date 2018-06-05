@@ -35,7 +35,7 @@ public class ModelFactory<TModelOptions> extends HashMap<Pair<String, Type>, Fun
 
     public void initializeModels(String targetCulture, TModelOptions options) {
         this.keySet().stream()
-                .filter(key -> StringUtils.isEmpty(targetCulture) || key.getValue0().equals(targetCulture))
+                .filter(key -> StringUtils.isEmpty(targetCulture) || key.getValue0().equalsIgnoreCase(targetCulture))
                 .forEach(key -> this.initializeModel(key.getValue1(), key.getValue0(), options));
     }
 
