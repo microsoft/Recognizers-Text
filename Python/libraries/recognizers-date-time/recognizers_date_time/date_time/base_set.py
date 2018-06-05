@@ -14,7 +14,7 @@ from .base_duration import BaseDurationParser
 from .base_timeperiod import BaseTimePeriodParser
 from .base_time import BaseTimeParser
 from .base_date import BaseDateParser
-from .base_datetime import BaseDateTimeParser
+from .base_datetime import BaseDateTimeParser, MatchedTimex
 from .base_dateperiod import BaseDatePeriodParser
 from .base_datetimeperiod import BaseDateTimePeriodParser
 
@@ -170,8 +170,6 @@ class BaseSetExtractor(DateTimeExtractor):
                         length += len(prefix)
 
                     yield Token(extract_result.start, extract_result.start + length)
-
-MatchedTimex = namedtuple('MatchedTimex', ['matched', 'timex'])
 
 class SetParserConfiguration:
     @property
