@@ -29,7 +29,8 @@ public abstract class BaseNumberExtractor implements IExtractor {
         ArrayList<ExtractResult> result = new ArrayList<>();
 
         HashMap<MatchResult, String> matchSource = new HashMap<>();
-        List<Boolean> matched = Arrays.asList(new Boolean[source.length()]);
+        Boolean[] matched = new Boolean[source.length()];
+        Arrays.fill(matched, false);
 
         getRegexes().forEach((k, value) -> {
             Matcher matcher = k.matcher(source);
@@ -37,9 +38,9 @@ public abstract class BaseNumberExtractor implements IExtractor {
                 MatchResult r = matcher.toMatchResult();
                 int start = r.start();
                 int end = r.end();
-                String text = r.group();
-                for (int j = 0; j < text.length(); j++) {
-                    matched.set(start + j, true);
+                int length = end - start;
+                for (int j = 0; j < length; j++) {
+                    matched[start + j] = true;
                 }
 
                 // Keep Source Data for extra information
@@ -49,8 +50,8 @@ public abstract class BaseNumberExtractor implements IExtractor {
 
         int last = -1;
         for (int i = 0; i < source.length(); i++) {
-            if (matched.get(i)) {
-                if (i + 1 == source.length() || !matched.get(i + 1)) {
+            if (matched[i]) {
+                if (i + 1 == source.length() || !matched[i + 1]) {
                     int start = last + 1;
                     int length = i - last;
                     String subStr = source.substring(start, start + length);
