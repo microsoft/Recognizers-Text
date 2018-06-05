@@ -188,11 +188,11 @@ public class FrenchNumeric {
     public static final String NumberWithPrefixPercentage = "((?<!{BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\\s*)({BaseNumbers.NumberReplaceToken})(?=\\s|$)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
-    public static final String DecimalSeparatorChar = ",";
+    public static final Character DecimalSeparatorChar = ',';
 
     public static final String FractionMarkerToken = "sur";
 
-    public static final String NonDecimalSeparatorChar = ".";
+    public static final Character NonDecimalSeparatorChar = '.';
 
     public static final String HalfADozenText = "six";
 

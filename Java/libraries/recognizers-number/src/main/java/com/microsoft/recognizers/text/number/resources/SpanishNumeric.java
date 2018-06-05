@@ -184,11 +184,11 @@ public class SpanishNumeric {
 
     public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)";
 
-    public static final String DecimalSeparatorChar = ",";
+    public static final Character DecimalSeparatorChar = ',';
 
     public static final String FractionMarkerToken = "sobre";
 
-    public static final String NonDecimalSeparatorChar = ".";
+    public static final Character NonDecimalSeparatorChar = '.';
 
     public static final String HalfADozenText = "seis";
 

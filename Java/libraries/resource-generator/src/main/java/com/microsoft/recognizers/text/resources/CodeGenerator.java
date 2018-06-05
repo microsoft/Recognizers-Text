@@ -30,7 +30,7 @@ public class CodeGenerator {
         constructor.addTypeDescription(new TypeDescription(ParamsRegex.class, "!paramsRegex"));
         constructor.addTypeDescription(new TypeDescription(SimpleRegex.class, "!simpleRegex"));
         constructor.addTypeDescription(new TypeDescription(NestedRegex.class, "!nestedRegex"));
-        constructor.addTypeDescription(new TypeDescription(String.class, "!char"));
+        constructor.addTypeDescription(new TypeDescription(Character.class, "!char"));
         constructor.addTypeDescription(new TypeDescription(Dictionary.class, "!dictionary"));
         constructor.addTypeDescription(new TypeDescription(List.class, "!list"));
 
@@ -92,6 +92,9 @@ public class CodeGenerator {
         if (token instanceof NestedRegex) {
             return new NestedRegexWriter(tokenName, (NestedRegex) token);
         }
+
+        if (token instanceof Character)
+            return new CharacterWritter(tokenName, (char) token);
 
         if (token instanceof String) {
             return new DefaultWriter(tokenName, (String) token);

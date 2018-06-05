@@ -256,11 +256,11 @@ public class EnglishNumeric {
             .replace("{TillRegex}", TillRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
-    public static final String DecimalSeparatorChar = ".";
+    public static final Character DecimalSeparatorChar = '.';
 
     public static final String FractionMarkerToken = "over";
 
-    public static final String NonDecimalSeparatorChar = ",";
+    public static final Character NonDecimalSeparatorChar = ',';
 
     public static final String HalfADozenText = "six";
 

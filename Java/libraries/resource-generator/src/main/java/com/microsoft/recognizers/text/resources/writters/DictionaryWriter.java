@@ -24,7 +24,7 @@ public class DictionaryWriter implements ICodeWriter {
             valueQuote1 = "[";
             valueQuote2 = "]";
         } else {
-            valueQuote1 = valueQuote2 = valueType == "Long" || valueType == "Double" ? "" : "\"";
+            valueQuote1 = valueQuote2 = valueType.equals("Long") || valueType.equals("Double") ? "" : "\"";
         }
 
         String[] entries = this.def.entries.entrySet().stream()

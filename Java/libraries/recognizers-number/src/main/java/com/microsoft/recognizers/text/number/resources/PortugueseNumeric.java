@@ -183,11 +183,11 @@ public class PortugueseNumeric {
     public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
-    public static final String DecimalSeparatorChar = ",";
+    public static final Character DecimalSeparatorChar = ',';
 
     public static final String FractionMarkerToken = "sobre";
 
-    public static final String NonDecimalSeparatorChar = ".";
+    public static final Character NonDecimalSeparatorChar = '.';
 
     public static final String HalfADozenText = "seis";
 
@@ -203,7 +203,7 @@ public class PortugueseNumeric {
 
     public static final List<String> WrittenFractionSuffix = Arrays.asList("avo", "ava");
 
-    public static final String PluralSuffix = "s";
+    public static final Character PluralSuffix = 's';
 
     public static final String HalfADozenRegex = "meia\\s+d[uú]zia";
 

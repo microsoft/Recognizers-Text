@@ -18,11 +18,11 @@ public class ChineseNumeric {
 
     public static final String LangMarker = "";
 
-    public static final String DecimalSeparatorChar = ".";
+    public static final Character DecimalSeparatorChar = '.';
 
     public static final String FractionMarkerToken = "";
 
-    public static final String NonDecimalSeparatorChar = " ";
+    public static final Character NonDecimalSeparatorChar = ' ';
 
     public static final String HalfADozenText = "";
 
