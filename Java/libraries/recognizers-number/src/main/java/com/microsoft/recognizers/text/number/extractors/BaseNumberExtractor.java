@@ -65,7 +65,7 @@ public abstract class BaseNumberExtractor implements IExtractor {
                         // Extract negative numbers
                         if (getNegativeNumberTermsRegex().isPresent()) {
                             Matcher match = getNegativeNumberTermsRegex().get().matcher(source.substring(0, start));
-                            if (match.matches()) {
+                            if (match.find()) {
                                 start = match.start();
                                 length = length + (match.end() - match.start());
                                 subStr = match.group() + subStr;

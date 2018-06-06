@@ -10,7 +10,6 @@ import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
 import org.javatuples.Pair;
 
-import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;

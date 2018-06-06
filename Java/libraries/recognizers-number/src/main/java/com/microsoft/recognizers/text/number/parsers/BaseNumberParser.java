@@ -6,7 +6,6 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.utilities.FormatUtility;
 
-import java.text.DecimalFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -59,7 +58,7 @@ public class BaseNumberParser implements IParser {
         if (extractResult.data instanceof String) {
             extra = (String) extractResult.data;
         } else {
-            if (this.longFormatRegex.matcher(extractResult.text).matches()) {
+            if (this.longFormatRegex.matcher(extractResult.text).find()) {
                 extra = "Num";
             } else {
                 extra = config.getLangMarker();
@@ -69,7 +68,7 @@ public class BaseNumberParser implements IParser {
         // Resolve symbol prefix
         boolean isNegative = false;
         Matcher matchNegative = config.getNegativeNumberSignRegex().matcher(extractResult.text);
-        if (matchNegative.matches()) {
+        if (matchNegative.find()) {
             isNegative = true;
             extractResult = new ExtractResult(
                     extractResult.start,
@@ -172,7 +171,7 @@ public class BaseNumberParser implements IParser {
         String resultText = extractResult.text.toLowerCase();
 
         Matcher match = config.getFractionPrepositionRegex().matcher(resultText);
-        if (match.matches()) {
+        if (match.find()) {
 
             String numerator = match.group("numerator");
             String denominator = match.group("denominator");
@@ -187,7 +186,7 @@ public class BaseNumberParser implements IParser {
 
             result = result.withValue(smallValue / bigValue);
         } else {
-            List<String> fracWords = config.normalizeTokenSet(Arrays.asList(resultText.split("")), result);
+            List<String> fracWords = config.normalizeTokenSet(Arrays.asList(resultText.split(" ")), result);
 
             // Split fraction with integer
             int splitIndex = fracWords.size() - 1;
@@ -269,7 +268,7 @@ public class BaseNumberParser implements IParser {
             int mixedIndex = fracWords.size();
             for (int i = fracWords.size() - 1; i >= 0; i--) {
                 if (i < fracWords.size() - 1 && config.getWrittenFractionSeparatorTexts().contains(fracWords.get(i))) {
-                    String numerStr = String.join(" ", fracPart.subList(i + 1, fracWords.size() - 1));
+                    String numerStr = String.join(" ", fracWords.subList(i + 1, fracWords.size()));
                     numerValue = getIntValue(getMatches(numerStr));
                     mixedIndex = i + 1;
                     break;
@@ -402,7 +401,7 @@ public class BaseNumberParser implements IParser {
     }
 
 
-    private double getIntValue(List<String> matchStrs) {
+    private Double getIntValue(List<String> matchStrs) {
         boolean[] isEnd = new boolean[matchStrs.size()];
         Arrays.fill(isEnd, false);
 
@@ -519,7 +518,7 @@ public class BaseNumberParser implements IParser {
 
         if (config.getCardinalNumberMap().containsKey(firstMatch) && config.getCardinalNumberMap().get(firstMatch) >= 10) {
             String prefix = "0.";
-            double tempInt = getIntValue(matchStrs);
+            int tempInt = getIntValue(matchStrs).intValue();
             String all = prefix + tempInt;
             ret = Double.parseDouble(all);
         } else {
