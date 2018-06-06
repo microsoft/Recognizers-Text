@@ -37,7 +37,41 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(BeforeAfterRegexMatch(text));
             tokens.AddRange(SpecialCasesRegexMatch(text, reference));
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            var ret = Token.MergeAllTokens(tokens, text, ExtractorName);
+
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                AddTimeZone(ret, this.config.TimeZoneExtractor.Extract(text, reference), text);
+            }
+
+            return ret;
+        }
+
+        private void AddTimeZone(List<ExtractResult> ret, List<ExtractResult> timeZoneErs, string text)
+        {
+            foreach (var er in ret)
+            {
+                foreach (var timeZoneEr in timeZoneErs)
+                {
+                    var begin = er.Start + er.Length;
+                    var end = timeZoneEr.Start;
+                    if (begin < end)
+                    {
+                        var midString = text.Substring((int) begin, (int) (end - begin));
+                        if (string.IsNullOrWhiteSpace(midString))
+                        {
+                            var length = (int) (timeZoneEr.Start + timeZoneEr.Length - er.Start);
+
+                            er.Text = text.Substring((int) er.Start, length);
+                            er.Length = length;
+                            er.Data =
+                                new KeyValuePair<string, ExtractResult>(
+                                    Constants.SYS_DATETIME_TIMEZONE,
+                                    timeZoneEr);
+                        }
+                    }
+                }
+            }
         }
 
         private List<Token> BasicRegexMatch(string text)

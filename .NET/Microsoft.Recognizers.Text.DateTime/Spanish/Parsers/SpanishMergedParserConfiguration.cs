@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimePeriodParser = new DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
             GetParser = new BaseSetParser(new SpanishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration());
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimezoneParser();
         }
     }
 }

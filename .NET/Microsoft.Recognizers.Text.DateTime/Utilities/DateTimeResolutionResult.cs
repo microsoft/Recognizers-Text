@@ -29,13 +29,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<object> SubDateTimeEntities { get; set; }
 
-        public TimeZoneResolutionResult TimeZoneResolution { get; set; }
+        public TimezoneResolutionResult TimezoneResolution { get; set; }
     }
 
-    public class TimeZoneResolutionResult
+    public class TimezoneResolutionResult
     {
         public string Value { get; set; }
 
         public int UtcOffsetMins { get; set; }
+
+        public string TimeZoneText { get; set; }
     }
 }

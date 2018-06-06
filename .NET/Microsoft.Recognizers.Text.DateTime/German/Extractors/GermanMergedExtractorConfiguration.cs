@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(options));
             SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimezoneExtractor(new GermanTimeZoneExtractorConfiguration());
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration());
         }

@@ -214,7 +214,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
                 case DateTimeExtractors.TimeZone:
-                    return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration());
+                    return new BaseTimezoneExtractor(new EnglishTimeZoneExtractorConfiguration());
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
@@ -248,7 +248,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
                 case DateTimeParsers.TimeZone:
-                    return new BaseTimeZoneParser();
+                    return new BaseTimezoneParser();
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:

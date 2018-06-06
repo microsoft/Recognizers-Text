@@ -5,6 +5,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface ITimeExtractorConfiguration : IOptionsConfiguration
     {
+        IDateTimeExtractor TimeZoneExtractor { get; }
+
         IEnumerable<Regex> TimeRegexList { get; }
 
         Regex AtRegex { get; }

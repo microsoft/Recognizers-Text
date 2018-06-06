@@ -338,6 +338,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddResolutionFields(res, ResolutionKey.Type, typeOutput);
             AddResolutionFields(res, DateTimeResolutionKey.IsLunar, islunar? islunar.ToString():string.Empty);
 
+
+            var hasTimezone = false;
+            // Add timezone resolution
+            if (val.TimezoneResolution != null)
+            {
+                if (slot.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
+                {
+                    // single timezone
+                    AddResolutionFields(res, Constants.ResolveTimezone, new Dictionary<string, string>
+                    {
+                        {ResolutionKey.Value, val.TimezoneResolution.Value},
+                        {Constants.UtcOffsetMinsKey, val.TimezoneResolution.UtcOffsetMins.ToString()}
+                    });
+                }
+                else
+                {
+                    // timezone as clarification of datetime
+                    hasTimezone = true;
+                    AddResolutionFields(res, Constants.Timezone, val.TimezoneResolution.Value);
+                    AddResolutionFields(res, Constants.TimezoneText, val.TimezoneResolution.TimeZoneText);
+                    AddResolutionFields(res, Constants.UtcOffsetMinsKey, val.TimezoneResolution.UtcOffsetMins.ToString());
+                }
+            }
+
             var pastResolutionStr = ((DateTimeResolutionResult) slot.Value).PastResolution;
             var futureResolutionStr = ((DateTimeResolutionResult) slot.Value).FutureResolution;
 
@@ -392,15 +416,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ResolveWeekOf(res, Constants.ResolveToPast); 
             }
 
-            if (val.TimeZoneResolution != null)
-            {
-                var timeZoneResolution = new Dictionary<string, string>();
-                timeZoneResolution.Add(ResolutionKey.Value, val.TimeZoneResolution.Value);
-                timeZoneResolution.Add(Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString());
-
-                AddResolutionFields(res, Constants.ResolveTimeZone, timeZoneResolution);
-            }
-
             foreach (var p in res)
             {
                 if (p.Value is Dictionary<string, string>)
@@ -411,6 +426,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     AddResolutionFields(value, DateTimeResolutionKey.Mod, mod);
                     AddResolutionFields(value, ResolutionKey.Type, typeOutput);
                     AddResolutionFields(value, DateTimeResolutionKey.IsLunar, islunar ? islunar.ToString() : string.Empty);
+
+                    if (hasTimezone)
+                    {
+                        AddResolutionFields(value, Constants.Timezone, val.TimezoneResolution.Value);
+                        AddResolutionFields(value, Constants.TimezoneText, val.TimezoneResolution.TimeZoneText);
+                        AddResolutionFields(value, Constants.UtcOffsetMinsKey, val.TimezoneResolution.UtcOffsetMins.ToString());
+                    }
 
                     foreach (var q in (Dictionary<string, string>) p.Value)
                     {
@@ -428,7 +450,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimeZoneResolution == null)
+            if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimezoneResolution == null)
             {
                 var notResolved = new Dictionary<string, string> {
                     {
@@ -494,17 +516,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(keyName))
             {
                 var resolution = (Dictionary<string, string>) resolutionDic[keyName];
+                var resolutionPm = new Dictionary<string, string>();
+
                 if (!resolutionDic.ContainsKey(DateTimeResolutionKey.Timex))
                 {
                     return;
                 }
 
                 var timex = (string) resolutionDic[DateTimeResolutionKey.Timex];
+
                 resolutionDic.Remove(keyName);
-
                 resolutionDic.Add(keyName + "Am", resolution);
-
-                var resolutionPm = new Dictionary<string, string>();
 
                 switch ((string) resolutionDic[ResolutionKey.Type])
                 {

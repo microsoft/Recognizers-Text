@@ -81,10 +81,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum);
         public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum);
 
-        // special value for timezone
+        // Special values for timezone
         public const int InvalidOffsetValue = -10000;
-        public const string UtcOffsetMinsKey = "UtcOffsetMins";
-        public const string ResolveTimeZone = "resolveTimeZone";
+        public const string UtcOffsetMinsKey = "utcOffsetMins";
+        public const string TimezoneText = "timezoneText";
+        public const string Timezone = "timezone";
+        public const string ResolveTimezone = "resolveTimeZone";
         public const int PositiveSign = 1;
         public const int NegativeSign = -1;
 

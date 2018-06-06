@@ -502,6 +502,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Comment = Constants.Comment_AmPm;
             }
 
+            if (((DateTimeResolutionResult)pr1.Value).TimezoneResolution != null)
+            {
+                ret.TimezoneResolution = ((DateTimeResolutionResult)pr1.Value).TimezoneResolution;
+            }
+            else if (((DateTimeResolutionResult)pr2.Value).TimezoneResolution != null)
+            {
+                ret.TimezoneResolution = ((DateTimeResolutionResult)pr2.Value).TimezoneResolution;
+            }
+
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;

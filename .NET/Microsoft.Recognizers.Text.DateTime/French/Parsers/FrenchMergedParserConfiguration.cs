@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateTimePeriodParser = new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(this));
             GetParser = new BaseSetParser(new FrenchSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration());
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimezoneParser();
         }
     }
 }

@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(options));
             SetExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimezoneExtractor(new FrenchTimeZoneExtractorConfiguration());
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration());
             IntegerExtractor = new Number.French.IntegerExtractor();
         }
