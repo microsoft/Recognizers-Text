@@ -1,0 +1,124 @@
+[
+  {
+    "Input": "100%",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twintig procent",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "twintig procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "percents of twenty",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "percents of twenty",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "een van de drie",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "een van de drie",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "33,3333333333333%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "een uit twee",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "een uit twee",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1/4 van",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "1/4 van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "een vierde van",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "een vierde van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "de helft van",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "de helft van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "een kwart van",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "een kwart van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "een derde",
+    "NotSupported": "dotnet, javascript, python",
+    "Results": []
+  }
+]
