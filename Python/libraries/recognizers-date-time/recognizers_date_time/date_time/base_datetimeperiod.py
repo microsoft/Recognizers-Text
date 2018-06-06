@@ -522,8 +522,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 time_period_timex = time_period_timex.replace('(', '').replace(')', '')
                 time_period_timex_array = time_period_timex.split(',')
                 time_period_future_value = time_period_resolution_result.future_value
-                begin_time: datetime = time_period_future_value[0]
-                end_time: datetime = time_period_future_value[1]
+                begin_time: datetime = time_period_future_value.start
+                end_time: datetime = time_period_future_value.end
 
                 if len(time_period_timex_array) == 3:
                     begin_str = date_str + time_period_timex_array[0]
@@ -557,7 +557,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if not match:
             match = regex.search(self.config.pure_number_between_and_regex, source)
 
-        if not match:
+        if not match or match.start() != 0:
             return result
 
         hour_group = RegExpUtility.get_group_list(match, 'hour')
@@ -652,7 +652,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 prs = self.get_two_points(datetime_ers[0], time_ers[0], self.config.date_time_parser, self.config.time_parser, reference)
                 begin_has_date = True
 
-        if prs is None or not prs.begin or not prs.end:
+        if prs is None or not prs.begin.value or not prs.end.value:
             return result
 
         begin: DateTimeResolutionResult = prs.begin.value
@@ -755,16 +755,16 @@ class BaseDateTimePeriodParser(DateTimeParser):
             if time_period_er:
                 after_str = after_str[time_period_er.start:time_period_er.start + time_period_er.length].strip()
 
-        if er.length != len(before_str):
+        if not er or er.length != len(before_str):
             valid = False
-            if er.length > 0 and er.start == 0:
+            if er and er.start == 0:
                 middle_str = before_str[er.start + er.length:]
                 if not middle_str.replace(',', ''):
                     valid = True
             if not valid:
                 er = next(iter(self.config.date_extractor.extract(after_str)), None)
-                if er.length == 0 or er.length != len(after_str):
-                    if er.length > 0 and er.start + er.length == len(after_str):
+                if not er or er.length != len(after_str):
+                    if er and er.start + er.length == len(after_str):
                         valid = True
                 else:
                     valid = True
@@ -779,17 +779,17 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 period_past = time_pr.value.past_value
 
                 if period_future == period_past:
-                    begin_hour: datetime = period_future[0]
-                    end_hour: datetime = period_future[1]
+                    begin_hour: datetime = period_future.start
+                    end_hour: datetime = period_future.end
                     matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min, matched.success)
                 else:
-                    if period_future[0].hour >= matched.begin_hour or period_future[1].hour <= matched.end_hour:
-                        begin_hour: datetime = period_future[0]
-                        end_hour: datetime = period_future[1]
+                    if period_future.start.hour >= matched.begin_hour or period_future.end.hour <= matched.end_hour:
+                        begin_hour: datetime = period_future.start
+                        end_hour: datetime = period_future.end
                         matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min, matched.success)
                     else:
-                        begin_hour: datetime = period_past[0]
-                        end_hour: datetime = period_past[1]
+                        begin_hour: datetime = period_past.start
+                        end_hour: datetime = period_past.end
                         matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min, matched.success)
                 has_specific_time_period = True
 
@@ -803,7 +803,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if not has_specific_time_period:
             result.timex = pr.timex_str + matched.time_str
         else:
-            result.timex = f'{pr.timex_str}T{matched.begin_hour},{pr.timex_str}t{matched.end_hour},PT{matched.end_hour - matched.begin_hour}H'
+            result.timex = f'{pr.timex_str}T{matched.begin_hour},{pr.timex_str}T{matched.end_hour},PT{matched.end_hour - matched.begin_hour}H'
 
         result.future_value = [
             DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, matched.begin_hour, 0, 0),
@@ -894,7 +894,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         
         if unit_str == 'D':
             end_time = DateUtils.safe_create_from_min_value(begin_time.year, begin_time.month, begin_time.day) + timedelta(days=1, seconds=-1)
-            difference = (end_time - begin_time).total_seconds()
+            difference = int((end_time - begin_time).total_seconds())
             pt_timex = f'PT{difference}S'
         elif unit_str == 'H':
             begin_time = begin_time + timedelta(hours=0 if swift > 0 else swift)
