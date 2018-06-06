@@ -5,8 +5,8 @@ from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
 from recognizers_number.number.english.extractors import EnglishCardinalExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
-from recognizers_date_time.date_time.base_duration import DurationParserConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..base_duration import DurationParserConfiguration
 
 class EnglishDurationParserConfiguration(DurationParserConfiguration):
     @property

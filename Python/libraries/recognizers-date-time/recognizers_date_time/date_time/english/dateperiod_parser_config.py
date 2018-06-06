@@ -1,11 +1,11 @@
 from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time import DateTimeExtractor, BaseDateParser
-from recognizers_date_time.date_time.base_duration import BaseDurationParser
-from recognizers_date_time.date_time.base_dateperiod import DatePeriodParserConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
-from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..parsers import DateTimeParser
+from ..base_configs import BaseDateParserConfiguration
+from ..base_dateperiod import DatePeriodParserConfiguration
 
 class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
@@ -13,7 +13,7 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._date_extractor
 
     @property
-    def date_parser(self) -> BaseDateParser:
+    def date_parser(self) -> DateTimeParser:
         return self._date_parser
 
     @property
@@ -21,7 +21,7 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._duration_extractor
 
     @property
-    def duration_parser(self) -> BaseDurationParser:
+    def duration_parser(self) -> DateTimeParser:
         return self._duration_parser
 
     @property
@@ -152,7 +152,7 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def unit_map(self) -> Dict[str, str]:
         return self._unit_map
 
-    def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
+    def __init__(self, config: BaseDateParserConfiguration):
         self._date_extractor = config.date_extractor
         self._date_parser = config.date_parser
         self._duration_extractor = config.duration_extractor

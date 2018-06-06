@@ -2,11 +2,20 @@ from typing import List, Pattern
 import regex
 
 from recognizers_number import BaseNumberExtractor, EnglishCardinalExtractor
-from recognizers_date_time.date_time import BaseDateExtractor, BaseTimeExtractor, BaseDateTimeExtractor, BaseDurationExtractor, BaseTimePeriodExtractor
-from recognizers_date_time.date_time.english import EnglishDateExtractorConfiguration, EnglishTimeExtractorConfiguration, EnglishDateTimeExtractorConfiguration, EnglishDurationExtractorConfiguration, EnglishTimePeriodExtractorConfiguration
-from recognizers_date_time.date_time.base_datetimeperiod import DateTimePeriodExtractorConfiguration, MatchedIndex
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..base_datetimeperiod import DateTimePeriodExtractorConfiguration, MatchedIndex
+from ..base_date import BaseDateExtractor
+from ..base_time import BaseTimeExtractor
+from ..base_duration import BaseDurationExtractor
+from ..base_timeperiod import BaseTimePeriodExtractor
+from ..base_datetime import BaseDateTimeExtractor
+from .date_extractor_config import EnglishDateExtractorConfiguration
+from .time_extractor_config import EnglishTimeExtractorConfiguration
+from .duration_extractor_config import EnglishDurationExtractorConfiguration
+from .timeperiod_extractor_config import EnglishTimePeriodExtractorConfiguration
+from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
 
 class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
     @property
@@ -14,23 +23,23 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
         return self._cardinal_extractor
 
     @property
-    def single_date_extractor(self) -> BaseDateExtractor:
+    def single_date_extractor(self) -> DateTimeExtractor:
         return self._single_date_extractor
 
     @property
-    def single_time_extractor(self) -> BaseTimeExtractor:
+    def single_time_extractor(self) -> DateTimeExtractor:
         return self._single_time_extractor
 
     @property
-    def single_date_time_extractor(self) -> BaseDateTimeExtractor:
+    def single_date_time_extractor(self) -> DateTimeExtractor:
         return self._single_date_time_extractor
 
     @property
-    def duration_extractor(self) -> BaseDurationExtractor:
+    def duration_extractor(self) -> DateTimeExtractor:
         return self._duration_extractor
 
     @property
-    def time_period_extractor(self) -> BaseTimePeriodExtractor:
+    def time_period_extractor(self) -> DateTimeExtractor:
         return self._time_period_extractor
 
     @property

@@ -1,18 +1,18 @@
-from typing import List, Pattern
+from typing import Pattern
 import regex
 
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time.base_date import BaseDateExtractor
-from recognizers_date_time.date_time.base_time import BaseTimeExtractor
-from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
-from recognizers_date_time.date_time.english.date_extractor_config import EnglishDateExtractorConfiguration
-from recognizers_date_time.date_time.english.time_extractor_config import EnglishTimeExtractorConfiguration
-from recognizers_date_time.date_time.english.duration_extractor_config import EnglishDurationExtractorConfiguration
-from recognizers_date_time.date_time.english.base_configs import EnglishDateTimeUtilityConfiguration
-from recognizers_date_time.date_time.extractors import DateTimeExtractor
-from recognizers_date_time.date_time.base_datetime import DateTimeExtractorConfiguration
-from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..utilities import DateTimeUtilityConfiguration
+from ..base_date import BaseDateExtractor
+from ..base_time import BaseTimeExtractor
+from ..base_duration import BaseDurationExtractor
+from ..base_datetime import DateTimeExtractorConfiguration
+from .base_configs import EnglishDateTimeUtilityConfiguration
+from .date_extractor_config import EnglishDateExtractorConfiguration
+from .time_extractor_config import EnglishTimeExtractorConfiguration
+from .duration_extractor_config import EnglishDurationExtractorConfiguration
 
 class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     @property

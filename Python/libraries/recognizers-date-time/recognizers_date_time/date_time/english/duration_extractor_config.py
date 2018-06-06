@@ -3,8 +3,8 @@ from typing import Pattern
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.english.extractors import EnglishCardinalExtractor
-from recognizers_date_time.date_time.base_duration import DurationExtractorConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..base_duration import DurationExtractorConfiguration
 
 class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
     @property

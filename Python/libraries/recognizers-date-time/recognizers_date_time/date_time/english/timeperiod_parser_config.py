@@ -3,22 +3,19 @@ from typing import Pattern, Dict
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
 from recognizers_number.number.english.extractors import EnglishIntegerExtractor
-from recognizers_date_time.date_time.base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
-from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTimeParser
-from recognizers_date_time.date_time.english.time_parser_config import EnglishTimeParserConfiguration
-from recognizers_date_time.date_time.english.base_configs import EnglishDateTimeUtilityConfiguration
-from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
-from recognizers_date_time.date_time.english.time_extractor_config import EnglishTimeExtractorConfiguration
-from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..parsers import DateTimeParser
+from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
+from ..base_timeperiod import TimePeriodParserConfiguration, MatchedTimeRegex
 
 class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
-    def time_extractor(self) -> BaseTimeExtractor:
+    def time_extractor(self) -> DateTimeExtractor:
         return self._time_extractor
 
     @property
-    def time_parser(self) -> BaseTimeParser:
+    def time_parser(self) -> DateTimeParser:
         return self._time_parser
 
     @property
@@ -49,7 +46,7 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
-    def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
+    def __init__(self, config: BaseDateParserConfiguration):
         self._time_extractor = config.time_extractor
         self._time_parser = config.time_parser
         self._integer_extractor = EnglishIntegerExtractor()
@@ -58,7 +55,7 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeOfDayRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.TillRegex)
         self._numbers = EnglishDateTime.Numbers
-        self._utility_configuration = EnglishDateTimeUtilityConfiguration()
+        self._utility_configuration = config.utility_configuration
 
 
     def get_matched_timex_range(self, source: str) -> MatchedTimeRegex:
@@ -101,9 +98,9 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
                 end_min=0
             )
         return MatchedTimeRegex(
-                matched=True,
-                timex=timex,
-                begin_hour=begin_hour,
-                end_hour=end_hour,
-                end_min=end_min
-            )
+            matched=True,
+            timex=timex,
+            begin_hour=begin_hour,
+            end_hour=end_hour,
+            end_min=end_min
+        )

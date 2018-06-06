@@ -2,14 +2,13 @@ from typing import Pattern, List, Dict
 from recognizers_number import (BaseNumberExtractor, BaseNumberParser,
                                 EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration)
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time.base_date import DateExtractorConfiguration
-from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
-from recognizers_date_time.date_time.extractors import DateTimeExtractor
-from recognizers_date_time.date_time.parsers import DateTimeParser
-from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
-from recognizers_date_time.date_time.english.duration_extractor_config import EnglishDurationExtractorConfiguration
-from recognizers_date_time.date_time.english.base_configs import EnglishDateTimeUtilityConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..base_duration import BaseDurationExtractor
+from ..base_date import DateExtractorConfiguration
+from ..utilities import DateTimeUtilityConfiguration
+from .duration_extractor_config import EnglishDurationExtractorConfiguration
+from .base_configs import EnglishDateTimeUtilityConfiguration
 
 class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     @property

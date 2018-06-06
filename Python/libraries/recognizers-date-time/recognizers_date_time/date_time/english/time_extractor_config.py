@@ -1,8 +1,8 @@
 from typing import List, Pattern
 
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time.base_time import TimeExtractorConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..base_time import TimeExtractorConfiguration
 
 class EnglishTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property

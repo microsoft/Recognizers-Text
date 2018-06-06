@@ -3,12 +3,12 @@ from typing import Pattern, Dict
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
-from recognizers_date_time.date_time.extractors import DateTimeExtractor
-from recognizers_date_time.date_time.parsers import DateTimeParser
-from recognizers_date_time.date_time.base_configs import BaseDateParserConfiguration
-from recognizers_date_time.date_time.base_datetime import DateTimeParserConfiguration, MatchedTimex
-from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..parsers import DateTimeParser
+from ..utilities import DateTimeUtilityConfiguration
+from ..base_configs import BaseDateParserConfiguration
+from ..base_datetime import DateTimeParserConfiguration, MatchedTimex
 
 class EnglishDateTimeParserConfiguration(DateTimeParserConfiguration):
     @property

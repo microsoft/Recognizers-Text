@@ -3,11 +3,11 @@ from typing import List, Pattern
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
 from recognizers_number.number.english.extractors import EnglishIntegerExtractor
-from recognizers_date_time.date_time.extractors import DateTimeExtractor
-from recognizers_date_time.date_time.base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
-from recognizers_date_time.date_time.base_time import BaseTimeExtractor
-from recognizers_date_time.date_time.english.time_extractor_config import EnglishTimeExtractorConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
+from ..base_time import BaseTimeExtractor
+from .time_extractor_config import EnglishTimeExtractorConfiguration
 
 class EnglishTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     @property

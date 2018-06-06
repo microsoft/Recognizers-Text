@@ -4,13 +4,13 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
 from recognizers_number.number.english.extractors import EnglishIntegerExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
-from recognizers_date_time.date_time import DateTimeExtractor
-from recognizers_date_time.date_time.base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
-from recognizers_date_time.date_time.base_date import BaseDateExtractor
-from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
-from recognizers_date_time.date_time.english.duration_extractor_config import EnglishDurationExtractorConfiguration
-from recognizers_date_time.date_time.english.date_extractor_config import EnglishDateExtractorConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..base_duration import BaseDurationExtractor
+from ..base_date import BaseDateExtractor
+from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
+from .duration_extractor_config import EnglishDurationExtractorConfiguration
+from .date_extractor_config import EnglishDateExtractorConfiguration
 
 class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
