@@ -604,4 +604,26 @@
     }
   ]
 }
+,
+{
+  "Input": "I realized that you are out for another week.",
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "another week",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Can we wait another month?",
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "another month",
+      "Type": "duration"
+    }
+  ]
+}
 ]

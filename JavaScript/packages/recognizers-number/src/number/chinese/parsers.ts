@@ -6,7 +6,7 @@ import { LongFormatType } from "../models";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
 import { CultureInfo, Culture } from "../../culture";
 import { RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
-import { BigNumber } from 'bignumber.js';
+import { BigNumber } from 'bignumber.js/bignumber';
 import trimEnd = require("lodash.trimend");
 import sortBy = require("lodash.sortby");
 

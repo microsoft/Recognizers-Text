@@ -523,7 +523,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceDate,
                 config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex,
-                config.UtilityConfiguration);
+                config.UtilityConfiguration, config.GetSwiftDay);
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group

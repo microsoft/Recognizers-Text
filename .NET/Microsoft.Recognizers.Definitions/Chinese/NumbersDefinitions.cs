@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string FracSplitRegex = @"又|分\s*之";
 		public const string ZeroToNineIntegerRegex = @"[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇两兩俩倆仨]";
 		public const string NegativeNumberTermsRegex = @"[负負]";
-		public const string NegativeNumberTermsRegexNum = @"(?<!(\d+\s*)|[-－])[-－]";
+		public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
 		public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[十拾半对對]";
 		public const string PairRegex = ".*[双对雙對]$";
@@ -224,6 +224,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*(?<number2>((?!([并且而並的同時时]|(，(?!\d+))|(,(?!\d+))|。)).)+)";
 		public const string OneNumberRangeLessRegex2 = @"比\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*更?[小少低]";
 		public const string OneNumberRangeLessRegex3 = @"(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*(以下|之下|更[小少低])";
+		public const string OneNumberRangeMoreSeparateRegex = @"^[.]";
+		public const string OneNumberRangeLessSeparateRegex = @"^[.]";
 		public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)";
 		public static readonly string TwoNumberRangeRegex1 = $@"(位于|在|位於)\s*(?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(和|与|與|{TillRegex})\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(之间|之間)";
 		public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})";

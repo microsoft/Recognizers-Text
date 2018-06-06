@@ -3,8 +3,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor

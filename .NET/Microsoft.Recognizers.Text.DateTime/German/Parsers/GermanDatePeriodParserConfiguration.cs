@@ -65,6 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex YearPeriodRegex { get; }
         public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
+        public Regex ReferenceDatePeriodRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -146,6 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             RelativeDecadeRegex = GermanDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = GermanDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            ReferenceDatePeriodRegex = GermanDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

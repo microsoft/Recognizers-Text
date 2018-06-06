@@ -2,7 +2,6 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -36,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             // one on one
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            // (the)? (day|week|month|year)
+            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
         };
 
         public DateTimeOptions Options { get; }
@@ -73,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
             SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
             TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration());

@@ -27,6 +27,10 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex LessOrEqualSuffix { get; }
 
+        Regex MoreOrEqualSeparate { get; }
+
+        Regex LessOrEqualSeparate { get; }
+
         #endregion
 
     }

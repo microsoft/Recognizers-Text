@@ -15,6 +15,8 @@ PastPrefixRegex: !simpleRegex
   def: (last|past|previous)\b
 ThisPrefixRegex: !simpleRegex
   def: (this|current)\b
+ReferencePrefixRegex: !simpleRegex
+  def: (that|same)\b
 FutureSuffixRegex: !simpleRegex
   def: \b(in\s+the\s+)?(future|hence)\b
 DayRegex: !simpleRegex
@@ -63,8 +65,8 @@ MonthWithYear: !nestedRegex
   def: \b(({WrittenMonthRegex}(\s*),?(\s+of)?(\s*)({YearRegex}|(?<order>next|last|this)\s+year))|(({YearRegex}|(?<order>next|last|this)\s+year)(\s*),?(\s*){WrittenMonthRegex}))\b
   references: [ WrittenMonthRegex, YearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(my\s+)?(weekend|week|month|year)(\s+{AfterNextSuffixRegex})?)\b
-  references: [ RelativeRegex, AfterNextSuffixRegex ]
+  def: \b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(my\s+)?(weekend|week|month|year)(\s+{AfterNextSuffixRegex})?)\b
+  references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({YearNumRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){YearNumRegex})
   references: [ YearNumRegex, MonthNumRegex ]
@@ -103,14 +105,16 @@ AllHalfYearRegex: !nestedRegex
   def: ({HalfYearFrontRegex})|({HalfYearBackRegex})|({HalfYearRelativeRegex})
   references: [ HalfYearFrontRegex, HalfYearBackRegex, HalfYearRelativeRegex ]
 EarlyPrefixRegex: !simpleRegex
-  def: ?<EarlyPrefix>early|beginning of|start of
+  def: (?<EarlyPrefix>early|beginning of|start of|(?<RelEarly>earlier(\s+in)?))
 MidPrefixRegex: !simpleRegex
-  def: ?<MidPrefix>mid|middle of
+  def: (?<MidPrefix>mid|middle of)
 LaterPrefixRegex: !simpleRegex
-  def: ?<LatePrefix>late|later(\s+in)?|end of
+  def: (?<LatePrefix>late|end of|(?<RelLate>later(\s+in)?))
 PrefixPeriodRegex: !nestedRegex
-  def: (({EarlyPrefixRegex})|({MidPrefixRegex})|({LaterPrefixRegex}))
+  def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
+PrefixDayRegex: !simpleRegex
+  def: ((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\s+in)?(\s+the\s+day)?$
 SeasonDescRegex: !simpleRegex
   def: (?<seas>spring|summer|fall|autumn|winter)
 SeasonRegex: !nestedRegex
@@ -155,7 +159,7 @@ NextDateRegex: !nestedRegex
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
   def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b
-  references: [ RelativeRegex]
+  references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
   def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b
   references: [ WrittenNumRegex ]
@@ -394,8 +398,10 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b(((?<half>half\s+)?(an|a))|(an|a))\s+{DurationUnitRegex}
+  def: \b((?<half>half\s+)?(an|a)|another)\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
+DuringRegex: !simpleRegex
+  def: \b(for|during)\s+the\s+(?<unit>year|month|week|day)\b
 AllRegex: !simpleRegex
   def: \b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b
 HalfRegex: !simpleRegex
@@ -430,9 +436,9 @@ AfterRegex: !nestedRegex
 SinceRegex: !simpleRegex
   def: \b(since|after or equal to|starting (from|on|with))\b\s*
 AgoRegex: !simpleRegex
-  def: \b(ago)\b
+  def: \b(ago|before (?<day>yesterday|today))\b
 LaterRegex: !simpleRegex
-  def: \b(later|from now)\b
+  def: \b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 WithinNextPrefixRegex: !nestedRegex
@@ -461,12 +467,18 @@ RelativeTimeUnitRegex: !nestedRegex
 RelativeDurationUnitRegex: !nestedRegex
   def: (((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
   references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
+ReferenceDatePeriodRegex: !nestedRegex
+  def: \b{ReferencePrefixRegex}\s+(?<duration>week|month|year|weekend)\b
+  references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|for|t|around)$
 FromToRegex: !simpleRegex
   def: \b(from).+(to)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
+# Filter ambiguous single word datetime extractions in CalendarMode
+SingleAmbiguousTermsRegex: !simpleRegex
+  def: ^(the\s+)?(day|week|month|year)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|from|to)$
 FlexibleDayRegex: !simpleRegex

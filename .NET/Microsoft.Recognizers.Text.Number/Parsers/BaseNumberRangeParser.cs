@@ -172,6 +172,11 @@ namespace Microsoft.Recognizers.Text.Number
                     match = Config.MoreOrEqualSuffix.Match(extResult.Text);
                 }
 
+                if (!match.Success)
+                {
+                    match = Config.MoreOrEqualSeparate.Match(extResult.Text);
+                }
+
                 if (match.Success)
                 {
                     leftBracket = NumberRangeConstants.LEFT_CLOSED;
@@ -197,6 +202,11 @@ namespace Microsoft.Recognizers.Text.Number
                 if (!match.Success)
                 {
                     match = Config.LessOrEqualSuffix.Match(extResult.Text);
+                }
+
+                if (!match.Success)
+                {
+                    match = Config.LessOrEqualSeparate.Match(extResult.Text);
                 }
 
                 if (match.Success)
