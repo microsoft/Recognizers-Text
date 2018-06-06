@@ -4,7 +4,7 @@ from datetime import datetime
 from calendar import Calendar
 
 from recognizers_text.extractor import ExtractResult
-from recognizers_date_time.resources.base_date_time import BaseDateTime
+from ..resources.base_date_time import BaseDateTime
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
