@@ -1,12 +1,14 @@
-import regex
 from typing import Pattern, List, Dict
-from recognizers_number import BaseNumberExtractor, BaseNumberParser
-from recognizers_date_time.date_time.base_date import DateParserConfiguration
-from recognizers_date_time.date_time.extractors import DateTimeExtractor
-from recognizers_date_time.date_time.parsers import DateTimeParser
-from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
+import regex
+
 from recognizers_text.utilities import RegExpUtility
+from recognizers_number import BaseNumberExtractor, BaseNumberParser
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..parsers import DateTimeParser
+from ..utilities import DateTimeUtilityConfiguration
+from ..base_date import DateParserConfiguration
+from ..base_configs import BaseDateParserConfiguration
 
 class EnglishDateParserConfiguration(DateParserConfiguration):
     @property
@@ -120,7 +122,7 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
     _next_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
     _past_prefix_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PastPrefixRegex)
 
-    def __init__(self, config: any):
+    def __init__(self, config: BaseDateParserConfiguration):
         self._ordinal_extractor = config.ordinal_extractor
         self._integer_extractor = config.integer_extractor
         self._cardinal_extractor = config.cardinal_extractor

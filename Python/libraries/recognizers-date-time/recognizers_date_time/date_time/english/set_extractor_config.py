@@ -1,22 +1,23 @@
-from typing import Pattern, List, Dict
+from typing import Pattern
+
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time.base_set import SetExtractorConfiguration
-from recognizers_date_time.date_time.extractors import DateTimeExtractor
-from recognizers_date_time.date_time.base_date import BaseDateExtractor
-from recognizers_date_time.date_time.base_dateperiod import BaseDatePeriodExtractor
-from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
-from recognizers_date_time.date_time.base_datetime import BaseDateTimeExtractor
-from recognizers_date_time.date_time.base_datetimeperiod import BaseDateTimePeriodExtractor
-from recognizers_date_time.date_time.base_time import BaseTimeExtractor
-from recognizers_date_time.date_time.base_timeperiod import BaseTimePeriodExtractor
-from .duration_extractor_config import EnglishDurationExtractorConfiguration
-from .time_extractor_config import EnglishTimeExtractorConfiguration
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..base_set import SetExtractorConfiguration
+from ..base_date import BaseDateExtractor
+from ..base_time import BaseTimeExtractor
+from ..base_duration import BaseDurationExtractor
+from ..base_dateperiod import BaseDatePeriodExtractor
+from ..base_timeperiod import BaseTimePeriodExtractor
+from ..base_datetime import BaseDateTimeExtractor
+from ..base_datetimeperiod import BaseDateTimePeriodExtractor
 from .date_extractor_config import EnglishDateExtractorConfiguration
-from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
+from .time_extractor_config import EnglishTimeExtractorConfiguration
+from .duration_extractor_config import EnglishDurationExtractorConfiguration
 from .dateperiod_extractor_config import EnglishDatePeriodExtractorConfiguration
 from .timeperiod_extractor_config import EnglishTimePeriodExtractorConfiguration
+from .datetime_extractor_config import EnglishDateTimeExtractorConfiguration
 from .datetimeperiod_extractor_config import EnglishDateTimePeriodExtractorConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
 
 class EnglishSetExtractorConfiguration(SetExtractorConfiguration):
     @property

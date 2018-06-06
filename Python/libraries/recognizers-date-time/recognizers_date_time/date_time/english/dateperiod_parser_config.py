@@ -1,10 +1,10 @@
 from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time import DateTimeExtractor, BaseDateParser
-from recognizers_date_time.date_time.base_duration import BaseDurationParser
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
-from recognizers_date_time.date_time.english.common_configs import EnglishCommonDateTimeParserConfiguration
+from ...resources.english_date_time import EnglishDateTime
+from ..extractors import DateTimeExtractor
+from ..parsers import DateTimeParser
+from ..base_configs import BaseDateParserConfiguration
 
 class EnglishDatePeriodParserConfiguration():
     @property
@@ -12,7 +12,7 @@ class EnglishDatePeriodParserConfiguration():
         return self._date_extractor
 
     @property
-    def date_parser(self) -> BaseDateParser:
+    def date_parser(self) -> DateTimeParser:
         return self._date_parser
 
     @property
@@ -20,7 +20,7 @@ class EnglishDatePeriodParserConfiguration():
         return self._duration_extractor
 
     @property
-    def duration_parser(self) -> BaseDurationParser:
+    def duration_parser(self) -> DateTimeParser:
         return self._duration_parser
 
     @property
@@ -139,7 +139,7 @@ class EnglishDatePeriodParserConfiguration():
     def unit_map(self) -> Dict[str, str]:
         return self._unit_map
 
-    def __init__(self, config: EnglishCommonDateTimeParserConfiguration):
+    def __init__(self, config: BaseDateParserConfiguration):
         self._date_extractor = config.date_extractor
         self._date_parser = config.date_parser
         self._duration_extractor = config.duration_extractor
@@ -154,7 +154,7 @@ class EnglishDatePeriodParserConfiguration():
         self._year_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.YearRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.PastPrefixRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NextPrefixRegex)
-        self._in_connector_regex = config.utilityConfiguration.in_connector_regex
+        self._in_connector_regex = config._utility_configuration.in_connector_regex
         self._week_of_month_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekOfMonthRegex)
         self._week_of_year_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.WeekOfYearRegex)
         self._quarter_regex = RegExpUtility.get_safe_reg_exp(EnglishDateTime.QuarterRegex)

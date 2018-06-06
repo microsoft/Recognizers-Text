@@ -2,14 +2,9 @@ from typing import Dict
 from abc import abstractmethod, ABC
 
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
-from recognizers_date_time.date_time.base_datetime import BaseDateTimeExtractor, BaseDateTimeParser
-from recognizers_date_time.date_time.base_date import BaseDateParser
-from recognizers_date_time.date_time.base_time import BaseTimeParser
-from recognizers_date_time.date_time.base_duration import BaseDurationParser
-from recognizers_date_time.date_time.base_dateperiod import BaseDatePeriodParser
-from recognizers_date_time.date_time.base_timeperiod import BaseTimePeriodParser
-from recognizers_date_time.date_time.base_datetimeperiod import BaseDateTimePeriodParser
-from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
+from .extractors import DateTimeExtractor
+from .parsers import DateTimeParser
+from .utilities import DateTimeUtilityConfiguration
 
 class BaseDateParserConfiguration(ABC):
     @property
@@ -34,72 +29,72 @@ class BaseDateParserConfiguration(ABC):
 
     @property
     @abstractmethod
-    def date_extractor(self) -> BaseDateTimeExtractor:
+    def date_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def time_extractor(self) -> BaseDateTimeExtractor:
+    def time_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def date_time_extractor(self) -> BaseDateTimeExtractor:
+    def date_time_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def duration_extractor(self) -> BaseDateTimeExtractor:
+    def duration_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def date_period_extractor(self) -> BaseDateTimeExtractor:
+    def date_period_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def time_period_extractor(self) -> BaseDateTimeExtractor:
+    def time_period_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def date_time_period_extractor(self) -> BaseDateTimeExtractor:
+    def date_time_period_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def date_parser(self) -> BaseDateParser:
+    def date_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def time_parser(self) -> BaseTimeParser:
+    def time_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def date_time_parser(self) -> BaseDateTimeParser:
+    def date_time_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def duration_parser(self) -> BaseDurationParser:
+    def duration_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def date_period_parser(self) -> BaseDatePeriodParser:
+    def date_period_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def time_period_parser(self) -> BaseTimePeriodParser:
+    def time_period_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def date_time_period_parser(self) -> BaseDateTimePeriodParser:
+    def date_time_period_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property

@@ -2,11 +2,9 @@ from typing import List, Pattern, Dict
 import regex
 
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time.english.base_configs import EnglishDateTimeUtilityConfiguration
-from recognizers_date_time.date_time.base_time import TimeParserConfiguration, AdjustParams
-from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
-from recognizers_date_time.resources.english_date_time import EnglishDateTime
-from recognizers_date_time.date_time.base_configs import BaseDateParserConfiguration
+from ...resources.english_date_time import EnglishDateTime
+from ..base_time import TimeParserConfiguration, AdjustParams
+from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 
 class EnglishTimeParserConfiguration(TimeParserConfiguration):
     @property
