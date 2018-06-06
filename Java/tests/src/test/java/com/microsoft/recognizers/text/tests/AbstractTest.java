@@ -35,7 +35,7 @@ public abstract class AbstractTest {
     @Test
     public void testPreValidate() {
         if (!isJavaSupported(this.currentCase.notSupported)) {
-            throw new AssumptionViolatedException("input '" + this.currentCase.input + "' not supported");
+            throw new AssumptionViolatedException("Test case wih input '" + this.currentCase.input + "' not supported.");
         }
 
         if (this.currentCase.debug) {
