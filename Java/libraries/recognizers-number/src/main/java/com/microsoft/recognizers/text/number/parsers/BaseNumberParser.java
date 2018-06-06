@@ -23,9 +23,6 @@ public class BaseNumberParser implements IParser {
 
     protected Optional<List<String>> supportedTypes = Optional.empty();
 
-
-    private final DecimalFormat decimalFormat = new DecimalFormat("#.###############");
-
     public void setSupportedTypes(List<String> types) {
         this.supportedTypes = Optional.of(types);
     }
@@ -112,8 +109,9 @@ public class BaseNumberParser implements IParser {
             //        ? ((double)ret.Value).ToString(Config.CultureInfo)
             //        : ret.Value.ToString();
 
-
-            String resolutionStr = decimalFormat.format(ret.value);
+            String resolutionStr = config.getCultureInfo() != null
+                    ? NumberFormatUtility.format(ret.value, config.getCultureInfo())
+                    : ret.value.toString();
             ret = ret.withResolutionStr(resolutionStr);
         }
 

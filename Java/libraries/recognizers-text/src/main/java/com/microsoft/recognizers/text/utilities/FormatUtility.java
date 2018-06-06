@@ -44,6 +44,10 @@ public class FormatUtility {
         return input.replaceAll("\\s+$", "");
     }
 
+    public static String trimEnd(String input, CharSequence chars) {
+        return input.replaceAll("[" + Pattern.quote(chars.toString()) + "]+$", "");
+    }
+
     public static List<String> split(String input, List<String> delimiters) {
         String delimitersRegex = String.join(
                 "|",
