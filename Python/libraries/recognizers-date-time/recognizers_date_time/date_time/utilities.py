@@ -200,10 +200,10 @@ class DateUtils:
     @staticmethod
     def day_of_year(seed: datetime) -> int:
         return seed.timetuple().tm_yday
-    
+
     @staticmethod
-    def last_day_of_month(year: int, month:int) -> int:
-        return calendar.monthrange(year,month)[1]
+    def last_day_of_month(year: int, month: int) -> int:
+        return calendar.monthrange(year, month)[1]
 
 class DateTimeUtilityConfiguration(ABC):
     @property
