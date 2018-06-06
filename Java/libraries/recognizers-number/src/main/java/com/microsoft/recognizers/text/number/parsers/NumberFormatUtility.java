@@ -45,7 +45,7 @@ public final class NumberFormatUtility {
         if(result.contains("E+")) {
             String[] parts = result.split(Pattern.quote("E+"));
             parts[0] = FormatUtility.trimEnd(parts[0], "0");
-            result = String.join("E-", parts);
+            result = String.join("E+", parts);
         }
 
         if (result.contains(".")) {

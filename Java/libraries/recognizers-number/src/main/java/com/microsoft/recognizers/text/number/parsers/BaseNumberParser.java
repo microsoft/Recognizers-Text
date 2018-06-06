@@ -336,7 +336,92 @@ public class BaseNumberParser implements IParser {
     }
 
     private ParseResult powerNumberParse(ExtractResult extractResult) {
-        return null;
+
+        ParseResult result = new ParseResult(extractResult.start, extractResult.length, extractResult.text, extractResult.type, null, null, null);
+
+        String handle = extractResult.text.toUpperCase();
+        boolean isE = !extractResult.text.contains("^");
+
+        //[1] 1e10
+        //[2] 1.1^-23
+        Stack<Double> calStack = new Stack<>();
+
+        double scale = 10;
+        boolean dot = false;
+        boolean isNegative = false;
+        double tmp = 0;
+        for (int i = 0; i < handle.length(); i++)
+        {
+            char ch = handle.charAt(i);
+            if (ch == '^' || ch == 'E')
+            {
+                if (isNegative)
+                {
+                    calStack.add(-tmp);
+                }
+                else
+                {
+                    calStack.add(tmp);
+                }
+                tmp = 0;
+                scale = 10;
+                dot = false;
+                isNegative = false;
+            }
+            else if (ch >= '0' && ch <= '9')
+            {
+                if (dot)
+                {
+                    tmp = tmp + scale * (ch - '0');
+                    scale *= 0.1;
+                }
+                else
+                {
+                    tmp = tmp * scale + (ch - '0');
+                }
+            }
+            else if (ch == config.getDecimalSeparatorChar())
+            {
+                dot = true;
+                scale = 0.1;
+            }
+            else if (ch == '-')
+            {
+                isNegative = !isNegative;
+            }
+            else if (ch == '+')
+            {
+                continue;
+            }
+
+            if (i == handle.length() - 1)
+            {
+                if (isNegative)
+                {
+                    calStack.add(-tmp);
+                }
+                else
+                {
+                    calStack.add(tmp);
+                }
+            }
+        }
+
+        double ret;
+        if (isE)
+        {
+            ret = calStack.remove(0) * Math.pow(10, calStack.remove(0));
+        }
+        else
+        {
+            ret = Math.pow(calStack.remove(0), calStack.remove(0));
+        }
+
+        result = result
+                .withValue(ret)
+                .withResolutionStr(NumberFormatUtility.format(ret, config.getCultureInfo()));
+
+        return result;
     }
 
     protected String getKeyRegex(Set<String> keyCollection) {
