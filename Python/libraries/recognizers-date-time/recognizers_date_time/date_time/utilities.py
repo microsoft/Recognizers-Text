@@ -202,6 +202,9 @@ class DateUtils:
             month = month % 12
         return DateUtils.safe_create_from_min_value(year, month, day)
 
+    def total_hours(from_date: datetime, to_date: datetime) -> int:
+        return round((to_date - from_date).total_seconds() / 3600)
+
     @staticmethod
     def day_of_year(seed: datetime) -> int:
         return seed.timetuple().tm_yday

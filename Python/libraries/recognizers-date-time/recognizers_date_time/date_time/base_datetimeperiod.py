@@ -668,18 +668,18 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 future_begin = past_begin
             if past_end < past_begin:
                 past_end = future_end
-            total_hours = int((future_end - future_begin).total_seconds() / 3600)
+            total_hours = DateUtils.total_hours(future_begin, future_end)
             result.timex = f'({prs.begin.timex_str},{prs.end.timex_str},PT{total_hours}H)'
         elif begin_has_date:
             future_end = self.get_datetime(future_begin, future_end)
             past_end = self.get_datetime(past_begin, past_end)
-            total_hours = int((future_end - future_begin).total_seconds() / 3600)
+            total_hours = DateUtils.total_hours(future_begin, future_end)
             date_str = prs.begin.timex_str.split('T').pop()
             result.timex = f'({prs.begin.timex_str},{date_str}{prs.end.timex_str},PT{total_hours}H)'
         elif end_has_date:
             future_begin = self.get_datetime(future_end, future_begin)
             past_begin = self.get_datetime(past_end, past_begin)
-            total_hours = int((future_end - future_begin).total_seconds() / 3600)
+            total_hours = DateUtils.total_hours(future_begin, future_end)
             date_str = prs.end.timex_str.split('T')[0]
             result.timex = f'({date_str}{prs.begin.timex_str},{prs.end.timex_str},PT{total_hours}H)'
 
