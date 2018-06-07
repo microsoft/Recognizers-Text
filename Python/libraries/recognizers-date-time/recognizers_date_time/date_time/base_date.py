@@ -408,9 +408,9 @@ class BaseDateParser(DateTimeParser):
         result = DateTimeResolutionResult()
         for regexp in self.config.date_regex:
             offset = 0
-            match = regex.match(regexp, trimmed_source)
+            match = regex.search(regexp, trimmed_source)
             if match is None:
-                match = regex.match(regexp, self.config.date_token_prefix + trimmed_source)
+                match = regex.search(regexp, self.config.date_token_prefix + trimmed_source)
                 offset = len(self.config.date_token_prefix)
             if match and match.start() == offset and len(match.group())== len(trimmed_source):
                 result = self.match_to_date(match, reference)
@@ -686,13 +686,13 @@ class BaseDateParser(DateTimeParser):
         day = 1
         month = 0
 
-        match = regex.match(self.config.month_regex, trimmed_source)
+        match = regex.search(self.config.month_regex, trimmed_source)
         if match:
             month = self.config.month_of_year.get(match.group())
             day = num
         else:
             # handling relative month
-            match = regex.match(self.config.relative_month_regex, trimmed_source)
+            match = regex.search(self.config.relative_month_regex, trimmed_source)
             if match:
                 month_str = match.group('order')
                 swift = self.config.get_swift_month(month_str)
@@ -703,7 +703,7 @@ class BaseDateParser(DateTimeParser):
 
         # handling casesd like 'second Sunday'
         if not match:
-            match = regex.match(self.config.week_day_regex, trimmed_source)
+            match = regex.search(self.config.week_day_regex, trimmed_source)
             if match:
                 month = reference.month
                 # resolve the date of wanted week day
