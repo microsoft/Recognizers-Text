@@ -27,7 +27,7 @@ def test_datetime_parser(culture, model, options, context, source, expected_resu
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
-    parser = create_parser(language, model)
+    parser = create_parser(language, model, options)
 
     extract_results = extractor.extract(source, reference_datetime)
     result = [parser.parse(x, reference_datetime) for x in extract_results]
@@ -106,7 +106,7 @@ def create_extractor(language, model, options):
     
     return extractor(configuration())
 
-def create_parser(language, model):
+def create_parser(language, model, options):
     parser = get_class(f'recognizers_date_time.date_time.{language.lower()}.parsers', f'{language}{model}Parser')
     if not parser:
         parser = get_class(f'recognizers_date_time.date_time.base_{model.lower()}',
@@ -119,6 +119,11 @@ def create_parser(language, model):
                                        f'{language}CommonDateTimeParserConfiguration')
 
     configuration = configuration_class(language_configuration()) if language_configuration else configuration_class()
+
+    if model == 'Merged':
+        option = get_option(options)
+        return parser(configuration, option)
+
     return parser(configuration)
 
 def get_class(module_name, class_name):

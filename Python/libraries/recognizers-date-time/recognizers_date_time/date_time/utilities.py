@@ -140,7 +140,7 @@ class FormatUtil:
     @staticmethod
     def to_pm(source: str) -> str:
         result = ''
-        if source.startwith('T'):
+        if source.startswith('T'):
             result = 'T'
             source = source[1:]
         split = source.split(':')
