@@ -26,6 +26,8 @@ public abstract class AbstractTest {
 
     private static final String SpecsPath = "../../Specs";
 
+    private static final List<String> SupportedCultures = Arrays.asList("English");
+
     protected final TestCase currentCase;
 
     public AbstractTest(TestCase currentCase) {
@@ -62,6 +64,8 @@ public abstract class AbstractTest {
                 .flatMap(ts -> Arrays.stream(ts))
                 // Ignore tests with NotSupportedByDesign = Java
                 .filter(ts -> isJavaSupported(ts.notSupportedByDesign))
+                // Filter supported languages only
+                .filter(ts -> SupportedCultures.contains(ts.language))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
