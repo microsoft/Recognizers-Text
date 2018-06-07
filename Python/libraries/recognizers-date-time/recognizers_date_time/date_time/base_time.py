@@ -230,8 +230,8 @@ class BaseTimeParser(DateTimeParser):
                 if hour is None:
                     return result
             else:
-                hour = int(hour_str) if hour_str.isnumeric() else None
-                if hour is None:
+                hour = int(hour_str) if hour_str.isnumeric() else self.config.numbers.get(hour_str, None)
+                if not hour:
                     return result
             #get minute
             min_str = RegExpUtility.get_group(match, 'min')
