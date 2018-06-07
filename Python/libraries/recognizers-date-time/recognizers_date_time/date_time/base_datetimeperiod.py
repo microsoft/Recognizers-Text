@@ -621,7 +621,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         return result
 
     def get_two_points(self, begin_er: ExtractResult, end_er: ExtractResult, begin_parser: DateTimeParser, end_parser: DateTimeParser, reference: datetime) -> BeginEnd:
-        return BeginEnd(begin = begin_parser.parse(begin_er), end = end_parser.parse(end_er))
+        return BeginEnd(begin = begin_parser.parse(begin_er, reference), end = end_parser.parse(end_er, reference))
 
     def merge_two_time_points(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
