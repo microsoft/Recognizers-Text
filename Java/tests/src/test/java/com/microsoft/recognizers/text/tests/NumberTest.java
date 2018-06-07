@@ -28,7 +28,7 @@ public class NumberTest extends AbstractTest {
 
         // assert
         List<ModelResult> expectedResults = readExpectedResults(ModelResult.class, currentCase.results);
-        Assert.assertEquals("Result count does not match.", expectedResults.size(), results.size());
+        Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
 
         IntStream.range(0, Math.min(results.size(), expectedResults.size()))
             .mapToObj(i -> Pair.with(expectedResults.get(i), results.get(i)))

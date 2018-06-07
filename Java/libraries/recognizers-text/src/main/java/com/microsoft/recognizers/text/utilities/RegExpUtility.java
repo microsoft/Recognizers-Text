@@ -44,7 +44,9 @@ public abstract class RegExpUtility {
             String groupName = m.group(1);
             String groupValue = groupedMatcher.group(groupName);
             groupName = groupName.split(groupNameIndexSepRegex)[0];
-            matchedGroups.put(groupName, groupValue);
+            if(groupValue != null) {
+                matchedGroups.put(groupName, groupValue);
+            }
         }
 
         return matchedGroups;

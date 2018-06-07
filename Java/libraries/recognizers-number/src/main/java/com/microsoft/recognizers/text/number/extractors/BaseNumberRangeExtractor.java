@@ -58,8 +58,8 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
             Matcher matcher = pair.getValue0();
             String value = pair.getValue1();
             while (matcher.find()) {
-                int start = 0;
-                int length = 0;
+                int start = NumberRangeConstants.INVALID_NUM;
+                int length = NumberRangeConstants.INVALID_NUM;
                 Pair<Integer, Integer> startAndLength = getMatchedStartAndLength(matcher, value, source, start, length);
                 start = startAndLength.getValue0();
                 length = startAndLength.getValue1();
