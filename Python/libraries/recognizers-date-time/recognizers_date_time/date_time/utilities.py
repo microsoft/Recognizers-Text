@@ -317,10 +317,10 @@ class AgoLaterUtil:
         pr = duration_parser.parse(duration, reference)
         if not pr:
             return result
-        match = regex.match(unit_regex, source)
+        match = regex.search(unit_regex, source)
         if not match:
             return result
-        after_str = source[duration.start + duration.length]
+        after_str = source[duration.start + duration.length:]
         before_str = source[0:duration.start]
         src_unit = match.group('unit')
         duration_result: DateTimeResolutionResult = pr.value
