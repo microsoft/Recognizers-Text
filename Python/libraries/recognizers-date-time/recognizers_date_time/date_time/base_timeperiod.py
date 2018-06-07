@@ -469,7 +469,7 @@ class BaseTimePeriodParser(DateTimeParser):
         result.future_value = ResolutionStartEnd()
         result.past_value = ResolutionStartEnd()
         result.future_value.start = datetime(year, month, day, timex_range.begin_hour, 0, 0)
-        result.future_value.end = datetime(year, month, day, timex_range.end_hour, timex_range.end_min, 0)
+        result.future_value.end = datetime(year, month, day, timex_range.end_hour, timex_range.end_min, timex_range.end_min)
         result.past_value.start = result.future_value.start
         result.past_value.end = result.future_value.end
 
