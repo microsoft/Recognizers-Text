@@ -99,6 +99,10 @@ class FormatUtil:
         return FormatUtil.luis_time(time.hour, time.minute, time.second)
 
     @staticmethod
+    def luis_date_time(time: datetime) -> str:
+        return FormatUtil.luis_date_from_datetime(time) + 'T' + FormatUtil.luis_time_from_datetime(time)
+
+    @staticmethod
     def format_date(date: datetime) -> str:
         return f'{date.year:04d}-{date.month:02d}-{date.day:02d}'
 
@@ -384,7 +388,7 @@ class AgoLaterUtil:
         else: return result
 
         result.timex = FormatUtil.luis_date_from_datetime(
-            value) if mode == AgoLaterMode.DATE else FormatUtil.format_date_time(value)
+            value) if mode == AgoLaterMode.DATE else FormatUtil.luis_date_time(value)
         result.future_value = value
         result.past_value = value
         result.success = True

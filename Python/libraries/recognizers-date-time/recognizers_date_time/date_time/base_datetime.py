@@ -394,9 +394,9 @@ class BaseDateTimeParser(DateTimeParser):
         er2: ExtractResult = next(iter(er2List), None)
         if er2 is None:
             # here we filter out "morning, afternoon, night..." time entities
-            ers = self.config.time_extractor.extract(self.config.token_before_time + source, reference)
-            if len(ers) == 1:
-                er2: ExtractResult = next(iter(ers), None)
+            er2List = self.config.time_extractor.extract(self.config.token_before_time + source, reference)
+            if len(er2List) == 1:
+                er2: ExtractResult = next(iter(er2List), None)
                 er2.start -= len(self.config.token_before_time)
             else:
                 return result
