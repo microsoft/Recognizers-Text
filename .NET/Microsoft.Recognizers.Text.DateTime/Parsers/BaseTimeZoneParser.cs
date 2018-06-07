@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
+
 using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -12,13 +12,9 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_TIMEZONE; //"TimeZone";
 
-        public BaseTimeZoneParser()
-        {
-        }
-
         public ParseResult Parse(ExtractResult result)
         {
-            return this.Parse(result, DateObject.Now);
+            return Parse(result, DateObject.Now);
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
@@ -49,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int minutes = 0;
             if (utcOffset.Contains(":"))
             {
-                List<string> tokens = utcOffset.Split(':').ToList();
+                var tokens = utcOffset.Split(':').ToList();
                 hours = int.Parse(tokens[0]);
                 minutes = int.Parse(tokens[1]);
             }
@@ -76,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
-            DateTimeParseResult result = null;
+            DateTimeParseResult result;
             result = new DateTimeParseResult
             {
                 Start = er.Start,
@@ -91,8 +87,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (offsetInMinutes != Constants.InvalidOffsetValue)
             {
-                result.Value = GetDateTimeResolutionResult(offsetInMinutes);
-                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + offsetInMinutes.ToString();
+                result.Value = GetDateTimeResolutionResult(offsetInMinutes, text);
+                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + offsetInMinutes;
             }
             else if (TimeZoneDefinitions.AbbrToMinMapping.ContainsKey(text))
             {
@@ -101,10 +97,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // TODO: Temporary solution for ambiguous data
                 if (utcMinuteShift == Constants.InvalidOffsetValue)
                 {
-                    result.Value = new DateTimeResolutionResult()
+                    result.Value = new DateTimeResolutionResult
                     {
                         Success = true,
-                        TimeZoneResolution = new TimeZoneResolutionResult()
+                        TimeZoneResolution = new TimeZoneResolutionResult
                         {
                             Value = "UTC+XX:XX",
                             UtcOffsetMins = Constants.InvalidOffsetValue
@@ -114,29 +110,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    result.Value = GetDateTimeResolutionResult(utcMinuteShift);
-                    result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
+                    result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);
+                    result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
                 }
             }
             else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(text))
             {
                 int utcMinuteShift = TimeZoneDefinitions.FullToMinMapping[text.ToLower()];
-                result.Value = GetDateTimeResolutionResult(utcMinuteShift);
-                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift.ToString();
+                result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);
+                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
             }
 
             return result;
         }
 
-        public DateTimeResolutionResult GetDateTimeResolutionResult(int offsetMins)
+        public DateTimeResolutionResult GetDateTimeResolutionResult(int offsetMins, string text)
         {
-            var val = new DateTimeResolutionResult()
+            var val = new DateTimeResolutionResult
             {
                 Success = true,
-                TimeZoneResolution = new TimeZoneResolutionResult()
+                TimeZoneResolution = new TimeZoneResolutionResult
                 {
                     Value = ConvertOffsetInMinsToOffsetString(offsetMins),
-                    UtcOffsetMins = offsetMins
+                    UtcOffsetMins = offsetMins,
+                    TimeZoneText = text
                 }
             };
 

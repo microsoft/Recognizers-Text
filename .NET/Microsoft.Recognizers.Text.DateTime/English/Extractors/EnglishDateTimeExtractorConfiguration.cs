@@ -58,8 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-            TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
         }
 
