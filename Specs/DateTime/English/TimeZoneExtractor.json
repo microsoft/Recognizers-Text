@@ -86,5 +86,24 @@
         "Type": "timezone"
       }
     ]
+  },
+  {
+    "Input": "For me, Christchurch Time, Colchester-time or Edinburgh time is OK.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Christchurch Time",
+        "Type": "timezone"
+      },
+      {
+        "Text": "Colchester-time",
+        "Type": "timezone"
+      },
+      {
+        "Text": "Edinburgh time",
+        "Type": "timezone"
+      }
+    ]
   }
 ]

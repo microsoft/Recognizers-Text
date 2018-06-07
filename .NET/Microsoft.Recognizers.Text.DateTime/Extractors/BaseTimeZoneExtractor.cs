@@ -31,16 +31,38 @@ namespace Microsoft.Recognizers.Text.DateTime
         private IEnumerable<Token> CityTimeMatch(string text)
         {
             var ret = new List<Token>();
-            var cityMatchResult = config.CityStringMatcher.Find(text.ToLowerInvariant());
+            var timeMatch = config.CityTimeSuffixRegex.Matches(text);
 
-            foreach (var result in cityMatchResult)
+            if (timeMatch.Count != 0)
             {
-                var afterString = text.Substring(result.End);
-                var suffixMatch = config.CityTimeSuffixRegex.Match(afterString);
+                var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
+                var cityMatchResult = config.CityMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant());
 
-                if (suffixMatch.Success && suffixMatch.Index == 0)
+                var i = 0;
+                foreach (Match match in timeMatch)
                 {
-                    ret.Add(new Token(result.Start, result.End + suffixMatch.Length)); 
+                    var hasCityBefore = false;
+
+                    while (i < cityMatchResult.Count && cityMatchResult[i].End <= match.Index)
+                    {
+                        hasCityBefore = true;
+                        i++;
+
+                        if (i == cityMatchResult.Count)
+                        {
+                            break;
+                        }
+                    }
+
+                    if (hasCityBefore && cityMatchResult[i - 1].End == match.Index)
+                    {
+                        ret.Add(new Token(cityMatchResult[i - 1].Start, match.Index + match.Length));
+                    }
+
+                    if (!hasCityBefore)
+                    {
+                        break;
+                    }
                 }
             }
 

@@ -18,6 +18,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
         public Regex CityTimeSuffixRegex { get; }
-        public StringMatcher CityStringMatcher { get; }
+        public StringMatcher CityMatcher { get; }
     }
 }

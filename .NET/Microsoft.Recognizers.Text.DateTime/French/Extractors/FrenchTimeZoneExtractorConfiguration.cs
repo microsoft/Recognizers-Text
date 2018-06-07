@@ -18,6 +18,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
         public Regex CityTimeSuffixRegex { get; }
-        public StringMatcher CityStringMatcher { get; }
+        public StringMatcher CityMatcher { get; }
     }
 }

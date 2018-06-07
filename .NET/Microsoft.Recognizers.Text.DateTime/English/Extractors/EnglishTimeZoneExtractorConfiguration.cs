@@ -31,9 +31,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StandardTimeRegex
         };
 
-        public EnglishTimeZoneExtractorConfiguration() : base(DateTimeOptions.None)
+        public EnglishTimeZoneExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
-            CityStringMatcher.Build();
+            if ((options & DateTimeOptions.EnablePreview) != 0)
+            {
+                CityMatcher.Build();
+            }
         }
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
@@ -41,6 +44,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex CityTimeSuffixRegex => new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public StringMatcher CityStringMatcher => new StringMatcher(TimeZoneDefinitions.CitiesList.Select(o => o.ToLowerInvariant()));
+        public StringMatcher CityMatcher => new StringMatcher(TimeZoneDefinitions.MajorCities.Select(o => o.ToLowerInvariant()));
     }
 }

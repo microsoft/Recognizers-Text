@@ -10,6 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex CityTimeSuffixRegex { get; }
 
-        StringMatcher CityStringMatcher { get; }
+        StringMatcher CityMatcher { get; }
     }
 }
