@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     {
         dotNet = 1,
         javascript = 2,
-        python = 4
+        python = 4,
+        java = 8
     }
 }
