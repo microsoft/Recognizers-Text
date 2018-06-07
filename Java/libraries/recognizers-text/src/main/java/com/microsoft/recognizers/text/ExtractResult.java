@@ -15,4 +15,22 @@ public class ExtractResult {
         this.type = type;
         this.data = data;
     }
+
+    public ExtractResult withText(String newText) {
+        return new ExtractResult(
+                this.start,
+                this.length,
+                newText,
+                this.type,
+                this.data);
+    }
+
+    public ExtractResult withData(Object newData) {
+        return new ExtractResult(
+                this.start,
+                this.length,
+                this.text,
+                this.type,
+                newData);
+    }
 }

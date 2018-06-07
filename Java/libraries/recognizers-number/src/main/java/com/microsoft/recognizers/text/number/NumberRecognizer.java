@@ -82,12 +82,12 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         registerModel(NumberModel.class, Culture.English, (options) -> new NumberModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(options)),
                 com.microsoft.recognizers.text.number.english.extractors.NumberExtractor.getInstance(NumberMode.PureNumber, options)));
-//        registerModel(OrdinalModel.class, Culture.English, (options) -> new OrdinalModel(
-//                null,
-//                null));
 //        registerModel(PercentModel.class, Culture.English, (options) -> new PercentModel(
 //                null,
 //                null));
+        registerModel(OrdinalModel.class, Culture.English, (options) -> new OrdinalModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration(options)),
+                com.microsoft.recognizers.text.number.english.extractors.OrdinalExtractor.getInstance()));
 //        registerModel(NumberRangeModel.class, Culture.English, (options) -> new NumberRangeModel(
 //                null,
 //                null));
