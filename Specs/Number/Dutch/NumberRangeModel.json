@@ -1,12 +1,12 @@
 [
   {
     "Input": "10-1995",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": []
   },
   {
     "Input": "Dit nummer is hoger dan twintig en kleiner of gelijk dan vijfendertig.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "hoger dan twintig en kleiner of gelijk dan vijfendertig",
@@ -19,7 +19,7 @@
   },
   {
     "Input": "Het nummer ligt tussen de 20 en 30.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "tussen de 20 en 30",
@@ -32,7 +32,7 @@
   },
   {
     "Input": "Hij is geëindigd tussen de tiende en de vijftiende.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "tussen de tiende en de vijftiende",
@@ -45,7 +45,7 @@
   },
   {
     "Input": "Hij scoort tussen min tien en vijftien.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "tussen min tien en vijftien",
@@ -58,7 +58,7 @@
   },
   {
     "Input": "Hij staat hoger dan de tiende maar lager dan de vijftiende.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "hoger dan de tiende maar lager dan de vijftiende",
@@ -71,7 +71,7 @@
   },
   {
     "Input": "Dit is een getal wat groter is dan 100, maar kleiner als 300",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "groter is dan 100, maar kleiner als 300",
@@ -84,7 +84,7 @@
   },
   {
     "Input": "Dit aantal is hoger of gelijk aan honderd, maar lager of gelijk aan driehonderd",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "hoger of gelijk aan honderd, maar lager of gelijk aan driehonderd",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Er zijn maximum 100 appels en op zijn minst 20 appels.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "maximum 100 appels en op zijn minst 20",
@@ -110,7 +110,7 @@
   },
   {
     "Input": "Deze appels zijn ongeveer 20~100 gram",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "20~100",
@@ -123,7 +123,7 @@
   },
   {
     "Input": "Het bereik van de getallen is 20 tot 100",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "20 tot 100",
@@ -136,7 +136,7 @@
   },
   {
     "Input": "Het bereik van de getallen is 20 tot en met 100",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "20 tot en met 100",
@@ -149,7 +149,7 @@
   },
   {
     "Input": "Het bereik van de getallen gaat van duizend tot vijftienhonderd.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "van duizend tot vijftienhonderd",
@@ -162,7 +162,7 @@
   },
   {
     "Input": "Het nummer ligt boven de 1000 en onder de 1500",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "boven de 1000 en onder de 1500",
@@ -175,7 +175,7 @@
   },
   {
     "Input": "Het getal is hoger dan een kwart maar lager als de helft.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "hoger dan een kwart maar lager als de helft",
@@ -188,7 +188,7 @@
   },
   {
     "Input": "Dit getal is groter of gelijk aan drieduizendnegenhonderdvijfenzestig.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "groter of gelijk aan drieduizendnegenhonderdvijfenzestig",
@@ -201,7 +201,7 @@
   },
   {
     "Input": "Dit getal is groter als 4.565",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "groter als 4.565",
@@ -214,7 +214,7 @@
   },
   {
     "Input": "Hij is meer dan dertig jaren oud.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "meer dan dertig",
@@ -227,7 +227,7 @@
   },
   {
     "Input": "Zijn leeftijd is niet minder dan dertig.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "niet minder dan dertig",
@@ -240,7 +240,7 @@
   },
   {
     "Input": "There're about five hundred and more in these products.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "five hundred and more",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Er zijn ongeveer vijfhonderd of meer van deze producten.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "vijfhonderd of meer",
@@ -266,7 +266,7 @@
   },
   {
     "Input": "Meer dan de helft van de mensen is aanwezig.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "Meer dan de helft",
@@ -279,7 +279,7 @@
   },
   {
     "Input": "Meer dan 1/2 van de mensen is aanwezig.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "Meer dan 1/2",
@@ -292,7 +292,7 @@
   },
   {
     "Input": "Zoek de priemgetallen die kleiner of gelijk aan 100 zijn",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "kleiner of gelijk aan 100",
@@ -305,7 +305,7 @@
   },
   {
     "Input": "Er zijn ongeveer vijfhonderd of minder van deze producten.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "vijfhonderd of minder",
@@ -318,7 +318,7 @@
   },
   {
     "Input": "Vind de priemgetallen die < = 100 zijn",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "< = 100",
@@ -331,7 +331,7 @@
   },
   {
     "Input": "Zijn lengte is onder de 170.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "onder de 170",
@@ -344,7 +344,7 @@
   },
   {
     "Input": "Zijn lengte is kleiner dan 170.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "kleiner dan 170",
@@ -357,7 +357,7 @@
   },
   {
     "Input": "Minder dan duizend reuzenpanda's leven nog steeds in het wild.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "Minder dan duizend",
@@ -370,7 +370,7 @@
   },
   {
     "Input": "x is gelijk aan honderdzeventig.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk aan honderdzeventig",
@@ -383,7 +383,7 @@
   },
   {
     "Input": "x>10 en y<20",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": ">10",
@@ -403,7 +403,7 @@
   },
   {
     "Input": "x is groter dan 10 en kleiner dan 20. y is niet meer als 50 en niet kleiner als 20.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "groter dan 10 en kleiner dan 20",
@@ -423,12 +423,12 @@
   },
   {
     "Input": "Een vierde is een breuk",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": []
   },
   {
     "Input": "Het getal is gelijk aan 20.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk aan 20",
@@ -441,7 +441,7 @@
   },
   {
     "Input": "Gelijk aan 20, is het aantal studenten in onze klas niet significant.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "Gelijk aan 20",
@@ -454,22 +454,22 @@
   },
   {
     "Input": "0612345678 is een telefoonnummer.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": []
   },
   {
     "Input": "+31612345678 is een telefoonnummer.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": []
   },
   {
     "Input": "+31 6 12 34 56 78 is een telefoonnummer.",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": []
   },
   {
     "Input": "Zojn resultaat is 200 of meer",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "200 of meer",
@@ -482,7 +482,7 @@
   },
   {
     "Input": "Zijn resultaat is 200 of hoger dan 190",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "hoger dan 190",
@@ -495,7 +495,7 @@
   },
   {
     "Input": "Het resultaat is 200 of hoger",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "200 of hoger",
@@ -508,7 +508,7 @@
   },
   {
     "Input": "Zijn score is minder dan of gelijk aan 30",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "minder dan of gelijk aan 30",
@@ -521,7 +521,7 @@
   },
   {
     "Input": "Zijn score is gelijk aan of minder dan 30",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk aan of minder dan 30",
@@ -534,7 +534,7 @@
   },
   {
     "Input": "Zijn score is minstens of gelijk aan 30",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "minstens of gelijk aan 30",
@@ -547,7 +547,7 @@
   },
   {
     "Input": "Zijn score is gelijk of meer dan 30",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk of meer dan 30",
@@ -560,7 +560,7 @@
   },
   {
     "Input": "Zijn score is gelijk aan 5000 of minder",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk aan 5000 of minder",
@@ -573,7 +573,7 @@
   },
   {
     "Input": "Zijn score is gelijk aan 5000 of minder dan 6000",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk aan 5000",
@@ -593,7 +593,7 @@
   },
   {
     "Input": "Zijn resultaat is gelijk aan 5000 of meer dan dat",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk aan 5000 of meer dan",
@@ -606,7 +606,7 @@
   },
   {
     "Input": "Het resultaat is gelijk aan 5000 of meer dan 4500",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk aan 5000",
@@ -626,7 +626,7 @@
   },
   {
     "Input": "Het resultaat is minder dan 5000 of gelijk aan",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "minder dan 5000 of gelijk aan",
@@ -639,7 +639,7 @@
   },
   {
     "Input": "Het kost meer dan 5000 of evenveel",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "meer dan 5000 of evenveel",
@@ -652,7 +652,7 @@
   },
   {
     "Input": "Zijn resultaat is meer dan 5000 of gelijk aan",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "meer dan 5000 of gelijk aan",
@@ -665,7 +665,7 @@
   },
   {
     "Input": "Het resultaat is meer dan 5000 of gelijk aan 6000",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "meer dan 5000",
@@ -685,7 +685,7 @@
   },
   {
     "Input": "Het resultaat is gelijk aan 5000 of minder dan 5000",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "gelijk aan 5000",

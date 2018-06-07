@@ -1,7 +1,7 @@
 [
   {
     "Input": "100%",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "100%",
@@ -14,7 +14,7 @@
   },
   {
     "Input": "twintig procent",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "twintig procent",
@@ -27,7 +27,7 @@
   },
   {
     "Input": "percents of twenty",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "percents of twenty",
@@ -40,7 +40,7 @@
   },
   {
     "Input": "een van de drie",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "een van de drie",
@@ -53,7 +53,7 @@
   },
   {
     "Input": "een uit twee",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "een uit twee",
@@ -66,7 +66,7 @@
   },
   {
     "Input": "1/4 van",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "1/4 van",
@@ -79,7 +79,7 @@
   },
   {
     "Input": "een vierde van",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "een vierde van",
@@ -92,7 +92,7 @@
   },
   {
     "Input": "de helft van",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "de helft van",
@@ -105,7 +105,7 @@
   },
   {
     "Input": "een kwart van",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "een kwart van",
@@ -118,7 +118,7 @@
   },
   {
     "Input": "een derde",
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": []
   }
 ]
