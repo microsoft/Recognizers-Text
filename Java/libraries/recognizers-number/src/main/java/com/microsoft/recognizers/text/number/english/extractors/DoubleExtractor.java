@@ -17,7 +17,6 @@ public class DoubleExtractor extends BaseNumberExtractor {
 
     private final Map<Pattern, String> regexes;
 
-
     @Override
     protected Map<Pattern, String> getRegexes() {
         return this.regexes;

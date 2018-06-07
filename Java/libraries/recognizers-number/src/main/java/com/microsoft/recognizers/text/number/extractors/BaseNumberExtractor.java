@@ -28,10 +28,10 @@ public abstract class BaseNumberExtractor implements IExtractor {
 
         ArrayList<ExtractResult> result = new ArrayList<>();
 
-        HashMap<MatchResult, String> matchSource = new HashMap<>();
         Boolean[] matched = new Boolean[source.length()];
         Arrays.fill(matched, false);
 
+        HashMap<MatchResult, String> matchSource = new HashMap<>();
         getRegexes().forEach((k, value) -> {
             Matcher matcher = k.matcher(source);
             while (matcher.find()) {

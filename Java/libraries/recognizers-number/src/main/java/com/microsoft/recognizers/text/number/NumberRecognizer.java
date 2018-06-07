@@ -8,9 +8,7 @@ import com.microsoft.recognizers.text.number.models.NumberModel;
 import com.microsoft.recognizers.text.number.models.NumberRangeModel;
 import com.microsoft.recognizers.text.number.models.OrdinalModel;
 import com.microsoft.recognizers.text.number.models.PercentModel;
-import com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserFactory;
-import com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserType;
-import com.microsoft.recognizers.text.number.parsers.EnglishNumberParserConfiguration;
+import com.microsoft.recognizers.text.number.parsers.*;
 
 import java.util.List;
 import java.util.function.Function;

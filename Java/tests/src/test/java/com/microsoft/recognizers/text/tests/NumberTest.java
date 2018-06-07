@@ -66,7 +66,7 @@ public class NumberTest extends AbstractTest {
                     throw new AssumptionViolatedException("Model Type/Name not supported.");
             }
         } catch (IllegalArgumentException ex) {
-            throw new AssumptionViolatedException(ex.getMessage());
+            throw new AssumptionViolatedException(ex.getMessage(), ex);
         }
     }
 

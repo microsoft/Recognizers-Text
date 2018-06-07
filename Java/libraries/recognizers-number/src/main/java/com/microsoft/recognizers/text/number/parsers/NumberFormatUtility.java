@@ -66,27 +66,8 @@ public final class NumberFormatUtility {
 
             result = sb.toString();
         }
+
         return result;
-
-
-        /*
-        result = str(value)
-        result = result.replace('e', 'E')
-        if '.' in result:
-        result = result.rstrip('0').rstrip('.')
-        if 'E-' in result:
-        parts = result.split('E-')
-        parts[1] = parts[1].rjust(2, '0')
-        result = 'E-'.join(parts)
-        if 'E+' in result:
-        parts = result.split('E+')
-        parts[0] = parts[0].rstrip('0')
-        result = 'E+'.join(parts)
-        long_format = SUPPORTED_CULTURES.get(self.code)
-        if long_format:
-        result = ''.join(map(lambda x: self.change_mark(x, long_format), result))
-        return result
-        */
     }
 
     private static Character changeMark(Character c, LongFormatType longFormat) {

@@ -12,6 +12,10 @@ import java.util.regex.Pattern;
 
 public class EnglishNumberParserConfiguration extends BaseNumberParserConfiguration {
 
+    public EnglishNumberParserConfiguration() {
+        this(NumberOptions.None);
+    }
+
     public EnglishNumberParserConfiguration(NumberOptions options) {
         this(new CultureInfo(Culture.English), options);
     }

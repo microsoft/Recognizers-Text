@@ -42,6 +42,10 @@ public class NumberExtractor extends BaseNumberExtractor {
 
     private static final ConcurrentHashMap<Pair<NumberMode, NumberOptions>, NumberExtractor> instances = new ConcurrentHashMap<>();
 
+    public static NumberExtractor getInstance() {
+        return getInstance(NumberMode.Default, NumberOptions.None);
+    }
+
     public static NumberExtractor getInstance(NumberMode mode, NumberOptions options) {
         Pair<NumberMode, NumberOptions> key = Pair.with(mode, options);
         if (!instances.containsKey(key)) {
