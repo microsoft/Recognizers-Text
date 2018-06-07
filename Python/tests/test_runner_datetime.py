@@ -31,11 +31,12 @@ def test_datetime_parser(culture, model, options, context, source, expected_resu
 
     extract_results = extractor.extract(source, reference_datetime)
     result = [parser.parse(x, reference_datetime) for x in extract_results]
-
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
         assert actual.text == expected['Text']
         assert actual.type == expected['Type']
+        if 'Value' in expected:
+            assert actual.value
         if actual.value and 'Value' in expected:
             assert actual.value.timex == expected['Value']['Timex']
             assert actual.value.future_resolution == expected['Value']['FutureResolution']
