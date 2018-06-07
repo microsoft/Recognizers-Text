@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List, Dict, Pattern, Union
 from enum import Enum, IntEnum
 from datetime import datetime, timedelta
+from datedelta import datedelta
 import calendar
 import regex
 
@@ -371,9 +372,9 @@ class AgoLaterUtil:
         elif unit_str == 'W':
             value += timedelta(days=num * swift * 7)
         elif unit_str == 'MON':
-            value += timedelta(months=num * swift)
+            value += datedelta(months=num * swift)
         elif unit_str == 'Y':
-            value += timedelta(years=num * swift)
+            value += datedelta(years=num * swift)
         elif unit_str == 'H':
             value += timedelta(hours=num * swift)
         elif unit_str == 'M':
