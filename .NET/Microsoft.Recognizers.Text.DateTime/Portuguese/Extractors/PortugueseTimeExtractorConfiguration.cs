@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimezoneExtractor(new PortugueseTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration());
         }
     }
 }

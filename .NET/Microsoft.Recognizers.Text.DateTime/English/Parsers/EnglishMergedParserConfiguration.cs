@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
             GetParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
-            TimeZoneParser = new BaseTimezoneParser();
+            TimeZoneParser = new BaseTimeZoneParser();
         }
     }
 }

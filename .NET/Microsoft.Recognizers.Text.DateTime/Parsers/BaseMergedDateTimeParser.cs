@@ -338,27 +338,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddResolutionFields(res, ResolutionKey.Type, typeOutput);
             AddResolutionFields(res, DateTimeResolutionKey.IsLunar, islunar? islunar.ToString():string.Empty);
 
+            var hasTimeZone = false;
 
-            var hasTimezone = false;
-            // Add timezone resolution
-            if (val.TimezoneResolution != null)
+            // For standalone timezone entity recognition, we generate TimeZoneResolution for each entity we extracted.
+            // We also merge time entity with timezone entity and add the information in TimeZoneResolution to every DateTime resolutions.
+            if (val.TimeZoneResolution != null)
             {
                 if (slot.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
                 {
                     // single timezone
-                    AddResolutionFields(res, Constants.ResolveTimezone, new Dictionary<string, string>
+                    AddResolutionFields(res, Constants.ResolveTimeZone, new Dictionary<string, string>
                     {
-                        {ResolutionKey.Value, val.TimezoneResolution.Value},
-                        {Constants.UtcOffsetMinsKey, val.TimezoneResolution.UtcOffsetMins.ToString()}
+                        {ResolutionKey.Value, val.TimeZoneResolution.Value},
+                        {Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString()}
                     });
                 }
                 else
                 {
                     // timezone as clarification of datetime
-                    hasTimezone = true;
-                    AddResolutionFields(res, Constants.Timezone, val.TimezoneResolution.Value);
-                    AddResolutionFields(res, Constants.TimezoneText, val.TimezoneResolution.TimeZoneText);
-                    AddResolutionFields(res, Constants.UtcOffsetMinsKey, val.TimezoneResolution.UtcOffsetMins.ToString());
+                    hasTimeZone = true;
+                    AddResolutionFields(res, Constants.TimeZone, val.TimeZoneResolution.Value);
+                    AddResolutionFields(res, Constants.TimeZoneText, val.TimeZoneResolution.TimeZoneText);
+                    AddResolutionFields(res, Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString());
                 }
             }
 
@@ -427,11 +428,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     AddResolutionFields(value, ResolutionKey.Type, typeOutput);
                     AddResolutionFields(value, DateTimeResolutionKey.IsLunar, islunar ? islunar.ToString() : string.Empty);
 
-                    if (hasTimezone)
+                    if (hasTimeZone)
                     {
-                        AddResolutionFields(value, Constants.Timezone, val.TimezoneResolution.Value);
-                        AddResolutionFields(value, Constants.TimezoneText, val.TimezoneResolution.TimeZoneText);
-                        AddResolutionFields(value, Constants.UtcOffsetMinsKey, val.TimezoneResolution.UtcOffsetMins.ToString());
+                        AddResolutionFields(value, Constants.TimeZone, val.TimeZoneResolution.Value);
+                        AddResolutionFields(value, Constants.TimeZoneText, val.TimeZoneResolution.TimeZoneText);
+                        AddResolutionFields(value, Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString());
                     }
 
                     foreach (var q in (Dictionary<string, string>) p.Value)
@@ -450,7 +451,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimezoneResolution == null)
+            if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimeZoneResolution == null)
             {
                 var notResolved = new Dictionary<string, string> {
                     {

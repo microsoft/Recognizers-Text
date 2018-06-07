@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimezoneExtractor(new SpanishTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration());
         }
     }
 }

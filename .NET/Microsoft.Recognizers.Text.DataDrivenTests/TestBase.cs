@@ -195,12 +195,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 CollectionAssert.AreEqual(expectedValue.FutureResolution, actualValue.FutureResolution, GetMessage(TestSpec));
                 CollectionAssert.AreEqual(expectedValue.PastResolution, actualValue.PastResolution, GetMessage(TestSpec));
 
-                if (expectedValue.TimezoneResolution != null || actualValue.TimezoneResolution != null)
+                if (expectedValue.TimeZoneResolution != null || actualValue.TimeZoneResolution != null)
                 {
-                    Assert.IsNotNull(actualValue.TimezoneResolution, GetMessage(TestSpec));
-                    Assert.IsNotNull(expectedValue.TimezoneResolution, GetMessage(TestSpec));
-                    Assert.AreEqual(expectedValue.TimezoneResolution.Value, actualValue.TimezoneResolution.Value, GetMessage(TestSpec));
-                    Assert.AreEqual(expectedValue.TimezoneResolution.UtcOffsetMins, actualValue.TimezoneResolution.UtcOffsetMins, GetMessage(TestSpec));
+                    Assert.IsNotNull(actualValue.TimeZoneResolution, GetMessage(TestSpec));
+                    Assert.IsNotNull(expectedValue.TimeZoneResolution, GetMessage(TestSpec));
+                    Assert.AreEqual(expectedValue.TimeZoneResolution.Value, actualValue.TimeZoneResolution.Value, GetMessage(TestSpec));
+                    Assert.AreEqual(expectedValue.TimeZoneResolution.UtcOffsetMins, actualValue.TimeZoneResolution.UtcOffsetMins, GetMessage(TestSpec));
                 }
             }
         }

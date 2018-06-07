@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeRegexes = GermanTimeExtractorConfiguration.TimeRegexList;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
-            TimeZoneParser = new BaseTimezoneParser();
+            TimeZoneParser = new BaseTimeZoneParser();
         }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)

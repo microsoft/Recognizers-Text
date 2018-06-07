@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DateTimePeriodParser = new DateTimePeriodParser(new PortugueseDateTimePeriodParserConfiguration(this));
             GetParser = new BaseSetParser(new PortugueseSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration());
-            TimeZoneParser = new BaseTimezoneParser();
+            TimeZoneParser = new BaseTimeZoneParser();
         }
     }
 }

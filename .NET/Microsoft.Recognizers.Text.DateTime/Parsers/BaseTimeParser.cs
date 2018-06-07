@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     innerResult = InternalParse(er.Text.Substring(0, (int)(er.Length - timezoneEr.Length)),
                         referenceTime);
-                    innerResult.TimezoneResolution = ((DateTimeResolutionResult)timezonePr.Value).TimezoneResolution;
+                    innerResult.TimeZoneResolution = ((DateTimeResolutionResult)timezonePr.Value).TimeZoneResolution;
                 }
                 else
                 {

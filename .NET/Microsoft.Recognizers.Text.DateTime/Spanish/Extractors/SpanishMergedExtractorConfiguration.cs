@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimezoneExtractor(new SpanishTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration());
             IntegerExtractor = new Number.Spanish.IntegerExtractor();
         }
 

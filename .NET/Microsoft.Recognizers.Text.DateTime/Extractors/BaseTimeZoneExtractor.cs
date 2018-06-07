@@ -4,13 +4,13 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseTimezoneExtractor : IDateTimeExtractor
+    public class BaseTimeZoneExtractor : IDateTimeExtractor
     {
         private static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEZONE; // "TimeZone";
 
         private readonly ITimeZoneExtractorConfiguration config;
 
-        public BaseTimezoneExtractor(ITimeZoneExtractorConfiguration config)
+        public BaseTimeZoneExtractor(ITimeZoneExtractorConfiguration config)
         {
             this.config = config;
         }
@@ -23,11 +23,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
-            tokens.AddRange(TimezoneMatch(text));
+            tokens.AddRange(TimeZoneMatch(text));
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        private List<Token> TimezoneMatch(string text)
+        private List<Token> TimeZoneMatch(string text)
         {
             var ret = new List<Token>();
             foreach (var regex in this.config.TimeZoneRegexes)

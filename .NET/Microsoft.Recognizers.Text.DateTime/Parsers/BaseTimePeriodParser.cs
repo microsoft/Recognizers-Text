@@ -304,13 +304,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Comment = Constants.Comment_AmPm;
             }
 
-            if (((DateTimeResolutionResult)pr1.Value).TimezoneResolution != null)
+            if (((DateTimeResolutionResult)pr1.Value).TimeZoneResolution != null)
             {
-                ret.TimezoneResolution = ((DateTimeResolutionResult)pr1.Value).TimezoneResolution;
+                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr1.Value).TimeZoneResolution;
             }
-            else if (((DateTimeResolutionResult)pr2.Value).TimezoneResolution != null)
+            else if (((DateTimeResolutionResult)pr2.Value).TimeZoneResolution != null)
             {
-                ret.TimezoneResolution = ((DateTimeResolutionResult)pr2.Value).TimezoneResolution;
+                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
             }
 
             ret.SubDateTimeEntities = new List<object> {pr1, pr2};

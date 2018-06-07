@@ -68,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(options));
             SetExtractor = new BaseSetExtractor(new PortugueseSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimezoneExtractor(new PortugueseTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration());
             IntegerExtractor = new Number.Portuguese.IntegerExtractor();
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new PortugueseDateTimeAltExtractorConfiguration());
         }

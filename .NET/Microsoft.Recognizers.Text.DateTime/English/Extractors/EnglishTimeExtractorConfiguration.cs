@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimezoneExtractor(new EnglishTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration());
         }
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseTimezoneParser : IDateTimeParser
+    public class BaseTimeZoneParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_TIMEZONE; //"TimeZone";
 
@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     result.Value = new DateTimeResolutionResult
                     {
                         Success = true,
-                        TimezoneResolution = new TimezoneResolutionResult
+                        TimeZoneResolution = new TimeZoneResolutionResult
                         {
                             Value = "UTC+XX:XX",
                             UtcOffsetMins = Constants.InvalidOffsetValue
@@ -129,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var val = new DateTimeResolutionResult
             {
                 Success = true,
-                TimezoneResolution = new TimezoneResolutionResult
+                TimeZoneResolution = new TimeZoneResolutionResult
                 {
                     Value = ConvertOffsetInMinsToOffsetString(offsetMins),
                     UtcOffsetMins = offsetMins,

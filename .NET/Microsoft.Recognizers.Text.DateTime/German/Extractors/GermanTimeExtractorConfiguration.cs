@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public GermanTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimezoneExtractor(new GermanTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration());
         }
     }
 }

@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
             SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimezoneExtractor(new EnglishTimeZoneExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration());
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration());
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }

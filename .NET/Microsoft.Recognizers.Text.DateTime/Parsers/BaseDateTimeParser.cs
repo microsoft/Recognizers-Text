@@ -236,7 +236,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.SubDateTimeEntities = new List<object> {pr1, pr2};
 
             // Add timezone
-            ret.TimezoneResolution = ((DateTimeResolutionResult)pr2.Value).TimezoneResolution;
+            ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
 
             return ret;
         }

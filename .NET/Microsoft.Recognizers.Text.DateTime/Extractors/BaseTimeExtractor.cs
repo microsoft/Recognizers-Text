@@ -37,41 +37,43 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(BeforeAfterRegexMatch(text));
             tokens.AddRange(SpecialCasesRegexMatch(text, reference));
 
-            var ret = Token.MergeAllTokens(tokens, text, ExtractorName);
+            var timeErs = Token.MergeAllTokens(tokens, text, ExtractorName);
 
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                AddTimeZone(ret, this.config.TimeZoneExtractor.Extract(text, reference), text);
+                timeErs = MergeTimeZones(timeErs, config.TimeZoneExtractor.Extract(text, reference), text);
             }
 
-            return ret;
+            return timeErs;
         }
 
-        private void AddTimeZone(List<ExtractResult> ret, List<ExtractResult> timeZoneErs, string text)
+        private List<ExtractResult> MergeTimeZones(List<ExtractResult> timeErs, List<ExtractResult> timeZoneErs, string text)
         {
-            foreach (var er in ret)
+            foreach (var er in timeErs)
             {
                 foreach (var timeZoneEr in timeZoneErs)
                 {
                     var begin = er.Start + er.Length;
                     var end = timeZoneEr.Start;
+
                     if (begin < end)
                     {
-                        var midString = text.Substring((int) begin, (int) (end - begin));
-                        if (string.IsNullOrWhiteSpace(midString))
-                        {
-                            var length = (int) (timeZoneEr.Start + timeZoneEr.Length - er.Start);
+                        var gapText = text.Substring((int) begin, (int) (end - begin));
 
-                            er.Text = text.Substring((int) er.Start, length);
-                            er.Length = length;
-                            er.Data =
-                                new KeyValuePair<string, ExtractResult>(
-                                    Constants.SYS_DATETIME_TIMEZONE,
-                                    timeZoneEr);
+                        if (string.IsNullOrWhiteSpace(gapText))
+                        {
+                            var newLength = (int) (timeZoneEr.Start + timeZoneEr.Length - er.Start);
+
+                            er.Text = text.Substring((int) er.Start, newLength);
+                            er.Length = newLength;
+                            er.Data = new KeyValuePair<string, ExtractResult>(Constants.SYS_DATETIME_TIMEZONE,
+                                timeZoneEr);
                         }
                     }
                 }
             }
+
+            return timeErs;
         }
 
         private List<Token> BasicRegexMatch(string text)
