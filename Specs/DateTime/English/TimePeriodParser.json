@@ -1083,6 +1083,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "from 0:01 am to 1 pm",
@@ -1107,7 +1108,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "from 0:01 am to 1",

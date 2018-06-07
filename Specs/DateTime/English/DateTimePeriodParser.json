@@ -1708,6 +1708,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-14T19:12:00"
   },
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "in the afternoon on Friday between 1PM and 4 PM",
