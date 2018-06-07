@@ -7,6 +7,7 @@ from .models import DateTimeModel
 from .base_merged import BaseMergedExtractor, BaseMergedParser
 from .english.common_configs import EnglishCommonDateTimeParserConfiguration
 from .english.merged_extractor_config import EnglishMergedExtractorConfiguration
+from .english.merged_parser_config import EnglishMergedParserConfiguration
 
 class DateTimeRecognizer(Recognizer[DateTimeOptions]):
     def __init__(self, target_culture: str = None,
@@ -18,7 +19,7 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
 
     def initialize_configuration(self):
         self.register_model('DateTimeModel', Culture.English, lambda options: DateTimeModel(
-            BaseMergedParser(None, options),
+            BaseMergedParser(EnglishMergedParserConfiguration(EnglishCommonDateTimeParserConfiguration()), options),
             BaseMergedExtractor(EnglishMergedExtractorConfiguration(), options)
         ))
 

@@ -389,7 +389,7 @@ class BaseMergedParser(DateTimeParser):
             val.mod = TimeTypeConstants.SINCE_MOD
             result.value = val
 
-        if (self.options & DateTimeOptions.SPLIT_DATE_AND_TIME.value) == DateTimeOptions.SPLIT_DATE_AND_TIME.value and result.value and result.value.subDateTimeEntities:
+        if (self.options & DateTimeOptions.SPLIT_DATE_AND_TIME.value) == DateTimeOptions.SPLIT_DATE_AND_TIME.value and result.value and result.value.sub_date_time_entities:
             result.value = self._date_time_resolution_for_split(result)
         else:
             result = self.set_parse_result(result, has_before, has_after, has_since)
@@ -441,14 +441,15 @@ class BaseMergedParser(DateTimeParser):
 
     def _date_time_resolution_for_split(self, slot: DateTimeParseResult) -> List[DateTimeParseResult]:
         results = []
-        if 'subDateTimeEntities' in slot.value:
-            sub_entities = slot.value['subDateTimeEntities']
+        if slot.value.sub_date_time_entities:
+            sub_entities = slot.value.sub_date_time_entities
             for sub_entity in sub_entities:
                 result = sub_entity
-                result += self._date_time_resolution_for_split(result)
+                results += self._date_time_resolution_for_split(result)
         else:
             slot.value = self._date_time_resolution(slot, False, False, False)
             slot.type = f'{self.parser_type_name}.{self._determine_date_time_types(slot.type, False, False, False)}'
+            results.append(slot)
 
         return results
 

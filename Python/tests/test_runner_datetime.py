@@ -75,9 +75,9 @@ def test_datetime_model(culture, model, options, context, source, expected_resul
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
         assert actual.text == expected['Text']
-        assert actual.type == expected['Type']
-        assert len(actual.resolution.values) == len(expected_results['Resolution']['Values'])
-        for actual_resilution_value, expected_resoulution_value in zip(actual.resolution.values, expected_results['Resolution']['Values']):
+        assert actual.type_name == expected['TypeName']
+        assert len(actual.resolution['values']) == len(expected['Resolution']['values'])
+        for actual_resilution_value, expected_resoulution_value in zip(actual.resolution['values'], expected['Resolution']['values']):
             assert_resolution(actual_resilution_value, expected_resoulution_value)
 
 def get_assert_model_resolution(option):
@@ -106,10 +106,10 @@ def assert_model_resolution_option_extended_types(actual, expected):
     assert actual.value == expected['value']
 
 def assert_model_resolution_option_split_date_and_time(actual, expected):
-    assert actual.timex == expected['timex']
-    assert actual.type == expected['type']
-    assert actual.value == expected['value']
-    assert actual.mod == expected['Mod']
+    assert actual.get('timex', None) == expected.get('timex', None)
+    assert actual.get('type', None) == expected.get('type', None)
+    assert actual.get('value', None) == expected.get('value', None)
+    assert actual.get('mod', None) == expected.get('Mod', None)
 
 def create_extractor(language, model, options):
     extractor = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
