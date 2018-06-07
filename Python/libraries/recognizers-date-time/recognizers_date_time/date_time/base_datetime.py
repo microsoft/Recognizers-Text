@@ -403,16 +403,14 @@ class BaseDateTimeParser(DateTimeParser):
 
         # handle case "Oct. 5 in the afternoon at 7:00"
         # in this case "5 in the afternoon" will be extract as a Time entity
-        correctTimeIdx = -1
-        for idx, er2Item in enumerate(er2List):
-            if er2Item.overlap(er1):
-                correctTimeIdx = idx
-                break
+        correct_time_idx = 0
+        while correct_time_idx < len(er2List) and er2List[correct_time_idx].overlap(er1):
+            correct_time_idx += 1
 
-        if correctTimeIdx == -1:
+        if correct_time_idx >= len(er2List):
             return result
 
-        er2 = er2List[correctTimeIdx]
+        er2 = er2List[correct_time_idx]
 
         pr1 = self.config.date_parser.parse(er1, reference)
         pr2 = self.config.time_parser.parse(er2, reference)

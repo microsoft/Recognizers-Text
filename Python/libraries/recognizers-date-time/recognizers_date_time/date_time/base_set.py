@@ -403,17 +403,23 @@ class BaseSetParser(DateTimeParser):
         result = DateTimeResolutionResult()
         success = False
         er: List[ExtractResult] = list()
-        match = regex.match(self.config.set_each_regex, source)
+        match = regex.search(self.config.set_each_regex, source)
         if match:
             trimmed_text = source[0:match.start()] + source[match.end():]
             er = extractor.extract(trimmed_text, reference)
-            if(len(er) == 1 and len(er[0]) == len(trimmed_text)):
+            if(len(er) == 1 and er[0].length == len(trimmed_text)):
+                success = True
+        match = regex.search(self.config.set_week_day_regex, source)
+        if match:
+            trimmed_text = source[0:match.start()] + RegExpUtility.get_group(match, 'weekday') + source[match.end():]
+            er = extractor.extract(trimmed_text, reference)
+            if len(er) == 1 and er[0].length == len(trimmed_text):
                 success = True
         if success:
             pr = parser.parse(er[0])
             result.timex = pr.timex_str
-            result.future_value = ' Set: ' + pr.timex_str
-            result.past_value = ' Set: ' + pr.timex_str
+            result.future_value = 'Set: ' + pr.timex_str
+            result.past_value = 'Set: ' + pr.timex_str
             result.success = True
 
         return result

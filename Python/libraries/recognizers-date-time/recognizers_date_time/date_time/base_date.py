@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict
 from datetime import datetime, timedelta
+from datedelta import datedelta
 import calendar
 import regex
 
@@ -460,8 +461,8 @@ class BaseDateParser(DateTimeParser):
         result = DateTimeResolutionResult()
 
         # handle "on 12"
-        match = regex.match(self.config.on_regex, self.config.date_token_prefix + trimmed_source)
-        if match and match.start == len(self.config.date_token_prefix) and len(match.group()) == len(trimmed_source):
+        match = regex.search(self.config.on_regex, self.config.date_token_prefix + trimmed_source)
+        if match and match.start() == len(self.config.date_token_prefix) and len(match.group()) == len(trimmed_source):
             day = 0
             month = reference.month
             year = reference.year
@@ -479,10 +480,10 @@ class BaseDateParser(DateTimeParser):
                 future_date = DateUtils.safe_create_from_min_value(year, month, day)
                 past_date = DateUtils.safe_create_from_min_value(year, month, day)
                 if future_date < reference:
-                    future_date += timedelta(month=1)
+                    future_date += datedelta(months=1)
 
                 if past_date >= reference:
-                    past_date += timedelta(month=-1)
+                    past_date += datedelta(months=-1)
             else:
                 future_date = DateUtils.safe_create_from_min_value(year, month + 1, day)
                 past_date = DateUtils.safe_create_from_min_value(year, month - 1, day)
