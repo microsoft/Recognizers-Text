@@ -86,9 +86,9 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         registerModel(PercentModel.class, Culture.English, (options) -> new PercentModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration(options)),
                 new com.microsoft.recognizers.text.number.english.extractors.PercentageExtractor(options)));
-//        registerModel(NumberRangeModel.class, Culture.English, (options) -> new NumberRangeModel(
-//                null,
-//                null));
+        registerModel(NumberRangeModel.class, Culture.English, (options) -> new NumberRangeModel(
+                new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
+                new com.microsoft.recognizers.text.number.english.extractors.NumberRangeExtractor()));
 
         //endregion
     }
