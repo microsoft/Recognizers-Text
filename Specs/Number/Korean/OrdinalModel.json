@@ -1,0 +1,220 @@
+[{
+  "Input": "3조 번째",
+  "Results": [
+    {
+      "Text": "3조 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "조 번째",
+  "Results": [
+    {
+      "Text": "조 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "백조 번째",
+  "Results": [
+    {
+      "Text": "백조 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "열한 번째",
+  "Results": [
+    {
+      "Text": "열한 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "스물한 번째",
+  "Results": [
+    {
+      "Text": "스물한 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "21"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "서른 번째",
+  "Results": [
+    {
+      "Text": "서른 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "30"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "두 번째",
+  "Results": [
+    {
+      "Text": "두 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "열한 번째",
+  "Results": [
+    {
+      "Text": "열한 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "스무 번째",
+  "Results": [
+    {
+      "Text": "스무 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "스물다섯 번째",
+  "Results": [
+    {
+      "Text": "스물다섯 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "스물한 번째",
+  "Results": [
+    {
+      "Text": "스물한 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "21"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "백스물다섯 번째",
+  "Results": [
+    {
+      "Text": "백스물다섯 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "백이십오 번째",
+  "Results": [
+    {
+      "Text": "백이십오 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "조번째",
+  "Results": [
+    {
+      "Text": "조번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일조 삼백이십이 번째",
+  "Results": [
+    {
+      "Text": "이십일조 삼백이십이 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "21000000000322"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이백 번째",
+  "Results": [
+    {
+      "Text": "이백 번째",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "200"
+      }
+    }
+  ]
+},
+{
+  "Input": "시애틀로 가는 일등석을 예약해주십시오.",
+  "Results": [
+    {
+      "Text": "일등",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
+}
+]
