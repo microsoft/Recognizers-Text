@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -16,5 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         }
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+        public Regex CityTimeSuffixRegex { get; }
+        public StringMatcher CityStringMatcher { get; }
     }
 }

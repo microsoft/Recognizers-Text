@@ -53,5 +53,38 @@
         "Type": "timezone"
       }
     ]
+  },
+  {
+    "Input": "Book me a room at beijing-time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "beijing-time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at St. Louis-time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "St. Louis-time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at San José Time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "San José Time",
+        "Type": "timezone"
+      }
+    ]
   }
 ]

@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -16,5 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         }
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+        public Regex CityTimeSuffixRegex { get; }
+        public StringMatcher CityStringMatcher { get; }
     }
 }
