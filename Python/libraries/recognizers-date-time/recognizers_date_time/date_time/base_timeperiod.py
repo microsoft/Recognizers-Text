@@ -444,8 +444,8 @@ class BaseTimePeriodParser(DateTimeParser):
                 result.comment = 'late'
 
         timex_range = self.config.get_matched_timex_range(source)
-        if timex_range.matched:
-            return DateTimeResolutionResult()
+        if not timex_range.matched:
+            return result
 
         # modify time period if "early" or "late" is existed
         if has_early:
