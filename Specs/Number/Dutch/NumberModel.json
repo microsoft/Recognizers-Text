@@ -1,7 +1,7 @@
 [
     {
         "Input": "192.",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "192",
@@ -14,7 +14,7 @@
     },
     {
         "Input": "192.168.1.2",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "192",
@@ -48,32 +48,32 @@
     },
     {
         "Input": "180,25ml vloeistof",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": []
     },
     {
         "Input": "180ml vloeistof",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": []
     },
     {
         "Input": " 29km weg ",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": []
     },
     {
         "Input": " 4 mei ",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": []
     },
     {
         "Input": ",25ml vloeistof",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": []
     },
     {
         "Input": ",08",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": ",08",
@@ -86,12 +86,12 @@
     },
     {
         "Input": "en",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": []
     },
     {
         "Input": ",23456000",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": ",23456000",
@@ -104,7 +104,7 @@
     },
     {
         "Input": "4,800",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "4,800",
@@ -117,7 +117,7 @@
     },
     {
         "Input": "honderddrie en twee derde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "honderddrie en twee derde",
@@ -130,7 +130,7 @@
     },
     {
         "Input": "honderdendrie en twee derde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "honderdendrie en twee derde",
@@ -143,8 +143,7 @@
     },
     {
         "Input": "zestien",
-        "Debug": true,
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "zestien",
@@ -157,7 +156,7 @@
     },
     {
         "Input": "twee derde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "twee derde",
@@ -170,7 +169,7 @@
     },
     {
         "Input": "honderdzestien",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "honderdzestien",
@@ -183,7 +182,7 @@
     },
     {
         "Input": "honderdzes",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "honderdzes",
@@ -196,7 +195,7 @@
     },
     {
         "Input": "honderdeenenzestig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "honderdeenenzestig",
@@ -209,7 +208,7 @@
     },
     {
         "Input": "een half  dozijn",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een half dozijn",
@@ -222,7 +221,7 @@
     },
     {
         "Input": " 3 dozijn",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "3 dozijn",
@@ -235,7 +234,7 @@
     },
     {
         "Input": "een dozijn",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een dozijn",
@@ -248,7 +247,7 @@
     },
     {
         "Input": " drie dozijnen ",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drie dozijnen",
@@ -261,7 +260,7 @@
     },
     {
         "Input": " driehonderd en twee dozijn",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "driehonderd en twee dozijn",
@@ -274,7 +273,7 @@
     },
     {
         "Input": "1.234,567",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1.234,567",
@@ -287,7 +286,7 @@
     },
     {
         "Input": "1, 234, 567",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1",
@@ -314,7 +313,7 @@
     },
     {
         "Input": "9,2321312",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "9,2321312",
@@ -327,7 +326,7 @@
     },
     {
         "Input": " -9,2321312",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-9,2321312",
@@ -340,7 +339,7 @@
     },
     {
         "Input": " -1",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-1",
@@ -353,7 +352,7 @@
     },
     {
         "Input": "-4/5",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-4/5",
@@ -366,7 +365,7 @@
     },
     {
         "Input": "- 1 4/5",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "- 1 4/5",
@@ -379,7 +378,7 @@
     },
     {
         "Input": "drie",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drie",
@@ -392,7 +391,7 @@
     },
     {
         "Input": " 123456789101231",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "123456789101231",
@@ -405,7 +404,7 @@
     },
     {
         "Input": "-123456789101231",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-123456789101231",
@@ -418,7 +417,7 @@
     },
     {
         "Input": " -123456789101231",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-123456789101231",
@@ -431,7 +430,7 @@
     },
     {
         "Input": "1",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1",
@@ -444,7 +443,7 @@
     },
     {
         "Input": "10k",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "10k",
@@ -457,7 +456,7 @@
     },
     {
         "Input": "10G",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "10G",
@@ -470,7 +469,7 @@
     },
     {
         "Input": "- 10  k",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "- 10  k",
@@ -483,7 +482,7 @@
     },
     {
         "Input": "2 miljoen",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "2 miljoen",
@@ -496,7 +495,7 @@
     },
     {
         "Input": "1 biljoen",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 biljoen",
@@ -509,7 +508,7 @@
     },
     {
         "Input": " drie ",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drie",
@@ -522,7 +521,7 @@
     },
     {
         "Input": "een biljoen",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een biljoen",
@@ -535,7 +534,7 @@
     },
     {
         "Input": "eenentwintig biljoen",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "eenentwintig biljoen",
@@ -548,7 +547,7 @@
     },
     {
         "Input": "fifty - two",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "fifty - two",
@@ -561,7 +560,7 @@
     },
     {
         "Input": "tweeënvijftig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeënvijftig",
@@ -574,7 +573,7 @@
     },
     {
         "Input": "tweeenvijftig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeenvijftig",
@@ -587,7 +586,7 @@
     },
     {
         "Input": "tweeduizend tweehonderd",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeduizend tweehonderd",
@@ -600,7 +599,7 @@
     },
     {
         "Input": "tweeduizend tweehonderdtwintig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeduizend tweehonderdtwintig",
@@ -613,7 +612,7 @@
     },
     {
         "Input": "tweeëntwintighonderd",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeëntwintighonderd",
@@ -626,7 +625,7 @@
     },
     {
         "Input": " 2,33 k",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "2,33 k",
@@ -639,7 +638,7 @@
     },
     {
         "Input": "1e10",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1e10",
@@ -652,7 +651,7 @@
     },
     {
         "Input": "1,1^23",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1,1^23",
@@ -665,7 +664,7 @@
     },
     {
         "Input": " tweeendertigduizend tweehonderd  ",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeendertigduizend tweehonderd ",
@@ -678,7 +677,7 @@
     },
     {
         "Input": "zeventig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "zeventig",
@@ -691,7 +690,7 @@
     },
     {
         "Input": "tweeenvijftig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeenvijftig",
@@ -704,7 +703,7 @@
     },
     {
         "Input": "2  1/4",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "2  1/4",
@@ -717,7 +716,7 @@
     },
     {
         "Input": "3/4",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "3/4",
@@ -730,7 +729,7 @@
     },
     {
         "Input": "een achtste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een achtste",
@@ -743,7 +742,7 @@
     },
     {
         "Input": "vijf achtste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "vijf achtste",
@@ -756,7 +755,7 @@
     },
     {
         "Input": "een halve",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een halve",
@@ -769,7 +768,7 @@
     },
     {
         "Input": "drie kwart",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drie kwart",
@@ -782,7 +781,7 @@
     },
     {
         "Input": "twintig drie vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "twintig drie vijfde",
@@ -795,7 +794,7 @@
     },
     {
         "Input": "drieëntwintig vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drieëntwintig vijfde",
@@ -808,7 +807,7 @@
     },
     {
         "Input": "drieëntwintig en drie vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drieëntwintig en drie vijfde",
@@ -821,7 +820,7 @@
     },
     {
         "Input": "een miljoen tweeduizend tweehonderd drie vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een miljoen tweeduizend tweehonderd drie vijfde",
@@ -834,7 +833,7 @@
     },
     {
         "Input": "anderhalf",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "anderhalf",
@@ -847,7 +846,7 @@
     },
     {
         "Input": "een en een vierde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een en een vierde",
@@ -860,7 +859,7 @@
     },
     {
         "Input": "vijf en een kwart",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "vijf en een kwart",
@@ -873,7 +872,7 @@
     },
     {
         "Input": "honderd driekwart",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "honderd driekwart",
@@ -886,7 +885,7 @@
     },
     {
         "Input": "een honderdste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een honderdste",
@@ -899,7 +898,7 @@
     },
     {
         "Input": "1,1^+23",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1,1^+23",
@@ -912,7 +911,7 @@
     },
     {
         "Input": "2,5^-1",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "2,5^-1",
@@ -925,7 +924,7 @@
     },
     {
         "Input": "-2500^-1",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-2500^-1",
@@ -938,7 +937,7 @@
     },
     {
         "Input": "-1,1^+23",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-1,1^+23",
@@ -951,7 +950,7 @@
     },
     {
         "Input": "-2,5^-1",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-2,5^-1",
@@ -964,7 +963,7 @@
     },
     {
         "Input": "-1,1^--23",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-1,1^--23",
@@ -977,7 +976,7 @@
     },
     {
         "Input": "-127,32e13",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-127,32e13",
@@ -990,7 +989,7 @@
     },
     {
         "Input": "12,32e+14",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "12,32e+14",
@@ -1003,7 +1002,7 @@
     },
     {
         "Input": "-12e-1",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "-12e-1",
@@ -1016,7 +1015,7 @@
     },
     {
         "Input": "1,2b",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1,2b",
@@ -1029,7 +1028,7 @@
     },
     {
         "Input": "een vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een vijfde",
@@ -1042,7 +1041,7 @@
     },
     {
         "Input": "honderdduizend biljoensten",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "honderdduizend biljoensten",
@@ -1055,7 +1054,7 @@
     },
     {
         "Input": "drie vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drie vijfde",
@@ -1068,7 +1067,7 @@
     },
     {
         "Input": "twintig vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "twintig vijfde",
@@ -1081,7 +1080,7 @@
     },
     {
         "Input": "drie een vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drie een vijfde",
@@ -1094,7 +1093,7 @@
     },
     {
         "Input": "eenentwintig vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "eenentwintig vijfde",
@@ -1107,7 +1106,7 @@
     },
     {
         "Input": "een eenentwintigste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een eenentwintigste",
@@ -1120,7 +1119,7 @@
     },
     {
         "Input": "een vijfentwintigste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een vijfentwintigste",
@@ -1133,7 +1132,7 @@
     },
     {
         "Input": "drie eenentwintigste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "drie eenentwintigste",
@@ -1146,7 +1145,7 @@
     },
     {
         "Input": "twintig vijventwintigste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "twintig vijventwintigste",
@@ -1159,7 +1158,7 @@
     },
     {
         "Input": "honderd en dertig vijfde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "honderd en dertig vijfde",
@@ -1172,7 +1171,7 @@
     },
     {
         "Input": "een van de drie",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een van de drie",
@@ -1185,7 +1184,7 @@
     },
     {
         "Input": "1 uit eenentwintig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 uit eenentwintig",
@@ -1198,7 +1197,7 @@
     },
     {
         "Input": "1 uit drie",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 uit drie",
@@ -1211,7 +1210,7 @@
     },
     {
         "Input": "1 op de 3",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 op de 3",
@@ -1224,7 +1223,7 @@
     },
     {
         "Input": "1 van de 3",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 van de 3",
@@ -1237,7 +1236,7 @@
     },
     {
         "Input": "één uit de 20",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "één uit de 20",
@@ -1250,7 +1249,7 @@
     },
     {
         "Input": "één van de twintig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "één van de twintig",
@@ -1263,12 +1262,12 @@
     },
     {
         "Input": "Boek een eerste klas ticket naar Amsterdam",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": []
     },
     {
         "Input": "Het antwoord is min een",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "min een",
@@ -1281,7 +1280,7 @@
     },
     {
         "Input": "Een op de twintig is hier niet tevreden mee",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "Een op de twintig",
@@ -1294,7 +1293,7 @@
     },
     {
         "Input": "Het antwoord is vijf en een half",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "vijf en een half",
@@ -1307,7 +1306,7 @@
     },
     {
         "Input": "Het antwoord is min 5 punt vijf",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "min 5 punt vijf",
@@ -1320,7 +1319,7 @@
     },
     {
         "Input": "Het antwoord is min 5",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "min 5",
@@ -1333,7 +1332,7 @@
     },
     {
         "Input": "een - vierde",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een - vierde",
@@ -1346,7 +1345,7 @@
     },
     {
         "Input": "een-achtste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een-achtste",
@@ -1359,7 +1358,7 @@
     },
     {
         "Input": "vijf / achtste",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "vijf / achtste",
@@ -1372,7 +1371,7 @@
     },
     {
         "Input": "een van de drie",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "een van de drie",
@@ -1385,7 +1384,7 @@
     },
     {
         "Input": "1 van de eenentwintig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 van de eenentwintig",
@@ -1398,7 +1397,7 @@
     },
     {
         "Input": "vijf achtsten van",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "vijf achtsten",
@@ -1411,7 +1410,7 @@
     },
     {
         "Input": "1 234 567",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 234 567",
@@ -1424,7 +1423,7 @@
     },
     {
         "Input": "40 000 is hetzelfde als 40 000",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "40 000",
@@ -1444,7 +1443,7 @@
     },
     {
         "Input": "Op dit moment de populatie van China is 1 414 021 100.",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 414 021 100",
@@ -1457,7 +1456,7 @@
     },
     {
         "Input": "423 0000 zal worden herkend als twee nummers.",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "423",
@@ -1484,7 +1483,7 @@
     },
     {
         "Input": "1 234 567,89 is een geldig nummer.",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1 234 567,89",
@@ -1497,7 +1496,7 @@
     },
     {
         "Input": "Nul is hetzelfde als 0",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "nul",
@@ -1517,7 +1516,7 @@
     },
     {
         "Input": "Heb je op 17/5/2018 tijd om af te spreken?",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "17",
@@ -1544,7 +1543,7 @@
     },
     {
         "Input": "Mijn telefoonnummer is +1-222-2222/2222",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "1",
@@ -1578,7 +1577,7 @@
     },
     {
         "Input": "tweeentwintig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeentwintig",
@@ -1591,7 +1590,7 @@
     },
     {
         "Input": "tweeëntwintig",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "tweeëntwintig",
@@ -1604,7 +1603,7 @@
     },
     {
         "Input": "één",
-        "NotSupported": "dotnet, javascript, python",
+        "NotSupported": "dotNet, javascript, python",
         "Results": [
             {
                 "Text": "één",

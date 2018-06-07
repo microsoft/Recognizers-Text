@@ -1,7 +1,7 @@
 [
   {
     "Input": "één van de drie",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "één",
@@ -21,7 +21,7 @@
   },
   {
     "Input": "1 in eenentwintig",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotNet,javascript,python",
     "Results": [
       {
         "Text": "1",
