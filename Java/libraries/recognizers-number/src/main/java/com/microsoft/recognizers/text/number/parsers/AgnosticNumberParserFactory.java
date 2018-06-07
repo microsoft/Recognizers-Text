@@ -4,9 +4,6 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.number.Constants;
 
 import java.util.Arrays;
-import java.util.Collections;
-
-import static com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserType.*;
 
 public abstract class AgnosticNumberParserFactory {
 
@@ -44,9 +41,7 @@ public abstract class AgnosticNumberParserFactory {
                 break;
             case Percentage:
                 if (!isChinese && !isJapanese) {
-                    // TODO:
-                    // parser = new BasePercentageParser(languageConfiguration);
-                    throw new UnsupportedOperationException("CBasePercentageParser not yet supported.");
+                     parser = new BasePercentageParser(languageConfiguration);
                 }
                 break;
         }
