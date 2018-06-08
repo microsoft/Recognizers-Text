@@ -36,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
@@ -43,11 +45,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
+            TimeZoneParser = new BaseTimeZoneParser();
         }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
         {
-            var deltaMin = 0;
+            int deltaMin;
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
             if (trimedPrefix.StartsWith("half"))

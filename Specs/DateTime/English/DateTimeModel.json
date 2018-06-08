@@ -3515,6 +3515,29 @@
 }
 ,
 {
+  "Input": "I'll go back 5/3/18 @ 17:49:19",
+  "Context": {
+    "ReferenceDateTime": "2018-05-01T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "5/3/18 @ 17:49:19",
+    "Start": 13,
+    "End": 29,
+    "TypeName": "datetimeV2.datetime",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018-05-03T17:49:19",
+          "type": "datetime",
+          "value": "2018-05-03 17:49:19"
+        }
+      ]
+    }
+  }]
+}
+,
+{
   "Input": "I have already finished all my work more than 2 weeks before today",
   "Context": {
     "ReferenceDateTime": "2018-06-12T00:00:00"

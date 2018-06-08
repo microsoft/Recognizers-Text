@@ -1,0 +1,43 @@
+[
+{
+  "Input": "삼분의 일",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+    "Text": "일",
+    "TypeName": "number",
+    "Resolution": {
+        "value": "1"
+    }
+    },
+    {
+      "Text": "삼",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일분의 1",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "이십일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "21"
+      }
+    }
+  ]
+}
+]

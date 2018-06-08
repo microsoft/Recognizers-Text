@@ -104,9 +104,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
         public PortugueseTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration());
         }
     }
 }

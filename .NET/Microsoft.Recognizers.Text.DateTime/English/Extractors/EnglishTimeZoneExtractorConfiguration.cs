@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -29,10 +31,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StandardTimeRegex
         };
 
-        public EnglishTimeZoneExtractorConfiguration() : base(DateTimeOptions.None)
+        public EnglishTimeZoneExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
+            if ((options & DateTimeOptions.EnablePreview) != 0)
+            {
+                CityMatcher.Build();
+            }
         }
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+
+        public Regex CityTimeSuffixRegex => new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public StringMatcher CityMatcher => new StringMatcher(TimeZoneDefinitions.MajorCities.Select(o => o.ToLowerInvariant()));
     }
 }

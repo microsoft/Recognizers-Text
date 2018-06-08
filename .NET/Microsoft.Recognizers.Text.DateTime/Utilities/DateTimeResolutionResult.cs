@@ -37,5 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public string Value { get; set; }
 
         public int UtcOffsetMins { get; set; }
+
+        public string TimeZoneText { get; set; }
     }
 }

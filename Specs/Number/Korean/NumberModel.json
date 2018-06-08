@@ -1,0 +1,1691 @@
+[{
+  "Input": "192.",
+  "Results": [
+    {
+      "Text": "192",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "192"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "192.168.1.2",
+  "Results": [
+    {
+      "Text": "192",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "192"
+      }
+    },
+    {
+      "Text": "168",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "168"
+      }
+    },
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "2",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "180.25ml의 액체",
+  "Results": [
+    {
+      "Text": "180.25",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "180.25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "180ml의 액체",
+  "Results": [
+    {
+      "Text": "180",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "180"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 29km의 길 ",
+  "Results": [
+    {
+      "Text": "29",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "29"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 5월 4일 ",
+  "Results": [
+    {
+      "Text": "5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5"
+      }
+    },
+    {
+      "Text": "4",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": ".25ml의 액체",
+  "Results": [
+    {
+      "Text": ".25",
+      "TypeName": "number",
+      "Resolution": {
+        "value": ".25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": ".08",
+  "Results": [
+    {
+      "Text": ".08",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.08"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": ".23456000",
+  "Results": [
+    {
+      "Text": ".23456000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.23456"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "4.800",
+  "Results": [
+    {
+      "Text": "4.800",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4.8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백삼과 삼분의 이",
+  "Results": [
+    {
+      "Text": "일백삼과 삼분의 이",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "103.666666666667"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "십육",
+  "Results": [
+    {
+      "Text": "십육",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "16"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼분의 이",
+  "Results": [
+    {
+      "Text": "삼분의 이",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.666666666666667"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백십육",
+  "Results": [
+    {
+      "Text": "일백십육",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "116"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백육",
+  "Results": [
+    {
+      "Text": "일백육",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "106"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백육십일",
+  "Results": [
+    {
+      "Text": "일백육십일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "161"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "조 번째",
+  "Results": [
+    {
+      "Text": "조 번째",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1E-12"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백조 번째",
+  "Results": [
+    {
+      "Text": "일백조 번째",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1E-10"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1,234,567",
+  "Results": [
+    {
+      "Text": "1,234,567",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1234567"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1, 234, 567",
+  "Results": [
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "234",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "234"
+      }
+    },
+    {
+      "Text": "567",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "567"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "9.2321312",
+  "Results": [
+    {
+      "Text": "9.2321312",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "9.2321312"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " -9.2321312",
+  "Results": [
+    {
+      "Text": "-9.2321312",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-9.2321312"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " -1",
+  "Results": [
+    {
+      "Text": "-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-4/5",
+  "Results": [
+    {
+      "Text": "-4/5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-0.8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "- 1 4/5",
+  "Results": [
+    {
+      "Text": "- 1 4/5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼",
+  "Results": [
+    {
+      "Text": "삼",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 123456789101231",
+  "Results": [
+    {
+      "Text": "123456789101231",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-123456789101231",
+  "Results": [
+    {
+      "Text": "-123456789101231",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " -123456789101231",
+  "Results": [
+    {
+      "Text": "-123456789101231",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1",
+  "Results": [
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일만",
+  "Results": [
+    {
+      "Text": "일만",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백억",
+  "Results": [
+    {
+      "Text": "일백억",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-일만",
+  "Results": [
+    {
+      "Text": "-일만",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-10000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이백만",
+  "Results": [
+    {
+      "Text": "이백만",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1조",
+  "Results": [
+    {
+      "Text": "1조",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 삼 ",
+  "Results": [
+    {
+      "Text": "삼",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일조",
+  "Results": [
+    {
+      "Text": "일조",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일조",
+  "Results": [
+    {
+      "Text": "이십일조",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "21000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일조 삼백",
+  "Results": [
+    {
+      "Text": "이십일조",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "21000000000300"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일조 그리고 삼백",
+  "Results": [
+    {
+      "Text": "이십일조 그리고 삼백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "21000000000300"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "오십 이",
+  "Results": [
+    {
+      "Text": "오십 이",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "오십  이",
+  "Results": [
+    {
+      "Text": "오십  이",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼백  삼십  일",
+  "Results": [
+    {
+      "Text": "삼백  삼십  일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "331"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십만 이천",
+  "Results": [
+    {
+      "Text": "이십만 이천",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "202000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이천  이백",
+  "Results": [
+    {
+      "Text": "이천  이백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 2.33천",
+  "Results": [
+    {
+      "Text": "2.33천",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2330"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 이백 점 영삼",
+  "Results": [
+    {
+      "Text": "이백 점 영삼",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200.03"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 이백 점 칠일",
+  "Results": [
+    {
+      "Text": "이백 점 칠일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200.71"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "서른다섯",
+  "Results": [
+    {
+      "Text": "서른다섯",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "35"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일곱",
+  "Results": [
+    {
+      "Text": "일곱",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "7"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "마흔 여덟",
+  "Results": [
+    {
+      "Text": "마흔 여덟",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "48"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1e10",
+  "Results": [
+    {
+      "Text": "1e10",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1.1^23",
+  "Results": [
+    {
+      "Text": "1.1^23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 322 백 ",
+  "Results": [
+    {
+      "Text": "322 백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "32200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "칠십",
+  "Results": [
+    {
+      "Text": "칠십",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "70"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "오십 이",
+  "Results": [
+    {
+      "Text": "오십 이",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2  1/4",
+  "Results": [
+    {
+      "Text": "2  1/4",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "3/4",
+  "Results": [
+    {
+      "Text": "3/4",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.75"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "팔분의 일",
+  "Results": [
+    {
+      "Text": "팔분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "팔분의 오",
+  "Results": [
+    {
+      "Text": "팔분의 오",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.625"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "반",
+  "Results": [
+    {
+      "Text": "반",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십 점 육",
+  "Results": [
+    {
+      "Text": "이십 점 육",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20.6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십삼과 오분의 삼",
+  "Results": [
+    {
+      "Text": "이십삼과 오분의 삼",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "23.6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일과 이분의 일",
+  "Results": [
+    {
+      "Text": "일과 이분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일과 사분의 일",
+  "Results": [
+    {
+      "Text": "일과 사분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1.25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "오와 사분의 일",
+  "Results": [
+    {
+      "Text": "오와 사분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5.25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백과 사분의 삼",
+  "Results": [
+    {
+      "Text": "일백과 사분의 삼",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100.75"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "백분의 일",
+  "Results": [
+    {
+      "Text": "백분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.01"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1.1^+23",
+  "Results": [
+    {
+      "Text": "1.1^+23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2.5^-1",
+  "Results": [
+    {
+      "Text": "2.5^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-2500^-1",
+  "Results": [
+    {
+      "Text": "-2500^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-0.0004"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-1.1^+23",
+  "Results": [
+    {
+      "Text": "-1.1^+23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-2.5^-1",
+  "Results": [
+    {
+      "Text": "-2.5^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-0.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-1.1^--23",
+  "Results": [
+    {
+      "Text": "-1.1^--23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-127.32e13",
+  "Results": [
+    {
+      "Text": "-127.32e13",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.2732E+15"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12.32e+14",
+  "Results": [
+    {
+      "Text": "12.32e+14",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1.232E+15"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-12e-1",
+  "Results": [
+    {
+      "Text": "-12e-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "십이억",
+  "Results": [
+    {
+      "Text": "십이억",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1200000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "오분의 일",
+  "Results": [
+    {
+      "Text": "오분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼과 오분의 일",
+  "Results": [
+    {
+      "Text": "삼과 오분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일분의 일",
+  "Results": [
+    {
+      "Text": "이십일분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십오분의 일",
+  "Results": [
+    {
+      "Text": "이십오분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.04"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일분의 삼",
+  "Results": [
+    {
+      "Text": "이십일분의 삼",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.142857142857143"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일 분의 삼",
+  "Results": [
+    {
+      "Text": "이십일 분의 삼",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.142857142857143"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십오분의 이십",
+  "Results": [
+    {
+      "Text": "이십오분의 이십",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백과 오분의 삼십",
+  "Results": [
+    {
+      "Text": "일백과 오분의 삼십",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "26"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼십오분의 일백",
+  "Results": [
+    {
+      "Text": "삼십오분의 일백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.85714285714286"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "오분의 일백삼십이",
+  "Results": [
+    {
+      "Text": "오분의 일백삼십이",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "26.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백삼십과 오분의 이",
+  "Results": [
+    {
+      "Text": "일백삼십과 오분의 이",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "130.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼십오분의 일백",
+  "Results": [
+    {
+      "Text": "삼십오분의 일백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.85714285714286"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백오분의 일",
+  "Results": [
+    {
+      "Text": "일백오분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.00952380952380952"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "백오분의 일",
+  "Results": [
+    {
+      "Text": "백오분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.00952380952380952"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일천오분의 일백",
+  "Results": [
+    {
+      "Text": "일천오분의 일백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0995024875621891"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼분의 일",
+  "Results": [
+    {
+      "Text": "삼분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십일분의 일",
+  "Results": [
+    {
+      "Text": "이십일분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백이십일분의 일",
+  "Results": [
+    {
+      "Text": "일백이십일분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.00826446280991736"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼 분의 일",
+  "Results": [
+    {
+      "Text": "삼 분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "3분의 일",
+  "Results": [
+    {
+      "Text": "3분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼분의 1",
+  "Results": [
+    {
+      "Text": "삼분의 1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20분의 일",
+  "Results": [
+    {
+      "Text": "20분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.05"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십분의 일",
+  "Results": [
+    {
+      "Text": "이십분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.05"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백분의 일",
+  "Results": [
+    {
+      "Text": "일백분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.01"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "일백이십팔분의 일",
+  "Results": [
+    {
+      "Text": "일백이십팔분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.008"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "정답은 음수 일천구백입니다.",
+  "Results": [
+    {
+      "Text": "음수 일천구백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1900"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "정답은 마이너스 일천구백입니다.",
+  "Results": [
+    {
+      "Text": "마이너스 일천구백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1900"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "정답은 마이너스 일입니다.",
+  "Results": [
+    {
+      "Text": "마이너스 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "정답은 마이너스 삼십오분의 일백입니다. ",
+  "Results": [
+    {
+      "Text": "마이너스 삼십오분의 일백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-2.85714285714286"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "정답은 음수 이십분의 일입니다.",
+  "Results": [
+    {
+      "Text": "음수 이십분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-0.05"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "정답은 마이너스 오 점 오입니다.",
+  "Results": [
+    {
+      "Text": "마이너스 오 점 오",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-5.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "정답은 마이너스 오입니다.",
+  "Results": [
+    {
+      "Text": "마이너스 오",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "사분의 일",
+  "Results": [
+    {
+      "Text": "사분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "팔분의 일",
+  "Results": [
+    {
+      "Text": "팔분의 일",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "팔분의 오",
+  "Results": [
+    {
+      "Text": "팔분의 오",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.625"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "오분의 구천오백",
+  "Results": [
+    {
+      "Text": "오분의 구천오백",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1900"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 234 567",
+  "Results": [
+    {
+      "Text": "1 234 567",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1234567"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "40 000 은 40 000과 같다",
+  "Results": [
+    {
+      "Text": "40 000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000"
+      }
+    },
+    {
+      "Text": "40 000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "현재 중국의 인구수는 1 414 021 100이다.",
+  "Results": [
+    {
+      "Text": "1 414 021 100",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1414021100"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "423 0000는 두 개의 숫자이다.",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "423",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "423"
+      }
+    },
+    {
+      "Text": "0000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    },
+    {
+      "Text": "두",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 234 567.89는 유효한 숫자 형식이다.",
+  "Results": [
+    {
+      "Text": "1 234 567.89",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1234567.89"
+      }
+    }
+  ]
+},
+{
+  "Input": "0은 영이다.",
+  "Results": [
+    {
+      "Text": "영",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    },
+    {
+      "Text": "0",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    }
+  ]
+},
+{
+  "Input": "5/17/2018에 만날까요?",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5"
+      }
+    },
+    {
+      "Text": "17",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "17"
+      }
+    },
+    {
+      "Text": "2018",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2018"
+      }
+    }
+  ]
+},
+{
+  "Input": "내 전화번호는 +1-222-2222/2222입니다.",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "222"
+      }
+    },
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    }
+  ]
+}
+]

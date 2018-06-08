@@ -338,6 +338,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddResolutionFields(res, ResolutionKey.Type, typeOutput);
             AddResolutionFields(res, DateTimeResolutionKey.IsLunar, islunar? islunar.ToString():string.Empty);
 
+            var hasTimeZone = false;
+
+            // For standalone timezone entity recognition, we generate TimeZoneResolution for each entity we extracted.
+            // We also merge time entity with timezone entity and add the information in TimeZoneResolution to every DateTime resolutions.
+            if (val.TimeZoneResolution != null)
+            {
+                if (slot.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
+                {
+                    // single timezone
+                    AddResolutionFields(res, Constants.ResolveTimeZone, new Dictionary<string, string>
+                    {
+                        {ResolutionKey.Value, val.TimeZoneResolution.Value},
+                        {Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString()}
+                    });
+                }
+                else
+                {
+                    // timezone as clarification of datetime
+                    hasTimeZone = true;
+                    AddResolutionFields(res, Constants.TimeZone, val.TimeZoneResolution.Value);
+                    AddResolutionFields(res, Constants.TimeZoneText, val.TimeZoneResolution.TimeZoneText);
+                    AddResolutionFields(res, Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString());
+                }
+            }
+
             var pastResolutionStr = ((DateTimeResolutionResult) slot.Value).PastResolution;
             var futureResolutionStr = ((DateTimeResolutionResult) slot.Value).FutureResolution;
 
@@ -392,15 +417,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ResolveWeekOf(res, Constants.ResolveToPast); 
             }
 
-            if (val.TimeZoneResolution != null)
-            {
-                var timeZoneResolution = new Dictionary<string, string>();
-                timeZoneResolution.Add(ResolutionKey.Value, val.TimeZoneResolution.Value);
-                timeZoneResolution.Add(Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString());
-
-                AddResolutionFields(res, Constants.ResolveTimeZone, timeZoneResolution);
-            }
-
             foreach (var p in res)
             {
                 if (p.Value is Dictionary<string, string>)
@@ -411,6 +427,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     AddResolutionFields(value, DateTimeResolutionKey.Mod, mod);
                     AddResolutionFields(value, ResolutionKey.Type, typeOutput);
                     AddResolutionFields(value, DateTimeResolutionKey.IsLunar, islunar ? islunar.ToString() : string.Empty);
+
+                    if (hasTimeZone)
+                    {
+                        AddResolutionFields(value, Constants.TimeZone, val.TimeZoneResolution.Value);
+                        AddResolutionFields(value, Constants.TimeZoneText, val.TimeZoneResolution.TimeZoneText);
+                        AddResolutionFields(value, Constants.UtcOffsetMinsKey, val.TimeZoneResolution.UtcOffsetMins.ToString());
+                    }
 
                     foreach (var q in (Dictionary<string, string>) p.Value)
                     {
@@ -494,17 +517,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (resolutionDic.ContainsKey(keyName))
             {
                 var resolution = (Dictionary<string, string>) resolutionDic[keyName];
+                var resolutionPm = new Dictionary<string, string>();
+
                 if (!resolutionDic.ContainsKey(DateTimeResolutionKey.Timex))
                 {
                     return;
                 }
 
                 var timex = (string) resolutionDic[DateTimeResolutionKey.Timex];
+
                 resolutionDic.Remove(keyName);
-
                 resolutionDic.Add(keyName + "Am", resolution);
-
-                var resolutionPm = new Dictionary<string, string>();
 
                 switch ((string) resolutionDic[ResolutionKey.Type])
                 {
