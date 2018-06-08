@@ -1,9 +1,10 @@
-package com.microsoft.recognizers.text.number.parsers;
+package com.microsoft.recognizers.text.number.english.parsers;
 
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.NumberOptions;
+import com.microsoft.recognizers.text.number.parsers.BaseNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.resources.EnglishNumeric;
 
 import java.util.ArrayList;

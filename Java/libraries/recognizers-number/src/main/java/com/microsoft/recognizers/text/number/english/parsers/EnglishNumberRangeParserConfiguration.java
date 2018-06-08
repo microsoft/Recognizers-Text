@@ -1,4 +1,4 @@
-package com.microsoft.recognizers.text.number.parsers;
+package com.microsoft.recognizers.text.number.english.parsers;
 
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
@@ -6,6 +6,8 @@ import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.number.english.extractors.NumberExtractor;
 import com.microsoft.recognizers.text.number.english.extractors.OrdinalExtractor;
+import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
+import com.microsoft.recognizers.text.number.parsers.INumberRangeParserConfiguration;
 import com.microsoft.recognizers.text.number.resources.EnglishNumeric;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 

@@ -3,7 +3,7 @@ package com.microsoft.recognizers.text.number.english.extractors;
 import com.microsoft.recognizers.text.number.NumberRangeConstants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberRangeExtractor;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
-import com.microsoft.recognizers.text.number.parsers.EnglishNumberParserConfiguration;
+import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.resources.EnglishNumeric;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 

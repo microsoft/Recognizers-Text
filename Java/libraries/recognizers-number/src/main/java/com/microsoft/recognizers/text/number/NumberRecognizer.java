@@ -4,6 +4,8 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.Recognizer;
+import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
+import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberRangeParserConfiguration;
 import com.microsoft.recognizers.text.number.models.NumberModel;
 import com.microsoft.recognizers.text.number.models.NumberRangeModel;
 import com.microsoft.recognizers.text.number.models.OrdinalModel;
