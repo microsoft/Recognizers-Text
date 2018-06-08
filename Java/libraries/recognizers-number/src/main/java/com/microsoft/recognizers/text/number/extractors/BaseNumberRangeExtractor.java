@@ -73,27 +73,7 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
                     matchSource.put(Pair.with(start, length), value);
                 }
             }
-        };
-
-//        var collections = Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value);
-//        foreach (var collection in collections)
-//        {
-//            foreach (Match m in collection.Key)
-//            {
-//                GetMatchedStartAndLength(m, collection.Value, source, out int start, out int length);
-//
-//                if (start >= 0 && length > 0)
-//                {
-//                    for (var j = 0; j < length; j++)
-//                    {
-//                        matched[start + j] = true;
-//                    }
-//
-//                    // Keep Source Data for extra information
-//                    matchSource.Add(new Tuple<int, int>(start, length), collection.Value);
-//                }
-//            }
-//        }
+        }
 
         int last = -1;
         for (int i = 0; i < source.length(); i++) {
@@ -232,21 +212,18 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
         extractNumber.addAll(extractOrdinal);
 
         //        extractNumber = extractNumber.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
-        Collections.sort(extractNumber, new Comparator() {
-            public int compare(Object o1, Object o2) {
+        Collections.sort(extractNumber, (Comparator) (o1, o2) -> {
+            Integer x1 = ((ExtractResult) o1).length;
+            Integer x2 = ((ExtractResult) o2).length;
+            int sComp = x2.compareTo(x1);
 
-                Integer x1 = ((ExtractResult) o1).length;
-                Integer x2 = ((ExtractResult) o2).length;
-                int sComp = x2.compareTo(x1);
-
-                if (sComp != 0) {
-                    return sComp;
-                }
-
-                x1 = ((ExtractResult) o1).start;
-                x2 = ((ExtractResult) o2).start;
-                return x2.compareTo(x1);
+            if (sComp != 0) {
+                return sComp;
             }
+
+            x1 = ((ExtractResult) o1).start;
+            x2 = ((ExtractResult) o2).start;
+            return x2.compareTo(x1);
         });
 
         return extractNumber;

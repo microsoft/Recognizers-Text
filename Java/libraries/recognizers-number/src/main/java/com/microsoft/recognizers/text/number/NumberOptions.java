@@ -6,7 +6,7 @@ public enum NumberOptions {
 
     private final int value;
 
-    private NumberOptions(int value) {
+    NumberOptions(int value) {
         this.value = value;
     }
 

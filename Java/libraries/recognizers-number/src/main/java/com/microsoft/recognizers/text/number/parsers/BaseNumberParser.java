@@ -102,12 +102,6 @@ public class BaseNumberParser implements IParser {
                         ret.resolutionStr);
             }
 
-            // TODO: toString using config cultureInfo()
-            // .NET Code:
-            //ret.ResolutionStr = Config.CultureInfo != null
-            //        ? ((double)ret.Value).ToString(Config.CultureInfo)
-            //        : ret.Value.ToString();
-
             String resolutionStr = config.getCultureInfo() != null
                     ? NumberFormatUtility.format(ret.value, config.getCultureInfo())
                     : ret.value.toString();
@@ -256,7 +250,6 @@ public class BaseNumberParser implements IParser {
                 }
             }
 
-            //fracWords.RemoveRange(splitIndex, fracWords.Count - splitIndex);
             fracWords.subList(splitIndex, fracWords.size()).clear();
 
             // denomi = denominator
@@ -327,7 +320,6 @@ public class BaseNumberParser implements IParser {
             }
             pointPartRet += getPointValue(matchStrs);
         }
-
         //endregion
 
         result = result.withValue(intPartRet + pointPartRet);
@@ -575,7 +567,6 @@ public class BaseNumberParser implements IParser {
                     partValue = 1;
 
                     if (i != 0) {
-                        // partValue = getIntValue(matchStrs.GetRange(lastIndex, i - lastIndex));
                         partValue = getIntValue(matchStrs.subList(lastIndex, i));
 
                     }
@@ -588,7 +579,6 @@ public class BaseNumberParser implements IParser {
             //Calculate the part like "thirty-one"
             mulValue = 1;
             if (lastIndex != isEnd.length) {
-                // partValue = getIntValue(matchStrs.GetRange(lastIndex, isEnd.Length - lastIndex));
                 partValue = getIntValue(matchStrs.subList(lastIndex, isEnd.length));
                 tempValue += mulValue * partValue;
             }

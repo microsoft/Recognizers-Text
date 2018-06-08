@@ -62,13 +62,11 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
                 String origTempWord = tempWord;
                 int newLength = origTempWord.length();
                 tempWord = origTempWord.substring(0, newLength - 3);
-                //tempWord = origTempWord.Remove(newLength - 3);
                 if (this.getCardinalNumberMap().containsKey(tempWord)) {
                     result.add(tempWord);
                     continue;
                 } else {
                     tempWord = origTempWord.substring(0, newLength - 2);
-                    //tempWord = origTempWord.Remove(newLength - 2);
                     if (this.getCardinalNumberMap().containsKey(tempWord)) {
                         result.add(tempWord);
                         continue;
