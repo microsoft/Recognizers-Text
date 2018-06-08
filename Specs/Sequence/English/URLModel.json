@@ -316,6 +316,7 @@
   {
     "Input": "May 5th.https://t.co/YCUZfuyyHZ",
     "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "https://t.co/YCUZfuyyHZ",
@@ -330,16 +331,52 @@
   }
   ,
   {
-    "Input": "You can visit sound.academy for more infomation.",
+    "Input": "All of these are valid URLs: bit.ly, nyti.ms, sound.academy, pep.si, lero.aws...",
     "NotSupportedByDesign": "python",
     "Results": [
       {
+        "Text": "bit.ly",
+        "Start": 29,
+        "End": 34,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "bit.ly"
+        }
+      },
+      {
+        "Text": "nyti.ms",
+        "Start": 37,
+        "End": 43,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "nyti.ms"
+        }
+      },
+      {
         "Text": "sound.academy",
-        "Start": 14,
-        "End": 26,
+        "Start": 46,
+        "End": 58,
         "TypeName": "url",
         "Resolution": {
           "value": "sound.academy"
+        }
+      },
+      {
+        "Text": "pep.si",
+        "Start": 61,
+        "End": 66,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "pep.si"
+        }
+      },
+      {
+        "Text": "lero.aws",
+        "Start": 69,
+        "End": 76,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "lero.aws"
         }
       }
     ]
