@@ -9,7 +9,7 @@ from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 from ..base_date import BaseDateExtractor, BaseDateParser
-from ..base_time import BaseTimeExtractor, BaseTimeParser
+from ..base_time import BaseTimeExtractor
 from ..base_duration import BaseDurationExtractor, BaseDurationParser
 from ..base_dateperiod import BaseDatePeriodExtractor, BaseDatePeriodParser
 from ..base_timeperiod import BaseTimePeriodExtractor, BaseTimePeriodParser

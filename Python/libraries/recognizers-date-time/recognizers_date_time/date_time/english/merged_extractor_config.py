@@ -1,8 +1,8 @@
 from typing import List, Pattern
 
-from recognizers_text import Extractor
-from recognizers_number import EnglishIntegerExtractor
+from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
+from recognizers_number import EnglishIntegerExtractor
 from ...resources.english_date_time import EnglishDateTime
 from ..extractors import DateTimeExtractor
 from ..base_merged import MergedExtractorConfiguration

@@ -165,15 +165,15 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
         trimmed_text = source.strip().lower()
         swift = 0
         matches = regex.search(EnglishDateParserConfiguration._relative_day_regex, source)
-        if trimmed_text == "today":
+        if trimmed_text == 'today':
             swift = 0
-        elif trimmed_text == "tomorrow" or trimmed_text == "tmr":
+        elif trimmed_text == 'tomorrow' or trimmed_text == 'tmr':
             swift = 1
-        elif trimmed_text == "yesterday":
+        elif trimmed_text == 'yesterday':
             swift = -1
-        elif trimmed_text.endswith("day after tomorrow") or trimmed_text.endswith("day after tmr"):
+        elif trimmed_text.endswith('day after tomorrow') or trimmed_text.endswith('day after tmr'):
             swift = 2
-        elif trimmed_text.endswith("day before yesterday"):
+        elif trimmed_text.endswith('day before yesterday'):
             swift = -2
         elif matches:
             swift = self.get_swift(source)
@@ -197,4 +197,4 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
 
     def is_cardinal_last(self, source: str) -> bool:
         trimmed_text = source.strip().lower()
-        return trimmed_text == "last"
+        return trimmed_text == 'last'

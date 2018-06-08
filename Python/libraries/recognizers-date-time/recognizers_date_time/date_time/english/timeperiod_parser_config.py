@@ -88,8 +88,6 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
             end_hour = 23
             end_min = 59
         else:
-            timex = None
-            matched = False
             return MatchedTimeRegex(
                 matched=False,
                 timex='',
