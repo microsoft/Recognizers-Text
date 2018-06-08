@@ -266,11 +266,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var hasPm = false;
                 string dateStr;
 
-                // Get hours
+                int beginHour;
+                int invalidFlag = -1;
+                int beginMinute = invalidFlag;
+                int beginSecond = invalidFlag;
+                int endHour;
+                int endMinute = invalidFlag;
+                int endSecond = invalidFlag;
+
+                // Get time1 and time2
                 var hourGroup = match.Groups["hour"];
                 var hourStr = hourGroup.Captures[0].Value;
-                int beginHour;
-
                 if (this.Config.Numbers.ContainsKey(hourStr))
                 {
                     beginHour = this.Config.Numbers[hourStr];
@@ -280,8 +286,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     beginHour = int.Parse(hourStr);
                 }
 
+
                 hourStr = hourGroup.Captures[1].Value;
-                int endHour;
 
                 if (this.Config.Numbers.ContainsKey(hourStr))
                 {
@@ -290,6 +296,37 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else
                 {
                     endHour = int.Parse(hourStr);
+                }
+
+                var time1StartIndex = match.Groups["time1"].Index;
+                var time1EndIndex = time1StartIndex + match.Groups["time1"].Length;
+                var time2StartIndex = match.Groups["time2"].Index;
+                var time2EndIndex = time2StartIndex + match.Groups["time2"].Length;
+
+                for (int i = 0; i < match.Groups["min"].Captures.Count; i++)
+                {
+                    var minuteCapture = match.Groups["min"].Captures[i];
+                    if (minuteCapture.Index >= time1StartIndex && minuteCapture.Index + minuteCapture.Length <= time1EndIndex)
+                    {
+                        beginMinute = int.Parse(minuteCapture.Value);
+                    }
+                    else if (minuteCapture.Index >= time2StartIndex && minuteCapture.Index + minuteCapture.Length <= time2EndIndex)
+                    {
+                        endMinute = int.Parse(minuteCapture.Value);
+                    }
+                }
+
+                for (int i = 0; i < match.Groups["sec"].Captures.Count; i++)
+                {
+                    var secondCapture = match.Groups["sec"].Captures[i];
+                    if (secondCapture.Index >= time1StartIndex && secondCapture.Index + secondCapture.Length <= time1EndIndex)
+                    {
+                        beginSecond = int.Parse(secondCapture.Value);
+                    }
+                    else if (secondCapture.Index >= time2StartIndex && secondCapture.Index + secondCapture.Length <= time2EndIndex)
+                    {
+                        endSecond = int.Parse(secondCapture.Value);
+                    }
                 }
 
                 // Parse following date
@@ -316,37 +353,113 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                // Parse "pm" 
-                var pmStr = match.Groups["pm"].Value;
-                var amStr = match.Groups["am"].Value;
-                var descStr = match.Groups["desc"].Value;
-                if (!string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("a"))
+                var leftDesc = match.Groups["leftDesc"].Value;
+                var rightDesc = match.Groups["rightDesc"].Value;
+
+                for (int i = 0; i < match.Groups["desc"].Captures.Count; i++)
                 {
-                    if (beginHour >= 12)
+                    var descCapture = match.Groups["desc"].Captures[i];
+                    if (descCapture.Index >= time1StartIndex && descCapture.Index + descCapture.Length <= time1EndIndex && string.IsNullOrEmpty(leftDesc))
                     {
-                        beginHour -= 12;
+                        leftDesc = descCapture.Value;
                     }
-
-                    if (endHour >= 12)
+                    else if (descCapture.Index >= time2StartIndex && descCapture.Index + descCapture.Length <= time2EndIndex && string.IsNullOrEmpty(rightDesc))
                     {
-                        endHour -= 12;
+                        rightDesc = descCapture.Value;
                     }
-
-                    hasAm = true;
                 }
-                else if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("p"))
+
+                // Both timepoint has description like 'am' or 'pm'
+                if (!string.IsNullOrEmpty(leftDesc) && !string.IsNullOrEmpty(rightDesc))
                 {
-                    if (beginHour < 12)
+                    if (leftDesc.ToLower().StartsWith("a"))
                     {
-                        beginHour += 12;
+                        if (beginHour >= 12)
+                        {
+                            beginHour -= 12;
+                        }
+
+                        hasAm = true;
+                    }
+                    else if (leftDesc.ToLower().StartsWith("p"))
+                    {
+                        if (beginHour < 12)
+                        {
+                            beginHour += 12;
+                        }
+
+                        hasPm = true;
                     }
 
-                    if (endHour < 12)
+                    if (rightDesc.ToLower().StartsWith("a"))
                     {
-                        endHour += 12;
-                    }
+                        if (endHour >= 12)
+                        {
+                            endHour -= 12;
+                        }
 
-                    hasPm = true;
+                        hasAm = true;
+                    }
+                    else if (rightDesc.ToLower().StartsWith("p"))
+                    {
+                        if (endHour < 12)
+                        {
+                            endHour += 12;
+                        }
+
+                        hasPm = true;
+                    }
+                }
+                // one of the timepoint has description like 'am' or 'pm'
+                else if (!string.IsNullOrEmpty(leftDesc) || !string.IsNullOrEmpty(rightDesc))
+                {
+                    if (!string.IsNullOrEmpty(leftDesc))
+                    {
+                        if (leftDesc.ToLower().StartsWith("a"))
+                        {
+                            hasAm = true;
+                        }
+                        else if (leftDesc.ToLower().StartsWith("p"))
+                        {
+                            hasPm = true;
+                        }
+                    }
+                    else if (!string.IsNullOrEmpty(rightDesc))
+                    {
+                        if (rightDesc.ToLower().StartsWith("a"))
+                        {
+                            hasAm = true;
+                        }
+                        else if (rightDesc.ToLower().StartsWith("p"))
+                        {
+                            hasPm = true;
+                        }
+                    }
+                    
+                    if (hasAm)
+                    {
+                        if (beginHour >= 12)
+                        {
+                            beginHour -= 12;
+                        }
+
+                        if (endHour >= 12)
+                        {
+                            endHour -= 12;
+                        }
+                    }
+                    else if (hasPm)
+                    {
+                        if (beginHour < 12)
+                        {
+                            beginHour += 12;
+                        }
+
+                        if (endHour < 12)
+                        {
+                            endHour += 12;
+                        }
+                    }
                 }
 
                 if (!hasAm && !hasPm && beginHour <= 12 && endHour <= 12)
@@ -365,19 +478,40 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Comment = Constants.Comment_AmPm;
                 }
 
-                var pastHours = endHour - beginHour;
-                var beginStr = dateStr + "T" + beginHour.ToString("D2");
-                var endStr = dateStr + "T" + endHour.ToString("D2");
+                if (beginMinute == invalidFlag)
+                {
+                    beginMinute = 0;
+                }
 
-                ret.Timex = $"({beginStr},{endStr},PT{pastHours}H)";
+                if (beginSecond == invalidFlag)
+                {
+                    beginSecond = 0;
+                }
 
-                ret.FutureValue = new Tuple<DateObject, DateObject>(
-                    DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, beginHour, 0, 0),
-                    DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, endHour, 0, 0));
+                if (endMinute == invalidFlag)
+                {
+                    endMinute = 0;
+                }
 
-                ret.PastValue = new Tuple<DateObject, DateObject>(
-                    DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, beginHour, 0, 0),
-                    DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, endHour, 0, 0));
+                if (endSecond == invalidFlag)
+                {
+                    endSecond = 0;
+                }
+
+                var beginStr = dateStr + "T" + FormatUtil.LuisTime(beginHour, beginMinute, beginSecond);
+                var endStr = dateStr + "T" + FormatUtil.LuisTime(endHour, endMinute, endSecond);
+                var futureDateTimeStart = DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, beginHour, beginMinute, beginSecond);
+                var futureDateTimeEnd = DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, endHour, endMinute, endSecond);
+                var pastDateTimeStart = DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, beginHour, beginMinute, beginSecond);
+                var pastDateTimeEnd = DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, endHour, endMinute, endSecond);
+
+                var timeSpan = futureDateTimeEnd - futureDateTimeStart;
+
+                ret.Timex = $"({beginStr},{endStr},{FormatUtil.LuisTimeSpan(timeSpan)}";
+
+                ret.FutureValue = new Tuple<DateObject, DateObject>(futureDateTimeStart, futureDateTimeEnd);
+
+                ret.PastValue = new Tuple<DateObject, DateObject>(pastDateTimeStart, pastDateTimeEnd);
 
                 ret.Success = true;
 
