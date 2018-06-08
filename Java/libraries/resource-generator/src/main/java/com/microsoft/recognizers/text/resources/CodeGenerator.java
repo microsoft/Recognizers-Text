@@ -101,11 +101,11 @@ public class CodeGenerator {
         }
 
         if (token instanceof ArrayList) {
-            return new ListWriter(tokenName, (String[]) ((ArrayList) token).stream().map(o -> o.toString()).toArray(size -> new String[size]));
+            return new ListWriter(tokenName, "String", (String[]) ((ArrayList) token).stream().map(o -> o.toString()).toArray(size -> new String[size]));
         }
 
         if (token instanceof List) {
-            return new ListWriter(tokenName, ((List) token).entries);
+            return new ListWriter(tokenName, ((List) token).types[0], ((List) token).entries);
         }
 
         if (token instanceof Dictionary) {
