@@ -201,6 +201,7 @@ export class BaseURLExtractor extends BaseSequenceExtractor {
     constructor(){
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BaseURL.URLRegex), Constants.URL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex), Constants.URL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex), Constants.URL_REGEX)
     }
 }
