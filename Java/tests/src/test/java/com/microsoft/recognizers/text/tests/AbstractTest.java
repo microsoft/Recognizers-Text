@@ -26,7 +26,7 @@ public abstract class AbstractTest {
 
     private static final String SpecsPath = "../../Specs";
 
-    private static final List<String> SupportedCultures = Arrays.asList("English");
+    private static final List<String> SupportedCultures = Arrays.asList("English", "Spanish");
 
     protected final TestCase currentCase;
 

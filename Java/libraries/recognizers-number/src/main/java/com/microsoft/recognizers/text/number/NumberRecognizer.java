@@ -11,6 +11,7 @@ import com.microsoft.recognizers.text.number.models.NumberRangeModel;
 import com.microsoft.recognizers.text.number.models.OrdinalModel;
 import com.microsoft.recognizers.text.number.models.PercentModel;
 import com.microsoft.recognizers.text.number.parsers.*;
+import com.microsoft.recognizers.text.number.spanish.parsers.SpanishNumberParserConfiguration;
 
 import java.util.List;
 import java.util.function.Function;
@@ -92,6 +93,18 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
                 new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
                 new com.microsoft.recognizers.text.number.english.extractors.NumberRangeExtractor()));
 
+        //endregion
+
+        //region Spanish
+        registerModel(NumberModel.class, Culture.Spanish, (options) -> new NumberModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.spanish.extractors.NumberExtractor(NumberMode.PureNumber)));
+        registerModel(OrdinalModel.class, Culture.Spanish, (options) -> new OrdinalModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.spanish.extractors.OrdinalExtractor()));
+        registerModel(PercentModel.class, Culture.Spanish, (options) -> new PercentModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.spanish.extractors.PercentageExtractor()));
         //endregion
     }
 }

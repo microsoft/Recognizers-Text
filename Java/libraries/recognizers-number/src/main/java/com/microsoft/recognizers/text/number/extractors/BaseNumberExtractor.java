@@ -17,9 +17,9 @@ public abstract class BaseNumberExtractor implements IExtractor {
 
     protected abstract String getExtractType();
 
-    protected abstract NumberOptions getOptions();
+    protected NumberOptions getOptions() { return NumberOptions.None; }
 
-    protected abstract Optional<Pattern> getNegativeNumberTermsRegex();
+    protected Optional<Pattern> getNegativeNumberTermsRegex() { return Optional.empty(); }
 
     public List<ExtractResult> extract(String source) {
         if (source == null || source.isEmpty()) {
