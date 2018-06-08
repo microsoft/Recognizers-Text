@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.Recognizer;
+import com.microsoft.recognizers.text.number.chinese.parsers.ChineseNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberRangeParserConfiguration;
 import com.microsoft.recognizers.text.number.french.parsers.FrenchNumberParserConfiguration;
@@ -193,6 +194,27 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         registerModel(PercentModel.class, Culture.German, (options) -> new PercentModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.german.extractors.PercentageExtractor()));
+        //endregion
+        
+        //region Chinese
+        registerModel(NumberModel.class, Culture.Chinese, (options) -> new NumberModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.chinese.extractors.NumberExtractor()));
+//        RegisterModel<OrdinalModel>(
+//                Culture.Chinese,
+//                (options) => new OrdinalModel(
+//                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ChineseNumberParserConfiguration()),
+//                new Chinese.OrdinalExtractor()));
+//        RegisterModel<PercentModel>(
+//                Culture.Chinese,
+//                (options) => new PercentModel(
+//                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
+//                new Chinese.PercentageExtractor()));
+//        RegisterModel<NumberRangeModel>(
+//                Culture.Chinese,
+//                (options) => new NumberRangeModel(
+//                new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
+//                new Chinese.NumberRangeExtractor()));
         //endregion
     }
 }
