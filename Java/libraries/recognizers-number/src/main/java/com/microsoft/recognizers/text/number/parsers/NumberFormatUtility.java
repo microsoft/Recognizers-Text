@@ -30,11 +30,19 @@ public final class NumberFormatUtility {
 
     public static String format(Object value, CultureInfo culture) {
 
-        BigDecimal bc = new BigDecimal((Double)value, new MathContext(15, RoundingMode.HALF_EVEN));
-        String result = bc.toString();
+        Double doubleValue = (Double)value;
+        String result;
+
+        // EXPONENTIAL_AT: [-5, 15] });
+        // For small positive decimal places. E.g.: 0,000015 or 0,0000015 -> 1.5E-05 or 1.5E-06
+        if(doubleValue > 0 && doubleValue != Math.round(doubleValue) && doubleValue < 1E-4) {
+            result = doubleValue.toString();
+        } else {
+            BigDecimal bc = new BigDecimal(doubleValue, new MathContext(15, RoundingMode.HALF_EVEN));
+            result =bc.toString();
+        }
 
         result = result.replace('e', 'E');
-
         if(result.contains("E-")) {
             String[] parts = result.split(Pattern.quote("E-"));
             parts[0] = FormatUtility.trimEnd(parts[0], ".0");
