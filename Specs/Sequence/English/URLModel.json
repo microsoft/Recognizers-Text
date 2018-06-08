@@ -296,4 +296,52 @@
     "NotSupportedByDesign": "python",
     "Results": []
   }
+  ,
+  {
+    "Input": "MORE:https://bit.ly/2jm6eu3",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://bit.ly/2jm6eu3",
+        "Start": 5,
+        "End": 26,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://bit.ly/2jm6eu3"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "May 5th.https://t.co/YCUZfuyyHZ",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://t.co/YCUZfuyyHZ",
+        "Start": 8,
+        "End": 30,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://t.co/YCUZfuyyHZ"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "You can visit sound.academy for more infomation.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "sound.academy",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "sound.academy"
+        }
+      }
+    ]
+  }
 ]
