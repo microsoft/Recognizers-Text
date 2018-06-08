@@ -1,6 +1,5 @@
 [{
   "Input": "Change my meeting from 9am to 11am",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Start": 23,
@@ -19,7 +18,6 @@
 ,
 {
   "Input": "Change my meeting from Nov.19th to Nov.23th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Start": 23,

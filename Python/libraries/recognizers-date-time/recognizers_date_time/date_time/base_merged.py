@@ -159,7 +159,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                         continue
             if not is_found:
                 destination.append(value)
-            else:
+            elif overlap_indexes:
                 temp_dst: List[ExtractResult] = list()
                 for index, dest in enumerate(destination):
                     if index not in overlap_indexes:
@@ -189,10 +189,10 @@ class BaseMergedExtractor(DateTimeExtractor):
                     start_position = extract_result.start + extract_result.length + match.group().index(new_time)
                     tokens.append(Token(start_position, start_position + len(new_time)))
 
-        return merge_all_tokens(tokens, source, Constants.SYS_DATETIME_DATE)
+        return merge_all_tokens(tokens, source, Constants.SYS_DATETIME_TIME)
 
     def add_mod(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
-        return map(lambda x: self.add_mod_item(x, source), ers)
+        return list(map(lambda x: self.add_mod_item(x, source), ers))
 
     def add_mod_item(self, er: ExtractResult, source: str) -> ExtractResult:
         before_str = source[0:er.start]
@@ -200,21 +200,21 @@ class BaseMergedExtractor(DateTimeExtractor):
         before = self.has_token_index(before_str.strip(), self.config.before_regex)
         if before.matched:
             mod_len = len(before_str) - before.index
-            er.length =+ mod_len
+            er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
         
         after = self.has_token_index(before_str.strip(), self.config.after_regex)
         if after.matched:
             mod_len = len(before_str) - after.index
-            er.length =+ mod_len
+            er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
         
         since = self.has_token_index(before_str.strip(), self.config.since_regex)
         if since.matched:
             mod_len = len(before_str) - since.index
-            er.length =+ mod_len
+            er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
         
