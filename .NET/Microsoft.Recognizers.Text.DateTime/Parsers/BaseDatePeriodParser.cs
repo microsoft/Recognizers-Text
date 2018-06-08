@@ -444,6 +444,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var midPrefix = false;
             var isRef = false;
 
+            var earlierPrefix = false;
+            var laterPrefix = false;
+
             var trimedText = text.Trim().ToLower();
             var match = this.config.OneWordPeriodRegex.Match(trimedText);
 
@@ -479,6 +482,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     midPrefix = true;
                     trimedText = match.Groups["suffix"].ToString();
                     ret.Mod = Constants.MID_MOD;
+                }
+
+                if (match.Groups["RelEarly"].Success)
+                {
+                    earlierPrefix = true;
+                    ret.Mod = null;
+                }
+                else if (match.Groups["RelLate"].Success)
+                {
+                    laterPrefix = true;
+                    ret.Mod = null;
                 }
 
                 var monthStr = match.Groups["month"].Value;
@@ -561,6 +575,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                             beginDate = referenceDate.This(DayOfWeek.Thursday).AddDays(7 * swift);
                         }
 
+                        if (earlierPrefix && swift == 0)
+                        {
+                            if (endDate > referenceDate)
+                            {
+                                endDate = referenceDate;
+                            }
+                        }
+                        else if (laterPrefix && swift == 0)
+                        {
+                            if (beginDate < referenceDate)
+                            {
+                                beginDate = referenceDate;
+                            }
+                        }
+
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(beginDate, endDate);
@@ -622,6 +651,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                             beginDate = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                         }
 
+                        if (earlierPrefix && swift == 0)
+                        {
+                            if (endDate > referenceDate)
+                            {
+                                endDate = referenceDate;
+                            }
+                        }
+                        else if (laterPrefix && swift == 0)
+                        {
+                            if (beginDate < referenceDate)
+                            {
+                                beginDate = referenceDate;
+                            }
+                        }
+
                         ret.Timex = isRef ? TimexUtility.GenerateYearTimex() : TimexUtility.GenerateYearTimex(date);
 
                         ret.FutureValue =
@@ -671,6 +715,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 futureStart = DateObject.MinValue.SafeCreateFromValue(futureYear, month, 16);
                 pastStart = DateObject.MinValue.SafeCreateFromValue(pastYear, month, 16);
+            }
+
+            if (earlierPrefix && futureEnd == pastEnd)
+            {
+                if (futureEnd > referenceDate)
+                {
+                    futureEnd = pastEnd = referenceDate;
+                }
+            }
+            else if (laterPrefix && futureStart == pastStart)
+            {
+                if (futureStart < referenceDate)
+                {
+                    futureStart = pastStart = referenceDate;
+                }
             }
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureStart, futureEnd);

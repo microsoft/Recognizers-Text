@@ -1874,27 +1874,204 @@
     "Results": []
   },
   {
+    "Input": "We could have scheduled a time to meet earlier in the week.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "earlier in the week",
+        "Start": 39,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W22",
+              "type": "daterange",
+              "start": "2018-05-28",
+              "end": "2018-05-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We could have scheduled a time to meet earlier this month.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "earlier this month",
+        "Start": 39,
+        "End": 56,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05",
+              "type": "daterange",
+              "start": "2018-05-01",
+              "end": "2018-05-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We could have scheduled a time to meet earlier this year.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "earlier this year",
+        "Start": 39,
+        "End": 55,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-05-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please find us a time to meet later this week",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "later this week",
+        "Start": 30,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W22",
+              "type": "daterange",
+              "start": "2018-05-31",
+              "end": "2018-06-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please find us a time to meet later this month",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "later this month",
+        "Start": 30,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05",
+              "type": "daterange",
+              "start": "2018-05-28",
+              "end": "2018-06-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please find us a time to meet later this year",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "later this year",
+        "Start": 30,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please find us a time to meet later in the year",
+    "Context": {
+      "ReferenceDateTime": "2018-05-28T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "later in the year",
+        "Start": 30,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-07-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "What is the april 2017 bonus.",
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "python",
-    "Results": [{
-      "Text": "april 2017",
-      "Start": 12,
-      "End": 21,
-      "TypeName": "datetimeV2.daterange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2017-04",
-            "type": "daterange",
-            "start": "2017-04-01",
-            "end": "2017-05-01"
-          }
-        ]
+    "Results": [
+      {
+        "Text": "april 2017",
+        "Start": 12,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-04",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-05-01"
+            }
+          ]
+        }
       }
-    }]
+    ]
   },
   {
     "Input": "I went back to China in 2017 april.",
@@ -1902,22 +2079,24 @@
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "python",
-    "Results": [{
-      "Text": "2017 april",
-      "Start": 24,
-      "End": 33,
-      "TypeName": "datetimeV2.daterange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2017-04",
-            "type": "daterange",
-            "start": "2017-04-01",
-            "end": "2017-05-01"
-          }
-        ]
+    "Results": [
+      {
+        "Text": "2017 april",
+        "Start": 24,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-04",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-05-01"
+            }
+          ]
+        }
       }
-    }]
+    ]
   },
   {
     "Input": "I went back to China in the april.",
@@ -1925,27 +2104,201 @@
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
     "NotSupported": "python",
-    "Results": [{
-      "Text": "april",
-      "Start": 28,
-      "End": 32,
-      "TypeName": "datetimeV2.daterange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "XXXX-04",
-            "type": "daterange",
-            "start": "2018-04-01",
-            "end": "2018-05-01"
-          },
-          {
-            "timex": "XXXX-04",
-            "type": "daterange",
-            "start": "2019-04-01",
-            "end": "2019-05-01"
-          }
-        ]
+    "Results": [
+      {
+        "Text": "april",
+        "Start": 28,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04",
+              "type": "daterange",
+              "start": "2018-04-01",
+              "end": "2018-05-01"
+            },
+            {
+              "timex": "XXXX-04",
+              "type": "daterange",
+              "start": "2019-04-01",
+              "end": "2019-05-01"
+            }
+          ]
+        }
       }
-    }]
+    ]
+  },
+  {
+    "Input": "Are you available two days after today?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "two days after today",
+        "Start": 18,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-02",
+              "type": "date",
+              "value": "2018-06-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Are you available three weeks from tomorrow?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "three weeks from tomorrow",
+        "Start": 18,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-22",
+              "type": "date",
+              "value": "2018-06-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Where were you two days before yesterday?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "two days before yesterday",
+        "Start": 15,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-28",
+              "type": "date",
+              "value": "2018-05-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input":
+      "Cortana, can you schedule a meeting for us between 3:30pm and 6:30pm AEST?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "between 3:30pm and 6:30pm aest",
+        "Start": 43,
+        "End": 72,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T15:30,T18:30,PT3H)",
+              "type": "timerange",
+              "timezone": "UTC+10:00",
+              "timezoneText": "aest",
+              "utcOffsetMins": "600",
+              "start": "15:30:00",
+              "end": "18:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please send invite for 3:30pm AEST tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "3:30pm aest tomorrow",
+        "Start": 32,
+        "End": 51,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-07T15:30",
+              "type": "datetime",
+              "timezone": "UTC+10:00",
+              "timezoneText": "aest",
+              "utcOffsetMins": "600",
+              "value": "2018-06-07 15:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please send invite for 11:30am CST or 5pm CT.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "11:30am cst",
+        "Start": 32,
+        "End": 42,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T11:30",
+              "type": "time",
+              "timezone": "UTC+XX:XX",
+              "utcOffsetMins": "-10000",
+              "value": "11:30:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "5pm ct",
+        "Start": 47,
+        "End": 52,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "timezone": "UTC-06:00",
+              "timezoneText": "ct",
+              "utcOffsetMins": "-360",
+              "value": "17:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

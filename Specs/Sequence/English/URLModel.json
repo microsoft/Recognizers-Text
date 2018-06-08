@@ -296,4 +296,88 @@
     "NotSupportedByDesign": "python",
     "Results": []
   }
+  ,
+  {
+    "Input": "MORE:https://bit.ly/2jm6eu3",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://bit.ly/2jm6eu3",
+        "Start": 5,
+        "End": 26,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://bit.ly/2jm6eu3"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "May 5th.https://t.co/YCUZfuyyHZ",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://t.co/YCUZfuyyHZ",
+        "Start": 8,
+        "End": 30,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://t.co/YCUZfuyyHZ"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "All of these are valid URLs: bit.ly, nyti.ms, sound.academy, pep.si, lero.aws...",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "bit.ly",
+        "Start": 29,
+        "End": 34,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "bit.ly"
+        }
+      },
+      {
+        "Text": "nyti.ms",
+        "Start": 37,
+        "End": 43,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "nyti.ms"
+        }
+      },
+      {
+        "Text": "sound.academy",
+        "Start": 46,
+        "End": 58,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "sound.academy"
+        }
+      },
+      {
+        "Text": "pep.si",
+        "Start": 61,
+        "End": 66,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "pep.si"
+        }
+      },
+      {
+        "Text": "lero.aws",
+        "Start": 69,
+        "End": 76,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "lero.aws"
+        }
+      }
+    ]
+  }
 ]

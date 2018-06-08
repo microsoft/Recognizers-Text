@@ -36,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
@@ -43,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeRegexes = GermanTimeExtractorConfiguration.TimeRegexList;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
+            TimeZoneParser = new BaseTimeZoneParser();
         }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)

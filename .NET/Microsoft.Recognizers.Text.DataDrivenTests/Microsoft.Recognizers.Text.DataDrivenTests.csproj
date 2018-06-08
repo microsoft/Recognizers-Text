@@ -72,6 +72,8 @@
     <Compile Include="DateTime\TestDateTime_Spanish.cs" />
     <Compile Include="DateTime\TestDateTime_English.cs" />
     <Compile Include="DateTime\TestDateTimeRecognizerInitialization.cs" />
+    <Compile Include="Matcher\StringMatcherTest.cs" />
+    <Compile Include="Matcher\SimpleTokenizerTest.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerCache.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_French.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_German.cs" />
