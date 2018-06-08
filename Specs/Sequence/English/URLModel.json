@@ -316,7 +316,6 @@
   {
     "Input": "May 5th.https://t.co/YCUZfuyyHZ",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "https://t.co/YCUZfuyyHZ",

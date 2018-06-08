@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
@@ -13,12 +14,9 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected sealed override string ExtractType { get; } = Constants.SYS_URL;
 
-        private static Regex UrlPrefixRegex { get; } =
-            new Regex(BaseURL.UrlPrefixRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
-
-        private static Regex UrlSuffixRegex { get; } =
-            new Regex(BaseURL.UrlSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static Regex UrlRegex { get; } =
+            new Regex(BaseURL.UrlRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private StringMatcher TldMatcher { get; }
 
@@ -40,55 +38,25 @@ namespace Microsoft.Recognizers.Text.Sequence
         public override List<ExtractResult> Extract(string text)
         {
             var ret = base.Extract(text);
-            var ers = new List<ExtractResult>();
+            var urlMatches = UrlRegex.Matches(text);
 
-            var tldMatches = TldMatcher.Find(text);
-            var matched = new bool[text.Length];
-
-            // Process all matches from right to left to avoid overlapping.
-            tldMatches.Reverse();
-
-            foreach (var tld in tldMatches)
+            foreach (Match urlMatch in urlMatches)
             {
-                // Skip segment that has been processed before.
-                if (matched[tld.End - 1])
+                var tldString = urlMatch.Groups["Tld"].Value;
+                var tldMatches = TldMatcher.Find(tldString);
+
+                if (tldMatches.Any(o => o.Start == 0 && o.End == tldString.Length))
                 {
-                    continue;
-                }
-
-                var prefixString = text.Substring(0, tld.Start);
-                var match = UrlPrefixRegex.Match(prefixString);
-
-                if (match.Success && match.Index + match.Length == tld.Start)
-                {
-                    var erStart = match.Index;
-                    var prefixLength = match.Length;
-                    var suffixString = text.Substring(tld.End);
-
-                    match = UrlSuffixRegex.Match(suffixString);
-
-                    if (match.Success && match.Index == 0)
+                    ret.Add(new ExtractResult
                     {
-                        var erLength = prefixLength + tld.Length + match.Length;
-                        ers.Add(new ExtractResult
-                        {
-                            Start = erStart,
-                            Length = erLength,
-                            Text = text.Substring(erStart, erLength),
-                            Type = ExtractType,
-                            Data = Constants.URL_REGEX
-                        });
-
-                        for (var i = 0; i < erLength; i++)
-                        {
-                            matched[i + erStart] = true;
-                        }
-                    }
+                        Start = urlMatch.Index,
+                        Length = urlMatch.Length,
+                        Text = urlMatch.Value,
+                        Type = ExtractType,
+                        Data = Constants.URL_REGEX
+                    });
                 }
             }
-
-            ers.Reverse();
-            ret.AddRange(ers);
 
             return ret;
         }

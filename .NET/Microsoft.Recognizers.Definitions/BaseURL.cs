@@ -17,13 +17,13 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BaseURL
 	{
-		public const string SchemeRegex = @"((https?|ftp):\/\/)";
+		public const string ProtocolRegex = @"((https?|ftp):\/\/)";
 		public const string PortRegex = @"(:\d{1,5})";
-		public const string UrlPrefixRestrictRegex = @"(?<=\s|[\'""\(\[:.]|^)";
-		public static readonly string UrlPrefixRegex = $@"{UrlPrefixRestrictRegex}{SchemeRegex}?[-a-zA-Z0-9:%._\+~#=]{{1,256}}\.";
-		public static readonly string UrlSuffixRegex = $@"{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?!:)";
-		public static readonly string UrlRegex = $@"{UrlPrefixRegex}[a-zA-Z]{{2,18}}{UrlSuffixRegex}";
-		public static readonly string IpUrlRegex = $@"{UrlPrefixRestrictRegex}{SchemeRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}";
+		public const string ExtractionRestrictionRegex = @"(?<=\s|[\'""\(\[:.]|^)";
+		public static readonly string UrlPrefixRegex = $@"{ExtractionRestrictionRegex}{ProtocolRegex}?[-a-zA-Z0-9:%._\+~#=]{{1,256}}\.";
+		public static readonly string UrlSuffixRegex = $@"{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=])";
+		public static readonly string UrlRegex = $@"{UrlPrefixRegex}(?<Tld>[a-zA-Z]{{2,18}}){UrlSuffixRegex}";
+		public static readonly string IpUrlRegex = $@"{ExtractionRestrictionRegex}{ProtocolRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}";
 		public static readonly IList<string> TldList = new List<string>
 		{
 			"com",
@@ -319,63 +319,6 @@ namespace Microsoft.Recognizers.Definitions
 			"vu",
 			"wf",
 			"ws",
-			"ಭಾರತ",
-			"한국",
-			"ଭାରତ",
-			"ভাৰত",
-			"ভারত",
-			"বাংলা",
-			"қаз",
-			"срб",
-			"бг",
-			"бел",
-			"சிங்கப்பூர்",
-			"мкд",
-			"ею",
-			"中国",
-			"中國",
-			"భారత్",
-			"ලංකා",
-			"ભારત",
-			"भारतम्",
-			"भारत",
-			"भारोत",
-			"укр",
-			"香港",
-			"台湾",
-			"台灣",
-			"мон",
-			"‏الجزائر‎",
-			"‏عمان‎",
-			"‏ایران‎",
-			"‏امارات‎",
-			"‏موريتانيا‎",
-			"‏پاکستان‎",
-			"‏الاردن‎",
-			"‏بارت‎",
-			"‏بھارت‎",
-			"‏المغرب‎",
-			"‏السعودية‎",
-			"‏ڀارت‎",
-			"‏سودان‎",
-			"‏عراق‎",
-			"‏مليسيا‎",
-			"澳門",
-			"გე",
-			"ไทย",
-			"‏سورية‎",
-			"рф",
-			"‏تونس‎",
-			"ελ",
-			"ഭാരതം",
-			"ਭਾਰਤ",
-			"‏مصر‎",
-			"‏قطر‎",
-			"இலங்கை",
-			"இந்தியா",
-			"հայ",
-			"新加坡",
-			"‏فلسطين‎",
 			"ye",
 			"yt",
 			"za",

@@ -1,22 +1,24 @@
 ---
-SchemeRegex: !simpleRegex
+ProtocolRegex: !simpleRegex
   def: ((https?|ftp):\/\/)
 PortRegex: !simpleRegex
   def: (:\d{1,5})
-UrlPrefixRestrictRegex: !simpleRegex
+ExtractionRestrictionRegex: !simpleRegex
   def: (?<=\s|[\'""\(\[:.]|^)
+# For restrictions+protocol+hostname (without its tld)
 UrlPrefixRegex: !nestedRegex
-  def: '{UrlPrefixRestrictRegex}{SchemeRegex}?[-a-zA-Z0-9:%._\+~#=]{1,256}\.'
-  references: [ UrlPrefixRestrictRegex, SchemeRegex ]
+  def: '{ExtractionRestrictionRegex}{ProtocolRegex}?[-a-zA-Z0-9:%._\+~#=]{1,256}\.'
+  references: [ ExtractionRestrictionRegex, ProtocolRegex ]
+# For port+path+query
 UrlSuffixRegex: !nestedRegex
-  def: '{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?!:)'
+  def: '{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=])'
   references: [ PortRegex ]
 UrlRegex: !nestedRegex
-  def: '{UrlPrefixRegex}[a-zA-Z]{2,18}{UrlSuffixRegex}'
-  references: [ UrlPrefixRegex, SchemeRegex, UrlSuffixRegex ]
+  def: '{UrlPrefixRegex}(?<Tld>[a-zA-Z]{2,18}){UrlSuffixRegex}'
+  references: [ UrlPrefixRegex, ProtocolRegex, UrlSuffixRegex ]
 IpUrlRegex: !nestedRegex
-  def: '{UrlPrefixRestrictRegex}{SchemeRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}'
-  references: [ UrlPrefixRestrictRegex, SchemeRegex, BaseIp.Ipv4Regex, UrlSuffixRegex ]
+  def: '{ExtractionRestrictionRegex}{ProtocolRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}'
+  references: [ ExtractionRestrictionRegex, ProtocolRegex, BaseIp.Ipv4Regex, UrlSuffixRegex ]
 TldList: !list
   types: [ string ]
   entries:
@@ -316,63 +318,6 @@ TldList: !list
     - vu
     - wf
     - ws
-    - ಭಾರತ
-    - 한국
-    - ଭାରତ
-    - ভাৰত
-    - ভারত
-    - বাংলা
-    - қаз
-    - срб
-    - бг
-    - бел
-    - சிங்கப்பூர்
-    - мкд
-    - ею
-    - 中国
-    - 中國
-    - భారత్
-    - ලංකා
-    - ભારત
-    - भारतम्
-    - भारत
-    - भारोत
-    - укр
-    - 香港
-    - 台湾
-    - 台灣
-    - мон
-    - ‏الجزائر‎
-    - ‏عمان‎
-    - ‏ایران‎
-    - ‏امارات‎
-    - ‏موريتانيا‎
-    - ‏پاکستان‎
-    - ‏الاردن‎
-    - ‏بارت‎
-    - ‏بھارت‎
-    - ‏المغرب‎
-    - ‏السعودية‎
-    - ‏ڀارت‎
-    - ‏سودان‎
-    - ‏عراق‎
-    - ‏مليسيا‎
-    - 澳門
-    - გე
-    - ไทย
-    - ‏سورية‎
-    - рф
-    - ‏تونس‎
-    - ελ
-    - ഭാരതം
-    - ਭਾਰਤ
-    - ‏مصر‎
-    - ‏قطر‎
-    - இலங்கை
-    - இந்தியா
-    - հայ
-    - 新加坡
-    - ‏فلسطين‎
     - ye
     - yt
     - za
