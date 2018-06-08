@@ -1,15 +1,12 @@
-from enum import IntFlag
 from datetime import datetime
 from typing import List
 from recognizers_text import Culture, Recognizer
 from recognizers_text.model import Model, ModelResult
-from .models import DateTimeModel, DateTimeModelResult
-
-class DateTimeOptions(IntFlag):
-    NONE = 0
-    SKIP_FROM_TO_MERGE = 1
-    SPLIT_DATE_AND_TIME = 2
-    CALENDAR = 4
+from .utilities import DateTimeOptions
+from .models import DateTimeModel
+from .base_merged import BaseMergedExtractor, BaseMergedParser
+from .english.common_configs import EnglishCommonDateTimeParserConfiguration
+from .english.merged_extractor_config import EnglishMergedExtractorConfiguration
 
 class DateTimeRecognizer(Recognizer[DateTimeOptions]):
     def __init__(self, target_culture: str = None,
@@ -21,8 +18,8 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
 
     def initialize_configuration(self):
         self.register_model('DateTimeModel', Culture.English, lambda options: DateTimeModel(
-            None,
-            None
+            BaseMergedParser(None, options),
+            BaseMergedExtractor(EnglishMergedExtractorConfiguration(), options)
         ))
 
         self.register_model('DateTimeModel', Culture.Chinese, lambda options: DateTimeModel(

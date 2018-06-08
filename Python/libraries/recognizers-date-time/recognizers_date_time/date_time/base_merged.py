@@ -8,8 +8,7 @@ from recognizers_text.extractor import Extractor, ExtractResult
 from .constants import Constants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .date_time_recognizer import DateTimeOptions
-from .utilities import Token, merge_all_tokens, RegExpUtility
+from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeOptions
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 

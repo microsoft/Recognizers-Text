@@ -1,3 +1,4 @@
+from enum import IntFlag
 from abc import ABC, abstractmethod
 from typing import List, Dict, Pattern, Union
 from enum import Enum, IntEnum
@@ -11,6 +12,12 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.constants import TimeTypeConstants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
+
+class DateTimeOptions(IntFlag):
+    NONE = 0
+    SKIP_FROM_TO_MERGE = 1
+    SPLIT_DATE_AND_TIME = 2
+    CALENDAR = 4
 
 class Token:
     def __init__(self, start: int, end: int):

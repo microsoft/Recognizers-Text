@@ -12,7 +12,7 @@ from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil, FormatUtil, RegExpUtility, AgoLaterMode
 
-class DateTimeExtractorConfiguration:
+class DateTimeExtractorConfiguration(ABC):
     @property
     @abstractmethod
     def date_point_extractor(self) -> DateTimeExtractor:
@@ -114,7 +114,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
         if len(ers) < 2:
             return tokens
         ers = sorted(ers, key=lambda x: x.start)
-        i=0
+        i = 0
         while i < len(ers)-1:
             j = i+1
             while j < len(ers) and ers[i].overlap(ers[j]):
@@ -122,7 +122,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
             if j >= len(ers):
                 break
             if ((ers[i].type is Constants.SYS_DATETIME_DATE and ers[j].type is Constants.SYS_DATETIME_TIME) or
-                (ers[i].type is Constants.SYS_DATETIME_TIME and ers[j].type is Constants.SYS_DATETIME_DATE)):
+                    (ers[i].type is Constants.SYS_DATETIME_TIME and ers[j].type is Constants.SYS_DATETIME_DATE)):
                 middle_begin = ers[i].start + ers[i].length
                 middle_end = ers[j].start
                 if middle_begin > middle_end:
@@ -390,13 +390,13 @@ class BaseDateTimeParser(DateTimeParser):
             if self.config.have_ambiguous_token(source, er1.text):
                 return result
 
-        er2List: List[ExtractResult] = self.config.time_extractor.extract(source, reference)
-        er2: ExtractResult = next(iter(er2List), None)
+        er2_list: List[ExtractResult] = self.config.time_extractor.extract(source, reference)
+        er2: ExtractResult = next(iter(er2_list), None)
         if er2 is None:
             # here we filter out "morning, afternoon, night..." time entities
-            er2List = self.config.time_extractor.extract(self.config.token_before_time + source, reference)
-            if len(er2List) == 1:
-                er2: ExtractResult = next(iter(er2List), None)
+            er2_list = self.config.time_extractor.extract(self.config.token_before_time + source, reference)
+            if len(er2_list) == 1:
+                er2: ExtractResult = next(iter(er2_list), None)
                 er2.start -= len(self.config.token_before_time)
             else:
                 return result
@@ -404,13 +404,13 @@ class BaseDateTimeParser(DateTimeParser):
         # handle case "Oct. 5 in the afternoon at 7:00"
         # in this case "5 in the afternoon" will be extract as a Time entity
         correct_time_idx = 0
-        while correct_time_idx < len(er2List) and er2List[correct_time_idx].overlap(er1):
+        while correct_time_idx < len(er2_list) and er2_list[correct_time_idx].overlap(er1):
             correct_time_idx += 1
 
-        if correct_time_idx >= len(er2List):
+        if correct_time_idx >= len(er2_list):
             return result
 
-        er2 = er2List[correct_time_idx]
+        er2 = er2_list[correct_time_idx]
 
         pr1 = self.config.date_parser.parse(er1, reference)
         pr2 = self.config.time_parser.parse(er2, reference)
@@ -441,7 +441,7 @@ class BaseDateTimeParser(DateTimeParser):
 
         val = pr2.value
 
-        has_am_pm = regex.search(self.config.pm_time_regex, source) and regex.search(self.config.am_time_regex, source)
+        has_am_pm = regex.search(self.config.pm_time_regex, source) and regex.search(self.config.am_time_regex, source) and val.comment
         if hour <= 12 and not has_am_pm:
             result.comment = 'ampm'
 

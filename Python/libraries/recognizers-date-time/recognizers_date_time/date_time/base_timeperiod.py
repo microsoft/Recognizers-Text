@@ -127,11 +127,11 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
             # check overlap
             for time_num in time_numbers:
-                overlap: bool = any(map(time_num.overlap, time_ers)) #TODO test
+                overlap: bool = any(map(time_num.overlap, time_ers))
                 if not overlap:
                     time_ers.append(time_num)
 
-            time_ers = sorted(time_ers, key=lambda x: x.start) #TODO test
+            time_ers = sorted(time_ers, key=lambda x: x.start)
 
         # merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
         i = 0

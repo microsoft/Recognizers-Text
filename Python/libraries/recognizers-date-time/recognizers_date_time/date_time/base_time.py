@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime
-from collections import namedtuple
 import regex
 
 from recognizers_text.utilities import RegExpUtility

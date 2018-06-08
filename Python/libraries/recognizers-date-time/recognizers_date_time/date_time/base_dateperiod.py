@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Match, Dict
 from datetime import datetime, timedelta
-from datedelta import datedelta
 from collections import namedtuple
+from datedelta import datedelta
 
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.utilities import RegExpUtility
@@ -168,8 +168,8 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
             if first_two_year_num >= 100:
                 return first_two_year_num + last_two_year_num
-            else:
-                return first_two_year_num * 100 + last_two_year_num
+
+            return first_two_year_num * 100 + last_two_year_num
         else:
             return -1
 

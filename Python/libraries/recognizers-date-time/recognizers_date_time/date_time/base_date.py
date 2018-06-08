@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict
 from datetime import datetime, timedelta
-from datedelta import datedelta
 import calendar
+from datedelta import datedelta
 import regex
 
 from recognizers_text.extractor import ExtractResult
@@ -147,7 +147,7 @@ class BaseDateExtractor(DateTimeExtractor):
                     if match_case is not None:
                         ordinal_num = RegExpUtility.get_group(match_case, 'DayOfMonth')
                         if ordinal_num == result.text:
-                            length = len(RegExpUtility.get_group(match_case,'end'))
+                            length = len(RegExpUtility.get_group(match_case, 'end'))
                             ret.append(Token(match_case.start(), match_case.end() - length))
                             is_found = True
 
@@ -218,7 +218,7 @@ class BaseDateExtractor(DateTimeExtractor):
                 continue
 
             ret = AgoLaterUtil.extractor_duration_with_before_and_after(source, result, ret, self.config.utility_configuration)
-        
+
         return ret
 
 class DateParserConfiguration(ABC):
@@ -412,10 +412,10 @@ class BaseDateParser(DateTimeParser):
             if match is None:
                 match = regex.search(regexp, self.config.date_token_prefix + trimmed_source)
                 offset = len(self.config.date_token_prefix)
-            if match and match.start() == offset and len(match.group())== len(trimmed_source):
+            if match and match.start() == offset and len(match.group()) == len(trimmed_source):
                 result = self.match_to_date(match, reference)
                 break
-            
+
         return result
 
     def match_to_date(self, match, reference: datetime)-> DateTimeResolutionResult:

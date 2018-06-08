@@ -20,7 +20,7 @@ MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 MatchedTimeRange = namedtuple('MatchedTimeRange', ['time_str', 'begin_hour', 'end_hour', 'end_min', 'success'])
 BeginEnd = namedtuple('BeginEnd', ['begin', 'end'])
 
-class DateTimePeriodExtractorConfiguration:
+class DateTimePeriodExtractorConfiguration(ABC):
     @property
     @abstractmethod
     def cardinal_extractor(self) -> BaseNumberExtractor:
@@ -316,19 +316,19 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                     before_str = source[0:token.start].strip()
                     if before_str:
                         ers_time = self.config.time_period_extractor.extract(before_str, reference)
-                        for er in ers_time:
-                            middle_str = before_str[er.start + er.length:].strip()
+                        for er_time in ers_time:
+                            middle_str = before_str[er_time.start + er_time.length:].strip()
                             if not middle_str:
-                                tokens.append(Token(er.start, er.start + er.length + len(middle_str) + token.length))
+                                tokens.append(Token(er_time.start, er_time.start + er_time.length + len(middle_str) + token.length))
 
                 if token.start + token.length <= len(source):
                     after_str = source[token.start + token.length:]
                     if after_str:
                         ers_time = self.config.time_period_extractor.extract(after_str, reference)
-                        for er in ers_time:
-                            middle_str = after_str[0:er.start]
+                        for er_time in ers_time:
+                            middle_str = after_str[0:er_time.start]
                             if not middle_str:
-                                token_end = token.start + token.length + len(middle_str) + er.length
+                                token_end = token.start + token.length + len(middle_str) + er_time.length
                                 tokens.append(Token(token.start, token_end))
 
         return tokens
@@ -621,7 +621,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         return result
 
     def get_two_points(self, begin_er: ExtractResult, end_er: ExtractResult, begin_parser: DateTimeParser, end_parser: DateTimeParser, reference: datetime) -> BeginEnd:
-        return BeginEnd(begin = begin_parser.parse(begin_er, reference), end = end_parser.parse(end_er, reference))
+        return BeginEnd(begin=begin_parser.parse(begin_er, reference), end=end_parser.parse(end_er, reference))
 
     def merge_two_time_points(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
@@ -837,14 +837,14 @@ class BaseDateTimePeriodParser(DateTimeParser):
         mod = ''
         if isinstance(duration_result.past_value, int) and isinstance(duration_result.future_value, int):
             swift_second = int(duration_result.future_value)
-        
+
         begin_time: datetime = reference
         end_time: datetime = reference
         prefix_match = regex.search(self.config.past_regex, before_str)
         if prefix_match and prefix_match.group() == before_str:
             mod = TimeTypeConstants.BEFORE_MOD
             begin_time = begin_time - timedelta(seconds=swift_second)
-        
+
         prefix_match = regex.search(self.config.future_regex, before_str)
         if prefix_match and prefix_match.group() == before_str:
             mod = TimeTypeConstants.AFTER_MOD
@@ -881,7 +881,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
         if not unit_str:
             return result
-        
+
         swift = 1
         prefix_match = regex.search(self.config.past_regex, source)
         if prefix_match:
@@ -891,7 +891,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         end_time: datetime = reference
 
         pt_timex = ''
-        
+
         if unit_str == 'D':
             end_time = DateUtils.safe_create_from_min_value(begin_time.year, begin_time.month, begin_time.day) + timedelta(days=1, seconds=-1)
             difference = int((end_time - begin_time).total_seconds())
@@ -910,12 +910,12 @@ class BaseDateTimePeriodParser(DateTimeParser):
             pt_timex = 'PT1S'
         else:
             return result
-        
+
         luis_date_begin = FormatUtil.luis_date_from_datetime(begin_time)
         luis_time_begin = FormatUtil.luis_time_from_datetime(begin_time)
         luis_date_end = FormatUtil.luis_date_from_datetime(end_time)
         luis_time_end = FormatUtil.luis_time_from_datetime(end_time)
-        
+
         result.timex = f'({luis_date_begin}T{luis_time_begin},{luis_date_end}T{luis_time_end},{pt_timex})'
         result.future_value = [begin_time, end_time]
         result.past_value = [begin_time, end_time]

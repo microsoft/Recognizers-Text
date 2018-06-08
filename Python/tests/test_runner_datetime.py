@@ -141,7 +141,7 @@ def get_results(culture, model, source, options, reference):
 def get_option(option):
     if not option:
         option = 'None'
-    module = importlib.import_module('recognizers_date_time.date_time.date_time_recognizer')
+    module = importlib.import_module('recognizers_date_time.date_time.utilities')
     option_class = getattr(module, 'DateTimeOptions')
     if option in ['CalendarMode']:
         return option_class['CALENDAR']

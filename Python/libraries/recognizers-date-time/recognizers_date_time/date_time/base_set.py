@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict
 from datetime import datetime
-from collections import namedtuple
 import regex
 
 from recognizers_text.utilities import RegExpUtility
@@ -334,7 +333,7 @@ class BaseSetParser(DateTimeParser):
                 result.timex_str = inner_result.timex if inner_result is not None else ''
                 result.resolution_str = ''
 
-            return result
+        return result
 
     def parse_each_unit(self, source: str) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
