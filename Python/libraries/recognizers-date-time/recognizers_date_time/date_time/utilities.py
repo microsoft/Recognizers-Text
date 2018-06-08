@@ -1,10 +1,9 @@
-from enum import IntFlag
+from enum import Enum, IntEnum, IntFlag
 from abc import ABC, abstractmethod
 from typing import List, Dict, Pattern, Union
-from enum import Enum, IntEnum
 from datetime import datetime, timedelta
-from datedelta import datedelta
 import calendar
+from datedelta import datedelta
 import regex
 
 from recognizers_text.extractor import ExtractResult
@@ -60,7 +59,7 @@ def get_tokens_from_regex(pattern: Pattern, source: str) -> List[Token]:
     return list(map(lambda x: Token(x.start(), x.end()), regex.finditer(pattern, source)))
 
 class ResolutionStartEnd:
-    def __init__(self, start = None, end = None):
+    def __init__(self, start=None, end=None):
         self.start = start
         self.end = end
 
@@ -98,8 +97,8 @@ class FormatUtil:
         return FormatUtil.luis_date(date.year, date.month, date.day)
 
     @staticmethod
-    def luis_time(hour: int, min: int, second: int) -> str:
-        return f'{hour:02d}:{min:02d}:{second:02d}'
+    def luis_time(hour: int, minute: int, second: int) -> str:
+        return f'{hour:02d}:{minute:02d}:{second:02d}'
 
     @staticmethod
     def luis_time_from_datetime(time: datetime) -> str:
@@ -152,11 +151,11 @@ class FormatUtil:
 
 # ISO weekday
 class DayOfWeek(IntEnum):
-    Monday = 1,
-    Tuesday = 2,
-    Wednesday = 3,
-    Thursday = 4,
-    Friday = 5,
+    Monday = 1
+    Tuesday = 2
+    Wednesday = 3
+    Thursday = 4
+    Friday = 5
     Saturday = 6
     Sunday = 7
 
@@ -209,6 +208,7 @@ class DateUtils:
             month = month % 12
         return DateUtils.safe_create_from_min_value(year, month, day)
 
+    @staticmethod
     def total_hours(from_date: datetime, to_date: datetime) -> int:
         return round((to_date - from_date).total_seconds() / 3600)
 
@@ -320,7 +320,7 @@ class AgoLaterUtil:
     def parse_duration_with_ago_and_later(source: str, reference: datetime,
                                           duration_extractor: DateTimeExtractor,
                                           duration_parser: DateTimeParser,
-                                          unit_map: Dict[str, str] ,
+                                          unit_map: Dict[str, str],
                                           unit_regex: Pattern,
                                           utility_configuration: DateTimeUtilityConfiguration,
                                           mode: AgoLaterMode) -> DateTimeResolutionResult:
