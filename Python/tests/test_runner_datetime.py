@@ -13,7 +13,7 @@ MODELFUNCTION = {
 def test_datetime_extractor(culture, model, options, context, source, expected_results):
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
-    extractor = create_extractor(language, model)
+    extractor = create_extractor(language, model, options)
 
     result = extractor.extract(source, reference_datetime)
 
@@ -26,7 +26,7 @@ def test_datetime_extractor(culture, model, options, context, source, expected_r
 def test_datetime_parser(culture, model, options, context, source, expected_results):
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
-    extractor = create_extractor(language, model)
+    extractor = create_extractor(language, model, options)
     parser = create_parser(language, model)
 
     extract_results = extractor.extract(source, reference_datetime)
@@ -89,7 +89,7 @@ def assert_model_resolution_option_split_date_and_time(actual, expected):
     assert actual.value == expected['value']
     assert actual.mod == expected['Mod']
 
-def create_extractor(language, model):
+def create_extractor(language, model, options):
     extractor = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
                           f'{language}{model}Extractor')
     if extractor:
@@ -100,6 +100,10 @@ def create_extractor(language, model):
     configuration = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_extractor_config',
                               f'{language}{model}ExtractorConfiguration')
 
+    if model == 'Merged':
+        option = get_option(options)
+        return extractor(configuration(), option)
+    
     return extractor(configuration())
 
 def create_parser(language, model):
@@ -136,9 +140,14 @@ def get_results(culture, model, source, options, reference):
 
 def get_option(option):
     if not option:
-        option = 'NONE'
-    option = re.sub('\\B[A-Z]', r'_\g<0>', option).upper()
+        option = 'None'
     module = importlib.import_module('recognizers_date_time.date_time.date_time_recognizer')
     option_class = getattr(module, 'DateTimeOptions')
-
-    return option_class[option]
+    if option in ['CalendarMode']:
+        return option_class['CALENDAR']
+    elif option in ['SkipFromTo']:
+        return option_class['SKIP_FROM_TO_MERGE']
+    elif option in ['SplitDateAndTime']:
+        return option_class['SPLIT_DATE_AND_TIME']
+    
+    return option_class['NONE']
