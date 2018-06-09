@@ -13,7 +13,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Matcher
         public void SimpleTestStringMatcher()
         {
             var values = new List<string>() { "China", "Beijing", "City" };
-            var stringMatcher = new StringMatcher(values);
+            var stringMatcher = new StringMatcher();
+            stringMatcher.Init(values);
 
             foreach (var value in values)
             {
@@ -26,14 +27,15 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Matcher
         {
             var values = new List<string>() { "China", "Beijing", "City" };
             var Ids = new List<string>() { "1", "2", "3" };
-            var stringMatcher = new StringMatcher(values, Ids.ToArray());
+            var stringMatcher = new StringMatcher();
+            stringMatcher.Init(values, Ids.ToArray());
 
             for (var i = 0; i < values.Count; i++)
             {
                 var value = values[i];
                 var match = stringMatcher.Find(value).Single();
                 Assert.AreEqual(value, match.Text);
-                Assert.AreEqual(Ids[i], match.Values.First());
+                Assert.AreEqual(Ids[i], match.CanonicalValues.First());
             }
         }
 
@@ -62,14 +64,15 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Matcher
                 },
             };
 
-            var stringMatcher = new StringMatcher(valueDictionary);
+            var stringMatcher = new StringMatcher();
+            stringMatcher.Init(valueDictionary);
 
             foreach (var value in utc8Words)
             {
                 var sentence = $"please change {value}, thanks";
                 var matches = stringMatcher.Find(sentence);
                 Assert.AreEqual(value, matches.Single().Text);
-                Assert.AreEqual(utc8Value, matches.Single().Values.First());
+                Assert.AreEqual(utc8Value, matches.Single().CanonicalValues.First());
                 Assert.AreEqual(14, matches.Single().Start);
             }
 
@@ -78,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Matcher
                 var sentence = $"please change {value}, thanks";
                 var matches = stringMatcher.Find(sentence);
                 Assert.AreEqual(value, matches.Single().Text);
-                Assert.AreEqual(utc2Value, matches.Single().Values.First());
+                Assert.AreEqual(utc2Value, matches.Single().CanonicalValues.First());
                 Assert.AreEqual(14, matches.Single().Start);
             }
         }

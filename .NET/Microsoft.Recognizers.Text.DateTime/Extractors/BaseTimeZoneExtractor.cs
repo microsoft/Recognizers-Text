@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
@@ -36,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (timeMatch.Count != 0)
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
-                var cityMatchResult = config.CityMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant());
+                var cityMatchResult = config.CityMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant()).ToList();
 
                 var i = 0;
                 foreach (Match match in timeMatch)

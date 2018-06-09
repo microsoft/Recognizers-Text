@@ -3,63 +3,39 @@ using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Matcher
 {
-    public class AcAutomaton<T>
+    public class AcAutomaton<T> : AbstractMatcher<T>
     {
-        protected readonly Node<T> root = new Node<T>();
+        protected readonly AaNode<T> root = new AaNode<T>();
 
         public AcAutomaton()
         {
 
         }
 
-        public AcAutomaton(IEnumerable<T>[] values)
-        {
-            BatchInsert(values, values.Select(value => value.ToString()).ToArray());
-            Build();
-        }
-        
-        // Id could be a canonical value or a unique id
-        public AcAutomaton(IEnumerable<T>[] values, string[] ids)
-        {
-            BatchInsert(values, ids);
-            Build();
-        }
-
-        public void Insert(IEnumerable<T> value, string id)
+        public override void Insert(IEnumerable<T> value, string id)
         {
             var node = root;
-            for (int i = 0; i < value.Count(); i++)
+            int i = 0;
+            foreach (var item in value)
             {
-                var item = value.ElementAt(i);
                 var child = node[item];
 
                 if (child == null)
                 {
-                    child = node[item] = new Node<T>(item, i, node);
+                    child = node[item] = new AaNode<T>(item, i, node);
                 }
 
                 node = child;
+                i++;
             }
 
             node.AddValue(id);
         }
 
-        public void BatchInsert(IEnumerable<T>[] values, string[] ids)
+        public override void Init(IEnumerable<T>[] values, string[] ids)
         {
-            if (values.Length != ids.Length || values.Length == 0)
-            {
-                return;
-            }
-
-            for (int i = 0; i < values.Length; i++)
-            {
-                Insert(values[i], ids[i]);
-            }
-        }
-
-        public virtual void Build()
-        {
-            var queue = new Queue<Node<T>>();
+            BatchInsert(values, ids);
+            var queue = new Queue<AaNode<T>>();
             queue.Enqueue(root);
 
             while (queue.Any())
@@ -92,10 +68,9 @@ namespace Microsoft.Recognizers.Text.Matcher
             }
         }
 
-        public virtual List<MatchResult<T>> Find(IEnumerable<T> queryText)
+        public override IEnumerable<MatchResult<T>> Find(IEnumerable<T> queryText)
         {
             var node = root;
-            var rets = new List<MatchResult<T>>();
             var i = 0;
 
             foreach (var c in queryText)
@@ -111,17 +86,12 @@ namespace Microsoft.Recognizers.Text.Matcher
                 {
                     if (t.End)
                     {
-                        rets.Add(new MatchResult<T>(i - t.Depth, t.Depth + 1)
-                        {
-                            Values = t.Values
-                        });
+                        yield return new MatchResult<T>(i - t.Depth, t.Depth + 1, t.Values);
                     }
                 }
 
                 i++;
             }
-
-            return rets;
         }
     }
 }
