@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             if ((options & DateTimeOptions.EnablePreview) != 0)
             {
-                CityMatcher.Build();
+                CityMatcher.Init(TimeZoneDefinitions.MajorCities.Select(o => o.ToLowerInvariant()));
             }
         }
 
@@ -44,6 +44,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex CityTimeSuffixRegex => new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public StringMatcher CityMatcher => new StringMatcher(TimeZoneDefinitions.MajorCities.Select(o => o.ToLowerInvariant()));
+        public StringMatcher CityMatcher { get; set; } = new StringMatcher();
     }
 }

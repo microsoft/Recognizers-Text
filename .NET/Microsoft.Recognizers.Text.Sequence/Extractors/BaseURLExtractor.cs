@@ -31,8 +31,8 @@ namespace Microsoft.Recognizers.Text.Sequence
 
             Regexes = regexes.ToImmutableDictionary();
 
-            TldMatcher = new StringMatcher(BaseURL.TldList);
-            TldMatcher.Build();
+            TldMatcher = new StringMatcher();
+            TldMatcher.Init(BaseURL.TldList);
         }
 
         public override List<ExtractResult> Extract(string text)
