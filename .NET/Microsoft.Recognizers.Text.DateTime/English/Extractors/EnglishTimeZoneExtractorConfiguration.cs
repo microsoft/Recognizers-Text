@@ -31,6 +31,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StandardTimeRegex
         };
 
+        public static readonly Regex CityTimeSuffixRegex = new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly StringMatcher CityMatcher = new StringMatcher();
+
         public EnglishTimeZoneExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             if ((options & DateTimeOptions.EnablePreview) != 0)
@@ -39,11 +44,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             }
         }
 
-        public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+        IEnumerable<Regex> ITimeZoneExtractorConfiguration.TimeZoneRegexes => TimeZoneRegexList;
 
-        public Regex CityTimeSuffixRegex => new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        Regex ITimeZoneExtractorConfiguration.CityTimeSuffixRegex => CityTimeSuffixRegex;
 
-        public StringMatcher CityMatcher => new StringMatcher();
+        StringMatcher ITimeZoneExtractorConfiguration.CityMatcher => CityMatcher;
     }
 }
