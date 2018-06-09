@@ -38,23 +38,23 @@ namespace Microsoft.Recognizers.Text.Matcher
 
         public override IEnumerable<MatchResult<T>> Find(IEnumerable<T> queryText)
         {
-            var queryArr = queryText.ToArray();
-            for (var i = 0; i < queryArr.Length; i++)
+            var queryArray = queryText.ToArray();
+            for (var i = 0; i < queryArray.Length; i++)
             {
                 var node = root;
-                for (var j = i; j <= queryArr.Length; j++)
+                for (var j = i; j <= queryArray.Length; j++)
                 {
                     if (node.End)
                     {
                         yield return new MatchResult<T>(i, j - i, node.Values);
                     }
 
-                    if (j == queryArr.Length)
+                    if (j == queryArray.Length)
                     {
                         break;
                     }
 
-                    var text = queryArr[j];
+                    var text = queryArray[j];
                     if (node[text] == null)
                     {
                         break;

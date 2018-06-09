@@ -44,6 +44,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex CityTimeSuffixRegex => new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public StringMatcher CityMatcher { get; set; } = new StringMatcher();
+        public StringMatcher CityMatcher => new StringMatcher();
     }
 }
