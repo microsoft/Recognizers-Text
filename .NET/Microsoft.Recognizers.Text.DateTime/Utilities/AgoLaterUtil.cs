@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
                         }
                     }
-                }                
+                }
                 else if (MatchingUtil.GetTermIndex(beforeString, utilityConfiguration.WithinNextPrefixRegex, out index))
                 {
                     // For range unit like "week, month, year, day, second, minute, hour", it should output dateRange or datetimeRange

@@ -738,8 +738,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!string.IsNullOrEmpty(mod))
             {
-
-
                 // For the 'before' mod
                 // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
                 // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
