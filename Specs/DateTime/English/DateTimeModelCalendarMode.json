@@ -4,7 +4,7 @@
   "Context": {
     "ReferenceDateTime": "2018-02-08T00:00:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the week of april 10",
@@ -36,7 +36,7 @@
   "Context": {
     "ReferenceDateTime": "2018-02-08T00:00:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the week of july 23",
@@ -110,7 +110,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "tmr 3",
@@ -133,7 +133,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "tomorrow three",
@@ -156,7 +156,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "yesterday at 12",
