@@ -286,6 +286,12 @@ PureNumFromTo: !nestedRegex
 PureNumBetweenAnd: !nestedRegex
   def: \b(zwischen\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?\b
   references: [ HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangeConnectorRegex ]
+SpecificTimeFromTo: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+SpecificTimeBetweenAnd: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(um|am|vom|von|in)(\s+(der|dem|den))?$)
 TimeOfDayRegex: !simpleRegex

@@ -37,16 +37,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string ShortTime(int hour, int min, int second)
         {
-            if (min == 0 && second == 0)
+            if (min < 0 && second < 0)
             {
-                return hour.ToString("D2");
+                return $"T{hour.ToString("D2")}";
             }
-            else if (second == 0)
+            else if (second < 0)
             {
-                return string.Join(":", hour.ToString("D2"), min.ToString("D2"));
+                return $"T{string.Join(":", hour.ToString("D2"), min.ToString("D2"))}";
             }
 
-            return string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
+            return $"T{string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"))}";
         }
 
         public static string LuisTime(int hour, int min, int second)

@@ -36,17 +36,49 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in this.config.SimpleCasesRegex)
             {
                 var matches = regex.Matches(text);
+
                 foreach (Match match in matches)
                 {
-                    // Is there "pm" or "am" ?
-                    var pmStr = match.Groups["pm"].Value;
-                    var amStr = match.Groups["am"].Value;
-                    var descStr = match.Groups["desc"].Value;
-
-                    // Check "pm", "am"
-                    if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
+                    // Cases like "from 10:30 to 11", don't necessarily need "am/pm"
+                    if (match.Groups["min"].Success || match.Groups["sec"].Success)
                     {
-                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                        // Cases like "from 3:30 to 4" should be supported
+                        // Cases like "from 3:30 to 4 on 1/1/2015" should be supported
+                        // Cases like "from 3:30 to 4 people" is considered not valid
+                        bool endWithValidToken = false;
+
+                        if (match.Index + match.Length == text.Length)
+                        {
+                            endWithValidToken = true;
+                        }
+                        else
+                        {
+                            var afterStr = text.Substring(match.Index + match.Length);
+
+                            var endingMatch = this.config.GeneralEndingRegex.Match(afterStr);
+                            if (endingMatch.Success || afterStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
+                            {
+                                endWithValidToken = true;
+                            }
+                        }
+
+                        if (endWithValidToken)
+                        {
+                            ret.Add(new Token(match.Index, match.Index + match.Length));
+                        }
+                    }
+                    else
+                    {
+                        // Is there "pm" or "am" ?
+                        var pmStr = match.Groups["pm"].Value;
+                        var amStr = match.Groups["am"].Value;
+                        var descStr = match.Groups["desc"].Value;
+
+                        // Check "pm", "am"
+                        if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
+                        {
+                            ret.Add(new Token(match.Index, match.Index + match.Length));
+                        }
                     }
                 }
             }

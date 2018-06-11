@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -15,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public PortugueseDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
 
             SingleDateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());

@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     public class SpanishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public static readonly Regex NumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -58,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
 
             SingleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());

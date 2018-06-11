@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -35,6 +37,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex PureNumBetweenAnd =
             new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecificTimeFromTo = new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex SpecificTimeBetweenAnd = new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex PrepositionRegex = 
             new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -58,6 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public GermanTimePeriodExtractorConfiguration():base(DateTimeOptions.None)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();

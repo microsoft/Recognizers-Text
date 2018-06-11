@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDateTimePeriodParserConfiguration : IOptionsConfiguration
     {
+        string TokenBeforeDate { get; }
+
         IDateTimeExtractor DateExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }
