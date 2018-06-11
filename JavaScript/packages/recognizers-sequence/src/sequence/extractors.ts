@@ -84,7 +84,8 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         let ers = super.extract(source)
         let ret = new Array<ExtractResult>()
         for (let er of ers) {
-            if (er.start === 0 || (source[er.start - 1] !== '-' && source[er.start - 1] !== '.' && source[er.start - 1] !== '/')) {
+            let ch = source[er.start - 1];
+            if (er.start === 0 || BasePhoneNumbers.SeparatorCharList.indexOf(ch) === -1) {
                 ret.push(er); 
             }
         }
