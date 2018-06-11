@@ -30,7 +30,7 @@ class DateTimeModel(Model):
             if isinstance(parse_result.value, list):
                 parser_dates += parse_result.value
             else:
-                parser_dates.append(parse_result.value)
+                parser_dates.append(parse_result)
 
         return [self.__to_model_result(x) for x in parser_dates]
 
