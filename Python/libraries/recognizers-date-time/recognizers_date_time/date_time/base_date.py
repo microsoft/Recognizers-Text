@@ -399,7 +399,7 @@ class BaseDateParser(DateTimeParser):
         result = DateTimeParseResult(source)
         result.value = result_value
         result.timex_str = result_value.timex if result_value is not None else ''
-        result.resolutionStr = ''
+        result.resolution_str = ''
 
         return result
 

@@ -507,9 +507,9 @@ class BaseMergedParser(DateTimeParser):
             if isinstance(value, dict):
                 new_values = {}
                 self._add_resolution_fields(new_values, Constants.TimexKey, timex)
-                self._add_resolution_fields(new_values, Constants.TimexKey, mod)
-                self._add_resolution_fields(new_values, Constants.TimexKey, output_type)
-                self._add_resolution_fields(new_values, Constants.TimexKey, str(is_lunar).lower() if is_lunar else '')
+                self._add_resolution_fields(new_values, Constants.ModKey, mod)
+                self._add_resolution_fields(new_values, Constants.TypeKey, output_type)
+                self._add_resolution_fields(new_values, Constants.IsLunarKey, str(is_lunar).lower() if is_lunar else '')
 
                 for inner_key in value:
                     new_values[inner_key] = value[inner_key]
