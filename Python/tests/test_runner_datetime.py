@@ -109,7 +109,7 @@ def assert_model_resolution_option_split_date_and_time(actual, expected):
     assert actual.get('timex', None) == expected.get('timex', None)
     assert actual.get('type', None) == expected.get('type', None)
     assert actual.get('value', None) == expected.get('value', None)
-    assert actual.get('mod', None) == expected.get('Mod', None)
+    assert actual.get('Mod', None) == expected.get('Mod', None)
 
 def create_extractor(language, model, options):
     extractor = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
