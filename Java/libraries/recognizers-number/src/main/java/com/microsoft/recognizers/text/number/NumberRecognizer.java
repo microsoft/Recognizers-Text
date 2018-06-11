@@ -11,6 +11,7 @@ import com.microsoft.recognizers.text.number.models.NumberRangeModel;
 import com.microsoft.recognizers.text.number.models.OrdinalModel;
 import com.microsoft.recognizers.text.number.models.PercentModel;
 import com.microsoft.recognizers.text.number.parsers.*;
+import com.microsoft.recognizers.text.number.portuguese.parsers.PortugueseNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.spanish.parsers.SpanishNumberParserConfiguration;
 
 import java.util.List;
@@ -79,7 +80,6 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
     @Override
     protected void initializeConfiguration() {
         //region English
-
         registerModel(NumberModel.class, Culture.English, (options) -> new NumberModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(options)),
                 com.microsoft.recognizers.text.number.english.extractors.NumberExtractor.getInstance(NumberMode.PureNumber, options)));
@@ -105,6 +105,18 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         registerModel(PercentModel.class, Culture.Spanish, (options) -> new PercentModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.spanish.extractors.PercentageExtractor()));
+        //endregion
+
+        //region Portuguese
+        registerModel(NumberModel.class,  Culture.Portuguese, (options) -> new NumberModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.portuguese.extractors.NumberExtractor(NumberMode.PureNumber)));
+        registerModel(OrdinalModel.class,  Culture.Portuguese, (options) -> new OrdinalModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new PortugueseNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.portuguese.extractors.OrdinalExtractor()));
+        registerModel(PercentModel.class, Culture.Portuguese, (options) -> new PercentModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.portuguese.extractors.PercentageExtractor()));
         //endregion
     }
 }
