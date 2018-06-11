@@ -95,21 +95,25 @@ def assert_model_resolution_option_none(actual, expected):
     assert actual.value == expected['value']
 
 def assert_model_resolution_option_calendar_mode(actual, expected):
-    assert actual.timex == expected['timex']
-    assert actual.type == expected['type']
-    assert actual.start == expected['start']
-    assert actual.end == expected['end']
+    assert actual.get('timex', None) == expected.get('timex', None)
+    assert actual.get('type', None) == expected.get('type', None)
+    assert actual.get('start', None) == expected.get('start', None)
+    assert actual.get('end', None) == expected.get('end', None)
+    assert actual.get('value', None) == expected.get('value', None)
+    assert actual.get('mod', None) == expected.get('mod', None)
 
 def assert_model_resolution_option_extended_types(actual, expected):
-    assert actual.timex == expected['timex']
-    assert actual.type == expected['type']
-    assert actual.value == expected['value']
+    assert actual.get('timex', None) == expected.get('timex', None)
+    assert actual.get('type', None) == expected.get('type', None)
+    assert actual.get('start', None) == expected.get('start', None)
+    assert actual.get('end', None) == expected.get('end', None)
+    assert actual.get('mod', None) == expected.get('mod', None)
 
 def assert_model_resolution_option_split_date_and_time(actual, expected):
     assert actual.get('timex', None) == expected.get('timex', None)
     assert actual.get('type', None) == expected.get('type', None)
     assert actual.get('value', None) == expected.get('value', None)
-    assert actual.get('mod', None) == expected.get('Mod', None)
+    assert actual.get('Mod', None) == expected.get('Mod', None)
 
 def create_extractor(language, model, options):
     extractor = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
