@@ -126,12 +126,12 @@ class FormatUtil:
         split: List[str] = list()
         last_position = 0
         for match in matches:
-            if last_position == match.start():
+            if last_position != match.start():
                 split.append(source[last_position:match.start()])
             split.append(source[match.start():match.end()])
             last_position = match.end()
         if source[:last_position]:
-            split.append(source[:last_position])
+            split.append(source[last_position:])
         for index, value in enumerate(split):
             if regex.search(FormatUtil.HourTimeRegex, value):
                 split[index] = FormatUtil.to_pm(value)

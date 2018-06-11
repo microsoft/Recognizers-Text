@@ -366,7 +366,7 @@ class BaseMergedParser(DateTimeParser):
             return None
 
         if has_before and result.value:
-            result.length = len(mod_str)
+            result.length += len(mod_str)
             result.start -= len(mod_str)
             result.text = mod_str + result.text
             val = result.value
@@ -519,7 +519,7 @@ class BaseMergedParser(DateTimeParser):
         if len(past) == 0 and len(future) == 0:
             o = {}
             o['timex'] = timex
-            o['type'] = type
+            o['type'] = output_type
             o['value'] = 'not resolved'
             resolutions.append(o)
 
@@ -610,7 +610,7 @@ class BaseMergedParser(DateTimeParser):
             split_value = resolution[TimeTypeConstants.VALUE].split(' ')
             resolution_pm[TimeTypeConstants.VALUE] = f'{split_value[0]} {FormatUtil.to_pm(split_value[1])}'
             resolution_pm['timex'] = FormatUtil.all_str_to_pm(timex)
-        elif values_map['type'] == Constants.SYS_DATETIME_DATEPERIOD:
+        elif values_map['type'] == Constants.SYS_DATETIME_DATETIMEPERIOD:
             if TimeTypeConstants.START in resolution:
                 split_value = resolution[TimeTypeConstants.START].split(' ')
                 resolution_pm[TimeTypeConstants.START] = f'{split_value[0]} {FormatUtil.to_pm(split_value[1])}'
