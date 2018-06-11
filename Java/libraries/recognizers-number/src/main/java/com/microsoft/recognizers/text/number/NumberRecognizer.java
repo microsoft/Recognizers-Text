@@ -7,6 +7,7 @@ import com.microsoft.recognizers.text.Recognizer;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberRangeParserConfiguration;
 import com.microsoft.recognizers.text.number.french.parsers.FrenchNumberParserConfiguration;
+import com.microsoft.recognizers.text.number.german.parsers.GermanNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.models.NumberModel;
 import com.microsoft.recognizers.text.number.models.NumberRangeModel;
 import com.microsoft.recognizers.text.number.models.OrdinalModel;
@@ -130,6 +131,18 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         registerModel(PercentModel.class, Culture.French, (options) -> new PercentModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.french.extractors.PercentageExtractor()));
+        //endregion
+
+        //region German
+        registerModel(NumberModel.class, Culture.German, (options) -> new NumberModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration()),
+                com.microsoft.recognizers.text.number.german.extractors.NumberExtractor.getInstance(NumberMode.PureNumber)));
+        registerModel(OrdinalModel.class, Culture.German, (options) -> new OrdinalModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new GermanNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.german.extractors.OrdinalExtractor()));
+        registerModel(PercentModel.class, Culture.German, (options) -> new PercentModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.german.extractors.PercentageExtractor()));
         //endregion
     }
 }

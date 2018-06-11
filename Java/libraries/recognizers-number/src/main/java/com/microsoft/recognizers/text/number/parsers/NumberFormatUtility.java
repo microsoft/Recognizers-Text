@@ -26,6 +26,9 @@ public final class NumberFormatUtility {
         supportedCultures.put(Culture.Spanish, LongFormatType.DoubleNumDotComma);
         supportedCultures.put(Culture.Portuguese, LongFormatType.DoubleNumDotComma);
         supportedCultures.put(Culture.French, LongFormatType.DoubleNumDotComma);
+        supportedCultures.put(Culture.German, LongFormatType.DoubleNumDotComma);
+        supportedCultures.put(Culture.Chinese, LongFormatType.DoubleNumDotComma);
+        supportedCultures.put(Culture.Japanese, LongFormatType.DoubleNumDotComma);
     }
 
     public static String format(Object value, CultureInfo culture) {
