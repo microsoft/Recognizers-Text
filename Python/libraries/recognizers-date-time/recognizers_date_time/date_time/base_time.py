@@ -8,7 +8,7 @@ from recognizers_text.extractor import ExtractResult
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, FormatUtil
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, FormatUtil, DateUtils
 
 class TimeExtractorConfiguration(ABC):
     @property
@@ -159,7 +159,7 @@ class BaseTimeParser(DateTimeParser):
             if hour <= 12 and hour != 0:
                 result.comment = 'ampm'
             result.timex = f'T{hour:02d}'
-            result.future_value = None
+            result.future_value = DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day, hour, 0, 0)
             result.past_value = result.future_value
             result.success = True
             return result
