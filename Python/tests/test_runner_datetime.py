@@ -42,6 +42,28 @@ def test_datetime_parser(culture, model, options, context, source, expected_resu
             assert actual.value.future_resolution == expected['Value']['FutureResolution']
             assert actual.value.past_resolution == expected['Value']['PastResolution']
 
+@pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='DateTime', entity='MergedParser'))
+def test_datetime_mergedparser(culture, model, options, context, source, expected_results):
+    reference_datetime = get_reference_date(context)
+    language = get_language(culture)
+    extractor = create_extractor(language, model, options)
+    parser = create_parser(language, model, options)
+
+    extract_results = extractor.extract(source, reference_datetime)
+    result = [parser.parse(x, reference_datetime) for x in extract_results]
+    assert len(result) == len(expected_results)
+    for actual, expected in zip(result, expected_results):
+        assert actual.text == expected['Text']
+        assert actual.type == expected['Type']
+        if 'Value' in expected:
+            assert actual.value
+        if actual.value and 'Value' in expected:
+            if 'values' in expected['Value']:
+                assert isinstance(actual.value['values'], list)
+                for actual_values, expected_values in zip(actual.value['values'], expected['Value']['values']):
+                    for key in expected_values.keys():
+                        assert actual_values[key] == expected_values[key]
+
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='DateTime', entity='Model'))
 def test_datetime_model(culture, model, options, context, source, expected_results):
     reference_datetime = get_reference_date(context)
