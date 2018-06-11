@@ -4,7 +4,7 @@
   "Context":{
     "ReferenceDateTime":"2018-03-14T00:00:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results": [
     {
       "Text": "Within 3 years",

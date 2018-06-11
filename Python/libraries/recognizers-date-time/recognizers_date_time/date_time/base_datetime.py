@@ -441,8 +441,8 @@ class BaseDateTimeParser(DateTimeParser):
 
         val = pr2.value
 
-        has_am_pm = regex.search(self.config.pm_time_regex, source) and regex.search(self.config.am_time_regex, source) and val.comment
-        if hour <= 12 and not has_am_pm:
+        has_am_pm = regex.search(self.config.pm_time_regex, source) and regex.search(self.config.am_time_regex, source)
+        if hour <= 12 and not has_am_pm and val.comment:
             result.comment = 'ampm'
 
         result.future_value = datetime(future_date.year, future_date.month, future_date.day, hour, minute, second)
