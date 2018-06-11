@@ -1536,7 +1536,7 @@
   "Context":{
     "ReferenceDateTime":"2017-11-08T00:00:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 5 days",
@@ -1560,7 +1560,7 @@
   "Context":{
     "ReferenceDateTime":"2017-11-08T00:00:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 10 months",
@@ -1584,7 +1584,7 @@
   "Context":{
     "ReferenceDateTime":"2017-11-08T00:00:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 3 years",
@@ -1608,7 +1608,7 @@
   "Context":{
     "ReferenceDateTime":"2017-11-08T00:00:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 5 years 1 month 12 days",
@@ -1632,7 +1632,7 @@
   "Context":{
     "ReferenceDateTime":"2016-11-07T16:12:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 15 seconds",
@@ -1656,7 +1656,7 @@
   "Context":{
     "ReferenceDateTime":"2016-11-07T16:12:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 5 minutes",
@@ -1680,7 +1680,7 @@
   "Context":{
     "ReferenceDateTime":"2016-11-07T16:12:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 5 hours",
@@ -1704,7 +1704,7 @@
   "Context":{
     "ReferenceDateTime":"2016-11-07T16:12:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 1 day and 5 hours",
@@ -1728,7 +1728,7 @@
   "Context":{
     "ReferenceDateTime":"2016-11-07T16:12:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within 2 days 1 hour 5 minutes 30 seconds",
@@ -1752,7 +1752,7 @@
   "Context":{
     "ReferenceDateTime":"2016-11-07T16:12:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within the next 1 day and 5 hours",
@@ -1776,7 +1776,7 @@
   "Context":{
     "ReferenceDateTime":"2016-11-07T16:12:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within the upcoming 2 days 1 hour 5 minutes 30 seconds",
@@ -1800,7 +1800,7 @@
   "Context":{
     "ReferenceDateTime":"2016-11-07T16:12:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within the next 15 seconds",
@@ -1824,7 +1824,7 @@
   "Context":{
     "ReferenceDateTime":"2017-11-08T00:00:00"
   },
-  "NotSupported":"javascript",
+  "NotSupported":"javascript, python",
   "Results":[
     {
       "Text":"within next 10 months",
