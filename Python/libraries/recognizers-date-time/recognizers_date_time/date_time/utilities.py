@@ -310,7 +310,7 @@ class AgoLaterUtil:
                 else:
                     value = MatchingUtil.get_in_index(before_string, config.in_connector_regex)
                     # for range unit like "week, month, year", it should output dateRange or datetimeRange
-                    if regex.match(config.range_unit_regex, extract_result.text):
+                    if regex.search(config.range_unit_regex, extract_result.text):
                         return ret
                     if (value.matched and extract_result.start and extract_result.length and extract_result.start >= value.index):
                         ret.append(Token(extract_result.start - value.index, extract_result.start + extract_result.length))
