@@ -6,6 +6,7 @@ import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.Recognizer;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberRangeParserConfiguration;
+import com.microsoft.recognizers.text.number.french.parsers.FrenchNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.models.NumberModel;
 import com.microsoft.recognizers.text.number.models.NumberRangeModel;
 import com.microsoft.recognizers.text.number.models.OrdinalModel;
@@ -117,6 +118,18 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         registerModel(PercentModel.class, Culture.Portuguese, (options) -> new PercentModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.portuguese.extractors.PercentageExtractor()));
+        //endregion
+
+        //region French
+        registerModel(NumberModel.class, Culture.French, (options) -> new NumberModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
+                com.microsoft.recognizers.text.number.french.extractors.NumberExtractor.getInstance(NumberMode.PureNumber, NumberOptions.None)));
+        registerModel(OrdinalModel.class, Culture.French, (options) -> new OrdinalModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.french.extractors.OrdinalExtractor()));
+        registerModel(PercentModel.class, Culture.French, (options) -> new PercentModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.french.extractors.PercentageExtractor()));
         //endregion
     }
 }
