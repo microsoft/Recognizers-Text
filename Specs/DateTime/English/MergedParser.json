@@ -1221,6 +1221,7 @@
 },
 {
   "Input": "Schedule during the morning",
+  "NotSupported":"python",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -1247,6 +1248,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "by tomorrow",
@@ -1270,6 +1272,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "before tomorrow",
@@ -1293,6 +1296,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "no later than tomorrow",
@@ -1316,6 +1320,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "after or equal to 1/1/2016",
@@ -1339,6 +1344,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "later than 1/1/2016",
@@ -1362,6 +1368,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "after 1/1/2016",
@@ -1385,6 +1392,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "earlier than 1/1/2016",
@@ -1408,6 +1416,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "starting from 1/1/2016",
@@ -1431,6 +1440,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "ending with 1/1/2016",
@@ -1454,6 +1464,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "sooner than 2020",
@@ -1477,6 +1488,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported":"python",
   "Results": [
     {
       "Text": "until 2012",
