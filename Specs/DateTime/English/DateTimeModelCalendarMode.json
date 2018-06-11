@@ -5,7 +5,6 @@
     "ReferenceDateTime": "2018-02-08T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the week of april 10",
@@ -38,7 +37,6 @@
     "ReferenceDateTime": "2018-02-08T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the week of july 23",
@@ -71,7 +69,6 @@
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": []
 },
 {
@@ -80,7 +77,6 @@
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": []
 },
 {
@@ -89,7 +85,6 @@
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": []
 },
 {
@@ -98,7 +93,6 @@
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
@@ -108,7 +102,6 @@
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
@@ -118,7 +111,6 @@
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tmr 3",
@@ -142,7 +134,6 @@
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow three",
@@ -166,7 +157,6 @@
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "yesterday at 12",
@@ -189,8 +179,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "before 4",
@@ -214,8 +203,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "after three",
@@ -239,8 +227,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "no later than 4",
