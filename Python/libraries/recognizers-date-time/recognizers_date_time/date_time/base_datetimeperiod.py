@@ -803,7 +803,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         if not has_specific_time_period:
             result.timex = pr.timex_str + matched.time_str
         else:
-            result.timex = f'{pr.timex_str}T{matched.begin_hour},{pr.timex_str}T{matched.end_hour},PT{matched.end_hour - matched.begin_hour}H'
+            result.timex = f'({pr.timex_str}T{matched.begin_hour},{pr.timex_str}T{matched.end_hour},PT{matched.end_hour - matched.begin_hour}H)'
 
         result.future_value = [
             DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, matched.begin_hour, 0, 0),

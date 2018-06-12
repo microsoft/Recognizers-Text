@@ -389,7 +389,7 @@ class BaseMergedParser(DateTimeParser):
             val.mod = TimeTypeConstants.SINCE_MOD
             result.value = val
 
-        if (self.options & DateTimeOptions.SPLIT_DATE_AND_TIME.value) == DateTimeOptions.SPLIT_DATE_AND_TIME.value and result.value and result.value.sub_date_time_entities:
+        if self.options & DateTimeOptions.SPLIT_DATE_AND_TIME and result.value and result.value.sub_date_time_entities:
             result.value = self._date_time_resolution_for_split(result)
         else:
             result = self.set_parse_result(result, has_before, has_after, has_since)
@@ -426,7 +426,7 @@ class BaseMergedParser(DateTimeParser):
             return None
 
     def _determine_date_time_types(self, dtype: str, has_before: bool, has_after: bool, has_since: bool) -> str:
-        if (self.options & DateTimeOptions.SPLIT_DATE_AND_TIME) == DateTimeOptions.SPLIT_DATE_AND_TIME:
+        if self.options & DateTimeOptions.SPLIT_DATE_AND_TIME:
             if dtype == Constants.SYS_DATETIME_DATETIME:
                 return Constants.SYS_DATETIME_TIME
         else:

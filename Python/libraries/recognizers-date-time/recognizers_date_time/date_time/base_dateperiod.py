@@ -582,7 +582,7 @@ class BaseDatePeriodParser(DateTimeParser):
 
         match = self._get_match_simple_case(source)
 
-        if not match:
+        if not match or match.start() != 0 or match.group() != source:
             return result
         days = match.captures('day')
         begin_day = self.config.day_of_month.get(days[0])
