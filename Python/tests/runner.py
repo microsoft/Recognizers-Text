@@ -39,7 +39,7 @@ def get_all_specs():
 
 def get_specs(recognizer, entity):
     ret_specs = []
-    filtered_specs = list(filter(lambda x: x['config']['recognizer'] == recognizer and x['config']['entity'] == entity, SPECS))
+    filtered_specs = list(filter(lambda x: x['config']['recognizer'] == recognizer and x['config']['entity'] == entity and CULTURES.get(x['config']['language']), SPECS))
     for sp in filtered_specs:
         for spec in sp['specs']:
             if 'NotSupportedByDesign' in spec and 'python' in spec['NotSupportedByDesign']:
@@ -64,8 +64,7 @@ CULTURES = {
     'Portuguese': Culture.Portuguese,
     'French': Culture.French,
     'Japanese': Culture.Japanese,
-    'Dutch': Culture.Dutch,
-    'Korean': Culture.Korean
+    'Dutch': Culture.Dutch
 }
 
 SPECS = get_all_specs()
