@@ -2,58 +2,58 @@
 
 const timexHelpers = require('./timexHelpers.js');
 const timexDateHelpers = require('./timexDateHelpers.js');
-const Timex = require('./timex.js').Timex;
+const TimexProperty = require('./timexProperty.js').TimexProperty;
 
 const today = function (date) {
-    return Timex.fromDate(date || new Date()).timex;
+    return TimexProperty.fromDate(date || new Date()).timex;
 };
 
 const tomorrow = function (date) {
     const d = (date === undefined) ? new Date() : new Date(date.getTime());
     d.setDate(d.getDate() + 1);
-    return Timex.fromDate(d).timex;
+    return TimexProperty.fromDate(d).timex;
 };
 
 const yesterday = function (date) {
     const d = (date === undefined) ? new Date() : new Date(date.getTime());
     d.setDate(d.getDate() - 1);
-    return Timex.fromDate(d).timex;
+    return TimexProperty.fromDate(d).timex;
 };
 
 const weekFromToday = function (date) {
     const d = (date === undefined) ? new Date() : new Date(date.getTime());
-    return (new Timex(Object.assign(Timex.fromDate(d), { days: 7 }))).timex;
+    return (new TimexProperty(Object.assign(TimexProperty.fromDate(d), { days: 7 }))).timex;
 };
 
 const weekBackFromToday = function (date) {
     const d = (date === undefined) ? new Date() : new Date(date.getTime());
     d.setDate(d.getDate() - 7);
-    return (new Timex(Object.assign(Timex.fromDate(d), { days: 7 }))).timex;
+    return (new TimexProperty(Object.assign(TimexProperty.fromDate(d), { days: 7 }))).timex;
 };
 
 const thisWeek = function (date) {
     const d = (date === undefined) ? new Date() : new Date(date.getTime());
     d.setDate(d.getDate() - 7);
     const start = timexDateHelpers.dateOfNextDay(1, d);
-    return (new Timex(Object.assign(Timex.fromDate(start), { days: 7 }))).timex;
+    return (new TimexProperty(Object.assign(TimexProperty.fromDate(start), { days: 7 }))).timex;
 };
 
 const nextWeek = function (date) {
     const d = (date === undefined) ? new Date() : new Date(date.getTime());
     const start = timexDateHelpers.dateOfNextDay(1, d);
-    return (new Timex(Object.assign(Timex.fromDate(start), { days: 7 }))).timex;
+    return (new TimexProperty(Object.assign(TimexProperty.fromDate(start), { days: 7 }))).timex;
 };
 
 const lastWeek = function (date) {
     const d = (date === undefined) ? new Date() : new Date(date.getTime());
     const start = timexDateHelpers.dateOfLastDay(1, d);
     start.setDate(start.getDate() - 7);
-    return (new Timex(Object.assign(Timex.fromDate(start), { days: 7 }))).timex;
+    return (new TimexProperty(Object.assign(TimexProperty.fromDate(start), { days: 7 }))).timex;
 };
 
 const nextWeeksFromToday = function (n, date) {
     const d = (date === undefined) ? new Date() : new Date(date.getTime());
-    return (new Timex(Object.assign(Timex.fromDate(d), { days: 7 * n }))).timex;
+    return (new TimexProperty(Object.assign(TimexProperty.fromDate(d), { days: 7 * n }))).timex;
 };
 
 const monday = 'XXXX-WXX-1';

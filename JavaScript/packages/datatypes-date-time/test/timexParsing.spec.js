@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 
-const { Timex, TimexSet } = require('../index.js');
+const { TimexProperty, TimexSet } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;
@@ -13,7 +13,7 @@ describe('No Network', () => {
         describe('Timex parsing', () => {
             describe('date', () => {
                 it('complete date', () => {
-                    const timex = new Timex('2017-05-29');
+                    const timex = new TimexProperty('2017-05-29');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('definite', 'date');
                     timex.should.have.property('year', 2017);
                     timex.should.have.property('month', 5);
@@ -37,7 +37,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('month and dayOfMonth', () => {
-                    const timex = new Timex('XXXX-12-05');
+                    const timex = new TimexProperty('XXXX-12-05');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('date');
                     timex.should.not.have.property('year');
                     timex.should.have.property('month', 12);
@@ -61,7 +61,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('dayOfWeek', () => {
-                    const timex = new Timex('XXXX-WXX-3');
+                    const timex = new TimexProperty('XXXX-WXX-3');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('date');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -87,7 +87,7 @@ describe('No Network', () => {
             });
             describe('time', () => {
                 it('hours, minutes and seconds', () => {
-                    const timex = new Timex('T17:30:05');
+                    const timex = new TimexProperty('T17:30:05');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('time');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -111,7 +111,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('hours and minutes', () => {
-                    const timex = new Timex('T17:30');
+                    const timex = new TimexProperty('T17:30');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('time');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -135,7 +135,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('hours', () => {
-                    const timex = new Timex('T17');
+                    const timex = new TimexProperty('T17');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('time');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -161,7 +161,7 @@ describe('No Network', () => {
             });
             describe('datetime', () => {
                 it('now', () => {
-                    const timex = new Timex('PRESENT_REF');
+                    const timex = new TimexProperty('PRESENT_REF');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('present', 'datetime', 'date', 'time');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -185,7 +185,7 @@ describe('No Network', () => {
                     timex.should.have.property('now', true);
                 });
                 it('full datetime', () => {
-                    const timex = new Timex('1984-01-03T18:30:45');
+                    const timex = new TimexProperty('1984-01-03T18:30:45');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('definite', 'datetime', 'date', 'time');
                     timex.should.have.property('year', 1984);
                     timex.should.have.property('month', 1);
@@ -209,7 +209,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('paricular time on particular day of week (e.g. "Wednesday 4pm")', () => {
-                    const timex = new Timex('XXXX-WXX-3T16');
+                    const timex = new TimexProperty('XXXX-WXX-3T16');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('datetime', 'date', 'time');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -235,7 +235,7 @@ describe('No Network', () => {
             });
             describe('daterange', () => {
                 it('year', () => {
-                    const timex = new Timex('2016');
+                    const timex = new TimexProperty('2016');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.have.property('year', 2016);
                     timex.should.not.have.property('month');
@@ -259,7 +259,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('year season (e.g. "summer of 1999")', () => {
-                    const timex = new Timex('1999-SU');
+                    const timex = new TimexProperty('1999-SU');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.have.property('year', 1999);
                     timex.should.not.have.property('month');
@@ -283,7 +283,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('year and week', () => {
-                    const timex = new Timex('2017-W37');
+                    const timex = new TimexProperty('2017-W37');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.have.property('year', 2017);
                     timex.should.not.have.property('month');
@@ -307,7 +307,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('season (e.g. "summer")', () => {
-                    const timex = new Timex('SU');
+                    const timex = new TimexProperty('SU');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -331,7 +331,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('season (e.g. "winter")', () => {
-                    const timex = new Timex('WI');
+                    const timex = new TimexProperty('WI');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -355,7 +355,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('year and weekend (e.g. "this weekend" at least today:-))', () => {
-                    const timex = new Timex('2017-W37-WE');
+                    const timex = new TimexProperty('2017-W37-WE');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.have.property('year', 2017);
                     timex.should.not.have.property('month');
@@ -379,7 +379,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('month (e.g. "may")', () => {
-                    const timex = new Timex('XXXX-05');
+                    const timex = new TimexProperty('XXXX-05');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.not.have.property('year');
                     timex.should.have.property('month', 5);
@@ -403,7 +403,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('month (e.g. "July 2020")', () => {
-                    const timex = new Timex('2020-07');
+                    const timex = new TimexProperty('2020-07');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.have.property('year', 2020);
                     timex.should.have.property('month', 7);
@@ -427,7 +427,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('week of month ("first week of january")', () => {
-                    const timex = new Timex('XXXX-01-W01');
+                    const timex = new TimexProperty('XXXX-01-W01');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('daterange');
                     timex.should.not.have.property('year');
                     timex.should.have.property('month', 1);
@@ -451,7 +451,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('wednesday to saturday', () => {
-                    const timex = new Timex('(XXXX-WXX-3,XXXX-WXX-6,P3D)');
+                    const timex = new TimexProperty('(XXXX-WXX-3,XXXX-WXX-6,P3D)');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('date', 'duration', 'daterange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -475,7 +475,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('1 january to 5 august', () => {
-                    const timex = new Timex('(XXXX-01-01,XXXX-08-05,P216D)');
+                    const timex = new TimexProperty('(XXXX-01-01,XXXX-08-05,P216D)');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('date', 'duration', 'daterange');
                     timex.should.not.have.property('year');
                     timex.should.have.property('month', 1);
@@ -499,7 +499,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('1 january 2015 to 5 august 2015', () => {
-                    const timex = new Timex('(2015-01-01,2015-08-05,P216D)');
+                    const timex = new TimexProperty('(2015-01-01,2015-08-05,P216D)');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('definite', 'date', 'duration', 'daterange');
                     timex.should.have.property('year', 2015);
                     timex.should.have.property('month', 1);
@@ -525,7 +525,7 @@ describe('No Network', () => {
             });
             describe('TimeRange', () => {
                 it('daytime', () => {
-                    const timex = new Timex('TDT');
+                    const timex = new TimexProperty('TDT');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('timerange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -549,7 +549,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('night', () => {
-                    const timex = new Timex('TNI');
+                    const timex = new TimexProperty('TNI');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('timerange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -573,7 +573,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('morning', () => {
-                    const timex = new Timex('TMO');
+                    const timex = new TimexProperty('TMO');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('timerange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -597,7 +597,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('afternoon', () => {
-                    const timex = new Timex('TAF');
+                    const timex = new TimexProperty('TAF');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('timerange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -621,7 +621,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('evening', () => {
-                    const timex = new Timex('TEV');
+                    const timex = new TimexProperty('TEV');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('timerange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -646,7 +646,7 @@ describe('No Network', () => {
                 });
                 it('4:30pm to 4:45pm', () => {
                     // BUG Luis actually incorrectly returns "(T16:30,T16:45,PT0H)" 
-                    const timex = new Timex('(T16:30,T16:45,PT15M)');
+                    const timex = new TimexProperty('(T16:30,T16:45,PT15M)');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('time', 'duration', 'timerange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -672,7 +672,7 @@ describe('No Network', () => {
             });
             describe('DateTimeRange', () => {
                 it('friday evening', () => {
-                    const timex = new Timex('XXXX-WXX-5TEV');
+                    const timex = new TimexProperty('XXXX-WXX-5TEV');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('date', 'timerange', 'datetimerange');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -696,7 +696,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('last night', () => {
-                    const timex = new Timex('2017-09-07TNI');
+                    const timex = new TimexProperty('2017-09-07TNI');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('definite', 'date', 'timerange', 'datetimerange');
                     timex.should.have.property('year', 2017);
                     timex.should.have.property('month', 9);
@@ -720,7 +720,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('last 5 minutes', () => {
-                    const timex = new Timex('(2017-09-08T21:19:29,2017-09-08T21:24:29,PT5M)');
+                    const timex = new TimexProperty('(2017-09-08T21:19:29,2017-09-08T21:24:29,PT5M)');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('date', 'time', 'datetime', 'duration', 'datetimerange', 'daterange', 'definite', 'timerange');
                     timex.should.have.property('year', 2017);
                     timex.should.have.property('month', 9);
@@ -744,7 +744,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('4pm wednesday to 3pm saturday', () => {
-                    const timex = new Timex('(XXXX-WXX-3T16,XXXX-WXX-6T15,PT71H)');
+                    const timex = new TimexProperty('(XXXX-WXX-3T16,XXXX-WXX-6T15,PT71H)');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('date', 'time', 'datetime', 'daterange', 'timerange', 'datetimerange', 'duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -770,7 +770,7 @@ describe('No Network', () => {
             });
             describe('Duration', () => {
                 it('years', () => {
-                    const timex = new Timex('P2Y');
+                    const timex = new TimexProperty('P2Y');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -794,7 +794,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('months', () => {
-                    const timex = new Timex('P4M');
+                    const timex = new TimexProperty('P4M');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -818,7 +818,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('weeks', () => {
-                    const timex = new Timex('P6W');
+                    const timex = new TimexProperty('P6W');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -842,7 +842,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('weeks (floating point)', () => {
-                    const timex = new Timex('P2.5W');
+                    const timex = new TimexProperty('P2.5W');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -866,7 +866,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('days', () => {
-                    const timex = new Timex('P1D');
+                    const timex = new TimexProperty('P1D');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -890,7 +890,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('hours', () => {
-                    const timex = new Timex('PT5H');
+                    const timex = new TimexProperty('PT5H');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -914,7 +914,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('minutes', () => {
-                    const timex = new Timex('PT30M');
+                    const timex = new TimexProperty('PT30M');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');
@@ -938,7 +938,7 @@ describe('No Network', () => {
                     timex.should.not.have.property('now');
                 });
                 it('seconds', () => {
-                    const timex = new Timex('PT45S');
+                    const timex = new TimexProperty('PT45S');
                     timex.should.have.property('types').that.is.a('Set').that.has.keys('duration');
                     timex.should.not.have.property('year');
                     timex.should.not.have.property('month');

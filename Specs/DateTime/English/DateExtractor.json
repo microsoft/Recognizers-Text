@@ -1198,4 +1198,84 @@
     }
   ]
 }
+,
+{
+  "Input": "Are you free on 13.5.2015?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "13.5.2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available on 2015.5.13?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015.5.13",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two sundays from now?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two sundays from now",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two monday later?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two monday later",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two days after today?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days after today",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available three weeks from tomorrow?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three weeks from tomorrow",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Where were you two days before yesterday?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days before yesterday",
+      "Type": "date"
+    }
+  ]
+}
 ]

@@ -53,9 +53,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.LessThanOneHour,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EngTimeRegex =
+        public static readonly Regex WrittenTimeRegex =
             new Regex(
-                DateTimeDefinitions.EngTimeRegex,
+                DateTimeDefinitions.WrittenTimeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // TODO - will have change below
@@ -174,6 +174,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.TimeRegex9,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
+            new Regex(DateTimeDefinitions.TimeRegex10,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
             // 340pm
             ConnectNumRegex
         };
@@ -188,9 +191,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
         public FrenchTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration());
         }
     }
 }

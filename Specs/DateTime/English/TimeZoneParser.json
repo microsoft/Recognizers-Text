@@ -1,0 +1,394 @@
+[
+  {
+    "Input": "Book me a room at beijing time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "beijing time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at utc4:30",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "utc4:30",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at gmt-3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "gmt-3",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-03:00",
+            "UtcOffsetMins": -180
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at afghanistan standard time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "afghanistan standard time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at aft",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "aft",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at utc±0",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "utc±0",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+00:00",
+            "UtcOffsetMins": 0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at pdst",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "pdst",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at awdt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "awdt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at cot",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "cot",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at hkt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "hkt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at pacific daylight saving time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "pacific daylight saving time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at austrialian western daylight time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "austrialian western daylight time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at austrialian west daylight time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "austrialian west daylight time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at colombia time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "colombia time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at hong kong time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "hong kong time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at aedt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "aedt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+11:00",
+            "UtcOffsetMins": 660
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at pdt",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "pdt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at tost",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "tost",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+14:00",
+            "UtcOffsetMins": 840
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Book me a room at pacific daylight time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "pacific daylight time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        }
+      }
+    ]
+  }
+]

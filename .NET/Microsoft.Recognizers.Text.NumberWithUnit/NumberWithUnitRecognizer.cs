@@ -80,8 +80,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new English.CurrencyParserConfiguration())
                     }
                 }));
             RegisterModel<TemperatureModel>(
@@ -119,8 +119,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Chinese.CurrencyParserConfiguration())
                     },
                     {
                         new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
@@ -326,6 +326,35 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                     new NumberWithUnitParser(new German.AgeParserConfiguration())
                                 }
                             }));
+            #endregion
+
+            #region Japanese
+            RegisterModel<CurrencyModel>(
+                Culture.Japanese,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Japanese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Japanese.CurrencyParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
+                    }
+                }));
+            RegisterModel<AgeModel>(
+                Culture.Japanese,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Japanese.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Japanese.AgeParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
+                    }
+                }));
             #endregion
         }
     }

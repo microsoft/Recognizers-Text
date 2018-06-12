@@ -521,7 +521,7 @@
   "NotSupportedByDesign": "javascript, python",
   "Results": [
     {
-      "Text": "300mm",
+      "Text": "300 mm",
       "TypeName": "dimension",
       "Resolution": {
         "value": "300",

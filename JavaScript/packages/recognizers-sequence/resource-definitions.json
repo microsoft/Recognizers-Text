@@ -16,6 +16,39 @@
                 "export namespace BaseIp {"
             ],
             "footer": [ "}" ]
+        },
+        {
+            "input": ["Base-Mention" ],
+            "output": "baseMention",
+            "header": [
+                "export namespace BaseMention {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": ["Base-Hashtag" ],
+            "output": "baseHashtag",
+            "header": [
+                "export namespace BaseHashtag {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": ["Base-URL" ],
+            "output": "baseURL",
+            "header": [
+                "import { BaseIp } from \"./baseIp\";",
+                "export namespace BaseURL {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": ["Base-Email" ],
+            "output": "baseEmail",
+            "header": [
+                "export namespace BaseEmail {"
+            ],
+            "footer": [ "}" ]
         }
     ]
 }

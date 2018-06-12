@@ -22,7 +22,7 @@ export namespace FrenchNumeric {
 	export const SupportThousandsRegex = `((${BelowThousandsRegex}|${BelowHundredsRegex})\\s+${RoundNumberIntegerRegex}(\\s+${RoundNumberIntegerRegex})?)`;
 	export const SeparaIntRegex = `(${SupportThousandsRegex}(\\s+${SupportThousandsRegex})*(\\s+${BelowThousandsRegex})?|${BelowThousandsRegex})`;
 	export const AllIntRegex = `(${SeparaIntRegex}|mille(\\s+${BelowThousandsRegex})?)`;
-	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }
+	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }
 	export const NumbersWithSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(k|M|T|G)(?=\\b)`;
 	export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)(${DigitsNumberRegex})+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
 	export const NumbersWithDozenSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+douzaine(s)?(?=\\b)`;
@@ -48,7 +48,7 @@ export namespace FrenchNumeric {
 	export const FractionNotationRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))`;
 	export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((et)\\s+)?)?(${AllIntRegex})(\\s+((et)\\s)?)(((${AllOrdinalRegex})s?|(${SuffixOrdinalRegex})s?)|demis?|tiers?|quarts?)(?=\\b)`;
 	export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(et\\s+)?)?(un|une)(\\s+)((${AllOrdinalRegex})|(${SuffixOrdinalRegex})|(et\\s+)?demis?)(?=\\b)`;
-	export const FractionPrepositionRegex = `(?<=\\b)((${AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+((${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
+	export const FractionPrepositionRegex = `(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
 	export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;
 	export const AllFloatRegex = `(${AllIntRegex}(\\s+(virgule|point))${AllPointRegex})`;
 	export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?=${placeholder})`; }
@@ -59,8 +59,8 @@ export namespace FrenchNumeric {
 	export const DoubleExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)`;
 	export const DoubleCaretExponentialNotationRegex = `(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)`;
 	export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)`;
-	export const NumberWithSuffixPercentage = `(${BaseNumbers.NumberReplaceToken})(\\s*)(%|pourcentages|pourcents|pourcentage|pourcent)`;
-	export const NumberWithPrefixPercentage = `(%|pourcent|pourcent des|pourcentage de)(\\s*)(${BaseNumbers.NumberReplaceToken})`;
+	export const NumberWithSuffixPercentage = `(?<!%)(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(pourcentages|pourcents|pourcentage|pourcent)\\b)`;
+	export const NumberWithPrefixPercentage = `((?<!${BaseNumbers.NumberReplaceToken})%|pourcent|pourcent des|pourcentage de)(\\s*)(${BaseNumbers.NumberReplaceToken})(?=\\s|$)`;
 	export const DecimalSeparatorChar = ',';
 	export const FractionMarkerToken = 'sur';
 	export const NonDecimalSeparatorChar = '.';

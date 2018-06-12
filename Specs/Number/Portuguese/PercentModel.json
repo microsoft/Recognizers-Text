@@ -647,4 +647,10 @@
     }
   ]
 }
+,
+{
+  "NotSupported": "javascript",
+  "Input": "você pode ir para http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 para mais detalhes",
+  "Results": []
+}
 ]

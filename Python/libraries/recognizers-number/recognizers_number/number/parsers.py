@@ -6,6 +6,7 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
 from recognizers_number.culture import CultureInfo
+from recognizers_number.number.constants import Constants
 
 getcontext().prec = 15
 
@@ -144,7 +145,7 @@ class BaseNumberParser(Parser):
         elif 'Pow' in extra:
             ret = self._power_number_parse(source)
 
-        if ret and ret.value:
+        if ret and ret.value is not None:
             if is_negative:
                 # Recover to the original extracted Text
                 ret.text = match_negative[1] + source.text
@@ -496,13 +497,13 @@ class BaseNumberParser(Parser):
         scale: Decimal = Decimal(10)
         dot: bool = False
         negative: bool = False
-        fraction: bool = False
+        fraction: bool = '/' in digitstr
 
         call_stack: List[Decimal] = list()
 
         for c in digitstr:
-            if c == '/':
-                fraction = True
+            if not fraction and (c == self.config.non_decimal_separator_char or c == ' ' or c == Constants.NO_BREAK_SPACE):
+                continue
 
             if c == ' ' or c == '/':
                 call_stack.append(tmp)

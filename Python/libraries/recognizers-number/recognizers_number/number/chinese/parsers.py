@@ -98,20 +98,20 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._round_number_map = ChineseNumeric.RoundNumberMap
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DigitalNumberRegex)
 
-        self.zero_to_nine_map_chs = ChineseNumeric.ZeroToNineMapChs
-        self.round_number_map_chs = ChineseNumeric.RoundNumberMapChs
-        self.full_to_half_map_chs = ChineseNumeric.FullToHalfMapChs
-        self.trato_sim_map_chs = ChineseNumeric.TratoSimMapChs
-        self.unit_map_chs = ChineseNumeric.UnitMapChs
-        self.round_direct_list_chs = ChineseNumeric.RoundDirectListChs
+        self.zero_to_nine_map_chs = ChineseNumeric.ZeroToNineMap
+        self.round_number_map_chs = ChineseNumeric.RoundNumberMapChar
+        self.full_to_half_map_chs = ChineseNumeric.FullToHalfMap
+        self.trato_sim_map_chs = ChineseNumeric.TratoSimMap
+        self.unit_map_chs = ChineseNumeric.UnitMap
+        self.round_direct_list_chs = ChineseNumeric.RoundDirectList
 
         self.digit_num_regex = ChineseNumeric.DigitNumRegex
         self.dozen_regex = ChineseNumeric.DozenRegex
         self.percentage_regex = ChineseNumeric.PercentageRegex
-        self.double_and_round_chs_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleAndRoundChsRegex)
+        self.double_and_round_chs_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.DoubleAndRoundRegex)
         self.frac_split_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.FracSplitRegex)
         self._negative_number_sign_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.NegativeNumberSignRegex)
-        self.point_regex_chs = ChineseNumeric.PointRegexChs
+        self.point_regex_chs = ChineseNumeric.PointRegex
         self.spe_get_number_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.SpeGetNumberRegex)
         self.pair_regex = RegExpUtility.get_safe_reg_exp(ChineseNumeric.PairRegex)
 

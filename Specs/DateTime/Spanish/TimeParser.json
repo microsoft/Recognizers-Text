@@ -877,4 +877,64 @@
     }
   ]
 }
+,
+{
+  "Input": "Volveré a las 7h01",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7h01",
+      "Type": "time",
+      "Value": {
+        "Timex": "T07:01",
+        "FutureResolution": {
+          "time": "07:01:00"
+        },
+        "PastResolution": {
+          "time": "07:01:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Volveré a las 10 H 10 pm.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10 H 10 pm",
+      "Type": "time",
+      "Value": {
+        "Timex": "T22:10",
+        "FutureResolution": {
+          "time": "22:10:00"
+        },
+        "PastResolution": {
+          "time": "22:10:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Volveré a las tres min pasadas las 10 H 10 pm.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tres min pasadas las 10 H 10 pm",
+      "Type": "time",
+      "Value": {
+        "Timex": "T22:13",
+        "FutureResolution": {
+          "time": "22:13:00"
+        },
+        "PastResolution": {
+          "time": "22:13:00"
+        }
+      }
+    }
+  ]
+}
 ]

@@ -449,4 +449,44 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "Ich bin um 7h01 zurück",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "7h01",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:01",
+          "FutureResolution": {
+            "time": "07:01:00"
+          },
+          "PastResolution": {
+            "time": "07:01:00"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich bin um 10 h 10 Uhr zurück.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "10 h 10 Uhr",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:10",
+          "FutureResolution": {
+            "time": "10:10:00"
+          },
+          "PastResolution": {
+            "time": "10:10:00"
+          }
+        }
+      }
+    ]
+  }
 ]

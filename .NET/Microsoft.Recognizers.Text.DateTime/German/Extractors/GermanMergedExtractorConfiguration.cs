@@ -54,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
@@ -66,9 +68,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration());
             TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(options));
             SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration());
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration());
         }

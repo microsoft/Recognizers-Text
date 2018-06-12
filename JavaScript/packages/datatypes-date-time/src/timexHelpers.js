@@ -1,6 +1,5 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
-const Timex = require('./timex.js').Timex;
 const Time = require('./time.js').Time;
 const timexInference = require('./timexInference.js');
 

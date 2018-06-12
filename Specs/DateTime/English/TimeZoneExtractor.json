@@ -1,0 +1,109 @@
+[
+  {
+    "Input": "Book me a room at beijing time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "beijing time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at utc4:30",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "utc4:30",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at gmt-3",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "gmt-3",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at afghanistan standard time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "afghanistan standard time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at aft",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "aft",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at beijing-time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "beijing-time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at St. Louis-time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "St. Louis-time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at San José Time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "San José Time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "For me, Christchurch Time, Colchester-time or Edinburgh time is OK.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Christchurch Time",
+        "Type": "timezone"
+      },
+      {
+        "Text": "Colchester-time",
+        "Type": "timezone"
+      },
+      {
+        "Text": "Edinburgh time",
+        "Type": "timezone"
+      }
+    ]
+  }
+]

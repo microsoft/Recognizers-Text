@@ -31,8 +31,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchDuration(text, reference));
             tokens.AddRange(MatchTimeOfDay(text, reference));
             tokens.AddRange(MatchRelativeUnit(text));
+            tokens.AddRange(MatchDateWithPeriodPrefix(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        private IEnumerable<Token> MatchDateWithPeriodPrefix(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+            var dateErs = config.SingleDateExtractor.Extract(text, reference);
+
+            foreach (var dateEr in dateErs)
+            {
+                var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
+                var beforeStr = text.Substring(0, (int)dateEr.Start).TrimEnd();
+                var match = this.config.PrefixDayRegex.Match(beforeStr);
+                if (match.Success)
+                {
+                    ret.Add(new Token(match.Index, dateStrEnd));
+                }
+            }
+
+            return ret;
         }
 
         private List<Token> MatchSimpleCases(string text, DateObject reference)
@@ -398,24 +418,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
-                
-                match = this.config.PastPrefixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
-                {
-                    ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
-                    continue;
-                }
 
-                match = this.config.NextPrefixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                var matchDateUnit = this.config.DateUnitRegex.Match(afterStr);
+                if (!matchDateUnit.Success)
                 {
-                    ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
-                }
+                    match = this.config.PastPrefixRegex.Match(afterStr);
+                    if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                    {
+                        ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                        continue;
+                    }
 
-                match = this.config.FutureSuffixRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
-                {
-                    ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                    match = this.config.NextPrefixRegex.Match(afterStr);
+                    if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                    {
+                        ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                    }
+
+                    match = this.config.FutureSuffixRegex.Match(afterStr);
+                    if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                    {
+                        ret.Add(new Token(duration.Start, duration.Start + duration.Length + match.Index + match.Length));
+                    }
                 }
             }
 

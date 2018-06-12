@@ -26,17 +26,38 @@ namespace Microsoft.Recognizers.Text.DateTime
             object value = null;
             if (er.Type.Equals(ParserName))
             {
-                var innerResult = InternalParse(er.Text, referenceTime);
+                DateTimeResolutionResult innerResult;
+
+                // Resolve timezome
+                if ((config.Options & DateTimeOptions.EnablePreview) != 0 &&
+                    er.Data is KeyValuePair<string, ExtractResult>)
+                {
+                    var timezoneEr = ((KeyValuePair<string, ExtractResult>) er.Data).Value;
+                    var timezonePr = config.TimeZoneParser.Parse(timezoneEr);
+
+                    innerResult = InternalParse(er.Text.Substring(0, (int)(er.Length - timezoneEr.Length)),
+                        referenceTime);
+
+                    if (timezonePr.Value != null)
+                    {
+                        innerResult.TimeZoneResolution = ((DateTimeResolutionResult)timezonePr.Value).TimeZoneResolution;
+                    }
+                }
+                else
+                {
+                    innerResult = InternalParse(er.Text, referenceTime);
+                }
+
                 if (innerResult.Success)
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject)innerResult.FutureValue)}
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject)innerResult.PastValue)}
                     };
 
                     value = innerResult;
@@ -129,16 +150,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult Match2Time(Match match, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
+            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
             int hour = 0,
                 min = 0,
                 second = 0,
                 day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
-            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
 
-            var engTimeStr = match.Groups["engtime"].Value;
-            if (!string.IsNullOrEmpty(engTimeStr))
+            var writtenTimeStr = match.Groups["writtentime"].Value;
+
+            if (!string.IsNullOrEmpty(writtenTimeStr))
             {
                 // get hour
                 var hourStr = match.Groups["hournum"].Value.ToLower();

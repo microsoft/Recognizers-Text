@@ -1,6 +1,10 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { BasePhoneNumbers } from "../resources/basePhoneNumbers";
 import { BaseIp } from "../resources/baseIp";
+import { BaseMention } from "../resources/baseMention";
+import { BaseHashtag } from "../resources/baseHashtag";
+import { BaseEmail } from "../resources/baseEmail";
+import { BaseURL } from "../resources/baseURL";
 import { Constants } from "./constants";
 
 export abstract class BaseSequenceExtractor implements IExtractor {
@@ -73,6 +77,19 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.UkPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK)
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.GermanyPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GERMANY)
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US)
+            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN)
+            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL)
+    }
+    extract(source: string): Array<ExtractResult> {
+        let ers = super.extract(source)
+        let ret = new Array<ExtractResult>()
+        for (let er of ers) {
+            let ch = source[er.start - 1];
+            if (er.start === 0 || BasePhoneNumbers.SeparatorCharList.indexOf(ch) === -1) {
+                ret.push(er); 
+            }
+        }
+        return ret;
     }
 }
 
@@ -146,5 +163,46 @@ export class BaseIpExtractor extends BaseSequenceExtractor {
 
     isLetterOrDigit(c: string): boolean{
         return new RegExp("[0-9a-zA-z]").test(c);
+    }
+}
+
+export class BaseMentionExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor(){
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseMention.MentionRegex), Constants.MENTION_REGEX)
+    }
+}
+
+export class BaseHashtagExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor(){
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseHashtag.HashtagRegex), Constants.HASHTAG_REGEX)
+    }
+}
+
+export class BaseEmailExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor(){
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX)
+    }
+}
+
+export class BaseURLExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor(){
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex), Constants.URL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex), Constants.URL_REGEX)
     }
 }

@@ -33,6 +33,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.AnUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DuringRegex = 
+            new Regex(
+                DateTimeDefinitions.DuringRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex AllRegex = 
             new Regex(
                 DateTimeDefinitions.AllRegex,
@@ -48,14 +53,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.ConjunctionRegex, 
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex InExactNumberRegex = 
+        public static readonly Regex InexactNumberRegex = 
             new Regex(
-                DateTimeDefinitions.InExactNumberRegex, //quelques = "a few, some," etc 
+                DateTimeDefinitions.InexactNumberRegex, //quelques = "a few, some," etc 
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex InExactNumberUnitRegex = 
+        public static readonly Regex InexactNumberUnitRegex = 
             new Regex(
-                DateTimeDefinitions.InExactNumberUnitRegex,
+                DateTimeDefinitions.InexactNumberUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RelativeDurationUnitRegex =
@@ -64,7 +69,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex DurationConnectorRegex =
             new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDurationExtractorConfiguration() : base(DateTimeOptions.None)
+        public static readonly Regex MoreThanRegex =
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex LessThanRegex =
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public FrenchDurationExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
@@ -83,6 +94,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDurationExtractorConfiguration.AnUnitRegex => AnUnitRegex;
 
+        Regex IDurationExtractorConfiguration.DuringRegex => DuringRegex;
+
         Regex IDurationExtractorConfiguration.AllRegex => AllRegex;
 
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
@@ -91,14 +104,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;
 
-        Regex IDurationExtractorConfiguration.InExactNumberRegex => InExactNumberRegex;
+        Regex IDurationExtractorConfiguration.InexactNumberRegex => InexactNumberRegex;
 
-        Regex IDurationExtractorConfiguration.InExactNumberUnitRegex => InExactNumberUnitRegex;
+        Regex IDurationExtractorConfiguration.InexactNumberUnitRegex => InexactNumberUnitRegex;
 
         Regex IDurationExtractorConfiguration.RelativeDurationUnitRegex => RelativeDurationUnitRegex;
 
         Regex IDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
 
         Regex IDurationExtractorConfiguration.DurationConnectorRegex => DurationConnectorRegex;
+
+        Regex IDurationExtractorConfiguration.MoreThanRegex => MoreThanRegex;
+
+        Regex IDurationExtractorConfiguration.LessThanRegex => LessThanRegex;
     }
 }

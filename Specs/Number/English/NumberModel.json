@@ -1606,4 +1606,263 @@
     }
   ]
 }
+,
+{
+  "Input": "one - fourth",
+  "Results": [
+    {
+      "Text": "one - fourth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one-eighth",
+  "Results": [
+    {
+      "Text": "one-eighth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "five - eighths",
+  "Results": [
+    {
+      "Text": "five - eighths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.625"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ninety - five hundred-fifths",
+  "Results": [
+    {
+      "Text": "ninety - five hundred-fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1900"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one out of three",
+  "Results": [
+    {
+      "Text": "one out of three",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 in twenty-one",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "1 in twenty-one",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "five eighths of",
+  "Results": [
+    {
+      "Text": "five eighths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.625"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 234 567",
+  "Results": [
+    {
+      "Text": "1 234 567",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1234567"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "40 000 is the same as 40 000",
+  "Results": [
+    {
+      "Text": "40 000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000"
+      }
+    },
+    {
+      "Text": "40 000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "For now, China's population is 1 414 021 100.",
+  "Results": [
+    {
+      "Text": "1 414 021 100",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1414021100"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "423 0000 will be recognized as two numbers.",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "423",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "423"
+      }
+    },
+    {
+      "Text": "0000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    },
+    {
+      "Text": "two",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 234 567.89 is a valid number format.",
+  "Results": [
+    {
+      "Text": "1 234 567.89",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1234567.89"
+      }
+    }
+  ]
+},
+{
+  "Input": "zero is 0",
+  "Results": [
+    {
+      "Text": "zero",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    },
+    {
+      "Text": "0",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    }
+  ]
+},
+{
+  "Input": "Any time to meet on 5/17/2018?",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5"
+      }
+    },
+    {
+      "Text": "17",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "17"
+      }
+    },
+    {
+      "Text": "2018",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2018"
+      }
+    }
+  ]
+},
+{
+  "Input": "My phone number is +1-222-2222/2222",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "222"
+      }
+    },
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    }
+  ]
+}
 ]

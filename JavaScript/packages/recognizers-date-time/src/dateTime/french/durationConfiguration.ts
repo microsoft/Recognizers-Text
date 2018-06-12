@@ -10,9 +10,11 @@ export class FrenchDurationExtractorConfiguration implements IDurationExtractorC
     readonly followedUnit: RegExp;
     readonly numberCombinedWithUnit: RegExp;
     readonly anUnitRegex: RegExp;
-    readonly inExactNumberUnitRegex: RegExp;
+    readonly inexactNumberUnitRegex: RegExp;
     readonly suffixAndRegex: RegExp;
     readonly relativeDurationUnitRegex: RegExp;
+    readonly moreThanRegex: RegExp;
+    readonly lessThanRegex: RegExp;
     readonly cardinalExtractor: BaseNumberExtractor;
 
     constructor() {
@@ -21,9 +23,11 @@ export class FrenchDurationExtractorConfiguration implements IDurationExtractorC
         this.followedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.DurationFollowedUnit, "gis");
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberCombinedWithDurationUnit, "gis");
         this.anUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AnUnitRegex, "gis");
-        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InExactNumberUnitRegex, "gis");
+        this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InexactNumberUnitRegex, "gis");
         this.suffixAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SuffixAndRegex, "gis");
         this.relativeDurationUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeDurationUnitRegex, "gis");
+        this.moreThanRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MoreThanRegex, "gis");
+        this.lessThanRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.LessThanOneHour, "gis");
         this.cardinalExtractor = new FrenchCardinalExtractor();
     }
 }
@@ -37,7 +41,7 @@ export class FrenchDurationParserConfiguration implements IDurationParserConfigu
     readonly anUnitRegex: RegExp;
     readonly allDateUnitRegex: RegExp;
     readonly halfDateUnitRegex: RegExp;
-    readonly inExactNumberUnitRegex: RegExp;
+    readonly inexactNumberUnitRegex: RegExp;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly unitValueMap: ReadonlyMap<string, number>;
     readonly doubleNumbers: ReadonlyMap<string, number>;
@@ -51,7 +55,7 @@ export class FrenchDurationParserConfiguration implements IDurationParserConfigu
         this.anUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AnUnitRegex);
         this.allDateUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AllRegex);
         this.halfDateUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.HalfRegex);
-        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InExactNumberUnitRegex);
+        this.inexactNumberUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InexactNumberUnitRegex);
         this.unitMap = config.unitMap;
         this.unitValueMap = config.unitValueMap;
         this.doubleNumbers = config.doubleNumbers;

@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
 const chai = require('chai');
-const { Timex } = require('../index.js');
+const { TimexProperty } = require('../index.js');
 const resolver = require('../src/timexResolver.js');
 
 const assert = chai.assert;
@@ -190,6 +190,14 @@ describe('No Network', () => {
                     resolution.values[0].should.have.property('type', 'datetimerange');
                     resolution.values[0].should.have.property('start', '2017-10-07 08:00:00');
                     resolution.values[0].should.have.property('end', '2017-10-07 12:00:00');
+                });
+                it('tonight', () => {
+                    const resolution = resolver.resolve(['2018-03-18TNI']);
+                    resolution.should.have.property('values').that.is.an('array').of.length(1);
+                    resolution.values[0].should.have.property('timex', '2018-03-18TNI');
+                    resolution.values[0].should.have.property('type', 'datetimerange');
+                    resolution.values[0].should.have.property('start', '2018-03-18 20:00:00');
+                    resolution.values[0].should.have.property('end', '2018-03-18 24:00:00');
                 });
                 it('next monday 4am to next thursday 3pm', () => {
                     const resolution = resolver.resolve(['(2017-10-09T04,2017-10-12T15,PT83H)']);

@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser HolidayParser { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public FrenchMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = FrenchMergedExtractorConfiguration.BeforeRegex;
@@ -31,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateTimePeriodParser = new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(this));
             GetParser = new BaseSetParser(new FrenchSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration());
+            TimeZoneParser = new BaseTimeZoneParser();
         }
     }
 }

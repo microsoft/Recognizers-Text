@@ -1768,4 +1768,79 @@
     }
   ]
 }
+,
+{
+  "Input": "你可以访问一下 http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859",
+  "NotSupported": "javascript",
+  "Results": []
+}
+,
+{
+  "NotSupported": "javascript",
+  "Input": "你可以访问一下 https://www.test.com/search?q=30%25%2020%",
+  "Results": []
+}
+,
+{
+  "Input": "百分之6酒精含量的啤酒和32.5%的白酒",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "百分之6",  
+      "TypeName": "percentage",
+        "Resolution": {
+        "value": "6%"
+      }
+    },
+    {
+      "Text": "32.5%",  
+      "TypeName": "percentage",
+        "Resolution": {
+        "value": "32.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之2等于百分之二，和2%是一样的。",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "百分之2",  
+      "TypeName": "percentage",
+        "Resolution": {
+        "value": "2%"
+      }
+    },
+    {
+      "Text": "百分之二",  
+      "TypeName": "percentage",
+        "Resolution": {
+        "value": "2%"
+      }
+    },
+    {
+      "Text": "2%",  
+      "TypeName": "percentage",
+        "Resolution": {
+        "value": "2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "找出酒精量在5-20%之间的产品",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "20%",  
+      "TypeName": "percentage",
+        "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
 ]

@@ -95,4 +95,19 @@
     }
   ]
 }
+,
+{
+  "Input": "70 - 90天大的小孩应该去医院做检查",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "90天大",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "90",
+        "unit": "Day"
+      }
+    }
+  ]
+}
 ]

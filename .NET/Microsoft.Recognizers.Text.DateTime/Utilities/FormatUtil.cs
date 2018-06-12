@@ -7,7 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class FormatUtil
     {
-        public static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T\d{2}");
+        public static readonly Regex HourTimexRegex = new Regex(@"(?<!P)T(\d{2})");
+        public static readonly Regex WeekDayTimexRegex = new Regex(@"XXXX-WXX-(\d)");
 
         public static string LuisDate(int year, int month, int day)
         {
@@ -15,6 +16,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (month == -1)
                 {
+                    if (day == -1)
+                    {
+                        return string.Join("-", "XXXX", "XX", "XX");
+                    }
+                    
                     return string.Join("-", "XXXX", "XX", day.ToString("D2"));
                 }
 
@@ -68,7 +74,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (Match match in matches)
             {
                 if (lastPos != match.Index)
+                {
                     splited.Add(timeStr.Substring(lastPos, match.Index - lastPos));
+                }
                 splited.Add(timeStr.Substring(match.Index, match.Length));
                 lastPos = match.Index + match.Length;
             }
@@ -86,6 +94,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // Modify weekDay timex for the cases which cross day boundary
+            if (splited.Count >= 4)
+            {
+                var weekDayStartMatch = WeekDayTimexRegex.Match(splited[0]).Groups[1];
+                var weekDayEndMatch = WeekDayTimexRegex.Match(splited[2]).Groups[1];
+                var hourStartMatch = HourTimexRegex.Match(splited[1]).Groups[1];
+                var hourEndMatch = HourTimexRegex.Match(splited[3]).Groups[1];
+
+                if (int.TryParse(weekDayStartMatch.Value, out var weekDayStart) &&
+                    int.TryParse(weekDayEndMatch.Value, out var weekDayEnd) &&
+                    int.TryParse(hourStartMatch.Value, out var hourStart) &&
+                    int.TryParse(hourEndMatch.Value, out var hourEnd))
+                {
+                    if (hourEnd < hourStart && weekDayStart == weekDayEnd)
+                    {
+                        weekDayEnd = weekDayEnd == Constants.WeekDayCount ? 1 : weekDayEnd + 1;
+                        splited[2] = splited[2].Substring(0, weekDayEndMatch.Index) + weekDayEnd;
+                    }
+                }
+            }
+
             return string.Concat(splited);
         }
 
@@ -100,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var splited = timeStr.Split(':');
             var hour = int.Parse(splited[0]);
-            hour = (hour == 12 ? 0 : hour + 12);
+            hour = hour >= 12 ? hour - 12: hour + 12;
             splited[0] = hour.ToString("D2");
 
             return hasT ? "T" + string.Join(":", splited) : string.Join(":", splited);
@@ -108,9 +137,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string ToIsoWeekTimex(System.DateTime monday)
         {
-            Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+            var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
             return monday.Year.ToString("D4") + "-W" + 
-                Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+                cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
                 .ToString("D2");
         }
     }

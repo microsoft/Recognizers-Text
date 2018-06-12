@@ -36,12 +36,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
+            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
             DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
             DurationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
             TimeParser = new TimeParser(new EnglishTimeParserConfiguration(this));

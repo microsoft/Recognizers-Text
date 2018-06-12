@@ -82,6 +82,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeZoneExtractor-English.csv", "TimeZoneExtractor-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void TimeZoneExtractor()
+        {
+            base.ExtractorInitialize(Extractors);
+            base.TestDateTimeExtractor();
+        }
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationExtractor-English.csv", "DurationExtractor-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DurationExtractor()
@@ -177,6 +185,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeZoneParser-English.csv", "TimeZoneParser-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void TimeZoneParser()
+        {
+            base.ExtractorInitialize(Extractors);
+            base.ParserInitialize(Parsers);
+            base.TestDateTimeParser();
+        }
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationParser-English.csv", "DurationParser-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DurationParser()
@@ -222,12 +239,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void DateTimeModelCalendarMode()
         {
-            base.TestDateTime();
+            base.TestDateTimeAlt();
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelExtendedTypes-English.csv", "DateTimeModelExtendedTypes-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateTimeModelExtendedTypes()
+        {
+            base.TestDateTimeAlt();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelComplexCalendar-English.csv", "DateTimeModelComplexCalendar-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimeModelComplexCalendar()
         {
             base.TestDateTimeAlt();
         }

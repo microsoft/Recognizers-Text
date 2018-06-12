@@ -2,8 +2,6 @@
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimePeriodExtractor : IDateTimeExtractor
@@ -44,6 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var pmStr = match.Groups["pm"].Value;
                     var amStr = match.Groups["am"].Value;
                     var descStr = match.Groups["desc"].Value;
+
                     // Check "pm", "am"
                     if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
                     {
@@ -115,6 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         timeNumbers.Add(numErs[i]);
                     }
+
                     i++;
                 }
 

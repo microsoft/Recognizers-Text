@@ -495,6 +495,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     res.Add(DateTimeResolutionKey.START, start);
                     return;
                 }
+
+                //For until mode, the end of the period should be the end the new period, no start 
+                if (mod.Equals(Constants.UNTIL_MOD))
+                {
+                    res.Add(DateTimeResolutionKey.END, start);
+                    return;
+                }
             }
 
             if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))

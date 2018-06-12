@@ -297,12 +297,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                         $"PT{(hours > 0 ? hours + "H" : "")}{(minutes > 0 ? minutes + "M" : "")})";
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
             ret.Success = true;
-
             
             if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm)  && 
                 !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm))
             {
                 ret.Comment = Constants.Comment_AmPm;
+            }
+
+            if (((DateTimeResolutionResult)pr1.Value).TimeZoneResolution != null)
+            {
+                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr1.Value).TimeZoneResolution;
+            }
+            else if (((DateTimeResolutionResult)pr2.Value).TimeZoneResolution != null)
+            {
+                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
             }
 
             ret.SubDateTimeEntities = new List<object> {pr1, pr2};

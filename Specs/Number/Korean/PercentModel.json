@@ -1,0 +1,221 @@
+[{
+  "Input": "100%",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100% ",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100 퍼센트",
+  "Results": [
+    {
+      "Text": "100 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100 퍼센트",
+  "Results": [
+    {
+      "Text": "100 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100 프로",
+  "Results": [
+    {
+      "Text": "100 프로",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "240 퍼센트",
+  "Results": [
+    {
+      "Text": "240 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "240%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20프로",
+  "Results": [
+    {
+      "Text": "20프로",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십 퍼센트",
+  "Results": [
+    {
+      "Text": "이십 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼십 퍼센트",
+  "Results": [
+    {
+      "Text": "삼십 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "30%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "백퍼센트",
+  "Results": [
+    {
+      "Text": "백퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "백 퍼센트",
+  "Results": [
+    {
+      "Text": "백 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십 퍼센트",
+  "Results": [
+    {
+      "Text": "이십 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "십퍼센트",
+  "Results": [
+    {
+      "Text": "십퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "10%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십이 퍼센트",
+  "Results": [
+    {
+      "Text": "이십이 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이백십 퍼센트",
+  "Results": [
+    {
+      "Text": "이백십 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "210%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "십 퍼센트",
+  "Results": [
+    {
+      "Text": "십 퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "10%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-5퍼센트가 필요합니다.",
+  "Results": [
+    {
+      "Text": "-5퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "-5%"
+      }
+    }
+  ]
+}
+]

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
 using DateObject = System.DateTime;
@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             integerExtractor = new IntegerExtractor();
             ordinalExtractor = new OrdinalExtractor();
             durationExtractor = new DurationExtractorChs();
-            numberParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
+            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
         }
         
         public ParseResult Parse(ExtractResult extResult)
@@ -598,11 +598,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
-                    if (year < 100 && year >= 30)
+                    if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 30)
+                    else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
                         year += 2000;
                     }

@@ -10,6 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class AgoLaterUtil
     {
+        public delegate int SwiftDayDelegate(string text);
+
         public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret,
             IDateTimeUtilityConfiguration utilityConfiguration)
         {
@@ -57,12 +59,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public static DateTimeResolutionResult ParseDurationWithAgoAndLater(string text, 
-            DateObject referenceTime, 
+            DateObject referenceTime,
             IDateTimeExtractor durationExtractor,
             IDateTimeParser durationParser, 
             IImmutableDictionary<string, string> unitMap,
             Regex unitRegex,
-            IDateTimeUtilityConfiguration utilityConfiguration)
+            IDateTimeUtilityConfiguration utilityConfiguration,
+            SwiftDayDelegate SwiftDay)
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text, referenceTime);
@@ -90,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (pr.Value != null)
                     {
                         return GetAgoLaterResult(pr, afterStr, beforeStr, referenceTime,
-                                                 utilityConfiguration, mode);
+                                                 utilityConfiguration, mode, SwiftDay);
                     }
                 }
             }
@@ -103,22 +106,50 @@ namespace Microsoft.Recognizers.Text.DateTime
             string beforeStr,
             System.DateTime referenceTime,
             IDateTimeUtilityConfiguration utilityConfiguration,
-            AgoLaterMode mode)
+            AgoLaterMode mode,
+            SwiftDayDelegate SwiftDay)
         {
             var ret = new DateTimeResolutionResult();
             var resultDateTime = referenceTime;
             var timex = durationParseResult.TimexStr;
 
+            if (((DateTimeResolutionResult)durationParseResult.Value).Mod == Constants.MORE_THAN_MOD)
+            {
+                ret.Mod = Constants.MORE_THAN_MOD;
+            }
+            else if (((DateTimeResolutionResult)durationParseResult.Value).Mod == Constants.LESS_THAN_MOD)
+            {
+                ret.Mod = Constants.LESS_THAN_MOD;
+            }
+
             if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoRegex))
             {
-                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, false);
+                var match = utilityConfiguration.AgoRegex.Match(afterStr);
+                var swift = 0;
+
+                // Handle cases like "3 days before yesterday"
+                if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
+                {
+                    swift = SwiftDay(match.Groups["day"].Value);
+                }
+                
+                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), false);
                 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.BEFORE_MOD;
             }
             else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
                      MatchingUtil.ContainsTermIndex(beforeStr, utilityConfiguration.InConnectorRegex))
             {
-                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, true);
+                var match = utilityConfiguration.LaterRegex.Match(afterStr);
+                var swift = 0;
+
+                // Handle cases like "3 days after tomorrow"
+                if (match.Success && !string.IsNullOrEmpty(match.Groups["day"].Value))
+                {
+                    swift = SwiftDay(match.Groups["day"].Value);
+                }
+
+                resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime.AddDays(swift), true);
 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = Constants.AFTER_MOD;
             }

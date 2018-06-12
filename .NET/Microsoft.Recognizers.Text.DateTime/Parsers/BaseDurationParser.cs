@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 innerResult = ParseMergedDuration(er.Text, referenceTime);
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseNumerWithUnit(er.Text, referenceTime);
+                    innerResult = ParseNumberWithUnit(er.Text, referenceTime);
                 }
 
                 if (!innerResult.Success)
@@ -53,6 +53,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {TimeTypeConstants.DURATION, innerResult.PastValue.ToString()}
                     };
                     value = innerResult;
+                }
+            }
+
+            var res = (DateTimeResolutionResult)value;
+            if (res != null && er.Data != null)
+            {
+                if (er.Data.Equals(Constants.MORE_THAN_MOD))
+                {
+                    res.Mod = Constants.MORE_THAN_MOD;
+                }
+                else if (er.Data.Equals(Constants.LESS_THAN_MOD))
+                {
+                    res.Mod = Constants.LESS_THAN_MOD;
                 }
             }
 
@@ -88,17 +101,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // simple cases made by a number followed an unit
-        private DateTimeResolutionResult ParseNumerWithUnit(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceTime)
         {
 
             DateTimeResolutionResult ret;
 
-            if ((ret = ParseNumeberSpaceUnit(text)).Success)
+            if ((ret = ParseNumberSpaceUnit(text)).Success)
             {
                 return ret;
             }
 
-            if ((ret = ParseNumeberCombinedUnit(text)).Success)
+            if ((ret = ParseNumberCombinedUnit(text)).Success)
             {
                 return ret;
             }
@@ -108,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            if ((ret = ParseInExactNumberUnit(text)).Success)
+            if ((ret = ParseInexactNumberUnit(text)).Success)
             {
                 return ret;
             }
@@ -116,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseNumeberSpaceUnit(string text)
+        private DateTimeResolutionResult ParseNumberSpaceUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
             double numVal;
@@ -157,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseNumeberCombinedUnit(string text)
+        private DateTimeResolutionResult ParseNumberCombinedUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
             double numVal = 0;
@@ -228,19 +241,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseInExactNumberUnit(string text)
+        private DateTimeResolutionResult ParseInexactNumberUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
             double numVal = 0;
             string numStr, unitStr;
-            var suffixStr = text;
             Match match;
 
-            match = config.InExactNumberUnitRegex.Match(text);
+            match = config.InexactNumberUnitRegex.Match(text);
             if (match.Success)
             {
-                // set the inexact number "few", "some" to 3 for now
-                numVal = 3;
+                if (match.Groups["NumTwoTerm"].Success)
+                {
+                    numVal = 2;
+                }
+                else
+                {
+                    // set the inexact number "few", "some" to 3 for now
+                    numVal = 3;
+                }
+
                 numStr = numVal.ToString(CultureInfo.InvariantCulture);
 
                 var srcUnit = match.Groups["unit"].Value.ToLower();
@@ -271,6 +291,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // handle "all day" "all year"
             if (TryGetResultFromRegex(config.AllDateUnitRegex, text, "1", out result))
+            {
+                ret = result;
+            }
+
+            // handle "during/for the day/week/month/year"
+            if ((config.Options & DateTimeOptions.CalendarMode) != 0 &&
+                TryGetResultFromRegex(config.DuringRegex, text, "1", out result))
             {
                 ret = result;
             }

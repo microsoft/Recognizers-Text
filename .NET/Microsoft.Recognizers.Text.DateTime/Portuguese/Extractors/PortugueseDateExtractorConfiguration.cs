@@ -54,6 +54,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex SpecialDateRegex = 
             new Regex(DateTimeDefinitions.SpecialDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecialDayWithNumRegex = 
+            new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex RelativeWeekDayRegex =
+            new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         //TODO: modify below regex according to the counterpart in English
         public static readonly Regex ForTheRegex = new Regex($@"^[.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -82,11 +88,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             // (domingo,)? 6 de Abril
             new Regex(DateTimeDefinitions.DateExtractor3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 3-23-2017
-            new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
+                ?
+                // 23-3-2015
+                new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                :
+                // 3-23-2017
+                new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 23-3-2015
-            new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
+                ?
+                // 3-23-2017
+                new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                :
+                // 23-3-2015
+                new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // no|em 1/3
             new Regex(DateTimeDefinitions.DateExtractor6, RegexOptions.IgnoreCase | RegexOptions.Singleline),

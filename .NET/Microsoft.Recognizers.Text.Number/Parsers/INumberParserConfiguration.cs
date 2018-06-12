@@ -19,9 +19,13 @@ namespace Microsoft.Recognizers.Text.Number
 
         #region language settings
 
+        NumberOptions Options { get; }
+
         CultureInfo CultureInfo { get; }
 
         Regex DigitalNumberRegex { get; }
+
+        Regex FractionPrepositionRegex { get; }
 
         string FractionMarkerToken { get; }
 

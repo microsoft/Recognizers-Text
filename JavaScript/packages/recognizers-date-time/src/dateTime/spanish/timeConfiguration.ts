@@ -36,6 +36,7 @@ export class SpanishTimeExtractorConfiguration implements ITimeExtractorConfigur
             RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex9, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex10, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex11, "gis"),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex12, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectNumRegex, "gis")
         ]
     }

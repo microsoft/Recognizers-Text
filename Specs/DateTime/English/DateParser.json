@@ -1187,7 +1187,7 @@
 }
 ,
 {
-  "Input": "I'll go back my day",
+  "Input": "What does my day look like?",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -2248,6 +2248,446 @@
         },
         "PastResolution": {
           "date": "2000-09-10"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll see you the first Friday of next month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-20T09:58:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the first Friday of next month",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-04-WXX-5-#1",
+        "FutureResolution": {
+          "date": "2018-04-06"
+        },
+        "PastResolution": {
+          "date": "2018-04-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "So, make it the second Monday of next month?",
+  "Context": {
+    "ReferenceDateTime": "2018-03-20T10:45:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the second Monday of next month",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-04-WXX-1-#2",
+        "FutureResolution": {
+          "date": "2018-04-09"
+        },
+        "PastResolution": {
+          "date": "2018-04-09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I came back the third Wednesday of previous month",
+  "Context": {
+    "ReferenceDateTime": "2018-03-20T10:45:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third Wednesday of previous month",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-02-WXX-3-#3",
+        "FutureResolution": {
+          "date": "2018-02-21"
+        },
+        "PastResolution": {
+          "date": "2018-02-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go travelling Tuesday next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-20T22:16:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday next week",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-03-27",
+        "FutureResolution": {
+          "date": "2018-03-27"
+        },
+        "PastResolution": {
+          "date": "2018-03-27"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Handle homework on Sunday of next week",
+  "Context": {
+    "ReferenceDateTime": "2018-03-20T22:16:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on Sunday of next week",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-04-01",
+        "FutureResolution": {
+          "date": "2018-04-01"
+        },
+        "PastResolution": {
+          "date": "2018-04-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back two days from tomorrow.",
+  "Context": {
+    "ReferenceDateTime": "2018-04-20T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days from tomorrow",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-04-23",
+        "FutureResolution": {
+          "date": "2018-04-23"
+        },
+        "PastResolution": {
+          "date": "2018-04-23"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back four days from yesterday.",
+  "Context": {
+    "ReferenceDateTime": "2018-04-20T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "four days from yesterday",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-04-23",
+        "FutureResolution": {
+          "date": "2018-04-23"
+        },
+        "PastResolution": {
+          "date": "2018-04-23"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Are you free on 13.5.2015?",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "13.5.2015",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-05-13",
+        "FutureResolution": {
+          "date": "2015-05-13"
+        },
+        "PastResolution": {
+          "date": "2015-05-13"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available on 2015.5.13?",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015.5.13",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-05-13",
+        "FutureResolution": {
+          "date": "2015-05-13"
+        },
+        "PastResolution": {
+          "date": "2015-05-13"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 3-7-2017",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-7-2017",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-03-07",
+        "FutureResolution": {
+          "date": "2017-03-07"
+        },
+        "PastResolution": {
+          "date": "2017-03-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 3-7-07",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-7-07",
+      "Type": "date",
+      "Value": {
+        "Timex": "2007-03-07",
+        "FutureResolution": {
+          "date": "2007-03-07"
+        },
+        "PastResolution": {
+          "date": "2007-03-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 3-7-27",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-7-27",
+      "Type": "date",
+      "Value": {
+        "Timex": "2027-03-07",
+        "FutureResolution": {
+          "date": "2027-03-07"
+        },
+        "PastResolution": {
+          "date": "2027-03-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 05/05/89",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "05/05/89",
+      "Type": "date",
+      "Value": {
+        "Timex": "1989-05-05",
+        "FutureResolution": {
+          "date": "1989-05-05"
+        },
+        "PastResolution": {
+          "date": "1989-05-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 05/05/71",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "05/05/71",
+      "Type": "date",
+      "Value": {
+        "Timex": "1971-05-05",
+        "FutureResolution": {
+          "date": "1971-05-05"
+        },
+        "PastResolution": {
+          "date": "1971-05-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two sundays from now?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two sundays from now",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-05-20",
+        "FutureResolution": {
+          "date": "2018-05-20"
+        },
+        "PastResolution": {
+          "date": "2018-05-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two monday later?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two monday later",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-05-21",
+        "FutureResolution": {
+          "date": "2018-05-21"
+        },
+        "PastResolution": {
+          "date": "2018-05-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two days after today?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days after today",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-06-02",
+        "FutureResolution": {
+          "date": "2018-06-02"
+        },
+        "PastResolution": {
+          "date": "2018-06-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available three weeks from tomorrow?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three weeks from tomorrow",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-06-22",
+        "FutureResolution": {
+          "date": "2018-06-22"
+        },
+        "PastResolution": {
+          "date": "2018-06-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Where were you two days before yesterday?",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days before yesterday",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-05-28",
+        "FutureResolution": {
+          "date": "2018-05-28"
+        },
+        "PastResolution": {
+          "date": "2018-05-28"
         }
       }
     }

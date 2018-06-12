@@ -18,9 +18,14 @@ Open a terminal and run the following commands:
     python index.py ..\recognizers-number\resource-definitions.json
     python index.py ..\recognizers-number-with-unit\resource-definitions.json
 
+You can then install each of the local packages:
+
+    pip install -e .\libraries\recognizers-text\
+    pip install -e .\libraries\recognizers-number\
+
 ### Automatized Build
 
-Launch `Build.cmd` file.
+Launch `Build.cmd` file to install requirements, generate resources, install local packages and run all tests.
 
 ## Installation
 
@@ -31,62 +36,10 @@ Install Recognizer's by launching the following commands:
 
 ## API Documentation
 
-Once the proper package is installed, you'll need to reference the package:
+### [Microsoft.Recognizers.Text.Number](https://github.com/Microsoft/Recognizers-Text/tree/master/Python/libraries/recognizers-number)
 
-````Python
 from recognizers_text import Culture, ModelResult
 from recognizers_number import NumberRecognizer
-````
-
-### Recognizer's Models
-
-This is the preferred way if you need to parse multiple inputs based on the same context (e.g.: language and options):
-
-```Python
-recognizer = NumberRecognizer(Culture.English)
-model = recognizer.get_number_model()
-result = model.parse('Twelve')
-```
-
-Or, for less verbosity, you use the helper methods:
-
-`result = NumberRecognizer.recognize_number("Twelve", Culture.English);`
-
-Internally, both methods will cache the instance models to avoid extra costs.
-
-### Microsoft.Recognizers.Text.Number
-
-* **Numbers**
-
-    This recognizer will find any number from the input. E.g. _"I have two apples"_ will return _"2"_.
-
-    `NumberRecognizer.recognize_number('I have two apples', Culture.English)`
-
-    Or you can obtain a model instance using:
-
-    `NumberRecognizer(Culture.English).get_number_model()`
-
-
-* **Ordinal Numbers**
-
-    This recognizer will find any ordinal number. E.g. _"eleventh"_ will return _"11"_.
-
-    `NumberRecognizer.recognize_ordinal('eleventh', Culture.English)`
-
-    Or you can obtain a model instance using:
-
-    `NumberRecognizer(Culture.English).get_ordinal_model()`
-
-
-* **Percentages**
-
-    This recognizer will find any number presented as percentage. E.g. _"one hundred percents"_ will return _"100%"_.
-
-    `NumberRecognizer.recognize_percentage('one hundred percents', Culture.English)`
-
-    Or you can obtain a model instance using:
-
-    `NumberRecognizer(Culture.English).get_percentage_model()`
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
@@ -133,14 +86,17 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     `NumberWithUnitRecognizer(Culture.English).get_temperature_model()`
 
-
 ## Samples
 
 [Start using recognizers!](https://github.com/Microsoft/Recognizers-Text/tree/master/Python/samples)
 
 ## Integration tips
 
-The recognizers were designed to disjoint language's logic from the recognizer's core in order to grow without the obligation of change the supported platforms.
+The Recognizers aim to bridge people's spoken language and machine's programming languages.
+As such, Recognizers were designed to facilitate growing the number of supported _cultures_ (i.e. spoken languages) and _platforms_ (i.e. programming languages.)
+ 
+With this goal in mind, they are designed to disjoint the specific culture's logic from the recognizer's core implementation. A shared set of tools are available at the heart of a *cross-culture & cross-platform* approach that will help with extending the number and range of the recognizers.
+
 
 To achieve this, the recognizers contains the following folders:
 

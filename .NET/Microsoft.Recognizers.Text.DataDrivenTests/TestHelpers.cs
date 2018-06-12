@@ -55,8 +55,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     public enum Models
     {
         Number,
+        NumberPercentMode,
         Ordinal,
         Percent,
+        PercentPercentMode,
         NumberRange,
         CustomNumber,
         Age,
@@ -67,8 +69,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimeSplitDateAndTime,
         DateTimeCalendarMode,
         DateTimeExtendedTypes,
+        DateTimeComplexCalendar,
         PhoneNumber,
         IpAddress,
+        Mention,
+        Hashtag,
+        Email,
+        URL,
         Boolean,
     }
 
@@ -82,6 +89,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimePeriod,
         Duration,
         Holiday,
+        TimeZone,
         Set,
         Merged,
         MergedSkipFromTo
@@ -97,6 +105,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimePeriod,
         Duration,
         Holiday,
+        TimeZone,
         Set,
         Merged
     }
@@ -105,8 +114,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     {
         private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>() {
             { Models.Number, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.NumberPercentMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
+            { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false)},
             { Models.NumberRange, (test, culture) => NumberRecognizer.RecognizeNumberRange(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Age, (test, culture) => NumberWithUnitRecognizer.RecognizeAge(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Currency, (test, culture) => NumberWithUnitRecognizer.RecognizeCurrency(test.Input, culture, fallbackToDefaultCulture: false) },
@@ -116,8 +127,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.DateTimeSplitDateAndTime, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.SplitDateAndTime, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
             { Models.DateTimeCalendarMode, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.CalendarMode, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
             { Models.DateTimeExtendedTypes, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.ExtendedTypes, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
+            { Models.DateTimeComplexCalendar, (test, culture) => DateTimeRecognizer.RecognizeDateTime(test.Input, culture, DateTimeOptions.ExtendedTypes | DateTimeOptions.CalendarMode | DateTimeOptions.EnablePreview, refTime: test.GetReferenceDateTime(), fallbackToDefaultCulture: false) },
             { Models.PhoneNumber, (test, culture) => SequenceRecognizer.RecognizePhoneNumber(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.IpAddress, (test, culture) => SequenceRecognizer.RecognizeIpAddress(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Mention, (test, culture) => SequenceRecognizer.RecognizeMention(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Hashtag, (test, culture) => SequenceRecognizer.RecognizeHashtag(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.Email, (test, culture) => SequenceRecognizer.RecognizeEmail(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.URL, (test, culture) => SequenceRecognizer.RecognizeURL(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Boolean, (test, culture) => ChoiceRecognizer.RecognizeBoolean(test.Input, culture, fallbackToDefaultCulture: false) }
         };
 
@@ -197,12 +213,14 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
                 case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             }
 
             throw new Exception($"Extractor '{extractorName}' for English not supported");
@@ -229,10 +247,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseDurationParser(new EnglishDurationParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
@@ -322,7 +342,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new SpanishSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Spanish not supported");
@@ -353,7 +373,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new SpanishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedParser(new SpanishMergedParserConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeParser(new SpanishMergedParserConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Parser '{parserName}' for Spanish not supported");
@@ -382,7 +402,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new PortugueseSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeExtractor(new PortugueseMergedExtractorConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Portuguese not supported");
@@ -413,7 +433,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new PortugueseSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedParser(new PortugueseMergedParserConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeParser(new PortugueseMergedParserConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Parser '{parserName}' for Portuguese not supported");
@@ -442,9 +462,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new FrenchSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.None));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new BaseMergedDateTimeExtractor(new FrenchMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             }
 
             throw new Exception($"Extractor '{extractorName}' for French not supported");
@@ -474,7 +494,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new FrenchSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedParser(new FrenchMergedParserConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeParser(new FrenchMergedParserConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Parser '{parserName}' for French not supported");
@@ -503,9 +523,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new GermanSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new GermanMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(DateTimeOptions.None));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedExtractor(new GermanMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             }
 
             throw new Exception($"Extractor '{extractorName}' for German not supported");
@@ -535,7 +555,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new GermanSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedParser(new GermanMergedParserConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeParser(new GermanMergedParserConfiguration(DateTimeOptions.None));
             }
 
             throw new Exception($"Parser '{parserName}' for German not supported");

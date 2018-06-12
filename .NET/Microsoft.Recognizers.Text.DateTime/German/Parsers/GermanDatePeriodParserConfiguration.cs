@@ -63,7 +63,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
+        public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
+        public Regex ReferenceDatePeriodRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -114,8 +116,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = GermanDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = GermanDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = GermanDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = GermanDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = GermanDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -143,9 +143,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             YearPlusNumberRegex = GermanDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = GermanDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             YearPeriodRegex = GermanDatePeriodExtractorConfiguration.YearPeriodRegex;
+            ComplexDatePeriodRegex = GermanDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
             RelativeDecadeRegex = GermanDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = GermanDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            ReferenceDatePeriodRegex = GermanDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

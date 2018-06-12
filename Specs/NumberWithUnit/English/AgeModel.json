@@ -207,4 +207,21 @@
     }
   ]
 }
+,
+{
+  "Input": "He is about 40 - 50 years old.",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "50 years old",
+      "Start": 17,
+      "End": 28,
+      "TypeName": "age",
+      "Resolution": {
+        "unit": "Year",
+        "value": "50"
+      }
+    }
+  ]
+}
 ]

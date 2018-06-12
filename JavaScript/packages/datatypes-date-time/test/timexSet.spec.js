@@ -2,7 +2,7 @@
 
 const chai = require('chai');
 
-const { Timex, TimexSet } = require('../index.js');
+const { TimexProperty, TimexSet } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;

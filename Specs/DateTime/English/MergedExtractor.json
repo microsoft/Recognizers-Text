@@ -286,7 +286,7 @@
   "Input": "I born in the March",
   "Results": [
     {
-      "Text": "the March",
+      "Text": "March",
       "Type": "daterange"
     }
   ]
@@ -296,7 +296,7 @@
   "Input": "what happend at the May",
   "Results": [
     {
-      "Text": "the May",
+      "Text": "May",
       "Type": "daterange"
     }
   ]
@@ -688,6 +688,381 @@
     {
       "Text": "2012 or after",
       "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 -2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 -2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11- 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11- 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 / 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 / 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11/2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 -2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 -2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11- 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11- 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11 - 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11 - 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 11-2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11-2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 /11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 /11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016/ 11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/ 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 / 11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 / 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016/11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016/11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 -11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 -11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016- 11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016- 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 - 11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 - 11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016-11",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016-11",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 November",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 November",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out November , 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November , 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 , nov",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 , nov",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016, nov",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016, nov",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "He will arrive later than or at 1/1/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later than or at 1/1/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "He will leave before or on 1/1/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before or on 1/1/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "This task will complete on or earlier than 1/1/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or earlier than 1/1/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "This task will complete before or in Feb 2018",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before or in Feb 2018",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "You can't leave earlier than or in 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "earlier than or in 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "You can't leave earlier than or in 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "earlier than or in 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "You can leave office at or after 6:30PM today",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "at or after 6:30PM today",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "You need to leave on or before the day after tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or before the day after tomorrow",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "You need to leave on or earlier than 3pm 5/15/2018",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on or earlier than 3pm 5/15/2018",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two days after today?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days after today",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available three weeks from tomorrow?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three weeks from tomorrow",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Where were you two days before yesterday?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days before yesterday",
+      "Type": "date"
     }
   ]
 }

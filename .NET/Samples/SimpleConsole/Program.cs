@@ -100,6 +100,22 @@ namespace SimpleConsole
                 // E.g "My Ip is 8.8.8.8"
                 SequenceRecognizer.RecognizeIpAddress(query, culture),
 
+                // Mention recognizer will find all the mention usages
+                // E.g "@Cicero"
+                SequenceRecognizer.RecognizeMention(query, culture),
+
+                // Hashtag recognizer will find all the hash tag usages
+                // E.g "task #123"
+                SequenceRecognizer.RecognizeHashtag(query, culture),
+                
+                // Email recognizer will find all the emails
+                // E.g "a@b.com"
+                SequenceRecognizer.RecognizeEmail(query, culture),
+
+                // URL recognizer will find all the urls
+                // E.g "bing.com"
+                SequenceRecognizer.RecognizeURL(query, culture),
+
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"
                 ChoiceRecognizer.RecognizeBoolean(query, culture)

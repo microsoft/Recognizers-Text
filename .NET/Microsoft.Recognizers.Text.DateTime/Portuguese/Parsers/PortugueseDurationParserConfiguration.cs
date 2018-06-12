@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex AnUnitRegex { get; }
 
+        public Regex DuringRegex { get; }
+
         public Regex AllDateUnitRegex { get; }
 
         public Regex HalfDateUnitRegex { get; }
@@ -27,9 +29,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex ConjunctionRegex { get; }
 
-        public Regex InExactNumberRegex { get; }
+        public Regex InexactNumberRegex { get; }
 
-        public Regex InExactNumberUnitRegex { get; }
+        public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 
@@ -46,6 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(), false);
             NumberCombinedWithUnit = PortugueseDurationExtractorConfiguration.NumberCombinedWithUnit;
             AnUnitRegex = PortugueseDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = PortugueseDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = PortugueseDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = PortugueseDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = PortugueseDurationExtractorConfiguration.SuffixAndRegex;
@@ -54,8 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DoubleNumbers = config.DoubleNumbers;
             FollowedUnit = PortugueseDurationExtractorConfiguration.FollowedUnit;
             ConjunctionRegex = PortugueseDurationExtractorConfiguration.ConjunctionRegex;
-            InExactNumberRegex = PortugueseDurationExtractorConfiguration.InExactNumberRegex;
-            InExactNumberUnitRegex = PortugueseDurationExtractorConfiguration.InExactNumberUnitRegex;
+            InexactNumberRegex = PortugueseDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = PortugueseDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = PortugueseDurationExtractorConfiguration.DurationUnitRegex;
         }
     }

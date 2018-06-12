@@ -4,7 +4,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "NotSupported":"javascript",
     "Results": [
       {
         "Text": "heute von fünf bis sieben ",
@@ -29,7 +29,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "NotSupported":"javascript",
     "Results": [
       {
         "Text": "von 5 bis 6 am 22/4/2016",

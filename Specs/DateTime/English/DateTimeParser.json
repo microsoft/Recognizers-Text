@@ -1188,4 +1188,29 @@
     }
   ]
 }
+,
+{
+  "Input": "I will be free in less than an hour, so call me later",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in less than an hour",
+      "Type": "datetime",
+      "Value": {
+        "Mod": "less",
+        "Timex": "2017-11-23T01:00:00",
+        "FutureResolution": {
+          "dateTime": "2017-11-23 01:00:00"
+        },
+        "PastResolution": {
+          "dateTime": "2017-11-23 01:00:00"
+        }
+      }
+    }
+  ]
+}
 ]

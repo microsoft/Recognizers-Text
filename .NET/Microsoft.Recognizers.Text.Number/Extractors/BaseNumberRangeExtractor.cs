@@ -107,6 +107,12 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (type.Contains(NumberRangeConstants.TWONUMTILL))
                     {
+                        // num1 must have same type with num2
+                        if (extractNumList1[0].Type != extractNumList2[0].Type)
+                        {
+                            return;
+                        }
+
                         // num1 must less than num2
                         var num1 = (double)(numberParser.Parse(extractNumList1[0]).Value ?? 0);
                         var num2 = (double)(numberParser.Parse(extractNumList2[0]).Value ?? 0);
@@ -115,9 +121,12 @@ namespace Microsoft.Recognizers.Text.Number
                         {
                             return;
                         }
+
+                        extractNumList1.RemoveRange(1, extractNumList1.Count - 1);
+                        extractNumList2.RemoveRange(1, extractNumList2.Count - 1);
                     }
 
-                    bool validNum1 = false, validNum2 = false;
+                    bool validNum1, validNum2;
                     start = match.Index;
                     length = match.Length;
 
@@ -191,17 +200,15 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 return extractOrdinal.Count == 0 ? null : extractOrdinal;
             }
-            else
-            {
-                if (extractOrdinal.Count == 0)
-                {
-                    return extractNumber;
-                }
 
-                extractNumber.AddRange(extractOrdinal);
-                extractNumber = extractNumber.OrderBy(num => num.Start).ThenByDescending(num => num.Length).ToList();
+            if (extractOrdinal.Count == 0)
+            {
                 return extractNumber;
             }
+
+            extractNumber.AddRange(extractOrdinal);
+            extractNumber = extractNumber.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
+            return extractNumber;
         }
     }
 

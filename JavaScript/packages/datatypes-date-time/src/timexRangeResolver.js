@@ -4,7 +4,7 @@ const timexHelpers = require('./timexHelpers.js');
 const timexDateHelpers = require('./timexDateHelpers.js');
 const timexConstraintsHelper = require('./timexConstraintsHelper.js');
 const Time = require('./time.js').Time;
-const Timex = require('./timex.js').Timex;
+const TimexProperty = require('./timexProperty.js').TimexProperty;
 
 const resolveDefiniteAgainstConstraint = function (timex, constraint) {
     const timexDate = timexHelpers.dateFromTimex(timex);
@@ -26,7 +26,7 @@ const resolveDateAgainstConstraint = function (timex, constraint) {
     if ('month' in timex && 'dayOfMonth' in timex) {
         const result = [];
         for (let year = constraint.start.getFullYear(); year <= constraint.end.getFullYear(); year++) {
-            const r = resolveDefiniteAgainstConstraint(new Timex(Object.assign({}, timex, { year: year })), constraint);
+            const r = resolveDefiniteAgainstConstraint(new TimexProperty(Object.assign({}, timex, { year: year })), constraint);
             if (r.length > 0) {
                 result.push(r[0]);
             }
@@ -40,7 +40,7 @@ const resolveDateAgainstConstraint = function (timex, constraint) {
         for (const d of dates) {
             const t = Object.assign({}, timex);
             delete t.dayOfWeek;
-            const r = new Timex(Object.assign({}, t, { year: d.getFullYear(), month: d.getMonth() + 1, dayOfMonth: d.getDate() }));
+            const r = new TimexProperty(Object.assign({}, t, { year: d.getFullYear(), month: d.getMonth() + 1, dayOfMonth: d.getDate() }));
             result.push(r.timex);
         }
         return result;
@@ -93,7 +93,7 @@ const resolveByDateRangeConstraints = function (candidates, timexConstraints) {
 
     const resolution = [];
     for (const timex of candidates) {
-        const r = resolveDate(new Timex(timex), collapsedDateRanges);
+        const r = resolveDate(new TimexProperty(timex), collapsedDateRanges);
         Array.prototype.push.apply(resolution, r);        
     }
 
@@ -114,7 +114,7 @@ const resolveByTimeConstraints = function (candidates, timexConstraints) {
     }
 
     const resolution = [];
-    for (const timex of candidates.map(t => new Timex(t))) {
+    for (const timex of candidates.map(t => new TimexProperty(t))) {
         if (timex.types.has('date') && !timex.types.has('time')) {
             for (const time of times) {
                 timex.hour = time.hour;
@@ -146,7 +146,7 @@ const resolveByTimeRangeConstraints = function (candidates, timexConstraints) {
 
     const resolution = [];
     for (const timex of candidates) {
-        const r = resolveTime(new Timex(timex), collapsedTimeRanges);
+        const r = resolveTime(new TimexProperty(timex), collapsedTimeRanges);
         Array.prototype.push.apply(resolution, r);
     }
 
@@ -157,10 +157,10 @@ const resolveDuration = function (candidate, constraints) {
     const results = [];
     for (const constraint of constraints) {
         if (constraint.types.has('datetime')) {
-            results.push(new Timex(timexHelpers.timexDateTimeAdd(constraint, candidate)));
+            results.push(new TimexProperty(timexHelpers.timexDateTimeAdd(constraint, candidate)));
         }
         else if (constraint.types.has('time')) {
-            results.push(new Timex(timexHelpers.timexTimeAdd(constraint, candidate)));
+            results.push(new TimexProperty(timexHelpers.timexTimeAdd(constraint, candidate)));
         }
     }
     return results;
@@ -169,7 +169,7 @@ const resolveDuration = function (candidate, constraints) {
 const resolveDurations = function (candidates, constraints) {
     const results = [];
     for (const candidate of candidates) {
-        const timex = new Timex(candidate);
+        const timex = new TimexProperty(candidate);
         if (timex.types.has('duration')) {
             const r = resolveDuration(timex, constraints);
             for (const resolved of r) {
@@ -184,12 +184,12 @@ const resolveDurations = function (candidates, constraints) {
 };
 
 const evaluate = function (candidates, constraints) {
-    const timexConstraints = constraints.map((x) => { return new Timex(x); });
+    const timexConstraints = constraints.map((x) => { return new TimexProperty(x); });
     const candidatesWithDurationsResolved = resolveDurations(candidates, timexConstraints);
     const candidatesAccordingToDate = resolveByDateRangeConstraints(candidatesWithDurationsResolved, timexConstraints);
     const candidatesWithAddedTime = resolveByTimeConstraints(candidatesAccordingToDate, timexConstraints);
     const candidatesFilteredByTime = resolveByTimeRangeConstraints(candidatesWithAddedTime, timexConstraints);
-    const timexResults = candidatesFilteredByTime.map((x) => { return new Timex(x); });
+    const timexResults = candidatesFilteredByTime.map((x) => { return new TimexProperty(x); });
     return timexResults;
 };
 

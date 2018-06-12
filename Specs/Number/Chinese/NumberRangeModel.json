@@ -375,4 +375,36 @@
     }
   ]
 }
+,
+{
+  "Input": "请给我一到五个苹果",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "一到五",
+      "Start": 3,
+      "End": 5,
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1,5)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "请给我一以上个苹果",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "一以上",
+      "Start": 3,
+      "End": 5,
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(1,)"
+      }
+    }
+  ]
+}
 ]

@@ -4,7 +4,6 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -34,6 +33,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -55,6 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex RelativeMonthRegex { get; }
 
         public Regex YearSuffix { get; }
+
+        public Regex RelativeWeekDayRegex { get; }
 
         //TODO: implement the relative day regex if needed. If yes, they should be abstracted
         public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -79,6 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateRegexes = SpanishDateExtractorConfiguration.DateRegexList;
             OnRegex = SpanishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = SpanishDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = SpanishDateExtractorConfiguration.NextDateRegex;
             ThisRegex = SpanishDateExtractorConfiguration.ThisRegex;
             LastRegex = SpanishDateExtractorConfiguration.LastDateRegex;
@@ -90,6 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekDayAndDayOfMothRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
+            RelativeWeekDayRegex = SpanishDateExtractorConfiguration.RelativeWeekDayRegex;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

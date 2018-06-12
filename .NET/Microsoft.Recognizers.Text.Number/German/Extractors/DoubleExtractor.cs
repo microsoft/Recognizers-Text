@@ -57,6 +57,8 @@ namespace Microsoft.Recognizers.Text.Number.German
                     "DoublePow"
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder), "DoubleNum"
                 }
             };
 

@@ -1,0 +1,706 @@
+[
+  {
+    "Input": "10-1995",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Dit nummer is hoger dan twintig en kleiner of gelijk dan vijfendertig.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "hoger dan twintig en kleiner of gelijk dan vijfendertig",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,35]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het nummer ligt tussen de 20 en 30.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "tussen de 20 en 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,30)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hij is geëindigd tussen de tiende en de vijftiende.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "tussen de tiende en de vijftiende",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,15)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hij scoort tussen min tien en vijftien.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "tussen min tien en vijftien",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(-10,15)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hij staat hoger dan de tiende maar lager dan de vijftiende.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "hoger dan de tiende maar lager dan de vijftiende",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,15)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Dit is een getal wat groter is dan 100, maar kleiner als 300",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "groter is dan 100, maar kleiner als 300",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(100,300)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Dit aantal is hoger of gelijk aan honderd, maar lager of gelijk aan driehonderd",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "hoger of gelijk aan honderd, maar lager of gelijk aan driehonderd",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[100,300]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Er zijn maximum 100 appels en op zijn minst 20 appels.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "maximum 100 appels en op zijn minst 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Deze appels zijn ongeveer 20~100 gram",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "20~100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het bereik van de getallen is 20 tot 100",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "20 tot 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het bereik van de getallen is 20 tot en met 100",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "20 tot en met 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het bereik van de getallen gaat van duizend tot vijftienhonderd.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "van duizend tot vijftienhonderd",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,1500)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het nummer ligt boven de 1000 en onder de 1500",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "boven de 1000 en onder de 1500",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(1000,1500)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het getal is hoger dan een kwart maar lager als de helft.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "hoger dan een kwart maar lager als de helft",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.25,0.5)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Dit getal is groter of gelijk aan drieduizendnegenhonderdvijfenzestig.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "groter of gelijk aan drieduizendnegenhonderdvijfenzestig",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[3965,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Dit getal is groter als 4.565",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "groter als 4.565",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4565,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Hij is meer dan dertig jaren oud.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "meer dan dertig",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn leeftijd is niet minder dan dertig.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "niet minder dan dertig",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "There're about five hundred and more in these products.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "five hundred and more",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Er zijn ongeveer vijfhonderd of meer van deze producten.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "vijfhonderd of meer",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meer dan de helft van de mensen is aanwezig.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "Meer dan de helft",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meer dan 1/2 van de mensen is aanwezig.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "Meer dan 1/2",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zoek de priemgetallen die kleiner of gelijk aan 100 zijn",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "kleiner of gelijk aan 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Er zijn ongeveer vijfhonderd of minder van deze producten.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "vijfhonderd of minder",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,500]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vind de priemgetallen die < = 100 zijn",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "< = 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn lengte is onder de 170.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "onder de 170",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn lengte is kleiner dan 170.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "kleiner dan 170",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Minder dan duizend reuzenpanda's leven nog steeds in het wild.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "Minder dan duizend",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,1000)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "x is gelijk aan honderdzeventig.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk aan honderdzeventig",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[170,170]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "x>10 en y<20",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": ">10",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,)"
+        }
+      },
+      {
+        "Text": "<20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,20)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "x is groter dan 10 en kleiner dan 20. y is niet meer als 50 en niet kleiner als 20.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "groter dan 10 en kleiner dan 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,20)"
+        }
+      },
+      {
+        "Text": "niet meer als 50 en niet kleiner als 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,50]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Een vierde is een breuk",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Het getal is gelijk aan 20.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk aan 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,20]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Gelijk aan 20, is het aantal studenten in onze klas niet significant.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "Gelijk aan 20",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,20]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "0612345678 is een telefoonnummer.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "+31612345678 is een telefoonnummer.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "+31 6 12 34 56 78 is een telefoonnummer.",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Zojn resultaat is 200 of meer",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "200 of meer",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn resultaat is 200 of hoger dan 190",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "hoger dan 190",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(190,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het resultaat is 200 of hoger",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "200 of hoger",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn score is minder dan of gelijk aan 30",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "minder dan of gelijk aan 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn score is gelijk aan of minder dan 30",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk aan of minder dan 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn score is minstens of gelijk aan 30",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "minstens of gelijk aan 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn score is gelijk of meer dan 30",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk of meer dan 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn score is gelijk aan 5000 of minder",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk aan 5000 of minder",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn score is gelijk aan 5000 of minder dan 6000",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk aan 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "minder dan 6000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,6000)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn resultaat is gelijk aan 5000 of meer dan dat",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk aan 5000 of meer dan",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het resultaat is gelijk aan 5000 of meer dan 4500",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk aan 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "meer dan 4500",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4500,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het resultaat is minder dan 5000 of gelijk aan",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "minder dan 5000 of gelijk aan",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het kost meer dan 5000 of evenveel",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "meer dan 5000 of evenveel",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zijn resultaat is meer dan 5000 of gelijk aan",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "meer dan 5000 of gelijk aan",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het resultaat is meer dan 5000 of gelijk aan 6000",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "meer dan 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(5000,)"
+        }
+      },
+      {
+        "Text": "gelijk aan 6000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[6000,6000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Het resultaat is gelijk aan 5000 of minder dan 5000",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "gelijk aan 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "minder dan 5000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000)"
+        }
+      }
+    ]
+  }
+]

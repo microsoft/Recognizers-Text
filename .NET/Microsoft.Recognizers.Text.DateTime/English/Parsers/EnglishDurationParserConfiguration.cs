@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex AnUnitRegex { get; }
 
+        public Regex DuringRegex { get; }
+
         public Regex AllDateUnitRegex { get; }
 
         public Regex HalfDateUnitRegex { get; }
@@ -27,9 +29,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex ConjunctionRegex { get; }
 
-        public Regex InExactNumberRegex { get; }
+        public Regex InexactNumberRegex { get; }
 
-        public Regex InExactNumberUnitRegex { get; }
+        public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 
@@ -46,13 +48,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(), false);
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = EnglishDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = EnglishDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = EnglishDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = EnglishDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = EnglishDurationExtractorConfiguration.DurationFollowedUnit;
             ConjunctionRegex = EnglishDurationExtractorConfiguration.ConjunctionRegex;
-            InExactNumberRegex = EnglishDurationExtractorConfiguration.InExactNumberRegex;
-            InExactNumberUnitRegex = EnglishDurationExtractorConfiguration.InExactNumberUnitRegex;
+            InexactNumberRegex = EnglishDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = EnglishDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = EnglishDurationExtractorConfiguration.DurationUnitRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;

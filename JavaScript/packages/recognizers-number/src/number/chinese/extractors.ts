@@ -176,7 +176,7 @@ export class ChineseOrdinalExtractor extends BaseNumberExtractor {
         super();
         let regexes = new Array<RegExpValue>(
             { // 第一百五十四
-                regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.OrdinalRegexChs, "gi"),
+                regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.OrdinalRegex, "gi"),
                 value: "OrdinalChs"
             },
             { // 第２５６５,  第1234

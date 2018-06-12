@@ -368,6 +368,8 @@ CurrencySuffixList: !dictionary
 #Additional
     Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka
     Penni: penniä|penni
+CompoundUnitConnectorRegex: !simpleRegex
+    def: (?<spacer>[^.])
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
@@ -501,7 +503,7 @@ AmbiguousDimensionUnitList: !list
     - \"
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
-  def: (?<=(\s|^|\W))
+  def: (?<=(\s|^))
 BuildSuffix: !simpleRegex
   def: (?=(\s|\W|$))
 #LengthExtractorConfiguration

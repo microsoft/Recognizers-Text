@@ -73,6 +73,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.SpecialDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecialDayWithNumRegex =
+            new Regex(
+                DateTimeDefinitions.SpecialDayWithNumRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex DateUnitRegex =
             new Regex(
                 DateTimeDefinitions.DateUnitRegex,
@@ -91,6 +96,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex SpecialDate = 
             new Regex(
                 DateTimeDefinitions.SpecialDate,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex RelativeWeekDayRegex = 
+            new Regex(
+                DateTimeDefinitions.RelativeWeekDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ForTheRegex =
@@ -127,15 +137,29 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.DateExtractor3,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 3-23-2017
-            new Regex(
-                DateTimeDefinitions.DateExtractor4,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
+                ?
+                // 23-3-2015
+                new Regex(
+                    DateTimeDefinitions.DateExtractor5,
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                :
+                // 3-23-2017
+                new Regex(
+                    DateTimeDefinitions.DateExtractor4,
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 23-3-2015
-            new Regex(
-                DateTimeDefinitions.DateExtractor5,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
+                ?
+                // 3-23-2017
+                new Regex(
+                    DateTimeDefinitions.DateExtractor4,
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                :
+                // 23-3-2015
+                new Regex(
+                    DateTimeDefinitions.DateExtractor5,
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // on 1.3
             new Regex(

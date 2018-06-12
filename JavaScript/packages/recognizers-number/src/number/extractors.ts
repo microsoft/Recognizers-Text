@@ -89,7 +89,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
         let thousandsMark = escapeRegExp(type.thousandsMark);
         let decimalsMark = escapeRegExp(type.decimalsMark);
 
-        let  regexDefinition = type.decimalsMark === '\0'
+        let regexDefinition = type.decimalsMark === '\0'
             ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark)
             : BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 

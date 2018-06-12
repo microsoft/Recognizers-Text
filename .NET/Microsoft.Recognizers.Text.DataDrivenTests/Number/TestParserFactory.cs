@@ -2,6 +2,7 @@
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
+using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Spanish;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -51,9 +52,21 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             IParser parserCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration());
             IParser parserPercentaje = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration());
 
-            Assert.IsTrue(parserNumber is ChineseNumberParser);
-            Assert.IsTrue(parserCardinal is ChineseNumberParser);
-            Assert.IsTrue(parserPercentaje is ChineseNumberParser);
+            Assert.IsTrue(parserNumber is BaseCJKNumberParser);
+            Assert.IsTrue(parserCardinal is BaseCJKNumberParser);
+            Assert.IsTrue(parserPercentaje is BaseCJKNumberParser);
+        }
+
+        [TestMethod]
+        public void TestJapaneseParser()
+        {
+            IParser parserNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new JapaneseNumberParserConfiguration());
+            IParser parserCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new JapaneseNumberParserConfiguration());
+            IParser parserPercentaje = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new JapaneseNumberParserConfiguration());
+
+            Assert.IsTrue(parserNumber is BaseCJKNumberParser);
+            Assert.IsTrue(parserCardinal is BaseCJKNumberParser);
+            Assert.IsTrue(parserPercentaje is BaseCJKNumberParser);
         }
 
         [TestMethod]

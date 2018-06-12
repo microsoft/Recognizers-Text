@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Collections.Immutable;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.English;
@@ -54,8 +54,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex WeekDayOfMonthRegex =
             new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RelativeWeekDayRegex =
+            new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex SpecialDate = 
             new Regex(DateTimeDefinitions.SpecialDate, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex SpecialDayWithNumRegex = 
+            new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ForTheRegex =
             new Regex(DateTimeDefinitions.ForTheRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -84,11 +90,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             // (Sunday,)? 6th of April
             new Regex(DateTimeDefinitions.DateExtractor3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 3-23-2017
-            new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_MDY? 
+                // 3-23-2017
+                new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline):
+                // 23-3-2015
+                new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 23-3-2015
-            new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_MDY? 
+                // 23-3-2015
+                new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline):
+                // 3-23-2017
+                new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // on 1.3
             new Regex(DateTimeDefinitions.DateExtractor6, RegexOptions.IgnoreCase | RegexOptions.Singleline),
@@ -110,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex[] ImplicitDateList =
         {
             OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
-            SingleWeekDayRegex, WeekDayOfMonthRegex, SpecialDate
+            SingleWeekDayRegex, WeekDayOfMonthRegex, SpecialDate, SpecialDayWithNumRegex, RelativeWeekDayRegex
         };
 
         public static readonly Regex OfMonth = 

@@ -1,0 +1,764 @@
+[
+{
+  "Input": "今日は九パーセントの確率は雨",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "九パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "9%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "この車は19パーセントの確率が遅れた",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "19パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "19%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "彼女は50パーセントこのことはできません",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "50パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "共有29.5パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "29.5パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "29.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "彼は13,000.2パーセント告白失败",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "13,000.2パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "13000.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "彼は3500パーセント告白失败",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "3500パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "3500%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "僕2,100パーセント告白失败",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "2,100パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "僕１，１２３パーセント告白失败",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "１，１２３パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1123%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今日は3.2kパーセントの確率で雪が降る",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "3.2kパーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "3200%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今日は3.2kパ ーセ ントの確率で雪が降る",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "3.2kパ ーセ ント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "3200%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今日は15kパ ーセ ントの確率で雪が降る",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "15kパ ーセ ント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今日は１２０パ ーセ ントの確率で雪が降る",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "１２０パ ーセ ント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今日は９，９９９パ ーセ ントの確率で雪が降る",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "９，９９９パ ーセ ント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "9999%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２．４パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "２．４パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-22.2%",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "-22.2%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "-22.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２２％",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "２２％",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "－1２２％",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "－1２２％",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "-122%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "－1２２％",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "－1２２％",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "-122%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "22パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "22パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１２０パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "１２０パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "15kパーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "15kパーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1,111パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "1,111パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1111%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "９，９９９パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "９，９９９パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "9999%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "５６.２パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "５６.２パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "56.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "3.2Mパーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "3.2Mパーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "3200000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12.56パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "12.56パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "12.56%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "０.４パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "０.４パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "0.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "15,123パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "15,123パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15123%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１１１，１１１パーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "１１１，１１１パーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "111111%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１５kパーセント",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "１５kパーセント",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "５．５％",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "５．５％",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "5.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２．４パ ー   セ    ン ト",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "２．４パ ー   セ    ン ト",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "５２.５ k   パ ー セ  ン     ト",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "５２.５ k   パ ー セ  ン     ト",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "52500%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今日この服は5割引になります",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "5割引",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今日この服はの5.6割引になります",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "5.6割引",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "56%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今日この服はの２.５割引になります",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "２.５割引",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "９割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "９割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "90%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "7.２割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "7.２割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "72%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１０ 割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "１０ 割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１0 割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "１0 割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十 割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "十 割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "9.9割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "9.9割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "99%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "10割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "十割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２.５割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "２.５割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "２割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2割,2.5割,２．１割，２割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "2割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    },
+    {
+      "Text": "2.5割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    },
+    {
+      "Text": "２．１割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "21%"
+      }
+    },
+    {
+      "Text": "２割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五割",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "五割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "クラスの女子は3割を占める",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "3割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "30%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "クラスの女子は5割半を占める",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "5割半",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "55%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "女子学生は七割半を占めている",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "七割半",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "75%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "女子学生は3.8割を占めている",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "3.8割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "38%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "女子学生は三割を占めている",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "三割",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "30%"
+      }
+    }
+  ]
+}
+]

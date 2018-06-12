@@ -65,6 +65,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             ValidateResults(new string[] { ResolutionKey.Unit });
         }
 
+        public void TestCurrency()
+        {
+            TestPreValidation();
+            ValidateResults(new string[] { ResolutionKey.Unit, ResolutionKey.IsoCurrency });
+        }
+
         public void TestDateTime()
         {
             TestPreValidation();
@@ -107,24 +113,29 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
-                var actual = tuple.Item2 as ExtendedModelResult;
+                var actual = tuple.Item2;
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
                 if (expected.ParentText != null)
                 {
-                    Assert.AreEqual(expected.ParentText, actual.ParentText, GetMessage(TestSpec));
+                    Assert.AreEqual(expected.ParentText, ((ExtendedModelResult)actual).ParentText, GetMessage(TestSpec));
                 }
 
                 var values = actual.Resolution as IDictionary<string, object>;
                 var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
-                var actualValues = listValues.FirstOrDefault();
+                var actualValues = listValues;
 
                 var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
-                var expectedValues = expectedObj.FirstOrDefault();
+                var expectedValues = expectedObj;
 
-                CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
+                Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(TestSpec));
+
+                foreach (var value in Enumerable.Zip(expectedValues, actualValues, Tuple.Create))
+                {
+                    CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
+                }
             }
         }
 
@@ -174,8 +185,23 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.IsNotNull(actualValue, GetMessage(TestSpec));
                 Assert.AreEqual(expectedValue.Timex, actualValue.Timex, GetMessage(TestSpec));
+                if (expectedValue.Mod != null || actualValue.Mod != null)
+                {
+                    Assert.IsNotNull(expectedValue.Mod, GetMessage(TestSpec));
+                    Assert.IsNotNull(actualValue.Mod, GetMessage(TestSpec));
+                    Assert.AreEqual(expectedValue.Mod, actualValue.Mod, GetMessage(TestSpec));
+                }
+
                 CollectionAssert.AreEqual(expectedValue.FutureResolution, actualValue.FutureResolution, GetMessage(TestSpec));
                 CollectionAssert.AreEqual(expectedValue.PastResolution, actualValue.PastResolution, GetMessage(TestSpec));
+
+                if (expectedValue.TimeZoneResolution != null || actualValue.TimeZoneResolution != null)
+                {
+                    Assert.IsNotNull(actualValue.TimeZoneResolution, GetMessage(TestSpec));
+                    Assert.IsNotNull(expectedValue.TimeZoneResolution, GetMessage(TestSpec));
+                    Assert.AreEqual(expectedValue.TimeZoneResolution.Value, actualValue.TimeZoneResolution.Value, GetMessage(TestSpec));
+                    Assert.AreEqual(expectedValue.TimeZoneResolution.UtcOffsetMins, actualValue.TimeZoneResolution.UtcOffsetMins, GetMessage(TestSpec));
+                }
             }
         }
 
@@ -196,6 +222,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
+
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Type, actual.Type, GetMessage(TestSpec));
 
                 var values = actual.Value as IDictionary<string, object>;
                 if (values != null)
@@ -220,6 +249,30 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         }
 
         public void TestPhoneNumber()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
+        public void TestMention()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
+        public void TestHashtag()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
+        public void TestEmail()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
+        public void TestURL()
         {
             TestPreValidation();
             ValidateResults();
@@ -263,6 +316,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 
                 foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
                 {
+                    if (!actual.Resolution.ContainsKey(key) && !expected.Resolution.ContainsKey(key))
+                    {
+                        continue;
+                    }
+
                     Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
                 }
             }

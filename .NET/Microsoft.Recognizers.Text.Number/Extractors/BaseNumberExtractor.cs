@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual string ExtractType { get; } = "";
 
+        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+
         protected virtual Regex NegativeNumberTermsRegex { get; } = null;
 
         public virtual List<ExtractResult> Extract(string source)
@@ -124,6 +126,9 @@ namespace Microsoft.Recognizers.Text.Number
         // 1 234 567
         public static LongFormatType IntegerNumBlank = new LongFormatType(' ', '\0');
 
+        // 1 234 567
+        public static LongFormatType IntegerNumNoBreakSpace = new LongFormatType(Constants.NO_BREAK_SPACE, '\0');
+
         // 1'234'567
         public static LongFormatType IntegerNumQuote = new LongFormatType('\'', '\0');
 
@@ -136,8 +141,14 @@ namespace Microsoft.Recognizers.Text.Number
         // 1 234 567,89
         public static LongFormatType DoubleNumBlankComma = new LongFormatType(' ', ',');
 
+        // 1 234 567,89
+        public static LongFormatType DoubleNumNoBreakSpaceComma = new LongFormatType(Constants.NO_BREAK_SPACE, ',');
+
         // 1 234 567.89
         public static LongFormatType DoubleNumBlankDot = new LongFormatType(' ', '.');
+
+        // 1 234 567.89
+        public static LongFormatType DoubleNumNoBreakSpaceDot = new LongFormatType(Constants.NO_BREAK_SPACE, '.');
 
         // 1.234.567,89
         public static LongFormatType DoubleNumDotComma = new LongFormatType('.', ',');

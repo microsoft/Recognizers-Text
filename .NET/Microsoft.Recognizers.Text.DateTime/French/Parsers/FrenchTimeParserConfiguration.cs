@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; 
@@ -26,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             TimeRegexes = FrenchTimeExtractorConfiguration.TimeRegexList;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
+            TimeZoneParser = new BaseTimeZoneParser();
         }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)

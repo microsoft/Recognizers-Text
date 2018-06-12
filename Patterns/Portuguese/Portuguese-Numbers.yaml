@@ -51,7 +51,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
   def: (?<=\b)(((meia)?\s+(d[úu]zia))|({AllIntRegex}\s+(e|com)\s+)?({AllIntRegex}\s+(d[úu]zia(s)?|dezena(s)?)))(?=\b)
   references: [ AllIntRegex ]
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
@@ -61,7 +61,7 @@ RoundNumberIntegerRegexWithLocks: !nestedRegex
 NumbersWithDozenSuffix: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dezena(s)?(?=\b)
 NumbersWithDozen2Suffix: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<=\b))\d+(\s+d[úu]zia(s))?(?=\b)
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+d[úu]zia(s)(?=\b)
 #Ordinal Regex
 SimpleRoundOrdinalRegex: !simpleRegex
   def: (mil[eé]sim[oa]|milion[eé]sim[oa]|bilion[eé]sim[oa]|trilion[eé]sim[oa]|quatrilion[eé]sim[oa]|quintilion[eé]sim[oa])
@@ -111,7 +111,7 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SuffixRoundOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(({AllIntRegex})|((\d+)(?!\.)))(?=\b)
+  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
   references: [ AllIntRegex ]
 #Double Regex
 AllFloatRegex: !nestedRegex
@@ -140,7 +140,7 @@ CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: ({BaseNumbers.NumberReplaceToken})(\s*)(%|por cento|pontos percentuais)
+  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\b)
   references: [ BaseNumbers.NumberReplaceToken ]
 #Parser
 DecimalSeparatorChar: !char ','
