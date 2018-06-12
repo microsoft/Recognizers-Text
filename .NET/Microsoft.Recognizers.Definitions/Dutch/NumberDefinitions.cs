@@ -25,8 +25,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string AnIntRegex = @"(een)(?=\s)";
 		public const string TenToNineteenIntegerRegex = @"(zeventien|dertien|veertien|achttien|negentien|vijftien|zestien|elf|twaalf|tien)";
 		public const string TensNumberIntegerRegex = @"(zeventig|twintig|dertig|tachtig|negentig|veertig|vijftig|zestig)";
-		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))";
-		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})";
+		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(en\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))";
+		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(en\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})";
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
 		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})";
@@ -92,8 +92,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = "zes";
 		public const string WordSeparatorToken = "en";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "punt" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "punto" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { "komma" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { "punt" };
 		public static readonly string[] WrittenIntegerSeparatorTexts = { "en" };
 		public static readonly string[] WrittenFractionSeparatorTexts = { "en" };
 		public const string HalfADozenRegex = @"half\s+dozijn";
