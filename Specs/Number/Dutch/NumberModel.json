@@ -547,19 +547,6 @@
         ]
     },
     {
-        "Input": "tweeenvijftig",
-        "NotSupported": "javascript,python",
-        "Results": [
-            {
-                "Text": "tweeenvijftig",
-                "TypeName": "number",
-                "Resolution": {
-                    "value": "52"
-                }
-            }
-        ]
-    },
-    {
         "Input": "tweeënvijftig",
         "NotSupported": "javascript,python",
         "Results": [
