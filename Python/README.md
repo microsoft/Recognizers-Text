@@ -17,32 +17,94 @@ Open a terminal and run the following commands:
     pip install -r .\requirements.txt
     python index.py ..\recognizers-number\resource-definitions.json
     python index.py ..\recognizers-number-with-unit\resource-definitions.json
+    python index.py ..\recognizers-date-time\resource-definitions.json
 
 You can then install each of the local packages:
 
     pip install -e .\libraries\recognizers-text\
     pip install -e .\libraries\recognizers-number\
+    pip install -e .\libraries\recognizers-date-time\
+
+To run tests:
+
+    pytest --tb=line
 
 ### Automatized Build
 
 Launch `Build.cmd` file to install requirements, generate resources, install local packages and run all tests.
 
-## Installation
+## Installation from PyPI
 
 Install Recognizer's by launching the following commands:
 
 * Get the numbers Recognizer's features:
 `pip install recognizers-text-number`
 
+* Get the number with unit Recognizer's features:
+`pip install recognizers-text-number-with-unit`
+
+* Get the date time Recognizer's features:
+`pip install recognizers-text-date-time`
+
 ## API Documentation
 
-### [Microsoft.Recognizers.Text.Number](https://github.com/Microsoft/Recognizers-Text/tree/master/Python/libraries/recognizers-number)
+Once the proper package is installed, you'll need to reference the package:
 
+````Python
 from recognizers_text import Culture, ModelResult
 from recognizers_number import NumberRecognizer
+from recognizers_number_with_unit import NumberWithUnitRecognizer 
+from recognizers_date_time import DateTimeRecognizer 
+````
+
+### Recognizer's Models
+
+This is the preferred way if you need to parse multiple inputs based on the same context (e.g.: language and options):
+
+```Pyton
+recognizer = NumberRecognizer(Culture.English)
+model = recognizer.get_number_model()
+result = model.parse('Twelve')
+```
+
+Or, for less verbosity, you use the helper methods:
+
+`result = NumberRecognizer.recognize_number("Twelve", Culture.English)`
+
+Internally, both methods will cache the instance models to avoid extra costs.
+
+### Microsoft.Recognizers.Text.Number
+* **Numbers**
+
+    This recognizer will find any number from the input. E.g. _"I have two apples"_ will return _"2"_.
+
+    `NumberRecognizer.recognize_number('I have two apples', Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `NumberRecognizer(Culture.English).get_number_model()`
+
+* **Ordinal Numbers**
+
+    This recognizer will find any ordinal number. E.g. _"eleventh"_ will return _"11"_.
+
+    `NumberRecognizer.recognize_ordinal('eleventh', Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `NumberRecognizer(Culture.English).get_ordinal_model()`
+
+* **Percentages**
+
+    This recognizer will find any number presented as percentage. E.g. _"one hundred percents"_ will return _"100%"_.
+
+    `NumberRecognizer.recognize_percentage('one hundred percents', Culture.English))`
+
+    Or you can obtain a model instance using:
+
+    `NumberRecognizer(Culture.English).get_percentage_model()`
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
-
 * **Ages**
 
     This recognizer will find any age number presented. E.g. _"After ninety five years of age, perspectives change"_ will return _"95 Year"_.
@@ -52,7 +114,6 @@ from recognizers_number import NumberRecognizer
     Or you can obtain a model instance using:
 
     `NumberWithUnitRecognizer(Culture.English).get_age_model()`
-
 
 * **Currencies**
 
@@ -64,7 +125,6 @@ from recognizers_number import NumberRecognizer
 
     `NumberWithUnitRecognizer(Culture.English).get_currency_model()`
 
-
 * **Dimensions**
 
     This recognizer will find any dimension presented. E.g. _"The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours."_ will return _"6 Mile"_.
@@ -75,7 +135,6 @@ from recognizers_number import NumberRecognizer
 
     `NumberWithUnitRecognizer(Culture.English).get_dimension_model()`
 
-
 * **Temperatures**
 
     This recognizer will find any temperature presented. E.g. _"Set the temperature to 30 degrees celsius"_ will return _"30 C"_.
@@ -85,6 +144,18 @@ from recognizers_number import NumberRecognizer
     Or you can obtain a model instance using:
 
     `NumberWithUnitRecognizer(Culture.English).get_temperature_model()`
+
+### Microsoft.Recognizers.Text.DateTime
+* **DateTime**
+
+    This recognizer will find any date, time, duration and date/time ranges, even if its write in colloquial language. E.g. _"I'll go back 8pm today"_ will return _"2017-10-04 20:00:00"_.
+
+    `DateTimeRecognizer.recognize_datetime("I'll go back 8pm today", Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `DateTimeRecognizer(Recognizers.Culture.English).get_datetime_model()`
+
 
 ## Samples
 
