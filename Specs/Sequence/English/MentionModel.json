@@ -117,10 +117,5 @@
         }
       }
     ]
-  },
-  {
-    "Input": ":@HowardsCreekFD and .@Alice are invalid.",
-    "NotSupportedByDesign": "python",
-    "Results": []
   }
 ]

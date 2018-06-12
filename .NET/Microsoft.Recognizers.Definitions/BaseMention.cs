@@ -17,6 +17,6 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BaseMention
 	{
-		public const string MentionRegex = @"(?<![.:])@([a-zA-Z0-9_]+)(?![.]\w)\b";
+		public const string MentionRegex = @"@([a-zA-Z0-9_]+)(?![.]\w)\b";
 	}
 }
