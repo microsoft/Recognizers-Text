@@ -40,6 +40,10 @@ public class NumberExtractor extends BaseNumberExtractor {
         return getInstance(NumberMode.Default, options);
     }
 
+    public static NumberExtractor getInstance(NumberMode mode) {
+        return getInstance(mode, NumberOptions.None);
+    }
+
     public static NumberExtractor getInstance() {
         return getInstance(NumberMode.Default, NumberOptions.None);
     }

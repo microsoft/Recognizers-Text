@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 
 public class PercentageExtractor extends BasePercentageExtractor {
 
-
     private final NumberOptions options;
     private final Set<Pattern> regexes;
 

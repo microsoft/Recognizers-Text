@@ -124,7 +124,7 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         //region French
         registerModel(NumberModel.class, Culture.French, (options) -> new NumberModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
-                com.microsoft.recognizers.text.number.french.extractors.NumberExtractor.getInstance(NumberMode.PureNumber, NumberOptions.None)));
+                com.microsoft.recognizers.text.number.french.extractors.NumberExtractor.getInstance(NumberMode.PureNumber)));
         registerModel(OrdinalModel.class, Culture.French, (options) -> new OrdinalModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.french.extractors.OrdinalExtractor()));
