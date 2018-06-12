@@ -1,4 +1,4 @@
 ---
 MentionRegex: !simpleRegex
-  def: ((?<=\s|^)@([a-zA-Z0-9_]+))
+  def: '@([a-zA-Z0-9_]+)(?![.]\w)\b'
 ...
