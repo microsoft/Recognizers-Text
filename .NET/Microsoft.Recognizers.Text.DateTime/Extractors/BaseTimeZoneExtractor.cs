@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -23,9 +24,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
+            var normalizedText = StringUtil.RemoveDiacritics(text);
             var tokens = new List<Token>();
-            tokens.AddRange(TimeZoneMatch(text));
-            tokens.AddRange(CityTimeMatch(text));
+            tokens.AddRange(TimeZoneMatch(normalizedText));
+            tokens.AddRange(CityTimeMatch(normalizedText));
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
@@ -60,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Add(new Token(cityMatchResult[i - 1].Start, match.Index + match.Length));
                     }
 
-                    if (!hasCityBefore)
+                    if (i == cityMatchResult.Count)
                     {
                         break;
                     }

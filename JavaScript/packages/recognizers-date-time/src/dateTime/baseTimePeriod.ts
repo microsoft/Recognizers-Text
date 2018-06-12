@@ -154,6 +154,12 @@ export class BaseTimePeriodExtractor implements IDateTimeExtractor {
                     periodBegin = fromIndex.index;
                 }
 
+                // handle "between"
+                let betweenIndex = this.config.getBetweenTokenIndex(beforeStr);
+                if (betweenIndex.matched) {
+                    periodBegin = betweenIndex.index;
+                }
+
                 ret.push(new Token(periodBegin, periodEnd));
                 idx += 2;
                 continue;

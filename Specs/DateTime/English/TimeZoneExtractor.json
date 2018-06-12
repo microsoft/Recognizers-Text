@@ -105,5 +105,27 @@
         "Type": "timezone"
       }
     ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Sydney timezone.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Sydney timezone",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Montréal time.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Montréal time",
+        "Type": "timezone"
+      }
+    ]
   }
 ]
