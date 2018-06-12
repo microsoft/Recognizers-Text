@@ -1,4 +1,4 @@
-from typing import Pattern, Dict
+from typing import Pattern
 from recognizers_text.utilities import RegExpUtility
 
 from .holiday_parser_config import EnglishHolidayParserConfiguration

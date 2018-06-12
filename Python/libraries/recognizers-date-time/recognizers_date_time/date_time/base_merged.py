@@ -125,7 +125,7 @@ class BaseMergedExtractor(DateTimeExtractor):
         if reference is None:
             reference = datetime.now()
 
-        result:List[ExtractResult] = list()
+        result: List[ExtractResult] = list()
         result = self.add_to(result, self.config.date_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.time_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.duration_extractor.extract(source, reference), source)
@@ -146,7 +146,7 @@ class BaseMergedExtractor(DateTimeExtractor):
             result = self.check_calendar_filter_list(result, source)
 
         result = sorted(result, key=lambda x: x.start)
-        
+
         return result
 
     def add_to(self, destination: List[ExtractResult], source: List[ExtractResult], text: str) -> List[ExtractResult]:
@@ -204,28 +204,28 @@ class BaseMergedExtractor(DateTimeExtractor):
 
     def add_mod_item(self, er: ExtractResult, source: str) -> ExtractResult:
         before_str = source[0:er.start]
-        
+
         before = self.has_token_index(before_str.strip(), self.config.before_regex)
         if before.matched:
             mod_len = len(before_str) - before.index
             er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
-        
+
         after = self.has_token_index(before_str.strip(), self.config.after_regex)
         if after.matched:
             mod_len = len(before_str) - after.index
             er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
-        
+
         since = self.has_token_index(before_str.strip(), self.config.since_regex)
         if since.matched:
             mod_len = len(before_str) - since.index
             er.length += mod_len
             er.start -= mod_len
             er.text = source[er.start:er.start + er.length]
-        
+
         return er
 
     def has_token_index(self, source: str, pattern: Pattern) -> MatchedIndex:
@@ -489,12 +489,12 @@ class BaseMergedParser(DateTimeParser):
         intersect_values = [i for i, j in zip(future_values, past_values) if i == j]
 
         if len(intersect_values) == len(past_values) and len(intersect_values) == len(future_values):
-            if len(past_values) > 0:
+            if past_values:
                 self._add_resolution_fields_any(result, Constants.ResolveKey, past)
         else:
-            if len(past_values) > 0:
+            if past_values:
                 self._add_resolution_fields_any(result, Constants.ResolveToPastKey, past)
-            if len(future_resolution) > 0:
+            if future_resolution:
                 self._add_resolution_fields_any(result, Constants.ResolveToFutureKey, future)
 
         if comment == 'ampm':
@@ -517,7 +517,7 @@ class BaseMergedParser(DateTimeParser):
 
                 resolutions.append(new_values)
 
-        if len(past) == 0 and len(future) == 0:
+        if not past and not future:
             o = {}
             o['timex'] = timex
             o['type'] = output_type
