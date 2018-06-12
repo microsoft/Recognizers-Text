@@ -108,20 +108,17 @@ class NumberRecognizer(Recognizer[NumberOptions]):
     def get_percentage_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
         return self.get_model('PercentModel', culture, fallback_to_default_culture)
 
-    @staticmethod
-    def recognize_number(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberRecognizer(culture, options)
-        model = recognizer.get_number_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_number(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberRecognizer(culture, options)
+    model = recognizer.get_number_model(culture, fallback_to_default_culture)
+    return model.parse(query)
 
-    @staticmethod
-    def recognize_ordinal(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberRecognizer(culture, options)
-        model = recognizer.get_ordinal_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_ordinal(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberRecognizer(culture, options)
+    model = recognizer.get_ordinal_model(culture, fallback_to_default_culture)
+    return model.parse(query)
 
-    @staticmethod
-    def recognize_percentage(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberRecognizer(culture, options)
-        model = recognizer.get_percentage_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_percentage(query: str, culture: str, options: NumberOptions = NumberOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberRecognizer(culture, options)
+    model = recognizer.get_percentage_model(culture, fallback_to_default_culture)
+    return model.parse(query)

@@ -1,11 +1,11 @@
 import pytest
 from runner import get_specs
-from recognizers_number.number import NumberRecognizer
+from recognizers_number.number.number_recognizer import recognize_number, recognize_ordinal, recognize_percentage
 
 MODELFUNCTION = {
-    'Number': NumberRecognizer.recognize_number,
-    'Ordinal': NumberRecognizer.recognize_ordinal,
-    'Percent': NumberRecognizer.recognize_percentage,
+    'Number': recognize_number,
+    'Ordinal': recognize_ordinal,
+    'Percent': recognize_percentage,
 }
 
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='Number', entity='Model'))
