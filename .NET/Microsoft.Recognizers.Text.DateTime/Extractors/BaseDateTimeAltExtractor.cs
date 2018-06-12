@@ -36,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> ExtractAlt(List<ExtractResult> extractResult, string text, DateObject reference)
         {
             var ers = AddImplicitDates(extractResult, text);
+
+            // Sort the extracted results for the further sequential process.
             ers.Sort((x, y) => x.Start - y.Start ?? 0);
 
             var i = 0;

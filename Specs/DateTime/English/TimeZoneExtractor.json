@@ -127,5 +127,16 @@
         "Type": "timezone"
       }
     ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Montreal time.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Montreal time",
+        "Type": "timezone"
+      }
+    ]
   }
 ]
