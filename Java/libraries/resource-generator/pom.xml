@@ -57,7 +57,7 @@
                 <configuration>
                     <mainClass>com.microsoft.recognizers.text.resources.ResourcesGenerator</mainClass>
                     <arguments>
-                        <argument>libraries/recognizers-number/resource-definitions.json</argument>
+                        <argument>libraries/recognizers-text-number/resource-definitions.json</argument>
                         <!--<argument>arg1</argument>-->
                     </arguments>
                 </configuration>
