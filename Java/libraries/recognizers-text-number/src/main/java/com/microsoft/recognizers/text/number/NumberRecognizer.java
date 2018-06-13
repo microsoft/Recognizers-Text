@@ -41,16 +41,33 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         super(culture, numberOptions, lazyInitialization);
     }
 
+    //region Helper methods for less verbosity
+    public NumberModel getNumberModel() {
+        return getNumberModel(null, true);
+    }
+
     public NumberModel getNumberModel(String culture, boolean fallbackToDefaultCulture) {
         return getModel(NumberModel.class, culture, fallbackToDefaultCulture);
+    }
+
+    public OrdinalModel getOrdinalModel() {
+        return getOrdinalModel(null, true);
     }
 
     public OrdinalModel getOrdinalModel(String culture, boolean fallbackToDefaultCulture) {
         return getModel(OrdinalModel.class, culture, fallbackToDefaultCulture);
     }
 
+    public PercentModel getPercentageModel() {
+        return getPercentageModel(null, true);
+    }
+
     public PercentModel getPercentageModel(String culture, boolean fallbackToDefaultCulture) {
         return getModel(PercentModel.class, culture, fallbackToDefaultCulture);
+    }
+
+    public NumberRangeModel getNumberRangeModel() {
+        return getNumberRangeModel(null, true);
     }
 
     public NumberRangeModel getNumberRangeModel(String culture, boolean fallbackToDefaultCulture) {
@@ -58,11 +75,11 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
     }
 
     public static List<ModelResult> recognizeNumber(String query, String culture) {
-        return recognizeNumber(query, culture, NumberOptions.None, false);
+        return recognizeNumber(query, culture, NumberOptions.None, true);
     }
 
     public static List<ModelResult> recognizeNumber(String query, String culture, NumberOptions options) {
-        return recognizeNumber(query, culture, options, false);
+        return recognizeNumber(query, culture, options, true);
     }
 
     public static List<ModelResult> recognizeNumber(String query, String culture, NumberOptions options, boolean fallbackToDefaultCulture) {
@@ -70,11 +87,11 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
     }
 
     public static List<ModelResult> recognizeOrdinal(String query, String culture) {
-        return recognizeOrdinal(query, culture, NumberOptions.None, false);
+        return recognizeOrdinal(query, culture, NumberOptions.None, true);
     }
 
     public static List<ModelResult> recognizeOrdinal(String query, String culture, NumberOptions options) {
-        return recognizeOrdinal(query, culture, options, false);
+        return recognizeOrdinal(query, culture, options, true);
     }
 
     public static List<ModelResult> recognizeOrdinal(String query, String culture, NumberOptions options, boolean fallbackToDefaultCulture) {
@@ -82,11 +99,11 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
     }
 
     public static List<ModelResult> recognizePercentage(String query, String culture) {
-        return recognizePercentage(query, culture, NumberOptions.None, false);
+        return recognizePercentage(query, culture, NumberOptions.None, true);
     }
 
     public static List<ModelResult> recognizePercentage(String query, String culture, NumberOptions options) {
-        return recognizePercentage(query, culture, options, false);
+        return recognizePercentage(query, culture, options, true);
     }
 
     public static List<ModelResult> recognizePercentage(String query, String culture, NumberOptions options, boolean fallbackToDefaultCulture) {
@@ -94,16 +111,17 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
     }
 
     public static List<ModelResult> recognizeNumberRange(String query, String culture) {
-        return recognizeNumberRange(query, culture, NumberOptions.None, false);
+        return recognizeNumberRange(query, culture, NumberOptions.None, true);
     }
 
     public static List<ModelResult> recognizeNumberRange(String query, String culture, NumberOptions options) {
-        return recognizeNumberRange(query, culture, options, false);
+        return recognizeNumberRange(query, culture, options, true);
     }
 
     public static List<ModelResult> recognizeNumberRange(String query, String culture, NumberOptions options, boolean fallbackToDefaultCulture) {
         return RecognizeByModel((NumberRecognizer recognizer) -> recognizer.getNumberRangeModel(culture, fallbackToDefaultCulture), query, options);
     }
+    //endregion
 
     private static List<ModelResult> RecognizeByModel(Function<NumberRecognizer, IModel> getModelFun, String query, NumberOptions options) {
         NumberRecognizer recognizer = new NumberRecognizer(options);
