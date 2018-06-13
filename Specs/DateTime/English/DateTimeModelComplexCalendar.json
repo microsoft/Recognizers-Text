@@ -2532,5 +2532,14 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I want to get the most from this deal.",
+    "Comment": "This test case is for testing the ambiguous single timezone word filter.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript",
+    "Results": []
   }
 ]

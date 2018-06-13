@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
+using Microsoft.Recognizers.Text.Utilities;
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseTimeZoneExtractor : IDateTimeExtractor
+    public class BaseTimeZoneExtractor : IDateTimeZoneExtractor
     {
         private static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEZONE; // "TimeZone";
 
@@ -24,11 +24,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
-            var normalizedText = StringUtil.RemoveDiacritics(text);
+            var normalizedText = FormatUtility.RemoveDiacritics(text);
             var tokens = new List<Token>();
             tokens.AddRange(TimeZoneMatch(normalizedText));
             tokens.AddRange(CityTimeMatch(normalizedText));
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        public List<ExtractResult> RemoveAmbiguousTimezone(List<ExtractResult> ers)
+        {
+            ers.RemoveAll(o => config.AmbiguousTimezoneList.Contains(o.Text.ToLowerInvariant()));
+            return ers;
         }
 
         private IEnumerable<Token> CityTimeMatch(string text)

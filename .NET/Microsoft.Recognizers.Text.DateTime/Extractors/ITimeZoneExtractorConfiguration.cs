@@ -11,5 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex CityTimeSuffixRegex { get; }
 
         StringMatcher CityMatcher { get; }
+
+        List<string> AmbiguousTimezoneList { get; }
     }
 }
