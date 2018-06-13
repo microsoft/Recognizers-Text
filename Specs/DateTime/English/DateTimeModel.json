@@ -2615,7 +2615,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-16T16:12:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "monday 12-4",
@@ -2657,7 +2657,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-16T16:12:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "monday 11-4",
@@ -2759,7 +2759,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-20T00:00:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "each week",
@@ -2830,7 +2830,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-17T00:00:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "same week",
@@ -2855,7 +2855,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "same month",
@@ -2880,7 +2880,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-11T00:00:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "that weekend",
@@ -2905,7 +2905,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "same year",
@@ -2979,7 +2979,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-18T00:00:00"
   },
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupportedByDesign": "javascript, python",
   "Results": [
     {
       "Text": "early in the day wednesday",
@@ -3003,7 +3003,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-18T00:00:00"
   },
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupportedByDesign": "javascript, python",
   "Results": [
     {
       "Text": "mid today",
@@ -3027,7 +3027,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-18T00:00:00"
   },
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupportedByDesign": "javascript, python",
   "Results": [
     {
       "Text": "later in today",
@@ -3450,7 +3450,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-31T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [{
     "Text": "two days after today",
     "Start": 18,
@@ -3473,7 +3473,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-31T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [{
     "Text": "three weeks from tomorrow",
     "Start": 18,
@@ -3496,7 +3496,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-31T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [{
     "Text": "two days before yesterday",
     "Start": 15,

@@ -1482,7 +1482,7 @@
 ,
 {
   "Input": "I'll be back at 7h01",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "7h01",
@@ -1502,7 +1502,7 @@
 ,
 {
   "Input": "I'll be back at 10 H 10 pm.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "10 H 10 pm",
@@ -1522,7 +1522,7 @@
 ,
 {
   "Input": "I'll be back at three min past 10 H 10 pm.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "three min past 10 H 10 pm",

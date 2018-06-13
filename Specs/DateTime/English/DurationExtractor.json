@@ -552,7 +552,6 @@
 ,
 {
   "Input": "I realized that you are out for another week.",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "another week",
@@ -563,7 +562,6 @@
 ,
 {
   "Input": "Can we wait another month?",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "another month",

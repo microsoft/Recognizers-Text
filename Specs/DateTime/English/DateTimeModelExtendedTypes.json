@@ -280,8 +280,7 @@
   "Context": {
     "ReferenceDateTime": "2018-03-21T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "this week or next",
@@ -325,8 +324,7 @@
   "Context": {
     "ReferenceDateTime": "2018-03-21T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "last year or next",
@@ -370,7 +368,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "next week on tuesday or thursday or friday",
@@ -428,7 +426,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "next week mon, wed, fri",
@@ -486,7 +484,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "monday, thursday, friday next week",
@@ -544,7 +542,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "the 22nd, 23rd, 30th or 31st of march",
@@ -618,7 +616,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "july 17th, 18th, or 19th",
@@ -975,7 +973,6 @@
   "Context": {
     "ReferenceDateTime": "2018-05-20T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "each week",
@@ -1012,7 +1009,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-20T00:00:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "each week",
