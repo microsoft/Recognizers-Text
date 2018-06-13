@@ -81,18 +81,26 @@ def test_datetime_model(culture, model, options, context, source, expected_resul
             assert_resolution(actual_resilution_value, expected_resoulution_value)
 
 def get_assert_model_resolution(option):
-    assert_resolutions = {
-        None: assert_model_resolution_option_none,
-        'CalendarMode': assert_model_resolution_option_calendar_mode,
-        'ExtendedTypes': assert_model_resolution_option_extended_types,
-        'SplitDateAndTime': assert_model_resolution_option_split_date_and_time
-    }
-    return assert_resolutions.get(option)
+    if option == 'CalendarMode':
+        return assert_model_resolution_option_calendar_mode
+    elif option == 'ExtendedTypes':
+        return assert_model_resolution_option_extended_types
+    elif option == 'SplitDateAndTime':
+        return assert_model_resolution_option_split_date_and_time
+    return assert_model_resolution_option_none
+
+def single_assert(actual, expected, prop):
+    if expected.get(prop):
+        assert actual[prop] == expected[prop]
+    else:
+        assert actual.get(prop) is None
 
 def assert_model_resolution_option_none(actual, expected):
-    assert actual.timex == expected['timex']
-    assert actual.type == expected['type']
-    assert actual.value == expected['value']
+    single_assert(actual, expected, 'timex')
+    single_assert(actual, expected, 'type')
+    single_assert(actual, expected, 'value')
+    single_assert(actual, expected, 'start')
+    single_assert(actual, expected, 'end')
 
 def assert_model_resolution_option_calendar_mode(actual, expected):
     assert actual.get('timex', None) == expected.get('timex', None)
