@@ -41,7 +41,8 @@ def get_specs(spec_type):
             if 'NotSupportedByDesign' in spec and 'python' in spec['NotSupportedByDesign']:
                 continue
             not_suppoted = 'NotSupported' in spec and 'python' in spec['NotSupported']
-            ret_specs.append(pytest.param(CULTURES[sp['config']['language']], sp['config']['sub_type'], spec['Input'], spec['Results'], marks=pytest.mark.skipif(not_suppoted, reason='Not supported')))
+            if sp['config']['language'] in CULTURES:
+                ret_specs.append(pytest.param(CULTURES[sp['config']['language']], sp['config']['sub_type'], spec['Input'], spec['Results'], marks=pytest.mark.skipif(not_suppoted, reason='Not supported')))
     return ret_specs
 
 CULTURES = {
