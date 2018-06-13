@@ -19,6 +19,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public static readonly string Afternoon = "(T12,T16,PT4H)";
         public static readonly string Evening = "(T16,T20,PT4H)";
         public static readonly string Daytime = "(T08,T18,PT10H)";
+        public static readonly string Night = "(T20,T24,PT10H)";
 
         public static string Today(System.DateTime date = default(System.DateTime))
         {

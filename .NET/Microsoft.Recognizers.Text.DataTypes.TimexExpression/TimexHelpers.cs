@@ -65,9 +65,6 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     case "DT":
                         timex = new TimexProperty(TimexCreator.Daytime);
                         break;
-                    case "NI":
-                        timex = new TimexProperty(TimexCreator.Afternoon);
-                        break;
                     case "MO":
                         timex = new TimexProperty(TimexCreator.Morning);
                         break;
@@ -76,6 +73,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         break;
                     case "EV":
                         timex = new TimexProperty(TimexCreator.Evening);
+                        break;
+                    case "NI":
+                        timex = new TimexProperty(TimexCreator.Night);
                         break;
                 }
             }
