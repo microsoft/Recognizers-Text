@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanDateTimePeriodParserConfiguration : BaseOptionsConfiguration,IDateTimePeriodParserConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -70,6 +72,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;

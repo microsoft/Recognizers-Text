@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeExtractor TimeZoneExtractor { get; }
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 

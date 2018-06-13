@@ -321,6 +321,12 @@ PureNumFromTo: !nestedRegex
 PureNumBetweenAnd: !nestedRegex
   def: (entre\s+((a|as)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*e\s*(a(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
   references: [ BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex, PmRegex, AmRegex ]
+SpecificTimeFromTo: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+SpecificTimeBetweenAnd: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 TimeUnitRegex: !simpleRegex
   def: (?<unit>horas|hora|h|minutos|minuto|mins|min|segundos|segundo|secs|sec)\b
 TimeFollowedUnit: !nestedRegex

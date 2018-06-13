@@ -14,6 +14,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor IntegerExtractor { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
@@ -35,6 +39,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = EnglishTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = EnglishTimePeriodExtractorConfiguration.TillRegex;

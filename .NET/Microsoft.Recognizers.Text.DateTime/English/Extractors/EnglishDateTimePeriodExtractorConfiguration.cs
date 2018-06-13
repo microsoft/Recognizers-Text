@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         private static readonly Regex[] SimpleCases =
         {
             EnglishTimePeriodExtractorConfiguration.PureNumFromTo,
@@ -64,14 +66,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.PrefixDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
 
-        public EnglishDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public EnglishDateTimePeriodExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-            SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+            SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
         }
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;

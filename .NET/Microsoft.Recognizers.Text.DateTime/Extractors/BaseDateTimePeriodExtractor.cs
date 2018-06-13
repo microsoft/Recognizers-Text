@@ -196,6 +196,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Regarding the pharse as-- {Date} {TimePeriod}, like "2015-9-23 1pm to 4"
+            // Or {TimePeriod} on {Date}, like "1:30 to 4 on 2015-9-23"
             er1 = this.config.SingleDateExtractor.Extract(text, reference);
             er2 = this.config.TimePeriodExtractor.Extract(text, reference);
             er1.AddRange(er2);
@@ -215,7 +216,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (midEnd - midBegin > 0)
                 {
                     var midStr = text.Substring(midBegin, midEnd-midBegin);
-                    if (string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr))
+                    if ((string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr)) ||
+                        midStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
                     {
                         ret.Add(new Token(points[idx].Start ?? 0, points[idx + 1].Start + points[idx + 1].Length ?? 0));
                         idx += 2;

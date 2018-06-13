@@ -1083,4 +1083,48 @@
     }
   ]
 }
+,
+{
+  "Input": "Hi, please arrange a meeting for T6 in the coming weeks or next week.",
+  "Context": {
+    "ReferenceDateTime": "2018-06-12T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "ParentText": "coming weeks or next week",
+      "Text": "coming weeks",
+      "Start": 43,
+      "End": 54,
+      "TypeName": "datetimeV2.datetimealt",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2018-06-13,2018-06-20,P1W)",
+            "type": "daterange",
+            "start": "2018-06-13",
+            "end": "2018-06-20"
+          }
+        ]
+      }
+    },
+    {
+      "ParentText": "coming weeks or next week",
+      "Text": "next week",
+      "Start": 59,
+      "End": 67,
+      "TypeName": "datetimeV2.datetimealt",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-W25",
+            "type": "daterange",
+            "start": "2018-06-18",
+            "end": "2018-06-25"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

@@ -4,46 +4,59 @@ using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Matcher
 {
-    public class StringMatcher : AcAutomaton<string>
+    public class StringMatcher
     {
         private readonly ITokenizer Tokenizer;
+        private IMatcher<string> Matcher { get; set; }
 
-        public StringMatcher(IEnumerable<string> values, ITokenizer tokenizer = null)
+        public StringMatcher(MatchStrategy matchStrategy = MatchStrategy.TrieTree, ITokenizer tokenizer = null)
         {
             Tokenizer = tokenizer ?? new SimpleTokenizer();
-
-            BatchInsert(GetTokenizedText(values), values.ToArray());
-            Build();
+            switch (matchStrategy)
+            {
+                case MatchStrategy.AcAutomaton:
+                    Matcher = new AcAutomaton<string>();
+                    break;
+                case MatchStrategy.TrieTree:
+                    Matcher = new TrieTree<string>();
+                    break;
+                default:
+                    throw new ArgumentException($"Unsupported match strategy: {matchStrategy.ToString()}");
+            }
         }
 
-        public StringMatcher(Dictionary<string, List<string>> valuesDictionary, ITokenizer tokenizer = null)
+        public void Init(IEnumerable<string> values)
         {
-            Tokenizer = tokenizer ?? new SimpleTokenizer();
-            
+            Init(values, values.Select(v => v.ToString()).ToArray());
+        }
+
+        public void Init(IEnumerable<string> values, string[] ids)
+        {
+            var tokenizedValues = GetTokenizedText(values);
+            Init(tokenizedValues, ids);
+        }
+
+        public void Init(Dictionary<string, List<string>> valuesDictionary)
+        {
+            var values = new List<string>();
+            var ids = new List<string>();
             foreach (var item in valuesDictionary)
             {
                 var id = item.Key;
                 foreach (var value in item.Value)
                 {
-                    Insert(Tokenizer.Tokenize(value).Select(v => v.Text), id);
+                    values.Add(value);
+                    ids.Add(id);
                 }
             }
 
-            Build();
+            var tokenizedValues = GetTokenizedText(values);
+            Init(tokenizedValues, ids.ToArray());
         }
 
-        public StringMatcher(IEnumerable<string> values, string[] ids, ITokenizer tokenizer = null)
+        public void Init(IEnumerable<string>[] tokenizedValues, string[] ids)
         {
-            Tokenizer = tokenizer ?? new SimpleTokenizer();
-            BatchInsert(GetTokenizedText(values), ids);
-            Build();
-        }
-
-        public StringMatcher(IEnumerable<string>[] values, string[] ids, ITokenizer tokenizer = null)
-        {
-            Tokenizer = tokenizer ?? new SimpleTokenizer();
-            BatchInsert(values, ids);
-            Build();
+            Matcher.Init(tokenizedValues, ids);
         }
 
         private IEnumerable<string>[] GetTokenizedText(IEnumerable<string> values)
@@ -51,34 +64,33 @@ namespace Microsoft.Recognizers.Text.Matcher
             return values.Select(t => Tokenizer.Tokenize(t).Select(i => i.Text)).ToArray();
         }
 
-        public List<MatchResult> Find(string queryText)
+        // Return token based entity result
+        public IEnumerable<MatchResult<string>> Find(IEnumerable<string> tokenizedQuery)
         {
-            var matches = new List<MatchResult>();
+            return Matcher.Find(tokenizedQuery);
+        }
 
-            if (string.IsNullOrWhiteSpace(queryText))
-            {
-                return matches;
-            }
-
+        public IEnumerable<MatchResult<string>> Find(string queryText)
+        {
             var queryTokens = Tokenizer.Tokenize(queryText);
             var tokenizedQueryText = queryTokens.Select(t => t.Text);
 
-            matches = Find(tokenizedQueryText).Select(r => {
-                var segments = queryTokens.GetRange(r.Start, r.Length);
-                var start = segments.First().Start;
-                var length = segments.Last().End - segments.First().Start;
+            foreach (var r in Find(tokenizedQueryText))
+            {
+                var startToken = queryTokens[r.Start];
+                var endToken = queryTokens[r.Start + r.Length - 1];
+                var start = startToken.Start;
+                var length = endToken.End - startToken.Start;
                 var rtext = queryText.Substring(start, length);
 
-                return new MatchResult()
+                yield return new MatchResult<string>()
                 {
                     Start = start,
                     Length = length,
                     Text = rtext,
-                    Values = r.Values
+                    CanonicalValues = r.CanonicalValues
                 };
-            }).ToList();
-
-            return matches;
+            }
         }
     }
 }

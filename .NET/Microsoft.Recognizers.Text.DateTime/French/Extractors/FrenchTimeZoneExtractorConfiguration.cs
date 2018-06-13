@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -16,5 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         }
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+        public Regex CityTimeSuffixRegex { get; }
+        public StringMatcher CityMatcher { get; }
+        public List<string> AmbiguousTimezoneList { get; }
     }
 }

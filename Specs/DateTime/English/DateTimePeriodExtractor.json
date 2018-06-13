@@ -915,4 +915,64 @@
     }
   ]
 }
+,
+{
+  "Input": "It will happen between 10 and 11:30 on 1/1/2015",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 10 and 11:30 on 1/1/2015",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 1/1/2015 between 10 and 11:30",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1/1/2015 between 10 and 11:30",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen from 10:30 to 3 on 1/1/2015",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 10:30 to 3 on 1/1/2015",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen between 3 and 5 on 1/1/2015",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 3 and 5 on 1/1/2015",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen from 3:30 to 5:55 on 1/1/2015",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 3:30 to 5:55 on 1/1/2015",
+      "Type": "datetimerange"
+    }
+  ]
+}
 ]

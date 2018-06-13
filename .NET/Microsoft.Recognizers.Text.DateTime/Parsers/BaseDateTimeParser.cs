@@ -235,6 +235,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Add the date and time object in case we want to split them
             ret.SubDateTimeEntities = new List<object> {pr1, pr2};
 
+            // Add timezone
+            ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
+
             return ret;
         }
 

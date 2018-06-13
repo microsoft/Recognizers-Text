@@ -1,0 +1,141 @@
+[ 
+{
+  "Input": "100%",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십 퍼센트",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "이십퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "백퍼센트",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "백퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십퍼센트",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "이십퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "삼분의 일",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "삼분의 일",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "33.3333333333333%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이분의 일",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "이분의 일",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "사분의 일의",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "사분의 일의",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "이십오퍼센트",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "이십오퍼센트",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "절반의",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "절반의",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "반의",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "반의",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+]

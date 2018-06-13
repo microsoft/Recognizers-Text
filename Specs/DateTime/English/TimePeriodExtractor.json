@@ -600,4 +600,64 @@
     }
   ]
 }
+,
+{
+  "Input": "set up meeting between 10 and 11:30",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 10 and 11:30",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting between 10:10am and 12:50",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 10:10am and 12:50",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting between 10:10pm and 3",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 10:10pm and 3",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 10:10pm to 10",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 10:10pm to 10",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 10:30am to 23",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 10:30am to 23",
+      "Type": "timerange"
+    }
+  ]
+}
 ]

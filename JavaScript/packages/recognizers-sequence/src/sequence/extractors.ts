@@ -84,7 +84,8 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
         let ers = super.extract(source)
         let ret = new Array<ExtractResult>()
         for (let er of ers) {
-            if (er.start === 0 || (source[er.start - 1] !== '-' && source[er.start - 1] !== '.' && source[er.start - 1] !== '/')) {
+            let ch = source[er.start - 1];
+            if (er.start === 0 || BasePhoneNumbers.SeparatorCharList.indexOf(ch) === -1) {
                 ret.push(er); 
             }
         }
@@ -201,6 +202,7 @@ export class BaseURLExtractor extends BaseSequenceExtractor {
     constructor(){
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BaseURL.URLRegex), Constants.URL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex), Constants.URL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex), Constants.URL_REGEX)
     }
 }
