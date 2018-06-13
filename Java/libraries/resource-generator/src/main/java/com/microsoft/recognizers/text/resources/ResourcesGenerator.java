@@ -20,7 +20,6 @@ public class ResourcesGenerator {
         for(String resourceDefinitionFilePath : args) {
 
             ResourceDefinitions definition = Parse(resourceDefinitionFilePath);
-            Path output = FileSystems.getDefault().getPath(definition.outputPath);
             definition.configFiles.forEach(config -> {
                 Path inputPath = FileSystems.getDefault().getPath(ResourcesPath, String.join(File.separator, config.input) + ".yaml");
                 Path outputPath = FileSystems.getDefault().getPath(definition.outputPath, config.output + ".java");
