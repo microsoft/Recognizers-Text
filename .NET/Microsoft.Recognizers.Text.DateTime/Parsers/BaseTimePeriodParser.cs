@@ -460,6 +460,36 @@ namespace Microsoft.Recognizers.Text.DateTime
                         beginDateTime,
                         endDateTime);
 
+                    ret.SubDateTimeEntities = new List<object>();
+
+                    if (hasLeft || beginMinute != invalidFlag || beginSecond != invalidFlag)
+                    {
+                        var er = new ExtractResult()
+                        {
+                            Start = time1StartIndex,
+                            Length = time1EndIndex - time1StartIndex,
+                            Text = text.Substring(time1StartIndex, time1EndIndex - time1StartIndex),
+                            Type = $"{Constants.SYS_DATETIME_TIME}"
+                        };
+
+                        DateTimeParseResult pr = this.config.TimeParser.Parse(er, referenceTime);
+                        ret.SubDateTimeEntities.Add(pr);
+                    }
+
+                    if (hasRight || endMinute != invalidFlag || endSecond != invalidFlag)
+                    {
+                        var er = new ExtractResult()
+                        {
+                            Start = time2StartIndex,
+                            Length = time2EndIndex - time2StartIndex,
+                            Text = text.Substring(time2StartIndex, time2EndIndex - time2StartIndex),
+                            Type = $"{Constants.SYS_DATETIME_TIME}"
+                        };
+
+                        DateTimeParseResult pr = this.config.TimeParser.Parse(er, referenceTime);
+                        ret.SubDateTimeEntities.Add(pr);
+                    }
+
                     ret.Success = true;
                 }
             }
