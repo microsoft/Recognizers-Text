@@ -39,4 +39,7 @@ const collapse = function (ranges, T) {
     return r;
 };
 
-module.exports.collapse = collapse;
+module.exports = {
+    collapse: collapse,
+    isOverlapping: isOverlapping
+};
