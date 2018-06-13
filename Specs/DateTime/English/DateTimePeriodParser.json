@@ -2237,4 +2237,129 @@
     }
   ]
 }
+,
+{
+  "Input": "It will happen between 10 and 11:30 on 1/1/2015",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T08:12:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "between 10 and 11:30 on 1/1/2015",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+        "FutureResolution": {
+          "startDateTime": "2015-01-01 10:00:00",
+          "endDateTime": "2015-01-01 11:30:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2015-01-01 10:00:00",
+          "endDateTime": "2015-01-01 11:30:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 1/1/2015 between 10 and 11:30",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T08:12:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "1/1/2015 between 10 and 11:30",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+        "FutureResolution": {
+          "startDateTime": "2015-01-01 10:00:00",
+          "endDateTime": "2015-01-01 11:30:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2015-01-01 10:00:00",
+          "endDateTime": "2015-01-01 11:30:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen from 10:30 to 3 on 1/1/2015",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T08:12:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "from 10:30 to 3 on 1/1/2015",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2015-01-01T10:30,2015-01-01T15,PT4H30M)",
+        "FutureResolution": {
+          "startDateTime": "2015-01-01 10:30:00",
+          "endDateTime": "2015-01-01 15:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2015-01-01 10:30:00",
+          "endDateTime": "2015-01-01 15:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen between 3 and 5 on 1/1/2015",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T08:12:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "between 3 and 5 on 1/1/2015",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2015-01-01T03,2015-01-01T05,PT2H)",
+        "FutureResolution": {
+          "startDateTime": "2015-01-01 03:00:00",
+          "endDateTime": "2015-01-01 05:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2015-01-01 03:00:00",
+          "endDateTime": "2015-01-01 05:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen from 3:30 to 5:55 on 1/1/2015",
+  "Context": {
+    "ReferenceDateTime": "2018-05-16T08:12:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "from 3:30 to 5:55 on 1/1/2015",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2015-01-01T03:30,2015-01-01T05:55,PT2H25M)",
+        "FutureResolution": {
+          "startDateTime": "2015-01-01 03:30:00",
+          "endDateTime": "2015-01-01 05:55:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2015-01-01 03:30:00",
+          "endDateTime": "2015-01-01 05:55:00"
+        }
+      }
+    }
+  ]
+}
 ]

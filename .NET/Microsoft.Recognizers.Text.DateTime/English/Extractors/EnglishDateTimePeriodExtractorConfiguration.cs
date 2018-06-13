@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         private static readonly Regex[] SimpleCases =
         {
             EnglishTimePeriodExtractorConfiguration.PureNumFromTo,
@@ -66,6 +68,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDateTimePeriodExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));

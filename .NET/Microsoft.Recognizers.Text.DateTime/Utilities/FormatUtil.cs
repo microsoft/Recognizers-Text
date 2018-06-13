@@ -35,6 +35,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             return LuisDate(date.Year, date.Month, date.Day);
         }
 
+        public static string ShortTime(int hour, int min, int second)
+        {
+            if (min < 0 && second < 0)
+            {
+                return $"T{hour.ToString("D2")}";
+            }
+            else if (second < 0)
+            {
+                return $"T{string.Join(":", hour.ToString("D2"), min.ToString("D2"))}";
+            }
+
+            return $"T{string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"))}";
+        }
+
         public static string LuisTime(int hour, int min, int second)
         {
             return string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
@@ -48,6 +62,29 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string LuisDateTime(System.DateTime time)
         {
             return $"{LuisDate(time)}T{LuisTime(time.Hour, time.Minute, time.Second)}";
+        }
+
+        // Only handle TimeSpan which is less than one day
+        public static string LuisTimeSpan(System.TimeSpan timeSpan)
+        {
+            var result = "PT";
+
+            if (timeSpan.Hours > 0)
+            {
+                result += $"{timeSpan.Hours}H";
+            }
+
+            if (timeSpan.Minutes > 0)
+            {
+                result += $"{timeSpan.Minutes}M";
+            }
+
+            if (timeSpan.Seconds > 0)
+            {
+                result += $"{timeSpan.Seconds}S";
+            }
+
+            return result;
         }
 
         public static string FormatDate(System.DateTime date)

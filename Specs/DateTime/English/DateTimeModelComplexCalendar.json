@@ -2541,5 +2541,158 @@
     },
     "NotSupportedByDesign": "python,javascript",
     "Results": []
+  },
+  {
+    "Input": "It will happen between 10 and 11:30 on 1/1/2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "between 10 and 11:30 on 1/1/2015",
+        "Start": 15,
+        "End": 46,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 10:00:00",
+              "end": "2015-01-01 11:30:00"
+            }
+            ,
+            {
+              "timex": "(2015-01-01T22,2015-01-01T23:30,PT1H30M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 22:00:00",
+              "end": "2015-01-01 23:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen 1/1/2015 between 10 and 11:30",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "1/1/2015 between 10 and 11:30",
+        "Start": 15,
+        "End": 43,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 10:00:00",
+              "end": "2015-01-01 11:30:00"
+            }
+            ,
+            {
+              "timex": "(2015-01-01T22,2015-01-01T23:30,PT1H30M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 22:00:00",
+              "end": "2015-01-01 23:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen from 10:30 to 3 on 1/1/2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "from 10:30 to 3 on 1/1/2015",
+        "Start": 15,
+        "End": 41,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01T10:30,2015-01-01T15,PT4H30M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 10:30:00",
+              "end": "2015-01-01 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen between 3 and 5 on 1/1/2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "between 3 and 5 on 1/1/2015",
+        "Start": 15,
+        "End": 41,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01T03,2015-01-01T05,PT2H)",
+              "type": "datetimerange",
+              "start": "2015-01-01 03:00:00",
+              "end": "2015-01-01 05:00:00"
+            }
+            ,
+            {
+              "timex": "(2015-01-01T15,2015-01-01T17,PT2H)",
+              "type": "datetimerange",
+              "start": "2015-01-01 15:00:00",
+              "end": "2015-01-01 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen between 10 and 11:30 on 1/1/2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "between 10 and 11:30 on 1/1/2015",
+        "Start": 15,
+        "End": 46,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 10:00:00",
+              "end": "2015-01-01 11:30:00"
+            }
+            ,
+            {
+              "timex": "(2015-01-01T22,2015-01-01T23:30,PT1H30M)",
+              "type": "datetimerange",
+              "start": "2015-01-01 22:00:00",
+              "end": "2015-01-01 23:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
