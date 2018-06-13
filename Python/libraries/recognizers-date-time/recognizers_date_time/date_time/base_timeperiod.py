@@ -79,13 +79,16 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
     def match_simple_cases(self, source: str) -> List[Token]:
         result: List[Token] = list()
+
         for pattern in self.config.simple_cases_regex:
             for match in regex.finditer(pattern, source):
                 pm = RegExpUtility.get_group(match, 'pm')
                 am = RegExpUtility.get_group(match, 'am')
                 desc = RegExpUtility.get_group(match, 'desc')
+
                 if pm or am or desc:
                     result.append(Token(match.start(), match.end()))
+
         return result
 
     def merge_two_time_points(self, source: str, reference: datetime) -> List[Token]:
@@ -111,11 +114,14 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
             i = 0
             j = 0
+
             while i < len(num_ers):
                 # find subsequent time point
                 num_end = num_ers[i].start + num_ers[i].length
+
                 while j < len(time_ers) and time_ers[j].start <= num_end:
                     j += 1
+
                 if j >= len(time_ers):
                     break
                 # check connector string
@@ -135,11 +141,13 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
         # merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
         i = 0
+
         while i < len(time_ers)-1:
             middle_begin = time_ers[i].start + time_ers[i].length
             middle_end = time_ers[i+1].start
             middle: str = source[middle_begin:middle_end].strip().lower()
             match = regex.search(self.config.till_regex, middle)
+
             # handle "{TimePoint} to {TimePoint}"
             if match is not None and match.start() == 0 and match.group() == middle:
                 period_begin = time_ers[i].start
@@ -154,6 +162,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 result.append(Token(period_begin, period_end))
                 i += 2
                 continue
+
             # handle "between {TimePoint} and {TimePoint}"
             if self.config.has_connector_token(middle):
                 period_begin = time_ers[i].start
@@ -168,6 +177,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     i += 2
                     continue
             i += 1
+
         return result
 
     def match_night(self, source: str) -> List[Token]:
@@ -243,8 +253,10 @@ class BaseTimePeriodParser(DateTimeParser):
             source_text = source.text.lower()
 
             inner_result = self.parse_simple_cases(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.merge_two_time_points(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parse_night(source_text, reference)
 
@@ -301,6 +313,7 @@ class BaseTimePeriodParser(DateTimeParser):
         if not left_desc:
             rigth_am_valid: bool = right_desc and regex.search(self.config.utility_configuration.am_desc_regex, right_desc.lower())
             rigth_pm_valid: bool = right_desc and regex.search(self.config.utility_configuration.pm_desc__regex, right_desc.lower())
+
             if am_str or rigth_am_valid:
                 if end_hour >= 12:
                     end_hour -= 12
@@ -352,9 +365,11 @@ class BaseTimePeriodParser(DateTimeParser):
             if len(ers) == 1:
                 time_er = ers[0]
                 num_ers = self.config.integer_extractor.extract(source)
+
                 for num in num_ers:
                     middle_begin = 0
                     middle_end = 0
+
                     # ending number
                     if num.start > time_er.start + time_er.length:
                         middle_begin = time_er.start + time_er.length
@@ -370,7 +385,9 @@ class BaseTimePeriodParser(DateTimeParser):
                         ers.append(num)
                         valid_time_number = True
                         break
+
                 ers = sorted(ers, key=lambda x: x.start)
+
             if not valid_time_number:
                 return result
 

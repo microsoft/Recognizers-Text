@@ -131,6 +131,7 @@ class BaseSetExtractor(DateTimeExtractor):
         for extract_result in self.config.duration_extractor.extract(source, reference):
             if regex.search(self.config.last_regex, extract_result.text):
                 continue
+
             before_str = source[0:extract_result.start]
             match = regex.search(self.config.each_prefix_regex, before_str)
             if match:
@@ -154,6 +155,7 @@ class BaseSetExtractor(DateTimeExtractor):
     def match_each(self, extractor: DateTimeExtractor, source: str, reference: datetime) -> List[Token]:
         for match in regex.finditer(self.config.set_each_regex, source):
             trimmed_source = source[0:match.start()] + source[match.end():]
+
             for extract_result in extractor.extract(trimmed_source, reference):
                 if (extract_result.start <= match.start()
                         and extract_result.start + extract_result.length > match.start()):
@@ -161,6 +163,7 @@ class BaseSetExtractor(DateTimeExtractor):
 
         for match in regex.finditer(self.config.set_week_day_regex, source):
             trimmed_source = source[0:match.start()] + RegExpUtility.get_group(match, 'weekday') + source[match.end():]
+
             for extract_result in extractor.extract(trimmed_source, reference):
                 if extract_result.start <= match.start():
                     length = extract_result.length + 1
@@ -300,8 +303,10 @@ class BaseSetParser(DateTimeParser):
 
         if source.type is self.parser_type_name:
             inner_result = self.parse_each_unit(source.text)
+
             if not inner_result.success:
                 inner_result = self.parse_each_duration(source.text, reference)
+
             if not inner_result.success:
                 inner_result = self.parser_time_everyday(source.text, reference)
 
@@ -379,6 +384,7 @@ class BaseSetParser(DateTimeParser):
             result.timex = pr.timex_str
             result.future_value = result.past_value = 'Set: ' + pr.timex_str
             result.success = True
+
         return result
 
     def parser_time_everyday(self, source: str, reference: datetime) -> DateTimeResolutionResult:
@@ -402,18 +408,21 @@ class BaseSetParser(DateTimeParser):
         result = DateTimeResolutionResult()
         success = False
         er: List[ExtractResult] = list()
+
         match = regex.search(self.config.set_each_regex, source)
         if match:
             trimmed_text = source[0:match.start()] + source[match.end():]
             er = extractor.extract(trimmed_text, reference)
             if(len(er) == 1 and er[0].length == len(trimmed_text)):
                 success = True
+
         match = regex.search(self.config.set_week_day_regex, source)
         if match:
             trimmed_text = source[0:match.start()] + RegExpUtility.get_group(match, 'weekday') + source[match.end():]
             er = extractor.extract(trimmed_text, reference)
             if len(er) == 1 and er[0].length == len(trimmed_text):
                 success = True
+
         if success:
             pr = parser.parse(er[0])
             result.timex = pr.timex_str

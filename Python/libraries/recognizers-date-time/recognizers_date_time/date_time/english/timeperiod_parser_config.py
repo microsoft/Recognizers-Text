@@ -62,10 +62,12 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         source = source.strip().lower()
         if source.endswith('s'):
             source = source[:-1]
+
         timex = ''
         begin_hour = 0
         end_hour = 0
         end_min = 0
+
         if source.endswith('morning'):
             timex = 'TMO'
             begin_hour = 8
@@ -95,6 +97,7 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
                 end_hour=0,
                 end_min=0
             )
+
         return MatchedTimeRegex(
             matched=True,
             timex=timex,

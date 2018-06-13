@@ -25,6 +25,7 @@ class DateTimeModel(Model):
 
         extract_results = self.extractor.extract(query, reference)
         parser_dates = []
+
         for result in extract_results:
             parse_result = self.parser.parse(result, reference)
             if isinstance(parse_result.value, list):

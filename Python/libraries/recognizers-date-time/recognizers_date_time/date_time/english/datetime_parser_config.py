@@ -123,26 +123,32 @@ class EnglishDateTimeParserConfiguration(DateTimeParserConfiguration):
 
     def get_matched_now_timex(self, source: str) -> MatchedTimex:
         source = source.strip().lower()
+
         if source.endswith('now'):
             return MatchedTimex(True, 'PRESENT_REF')
         elif source in ['recently', 'previously']:
             return MatchedTimex(True, 'PAST_REF')
         elif source in ['as soon as possible', 'asap']:
             return MatchedTimex(True, 'FUTURE_REF')
+
         return MatchedTimex(False, None)
 
     def get_swift_day(self, source: str) -> int:
         source = source.strip().lower()
+
         if source.startswith('next'):
             return 1
         elif source.startswith('last'):
             return -1
+
         return 0
 
     def get_hour(self, source: str, hour: int) -> int:
         source = source.strip().lower()
+
         if source.endswith('morning') and hour >= 12:
             return hour - 12
         elif not source.endswith('morning') and hour < 12:
             return hour + 12
+
         return hour

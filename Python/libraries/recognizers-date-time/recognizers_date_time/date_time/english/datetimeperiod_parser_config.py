@@ -119,17 +119,23 @@ class EnglishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
     def get_matched_time_range(self, source: str) -> MatchedTimeRange:
         if regex.search(self.morning_start_end_regex, source):
             return MatchedTimeRange('TMO', 8, 12, 0, True)
+
         if regex.search(self.afternoon_start_end_regex, source):
             return MatchedTimeRange('TAF', 12, 16, 0, True)
+
         if regex.search(self.evening_start_end_regex, source):
             return MatchedTimeRange('TEV', 16, 20, 0, True)
+
         if regex.search(self.night_start_end_regex, source):
             return MatchedTimeRange('TNI', 20, 23, 59, True)
+
         return MatchedTimeRange(None, 0, 0, 0, False)
 
     def get_swift_prefix(self, source: str) -> int:
         if source.startswith('next'):
             return 1
+
         if source.startswith('last'):
             return -1
+
         return 0

@@ -47,18 +47,22 @@ class BaseTimeExtractor(DateTimeExtractor):
 
     def basic_regex_match(self, source: str) -> List[Token]:
         result: List[Token] = list()
+
         for pattern in self.config.time_regex_list:
             matches = list(regex.finditer(pattern, source))
             result.extend(map(lambda x: Token(x.start(), x.end()), matches))
+
         return result
 
     def at_regex_match(self, source: str) -> List[Token]:
         result: List[Token] = list()
         matches = list(filter(lambda x: x.group(), regex.finditer(self.config.at_regex, source)))
+
         for match in matches:
             if match.end() < len(source) and source[match.end()] == '%':
                 continue
             result.append(Token(match.start(), match.end()))
+
         return result
 
     def specials_regex_match(self, source: str) -> List[Token]:
@@ -158,6 +162,7 @@ class BaseTimeParser(DateTimeParser):
                 hour = 0
             if hour <= 12 and hour != 0:
                 result.comment = 'ampm'
+
             result.timex = f'T{hour:02d}'
             result.future_value = DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day, hour, 0, 0)
             result.past_value = result.future_value
@@ -169,6 +174,7 @@ class BaseTimeParser(DateTimeParser):
             match = regex.search(pattern, source)
             if match is not None and match.start() == offset and match.group() == source:
                 return self.match_to_time(match, reference)
+
         return DateTimeResolutionResult()
 
     def match_to_time(self, match: Match, reference: datetime) -> DateTimeResolutionResult:

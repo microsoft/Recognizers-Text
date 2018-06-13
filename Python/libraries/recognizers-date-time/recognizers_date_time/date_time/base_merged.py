@@ -156,6 +156,7 @@ class BaseMergedExtractor(DateTimeExtractor):
             is_found = False
             overlap_indexes: List[int] = list()
             first_index = -1
+
             for index, dest in enumerate(destination):
                 if dest.overlap(value):
                     is_found = True
@@ -165,10 +166,12 @@ class BaseMergedExtractor(DateTimeExtractor):
                         overlap_indexes.append(index)
                     else:
                         continue
+
             if not is_found:
                 destination.append(value)
             elif overlap_indexes:
                 temp_dst: List[ExtractResult] = list()
+
                 for index, dest in enumerate(destination):
                     if index not in overlap_indexes:
                         temp_dst.append(dest)
@@ -232,6 +235,7 @@ class BaseMergedExtractor(DateTimeExtractor):
         match = regex.search(pattern, source)
         if match:
             return MatchedIndex(True, match.start())
+
         return MatchedIndex(False, -1)
 
     def check_calendar_filter_list(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
@@ -240,6 +244,7 @@ class BaseMergedExtractor(DateTimeExtractor):
                 if regex.search(pattern, er.text):
                     ers.remove(er)
                     break
+
         return ers
 
 class MergedParserConfiguration(ABC):
@@ -326,6 +331,7 @@ class BaseMergedParser(DateTimeParser):
         before_match = self.config.before_regex.match(source.text)
         after_match = self.config.after_regex.match(source.text)
         since_match = self.config.since_regex.match(source.text)
+
         if before_match:
             has_before = True
             source.start += before_match.end()
@@ -344,6 +350,7 @@ class BaseMergedParser(DateTimeParser):
             source.length -= since_match.end()
             source.text = source.text[since_match.end():]
             mod_str = since_match.group()
+
         if source.type == Constants.SYS_DATETIME_DATE:
             result = self.config.date_parser.parse(source, reference)
             if not result.value:
@@ -433,8 +440,10 @@ class BaseMergedParser(DateTimeParser):
             if has_before or has_after or has_since:
                 if dtype == Constants.SYS_DATETIME_DATE:
                     return Constants.SYS_DATETIME_DATEPERIOD
+
                 if dtype == Constants.SYS_DATETIME_TIME:
                     return Constants.SYS_DATETIME_TIMEPERIOD
+
                 if dtype == Constants.SYS_DATETIME_DATETIME:
                     return Constants.SYS_DATETIME_DATETIMEPERIOD
         return dtype
@@ -443,6 +452,7 @@ class BaseMergedParser(DateTimeParser):
         results = []
         if slot.value.sub_date_time_entities:
             sub_entities = slot.value.sub_date_time_entities
+
             for sub_entity in sub_entities:
                 result = sub_entity
                 results += self._date_time_resolution_for_split(result)
@@ -539,6 +549,7 @@ class BaseMergedParser(DateTimeParser):
 
     def _generate_from_resolution(self, dtype: str, resolution: Dict[str, str], mod: str) -> Dict[str, str]:
         result = {}
+
         if dtype == Constants.SYS_DATETIME_DATETIME:
             self.__add_single_date_time_to_resolution(resolution, TimeTypeConstants.DATETIME, mod, result)
         elif dtype == Constants.SYS_DATETIME_TIME:
@@ -548,10 +559,13 @@ class BaseMergedParser(DateTimeParser):
         elif dtype == Constants.SYS_DATETIME_DURATION:
             if TimeTypeConstants.DURATION in resolution:
                 result[TimeTypeConstants.VALUE] = resolution[TimeTypeConstants.DURATION]
+
         if dtype == Constants.SYS_DATETIME_TIMEPERIOD:
             self.__add_period_to_resolution(resolution, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, result)
+
         if dtype == Constants.SYS_DATETIME_DATEPERIOD:
             self.__add_period_to_resolution(resolution, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, result)
+
         if dtype == Constants.SYS_DATETIME_DATETIMEPERIOD:
             self.__add_period_to_resolution(resolution, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, result)
 

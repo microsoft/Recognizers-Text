@@ -91,6 +91,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
         self.config = config
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
+
         if reference is None:
             reference = datetime.now()
 
@@ -108,28 +109,38 @@ class BaseDateTimeExtractor(DateTimeExtractor):
     def merge_date_and_time(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         ers: List[ExtractResult] = self.config.date_point_extractor.extract(source, reference)
+
         if not ers:
             return tokens
+
         ers.extend(self.config.time_point_extractor.extract(source, reference))
+
         if len(ers) < 2:
             return tokens
+
         ers = sorted(ers, key=lambda x: x.start)
         i = 0
+
         while i < len(ers)-1:
             j = i+1
+
             while j < len(ers) and ers[i].overlap(ers[j]):
                 j += 1
+
             if j >= len(ers):
                 break
+
             if ((ers[i].type is Constants.SYS_DATETIME_DATE and ers[j].type is Constants.SYS_DATETIME_TIME) or
                     (ers[i].type is Constants.SYS_DATETIME_TIME and ers[j].type is Constants.SYS_DATETIME_DATE)):
                 middle_begin = ers[i].start + ers[i].length
                 middle_end = ers[j].start
+
                 if middle_begin > middle_end:
                     i = j + 1
                     continue
 
                 middle = source[middle_begin:middle_end].strip().lower()
+
                 if self.config.is_connector_token(middle):
                     begin = ers[i].start
                     end = ers[j].start + ers[j].length
@@ -144,8 +155,10 @@ class BaseDateTimeExtractor(DateTimeExtractor):
     def verify_end_token(self, source: str, token: Token) -> Token:
         after_str = source[token.end:]
         match = regex.search(self.config.suffix_regex, after_str)
+
         if match is not None:
             token.end += len(match.group())
+
         return token
 
     def basic_regex_match(self, source: str) -> List[Token]:
@@ -157,18 +170,23 @@ class BaseDateTimeExtractor(DateTimeExtractor):
     def time_of_today_before(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         ers = self.config.time_point_extractor.extract(source, reference)
+
         for er in ers:
             before = source[:er.start]
             inner_match = regex.search(self.config.night_regex, er.text)
+
             if inner_match is not None and inner_match.start() == 0:
                 before = source[:er.start + len(inner_match.group())]
+
             if not before:
                 continue
+
             match = regex.search(self.config.time_of_today_before_regex, before)
             if match is not None:
                 begin = match.start()
                 end = er.start + er.length
                 tokens.append(Token(begin, end))
+
         matches: List[Match] = list(regex.finditer(self.config.simple_time_of_today_before_regex, source))
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return tokens
@@ -176,15 +194,18 @@ class BaseDateTimeExtractor(DateTimeExtractor):
     def time_of_today_after(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         ers = self.config.time_point_extractor.extract(source, reference)
+
         for er in ers:
             after = source[er.start + er.length:]
             if not after:
                 continue
+
             match = regex.search(self.config.time_of_today_after_regex, after)
             if match is not None:
                 begin = er.start
                 end = er.start + er.length + len(match.group())
                 tokens.append(Token(begin, end))
+
         matches: List[Match] = list(regex.finditer(self.config.simple_time_of_today_after_regex, source))
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return tokens
@@ -192,9 +213,11 @@ class BaseDateTimeExtractor(DateTimeExtractor):
     def special_time_of_date(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         ers = self.config.date_point_extractor.extract(source, reference)
+
         for er in ers:
             before = source[:er.start]
             before_match = regex.search(self.config.the_end_of_regex, before)
+
             if before_match is not None:
                 tokens.append(Token(before_match.start(), er.start + er.length))
             else:
@@ -202,15 +225,18 @@ class BaseDateTimeExtractor(DateTimeExtractor):
                 after_match = regex.search(self.config.the_end_of_regex, after)
                 if after_match is not None:
                     tokens.append(Token(er.start, er.start + er.length + after_match.end()))
+
         return tokens
 
     def duration_with_before_and_after(self, source: str, reference: datetime) -> List[Token]:
         tokens: List[Token] = list()
         ers = self.config.duration_extractor.extract(source, reference)
+
         for er in ers:
             match = regex.search(self.config.unit_regex, er.text)
             if match is not None:
                 tokens = AgoLaterUtil.extractor_duration_with_before_and_after(source, er, tokens, self.config.utility_configuration)
+
         return tokens
 
 MatchedTimex = namedtuple('MatchedTimex', ['matched', 'timex'])
@@ -353,14 +379,17 @@ class BaseDateTimeParser(DateTimeParser):
 
         if source.type is self.parser_type_name:
             source_text = source.text.lower()
-
             inner_result = self.merge_date_and_time(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parse_basic_regex(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parse_time_of_today(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parse_special_time_of_date(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parser_duration_with_ago_and_later(source_text, reference)
 
@@ -377,8 +406,10 @@ class BaseDateTimeParser(DateTimeParser):
     def merge_date_and_time(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         er1: ExtractResult = next(iter(self.config.date_extractor.extract(source, reference)), None)
+
         if er1 is None:
             ers = self.config.date_extractor.extract(self.config.token_before_date + source, reference)
+
             if len(ers) == 1:
                 er1: ExtractResult = next(iter(ers), None)
                 er1.start -= len(self.config.token_before_date)
@@ -392,9 +423,11 @@ class BaseDateTimeParser(DateTimeParser):
 
         er2_list: List[ExtractResult] = self.config.time_extractor.extract(source, reference)
         er2: ExtractResult = next(iter(er2_list), None)
+
         if er2 is None:
             # here we filter out "morning, afternoon, night..." time entities
             er2_list = self.config.time_extractor.extract(self.config.token_before_time + source, reference)
+
             if len(er2_list) == 1:
                 er2: ExtractResult = next(iter(er2_list), None)
                 er2.start -= len(self.config.token_before_time)
@@ -404,6 +437,7 @@ class BaseDateTimeParser(DateTimeParser):
         # handle case "Oct. 5 in the afternoon at 7:00"
         # in this case "5 in the afternoon" will be extract as a Time entity
         correct_time_idx = 0
+
         while correct_time_idx < len(er2_list) and er2_list[correct_time_idx].overlap(er1):
             correct_time_idx += 1
 
@@ -545,11 +579,13 @@ class BaseDateTimeParser(DateTimeParser):
     def parse_special_time_of_date(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         ers = self.config.date_extractor.extract(source, reference)
+
         if len(ers) != 1:
             return result
 
         er = next(iter(ers), None)
         before_str = source[0:er.start]
+
         if regex.search(self.config.the_end_of_regex, before_str) is None:
             return result
 

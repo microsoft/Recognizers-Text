@@ -27,6 +27,7 @@ class BaseHolidayExtractor(DateTimeExtractor):
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if not reference:
             reference = datetime.now()
+
         tokens = []
         tokens += self.__holiday_match(source)
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
@@ -34,10 +35,12 @@ class BaseHolidayExtractor(DateTimeExtractor):
 
     def __holiday_match(self, source: str) -> List[Token]:
         tokens = []
+
         for regexp in self.config.holiday_regexes:
             matches = regexp.finditer(source)
             for match in matches:
                 tokens.append(Token(match.start(), match.end()))
+
         return tokens
 
 class HolidayParserConfiguration(ABC):
@@ -82,6 +85,7 @@ class BaseHolidayParser(DateTimeParser):
             reference = datetime.now()
 
         value = None
+
         if source.type == self.parser_type_name:
             inner_result = self._parse_holiday_regex_match(source.text, reference)
             if inner_result.success:
@@ -102,11 +106,13 @@ class BaseHolidayParser(DateTimeParser):
 
     def _parse_holiday_regex_match(self, text: str, reference: datetime) -> DateTimeResolutionResult:
         trimmed_text = text.strip()
+
         for pattern in self.config.holiday_regex_list:
             match = pattern.search(trimmed_text)
             if match and match.pos == 0 and match.endpos == len(trimmed_text):
                 result = self._match2date(match, reference)
                 return result
+
         return DateTimeResolutionResult()
 
     def _match2date(self, match: Match, reference: datetime) -> DateTimeResolutionResult:

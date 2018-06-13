@@ -98,15 +98,19 @@ class BaseDurationExtractor(DateTimeExtractor):
     def __cardinal_to_token(self, cardinal: ExtractResult, source: str) -> Optional[Token]:
         after = source[cardinal.start + cardinal.length:]
         match = regex.match(self.config.followed_unit, after)
+
         if match is not None:
             return Token(cardinal.start, cardinal.start + cardinal.length + len(match.group()))
+
         return None
 
     def __base_to_token(self, token: Token, source: str) -> Optional[Token]:
         after = source[token.start + token.length:]
         match = regex.match(self.config.suffix_and_regex, after)
+
         if match is not None:
             return Token(token.start, token.start + token.length + len(match.group()))
+
         return None
 
     def get_tokens_from_regex(self, pattern: Pattern, source: str) -> List[Token]:
@@ -207,10 +211,13 @@ class BaseDurationParser(DateTimeParser):
         source = source.strip()
 
         result = self.parse_number_space_unit(source)
+
         if not result.success:
             result = self.parse_number_combined_unit(source)
+
         if not result.success:
             result = self.parse_an_unit(source)
+
         if not result.success:
             result = self.parse_in_exact_number_unit(source)
 
@@ -220,8 +227,10 @@ class BaseDurationParser(DateTimeParser):
         source = source.strip()
 
         result = self.get_result_from_regex(self.config.all_date_unit_regex, source, 1)
+
         if not result.success:
             result = self.get_result_from_regex(self.config.half_date_unit_regex, source, 0.5)
+
         if not result.success:
             result = self.get_result_from_regex(self.config.followed_unit, source, 1)
 
@@ -229,6 +238,7 @@ class BaseDurationParser(DateTimeParser):
 
     def get_result_from_regex(self, pattern: Pattern, source: str, num: float) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
+
         match: Match = regex.search(pattern, source)
         if match is None:
             return result
@@ -248,6 +258,7 @@ class BaseDurationParser(DateTimeParser):
 
     def parse_number_space_unit(self, source: str) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
+
         ers = self.config.cardinal_extractor.extract(source)
         if len(ers) != 1:
             return result
@@ -279,18 +290,22 @@ class BaseDurationParser(DateTimeParser):
 
     def parse_number_with_unit_and_suffix(self, source: str) -> float:
         match = regex.search(self.config.suffix_and_regex, source)
+
         if match is not None:
             num = match.group('suffix_num') or ''
             return self.config.double_numbers.get(num, 0)
+
         return 0
 
     def parse_number_combined_unit(self, source: str) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
+
         match = regex.search(self.config.number_combined_with_unit, source)
         if match is None:
             return result
 
         num = float(match.group('num')) + self.parse_number_with_unit_and_suffix(source)
+
         source_unit = match.group('unit') or ''
         if source_unit not in self.config.unit_map:
             return result
@@ -310,13 +325,16 @@ class BaseDurationParser(DateTimeParser):
     def parse_an_unit(self, source: str) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         match = regex.search(self.config.an_unit_regex, source)
+
         if match is None:
             match = regex.search(self.config.half_date_unit_regex, source)
+
         if match is None:
             return result
 
         num = (0.5 if match.group('half') else 1) + self.parse_number_with_unit_and_suffix(source)
         source_unit = match.group('unit') or ''
+
         if source_unit not in self.config.unit_map:
             return result
 
@@ -332,6 +350,7 @@ class BaseDurationParser(DateTimeParser):
     def parse_in_exact_number_unit(self, source: str) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         match = regex.search(self.config.in_exact_number_unit_regex, source)
+
         if match is None:
             return result
 

@@ -112,6 +112,7 @@ class BaseDateExtractor(DateTimeExtractor):
 
     def basic_regex_match(self, source: str) -> List[Token]:
         ret: List[Token] = list()
+
         for regexp in self.config.date_regex_list:
             ret.extend(get_tokens_from_regex(regexp, source))
 
@@ -119,6 +120,7 @@ class BaseDateExtractor(DateTimeExtractor):
 
     def implicit_date(self, source: str) -> List[Token]:
         ret: List[Token] = list()
+
         for regexp in self.config.implicit_date_list:
             ret.extend(get_tokens_from_regex(regexp, source))
 
@@ -131,11 +133,14 @@ class BaseDateExtractor(DateTimeExtractor):
 
         for result in extract_results:
             num = int(self.config.number_parser.parse(result).value)
+
             if num < 1 or num > 31:
                 continue
+
             if result.start >= 0:
                 front_string = source[0:result.start or 0]
                 match = regex.search(self.config.month_end, front_string)
+
                 if match is not None:
                     ret.append(Token(match.start(), match.end() + result.length))
                     continue
@@ -143,9 +148,11 @@ class BaseDateExtractor(DateTimeExtractor):
                 # handling cases like 'for the 25th'
                 matches = regex.finditer(self.config.for_the_regex, source)
                 is_found = False
+
                 for match_case in matches:
                     if match_case is not None:
                         ordinal_num = RegExpUtility.get_group(match_case, 'DayOfMonth')
+
                         if ordinal_num == result.text:
                             length = len(RegExpUtility.get_group(match_case, 'end'))
                             ret.append(Token(match_case.start(), match_case.end() - length))
@@ -156,9 +163,11 @@ class BaseDateExtractor(DateTimeExtractor):
 
                 # handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
                 matches = regex.finditer(self.config.week_day_and_day_of_month_regex, source)
+
                 for match_case in matches:
                     if match_case is not None:
                         ordinal_num = RegExpUtility.get_group(match_case, 'DayOfMonth')
+
                         if ordinal_num == result.text:
                             month = reference.month
                             year = reference.year
@@ -196,6 +205,7 @@ class BaseDateExtractor(DateTimeExtractor):
                         num >= 1 and num <= 5 and
                         result.type == NumberConstants.SYS_NUM_ORDINAL):
                     week_day_str = RegExpUtility.get_group(match, 'weekday')
+
                     if week_day_str in self.config.day_of_week:
                         ret.append(
                             Token(result.start, result.start + result.length + space_len + len(match.group())))
@@ -203,6 +213,7 @@ class BaseDateExtractor(DateTimeExtractor):
             if result.start + result.length < len(source):
                 after_string = source[result.start + result.length:]
                 match = regex.match(self.config.of_month, after_string)
+
                 if match is not None:
                     ret.append(Token(result.start, result.start + result.length + len(match.group())))
 
@@ -214,6 +225,7 @@ class BaseDateExtractor(DateTimeExtractor):
 
         for result in duration_results:
             match = regex.search(self.config.date_unit_regex, result.text)
+
             if match is None:
                 continue
 
@@ -375,20 +387,28 @@ class BaseDateParser(DateTimeParser):
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if reference is None:
             reference = datetime.now()
+
         result_value: DateTimeParseResult = None
+
         if source.type is self.parser_type_name:
             source_text = source.text.lower()
             inner_result = self.parse_basic_regex_match(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parse_implicit_date(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parse_weekday_of_month(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parser_duration_with_ago_and_later(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parse_number_with_month(source_text, reference)
+
             if not inner_result.success:
                 inner_result = self.parse_single_number(source_text, reference)
+
             if inner_result.success:
                 inner_result.future_resolution: Dict[str, str] = dict()
                 inner_result.future_resolution[TimeTypeConstants.DATE] = FormatUtil.format_date(inner_result.future_value)
@@ -406,12 +426,15 @@ class BaseDateParser(DateTimeParser):
     def parse_basic_regex_match(self, source: str, reference: datetime) -> DateTimeParseResult:
         trimmed_source = source.strip()
         result = DateTimeResolutionResult()
+
         for regexp in self.config.date_regex:
             offset = 0
             match = regex.search(regexp, trimmed_source)
+
             if match is None:
                 match = regex.search(regexp, self.config.date_token_prefix + trimmed_source)
                 offset = len(self.config.date_token_prefix)
+
             if match and match.start() == offset and len(match.group()) == len(trimmed_source):
                 result = self.match_to_date(match, reference)
                 break
@@ -426,17 +449,21 @@ class BaseDateParser(DateTimeParser):
         month = 0
         day = 0
         year = 0
+
         if month_str in self.config.month_of_year and day_str in self.config.day_of_month:
             month = self.config.month_of_year.get(month_str)
             day = self.config.day_of_month.get(day_str)
+
             if year_str:
                 year = int(year_str) if year_str.isnumeric() else 0
+
                 if year < 100 and year >= 90:
                     year += 1900
                 elif year < 100 and year < 20:
                     year += 2000
 
         no_year = False
+
         if year == 0:
             year = reference.year
             result.timex = FormatUtil.luis_date(-1, month, day)
@@ -446,8 +473,10 @@ class BaseDateParser(DateTimeParser):
 
         future_date = DateUtils.safe_create_from_min_value(year, month, day)
         past_date = DateUtils.safe_create_from_min_value(year, month, day)
+
         if no_year and future_date < reference:
             future_date = DateUtils.safe_create_from_min_value(year + 1, month, day)
+
         if no_year and past_date >= reference:
             past_date = DateUtils.safe_create_from_min_value(year - 1, month, day)
 
@@ -479,6 +508,7 @@ class BaseDateParser(DateTimeParser):
             if try_date:
                 future_date = DateUtils.safe_create_from_min_value(year, month, day)
                 past_date = DateUtils.safe_create_from_min_value(year, month, day)
+
                 if future_date < reference:
                     future_date += datedelta(months=1)
 
@@ -549,13 +579,17 @@ class BaseDateParser(DateTimeParser):
 
             if weekday < int(DayOfWeek.Monday):
                 weekday = int(DayOfWeek.Sunday)
+
             if weekday < reference.isoweekday():
                 value = DateUtils.next(reference, weekday)
+
             result.timex = 'XXXX-WXX-' + str(weekday)
             future_date = value
             past_date = value
+
             if future_date < reference:
                 future_date += timedelta(weeks=1)
+
             if past_date >= reference:
                 past_date -= timedelta(weeks=1)
 
@@ -606,8 +640,10 @@ class BaseDateParser(DateTimeParser):
         trimmed_source = source.strip()
         result = DateTimeResolutionResult()
         match = regex.match(self.config.week_day_of_month_regex, trimmed_source)
+
         if not match:
             return result
+
         cardinal_str = RegExpUtility.get_group(match, 'cardinal')
         weekday_str = RegExpUtility.get_group(match, 'weekday')
         month_str = RegExpUtility.get_group(match, 'month')
@@ -634,6 +670,7 @@ class BaseDateParser(DateTimeParser):
 
         future_date = value
         past_date = value
+
         if no_year and future_date < reference:
             future_date = self._compute_date(cardinal, weekday, month, year + 1)
             if future_date.month != month:
@@ -653,10 +690,13 @@ class BaseDateParser(DateTimeParser):
     def _compute_date(self, cardinal: int, weekday: DayOfWeek, month: int, year: int):
         first_day = datetime(year, month, 1)
         first_weekday = DateUtils.this(first_day, weekday)
+
         if weekday == 0:
             weekday = int(DayOfWeek.Sunday)
+
         if weekday < first_day.isoweekday():
             first_weekday = DateUtils.next(first_day, weekday)
+
         first_weekday = first_weekday.replace(day=first_weekday.day + (7 * (cardinal - 1)))
         return first_weekday
 
@@ -677,8 +717,10 @@ class BaseDateParser(DateTimeParser):
         result = DateTimeResolutionResult()
 
         ers = self.config.ordinal_extractor.extract(trimmed_source)
+
         if not ers:
             ers = self.config.integer_extractor.extract(trimmed_source)
+
         if not ers:
             return result
 
@@ -687,6 +729,7 @@ class BaseDateParser(DateTimeParser):
         month = 0
 
         match = regex.search(self.config.month_regex, trimmed_source)
+
         if match:
             month = self.config.month_of_year.get(match.group())
             day = num
@@ -727,8 +770,10 @@ class BaseDateParser(DateTimeParser):
 
         if ambiguous:
             result.timex = FormatUtil.luis_date(-1, month, day)
+
             if future_date < reference:
                 future_date = future_date.replace(year=future_date.year+1)
+
             if past_date >= reference:
                 past_date = past_date.replace(year=past_date.year+1)
         else:
@@ -744,8 +789,10 @@ class BaseDateParser(DateTimeParser):
         result = DateTimeResolutionResult()
 
         ers = self.config.ordinal_extractor.extract(trimmed_source)
+
         if not ers or not ers[0].text:
             ers = self.config.integer_extractor.extract(trimmed_source)
+
         if not ers or ers[0].text:
             return result
 
@@ -759,6 +806,7 @@ class BaseDateParser(DateTimeParser):
 
         if future_date != DateUtils.min_value and future_date < reference:
             future_date = future_date.replace(month=future_date.month + 1)
+
         if past_date != DateUtils.min_value and past_date >= reference:
             past_date = past_date.replace(month=past_date.month - 1)
 

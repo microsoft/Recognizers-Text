@@ -132,11 +132,13 @@ class EnglishDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigu
     def get_from_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('from'):
             return MatchedIndex(matched=True, index=source.rfind('from'))
+
         return MatchedIndex(matched=False, index=-1)
 
     def get_between_token_index(self, source: str) -> MatchedIndex:
         if source.endswith('between'):
             return MatchedIndex(matched=True, index=source.rfind('between'))
+
         return MatchedIndex(matched=False, index=-1)
 
     def has_connector_token(self, source: str) -> bool:

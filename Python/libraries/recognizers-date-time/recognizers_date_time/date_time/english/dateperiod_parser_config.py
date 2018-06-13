@@ -193,21 +193,25 @@ class EnglishDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def get_swift_day_or_month(self, source: str) -> int:
         trimmed_source = source.strip().lower()
         swift = 0
+
         if self.next_prefix_regex.search(trimmed_source):
             swift = 1
         elif self.past_prefix_regex.search(trimmed_source):
             swift = -1
+
         return swift
 
     def get_swift_year(self, source: str) -> int:
         trimmed_source = source.strip().lower()
         swift = -10
+
         if self.next_prefix_regex.search(trimmed_source):
             swift = 1
         elif self.past_prefix_regex.search(trimmed_source):
             swift = -1
         elif self.this_prefix_regex.search(trimmed_source):
             swift = 0
+
         return swift
 
     def is_future(self, source: str) -> bool:
