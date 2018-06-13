@@ -117,5 +117,18 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I talked to:@Howard",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Howard",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Howard"
+        }
+      }
+    ]
   }
 ]

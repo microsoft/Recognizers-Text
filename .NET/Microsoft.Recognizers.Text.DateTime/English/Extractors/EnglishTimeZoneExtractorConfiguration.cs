@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -40,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             if ((options & DateTimeOptions.EnablePreview) != 0)
             {
-                CityMatcher.Init(TimeZoneDefinitions.MajorCities.Select(o => o.ToLowerInvariant()));
+                CityMatcher.Init(TimeZoneDefinitions.MajorCities.Select(o => StringUtil.RemoveDiacritics(o.ToLowerInvariant())));
             }
         }
 

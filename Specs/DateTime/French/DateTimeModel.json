@@ -451,7 +451,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5 du matin et 6 apres-midi",
+      "Text": "entre 5 du matin et 6 apres-midi",
       "TypeName": "datetimeV2.timerange",
       "Resolution": {
         "values": [

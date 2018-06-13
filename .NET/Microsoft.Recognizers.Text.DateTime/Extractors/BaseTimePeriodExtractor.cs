@@ -136,7 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                ers.Sort((x, y) => (x.Start - y.Start ?? 0));
+                ers.Sort((x, y) => x.Start - y.Start ?? 0);
             }
 
             var idx = 0;
@@ -162,9 +162,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handle "from"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
-                    if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex))
+                    if (this.config.GetFromTokenIndex(beforeStr, out var fromIndex))
                     {
+                        // Handle "from"
                         periodBegin = fromIndex;
+                    }
+                    else if (this.config.GetBetweenTokenIndex(beforeStr, out var betweenIndex))
+                    {
+                        // Handle "between"
+                        periodBegin = betweenIndex;
                     }
 
                     ret.Add(new Token(periodBegin, periodEnd));
