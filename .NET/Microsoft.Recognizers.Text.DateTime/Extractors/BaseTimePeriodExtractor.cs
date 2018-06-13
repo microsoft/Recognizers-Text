@@ -30,6 +30,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
+        // Cases like "from 3 to 5am" or "between 3:30 and 5" are extracted here
+        // Note that cases like "from 3 to 5" will not be extracted here because no "am/pm" or "hh:mm" to infer it's a time period
+        // Also cases like "from 3:30 to 4 people" shuold not be extracted as a time period
         private List<Token> MatchSimpleCases(string text)
         {
             var ret = new List<Token>();
@@ -47,6 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // Cases like "from 3:30 to 4 people" is considered not valid
                         bool endWithValidToken = false;
 
+                        // "No extra tokens after the time period"
                         if (match.Index + match.Length == text.Length)
                         {
                             endWithValidToken = true;
@@ -55,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             var afterStr = text.Substring(match.Index + match.Length);
 
+                            // "End with general ending tokens or "TokenBeforeDate" (like "on")
                             var endingMatch = this.config.GeneralEndingRegex.Match(afterStr);
                             if (endingMatch.Success || afterStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
                             {

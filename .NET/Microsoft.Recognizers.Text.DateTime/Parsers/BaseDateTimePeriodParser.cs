@@ -233,7 +233,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (!string.IsNullOrEmpty(timePeriodResolutionResult.Comment) && 
                             timePeriodResolutionResult.Comment.Equals(Constants.Comment_AmPm))
                         {
-                            ret.Comment = Constants.Comment_AmPm;
+                            // AmPm comment is used for later SetParserResult to judge whether this parse result should have two parsing results
+                            // Cases like "from 10:30 to 11 on 1/1/2015" should have AmPm comment, as it can be parsed to "10:30am to 11am" and also be parsed to "10:30pm to 11pm"
+                            // Cases like "from 10:30 to 3 on 1/1/2015" should not have AmPm comment
+                            if (beginTime.Hour < 12 && endTime.Hour < 12)
+                            {
+                                ret.Comment = Constants.Comment_AmPm;
+                            }
                         }
 
                         ret.Success = true;

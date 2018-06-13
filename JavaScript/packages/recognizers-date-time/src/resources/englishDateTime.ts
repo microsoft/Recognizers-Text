@@ -134,6 +134,8 @@ export namespace EnglishDateTime {
 	export const TimeRegex10 = `(\\b${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
 	export const PureNumFromTo = `((from|between)\\s+)?(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${TillRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
 	export const PureNumBetweenAnd = `(between\\s+)(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${RangeConnectorRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
+	export const SpecificTimeFromTo = `((from|between)\\s+)?(?<time1>(${TimeRegex2}|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${TillRegex}\\s*(?<time2>(${TimeRegex2}|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
+	export const SpecificTimeBetweenAnd = `(between\\s+)(?<time1>(${TimeRegex2}|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${RangeConnectorRegex}\\s*(?<time2>(${TimeRegex2}|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
 	export const PrepositionRegex = `(?<prep>^(at|on|of)(\\s+the)?$)`;
 	export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime)))s?)\\b`;
 	export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btonight)s?\\b`;
