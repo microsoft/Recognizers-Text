@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor HolidayExtractor { get; }
 
-        IDateTimeExtractor TimeZoneExtractor { get; }
+        IDateTimeZoneExtractor TimeZoneExtractor { get; }
 
         IDateTimeListExtractor DateTimeAltExtractor { get; }
 

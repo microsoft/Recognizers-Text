@@ -37,6 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
                 AddTo(ret, this.config.TimeZoneExtractor.Extract(text, reference), text);
+                ret = this.config.TimeZoneExtractor.RemoveAmbiguousTimezone(ret);
             }
 
             // This should be at the end since if need the extractor to determine the previous text contains time or not

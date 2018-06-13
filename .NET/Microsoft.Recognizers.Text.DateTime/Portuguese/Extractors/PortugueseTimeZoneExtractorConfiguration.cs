@@ -19,5 +19,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
         public Regex CityTimeSuffixRegex { get; }
         public StringMatcher CityMatcher { get; }
+        public List<string> AmbiguousTimezoneList { get; }
     }
 }
