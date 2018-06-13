@@ -1018,7 +1018,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "couple of weeks",
@@ -1041,7 +1041,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "a couple of days",
@@ -1064,7 +1064,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "less than a couple of days",
@@ -1088,7 +1088,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "more than an hour",
@@ -1112,7 +1112,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "another hour",
@@ -1135,7 +1134,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "another week",
@@ -1158,7 +1156,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "another month",

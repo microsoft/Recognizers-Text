@@ -396,7 +396,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-20T00:00:00"
     },
-    "NotSupported": "python,javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "each week",
@@ -473,7 +473,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "for the day",
@@ -497,7 +497,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "for the month",
@@ -521,7 +521,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -529,7 +529,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -537,7 +537,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -545,7 +545,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -553,7 +553,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -561,7 +561,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -569,7 +569,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-24T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": []
   }
 ]

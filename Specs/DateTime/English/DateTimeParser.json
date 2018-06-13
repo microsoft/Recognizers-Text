@@ -1194,8 +1194,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "in less than an hour",

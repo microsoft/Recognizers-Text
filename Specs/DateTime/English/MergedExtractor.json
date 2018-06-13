@@ -695,7 +695,6 @@
 {
   "Input": "I'll be out 11 -2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 -2016",
@@ -707,7 +706,6 @@
 {
   "Input": "I'll be out 11- 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11- 2016",
@@ -719,7 +717,6 @@
 {
   "Input": "I'll be out 11 / 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 / 2016",
@@ -731,7 +728,6 @@
 {
   "Input": "I'll be out 11/2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11/2016",
@@ -743,7 +739,6 @@
 {
   "Input": "I'll be out 11 -2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 -2016",
@@ -755,7 +750,6 @@
 {
   "Input": "I'll be out 11- 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11- 2016",
@@ -767,7 +761,6 @@
 {
   "Input": "I'll be out 11 - 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 - 2016",
@@ -779,7 +772,6 @@
 {
   "Input": "I'll be out 11-2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11-2016",
@@ -791,7 +783,6 @@
 {
   "Input": "I'll be out 2016 /11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 /11",
@@ -803,7 +794,6 @@
 {
   "Input": "I'll be out 2016/ 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016/ 11",
@@ -815,7 +805,6 @@
 {
   "Input": "I'll be out 2016 / 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 / 11",
@@ -827,7 +816,6 @@
 {
   "Input": "I'll be out 2016/11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016/11",
@@ -839,7 +827,6 @@
 {
   "Input": "I'll be out 2016 -11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 -11",
@@ -851,7 +838,6 @@
 {
   "Input": "I'll be out 2016- 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016- 11",
@@ -863,7 +849,6 @@
 {
   "Input": "I'll be out 2016 - 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 - 11",
@@ -875,7 +860,6 @@
 {
   "Input": "I'll be out 2016-11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016-11",
@@ -887,7 +871,6 @@
 {
   "Input": "I'll be out 2016 November",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 November",
@@ -899,7 +882,6 @@
 {
   "Input": "I'll be out November , 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November , 2016",
@@ -911,7 +893,6 @@
 {
   "Input": "I'll be out 2016 , nov",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 , nov",
@@ -923,7 +904,6 @@
 {
   "Input": "I'll be out 2016, nov",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016, nov",
@@ -934,7 +914,6 @@
 ,
 {
   "Input": "He will arrive later than or at 1/1/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "later than or at 1/1/2016",
@@ -945,7 +924,6 @@
 ,
 {
   "Input": "He will leave before or on 1/1/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before or on 1/1/2016",
@@ -956,7 +934,6 @@
 ,
 {
   "Input": "This task will complete on or earlier than 1/1/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on or earlier than 1/1/2016",
@@ -967,7 +944,6 @@
 ,
 {
   "Input": "This task will complete before or in Feb 2018",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before or in Feb 2018",
@@ -978,7 +954,6 @@
 ,
 {
   "Input": "You can't leave earlier than or in 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "earlier than or in 2016",
@@ -989,7 +964,6 @@
 ,
 {
   "Input": "You can't leave earlier than or in 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "earlier than or in 2016",
@@ -1000,7 +974,6 @@
 ,
 {
   "Input": "You can leave office at or after 6:30PM today",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "at or after 6:30PM today",
@@ -1011,7 +984,6 @@
 ,
 {
   "Input": "You need to leave on or before the day after tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on or before the day after tomorrow",
@@ -1022,7 +994,6 @@
 ,
 {
   "Input": "You need to leave on or earlier than 3pm 5/15/2018",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on or earlier than 3pm 5/15/2018",
@@ -1034,7 +1005,6 @@
 {
   "Input": "Are you available two days after today?",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two days after today",
@@ -1046,7 +1016,6 @@
 {
   "Input": "Are you available three weeks from tomorrow?",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "three weeks from tomorrow",
@@ -1058,7 +1027,6 @@
 {
   "Input": "Where were you two days before yesterday?",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two days before yesterday",
