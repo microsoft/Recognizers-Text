@@ -1,3 +1,0 @@
-mvn compile
-
-mvn test
