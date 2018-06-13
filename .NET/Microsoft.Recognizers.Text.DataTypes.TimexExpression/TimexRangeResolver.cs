@@ -151,6 +151,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     var start = Math.Max(candidate.Start.GetTime(), constraint.Start.GetTime());
                     var time = new Time(start);
 
+                    // TODO: consider a method on TimexProperty to do this clone/overwrite pattern
                     var resolved = timex.Clone();
                     resolved.PartOfDay = null;
                     resolved.Seconds = null;
@@ -222,6 +223,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.DayOfWeek != null)
             {
+                // convert between ISO day of week and .NET day of week
                 var day = timex.DayOfWeek == 7 ? DayOfWeek.Sunday : (DayOfWeek)timex.DayOfWeek;
                 var dates = TimexDateHelpers.DatesMatchingDay(day, constraint.Start, constraint.End);
                 var result = new List<string>();

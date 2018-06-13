@@ -173,6 +173,8 @@ const expandTimeRange = function (timex) {
             case 'NI':
                 timex = { hour: 20, minute: 0, second: 0, hours: 4, minutes: 0, seconds: 0 };
                 break;
+            default:
+                throw new exception('unrecognized part of day timerange');
         }
     }
 

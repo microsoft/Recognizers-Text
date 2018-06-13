@@ -77,6 +77,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     case "NI":
                         timex = new TimexProperty(TimexCreator.Night);
                         break;
+                    default:
+                        throw new ArgumentException("unrecognized part of day timerange", nameof(timex));
                 }
             }
 

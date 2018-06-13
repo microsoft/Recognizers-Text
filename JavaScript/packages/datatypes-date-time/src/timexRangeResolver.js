@@ -172,6 +172,7 @@ const resolveTimeRange = function (timex, constraints) {
             const start = Math.max(candidate.start.getTime(), constraint.start.getTime());
             const time = new Time(start);
 
+            // TODO: refer to comments in C# - consider first classing this clone/overwrite behavior
             const resolved = new TimexProperty(timex.timex);
             delete resolved.partOfDay;
             delete resolved.seconds;

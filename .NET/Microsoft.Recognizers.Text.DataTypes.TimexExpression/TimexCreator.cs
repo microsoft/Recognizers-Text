@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
     public static class TimexCreator
     {
-
+        // The following constants are consistent with the Recognizer results
         public static readonly string Monday = "XXXX-WXX-1";
         public static readonly string Tuesday = "XXXX-WXX-2";
         public static readonly string Wednesday = "XXXX-WXX-3";
