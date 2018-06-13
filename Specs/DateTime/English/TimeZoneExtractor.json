@@ -53,5 +53,90 @@
         "Type": "timezone"
       }
     ]
+  },
+  {
+    "Input": "Book me a room at beijing-time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "beijing-time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at St. Louis-time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "St. Louis-time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at San José Time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "San José Time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "For me, Christchurch Time, Colchester-time or Edinburgh time is OK.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Christchurch Time",
+        "Type": "timezone"
+      },
+      {
+        "Text": "Colchester-time",
+        "Type": "timezone"
+      },
+      {
+        "Text": "Edinburgh time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Sydney timezone.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Sydney timezone",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Montréal time.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Montréal time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Montreal time.",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Montreal time",
+        "Type": "timezone"
+      }
+    ]
   }
 ]

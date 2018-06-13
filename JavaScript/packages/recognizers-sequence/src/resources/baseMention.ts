@@ -7,5 +7,5 @@
 // ------------------------------------------------------------------------------
 
 export namespace BaseMention {
-	export const MentionRegex = `((?<=\\s|^)@([a-zA-Z0-9_]+))`;
+	export const MentionRegex = `@([a-zA-Z0-9_]+)(?![.]\\w)\\b`;
 }

@@ -62,10 +62,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public EnglishTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public EnglishTimePeriodExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+            SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }

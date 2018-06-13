@@ -3515,6 +3515,52 @@
 }
 ,
 {
+  "Input": "Eli Lilly sold IVAC on Dec. 31 , 1994",
+  "Context": {
+    "ReferenceDateTime": "2018-05-01T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "dec. 31 , 1994",
+    "Start": 23,
+    "End": 36,
+    "TypeName": "datetimeV2.date",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "1994-12-31",
+          "type": "date",
+          "value": "1994-12-31"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "I'll go back 5/3/18 @ 17:49:19",
+  "Context": {
+    "ReferenceDateTime": "2018-05-01T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "5/3/18 @ 17:49:19",
+    "Start": 13,
+    "End": 29,
+    "TypeName": "datetimeV2.datetime",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018-05-03T17:49:19",
+          "type": "datetime",
+          "value": "2018-05-03 17:49:19"
+        }
+      ]
+    }
+  }]
+}
+,
+{
   "Input": "It will happen between 10 and 11:30 on 1/1/2015",
   "Context": {
     "ReferenceDateTime": "2018-05-31T00:00:00"

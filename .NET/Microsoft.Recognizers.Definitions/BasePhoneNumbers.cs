@@ -25,5 +25,11 @@ namespace Microsoft.Recognizers.Definitions
 		public const string USPhoneNumberRegex = @"((((\B\+)|\b)1(\s|-)?)|\b)?(\(\d{3}\)|\b\d{3})\s?-?\s?\d{3}\s?-?\s?\d{4}\b";
 		public const string CNPhoneNumberRegex = @"((\b00\s?)?\+?86\s?-?\s?)?((\d{2,5}|\(\d{2,5}\))\s?-?\s?\d{4}\s?-?\s?\d{4}(\s?-?\s?\d{4})?|\d{3}\s?-?\s?\d{4}\s?-?\s?\d{4})(?!-)\b";
 		public const string SpecialPhoneNumberRegex = @"\b(\d{3,4}[/-]\d{1,4}[/-]\d{3,4})\b";
+		public static readonly IList<char> SeparatorCharList = new List<char>
+		{
+			'-',
+			'.',
+			'/'
+		};
 	}
 }

@@ -171,6 +171,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ParseSimpleCases(text, referenceTime);
             }
 
+            if (timePeriodResolutionResult.TimeZoneResolution != null)
+            {
+                ret.TimeZoneResolution = timePeriodResolutionResult.TimeZoneResolution;
+            }
+
             var timePeriodTimex = timePeriodResolutionResult.Timex;
 
             // If it is a range type timex
@@ -243,7 +248,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Success = true;
-                        ret.SubDateTimeEntities = new List<object> { pr, timePeriodParseResult };
+                        ret.SubDateTimeEntities = new List<object> {pr, timePeriodParseResult};
 
                         return ret;
                     }
@@ -314,6 +319,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         pastTime = (DateObject) ((DateTimeResolutionResult) pr.Value).PastValue;
 
                         dateStr = pr.TimexStr;
+
+                        if (((DateTimeResolutionResult)pr.Value).TimeZoneResolution != null)
+                        {
+                            ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
+                        }
                     }
                     else
                     {

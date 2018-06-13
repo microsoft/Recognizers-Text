@@ -1,0 +1,215 @@
+[
+  {
+    "Input": "drie biljoenste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "drie biljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "een biljoenste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "honderd biljoenste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "honderd biljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "11e",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "11e",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "derde",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "derde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30ste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "30ste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tweede",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "tweede",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "elfde",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "elfde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nulde",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "nulde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twintigste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "twintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vijfentwintigste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "vijfentwintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eenentwintigste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "eenentwintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "21"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "honderdvijfentwintigste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "honderdvijfentwintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "biljoenste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "biljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eerste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "eerste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tweehonderdste",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "tweehonderdste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Boek een eerste klas ticket naar Amsterdam",
+    "NotSupported": "dotNet,javascript,python",
+    "Results": [
+      {
+        "Text": "eerste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  }
+]
