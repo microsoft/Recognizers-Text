@@ -1833,7 +1833,7 @@
 },
 {
   "Input": "My phone number is +1-222-2222/2222",
-  "NotSupported": "javascript",
+  "NotSupported": "javascript,java",
   "Results": [
     {
       "Text": "1",

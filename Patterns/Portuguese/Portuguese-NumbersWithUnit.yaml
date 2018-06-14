@@ -572,7 +572,7 @@ InformationSuffixList: !dictionary
     tebibyte: tebibyte|tebibytes|TiB|TiByte
     pebibyte: pebibyte|pebibytes|PiB|PiByte
 AmbiguousDimensionUnitList: !list
-  types: [ string, string ]
+  types: [ string ]
   entries:
     - ton
     - tonelada

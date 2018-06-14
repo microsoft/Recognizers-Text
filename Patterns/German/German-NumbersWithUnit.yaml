@@ -481,7 +481,7 @@ InformationSuffixList: !dictionary
     Terabyte: terabyte|tB|terabytes|tera byte|tera bytes|TByte
     Petabyte: petabyte|pB|petabytes|peta byte|peta bytes|PByte
 AmbiguousDimensionUnitList: !list
-  types: [ string, string ]
+  types: [ string ]
   entries:
     - barrel
     - grain
