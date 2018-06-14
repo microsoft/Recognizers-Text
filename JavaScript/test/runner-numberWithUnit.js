@@ -26,14 +26,14 @@ module.exports = function getNumberWithUnitTestRunner(config) {
             t.is(!!actual.resolution, !!expected.Resolution, 'Result.Resolution is defined');
             if(!expected.Resolution) return;
 
-            simple_assert(t, actual, expected, 'value');
-            simple_assert(t, actual, expected, 'unit');
-            simple_assert(t, actual, expected, 'isoCurrency');
+            simpleAssert(t, actual, expected, 'value');
+            simpleAssert(t, actual, expected, 'unit');
+            simpleAssert(t, actual, expected, 'isoCurrency');
         });
     };
 }
 
-function simple_assert(t, actual, expected, prop) {
+function simpleAssert(t, actual, expected, prop) {
     if (expected.Resolution[prop]) {
         t.is(actual.resolution[prop], expected.Resolution[prop], 'Result.Resolution.' + prop);
     }

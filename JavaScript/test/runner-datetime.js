@@ -60,7 +60,7 @@ module.exports = function getDateTimeRunner(config) {
     return ignoredTest;
 };
 
-function simple_extractor_assert(t, actual, expected, prop, resolution) {
+function simpleExtractorAssert(t, actual, expected, prop, resolution) {
     if (expected[resolution]) {
         t.is(actual[prop], expected[resolution], 'Result.Resolution.' + resolution);
     }
@@ -81,21 +81,21 @@ function getExtractorTestRunner(extractor) {
         _.zip(result, expected).forEach(o => {
             var actual = o[0];
             var expected = o[1];
-            simple_extractor_assert(t, actual, expected, 'text', 'Text');
-            simple_extractor_assert(t, actual, expected, 'type', 'Type');
-            simple_extractor_assert(t, actual, expected, 'start', 'Start');
-            simple_extractor_assert(t, actual, expected, 'length', 'Length');
+            simpleExtractorAssert(t, actual, expected, 'text', 'Text');
+            simpleExtractorAssert(t, actual, expected, 'type', 'Type');
+            simpleExtractorAssert(t, actual, expected, 'start', 'Start');
+            simpleExtractorAssert(t, actual, expected, 'length', 'Length');
         });
     };
 }
 
-function simple_parser_assert(t, actual, expected, prop, resolution) {
+function simpleParserAssert(t, actual, expected, prop, resolution) {
     if (expected[resolution]) {
         t.is(actual[prop], expected[resolution], 'Result.Value.' + resolution + ' actual:' + JSON.stringify(actual))
     }
 }
 
-function deep_parser_assert(t, actual, expected, prop, resolution) {
+function deepParserAssert(t, actual, expected, prop, resolution) {
     if (expected[resolution]) {
         t.deepEqual(actual[prop], expected[resolution], 'Result.Value.' + resolution + ' actual:' + JSON.stringify(actual))
     }
@@ -122,10 +122,10 @@ function getParserTestRunner(extractor, parser) {
 
             t.is(!!actual.value, !!expected.Value, 'Result.Value');
             if (expected.Value) {
-                simple_parser_assert(t, actual.value, expected.Value, 'timex', 'Timex');
-                simple_parser_assert(t, actual.value, expected.Value, 'mod', 'Mod');
-                deep_parser_assert(t, actual.value, expected.Value, 'futureResolution', 'FutureResolution');
-                deep_parser_assert(t, actual.value, expected.Value, 'pastResolution', 'PastResolution');
+                simpleParserAssert(t, actual.value, expected.Value, 'timex', 'Timex');
+                simpleParserAssert(t, actual.value, expected.Value, 'mod', 'Mod');
+                deepParserAssert(t, actual.value, expected.Value, 'futureResolution', 'FutureResolution');
+                deepParserAssert(t, actual.value, expected.Value, 'pastResolution', 'PastResolution');
             }
         });
     };
@@ -149,8 +149,8 @@ function getMergedParserTestRunner(extractor, parser) {
             var expected = o[1];
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.type, expected.Type, 'Result.Type');
-            simple_parser_assert(t, actual, expected, 'start', 'Start');
-            simple_parser_assert(t, actual, expected, 'end', 'End');
+            simpleParserAssert(t, actual, expected, 'start', 'Start');
+            simpleParserAssert(t, actual, expected, 'end', 'End');
 
             t.is(!!actual.value, !!expected.Value, 'Result.Value');
             if (expected.Value) {
@@ -181,9 +181,9 @@ function getModelTestRunner(getResults) {
             var expected = o[1];
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
-            simple_parser_assert(t, actual, expected, 'parentText', 'ParentText');
-            simple_parser_assert(t, actual, expected, 'start', 'Start');
-            simple_parser_assert(t, actual, expected, 'end', 'End');
+            simpleParserAssert(t, actual, expected, 'parentText', 'ParentText');
+            simpleParserAssert(t, actual, expected, 'start', 'Start');
+            simpleParserAssert(t, actual, expected, 'end', 'End');
 
             t.is(!!actual.resolution, !!expected.Resolution, 'Result.Resolution');
             if (expected.Resolution) {
