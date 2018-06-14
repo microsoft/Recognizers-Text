@@ -1,301 +1,589 @@
 [
   {
-    "Input": "Ik ga terug met Pasen",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": "75ml",
     "Results": [
       {
-        "Text": "Pasen",
-        "Type": "date",
-        "Value": {
-          "Timex": "",
-          "FutureResolution": {
-            "date": "0001-01-01"
-          },
-          "PastResolution": {
-            "date": "0001-01-01"
-          }
+        "Text": "75ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "75",
+          "unit": "Milliliter"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op 1e kerstdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": "Het grootste nadeel is de dikte van 3 inch, groot genoeg voor een consultant om het beschrijven als plomp.",
     "Results": [
       {
-        "Text": "1e kerstdag",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-12-25",
-          "FutureResolution": {
-            "date": "2016-12-25"
-          },
-          "PastResolution": {
-            "date": "2015-12-25"
-          }
+        "Text": "3-inch",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Inch"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op nieuwjaarsdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": "een tornado woekerde door een gebied van tien mijl lang, waardoor ten minste veertien mensen om het leven zijn gekomen en tientallen huizen verwoest zijn.",
     "Results": [
       {
-        "Text": "nieuwjaarsdag",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-12-31",
-          "FutureResolution": {
-            "date": "2016-12-31"
-          },
-          "PastResolution": {
-            "date": "2015-12-31"
-          }
+        "Text": "tien kilometer",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Mile"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op oudejaarsavond",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": "Er is meer dan 10 ½ kilometer kabel en snoer nodig om het allemaal aan te sluiten, en 23 computers.",
     "Results": [
       {
-        "Text": "oudejaarsavond",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-12-31",
-          "FutureResolution": {
-            "date": "2016-12-31"
-          },
-          "PastResolution": {
-            "date": "2015-12-31"
-          }
+        "Text": "10 1/2 kilometer",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10.5",
+          "unit": "Mile"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug met kerst",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": "de reis van 6 kilometer naar mijn vliegveld hotel dat eerder op de dag 20 minuten duurde, duurde nu meer dan drie uur.",
     "Results": [
       {
-        "Text": "kerst",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-12-25",
-          "FutureResolution": {
-            "date": "2016-12-25"
-          },
-          "PastResolution": {
-            "date": "2015-12-25"
-          }
+        "Text": "6 kilometer",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Mile"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op Nieuwjaarsdag.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": " In de gehele industrie daalde de olieproductie in dit land met 500.000 vaten per dag naar vaten in de eerste acht maanden van dit jaar. ",
     "Results": [
       {
-        "Text": "Nieuwjaarsdag",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-01",
-          "FutureResolution": {
-            "date": "2017-01-01"
-          },
-          "PastResolution": {
-            "date": "2016-01-01"
-          }
+        "Text": "500.000 vaten",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500000",
+          "unit": "Barrel"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op thanks giving day",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
-    "Results": [
+    "Input": " het is wat 1) verklaart waarom we zijn als, nou ja, onszelf in plaats van bo jackson; 2) waarschuwt dat het mogelijk is om te verdrinken in een meer dat gemiddeld twee voet diep is; en 3) voorspelt dat 10.000 apen die vóór 10.000 worden geplaatst, 1, 118 publiceerbare rock 'n' roll-tunes produceren.”,  
+
+  "Results": [
       {
-        "Text": "thanks giving day",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-WXX-4-4",
-          "FutureResolution": {
-            "date": "2016-11-24"
-          },
-          "PastResolution": {
-            "date": "2015-11-26"
-          }
+        "Text": "twee voet",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Foot"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug met thanksgiving",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": " op 19 mei begon de fda met het vasthouden van Chinese paddestoelen in 68 ons blikken nadat meer dan 100 mensen in Mississippi, New York en Pennsylvania ziek werden door het eten van bedorven champignons.",
     "Results": [
       {
-        "Text": "thanksgiving",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-11-WXX-4-4",
-          "FutureResolution": {
-            "date": "2016-11-24"
-          },
-          "PastResolution": {
-            "date": "2015-11-26"
-          }
+        "Text": "68 ons",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "68",
+          "unit": "Ounce"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op vaderdag",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
-    "Results": [
+    "Input": " Dhr . Hulings gnoof dat hij al zijn aandelen verkocht een week voor de markt 190 punten kelderde op 13 oktober, en hij gebruikt het geld om een 45-hectare groot paardenbedrijf te kopen. 
+
+  "Results": [
       {
-        "Text": "vaderdag",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-06-WXX-7-3",
-          "FutureResolution": {
-            "date": "2017-06-18"
-          },
-          "PastResolution": {
-            "date": "2016-06-19"
-          }
+        "Text": "45-hectare",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "45",
+          "unit": "Acre"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op Nieuwjaarsdag volgend jaar",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": "dan, om van deze tuintjes vrij letterlijk kamers te maken, had mvr. Bartlett raamloze wanden (baksteen, traliewerk, haag) van acht tot tien voet hoog gemaakt, waardoor haar interieurs in dag-lange stygische schaduwen worden geworpen",
     "Results": [
       {
-        "Text": " Nieuwjaarsdag volgend jaar",
-        "Type": "date",
-        "Value": {
-          "Timex": "2017-01-01",
-          "FutureResolution": {
-            "date": "2017-01-01"
-          },
-          "PastResolution": {
-            "date": "2017-01-01"
-          }
+        "Text": "10 voet",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Foot"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op thanks giving day 2010",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": "` ` `management wil geen verrassingen '', merkt jack zaves op, die als brandstofservicedirecteur bij American Airlines jaarlijks ongeveer 2,4 miljard liter vliegtuigbrandstof koopt.",
     "Results": [
       {
-        "Text": "thanks giving day 2010",
-        "Type": "date",
-        "Value": {
-          "Timex": "2010-11-WXX-4-4",
-          "FutureResolution": {
-            "date": "2010-11-25"
-          },
-          "PastResolution": {
-            "date": "2010-11-25"
-          }
+        "Text": "2,4 miljard liter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2400000000",
+          "unit": "Gallon"
         }
       }
     ]
   },
   {
-    "Input": "Ik ga terug op vaderdag 2015",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": " een 10-liter waterkoeler was op de vloer gevallen en bedrenkte de rode vloerbedekking. ",
     "Results": [
       {
-        "Text": "vaderdag 2015",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-06-WXX-7-3",
-          "FutureResolution": {
-            "date": "2015-06-21"
-          },
-          "PastResolution": {
-            "date": "2015-06-21"
-          }
+        "Text": "10-liter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Gallon"
         }
       }
     ]
   },
   {
-    "Input": "Hier op Pershing Square tijdens Dag van de Arbeid.",
-    "Context": {
-      "ReferenceDateTime": "2018-06-01T00:00:00"
-    },
-    "NotSupportedByDesign": "python",
+    "Input": " in de buurt, dartelen zes dolfijnen in een zeewateraquarium van 1,5 miljoen liter. ",
     "Results": [
       {
-        "Text": "Dag van de Arbeid",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-01",
-          "FutureResolution": {
-            "date": "2019-05-01"
-          },
-          "PastResolution": {
-            "date": "2018-05-01"
-          }
+        "Text": "1,5 miljoen liter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1500000",
+          "unit": "Gallon"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " en deze baby is meer dan twee pond.",
+    "Results": [
+      {
+        "Text": "twee pond",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Pound"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ik vertrouw mensen die niet eten, niet, zei ms. Volokh, hoewel ze zelf een paar jaar geleden stopte met het eten van lunch om 25 pond te laten vallen. ",
+    "Results": [
+      {
+        "Text": "25 pond",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "25",
+          "unit": "Pound"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " Shell, een dochteronderneming van Royal Dutch / Shell Group, mag 0,9 biljoen kubieke voet exporteren, en Golf, een afdeling van Olympia & York Developments ltd. zal worden toegestaan om te exporteren ",
+    "Results": [
+      {
+        "Text": "0,9 biljoen kubieke voet",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "900000000000",
+          "unit": "Cubic foot"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " De belangrijkste elementen van de wetgeving, zoals die momenteel worden weergegeven, zijn: - een beperking van de hoeveelheid onroerend goed die een gezin kan bezitten, tot 660 vierkante meter in de zes grootste steden van de natie, maar meer in kleinere steden en plattelandsgebieden.",
+    "Results": [
+      {
+        "Text": "660 vierkante meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "660",
+          "unit": "Square meter"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " Tigrische legers zijn nu 200 mijl ten noorden van Addis Ababa en bedreigen de stad Dese, die de heer Mengistu 's hoofdstad zou afsnijden van de haven van Assab, via welke alle brandstof en andere benodigdheden Addis Ababa bereiken.",
+    "Results": [
+      {
+        "Text": "200 mijl",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200",
+          "unit": "Mile"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " hij zei dat een van de computers drie meter over de vloer gleed. ",
+    "Results": [
+      {
+        "Text": "drie meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Foot"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " de kern van het bezit is 190.000 vierkante meter ongelooflijk duur vastgoed in de wijk Marunouchi, het zakelijke en financiële centrum van Tokio, vaak gekscherend 'Mitsubishi-dorp' genoemd. ''",
+    "Results": [
+      {
+        "Text": "190.000 vierkante meters",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190000",
+          "unit": "Square meter"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " de satelliet, gebouwd door hughes voor de internationale telecommunicatiesatellietorganisatie, maakt deel uit van een contract van 700 miljoen dollar dat in 1982 aan Hughes werd toegekend om vijf van de drie ton-satellieten te ontwikkelen.",
+    "Results": [
+      {
+        "Text": "drie ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Ton"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " in een rapport uit 1996 over biologische wapens, waarschuwde het centrum voor strategische en internationale studies, een onderzoeksinstelling voor overheidsbeleid in Washington, dat het voor potentiële terroristen gemakkelijk was om biologische wapens te verzamelen _ met behulp van commerciële apparatuur met een capaciteit van 130 liter. ",
+    "Results": [
+      {
+        "Text": "130 liter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "130",
+          "unit": "Gallon"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " uit de gegevens van de handelsgroep over de gegevens van de handelsafdeling bleek dat de invoer in augustus, het op een na grootste maandelijkse totaal van het jaar, met 5% steeg ten opzichte van 1.488.000 ton in juli, maar onder het niveau van vorig jaar in juni 1988.",
+    "Results": [
+      {
+        "Text": "1.458.000 ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1458000",
+          "unit": "Ton"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " bij nummer 1, sloeg Singh een 9-ijzeren naderingsschot tot op zes voet van de beker.",
+    "Results": [
+      {
+        "Text": "zes voet",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Foot"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " dus wanneer het psylliumgewas van volgend jaar in maart wordt geoogst, kan het kleiner zijn dan de 16.000 ton van de afgelopen paar jaar - precies op de top van de psylliumboom.",
+    "Results": [
+      {
+        "Text": "16.000 ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16000",
+          "unit": "Metric ton"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " de 486 is de afstammeling van een lange reeks intel-chips die de markt begon te domineren sinds IBM de 16-bit 8088-chip koos voor zijn eerste personal computer. ",
+    "Results": [
+      {
+        "Text": "16-bit",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16",
+          "unit": "Bit"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " de `` jiotto caspita '' kan op meer dan 188 mijl per uur rennen, aldus een woordvoerder van het bedrijf.",
+    "Results": [
+      {
+        "Text": "188 mijl per uur",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "188",
+          "unit": "Mile per hour"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "de marine heeft een helikopterlandingszone opgezet op slechts 100 meter van een mobiele operatiekamer, net aan de rand van Bagdad.",
+    "Results": [
+      {
+        "Text": "100 meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Meter"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " Caltran is van plan om een tweede dek toe te voegen voor bussen en carpools boven de mediaan van een 2,5 mijl lang stuk van de havenfiet net ten zuiden van Los Angeles, in de buurt van het gedenkteken Coliseum. ",
+    "Results": [
+      {
+        "Text": "2.,5 mijl",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.5",
+          "unit": "Mile"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " op mijn rit van vier mijl naar het hoofdkwartier van de boerderij elke ochtend, rijd ik langs nog vier lege huizen.",
+    "Results": [
+      {
+        "Text": "vier mijl",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Mile"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " we zijn beledigd, zei Langa van het Grieks-katholieke hoofdkwartier, zo'n 325 kilometer ten noordwesten van Boekarest. ",
+    "Results": [
+      {
+        "Text": "325 kilometer",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "325",
+          "unit": "Kilometer"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Rotich is een kleine (5 voet",
+    "Results": [
+      {
+        "Text": "5 voet",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5",
+          "unit": "Foot"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4 inch) 28 - jarige die pas drie jaar geleden serieus begon te rennen en tot deze maand niet binnen competitie had gedaan. ",
+    "Results": [
+      {
+        "Text": "4 inch",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Inch"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " racebaan park (minnesota) in shakopee is een verharde ovaal van 1/4 mijl. ",
+    "Results": [
+      {
+        "Text": "1/4 mijl",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "0.25",
+          "unit": "Mile"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " Castlecrag Mountain ligt ten zuiden van Moat Lake, 1,6 km ten westen van Mount Frink langs dezelfde rand lijn.",
+    "Results": [
+      {
+        "Text": "1,6 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1.6",
+          "unit": "Kilometer"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " de javadi-heuvels liggen op ongeveer 17 km van Ambur.",
+    "Results": [
+      {
+        "Text": "17 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "17",
+          "unit": "Kilometer"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " Na meer dan twee uur rond het meer in Michigan in de buurt van de expositie te hebben gevlogen, heeft commandant hugo eckener het 776-voet luchtschip geland op de nabijgelegen curtiss-wright luchthaven in glenview. ",
+    "Results": [
+      {
+        "Text": "776-voet",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "776",
+          "unit": "Foot"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "het knooppunt met snelweg 35 en snelweg 115 naar Lindsay en Peterborough (afrit 436) ligt 500 meter ten oosten van Bennett Road. ",
+    "Results": [
+      {
+        "Text": "500 meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500",
+          "unit": "Meter"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " in 1995 introduceerde Canon de eerste commercieel verkrijgbare SLR-lens met interne beeldstabilisatie, bijv. 75 - 300 mm f / 4 - 5. 6 is usm. ",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "300 mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "300",
+          "unit": "Millimeter"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " Sterling Armaments uit Dagenham, Essex produceerde een conversiekit bestaande uit een nieuwe 7,62 mm vat, magazijn, afzuigkap en uitwerper voor commerciële verkoop. ",
+    "Results": [
+      {
+        "Text": "7.62 mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "7.62",
+          "unit": "Millimeter"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " het project kost $ 46. 8 miljoen, en is bedoeld om de productiecapaciteit van het bedrijf met 25% te verhogen tot 34.500 metrische ton koperkathodes per jaar. ",
+    "Results": [
+      {
+        "Text": "34.500 metrische ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "34500",
+          "unit": "Metric ton"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " de productie van canadese staal - ingots bedroeg 291.890 metrische ton in de week eindigend op 7 oktober, 14. 8% meer dan het totaal van de vorige week, zei een Federaal agentschap. ",
+    "Results": [
+      {
+        "Text": "291.890 metrische ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "291890",
+          "unit": "Metric ton"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "De floridapanters hebben leefgebieden tussen de 190 km2.",
+    "Results": [
+      {
+        "Text": "190 km2",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190",
+          "unit": "Square kilometer"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " een metrische ton is gelijk aan 2,204.62 pond. ",
+    "Results": [
+      {
+        "Text": "2,204.62 pond",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2204.62",
+          "unit": "Pound"
         }
       },
       {
-        "Text": " Dag van de Arbeid ",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-05-01",
-          "FutureResolution": {
-            "date": "2019-05-01"
-          },
-          "PastResolution": {
-            "date": "2018-05-01"
-          }
+        "Text": "metric ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Metric ton"
         }
       }
     ]
+  },
+  {
+    "Input": "Ik ben een man",
+    "Results": []
   }
 ]
