@@ -19,8 +19,10 @@ def test_datetime_extractor(culture, model, options, context, source, expected_r
 
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
-        assert actual.text == expected['Text']
-        assert actual.type == expected['Type']
+        simple_extractor_assert(actual, expected, 'text', 'Text')
+        simple_extractor_assert(actual, expected, 'type', 'Type')
+        simple_extractor_assert(actual, expected, 'start', 'Start')
+        simple_extractor_assert(actual, expected, 'length', 'Length')
 
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='DateTime', entity='Parser'))
 def test_datetime_parser(culture, model, options, context, source, expected_results):
@@ -53,8 +55,10 @@ def test_datetime_mergedparser(culture, model, options, context, source, expecte
     result = [parser.parse(x, reference_datetime) for x in extract_results]
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
-        assert actual.text == expected['Text']
-        assert actual.type == expected['Type']
+        simple_extractor_assert(actual, expected, 'text', 'Text')
+        simple_extractor_assert(actual, expected, 'type', 'Type')
+        simple_extractor_assert(actual, expected, 'start', 'Start')
+        simple_extractor_assert(actual, expected, 'length', 'Length')
         if 'Value' in expected:
             assert actual.value
         if actual.value and 'Value' in expected:
@@ -92,6 +96,10 @@ def assert_model_resolution(actual, expected):
     single_assert(actual, expected, 'start')
     single_assert(actual, expected, 'end')
     single_assert(actual, expected, 'Mod')
+
+def simple_extractor_assert(actual, expected, prop, resolution):
+    if resolution in expected:
+        assert getattr(actual, prop) == expected[resolution]
 
 def create_extractor(language, model, options):
     extractor = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
