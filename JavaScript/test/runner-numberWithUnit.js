@@ -24,12 +24,19 @@ module.exports = function getNumberWithUnitTestRunner(config) {
 
             // Check resolution is defined (or not) in both actual and expected
             t.is(!!actual.resolution, !!expected.Resolution, 'Result.Resolution is defined');
-            if(!actual.resolution) return;
+            if(!expected.Resolution) return;
 
-            t.is(actual.resolution.value, expected.Resolution.value, 'Result.Resolution.value');
-            t.is(actual.resolution.unit, expected.Resolution.unit, 'Result.Resolution.unit');
+            simple_assert(t, actual, expected, 'value');
+            simple_assert(t, actual, expected, 'unit');
+            simple_assert(t, actual, expected, 'isoCurrency');
         });
     };
+}
+
+function simple_assert(t, actual, expected, prop) {
+    if (expected.Resolution[prop]) {
+        t.is(actual.resolution[prop], expected.Resolution[prop], 'Result.Resolution.' + prop);
+    }
 }
 
 function getResults(input, config) {
