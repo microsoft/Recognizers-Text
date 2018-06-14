@@ -196,13 +196,13 @@
     "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": "de temperatuur buiten is 98 graden",
+    "Input": "de temperatuur buiten is 30 graden",
     "Results": [
       {
-        "Text": "98 graden",
+        "Text": "30 graden",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "98",
+          "value": "30",
           "unit": "Degree"
         }
       }

@@ -112,14 +112,14 @@
     "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": " Dhr . Hulings gnoof dat hij al zijn aandelen verkocht een week voor de markt 190 punten kelderde op 13 oktober, en hij gebruikt het geld om een 45-hectare groot paardenbedrijf te kopen.",
+    "Input": " Dhr. Hulings gnoof dat hij al zijn aandelen verkocht een week voor de markt 190 punten kelderde op 13 oktober, en hij gebruikt het geld om een 45-hectare groot paardenbedrijf te kopen.",
     "Results": [
       {
         "Text": "45-hectare",
         "TypeName": "dimension",
         "Resolution": {
           "value": "45",
-          "unit": "Acre"
+          "unit": "Hectare"
         }
       }
     ],
@@ -147,7 +147,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2400000000",
-          "unit": "Gallon"
+          "unit": "Liter"
         }
       }
     ],
@@ -161,7 +161,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Gallon"
+          "unit": "Liter"
         }
       }
     ],
@@ -175,7 +175,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "1500000",
-          "unit": "Gallon"
+          "unit": "Liter"
         }
       }
     ],
@@ -259,7 +259,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
-          "unit": "Foot"
+          "unit": "Meter"
         }
       }
     ],
@@ -269,7 +269,7 @@
     "Input": " de kern van het bezit is 190.000 vierkante meter ongelooflijk duur vastgoed in de wijk Marunouchi, het zakelijke en financiële centrum van Tokio, vaak gekscherend 'Mitsubishi-dorp' genoemd. ''",
     "Results": [
       {
-        "Text": "190.000 vierkante meters",
+        "Text": "190.000 vierkante meter",
         "TypeName": "dimension",
         "Resolution": {
           "value": "190000",
@@ -549,7 +549,7 @@
     "Input": " Sterling Armaments uit Dagenham, Essex produceerde een conversiekit bestaande uit een nieuwe 7,62 mm vat, magazijn, afzuigkap en uitwerper voor commerciële verkoop. ",
     "Results": [
       {
-        "Text": "7.62 mm",
+        "Text": "7,62 mm",
         "TypeName": "dimension",
         "Resolution": {
           "value": "7.62",
@@ -574,14 +574,14 @@
     "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": " de productie van canadese staal - ingots bedroeg 291.890 metrische ton in de week eindigend op 7 oktober, 14. 8% meer dan het totaal van de vorige week, zei een Federaal agentschap. ",
+    "Input": " de productie van canadese staal - ingots bedroeg 291.890 ton in de week eindigend op 7 oktober, 14. 8% meer dan het totaal van de vorige week, zei een Federaal agentschap. ",
     "Results": [
       {
-        "Text": "291.890 metrische ton",
+        "Text": "291.890 ton",
         "TypeName": "dimension",
         "Resolution": {
           "value": "291890",
-          "unit": "Metric ton"
+          "unit": "Ton"
         }
       }
     ],

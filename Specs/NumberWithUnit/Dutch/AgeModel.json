@@ -215,8 +215,6 @@
     "Results": [
       {
         "Text": "50 jaar",
-        "Start": 17,
-        "End": 28,
         "TypeName": "age",
         "Resolution": {
           "unit": "Year",
