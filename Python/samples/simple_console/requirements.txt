@@ -1,3 +1,5 @@
 -e ../../libraries/recognizers-text/
 -e ../../libraries/recognizers-number/
 -e ../../libraries/recognizers-number-with-unit/
+-e ../../libraries/recognizers-date-time/
+-e ../../libraries/recognizers-suite/
