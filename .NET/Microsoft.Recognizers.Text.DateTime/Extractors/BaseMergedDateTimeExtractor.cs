@@ -3,6 +3,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
@@ -22,6 +24,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var ret = new List<ExtractResult>();
+
+            var originText = text;
+            List<MatchResult<string>> superfluousWordMatches = null;
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                text = PreProcessRemoveSuperfluousWords(text, out superfluousWordMatches);
+            }
 
             // The order is important, since there is a problem in merging
             AddTo(ret, this.config.DateExtractor.Extract(text, reference), text);
@@ -59,7 +68,54 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = ret.OrderBy(p => p.Start).ToList();
 
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                ret = PosProcessRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
+            }
+
             return ret;
+        }
+
+        private string PreProcessRemoveSuperfluousWords(string text, out List<MatchResult<string>> superfluousWordMatches)
+        {
+            superfluousWordMatches = this.config.SuperfluousWordMatcher.Find(text).ToList();
+            var bias = 0;
+
+            foreach (var match in superfluousWordMatches)
+            {
+                text = text.Remove(match.Start - bias, match.Length);
+                bias += match.Length;
+            }
+
+            return text;
+        }
+
+        private List<ExtractResult> PosProcessRecoverSuperfluousWords(List<ExtractResult> extractResults,
+            List<MatchResult<string>> superfluousWordMatches, string originText)
+        {
+            foreach (var match in superfluousWordMatches)
+            {
+                foreach (var extractResult in extractResults)
+                {
+                    var extractResultEnd = extractResult.Start + extractResult.Length;
+                    if (match.Start > extractResult.Start && extractResultEnd >= match.Start)
+                    {
+                        extractResult.Length += match.Length;
+                    }
+
+                    if (match.Start <= extractResult.Start)
+                    {
+                        extractResult.Start += match.Length;
+                    }
+                }
+            }
+
+            foreach (var extractResult in extractResults)
+            {
+                extractResult.Text = originText.Substring((int)extractResult.Start, (int)extractResult.Length);
+            }
+
+            return extractResults;
         }
 
         private void CheckCalendarFilterList(List<ExtractResult> ers, string text)

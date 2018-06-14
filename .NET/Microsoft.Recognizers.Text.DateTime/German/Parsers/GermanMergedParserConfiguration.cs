@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public sealed class GermanMergedParserConfiguration : GermanCommonDateTimeParserConfiguration, IMergedParserConfiguration
@@ -20,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeParser TimeZoneParser { get; }
 
+        public StringMatcher SuperfluousWordMatcher { get; }
+
         public GermanMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;
@@ -27,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             SinceRegex = GermanMergedExtractorConfiguration.SinceRegex;
             YearAfterRegex = GermanMergedExtractorConfiguration.YearAfterRegex;
             YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = GermanMergedExtractorConfiguration.SuperfluousWordMatcher;
             DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));

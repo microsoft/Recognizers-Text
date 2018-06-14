@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public sealed class PortugueseMergedParserConfiguration : PortugueseCommonDateTimeParserConfiguration, IMergedParserConfiguration
@@ -21,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeParser TimeZoneParser { get; }
 
+        public StringMatcher SuperfluousWordMatcher { get; }
+
         public PortugueseMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = PortugueseMergedExtractorConfiguration.BeforeRegex;
@@ -28,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             SinceRegex = PortugueseMergedExtractorConfiguration.SinceRegex;
             YearAfterRegex = PortugueseMergedExtractorConfiguration.YearAfterRegex;
             YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = PortugueseMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new PortugueseTimePeriodParserConfiguration(this));

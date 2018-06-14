@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.Text.RegularExpressions;
-
 using DateObject = System.DateTime;
+
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -32,6 +33,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var referenceTime = refTime;
             DateTimeParseResult pr = null;
+
+            var originText = er.Text;
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                er = PreProcessRemoveSuperfluousWords(er);
+            }
 
             // Push, save the MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false, hasYearAfter = false;
@@ -214,7 +221,40 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr = SetParseResult(pr, hasModifier);
             }
 
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                pr = PosProcessRecoverSuperfluousWords(pr, originText);
+            }
+
             return pr;
+        }
+
+
+        private ExtractResult PreProcessRemoveSuperfluousWords(ExtractResult er)
+        {
+            var text = er.Text;
+
+            var matches = Config.SuperfluousWordMatcher.Find(text).ToList();
+            var bias = 0;
+
+            foreach (var match in matches)
+            {
+                text = text.Remove(match.Start - bias, match.Length);
+                bias += match.Length;
+            }
+
+            er.Length += text.Length - er.Text.Length;
+            er.Text = text;
+
+            return er;
+        }
+
+        private DateTimeParseResult PosProcessRecoverSuperfluousWords(DateTimeParseResult parseResult, string originText)
+        {
+            parseResult.Length += originText.Length - parseResult.Text.Length;
+            parseResult.Text = originText;
+
+            return parseResult;
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
