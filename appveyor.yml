@@ -49,4 +49,7 @@ build_script:
 test: off
 
 artifacts:
-    - path : '**\*Microsoft.Recognizers*.nupkg'
+    - path: '**\*Microsoft.Recognizers*.nupkg'
+      name: NuGets
+    - path: 'Java\libraries\**\recognizers-text*.jar'
+      name: JARs
