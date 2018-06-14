@@ -37,7 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             var originText = er.Text;
             if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                er = PreProcessRemoveSuperfluousWords(er);
+                er.Text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(er.Text, Config.SuperfluousWordMatcher, out var _);
+                er.Length += er.Text.Length - originText.Length;
             }
 
             // Push, save the MOD string
@@ -223,38 +224,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
             {
-                pr = PosProcessRecoverSuperfluousWords(pr, originText);
+                pr.Length += originText.Length - pr.Text.Length;
+                pr.Text = originText;
             }
 
             return pr;
-        }
-
-
-        private ExtractResult PreProcessRemoveSuperfluousWords(ExtractResult er)
-        {
-            var text = er.Text;
-
-            var matches = Config.SuperfluousWordMatcher.Find(text).ToList();
-            var bias = 0;
-
-            foreach (var match in matches)
-            {
-                text = text.Remove(match.Start - bias, match.Length);
-                bias += match.Length;
-            }
-
-            er.Length += text.Length - er.Text.Length;
-            er.Text = text;
-
-            return er;
-        }
-
-        private DateTimeParseResult PosProcessRecoverSuperfluousWords(DateTimeParseResult parseResult, string originText)
-        {
-            parseResult.Length += originText.Length - parseResult.Text.Length;
-            parseResult.Text = originText;
-
-            return parseResult;
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
