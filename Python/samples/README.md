@@ -21,6 +21,7 @@ The important piece is the `Recognizers` module, which you'll need to import usi
 
 ```Python
 from recognizers_number import NumberRecognizer
+from recognizers_date_time import DateTimeRecognizer
 ```
 
 Then, the sample gets a model reference of each available Recognizer. We need to do so by passing the Culture code we'll want to detect. E.g.: `en-us`.
@@ -57,7 +58,11 @@ NumberWithUnitRecognizer.recognize_dimension(user_input, culture),
 
 # Temperature recognizer - This function will find any temperature presented
 # E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-NumberWithUnitRecognizer.recognize_temperature(user_input, culture)
+NumberWithUnitRecognizer.recognize_temperature(user_input, culture),
+
+# DateTime recognizer - This function will find any Date even if its write in colloquial language
+# E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
+DateTimeRecognizer.recognize_datetime(user_input, culture)
 ````
 
 All these models accept `user_input: str` as a string and returns a **List** of [ModelResult](../libraries/recognizers-text/recognizers_text/model.py#L10-L16):

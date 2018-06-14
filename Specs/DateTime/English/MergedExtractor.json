@@ -1,6 +1,5 @@
 [{
   "Input": "this is 2 days",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 days",
@@ -11,7 +10,6 @@
 ,
 {
   "Input": "this is before 4pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before 4pm",
@@ -22,7 +20,6 @@
 ,
 {
   "Input": "this is before 4pm tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before 4pm tomorrow",
@@ -33,7 +30,6 @@
 ,
 {
   "Input": "this is before tomorrow 4pm ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before tomorrow 4pm",
@@ -44,7 +40,6 @@
 ,
 {
   "Input": "this is after 4pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "after 4pm",
@@ -55,7 +50,6 @@
 ,
 {
   "Input": "this is after 4pm tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "after 4pm tomorrow",
@@ -66,7 +60,6 @@
 ,
 {
   "Input": "this is after tomorrow 4pm ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "after tomorrow 4pm",
@@ -77,7 +70,6 @@
 ,
 {
   "Input": "I'll be back in 5 minutes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in 5 minutes",
@@ -88,7 +80,6 @@
 ,
 {
   "Input": "past week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "past week",
@@ -99,7 +90,6 @@
 ,
 {
   "Input": "schedule a meeting in 10 hours",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in 10 hours",
@@ -110,7 +100,6 @@
 ,
 {
   "Input": "What's this day look like?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this day",
@@ -121,7 +110,6 @@
 ,
 {
   "Input": "What's this week look like?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this week",
@@ -132,7 +120,6 @@
 ,
 {
   "Input": "What's my week look like?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "my week",
@@ -143,7 +130,6 @@
 ,
 {
   "Input": "What's the week look like?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the week",
@@ -154,7 +140,6 @@
 ,
 {
   "Input": "What's my day look like?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "my day",
@@ -165,7 +150,6 @@
 ,
 {
   "Input": "What's the day look like?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the day",
@@ -176,7 +160,6 @@
 ,
 {
   "Input": "Schedule a meeting from 9am to 11am",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 9am to 11am",
@@ -187,7 +170,6 @@
 ,
 {
   "Input": "Schedule a meeting from 9am to 11am tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 9am to 11am tomorrow",
@@ -198,7 +180,6 @@
 ,
 {
   "Input": "Change July 22nd meeting in Bellevue to August 22nd",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "July 22nd",
@@ -213,7 +194,6 @@
 ,
 {
   "Input": "after 7/2 ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "after 7/2",
@@ -224,7 +204,6 @@
 ,
 {
   "Input": "since 7/2 ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "since 7/2",
@@ -235,7 +214,6 @@
 ,
 {
   "Input": "before 7/2 ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before 7/2",
@@ -246,7 +224,6 @@
 ,
 {
   "Input": "06/06 12:15",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "06/06 12:15",
@@ -257,7 +234,6 @@
 ,
 {
   "Input": "06/06/12 15:15",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "06/06/12 15:15",
@@ -268,7 +244,6 @@
 ,
 {
   "Input": "06/06, 2015",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "06/06, 2015",
@@ -279,7 +254,6 @@
 ,
 {
   "Input": "May 29th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May 29th",
@@ -290,7 +264,6 @@
 ,
 {
   "Input": "March 29th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "March 29th",
@@ -301,7 +274,6 @@
 ,
 {
   "Input": "I born in March",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "March",
@@ -312,7 +284,6 @@
 ,
 {
   "Input": "I born in the March",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "March",
@@ -323,7 +294,6 @@
 ,
 {
   "Input": "what happend at the May",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May",
@@ -334,43 +304,36 @@
 ,
 {
   "Input": "What are the hours of Palomino? ",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "in the sun",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "which email have gotten a reply",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "He is often alone",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "often a bird",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "michigan hours",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "I'll change the 3pm appointment to 4.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3pm",
@@ -386,7 +349,6 @@
 ,
 {
   "Input": "I'll change the 3pm appointment to 4,",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3pm",
@@ -402,7 +364,6 @@
 ,
 {
   "Input": "I'll change the three pm appointment to four",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "three pm",
@@ -418,7 +379,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to eleven",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -434,7 +394,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 4.,",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -450,7 +409,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to eleven!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -466,7 +424,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to eleven?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -482,7 +439,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 20!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -498,7 +454,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to twenty!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -514,7 +469,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to thirteen!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -530,7 +484,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 13!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -546,7 +499,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 0!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -562,7 +514,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 24!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -578,7 +529,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to zero.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -594,7 +544,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to twenty four.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -610,7 +559,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 4, how do you think?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -626,7 +574,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 4.3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -637,7 +584,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to twenty six",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -648,7 +594,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 4 or later",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -659,7 +604,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to 25",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -670,7 +614,6 @@
 ,
 {
   "Input": "I'll change the ten am appointment to twenty five",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten am",
@@ -686,8 +629,7 @@
 ,
 {
   "Input": "next meeting will be held on March 16th, 2017, how about we have a discussion at 2pm this afternoon?",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "March 16th, 2017",
@@ -703,8 +645,7 @@
 ,
 {
   "Input": "April 1st, 2018, we can plan it 2pm this afternoon",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "April 1st, 2018",
@@ -721,7 +662,6 @@
 {
   "Input": "The range is before 2012",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before 2012",
@@ -733,7 +673,6 @@
 {
   "Input": "The range is until 2012",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "until 2012",
@@ -744,8 +683,7 @@
 ,
 {
   "Input": "The range is 2012 or after",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "2012 or after",
@@ -757,7 +695,6 @@
 {
   "Input": "I'll be out 11 -2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 -2016",
@@ -769,7 +706,6 @@
 {
   "Input": "I'll be out 11- 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11- 2016",
@@ -781,7 +717,6 @@
 {
   "Input": "I'll be out 11 / 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 / 2016",
@@ -793,7 +728,6 @@
 {
   "Input": "I'll be out 11/2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11/2016",
@@ -805,7 +739,6 @@
 {
   "Input": "I'll be out 11 -2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 -2016",
@@ -817,7 +750,6 @@
 {
   "Input": "I'll be out 11- 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11- 2016",
@@ -829,7 +761,6 @@
 {
   "Input": "I'll be out 11 - 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 - 2016",
@@ -841,7 +772,6 @@
 {
   "Input": "I'll be out 11-2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11-2016",
@@ -853,7 +783,6 @@
 {
   "Input": "I'll be out 2016 /11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 /11",
@@ -865,7 +794,6 @@
 {
   "Input": "I'll be out 2016/ 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016/ 11",
@@ -877,7 +805,6 @@
 {
   "Input": "I'll be out 2016 / 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 / 11",
@@ -889,7 +816,6 @@
 {
   "Input": "I'll be out 2016/11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016/11",
@@ -901,7 +827,6 @@
 {
   "Input": "I'll be out 2016 -11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 -11",
@@ -913,7 +838,6 @@
 {
   "Input": "I'll be out 2016- 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016- 11",
@@ -925,7 +849,6 @@
 {
   "Input": "I'll be out 2016 - 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 - 11",
@@ -937,7 +860,6 @@
 {
   "Input": "I'll be out 2016-11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016-11",
@@ -949,7 +871,6 @@
 {
   "Input": "I'll be out 2016 November",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 November",
@@ -961,7 +882,6 @@
 {
   "Input": "I'll be out November , 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November , 2016",
@@ -973,7 +893,6 @@
 {
   "Input": "I'll be out 2016 , nov",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 , nov",
@@ -985,7 +904,6 @@
 {
   "Input": "I'll be out 2016, nov",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016, nov",
@@ -996,7 +914,6 @@
 ,
 {
   "Input": "He will arrive later than or at 1/1/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "later than or at 1/1/2016",
@@ -1007,7 +924,6 @@
 ,
 {
   "Input": "He will leave before or on 1/1/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before or on 1/1/2016",
@@ -1018,7 +934,6 @@
 ,
 {
   "Input": "This task will complete on or earlier than 1/1/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on or earlier than 1/1/2016",
@@ -1029,7 +944,6 @@
 ,
 {
   "Input": "This task will complete before or in Feb 2018",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "before or in Feb 2018",
@@ -1040,7 +954,6 @@
 ,
 {
   "Input": "You can't leave earlier than or in 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "earlier than or in 2016",
@@ -1051,7 +964,6 @@
 ,
 {
   "Input": "You can't leave earlier than or in 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "earlier than or in 2016",
@@ -1062,7 +974,6 @@
 ,
 {
   "Input": "You can leave office at or after 6:30PM today",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "at or after 6:30PM today",
@@ -1073,7 +984,6 @@
 ,
 {
   "Input": "You need to leave on or before the day after tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on or before the day after tomorrow",
@@ -1084,7 +994,6 @@
 ,
 {
   "Input": "You need to leave on or earlier than 3pm 5/15/2018",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on or earlier than 3pm 5/15/2018",
@@ -1096,7 +1005,6 @@
 {
   "Input": "Are you available two days after today?",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two days after today",
@@ -1108,7 +1016,6 @@
 {
   "Input": "Are you available three weeks from tomorrow?",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "three weeks from tomorrow",
@@ -1120,7 +1027,6 @@
 {
   "Input": "Where were you two days before yesterday?",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two days before yesterday",

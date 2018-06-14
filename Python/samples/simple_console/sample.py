@@ -3,6 +3,7 @@ from typing import List
 from recognizers_text import Culture, ModelResult
 from recognizers_number import NumberRecognizer
 from recognizers_number_with_unit import NumberWithUnitRecognizer
+from recognizers_date_time import DateTimeRecognizer
 
 # Use English for the Recognizers culture
 DEFAULT_CULTURE = Culture.English
@@ -60,7 +61,11 @@ def parse_all(user_input: str, culture: str) -> List[ModelResult]:
 
         # Temperature recognizer - This function will find any temperature presented
         # E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-        NumberWithUnitRecognizer.recognize_temperature(user_input, culture)
+        NumberWithUnitRecognizer.recognize_temperature(user_input, culture),
+
+        # DateTime recognizer - This function will find any Date even if its write in colloquial language -
+        # E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
+        DateTimeRecognizer.recognize_datetime(user_input, culture)
     ]
 
 # Show Introduction
