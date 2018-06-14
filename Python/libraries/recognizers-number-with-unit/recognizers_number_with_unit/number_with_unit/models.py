@@ -8,8 +8,6 @@ from recognizers_text.parser import Parser
 from recognizers_text.utilities import FormatUtility
 from recognizers_number_with_unit.number_with_unit.parsers import UnitValue
 
-ValueUnit = namedtuple('ValueUnit', ['value', 'unit'])
-
 class ExtractorParserModel:
     def __init__(self, extractor: Extractor, parser: Parser):
         self.extractor = extractor
@@ -49,9 +47,14 @@ class AbstractNumberWithUnitModel(Model):
 
     def get_resolution(self, data):
         if isinstance(data, str):
-            return ValueUnit(value=data)
+            return {
+                'value': data
+            }
         elif isinstance(data, UnitValue):
-            return ValueUnit(value=data.number, unit=data.unit)
+            return {
+                'value': data.number,
+                'unit': data.unit
+            }
         return None
 
 class AgeModel(AbstractNumberWithUnitModel):
