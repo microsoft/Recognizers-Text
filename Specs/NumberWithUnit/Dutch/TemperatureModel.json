@@ -10,7 +10,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "het is 90 Fahrenheit in Texas",
@@ -23,7 +24,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "-5 graden Fahrenheit",
@@ -36,7 +38,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "6 gr. C",
@@ -49,7 +52,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "98,6 graden F is de normale temperatuur",
@@ -62,7 +66,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Zet de temperatuur op 30 graden Celsius",
@@ -75,7 +80,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "normale temperatuur is 98,6 graden Fahrenheit",
@@ -88,7 +94,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "100 graden F",
@@ -101,7 +108,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "20 graden C",
@@ -114,7 +122,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "100,2 graden Farenheit is laag",
@@ -127,7 +136,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "10,5 Celcius",
@@ -140,7 +150,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "20 graden Celsius",
@@ -153,7 +164,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "20,3 Celsius",
@@ -166,7 +178,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "34,5 Celcius",
@@ -179,7 +192,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "de temperatuur buiten is 98 graden",
@@ -192,7 +206,8 @@
           "unit": "Degree"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "zet de thermostaat op 85°",
@@ -205,7 +220,8 @@
           "unit": "Degree"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "verhoog de temperatuur met 5 graden",
@@ -218,7 +234,8 @@
           "unit": "Degree"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "zet de temperatuur op 70 graden F",
@@ -231,7 +248,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "verhoog de temperatuur met 20 graden",
@@ -244,7 +262,8 @@
           "unit": "Degree"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "zet de temperatuur op 100 graden",
@@ -257,7 +276,8 @@
           "unit": "Degree"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "hou de temperatuur op 75 graden F",
@@ -270,7 +290,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "laat de temperatuur 40 Celsius zijn",
@@ -283,7 +304,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "laat de temperatuur 50 graden zijn",
@@ -296,7 +318,8 @@
           "unit": "Degree"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "converteer 10 graden Celsius to Fahrenheit",
@@ -317,7 +340,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "34,9 graden Celsius naar Fahrenheit",
@@ -338,7 +362,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "converteer 200 graden Celsius naar Fahrenheit",
@@ -367,7 +392,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Fahrenheit naar Celsius: 101 Fahrenheit is hoe veel graden Celsius",
@@ -404,7 +430,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "50 graden Celsius naar Fahrenheit",
@@ -433,7 +460,8 @@
           "unit": "F"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "zou je 51 Fahrenheit naar graden Celsius kunnen converteren?",
@@ -454,7 +482,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "converteer 106 graden Fahrenheit naar graden Celsius",
@@ -475,7 +504,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "converteer 45 graden Fahrenheit naar Celsius",
@@ -496,7 +526,8 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "hoe converteer je - 20 graden Fahrenheit naar Celsius",
@@ -517,6 +548,7 @@
           "unit": "C"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   }
 ]

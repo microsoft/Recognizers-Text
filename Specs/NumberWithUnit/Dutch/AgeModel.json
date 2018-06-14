@@ -10,7 +10,8 @@
           "unit": "Year"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Dit verhaal is 10 jaar oud.",
@@ -23,7 +24,8 @@
           "unit": "Year"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Ik ben pas 29 jaar.",
@@ -36,7 +38,8 @@
           "unit": "Year"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Nu, op 95-jarige leeftijd, inzichten veranderen.",
@@ -49,7 +52,8 @@
           "unit": "Year"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "De Chinese Muur is meer dan 500 jaar oud en is langer dan 5000 mijl.",
@@ -62,7 +66,8 @@
           "unit": "Year"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Zij is 60; zij is geboren op 8 mei 1945.",
@@ -75,7 +80,8 @@
           "unit": "Year"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "25% van de gevallen zijn niet gediagnostiseerd tot een leeftijd van 3 jaar.",
@@ -88,7 +94,8 @@
           "unit": "Year"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Wanneer komt er druk om een afspraak van 1 jaar na te komen?",
@@ -101,7 +108,8 @@
           "unit": "Year"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Het gebeurde toen de baby pas 10 maanden was.",
@@ -114,7 +122,8 @@
           "unit": "Month"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Het bestuursvoorstel is 8 maanden.",
@@ -127,7 +136,8 @@
           "unit": "Month"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Ongeveer 50% van de gevallen worden gediagnostiseerd wanneer ze 18 maanden oud zijn.",
@@ -140,7 +150,8 @@
           "unit": "Month"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Het is mogelijk, maar in 2006 was 95% jonger dan drie maanden.",
@@ -153,7 +164,8 @@
           "unit": "Month"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Als we doorgaan in december, is het project 3 weken oud.",
@@ -166,7 +178,8 @@
           "unit": "Week"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Op 6-jarige leeftijd kun je al Kerst vieren.",
@@ -179,7 +192,8 @@
           "unit": "Week"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Een energie factuur van 90 dagen is erg oud",
@@ -192,7 +206,8 @@
           "unit": "Day"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Hij is tussen de 40 en 50 jaar.",

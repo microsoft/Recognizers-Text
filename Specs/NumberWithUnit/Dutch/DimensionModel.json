@@ -10,7 +10,8 @@
           "unit": "Milliliter"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Het grootste nadeel is de dikte van 3 inch, groot genoeg voor een consultant om het beschrijven als plomp.",
@@ -23,33 +24,36 @@
           "unit": "Inch"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": "een tornado woekerde door een gebied van tien mijl lang, waardoor ten minste veertien mensen om het leven zijn gekomen en tientallen huizen verwoest zijn.",
+    "Input": "een tornado woekerde door een gebied van tien kilometer lang, waardoor ten minste veertien mensen om het leven zijn gekomen en tientallen huizen verwoest zijn.",
     "Results": [
       {
         "Text": "tien kilometer",
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Mile"
+          "unit": "Kilometer"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": "Er is meer dan 10 ½ kilometer kabel en snoer nodig om het allemaal aan te sluiten, en 23 computers.",
+    "Input": "Er is meer dan 10 1/2 kilometer kabel en snoer nodig om het allemaal aan te sluiten, en 23 computers.",
     "Results": [
       {
         "Text": "10 1/2 kilometer",
         "TypeName": "dimension",
         "Resolution": {
           "value": "10.5",
-          "unit": "Mile"
+          "unit": "Kilometer"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "de reis van 6 kilometer naar mijn vliegveld hotel dat eerder op de dag 20 minuten duurde, duurde nu meer dan drie uur.",
@@ -59,10 +63,11 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "6",
-          "unit": "Mile"
+          "unit": "Kilometer"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " In de gehele industrie daalde de olieproductie in dit land met 500.000 vaten per dag naar vaten in de eerste acht maanden van dit jaar. ",
@@ -75,12 +80,12 @@
           "unit": "Barrel"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": " het is wat 1) verklaart waarom we zijn als, nou ja, onszelf in plaats van bo jackson; 2) waarschuwt dat het mogelijk is om te verdrinken in een meer dat gemiddeld twee voet diep is; en 3) voorspelt dat 10.000 apen die vóór 10.000 worden geplaatst, 1, 118 publiceerbare rock 'n' roll-tunes produceren.”,  
-
-  "Results": [
+    "Input": " het is wat 1) verklaart waarom we zijn als, nou ja, onszelf in plaats van bo jackson; 2) waarschuwt dat het mogelijk is om te verdrinken in een meer dat gemiddeld twee voet diep is; en 3) voorspelt dat 10.000 apen die vóór 10.000 worden geplaatst, 1, 118 publiceerbare rock 'n' roll-tunes produceren.",
+    "Results": [
       {
         "Text": "twee voet",
         "TypeName": "dimension",
@@ -89,7 +94,8 @@
           "unit": "Foot"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " op 19 mei begon de fda met het vasthouden van Chinese paddestoelen in 68 ons blikken nadat meer dan 100 mensen in Mississippi, New York en Pennsylvania ziek werden door het eten van bedorven champignons.",
@@ -102,12 +108,12 @@
           "unit": "Ounce"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": " Dhr . Hulings gnoof dat hij al zijn aandelen verkocht een week voor de markt 190 punten kelderde op 13 oktober, en hij gebruikt het geld om een 45-hectare groot paardenbedrijf te kopen. 
-
-  "Results": [
+    "Input": " Dhr . Hulings gnoof dat hij al zijn aandelen verkocht een week voor de markt 190 punten kelderde op 13 oktober, en hij gebruikt het geld om een 45-hectare groot paardenbedrijf te kopen.",
+    "Results": [
       {
         "Text": "45-hectare",
         "TypeName": "dimension",
@@ -116,7 +122,8 @@
           "unit": "Acre"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "dan, om van deze tuintjes vrij letterlijk kamers te maken, had mvr. Bartlett raamloze wanden (baksteen, traliewerk, haag) van acht tot tien voet hoog gemaakt, waardoor haar interieurs in dag-lange stygische schaduwen worden geworpen",
@@ -129,10 +136,11 @@
           "unit": "Foot"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": "` ` `management wil geen verrassingen '', merkt jack zaves op, die als brandstofservicedirecteur bij American Airlines jaarlijks ongeveer 2,4 miljard liter vliegtuigbrandstof koopt.",
+    "Input": "'management wil geen verrassingen', merkt jack zaves op, die als brandstofservicedirecteur bij American Airlines jaarlijks ongeveer 2,4 miljard liter vliegtuigbrandstof koopt.",
     "Results": [
       {
         "Text": "2,4 miljard liter",
@@ -142,7 +150,8 @@
           "unit": "Gallon"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " een 10-liter waterkoeler was op de vloer gevallen en bedrenkte de rode vloerbedekking. ",
@@ -155,7 +164,8 @@
           "unit": "Gallon"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " in de buurt, dartelen zes dolfijnen in een zeewateraquarium van 1,5 miljoen liter. ",
@@ -168,7 +178,8 @@
           "unit": "Gallon"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " en deze baby is meer dan twee pond.",
@@ -181,7 +192,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "ik vertrouw mensen die niet eten, niet, zei ms. Volokh, hoewel ze zelf een paar jaar geleden stopte met het eten van lunch om 25 pond te laten vallen. ",
@@ -194,7 +206,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " Shell, een dochteronderneming van Royal Dutch / Shell Group, mag 0,9 biljoen kubieke voet exporteren, en Golf, een afdeling van Olympia & York Developments ltd. zal worden toegestaan om te exporteren ",
@@ -207,7 +220,8 @@
           "unit": "Cubic foot"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " De belangrijkste elementen van de wetgeving, zoals die momenteel worden weergegeven, zijn: - een beperking van de hoeveelheid onroerend goed die een gezin kan bezitten, tot 660 vierkante meter in de zes grootste steden van de natie, maar meer in kleinere steden en plattelandsgebieden.",
@@ -220,7 +234,8 @@
           "unit": "Square meter"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " Tigrische legers zijn nu 200 mijl ten noorden van Addis Ababa en bedreigen de stad Dese, die de heer Mengistu 's hoofdstad zou afsnijden van de haven van Assab, via welke alle brandstof en andere benodigdheden Addis Ababa bereiken.",
@@ -233,7 +248,8 @@
           "unit": "Mile"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " hij zei dat een van de computers drie meter over de vloer gleed. ",
@@ -246,7 +262,8 @@
           "unit": "Foot"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " de kern van het bezit is 190.000 vierkante meter ongelooflijk duur vastgoed in de wijk Marunouchi, het zakelijke en financiële centrum van Tokio, vaak gekscherend 'Mitsubishi-dorp' genoemd. ''",
@@ -259,7 +276,8 @@
           "unit": "Square meter"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " de satelliet, gebouwd door hughes voor de internationale telecommunicatiesatellietorganisatie, maakt deel uit van een contract van 700 miljoen dollar dat in 1982 aan Hughes werd toegekend om vijf van de drie ton-satellieten te ontwikkelen.",
@@ -272,7 +290,8 @@
           "unit": "Ton"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " in een rapport uit 1996 over biologische wapens, waarschuwde het centrum voor strategische en internationale studies, een onderzoeksinstelling voor overheidsbeleid in Washington, dat het voor potentiële terroristen gemakkelijk was om biologische wapens te verzamelen _ met behulp van commerciële apparatuur met een capaciteit van 130 liter. ",
@@ -285,7 +304,8 @@
           "unit": "Gallon"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " uit de gegevens van de handelsgroep over de gegevens van de handelsafdeling bleek dat de invoer in augustus, het op een na grootste maandelijkse totaal van het jaar, met 5% steeg ten opzichte van 1.488.000 ton in juli, maar onder het niveau van vorig jaar in juni 1988.",
@@ -298,7 +318,8 @@
           "unit": "Ton"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " bij nummer 1, sloeg Singh een 9-ijzeren naderingsschot tot op zes voet van de beker.",
@@ -311,7 +332,8 @@
           "unit": "Foot"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " dus wanneer het psylliumgewas van volgend jaar in maart wordt geoogst, kan het kleiner zijn dan de 16.000 ton van de afgelopen paar jaar - precies op de top van de psylliumboom.",
@@ -324,7 +346,8 @@
           "unit": "Metric ton"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " de 486 is de afstammeling van een lange reeks intel-chips die de markt begon te domineren sinds IBM de 16-bit 8088-chip koos voor zijn eerste personal computer. ",
@@ -337,7 +360,8 @@
           "unit": "Bit"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " de `` jiotto caspita '' kan op meer dan 188 mijl per uur rennen, aldus een woordvoerder van het bedrijf.",
@@ -350,7 +374,8 @@
           "unit": "Mile per hour"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "de marine heeft een helikopterlandingszone opgezet op slechts 100 meter van een mobiele operatiekamer, net aan de rand van Bagdad.",
@@ -363,7 +388,8 @@
           "unit": "Meter"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " Caltran is van plan om een tweede dek toe te voegen voor bussen en carpools boven de mediaan van een 2,5 mijl lang stuk van de havenfiet net ten zuiden van Los Angeles, in de buurt van het gedenkteken Coliseum. ",
@@ -376,7 +402,8 @@
           "unit": "Mile"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " op mijn rit van vier mijl naar het hoofdkwartier van de boerderij elke ochtend, rijd ik langs nog vier lege huizen.",
@@ -389,7 +416,8 @@
           "unit": "Mile"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " we zijn beledigd, zei Langa van het Grieks-katholieke hoofdkwartier, zo'n 325 kilometer ten noordwesten van Boekarest. ",
@@ -402,7 +430,8 @@
           "unit": "Kilometer"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Rotich is een kleine (5 voet",
@@ -415,7 +444,8 @@
           "unit": "Foot"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "4 inch) 28 - jarige die pas drie jaar geleden serieus begon te rennen en tot deze maand niet binnen competitie had gedaan. ",
@@ -428,7 +458,8 @@
           "unit": "Inch"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " racebaan park (minnesota) in shakopee is een verharde ovaal van 1/4 mijl. ",
@@ -441,7 +472,8 @@
           "unit": "Mile"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " Castlecrag Mountain ligt ten zuiden van Moat Lake, 1,6 km ten westen van Mount Frink langs dezelfde rand lijn.",
@@ -454,7 +486,8 @@
           "unit": "Kilometer"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " de javadi-heuvels liggen op ongeveer 17 km van Ambur.",
@@ -467,7 +500,8 @@
           "unit": "Kilometer"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " Na meer dan twee uur rond het meer in Michigan in de buurt van de expositie te hebben gevlogen, heeft commandant hugo eckener het 776-voet luchtschip geland op de nabijgelegen curtiss-wright luchthaven in glenview. ",
@@ -480,7 +514,8 @@
           "unit": "Foot"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "het knooppunt met snelweg 35 en snelweg 115 naar Lindsay en Peterborough (afrit 436) ligt 500 meter ten oosten van Bennett Road. ",
@@ -493,11 +528,11 @@
           "unit": "Meter"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " in 1995 introduceerde Canon de eerste commercieel verkrijgbare SLR-lens met interne beeldstabilisatie, bijv. 75 - 300 mm f / 4 - 5. 6 is usm. ",
-    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "300 mm",
@@ -507,7 +542,8 @@
           "unit": "Millimeter"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " Sterling Armaments uit Dagenham, Essex produceerde een conversiekit bestaande uit een nieuwe 7,62 mm vat, magazijn, afzuigkap en uitwerper voor commerciële verkoop. ",
@@ -520,10 +556,11 @@
           "unit": "Millimeter"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
-    "Input": " het project kost $ 46. 8 miljoen, en is bedoeld om de productiecapaciteit van het bedrijf met 25% te verhogen tot 34.500 metrische ton koperkathodes per jaar. ",
+    "Input": " het project kost $46.8 miljoen, en is bedoeld om de productiecapaciteit van het bedrijf met 25% te verhogen tot 34.500 metrische ton koperkathodes per jaar. ",
     "Results": [
       {
         "Text": "34.500 metrische ton",
@@ -533,7 +570,8 @@
           "unit": "Metric ton"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " de productie van canadese staal - ingots bedroeg 291.890 metrische ton in de week eindigend op 7 oktober, 14. 8% meer dan het totaal van de vorige week, zei een Federaal agentschap. ",
@@ -546,7 +584,8 @@
           "unit": "Metric ton"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "De floridapanters hebben leefgebieden tussen de 190 km2.",
@@ -559,7 +598,8 @@
           "unit": "Square kilometer"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " een metrische ton is gelijk aan 2,204.62 pond. ",
@@ -580,10 +620,12 @@
           "unit": "Metric ton"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "Ik ben een man",
-    "Results": []
+    "Results": [],
+    "NotSupported": "dotNet,javascript,python,java,"
   }
 ]

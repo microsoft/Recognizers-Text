@@ -10,7 +10,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "finnish conglomerate nokia oy ab said it reached an agreement to buy dutch cable company nkf kabel b . v . for 420 million finnish markka .",
@@ -23,7 +24,8 @@
           "unit": "Finnish markka"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "national paid siegel and shuster $94,000 to drop all claims .",
@@ -36,7 +38,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "general dynamics services co . , a unit of general dynamics corp . , won a $48.2 million army contract to establish maintenance facilities for tracked vehicles in pakistan .",
@@ -49,7 +52,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the price of the second simulator ranges between c $ 16.4 million",
@@ -63,7 +67,8 @@
           "isoCurrency": "CAD"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "golar gas holding co . , a subsidiary of gotaas - larsen shipping corp . , offering of $ 280 million first preferred ship mortgage notes , via merrill lynch capital markets .",
@@ -76,7 +81,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "bard / ems had 1988 sales of about $ 14 million , birtcher said .",
@@ -89,7 +95,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "accord prices start at $ 12,345 .",
@@ -102,7 +109,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "` ` batman ' ' alone has racked up more than $ 247 million in box - office receipts to date , making it warner bros . ' largest grossing film ever .",
@@ -115,7 +123,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "coyle ' s net worth was estimated at £ 8.10 million in october 2014 .",
@@ -128,7 +137,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "net interest income sank 27 % in the quarter to $ 254 million.",
@@ -141,7 +151,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "a federal appeals court struck down a natural - gas regulation that had prevented pipeline companies from passing to customers part of $ 1 billion in costs from controversial ` ` take - or - pay ' ' contracts .",
@@ -154,7 +165,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the 1988 quarter also included one - time gains totaling about $ 35 million .",
@@ -167,7 +179,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "y . j . park and her family scrimped for four years to buy a tiny apartment here , but found that the closer they got to saving the $ 40,000 they originally needed , the more the price rose .",
@@ -180,7 +193,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "e . robert wallach was sentenced by a u . s . judge in new york to six years in prison and fined $ 250,000 for his racketeering conviction in the wedtech scandal .",
@@ -193,7 +207,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "an article in the middle east economic survey ( mees ) published today wednesday reveals that iraq has asked its clients to pay 50 cents more per barrel of oil over the official oil price as of december 1 into an account not under united nations supervision .",
@@ -206,7 +221,8 @@
           "unit": "Cent"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "general motors corp . ' s chevrolet division , reacting to slow sales , said it will offer $ 800 rebates on its 1990 beretta , the two - door version of its core compact - car line .",
@@ -219,7 +235,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "( storer also took $ 125 million of junior sci tv bonds as partial payment for the tv assets . )",
@@ -232,7 +249,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "in national over - the - counter trading friday , scimed shares tumbled $ 2.75 .",
@@ -245,7 +263,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "at the same time , investors estimate the restructuring would cut the company ' s annual cash interest bill from about $ 90 million.",
@@ -258,7 +277,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "capital expenditure in 1990 will rise slightly , mr . marous said , from an estimated $ 470 million this year .",
@@ -271,7 +291,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "shearson ` ` really only has $ 300 million of capital , ' ' says mr . bowman of s & p .",
@@ -284,7 +305,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "it may be straightforward - - he wants money for food - - or incredibly convoluted ; his sister is at this very moment near death in hoboken , he has lost his wallet and has only $ 1.22 in change to put toward a bus ticket costing , and wo n ' t you give him the difference ?",
@@ -297,7 +319,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the december contract rose 1.20 cents ",
@@ -310,7 +333,8 @@
           "unit": "Cent"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "walter kirchberger , an analyst with painewebber inc . , said that offering holders a higher , $ 70 - a - share price is ` ` a fairly effective method of blocking ' ' the stena - tiphook bid .",
@@ -323,7 +347,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "net sales for this year ' s third quarter were $ 14 million  last year .",
@@ -336,7 +361,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the parent company of first national bank of chicago , with $ 48 billion in assets , said it set aside to absorb losses on loans and investments in financially troubled countries .",
@@ -349,7 +375,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "fluor corp . said it was awarded a $ 300 million contract to provide engineering and construction - management services at a copper mine in irian jaya , indonesia , for a unit of freeport - mcmoran copper co .",
@@ -362,7 +389,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the american stock exchange said a seat was sold for down $ 5,000 from the previous sale last friday .",
@@ -375,7 +403,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "warner communications inc . , which is being acquired by time warner , has filed a $ 1 billion breach - of - contract suit against sony and the two producers .",
@@ -388,7 +417,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "in august , asarco , through its lac d ' amiante du quebec subsidiary , sold its remaining one - third interest in an asbestos mining limited partnership in canada for $ 11.7 million .",
@@ -401,7 +431,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "in 1988 , exports of domestically produced toys and games fell 19 % from 1987 , to hk $ 10.05 billion .",
@@ -415,7 +446,8 @@
           "isoCurrency": "HKD"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "fiscal fourth - quarter sales grew about 18 % to from $ 1.17 billion a year earlier .",
@@ -428,7 +460,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "during the first hour of trading yesterday , prices fell as much as 1 / 4 point , or down about $ 2.50 for each face amount .",
@@ -441,7 +474,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "new jersey , for example , was asked to accept $ 300,000 , but refused .",
@@ -454,7 +488,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "sales rose 6 . 2 % to $ 1.45 billion .",
@@ -467,7 +502,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "as of yesterday afternoon , the redemptions represented less than 15 % of the total cash position of about $ 2 billion of fidelity ' s stock funds .",
@@ -480,7 +516,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "onvia . com inc . , down 34 cents",
@@ -493,7 +530,8 @@
           "unit": "Cent"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the tw prospectus says that if the acquisition had been completed earlier , pretax earnings ` ` would have been insufficient to cover its fixed charges , including interest on debt securities , ' ' by approximately $ 62.7 million in the first six months of 1989 .",
@@ -506,7 +544,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "filenet noted that it had cash and marketable securities totaling $ 22.5 million on sept . 30 , and stockholders.",
@@ -519,7 +558,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "for the 20 most expensive restaurants in the city , the price of a dinner rose from $ 63.45 , also an 8 percent increase .",
@@ -532,7 +572,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "trans world airlines inc . , offering of $ 150 million senior notes , via drexel burnham .",
@@ -545,7 +586,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the fettuccine with portobello mushrooms costs $ 8.50 .",
@@ -558,7 +600,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the march delivery ended with an advance of  to 14.27 cents .",
@@ -571,7 +614,8 @@
           "unit": "Cent"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "interest expense in the 1988 third quarter was $ 75.3 million .",
@@ -584,7 +628,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the $ 2.38 billion dalkon shield claimants trust was established as part of a . h . robins ' bankruptcy - reorganization plan to resolve injury claims arising from use of the shield .",
@@ -597,7 +642,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the terms of the offer put a value of 528 million francs on the 32 . 99 % shareholding .",
@@ -610,7 +656,8 @@
           "unit": "Franc"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "russia has accepted a us $ 150 million world bank loan to combat the spread of aids and tuberculosis , ending a negotiating process that lasted four years , world bank officials said friday .",
@@ -624,7 +671,8 @@
           "isoCurrency": "USD"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the previous bellsouth pact was valued at about $ 98 a share .",
@@ -637,7 +685,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "one dealer said the talk was that the firm sold about $ 500 million of bellwether 30 - year bonds .",
@@ -650,7 +699,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "for the third quarter , sears said its total revenue rose 4 . 8 % to $ 13.18 billion a year earlier .",
@@ -663,7 +713,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "for the nine months , ethyl said net fell 2 % or $ 1.40 a share",
@@ -676,7 +727,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "analysts ' expectations suggest a september current account deficit of 1 . 6 billion ( $ 2.54 billion ) , compared with august ' s 2 . 0 billion deficit .",
@@ -689,7 +741,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "125 million australian dollars of zero - coupon eurobonds due dec . 12 , 1994 , priced at 50 . 9375 to yield 15 . 06 % less fees via hambros bank ltd .",
@@ -703,7 +756,8 @@
           "isoCurrency": "AUD"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "on friday , the chief cabinet secretary announced that eight cabinet ministers had received five million yen from the industry",
@@ -717,7 +771,8 @@
           "isoCurrency": "JPY"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": " including 450,000 yen by prime minister toshiki kaifu .",
@@ -731,7 +786,8 @@
           "isoCurrency": "JPY"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "orkem s . a . , a french state - controlled chemical manufacturer , is making a friendly bid of 470 pence a share for the 59 . 2 % of u . k . specialty chemical group coates brothers plc which it does n ' t already own , the two sides said .",
@@ -744,7 +800,8 @@
           "unit": "Pence"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "august adjusted spending by wage - earning families was down 0 . 6 % to 309,381 yen from a year earlier .",
@@ -758,7 +815,8 @@
           "isoCurrency": "JPY"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "national income realty trust said it will resume dividend payments with a 12-cent-a-share dividend to be paid nov . 6 to shares of record oct . 25 .",
@@ -771,7 +829,8 @@
           "unit": "Cent"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "mr . bowder said the c $ 300 million charge to earnings",
@@ -785,7 +844,8 @@
           "isoCurrency": "CAD"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "would amount to about c $ 1.34 a share .",
@@ -799,7 +859,8 @@
           "isoCurrency": "CAD"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "egg prices averaged 64.2 cents a dozen .",
@@ -812,7 +873,8 @@
           "unit": "Cent"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "still , it said it expects sales for all of 1989 to be on the order of 20 billion francs , reflecting anticipated billings for two large contracts in the second half of the year .",
@@ -825,7 +887,8 @@
           "unit": "Franc"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the transaction called for mr . murdoch ' s news international plc , a unit of australia - based news corp . , to subscribe to a rights issue by zeta valued at 6.65 billion pesetas .",
@@ -838,7 +901,8 @@
           "unit": "Peseta"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "fujitsu ltd . said it wants to withdraw its controversial one-yen bid to design a waterworks computer system for the city of hiroshima .",
@@ -852,7 +916,8 @@
           "isoCurrency": "JPY"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "250 million dutch guilders of 7 3 / 4 % bonds due nov . 15 , 1999 , priced at 101 1 / 4 to yield 7 . 57 % at issue price and 7 . 86 % less full fees , via amro bank .",
@@ -865,7 +930,8 @@
           "unit": "Netherlands guilder"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "in addition , the bank has an option to buy a 30 . 84 % stake in bip from societe generale after jan . 1 , 1990 at 1,015 francs a share .",
@@ -878,7 +944,8 @@
           "unit": "Franc"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "its shares slid in late dealings to close one penny",
@@ -891,7 +958,8 @@
           "unit": "Penny"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "per share lower at 197 pence.",
@@ -904,7 +972,8 @@
           "unit": "Pence"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "its quarterly operating profit improved to 361 million pounds ",
@@ -917,7 +986,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "last year , the gross output value of township enterprises of the whole city broke through 100 billion yuan for the first time , ranking first in the entire province .",
@@ -931,7 +1001,8 @@
           "isoCurrency": "CNY"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "rangers got to keep an estimated £ 50 million saved by baxendale - walker ' s advice .",
@@ -944,7 +1015,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "in turn , francis leung pak - to has agreed to sell an 8 % stake in pccw to telefónica for 323 million euros .",
@@ -958,7 +1030,8 @@
           "isoCurrency": "EUR"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "uefa charged ferguson for bringing the game into disrepute with his comments , and on 1 may that year he was fined 10,000 swiss francs  .",
@@ -972,7 +1045,8 @@
           "isoCurrency": "CHF"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the ipl signed up kingfisher airlines as the official umpire partner for the series in a ( approximately £ 15 million ) deal .",
@@ -985,7 +1059,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the revenue of adelaide ' s electronics industry has grown at about 15 % per annum since 1990 , and in 2011 exceeds a $ 4 billion .",
@@ -998,7 +1073,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "abel and associates bid $ 4 million for doing the film ' s effects and paramount accepted .",
@@ -1011,7 +1087,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "malone sued 20th century - fox for $ 1.6 million for breach of contract ;",
@@ -1024,7 +1101,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "in 2003 , bayern munich loaned € 2 million to dortmund for a couple of months to pay their payroll .",
@@ -1038,7 +1116,8 @@
           "isoCurrency": "EUR"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "lockheed martin and the united states government intensively lobbied for india ' s us $ 10 billion contract for 126 fighter jets .",
@@ -1052,7 +1131,8 @@
           "isoCurrency": "USD"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "according to research firm npd , the average selling price of all windows portable pcs has fallen from $ 659 in october 2008 to",
@@ -1065,7 +1145,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "one . tel floated on the australian stock exchange at $ 2 per share in november 1997 .",
@@ -1078,7 +1159,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the east stand ( worcester avenue ) stand was finished in 1934 and this increased capacity to around 80 , 000 spectators but cost £ 60,000 .",
@@ -1091,7 +1173,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "his fulham teammate johnny haynes became the first £ 100 player .",
@@ -1104,7 +1187,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "for the nine months , amr ' s net rose 15 % to $ 415.9 million",
@@ -1117,7 +1201,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the airline ' s share price already is far below the 210 pence  level seen after the company announced the rights issue in late september .",
@@ -1130,7 +1215,8 @@
           "unit": "Pence"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "rolling stone noted , ` ` harpercollins acquired the book project for $ 3 million in 2008 .",
@@ -1143,7 +1229,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "their conclusion was a terse pronouncement that $ 48 \" is not adequate . \"",
@@ -1156,7 +1243,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "2013 , edition of forbes magazine features keith on the cover with the caption ` ` country music ' s $ 500 million man ' ' .",
@@ -1169,7 +1257,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "harry ferguson sued us ford for illegal use of his patents asking for compensation of £ 90 million , settled out of court in 1952 .",
@@ -1182,7 +1271,8 @@
           "unit": "Pound"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "aerosmith signed with columbia in mid - 1972 for a reported $ 125,000 and issued their debut album , aerosmith .",
@@ -1195,7 +1285,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "it was one of coke ' s largest acquisitions since it bought odwalla inc . for $ 186 million in 2001 .",
@@ -1208,7 +1299,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "subsequently , apple and creative reached a settlement , with apple paying $ 100 million to creative , and creative joining the ` ` made for ipod ' ' accessory program .",
@@ -1221,7 +1313,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "the hart - scott filing is then reviewed and any antitrust concerns usually met . typically , hart - scott is used now to give managers of target firms early news of a bid and a chance to use regulatory review as a delaying tactic . the $ 20,000 tax would be a small cost in a multibillion - dollar deal , but a serious drag on thousands of small , friendly deals .",
@@ -1242,7 +1335,8 @@
           "unit": "Dollar"
         }
       }
-    ]
+    ],
+    "NotSupported": "dotNet,javascript,python,java,"
   },
   {
     "Input": "dollar : 143.80 yen , up 0 . 95 ; 1 . 8500 marks , up 0 . 0085 .",
