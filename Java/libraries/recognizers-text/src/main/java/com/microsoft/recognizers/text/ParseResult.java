@@ -18,6 +18,10 @@ public class ParseResult extends ExtractResult {
         this.resolutionStr = resolutionStr;
     }
 
+    public ParseResult(ExtractResult er) {
+        this(er.start, er.length, er.text, er.type, er.data, null, null);
+    }
+
     public ParseResult withText(String newText) {
         return new ParseResult(
                 this.start,
