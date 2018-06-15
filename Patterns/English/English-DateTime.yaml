@@ -155,7 +155,7 @@ LastDateRegex: !nestedRegex
   def: \b({PastPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+last\s*week))\b
   references: [ PastPrefixRegex, WeekDayRegex ]
 NextDateRegex: !nestedRegex
-  def: \b({NextPrefixRegex}(\s*week(\s*on)?)?\s+{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+next\s*week))\b
+  def: \b({NextPrefixRegex}(\s*week(\s*,?\s*on)?)?\s+{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+next\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
   def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b
@@ -915,4 +915,13 @@ SpecialDecadeCases: !dictionary
     'noughties': 2000
     'two thousands': 2000
 DefaultLanguageFallback: 'MDY'
+SuperfluousWordList: !list
+  types: [ string ]
+  entries:
+    - preferably
+    - how about
+    - maybe
+    - say
+    - like
+    - around
 ...

@@ -40,6 +40,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         private IEnumerable<Token> CityTimeMatch(string text)
         {
             var ret = new List<Token>();
+
+            if (config.CityTimeSuffixRegex == null)
+            {
+                return ret;
+            }
+
             var timeMatch = config.CityTimeSuffixRegex.Matches(text);
 
             if (timeMatch.Count != 0)

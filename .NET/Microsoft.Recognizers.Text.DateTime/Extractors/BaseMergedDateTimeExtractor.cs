@@ -3,6 +3,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
@@ -22,6 +24,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var ret = new List<ExtractResult>();
+
+            var originText = text;
+            List<MatchResult<string>> superfluousWordMatches = null;
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, out superfluousWordMatches);
+            }
 
             // The order is important, since there is a problem in merging
             AddTo(ret, this.config.DateExtractor.Extract(text, reference), text);
@@ -58,6 +67,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             ret = ret.OrderBy(p => p.Start).ToList();
+
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                ret = MatchingUtil.PosProcessExtractionRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
+            }
 
             return ret;
         }

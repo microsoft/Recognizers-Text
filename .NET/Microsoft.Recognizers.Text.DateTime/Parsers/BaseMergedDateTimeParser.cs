@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.Text.RegularExpressions;
-
 using DateObject = System.DateTime;
+
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -32,6 +33,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var referenceTime = refTime;
             DateTimeParseResult pr = null;
+
+            var originText = er.Text;
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                er.Text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(er.Text, Config.SuperfluousWordMatcher, out var _);
+                er.Length += er.Text.Length - originText.Length;
+            }
 
             // Push, save the MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false, hasYearAfter = false;
@@ -212,6 +220,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var hasModifier = hasBefore || hasAfter || hasSince;
                 pr = SetParseResult(pr, hasModifier);
+            }
+
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                pr.Length += originText.Length - pr.Text.Length;
+                pr.Text = originText;
             }
 
             return pr;
