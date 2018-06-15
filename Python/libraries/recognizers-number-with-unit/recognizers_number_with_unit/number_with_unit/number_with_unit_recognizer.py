@@ -181,26 +181,22 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
     def get_temperature_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
         return self.get_model('TemperatureModel', culture, fallback_to_default_culture)
 
-    @staticmethod
-    def recognize_age(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberWithUnitRecognizer(culture, options)
-        model = recognizer.get_age_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_age(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberWithUnitRecognizer(culture, options)
+    model = recognizer.get_age_model(culture, fallback_to_default_culture)
+    return model.parse(query)
 
-    @staticmethod
-    def recognize_currency(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberWithUnitRecognizer(culture, options)
-        model = recognizer.get_currency_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_currency(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberWithUnitRecognizer(culture, options)
+    model = recognizer.get_currency_model(culture, fallback_to_default_culture)
+    return model.parse(query)
 
-    @staticmethod
-    def recognize_dimension(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberWithUnitRecognizer(culture, options)
-        model = recognizer.get_dimension_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_dimension(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberWithUnitRecognizer(culture, options)
+    model = recognizer.get_dimension_model(culture, fallback_to_default_culture)
+    return model.parse(query)
 
-    @staticmethod
-    def recognize_temperature(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberWithUnitRecognizer(culture, options)
-        model = recognizer.get_temperature_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_temperature(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberWithUnitRecognizer(culture, options)
+    model = recognizer.get_temperature_model(culture, fallback_to_default_culture)
+    return model.parse(query)

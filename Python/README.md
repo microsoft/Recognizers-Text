@@ -23,6 +23,7 @@ You can then install each of the local packages:
 
     pip install -e .\libraries\recognizers-text\
     pip install -e .\libraries\recognizers-number\
+    pip install -e .\libraries\recognizers-number-with-unit\
     pip install -e .\libraries\recognizers-date-time\
 
 To run tests:
@@ -46,6 +47,10 @@ Install Recognizer's by launching the following commands:
 * Get the date time Recognizer's features:
 `pip install recognizers-text-date-time`
 
+Or install Recognizer's suite with the following command:
+
+`pip install recognizers-suite`
+
 ## API Documentation
 
 Once the proper package is installed, you'll need to reference the package:
@@ -56,6 +61,13 @@ from recognizers_number import NumberRecognizer
 from recognizers_number_with_unit import NumberWithUnitRecognizer 
 from recognizers_date_time import DateTimeRecognizer 
 ````
+
+Or, using the suite package:
+
+````Python
+import recognizers_suite
+````
+
 
 ### Recognizer's Models
 
@@ -69,7 +81,11 @@ result = model.parse('Twelve')
 
 Or, for less verbosity, you use the helper methods:
 
-`result = NumberRecognizer.recognize_number("Twelve", Culture.English)`
+```Python
+from recognizers_number import recognize_number, Culture
+
+result = recognize_number("Twelve", Culture.English)
+```
 
 Internally, both methods will cache the instance models to avoid extra costs.
 
@@ -78,7 +94,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This recognizer will find any number from the input. E.g. _"I have two apples"_ will return _"2"_.
 
-    `NumberRecognizer.recognize_number('I have two apples', Culture.English)`
+    `recognize_number('I have two apples', Culture.English)`
 
     Or you can obtain a model instance using:
 
@@ -88,7 +104,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This recognizer will find any ordinal number. E.g. _"eleventh"_ will return _"11"_.
 
-    `NumberRecognizer.recognize_ordinal('eleventh', Culture.English)`
+    `recognize_ordinal('eleventh', Culture.English)`
 
     Or you can obtain a model instance using:
 
@@ -98,7 +114,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This recognizer will find any number presented as percentage. E.g. _"one hundred percents"_ will return _"100%"_.
 
-    `NumberRecognizer.recognize_percentage('one hundred percents', Culture.English))`
+    `recognize_percentage('one hundred percents', Culture.English))`
 
     Or you can obtain a model instance using:
 
@@ -109,7 +125,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This recognizer will find any age number presented. E.g. _"After ninety five years of age, perspectives change"_ will return _"95 Year"_.
 
-    `NumberWithUnitRecognizers.recognize_age('After ninety five years of age, perspectives change', Culture.English)`
+    `recognize_age('After ninety five years of age, perspectives change', Culture.English)`
 
     Or you can obtain a model instance using:
 
@@ -119,7 +135,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This recognizer will find any currency presented. E.g. _"Interest expense in the 1988 third quarter was $ 75.3 million"_ will return _"75300000 Dollar"_.
 
-    `NumberWithUnitRecognizers.recognize_currency('Interest expense in the 1988 third quarter was $ 75.3 million', Culture.English)`
+    `recognize_currency('Interest expense in the 1988 third quarter was $ 75.3 million', Culture.English)`
 
     Or you can obtain a model instance using:
 
@@ -129,7 +145,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This recognizer will find any dimension presented. E.g. _"The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours."_ will return _"6 Mile"_.
 
-    `NumberWithUnitRecognizers.recognize_dimension('The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.', Culture.English)`
+    `recognize_dimension('The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.', Culture.English)`
 
     Or you can obtain a model instance using:
 
@@ -139,7 +155,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This recognizer will find any temperature presented. E.g. _"Set the temperature to 30 degrees celsius"_ will return _"30 C"_.
 
-    `NumberWithUnitRecognizers.recognize_temperature('Set the temperature to 30 degrees celsius', Culture.English)`
+    `recognize_temperature('Set the temperature to 30 degrees celsius', Culture.English)`
 
     Or you can obtain a model instance using:
 
@@ -150,7 +166,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     This recognizer will find any date, time, duration and date/time ranges, even if its write in colloquial language. E.g. _"I'll go back 8pm today"_ will return _"2017-10-04 20:00:00"_.
 
-    `DateTimeRecognizer.recognize_datetime("I'll go back 8pm today", Recognizers.Culture.English)`
+    `recognize_datetime("I'll go back 8pm today", Recognizers.Culture.English)`
 
     Or you can obtain a model instance using:
 

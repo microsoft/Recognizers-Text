@@ -1,12 +1,12 @@
 import pytest
 from runner import get_specs
-from recognizers_number_with_unit.number_with_unit import NumberWithUnitRecognizer
+from recognizers_number_with_unit.number_with_unit.number_with_unit_recognizer import recognize_age, recognize_currency, recognize_dimension, recognize_temperature
 
 MODELFUNCTION = {
-    'Age': NumberWithUnitRecognizer.recognize_age,
-    'Currency': NumberWithUnitRecognizer.recognize_currency,
-    'Temperature': NumberWithUnitRecognizer.recognize_temperature,
-    'Dimension': NumberWithUnitRecognizer.recognize_dimension,
+    'Age': recognize_age,
+    'Currency': recognize_currency,
+    'Temperature': recognize_temperature,
+    'Dimension': recognize_dimension,
 }
 
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='NumberWithUnit', entity='Model'))

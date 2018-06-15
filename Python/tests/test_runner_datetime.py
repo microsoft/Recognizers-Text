@@ -3,10 +3,10 @@ import re
 import datetime
 import pytest
 from runner import get_specs, CULTURES
-from recognizers_date_time.date_time import DateTimeRecognizer
+from recognizers_date_time import recognize_datetime
 
 MODELFUNCTION = {
-    'DateTime': DateTimeRecognizer.recognize_datetime
+    'DateTime': recognize_datetime
 }
 
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='DateTime', entity='Extractor'))
