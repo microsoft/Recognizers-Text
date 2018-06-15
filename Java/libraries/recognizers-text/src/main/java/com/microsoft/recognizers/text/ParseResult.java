@@ -22,6 +22,17 @@ public class ParseResult extends ExtractResult {
         this(er.start, er.length, er.text, er.type, er.data, null, null);
     }
 
+    public ParseResult withLength(int newLength) {
+        return new ParseResult(
+                this.start,
+                newLength,
+                this.text,
+                this.type,
+                this.data,
+                this.value,
+                this.resolutionStr);
+    }
+
     public ParseResult withText(String newText) {
         return new ParseResult(
                 this.start,
