@@ -28,5 +28,3 @@ def resoultion_assert(actual, expected, props):
         for prop in props:
             if prop in expected['Resolution']:
                 assert actual.resolution[prop] == expected['Resolution'][prop]
-            else:
-                assert not prop in actual.resolution

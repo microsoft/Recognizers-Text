@@ -3,8 +3,8 @@ from typing import List
 from recognizers_text import Culture, Recognizer
 from recognizers_text.model import Model, ModelResult
 from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel, ExtractorParserModel
-from .extractors import NumberWithUnitExtractor
-from .parsers import NumberWithUnitParser
+from .extractors import NumberWithUnitExtractor, BaseMergedUnitExtractor
+from .parsers import NumberWithUnitParser, BaseMergedUnitParser
 from .english.extractors import (EnglishCurrencyExtractorConfiguration,
                                  EnglishTemperatureExtractorConfiguration,
                                  EnglishDimensionExtractorConfiguration,
@@ -60,7 +60,7 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
     def initialize_configuration(self):
         #region English
         self.register_model('CurrencyModel', Culture.English, lambda options: CurrencyModel(
-            [ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()), NumberWithUnitParser(EnglishCurrencyParserConfiguration()))]
+            [ExtractorParserModel(BaseMergedUnitExtractor(EnglishCurrencyExtractorConfiguration()), BaseMergedUnitParser(EnglishCurrencyParserConfiguration()))]
             ))
         self.register_model('TemperatureModel', Culture.English, lambda options: TemperatureModel(
             [ExtractorParserModel(NumberWithUnitExtractor(EnglishTemperatureExtractorConfiguration()), NumberWithUnitParser(EnglishTemperatureParserConfiguration()))]
@@ -76,8 +76,8 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         #region Chinese
         self.register_model('CurrencyModel', Culture.Chinese, lambda options: CurrencyModel([
             ExtractorParserModel(
-                NumberWithUnitExtractor(ChineseCurrencyExtractorConfiguration()),
-                NumberWithUnitParser(ChineseCurrencyParserConfiguration())),
+                BaseMergedUnitExtractor(ChineseCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(ChineseCurrencyParserConfiguration())),
             ExtractorParserModel(
                 NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()),
                 NumberWithUnitParser(EnglishCurrencyParserConfiguration()))

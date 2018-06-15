@@ -6,7 +6,7 @@ from recognizers_text.model import Model, ModelResult
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser
 from recognizers_text.utilities import FormatUtility
-from recognizers_number_with_unit.number_with_unit.parsers import UnitValue
+from recognizers_number_with_unit.number_with_unit.parsers import UnitValue, CurrencyUnitValue
 
 class ExtractorParserModel:
     def __init__(self, extractor: Extractor, parser: Parser):
@@ -54,6 +54,12 @@ class AbstractNumberWithUnitModel(Model):
             return {
                 'value': data.number,
                 'unit': data.unit
+            }
+        elif isinstance(data, CurrencyUnitValue):
+            return {
+                'value': data.number,
+                'unit': data.unit,
+                'isoCurrency': data.iso_currency
             }
         return None
 
