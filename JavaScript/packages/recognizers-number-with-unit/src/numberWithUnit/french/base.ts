@@ -1,4 +1,4 @@
-import { IExtractor, IParser } from "@microsoft/recognizers-text";
+import { IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
 import { Culture, CultureInfo, NumberMode, AgnosticNumberParserFactory, AgnosticNumberParserType, FrenchNumberExtractor, FrenchNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
@@ -16,6 +16,7 @@ export abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
     readonly buildPrefix: string;
     readonly buildSuffix: string;
     readonly connectorToken: string;
+    readonly compoundUnitConnectorRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -24,6 +25,7 @@ export abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
         this.buildPrefix = FrenchNumericWithUnit.BuildPrefix;
         this.buildSuffix = FrenchNumericWithUnit.BuildSuffix;
         this.connectorToken = FrenchNumericWithUnit.ConnectorToken;
+        this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(FrenchNumericWithUnit.CompoundUnitConnectorRegex);
     }
 }
 
@@ -31,6 +33,8 @@ export class FrenchNumberWithUnitParserConfiguration extends BaseNumberWithUnitP
     readonly internalNumberParser: IParser;
     readonly internalNumberExtractor: IExtractor;
     readonly connectorToken: string;
+    readonly currencyNameToIsoCodeMap: ReadonlyMap<string, string>;
+    readonly currencyFractionCodeList: ReadonlyMap<string, string>;
 
     constructor(ci: CultureInfo) {
         super(ci);

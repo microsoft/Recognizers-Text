@@ -7,9 +7,9 @@ var EnglishCulture = Culture.English;
 var SpanishCulture = Culture.Spanish;
 var InvalidCulture = "vo-id";
 
-var controlModel = new Recognizer.CurrencyModel(new Map([[
-    new Recognizer.NumberWithUnitExtractor(new Recognizer.EnglishCurrencyExtractorConfiguration()), 
-    new Recognizer.NumberWithUnitParser(new Recognizer.EnglishCurrencyParserConfiguration())]]));
+var controlModel = new Recognizer.DimensionModel(new Map([[
+    new Recognizer.NumberWithUnitExtractor(new Recognizer.EnglishDimensionExtractorConfiguration()), 
+    new Recognizer.NumberWithUnitParser(new Recognizer.EnglishDimensionParserConfiguration())]]));
 
 function clearCache() {
     var recognizer = new NumberWithUnitRecognizer();
@@ -24,32 +24,32 @@ module.exports = function (describe) {
     describe(`numberWithUnitRecognizer - initialization -`, it => {
         it('WithoutCulture_UseTargetCulture', t => {
             var recognizer = new NumberWithUnitRecognizer(EnglishCulture);
-            t.deepEqual(recognizer.getCurrencyModel(), controlModel);
+            t.deepEqual(recognizer.getDimensionModel(), controlModel);
         });
 
         it('WithOtherCulture_NotUseTargetCulture', t => {
             var recognizer = new NumberWithUnitRecognizer(EnglishCulture);
-            t.notDeepEqual(recognizer.getCurrencyModel(SpanishCulture), controlModel);
+            t.notDeepEqual(recognizer.getDimensionModel(SpanishCulture), controlModel);
         });
 
         it('WithInvalidCulture_UseTargetCulture', t => {
             var recognizer = new NumberWithUnitRecognizer(EnglishCulture);
-            t.deepEqual(recognizer.getCurrencyModel(InvalidCulture), controlModel);
+            t.deepEqual(recognizer.getDimensionModel(InvalidCulture), controlModel);
         });
 
         it('WithInvalidCultureAndWithoutFallback_ThrowError', t => {
             var recognizer = new NumberWithUnitRecognizer();
-            t.throws(() => { recognizer.getCurrencyModel(InvalidCulture, false) });
+            t.throws(() => { recognizer.getDimensionModel(InvalidCulture, false) });
         });
 
         it('WithInvalidCultureAsTargetAndWithoutFallback_ThrowError', t => {
             var recognizer = new NumberWithUnitRecognizer(InvalidCulture);
-            t.throws(() => { recognizer.getCurrencyModel(null, false) });
+            t.throws(() => { recognizer.getDimensionModel(null, false) });
         });
 
         it('WithoutTargetCultureAndWithoutCulture_FallbackToEnglishCulture', t => {
             var recognizer = new NumberWithUnitRecognizer();
-            t.deepEqual(recognizer.getCurrencyModel(), controlModel);
+            t.deepEqual(recognizer.getDimensionModel(), controlModel);
         });
 
         it('InitializationWithIntOption_ResolveOptionsEnum', t => {
