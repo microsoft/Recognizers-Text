@@ -40,9 +40,10 @@ def test_datetime_parser(culture, model, options, context, source, expected_resu
         if 'Value' in expected:
             assert actual.value
         if actual.value and 'Value' in expected:
-            assert actual.value.timex == expected['Value']['Timex']
-            assert actual.value.future_resolution == expected['Value']['FutureResolution']
-            assert actual.value.past_resolution == expected['Value']['PastResolution']
+            simple_parser_assert(actual.value, expected['Value'], 'timex', 'Timex')
+            simple_parser_assert(actual.value, expected['Value'], 'mod', 'Mod')
+            simple_parser_assert(actual.value, expected['Value'], 'future_resolution', 'FutureResolution')
+            simple_parser_assert(actual.value, expected['Value'], 'past_resolution', 'PastResolution')
 
 @pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(recognizer='DateTime', entity='MergedParser'))
 def test_datetime_mergedparser(culture, model, options, context, source, expected_results):
@@ -77,8 +78,11 @@ def test_datetime_model(culture, model, options, context, source, expected_resul
 
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
-        assert actual.text == expected['Text']
-        assert actual.type_name == expected['TypeName']
+        simple_parser_assert(actual, expected, 'text', 'Text')
+        simple_parser_assert(actual, expected, 'typeName', 'TypeName')
+        simple_parser_assert(actual, expected, 'parentText', 'ParentText')
+        simple_parser_assert(actual, expected, 'start', 'Start')
+        simple_parser_assert(actual, expected, 'end', 'End')
         assert len(actual.resolution['values']) == len(expected['Resolution']['values'])
         for actual_resilution_value, expected_resoulution_value in zip(actual.resolution['values'], expected['Resolution']['values']):
             assert_model_resolution(actual_resilution_value, expected_resoulution_value)
@@ -98,6 +102,13 @@ def assert_model_resolution(actual, expected):
     single_assert(actual, expected, 'Mod')
 
 def simple_extractor_assert(actual, expected, prop, resolution):
+    if resolution in expected:
+        assert getattr(actual, prop) == expected[resolution]
+def simple_extractor_assert(actual, expected, prop, resolution):
+    if resolution in expected:
+        assert getattr(actual, prop) == expected[resolution]
+
+def simple_parser_assert(actual, expected, prop, resolution):
     if resolution in expected:
         assert getattr(actual, prop) == expected[resolution]
 
