@@ -253,12 +253,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         public bool HasTokenIndex(string text, Regex regex, out int index)
         {
             index = -1;
-            var match = regex.Match(text);
 
-            if (match.Success && string.IsNullOrWhiteSpace(text.Substring(match.Index+match.Length)))
+            // Here we need to go through all matches
+            // Because if we only use regex.Match(text)
+            // Cases like "show me sales after 2010 and before 2018 or before 2000" will fail as two "before" exists
+            var matches = regex.Matches(text);
+
+            foreach (Match match in matches)
             {
-                index = match.Index;
-                return true;
+                if (match.Success && string.IsNullOrWhiteSpace(text.Substring(match.Index + match.Length)))
+                {
+                    index = match.Index;
+                    return true;
+                }
             }
 
             return false;
