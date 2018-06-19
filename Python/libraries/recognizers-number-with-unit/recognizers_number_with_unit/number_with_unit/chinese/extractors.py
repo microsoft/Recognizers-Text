@@ -1,7 +1,8 @@
-from typing import Dict, List
+from typing import Dict, List, Pattern
 
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
+from recognizers_text.utilities import RegExpUtility
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseNumberExtractorMode
 from recognizers_number_with_unit.number_with_unit.constants import Constants
@@ -26,6 +27,10 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def connector_token(self) -> str:
         return ChineseNumericWithUnit.ConnectorToken
 
+    @property
+    def compound_unit_connector_regex(self) -> Pattern:
+        return self._compound_unit_connector_regex
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
@@ -33,6 +38,7 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._unit_num_extractor = ChineseNumberExtractor(ChineseNumberExtractorMode.EXTRACT_ALL)
         self._build_prefix = ChineseNumericWithUnit.BuildPrefix
         self._build_suffix = ChineseNumericWithUnit.BuildSuffix
+        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(ChineseNumericWithUnit.CompoundUnitConnectorRegex)
 # pylint: enable=abstract-method
 
 class ChineseAgeExtractorConfiguration(ChineseNumberWithUnitExtractorConfiguration):

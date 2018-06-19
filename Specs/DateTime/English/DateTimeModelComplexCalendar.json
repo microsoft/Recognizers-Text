@@ -2800,6 +2800,48 @@
     ]
   },
   {
+    "Input": "show me sales before 2010 or after 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "before 2010",
+        "Start": 14,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+      ,
+      {
+        "Text": "after 2018",
+        "Start": 29,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input":
       "Can we have a quick 30-min meeting @ Chestnut Run Plaza Bldg 450 on January 16th between 830am ET and 9am ET so that we can discuss Microsoft and potential opportunities?",
     "Context": {

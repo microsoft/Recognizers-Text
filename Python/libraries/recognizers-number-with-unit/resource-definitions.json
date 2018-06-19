@@ -11,6 +11,15 @@
             "footer": [ "# pylint: enable=line-too-long" ]
         },
         {
+            "input": [ "Base-Currency" ],
+            "output": "base_currency",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseCurrency:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
             "input": [ "English", "English-NumbersWithUnit" ],
             "output": "english_numeric_with_unit",
             "header": [
