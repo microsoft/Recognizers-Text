@@ -2905,4 +2905,44 @@
     }
   ]
 }
+,
+{
+  "Input": "show me sales before 2010 or after 2018",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 2010",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2010",
+            "Mod":"before",
+            "type":"daterange",
+            "end":"2010-01-01"         
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "after 2018",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018",
+            "Mod":"after",
+            "type":"daterange",
+            "start":"2019-01-01"         
+          }
+        ]
+      }
+    }
+  ]
+}
 ]
