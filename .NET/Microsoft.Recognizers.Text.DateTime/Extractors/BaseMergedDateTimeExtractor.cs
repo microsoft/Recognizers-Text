@@ -226,7 +226,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
 
                     var match = config.YearAfterRegex.Match(afterStr.TrimStart());
-                    if (match.Success && match.Index == 0)
+                    if (match.Success && match.Index == 0 && match.Length == afterStr.Trim().Length)
                     {
                         var modLengh = match.Length + afterStr.IndexOf(match.Value);
                         er.Length += modLengh;
