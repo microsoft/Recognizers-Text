@@ -1,0 +1,64 @@
+{
+    "outputPath": "./recognizers_date_time/resources/",
+    "configFiles": [
+        {
+            "input": [ "Base-DateTime" ],
+            "output": "base_date_time",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "class BaseDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "English", "English-DateTime" ],
+            "output": "english_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "class EnglishDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Spanish", "Spanish-DateTime" ],
+            "output": "spanish_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "class SpanishDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Portuguese", "Portuguese-DateTime" ],
+            "output": "portuguese_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "class PortugueseDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-DateTime" ],
+            "output": "chinese_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "class ChineseDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "French", "French-DateTime" ],
+            "output": "french_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "class FrenchDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        }
+    ]
+}

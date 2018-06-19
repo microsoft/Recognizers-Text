@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -32,7 +35,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
-
         public static bool ContainsAgoLaterIndex(string text, Regex regex)
         {
             int index = -1;
@@ -44,5 +46,50 @@ namespace Microsoft.Recognizers.Text.DateTime
             int index = -1;
             return GetTermIndex(text, regex, out index);
         }
+
+        // Temporary solution for remove superfluous words only under the Preview mode
+        public static string PreProcessTextRemoveSuperfluousWords(string text, StringMatcher matcher, out List<MatchResult<string>> superfluousWordMatches)
+        {
+            superfluousWordMatches = matcher.Find(text).ToList();
+            var bias = 0;
+
+            foreach (var match in superfluousWordMatches)
+            {
+                text = text.Remove(match.Start - bias, match.Length);
+                bias += match.Length;
+            }
+
+            return text;
+        }
+
+        // Temporary solution for recover superfluous words only under the Preview mode
+        public static List<ExtractResult> PosProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults,
+            List<MatchResult<string>> superfluousWordMatches, string originText)
+        {
+            foreach (var match in superfluousWordMatches)
+            {
+                foreach (var extractResult in extractResults)
+                {
+                    var extractResultEnd = extractResult.Start + extractResult.Length;
+                    if (match.Start > extractResult.Start && extractResultEnd >= match.Start)
+                    {
+                        extractResult.Length += match.Length;
+                    }
+
+                    if (match.Start <= extractResult.Start)
+                    {
+                        extractResult.Start += match.Length;
+                    }
+                }
+            }
+
+            foreach (var extractResult in extractResults)
+            {
+                extractResult.Text = originText.Substring((int)extractResult.Start, (int)extractResult.Length);
+            }
+
+            return extractResults;
+        }
+
     }
 }

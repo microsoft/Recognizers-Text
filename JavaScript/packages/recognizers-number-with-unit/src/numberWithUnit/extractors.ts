@@ -1,5 +1,6 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
-import { Culture, CultureInfo } from "@microsoft/recognizers-text-number";
+import { Culture, CultureInfo, Constants as NumberConstants } from "@microsoft/recognizers-text-number";
+import { Constants } from "./constants";
 import max = require("lodash.max");
 import escapeRegExp = require("lodash.escaperegexp");
 
@@ -14,6 +15,7 @@ export interface INumberWithUnitExtractorConfiguration {
     readonly buildPrefix: string;
     readonly buildSuffix: string;
     readonly connectorToken: string;
+    readonly compoundUnitConnectorRegex: RegExp;
 }
 
 export class NumberWithUnitExtractor implements IExtractor {
@@ -332,6 +334,157 @@ export class NumberWithUnitExtractor implements IExtractor {
                 }
             }
         }
+    }
+}
+
+export class BaseMergedUnitExtractor implements IExtractor {
+    private readonly config: INumberWithUnitExtractorConfiguration;
+    private readonly innerExtractor: NumberWithUnitExtractor;
+
+    constructor(config: INumberWithUnitExtractorConfiguration) {
+        this.config = config;
+        this.innerExtractor = new NumberWithUnitExtractor(config);
+    }
+
+    extract(source: string): Array<ExtractResult> {
+        let result = new Array<ExtractResult>();
+
+        if (this.config.extractType === Constants.SYS_UNIT_CURRENCY) {
+            result = this.mergeCompoundUnits(source);
+        } else {
+            result = this.innerExtractor.extract(source);
+        }
+
+        return result;
+    }
+
+    private mergeCompoundUnits(source: string): Array<ExtractResult> {
+        let result = new Array<ExtractResult>();
+        let ers = this.innerExtractor.extract(source);
+        this.MergePureNumber(source, ers);
+
+        let groups: number[] = [];
+        groups[0] = 0;
+        for (let i = 0; i < ers.length - 1; i++) {
+            if (ers[i].type !== ers[i + 1].type && ers[i].type !== NumberConstants.SYS_NUM && ers[i + 1].type !== NumberConstants.SYS_NUM) {
+                continue;
+            }
+
+            if ((ers[i].data as ExtractResult).data != null && !ers[i].data.data.startsWith('Integer')) {
+                groups[i + 1] = groups[i] + 1
+                continue;
+            }
+
+            let middleBegin = ers[i].start + ers[i].length;
+            let middleEnd = ers[i + 1].start;
+
+            let middleStr = source.substring(middleBegin, middleEnd).trim().toLowerCase();
+            
+            // Separated by whitespace
+            if (StringUtility.isNullOrEmpty(middleStr)) {
+                groups[i + 1] = groups[i];
+                continue;
+            }
+
+            // Separated by connectors
+            let match = RegExpUtility.getMatches(this.config.compoundUnitConnectorRegex, middleStr).pop();
+            if (match && match.index === 0 && match.length === middleStr.length) {
+                groups[i + 1] = groups[i];
+            } else {
+                groups[i + 1] = groups[i] + 1;
+            }
+        }
+
+        for (let i = 0; i < ers.length; i++) {
+            if (i === 0 || groups[i] !== groups[i - 1]) {
+                let tmpInner = new ExtractResult();
+                tmpInner.data = ers[i].data;
+                tmpInner.length = ers[i].length;
+                tmpInner.start = ers[i].start;
+                tmpInner.text = ers[i].text;
+                tmpInner.type = ers[i].type;
+
+                let tmpExtractResult = ers[i];
+                tmpExtractResult.data = new Array<ExtractResult>();
+                tmpExtractResult.data.push(tmpInner);
+
+                result.push(tmpExtractResult);
+            }
+
+            // Reduce extract results in same group
+            if (i + 1 < ers.length && groups[i  + 1] === groups[i]) {
+                let group = groups[i];
+
+                let periodBegin = result[group].start;
+                let periodEnd = ers[i + 1].start + ers[i + 1].length;
+
+                result[group].length = periodEnd - periodBegin;
+                result[group].text = source.substring(periodBegin, periodEnd);
+                result[group].type = Constants.SYS_UNIT_CURRENCY;
+                result[group].data.push(ers[i + 1]);
+            }
+        }
+
+        for (let i = 0; i < result.length; i++) {
+            let innerData: Array<ExtractResult> = result[i].data;
+            if (innerData && innerData.length === 1) {
+                result[i] = innerData[0];
+            }
+        }
+
+        result = result.filter(er => er.type !== NumberConstants.SYS_NUM);
+
+        return result;
+    }
+
+    private MergePureNumber(source: string, result: Array<ExtractResult>) {
+        let numErs = this.config.unitNumExtractor.extract(source);
+        let unitNumbers = new Array<ExtractResult>();
+        let i: number;
+        let j: number;
+        for (i = 0, j = 0; i < numErs.length; i++) {
+            let hasBehindExtraction: boolean = false;
+            while (j < result.length && result[j].start + result[j].length < numErs[i].start) {
+                hasBehindExtraction = true;
+                j++;
+            }
+
+            if (!hasBehindExtraction) {
+                continue;
+            }
+
+            let middleBegin = result[j - 1].start + result[j - 1].length;
+            let middleEnd = numErs[i].start;
+
+            let middleStr = source.substring(middleBegin, middleEnd).trim().toLowerCase();
+
+            // Separated by whitespace
+            if (StringUtility.isNullOrEmpty(middleStr)) {
+                unitNumbers.push(numErs[i]);
+                continue;
+            }
+
+            // Separated by connectors
+            let match = RegExpUtility.getMatches(this.config.compoundUnitConnectorRegex, middleStr).pop();
+            if (match && match.index === 0 && match.length === middleStr.length) {
+                unitNumbers.push(numErs[i]);
+            }
+        }
+
+        unitNumbers.forEach(extractResult => {
+            let overlap = false;
+            result.forEach(er => {
+                if (er.start <= extractResult.start && er.start + er.length >= extractResult.start) {
+                    overlap = true;
+                }
+            });
+
+            if (!overlap) {
+                result.push(extractResult);
+            } 
+        });
+
+        result.sort((x, y) => x.start - y.start);
     }
 }
 

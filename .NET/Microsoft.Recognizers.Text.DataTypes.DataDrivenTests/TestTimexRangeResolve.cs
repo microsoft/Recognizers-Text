@@ -482,5 +482,115 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             var r = new HashSet<string>(result.Select(t => t.TimexValue));
             Assert.IsFalse(r.Any());
         }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_dateranges()
+        {
+            var candidates = new[] { "XXXX-WXX-7" };
+            var constraints = new[]
+            {
+                "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
+                "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
+                TimexCreator.Evening
+            };
+
+            var result = TimexRangeResolver.Evaluate(candidates, constraints);
+
+            var r = new HashSet<string>(result.Select(t => t.TimexValue));
+            Assert.IsTrue(r.Contains("2018-06-10T16"));
+            Assert.IsTrue(r.Contains("2018-06-17T16"));
+            Assert.AreEqual(2, r.Count);
+        }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_dateranges_no_time_constraint()
+        {
+            var candidates = new[] { "XXXX-WXX-7TEV" };
+            var constraints = new[]
+            {
+                "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
+                "(2018-06-11,2018-06-18,P7D)"   // e.g. next week
+            };
+
+            var result = TimexRangeResolver.Evaluate(candidates, constraints);
+
+            var r = new HashSet<string>(result.Select(t => t.TimexValue));
+            Assert.IsTrue(r.Contains("2018-06-10TEV"));
+            Assert.IsTrue(r.Contains("2018-06-17TEV"));
+            Assert.AreEqual(2, r.Count);
+        }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_dateranges_overlapping_constraint_1()
+        {
+            var candidates = new[] { "XXXX-WXX-7TEV" };
+            var constraints = new[]
+            {
+                "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
+                "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
+                "(T18,T22,PT4H)"
+            };
+
+            var result = TimexRangeResolver.Evaluate(candidates, constraints);
+
+            var r = new HashSet<string>(result.Select(t => t.TimexValue));
+            Assert.IsTrue(r.Contains("2018-06-10T18"));
+            Assert.IsTrue(r.Contains("2018-06-17T18"));
+            Assert.AreEqual(2, r.Count);
+        }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_dateranges_overlapping_constraint_2()
+        {
+            var candidates = new[] { "XXXX-WXX-7TEV" };
+            var constraints = new[]
+            {
+                "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
+                "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
+                "(T15,T19,PT4H)"
+            };
+
+            var result = TimexRangeResolver.Evaluate(candidates, constraints);
+
+            var r = new HashSet<string>(result.Select(t => t.TimexValue));
+            Assert.IsTrue(r.Contains("2018-06-10T16"));
+            Assert.IsTrue(r.Contains("2018-06-17T16"));
+            Assert.AreEqual(2, r.Count);
+        }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_dateranges_non_overlapping_constraint()
+        {
+            var candidates = new[] { "XXXX-WXX-7TEV" };
+            var constraints = new[]
+            {
+                "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
+                "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
+                TimexCreator.Morning
+            };
+
+            var result = TimexRangeResolver.Evaluate(candidates, constraints);
+
+            Assert.IsFalse(result.Any());
+        }
+
+        [TestMethod]
+        public void DataTypes_RangeResolve_dateranges_Sunday_Evening()
+        {
+            var candidates = new[] { "XXXX-WXX-7TEV" };
+            var constraints = new[]
+            {
+                "(2018-06-04,2018-06-11,P7D)",  // e.g. this week
+                "(2018-06-11,2018-06-18,P7D)",  // e.g. next week
+                TimexCreator.Evening
+            };
+
+            var result = TimexRangeResolver.Evaluate(candidates, constraints);
+
+            var r = new HashSet<string>(result.Select(t => t.TimexValue));
+            Assert.IsTrue(r.Contains("2018-06-10T16"));
+            Assert.IsTrue(r.Contains("2018-06-17T16"));
+            Assert.AreEqual(2, r.Count);
+        }
     }
 }

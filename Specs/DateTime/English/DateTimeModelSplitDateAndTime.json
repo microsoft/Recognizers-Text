@@ -3,7 +3,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "hour",
@@ -27,7 +26,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 minutes",
@@ -51,7 +49,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 days",
@@ -75,7 +72,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "now",
@@ -98,7 +94,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7",
@@ -126,7 +121,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7pm",
@@ -149,7 +143,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 hours",
@@ -173,7 +166,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -222,7 +214,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today",
@@ -271,7 +262,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next monday",
@@ -320,7 +310,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -369,7 +358,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today",
@@ -418,7 +406,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next monday",
@@ -467,7 +454,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -504,7 +490,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "sep.1st",
@@ -550,7 +535,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "july the 5th",
@@ -596,7 +580,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5:30",
@@ -642,7 +625,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5pm",
@@ -678,7 +660,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5am",
@@ -714,7 +695,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 days",
@@ -738,7 +718,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 minutes",
@@ -762,7 +741,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -798,7 +776,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",

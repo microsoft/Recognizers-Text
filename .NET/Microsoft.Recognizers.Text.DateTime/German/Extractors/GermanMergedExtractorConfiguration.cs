@@ -1,6 +1,8 @@
 ﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.German;
 using System.Collections.Generic;
+
+using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -29,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public static readonly Regex[] FilterWordRegexList =
         {
@@ -85,5 +89,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

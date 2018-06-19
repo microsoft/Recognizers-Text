@@ -53,6 +53,35 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static TimexRange ExpandTimeRange(TimexProperty timex)
         {
+            if (!timex.Types.Contains(Constants.TimexTypes.TimeRange))
+            {
+                throw new ArgumentException("argument must be a timerange", nameof(timex));
+            }
+
+            if (timex.PartOfDay != null)
+            {
+                switch (timex.PartOfDay)
+                {
+                    case "DT":
+                        timex = new TimexProperty(TimexCreator.Daytime);
+                        break;
+                    case "MO":
+                        timex = new TimexProperty(TimexCreator.Morning);
+                        break;
+                    case "AF":
+                        timex = new TimexProperty(TimexCreator.Afternoon);
+                        break;
+                    case "EV":
+                        timex = new TimexProperty(TimexCreator.Evening);
+                        break;
+                    case "NI":
+                        timex = new TimexProperty(TimexCreator.Night);
+                        break;
+                    default:
+                        throw new ArgumentException("unrecognized part of day timerange", nameof(timex));
+                }
+            }
+
             var start = new TimexProperty { Hour = timex.Hour, Minute = timex.Minute, Second = timex.Second };
             var duration = CloneDuration(timex);
 

@@ -1,10 +1,18 @@
-from typing import Pattern
+from typing import Pattern, Match, Union, List
 import regex
 
 class RegExpUtility:
     @staticmethod
     def get_safe_reg_exp(source: str, flags: int = regex.I | regex.S) -> Pattern:
         return regex.compile(source, flags=flags)
+
+    @staticmethod
+    def get_group(match: Match, group: str, default_val: str = '') -> str:
+        return match.groupdict().get(group, default_val) or default_val
+
+    @staticmethod
+    def get_group_list(match: Match, group: str) -> List[str]:
+        return match.captures(group)
 
 class FormatUtility:
     @staticmethod
@@ -33,3 +41,7 @@ class FormatUtility:
         result = result.replace('（', '(')
         result = result.replace('）', ')')
         return result
+
+    @staticmethod
+    def float_or_int(source: Union[float, int]) -> Union[float, int]:
+        return float(source) if source % 1 else int(source)

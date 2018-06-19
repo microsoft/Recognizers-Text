@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -49,6 +50,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex NumberEndingPattern { get; }
 
         Regex YearAfterRegex { get; }
+
+        StringMatcher SuperfluousWordMatcher { get; }
 
     }
 }

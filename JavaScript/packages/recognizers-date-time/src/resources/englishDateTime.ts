@@ -70,7 +70,7 @@ export namespace EnglishDateTime {
 	export const RelaxedOnRegex = `(?<=\\b(on|at|in)\\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\\b`;
 	export const ThisRegex = `\\b((this(\\s*week)?(\\s*on)?\\s+)${WeekDayRegex})|(${WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b`;
 	export const LastDateRegex = `\\b(${PastPrefixRegex}(\\s*week)?\\s+${WeekDayRegex})|(${WeekDayRegex}(\\s+last\\s*week))\\b`;
-	export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week(\\s*on)?)?\\s+${WeekDayRegex})|((on\\s+)?${WeekDayRegex}((\\s+of)?\\s+next\\s*week))\\b`;
+	export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week(\\s*,?\\s*on)?)?\\s+${WeekDayRegex})|((on\\s+)?${WeekDayRegex}((\\s+of)?\\s+next\\s*week))\\b`;
 	export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b`;
 	export const SpecialDayWithNumRegex = `\\b((?<number>${WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b`;
 	export const RelativeDayRegex = `\\b(((the\\s+)?${RelativeRegex}\\s+day))\\b`;
@@ -241,4 +241,5 @@ export namespace EnglishDateTime {
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["hundreds", 0],["tens", 10],["twenties", 20],["thirties", 30],["forties", 40],["fifties", 50],["sixties", 60],["seventies", 70],["eighties", 80],["nineties", 90]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["noughties", 2000],["two thousands", 2000]]);
 	export const DefaultLanguageFallback = 'MDY';
+	export const SuperfluousWordList = [ 'preferably','how about','maybe','say','like','around' ];
 }

@@ -1,5 +1,5 @@
 import { IModel, ModelResult, IExtractor, IParser, FormatUtility } from "@microsoft/recognizers-text";
-import { UnitValue } from "./parsers";
+import { UnitValue, UnitValueIso } from "./parsers";
 
 export enum CompositeEntityType {
     Age,
@@ -57,9 +57,15 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
     private getResolution(data: any): any {
         if(typeof data === 'undefined') return null;
 
-        return typeof data === "string"
+        let result =  typeof data === "string"
             ? { value: data.toString() }
             : { value: (data as UnitValue).number, unit: (data as UnitValue).unit };
+
+        if ((data as UnitValueIso).isoCurrency) {
+            result['isoCurrency'] = data.isoCurrency;
+        }
+
+        return result;
     }
 }
 

@@ -1,6 +1,5 @@
 [{
   "Input": "I'll leave weekly",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "weekly",
@@ -11,7 +10,6 @@
 ,
 {
   "Input": "I'll leave daily",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "daily",
@@ -22,7 +20,6 @@
 ,
 {
   "Input": "I'll leave every day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "every day",
@@ -33,7 +30,6 @@
 ,
 {
   "Input": "I'll leave each month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "each month",
@@ -44,7 +40,6 @@
 ,
 {
   "Input": "I'll leave annually",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "annually",
@@ -55,7 +50,6 @@
 ,
 {
   "Input": "I'll leave annual",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "annual",
@@ -66,7 +60,6 @@
 ,
 {
   "Input": "I'll leave each two days",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "each two days",
@@ -77,7 +70,6 @@
 ,
 {
   "Input": "I'll leave every three week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "every three week",
@@ -88,7 +80,6 @@
 ,
 {
   "Input": "I'll leave 3pm every day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3pm every day",
@@ -99,7 +90,6 @@
 ,
 {
   "Input": "I'll leave 3pm each day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3pm each day",
@@ -110,7 +100,6 @@
 ,
 {
   "Input": "I'll leave each 4/15",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "each 4/15",
@@ -121,7 +110,6 @@
 ,
 {
   "Input": "I'll leave every monday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "every monday",
@@ -132,7 +120,6 @@
 ,
 {
   "Input": "I'll leave each monday 4pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "each monday 4pm",
@@ -143,7 +130,6 @@
 ,
 {
   "Input": "I'll leave every morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "every morning",
@@ -154,7 +140,6 @@
 ,
 {
   "Input": "I'll leave every morning at 9am",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "every morning at 9am",
@@ -165,7 +150,6 @@
 ,
 {
   "Input": "I'll leave every afternoon at 4pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "every afternoon at 4pm",
@@ -176,7 +160,6 @@
 ,
 {
   "Input": "I'll leave every night at 9pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "every night at 9pm",
@@ -187,7 +170,6 @@
 ,
 {
   "Input": "I'll leave every night at 9",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "every night at 9",
@@ -198,7 +180,6 @@
 ,
 {
   "Input": "I'll leave mornings at 9am",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mornings at 9am",
@@ -209,7 +190,6 @@
 ,
 {
   "Input": "I'll leave on mornings at 9",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on mornings at 9",
@@ -220,7 +200,6 @@
 ,
 {
   "Input": "I'll leave at 9am every Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9am every Sunday",
@@ -231,7 +210,6 @@
 ,
 {
   "Input": "I'll leave at 9am on Mondays",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9am on Mondays",
@@ -242,7 +220,6 @@
 ,
 {
   "Input": "I'll leave at 9am Mondays",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9am Mondays",
@@ -253,7 +230,6 @@
 ,
 {
   "Input": "I'll leave on Mondays",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on Mondays",
@@ -264,7 +240,6 @@
 ,
 {
   "Input": "I'll leave on Sundays",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on Sundays",
@@ -275,7 +250,6 @@
 ,
 {
   "Input": "I'll leave Sundays",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Sundays",
