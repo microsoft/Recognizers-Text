@@ -24,7 +24,7 @@ def get_suite_config(json_path):
     parts = splitall(json_path)
     filename = os.path.splitext(parts[4])[0]
     model, entity, options = ENTITYPATTERN.search(filename).groups()
-    if model == 'Merged':
+    if model == 'Merged' and entity == 'Parser':
         entity = f'{model}{entity}'
     return {'recognizer': parts[2], 'model': model, 'entity': entity, 'options': options, 'language': parts[3]}
 
