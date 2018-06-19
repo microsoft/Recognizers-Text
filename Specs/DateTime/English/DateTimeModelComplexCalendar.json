@@ -2730,7 +2730,7 @@
               "timex": "2018",
               "Mod": "after",
               "type": "daterange",
-              "end": "2019-01-01"
+              "start": "2019-01-01"
             }
           ]
         }
