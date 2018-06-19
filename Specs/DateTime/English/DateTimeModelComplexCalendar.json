@@ -3062,5 +3062,69 @@
         }
       }
     ]
+  },
+  {
+    "Input":
+      "Could you please schedule a 30 min skype meeting after 11:00am mountain today?",
+    "Context": {
+      "ReferenceDateTime": "2018-06-19T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "30 min",
+        "Start": 28,
+        "End": 33,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "after 11:00am mountain today",
+        "Start": 49,
+        "End": 76,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-19T11:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "mountain",
+              "utcOffsetMins": "-420",
+              "start": "2018-06-19 11:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The mountain is very high.",
+    "Comment":
+      "This test case is for testing the ambiguous single timezone word filter.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript",
+    "Results": []
+  },
+  {
+    "Input": "We have arrived in the central district.",
+    "Comment":
+      "This test case is for testing the ambiguous single timezone word filter.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript",
+    "Results": []
   }
 ]
