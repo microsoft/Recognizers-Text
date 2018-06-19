@@ -35,8 +35,8 @@ def test_datetime_parser(culture, model, options, context, source, expected_resu
     result = [parser.parse(x, reference_datetime) for x in extract_results]
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
-        assert actual.text == expected['Text']
-        assert actual.type == expected['Type']
+        simple_parser_assert(actual, expected, 'text', 'Text')
+        simple_parser_assert(actual, expected, 'type', 'Type')
         if 'Value' in expected:
             assert actual.value
         if actual.value and 'Value' in expected:
@@ -79,8 +79,8 @@ def test_datetime_model(culture, model, options, context, source, expected_resul
     assert len(result) == len(expected_results)
     for actual, expected in zip(result, expected_results):
         simple_parser_assert(actual, expected, 'text', 'Text')
-        simple_parser_assert(actual, expected, 'typeName', 'TypeName')
-        simple_parser_assert(actual, expected, 'parentText', 'ParentText')
+        simple_parser_assert(actual, expected, 'type_name', 'TypeName')
+        simple_parser_assert(actual, expected, 'parent_text', 'ParentText')
         simple_parser_assert(actual, expected, 'start', 'Start')
         simple_parser_assert(actual, expected, 'end', 'End')
         assert len(actual.resolution['values']) == len(expected['Resolution']['values'])
