@@ -2896,8 +2896,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana please set up a call today for 10 minutes and also set up a 30 minute call Wednesday at 7 PM Eastern.",
+    "Input": "Cortana please set up a call today for 10 minutes and also set up a 30 minute call Wednesday at 7 PM Eastern.",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -2958,17 +2957,17 @@
             {
               "timex": "XXXX-WXX-3T19",
               "type": "datetime",
-              "timezone": "UTC-05:00",
+              "timezone": "UTC-04:00",
               "timezoneText": "eastern",
-              "utcOffsetMins": "-300",
+              "utcOffsetMins": "-240",
               "value": "2018-06-13 19:00:00"
             },
             {
               "timex": "XXXX-WXX-3T19",
               "type": "datetime",
-              "timezone": "UTC-05:00",
+              "timezone": "UTC-04:00",
               "timezoneText": "eastern",
-              "utcOffsetMins": "-300",
+              "utcOffsetMins": "-240",
               "value": "2018-06-20 19:00:00"
             }
           ]
@@ -3064,8 +3063,7 @@
     ]
   },
   {
-    "Input":
-      "Could you please schedule a 30 min skype meeting after 11:00am mountain today?",
+    "Input": "Could you please schedule a 30 min skype meeting after 11:00am mountain today?",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -3097,9 +3095,9 @@
               "timex": "2018-06-19T11:00",
               "Mod": "after",
               "type": "datetimerange",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-06:00",
               "timezoneText": "mountain",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-360",
               "start": "2018-06-19 11:00:00"
             }
           ]
@@ -3109,8 +3107,7 @@
   },
   {
     "Input": "The mountain is very high.",
-    "Comment":
-      "This test case is for testing the ambiguous single timezone word filter.",
+    "Comment": "This test case is for testing the ambiguous single timezone word filter.",
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
@@ -3119,8 +3116,7 @@
   },
   {
     "Input": "We have arrived in the central district.",
-    "Comment":
-      "This test case is for testing the ambiguous single timezone word filter.",
+    "Comment": "This test case is for testing the ambiguous single timezone word filter.",
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },

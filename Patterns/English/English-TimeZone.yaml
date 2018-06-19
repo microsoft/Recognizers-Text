@@ -268,7 +268,7 @@ FullToMinMapping: !dictionary
    e. europe standard time: 120
    e. south america standard time: -180
    central: -300
-   eastern: -300
+   eastern: -240
    eastern standard time: -300
    eastern standard time (mexico): -300
    egypt standard time: 120
@@ -296,7 +296,7 @@ FullToMinMapping: !dictionary
    middle east standard time: 120
    montevideo standard time: -180
    morocco standard time: 0
-   mountain: -420
+   mountain: -360
    mountain standard time: -420
    mountain standard time (mexico): -420
    myanmar standard time: 390
