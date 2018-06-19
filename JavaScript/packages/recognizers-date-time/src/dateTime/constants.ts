@@ -12,13 +12,15 @@ export class Constants {
 
     // key
     static readonly TimexKey: string = "timex";
-    static readonly CommentKey: string = "Comment";
     static readonly ModKey: string = "Mod";
     static readonly TypeKey: string = "type";
     static readonly IsLunarKey: string = "isLunar";
     static readonly ResolveKey: string = "resolve";
     static readonly ResolveToPastKey: string = "resolveToPast";
     static readonly ResolveToFutureKey: string = "resolveToFuture";
+    
+    static readonly CommentKey: string = "Comment";
+    static readonly CommentAmPm: string = "ampm";
 
     static readonly SemesterMonthCount: number = 6;
     static readonly TrimesterMonthCount: number = 3;
