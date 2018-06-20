@@ -178,11 +178,11 @@ SpecialDate: !nestedRegex
   def: (?=\b(on|at)\s+the\s+){DayRegex}\b
   references: [ DayRegex ]
 DateExtractor1: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\.)?\s*[/\\\.\-]?\s*{DayRegex}(\.)?\b
+  def: \b((this\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\\.\-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))
   references: [ WeekDayRegex, MonthRegex, DayRegex ]
 DateExtractor2: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\.)?\s*[\.\-]?\s*{DayRegex}(\.)?(\s+|\s*,\s*|\s+of\s+){DateYearRegex}\b
-  references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex ]
+  def: \b{DateExtractor1}(\s+|\s*,\s*|\s+of\s+){DateYearRegex}\b
+  references: [ DateExtractor1, DateYearRegex ]
 DateExtractor3: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s+of\s+|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*){DateYearRegex})?\b
   references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
@@ -214,7 +214,7 @@ MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(the)?\s*$'
   references: [ MonthRegex ]
 WeekDayEnd: !nestedRegex
-  def: '{WeekDayRegex}\s*,?\s*$'
+  def: '(this\s+)?{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years|year|months|month|weeks|week)\b
@@ -421,7 +421,7 @@ HolidayRegex2: !nestedRegex
   def: \b(?<holiday>all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex3: !nestedRegex
-  def: (?<holiday>(martin luther king|martin luther king jr|canberra|easter|columbus|thanks\s*giving|christmas|xmas|labour|(international|int'l)\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
+  def: (?<holiday>(mlk|martin luther king|martin luther king jr|canberra|easter|columbus|thanks\s*giving|christmas|xmas|labour|(international|int'l)\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
   references: [ YearRegex, RelativeRegex ]
 DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
@@ -853,7 +853,7 @@ HolidayNames: !dictionary
     fathers: [ fatherday, fathersday ]
     mothers: [ motherday, mothersday ]
     thanksgiving: [ thanksgivingday, thanksgiving ]
-    martinlutherking: [ martinlutherkingday, martinlutherkingjrday ]
+    martinlutherking: [ mlkday, martinlutherkingday, martinlutherkingjrday ]
     washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ]
     canberra: [ canberraday ]
     labour: [ labourday, laborday ]

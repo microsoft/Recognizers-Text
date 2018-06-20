@@ -97,4 +97,19 @@
     }
   ]
 }
+,
+{
+  "Input": "MLK Day is an American federal holiday.",
+  "Results": [
+    {
+      "Text": "MLK Day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Martin Luther King has a holiday under his name",
+  "Results": []
+}
 ]

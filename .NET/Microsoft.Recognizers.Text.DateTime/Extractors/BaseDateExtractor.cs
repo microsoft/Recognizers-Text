@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -42,11 +41,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(yearStr))
             {
                 year = int.Parse(yearStr);
-                if (year < 100 && year >= 90)
+                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                 {
                     year += 1900;
                 }
-                else if (year < 100 && year < 30)
+                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                 {
                     year += 2000;
                 }
@@ -56,10 +55,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
                 if (!string.IsNullOrEmpty(firstTwoYearNumStr))
                 {
-                    ExtractResult er = new ExtractResult();
-                    er.Text = firstTwoYearNumStr;
-                    er.Start = match.Groups["firsttwoyearnum"].Index;
-                    er.Length = match.Groups["firsttwoyearnum"].Length;
+                    var er = new ExtractResult
+                    {
+                        Text = firstTwoYearNumStr,
+                        Start = match.Groups["firsttwoyearnum"].Index,
+                        Length = match.Groups["firsttwoyearnum"].Length
+                    };
 
                     var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
 
@@ -157,7 +158,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var startIndex = match.Index;
                         var endIndex = match.Index + match.Length + (result.Length ?? 0);
 
-                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, text);
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
+                            config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
+                            num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
                         continue;
@@ -204,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
-                                var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToString().ToLower();
+                                var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToLower();
                                 if (!date.Equals(DateObject.MinValue) &&
                                     config.DayOfWeek[numWeekDayStr] == config.DayOfWeek[extractedWeekDayStr])
                                 {
@@ -258,6 +261,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
+                // For cases like "I'll go back twenty second of June"
                 if (result.Start + result.Length < text.Length)
                 {
                     var afterStr = text.Substring(result.Start + result.Length ?? 0);
@@ -268,10 +272,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var startIndex = result.Start ?? 0;
                         var endIndex = (result.Start + result.Length ?? 0) + match.Length;
 
-                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, text);
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
+                            config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
+                            num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
-                        continue;
                     }
                 }
             }
@@ -279,22 +284,42 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void ExtendWithWeekdayAndYear(ref int startIndex, ref int endIndex, string text)
+        // TODO: Remove the parsing logic from here
+        private void ExtendWithWeekdayAndYear(ref int startIndex,
+            ref int endIndex, int month, int day, string text, DateObject reference)
         {
-            // Check whether there's weekday
-            var prefix = text.Substring(0, startIndex);
-            var matchWeekDay = this.config.WeekDayEnd.Match(prefix);
-            if (matchWeekDay.Success)
-            {
-                startIndex = matchWeekDay.Index;
-            }
+            var year = reference.Year;
 
-            // Check whether there's year
+            // Check whether there's a year
             var suffix = text.Substring(endIndex);
             var matchYear = this.config.YearSuffix.Match(suffix);
             if (matchYear.Success && matchYear.Index == 0)
             {
+                year = GetYearFromText(matchYear);
                 endIndex += matchYear.Length;
+            }           
+
+            var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+
+            // Check whether there's a weekday
+            var prefix = text.Substring(0, startIndex);
+            var matchWeekDay = this.config.WeekDayEnd.Match(prefix);
+            if (matchWeekDay.Success)
+            {
+
+                // Get weekday from context directly, compare it with the weekday extraction above
+                // to see whether they are referred to the same weekday
+                var extractedWeekDayStr = matchWeekDay.Groups["weekday"].Value.ToLower();
+                var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
+
+                if (config.DayOfWeek.TryGetValue(numWeekDayStr, out var weekDay1) &&
+                    config.DayOfWeek.TryGetValue(extractedWeekDayStr, out var weekDay2))
+                {
+                    if (!date.Equals(DateObject.MinValue) && weekDay1 == weekDay2)
+                    {
+                        startIndex = matchWeekDay.Index;
+                    }
+                }
             }
         }
 
