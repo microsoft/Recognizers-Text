@@ -2945,4 +2945,44 @@
     }
   ]
 }
+,
+{
+  "Input": "show me records more than 4 days and less than 1 week",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "more than 4 days",
+      "Type": "datetimeV2.duration",
+      "Value":{
+        "values":[
+          {
+            "timex":"P4D",
+            "Mod":"more",
+            "type":"duration",
+            "value":"345600"         
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "less than 1 week",
+      "Type": "datetimeV2.duration",
+      "Value":{
+        "values":[
+          {
+            "timex":"P1W",
+            "Mod":"less",
+            "type":"duration",
+            "value":"604800"         
+          }
+        ]
+      }
+    }
+  ]
+}
 ]
