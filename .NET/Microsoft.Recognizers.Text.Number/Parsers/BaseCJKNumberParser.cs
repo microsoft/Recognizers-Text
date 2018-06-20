@@ -222,6 +222,19 @@ namespace Microsoft.Recognizers.Text.Number
 
                         result.Value = (intNumber + pointNumber) * 10;
                     }
+                    else if(matches.Count == 5)
+                    {
+                        var intNumberChar = matches[0].Value[0];
+                        var pointNumberChar = matches[1].Value[0];
+                        var dotNumberChar = matches[3].Value[0];
+                        
+                        double pointNumber = Config.ZeroToNineMap[pointNumberChar] * 0.1;
+                        double dotNumber = Config.ZeroToNineMap[dotNumberChar] * 0.01;
+
+                        intNumber = Config.ZeroToNineMap[intNumberChar];
+
+                        result.Value = (intNumber + pointNumber + dotNumber) * 10;
+                    }
                     else
                     {
                         var intNumberChar = matches[0].Value[0];

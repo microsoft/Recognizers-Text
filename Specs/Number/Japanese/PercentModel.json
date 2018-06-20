@@ -761,4 +761,18 @@
     }
   ]
 }
+,
+{
+  "Input": "今シーズンの打率は3割8分7厘でした",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "3割8分7厘",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "38.7%"
+      }
+    }
+  ]
+}
 ]
