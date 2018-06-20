@@ -222,8 +222,9 @@ namespace Microsoft.Recognizers.Text.Number
 
                         result.Value = (intNumber + pointNumber) * 10;
                     }
-                    else if(matches.Count == 5)
+                    else if (matches.Count == 5)
                     {
+                        // Deal the Japanese percentage case like "xxx割xxx分xxx厘", get the integer value and convert into result. 
                         var intNumberChar = matches[0].Value[0];
                         var pointNumberChar = matches[1].Value[0];
                         var dotNumberChar = matches[3].Value[0];

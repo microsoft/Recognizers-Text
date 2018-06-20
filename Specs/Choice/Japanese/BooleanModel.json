@@ -7,7 +7,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -22,7 +22,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -37,7 +37,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -52,7 +52,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -67,7 +67,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -82,7 +82,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.7
+        "score": 0.7
       }
     }
   ]
@@ -97,7 +97,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.6
+        "score": 0.6
       }
     }
   ]
