@@ -24,6 +24,8 @@ AmbiguousTimezoneList: !list
     - vet
     - wet
     - cot
+    - pt
+    - et
     - eastern
     - pacific
     - central
