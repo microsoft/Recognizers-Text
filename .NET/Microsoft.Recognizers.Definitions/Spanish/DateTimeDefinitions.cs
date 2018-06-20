@@ -435,7 +435,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string ReferenceDatePeriodRegex = @"^[.]";
 		public const string FromToRegex = @"\b(from).+(to)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
-		public const string PrepositionSuffixRegex = @"\b(on|in|at|around|from|to)$";
+		public const string UnspecificDatePeriodRegex = @"^[.]";
+		public const string PrepositionSuffixRegex = @"\b(on|in|at|around|for|during|since|from|to)$";
 		public const string RestOfDateTimeRegex = @"^[\.]";
 		public const string SetWeekDayRegex = @"^[\.]";
 		public const string NightRegex = @"\b(medionoche|noche)\b";

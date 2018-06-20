@@ -191,6 +191,7 @@ export namespace PortugueseDateTime {
 	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
+	export const UnspecificDatePeriodRegex = `^[.]`;
 	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;
 	export const RestOfDateTimeRegex = `^[\\.]`;
 	export const SetWeekDayRegex = `^[\\.]`;

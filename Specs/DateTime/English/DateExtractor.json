@@ -1347,4 +1347,78 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday-Jun-15 with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-14T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "this Friday-Jun-15",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday(Jun-15) with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-14T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "this Friday(Jun-15)",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday (Jun-15) with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-14T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "this Friday (Jun-15)",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday June twenty two with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "this Friday June twenty two",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday June twenty three with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "this Friday",
+      "Type": "date"
+    },
+    {
+      "Text": "June twenty three",
+      "Type": "date"
+    }
+  ]
+}
 ]

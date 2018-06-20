@@ -81,10 +81,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex[] DateRegexList =
         {
-            // (Sunday,)? April 5
+            // ((this)? Sunday,)? April 5
             new Regex(DateTimeDefinitions.DateExtractor1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (Sunday,)? April 5, 2016
+            // ((this)? Sunday,)? April 5, 2016
             new Regex(DateTimeDefinitions.DateExtractor2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (Sunday,)? 6th of April
@@ -140,6 +140,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly ImmutableDictionary<string, int> DayOfWeek = 
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
+        public static readonly ImmutableDictionary<string, int> MonthOfYear = 
+            DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
+
         public EnglishDateExtractorConfiguration()
         {
             Options = DateTimeOptions.None;
@@ -165,6 +168,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
+
+        IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
 
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 

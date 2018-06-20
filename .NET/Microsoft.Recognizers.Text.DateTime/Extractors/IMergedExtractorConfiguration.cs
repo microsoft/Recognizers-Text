@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearAfterRegex { get; }
 
+        Regex UnspecificDatePeriodRegex { get; }
+
         StringMatcher SuperfluousWordMatcher { get; }
 
     }

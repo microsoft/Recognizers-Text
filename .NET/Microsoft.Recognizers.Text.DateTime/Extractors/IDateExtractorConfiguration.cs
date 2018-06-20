@@ -44,5 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         IImmutableDictionary<string, int> DayOfWeek { get; }
+
+        IImmutableDictionary<string, int> MonthOfYear { get; }
     }
 }
