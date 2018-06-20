@@ -255,10 +255,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             index = -1;
             var match = regex.Match(text);
 
-            if (match.Success && string.IsNullOrWhiteSpace(text.Substring(match.Index+match.Length)))
+            while (match.Success)
             {
-                index = match.Index;
-                return true;
+                if (string.IsNullOrWhiteSpace(text.Substring(match.Index + match.Length)))
+                {
+                    index = match.Index;
+                    return true;
+                }
+
+                // Support cases has two or more specific tokens
+                // For example, "show me sales after 2010 and before 2018 or before 2000"
+                // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
+                match = match.NextMatch();
             }
 
             return false;

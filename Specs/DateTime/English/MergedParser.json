@@ -2945,4 +2945,74 @@
     }
   ]
 }
+,
+{
+  "Input": "show me sales after 2010 and before 2018 or before 2000 but not 1998",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after 2010",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2010",
+            "Mod":"after",
+            "type":"daterange",
+            "start":"2011-01-01"         
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "before 2018",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018",
+            "Mod":"before",
+            "type":"daterange",
+            "end":"2018-01-01"         
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "before 2000",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2000",
+            "Mod":"before",
+            "type":"daterange",
+            "end":"2000-01-01"         
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "1998",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"1998",
+            "type":"daterange",            
+            "start":"1998-01-01",
+            "end":"1999-01-01"         
+          }
+        ]
+      }
+    }
+  ]
+}
 ]
