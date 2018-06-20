@@ -1037,7 +1037,7 @@
 ,
 {
   "Input": "What the sale by year?",
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "year",
