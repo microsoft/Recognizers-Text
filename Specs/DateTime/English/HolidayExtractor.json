@@ -87,4 +87,14 @@
     }
   ]
 }
+,
+{
+  "Input": "Martin Luther King Day is an American federal holiday.",
+  "Results": [
+    {
+      "Text": "Martin Luther King Day",
+      "Type": "date"
+    }
+  ]
+}
 ]
