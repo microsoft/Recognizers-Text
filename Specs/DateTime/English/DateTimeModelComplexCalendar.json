@@ -3166,6 +3166,44 @@
     "Results": []
   },
   {
+    "Input": "ET is one of my favorite movies.",
+    "Comment": "This test case is for testing the ambiguous single timezone word filter.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupportedByDesign": "python,javascript",
+    "Results": []
+  },
+  {
+    "Input": "Martin Luther King Day is an American federal holiday.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+        {
+        "Text": "martin luther king day",
+        "Start": 0,
+        "End": 21,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-WXX-1-3",
+              "type": "date",
+              "value": "2018-01-15"
+            },
+            {
+              "timex": "XXXX-01-WXX-1-3",
+              "type": "date",
+              "value": "2019-01-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "show me sales after 2010 and before 2018 or before 2000 but not 1998",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
