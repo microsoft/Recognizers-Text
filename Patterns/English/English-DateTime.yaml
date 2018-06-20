@@ -482,9 +482,11 @@ FromToRegex: !simpleRegex
   def: \b(from).+(to)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
-# Filter ambiguous single word datetime extractions in CalendarMode
+# Filter ambiguous single word datetime extractions in CalendarMode or when adding the modifier
 SingleAmbiguousTermsRegex: !simpleRegex
   def: ^(the\s+)?(day|week|month|year)$
+UnspecificDatePeriodRegex: !simpleRegex
+  def: ^(week|weekend|month|year)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|from|to)$
 FlexibleDayRegex: !simpleRegex

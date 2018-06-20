@@ -201,6 +201,7 @@ export namespace EnglishDateTime {
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
 	export const SingleAmbiguousTermsRegex = `^(the\\s+)?(day|week|month|year)$`;
+	export const UnspecificDatePeriodRegex = `^(week|weekend|month|year)$`;
 	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b(((for the ${FlexibleDayRegex})|(on (the\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;

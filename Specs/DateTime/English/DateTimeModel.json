@@ -3773,4 +3773,28 @@
     }
   }]
 }
+,
+{
+  "Input": "Cortana, please tell me the sale by year of Microsoft.",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [{
+    "Text": "year",
+    "Start": 36,
+    "End": 39,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018",
+          "type": "daterange",
+          "start": "2018-01-01",
+          "end": "2019-01-01"
+        }
+      ]
+    }
+  }]
+}
 ]

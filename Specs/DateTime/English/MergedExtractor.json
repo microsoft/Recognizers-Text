@@ -1034,4 +1034,15 @@
     }
   ]
 }
+,
+{
+  "Input": "What the sale by year?",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "year",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
