@@ -1,6 +1,5 @@
 [{
   "Input": "I'll be out in Jan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jan",
@@ -11,7 +10,6 @@
 ,
 {
   "Input": "I'll be out this Jan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Jan",
@@ -22,7 +20,6 @@
 ,
 {
   "Input": "I'll be out month of Jan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Jan",
@@ -33,7 +30,6 @@
 ,
 {
   "Input": "I'll be out the month of Jan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Jan",
@@ -44,7 +40,6 @@
 ,
 {
   "Input": "I was missing Jan 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jan 2001",
@@ -55,7 +50,6 @@
 ,
 {
   "Input": "I was missing Jan, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jan, 2001",
@@ -66,7 +60,6 @@
 ,
 {
   "Input": "I'll be out in Feb",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Feb",
@@ -77,7 +70,6 @@
 ,
 {
   "Input": "I'll be out this Feb",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Feb",
@@ -88,7 +80,6 @@
 ,
 {
   "Input": "I'll be out month of Feb",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Feb",
@@ -99,7 +90,6 @@
 ,
 {
   "Input": "I'll be out the month of Feb",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Feb",
@@ -110,7 +100,6 @@
 ,
 {
   "Input": "I was missing Feb 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Feb 2001",
@@ -121,7 +110,6 @@
 ,
 {
   "Input": "I was missing Feb, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Feb, 2001",
@@ -132,7 +120,6 @@
 ,
 {
   "Input": "I'll be out in Mar",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Mar",
@@ -143,7 +130,6 @@
 ,
 {
   "Input": "I'll be out this Mar",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Mar",
@@ -154,7 +140,6 @@
 ,
 {
   "Input": "I'll be out month of Mar",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Mar",
@@ -165,7 +150,6 @@
 ,
 {
   "Input": "I'll be out the month of Mar",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Mar",
@@ -176,7 +160,6 @@
 ,
 {
   "Input": "I was missing Mar 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Mar 2001",
@@ -187,7 +170,6 @@
 ,
 {
   "Input": "I was missing Mar, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Mar, 2001",
@@ -198,7 +180,6 @@
 ,
 {
   "Input": "I'll be out in Apr",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Apr",
@@ -209,7 +190,6 @@
 ,
 {
   "Input": "I'll be out this Apr",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Apr",
@@ -220,7 +200,6 @@
 ,
 {
   "Input": "I'll be out month of Apr",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Apr",
@@ -231,7 +210,6 @@
 ,
 {
   "Input": "I'll be out the month of Apr",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Apr",
@@ -242,7 +220,6 @@
 ,
 {
   "Input": "I was missing Apr 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Apr 2001",
@@ -253,7 +230,6 @@
 ,
 {
   "Input": "I was missing Apr, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Apr, 2001",
@@ -264,7 +240,6 @@
 ,
 {
   "Input": "I'll be out in May",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May",
@@ -275,7 +250,6 @@
 ,
 {
   "Input": "I'll be out this May",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this May",
@@ -286,7 +260,6 @@
 ,
 {
   "Input": "I'll be out month of May",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of May",
@@ -297,7 +270,6 @@
 ,
 {
   "Input": "I'll be out the month of May",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of May",
@@ -308,7 +280,6 @@
 ,
 {
   "Input": "I was missing May 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May 2001",
@@ -319,7 +290,6 @@
 ,
 {
   "Input": "I was missing May, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May, 2001",
@@ -330,7 +300,6 @@
 ,
 {
   "Input": "I'll be out in Jun",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jun",
@@ -341,7 +310,6 @@
 ,
 {
   "Input": "I'll be out this Jun",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Jun",
@@ -352,7 +320,6 @@
 ,
 {
   "Input": "I'll be out month of Jun",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Jun",
@@ -363,7 +330,6 @@
 ,
 {
   "Input": "I'll be out the month of Jun",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Jun",
@@ -374,7 +340,6 @@
 ,
 {
   "Input": "I was missing Jun 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jun 2001",
@@ -385,7 +350,6 @@
 ,
 {
   "Input": "I was missing Jun, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jun, 2001",
@@ -396,7 +360,6 @@
 ,
 {
   "Input": "I'll be out in Jul",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jul",
@@ -407,7 +370,6 @@
 ,
 {
   "Input": "I'll be out this Jul",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Jul",
@@ -418,7 +380,6 @@
 ,
 {
   "Input": "I'll be out month of Jul",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Jul",
@@ -429,7 +390,6 @@
 ,
 {
   "Input": "I'll be out the month of Jul",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Jul",
@@ -440,7 +400,6 @@
 ,
 {
   "Input": "I was missing Jul 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jul 2001",
@@ -451,7 +410,6 @@
 ,
 {
   "Input": "I was missing Jul, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jul, 2001",
@@ -462,7 +420,6 @@
 ,
 {
   "Input": "I'll be out in Aug",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Aug",
@@ -473,7 +430,6 @@
 ,
 {
   "Input": "I'll be out this Aug",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Aug",
@@ -484,7 +440,6 @@
 ,
 {
   "Input": "I'll be out month of Aug",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Aug",
@@ -495,7 +450,6 @@
 ,
 {
   "Input": "I'll be out the month of Aug",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Aug",
@@ -506,7 +460,6 @@
 ,
 {
   "Input": "I was missing Aug 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Aug 2001",
@@ -517,7 +470,6 @@
 ,
 {
   "Input": "I was missing Aug, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Aug, 2001",
@@ -528,7 +480,6 @@
 ,
 {
   "Input": "I'll be out in Sep",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Sep",
@@ -539,7 +490,6 @@
 ,
 {
   "Input": "I'll be out this Sep",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Sep",
@@ -550,7 +500,6 @@
 ,
 {
   "Input": "I'll be out month of Sep",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Sep",
@@ -561,7 +510,6 @@
 ,
 {
   "Input": "I'll be out the month of Sep",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Sep",
@@ -572,7 +520,6 @@
 ,
 {
   "Input": "I was missing Sep 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Sep 2001",
@@ -583,7 +530,6 @@
 ,
 {
   "Input": "I was missing Sep, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Sep, 2001",
@@ -594,7 +540,6 @@
 ,
 {
   "Input": "I'll be out in Sept",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Sept",
@@ -605,7 +550,6 @@
 ,
 {
   "Input": "I'll be out this Sept",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Sept",
@@ -616,7 +560,6 @@
 ,
 {
   "Input": "I'll be out month of Sept",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Sept",
@@ -627,7 +570,6 @@
 ,
 {
   "Input": "I'll be out the month of Sept",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Sept",
@@ -638,7 +580,6 @@
 ,
 {
   "Input": "I was missing Sept 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Sept 2001",
@@ -649,7 +590,6 @@
 ,
 {
   "Input": "I was missing Sept, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Sept, 2001",
@@ -660,7 +600,6 @@
 ,
 {
   "Input": "I'll be out in Oct",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Oct",
@@ -671,7 +610,6 @@
 ,
 {
   "Input": "I'll be out this Oct",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Oct",
@@ -682,7 +620,6 @@
 ,
 {
   "Input": "I'll be out month of Oct",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Oct",
@@ -693,7 +630,6 @@
 ,
 {
   "Input": "I'll be out the month of Oct",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Oct",
@@ -704,7 +640,6 @@
 ,
 {
   "Input": "I was missing Oct 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Oct 2001",
@@ -715,7 +650,6 @@
 ,
 {
   "Input": "I was missing Oct, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Oct, 2001",
@@ -726,7 +660,6 @@
 ,
 {
   "Input": "I'll be out in Nov",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Nov",
@@ -737,7 +670,6 @@
 ,
 {
   "Input": "I'll be out this Nov",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Nov",
@@ -748,7 +680,6 @@
 ,
 {
   "Input": "I'll be out month of Nov",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Nov",
@@ -759,7 +690,6 @@
 ,
 {
   "Input": "I'll be out the month of Nov",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Nov",
@@ -770,7 +700,6 @@
 ,
 {
   "Input": "I was missing Nov 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Nov 2001",
@@ -781,7 +710,6 @@
 ,
 {
   "Input": "I was missing Nov, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Nov, 2001",
@@ -792,7 +720,6 @@
 ,
 {
   "Input": "I'll be out in Dec",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Dec",
@@ -803,7 +730,6 @@
 ,
 {
   "Input": "I'll be out this Dec",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Dec",
@@ -814,7 +740,6 @@
 ,
 {
   "Input": "I'll be out month of Dec",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of Dec",
@@ -825,7 +750,6 @@
 ,
 {
   "Input": "I'll be out the month of Dec",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of Dec",
@@ -836,7 +760,6 @@
 ,
 {
   "Input": "I was missing Dec 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Dec 2001",
@@ -847,7 +770,6 @@
 ,
 {
   "Input": "I was missing Dec, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Dec, 2001",
@@ -858,7 +780,6 @@
 ,
 {
   "Input": "I'll be out in January",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "January",
@@ -869,7 +790,6 @@
 ,
 {
   "Input": "I'll be out this January",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this January",
@@ -880,7 +800,6 @@
 ,
 {
   "Input": "I'll be out month of January",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of January",
@@ -891,7 +810,6 @@
 ,
 {
   "Input": "I'll be out the month of January",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of January",
@@ -902,7 +820,6 @@
 ,
 {
   "Input": "I was missing January 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "January 2001",
@@ -913,7 +830,6 @@
 ,
 {
   "Input": "I was missing January, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "January, 2001",
@@ -924,7 +840,6 @@
 ,
 {
   "Input": "I'll be out in February",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "February",
@@ -935,7 +850,6 @@
 ,
 {
   "Input": "I'll be out this February",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this February",
@@ -946,7 +860,6 @@
 ,
 {
   "Input": "I'll be out month of February",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of February",
@@ -957,7 +870,6 @@
 ,
 {
   "Input": "I'll be out the month of February",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of February",
@@ -968,7 +880,6 @@
 ,
 {
   "Input": "I was missing February 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "February 2001",
@@ -979,7 +890,6 @@
 ,
 {
   "Input": "I was missing February, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "February, 2001",
@@ -990,7 +900,6 @@
 ,
 {
   "Input": "I'll be out in March",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "March",
@@ -1001,7 +910,6 @@
 ,
 {
   "Input": "I'll be out this March",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this March",
@@ -1012,7 +920,6 @@
 ,
 {
   "Input": "I'll be out month of March",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of March",
@@ -1023,7 +930,6 @@
 ,
 {
   "Input": "I'll be out the month of March",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of March",
@@ -1034,7 +940,6 @@
 ,
 {
   "Input": "I was missing March 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "March 2001",
@@ -1045,7 +950,6 @@
 ,
 {
   "Input": "I was missing March, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "March, 2001",
@@ -1056,7 +960,6 @@
 ,
 {
   "Input": "I'll be out in April",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "April",
@@ -1067,7 +970,6 @@
 ,
 {
   "Input": "I'll be out this April",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this April",
@@ -1078,7 +980,6 @@
 ,
 {
   "Input": "I'll be out month of April",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of April",
@@ -1089,7 +990,6 @@
 ,
 {
   "Input": "I'll be out the month of April",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of April",
@@ -1100,7 +1000,6 @@
 ,
 {
   "Input": "I was missing April 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "April 2001",
@@ -1111,7 +1010,6 @@
 ,
 {
   "Input": "I was missing April, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "April, 2001",
@@ -1122,7 +1020,6 @@
 ,
 {
   "Input": "I'll be out in June",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "June",
@@ -1133,7 +1030,6 @@
 ,
 {
   "Input": "I'll be out this June",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this June",
@@ -1144,7 +1040,6 @@
 ,
 {
   "Input": "I'll be out month of June",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of June",
@@ -1155,7 +1050,6 @@
 ,
 {
   "Input": "I'll be out the month of June",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of June",
@@ -1166,7 +1060,6 @@
 ,
 {
   "Input": "I was missing June 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "June 2001",
@@ -1177,7 +1070,6 @@
 ,
 {
   "Input": "I was missing June, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "June, 2001",
@@ -1188,7 +1080,6 @@
 ,
 {
   "Input": "I'll be out in July",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "July",
@@ -1199,7 +1090,6 @@
 ,
 {
   "Input": "I'll be out this July",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this July",
@@ -1210,7 +1100,6 @@
 ,
 {
   "Input": "I'll be out month of July",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of July",
@@ -1221,7 +1110,6 @@
 ,
 {
   "Input": "I'll be out the month of July",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of July",
@@ -1232,7 +1120,6 @@
 ,
 {
   "Input": "I was missing July 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "July 2001",
@@ -1243,7 +1130,6 @@
 ,
 {
   "Input": "I was missing July, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "July, 2001",
@@ -1254,7 +1140,6 @@
 ,
 {
   "Input": "I'll be out in August",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "August",
@@ -1265,7 +1150,6 @@
 ,
 {
   "Input": "I'll be out this August",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this August",
@@ -1276,7 +1160,6 @@
 ,
 {
   "Input": "I'll be out month of August",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of August",
@@ -1287,7 +1170,6 @@
 ,
 {
   "Input": "I'll be out the month of August",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of August",
@@ -1298,7 +1180,6 @@
 ,
 {
   "Input": "I was missing August 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "August 2001",
@@ -1309,7 +1190,6 @@
 ,
 {
   "Input": "I was missing August, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "August, 2001",
@@ -1320,7 +1200,6 @@
 ,
 {
   "Input": "I'll be out in September",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "September",
@@ -1331,7 +1210,6 @@
 ,
 {
   "Input": "I'll be out this September",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this September",
@@ -1342,7 +1220,6 @@
 ,
 {
   "Input": "I'll be out month of September",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of September",
@@ -1353,7 +1230,6 @@
 ,
 {
   "Input": "I'll be out the month of September",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of September",
@@ -1364,7 +1240,6 @@
 ,
 {
   "Input": "I was missing September 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "September 2001",
@@ -1375,7 +1250,6 @@
 ,
 {
   "Input": "I was missing September, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "September, 2001",
@@ -1386,7 +1260,6 @@
 ,
 {
   "Input": "I'll be out in October",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "October",
@@ -1397,7 +1270,6 @@
 ,
 {
   "Input": "I'll be out this October",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this October",
@@ -1408,7 +1280,6 @@
 ,
 {
   "Input": "I'll be out month of October",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of October",
@@ -1419,7 +1290,6 @@
 ,
 {
   "Input": "I'll be out the month of October",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of October",
@@ -1430,7 +1300,6 @@
 ,
 {
   "Input": "I was missing October 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "October 2001",
@@ -1441,7 +1310,6 @@
 ,
 {
   "Input": "I was missing October, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "October, 2001",
@@ -1452,7 +1320,6 @@
 ,
 {
   "Input": "I'll be out in November",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November",
@@ -1463,7 +1330,6 @@
 ,
 {
   "Input": "I'll be out this November",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this November",
@@ -1474,7 +1340,6 @@
 ,
 {
   "Input": "I'll be out month of November",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of November",
@@ -1485,7 +1350,6 @@
 ,
 {
   "Input": "I'll be out the month of November",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of November",
@@ -1496,7 +1360,6 @@
 ,
 {
   "Input": "I was missing November 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November 2001",
@@ -1507,7 +1370,6 @@
 ,
 {
   "Input": "I was missing November, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November, 2001",
@@ -1518,7 +1380,6 @@
 ,
 {
   "Input": "I'll be out in December",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "December",
@@ -1529,7 +1390,6 @@
 ,
 {
   "Input": "I'll be out this December",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this December",
@@ -1540,7 +1400,6 @@
 ,
 {
   "Input": "I'll be out month of December",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of December",
@@ -1551,7 +1410,6 @@
 ,
 {
   "Input": "I'll be out the month of December",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of December",
@@ -1562,7 +1420,6 @@
 ,
 {
   "Input": "I was missing December 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "December 2001",
@@ -1573,7 +1430,6 @@
 ,
 {
   "Input": "I was missing December, 2001",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "December, 2001",
@@ -1584,7 +1440,6 @@
 ,
 {
   "Input": "Calendar for the month of September.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the month of September",
@@ -1595,7 +1450,6 @@
 ,
 {
   "Input": "I'll be out from 4 to 22 this month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 4 to 22 this month",
@@ -1606,7 +1460,6 @@
 ,
 {
   "Input": "I'll be out from 4-23 in next month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 4-23 in next month",
@@ -1617,7 +1470,6 @@
 ,
 {
   "Input": "I'll be out from 3 until 12 of Sept hahaha",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 3 until 12 of Sept",
@@ -1628,7 +1480,6 @@
 ,
 {
   "Input": "I'll be out 4 to 23 next month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4 to 23 next month",
@@ -1639,7 +1490,6 @@
 ,
 {
   "Input": "I'll be out 4 till 23 of this month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4 till 23 of this month",
@@ -1650,7 +1500,6 @@
 ,
 {
   "Input": "I'll be out between 4 and 22 this month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 4 and 22 this month",
@@ -1661,7 +1510,6 @@
 ,
 {
   "Input": "I'll be out between 3 and 12 of Sept hahaha",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 3 and 12 of Sept",
@@ -1672,7 +1520,6 @@
 ,
 {
   "Input": "I'll be out between september 4th through september 8th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between september 4th through september 8th",
@@ -1683,7 +1530,6 @@
 ,
 {
   "Input": "I'll be out between November 15th through 19th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between November 15th through 19th",
@@ -1694,7 +1540,6 @@
 ,
 {
   "Input": "I'll be out between November 15th through the 19th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between November 15th through the 19th",
@@ -1705,7 +1550,6 @@
 ,
 {
   "Input": "I'll be out between November the 15th through 19th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between November the 15th through 19th",
@@ -1716,7 +1560,6 @@
 ,
 {
   "Input": "I'll be out from 4 to 22 January, 2017",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 4 to 22 January, 2017",
@@ -1727,7 +1570,6 @@
 ,
 {
   "Input": "I'll be out between 4-22 January, 2017",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 4-22 January, 2017",
@@ -1738,7 +1580,6 @@
 ,
 {
   "Input": "I'll be out on this week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this week",
@@ -1749,7 +1590,6 @@
 ,
 {
   "Input": "I'll be out the coming week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "coming week",
@@ -1760,7 +1600,6 @@
 ,
 {
   "Input": "I'll be out September",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "September",
@@ -1771,7 +1610,6 @@
 ,
 {
   "Input": "I'll be out last sept",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last sept",
@@ -1782,7 +1620,6 @@
 ,
 {
   "Input": "I'll be out next june",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next june",
@@ -1793,7 +1630,6 @@
 ,
 {
   "Input": "I'll be out june 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "june 2016",
@@ -1804,7 +1640,6 @@
 ,
 {
   "Input": "I'll be out june next year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "june next year",
@@ -1815,7 +1650,6 @@
 ,
 {
   "Input": "I'll be out this weekend",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this weekend",
@@ -1826,7 +1660,6 @@
 ,
 {
   "Input": "I'll be out the third week of this month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the third week of this month",
@@ -1837,7 +1670,6 @@
 ,
 {
   "Input": "I'll be out the last week of july",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the last week of july",
@@ -1848,7 +1680,6 @@
 ,
 {
   "Input": "schedule camping for Friday through Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday through Sunday",
@@ -1859,7 +1690,6 @@
 ,
 {
   "Input": "I'll be out next 3 days",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next 3 days",
@@ -1870,7 +1700,6 @@
 ,
 {
   "Input": "I'll be out next 3 months",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next 3 months",
@@ -1881,7 +1710,6 @@
 ,
 {
   "Input": "I'll be out in 3 year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in 3 year",
@@ -1892,7 +1720,6 @@
 ,
 {
   "Input": "I'll be out in 3 years",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in 3 years",
@@ -1903,7 +1730,6 @@
 ,
 {
   "Input": "I'll be out in 3 weeks",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in 3 weeks",
@@ -1914,7 +1740,6 @@
 ,
 {
   "Input": "I'll be out in 3 months",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in 3 months",
@@ -1925,7 +1750,6 @@
 ,
 {
   "Input": "I'll be out past 3 weeks",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "past 3 weeks",
@@ -1936,7 +1760,6 @@
 ,
 {
   "Input": "I'll be out last 3year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last 3year",
@@ -1947,7 +1770,6 @@
 ,
 {
   "Input": "I'll be out last year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last year",
@@ -1958,7 +1780,6 @@
 ,
 {
   "Input": "I'll be out past month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "past month",
@@ -1969,7 +1790,6 @@
 ,
 {
   "Input": "I'll be out previous 3 weeks",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "previous 3 weeks",
@@ -1980,7 +1800,6 @@
 ,
 {
   "Input": "past few weeks",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "past few weeks",
@@ -1991,7 +1810,6 @@
 ,
 {
   "Input": "past several days",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "past several days",
@@ -2002,7 +1820,6 @@
 ,
 {
   "Input": "I'll be out Oct. 2 to October 22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Oct. 2 to October 22",
@@ -2013,7 +1830,6 @@
 ,
 {
   "Input": "I'll be out January 12, 2016 - 02/22/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "January 12, 2016 - 02/22/2016",
@@ -2024,7 +1840,6 @@
 ,
 {
   "Input": "I'll be out 1st Jan until Wed, 22 of Jan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1st Jan until Wed, 22 of Jan",
@@ -2035,7 +1850,6 @@
 ,
 {
   "Input": "I'll be out today till tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today till tomorrow",
@@ -2046,7 +1860,6 @@
 ,
 {
   "Input": "I'll be out today to October 22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today to October 22",
@@ -2057,7 +1870,6 @@
 ,
 {
   "Input": "I'll be out Oct. 2 until the day after tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Oct. 2 until the day after tomorrow",
@@ -2068,7 +1880,6 @@
 ,
 {
   "Input": "I'll be out today until next Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today until next Sunday",
@@ -2079,7 +1890,6 @@
 ,
 {
   "Input": "I'll be out this Friday until next Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Friday until next Sunday",
@@ -2090,7 +1900,6 @@
 ,
 {
   "Input": "I'll be out from Oct. 2 to October 22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from Oct. 2 to October 22",
@@ -2101,7 +1910,6 @@
 ,
 {
   "Input": "I'll be out from 2015/08/12 until October 22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 2015/08/12 until October 22",
@@ -2115,7 +1923,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from Friday the 2nd until Tuesday the 6th",
@@ -2126,7 +1933,6 @@
 ,
 {
   "Input": "I'll be out from today till tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from today till tomorrow",
@@ -2137,7 +1943,6 @@
 ,
 {
   "Input": "I'll be out from this Friday until next Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from this Friday until next Sunday",
@@ -2148,7 +1953,6 @@
 ,
 {
   "Input": "I'll be out between Oct. 2 and October 22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between Oct. 2 and October 22",
@@ -2159,7 +1963,6 @@
 ,
 {
   "Input": "I'll be out November 19-20",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November 19-20",
@@ -2170,7 +1973,6 @@
 ,
 {
   "Input": "I'll be out November 19 to 20",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November 19 to 20",
@@ -2181,7 +1983,6 @@
 ,
 {
   "Input": "I'll be out November between 19 and 20",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November between 19 and 20",
@@ -2192,7 +1993,6 @@
 ,
 {
   "Input": "I'll be out the third quarter of 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the third quarter of 2016",
@@ -2203,7 +2003,6 @@
 ,
 {
   "Input": "I'll be out the third quarter this year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the third quarter this year",
@@ -2214,7 +2013,6 @@
 ,
 {
   "Input": "I'll be out 2016 the third quarter",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 the third quarter",
@@ -2225,7 +2023,6 @@
 ,
 {
   "Input": "I'll be back during Q1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Q1",
@@ -2236,7 +2033,6 @@
 ,
 {
   "Input": "I'll be out this Q3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Q3",
@@ -2247,7 +2043,6 @@
 ,
 {
   "Input": "I'll be out 2015.3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2015.3",
@@ -2258,7 +2053,6 @@
 ,
 {
   "Input": "I'll be out 2015-3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2015-3",
@@ -2269,7 +2063,6 @@
 ,
 {
   "Input": "I'll be out 2015/3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2015/3",
@@ -2280,7 +2073,6 @@
 ,
 {
   "Input": "I'll be out 3/2015",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3/2015",
@@ -2291,7 +2083,6 @@
 ,
 {
   "Input": "I'll be out the third week of 2027",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the third week of 2027",
@@ -2302,7 +2093,6 @@
 ,
 {
   "Input": "I'll be out the third week next year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the third week next year",
@@ -2313,7 +2103,6 @@
 ,
 {
   "Input": "I'll leave this summer",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this summer",
@@ -2324,7 +2113,6 @@
 ,
 {
   "Input": "I'll leave next spring",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next spring",
@@ -2335,7 +2123,6 @@
 ,
 {
   "Input": "I'll leave the summer",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the summer",
@@ -2346,7 +2133,6 @@
 ,
 {
   "Input": "I'll leave summer",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "summer",
@@ -2357,7 +2143,6 @@
 ,
 {
   "Input": "I'll leave summer 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "summer 2016",
@@ -2368,7 +2153,6 @@
 ,
 {
   "Input": "I'll leave summer of 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "summer of 2016",
@@ -2379,7 +2163,6 @@
 ,
 {
   "Input": "upcoming month holidays",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "upcoming month",
@@ -2390,7 +2173,6 @@
 ,
 {
   "Input": "next month holidays",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next month",
@@ -2401,7 +2183,6 @@
 ,
 {
   "Input": "What do I have the week of November 30th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the week of November 30th",
@@ -2412,7 +2193,6 @@
 ,
 {
   "Input": "the week of september.15th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the week of september.15th",
@@ -2423,7 +2203,6 @@
 ,
 {
   "Input": "week of september.15th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "week of september.15th",
@@ -2434,7 +2213,6 @@
 ,
 {
   "Input": "month of september.15th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "month of september.15th",
@@ -2445,7 +2223,6 @@
 ,
 {
   "Input": "I'll leave over the weekend",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the weekend",
@@ -2456,7 +2233,6 @@
 ,
 {
   "Input": "I'll leave rest of the week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "rest of the week",
@@ -2467,7 +2243,6 @@
 ,
 {
   "Input": "I'll leave rest of my week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "rest of my week",
@@ -2478,7 +2253,6 @@
 ,
 {
   "Input": "I'll leave rest of week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "rest of week",
@@ -2489,7 +2263,6 @@
 ,
 {
   "Input": "I'll leave rest the week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "rest the week",
@@ -2500,7 +2273,6 @@
 ,
 {
   "Input": "I'll leave rest of this week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "rest of this week",
@@ -2511,7 +2283,6 @@
 ,
 {
   "Input": "I'll leave rest current week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "rest current week",
@@ -2522,7 +2293,6 @@
 ,
 {
   "Input": "I'll leave rest of the month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "rest of the month",
@@ -2533,7 +2303,6 @@
 ,
 {
   "Input": "I'll leave rest of the year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "rest of the year",
@@ -2544,7 +2313,6 @@
 ,
 {
   "Input": "Please find us a time to meet later this month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "later this month",
@@ -2555,7 +2323,6 @@
 ,
 {
   "Input": "Please find us a time to meet later this week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "later this week",
@@ -2566,7 +2333,6 @@
 ,
 {
   "Input": "Please find us a time to meet late next week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "late next week",
@@ -2577,7 +2343,6 @@
 ,
 {
   "Input": "Please find us a time to meet late next year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "late next year",
@@ -2588,7 +2353,6 @@
 ,
 {
   "Input": "We met late last week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "late last week",
@@ -2599,7 +2363,6 @@
 ,
 {
   "Input": "Please find us a time to meet early this month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "early this month",
@@ -2610,7 +2373,6 @@
 ,
 {
   "Input": "Please find us a time to meet early this week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "early this week",
@@ -2621,7 +2383,6 @@
 ,
 {
   "Input": "Please find us a time to meet early next week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "early next week",
@@ -2632,7 +2393,6 @@
 ,
 {
   "Input": "Please find us a time to meet early next year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "early next year",
@@ -2643,7 +2403,6 @@
 ,
 {
   "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week between Wednesday and Friday.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next week between Wednesday and Friday",
@@ -2654,7 +2413,6 @@
 ,
 {
   "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week from Wednesday to Friday.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next week from Wednesday to Friday",
@@ -2665,7 +2423,6 @@
 ,
 {
   "Input": "Cortana, please coordinate a 25 minutes meeting with antonio last week from Wednesday to Friday.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last week from Wednesday to Friday",
@@ -2676,7 +2433,6 @@
 ,
 {
   "Input": "Cortana, please coordinate a 25 minutes meeting with antonio this week between Wednesday and Friday.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this week between Wednesday and Friday",
@@ -2687,8 +2443,7 @@
 ,
 {
   "Input": "I'll be out year 247",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "year 247",
@@ -2699,8 +2454,7 @@
 ,
 {
   "Input": "In the 1970s",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the 1970s",
@@ -2711,8 +2465,7 @@
 ,
 {
   "Input": "In the 2000s, he was born.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the 2000s",
@@ -2723,8 +2476,7 @@
 ,
 {
   "Input": "In the 1970's",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the 1970's",
@@ -2735,8 +2487,7 @@
 ,
 {
   "Input": "In the 70s",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the 70s",
@@ -2747,8 +2498,7 @@
 ,
 {
   "Input": "In the 70's",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the 70's",
@@ -2759,8 +2509,7 @@
 ,
 {
   "Input": "In the '40s",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the '40s",
@@ -2771,8 +2520,7 @@
 ,
 {
   "Input": "In the seventies",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the seventies",
@@ -2783,8 +2531,7 @@
 ,
 {
   "Input": "In the nineteen seventies",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the nineteen seventies",
@@ -2795,8 +2542,7 @@
 ,
 {
   "Input": "In the two thousand and tens",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the two thousand and tens",
@@ -2807,8 +2553,7 @@
 ,
 {
   "Input": "In the twenty-tens",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the twenty-tens",
@@ -2819,8 +2564,7 @@
 ,
 {
   "Input": "In the two thousands",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the two thousands",
@@ -2831,8 +2575,7 @@
 ,
 {
   "Input": "In the noughties",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the noughties",
@@ -2844,7 +2587,6 @@
 {
   "Input": "I'll be out from 2 to 7 Feb, two thousand and eighteen",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 2 to 7 Feb, two thousand and eighteen",
@@ -2856,7 +2598,6 @@
 {
   "Input": "I'll be out between 2 and 7 Feb two thousand and eighteen",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 2 and 7 Feb two thousand and eighteen",
@@ -2868,7 +2609,6 @@
 {
   "Input": "I'll be out Feb between 2-7 two thousand and eighteen",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Feb between 2-7 two thousand and eighteen",
@@ -2879,8 +2619,7 @@
 ,
 {
   "Input": "It happened in June of nineteen ninety nine",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "June of nineteen ninety nine",
@@ -2892,7 +2631,6 @@
 {
   "Input": "In nineteen twenty eight",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "nineteen twenty eight",
@@ -2904,7 +2642,6 @@
 {
   "Input": "I'll be out the first week of two thousand and twenty seven",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the first week of two thousand and twenty seven",
@@ -2916,7 +2653,6 @@
 {
   "Input": "I'll be out the first quarter of two thousand and twenty",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the first quarter of two thousand and twenty",
@@ -2928,7 +2664,6 @@
 {
   "Input": "In the spring of nineteen seventy eight",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the spring of nineteen seventy eight",
@@ -2938,9 +2673,8 @@
 }
 ,
 {
-  "Input": "Year two hundred and sixty seven",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "Input": "Year two hundred and sixty seven,",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "Year two hundred and sixty seven",
@@ -2952,7 +2686,6 @@
 {
   "Input": "I'll be out the week after next",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the week after next",
@@ -2963,8 +2696,7 @@
 ,
 {
   "Input": "It happened in the past 2 decades",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the past 2 decades",
@@ -2975,8 +2707,7 @@
 ,
 {
   "Input": "It happened in the last two decades",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the last two decades",
@@ -2987,8 +2718,7 @@
 ,
 {
   "Input": "It happened in the next decade",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the next decade",
@@ -2999,8 +2729,7 @@
 ,
 {
   "Input": "It will happen 4 weeks in the future",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "4 weeks in the future",
@@ -3011,8 +2740,7 @@
 ,
 {
   "Input": "It will happen 2 days hence",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "2 days hence",
@@ -3024,7 +2752,6 @@
 {
   "Input": "Cortana can find us a time beginning of next week",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "beginning of next week",
@@ -3036,7 +2763,6 @@
 {
   "Input": "Sure, let's get a Skype end of next week",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "end of next week",
@@ -3048,7 +2774,6 @@
 {
   "Input": "Sure, let's get a Skype start of next week",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "start of next week",
@@ -3060,7 +2785,6 @@
 {
   "Input": "Cortana, find us a time end of March",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "end of March",
@@ -3072,7 +2796,6 @@
 {
   "Input": "Cortana, please find us a time mid next week",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid next week",
@@ -3084,7 +2807,6 @@
 {
   "Input": "cortana can arrange us to meet mid March",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid March",
@@ -3096,7 +2818,6 @@
 {
   "Input": "what about by mid summer?",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid summer",
@@ -3108,7 +2829,6 @@
 {
   "Input": "I can find us a time beginning of next week",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "beginning of next week",
@@ -3120,7 +2840,6 @@
 {
   "Input": "I'll be out 11 -2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 -2016",
@@ -3132,7 +2851,6 @@
 {
   "Input": "I'll be out 11- 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11- 2016",
@@ -3144,7 +2862,6 @@
 {
   "Input": "I'll be out 11 / 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 / 2016",
@@ -3156,7 +2873,6 @@
 {
   "Input": "I'll be out 11/2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11/2016",
@@ -3168,7 +2884,6 @@
 {
   "Input": "I'll be out 11 -2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 -2016",
@@ -3180,7 +2895,6 @@
 {
   "Input": "I'll be out 11- 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11- 2016",
@@ -3192,7 +2906,6 @@
 {
   "Input": "I'll be out 11 - 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 - 2016",
@@ -3204,7 +2917,6 @@
 {
   "Input": "I'll be out 11-2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11-2016",
@@ -3216,7 +2928,6 @@
 {
   "Input": "I'll be out 2016 /11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 /11",
@@ -3228,7 +2939,6 @@
 {
   "Input": "I'll be out 2016/ 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016/ 11",
@@ -3240,7 +2950,6 @@
 {
   "Input": "I'll be out 2016 / 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 / 11",
@@ -3252,7 +2961,6 @@
 {
   "Input": "I'll be out 2016/11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016/11",
@@ -3264,7 +2972,6 @@
 {
   "Input": "I'll be out 2016 -11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 -11",
@@ -3276,7 +2983,6 @@
 {
   "Input": "I'll be out 2016- 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016- 11",
@@ -3288,7 +2994,6 @@
 {
   "Input": "I'll be out 2016 - 11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 - 11",
@@ -3300,7 +3005,6 @@
 {
   "Input": "I'll be out 2016-11",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016-11",
@@ -3312,7 +3016,6 @@
 {
   "Input": "I'll be out 2016 November",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 November",
@@ -3324,7 +3027,6 @@
 {
   "Input": "I'll be out November , 2016",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "November , 2016",
@@ -3336,7 +3038,6 @@
 {
   "Input": "I'll be out 2016 , nov",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016 , nov",
@@ -3348,7 +3049,6 @@
 {
   "Input": "I'll be out 2016, nov",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2016, nov",
@@ -3360,7 +3060,6 @@
 {
   "Input": "I'll be out between January 1st and April 5th",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between January 1st and April 5th",
@@ -3372,7 +3071,6 @@
 {
   "Input": "I'll be out between January 1st 2015 and Feb 5th 2018",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between January 1st 2015 and Feb 5th 2018",
@@ -3383,8 +3081,7 @@
 ,
 {
   "Input": "I'll be out between January 1st 2015 and Feb 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between January 1st 2015 and Feb 2018",
@@ -3395,8 +3092,7 @@
 ,
 {
   "Input": "I'll be out between 2015 and Feb 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between 2015 and Feb 2018",
@@ -3407,8 +3103,7 @@
 ,
 {
   "Input": "I'll be out from Feb 1st to March 2019",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "from Feb 1st to March 2019",
@@ -3419,8 +3114,7 @@
 ,
 {
   "Input": "I'll be out between Feb 1st and March 2019",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between Feb 1st and March 2019",
@@ -3431,8 +3125,7 @@
 ,
 {
   "Input": "I'll be out between 2015 June and 2018 May",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between 2015 June and 2018 May",
@@ -3443,8 +3136,7 @@
 ,
 {
   "Input": "I'll be out between 2015 May and 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between 2015 May and 2018",
@@ -3455,8 +3147,7 @@
 ,
 {
   "Input": "I'll be out between May 2015 and 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between May 2015 and 2018",
@@ -3467,8 +3158,7 @@
 ,
 {
   "Input": "I'll be out between May 2015 and 2018 June",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between May 2015 and 2018 June",
@@ -3479,8 +3169,7 @@
 ,
 {
   "Input": "I'll be out between 2015 and January 5th 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between 2015 and January 5th 2018",
@@ -3491,8 +3180,7 @@
 ,
 {
   "Input": "I'll be out from 2015 to May 5th, 2017",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "from 2015 to May 5th, 2017",
@@ -3503,8 +3191,7 @@
 ,
 {
   "Input": "I'll be out from last Monday April to 2019",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "from last Monday April to 2019",
@@ -3515,8 +3202,7 @@
 ,
 {
   "Input": "I'll be out from Week 31 to Week 35",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "from Week 31 to Week 35",
@@ -3527,8 +3213,7 @@
 ,
 {
   "Input": "I'll be out between Week 31 and Week 35",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between Week 31 and Week 35",
@@ -3540,7 +3225,6 @@
 {
   "Input": "I'll stay here from today to two and half days later",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from today to two and half days later",
@@ -3551,7 +3235,6 @@
 ,
 {
   "Input": "What is my april 2017 bonus?",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "april 2017",
@@ -3562,7 +3245,7 @@
 ,
 {
   "Input": "I was not there the same month that it happened.",
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "same month",
@@ -3573,7 +3256,7 @@
 ,
 {
   "Input": "I was not there the same week that it happened.",
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "same week",
@@ -3584,7 +3267,7 @@
 ,
 {
   "Input": "I weren't there that year.",
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "that year",

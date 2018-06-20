@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod, abstractproperty
+from abc import ABC, abstractmethod
 from enum import Flag
 from typing import List, Dict, Generic, TypeVar, Callable, Optional
 from collections import namedtuple
@@ -16,7 +16,8 @@ class ModelResult():
         self.resolution: Dict[str, object]
 
 class Model(ABC):
-    @abstractproperty
+    @property
+    @abstractmethod
     def model_type_name(self) -> str:
         raise NotImplementedError
 

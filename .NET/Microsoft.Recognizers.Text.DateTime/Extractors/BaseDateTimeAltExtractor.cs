@@ -37,6 +37,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ers = AddImplicitDates(extractResult, text);
 
+            // Sort the extracted results for the further sequential process.
+            ers.Sort((x, y) => x.Start - y.Start ?? 0);
+
             var i = 0;
             while (i < ers.Count - 1)
             {
@@ -47,6 +50,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // check whether middle string is a connector
                     var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
+
+                    if (middleBegin >= middleEnd)
+                    {
+                        break;
+                    }
+
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
                     var matches = config.OrRegex.Matches(middleStr);
 
@@ -289,6 +298,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 data = ExtractDateTimeRange_TimeRange(former, latter);
             }
 
+            if (data.Count == 0)
+            {
+                data = ExtractDateRange_DateRange(former, latter);
+            }
+
             return data;
         }
 
@@ -392,6 +406,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                     data.Add(Constants.Context, ers[0]);
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_TIMEPERIOD);
                 }
+            }
+            
+            return data;
+        }
+
+        private Dictionary<string, object> ExtractDateRange_DateRange(ExtractResult former, ExtractResult latter)
+        {
+            var data = new Dictionary<string, object>();
+            
+            if (former.Type == Constants.SYS_DATETIME_DATEPERIOD && latter.Type == Constants.SYS_DATETIME_DATEPERIOD)
+            {
+                data.Add(Constants.SubType, Constants.SYS_DATETIME_DATEPERIOD);
             }
             
             return data;

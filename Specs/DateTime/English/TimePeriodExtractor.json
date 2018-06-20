@@ -1,6 +1,5 @@
 [{
   "Input": "I'll be out 5 to 6pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 to 6pm",
@@ -11,7 +10,6 @@
 ,
 {
   "Input": "I'll be out 5 to 6 p.m.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 to 6 p.m.",
@@ -22,7 +20,6 @@
 ,
 {
   "Input": "I'll be out 5 to 6 in the afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 to 6 in the afternoon",
@@ -33,7 +30,6 @@
 ,
 {
   "Input": "I'll be out 5 to seven in the morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 to seven in the morning",
@@ -44,7 +40,6 @@
 ,
 {
   "Input": "I'll be out from 5 to 6pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 5 to 6pm",
@@ -55,7 +50,6 @@
 ,
 {
   "Input": "I'll be out between 5 and 6pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 5 and 6pm",
@@ -66,7 +60,6 @@
 ,
 {
   "Input": "I'll be out between 5pm and 6pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 5pm and 6pm",
@@ -77,7 +70,6 @@
 ,
 {
   "Input": "I'll be out between 5 and 6 in the afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 5 and 6 in the afternoon",
@@ -88,7 +80,6 @@
 ,
 {
   "Input": "I'll be out 4pm till 5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4pm till 5pm",
@@ -99,7 +90,6 @@
 ,
 {
   "Input": "I'll be out 4 til 5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4 til 5pm",
@@ -110,7 +100,6 @@
 ,
 {
   "Input": "I'll be out 4:00 till 5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4:00 till 5pm",
@@ -121,7 +110,6 @@
 ,
 {
   "Input": "I'll be out 4:00 til 5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4:00 til 5pm",
@@ -132,7 +120,6 @@
 ,
 {
   "Input": "I'll be out 4:00 to 7 oclock",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4:00 to 7 oclock",
@@ -143,7 +130,6 @@
 ,
 {
   "Input": "I'll be out 3pm to half past seven",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3pm to half past seven",
@@ -154,7 +140,6 @@
 ,
 {
   "Input": "I'll be out 4pm-5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4pm-5pm",
@@ -165,7 +150,6 @@
 ,
 {
   "Input": "I'll be out 4pm - 5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4pm - 5pm",
@@ -176,7 +160,6 @@
 ,
 {
   "Input": "I'll be out 20 minutes to three to eight in the evening",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 minutes to three to eight in the evening",
@@ -187,7 +170,6 @@
 ,
 {
   "Input": "I'll be out from 4pm to 5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 4pm to 5pm",
@@ -198,7 +180,6 @@
 ,
 {
   "Input": "I'll be out from 4pm to half past five",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 4pm to half past five",
@@ -209,7 +190,6 @@
 ,
 {
   "Input": "I'll be out from 3 in the morning until 5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 3 in the morning until 5pm",
@@ -220,7 +200,6 @@
 ,
 {
   "Input": "I'll be out from 3 in the morning until five in the afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 3 in the morning until five in the afternoon",
@@ -231,7 +210,6 @@
 ,
 {
   "Input": "I'll be out between 4pm and half past five",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 4pm and half past five",
@@ -242,7 +220,6 @@
 ,
 {
   "Input": "I'll be out between 3 in the morning and 5pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 3 in the morning and 5pm",
@@ -253,7 +230,6 @@
 ,
 {
   "Input": "let's meet in the morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the morning",
@@ -264,7 +240,6 @@
 ,
 {
   "Input": "let's meet in the afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the afternoon",
@@ -275,7 +250,6 @@
 ,
 {
   "Input": "let's meet in the night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the night",
@@ -286,7 +260,6 @@
 ,
 {
   "Input": "let's meet in the evening",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the evening",
@@ -297,7 +270,6 @@
 ,
 {
   "Input": "let's meet in the evenings",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the evenings",
@@ -308,7 +280,6 @@
 ,
 {
   "Input": "let's meet in the early-mornings",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-mornings",
@@ -319,7 +290,6 @@
 ,
 {
   "Input": "let's meet in the late-mornings",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-mornings",
@@ -330,7 +300,6 @@
 ,
 {
   "Input": "let's meet in the early-morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-morning",
@@ -341,7 +310,6 @@
 ,
 {
   "Input": "let's meet in the late-morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-morning",
@@ -352,7 +320,6 @@
 ,
 {
   "Input": "let's meet in the early-afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-afternoon",
@@ -363,7 +330,6 @@
 ,
 {
   "Input": "let's meet in the late-afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-afternoon",
@@ -374,7 +340,6 @@
 ,
 {
   "Input": "let's meet in the early-evening",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-evening",
@@ -385,7 +350,6 @@
 ,
 {
   "Input": "let's meet in the late-evening",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-evening",
@@ -396,7 +360,6 @@
 ,
 {
   "Input": "let's meet in the early-night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-night",
@@ -407,7 +370,6 @@
 ,
 {
   "Input": "let's meet in the late-night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-night",
@@ -418,7 +380,6 @@
 ,
 {
   "Input": "let's meet in the early night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early night",
@@ -429,7 +390,6 @@
 ,
 {
   "Input": "let's meet in the late night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late night",
@@ -440,7 +400,6 @@
 ,
 {
   "Input": "set up meeting from two to five pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from two to five pm",
@@ -451,7 +410,6 @@
 ,
 {
   "Input": "Party at Jean’s from 6 to 11 pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 6 to 11 pm",
@@ -462,7 +420,6 @@
 ,
 {
   "Input": "set up meeting from 14:00 to 16:30",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 14:00 to 16:30",
@@ -473,7 +430,6 @@
 ,
 {
   "Input": "set up meeting from two to five p m",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from two to five p m",
@@ -484,7 +440,6 @@
 ,
 {
   "Input": "set up meeting 1p.m. to 4",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1p.m. to 4",
@@ -495,7 +450,6 @@
 ,
 {
   "Input": "set up meeting 1p.m. to 4.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1p.m. to 4",
@@ -506,7 +460,6 @@
 ,
 {
   "Input": "set up meeting 1:30p.m. to 4!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1:30p.m. to 4",
@@ -517,7 +470,6 @@
 ,
 {
   "Input": "set up meeting 1:30p.m. to 4 people",
-  "NotSupportedByDesign": "python",
   "Results": [
   ]
 }
@@ -525,7 +477,6 @@
 {
   "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, this Friday I will leave.",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the afternoon",
@@ -537,7 +488,6 @@
 {
   "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting this Friday, in the afternoon I will leave.",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the afternoon",
@@ -548,7 +498,6 @@
 ,
 {
   "Input": "set up meeting from 1:30 to 3:30",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30 to 3:30",
@@ -559,7 +508,6 @@
 ,
 {
   "Input": "set up meeting from 1:30 pm to 3:30",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30 pm to 3:30",
@@ -570,7 +518,6 @@
 ,
 {
   "Input": "set up meeting from 1:30 pm to 3:30 pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30 pm to 3:30 pm",
@@ -581,7 +528,6 @@
 ,
 {
   "Input": "set up meeting from 1 to 3:30",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1 to 3:30",
@@ -592,10 +538,69 @@
 ,
 {
   "Input": "set up meeting from 1:30 to 3",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30 to 3",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting between 10 and 11:30",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 10 and 11:30",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting between 10:10am and 12:50",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 10:10am and 12:50",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting between 10:10pm and 3",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 10:10pm and 3",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 10:10pm to 10",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 10:10pm to 10",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 10:30am to 23",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 10:30am to 23",
       "Type": "timerange"
     }
   ]

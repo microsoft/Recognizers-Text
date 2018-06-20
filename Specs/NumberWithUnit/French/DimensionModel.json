@@ -561,7 +561,7 @@
 ,
 {
   "Input": "En 1995 le canon a présenté la première lentille slr disponible dans le commerce avec la stabilisation d'image interne, ef 75 - 300mm f / 4 - 5. 6 est usm.",
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "300mm",

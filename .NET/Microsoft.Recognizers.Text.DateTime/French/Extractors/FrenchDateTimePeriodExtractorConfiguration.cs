@@ -8,8 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     public class FrenchDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public FrenchDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());

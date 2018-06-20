@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.French;
-using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
@@ -38,6 +39,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         };
 
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -56,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeExtractor TimeZoneExtractor { get; }
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
@@ -88,5 +91,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

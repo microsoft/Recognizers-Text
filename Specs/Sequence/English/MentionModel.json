@@ -104,5 +104,31 @@
     "Input": "abc@efg.com, which is an email rather than a mention",
     "NotSupportedByDesign": "python",
     "Results": []
+  },
+  {
+    "Input": "Hi@HowardsCreekFD, please respond.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@HowardsCreekFD",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@HowardsCreekFD"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I talked to:@Howard",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "@Howard",
+        "TypeName": "mention",
+        "Resolution": {
+          "value": "@Howard"
+        }
+      }
+    ]
   }
 ]

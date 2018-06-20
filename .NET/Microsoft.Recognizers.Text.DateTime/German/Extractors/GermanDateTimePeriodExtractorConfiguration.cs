@@ -9,8 +9,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     public class GermanDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public GermanDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());

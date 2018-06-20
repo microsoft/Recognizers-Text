@@ -436,7 +436,7 @@ InformationSuffixList: !dictionary
     Téraoctet: téraoctet|téraoctets|To|Tio|TB|TiB|térabyte|térabytes
     Pétaoctet: pétaoctet|pétaoctets|Po|Pio|PB|PiB|pétabyte|pétabytes
 AmbiguousDimensionUnitList: !list
-   types: [ string, string ]
+   types: [ string ]
    entries:
      - mi
      - barils

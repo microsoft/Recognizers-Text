@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.Spanish;
-using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -33,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
         };
 
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -51,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeExtractor TimeZoneExtractor { get; }
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
@@ -82,5 +85,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

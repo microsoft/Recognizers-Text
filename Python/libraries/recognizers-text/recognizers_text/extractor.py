@@ -3,10 +3,10 @@ from typing import List
 
 class ExtractResult:
     def __init__(self):
-        self.start: int
-        self.length: int
-        self.text: str
-        self.type: str
+        self.start: int = None
+        self.length: int = None
+        self.text: str = None
+        self.type: str = None
         self.data: object = None
 
     @property
@@ -19,6 +19,15 @@ class ExtractResult:
     def cover(self, other: 'ExtractResult') -> bool:
         return (((other.start < self.start) and (other.end >= self.end))
                 or ((other.start <= self.start) and (other.end > self.end)))
+
+    @staticmethod
+    def get_from_text(source: str):
+        result = ExtractResult()
+        result.start = 0
+        result.length = len(source)
+        result.text = source
+        result.type = 'custom'
+        return result
 
 class Extractor(ABC):
     @abstractmethod

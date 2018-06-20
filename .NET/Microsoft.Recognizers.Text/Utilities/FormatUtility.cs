@@ -1,3 +1,7 @@
+using System.Globalization;
+using System.Linq;
+using System.Text;
+
 namespace Microsoft.Recognizers.Text.Utilities
 {
     public static class FormatUtility
@@ -33,6 +37,27 @@ namespace Microsoft.Recognizers.Text.Utilities
             query = query.Replace("）", ")");
 
             return query;
+        }
+
+        public static string RemoveDiacritics(string query)
+        {
+            if (query == null)
+            {
+                return null;
+            }
+
+            // FormD indicates that a Unicode string is normalized using full canonical decomposition.
+            var chars =
+                from c in query.Normalize(NormalizationForm.FormD).ToCharArray()
+                let uc = CharUnicodeInfo.GetUnicodeCategory(c)
+                where uc != UnicodeCategory.NonSpacingMark
+                select c;
+
+            // FormC indicates that a Unicode string is normalized using full canonical decomposition, 
+            // followed by the replacement of sequences with their primary composites, if possible.
+            var normalizedQuery = new string(chars.ToArray()).Normalize(NormalizationForm.FormC);
+
+            return normalizedQuery;
         }
     }
 }

@@ -15,4 +15,5 @@ export namespace BasePhoneNumbers {
 	export const USPhoneNumberRegex = `((((\\B\\+)|\\b)1(\\s|-)?)|\\b)?(\\(\\d{3}\\)|\\b\\d{3})\\s?-?\\s?\\d{3}\\s?-?\\s?\\d{4}\\b`;
 	export const CNPhoneNumberRegex = `((\\b00\\s?)?\\+?86\\s?-?\\s?)?((\\d{2,5}|\\(\\d{2,5}\\))\\s?-?\\s?\\d{4}\\s?-?\\s?\\d{4}(\\s?-?\\s?\\d{4})?|\\d{3}\\s?-?\\s?\\d{4}\\s?-?\\s?\\d{4})(?!-)\\b`;
 	export const SpecialPhoneNumberRegex = `\\b(\\d{3,4}[/-]\\d{1,4}[/-]\\d{3,4})\\b`;
+	export const SeparatorCharList = [ '-','.','/' ];
 }

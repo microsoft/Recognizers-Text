@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -39,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
         };
 
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
+
         public DateTimeOptions Options { get; }
 
         public IDateTimeExtractor DateExtractor { get; }
@@ -59,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeExtractor TimeZoneExtractor { get; }
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
@@ -80,6 +84,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration());
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+
+            if ((options & DateTimeOptions.EnablePreview) != 0)
+            {
+                SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
+            }
+
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
@@ -91,5 +101,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

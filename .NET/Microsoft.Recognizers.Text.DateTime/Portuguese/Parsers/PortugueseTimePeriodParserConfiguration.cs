@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex TimeOfDayRegex { get; }
 
         public Regex GeneralEndingRegex { get; }
@@ -35,6 +39,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = PortugueseTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = PortugueseTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = PortugueseTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = PortugueseTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = PortugueseTimePeriodExtractorConfiguration.TillRegex;

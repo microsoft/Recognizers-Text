@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public sealed class SpanishMergedParserConfiguration : SpanishCommonDateTimeParserConfiguration, IMergedParserConfiguration
@@ -21,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeParser TimeZoneParser { get; }
 
+        public StringMatcher SuperfluousWordMatcher { get; }
+
         public SpanishMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
@@ -28,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
             YearAfterRegex = SpanishMergedExtractorConfiguration.YearAfterRegex;
             YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = SpanishMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));

@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex TimeOfDayRegex { get; }
 
         public Regex GeneralEndingRegex { get; }
@@ -34,7 +38,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo; 
-            PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd; 
+            PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = FrenchTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = FrenchTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = FrenchTimePeriodExtractorConfiguration.TillRegex;

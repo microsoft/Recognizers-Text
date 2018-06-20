@@ -3,7 +3,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "hour",
@@ -27,7 +26,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 minutes",
@@ -51,7 +49,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 days",
@@ -75,7 +72,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "now",
@@ -98,7 +94,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7",
@@ -126,7 +121,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7pm",
@@ -149,7 +143,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 hours",
@@ -173,7 +166,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -222,7 +214,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today",
@@ -271,7 +262,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next monday",
@@ -320,7 +310,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -369,7 +358,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today",
@@ -418,7 +406,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next monday",
@@ -467,7 +454,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -504,7 +490,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "sep.1st",
@@ -550,7 +535,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "july the 5th",
@@ -596,7 +580,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5:30",
@@ -642,7 +625,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5pm",
@@ -678,7 +660,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5am",
@@ -714,7 +695,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 days",
@@ -738,7 +718,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 minutes",
@@ -762,7 +741,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -798,7 +776,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -822,6 +799,190 @@
             "timex": "T07",
             "type": "time",
             "value": "07:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen between 10 and 11:30 on 1/1/2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1/1/2015",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2015-01-01",
+            "type": "date",
+            "value": "2015-01-01"
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "11:30",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T11:30",
+            "type": "time",
+            "value": "11:30:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 1/1/2015 between 10 and 11:30",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1/1/2015",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2015-01-01",
+            "type": "date",
+            "value": "2015-01-01"
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "11:30",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T11:30",
+            "type": "time",
+            "value": "11:30:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen from 10:30 to 3 on 1/1/2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1/1/2015",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2015-01-01",
+            "type": "date",
+            "value": "2015-01-01"
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "10:30",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T10:30",
+            "type": "time",
+            "value": "10:30:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen between 3 and 5 on 1/1/2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 3 and 5 on 1/1/2015",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2015-01-01T03,2015-01-01T05,PT2H)",
+            "type": "datetimerange",
+            "start": "2015-01-01 03:00:00",
+            "end": "2015-01-01 05:00:00"
+          }
+          ,
+          {
+            "timex": "(2015-01-01T15,2015-01-01T17,PT2H)",
+            "type": "datetimerange",
+            "start": "2015-01-01 15:00:00",
+            "end": "2015-01-01 17:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen between 10 and 11:30 on 1/1/2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1/1/2015",
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2015-01-01",
+            "type": "date",
+            "value": "2015-01-01"
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "11:30",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T11:30",
+            "type": "time",
+            "value": "11:30:00"
           }
         ]
       }

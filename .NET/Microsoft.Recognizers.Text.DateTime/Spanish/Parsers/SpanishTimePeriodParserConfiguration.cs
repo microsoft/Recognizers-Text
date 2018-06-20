@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex TimeOfDayRegex { get; }
 
         public Regex GeneralEndingRegex { get; }
@@ -35,6 +39,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = SpanishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = SpanishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = SpanishTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = SpanishTimePeriodExtractorConfiguration.TillRegex;

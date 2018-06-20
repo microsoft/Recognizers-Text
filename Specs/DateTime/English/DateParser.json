@@ -3,7 +3,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15",
@@ -26,7 +25,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Oct. 2",
@@ -49,7 +47,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Oct-2",
@@ -72,7 +69,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Oct/2",
@@ -95,7 +91,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "October. 2",
@@ -118,7 +113,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "January 12, 2016",
@@ -141,7 +135,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Monday January 12th, 2016",
@@ -164,7 +157,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "02/22/2016",
@@ -187,7 +179,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21/04/2016",
@@ -210,7 +201,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21/04/16",
@@ -233,7 +223,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21-04-2016",
@@ -256,7 +245,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4.22",
@@ -279,7 +267,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4-22",
@@ -302,7 +289,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4.22",
@@ -325,7 +311,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4-22",
@@ -348,7 +333,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4/22",
@@ -371,7 +355,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "22/04",
@@ -394,7 +377,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4/22",
@@ -417,7 +399,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "22/04",
@@ -440,7 +421,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2015/08/12",
@@ -463,7 +443,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "08/12,2015",
@@ -486,7 +465,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "08/12,15",
@@ -509,7 +487,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1st Jan",
@@ -532,7 +509,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jan-1",
@@ -555,7 +531,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Wed, 22 of Jan",
@@ -578,7 +553,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jan first",
@@ -601,7 +575,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May twenty-first",
@@ -624,7 +597,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May twenty one",
@@ -647,7 +619,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "second of Aug",
@@ -670,7 +641,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twenty second of June",
@@ -693,7 +663,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday",
@@ -716,7 +685,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday",
@@ -739,7 +707,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today",
@@ -762,7 +729,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -785,7 +751,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "yesterday",
@@ -808,7 +773,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the day before yesterday",
@@ -831,7 +795,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the day after tomorrow",
@@ -854,7 +817,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "The day after tomorrow",
@@ -877,7 +839,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the next day",
@@ -900,7 +861,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next day",
@@ -923,7 +883,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Friday",
@@ -946,7 +905,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next Sunday",
@@ -969,7 +927,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last Sunday",
@@ -992,7 +949,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this week Friday",
@@ -1015,7 +971,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next week Sunday",
@@ -1038,7 +993,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last week Sunday",
@@ -1061,7 +1015,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last day",
@@ -1084,7 +1037,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the last day",
@@ -1107,7 +1059,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the day",
@@ -1130,7 +1081,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15 June 2016",
@@ -1153,7 +1103,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the first friday of july",
@@ -1176,7 +1125,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the first friday in this month",
@@ -1199,7 +1147,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next week on Friday",
@@ -1222,7 +1169,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on Friday next week",
@@ -1241,11 +1187,10 @@
 }
 ,
 {
-  "Input": "I'll go back my day",
+  "Input": "What does my day look like?",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "my day",
@@ -1268,7 +1213,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this day",
@@ -1291,7 +1235,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "past day",
@@ -1314,7 +1257,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two weeks from now",
@@ -1337,7 +1279,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a month ago",
@@ -1360,7 +1301,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "few month ago",
@@ -1383,7 +1323,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a few day ago",
@@ -1406,7 +1345,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27",
@@ -1429,7 +1367,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27th",
@@ -1452,7 +1389,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27",
@@ -1475,7 +1411,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27",
@@ -1498,7 +1433,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27",
@@ -1521,7 +1455,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 21st",
@@ -1544,7 +1477,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 22nd",
@@ -1567,7 +1499,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the second",
@@ -1590,7 +1521,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the twenty second",
@@ -1613,7 +1543,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the thirty",
@@ -1634,9 +1563,8 @@
 {
   "Input": "I went back Thursday the 21st",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8080661+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Thursday the 21st",
@@ -1657,9 +1585,8 @@
 {
   "Input": "I went back Friday the 22nd",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8110663+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday the 22nd",
@@ -1680,9 +1607,8 @@
 {
   "Input": "I went back Saturday the 23rd",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8120465+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Saturday the 23rd",
@@ -1703,9 +1629,8 @@
 {
   "Input": "I went back Friday the 15th",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8130455+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday the 15th",
@@ -1726,9 +1651,8 @@
 {
   "Input": "I went back Thursday the twenty first",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8140457+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Thursday the twenty first",
@@ -1749,9 +1673,8 @@
 {
   "Input": "I went back Friday the twenty second",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8150456+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday the twenty second",
@@ -1772,9 +1695,8 @@
 {
   "Input": "I went back Friday the fifteen",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8160454+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday the fifteen",
@@ -1795,9 +1717,8 @@
 {
   "Input": "I'll go back second Sunday",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "second Sunday",
@@ -1818,9 +1739,8 @@
 {
   "Input": "I'll go back first Sunday",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "first Sunday",
@@ -1841,9 +1761,8 @@
 {
   "Input": "I'll go back third Tuesday",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8210454+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "third Tuesday",
@@ -1864,9 +1783,8 @@
 {
   "Input": "I'll go back fifth Sunday",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:49.8225493+08:00"
+    "ReferenceDateTime": "2017-09-27T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "fifth Sunday",
@@ -1889,7 +1807,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20th of next month",
@@ -1912,7 +1829,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "31st of this month",
@@ -1935,7 +1851,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "January 12, 2018",
@@ -1958,7 +1873,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9-18-15",
@@ -1981,7 +1895,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two days ago",
@@ -2004,7 +1917,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two years ago",
@@ -2027,7 +1939,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-14T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "16. Nov. 2016",
@@ -2050,8 +1961,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "1 month 21 days ago",
@@ -2074,8 +1984,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "2 years 1 month 21 days ago",
@@ -2098,8 +2007,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "2 years 21 days later",
@@ -2122,8 +2030,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "1 month 2 years 21 days ago",
@@ -2146,8 +2053,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "1 month and 21 days ago",
@@ -2170,8 +2076,7 @@
   "Context": {
     "ReferenceDateTime": "2017-11-23T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "1 month, 21 days ago",
@@ -2194,8 +2099,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-07T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the 20th of next month",
@@ -2218,7 +2122,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 December 1391",
@@ -2241,8 +2144,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "Monday, Jan twenty two, 2018",
@@ -2265,8 +2167,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "Sunday Jan twenty one two thousand and eighteen",
@@ -2289,8 +2190,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "September the twenty-first nineteen seventy eight",
@@ -2313,8 +2213,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "September 10, nineteen zero one",
@@ -2337,8 +2236,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "tenth of September, two thousand",
@@ -2361,7 +2259,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-20T09:58:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the first Friday of next month",
@@ -2384,7 +2281,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-20T10:45:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the second Monday of next month",
@@ -2407,7 +2303,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-20T10:45:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the third Wednesday of previous month",
@@ -2430,7 +2325,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-20T22:16:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Tuesday next week",
@@ -2453,7 +2347,6 @@
   "Context": {
     "ReferenceDateTime": "2018-03-20T22:16:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on Sunday of next week",
@@ -2476,7 +2369,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-20T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "two days from tomorrow",
@@ -2499,7 +2392,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-20T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "four days from yesterday",
@@ -2522,7 +2415,6 @@
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "13.5.2015",
@@ -2545,7 +2437,6 @@
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2015.5.13",
@@ -2568,7 +2459,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3-7-2017",
@@ -2591,7 +2481,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3-7-07",
@@ -2614,7 +2503,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3-7-27",
@@ -2637,7 +2526,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "05/05/89",
@@ -2660,7 +2549,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "05/05/71",
@@ -2683,7 +2572,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "two sundays from now",
@@ -2706,7 +2595,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "two monday later",
@@ -2729,8 +2618,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-31T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "two days after today",
@@ -2753,8 +2641,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-31T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "three weeks from tomorrow",
@@ -2777,8 +2664,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-31T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "two days before yesterday",

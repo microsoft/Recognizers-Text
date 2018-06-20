@@ -4,8 +4,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "next week mon 9 am",
@@ -42,8 +41,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "next week mon",
@@ -80,8 +78,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "in the morning 9 oclock",
@@ -118,8 +115,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "next monday 1-3 pm",
@@ -158,8 +154,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "monday 8-9am",
@@ -210,8 +205,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "next week on tuesday",
@@ -248,8 +242,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "next week on tuesday 9 am",
@@ -287,8 +280,7 @@
   "Context": {
     "ReferenceDateTime": "2018-03-21T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "this week or next",
@@ -332,8 +324,7 @@
   "Context": {
     "ReferenceDateTime": "2018-03-21T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "last year or next",
@@ -377,7 +368,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "next week on tuesday or thursday or friday",
@@ -435,7 +426,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "next week mon, wed, fri",
@@ -493,7 +484,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "monday, thursday, friday next week",
@@ -551,7 +542,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "the 22nd, 23rd, 30th or 31st of march",
@@ -625,7 +616,7 @@
   "Context": {
     "ReferenceDateTime": "2018-04-16T00:00:00"
   },
-  "NotSupported": "javascript,python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "ParentText": "july 17th, 18th, or 19th",
@@ -982,7 +973,6 @@
   "Context": {
     "ReferenceDateTime": "2018-05-20T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "each week",
@@ -1019,7 +1009,7 @@
   "Context": {
     "ReferenceDateTime": "2018-05-20T00:00:00"
   },
-  "NotSupported": "python,javascript",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "each week",
@@ -1077,6 +1067,50 @@
             "type": "daterange",
             "start": "2018-11-01",
             "end": "2018-12-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Hi, please arrange a meeting for T6 in the coming weeks or next week.",
+  "Context": {
+    "ReferenceDateTime": "2018-06-12T00:00:00"
+  },
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "ParentText": "coming weeks or next week",
+      "Text": "coming weeks",
+      "Start": 43,
+      "End": 54,
+      "TypeName": "datetimeV2.datetimealt",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2018-06-13,2018-06-20,P1W)",
+            "type": "daterange",
+            "start": "2018-06-13",
+            "end": "2018-06-20"
+          }
+        ]
+      }
+    },
+    {
+      "ParentText": "coming weeks or next week",
+      "Text": "next week",
+      "Start": 59,
+      "End": 67,
+      "TypeName": "datetimeV2.datetimealt",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018-W25",
+            "type": "daterange",
+            "start": "2018-06-18",
+            "end": "2018-06-25"
           }
         ]
       }

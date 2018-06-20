@@ -47,7 +47,11 @@ class DictionaryWriter(CodeWriter):
         value_quote = '\'' if value_type=='string' else ''
         for key, value in entries.items():
             k = key.replace(r"\'", '\'').replace('\'', r"\'")
-            v = value.replace(r"\'", '\'').replace('\'', r"\'")
+            if isinstance(value, list):
+                value = ', '.join(map(lambda x: json.dumps(x.value).replace("'", r"\'").replace('"', "'"), value))
+                v = f'[{value}]'
+            else:
+                v = value.replace(r"\'", '\'').replace('\'', r"\'")
             self.entries.append(f'({key_quote}{k}{key_quote}, {value_quote}{v}{value_quote})')
 
     def write(self):
@@ -80,14 +84,13 @@ def sanitize(value: str, value_type = None, tokens = None):
     except:
         stringified = '"' + value + '"'
 
-    return stringified[1:len(stringified)-1]
+    return stringified[1:len(stringified)-1].replace("'", r"\'")
 
 def to_python_type(type_: str) -> str:
     if type_ == 'long':
         return 'float'
     elif type_ == 'char':
         return 'string'
-
     else:
         return type_
 

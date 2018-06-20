@@ -3,8 +3,8 @@ from typing import List
 from recognizers_text import Culture, Recognizer
 from recognizers_text.model import Model, ModelResult
 from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel, ExtractorParserModel
-from .extractors import NumberWithUnitExtractor
-from .parsers import NumberWithUnitParser
+from .extractors import NumberWithUnitExtractor, BaseMergedUnitExtractor
+from .parsers import NumberWithUnitParser, BaseMergedUnitParser
 from .english.extractors import (EnglishCurrencyExtractorConfiguration,
                                  EnglishTemperatureExtractorConfiguration,
                                  EnglishDimensionExtractorConfiguration,
@@ -60,7 +60,7 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
     def initialize_configuration(self):
         #region English
         self.register_model('CurrencyModel', Culture.English, lambda options: CurrencyModel(
-            [ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()), NumberWithUnitParser(EnglishCurrencyParserConfiguration()))]
+            [ExtractorParserModel(BaseMergedUnitExtractor(EnglishCurrencyExtractorConfiguration()), BaseMergedUnitParser(EnglishCurrencyParserConfiguration()))]
             ))
         self.register_model('TemperatureModel', Culture.English, lambda options: TemperatureModel(
             [ExtractorParserModel(NumberWithUnitExtractor(EnglishTemperatureExtractorConfiguration()), NumberWithUnitParser(EnglishTemperatureParserConfiguration()))]
@@ -76,8 +76,8 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         #region Chinese
         self.register_model('CurrencyModel', Culture.Chinese, lambda options: CurrencyModel([
             ExtractorParserModel(
-                NumberWithUnitExtractor(ChineseCurrencyExtractorConfiguration()),
-                NumberWithUnitParser(ChineseCurrencyParserConfiguration())),
+                BaseMergedUnitExtractor(ChineseCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(ChineseCurrencyParserConfiguration())),
             ExtractorParserModel(
                 NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()),
                 NumberWithUnitParser(EnglishCurrencyParserConfiguration()))
@@ -181,26 +181,22 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
     def get_temperature_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
         return self.get_model('TemperatureModel', culture, fallback_to_default_culture)
 
-    @staticmethod
-    def recognize_age(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberWithUnitRecognizer(culture, options)
-        model = recognizer.get_age_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_age(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberWithUnitRecognizer(culture, options)
+    model = recognizer.get_age_model(culture, fallback_to_default_culture)
+    return model.parse(query)
 
-    @staticmethod
-    def recognize_currency(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberWithUnitRecognizer(culture, options)
-        model = recognizer.get_currency_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_currency(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberWithUnitRecognizer(culture, options)
+    model = recognizer.get_currency_model(culture, fallback_to_default_culture)
+    return model.parse(query)
 
-    @staticmethod
-    def recognize_dimension(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberWithUnitRecognizer(culture, options)
-        model = recognizer.get_dimension_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_dimension(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberWithUnitRecognizer(culture, options)
+    model = recognizer.get_dimension_model(culture, fallback_to_default_culture)
+    return model.parse(query)
 
-    @staticmethod
-    def recognize_temperature(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
-        recognizer = NumberWithUnitRecognizer(culture, options)
-        model = recognizer.get_temperature_model(culture, fallback_to_default_culture)
-        return model.parse(query)
+def recognize_temperature(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
+    recognizer = NumberWithUnitRecognizer(culture, options)
+    model = recognizer.get_temperature_model(culture, fallback_to_default_culture)
+    return model.parse(query)

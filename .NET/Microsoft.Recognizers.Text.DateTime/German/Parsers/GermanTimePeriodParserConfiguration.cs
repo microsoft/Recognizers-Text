@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex TimeOfDayRegex { get; }
 
         public Regex GeneralEndingRegex { get; }
@@ -35,6 +39,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = GermanTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = GermanTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = GermanTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = GermanTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = GermanTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = GermanTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = GermanTimePeriodExtractorConfiguration.TillRegex;

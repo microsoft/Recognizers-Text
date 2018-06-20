@@ -3,7 +3,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 to 6pm",
@@ -28,7 +27,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 to 6 p.m",
@@ -53,7 +51,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 to seven in the morning",
@@ -78,7 +75,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 5 to 6 pm",
@@ -103,7 +99,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 5 and 6pm",
@@ -128,7 +123,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 5pm and 6pm",
@@ -153,7 +147,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 5 and 6 in the afternoon",
@@ -178,7 +171,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1am to 5pm",
@@ -203,7 +195,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4pm till 5pm",
@@ -228,7 +219,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4 til 5pm",
@@ -253,7 +243,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4:00 to 7 oclock",
@@ -278,7 +267,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4pm-5pm",
@@ -303,7 +291,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4pm - 5pm",
@@ -328,7 +315,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 3 in the morning until 5pm",
@@ -353,7 +339,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 3 in the morning and 5pm",
@@ -378,7 +363,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 4pm and 5pm",
@@ -403,7 +387,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the morning",
@@ -428,7 +411,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the afternoon",
@@ -453,7 +435,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the night",
@@ -478,7 +459,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the evening",
@@ -503,7 +483,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the evenings",
@@ -528,7 +507,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-mornings",
@@ -553,7 +531,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-mornings",
@@ -578,7 +555,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-morning",
@@ -603,7 +579,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-morning",
@@ -628,7 +603,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-afternoon",
@@ -653,7 +627,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-afternoon",
@@ -678,7 +651,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-evening",
@@ -703,7 +675,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-evening",
@@ -728,7 +699,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early-night",
@@ -753,7 +723,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late-night",
@@ -778,7 +747,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the early night",
@@ -803,7 +771,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the late night",
@@ -828,7 +795,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1p.m. to 4",
@@ -853,7 +819,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30p.m. to 4",
@@ -878,7 +843,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "morning",
@@ -903,7 +867,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30am to 3",
@@ -928,7 +891,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 11 am to 3",
@@ -953,7 +915,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 11 pm to 3",
@@ -978,7 +939,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 11:01 pm to 11",
@@ -1003,7 +963,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 11:01 am to 11",
@@ -1028,7 +987,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 11am to 11:50",
@@ -1053,7 +1011,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30 pm to 3:30",
@@ -1078,7 +1035,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30 pm to 3:30 pm",
@@ -1103,7 +1059,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 3 pm to 3:30 pm",
@@ -1128,7 +1083,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "from 0:01 am to 1 pm",
@@ -1153,8 +1108,7 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "from 0:01 am to 1",
@@ -1179,7 +1133,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 3 to 3:30",
@@ -1204,7 +1157,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30 to 3",
@@ -1229,7 +1181,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 1:30 to 3pm",
@@ -1254,7 +1205,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 11 to 3pm",
@@ -1279,7 +1229,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 11 to 11:50am",
@@ -1304,7 +1253,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 11 to 3am",
@@ -1329,7 +1277,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 10 to 11am",
@@ -1354,7 +1301,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 23 to 3am",
@@ -1379,7 +1325,6 @@
   "Context": {
     "ReferenceDateTime": "2017-12-01T13:37:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from 23 to 3pm",
@@ -1393,6 +1338,136 @@
         "PastResolution": {
           "startTime": "23:00:00",
           "endTime": "15:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting between 10 and 11:30",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between 10 and 11:30",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T10,T11:30,PT1H30M)",
+        "FutureResolution": {
+          "startTime": "10:00:00",
+          "endTime": "11:30:00"
+        },
+        "PastResolution": {
+          "startTime": "10:00:00",
+          "endTime": "11:30:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting between 10:10am and 12:50",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between 10:10am and 12:50",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T10:10,T12:50,PT2H40M)",
+        "FutureResolution": {
+          "startTime": "10:10:00",
+          "endTime": "12:50:00"
+        },
+        "PastResolution": {
+          "startTime": "10:10:00",
+          "endTime": "12:50:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting between 10:10pm and 3",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "between 10:10pm and 3",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T22:10,T03,PT4H50M)",
+        "FutureResolution": {
+          "startTime": "22:10:00",
+          "endTime": "03:00:00"
+        },
+        "PastResolution": {
+          "startTime": "22:10:00",
+          "endTime": "03:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 10:10pm to 10",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "from 10:10pm to 10",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T22:10,T10,PT11H50M)",
+        "FutureResolution": {
+          "startTime": "22:10:00",
+          "endTime": "10:00:00"
+        },
+        "PastResolution": {
+          "startTime": "22:10:00",
+          "endTime": "10:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 10:30am to 23",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "from 10:30am to 23",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T10:30,T23,PT12H30M)",
+        "FutureResolution": {
+          "startTime": "10:30:00",
+          "endTime": "23:00:00"
+        },
+        "PastResolution": {
+          "startTime": "10:30:00",
+          "endTime": "23:00:00"
         }
       }
     }

@@ -5,6 +5,8 @@ class Culture:
     Portuguese: str = 'pt-br'
     French: str = 'fr-fr'
     Japanese: str = 'ja-jp'
+    Dutch: str = 'nl-nl'
+    Korean: str = 'ko-kr'
 
 class BaseCultureInfo:
     def __init__(self, culture_code: str):

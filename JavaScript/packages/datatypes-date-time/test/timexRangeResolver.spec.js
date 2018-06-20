@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
 const chai = require('chai');
-const { TimexProperty, resolver } = require('../index.js');
+const { TimexProperty, creator, resolver } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;
@@ -166,6 +166,55 @@ describe('No Network', () => {
                         { year: 2017, month: 10, dayOfMonth: 5, days: 7 }
                     ];
                     resolver.evaluate(['PT5M'], constraints).map(t => t.timex).should.have.length(0);
+                });
+            });
+            describe('candidate includes a timerange', () => {
+                it('basic resolve day against daterange', () => {
+                    const constraints = [
+                        new TimexProperty('(2018-06-04,2018-06-11,P7D)'),
+                        new TimexProperty('(2018-06-11,2018-06-18,P7D)'),
+                        creator.evening
+                    ];
+                    resolver.evaluate(['XXXX-WXX-7'], constraints).map(t => t.timex).should.have.members(['2018-06-10T16', '2018-06-17T16']);
+                });
+                it('no time constraint', () => {
+                    const constraints = [
+                        new TimexProperty('(2018-06-04,2018-06-11,P7D)'),
+                        new TimexProperty('(2018-06-11,2018-06-18,P7D)')
+                    ];
+                    resolver.evaluate(['XXXX-WXX-7TEV'], constraints).map(t => t.timex).should.have.members(['2018-06-10TEV', '2018-06-17TEV']);
+                });
+                it('overlapping constraint 1', () => {
+                    const constraints = [
+                        new TimexProperty('(2018-06-04,2018-06-11,P7D)'),
+                        new TimexProperty('(2018-06-11,2018-06-18,P7D)'),
+                        new TimexProperty('(T18,T22,PT4H)')
+                    ];
+                    resolver.evaluate(['XXXX-WXX-7TEV'], constraints).map(t => t.timex).should.have.members(['2018-06-10T18', '2018-06-17T18']);
+                });
+                it('overlapping constraint 2', () => {
+                    const constraints = [
+                        new TimexProperty('(2018-06-04,2018-06-11,P7D)'),
+                        new TimexProperty('(2018-06-11,2018-06-18,P7D)'),
+                        new TimexProperty('(T15,T19,PT4H)')
+                    ];
+                    resolver.evaluate(['XXXX-WXX-7TEV'], constraints).map(t => t.timex).should.have.members(['2018-06-10T16', '2018-06-17T16']);
+                });
+                it('non overlapping constraint', () => {
+                    const constraints = [
+                        new TimexProperty('(2018-06-04,2018-06-11,P7D)'),
+                        new TimexProperty('(2018-06-11,2018-06-18,P7D)'),
+                        creator.morning
+                    ];
+                    resolver.evaluate(['XXXX-WXX-7TEV'], constraints).map(t => t.timex).should.have.length(0);
+                });
+                it('sunday evening as the candidate and the constraint', () => {
+                    const constraints = [
+                        new TimexProperty('(2018-06-04,2018-06-11,P7D)'),
+                        new TimexProperty('(2018-06-11,2018-06-18,P7D)'),
+                        creator.evening
+                    ];
+                    resolver.evaluate(['XXXX-WXX-7TEV'], constraints).map(t => t.timex).should.have.members(['2018-06-10T16', '2018-06-17T16']);
                 });
             });
         });

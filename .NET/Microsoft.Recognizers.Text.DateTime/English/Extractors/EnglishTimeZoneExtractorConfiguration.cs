@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Matcher;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -31,19 +32,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StandardTimeRegex
         };
 
+        public static readonly Regex CityTimeSuffixRegex = new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly StringMatcher CityMatcher = new StringMatcher();
+
+        public static readonly List<string> AmbiguousTimezoneList = TimeZoneDefinitions.AmbiguousTimezoneList.ToList();
+
         public EnglishTimeZoneExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             if ((options & DateTimeOptions.EnablePreview) != 0)
             {
-                CityMatcher.Build();
+                CityMatcher.Init(TimeZoneDefinitions.MajorCities.Select(o => FormatUtility.RemoveDiacritics(o.ToLowerInvariant())));
             }
         }
 
-        public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
+        IEnumerable<Regex> ITimeZoneExtractorConfiguration.TimeZoneRegexes => TimeZoneRegexList;
 
-        public Regex CityTimeSuffixRegex => new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        Regex ITimeZoneExtractorConfiguration.CityTimeSuffixRegex => CityTimeSuffixRegex;
 
-        public StringMatcher CityMatcher => new StringMatcher(TimeZoneDefinitions.MajorCities.Select(o => o.ToLowerInvariant()));
+        StringMatcher ITimeZoneExtractorConfiguration.CityMatcher => CityMatcher;
+
+        List<string> ITimeZoneExtractorConfiguration.AmbiguousTimezoneList => AmbiguousTimezoneList;
     }
 }

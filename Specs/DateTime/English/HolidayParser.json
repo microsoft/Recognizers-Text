@@ -3,7 +3,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "easter",
@@ -26,7 +25,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "christmas day",
@@ -49,7 +47,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "new year eve",
@@ -72,7 +69,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "new year's eve",
@@ -95,7 +91,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "christmas",
@@ -118,7 +113,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Yuandan",
@@ -141,7 +135,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "thanks giving day",
@@ -164,7 +157,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "thanksgiving",
@@ -187,7 +179,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "father's day",
@@ -210,7 +201,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Yuandan of next year",
@@ -233,7 +223,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "thanks giving day 2010",
@@ -256,7 +245,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "father's day of 2015",
@@ -279,7 +267,6 @@
   "Context": {
     "ReferenceDateTime": "2018-06-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May Day",
@@ -304,6 +291,28 @@
         },
         "PastResolution": {
           "date": "2018-05-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Martin Luther King Day is an American federal holiday.",
+  "Context": {
+    "ReferenceDateTime": "2018-06-01T00:00:00"
+  },
+  "Results": [
+    {
+      "Text": "Martin Luther King Day",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-WXX-1-3",
+        "FutureResolution": {
+          "date": "2019-01-21"
+        },
+        "PastResolution": {
+          "date": "2018-01-15"
         }
       }
     }

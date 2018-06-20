@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return r;
         }
 
-        private static bool IsOverlapping(TimeRange r1, TimeRange r2)
+        public static bool IsOverlapping(TimeRange r1, TimeRange r2)
         {
             return r1.End.GetTime() > r2.Start.GetTime() && r1.Start.GetTime() <= r2.Start.GetTime() || 
                    r1.Start.GetTime() < r2.End.GetTime() && r1.Start.GetTime() >= r2.Start.GetTime();
