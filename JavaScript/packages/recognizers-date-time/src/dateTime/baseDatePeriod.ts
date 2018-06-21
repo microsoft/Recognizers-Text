@@ -462,6 +462,8 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let month = referenceDate.getMonth();
         let earlyPrefix = false;
         let latePrefix = false;
+        let midPrefix = false;
+        let isRef = false;
 
         let earlierPrefix = false;
         let laterPrefix = false;
@@ -497,22 +499,33 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         {
             earlyPrefix = true;
             trimedText = match.groups("suffix").value;
+            result.mod = Constants.EARLY_MOD;
         }
 
         if (match.groups("LatePrefix").value)
         {
             latePrefix = true;
             trimedText = match.groups("suffix").value;
+            result.mod = Constants.LATE_MOD;
+        }
+
+        if (match.groups("MidPrefix").value)
+        {
+            latePrefix = true;
+            trimedText = match.groups("suffix").value;
+            result.mod = Constants.MID_MOD;
         }
 
         if (match.groups("RelEarly").value)
         {
             earlierPrefix = true;
+            result.mod = null;
         }
 
         if (match.groups("RelLate").value)
         {
             laterPrefix = true;
+            result.mod = null;
         }
 
         let monthStr = match.groups('month').value;
