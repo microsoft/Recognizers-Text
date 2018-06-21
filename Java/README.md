@@ -27,6 +27,7 @@ import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.number.NumberRecognizer;
+import com.microsoft.recognizers.text.numberwithunit.NumberWithUnitRecognizer;
 ````
 
 ### Recognizer's Models
@@ -78,6 +79,51 @@ Internally, both methods will cache the instance models to avoid extra costs.
     Or you can obtain a model instance using:
 
     `new NumberRecognizer(Culture.English).getPercentageModel()`
+
+### com.microsoft.recognizers.text.numberwithunit
+
+* **Ages**
+
+    This recognizer will find any age number presented. E.g "After ninety five years of age, perspectives change" will return "95 Year".
+
+    `NumberWithUnitRecognizer.recognizeAge("After ninety five years of age, perspectives change", Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizer(Culture.English).getAgeModel()`
+
+
+* **Currencies**
+
+    This recognizer will find any currency presented. E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
+
+    `NumberWithUnitRecognizer.recognizeCurrency("Interest expense in the 1988 third quarter was $ 75.3 million", Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizer(Culture.English).getCurrencyModel()`
+
+
+* **Dimensions**
+
+    This recognizer will find any dimension presented. E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
+
+    `NumberWithUnitRecognizer.recognizeDimension("The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.", Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizer(Culture.English).getDimensionModel()`
+
+
+* **Temperatures**
+
+    This recognizer will find any temperature presented. E.g "Set the temperature to 30 degrees celsius" will return "30 C".
+
+    `NumberWithUnitRecognizer.recognizeTemperature("Set the temperature to 30 degrees celsius", Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizer(Culture.English).getTemperatureModel()`
 
 ## Samples
 
