@@ -34,6 +34,8 @@ public class BaseMergedUnitExtractor implements IExtractor {
         List<ExtractResult> ers = new NumberWithUnitExtractor(config).extract(source);
         mergePureNumber(source, ers);
 
+        if(ers.size() == 0) return ers;
+
         List<ExtractResult> result = new ArrayList<>();
         int[] groups = new int[ers.size()];
         groups[0] = 0;
