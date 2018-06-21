@@ -50,7 +50,7 @@ public class NumberWithUnitParser implements IParser {
                     addIfNotContained(unitKeys, unitKeyBuild.toString().trim());
                     unitKeyBuild = new StringBuilder();
                 }
-                int o = numberResult.start + numberResult.length - 1;
+                i = numberResult.start + numberResult.length - 1;
             } else {
                 unitKeyBuild.append(key.charAt(i));
             }
@@ -66,13 +66,15 @@ public class NumberWithUnitParser implements IParser {
         if (key != null && !key.isEmpty() && unitMap != null && unitMap.containsKey(lastUnit)) {
             String unitValue = unitMap.get(lastUnit);
 
-            ParseResult numValue = numberResult.text != null && !numberResult.text.isEmpty()
+            ParseResult numValue = numberResult.text == null || numberResult.text.isEmpty()
                     ? null
                     : this.config.getInternalNumberParser().parse(numberResult);
 
+            String resolutionStr = numValue != null ? numValue.resolutionStr : null;
+
             ret = ret
-                    .withValue(new UnitValue(numValue.resolutionStr, unitValue))
-                    .withResolutionStr(String.format("%s %s", numValue.resolutionStr, unitValue).trim());
+                    .withValue(new UnitValue(resolutionStr, unitValue))
+                    .withResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());
         }
 
         return ret;

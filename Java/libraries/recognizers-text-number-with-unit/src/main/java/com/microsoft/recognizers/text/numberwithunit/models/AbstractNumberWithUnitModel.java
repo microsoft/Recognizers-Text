@@ -1,5 +1,6 @@
 package com.microsoft.recognizers.text.numberwithunit.models;
 
+import com.google.common.collect.ImmutableSortedMap;
 import com.microsoft.recognizers.text.*;
 import com.microsoft.recognizers.text.utilities.FormatUtility;
 
@@ -46,25 +47,28 @@ public abstract class AbstractNumberWithUnitModel implements IModel {
                 }
 
                 List<ModelResult> modelResults = parsedResults.stream().map(o -> {
-                    SortedMap<String, Object> resolutionValues = new TreeMap<>();
 
-                    // TODO: Add resolution values
-                    /*
-                        Resolution = (o.Value is UnitValue) ? new SortedDictionary<string, object>
-                            {
-                                {ResolutionKey.Value, ((UnitValue) o.Value).Number},
-                                {ResolutionKey.Unit, ((UnitValue) o.Value).Unit}
-                            }
-                            : (o.Value is CurrencyUnitValue) ? new SortedDictionary<string, object>
-                            {
-                                {ResolutionKey.Value, ((CurrencyUnitValue) o.Value).Number},
-                                {ResolutionKey.Unit, ((CurrencyUnitValue) o.Value).Unit},
-                                {ResolutionKey.IsoCurrency, ((CurrencyUnitValue) o.Value).IsoCurrency}
-                            } : new SortedDictionary<string, object>
-                            {
-                                {ResolutionKey.Value, (string) o.Value}
-                            }
-                     */
+                    SortedMap<String, Object> resolutionValues =
+                            (o.value instanceof UnitValue) ?
+                                    new TreeMap<String, Object>() {
+                                        {
+                                            put(ResolutionKey.Value, ((UnitValue) o.value).number);
+                                            put(ResolutionKey.Unit, ((UnitValue) o.value).unit);
+                                        }
+                                    } :
+                                    (o.value instanceof CurrencyUnitValue) ?
+                                            new TreeMap<String, Object>() {
+                                                {
+                                                    put(ResolutionKey.Value, ((CurrencyUnitValue) o.value).number);
+                                                    put(ResolutionKey.Unit, ((CurrencyUnitValue) o.value).unit);
+                                                    put(ResolutionKey.IsoCurrency, ((CurrencyUnitValue) o.value).isoCurrency);
+                                                }
+                                            } :
+                                            new TreeMap<String, Object>() {
+                                                {
+                                                    put(ResolutionKey.Value, (String) o.value);
+                                                }
+                                            };
 
                     return new ModelResult(
                             o.text,

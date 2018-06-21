@@ -81,7 +81,7 @@ public class NumberWithUnitExtractor implements IExtractor {
                 }
 
                 /* Scan from left to right , find the longest match */
-                String leftStr = source.substring(number.start - maxFindPref, number.start + maxFindPref);
+                String leftStr = source.substring(number.start - maxFindPref, number.start);
                 int lastIndex = leftStr.length();
 
                 MatchResult bestMatch = null;
@@ -94,22 +94,6 @@ public class NumberWithUnitExtractor implements IExtractor {
                             }
                         }
                     }
-//                    var collection = regex.Matches(leftStr);
-//                    if (collection.Count == 0)
-//                    {
-//                        continue;
-//                    }
-//
-//                    foreach (Match match in collection)
-//                    {
-//                        if (match.Success && leftStr.Substring(match.Index, lastIndex - match.Index).Trim() == match.Value)
-//                        {
-//                            if (bestMatch == null || bestMatch.Index >= match.Index)
-//                            {
-//                                bestMatch = match;
-//                            }
-//                        }
-//                    }
                 }
 
                 if (bestMatch != null) {
@@ -144,26 +128,11 @@ public class NumberWithUnitExtractor implements IExtractor {
                         int endpos = m.end();
                         if (m.start() >= 0) {
                             String midStr = rightSub.substring(0, Math.min(m.start(), rightSub.length()));
-                            if (maxFindLen < endpos && (midStr.isEmpty() || midStr.trim().equalsIgnoreCase(this.config.getConnectorToken()))) {
+                            if (maxlen < endpos && (midStr.isEmpty() || midStr.trim().equalsIgnoreCase(this.config.getConnectorToken()))) {
                                 maxlen = endpos;
                             }
                         }
                     }
-//                    foreach (Match m in unitMatch[i])
-//                    {
-//                        if (m.Length > 0)
-//                        {
-//                            var endpos = m.Index + m.Length;
-//                            if (m.Index >= 0)
-//                            {
-//                                var midStr = rightSub.Substring(0, Math.Min(m.Index, rightSub.Length));
-//                                if (maxlen < endpos && (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken)))
-//                                {
-//                                    maxlen = endpos;
-//                                }
-//                            }
-//                        }
-//                    }
                 }
 
                 if (maxlen != 0) {
@@ -182,9 +151,8 @@ public class NumberWithUnitExtractor implements IExtractor {
                     }
 
                     /* Relative position will be used in Parser */
-                    number = number
-                            .withStart(start - er.start)
-                            .withData(number);
+                    number = number.withStart(start - er.start);
+                    er = er.withData(number);
                     result.add(er);
 
                     continue;
@@ -200,9 +168,8 @@ public class NumberWithUnitExtractor implements IExtractor {
                         null);
 
                 /* Relative position will be used in Parser */
-                number = number
-                        .withStart(start - er.start)
-                        .withData(number);
+                number = number.withStart(start - er.start);
+                er = er.withData(number);
                 result.add(er);
             }
         }

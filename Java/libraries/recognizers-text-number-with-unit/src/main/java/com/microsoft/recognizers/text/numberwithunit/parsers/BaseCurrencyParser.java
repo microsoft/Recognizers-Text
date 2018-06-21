@@ -31,7 +31,7 @@ public class BaseCurrencyParser implements IParser {
             UnitValue value = (UnitValue) pr.value;
 
             String mainUnitIsoCode = null;
-            if (value.unit != null && config.getCurrencyNameToIsoCodeMap().containsKey(value.unit)) {
+            if (value != null && config.getCurrencyNameToIsoCodeMap().containsKey(value.unit)) {
                 mainUnitIsoCode = config.getCurrencyNameToIsoCodeMap().get(value.unit);
             }
 
@@ -57,7 +57,7 @@ public class BaseCurrencyParser implements IParser {
         for (int idx = 0; idx < compoundUnit.size(); idx++) {
             ExtractResult extractResult = compoundUnit.get(idx);
             ParseResult parseResult = numberWithUnitParser.parse(extractResult);
-            Optional<UnitValue> parseResultValue = Optional.of(parseResult.value instanceof UnitValue ? (UnitValue) parseResult.value : null);
+            Optional<UnitValue> parseResultValue = Optional.ofNullable(parseResult.value instanceof UnitValue ? (UnitValue) parseResult.value : null);
             String unitValue = parseResultValue.isPresent() ? parseResultValue.get().unit : "";
 
             // Process a new group
@@ -102,13 +102,13 @@ public class BaseCurrencyParser implements IParser {
                         : null;
 
                 String unit = parseResultValue.isPresent() ? parseResultValue.get().unit : null;
-                Long fractionNumValue = config.getCurrencyFractionNumMap().containsValue(unit)
+                Optional<Long> fractionNumValue = Optional.ofNullable(config.getCurrencyFractionNumMap().containsKey(unit)
                         ? config.getCurrencyFractionNumMap().get(unit)
-                        : null;
+                        : null);
 
-                if (fractionUnitCode != null && !fractionUnitCode.isEmpty() && fractionNumValue != 0 &&
+                if (fractionUnitCode != null && !fractionUnitCode.isEmpty() && fractionNumValue.isPresent() && fractionNumValue.get() != 0 &&
                         checkUnitsStringContains(fractionUnitCode, fractionUnitsString)) {
-                    numberValue += Double.parseDouble(parseResultValue.get().number) * (1.0 / fractionNumValue);
+                    numberValue += Double.parseDouble(parseResultValue.get().number) * (1.0 / fractionNumValue.get());
                     result = result
                             .withResolutionStr(result.resolutionStr + " " + parseResult.resolutionStr)
                             .withLength(parseResult.start + parseResult.length - result.start);
