@@ -532,6 +532,7 @@
 ,
 {
   "Input": "in 1995 canon introduced the first commercially available slr lens with internal image stabilization , ef 75 -300mm f / 4 - 5 . 6 is usm.",
+  "NotSupported": "java",
   "NotSupportedByDesign": "javascript",
   "Results": [
     {
