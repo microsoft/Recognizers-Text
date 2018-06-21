@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public const string NegativeNumberTermsRegex = @"(マ\s*イ\s*ナ\s*ス)";
 		public const string NegativeNumberTermsRegexNum = @"(?<!(\d+\s*)|[-－])[-－]";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
-		public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]";
+		public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]|[分厘]";
 		public const string PairRegex = ".*[対膳足]$";
 		public const string RoundNumberIntegerRegex = @"[十百千万億兆]";
 		public const string WhiteListRegex = @"(。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|\s|$)";
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public static readonly string SimpleIntegerPercentageRegex = $@"{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%]";
 		public static readonly string NumbersFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}(([\.．]?|\s*){ZeroToNineFullHalfRegex})?\s*[の]*\s*割引";
 		public static readonly string FoldsPercentageRegex = $@"{ZeroToNineIntegerRegex}(\s*[.]?\s*{ZeroToNineIntegerRegex})?\s*[の]\s*割引";
-		public static readonly string SimpleFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}\s*割(\s*(半|{ZeroToNineFullHalfRegex}))?";
+		public static readonly string SimpleFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}\s*割(\s*(半|({ZeroToNineFullHalfRegex}\s*分\s*{ZeroToNineFullHalfRegex}\s*厘)|{ZeroToNineFullHalfRegex}))?";
 		public static readonly string SpecialsPercentageRegex = $@"({ZeroToNineIntegerRegex}|[十])\s*割(\s*(半|{ZeroToNineIntegerRegex}))?";
 		public static readonly string NumbersSpecialsPercentageRegex = $@"({ZeroToNineFullHalfRegex}[\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\s*割";
 		public static readonly string SimpleSpecialsPercentageRegex = $@"{ZeroToNineIntegerRegex}\s*[.]\s*{ZeroToNineIntegerRegex}\s*割";

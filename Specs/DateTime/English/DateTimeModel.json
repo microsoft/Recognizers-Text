@@ -3719,6 +3719,86 @@
 }
 ,
 {
+  "Input": "Cortana, please set up a Skype call sometime this Friday-Jun-15 with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "this friday-jun-15",
+    "Start": 45,
+    "End": 62,
+    "TypeName": "datetimeV2.date",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "XXXX-06-15",
+          "type": "date",
+          "value": "2018-06-15"
+        },
+        {
+          "timex": "XXXX-06-15",
+          "type": "date",
+          "value": "2019-06-15"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this friday (jun-15) with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [{
+    "Text": "this friday (jun-15)",
+    "Start": 45,
+    "End": 64,
+    "TypeName": "datetimeV2.date",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "XXXX-06-15",
+          "type": "date",
+          "value": "2018-06-15"
+        },
+        {
+          "timex": "XXXX-06-15",
+          "type": "date",
+          "value": "2019-06-15"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Cortana, please tell me the sale by year of Microsoft.",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [{
+    "Text": "year",
+    "Start": 36,
+    "End": 39,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "2018",
+          "type": "daterange",
+          "start": "2018-01-01",
+          "end": "2019-01-01"
+        }
+      ]
+    }
+  }]
+}
+,
+{
   "Input": "show me records more than 4 days and less than 1 week",
   "Context": {
     "ReferenceDateTime": "2018-05-31T00:00:00"
@@ -3752,6 +3832,30 @@
           "Mod": "less",
           "type": "duration",
           "value": "604800"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Show me records more than 1 hour and 30 minutes",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [{
+    "Text": "more than 1 hour and 30 minutes",
+    "Start": 16,
+    "End": 46,
+    "TypeName": "datetimeV2.duration",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "PT1HT30M",
+          "Mod": "more",
+          "type": "duration",
+          "value": "5400"
         }
       ]
     }

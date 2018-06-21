@@ -33,12 +33,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnspecificDatePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] FilterWordRegexList =
         {
             // one on one
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
             // (the)? (day|week|month|year)
-            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
@@ -100,6 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }

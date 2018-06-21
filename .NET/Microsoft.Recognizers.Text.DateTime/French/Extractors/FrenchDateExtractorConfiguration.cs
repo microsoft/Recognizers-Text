@@ -209,6 +209,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
+        public static readonly ImmutableDictionary<string, int> MonthOfYear =
+            DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
+
         public static readonly Regex NonDateUnitRegex = new Regex(@"(?<unit>heure|heures|hrs|secondes|seconde|secs|sec|minutes|minute|mins)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -236,6 +239,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
+
+        IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
 
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 

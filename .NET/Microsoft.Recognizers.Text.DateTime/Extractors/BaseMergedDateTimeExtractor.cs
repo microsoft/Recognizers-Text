@@ -208,6 +208,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             var lastEnd = 0;
             foreach (var er in ers)
             {
+                // Skip the unspecific date period
+                if (this.config.UnspecificDatePeriodRegex.IsMatch(er.Text))
+                {
+                    continue;
+                }
+
                 var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
 
                 if (HasTokenIndex(beforeStr.TrimEnd(), config.BeforeRegex, out int tokenIndex))
