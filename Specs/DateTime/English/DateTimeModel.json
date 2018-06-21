@@ -3797,4 +3797,68 @@
     }
   }]
 }
+,
+{
+  "Input": "show me records more than 4 days and less than 1 week",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [{
+    "Text": "more than 4 days",
+    "Start": 16,
+    "End": 31,
+    "TypeName": "datetimeV2.duration",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "P4D",
+          "Mod": "more",
+          "type": "duration",
+          "value": "345600"
+        }
+      ]
+    }
+  },
+  {
+    "Text": "less than 1 week",
+    "Start": 37,
+    "End": 52,
+    "TypeName": "datetimeV2.duration",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "P1W",
+          "Mod": "less",
+          "type": "duration",
+          "value": "604800"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Show me records more than 1 hour and 30 minutes",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [{
+    "Text": "more than 1 hour and 30 minutes",
+    "Start": 16,
+    "End": 46,
+    "TypeName": "datetimeV2.duration",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "PT1HT30M",
+          "Mod": "more",
+          "type": "duration",
+          "value": "5400"
+        }
+      ]
+    }
+  }]
+}
 ]

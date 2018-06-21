@@ -34,18 +34,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var rets = Token.MergeAllTokens(tokens, text, ExtractorName);
 
-            ResolveMoreThanOrLessThanPrefix(text, rets);
-
+            // First MergeMultipleDuration then ResolveMoreThanOrLessThanPrefix so cases like "more than 4 days and less than 1 week" will not be merged into one "multipleDuration"
             if (this.merge)
             {
-                rets = MergeMultipleDuration(rets, text);
+                rets = MergeMultipleDuration(text, rets);
             }
+
+            rets = TagInequalityPrefix(text, rets);
 
             return rets;
         }
 
         // handle cases look like: {more than | less than} {duration}?
-        private void ResolveMoreThanOrLessThanPrefix(string text, List<ExtractResult> ers)
+        private List<ExtractResult> TagInequalityPrefix(string text, List<ExtractResult> ers)
         {
             foreach (var er in ers)
             {
@@ -72,6 +73,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = text.Substring((int)er.Start, (int)er.Length);
                 }
             }
+
+            return ers;
         }
         
         // handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
@@ -151,7 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<ExtractResult> MergeMultipleDuration(List<ExtractResult> extractorResults, string text)
+        private List<ExtractResult> MergeMultipleDuration(string text, List<ExtractResult> extractorResults)
         {
             if (extractorResults.Count <= 1)
             {
