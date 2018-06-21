@@ -3358,5 +3358,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Book me a room at 10:30am montreal time.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-21T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "10:30am montreal time",
+        "Start": 18,
+        "End": 38,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10:30",
+              "type": "time",
+              "timezone": "UTC+XX:XX",
+              "utcOffsetMins": "-10000",
+              "value": "10:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
