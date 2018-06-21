@@ -361,7 +361,7 @@
       {
         "Text": "each week",
         "Start": 0,
-        "End": 9,
+        "End": 8,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -376,7 +376,7 @@
       {
         "Text": "this week",
         "Start": 28,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -401,7 +401,7 @@
       {
         "Text": "each week",
         "Start": 66,
-        "End": 75,
+        "End": 74,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -416,7 +416,7 @@
       {
         "Text": "this week",
         "Start": 136,
-        "End": 145,
+        "End": 144,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -432,7 +432,7 @@
       {
         "Text": "45 minutes",
         "Start": 403,
-        "End": 413,
+        "End": 412,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -447,7 +447,7 @@
       {
         "Text": "november",
         "Start": 417,
-        "End": 425,
+        "End": 424,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
