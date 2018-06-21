@@ -52,6 +52,8 @@ public class NumberWithUnitTest extends AbstractTest {
             switch (currentCase.modelName) {
                 case "CurrencyModel":
                     return NumberWithUnitRecognizer.recognizeCurrency(currentCase.input, culture, NumberWithUnitOptions.None, false);
+                case "TemperatureModel":
+                    return NumberWithUnitRecognizer.recognizeTemperature(currentCase.input, culture, NumberWithUnitOptions.None, false);
                 default:
                     throw new AssumptionViolatedException("Model Type/Name not supported.");
             }

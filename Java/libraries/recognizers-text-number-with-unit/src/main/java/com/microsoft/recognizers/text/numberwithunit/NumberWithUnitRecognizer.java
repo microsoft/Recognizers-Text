@@ -3,10 +3,12 @@ package com.microsoft.recognizers.text.numberwithunit;
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.*;
 import com.microsoft.recognizers.text.numberwithunit.extractors.BaseMergedUnitExtractor;
+import com.microsoft.recognizers.text.numberwithunit.extractors.NumberWithUnitExtractor;
 import com.microsoft.recognizers.text.numberwithunit.models.AgeModel;
 import com.microsoft.recognizers.text.numberwithunit.models.CurrencyModel;
 import com.microsoft.recognizers.text.numberwithunit.models.TemperatureModel;
 import com.microsoft.recognizers.text.numberwithunit.parsers.BaseMergedUnitParser;
+import com.microsoft.recognizers.text.numberwithunit.parsers.NumberWithUnitParser;
 
 import java.util.List;
 import java.util.function.Function;
@@ -105,18 +107,17 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
     protected void initializeConfiguration() {
 
         //region English
-        registerModel(CurrencyModel.class, Culture.English, (options) -> 
-            new CurrencyModel(
-                ImmutableMap.of(
-                    new BaseMergedUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractos.CurrencyExtractorConfiguration()),
-                    new BaseMergedUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.CurrencyParserConfiguration()))));
-//        registerModel(TemperatureModel.class, Culture.English, (options) -> new TemperatureModel(new Dictionary<IExtractor, IParser>
-//        {
-//            {
-//                new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
-//                        new NumberWithUnitParser(new English.TemperatureParserConfiguration())
-//            }
-//        }));
+        registerModel(CurrencyModel.class, Culture.English, (options) ->
+                new CurrencyModel(
+                        ImmutableMap.of(
+                                new BaseMergedUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractos.CurrencyExtractorConfiguration()),
+                                new BaseMergedUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.CurrencyParserConfiguration()))));
+        registerModel(TemperatureModel.class, Culture.English, (options) ->
+                new TemperatureModel(
+                        ImmutableMap.of(
+                                new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractos.TemperatureExtractorConfiguration()),
+                                new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.TemperatureParserConfiguration()))));
+
 //        registerModel(DimensionModel.class, Culture.English, (options) -> new DimensionModel(new Dictionary<IExtractor, IParser>
 //        {
 //            {

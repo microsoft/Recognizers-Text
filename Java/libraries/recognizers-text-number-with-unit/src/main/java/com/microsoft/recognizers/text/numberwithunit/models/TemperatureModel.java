@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class TemperatureModel extends AbstractNumberWithUnitModel {
 
-    protected TemperatureModel(Map<IExtractor, IParser> extractorParserMap) {
+    public TemperatureModel(Map<IExtractor, IParser> extractorParserMap) {
         super(extractorParserMap);
     }
 
