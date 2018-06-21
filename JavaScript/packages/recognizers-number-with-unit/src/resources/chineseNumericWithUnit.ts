@@ -23,5 +23,5 @@ export namespace ChineseNumericWithUnit {
 	export const DimensionAmbiguousValues = [ '丈','位','克','分','升','寸','尺','斗','斤','桶','毫','石','码','磅','米','罐','里' ];
 	export const TemperatureSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["F", "华氏温度|华氏度"],["K", "k|开尔文温度|开氏度|凯氏度"],["R", "兰氏温度"],["C", "摄氏温度|摄氏度"],["Degree", "度"]]);
 	export const TemperaturePrefixList: ReadonlyMap<string, string> = new Map<string, string>([["F", "华氏温度|华氏"],["K", "开氏温度|开氏"],["R", "兰氏温度|兰氏"],["C", "摄氏温度|摄氏"]]);
-	export const TemperatureAmbiguousValues = [ '度' ];
+	export const TemperatureAmbiguousValues = [ '度','k' ];
 }

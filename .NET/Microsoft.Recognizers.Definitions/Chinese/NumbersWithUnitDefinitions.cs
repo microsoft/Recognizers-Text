@@ -649,7 +649,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		};
 		public static readonly IList<string> TemperatureAmbiguousValues = new List<string>
 		{
-			"度"
+			"度",
+			"k"
 		};
 	}
 }
