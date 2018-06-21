@@ -1,4 +1,4 @@
-package com.microsoft.recognizers.text.numberwithunit.english.extractos;
+package com.microsoft.recognizers.text.numberwithunit.english.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.IExtractor;

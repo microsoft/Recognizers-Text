@@ -2,10 +2,9 @@ package com.microsoft.recognizers.text.numberwithunit.english.parsers;
 
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
-import com.microsoft.recognizers.text.numberwithunit.english.extractos.TemperatureExtractorConfiguration;
+import com.microsoft.recognizers.text.numberwithunit.english.extractors.TemperatureExtractorConfiguration;
 
 public class TemperatureParserConfiguration extends EnglishNumberWithUnitParserConfiguration {
-
 
     public TemperatureParserConfiguration() {
         this(new CultureInfo(Culture.English));

@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class AgeModel extends AbstractNumberWithUnitModel {
 
-    protected AgeModel(Map<IExtractor, IParser> extractorParserMap) {
+    public AgeModel(Map<IExtractor, IParser> extractorParserMap) {
         super(extractorParserMap);
     }
 

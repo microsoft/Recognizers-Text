@@ -1,4 +1,4 @@
-package com.microsoft.recognizers.text.numberwithunit.english.extractos;
+package com.microsoft.recognizers.text.numberwithunit.english.extractors;
 
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
@@ -39,6 +39,6 @@ public class CurrencyExtractorConfiguration extends EnglishNumberWithUnitExtract
         return CurrencyPrefixList;
     }
 
-    public static Map<String, String> CurrencySuffixList = new HashMap(EnglishNumericWithUnit.CurrencySuffixList);
-    public static Map<String, String> CurrencyPrefixList = new HashMap(EnglishNumericWithUnit.CurrencyPrefixList);
+    public static Map<String, String> CurrencySuffixList = EnglishNumericWithUnit.CurrencySuffixList;
+    public static Map<String, String> CurrencyPrefixList = EnglishNumericWithUnit.CurrencyPrefixList;
 }

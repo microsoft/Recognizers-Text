@@ -2,7 +2,7 @@ package com.microsoft.recognizers.text.numberwithunit.english.parsers;
 
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
-import com.microsoft.recognizers.text.numberwithunit.english.extractos.CurrencyExtractorConfiguration;
+import com.microsoft.recognizers.text.numberwithunit.english.extractors.CurrencyExtractorConfiguration;
 import com.microsoft.recognizers.text.numberwithunit.resources.EnglishNumericWithUnit;
 
 import java.util.Map;

@@ -6,6 +6,7 @@ import com.microsoft.recognizers.text.numberwithunit.extractors.BaseMergedUnitEx
 import com.microsoft.recognizers.text.numberwithunit.extractors.NumberWithUnitExtractor;
 import com.microsoft.recognizers.text.numberwithunit.models.AgeModel;
 import com.microsoft.recognizers.text.numberwithunit.models.CurrencyModel;
+import com.microsoft.recognizers.text.numberwithunit.models.DimensionModel;
 import com.microsoft.recognizers.text.numberwithunit.models.TemperatureModel;
 import com.microsoft.recognizers.text.numberwithunit.parsers.BaseMergedUnitParser;
 import com.microsoft.recognizers.text.numberwithunit.parsers.NumberWithUnitParser;
@@ -59,6 +60,14 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
         return getModel(AgeModel.class, culture, fallbackToDefaultCulture);
     }
 
+    public DimensionModel getDimensionModel() {
+        return getDimensionModel(null, true);
+    }
+
+    public DimensionModel getDimensionModel(String culture, boolean fallbackToDefaultCulture) {
+        return getModel(DimensionModel.class, culture, fallbackToDefaultCulture);
+    }
+
     //region Helper methods for less verbosity
     public static List<ModelResult> recognizeCurrency(String query, String culture) {
         return recognizeByModel(recognizer -> recognizer.getCurrencyModel(culture, true), query, NumberWithUnitOptions.None);
@@ -95,6 +104,18 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
     public static List<ModelResult> recognizeAge(String query, String culture, NumberWithUnitOptions options, boolean fallbackToDefaultCulture) {
         return recognizeByModel(recognizer -> recognizer.getAgeModel(culture, fallbackToDefaultCulture), query, options);
     }
+
+    public static List<ModelResult> recognizeDimension(String query, String culture) {
+        return recognizeByModel(recognizer -> recognizer.getDimensionModel(culture, true), query, NumberWithUnitOptions.None);
+    }
+
+    public static List<ModelResult> recognizeDimension(String query, String culture, NumberWithUnitOptions options) {
+        return recognizeByModel(recognizer -> recognizer.getDimensionModel(culture, true), query, options);
+    }
+
+    public static List<ModelResult> recognizeDimension(String query, String culture, NumberWithUnitOptions options, boolean fallbackToDefaultCulture) {
+        return recognizeByModel(recognizer -> recognizer.getDimensionModel(culture, fallbackToDefaultCulture), query, options);
+    }
     //endregion
 
     private static List<ModelResult> recognizeByModel(Function<NumberWithUnitRecognizer, IModel> getModelFun, String query, NumberWithUnitOptions options) {
@@ -108,30 +129,21 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
 
         //region English
         registerModel(CurrencyModel.class, Culture.English, (options) ->
-                new CurrencyModel(
-                        ImmutableMap.of(
-                                new BaseMergedUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractos.CurrencyExtractorConfiguration()),
-                                new BaseMergedUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.CurrencyParserConfiguration()))));
+                new CurrencyModel(ImmutableMap.of(
+                        new BaseMergedUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.CurrencyParserConfiguration()))));
         registerModel(TemperatureModel.class, Culture.English, (options) ->
-                new TemperatureModel(
-                        ImmutableMap.of(
-                                new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractos.TemperatureExtractorConfiguration()),
-                                new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.TemperatureParserConfiguration()))));
-
-//        registerModel(DimensionModel.class, Culture.English, (options) -> new DimensionModel(new Dictionary<IExtractor, IParser>
-//        {
-//            {
-//                new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
-//                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
-//            }
-//        }));
-//        registerModel(AgeModel.class, Culture.English, (options) -> new AgeModel(new Dictionary<IExtractor, IParser>
-//        {
-//            {
-//                new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
-//                        new NumberWithUnitParser(new English.AgeParserConfiguration())
-//            }
-//        }));
+                new TemperatureModel(ImmutableMap.of(
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.TemperatureParserConfiguration()))));
+        registerModel(DimensionModel.class, Culture.English, (options) ->
+                new DimensionModel(ImmutableMap.of(
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.DimensionParserConfiguration()))));
+        registerModel(AgeModel.class, Culture.English, (options) ->
+                new AgeModel(ImmutableMap.of(
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.AgeParserConfiguration()))));
         //endregion
     }
 }

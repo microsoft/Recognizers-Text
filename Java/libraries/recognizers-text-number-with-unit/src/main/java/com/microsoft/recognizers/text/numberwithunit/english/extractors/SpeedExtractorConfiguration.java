@@ -1,4 +1,4 @@
-package com.microsoft.recognizers.text.numberwithunit.english.extractos;
+package com.microsoft.recognizers.text.numberwithunit.english.extractors;
 
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.CultureInfo;
@@ -6,28 +6,27 @@ import com.microsoft.recognizers.text.numberwithunit.Constants;
 import com.microsoft.recognizers.text.numberwithunit.resources.EnglishNumericWithUnit;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TemperatureExtractorConfiguration extends EnglishNumberWithUnitExtractorConfiguration {
+public class SpeedExtractorConfiguration extends EnglishNumberWithUnitExtractorConfiguration {
 
-    public TemperatureExtractorConfiguration() {
+    public SpeedExtractorConfiguration() {
         this(new CultureInfo(Culture.English));
     }
 
-    public TemperatureExtractorConfiguration(CultureInfo ci) {
+    public SpeedExtractorConfiguration(CultureInfo ci) {
         super(ci);
     }
 
     @Override
     public String getExtractType() {
-        return Constants.SYS_UNIT_TEMPERATURE;
+        return Constants.SYS_UNIT_SPEED;
     }
 
     @Override
     public Map<String, String> getSuffixList() {
-        return TemperatureSuffixList;
+        return SpeedSuffixList;
     }
 
     @Override
@@ -37,8 +36,8 @@ public class TemperatureExtractorConfiguration extends EnglishNumberWithUnitExtr
 
     @Override
     public List<String> getAmbiguousUnitList() {
-        return EnglishNumericWithUnit.AmbiguousTemperatureUnitList;
+        return Collections.emptyList();
     }
 
-    public static Map<String, String> TemperatureSuffixList = new HashMap(EnglishNumericWithUnit.TemperatureSuffixList);
+    public static Map<String, String> SpeedSuffixList = EnglishNumericWithUnit.SpeedSuffixList;
 }

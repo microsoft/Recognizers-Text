@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class DimensionModel extends AbstractNumberWithUnitModel {
 
-    protected DimensionModel(Map<IExtractor, IParser> extractorParserMap) {
+    public DimensionModel(Map<IExtractor, IParser> extractorParserMap) {
         super(extractorParserMap);
     }
 

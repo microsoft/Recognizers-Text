@@ -50,8 +50,12 @@ public class NumberWithUnitTest extends AbstractTest {
         try {
             String culture = getCultureCode(currentCase.language);
             switch (currentCase.modelName) {
+                case "AgeModel":
+                    return NumberWithUnitRecognizer.recognizeAge(currentCase.input, culture, NumberWithUnitOptions.None, false);
                 case "CurrencyModel":
                     return NumberWithUnitRecognizer.recognizeCurrency(currentCase.input, culture, NumberWithUnitOptions.None, false);
+                case "DimensionModel":
+                    return NumberWithUnitRecognizer.recognizeDimension(currentCase.input, culture, NumberWithUnitOptions.None, false);
                 case "TemperatureModel":
                     return NumberWithUnitRecognizer.recognizeTemperature(currentCase.input, culture, NumberWithUnitOptions.None, false);
                 default:
