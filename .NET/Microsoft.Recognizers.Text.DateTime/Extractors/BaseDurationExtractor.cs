@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
@@ -35,12 +34,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var rets = Token.MergeAllTokens(tokens, text, ExtractorName);
 
-            ResolveMoreThanOrLessThanPrefix(text, rets);
-
+            // First MergeMultipleDuration then ResolveMoreThanOrLessThanPrefix so cases like "more than 4 days and less than 1 week" will not be merged into one "multipleDuration"
             if (this.merge)
             {
                 rets = MergeMultipleDuration(rets, text);
             }
+
+            ResolveMoreThanOrLessThanPrefix(text, rets);
 
             return rets;
         }
@@ -154,12 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private List<ExtractResult> MergeMultipleDuration(List<ExtractResult> extractorResults, string text)
         {
-            // Cases like "more than 4 days and less than 1 week" should not be merged as multiple duration
-            // Cases like "4 days and 1 hour" should be merged as multiple duration
-            var extractorResultsWithoutMoreOrLess = extractorResults
-                            .Where(er => er.Data == null || ((string)er.Data != Constants.MORE_THAN_MOD && (string)er.Data != Constants.LESS_THAN_MOD)).ToList();
-
-            if (extractorResultsWithoutMoreOrLess.Count <= 1)
+            if (extractorResults.Count <= 1)
             {
                 return extractorResults;
             }
@@ -172,10 +167,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             var firstExtractionIndex = 0;
             var timeUnit = 0;
             var totalUnit = 0;
-            while (firstExtractionIndex < extractorResultsWithoutMoreOrLess.Count)
+            while (firstExtractionIndex < extractorResults.Count)
             {
                 string curUnit = null;
-                var unitMatch = unitRegex.Match(extractorResultsWithoutMoreOrLess[firstExtractionIndex].Text);
+                var unitMatch = unitRegex.Match(extractorResults[firstExtractionIndex].Text);
                 
                 if (unitMatch.Success && UnitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
                 {
@@ -194,16 +189,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var secondExtractionIndex = firstExtractionIndex + 1;
-                while (secondExtractionIndex < extractorResultsWithoutMoreOrLess.Count)
+                while (secondExtractionIndex < extractorResults.Count)
                 {
                     var valid = false;
-                    var midStrBegin = extractorResultsWithoutMoreOrLess[secondExtractionIndex - 1].Start + extractorResultsWithoutMoreOrLess[secondExtractionIndex - 1].Length ?? 0;
-                    var midStrEnd = extractorResultsWithoutMoreOrLess[secondExtractionIndex].Start ?? 0;
+                    var midStrBegin = extractorResults[secondExtractionIndex - 1].Start + extractorResults[secondExtractionIndex - 1].Length ?? 0;
+                    var midStrEnd = extractorResults[secondExtractionIndex].Start ?? 0;
                     var midStr = text.Substring(midStrBegin, midStrEnd - midStrBegin);
                     var match = this.config.DurationConnectorRegex.Match(midStr);
                     if (match.Success)
                     {
-                        unitMatch = unitRegex.Match(extractorResultsWithoutMoreOrLess[secondExtractionIndex].Text);
+                        unitMatch = unitRegex.Match(extractorResults[secondExtractionIndex].Text);
                         if (unitMatch.Success && UnitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
                         {
                             var nextUnitStr = unitMatch.Groups["unit"].ToString();
@@ -235,10 +230,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (secondExtractionIndex - 1 > firstExtractionIndex)
                 {
                     var node = new ExtractResult();
-                    node.Start = extractorResultsWithoutMoreOrLess[firstExtractionIndex].Start;
-                    node.Length = extractorResultsWithoutMoreOrLess[secondExtractionIndex - 1].Start + extractorResultsWithoutMoreOrLess[secondExtractionIndex - 1].Length - node.Start;
+                    node.Start = extractorResults[firstExtractionIndex].Start;
+                    node.Length = extractorResults[secondExtractionIndex - 1].Start + extractorResults[secondExtractionIndex - 1].Length - node.Start;
                     node.Text = text.Substring(node.Start?? 0, node.Length?? 0);
-                    node.Type = extractorResultsWithoutMoreOrLess[firstExtractionIndex].Type;
+                    node.Type = extractorResults[firstExtractionIndex].Type;
 
                     // add multiple duration type to extract result
                     string type = null;
@@ -263,18 +258,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    ret.Add(extractorResultsWithoutMoreOrLess[firstExtractionIndex]);
+                    ret.Add(extractorResults[firstExtractionIndex]);
                 }
 
                 firstExtractionIndex = secondExtractionIndex;
             }
 
-            var extractorResultsWithMoreOrLess = extractorResults
-                            .Where(er => er.Data != null && ((string)er.Data == Constants.MORE_THAN_MOD || (string)er.Data == Constants.LESS_THAN_MOD));
-
-            ret.AddRange(extractorResultsWithMoreOrLess);
-
-            return ret.OrderBy(t => t.Start).ToList();
+            return ret;
         }
     }
 }
