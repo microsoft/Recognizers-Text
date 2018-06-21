@@ -49,6 +49,7 @@ export { FrenchSetExtractorConfiguration, FrenchSetParserConfiguration } from ".
 export { FrenchDurationExtractorConfiguration, FrenchDurationParserConfiguration } from "./dateTime/french/durationConfiguration";
 export { FrenchHolidayExtractorConfiguration, FrenchHolidayParserConfiguration } from "./dateTime/french/holidayConfiguration";
 export { FrenchMergedExtractorConfiguration, FrenchMergedParserConfiguration } from "./dateTime/french/mergedConfiguration";
+export { FrenchTimeParser } from './dateTime/french/timeParser';
 export { ChineseDurationExtractor, ChineseDurationParser } from "./dateTime/chinese/durationConfiguration";
 export { ChineseTimeExtractor, ChineseTimeParser } from "./dateTime/chinese/timeConfiguration";
 export { ChineseTimePeriodExtractor, ChineseTimePeriodParser } from "./dateTime/chinese/timePeriodConfiguration";
