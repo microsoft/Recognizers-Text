@@ -36,12 +36,11 @@ public class NumberWithUnitTest extends AbstractTest {
     }
 
     private List<String> getKeysToTest(TestCase currentCase) {
-        // TODO
         switch (currentCase.modelName) {
             case "CurrencyModel":
                 return Arrays.asList(ResolutionKey.Unit, ResolutionKey.Unit, ResolutionKey.IsoCurrency);
             default:
-                return Collections.emptyList();
+                return Arrays.asList(ResolutionKey.Unit);
         }
     }
 
