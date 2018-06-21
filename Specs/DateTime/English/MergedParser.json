@@ -3015,4 +3015,43 @@
     }
   ]
 }
+,
+{
+  "Input": "show me sales from 2010 – 2020 and not 2015",
+  "Context": {
+    "ReferenceDateTime": "2018-05-31T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 2010 – 2020",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"(2010-01-01,2020-01-01,P10Y)",
+            "type":"daterange",
+            "start":"2010-01-01",
+            "end":"2020-01-01"
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "2015",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2015",
+            "type":"daterange",
+            "start":"2015-01-01",
+            "end":"2016-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]
