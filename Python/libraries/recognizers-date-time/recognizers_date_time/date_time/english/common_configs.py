@@ -131,10 +131,6 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         return self._cardinal_map
 
     @property
-    def day_of_month(self) -> Dict[str, int]:
-        return self._day_of_month
-
-    @property
     def day_of_week(self) -> Dict[str, int]:
         return self._day_of_week
 
@@ -147,6 +143,8 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         return self._utility_configuration
 
     def __init__(self):
+        BaseDateParserConfiguration.__init__(self)
+
         self._utility_configuration = EnglishDateTimeUtilityConfiguration()
         self._unit_map = EnglishDateTime.UnitMap
         self._unit_value_map = EnglishDateTime.UnitValueMap

@@ -12,7 +12,7 @@ from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .base_date import BaseDateParser
 from .base_duration import BaseDurationParser
-from .utilities import Token, merge_all_tokens, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek
+from .utilities import Token, merge_all_tokens, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, RegExpUtility
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 
@@ -1164,9 +1164,11 @@ class BaseDatePeriodParser(DateTimeParser):
         if not (match and len(match.group()) == len(source)):
             return result
 
-        cardinal_str = match.group('cardinal')
-        year_str = match.group('year')
-        order_str = match.group('order')
+        cardinal_str = RegExpUtility.get_group(match, 'cardinal')
+        year_str = RegExpUtility.get_group(match, 'year')
+        order_str = RegExpUtility.get_group(match, 'order')
+        quarter_str = RegExpUtility.get_group(match, 'number')
+
         no_specific_value = False
         try:
             year = int(year_str)
@@ -1177,7 +1179,6 @@ class BaseDatePeriodParser(DateTimeParser):
                 swift = 0
                 no_specific_value = True
             year = reference.year + swift
-        quarter_str = match.group('number')
 
         if quarter_str:
             quarter_num = int(quarter_str)

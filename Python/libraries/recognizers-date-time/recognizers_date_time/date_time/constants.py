@@ -1,3 +1,5 @@
+from ..resources import BaseDateTime
+
 class Constants:
     SYS_DATETIME_DATE: str = 'date'
     SYS_DATETIME_TIME: str = 'time'
@@ -21,6 +23,12 @@ class Constants:
 
     SemesterMonthCount: int = 6
     TrimesterMonthCount: int = 3
+
+    DefaultLanguageFallback_MDY: str = 'MDY'
+    DefaultLanguageFallback_DMY: str = 'DMY'
+
+    MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
+    MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
 class TimeTypeConstants:
     DATE: str = 'date'

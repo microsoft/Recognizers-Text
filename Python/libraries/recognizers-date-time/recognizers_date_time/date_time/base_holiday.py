@@ -228,7 +228,7 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
             ('washingtonsbirthday', BaseHolidayParserConfiguration.washingtons_birthday),
             ('labour', BaseHolidayParserConfiguration.labour_day),
             ('canberra', BaseHolidayParserConfiguration.canberra_day),
-            ('colombus', BaseHolidayParserConfiguration.colombus_day),
+            ('columbus', BaseHolidayParserConfiguration.columbus_day),
             ('memorial', BaseHolidayParserConfiguration.memorial_day)
         ])
 
@@ -261,7 +261,7 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
         return datetime(year, 9, BaseHolidayParserConfiguration.get_day(year, 9, 0, DayOfWeek.Monday))
 
     @staticmethod
-    def colombus_day(year: int) -> datetime:
+    def columbus_day(year: int) -> datetime:
         return datetime(year, 10, BaseHolidayParserConfiguration.get_day(year, 10, 1, DayOfWeek.Monday))
 
     @staticmethod
