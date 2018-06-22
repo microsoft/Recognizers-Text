@@ -752,7 +752,7 @@
 ,
 {
   "Input": "The number range is 1000-5000",
-  "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python, java",
   "Results": [
     {
       "Text": "1000-5000",
@@ -766,7 +766,7 @@
 ,
 {
   "Input": "The number range is 1000 - 5000",
-  "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python, java",
   "Results": [
     {
       "Text": "1000 - 5000",
@@ -780,7 +780,7 @@
 ,
 {
   "Input": "The number range is 1000–5000",
-  "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python, java",
   "Results": [
     {
       "Text": "1000–5000",
@@ -794,7 +794,7 @@
 ,
 {
   "Input": "The number range is 1000 – 5000",
-  "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python, java",
   "Results": [
     {
       "Text": "1000 – 5000",
