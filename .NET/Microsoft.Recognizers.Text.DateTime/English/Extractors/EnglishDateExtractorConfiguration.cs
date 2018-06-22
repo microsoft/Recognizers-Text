@@ -137,6 +137,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex YearSuffix = 
             new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex LessThanRegex = 
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MoreThanRegex =
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek = 
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
@@ -190,6 +196,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
 
         Regex IDateExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDateExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
         public DateTimeOptions Options { get; }
 

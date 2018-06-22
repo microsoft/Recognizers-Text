@@ -66,6 +66,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
         public Regex ReferenceDatePeriodRegex { get; }
+        public Regex AgoRegex { get; }
+        public Regex LaterRegex { get; }
+        public Regex LessThanRegex { get; }
+        public Regex MoreThanRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -141,6 +145,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = SpanishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             ReferenceDatePeriodRegex = SpanishDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            AgoRegex = SpanishDatePeriodExtractorConfiguration.AgoRegex;
+            LaterRegex = SpanishDatePeriodExtractorConfiguration.LaterRegex;
+            LessThanRegex = SpanishDatePeriodExtractorConfiguration.LessThanRegex;
+            MoreThanRegex = SpanishDatePeriodExtractorConfiguration.MoreThanRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

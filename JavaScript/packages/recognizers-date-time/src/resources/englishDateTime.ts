@@ -153,8 +153,8 @@ export namespace EnglishDateTime {
 	export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b`;
 	export const PeriodSpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;
 	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}(\\s+(on|of))?))\\b`;
-	export const LessThanRegex = `\\b(less\\s+than)\\s+$`;
-	export const MoreThanRegex = `\\b(more\\s+than)\\s+$`;
+	export const LessThanRegex = `\\b(less\\s+than)\\b`;
+	export const MoreThanRegex = `\\b(more\\s+than)\\b`;
 	export const DurationUnitRegex = `(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(and)\\s+((an|a)\\s+)?(?<suffix_num>half|quarter))`;
 	export const PeriodicRegex = `\\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annually|annual)\\b`;
@@ -186,7 +186,7 @@ export namespace EnglishDateTime {
 	export const AgoRegex = `\\b(ago|before (?<day>yesterday|today))\\b`;
 	export const LaterRegex = `\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
-	export const WithinNextPrefixRegex = `\\b(within(\\s+the)?(\\s+${NextPrefixRegex})?)\\b`;
+	export const WithinNextPrefixRegex = `\\b(within(\\s+the)?(\\s+(?<next>${NextPrefixRegex}))?)\\b`;
 	export const AmPmDescRegex = `(ampm)`;
 	export const MorningStartEndRegex = `(^(morning|${AmDescRegex}))|((morning|${AmDescRegex})$)`;
 	export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;
@@ -243,4 +243,5 @@ export namespace EnglishDateTime {
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["noughties", 2000],["two thousands", 2000]]);
 	export const DefaultLanguageFallback = 'MDY';
 	export const SuperfluousWordList = [ 'preferably','how about','maybe','say','like','around' ];
+	export const DurationDateRestrictions = [ 'today','now' ];
 }

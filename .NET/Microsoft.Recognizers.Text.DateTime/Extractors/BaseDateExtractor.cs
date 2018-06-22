@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
             tokens.AddRange(NumberWithMonth(text, reference));
-            tokens.AddRange(DurationWithBeforeAndAfter(text, reference));
+            tokens.AddRange(ExtractRelativeDurationDate(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -323,17 +323,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        private List<Token> DurationWithBeforeAndAfter(string text, DateObject reference)
+        // Cases like "3 days from today", "5 weeks before yesterday", "2 months after tomorrow"
+        // Note that these cases are of type "date"
+        private List<Token> ExtractRelativeDurationDate(string text, DateObject reference)
         {
             var ret = new List<Token>();
             var durationEr = config.DurationExtractor.Extract(text, reference);
 
             foreach (var er in durationEr)
             {
-                // if it is a multiple duration and its type is not equal to Date than skip it.
-                if (er.Data != null && er.Data.ToString() != Constants.MultipleDuration_Date)
+                // if it is a multiple duration but its type is not equal to Date, skip it here
+                if (IsMultipleDuration(er) && !IsMultipleDurationDate(er))
                 {
                     continue;
+                }
+
+                // Some types of duration can be compounded with "before", "after" or "from" suffix to create a "date"
+                // While some other types of durations, when compounded with such suffix, it will not create a "date", but create a "dateperiod"
+                // For example, durations like "3 days", "2 weeks", "1 week and 2 days", can be compounded with such suffix to create a "date"
+                // But "more than 3 days", "less than 2 weeks", when compounded with such suffix, it will become cases like "more than 3 days from today" which is a "dateperiod", not a "date"
+                // As this parent method is aimed to extract RelativeDurationDate, so for cases with "more than" or "less than", we remove the prefix so as to extract the expected RelativeDurationDate
+                if (IsInequalityDuration(er))
+                {
+                    StripInequalityDuration(er);
                 }
 
                 var match = config.DateUnitRegex.Match(er.Text);
@@ -347,5 +359,40 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        private void StripInequalityDuration(ExtractResult er)
+        {
+            StripInequalityPrefix(er, config.MoreThanRegex);
+            StripInequalityPrefix(er, config.LessThanRegex);
+        }
+
+        private void StripInequalityPrefix(ExtractResult er, Regex regex)
+        {
+            var match = regex.Match(er.Text);
+
+            if (match.Success)
+            {
+                var originalLength = er.Text.Length;
+                er.Text = regex.Replace(er.Text, string.Empty).Trim();
+                er.Start += originalLength - er.Text.Length;
+                er.Length = er.Text.Length;
+                er.Data = string.Empty;
+            }
+        }
+
+        private bool IsMultipleDurationDate(ExtractResult er)
+        {
+            return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
+        }
+
+        private bool IsMultipleDuration(ExtractResult er)
+        {
+            return er.Data != null && er.Data.ToString().StartsWith(Constants.MultipleDuration_Prefix);
+        }
+
+        // Cases like "more than 3 days", "less than 4 weeks"
+        private bool IsInequalityDuration(ExtractResult er)
+        {
+            return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
+        }
     }
 }

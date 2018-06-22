@@ -1045,4 +1045,93 @@
     }
   ]
 }
+,
+{
+  "Input": "I have already finished all my work more than 2 weeks before today",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "more than 2 weeks before today",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I will come back within 2 weeks from today",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "within 2 weeks from today",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I will come back less than 2 weeks from today",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "less than 2 weeks from today",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "This task should have been done more than 2 days before yesterday",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "more than 2 days before yesterday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "This task will be done less than 3 days after tomorrow",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "less than 3 days after tomorrow",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Let's start 3 minutes from now",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutes from now",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Let's start 3 minutes from today",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutes",
+      "Type": "duration"
+    }
+    ,
+    {
+      "Text": "today",
+      "Type": "date"
+    }
+  ]
+}
 ]

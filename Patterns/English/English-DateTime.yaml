@@ -377,9 +377,9 @@ PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(({TimeOfDayRegex}(\s+(on|of))?))\b
  references: [ TimeOfDayRegex]
 LessThanRegex: !simpleRegex
-  def: \b(less\s+than)\s+$
+  def: \b(less\s+than)\b
 MoreThanRegex: !simpleRegex
-  def: \b(more\s+than)\s+$
+  def: \b(more\s+than)\b
 DurationUnitRegex: !simpleRegex
   def: (?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
 SuffixAndRegex: !simpleRegex
@@ -448,8 +448,9 @@ LaterRegex: !simpleRegex
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 WithinNextPrefixRegex: !nestedRegex
-  def: \b(within(\s+the)?(\s+{NextPrefixRegex})?)\b
+  def: \b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
+# "next" group here is used to judge for illegal cases like "within the next 5 days before today"
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !nestedRegex
@@ -926,4 +927,6 @@ SuperfluousWordList: !list
     - say
     - like
     - around
+DurationDateRestrictions: [ today, now ]
+# For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty. 
 ...

@@ -172,7 +172,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        //Extract the month of date, week of date to a date range
+        // 1. Extract the month of date, week of date to a date range
+        // 2. Extract cases like within two weeks from/before today/tomorrow/yesterday
         private List<Token> SingleTimePointWithPatterns(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -189,10 +190,49 @@ namespace Microsoft.Recognizers.Text.DateTime
                     string beforeString = text.Substring(0, (int)extractionResult.Start);
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.WeekOfRegex, extractionResult));
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.MonthOfRegex, extractionResult));
+
+                    // Cases like "3 days from today", "2 weeks before yesterday", "3 months after tomorrow"
+                    if (IsRelativeDurationDate(extractionResult))
+                    {
+                        ret.AddRange(GetTokenForRegexMatching(beforeString, config.LessThanRegex, extractionResult));
+                        ret.AddRange(GetTokenForRegexMatching(beforeString, config.MoreThanRegex, extractionResult));
+
+                        // For "within" case, only duration with relative to "today" or "now" makes sense
+                        // Cases like "within 3 days from yesterday/tomorrow" does not make any sense
+                        if (IsDateRelativeToNowOrToday(extractionResult))
+                        {
+                            var match = this.config.WithinNextPrefixRegex.Match(beforeString);
+                            if (match.Success)
+                            {
+                                var isNext = !string.IsNullOrEmpty(match.Groups[Constants.NextGroupNameForWithinRegex].Value);
+
+                                // For "within" case
+                                // Cases like "within the next 5 days before today" is not acceptable
+                                if (!(isNext && IsAgoRelativeDurationDate(extractionResult)))
+                                {
+                                    ret.AddRange(GetTokenForRegexMatching(beforeString, config.WithinNextPrefixRegex, extractionResult));
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
             return ret;
+        }
+
+        // Cases like "3 days from today", "2 weeks before yesterday", "3 months after tomorrow"
+        private bool IsRelativeDurationDate(ExtractResult er)
+        {
+            var isAgo = this.config.AgoRegex.Match(er.Text).Success;
+            var isLater = this.config.LaterRegex.Match(er.Text).Success;
+
+            return isAgo || isLater;
+        }
+
+        private bool IsAgoRelativeDurationDate(ExtractResult er)
+        {
+            return this.config.AgoRegex.Match(er.Text).Success;
         }
 
         private List<Token> GetTokenForRegexMatching(string text, Regex regex, ExtractResult er)
@@ -317,7 +357,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             return result;
         }
 
+        private bool IsDateRelativeToNowOrToday(ExtractResult er)
+        {
+            foreach (var flagWord in config.DurationDateRestrictions)
+            {
+                if (er.Text.Contains(flagWord))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
-
-
 }

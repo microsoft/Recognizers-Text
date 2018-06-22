@@ -476,5 +476,6 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 			{ "", 0 }
 		};
 		public const string DefaultLanguageFallback = "DMY";
+		public static readonly string[] DurationDateRestrictions = {  };
 	}
 }
