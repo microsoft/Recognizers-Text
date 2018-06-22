@@ -118,6 +118,6 @@ public abstract class AbstractTest {
         // definition for "not supported" missing, should be supported then
         if (notSupported == null) return true;
 
-        return !Arrays.asList(notSupported.toLowerCase().split(Pattern.quote(","))).contains("java");
+        return !Arrays.asList(notSupported.toLowerCase().trim().split("\\s*,\\s*")).contains("java");
     }
 }
