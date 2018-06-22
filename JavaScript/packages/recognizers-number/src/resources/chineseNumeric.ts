@@ -84,7 +84,7 @@ export namespace ChineseNumeric {
 	export const NumbersSpecialsPercentageRegex = `(${ZeroToNineFullHalfRegex}[\\.．]${ZeroToNineFullHalfRegex}|[1１][0０])\\s*成`;
 	export const SimpleSpecialsPercentageRegex = `${ZeroToNineIntegerRegex}\\s*[点點]\\s*${ZeroToNineIntegerRegex}\\s*成`;
 	export const SpecialsFoldsPercentageRegex = `半\\s*成|(?<=打)[对對]\\s*折|半\\s*折`;
-	export const TillRegex = `(到|至|--|-|—|——|~)`;
+	export const TillRegex = `(到|至|--|-|—|——|~|–)`;
 	export const MoreRegex = `(大于|多于|高于|超过|大於|多於|高於|超過|>)`;
 	export const LessRegex = `(小于|少于|低于|小於|少於|低於|不到|不足|<)`;
 	export const EqualRegex = `(等于|等於|=)`;

@@ -9,8 +9,8 @@
 from .base_date_time import BaseDateTime
 # pylint: disable=line-too-long
 class EnglishDateTime:
-    TillRegex = f'(?<till>to|till|til|until|thru|through|--|-|—|——|~)'
-    RangeConnectorRegex = f'(?<and>and|through|to|--|-|—|——)'
+    TillRegex = f'(?<till>to|till|til|until|thru|through|--|-|—|——|~|–)'
+    RangeConnectorRegex = f'(?<and>and|through|to|--|-|—|——|~|–)'
     RelativeRegex = f'(?<order>next|coming|upcoming|this|last|past|previous|current|the)'
     StrictRelativeRegex = f'(?<order>next|coming|upcoming|this|last|past|previous|current)'
     NextPrefixRegex = f'(next|coming|upcoming)\\b'

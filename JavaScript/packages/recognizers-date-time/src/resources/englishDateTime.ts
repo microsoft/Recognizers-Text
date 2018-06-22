@@ -8,8 +8,8 @@
 
 import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {
-	export const TillRegex = `(?<till>to|till|til|until|thru|through|--|-|—|——|~)`;
-	export const RangeConnectorRegex = `(?<and>and|through|to|--|-|—|——)`;
+	export const TillRegex = `(?<till>to|till|til|until|thru|through|--|-|—|——|~|–)`;
+	export const RangeConnectorRegex = `(?<and>and|through|to|--|-|—|——|~|–)`;
 	export const RelativeRegex = `(?<order>next|coming|upcoming|this|last|past|previous|current|the)`;
 	export const StrictRelativeRegex = `(?<order>next|coming|upcoming|this|last|past|previous|current)`;
 	export const NextPrefixRegex = `(next|coming|upcoming)\\b`;
