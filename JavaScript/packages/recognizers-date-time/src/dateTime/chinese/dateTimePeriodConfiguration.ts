@@ -370,6 +370,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
     private readonly TAFRegex: RegExp;
     private readonly TEVRegex: RegExp;
     private readonly TNIRegex; RegExp;
+    private readonly unitRegex: RegExp;
     private readonly timeOfDayRegex: RegExp;
     private readonly cardinalExtractor: IExtractor;
     private readonly cardinalParser: IParser;
@@ -381,6 +382,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         this.TAFRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodAFRegex);
         this.TEVRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodEVRegex);
         this.TNIRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodNIRegex);
+        this.unitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimePeriodUnitRegex);
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfDayRegex);
         this.cardinalExtractor = new ChineseCardinalExtractor();
         this.cardinalParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Cardinal, new ChineseNumberParserConfiguration());
@@ -629,19 +631,32 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
     protected parseNumberWithUnit(text: string, referenceTime: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let ers = this.cardinalExtractor.extract(text);
-        if (ers.length !== 1) return result;
+        
+        if (ers.length === 1) {
+            let er = ers[0];
 
-        let er = ers[0];
+            let pr = this.cardinalParser.parse(er);
+            let sourceUnit = text.substr(er.start + er.length).trim().toLowerCase();
+            if (sourceUnit.startsWith('个')) {
+                sourceUnit = sourceUnit.substr(1);
+            }
+    
+            let beforeStr = text.substr(0, er.start).trim().toLowerCase();
+    
+            return this.parseCommonDurationWithUnit(beforeStr, sourceUnit, pr.resolutionStr, pr.value, referenceTime);
+        }
+        
+        // handle "last hour"
+        let match = RegExpUtility.getMatches(this.unitRegex, text).pop();
 
-        let pr = this.cardinalParser.parse(er);
-        let sourceUnit = text.substr(er.start + er.length).trim().toLowerCase();
-        if (sourceUnit.startsWith('个')) {
-            sourceUnit = sourceUnit.substr(1);
+        if (match) {
+            let srcUnit = match.groups('unit').value;
+            let beforeStr = text.substr(0, match.index).trim().toLowerCase();
+
+            return this.parseCommonDurationWithUnit(beforeStr, srcUnit, '1', 1, referenceTime);
         }
 
-        let beforeStr = text.substr(0, er.start).trim().toLowerCase();
-
-        return this.parseCommonDurationWithUnit(beforeStr, sourceUnit, pr.resolutionStr, pr.value, referenceTime);
+        return result;
     }
 
     protected parseDuration(text: string, referenceTime: Date): DateTimeResolutionResult {
@@ -668,7 +683,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         let futureMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
         let hasFuture = futureMatch && futureMatch.length === beforeStr.length;
 
-        if (!hasPast ||!hasFuture) return result;
+        if (!hasPast && !hasFuture) return result;
 
         let beginDate = new Date(referenceDate);
         let endDate = new Date(referenceDate);
