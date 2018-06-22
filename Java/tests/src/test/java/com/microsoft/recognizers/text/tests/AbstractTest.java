@@ -52,8 +52,9 @@ public abstract class AbstractTest {
 
     // TODO Override in specific models
     protected abstract List<ModelResult> recognize(TestCase currentCase);
+
     protected void recognizeAndAssert(TestCase currentCase) {
-        if(currentCase.debug) System.out.println("debug break!");
+        if (currentCase.debug) System.out.println("debug break!");
         List<ModelResult> results = recognize(currentCase);
         assertResults(currentCase, results);
     }
@@ -77,7 +78,9 @@ public abstract class AbstractTest {
 
                     Assert.assertEquals(getMessage(currentCase, "resolution.value"), expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
 
-                    // TODO: assert testResolutionKeys
+                    for (String key : testResolutionKeys) {
+                        Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
+                    }
                 });
     }
 
