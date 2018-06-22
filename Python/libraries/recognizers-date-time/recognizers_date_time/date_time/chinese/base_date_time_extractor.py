@@ -6,6 +6,11 @@ import regex
 from recognizers_text import ExtractResult
 from ..extractors import DateTimeExtractor
 
+class DateTimeExtra:
+    def __init__(self):
+        self.data_type: any = None
+        self.named_entity: Dict[str, str] = dict()
+
 class ChineseBaseDateTimeExtractor(DateTimeExtractor):
     def __init__(self, regex_dict: Dict[Pattern, any]):
         self._regex_dict = regex_dict
@@ -50,11 +55,13 @@ class ChineseBaseDateTimeExtractor(DateTimeExtractor):
             else:
                 last = i
 
+        return result
+
     def __get_data(self, source: Dict[Match, any], key: Match) -> any:
         if key not in source:
             return None
         
-        result: any
+        result = DateTimeExtra()
         result.data_type = source[key]
         result.named_entity = key.groupdict()
         return result
