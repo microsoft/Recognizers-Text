@@ -19,27 +19,27 @@ import java.util.Map;
 public class NumberCacheTest {
 
     @Before
-    public void Initialization() {
+    public void initialization() {
         NumberRecognizer recognizer = new NumberRecognizer();
         getInternalModelCache(recognizer).clear();
     }
 
     @Test
-    public void WithLazyInitializationCacheShouldBeEmpty() {
+    public void withLazyInitializationCacheShouldBeEmpty() {
         NumberRecognizer recognizer = new NumberRecognizer(NumberOptions.None, true);
         Map<Triplet<String, Type, String>, IModel> internalCache = getInternalModelCache(recognizer);
         Assert.assertEquals(0, internalCache.size());
     }
 
     @Test
-    public void WithoutLazyInitializationCacheShouldBeFull() {
+    public void withoutLazyInitializationCacheShouldBeFull() {
         NumberRecognizer recognizer = new NumberRecognizer(NumberOptions.None, false);
         Map<Triplet<String, Type, String>, IModel> internalCache = getInternalModelCache(recognizer);
         Assert.assertNotEquals(0, internalCache.size());
     }
 
     @Test
-    public void WithoutLazyInitializationAndCultureCacheForSpecificCultureShouldBeSet() {
+    public void withoutLazyInitializationAndCultureCacheForSpecificCultureShouldBeSet() {
         NumberRecognizer recognizer = new NumberRecognizer(Culture.English, NumberOptions.None, false);
         Map<Triplet<String, Type, String>, IModel> internalCache = getInternalModelCache(recognizer);
 

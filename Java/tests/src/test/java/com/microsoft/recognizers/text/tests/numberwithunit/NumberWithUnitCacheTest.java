@@ -19,27 +19,27 @@ import java.util.Map;
 public class NumberWithUnitCacheTest {
 
     @Before
-    public void Initialization() {
+    public void initialization() {
         NumberWithUnitRecognizer recognizer = new NumberWithUnitRecognizer();
         getInternalModelCache(recognizer).clear();
     }
 
     @Test
-    public void WithLazyInitializationCacheShouldBeEmpty() {
+    public void withLazyInitializationCacheShouldBeEmpty() {
         NumberWithUnitRecognizer recognizer = new NumberWithUnitRecognizer(NumberWithUnitOptions.None, true);
         Map<Triplet<String, Type, String>, IModel> internalCache = getInternalModelCache(recognizer);
         Assert.assertEquals(0, internalCache.size());
     }
 
     @Test
-    public void WithoutLazyInitializationCacheShouldBeFull() {
+    public void withoutLazyInitializationCacheShouldBeFull() {
         NumberWithUnitRecognizer recognizer = new NumberWithUnitRecognizer(NumberWithUnitOptions.None, false);
         Map<Triplet<String, Type, String>, IModel> internalCache = getInternalModelCache(recognizer);
         Assert.assertNotEquals(0, internalCache.size());
     }
 
     @Test
-    public void WithoutLazyInitializationAndCultureCacheForSpecificCultureShouldBeSet() {
+    public void withoutLazyInitializationAndCultureCacheForSpecificCultureShouldBeSet() {
         NumberWithUnitRecognizer recognizer = new NumberWithUnitRecognizer(Culture.English, NumberWithUnitOptions.None, false);
         Map<Triplet<String, Type, String>, IModel> internalCache = getInternalModelCache(recognizer);
 
@@ -50,7 +50,7 @@ public class NumberWithUnitCacheTest {
         try {
             Field field = Recognizer.class.getDeclaredField("factory");
             field.setAccessible(true);
-            ModelFactory<NumberWithUnitOptions> factory = (ModelFactory<NumberWithUnitOptions>)field.get(recognizer);
+            ModelFactory<NumberWithUnitOptions> factory = (ModelFactory<NumberWithUnitOptions>) field.get(recognizer);
             Field cacheField = factory.getClass().getDeclaredField("cache");
             cacheField.setAccessible(true);
             Map<Triplet<String, Type, String>, IModel> cache = (Map<Triplet<String, Type, String>, IModel>) cacheField.get(null);
@@ -60,6 +60,5 @@ public class NumberWithUnitCacheTest {
             ex.printStackTrace();
             return Collections.emptyMap();
         }
-
     }
 }
