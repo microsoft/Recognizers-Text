@@ -30,6 +30,10 @@ ECHO # Installing recognizers-date-time
 CALL  pip install -e .\libraries\recognizers-date-time\
 
 ECHO.
+ECHO # Installing recognizers-suite
+CALL  pip install -e .\libraries\recognizers-suite\
+
+ECHO.
 ECHO # Installing Test Dependencies
 CALL pip install -r .\tests\requirements.txt
 
