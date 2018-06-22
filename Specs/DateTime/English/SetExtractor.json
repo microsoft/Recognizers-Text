@@ -257,4 +257,12 @@
     }
   ]
 }
+,
+{
+  "Input": "Can I do a booking for the 09th of May for 2 nights?",
+  "Results": [{
+      "Text": "nights",
+      "Type": "set"
+    }]
+}
 ]

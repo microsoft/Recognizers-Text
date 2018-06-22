@@ -4018,4 +4018,47 @@
     }
   }]
 }
+,
+{
+  "Input": "Can I do a booking for the 09th of May for 2 nights?",
+  "Context": {
+    "ReferenceDateTime": "2018-06-22T00:00:00"
+  },
+  "Results": [{
+    "Text": "09th of may",
+    "Start": 27,
+    "End": 37,
+    "TypeName": "datetimeV2.date",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "XXXX-05-09",
+          "type": "date",
+          "value": "2018-05-09"
+        },
+        {
+          "timex": "XXXX-05-09",
+          "type": "date",
+          "value": "2019-05-09"
+        }
+      ]
+    }
+  },
+  {
+    "Text": "nights",
+    "Start": 45,
+    "End": 50,
+    "TypeName": "datetimeV2.timerange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "TNI",
+          "type": "timerange",
+          "start": "20:00:00",
+          "end": "23:59:59"
+        }
+      ]
+    }
+  }]
+}
 ]
