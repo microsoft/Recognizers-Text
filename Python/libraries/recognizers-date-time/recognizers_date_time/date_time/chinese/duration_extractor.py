@@ -7,7 +7,7 @@ from recognizers_number_with_unit import NumberWithUnitExtractor
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from .base_date_time_extractor import ChineseBaseDateTimeExtractor
-from .duration_extractor_configuration import ChineseDurationExtractorConfiguration
+from .duration_extractor_config import ChineseDurationExtractorConfiguration
 
 class ChineseDurationExtractor(ChineseBaseDateTimeExtractor):
     @property
