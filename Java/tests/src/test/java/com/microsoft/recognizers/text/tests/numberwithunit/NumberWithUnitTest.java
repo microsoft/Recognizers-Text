@@ -1,16 +1,16 @@
-package com.microsoft.recognizers.text.tests;
+package com.microsoft.recognizers.text.tests.numberwithunit;
 
-import com.google.common.collect.Lists;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.numberwithunit.NumberWithUnitOptions;
 import com.microsoft.recognizers.text.numberwithunit.NumberWithUnitRecognizer;
+import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.TestCase;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class NumberWithUnitTest extends AbstractTest {

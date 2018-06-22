@@ -1,8 +1,10 @@
-package com.microsoft.recognizers.text.tests;
+package com.microsoft.recognizers.text.tests.number;
 
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.NumberRecognizer;
+import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.TestCase;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
 

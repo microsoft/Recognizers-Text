@@ -32,7 +32,7 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
         this(null, options, lazyInitialization);
     }
 
-    protected NumberWithUnitRecognizer(String culture, NumberWithUnitOptions options, boolean lazyInitialization) {
+    public NumberWithUnitRecognizer(String culture, NumberWithUnitOptions options, boolean lazyInitialization) {
         super(culture, options, lazyInitialization);
     }
 
