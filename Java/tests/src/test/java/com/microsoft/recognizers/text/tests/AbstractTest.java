@@ -3,9 +3,13 @@ package com.microsoft.recognizers.text.tests;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.tests.helpers.ModelResultMixIn;
 import org.apache.commons.io.FileUtils;
+import org.javatuples.Pair;
+import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,12 +18,10 @@ import org.junit.runners.Parameterized;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @RunWith(Parameterized.class)
 public abstract class AbstractTest {
@@ -35,19 +37,49 @@ public abstract class AbstractTest {
     }
 
     @Test
-    public void testPreValidate() {
+    public void test() {
         if (!isJavaSupported(this.currentCase.notSupported)) {
             throw new AssumptionViolatedException("Test case wih input '" + this.currentCase.input + "' not supported.");
         }
 
         if (this.currentCase.debug) {
             // Add breakpoint here to stop on those TestCases marked with "Debug": true
+            System.out.println("Debug Brk!");
         }
 
-        test();
+        recognizeAndAssert(currentCase);
     }
 
-    abstract void test();
+    // TODO Override in specific models
+    protected abstract List<ModelResult> recognize(TestCase currentCase);
+    protected void recognizeAndAssert(TestCase currentCase) {
+        if(currentCase.debug) System.out.println("debug break!");
+        List<ModelResult> results = recognize(currentCase);
+        assertResults(currentCase, results);
+    }
+
+    public static void assertResults(TestCase currentCase, List<ModelResult> results) {
+        assertResultsWithKeys(currentCase, results, Collections.emptyList());
+    }
+
+    public static void assertResultsWithKeys(TestCase currentCase, List<ModelResult> results, List<String> testResolutionKeys) {
+        List<ModelResult> expectedResults = readExpectedResults(ModelResult.class, currentCase.results);
+        Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
+
+        IntStream.range(0, expectedResults.size())
+                .mapToObj(i -> Pair.with(expectedResults.get(i), results.get(i)))
+                .forEach(t -> {
+                    ModelResult expected = t.getValue0();
+                    ModelResult actual = t.getValue1();
+
+                    Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
+                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
+
+                    Assert.assertEquals(getMessage(currentCase, "resolution.value"), expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
+
+                    // TODO: assert testResolutionKeys
+                });
+    }
 
     public static Collection<TestCase> enumerateTestCases(String recognizerType) {
 
@@ -69,7 +101,7 @@ public abstract class AbstractTest {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    private static TestCase[] parseSpecFile(File f, ObjectMapper mapper) {
+    public static TestCase[] parseSpecFile(File f, ObjectMapper mapper) {
         List<String> paths = Arrays.asList(f.toPath().toString().split(Pattern.quote(File.separator)));
         List<String> testInfo = paths.subList(paths.size() - 3, paths.size());
 
@@ -88,12 +120,7 @@ public abstract class AbstractTest {
         }
     }
 
-    protected <T extends ModelResult> List<T> readExpectedResults(Class<T> modelResultClass, List<Object> results) {
-        return results.stream().map(r -> this.parseResult(modelResultClass, r))
-                .collect(Collectors.toCollection(ArrayList::new));
-    }
-
-    private <T extends ModelResult> T parseResult(Class<T> modelResultClass, Object result) {
+    public static <T extends ModelResult> T parseResult(Class<T> modelResultClass, Object result) {
         // Deserializer
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
@@ -110,14 +137,29 @@ public abstract class AbstractTest {
         } catch (IOException e) {
             e.printStackTrace();
             return null;
-
         }
     }
 
-    private static boolean isJavaSupported(String notSupported) {
+    public static <T extends ModelResult> List<T> readExpectedResults(Class<T> modelResultClass, List<Object> results) {
+        return results.stream().map(r -> parseResult(modelResultClass, r))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public static String getCultureCode(String language) {
+        return Arrays.stream(Culture.SupportedCultures)
+                .filter(c -> c.cultureName.equalsIgnoreCase(language))
+                .findFirst().get().cultureCode;
+    }
+
+    public static boolean isJavaSupported(String notSupported) {
         // definition for "not supported" missing, should be supported then
         if (notSupported == null) return true;
 
         return !Arrays.asList(notSupported.toLowerCase().trim().split("\\s*,\\s*")).contains("java");
     }
+
+    public static String getMessage(TestCase testCase, String propName) {
+        return "Does not match " + propName + " on Input: \"" + testCase.input + "\"";
+    }
+
 }
