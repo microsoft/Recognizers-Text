@@ -1033,4 +1033,5 @@ SpecialDecadeCases: !dictionary
   entries:
     'zweitausender': 2000
 DefaultLanguageFallback: DMY
+DurationDateRestrictions: []
 ...

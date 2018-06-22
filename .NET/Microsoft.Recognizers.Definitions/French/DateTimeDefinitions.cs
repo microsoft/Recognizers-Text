@@ -663,5 +663,6 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "", 0 }
 		};
 		public const string DefaultLanguageFallback = "DMY";
+		public static readonly string[] DurationDateRestrictions = {  };
 	}
 }

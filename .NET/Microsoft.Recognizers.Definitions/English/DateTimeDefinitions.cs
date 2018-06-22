@@ -611,5 +611,6 @@ namespace Microsoft.Recognizers.Definitions.English
 			"like",
 			"around"
 		};
+		public static readonly string[] DurationDateRestrictions = { "today", "now" };
 	}
 }

@@ -730,5 +730,6 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "zweitausender", 2000 }
 		};
 		public const string DefaultLanguageFallback = "DMY";
+		public static readonly string[] DurationDateRestrictions = {  };
 	}
 }

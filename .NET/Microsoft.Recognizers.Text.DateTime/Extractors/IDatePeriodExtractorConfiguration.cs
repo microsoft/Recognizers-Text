@@ -64,5 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool HasConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
+
+        string[] DurationDateRestrictions { get; }
     }
 }

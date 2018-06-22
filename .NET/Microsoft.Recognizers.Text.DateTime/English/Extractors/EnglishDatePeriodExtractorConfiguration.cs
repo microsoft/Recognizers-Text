@@ -245,6 +245,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
+        string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
+
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;

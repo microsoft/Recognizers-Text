@@ -966,4 +966,5 @@ SpecialDecadeCases: !dictionary
   entries:
     '': 0
 DefaultLanguageFallback: DMY
+DurationDateRestrictions: []
 ...

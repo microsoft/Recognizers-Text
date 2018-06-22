@@ -242,4 +242,5 @@ export namespace EnglishDateTime {
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["noughties", 2000],["two thousands", 2000]]);
 	export const DefaultLanguageFallback = 'MDY';
 	export const SuperfluousWordList = [ 'preferably','how about','maybe','say','like','around' ];
+	export const DurationDateRestrictions = [ 'today','now' ];
 }
