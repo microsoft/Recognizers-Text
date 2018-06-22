@@ -35,10 +35,10 @@ public class BaseCurrencyParser implements IParser {
                 mainUnitIsoCode = config.getCurrencyNameToIsoCodeMap().get(value.unit);
             }
 
-            if (mainUnitIsoCode == null || !mainUnitIsoCode.isEmpty() || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
+            if (mainUnitIsoCode == null || mainUnitIsoCode.isEmpty() || mainUnitIsoCode.startsWith(Constants.FAKE_ISO_CODE_PREFIX)) {
                 return pr.withValue(new UnitValue(value.number, value.unit));
             } else {
-                return pr.withValue(new CurrencyUnitValue(value.unit, value.number, mainUnitIsoCode));
+                return pr.withValue(new CurrencyUnitValue(value.number, value.unit, mainUnitIsoCode));
             }
         }
     }
