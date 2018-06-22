@@ -177,7 +177,7 @@ class ChineseNumeric:
     NumbersSpecialsPercentageRegex = f'({ZeroToNineFullHalfRegex}[\\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\\s*成'
     SimpleSpecialsPercentageRegex = f'{ZeroToNineIntegerRegex}\\s*[点點]\\s*{ZeroToNineIntegerRegex}\\s*成'
     SpecialsFoldsPercentageRegex = f'半\\s*成|(?<=打)[对對]\\s*折|半\\s*折'
-    TillRegex = f'(到|至|--|-|—|——|~)'
+    TillRegex = f'(到|至|--|-|—|——|~|–)'
     MoreRegex = f'(大于|多于|高于|超过|大於|多於|高於|超過|>)'
     LessRegex = f'(小于|少于|低于|小於|少於|低於|不到|不足|<)'
     EqualRegex = f'(等于|等於|=)'

@@ -56,7 +56,7 @@ class EnglishNumeric:
     FractionNumberWithSuffixPercentage = f'(({BaseNumbers.FractionNumberReplaceToken})\\s+of)'
     NumberWithPrefixPercentage = f'(per cent of|percent of|percents of)(\\s*)({BaseNumbers.NumberReplaceToken})'
     NumberWithPrepositionPercentage = f'({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*({BaseNumbers.NumberReplaceToken})'
-    TillRegex = f'(to|through|--|-|—|——|~)'
+    TillRegex = f'(to|through|--|-|—|——|~|–)'
     MoreRegex = f'((bigger|greater|more|higher|larger)(\\s+than)?|above|over|>)'
     LessRegex = f'((less|lower|smaller|fewer)(\\s+than)?|below|under|<)'
     EqualRegex = f'(equal(s|ing)?(\\s+(to|than))?|=)'
