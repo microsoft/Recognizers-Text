@@ -84,7 +84,7 @@
 ,
 {
   "Input": "这里水深超过250m",
-  "NotSupported": "javascript",
+  "NotSupported": "javascript,python",
   "Results": [
     {
       "Text": "250m",
