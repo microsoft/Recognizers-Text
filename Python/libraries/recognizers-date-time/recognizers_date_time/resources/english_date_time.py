@@ -43,7 +43,7 @@ class EnglishDateTime:
     WeekOfYearRegex = f'(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+({YearRegex}|{RelativeRegex}\\s+year))'
     FollowedDateUnit = f'^\\s*{DateUnitRegex}'
     NumberCombinedWithDateUnit = f'\\b(?<num>\\d+(\\.\\d*)?){DateUnitRegex}'
-    QuarterTermRegex = f'(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\\s+quarter)|(Q(?<number>[1-4])))'
+    QuarterTermRegex = f'\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\\s+quarter)|(Q(?<number>[1-4])))\\b'
     QuarterRegex = f'(the\\s+)?{QuarterTermRegex}((\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?'
     QuarterRegexYearFront = f'({YearRegex}|{RelativeRegex}\\s+year)\\s+(the\\s+)?{QuarterTermRegex}'
     HalfYearTermRegex = f'(?<cardinal>first|1st|second|2nd)\\s+half'
@@ -154,8 +154,8 @@ class EnglishDateTime:
     PeriodTimeOfDayRegex = f'\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b'
     PeriodSpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\btonight)\\b'
     PeriodTimeOfDayWithDateRegex = f'\\b(({TimeOfDayRegex}(\\s+(on|of))?))\\b'
-    LessThanRegex = f'\\b(less\\s+than)\\s+$'
-    MoreThanRegex = f'\\b(more\\s+than)\\s+$'
+    LessThanRegex = f'\\b(less\\s+than)\\b'
+    MoreThanRegex = f'\\b(more\\s+than)\\b'
     DurationUnitRegex = f'(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b'
     SuffixAndRegex = f'(?<suffix>\\s*(and)\\s+((an|a)\\s+)?(?<suffix_num>half|quarter))'
     PeriodicRegex = f'\\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annually|annual)\\b'
@@ -187,7 +187,7 @@ class EnglishDateTime:
     AgoRegex = f'\\b(ago|before (?<day>yesterday|today))\\b'
     LaterRegex = f'\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b'
     InConnectorRegex = f'\\b(in)\\b'
-    WithinNextPrefixRegex = f'\\b(within(\\s+the)?(\\s+{NextPrefixRegex})?)\\b'
+    WithinNextPrefixRegex = f'\\b(within(\\s+the)?(\\s+(?<next>{NextPrefixRegex}))?)\\b'
     AmPmDescRegex = f'(ampm)'
     MorningStartEndRegex = f'(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)'
     AfternoonStartEndRegex = f'(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)'
@@ -557,4 +557,5 @@ class EnglishDateTime:
                                ('two thousands', 2000)])
     DefaultLanguageFallback = 'MDY'
     SuperfluousWordList = ['preferably', 'how about', 'maybe', 'say', 'like', 'around']
+    DurationDateRestrictions = ['today', 'now']
 # pylint: enable=line-too-long

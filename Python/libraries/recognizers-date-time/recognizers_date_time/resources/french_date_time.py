@@ -167,6 +167,7 @@ class FrenchDateTime:
     SinceRegex = f'\\b(depuis)\\b'
     AgoPrefixRegex = f'\\b(y a)\\b'
     LaterRegex = f'\\b(plus tard)\\b'
+    AgoRegex = f'^[.]'
     InConnectorRegex = f'\\b(dans|en|sur)\\b'
     WithinNextPrefixRegex = f'^[.]'
     AmDescRegex = f'(h|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b)'
@@ -616,4 +617,5 @@ class FrenchDateTime:
     WrittenDecades = dict([('', 0)])
     SpecialDecadeCases = dict([('', 0)])
     DefaultLanguageFallback = 'DMY'
+    DurationDateRestrictions = []
 # pylint: enable=line-too-long

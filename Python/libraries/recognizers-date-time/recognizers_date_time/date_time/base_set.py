@@ -165,7 +165,7 @@ class BaseSetExtractor(DateTimeExtractor):
             trimmed_source = source[0:match.start()] + RegExpUtility.get_group(match, 'weekday') + source[match.end():]
 
             for extract_result in extractor.extract(trimmed_source, reference):
-                if extract_result.start <= match.start():
+                if extract_result.start <= match.start() and RegExpUtility.get_group(match, 'weekday') in extract_result.text:
                     length = extract_result.length + 1
                     prefix = RegExpUtility.get_group(match, 'prefix')
                     if prefix:
