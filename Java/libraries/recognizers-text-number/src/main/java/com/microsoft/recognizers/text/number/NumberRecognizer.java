@@ -37,7 +37,7 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         this(null, numberOptions, lazyInitialization);
     }
 
-    protected NumberRecognizer(String culture, NumberOptions numberOptions, boolean lazyInitialization) {
+    public NumberRecognizer(String culture, NumberOptions numberOptions, boolean lazyInitialization) {
         super(culture, numberOptions, lazyInitialization);
     }
 
