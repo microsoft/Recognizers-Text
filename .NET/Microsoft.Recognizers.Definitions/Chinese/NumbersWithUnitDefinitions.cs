@@ -549,11 +549,11 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		};
 		public static readonly Dictionary<string, string> DimensionSuffixList = new Dictionary<string, string>
 		{
-			{ "Meter", "米|公尺" },
-			{ "Kilometer", "千米|公里" },
-			{ "Decimeter", "分米|公寸" },
-			{ "Centimeter", "釐米|厘米|公分" },
-			{ "Micrometer", "毫米|公釐" },
+			{ "Meter", "米|公尺|m" },
+			{ "Kilometer", "千米|公里|km" },
+			{ "Decimeter", "分米|公寸|dm" },
+			{ "Centimeter", "釐米|厘米|公分|cm" },
+			{ "Micrometer", "毫米|公釐|mm" },
 			{ "Microns", "微米" },
 			{ "Picometer", "皮米" },
 			{ "Nanometer", "纳米" },
@@ -569,10 +569,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "Yard", "码" },
 			{ "Knot", "海里" },
 			{ "Light year", "光年" },
-			{ "Meter per second", "米每秒|米/秒" },
-			{ "Kilometer per hour", "公里每小时|千米每小时|公里/小时|千米/小时" },
-			{ "Kilometer per minute", "公里每分钟|千米每分钟|公里/分钟|千米/分钟" },
-			{ "Kilometer per second", "公里每秒|千米每秒|公里/秒|千米/秒" },
+			{ "Meter per second", "米每秒|米/秒|m/s" },
+			{ "Kilometer per hour", "公里每小时|千米每小时|公里/小时|千米/小时|km/h" },
+			{ "Kilometer per minute", "公里每分钟|千米每分钟|公里/分钟|千米/分钟|km/min" },
+			{ "Kilometer per second", "公里每秒|千米每秒|公里/秒|千米/秒|km/s" },
 			{ "Mile per hour", "英里每小时|英里/小时" },
 			{ "Foot per second", "英尺每小时|英尺/小时" },
 			{ "Foot per minute", "英尺每分钟|英尺/分钟" },
@@ -585,8 +585,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "Acre", "英亩|公亩" },
 			{ "Hectare", "公顷" },
 			{ "Mu", "亩|市亩" },
-			{ "Liter", "公升|升" },
-			{ "Milliliter", "毫升" },
+			{ "Liter", "公升|升|l" },
+			{ "Milliliter", "毫升|ml" },
 			{ "Cubic meter", "立方米" },
 			{ "Cubic decimeter", "立方分米" },
 			{ "Cubic millimeter", "立方毫米" },
@@ -595,22 +595,22 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "Pint", "品脱" },
 			{ "Dou", "市斗|斗" },
 			{ "Dan", "市石|石" },
-			{ "Kilogram", "千克|公斤" },
+			{ "Kilogram", "千克|公斤|kg" },
 			{ "Jin", "市斤|斤" },
-			{ "Milligram", "毫克" },
+			{ "Milligram", "毫克|mg" },
 			{ "Barrel", "桶" },
 			{ "Pot", "罐" },
-			{ "Gram", "克" },
-			{ "Ton", "公吨|吨" },
+			{ "Gram", "克|g" },
+			{ "Ton", "公吨|吨|t" },
 			{ "Pound", "磅" },
 			{ "Ounce", "盎司" },
-			{ "Bit", "比特|位" },
-			{ "Byte", "字节" },
-			{ "Kilobyte", "千字节" },
-			{ "Megabyte", "兆字节" },
-			{ "Gigabyte", "十亿字节|千兆字节" },
-			{ "Terabyte", "万亿字节|兆兆字节" },
-			{ "Petabyte", "千兆兆|千万亿字节" }
+			{ "Bit", "比特|位|b" },
+			{ "Byte", "字节|byte" },
+			{ "Kilobyte", "千字节|kb" },
+			{ "Megabyte", "兆字节|mb" },
+			{ "Gigabyte", "十亿字节|千兆字节|gb" },
+			{ "Terabyte", "万亿字节|兆兆字节|tb" },
+			{ "Petabyte", "千兆兆|千万亿字节|pb" }
 		};
 		public static readonly IList<string> DimensionAmbiguousValues = new List<string>
 		{
@@ -630,14 +630,32 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			"磅",
 			"米",
 			"罐",
-			"里"
+			"里",
+			"m",
+			"km",
+			"dm",
+			"cm",
+			"mm",
+			"l",
+			"ml",
+			"kg",
+			"mg",
+			"g",
+			"t",
+			"b",
+			"byte",
+			"kb",
+			"mb",
+			"gb",
+			"tb",
+			"pb"
 		};
 		public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
 		{
-			{ "F", "华氏温度|华氏度" },
+			{ "F", "华氏温度|华氏度|°f" },
 			{ "K", "k|开尔文温度|开氏度|凯氏度" },
-			{ "R", "兰氏温度" },
-			{ "C", "摄氏温度|摄氏度" },
+			{ "R", "兰氏温度|°r" },
+			{ "C", "摄氏温度|摄氏度|°c" },
 			{ "Degree", "度" }
 		};
 		public static readonly Dictionary<string, string> TemperaturePrefixList = new Dictionary<string, string>
@@ -649,7 +667,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		};
 		public static readonly IList<string> TemperatureAmbiguousValues = new List<string>
 		{
-			"度"
+			"度",
+			"k"
 		};
 	}
 }

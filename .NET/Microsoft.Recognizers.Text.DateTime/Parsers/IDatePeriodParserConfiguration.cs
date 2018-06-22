@@ -93,6 +93,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ReferenceDatePeriodRegex { get; }
 
+        Regex AgoRegex { get; }
+
+        Regex LaterRegex { get; }
+
+        Regex LessThanRegex { get; }
+
+        Regex MoreThanRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

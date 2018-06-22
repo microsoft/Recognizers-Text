@@ -21,10 +21,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MODEL_DATETIME = "datetime";
 
         // Multiple Duration Types
-        public const string MultipleDuration_Type = "multipleDurationType";
-        public const string MultipleDuration_DateTime = "multipleDurationDateTime";
-        public const string MultipleDuration_Date = "multipleDurationDate";
-        public const string MultipleDuration_Time = "multipleDurationTime";
+        public const string MultipleDuration_Prefix = "multipleDuration";
+        public const string MultipleDuration_Type = MultipleDuration_Prefix + "Type";
+        public const string MultipleDuration_DateTime = MultipleDuration_Prefix + "DateTime";
+        public const string MultipleDuration_Date = MultipleDuration_Prefix + "Date";
+        public const string MultipleDuration_Time = MultipleDuration_Prefix + "Time";
         
         // DateTime Parse
         public const string Resolve = "resolve";
@@ -101,5 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
+
+        public const string NextGroupNameForWithinRegex = "next";
     }
 }

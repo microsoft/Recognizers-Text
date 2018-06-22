@@ -103,4 +103,37 @@
     }
   ]
 }
+,
+{
+  "Input": "Annatalk请给我一些数目",
+  "Results": []
+}
+,
+{
+  "Input": "他烧到了39°C那么高",
+  "Results": [
+    {
+      "Text": "39°C",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "39",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "温度的单位是°C吗",
+  "Results": [
+    {
+      "Text": "°C",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    }
+  ]
+}
 ]

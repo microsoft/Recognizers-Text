@@ -51,22 +51,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var beforeString = text.Substring(0, (int)er.Start);
+                bool isInequalityPrefixMatched = false;
+
                 var match = config.MoreThanRegex.Match(beforeString);
-                if (match.Success)
+
+                // The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week", it will not be tagged incorrectly as "more than"
+                if (match.Success && match.Index + match.Length == beforeString.Trim().Length)
                 {
                     er.Data = Constants.MORE_THAN_MOD;
+                    isInequalityPrefixMatched = true;
                 }
 
-                if (!match.Success)
+                if (!isInequalityPrefixMatched)
                 {
                     match = config.LessThanRegex.Match(beforeString);
-                    if (match.Success)
+                    if (match.Success && match.Index + match.Length == beforeString.Trim().Length)
                     {
                         er.Data = Constants.LESS_THAN_MOD;
+                        isInequalityPrefixMatched = true;
                     }
                 }
 
-                if (match.Success)
+                if (isInequalityPrefixMatched)
                 {
                     er.Length += er.Start - match.Index;
                     er.Start = match.Index;

@@ -166,6 +166,7 @@ export namespace FrenchDateTime {
 	export const SinceRegex = `\\b(depuis)\\b`;
 	export const AgoPrefixRegex = `\\b(y a)\\b`;
 	export const LaterRegex = `\\b(plus tard)\\b`;
+	export const AgoRegex = `^[.]`;
 	export const InConnectorRegex = `\\b(dans|en|sur)\\b`;
 	export const WithinNextPrefixRegex = `^[.]`;
 	export const AmDescRegex = `(h|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b)`;
@@ -229,4 +230,5 @@ export namespace FrenchDateTime {
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
+	export const DurationDateRestrictions = [  ];
 }

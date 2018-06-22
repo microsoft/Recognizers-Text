@@ -144,6 +144,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex ReferenceDatePeriodRegex =
             new Regex(DateTimeDefinitions.ReferenceDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AgoRegex =
+            new Regex(DateTimeDefinitions.AgoRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex LaterRegex =
+            new Regex(DateTimeDefinitions.LaterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex LessThanRegex =
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MoreThanRegex =
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -224,6 +236,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDatePeriodExtractorConfiguration.RelativeDecadeRegex => RelativeDecadeRegex;
 
         Regex IDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex => ReferenceDatePeriodRegex;
+
+        Regex IDatePeriodExtractorConfiguration.AgoRegex => AgoRegex;
+
+        Regex IDatePeriodExtractorConfiguration.LaterRegex => LaterRegex;
+
+        Regex IDatePeriodExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
+
+        string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

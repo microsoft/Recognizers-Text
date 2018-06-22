@@ -43,6 +43,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ReferenceDatePeriodRegex { get; }
 
+        Regex AgoRegex { get; }
+
+        Regex LaterRegex { get; }
+
+        Regex LessThanRegex { get; }
+
+        Regex MoreThanRegex { get; }
+
         IDateTimeExtractor DatePointExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
@@ -56,5 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool HasConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
+
+        string[] DurationDateRestrictions { get; }
     }
 }
