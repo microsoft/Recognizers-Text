@@ -53,4 +53,52 @@
     }
   ]
 }
+,
+{
+  "Input": "如今身高168cm",
+  "Results": [
+    {
+      "Text": "168cm",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": "168",
+        "unit": "Centimeter"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "如今身高168CM",
+  "Results": [
+    {
+      "Text": "168CM",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": "168",
+        "unit": "Centimeter"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这里水深超过250m",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "250m",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": "250",
+        "unit": "Meter"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "dimension是什么意思",
+  "Results": []
+}
 ]
