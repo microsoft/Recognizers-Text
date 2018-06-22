@@ -71,7 +71,7 @@ class EnglishDateTime:
     RelaxedOnRegex = f'(?<=\\b(on|at|in)\\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|21th|22nd|22th|23rd|23th|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\\b'
     ThisRegex = f'\\b((this(\\s*week)?(\\s*on)?\\s+){WeekDayRegex})|({WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b'
     LastDateRegex = f'\\b({PastPrefixRegex}(\\s*week)?\\s+{WeekDayRegex})|({WeekDayRegex}(\\s+last\\s*week))\\b'
-    NextDateRegex = f'\\b({NextPrefixRegex}(\\s*week(\\s*on)?)?\\s+{WeekDayRegex})|((on\\s+)?{WeekDayRegex}((\\s+of)?\\s+next\\s*week))\\b'
+    NextDateRegex = f'\\b({NextPrefixRegex}(\\s*week(\\s*,?\\s*on)?)?\\s+{WeekDayRegex})|((on\\s+)?{WeekDayRegex}((\\s+of)?\\s+next\\s*week))\\b'
     SpecialDayRegex = f'\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today)\\b'
     SpecialDayWithNumRegex = f'\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b'
     RelativeDayRegex = f'\\b(((the\\s+)?{RelativeRegex}\\s+day))\\b'
@@ -79,8 +79,8 @@ class EnglishDateTime:
     WeekDayOfMonthRegex = f'(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'\\b({WrittenNumRegex}\\s+{WeekDayRegex}\\s+(from\\s+now|later))\\b'
     SpecialDate = f'(?=\\b(on|at)\\s+the\\s+){DayRegex}\\b'
-    DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}(\\.)?\\s*[/\\\\\\.\\-]?\\s*{DayRegex}(\\.)?\\b'
-    DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}(\\.)?\\s*[\\.\\-]?\\s*{DayRegex}(\\.)?(\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex}\\b'
+    DateExtractor1 = f'\\b((this\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\\\.\\-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\)))'
+    DateExtractor2 = f'\\b{DateExtractor1}(\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex}\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\.)?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*){MonthRegex}(\\.)?((\\s+|\\s*,\\s*){DateYearRegex})?\\b'
     DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*{DateYearRegex}'
     DateExtractor5 = f'\\b{DayRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}'
@@ -91,7 +91,7 @@ class EnglishDateTime:
     DateExtractorA = f'\\b{DateYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}'
     OfMonth = f'^\\s*of\\s*{MonthRegex}'
     MonthEnd = f'{MonthRegex}\\s*(the)?\\s*$'
-    WeekDayEnd = f'{WeekDayRegex}\\s*,?\\s*$'
+    WeekDayEnd = f'(this\\s+)?{WeekDayRegex}\\s*,?\\s*$'
     RangeUnitRegex = f'\\b(?<unit>years|year|months|month|weeks|week)\\b'
     OclockRegex = f'(?<oclock>o\\s*’\\s*clock|o\\s*‘\\s*clock|o\\s*\'\\s*clock|o\\s*clock)'
     DescRegex = f'((({OclockRegex}\\s+)?(?<desc>ampm|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|a m\\b|pm\\b|p\\.m\\.|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p\\b|p m\\b))|{OclockRegex})'
@@ -135,6 +135,8 @@ class EnglishDateTime:
     TimeRegex10 = f'(\\b{TimePrefix}\\s+)?{BaseDateTime.HourRegex}(\\s*h\\s*){BaseDateTime.MinuteRegex}(\\s*{DescRegex})?'
     PureNumFromTo = f'((from|between)\\s+)?({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*{TillRegex}\\s*({HourRegex}|{PeriodHourNumRegex})\\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?'
     PureNumBetweenAnd = f'(between\\s+)({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*{RangeConnectorRegex}\\s*({HourRegex}|{PeriodHourNumRegex})\\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?'
+    SpecificTimeFromTo = f'((from|between)\\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{TillRegex}\\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))'
+    SpecificTimeBetweenAnd = f'(between\\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{RangeConnectorRegex}\\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))'
     PrepositionRegex = f'(?<prep>^(at|on|of)(\\s+the)?$)'
     TimeOfDayRegex = f'\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime)))s?)\\b'
     SpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btonight)s?\\b'
@@ -170,8 +172,8 @@ class EnglishDateTime:
     HalfRegex = f'(((a|an)\\s*)|\\b)(?<half>half\\s+(?<unit>year|month|week|day|hour))\\b'
     ConjunctionRegex = f'\\b((and(\\s+for)?)|with)\\b'
     HolidayRegex1 = f'\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington\'s birthday|mao\'s birthday|chinese new Year|new years\' eve|new year\'s eve|new year \'s eve|new years eve|new year eve|new years\'|new year\'s|new year \'s|new years|new year|may\\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
-    HolidayRegex2 = f'\\b(?<holiday>martin luther king|martin luther king jr|all saint\'s|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|all hallow|all souls|guy fawkes)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
-    HolidayRegex3 = f'(?<holiday>(canberra|easter|columbus|thanks\\s*giving|christmas|xmas|labour|(international|int\'l)\\s+workers\'?|mother\'s|mother|mothers|father\'s|father|fathers|female|single|teacher\'s|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine\'s|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years\'|new year\'s|new year \'s|new years|new year)\\s+(day))(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?'
+    HolidayRegex2 = f'\\b(?<holiday>all saint\'s|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|all hallow|all souls|guy fawkes)(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?\\b'
+    HolidayRegex3 = f'(?<holiday>(mlk|martin luther king|martin luther king jr|canberra|easter|columbus|thanks\\s*giving|christmas|xmas|labour|(international|int\'l)\\s+workers\'?|mother\'s|mother|mothers|father\'s|father|fathers|female|single|teacher\'s|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine\'s|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years\'|new year\'s|new year \'s|new years|new year)\\s+(day))(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?'
     DateTokenPrefix = 'on '
     TimeTokenPrefix = 'at '
     TokenBeforeDate = 'on '
@@ -200,6 +202,7 @@ class EnglishDateTime:
     FromToRegex = f'\\b(from).+(to)\\b.+'
     SingleAmbiguousMonthRegex = f'^(the\\s+)?(may|march)$'
     SingleAmbiguousTermsRegex = f'^(the\\s+)?(day|week|month|year)$'
+    UnspecificDatePeriodRegex = f'^(week|weekend|month|year)$'
     PrepositionSuffixRegex = f'\\b(on|in|at|around|from|to)$'
     FlexibleDayRegex = f'(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)'
     ForTheRegex = f'\\b(((for the {FlexibleDayRegex})|(on (the\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))'
@@ -497,7 +500,7 @@ class EnglishDateTime:
                          ('fathers', ['fatherday', 'fathersday']),
                          ('mothers', ['motherday', 'mothersday']),
                          ('thanksgiving', ['thanksgivingday', 'thanksgiving']),
-                         ('martinlutherking', ['martinlutherkingday', 'martinlutherkingjrday']),
+                         ('martinlutherking', ['mlkday', 'martinlutherkingday', 'martinlutherkingjrday']),
                          ('washingtonsbirthday', ['washingtonsbirthday', 'washingtonbirthday']),
                          ('canberra', ['canberraday']),
                          ('labour', ['labourday', 'laborday']),
@@ -553,4 +556,5 @@ class EnglishDateTime:
     SpecialDecadeCases = dict([('noughties', 2000),
                                ('two thousands', 2000)])
     DefaultLanguageFallback = 'MDY'
+    SuperfluousWordList = ['preferably', 'how about', 'maybe', 'say', 'like', 'around']
 # pylint: enable=line-too-long

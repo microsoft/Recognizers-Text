@@ -196,6 +196,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string FromRegex2 = @"((depuis|de)(\s*la(s)?)?)$";
 		public const string FromToRegex = @"\b(du|de|des|depuis).+(à|a|au)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(le\s+)?(may|march)$";
+		public const string UnspecificDatePeriodRegex = @"^[.]";
 		public const string PrepositionSuffixRegex = @"\b(du|de|[àa]|vers|dans)$";
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
 		public static readonly string ForTheRegex = $@"\b(((pour le {FlexibleDayRegex})|(dans (le\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";

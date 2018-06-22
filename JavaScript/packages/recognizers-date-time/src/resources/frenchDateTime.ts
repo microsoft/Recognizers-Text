@@ -187,6 +187,7 @@ export namespace FrenchDateTime {
 	export const FromRegex2 = `((depuis|de)(\\s*la(s)?)?)$`;
 	export const FromToRegex = `\\b(du|de|des|depuis).+(à|a|au)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(le\\s+)?(may|march)$`;
+	export const UnspecificDatePeriodRegex = `^[.]`;
 	export const PrepositionSuffixRegex = `\\b(du|de|[àa]|vers|dans)$`;
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b(((pour le ${FlexibleDayRegex})|(dans (le\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;

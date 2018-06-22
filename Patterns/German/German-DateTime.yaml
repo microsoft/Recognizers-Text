@@ -439,6 +439,9 @@ FromToRegex: !simpleRegex
   def: \b(vom|von).+(bis(\s*zum)?)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
+UnspecificDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PrepositionSuffixRegex: !simpleRegex
   def: \b(am|in|um|gegen|von|vom|zum)$
 FlexibleDayRegex: !simpleRegex

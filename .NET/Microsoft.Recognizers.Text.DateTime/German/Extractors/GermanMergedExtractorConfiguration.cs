@@ -32,6 +32,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnspecificDatePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public static readonly Regex[] FilterWordRegexList =
@@ -88,6 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }

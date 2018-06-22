@@ -160,5 +160,16 @@
         "Type": "timezone"
       }
     ]
+  },
+  {
+    "Input": "let's meet eastern time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "eastern time",
+        "Type": "timezone"
+      }
+    ]
   }
 ]

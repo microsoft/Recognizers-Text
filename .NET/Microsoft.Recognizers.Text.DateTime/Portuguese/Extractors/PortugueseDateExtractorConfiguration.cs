@@ -145,6 +145,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly ImmutableDictionary<string, int> DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
+        public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
+
         public PortugueseDateExtractorConfiguration() : base(DateTimeOptions.None)
         {
             IntegerExtractor = new IntegerExtractor();
@@ -169,6 +171,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
+
+        IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
 
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 

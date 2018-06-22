@@ -191,6 +191,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string ConnectorRegex = @"^(-|,|für|t|gegen)$";
 		public const string FromToRegex = @"\b(vom|von).+(bis(\s*zum)?)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
+		public const string UnspecificDatePeriodRegex = @"^[.]";
 		public const string PrepositionSuffixRegex = @"\b(am|in|um|gegen|von|vom|zum)$";
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
 		public static readonly string ForTheRegex = $@"\b(für den {FlexibleDayRegex})";

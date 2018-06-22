@@ -746,6 +746,9 @@ FromToRegex: !simpleRegex
 SingleAmbiguousMonthRegex: !simpleRegex
   # TODO: change to Portuguese according to corresponding Regex
   def: ^(the\s+)?(may|march)$
+UnspecificDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PrepositionSuffixRegex: !simpleRegex
   # TODO: change to Portuguese according to corresponding Regex
   def: \b(on|in|at|around|from|to)$

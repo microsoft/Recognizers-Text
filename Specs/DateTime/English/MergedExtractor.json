@@ -1036,6 +1036,17 @@
 }
 ,
 {
+  "Input": "What the sale by year?",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "I have already finished all my work more than 2 weeks before today",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",

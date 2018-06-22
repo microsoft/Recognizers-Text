@@ -196,7 +196,8 @@ export namespace SpanishDateTime {
 	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
-	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;
+	export const UnspecificDatePeriodRegex = `^[.]`;
+	export const PrepositionSuffixRegex = `\\b(on|in|at|around|for|during|since|from|to)$`;
 	export const RestOfDateTimeRegex = `^[\\.]`;
 	export const SetWeekDayRegex = `^[\\.]`;
 	export const NightRegex = `\\b(medionoche|noche)\\b`;

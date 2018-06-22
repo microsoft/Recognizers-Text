@@ -2821,8 +2821,7 @@
             }
           ]
         }
-      }
-      ,
+      },
       {
         "Text": "after 2018",
         "Start": 29,
@@ -2938,7 +2937,8 @@
     ]
   },
   {
-    "Input": "Cortana please set up a call today for 10 minutes and also set up a 30 minute call Wednesday at 7 PM Eastern.",
+    "Input":
+      "Cortana please set up a call today for 10 minutes and also set up a 30 minute call Wednesday at 7 PM Eastern.",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -3105,7 +3105,8 @@
     ]
   },
   {
-    "Input": "Could you please schedule a 30 min skype meeting after 11:00am mountain today?",
+    "Input":
+      "Could you please schedule a 30 min skype meeting after 11:00am mountain today?",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -3181,7 +3182,7 @@
     },
     "NotSupportedByDesign": "python",
     "Results": [
-        {
+      {
         "Text": "martin luther king day",
         "Start": 0,
         "End": 21,
@@ -3225,8 +3226,7 @@
             }
           ]
         }
-      }
-      ,
+      },
       {
         "Text": "before 2018",
         "Start": 29,
@@ -3242,8 +3242,7 @@
             }
           ]
         }
-      }
-      ,
+      },
       {
         "Text": "before 2000",
         "Start": 44,
@@ -3259,8 +3258,7 @@
             }
           ]
         }
-      }
-      ,
+      },
       {
         "Text": "1998",
         "Start": 64,
@@ -3273,6 +3271,114 @@
               "type": "daterange",
               "start": "1998-01-01",
               "end": "1999-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please tell me the sale by year of Microsoft.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "show me records more than 4 days and less than 1 week",
+    "Context": {
+      "ReferenceDateTime": "2018-06-19T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "more than 4 days",
+        "Start": 16,
+        "End": 31,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P4D",
+              "Mod": "more",
+              "type": "duration",
+              "value": "345600"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "less than 1 week",
+        "Start": 37,
+        "End": 52,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "Mod": "less",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please tell me the sale by year of Microsoft.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Show me records more than 1 hour and 30 minutes",
+    "Context": {
+      "ReferenceDateTime": "2018-06-19T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "more than 1 hour and 30 minutes",
+        "Start": 16,
+        "End": 46,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1HT30M",
+              "Mod": "more",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at 10:30am montreal time.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-21T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "10:30am montreal time",
+        "Start": 18,
+        "End": 38,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10:30",
+              "type": "time",
+              "timezone": "UTC+XX:XX",
+              "utcOffsetMins": "-10000",
+              "value": "10:30:00"
             }
           ]
         }

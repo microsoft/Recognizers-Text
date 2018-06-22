@@ -446,6 +446,9 @@ FromToRegex: !simpleRegex
   def: \b(du|de|des|depuis).+(à|a|au)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(le\s+)?(may|march)$
+UnspecificDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PrepositionSuffixRegex: !simpleRegex
   def: \b(du|de|[àa]|vers|dans)$
 FlexibleDayRegex: !simpleRegex
