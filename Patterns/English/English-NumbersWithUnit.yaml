@@ -767,6 +767,7 @@ AmbiguousDimensionUnitList: !list
     - fps
     - pts
     - in
+    - dm
     - \"
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
