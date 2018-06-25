@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor OrdinalExtractor { get; }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
@@ -71,6 +73,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex LessThanRegex { get; }
         public Regex MoreThanRegex { get; }
 
+        public Regex CenturySuffixRegex { get; }
+
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -107,6 +111,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
@@ -149,6 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             LaterRegex = SpanishDatePeriodExtractorConfiguration.LaterRegex;
             LessThanRegex = SpanishDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = SpanishDatePeriodExtractorConfiguration.MoreThanRegex;
+            CenturySuffixRegex = SpanishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

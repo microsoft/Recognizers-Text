@@ -156,6 +156,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex MoreThanRegex =
             new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex CenturySuffixRegex =
+            new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -185,6 +188,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
+            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
         }
@@ -192,6 +196,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IDateTimeExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
 
@@ -242,6 +248,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDatePeriodExtractorConfiguration.LessThanRegex => LessThanRegex;
 
         Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
+
+        Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

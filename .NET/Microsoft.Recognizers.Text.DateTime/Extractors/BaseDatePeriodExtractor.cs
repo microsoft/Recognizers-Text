@@ -34,8 +34,38 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(SingleTimePointWithPatterns(text, reference));
             tokens.AddRange(MatchComplexCases(text, simpleCasesResults, reference));
             tokens.AddRange(MatchYearPeriod(text, reference));
+            tokens.AddRange(MatchOrdinalNumberWithCenturySuffix(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        // Cases like "21st century"
+        private List<Token> MatchOrdinalNumberWithCenturySuffix(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+            var ers = this.config.OrdinalExtractor.Extract(text);
+
+            foreach (var er in ers)
+            {
+                if (er.Start + er.Length >= text.Length)
+                {
+                    continue;
+                }
+
+                var afterString = text.Substring((er.Start + er.Length).Value);
+                var trimmedAfterString = afterString.TrimStart();
+                var whiteSpacesCount = afterString.Length - trimmedAfterString.Length;
+                var afterStringOffset = (er.Start + er.Length).Value + whiteSpacesCount;
+
+                var match = this.config.CenturySuffixRegex.Match(trimmedAfterString);
+                
+                if (match.Success)
+                {
+                    ret.Add(new Token(er.Start.Value, afterStringOffset + match.Index + match.Length));
+                }
+            }
+
+            return ret;
         }
 
         private List<Token> MatchYearPeriod(string text, DateObject referece)

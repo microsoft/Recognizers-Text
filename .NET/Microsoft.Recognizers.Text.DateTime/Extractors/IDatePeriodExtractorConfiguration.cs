@@ -51,9 +51,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MoreThanRegex { get; }
 
+        Regex CenturySuffixRegex { get; }
+
         IDateTimeExtractor DatePointExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
+
+        IExtractor OrdinalExtractor { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
 
