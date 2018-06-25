@@ -16,12 +16,39 @@ public class ExtractResult {
         this.data = data;
     }
 
+    public ExtractResult withStart(int newStart) {
+        return new ExtractResult(
+                newStart,
+                this.length,
+                this.text,
+                this.type,
+                this.data);
+    }
+
+    public ExtractResult withLength(int newLength) {
+        return new ExtractResult(
+                this.start,
+                newLength,
+                this.text,
+                this.type,
+                this.data);
+    }
+
     public ExtractResult withText(String newText) {
         return new ExtractResult(
                 this.start,
                 this.length,
                 newText,
                 this.type,
+                this.data);
+    }
+
+    public ExtractResult withType(String newType) {
+        return new ExtractResult(
+                this.start,
+                this.length,
+                this.text,
+                newType,
                 this.data);
     }
 

@@ -16,6 +16,7 @@ The important pieces are the Recognizers and Model classes, which you'll need to
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.number.NumberRecognizer;
+import com.microsoft.recognizers.text.numberwithunit.NumberWithUnitRecognizer;
 ```
 
 Then, the sample gets a model reference of each available Recognizer. We need to do so by passing the Culture code we'll want to detect. E.g.: `en-us`.
@@ -40,7 +41,23 @@ NumberRecognizer.recognizePercentage(userInput, culture),
 
 // Number Range recognizer will find any cardinal or ordinal number range
 // E.g. "between 2 and 5" will return "(2,5)"
-NumberRecognizer.recognizeNumberRange(userInput, culture)
+NumberRecognizer.recognizeNumberRange(userInput, culture),
+
+// Age recognizer will find any age number presented
+// E.g "After ninety five years of age, perspectives change" will return "95 Year"
+NumberWithUnitRecognizer.recognizeAge(userInput, culture),
+
+// Currency recognizer will find any currency presented
+// E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
+NumberWithUnitRecognizer.recognizeCurrency(userInput, culture),
+
+// Dimension recognizer will find any dimension presented
+// E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
+NumberWithUnitRecognizer.recognizeDimension(userInput, culture),
+
+// Temperature recognizer will find any temperature presented
+// E.g "Set the temperature to 30 degrees celsius" will return "30 C"
+NumberWithUnitRecognizer.recognizeTemperature(userInput, culture)
 ````
 
 All these models accept `userInput` as a string and returns a **List** of [ModelResult](../libraries/recognizers-text/src/main/java/com/microsoft/recognizers/text/ModelResult.java):

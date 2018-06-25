@@ -17,6 +17,7 @@
         <module>libraries/resource-generator</module>
         <module>libraries/recognizers-text</module>
         <module>libraries/recognizers-text-number</module>
+        <module>libraries/recognizers-text-number-with-unit</module>
         <module>tests</module>
         <module>samples/simple-console</module>
     </modules>
