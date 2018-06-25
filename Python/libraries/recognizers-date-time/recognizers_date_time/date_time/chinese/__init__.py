@@ -7,5 +7,7 @@ from .date_extractor import *
 from .time_period_extractor import *
 from .date_period_extractor_config import *
 from .date_period_extractor import *
+from .datetime_extractor_config import *
+from .datetime_extractor import *
 from .datetime_period_extractor_config import *
 from .datetime_period_extractor import *
