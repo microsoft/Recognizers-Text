@@ -3049,23 +3049,8 @@
   "Context": {
     "ReferenceDateTime": "2018-05-24T00:00:00"
   },
-  "NotSupported": "python",
-  "Results": [{
-    "Text": "month",
-    "Start": 13,
-    "End": 17,
-    "TypeName": "datetimeV2.daterange",
-    "Resolution": {
-      "values": [
-        {
-          "timex": "2018-05",
-          "type": "daterange",
-          "start": "2018-05-01",
-          "end": "2018-06-01"
-        }
-      ]
-    }
-  }]
+  "NotSupported": "python,javascript",
+  "Results": []
 }
 ,
 {
@@ -3082,23 +3067,8 @@
   "Context": {
     "ReferenceDateTime": "2018-05-24T00:00:00"
   },
-  "NotSupported": "python",
-  "Results": [{
-    "Text": "week",
-    "Start": 13,
-    "End": 16,
-    "TypeName": "datetimeV2.daterange",
-    "Resolution": {
-      "values": [
-        {
-          "timex": "2018-W21",
-          "type": "daterange",
-          "start": "2018-05-21",
-          "end": "2018-05-28"
-        }
-      ]
-    }
-  }]
+  "NotSupported": "python,javascript",
+  "Results": []
 }
 ,
 {
@@ -3780,22 +3750,7 @@
     "ReferenceDateTime": "2018-06-20T00:00:00"
   },
   "NotSupported": "javascript,python",
-  "Results": [{
-    "Text": "year",
-    "Start": 36,
-    "End": 39,
-    "TypeName": "datetimeV2.daterange",
-    "Resolution": {
-      "values": [
-        {
-          "timex": "2018",
-          "type": "daterange",
-          "start": "2018-01-01",
-          "end": "2019-01-01"
-        }
-      ]
-    }
-  }]
+  "Results": []
 }
 ,
 {
@@ -4056,6 +4011,54 @@
           "type": "timerange",
           "start": "20:00:00",
           "end": "23:59:59"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "It happens in 15th  century",
+  "Context": {
+    "ReferenceDateTime": "2018-06-22T00:00:00"
+  },
+  "NotSupported": "javascript,python,java",
+  "Results": [{
+    "Text": "15th  century",
+    "Start": 14,
+    "End": 26,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "(1400-01-01,1500-01-01,P100Y)",
+          "type": "daterange",
+          "start": "1400-01-01",
+          "end": "1500-01-01"
+        }
+      ]
+    }
+  }]
+}
+,
+{
+  "Input": "Show me the records in 21st century",
+  "Context": {
+    "ReferenceDateTime": "2018-06-22T00:00:00"
+  },
+  "NotSupported": "javascript,python,java",
+  "Results": [{
+    "Text": "21st century",
+    "Start": 23,
+    "End": 34,
+    "TypeName": "datetimeV2.daterange",
+    "Resolution": {
+      "values": [
+        {
+          "timex": "(2000-01-01,2100-01-01,P100Y)",
+          "type": "daterange",
+          "start": "2000-01-01",
+          "end": "2100-01-01"
         }
       ]
     }

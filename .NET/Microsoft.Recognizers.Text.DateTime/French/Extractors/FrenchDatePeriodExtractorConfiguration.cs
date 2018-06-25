@@ -229,6 +229,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex MoreThanRegex =
             new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex CenturySuffixRegex =
+            new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -259,6 +262,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
+            OrdinalExtractor = new Number.French.OrdinalExtractor();
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
         }
@@ -266,6 +270,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
 
@@ -316,6 +322,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDatePeriodExtractorConfiguration.LessThanRegex => LessThanRegex;
 
         Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
+
+        Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
 
         string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 

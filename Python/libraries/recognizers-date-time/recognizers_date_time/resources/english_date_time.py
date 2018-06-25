@@ -17,6 +17,7 @@ class EnglishDateTime:
     AfterNextSuffixRegex = f'\\b(after\\s+(the\\s+)?next)\\b'
     PastPrefixRegex = f'(last|past|previous)\\b'
     ThisPrefixRegex = f'(this|current)\\b'
+    CenturySuffixRegex = f'(^century)\\b'
     ReferencePrefixRegex = f'(that|same)\\b'
     FutureSuffixRegex = f'\\b(in\\s+the\\s+)?(future|hence)\\b'
     DayRegex = f'(the\\s*)?(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21th|21|22nd|22th|22|23rd|23th|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\\b|t)'

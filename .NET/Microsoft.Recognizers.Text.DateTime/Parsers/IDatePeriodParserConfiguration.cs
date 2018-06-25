@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor CardinalExtractor { get; }
 
+        IExtractor OrdinalExtractor { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IParser NumberParser { get; }
@@ -100,6 +102,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex LessThanRegex { get; }
 
         Regex MoreThanRegex { get; }
+
+        Regex CenturySuffixRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

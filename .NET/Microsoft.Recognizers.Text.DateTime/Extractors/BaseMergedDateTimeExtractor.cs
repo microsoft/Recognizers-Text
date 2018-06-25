@@ -58,6 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = this.config.DateTimeAltExtractor.Extract(ret, text, reference);
             }
 
+            ret = FilterUnspecificDatePeriod(ret, text);
             AddMod(ret, text);
 
             // filtering
@@ -159,6 +160,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return config.FromToRegex.IsMatch(er.Text);
         }
 
+        private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers, string text)
+        {
+            ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
+            return ers;
+        }
+
         private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
         {
             if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text.ToLowerInvariant()))
@@ -208,12 +215,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var lastEnd = 0;
             foreach (var er in ers)
             {
-                // Skip the unspecific date period
-                if (this.config.UnspecificDatePeriodRegex.IsMatch(er.Text))
-                {
-                    continue;
-                }
-
                 var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
 
                 if (HasTokenIndex(beforeStr.TrimEnd(), config.BeforeRegex, out int tokenIndex))

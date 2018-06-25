@@ -3327,14 +3327,6 @@
     ]
   },
   {
-    "Input": "Cortana, please tell me the sale by year of Microsoft.",
-    "Context": {
-      "ReferenceDateTime": "2018-06-20T00:00:00"
-    },
-    "NotSupported": "javascript,python",
-    "Results": []
-  },
-  {
     "Input": "Show me records more than 1 hour and 30 minutes",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
@@ -3549,6 +3541,58 @@
       }
     ]
   },
+  {
+    "Input": "It happens in 15th  century",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15th  century",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(1400-01-01,1500-01-01,P100Y)",
+              "type": "daterange",
+              "start": "1400-01-01",
+              "end": "1500-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Show me the records in 21st century",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21st century",
+        "Start": 23,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2000-01-01,2100-01-01,P100Y)",
+              "type": "daterange",
+              "start": "2000-01-01",
+              "end": "2100-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  ,
   {
     "Input": "Maybe we can leave after 2018",
     "Context": {

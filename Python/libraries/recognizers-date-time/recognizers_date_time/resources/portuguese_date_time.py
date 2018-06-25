@@ -43,6 +43,7 @@ class PortugueseDateTime:
     RangeUnitRegex = f'\\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\\b'
     InConnectorRegex = f'\\b(em)\\b'
     WithinNextPrefixRegex = f'^[.]'
+    CenturySuffixRegex = f'^[.]'
     FromRegex = f'((desde|de)(\\s*a(s)?)?)$'
     ConnectorAndRegex = f'(e\\s*([àa](s)?)?)$'
     BetweenRegex = f'(entre\\s*([oa](s)?)?)'
