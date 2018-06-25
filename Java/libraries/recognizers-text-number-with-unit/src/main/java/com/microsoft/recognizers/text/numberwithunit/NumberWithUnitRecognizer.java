@@ -151,6 +151,23 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
                 new CurrencyModel(ImmutableMap.of(
                     new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.spanish.extractors.CurrencyExtractorConfiguration()),
                     new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.spanish.parsers.CurrencyParserConfiguration()))));
+        registerModel(TemperatureModel.class, Culture.Spanish, (options) ->
+                new TemperatureModel(ImmutableMap.of(
+                    new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.spanish.extractors.TemperatureExtractorConfiguration()),
+                    new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.spanish.parsers.TemperatureParserConfiguration()))));
+//        RegisterModel<DimensionModel>(
+//                Culture.Spanish,
+//                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+//        {
+//            {
+//                new NumberWithUnitExtractor(new Spanish.DimensionExtractorConfiguration()),
+//                        new NumberWithUnitParser(new Spanish.DimensionParserConfiguration())
+//            }
+//        }));
+        registerModel(AgeModel.class, Culture.Spanish, (options) ->
+                new AgeModel(ImmutableMap.of(
+                    new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.spanish.extractors.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.spanish.parsers.AgeParserConfiguration()))));
         //endregion
     }
 }
