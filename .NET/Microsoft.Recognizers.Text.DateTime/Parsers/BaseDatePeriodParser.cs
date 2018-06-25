@@ -313,7 +313,52 @@ namespace Microsoft.Recognizers.Text.DateTime
                 innerResult = ParseDuration(text, referenceDate);
             }
 
+            // Cases like "21st century"
+            if (!innerResult.Success)
+            {
+                innerResult = ParseOrdinalNumberWithCenturySuffix(text, referenceDate);
+            }
+
             return innerResult;
+        }
+
+        // Cases like "21st century"
+        private DateTimeResolutionResult ParseOrdinalNumberWithCenturySuffix(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var er = this.config.OrdinalExtractor.Extract(text).FirstOrDefault();
+
+            if (er != null && er.Start + er.Length < text.Length)
+            {
+                var afterString = text.Substring((er.Start + er.Length).Value).Trim();
+
+                // It falls into the cases like "21st century"
+                if (this.config.CenturySuffixRegex.Match(afterString).Success)
+                {
+                    var number = this.config.NumberParser.Parse(er);
+
+                    if (number.Value != null)
+                    {
+                        var startYear = Convert.ToInt32((double)(number.Value)) * Constants.CenturyYearsCount;
+                        var startDate = new DateObject(startYear, 1, 1);
+                        var endDate = new DateObject(startYear + Constants.CenturyYearsCount, 1, 1);
+                        var duration = endDate - startDate;
+
+                        var startLuisStr = FormatUtil.LuisDate(startDate);
+                        var endLuisStr = FormatUtil.LuisDate(endDate);
+                        var durationTimex = $"P{Constants.CenturyYearsCount}Y";
+
+                        ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
+                        ret.FutureValue = new Tuple<DateObject, DateObject>(startDate,
+                            endDate);
+                        ret.PastValue = new Tuple<DateObject, DateObject>(startDate,
+                            endDate);
+                        ret.Success = true;
+                    }
+                }
+            }
+
+            return ret;
         }
 
         // Only handle cases like "within/less than/more than x weeks from/before/after today"

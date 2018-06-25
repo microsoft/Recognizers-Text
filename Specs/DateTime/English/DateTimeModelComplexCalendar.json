@@ -3540,5 +3540,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "It happens in 15th  century",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15th  century",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(1500-01-01,1600-01-01,P100Y)",
+              "type": "daterange",
+              "start": "1500-01-01",
+              "end": "1600-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

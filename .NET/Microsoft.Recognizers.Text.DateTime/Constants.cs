@@ -94,6 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int TrimesterMonthCount = 3;
         public const int SemesterMonthCount = 6;
         public const int WeekDayCount = 7;
+        public const int CenturyYearsCount = 100;
 
         // hours of one half day
         public const int HalfDayHourCount = 12;
