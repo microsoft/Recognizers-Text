@@ -1038,12 +1038,7 @@
 {
   "Input": "What the sale by year?",
   "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "year",
-      "Type": "daterange"
-    }
-  ]
+  "Results": []
 }
 ,
 {

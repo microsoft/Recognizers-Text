@@ -3327,14 +3327,6 @@
     ]
   },
   {
-    "Input": "Cortana, please tell me the sale by year of Microsoft.",
-    "Context": {
-      "ReferenceDateTime": "2018-06-20T00:00:00"
-    },
-    "NotSupported": "javascript,python",
-    "Results": []
-  },
-  {
     "Input": "Show me records more than 1 hour and 30 minutes",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
