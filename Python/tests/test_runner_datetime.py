@@ -104,9 +104,6 @@ def assert_model_resolution(actual, expected):
 def simple_extractor_assert(actual, expected, prop, resolution):
     if resolution in expected:
         assert getattr(actual, prop) == expected[resolution]
-def simple_extractor_assert(actual, expected, prop, resolution):
-    if resolution in expected:
-        assert getattr(actual, prop) == expected[resolution]
 
 def simple_parser_assert(actual, expected, prop, resolution):
     if resolution in expected:
