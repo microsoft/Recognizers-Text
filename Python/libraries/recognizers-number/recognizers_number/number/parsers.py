@@ -185,7 +185,6 @@ class BaseNumberParser(Parser):
                 # \\s+ for filter the spaces.
                 power *= rep
 
-                # tslint:disable-next-line:no-conditional-assignment
                 tmp_index = handle.find(match.group(), start_index)
                 while tmp_index >= 0:
                     front = handle[0:tmp_index].rstrip()

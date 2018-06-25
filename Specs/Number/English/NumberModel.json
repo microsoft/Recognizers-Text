@@ -1864,5 +1864,23 @@
       }
     }
   ]
+},
+{
+  "Input": "I can give you 1M.",
+  "Results": [
+    {
+      "Text": "1M",
+      "Start": 15,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000"
+      }
+    }
+  ]
+},
+{
+  "Input": "1m isn't a number.",
+  "Results": []
 }
 ]
