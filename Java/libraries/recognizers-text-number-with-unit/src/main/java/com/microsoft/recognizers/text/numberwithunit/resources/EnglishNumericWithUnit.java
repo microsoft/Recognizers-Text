@@ -615,7 +615,7 @@ public class EnglishNumericWithUnit {
         .put("Petabyte", "-petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte")
         .build();
 
-    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "barrels", "grain", "pound", "stone", "yards", "yard", "cord", "dram", "feet", "foot", "gill", "knot", "peck", "cup", "fps", "pts", "in", "\\\"");
+    public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "barrels", "grain", "pound", "stone", "yards", "yard", "cord", "dram", "feet", "foot", "gill", "knot", "peck", "cup", "fps", "pts", "in", "dm", "\\\"");
 
     public static final String BuildPrefix = "(?<=(\\s|^))";
 
