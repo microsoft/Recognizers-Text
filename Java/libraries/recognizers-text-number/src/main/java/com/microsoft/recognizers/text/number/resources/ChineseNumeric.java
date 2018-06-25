@@ -367,7 +367,7 @@ public class ChineseNumeric {
 
     public static final String SpecialsFoldsPercentageRegex = "半\\s*成|(?<=打)[对對]\\s*折|半\\s*折";
 
-    public static final String TillRegex = "(到|至|--|-|—|——|~)";
+    public static final String TillRegex = "(到|至|--|-|—|——|~|–)";
 
     public static final String MoreRegex = "(大于|多于|高于|超过|大於|多於|高於|超過|>)";
 
