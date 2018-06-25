@@ -12,13 +12,15 @@ export class Constants {
 
     // key
     static readonly TimexKey: string = "timex";
-    static readonly CommentKey: string = "Comment";
     static readonly ModKey: string = "Mod";
     static readonly TypeKey: string = "type";
     static readonly IsLunarKey: string = "isLunar";
     static readonly ResolveKey: string = "resolve";
     static readonly ResolveToPastKey: string = "resolveToPast";
     static readonly ResolveToFutureKey: string = "resolveToFuture";
+    
+    static readonly CommentKey: string = "Comment";
+    static readonly CommentAmPm: string = "ampm";
 
     static readonly SemesterMonthCount: number = 6;
     static readonly TrimesterMonthCount: number = 3;
@@ -31,6 +33,28 @@ export class Constants {
 
     static readonly MaxTwoDigitYearFutureNum: number = parseInt(BaseDateTime.MaxTwoDigitYearFutureNum);
     static readonly MinTwoDigitYearPastNum: number = parseInt(BaseDateTime.MinTwoDigitYearPastNum);
+
+    // Mod Value
+    // "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
+    static readonly BEFORE_MOD: string = 'before';
+
+    // "after" -> To mean "following in time". I.e. Does not include the extracted datetime entity in the resolution's starting point. Equivalent to ">"
+    static readonly AFTER_MOD: string = 'after';
+
+    // "since" -> Same as "after", but including the extracted datetime entity. Equivalent to ">="
+    static readonly SINCE_MOD: string = 'since';
+
+    // "until" -> Same as "before", but including the extracted datetime entity. Equivalent to "<="
+    static readonly UNTIL_MOD: string = 'until';
+
+    static readonly EARLY_MOD: string = 'start';
+    static readonly MID_MOD: string = 'mid';
+    static readonly LATE_MOD: string = 'end';
+
+    static readonly MORE_THAN_MOD: string = 'more';
+    static readonly LESS_THAN_MOD: string = 'less';
+
+    static readonly REF_UNDEF_MOD: string = 'ref_undef';
 }
 
 export class TimeTypeConstants {

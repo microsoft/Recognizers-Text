@@ -24,7 +24,8 @@ class ChineseHolidayParserConfiguration extends BaseHolidayParserConfiguration {
         super();
         this.holidayRegexList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.HolidayRegexList1),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.HolidayRegexList1)
+            RegExpUtility.getSafeRegExp(ChineseDateTime.HolidayRegexList2),
+            RegExpUtility.getSafeRegExp(ChineseDateTime.LunarHolidayRegex)
         ];
         this.holidayFuncDictionary = this.initHolidayFuncs();
         this.variableHolidaysTimexDictionary = ChineseDateTime.HolidayNoFixedTimex;

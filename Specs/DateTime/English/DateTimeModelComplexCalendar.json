@@ -1471,7 +1471,7 @@
       {
         "Text": "each week",
         "Start": 0,
-        "End": 9,
+        "End": 8,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1486,7 +1486,7 @@
       {
         "Text": "this week",
         "Start": 28,
-        "End": 37,
+        "End": 36,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
