@@ -339,7 +339,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (number.Value != null)
                     {
-                        var startYear = Convert.ToInt32((double)(number.Value)) * Constants.CenturyYearsCount;
+                        // Note that 1st century means from year 0 - 100
+                        var startYear = (Convert.ToInt32((double)(number.Value)) - 1) * Constants.CenturyYearsCount;
                         var startDate = new DateObject(startYear, 1, 1);
                         var endDate = new DateObject(startYear + Constants.CenturyYearsCount, 1, 1);
                         var duration = endDate - startDate;

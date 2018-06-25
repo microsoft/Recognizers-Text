@@ -5255,14 +5255,39 @@
       "Text": "15th  century",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1500-01-01,1600-01-01,P100Y)",
+        "Timex": "(1400-01-01,1500-01-01,P100Y)",
         "FutureResolution": {
-          "startDate": "1500-01-01",
-          "endDate": "1600-01-01"
+          "startDate": "1400-01-01",
+          "endDate": "1500-01-01"
         },
         "PastResolution": {
-          "startDate": "1500-01-01",
-          "endDate": "1600-01-01"
+          "startDate": "1400-01-01",
+          "endDate": "1500-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Show me the records in 21st century",
+  "Context": {
+    "ReferenceDateTime": "2018-05-29T00:00:00"
+  },
+  "NotSupported": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "21st century",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2000-01-01,2100-01-01,P100Y)",
+        "FutureResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2100-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2100-01-01"
         }
       }
     }
