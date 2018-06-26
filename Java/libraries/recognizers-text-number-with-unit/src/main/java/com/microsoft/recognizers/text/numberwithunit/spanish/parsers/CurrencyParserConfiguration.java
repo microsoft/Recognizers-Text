@@ -7,7 +7,7 @@ import com.microsoft.recognizers.text.numberwithunit.spanish.extractors.Currency
 public class CurrencyParserConfiguration extends SpanishNumberWithUnitParserConfiguration {
 
     public CurrencyParserConfiguration() {
-        this(new CultureInfo(Culture.English));
+        this(new CultureInfo(Culture.Spanish));
     }
 
     public CurrencyParserConfiguration(CultureInfo cultureInfo) {
