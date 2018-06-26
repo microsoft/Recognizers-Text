@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string FivesRegex = @"(?<tens>(fifteen|twenty(\s*five)?|thirty(\s*five)?|forty(\s*five)?|fourty(\s*five)?|fifty(\s*five)?|ten|five))\b";
 		public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
 		public const string PeriodHourNumRegex = @"\b(?<hour>twenty one|twenty two|twenty three|twenty four|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)\b";
-		public static readonly string ConnectNumRegex = $@"{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
+		public static readonly string ConnectNumRegex = $@"\b{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
 		public static readonly string TimeRegex1 = $@"\b({TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}";
 		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex3 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})";
@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string TimeRegex7 = $@"\b{TimeSuffixFull}\s+at\s+{BasicTime}((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex8 = $@"\b{TimeSuffixFull}\s+{BasicTime}((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)";
-		public static readonly string TimeRegex10 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
+		public static readonly string TimeRegex10 = $@"\b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?";
 		public static readonly string PureNumFromTo = $@"((from|between)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?";
 		public static readonly string PureNumBetweenAnd = $@"(between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?";
 		public static readonly string SpecificTimeFromTo = $@"((from|between)\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))";
