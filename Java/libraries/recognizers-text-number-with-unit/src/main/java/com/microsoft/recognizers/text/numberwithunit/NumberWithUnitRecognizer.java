@@ -183,5 +183,24 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
                         new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.portuguese.extractors.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.portuguese.parsers.AgeParserConfiguration()))));
         //endregion
+
+        //region French
+        registerModel(CurrencyModel.class, Culture.French, (options) ->
+                new CurrencyModel(ImmutableMap.of(
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.french.extractors.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.french.parsers.CurrencyParserConfiguration()))));
+        registerModel(TemperatureModel.class, Culture.French, (options) ->
+                new TemperatureModel(ImmutableMap.of(
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.french.extractors.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.french.parsers.TemperatureParserConfiguration()))));
+        registerModel(DimensionModel.class, Culture.French, (options) ->
+                new DimensionModel(ImmutableMap.of(
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.french.extractors.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.french.parsers.DimensionParserConfiguration()))));
+        registerModel(AgeModel.class, Culture.French, (options) ->
+                new AgeModel(ImmutableMap.of(
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.french.extractors.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.french.parsers.AgeParserConfiguration()))));
+        //endregion
     }
 }
