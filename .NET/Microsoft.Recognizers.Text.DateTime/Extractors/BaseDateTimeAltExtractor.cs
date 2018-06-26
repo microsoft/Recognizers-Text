@@ -59,7 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
                     var matches = config.OrRegex.Matches(middleStr);
 
-                    if (matches.Count != 1 || matches[0].Index != 0 || matches[0].Length != middleStr.Length)
+                    if (!string.IsNullOrEmpty(middleStr) &&
+                        (matches.Count != 1 || matches[0].Index != 0 || matches[0].Length != middleStr.Length))
                     {
                         break;
                     }
