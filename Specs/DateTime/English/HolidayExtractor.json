@@ -1,6 +1,5 @@
 [{
   "Input": "I'll go back on christmas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "christmas",
@@ -11,7 +10,6 @@
 ,
 {
   "Input": "I'll go back on christmas day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "christmas day",
@@ -22,7 +20,6 @@
 ,
 {
   "Input": "I'll go back on Yuandan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Yuandan",
@@ -33,7 +30,6 @@
 ,
 {
   "Input": "I'll go back on thanks giving day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "thanks giving day",
@@ -44,7 +40,6 @@
 ,
 {
   "Input": "I'll go back on father's day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "father's day",
@@ -55,7 +50,6 @@
 ,
 {
   "Input": "I'll go back on Yuandan of this year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Yuandan of this year",
@@ -66,7 +60,6 @@
 ,
 {
   "Input": "I'll go back on Yuandan of 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Yuandan of 2016",
@@ -77,7 +70,6 @@
 ,
 {
   "Input": "I'll go back on Yuandan 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Yuandan 2016",
@@ -88,12 +80,36 @@
 ,
 {
   "Input": "I'll go back on clean monday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "clean monday",
       "Type": "date"
     }
   ]
+}
+,
+{
+  "Input": "Martin Luther King Day is an American federal holiday.",
+  "Results": [
+    {
+      "Text": "Martin Luther King Day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "MLK Day is an American federal holiday.",
+  "Results": [
+    {
+      "Text": "MLK Day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Martin Luther King has a holiday under his name",
+  "Results": []
 }
 ]

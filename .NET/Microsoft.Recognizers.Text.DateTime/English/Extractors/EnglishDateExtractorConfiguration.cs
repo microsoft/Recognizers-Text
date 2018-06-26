@@ -81,10 +81,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex[] DateRegexList =
         {
-            // (Sunday,)? April 5
+            // ((this)? Sunday,)? April 5
             new Regex(DateTimeDefinitions.DateExtractor1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (Sunday,)? April 5, 2016
+            // ((this)? Sunday,)? April 5, 2016
             new Regex(DateTimeDefinitions.DateExtractor2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (Sunday,)? 6th of April
@@ -137,8 +137,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex YearSuffix = 
             new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex LessThanRegex = 
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MoreThanRegex =
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek = 
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
+
+        public static readonly ImmutableDictionary<string, int> MonthOfYear = 
+            DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
         public EnglishDateExtractorConfiguration()
         {
@@ -166,6 +175,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
 
+        IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
+
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
@@ -185,6 +196,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
 
         Regex IDateExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDateExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
         public DateTimeOptions Options { get; }
 

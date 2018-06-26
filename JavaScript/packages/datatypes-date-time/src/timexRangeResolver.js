@@ -146,11 +146,46 @@ const resolveByTimeRangeConstraints = function (candidates, timexConstraints) {
 
     const resolution = [];
     for (const timex of candidates) {
-        const r = resolveTime(new TimexProperty(timex), collapsedTimeRanges);
-        Array.prototype.push.apply(resolution, r);
+        const t = new TimexProperty(timex);
+        if (t.types.has('timerange')) {
+            const r = resolveTimeRange(t, collapsedTimeRanges);
+            Array.prototype.push.apply(resolution, r);
+        }
+        else if (t.types.has('time')) {
+            const r = resolveTime(t, collapsedTimeRanges);
+            Array.prototype.push.apply(resolution, r);
+        }
     }
 
     return removeDuplicates(resolution);
+};
+
+const resolveTimeRange = function (timex, constraints) {
+
+    const candidate = timexHelpers.timeRangeFromTimex(timex);
+
+    const result = [];
+    for (const constraint of constraints) {
+
+        if (timexConstraintsHelper.isOverlapping(candidate, constraint)) {
+
+            const start = Math.max(candidate.start.getTime(), constraint.start.getTime());
+            const time = new Time(start);
+
+            // TODO: refer to comments in C# - consider first classing this clone/overwrite behavior
+            const resolved = new TimexProperty(timex.timex);
+            delete resolved.partOfDay;
+            delete resolved.seconds;
+            delete resolved.minutes;
+            delete resolved.hours;
+            resolved.second = time.second;
+            resolved.minute = time.minute;
+            resolved.hour = time.hour;
+
+            result.push(resolved.timex);
+        }
+    }
+    return result;
 };
 
 const resolveDuration = function (candidate, constraints) {

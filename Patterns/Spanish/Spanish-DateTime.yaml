@@ -68,6 +68,9 @@ AllHalfYearRegex: !simpleRegex
 PrefixDayRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+CenturySuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SeasonRegex: !nestedRegex
   def: \b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente))\s+)?(?<seas>primavera|verano|otoño|invierno)((\s+del?|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))?)\b
   references: [ FullYearRegex ]
@@ -740,9 +743,12 @@ FromToRegex: !simpleRegex
 SingleAmbiguousMonthRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: ^(the\s+)?(may|march)$
+UnspecificDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PrepositionSuffixRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
-  def: \b(on|in|at|around|from|to)$
+  def: \b(on|in|at|around|for|during|since|from|to)$
 RestOfDateTimeRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[\.]
@@ -779,4 +785,5 @@ SpecialDecadeCases: !dictionary
   entries:
     '': 0
 DefaultLanguageFallback: DMY
+DurationDateRestrictions: []
 ...

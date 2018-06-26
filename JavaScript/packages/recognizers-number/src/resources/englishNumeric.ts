@@ -55,7 +55,7 @@ export namespace EnglishNumeric {
 	export const FractionNumberWithSuffixPercentage = `((${BaseNumbers.FractionNumberReplaceToken})\\s+of)`;
 	export const NumberWithPrefixPercentage = `(per cent of|percent of|percents of)(\\s*)(${BaseNumbers.NumberReplaceToken})`;
 	export const NumberWithPrepositionPercentage = `(${BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*(${BaseNumbers.NumberReplaceToken})`;
-	export const TillRegex = `(to|through|--|-|—|——|~)`;
+	export const TillRegex = `(to|through|--|-|—|——|~|–)`;
 	export const MoreRegex = `((bigger|greater|more|higher|larger)(\\s+than)?|above|over|>)`;
 	export const LessRegex = `((less|lower|smaller|fewer)(\\s+than)?|below|under|<)`;
 	export const EqualRegex = `(equal(s|ing)?(\\s+(to|than))?|=)`;

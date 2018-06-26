@@ -109,7 +109,7 @@ NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
 SpeGetNumberRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]'
+  def: '{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[半対]|[分厘]'
   references: [ZeroToNineFullHalfRegex, ZeroToNineIntegerRegex]
 PairRegex: .*[対膳足]$
 #IntegerExtractor
@@ -250,7 +250,7 @@ FoldsPercentageRegex: !nestedRegex
   def: '{ZeroToNineIntegerRegex}(\s*[.]?\s*{ZeroToNineIntegerRegex})?\s*[の]\s*割引'
   references: [ZeroToNineIntegerRegex]
 SimpleFoldsPercentageRegex: !nestedRegex
-  def: '{ZeroToNineFullHalfRegex}\s*割(\s*(半|{ZeroToNineFullHalfRegex}))?'
+  def: '{ZeroToNineFullHalfRegex}\s*割(\s*(半|({ZeroToNineFullHalfRegex}\s*分\s*{ZeroToNineFullHalfRegex}\s*厘)|{ZeroToNineFullHalfRegex}))?'
   references: [ZeroToNineFullHalfRegex]
 SpecialsPercentageRegex: !nestedRegex
   def: ({ZeroToNineIntegerRegex}|[十])\s*割(\s*(半|{ZeroToNineIntegerRegex}))?

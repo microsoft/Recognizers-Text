@@ -1,9 +1,9 @@
 export { default as NumberWithUnitRecognizer, NumberWithUnitOptions, recognizeTemperature, recognizeDimension, recognizeCurrency, recognizeAge } from "./numberWithUnit/numberWithUnitRecognizer";
 export { Culture, CultureInfo } from "@microsoft/recognizers-text-number";
 export { Constants } from "./numberWithUnit/constants";
-export { INumberWithUnitExtractorConfiguration, NumberWithUnitExtractor, PrefixUnitResult } from "./numberWithUnit/extractors";
+export { INumberWithUnitExtractorConfiguration, NumberWithUnitExtractor, PrefixUnitResult, BaseMergedUnitExtractor } from "./numberWithUnit/extractors";
 export { CompositeEntityType, AbstractNumberWithUnitModel, AgeModel, CurrencyModel, DimensionModel, TemperatureModel } from "./numberWithUnit/models";
-export { UnitValue, NumberWithUnitParser, INumberWithUnitParserConfiguration, BaseNumberWithUnitParserConfiguration } from "./numberWithUnit/parsers";
+export { UnitValue, UnitValueIso, NumberWithUnitParser, INumberWithUnitParserConfiguration, BaseNumberWithUnitParserConfiguration, BaseCurrencyParser, BaseMergedUnitParser } from "./numberWithUnit/parsers";
 export { EnglishAgeExtractorConfiguration, EnglishAgeParserConfiguration } from "./numberWithUnit/english/age";
 export { EnglishNumberWithUnitExtractorConfiguration, EnglishNumberWithUnitParserConfiguration } from "./numberWithUnit/english/base";
 export { EnglishCurrencyExtractorConfiguration, EnglishCurrencyParserConfiguration } from "./numberWithUnit/english/currency";

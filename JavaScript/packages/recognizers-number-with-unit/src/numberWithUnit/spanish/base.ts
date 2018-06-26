@@ -1,4 +1,4 @@
-import { IExtractor, IParser } from "@microsoft/recognizers-text";
+import { IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
 import { Culture, CultureInfo, NumberMode, AgnosticNumberParserFactory, AgnosticNumberParserType, SpanishNumberExtractor, SpanishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
@@ -16,6 +16,7 @@ export abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
     readonly buildPrefix: string;
     readonly buildSuffix: string;
     readonly connectorToken: string;
+    readonly compoundUnitConnectorRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -24,6 +25,7 @@ export abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
         this.buildPrefix = SpanishNumericWithUnit.BuildPrefix;
         this.buildSuffix = SpanishNumericWithUnit.BuildSuffix;
         this.connectorToken = SpanishNumericWithUnit.ConnectorToken;
+        this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(SpanishNumericWithUnit.CompoundUnitConnectorRegex);
     }
 }
 
@@ -31,6 +33,8 @@ export class SpanishNumberWithUnitParserConfiguration extends BaseNumberWithUnit
     readonly internalNumberParser: IParser;
     readonly internalNumberExtractor: IExtractor;
     readonly connectorToken: string;
+    readonly currencyNameToIsoCodeMap: ReadonlyMap<string, string>;
+    readonly currencyFractionCodeList: ReadonlyMap<string, string>;
 
     constructor(ci: CultureInfo) {
         super(ci);

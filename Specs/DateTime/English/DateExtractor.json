@@ -1,6 +1,5 @@
 [{
   "Input": "I'll go back on 15",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15",
@@ -11,7 +10,6 @@
 ,
 {
   "Input": "I'll go back April 22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "April 22",
@@ -22,7 +20,6 @@
 ,
 {
   "Input": "I'll go back Jan-1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jan-1",
@@ -33,7 +30,6 @@
 ,
 {
   "Input": "I'll go back Jan/1",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jan/1",
@@ -44,7 +40,6 @@
 ,
 {
   "Input": "I'll go back October. 2",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "October. 2",
@@ -55,7 +50,6 @@
 ,
 {
   "Input": "I'll go back January 12, 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "January 12, 2016",
@@ -66,7 +60,6 @@
 ,
 {
   "Input": "I'll go back January 12 of 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "January 12 of 2016",
@@ -77,7 +70,6 @@
 ,
 {
   "Input": "I'll go back Monday January 12th, 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Monday January 12th, 2016",
@@ -88,7 +80,6 @@
 ,
 {
   "Input": "I'll go back 02/22/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "02/22/2016",
@@ -99,7 +90,6 @@
 ,
 {
   "Input": "I'll go back 21/04/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21/04/2016",
@@ -110,7 +100,6 @@
 ,
 {
   "Input": "I'll go back 21/04/16",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21/04/16",
@@ -121,7 +110,6 @@
 ,
 {
   "Input": "I'll go back 9-18-15",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9-18-15",
@@ -132,7 +120,6 @@
 ,
 {
   "Input": "I'll go back on 4.22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4.22",
@@ -143,7 +130,6 @@
 ,
 {
   "Input": "I'll go back on 4-22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4-22",
@@ -154,7 +140,6 @@
 ,
 {
   "Input": "I'll go back at 4.22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4.22",
@@ -165,7 +150,6 @@
 ,
 {
   "Input": "I'll go back in 4-22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4-22",
@@ -176,7 +160,6 @@
 ,
 {
   "Input": "I'll go back on    4/22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4/22",
@@ -187,7 +170,6 @@
 ,
 {
   "Input": "I'll go back on 22/04",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "22/04",
@@ -198,7 +180,6 @@
 ,
 {
   "Input": "I'll go back       4/22",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4/22",
@@ -209,7 +190,6 @@
 ,
 {
   "Input": "I'll go back 22/04",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "22/04",
@@ -220,7 +200,6 @@
 ,
 {
   "Input": "I'll go back 2015/08/12",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2015/08/12",
@@ -231,7 +210,6 @@
 ,
 {
   "Input": "I'll go back 11/12,2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11/12,2016",
@@ -242,7 +220,6 @@
 ,
 {
   "Input": "I'll go back 11/12,16",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11/12,16",
@@ -253,7 +230,6 @@
 ,
 {
   "Input": "I'll go back 1st Jan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1st Jan",
@@ -264,7 +240,6 @@
 ,
 {
   "Input": "I'll go back 1-Jan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1-Jan",
@@ -275,7 +250,6 @@
 ,
 {
   "Input": "I'll go back 28-Nov",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "28-Nov",
@@ -286,7 +260,6 @@
 ,
 {
   "Input": "I'll go back Wed, 22 of Jan",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Wed, 22 of Jan",
@@ -297,7 +270,6 @@
 ,
 {
   "Input": "I'll go back the first friday of july",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the first friday of july",
@@ -308,7 +280,6 @@
 ,
 {
   "Input": "I'll go back the first friday in this month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the first friday in this month",
@@ -319,7 +290,6 @@
 ,
 {
   "Input": "I'll go back two weeks from now",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two weeks from now",
@@ -330,7 +300,6 @@
 ,
 {
   "Input": "I'll go back next week on Friday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next week on Friday",
@@ -341,7 +310,6 @@
 ,
 {
   "Input": "I'll go back on Friday next week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on Friday next week",
@@ -352,7 +320,6 @@
 ,
 {
   "Input": "past Monday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "past Monday",
@@ -363,7 +330,6 @@
 ,
 {
   "Input": "I'll go back on Tues.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Tues",
@@ -374,7 +340,6 @@
 ,
 {
   "Input": "I'll go back on Tues. good news.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Tues",
@@ -385,7 +350,6 @@
 ,
 {
   "Input": "I'll go back on Tues",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Tues",
@@ -396,7 +360,6 @@
 ,
 {
   "Input": "I'll go back on Friday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday",
@@ -407,7 +370,6 @@
 ,
 {
   "Input": "I'll go back Friday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday",
@@ -418,7 +380,6 @@
 ,
 {
   "Input": "I'll go back today",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "today",
@@ -429,7 +390,6 @@
 ,
 {
   "Input": "I'll go back tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tomorrow",
@@ -440,7 +400,6 @@
 ,
 {
   "Input": "I'll go back yesterday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "yesterday",
@@ -451,7 +410,6 @@
 ,
 {
   "Input": "I'll go back the day before yesterday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the day before yesterday",
@@ -462,7 +420,6 @@
 ,
 {
   "Input": "I'll go back the day after tomorrow",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the day after tomorrow",
@@ -473,7 +430,6 @@
 ,
 {
   "Input": "I'll go back the next day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the next day",
@@ -484,7 +440,6 @@
 ,
 {
   "Input": "I'll go back next day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next day",
@@ -495,7 +450,6 @@
 ,
 {
   "Input": "I'll go back this Friday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this Friday",
@@ -506,7 +460,6 @@
 ,
 {
   "Input": "I'll go back next Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next Sunday",
@@ -517,7 +470,6 @@
 ,
 {
   "Input": "I'll go back last Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last Sunday",
@@ -528,7 +480,6 @@
 ,
 {
   "Input": "I'll go back last day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last day",
@@ -539,7 +490,6 @@
 ,
 {
   "Input": "I'll go back the last day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the last day",
@@ -550,7 +500,6 @@
 ,
 {
   "Input": "I'll go back the day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the day",
@@ -561,7 +510,6 @@
 ,
 {
   "Input": "I'll go back this week Friday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this week Friday",
@@ -572,7 +520,6 @@
 ,
 {
   "Input": "I'll go back next week Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "next week Sunday",
@@ -583,7 +530,6 @@
 ,
 {
   "Input": "I'll go back last week Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "last week Sunday",
@@ -594,7 +540,6 @@
 ,
 {
   "Input": "I'll go back 15 June 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15 June 2016",
@@ -605,7 +550,6 @@
 ,
 {
   "Input": "a baseball on may the eleventh",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "may the eleventh",
@@ -616,7 +560,6 @@
 ,
 {
   "Input": "I'll go back fourth of may",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "fourth of may",
@@ -627,7 +570,6 @@
 ,
 {
   "Input": "I'll go back 4th of march",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4th of march",
@@ -638,7 +580,6 @@
 ,
 {
   "Input": "I'll go back Jan first",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Jan first",
@@ -649,7 +590,6 @@
 ,
 {
   "Input": "I'll go back May twenty-first",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May twenty-first",
@@ -660,7 +600,6 @@
 ,
 {
   "Input": "I'll go back May twenty one",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "May twenty one",
@@ -671,7 +610,6 @@
 ,
 {
   "Input": "I'll go back second of Aug",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "second of Aug",
@@ -682,7 +620,6 @@
 ,
 {
   "Input": "I'll go back twenty second of June",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twenty second of June",
@@ -693,7 +630,6 @@
 ,
 {
   "Input": "I went back two months ago",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two months ago",
@@ -704,7 +640,6 @@
 ,
 {
   "Input": "I'll go back two days later",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two days later",
@@ -715,7 +650,6 @@
 ,
 {
   "Input": "who did i email a month ago",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a month ago",
@@ -726,7 +660,6 @@
 ,
 {
   "Input": "I went back for the 27",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27",
@@ -737,7 +670,6 @@
 ,
 {
   "Input": "I went back for the 27th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27th",
@@ -748,7 +680,6 @@
 ,
 {
   "Input": "I went back for the 27.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27",
@@ -759,7 +690,6 @@
 ,
 {
   "Input": "I went back for the 27!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27",
@@ -770,7 +700,6 @@
 ,
 {
   "Input": "I went back for the 27 .",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 27",
@@ -781,7 +710,6 @@
 ,
 {
   "Input": "I went back for the 21st",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 21st",
@@ -792,7 +720,6 @@
 ,
 {
   "Input": "I went back for the 22nd",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the 22nd",
@@ -803,7 +730,6 @@
 ,
 {
   "Input": "I went back for the second",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the second",
@@ -814,7 +740,6 @@
 ,
 {
   "Input": "I went back for the twenty second",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the twenty second",
@@ -825,7 +750,6 @@
 ,
 {
   "Input": "I went back for the thirty first",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "for the thirty first",
@@ -836,7 +760,6 @@
 ,
 {
   "Input": "I went back on the 27th",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on the 27th",
@@ -847,7 +770,6 @@
 ,
 {
   "Input": "I went back on the 21st",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on the 21st",
@@ -858,7 +780,6 @@
 ,
 {
   "Input": "I went back on 22nd",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on 22nd",
@@ -869,7 +790,6 @@
 ,
 {
   "Input": "I went back on the second!",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on the second",
@@ -880,7 +800,6 @@
 ,
 {
   "Input": "I went back on twenty second?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "on twenty second",
@@ -891,25 +810,21 @@
 ,
 {
   "Input": "the first prize",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "I'll go to the 27th floor",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "Get tickets for the 17th Door Haunted Experience",
-  "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
@@ -918,7 +833,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Saturday the second",
@@ -932,7 +846,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Wednesday the 27th",
@@ -946,7 +859,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Thursday the 21st",
@@ -960,7 +872,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday the 22nd",
@@ -974,7 +885,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Saturday the 23rd",
@@ -988,7 +898,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday the 15th",
@@ -1002,7 +911,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Thursday the twenty first",
@@ -1016,7 +924,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday the twenty second",
@@ -1030,7 +937,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday the fifteen",
@@ -1044,7 +950,6 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Thursday the seventh",
@@ -1055,7 +960,6 @@
 ,
 {
   "Input": "I'll go back second Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "second Sunday",
@@ -1066,7 +970,6 @@
 ,
 {
   "Input": "I'll go back first Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "first Sunday",
@@ -1077,7 +980,6 @@
 ,
 {
   "Input": "I'll go back third Tuesday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "third Tuesday",
@@ -1088,7 +990,6 @@
 ,
 {
   "Input": "I'll go back fifth Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "fifth Sunday",
@@ -1099,7 +1000,6 @@
 ,
 {
   "Input": "I'll go back sixth Sunday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Sunday",
@@ -1110,7 +1010,6 @@
 ,
 {
   "Input": "I'll go back tenth Monday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Monday",
@@ -1121,7 +1020,6 @@
 ,
 {
   "Input": "I'll go back 20th of next month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20th of next month",
@@ -1132,7 +1030,6 @@
 ,
 {
   "Input": "I'll go back 31st of this month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "31st of this month",
@@ -1143,7 +1040,6 @@
 ,
 {
   "Input": "Cortana could try to arrange a Skype call either Friday this week or Tuesday of next week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday this week",
@@ -1159,7 +1055,6 @@
 ,
 {
   "Input": "Cortana could try to arrange a Skype call either Friday of this week or this week on Saturday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Friday of this week",
@@ -1175,7 +1070,6 @@
 ,
 {
   "Input": "16. Nov. 2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "16. Nov. 2016",
@@ -1186,8 +1080,7 @@
 ,
 {
   "Input": "We had a meeting 1 month 21 days ago",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "1 month 21 days ago",
@@ -1198,8 +1091,7 @@
 ,
 {
   "Input": "I left here 2 years 1 month 21 days ago",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "2 years 1 month 21 days ago",
@@ -1210,8 +1102,7 @@
 ,
 {
   "Input": "I will leve here 2 years 21 days later",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "2 years 21 days later",
@@ -1222,8 +1113,7 @@
 ,
 {
   "Input": "I left here 1 month 2 years 21 days ago",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "1 month 2 years 21 days ago",
@@ -1234,8 +1124,7 @@
 ,
 {
   "Input": "I left here the 20th next month",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "the 20th next month",
@@ -1246,7 +1135,6 @@
 ,
 {
   "Input": "I left here 5 December 1391",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 December 1391",
@@ -1257,8 +1145,7 @@
 ,
 {
   "Input": "Monday, Jan twenty two, 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "Monday, Jan twenty two, 2018",
@@ -1269,8 +1156,7 @@
 ,
 {
   "Input": "on Sunday Jan twenty one two thousand and eighteen",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "Sunday Jan twenty one two thousand and eighteen",
@@ -1281,8 +1167,7 @@
 ,
 {
   "Input": "on September the twenty-first nineteen seventy eight",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "September the twenty-first nineteen seventy eight",
@@ -1293,8 +1178,7 @@
 ,
 {
   "Input": "on September 10, nineteen zero one",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "September 10, nineteen zero one",
@@ -1305,8 +1189,7 @@
 ,
 {
   "Input": "on the tenth of September, two thousand",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "tenth of September, two thousand",
@@ -1317,7 +1200,6 @@
 ,
 {
   "Input": "Are you free on 13.5.2015?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "13.5.2015",
@@ -1328,7 +1210,6 @@
 ,
 {
   "Input": "Are you available on 2015.5.13?",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2015.5.13",
@@ -1339,7 +1220,7 @@
 ,
 {
   "Input": "Are you available two sundays from now?",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "two sundays from now",
@@ -1350,7 +1231,7 @@
 ,
 {
   "Input": "Are you available two monday later?",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "two monday later",
@@ -1361,8 +1242,7 @@
 ,
 {
   "Input": "Are you available two days after today?",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "two days after today",
@@ -1373,8 +1253,7 @@
 ,
 {
   "Input": "Are you available three weeks from tomorrow?",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "three weeks from tomorrow",
@@ -1385,11 +1264,159 @@
 ,
 {
   "Input": "Where were you two days before yesterday?",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "two days before yesterday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you free on 13.5.2015?",
+  "Results": [
+    {
+      "Text": "13.5.2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available on 2015.5.13?",
+  "Results": [
+    {
+      "Text": "2015.5.13",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two sundays from now?",
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "two sundays from now",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two monday later?",
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "two monday later",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available two days after today?",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "two days after today",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Are you available three weeks from tomorrow?",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "three weeks from tomorrow",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Where were you two days before yesterday?",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "two days before yesterday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday-Jun-15 with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-14T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "this Friday-Jun-15",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday(Jun-15) with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-14T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "this Friday(Jun-15)",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday (Jun-15) with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-14T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "this Friday (Jun-15)",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday June twenty two with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "this Friday June twenty two",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please set up a Skype call sometime this Friday June twenty three with Jim",
+  "Context": {
+    "ReferenceDateTime": "2018-06-20T00:00:00"
+  },
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "this Friday",
+      "Type": "date"
+    },
+    {
+      "Text": "June twenty three",
       "Type": "date"
     }
   ]

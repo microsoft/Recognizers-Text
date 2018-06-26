@@ -42,6 +42,7 @@ export namespace PortugueseDateTime {
 	export const RangeUnitRegex = `\\b(?<unit>anos|ano|meses|m[êe]s|semanas|semana)\\b`;
 	export const InConnectorRegex = `\\b(em)\\b`;
 	export const WithinNextPrefixRegex = `^[.]`;
+	export const CenturySuffixRegex = `^[.]`;
 	export const FromRegex = `((desde|de)(\\s*a(s)?)?)$`;
 	export const ConnectorAndRegex = `(e\\s*([àa](s)?)?)$`;
 	export const BetweenRegex = `(entre\\s*([oa](s)?)?)`;
@@ -191,6 +192,7 @@ export namespace PortugueseDateTime {
 	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
+	export const UnspecificDatePeriodRegex = `^[.]`;
 	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;
 	export const RestOfDateTimeRegex = `^[\\.]`;
 	export const SetWeekDayRegex = `^[\\.]`;
@@ -210,4 +212,5 @@ export namespace PortugueseDateTime {
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
+	export const DurationDateRestrictions = [  ];
 }

@@ -1,15 +1,15 @@
 import pytest
 from recognizers_text import Culture
 from recognizers_number_with_unit.number_with_unit import NumberWithUnitRecognizer, NumberWithUnitOptions
-from recognizers_number_with_unit.number_with_unit.models import CurrencyModel, AbstractNumberWithUnitModel, ExtractorParserModel
+from recognizers_number_with_unit.number_with_unit.models import DimensionModel, AbstractNumberWithUnitModel, ExtractorParserModel
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractor
-from recognizers_number_with_unit.number_with_unit.english.extractors import EnglishCurrencyExtractorConfiguration
+from recognizers_number_with_unit.number_with_unit.english.extractors import EnglishDimensionExtractorConfiguration
 from recognizers_number_with_unit.number_with_unit.parsers import NumberWithUnitParser
-from recognizers_number_with_unit.number_with_unit.english.parsers import EnglishCurrencyParserConfiguration
+from recognizers_number_with_unit.number_with_unit.english.parsers import EnglishDimensionParserConfiguration
 
 class TestInitializationNumberWithUnitRecognizer():
-    control_model = CurrencyModel(
-        [ ExtractorParserModel(NumberWithUnitExtractor(EnglishCurrencyExtractorConfiguration()), NumberWithUnitParser(EnglishCurrencyParserConfiguration())) ]
+    control_model = DimensionModel(
+        [ ExtractorParserModel(NumberWithUnitExtractor(EnglishDimensionExtractorConfiguration()), NumberWithUnitParser(EnglishDimensionParserConfiguration())) ]
         )
     english_culture = Culture.English
     spanish_culture = Culture.Spanish
@@ -44,29 +44,29 @@ class TestInitializationNumberWithUnitRecognizer():
 
     def test_without_culture_use_target_culture(self):
         recognizer = NumberWithUnitRecognizer(self.english_culture)
-        self.assert_models_equal(self.control_model, recognizer.get_currency_model())
+        self.assert_models_equal(self.control_model, recognizer.get_dimension_model())
 
     def test_withOtherCulture_not_use_target_culture(self):
         recognizer = NumberWithUnitRecognizer(self.english_culture)
-        self.assert_models_distinct(self.control_model, recognizer.get_currency_model(self.spanish_culture))
+        self.assert_models_distinct(self.control_model, recognizer.get_dimension_model(self.spanish_culture))
 
     def test_with_invalid_culture_use_target_culture(self):
         recognizer = NumberWithUnitRecognizer(self.spanish_culture)
-        self.assert_models_equal(self.control_model, recognizer.get_currency_model(self.invalid_culture))
+        self.assert_models_equal(self.control_model, recognizer.get_dimension_model(self.invalid_culture))
 
     def test_with_invalid_culture_and_without_fallback_throw_error(self):
         recognizer = NumberWithUnitRecognizer()
         with pytest.raises(ValueError):
-            recognizer.get_currency_model(self.invalid_culture, False)
+            recognizer.get_dimension_model(self.invalid_culture, False)
     
     def test_with_invalid_culture_as_target_and_without_fallback_throw_error(self):
         recognizer = NumberWithUnitRecognizer(self.invalid_culture)
         with pytest.raises(ValueError):
-            recognizer.get_currency_model(None, False)
+            recognizer.get_dimension_model(None, False)
     
     def test_without_target_culture_and_without_culture_fallback_to_english_culture(self):
         recognizer = NumberWithUnitRecognizer()
-        self.assert_models_equal(self.control_model, recognizer.get_currency_model())
+        self.assert_models_equal(self.control_model, recognizer.get_dimension_model())
     
     def test_initialization_with_int_option_resolve_options_enum(self):
         recognizer = NumberWithUnitRecognizer(self.english_culture, NumberWithUnitOptions.NONE, False)

@@ -5,6 +5,7 @@ image: Visual Studio 2017
 environment:
   nodejs_version: "Stable"
   PYTHON: "C:\\Python36-x64"
+  JAVA_HOME: "C:\\Program Files\\Java\\jdk9"
 platform: Any CPU
 configuration: Release
 
@@ -14,7 +15,7 @@ init:
 # Install Node 8
 install:
   - ps: Install-Product node $env:nodejs_version
-  - cmd: SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  - cmd: SET PATH=%PYTHON%;%PYTHON%\\Scripts;%JAVA_HOME%\bin;%PATH%
 
 # Projects
 clone_depth: 1
@@ -40,8 +41,15 @@ build_script:
 
     build.cmd
 
+    cd ..\java\
+
+    mvn package
+
 # disable automatic tests
 test: off
 
 artifacts:
-    - path : '**\*Microsoft.Recognizers*.nupkg'
+    - path: '**\*Microsoft.Recognizers*.nupkg'
+      name: NuGets
+    - path: 'Java\libraries\**\recognizers-text*.jar'
+      name: JARs

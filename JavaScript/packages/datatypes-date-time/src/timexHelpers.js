@@ -150,6 +150,34 @@ const timeAdd = function (start, duration) {
 };
 
 const expandTimeRange = function (timex) {
+
+    if (!timex.types.has('timerange'))
+    {
+        throw new exception('argument must be a timerange');
+    }
+
+    if (timex.partOfDay !== undefined) {
+        switch (timex.partOfDay) {
+            case 'DT':
+                timex = { hour: 8, minute: 0, second: 0, hours: 10, minutes: 0, seconds: 0 };
+                break;
+            case 'MO':
+                timex = { hour: 8, minute: 0, second: 0, hours: 4, minutes: 0, seconds: 0 };
+                break;
+            case 'AF':
+                timex = { hour: 12, minute: 0, second: 0, hours: 4, minutes: 0, seconds: 0 };
+                break;
+            case 'EV':
+                timex = { hour: 16, minute: 0, second: 0, hours: 4, minutes: 0, seconds: 0 };
+                break;
+            case 'NI':
+                timex = { hour: 20, minute: 0, second: 0, hours: 4, minutes: 0, seconds: 0 };
+                break;
+            default:
+                throw new exception('unrecognized part of day timerange');
+        }
+    }
+
     const start = { hour: timex.hour, minute: timex.minute, second: timex.second };
     const duration = cloneDuration(timex);
     return { start: start, end: timeAdd(start, duration), duration: duration };

@@ -681,6 +681,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			"fps",
 			"pts",
 			"in",
+			"dm",
 			"\""
 		};
 		public const string BuildPrefix = @"(?<=(\s|^))";

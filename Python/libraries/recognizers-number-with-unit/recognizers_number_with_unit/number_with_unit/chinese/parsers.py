@@ -27,6 +27,8 @@ class ChineseNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguration
         super().__init__(culture_info)
         self._internal_number_extractor = ChineseNumberExtractor(ChineseNumberExtractorMode.EXTRACT_ALL)
         self._internal_number_parser = AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, ChineseNumberParserConfiguration(culture_info))
+        self.currency_name_to_iso_code_map = ChineseNumericWithUnit.CurrencyNameToIsoCodeMap
+        self.currency_fraction_code_list = ChineseNumericWithUnit.FractionalUnitNameToCodeMap
 
 class ChineseAgeParserConfiguration(ChineseNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):

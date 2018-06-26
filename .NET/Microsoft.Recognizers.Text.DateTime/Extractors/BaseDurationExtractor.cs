@@ -34,44 +34,53 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var rets = Token.MergeAllTokens(tokens, text, ExtractorName);
 
-            ResolveMoreThanOrLessThanPrefix(text, rets);
-
+            // First MergeMultipleDuration then ResolveMoreThanOrLessThanPrefix so cases like "more than 4 days and less than 1 week" will not be merged into one "multipleDuration"
             if (this.merge)
             {
-                rets = MergeMultipleDuration(rets, text);
+                rets = MergeMultipleDuration(text, rets);
             }
+
+            rets = TagInequalityPrefix(text, rets);
 
             return rets;
         }
 
         // handle cases look like: {more than | less than} {duration}?
-        private void ResolveMoreThanOrLessThanPrefix(string text, List<ExtractResult> ers)
+        private List<ExtractResult> TagInequalityPrefix(string text, List<ExtractResult> ers)
         {
             foreach (var er in ers)
             {
                 var beforeString = text.Substring(0, (int)er.Start);
+                bool isInequalityPrefixMatched = false;
+
                 var match = config.MoreThanRegex.Match(beforeString);
-                if (match.Success)
+
+                // The second condition is necessary so for "1 week" in "more than 4 days and less than 1 week", it will not be tagged incorrectly as "more than"
+                if (match.Success && match.Index + match.Length == beforeString.Trim().Length)
                 {
                     er.Data = Constants.MORE_THAN_MOD;
+                    isInequalityPrefixMatched = true;
                 }
 
-                if (!match.Success)
+                if (!isInequalityPrefixMatched)
                 {
                     match = config.LessThanRegex.Match(beforeString);
-                    if (match.Success)
+                    if (match.Success && match.Index + match.Length == beforeString.Trim().Length)
                     {
                         er.Data = Constants.LESS_THAN_MOD;
+                        isInequalityPrefixMatched = true;
                     }
                 }
 
-                if (match.Success)
+                if (isInequalityPrefixMatched)
                 {
                     er.Length += er.Start - match.Index;
                     er.Start = match.Index;
                     er.Text = text.Substring((int)er.Start, (int)er.Length);
                 }
             }
+
+            return ers;
         }
         
         // handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
@@ -151,7 +160,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<ExtractResult> MergeMultipleDuration(List<ExtractResult> extractorResults, string text)
+        private List<ExtractResult> MergeMultipleDuration(string text, List<ExtractResult> extractorResults)
         {
             if (extractorResults.Count <= 1)
             {

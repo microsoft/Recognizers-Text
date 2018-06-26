@@ -35,6 +35,7 @@ export namespace SpanishDateTime {
 	export const QuarterRegexYearFront = `(${FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año)\\s+(el\\s+)?(?<cardinal>(primer|primero)|1er|segundo|2do|(tercer|terceo)|3ro|cuarto|4to)\\s+cuatrimestre`;
 	export const AllHalfYearRegex = `^[.]`;
 	export const PrefixDayRegex = `^[.]`;
+	export const CenturySuffixRegex = `^[.]`;
 	export const SeasonRegex = `\\b(?<season>(([uú]ltim[oa]|est[ea]|el|la|(pr[oó]xim[oa]s?|siguiente))\\s+)?(?<seas>primavera|verano|otoño|invierno)((\\s+del?|\\s*,\\s*)?\\s+(${FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\\s+año))?)\\b`;
 	export const WhichWeekRegex = `(semana)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
 	export const WeekOfRegex = `(semana)(\\s*)((do|da|de))`;
@@ -196,7 +197,8 @@ export namespace SpanishDateTime {
 	export const ReferenceDatePeriodRegex = `^[.]`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
-	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;
+	export const UnspecificDatePeriodRegex = `^[.]`;
+	export const PrepositionSuffixRegex = `\\b(on|in|at|around|for|during|since|from|to)$`;
 	export const RestOfDateTimeRegex = `^[\\.]`;
 	export const SetWeekDayRegex = `^[\\.]`;
 	export const NightRegex = `\\b(medionoche|noche)\\b`;
@@ -209,4 +211,5 @@ export namespace SpanishDateTime {
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const DefaultLanguageFallback = 'DMY';
+	export const DurationDateRestrictions = [  ];
 }

@@ -5,6 +5,7 @@ from collections import namedtuple
 from itertools import chain
 import regex
 
+from .constants import *
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
 from recognizers_number.culture import CultureInfo
@@ -50,6 +51,11 @@ class NumberWithUnitExtractorConfiguration(ABC):
     @property
     @abstractmethod
     def connector_token(self) -> str:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def compound_unit_connector_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -241,3 +247,132 @@ class NumberWithUnitExtractor(Extractor):
                     if y.lower() < x.lower():
                         return 1
                     return 0
+
+class BaseMergedUnitExtractor(Extractor):
+    def __init__(self, config: NumberWithUnitExtractorConfiguration):
+        self.config = config
+
+    def extract(self, source: str) -> List[ExtractResult]:
+        if self.config.extract_type == Constants.SYS_UNIT_CURRENCY:
+            result = self.__merged_compound_units(source)
+        else:
+            result = NumberWithUnitExtractor(self.config).extract(source)
+
+        return result
+
+    def __merged_compound_units(self, source:str):
+        ers = NumberWithUnitExtractor(self.config).extract(source)
+        ers = self.__merge_pure_number(source, ers)
+
+        result = []
+        groups = [0] * len(ers)
+
+        idx = 0
+        while idx < len(ers) - 1:
+            if ers[idx].type != ers[idx + 1].type and not ers[idx].type == Constants.SYS_NUM and not ers[idx + 1].type == Constants.SYS_NUM:
+                idx = idx + 1
+                continue
+
+            if isinstance(ers[idx].data, ExtractResult):
+                groups[idx + 1] = groups[idx] + 1
+                idx = idx + 1
+                continue
+
+            middle_begin = ers[idx].start + ers[idx].length
+            middle_end = ers[idx].start
+
+            middle_str = source[middle_begin:middle_end - middle_begin].strip().lower()
+
+            # Separated by whitespace
+            if not middle_str:
+                groups[idx + 1] = groups[idx]
+
+            # Separated by connector
+            match = self.config.compound_unit_connector_regex.match(middle_str)
+            if match:
+                groups[idx + 1] = groups[idx]
+            else:
+                groups[idx + 1] = groups[idx] + 1
+
+            idx = idx + 1
+
+        idx = 0
+        while idx < len(ers):
+            if idx == 0 or groups[idx] != groups[idx -1]:
+                tmp_extract_result = ers[idx]
+                tmp = ExtractResult()
+                tmp.data = ers[idx].data
+                tmp.length = ers[idx].length
+                tmp.start = ers[idx].start
+                tmp.text = ers[idx].text
+                tmp.type = ers[idx].type
+                tmp_extract_result.data = [tmp]
+                
+                result.append(tmp_extract_result)
+
+            # reduce extract results in same group
+            if idx + 1 < len(ers) and groups[idx + 1] == groups[idx]:
+                group = groups[idx]
+
+                period_begin = result[group].start
+                period_end = ers[idx + 1].start + ers[idx + 1].length
+
+                result[group].length = period_end - period_begin
+                result[group].text = source[period_begin:period_end - period_begin]
+                result[group].type = Constants.SYS_UNIT_CURRENCY
+                if isinstance(result[group].data, list):
+                    result[group].data.append(ers[idx + 1])
+
+            idx = idx + 1
+
+        idx = 0
+        while idx < len(result):
+            inner_data = result[idx].data
+            if len(inner_data) == 1:
+                result[idx] = inner_data[0]
+            idx = idx + 1
+
+        result = [x for x in result if not x.type == Constants.SYS_NUM]
+
+        return result
+
+    def __merge_pure_number(self, source: str, ers: List[ExtractResult]) -> List[ExtractResult]:
+        num_ers = self.config.unit_num_extractor.extract(source)
+        unit_numbers = []
+        i = j = 0
+        while i < len(num_ers):
+            has_behind_extraction = False
+            
+            while j < len(ers) and ers[j].start + ers[j].length < num_ers[i].start:
+                has_behind_extraction = True
+                j = j + 1
+            
+            if not has_behind_extraction:
+                i = i + 1
+                continue
+
+            middle_begin = ers[j - 1].start + ers[j - 1].length
+            middle_end = num_ers[i].start
+
+            middle_str = source[middle_begin:middle_end - middle_begin].strip().lower()
+
+            # separated by whitespace
+            if not middle_str:
+                unit_numbers.append(num_ers[i])
+                i = i + 1
+                continue
+        
+            i = i + 1
+
+        for extract_result in unit_numbers:
+            overlap = False
+            for er in ers:
+                if er.start <= extract_result.start and er.start + er.length >= extract_result.start:
+                    overlap = True
+
+            if not overlap:
+                ers.append(extract_result)
+
+        ers = sorted(ers, key=lambda e: e.start)
+
+        return ers

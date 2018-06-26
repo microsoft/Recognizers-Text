@@ -138,5 +138,38 @@
         "Type": "timezone"
       }
     ]
+  },
+  {
+    "Input": "Book me a room at pt",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "pt",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at et",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "et",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "let's meet eastern time",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "eastern time",
+        "Type": "timezone"
+      }
+    ]
   }
 ]

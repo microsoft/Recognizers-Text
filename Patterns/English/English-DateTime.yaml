@@ -1,8 +1,8 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>to|till|til|until|thru|through|--|-|—|——|~)
+  def: (?<till>to|till|til|until|thru|through|--|-|—|——|~|–)
 RangeConnectorRegex : !simpleRegex
-  def: (?<and>and|through|to|--|-|—|——)
+  def: (?<and>and|through|to|--|-|—|——|~|–)
 RelativeRegex: !simpleRegex
   def: (?<order>next|coming|upcoming|this|last|past|previous|current|the)
 StrictRelativeRegex: !simpleRegex
@@ -15,6 +15,8 @@ PastPrefixRegex: !simpleRegex
   def: (last|past|previous)\b
 ThisPrefixRegex: !simpleRegex
   def: (this|current)\b
+CenturySuffixRegex: !simpleRegex
+  def: (^century)\b
 ReferencePrefixRegex: !simpleRegex
   def: (that|same)\b
 FutureSuffixRegex: !simpleRegex
@@ -83,7 +85,7 @@ NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterTermRegex: !simpleRegex
-  def: (((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter)|(Q(?<number>[1-4])))
+  def: \b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter)|(Q(?<number>[1-4])))\b
 QuarterRegex: !nestedRegex
   def: (the\s+)?{QuarterTermRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?
   references: [ YearRegex, RelativeRegex, QuarterTermRegex ]
@@ -155,7 +157,7 @@ LastDateRegex: !nestedRegex
   def: \b({PastPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+last\s*week))\b
   references: [ PastPrefixRegex, WeekDayRegex ]
 NextDateRegex: !nestedRegex
-  def: \b({NextPrefixRegex}(\s*week(\s*on)?)?\s+{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+next\s*week))\b
+  def: \b({NextPrefixRegex}(\s*week(\s*,?\s*on)?)?\s+{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+next\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex ]
 SpecialDayRegex: !nestedRegex
   def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today)\b
@@ -178,11 +180,11 @@ SpecialDate: !nestedRegex
   def: (?=\b(on|at)\s+the\s+){DayRegex}\b
   references: [ DayRegex ]
 DateExtractor1: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\.)?\s*[/\\\.\-]?\s*{DayRegex}(\.)?\b
+  def: \b((this\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\\.\-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))
   references: [ WeekDayRegex, MonthRegex, DayRegex ]
 DateExtractor2: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\.)?\s*[\.\-]?\s*{DayRegex}(\.)?(\s+|\s*,\s*|\s+of\s+){DateYearRegex}\b
-  references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex ]
+  def: \b{DateExtractor1}(\s+|\s*,\s*|\s+of\s+){DateYearRegex}\b
+  references: [ DateExtractor1, DateYearRegex ]
 DateExtractor3: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s+of\s+|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*){DateYearRegex})?\b
   references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
@@ -214,7 +216,7 @@ MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(the)?\s*$'
   references: [ MonthRegex ]
 WeekDayEnd: !nestedRegex
-  def: '{WeekDayRegex}\s*,?\s*$'
+  def: '(this\s+)?{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years|year|months|month|weeks|week)\b
@@ -377,9 +379,9 @@ PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(({TimeOfDayRegex}(\s+(on|of))?))\b
  references: [ TimeOfDayRegex]
 LessThanRegex: !simpleRegex
-  def: \b(less\s+than)\s+$
+  def: \b(less\s+than)\b
 MoreThanRegex: !simpleRegex
-  def: \b(more\s+than)\s+$
+  def: \b(more\s+than)\b
 DurationUnitRegex: !simpleRegex
   def: (?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
 SuffixAndRegex: !simpleRegex
@@ -418,10 +420,10 @@ HolidayRegex1: !nestedRegex
   def: \b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|may\s*day|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
-  def: \b(?<holiday>martin luther king|martin luther king jr|all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
+  def: \b(?<holiday>all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex3: !nestedRegex
-  def: (?<holiday>(canberra|easter|columbus|thanks\s*giving|christmas|xmas|labour|(international|int'l)\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
+  def: (?<holiday>(mlk|martin luther king|martin luther king jr|canberra|easter|columbus|thanks\s*giving|christmas|xmas|labour|(international|int'l)\s+workers'?|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?
   references: [ YearRegex, RelativeRegex ]
 DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
@@ -448,8 +450,9 @@ LaterRegex: !simpleRegex
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 WithinNextPrefixRegex: !nestedRegex
-  def: \b(within(\s+the)?(\s+{NextPrefixRegex})?)\b
+  def: \b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
+# "next" group here is used to judge for illegal cases like "within the next 5 days before today"
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !nestedRegex
@@ -482,9 +485,11 @@ FromToRegex: !simpleRegex
   def: \b(from).+(to)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
-# Filter ambiguous single word datetime extractions in CalendarMode
+# Filter ambiguous single word datetime extractions in CalendarMode or when adding the modifier
 SingleAmbiguousTermsRegex: !simpleRegex
   def: ^(the\s+)?(day|week|month|year)$
+UnspecificDatePeriodRegex: !simpleRegex
+  def: ^(week|weekend|month|year)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|from|to)$
 FlexibleDayRegex: !simpleRegex
@@ -853,7 +858,7 @@ HolidayNames: !dictionary
     fathers: [ fatherday, fathersday ]
     mothers: [ motherday, mothersday ]
     thanksgiving: [ thanksgivingday, thanksgiving ]
-    martinlutherking: [ martinlutherkingday, martinlutherkingjrday ]
+    martinlutherking: [ mlkday, martinlutherkingday, martinlutherkingjrday ]
     washingtonsbirthday: [ washingtonsbirthday, washingtonbirthday ]
     canberra: [ canberraday ]
     labour: [ labourday, laborday ]
@@ -915,4 +920,15 @@ SpecialDecadeCases: !dictionary
     'noughties': 2000
     'two thousands': 2000
 DefaultLanguageFallback: 'MDY'
+SuperfluousWordList: !list
+  types: [ string ]
+  entries:
+    - preferably
+    - how about
+    - maybe
+    - say
+    - like
+    - around
+DurationDateRestrictions: [ today, now ]
+# For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty. 
 ...

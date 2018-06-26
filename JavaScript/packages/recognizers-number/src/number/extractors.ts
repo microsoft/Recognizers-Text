@@ -57,7 +57,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
 
                     // Extract negative numbers
                     if (this.negativeNumberTermsRegex !== null) {
-                        var match = source.substr(0, start).match(this.negativeNumberTermsRegex);
+                        let match = source.substr(0, start).match(this.negativeNumberTermsRegex);
                         if (match) {
                             start = match.index;
                             length = length + match[0].length;
@@ -72,7 +72,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
                             text: substr,
                             type: this.extractType,
                             data: matchSource.has(srcMatch) ? matchSource.get(srcMatch) : null
-                        });
+                        } as ExtractResult);
                     }
                 }
             }

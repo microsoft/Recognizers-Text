@@ -1,6 +1,5 @@
 [{
   "Input": "set an alarm for eight forty",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "eight forty",
@@ -20,7 +19,6 @@
 ,
 {
   "Input": "set an alarm for eight forty am",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "eight forty am",
@@ -40,7 +38,6 @@
 ,
 {
   "Input": "set an alarm for eight forty pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "eight forty pm",
@@ -60,7 +57,6 @@
 ,
 {
   "Input": "set an alarm for ten forty five",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten forty five",
@@ -80,7 +76,6 @@
 ,
 {
   "Input": "set an alarm for fifteen fifteen p m",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "fifteen fifteen p m",
@@ -100,7 +95,6 @@
 ,
 {
   "Input": "set an alarm for fifteen thirty p m",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "fifteen thirty p m",
@@ -120,7 +114,6 @@
 ,
 {
   "Input": "set an alarm for ten ten",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten ten",
@@ -140,7 +133,6 @@
 ,
 {
   "Input": "set an alarm for ten fifty five p. m.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ten fifty five p. m.",
@@ -160,7 +152,6 @@
 ,
 {
   "Input": "I'll be back at 7ampm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7ampm",
@@ -180,7 +171,6 @@
 ,
 {
   "Input": "I'll be back at 7",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7",
@@ -200,7 +190,6 @@
 ,
 {
   "Input": "I'll be back at seven",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "seven",
@@ -220,7 +209,6 @@
 ,
 {
   "Input": "I'll be back 7pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7pm",
@@ -240,7 +228,6 @@
 ,
 {
   "Input": "I'll be back 7:56pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7:56pm",
@@ -260,7 +247,6 @@
 ,
 {
   "Input": "I'll be back 7:56:30pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7:56:30pm",
@@ -280,7 +266,6 @@
 ,
 {
   "Input": "I'll be back 7:56:30 pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7:56:30 pm",
@@ -300,7 +285,6 @@
 ,
 {
   "Input": "I'll be back 12:34",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12:34",
@@ -320,7 +304,6 @@
 ,
 {
   "Input": "I'll be back 12:34:25 ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12:34:25",
@@ -340,7 +323,6 @@
 ,
 {
   "Input": "It's 7 o'clock",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7 o'clock",
@@ -360,7 +342,6 @@
 ,
 {
   "Input": "It's seven o'clock",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "seven o'clock",
@@ -380,7 +361,6 @@
 ,
 {
   "Input": "It's 8 in the morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "8 in the morning",
@@ -400,7 +380,6 @@
 ,
 {
   "Input": "It's 8 in the night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "8 in the night",
@@ -420,7 +399,6 @@
 ,
 {
   "Input": "It's half past eight",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half past eight",
@@ -440,7 +418,6 @@
 ,
 {
   "Input": "It's half past 8pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half past 8pm",
@@ -460,7 +437,6 @@
 ,
 {
   "Input": "It's 30 mins past eight",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30 mins past eight",
@@ -480,7 +456,6 @@
 ,
 {
   "Input": "It's a quarter past eight",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a quarter past eight",
@@ -500,7 +475,6 @@
 ,
 {
   "Input": "It's quarter past eight",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quarter past eight",
@@ -520,7 +494,6 @@
 ,
 {
   "Input": "It's three quarters past 9pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "three quarters past 9pm",
@@ -540,7 +513,6 @@
 ,
 {
   "Input": "It's three minutes to eight",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "three minutes to eight",
@@ -560,7 +532,6 @@
 ,
 {
   "Input": "It's half past seven o'clock",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half past seven o'clock",
@@ -580,7 +551,6 @@
 ,
 {
   "Input": "It's half past seven afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half past seven afternoon",
@@ -600,7 +570,6 @@
 ,
 {
   "Input": "It's half past seven in the morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half past seven in the morning",
@@ -620,7 +589,6 @@
 ,
 {
   "Input": "It's a quarter to 8 in the morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a quarter to 8 in the morning",
@@ -640,7 +608,6 @@
 ,
 {
   "Input": "It's 20 min past eight in the evening",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 min past eight in the evening",
@@ -660,7 +627,6 @@
 ,
 {
   "Input": "I'll be back in the afternoon at 7",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the afternoon at 7",
@@ -680,7 +646,6 @@
 ,
 {
   "Input": "I'll be back afternoon at 7",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "afternoon at 7",
@@ -700,7 +665,6 @@
 ,
 {
   "Input": "I'll be back afternoon 7:00",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "afternoon 7:00",
@@ -720,7 +684,6 @@
 ,
 {
   "Input": "I'll be back afternoon 7:00:05",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "afternoon 7:00:05",
@@ -740,7 +703,6 @@
 ,
 {
   "Input": "I'll be back afternoon seven pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "afternoon seven pm",
@@ -760,7 +722,6 @@
 ,
 {
   "Input": "I'll go back seven thirty pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "seven thirty pm",
@@ -780,7 +741,6 @@
 ,
 {
   "Input": "I'll go back seven thirty five pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "seven thirty five pm",
@@ -800,7 +760,6 @@
 ,
 {
   "Input": "I'll go back eleven twenty pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "eleven twenty pm",
@@ -820,7 +779,6 @@
 ,
 {
   "Input": "I'll be back noonish",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "noonish",
@@ -840,7 +798,6 @@
 ,
 {
   "Input": "I'll be back 12 noon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12 noon",
@@ -860,7 +817,6 @@
 ,
 {
   "Input": "I'll be back 11ish",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11ish",
@@ -880,7 +836,6 @@
 ,
 {
   "Input": "I'll be back 11-ish",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11-ish",
@@ -900,7 +855,6 @@
 ,
 {
   "Input": "I'll be back 340pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "340pm",
@@ -920,7 +874,6 @@
 ,
 {
   "Input": "I'll be back 1140 a.m.",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1140 a.m.",
@@ -940,7 +893,6 @@
 ,
 {
   "Input": "midnight",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "midnight",
@@ -960,7 +912,6 @@
 ,
 {
   "Input": "mid-night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid-night",
@@ -980,7 +931,6 @@
 ,
 {
   "Input": "mid night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid night",
@@ -1000,7 +950,6 @@
 ,
 {
   "Input": "midmorning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "midmorning",
@@ -1020,7 +969,6 @@
 ,
 {
   "Input": "mid-morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid-morning",
@@ -1040,7 +988,6 @@
 ,
 {
   "Input": "mid morning",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid morning",
@@ -1060,7 +1007,6 @@
 ,
 {
   "Input": "midafternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "midafternoon",
@@ -1080,7 +1026,6 @@
 ,
 {
   "Input": "mid-afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid-afternoon",
@@ -1100,7 +1045,6 @@
 ,
 {
   "Input": "mid afternoon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid afternoon",
@@ -1120,7 +1064,6 @@
 ,
 {
   "Input": "midday",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "midday",
@@ -1140,7 +1083,6 @@
 ,
 {
   "Input": "mid-day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid-day",
@@ -1160,7 +1102,6 @@
 ,
 {
   "Input": "mid day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mid day",
@@ -1180,7 +1121,6 @@
 ,
 {
   "Input": "noon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "noon",
@@ -1200,7 +1140,6 @@
 ,
 {
   "Input": "I'll be back 12 lunchtime",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12 lunchtime",
@@ -1220,7 +1159,6 @@
 ,
 {
   "Input": "I'll be back 12 midnight",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12 midnight",
@@ -1240,7 +1178,6 @@
 ,
 {
   "Input": "I'll be back 12 in the night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12 in the night",
@@ -1260,7 +1197,6 @@
 ,
 {
   "Input": "I'll be back 1 o'clock midnight",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 o'clock midnight",
@@ -1280,7 +1216,6 @@
 ,
 {
   "Input": "I'll be back 12 o'clock lunchtime",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12 o'clock lunchtime",
@@ -1300,7 +1235,6 @@
 ,
 {
   "Input": "I'll be back 11 o'clock lunchtime",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11 o'clock lunchtime",
@@ -1320,7 +1254,6 @@
 ,
 {
   "Input": "I'll be back 1 o'clock lunchtime",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 o'clock lunchtime",
@@ -1340,7 +1273,6 @@
 ,
 {
   "Input": "I'll be back at lunchtime 11 o'clock",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "at lunchtime 11 o'clock",
@@ -1360,7 +1292,6 @@
 ,
 {
   "Input": "I'll be back 7:56:13 pm",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7:56:13 pm",
@@ -1380,7 +1311,6 @@
 ,
 {
   "Input": "I'll be back 12:34:45 ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12:34:45",
@@ -1400,7 +1330,6 @@
 ,
 {
   "Input": "I'll be back afternoon 7:00:25",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "afternoon 7:00:25",
@@ -1420,7 +1349,6 @@
 ,
 {
   "Input": "I'll go back seven thirty am",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "seven thirty am",
@@ -1440,7 +1368,6 @@
 ,
 {
   "Input": "I'll go back at eleven five",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "eleven five",
@@ -1460,7 +1387,6 @@
 ,
 {
   "Input": "I'll go back three mins to five thirty ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "three mins to five thirty",
@@ -1480,7 +1406,6 @@
 ,
 {
   "Input": "I'll go back five thirty in the night",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "five thirty in the night",
@@ -1500,7 +1425,6 @@
 ,
 {
   "Input": "I'll go back in the night five thirty",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "in the night five thirty",
@@ -1520,7 +1444,6 @@
 ,
 {
   "Input": "I'll be back noon",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "noon",
@@ -1540,7 +1463,6 @@
 ,
 {
   "Input": "I'll be back at lunchtime 12 o'clock",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "at lunchtime 12 o'clock",
@@ -1560,7 +1482,7 @@
 ,
 {
   "Input": "I'll be back at 7h01",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "7h01",
@@ -1580,7 +1502,7 @@
 ,
 {
   "Input": "I'll be back at 10 H 10 pm.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "10 H 10 pm",
@@ -1600,7 +1522,7 @@
 ,
 {
   "Input": "I'll be back at three min past 10 H 10 pm.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "three min past 10 H 10 pm",

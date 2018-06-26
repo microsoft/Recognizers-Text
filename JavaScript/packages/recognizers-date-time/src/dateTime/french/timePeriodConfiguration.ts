@@ -66,6 +66,8 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
     readonly tillRegex: RegExp;
     readonly numbers: ReadonlyMap<string, number>;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly specificTimeFromToRegex: RegExp;
+    readonly specificTimeBetweenAndRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.timeExtractor = config.timeExtractor;
@@ -77,6 +79,8 @@ export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserCon
         this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis");
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeOfDayRegex, "gis");
         this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex, "gis");
+        this.specificTimeFromToRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeFromTo);
+        this.specificTimeBetweenAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeBetweenAnd);
     }
 
     getMatchedTimexRange(text: string): { matched: boolean; timex: string; beginHour: number; endHour: number; endMin: number; } {

@@ -78,6 +78,9 @@ AllHalfYearRegex: !simpleRegex
 PrefixDayRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+CenturySuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SeasonRegex: !nestedRegex
   def: \b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b
   references: [ YearRegex, RelativeRegex ]
@@ -439,6 +442,9 @@ FromToRegex: !simpleRegex
   def: \b(vom|von).+(bis(\s*zum)?)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
+UnspecificDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PrepositionSuffixRegex: !simpleRegex
   def: \b(am|in|um|gegen|von|vom|zum)$
 FlexibleDayRegex: !simpleRegex
@@ -1033,4 +1039,5 @@ SpecialDecadeCases: !dictionary
   entries:
     'zweitausender': 2000
 DefaultLanguageFallback: DMY
+DurationDateRestrictions: []
 ...

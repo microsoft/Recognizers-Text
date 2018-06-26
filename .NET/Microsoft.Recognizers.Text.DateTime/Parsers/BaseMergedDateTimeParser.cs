@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.Text.RegularExpressions;
-
 using DateObject = System.DateTime;
+
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -32,6 +33,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var referenceTime = refTime;
             DateTimeParseResult pr = null;
+
+            var originText = er.Text;
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                er.Text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(er.Text, Config.SuperfluousWordMatcher, out var _);
+                er.Length += er.Text.Length - originText.Length;
+            }
 
             // Push, save the MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false, hasYearAfter = false;
@@ -212,6 +220,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var hasModifier = hasBefore || hasAfter || hasSince;
                 pr = SetParseResult(pr, hasModifier);
+            }
+
+            if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                pr.Length += originText.Length - pr.Text.Length;
+                pr.Text = originText;
             }
 
             return pr;
@@ -738,28 +752,52 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!string.IsNullOrEmpty(mod))
             {
-                // For the 'before' mod, the start of the period should be the end the new period, not the start 
+                // For the 'before' mod
+                // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
+                // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
                 if (mod.Equals(Constants.BEFORE_MOD))
                 {
-                    res.Add(DateTimeResolutionKey.END, start);
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    {
+                        res.Add(DateTimeResolutionKey.END, start);
+                    }
+                    else
+                    {
+                        res.Add(DateTimeResolutionKey.END, end);
+                    }
+
                     return;
                 }
 
-                // For the 'after' mod, the end of the period should be the start the new period, not the end 
+                // For the 'after' mod
+                // 1. Cases like "After January", the end of the period should be the start of the new period, not the end 
+                // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
                 if (mod.Equals(Constants.AFTER_MOD))
                 {
-                    res.Add(DateTimeResolutionKey.START, end);
+                    // For cases like "After January" or "After 2018"
+                    // The "end" of the period is not inclusive by default ("January", the end should be "XXXX-02-01" / "2018", the end should be "2019-01-01")
+                    // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
+                    // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
+                    if (!string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
+                    {
+                        res.Add(DateTimeResolutionKey.START, GetPreviousDay(end));
+                    }
+                    else
+                    {
+                        res.Add(DateTimeResolutionKey.START, start);
+                    }
+
                     return;
                 }
 
-                // For the 'since' mod, the start of the period should be the start the new period, not the end 
+                // For the 'since' mod, the start of the period should be the start of the new period, not the end 
                 if (mod.Equals(Constants.SINCE_MOD))
                 {
                     res.Add(DateTimeResolutionKey.START, start);
                     return;
                 }
 
-                // For the 'until' mod, the end of the period should be the end the new period, not the start 
+                // For the 'until' mod, the end of the period should be the end of the new period, not the start 
                 if (mod.Equals(Constants.UNTIL_MOD))
                 {
                     res.Add(DateTimeResolutionKey.END, end);
@@ -772,6 +810,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 res.Add(DateTimeResolutionKey.START, start);
                 res.Add(DateTimeResolutionKey.END, end);
             }
+        }
+
+        public string GetPreviousDay(string dateStr)
+        {
+            // Here the dateString is in standard format, so Parse should work perfectly
+            var date = DateObject.Parse(dateStr);
+            date = date.AddDays(-1);
+            return FormatUtil.LuisDate(date);
         }
     }
 }

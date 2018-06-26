@@ -1704,7 +1704,7 @@
             "timex": "2008",            
             "type": "daterange",
             "start": "2008-01-01",
-			"end": "2009-01-01"
+            "end": "2009-01-01"
           }
         ]
       }
@@ -1729,7 +1729,7 @@
             "timex": "2008",            
             "type": "daterange",
             "start": "2008-01-01",
-			"end": "2009-01-01"
+            "end": "2009-01-01"
           }
         ]
       }
@@ -1753,7 +1753,82 @@
             "timex": "2008",            
             "type": "daterange",
             "start": "2008-01-01",
-			"end": "2009-01-01"
+            "end": "2009-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1995-1997年的收入很不乐观",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1995-1997年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(1995-01-01,1997-01-01,P2Y)",            
+            "type": "daterange",
+            "start": "1995-01-01",
+            "end": "1997-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1995 - 1997年的收入很不乐观",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1995 - 1997年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(1995-01-01,1997-01-01,P2Y)",            
+            "type": "daterange",
+            "start": "1995-01-01",
+            "end": "1997-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1995 – 1997年的收入很不乐观",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1995 – 1997年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(1995-01-01,1997-01-01,P2Y)",            
+            "type": "daterange",
+            "start": "1995-01-01",
+            "end": "1997-01-01"
           }
         ]
       }

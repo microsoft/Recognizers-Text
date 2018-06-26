@@ -84,6 +84,9 @@ InConnectorRegex: !simpleRegex
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+CenturySuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 FromRegex: !simpleRegex
   def: ((desde|de)(\s*a(s)?)?)$
 ConnectorAndRegex: !simpleRegex
@@ -746,6 +749,9 @@ FromToRegex: !simpleRegex
 SingleAmbiguousMonthRegex: !simpleRegex
   # TODO: change to Portuguese according to corresponding Regex
   def: ^(the\s+)?(may|march)$
+UnspecificDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 PrepositionSuffixRegex: !simpleRegex
   # TODO: change to Portuguese according to corresponding Regex
   def: \b(on|in|at|around|from|to)$
@@ -803,4 +809,5 @@ SpecialDecadeCases: !dictionary
   entries:
     '': 0
 DefaultLanguageFallback: DMY
+DurationDateRestrictions: []
 ...

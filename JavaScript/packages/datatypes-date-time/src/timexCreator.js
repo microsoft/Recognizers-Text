@@ -56,6 +56,7 @@ const nextWeeksFromToday = function (n, date) {
     return (new TimexProperty(Object.assign(TimexProperty.fromDate(d), { days: 7 * n }))).timex;
 };
 
+// The following constants are consistent with the Recognizer results
 const monday = 'XXXX-WXX-1';
 const tuesday = 'XXXX-WXX-2';
 const wednesday = 'XXXX-WXX-3';

@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public sealed class EnglishMergedParserConfiguration : EnglishCommonDateTimeParserConfiguration, IMergedParserConfiguration
@@ -21,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeParser TimeZoneParser { get; }
 
+        public StringMatcher SuperfluousWordMatcher { get; }
+
         public EnglishMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
@@ -28,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SinceRegex = EnglishMergedExtractorConfiguration.SinceRegex;
             YearAfterRegex = EnglishMergedExtractorConfiguration.YearAfterRegex;
             YearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = EnglishMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));

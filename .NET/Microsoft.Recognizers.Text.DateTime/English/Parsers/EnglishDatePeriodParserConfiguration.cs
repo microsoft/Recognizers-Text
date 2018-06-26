@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor OrdinalExtractor { get; }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
@@ -66,6 +68,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
         public Regex ReferenceDatePeriodRegex { get; }
+        public Regex AgoRegex { get; }
+        public Regex LaterRegex { get; }
+        public Regex LessThanRegex { get; }
+        public Regex MoreThanRegex { get; }
+
+        public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -115,6 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
@@ -153,6 +162,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = EnglishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
             ReferenceDatePeriodRegex = EnglishDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            AgoRegex = EnglishDatePeriodExtractorConfiguration.AgoRegex;
+            LaterRegex = EnglishDatePeriodExtractorConfiguration.LaterRegex;
+            LessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
+            MoreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
+            CenturySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

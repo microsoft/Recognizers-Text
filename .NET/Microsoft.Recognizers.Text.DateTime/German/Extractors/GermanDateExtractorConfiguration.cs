@@ -134,8 +134,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex YearSuffix =
             new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex LessThanRegex =
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MoreThanRegex =
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek = 
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
+
+        public static readonly ImmutableDictionary<string, int> MonthOfYear = 
+            DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
         public GermanDateExtractorConfiguration() : base(DateTimeOptions.None)
         {
@@ -164,6 +173,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
 
+        IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
+
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
@@ -181,5 +192,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 
         Regex IDateExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDateExtractorConfiguration.MoreThanRegex => MoreThanRegex;
     }
 }

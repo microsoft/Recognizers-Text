@@ -7,6 +7,126 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "はい！",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "はい！",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "よい",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "よい",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "よいです",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "よいです",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "そうです",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "そうです",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "はい！",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "はい！",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "よい",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "よい",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "よいです",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "よいです",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "そうです",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "そうです",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
 		"score": 1.0
       }
     }
@@ -22,7 +142,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.7
+        "score": 0.7
       }
     }
   ]
@@ -37,7 +157,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.6
+        "score": 0.6
       }
     }
   ]

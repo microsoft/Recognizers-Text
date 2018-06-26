@@ -1,6 +1,5 @@
 [{
   "Input": "I'll leave for 3h",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3h",
@@ -11,7 +10,6 @@
 ,
 {
   "Input": "I'll leave for 3day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3day",
@@ -22,7 +20,6 @@
 ,
 {
   "Input": "I'll leave for 3.5years",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3.5years",
@@ -33,7 +30,6 @@
 ,
 {
   "Input": "I'll leave for 3 h",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 h",
@@ -44,7 +40,6 @@
 ,
 {
   "Input": "I'll leave for 3 hours",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 hours",
@@ -55,7 +50,6 @@
 ,
 {
   "Input": "I'll leave for 3 hrs",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 hrs",
@@ -66,7 +60,6 @@
 ,
 {
   "Input": "I'll leave for 3 hr",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 hr",
@@ -77,7 +70,6 @@
 ,
 {
   "Input": "I'll leave for 3 day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 day",
@@ -88,7 +80,6 @@
 ,
 {
   "Input": "I'll leave for 3 months",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 months",
@@ -99,7 +90,6 @@
 ,
 {
   "Input": "I'll leave for 3 minutes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 minutes",
@@ -110,7 +100,6 @@
 ,
 {
   "Input": "I'll leave for 3 min",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 min",
@@ -121,7 +110,6 @@
 ,
 {
   "Input": "I'll leave for 3.5 second ",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3.5 second",
@@ -132,7 +120,6 @@
 ,
 {
   "Input": "I'll leave for 123.45 sec",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "123.45 sec",
@@ -143,7 +130,6 @@
 ,
 {
   "Input": "I'll leave for two weeks",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two weeks",
@@ -154,7 +140,6 @@
 ,
 {
   "Input": "I'll leave for twenty min",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twenty min",
@@ -165,7 +150,6 @@
 ,
 {
   "Input": "I'll leave for twenty and four hours",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twenty and four hours",
@@ -176,7 +160,6 @@
 ,
 {
   "Input": "I'll leave for all day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "all day",
@@ -187,7 +170,6 @@
 ,
 {
   "Input": "I'll leave for all week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "all week",
@@ -198,7 +180,6 @@
 ,
 {
   "Input": "I'll leave for all month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "all month",
@@ -209,7 +190,6 @@
 ,
 {
   "Input": "I'll leave for all year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "all year",
@@ -220,7 +200,6 @@
 ,
 {
   "Input": "I'll leave for all-day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "all-day",
@@ -231,7 +210,6 @@
 ,
 {
   "Input": "I'll leave for all-week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "all-week",
@@ -242,7 +220,6 @@
 ,
 {
   "Input": "I'll leave for all-month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "all-month",
@@ -253,7 +230,6 @@
 ,
 {
   "Input": "I'll leave for all-year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "all-year",
@@ -264,7 +240,6 @@
 ,
 {
   "Input": "I'll leave for full day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "full day",
@@ -275,7 +250,6 @@
 ,
 {
   "Input": "I'll leave for full week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "full week",
@@ -286,7 +260,6 @@
 ,
 {
   "Input": "I'll leave for full month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "full month",
@@ -297,7 +270,6 @@
 ,
 {
   "Input": "I'll leave for full year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "full year",
@@ -308,7 +280,6 @@
 ,
 {
   "Input": "I'll leave for full-day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "full-day",
@@ -319,7 +290,6 @@
 ,
 {
   "Input": "I'll leave for full-week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "full-week",
@@ -330,7 +300,6 @@
 ,
 {
   "Input": "I'll leave for full-month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "full-month",
@@ -341,7 +310,6 @@
 ,
 {
   "Input": "I'll leave for full-year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "full-year",
@@ -352,7 +320,6 @@
 ,
 {
   "Input": "I'll leave for an hour",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "an hour",
@@ -363,7 +330,6 @@
 ,
 {
   "Input": "I'll leave for a year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a year",
@@ -374,7 +340,6 @@
 ,
 {
   "Input": "half year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half year",
@@ -385,7 +350,6 @@
 ,
 {
   "Input": "half an year",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half an year",
@@ -396,7 +360,6 @@
 ,
 {
   "Input": "I'll leave for 3-min",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3-min",
@@ -407,7 +370,6 @@
 ,
 {
   "Input": "I'll leave for 30-minutes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30-minutes",
@@ -418,7 +380,6 @@
 ,
 {
   "Input": "I'll leave for a half hour",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a half hour",
@@ -429,7 +390,6 @@
 ,
 {
   "Input": "I'll leave for half an hour",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half an hour",
@@ -440,7 +400,6 @@
 ,
 {
   "Input": "I'll leave for an hour and half",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "an hour and half",
@@ -451,7 +410,6 @@
 ,
 {
   "Input": "I'll leave for an hour and a half",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "an hour and a half",
@@ -462,7 +420,6 @@
 ,
 {
   "Input": "I'll leave for half hour",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "half hour",
@@ -473,7 +430,6 @@
 ,
 {
   "Input": "I'll leave for two hours",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two hours",
@@ -484,7 +440,6 @@
 ,
 {
   "Input": "I'll leave for two and a half hours",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two and a half hours",
@@ -495,7 +450,6 @@
 ,
 {
   "Input": "In a week",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a week",
@@ -506,7 +460,6 @@
 ,
 {
   "Input": "In a day",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a day",
@@ -517,7 +470,6 @@
 ,
 {
   "Input": "for an hour",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "an hour",
@@ -528,7 +480,6 @@
 ,
 {
   "Input": "for a month",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a month",
@@ -539,7 +490,6 @@
 ,
 {
   "Input": "I'll leave for few hours",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "few hours",
@@ -550,7 +500,6 @@
 ,
 {
   "Input": "I'll leave for a few minutes",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a few minutes",
@@ -561,7 +510,6 @@
 ,
 {
   "Input": "I'll leave for some days",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "some days",
@@ -572,7 +520,6 @@
 ,
 {
   "Input": "I'll leave for several days",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "several days",
@@ -583,8 +530,7 @@
 ,
 {
   "Input": "I'll leave for 1 year 1 month 21 days",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "1 year 1 month 21 days",
@@ -595,8 +541,7 @@
 ,
 {
   "Input": "I'll leave for 2 days 1 month",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "2 days 1 month",
@@ -607,7 +552,6 @@
 ,
 {
   "Input": "I realized that you are out for another week.",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "another week",
@@ -618,7 +562,6 @@
 ,
 {
   "Input": "Can we wait another month?",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "another month",

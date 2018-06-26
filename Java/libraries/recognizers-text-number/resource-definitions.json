@@ -1,0 +1,112 @@
+{
+  "outputPath": "libraries/recognizers-text-number/src/main/java/com/microsoft/recognizers/text/number/resources/",
+  "configFiles": [
+    {
+      "input": [ "Base-Numbers" ],
+      "output": "BaseNumbers",
+      "header": [
+        "package com.microsoft.recognizers.text.number.resources;",
+        "",
+        "public class BaseNumbers {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "English", "English-Numbers" ],
+      "output": "EnglishNumeric",
+      "header": [
+        "package com.microsoft.recognizers.text.number.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class EnglishNumeric {"
+      ],
+      "footer": [ "}" ]
+    },
+
+    {
+      "input": [ "Spanish", "Spanish-Numbers" ],
+      "output": "SpanishNumeric",
+      "header": [
+        "package com.microsoft.recognizers.text.number.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class SpanishNumeric {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Portuguese", "Portuguese-Numbers" ],
+      "output": "PortugueseNumeric",
+      "header": [
+        "package com.microsoft.recognizers.text.number.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class PortugueseNumeric {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Chinese", "Chinese-Numbers" ],
+      "output": "ChineseNumeric",
+      "header": [
+        "package com.microsoft.recognizers.text.number.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class ChineseNumeric {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "French", "French-Numbers" ],
+      "output": "FrenchNumeric",
+      "header": [
+        "package com.microsoft.recognizers.text.number.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class FrenchNumeric {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "German", "German-Numbers" ],
+      "output": "GermanNumeric",
+      "header": [
+        "package com.microsoft.recognizers.text.number.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class GermanNumeric {"
+      ],
+      "footer": [ "}" ]
+    }
+  ]
+}

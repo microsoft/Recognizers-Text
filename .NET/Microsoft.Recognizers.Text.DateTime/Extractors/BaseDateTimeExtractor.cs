@@ -299,7 +299,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationEr = config.DurationExtractor.Extract(text, reference);
             foreach (var er in durationEr)
             {
-                // if it is a multiple duration and its type is equal to Date than skip it.
+                // if it is a multiple duration and its type is equal to Date then skip it.
                 if (er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date)
                 {
                     continue;
