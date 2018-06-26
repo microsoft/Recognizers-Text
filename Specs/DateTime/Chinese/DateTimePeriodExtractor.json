@@ -1,7 +1,6 @@
 [
   {
     "Input": "明天2点到4点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "明天2点到4点",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "从昨天下午两点到四点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从昨天下午两点到四点",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "从昨天下午两点到明天四点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从昨天下午两点到明天四点",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "从昨天5:00-6:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从昨天5:00-6:00",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "1月15号4点和2月3号9点之间",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1月15号4点和2月3号9点之间",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "2点-明天4点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2点-明天4点",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "昨晚",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "昨晚",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "昨天晚上",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "昨天晚上",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "明天上午",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "明天上午",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "上个小时",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "上个小时",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "之后5分钟",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "之后5分钟",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "之前3小时",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "之前3小时",
