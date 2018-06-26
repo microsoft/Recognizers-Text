@@ -224,7 +224,7 @@
 ,
 {
   "Input": "Ele tem cerca de 40 - 50 anos",
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, java",
   "Results": [
     {
       "Text": "50 anos",
