@@ -355,7 +355,7 @@ FullToMinMapping: !dictionary
 MajorLocations: !list
   types: [ string ]
   entries:
-    # major cities
+    # major cities, english focus
     - Aberdeen
     - Adelaide
     - Anaheim
@@ -711,7 +711,7 @@ MajorLocations: !list
     - Winston-Salem
     - Worcester
     - Yonkers
-    # major countries and states
+    # country/regions plus u.s. states
     - Afghanistan
     - AK
     - AL
