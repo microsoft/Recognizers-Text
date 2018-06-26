@@ -128,7 +128,7 @@ public class NumberWithUnitExtractor implements IExtractor {
                         int endpos = m.end();
                         if (m.start() >= 0) {
                             String midStr = rightSub.substring(0, Math.min(m.start(), rightSub.length()));
-                            if (maxlen < endpos && (midStr.isEmpty() || midStr.trim().equalsIgnoreCase(this.config.getConnectorToken()))) {
+                            if (maxlen < endpos && (midStr.trim().isEmpty() || midStr.trim().equalsIgnoreCase(this.config.getConnectorToken()))) {
                                 maxlen = endpos;
                             }
                         }

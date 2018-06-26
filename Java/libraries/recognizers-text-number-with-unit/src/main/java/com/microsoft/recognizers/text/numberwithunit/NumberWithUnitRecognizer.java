@@ -145,5 +145,24 @@ public class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> 
                         new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.english.extractors.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.english.parsers.AgeParserConfiguration()))));
         //endregion
+
+        //region Spanish
+        registerModel(CurrencyModel.class, Culture.Spanish, (options) ->
+                new CurrencyModel(ImmutableMap.of(
+                    new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.spanish.extractors.CurrencyExtractorConfiguration()),
+                    new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.spanish.parsers.CurrencyParserConfiguration()))));
+        registerModel(TemperatureModel.class, Culture.Spanish, (options) ->
+                new TemperatureModel(ImmutableMap.of(
+                    new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.spanish.extractors.TemperatureExtractorConfiguration()),
+                    new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.spanish.parsers.TemperatureParserConfiguration()))));
+        registerModel(DimensionModel.class, Culture.Spanish, (options) ->
+                new DimensionModel(ImmutableMap.of(
+                        new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.spanish.extractors.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.spanish.parsers.DimensionParserConfiguration()))));
+        registerModel(AgeModel.class, Culture.Spanish, (options) ->
+                new AgeModel(ImmutableMap.of(
+                    new NumberWithUnitExtractor(new com.microsoft.recognizers.text.numberwithunit.spanish.extractors.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new com.microsoft.recognizers.text.numberwithunit.spanish.parsers.AgeParserConfiguration()))));
+        //endregion
     }
 }

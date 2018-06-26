@@ -538,11 +538,11 @@ public class ChineseNumericWithUnit {
     public static final List<String> CurrencyAmbiguousValues = Arrays.asList("元", "仙", "分", "圆", "块", "毛", "盾", "箍", "蚊", "角");
 
     public static final Map<String, String> DimensionSuffixList = ImmutableMap.<String, String>builder()
-        .put("Meter", "米|公尺")
-        .put("Kilometer", "千米|公里")
-        .put("Decimeter", "分米|公寸")
-        .put("Centimeter", "釐米|厘米|公分")
-        .put("Micrometer", "毫米|公釐")
+        .put("Meter", "米|公尺|m")
+        .put("Kilometer", "千米|公里|km")
+        .put("Decimeter", "分米|公寸|dm")
+        .put("Centimeter", "釐米|厘米|公分|cm")
+        .put("Micrometer", "毫米|公釐|mm")
         .put("Microns", "微米")
         .put("Picometer", "皮米")
         .put("Nanometer", "纳米")
@@ -558,10 +558,10 @@ public class ChineseNumericWithUnit {
         .put("Yard", "码")
         .put("Knot", "海里")
         .put("Light year", "光年")
-        .put("Meter per second", "米每秒|米/秒")
-        .put("Kilometer per hour", "公里每小时|千米每小时|公里/小时|千米/小时")
-        .put("Kilometer per minute", "公里每分钟|千米每分钟|公里/分钟|千米/分钟")
-        .put("Kilometer per second", "公里每秒|千米每秒|公里/秒|千米/秒")
+        .put("Meter per second", "米每秒|米/秒|m/s")
+        .put("Kilometer per hour", "公里每小时|千米每小时|公里/小时|千米/小时|km/h")
+        .put("Kilometer per minute", "公里每分钟|千米每分钟|公里/分钟|千米/分钟|km/min")
+        .put("Kilometer per second", "公里每秒|千米每秒|公里/秒|千米/秒|km/s")
         .put("Mile per hour", "英里每小时|英里/小时")
         .put("Foot per second", "英尺每小时|英尺/小时")
         .put("Foot per minute", "英尺每分钟|英尺/分钟")
@@ -574,8 +574,8 @@ public class ChineseNumericWithUnit {
         .put("Acre", "英亩|公亩")
         .put("Hectare", "公顷")
         .put("Mu", "亩|市亩")
-        .put("Liter", "公升|升")
-        .put("Milliliter", "毫升")
+        .put("Liter", "公升|升|l")
+        .put("Milliliter", "毫升|ml")
         .put("Cubic meter", "立方米")
         .put("Cubic decimeter", "立方分米")
         .put("Cubic millimeter", "立方毫米")
@@ -584,31 +584,31 @@ public class ChineseNumericWithUnit {
         .put("Pint", "品脱")
         .put("Dou", "市斗|斗")
         .put("Dan", "市石|石")
-        .put("Kilogram", "千克|公斤")
+        .put("Kilogram", "千克|公斤|kg")
         .put("Jin", "市斤|斤")
-        .put("Milligram", "毫克")
+        .put("Milligram", "毫克|mg")
         .put("Barrel", "桶")
         .put("Pot", "罐")
-        .put("Gram", "克")
-        .put("Ton", "公吨|吨")
+        .put("Gram", "克|g")
+        .put("Ton", "公吨|吨|t")
         .put("Pound", "磅")
         .put("Ounce", "盎司")
-        .put("Bit", "比特|位")
-        .put("Byte", "字节")
-        .put("Kilobyte", "千字节")
-        .put("Megabyte", "兆字节")
-        .put("Gigabyte", "十亿字节|千兆字节")
-        .put("Terabyte", "万亿字节|兆兆字节")
-        .put("Petabyte", "千兆兆|千万亿字节")
+        .put("Bit", "比特|位|b")
+        .put("Byte", "字节|byte")
+        .put("Kilobyte", "千字节|kb")
+        .put("Megabyte", "兆字节|mb")
+        .put("Gigabyte", "十亿字节|千兆字节|gb")
+        .put("Terabyte", "万亿字节|兆兆字节|tb")
+        .put("Petabyte", "千兆兆|千万亿字节|pb")
         .build();
 
-    public static final List<String> DimensionAmbiguousValues = Arrays.asList("丈", "位", "克", "分", "升", "寸", "尺", "斗", "斤", "桶", "毫", "石", "码", "磅", "米", "罐", "里");
+    public static final List<String> DimensionAmbiguousValues = Arrays.asList("丈", "位", "克", "分", "升", "寸", "尺", "斗", "斤", "桶", "毫", "石", "码", "磅", "米", "罐", "里", "m", "km", "dm", "cm", "mm", "l", "ml", "kg", "mg", "g", "t", "b", "byte", "kb", "mb", "gb", "tb", "pb");
 
     public static final Map<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
-        .put("F", "华氏温度|华氏度")
+        .put("F", "华氏温度|华氏度|°f")
         .put("K", "k|开尔文温度|开氏度|凯氏度")
-        .put("R", "兰氏温度")
-        .put("C", "摄氏温度|摄氏度")
+        .put("R", "兰氏温度|°r")
+        .put("C", "摄氏温度|摄氏度|°c")
         .put("Degree", "度")
         .build();
 
@@ -619,5 +619,5 @@ public class ChineseNumericWithUnit {
         .put("C", "摄氏温度|摄氏")
         .build();
 
-    public static final List<String> TemperatureAmbiguousValues = Arrays.asList("度");
+    public static final List<String> TemperatureAmbiguousValues = Arrays.asList("度", "k");
 }
