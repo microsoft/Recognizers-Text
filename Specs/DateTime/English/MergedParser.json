@@ -3511,4 +3511,204 @@
     }
   ]
 }
+,
+{
+  "Input": "It will happen 1/1/2015 after 2:00",
+  "Context": {
+    "ReferenceDateTime": "2018-06-22T00:00:00"
+  },
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1/1/2015 after 2:00",
+      "Type": "datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2015-01-01T02:00",
+            "Mod":"after",
+            "type":"datetimerange",
+            "start":"2015-01-01 02:00:00"
+          }
+          ,
+          {
+            "timex":"2015-01-01T14:00",
+            "Mod":"after",
+            "type":"datetimerange",
+            "start":"2015-01-01 14:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen today before 4pm",
+  "Context": {
+    "ReferenceDateTime": "2018-06-22T00:00:00"
+  },
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today before 4pm",
+      "Type": "datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-06-22T16",
+            "Mod":"before",
+            "type":"datetimerange",
+            "end":"2018-06-22 16:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen next Wednesday later than 10 in the morning",
+  "Context": {
+    "ReferenceDateTime": "2018-06-26T00:00:00"
+  },
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next Wednesday later than 10 in the morning",
+      "Type": "datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-07-04T10",
+            "Mod":"after",
+            "type":"datetimerange",
+            "start":"2018-07-04 10:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It happened on previous Tuesday by 2 in the afternoon",
+  "Context": {
+    "ReferenceDateTime": "2018-06-26T00:00:00"
+  },
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "previous Tuesday by 2 in the afternoon",
+      "Type": "datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-06-19T14",
+            "Mod":"before",
+            "type":"datetimerange",
+            "end":"2018-06-19 14:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Let's go on Feb 1st no later than 6:00",
+  "Context": {
+    "ReferenceDateTime": "2018-06-26T00:00:00"
+  },
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb 1st no later than 6:00",
+      "Type": "datetimeV2.datetimerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"XXXX-02-01T06:00",
+            "Mod":"before",
+            "type":"datetimerange",
+            "end":"2018-02-01 06:00:00"
+          }
+          ,
+          {
+            "timex":"XXXX-02-01T06:00",
+            "Mod":"before",
+            "type":"datetimerange",
+            "end":"2019-02-01 06:00:00"
+          }
+          ,
+          {
+            "timex":"XXXX-02-01T18:00",
+            "Mod":"before",
+            "type":"datetimerange",
+            "end":"2018-02-01 18:00:00"
+          }
+          ,
+          {
+            "timex":"XXXX-02-01T18:00",
+            "Mod":"before",
+            "type":"datetimerange",
+            "end":"2019-02-01 18:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It happened on next week after 2:00",
+  "Context": {
+    "ReferenceDateTime": "2018-06-26T00:00:00"
+  },
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week",
+      "Type": "datetimeV2.daterange",
+      "Value":{
+        "values":[
+          {
+            "timex":"2018-W27",
+            "type":"daterange",
+            "start":"2018-07-02",
+            "end":"2018-07-09"
+          }
+        ]
+      }
+    }
+    ,
+    {
+      "Text": "after 2:00",
+      "Type": "datetimeV2.timerange",
+      "Value":{
+        "values":[
+          {
+            "timex":"T02:00",
+            "Mod":"after",
+            "type":"timerange",
+            "start":"02:00:00"
+          }
+          ,
+          {
+            "timex":"T14:00",
+            "Mod":"after",
+            "type":"timerange",
+            "start":"14:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

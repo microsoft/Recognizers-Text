@@ -58,6 +58,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.PrefixDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
 
+        public static readonly Regex SuffixRegex =
+            new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex BeforeRegex =
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AfterRegex =
+            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public SpanishDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
@@ -130,6 +139,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.SuffixRegex => SuffixRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.BeforeRegex => BeforeRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

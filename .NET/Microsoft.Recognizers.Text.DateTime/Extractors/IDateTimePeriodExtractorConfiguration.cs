@@ -51,6 +51,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PrefixDayRegex { get; }
 
+        Regex SuffixRegex { get; }
+
+        Regex BeforeRegex { get; }
+
+        Regex AfterRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IDateTimeExtractor SingleDateExtractor { get; }

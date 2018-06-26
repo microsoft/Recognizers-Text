@@ -35,9 +35,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         private static readonly Regex PeriodTimeOfDayRegex =
             new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -86,6 +83,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex PrefixDayRegex =
             new Regex(DateTimeDefinitions.PrefixDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
+
+        public static readonly Regex SuffixRegex =
+            new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AfterRegex =
+            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex BeforeRegex =
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
 
@@ -149,6 +155,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.SuffixRegex => SuffixRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.BeforeRegex => BeforeRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {
