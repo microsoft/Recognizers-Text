@@ -11,3 +11,5 @@ from .datetime_extractor_config import *
 from .datetime_extractor import *
 from .datetime_period_extractor_config import *
 from .datetime_period_extractor import *
+from .set_extractor_config import *
+from .set_extractor import *
