@@ -13,3 +13,4 @@ from .datetime_period_extractor_config import *
 from .datetime_period_extractor import *
 from .set_extractor_config import *
 from .set_extractor import *
+from .holiday_extractor_config import *
