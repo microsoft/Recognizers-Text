@@ -41,12 +41,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
 
-            if (config.CityTimeSuffixRegex == null)
+            if (config.LocationTimeSuffixRegex == null)
             {
                 return ret;
             }
 
-            var timeMatch = config.CityTimeSuffixRegex.Matches(text);
+            var timeMatch = config.LocationTimeSuffixRegex.Matches(text);
 
             if (timeMatch.Count != 0)
             {

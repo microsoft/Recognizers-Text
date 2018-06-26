@@ -162,12 +162,23 @@
     ]
   },
   {
-    "Input": "let's meet eastern time",
+    "Input": "let's meet Saint Barthélemy time",
     "NotSupported": "javascript",
     "NotSupportedByDesign": "python",
     "Results": [
       {
-        "Text": "eastern time",
+        "Text": "Saint Barthélemy time",
+        "Type": "timezone"
+      }
+    ]
+  },
+  {
+    "Input": "let's meet saint barthelemy timezone",
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "saint barthelemy timezone",
         "Type": "timezone"
       }
     ]

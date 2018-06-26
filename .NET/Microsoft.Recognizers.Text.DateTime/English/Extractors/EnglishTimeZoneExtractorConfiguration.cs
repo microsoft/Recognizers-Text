@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StandardTimeRegex
         };
 
-        public static readonly Regex CityTimeSuffixRegex = new Regex(TimeZoneDefinitions.CityTimeSuffixRegex,
+        public static readonly Regex LocationTimeSuffixRegex = new Regex(TimeZoneDefinitions.LocationTimeSuffixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly StringMatcher CityMatcher = new StringMatcher();
@@ -43,13 +43,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             if ((options & DateTimeOptions.EnablePreview) != 0)
             {
-                CityMatcher.Init(TimeZoneDefinitions.MajorCities.Select(o => FormatUtility.RemoveDiacritics(o.ToLowerInvariant())));
+                CityMatcher.Init(TimeZoneDefinitions.MajorLocations.Select(o => FormatUtility.RemoveDiacritics(o.ToLowerInvariant())));
             }
         }
 
         IEnumerable<Regex> ITimeZoneExtractorConfiguration.TimeZoneRegexes => TimeZoneRegexList;
 
-        Regex ITimeZoneExtractorConfiguration.CityTimeSuffixRegex => CityTimeSuffixRegex;
+        Regex ITimeZoneExtractorConfiguration.LocationTimeSuffixRegex => LocationTimeSuffixRegex;
 
         StringMatcher ITimeZoneExtractorConfiguration.CityMatcher => CityMatcher;
 

@@ -412,4 +412,25 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "Book me a room at Saint Barthélemy time.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "Saint Barthélemy time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        }
+      }
+    ]
+  }
 ]
