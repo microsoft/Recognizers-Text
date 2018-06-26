@@ -38,10 +38,10 @@ public class EnglishNumberParserConfiguration extends BaseNumberParserConfigurat
                 EnglishNumeric.CardinalNumberMap,
                 EnglishNumeric.OrdinalNumberMap,
                 EnglishNumeric.RoundNumberMap,
-                Pattern.compile(EnglishNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(EnglishNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(EnglishNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(EnglishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE));
+                Pattern.compile(EnglishNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(EnglishNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(EnglishNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(EnglishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS));
     }
 
     @Override

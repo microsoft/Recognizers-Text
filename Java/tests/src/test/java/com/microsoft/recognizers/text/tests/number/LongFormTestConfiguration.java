@@ -48,7 +48,7 @@ public class LongFormTestConfiguration implements INumberParserConfiguration {
 
     @Override
     public Pattern getDigitalNumberRegex() {
-        return Pattern.compile("((?<=\\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\\b))|((?<=(\\d|\\b))(k|t|m|g|b)(?=\\b))", Pattern.CASE_INSENSITIVE);
+        return Pattern.compile("((?<=\\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\\b))|((?<=(\\d|\\b))(k|t|m|g|b)(?=\\b))", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     @Override

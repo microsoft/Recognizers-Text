@@ -20,7 +20,7 @@ public abstract class SpanishNumberWithUnitExtractorConfiguration implements INu
         this.cultureInfo = cultureInfo;
 
         this.unitNumExtractor = new NumberExtractor();
-        this.compoundUnitConnectorRegex = Pattern.compile(SpanishNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE);
+        this.compoundUnitConnectorRegex = Pattern.compile(SpanishNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public CultureInfo getCultureInfo() { return this.cultureInfo; }

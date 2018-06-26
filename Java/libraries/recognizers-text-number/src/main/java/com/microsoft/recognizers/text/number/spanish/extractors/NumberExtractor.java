@@ -42,7 +42,7 @@ public class NumberExtractor extends BaseNumberExtractor {
                 cardExtract = CardinalExtractor.getInstance(SpanishNumeric.PlaceHolderPureNumber);
                 break;
             case Currency:
-                builder.put(Pattern.compile(SpanishNumeric.CurrencyRegex, Pattern.CASE_INSENSITIVE), "IntegerNum");
+                builder.put(Pattern.compile(SpanishNumeric.CurrencyRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
                 break;
             case Default:
                 break;

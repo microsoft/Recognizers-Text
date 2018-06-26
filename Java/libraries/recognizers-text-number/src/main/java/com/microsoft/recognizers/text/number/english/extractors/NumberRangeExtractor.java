@@ -22,27 +22,27 @@ public class NumberRangeExtractor extends BaseNumberRangeExtractor {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         // between...and...
-        builder.put(Pattern.compile(EnglishNumeric.TwoNumberRangeRegex1, Pattern.CASE_INSENSITIVE), NumberRangeConstants.TWONUMBETWEEN);
+        builder.put(Pattern.compile(EnglishNumeric.TwoNumberRangeRegex1, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUMBETWEEN);
         // more than ... less than ...
-        builder.put(Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.TwoNumberRangeRegex2), Pattern.CASE_INSENSITIVE), NumberRangeConstants.TWONUM);
+        builder.put(Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.TwoNumberRangeRegex2), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUM);
         // less than ... more than ...
-        builder.put(Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.TwoNumberRangeRegex3), Pattern.CASE_INSENSITIVE), NumberRangeConstants.TWONUM);
+        builder.put(Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.TwoNumberRangeRegex3), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUM);
         // from ... to/~/- ...
-        builder.put(Pattern.compile(EnglishNumeric.TwoNumberRangeRegex4, Pattern.CASE_INSENSITIVE), NumberRangeConstants.TWONUMTILL);
+        builder.put(Pattern.compile(EnglishNumeric.TwoNumberRangeRegex4, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUMTILL);
         // more/greater/higher than ...
-        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeMoreRegex1, Pattern.CASE_INSENSITIVE), NumberRangeConstants.MORE);
+        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeMoreRegex1, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.MORE);
         // 30 and/or greater/higher
-        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeMoreRegex2, Pattern.CASE_INSENSITIVE), NumberRangeConstants.MORE);
+        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeMoreRegex2, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.MORE);
         // less/smaller/lower than ...
-        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeLessRegex1, Pattern.CASE_INSENSITIVE), NumberRangeConstants.LESS);
+        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeLessRegex1, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.LESS);
         // 30 and/or less/smaller/lower
-        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeLessRegex2, Pattern.CASE_INSENSITIVE), NumberRangeConstants.LESS);
+        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeLessRegex2, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.LESS);
         // equal to ...
-        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeEqualRegex, Pattern.CASE_INSENSITIVE), NumberRangeConstants.EQUAL);
+        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeEqualRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.EQUAL);
         // equal to 30 or more than, larger than 30 or equal to ...
-        builder.put(Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeMoreSeparateRegex), Pattern.CASE_INSENSITIVE), NumberRangeConstants.MORE);
+        builder.put(Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeMoreSeparateRegex), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.MORE);
         // equal to 30 or less, smaller than 30 or equal ...
-        builder.put(Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeLessSeparateRegex), Pattern.CASE_INSENSITIVE), NumberRangeConstants.LESS);
+        builder.put(Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeLessSeparateRegex), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.LESS);
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

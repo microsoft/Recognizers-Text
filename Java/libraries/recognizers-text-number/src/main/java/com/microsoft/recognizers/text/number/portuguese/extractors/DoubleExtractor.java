@@ -31,13 +31,13 @@ public class DoubleExtractor extends BaseNumberExtractor {
     public DoubleExtractor(String placeholder) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleDecimalPointRegex(placeholder), Pattern.CASE_INSENSITIVE), "DoubleNum");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.CASE_INSENSITIVE), "DoubleNum");
+        builder.put(Pattern.compile(PortugueseNumeric.DoubleDecimalPointRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(Pattern.compile(PortugueseNumeric.DoubleWithoutIntegralRegex(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
         builder.put(Pattern.compile(PortugueseNumeric.DoubleWithMultiplierRegex), "DoubleNum");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleWithRoundNumber, Pattern.CASE_INSENSITIVE), "DoubleNum");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleAllFloatRegex, Pattern.CASE_INSENSITIVE), "DoublePor");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleExponentialNotationRegex, Pattern.CASE_INSENSITIVE), "DoublePow");
-        builder.put(Pattern.compile(PortugueseNumeric.DoubleCaretExponentialNotationRegex, Pattern.CASE_INSENSITIVE), "DoublePow");
+        builder.put(Pattern.compile(PortugueseNumeric.DoubleWithRoundNumber, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoubleNum");
+        builder.put(Pattern.compile(PortugueseNumeric.DoubleAllFloatRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePor");
+        builder.put(Pattern.compile(PortugueseNumeric.DoubleExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
+        builder.put(Pattern.compile(PortugueseNumeric.DoubleCaretExponentialNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "DoublePow");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder), "DoubleNum");
 

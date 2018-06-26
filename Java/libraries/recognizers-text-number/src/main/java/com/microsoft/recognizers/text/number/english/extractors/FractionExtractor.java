@@ -53,15 +53,15 @@ public class FractionExtractor extends BaseNumberExtractor {
 
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(EnglishNumeric.FractionNotationWithSpacesRegex, Pattern.CASE_INSENSITIVE), "FracNum");
-        builder.put(Pattern.compile(EnglishNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE), "FracNum");
-        builder.put(Pattern.compile(EnglishNumeric.FractionNounRegex, Pattern.CASE_INSENSITIVE), "FracEng");
-        builder.put(Pattern.compile(EnglishNumeric.FractionNounWithArticleRegex, Pattern.CASE_INSENSITIVE), "FracEng");
+        builder.put(Pattern.compile(EnglishNumeric.FractionNotationWithSpacesRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(Pattern.compile(EnglishNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(Pattern.compile(EnglishNumeric.FractionNounRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
+        builder.put(Pattern.compile(EnglishNumeric.FractionNounWithArticleRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
 
         if ((options.ordinal() & NumberOptions.PercentageMode.ordinal()) != 0) {
-            builder.put(Pattern.compile(EnglishNumeric.FractionPrepositionWithinPercentModeRegex, Pattern.CASE_INSENSITIVE), "FracEng");
+            builder.put(Pattern.compile(EnglishNumeric.FractionPrepositionWithinPercentModeRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
         } else {
-            builder.put(Pattern.compile(EnglishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE), "FracEng");
+            builder.put(Pattern.compile(EnglishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracEng");
         }
 
         this.regexes = Collections.unmodifiableMap(builder);

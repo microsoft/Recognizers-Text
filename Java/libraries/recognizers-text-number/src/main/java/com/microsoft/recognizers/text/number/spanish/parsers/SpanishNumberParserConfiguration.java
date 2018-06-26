@@ -41,10 +41,10 @@ public class SpanishNumberParserConfiguration extends BaseNumberParserConfigurat
                 SpanishNumeric.CardinalNumberMap,
                 buildOrdinalNumberMap(),
                 SpanishNumeric.RoundNumberMap,
-                Pattern.compile(SpanishNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(SpanishNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(SpanishNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(SpanishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE));
+                Pattern.compile(SpanishNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(SpanishNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(SpanishNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(SpanishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS));
     }
 
     @Override

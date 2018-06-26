@@ -54,10 +54,10 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     private OrdinalExtractor() {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(EnglishNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE), "OrdinalNum");
-        builder.put(Pattern.compile(EnglishNumeric.OrdinalNumericRegex, Pattern.CASE_INSENSITIVE), "OrdinalNum");
-        builder.put(Pattern.compile(EnglishNumeric.OrdinalEnglishRegex, Pattern.CASE_INSENSITIVE), "OrdEng");
-        builder.put(Pattern.compile(EnglishNumeric.OrdinalRoundNumberRegex, Pattern.CASE_INSENSITIVE), "OrdEng");
+        builder.put(Pattern.compile(EnglishNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(Pattern.compile(EnglishNumeric.OrdinalNumericRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(Pattern.compile(EnglishNumeric.OrdinalEnglishRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdEng");
+        builder.put(Pattern.compile(EnglishNumeric.OrdinalRoundNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdEng");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

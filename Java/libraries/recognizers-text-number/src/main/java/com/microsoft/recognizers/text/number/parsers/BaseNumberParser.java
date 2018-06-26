@@ -35,12 +35,12 @@ public class BaseNumberParser implements IParser {
 
         // Necessary for the german language because bigger numbers are not separated by whitespaces or special characters like in other languages
         if (config.getCultureInfo().cultureCode.equalsIgnoreCase("de-DE")) {
-            this.textNumberRegex = Pattern.compile("(" + singleIntFrac + ")", Pattern.CASE_INSENSITIVE);
+            this.textNumberRegex = Pattern.compile("(" + singleIntFrac + ")", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
         } else {
-            this.textNumberRegex = Pattern.compile("(?<=\\b)(" + singleIntFrac + ")(?=\\b)", Pattern.CASE_INSENSITIVE);
+            this.textNumberRegex = Pattern.compile("(?<=\\b)(" + singleIntFrac + ")(?=\\b)", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
         }
 
-        this.longFormatRegex = Pattern.compile("\\d+", Pattern.CASE_INSENSITIVE);
+        this.longFormatRegex = Pattern.compile("\\d+", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
 
         this.roundNumberSet = new HashSet<>(config.getRoundNumberMap().keySet());
     }

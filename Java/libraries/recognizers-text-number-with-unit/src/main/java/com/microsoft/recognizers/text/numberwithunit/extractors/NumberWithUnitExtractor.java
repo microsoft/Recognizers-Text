@@ -249,7 +249,7 @@ public class NumberWithUnitExtractor implements IExtractor {
                     String.join("|", regexTokens),
                     this.config.getBuildSuffix());
 
-            int options = ignoreCase ? Pattern.CASE_INSENSITIVE : 0;
+            int options = Pattern.UNICODE_CHARACTER_CLASS | (ignoreCase ? Pattern.CASE_INSENSITIVE : 0);
 
             Pattern regex = Pattern.compile(pattern, options);
             regexes.add(regex);
@@ -307,7 +307,7 @@ public class NumberWithUnitExtractor implements IExtractor {
                 this.config.getBuildPrefix(),
                 String.join("|", regexTokens),
                 this.config.getBuildSuffix());
-        int options = ignoreCase ? Pattern.CASE_INSENSITIVE : 0;
+        int options = Pattern.UNICODE_CHARACTER_CLASS | (ignoreCase ? Pattern.CASE_INSENSITIVE : 0);
 
         Pattern regex = Pattern.compile(pattern, options);
         return regex;

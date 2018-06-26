@@ -31,15 +31,15 @@ public class IntegerExtractor extends BaseNumberExtractor {
     public IntegerExtractor(String placeholder) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(SpanishNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE) , "IntegerNum");
+        builder.put(Pattern.compile(SpanishNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS) , "IntegerNum");
         builder.put(Pattern.compile(SpanishNumeric.NumbersWithSuffix), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum");
-        builder.put(Pattern.compile(SpanishNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE), "IntegerNum");
-        builder.put(Pattern.compile(SpanishNumeric.NumbersWithDozenSuffix, Pattern.CASE_INSENSITIVE), "IntegerNum");
-        builder.put(Pattern.compile(SpanishNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE), "IntegerSpa");
-        builder.put(Pattern.compile(SpanishNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE), "IntegerSpa");
+        builder.put(Pattern.compile(SpanishNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(Pattern.compile(SpanishNumeric.NumbersWithDozenSuffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(Pattern.compile(SpanishNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerSpa");
+        builder.put(Pattern.compile(SpanishNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerSpa");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

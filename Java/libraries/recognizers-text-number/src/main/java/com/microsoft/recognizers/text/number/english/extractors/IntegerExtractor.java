@@ -60,12 +60,12 @@ public class IntegerExtractor extends BaseNumberExtractor {
     private IntegerExtractor(String placeholder) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(EnglishNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE), "IntegerNum");
+        builder.put(Pattern.compile(EnglishNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
         builder.put(Pattern.compile(EnglishNumeric.NumbersWithSuffix), "IntegerNum");
-        builder.put(Pattern.compile(EnglishNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE), "IntegerNum");
-        builder.put(Pattern.compile(EnglishNumeric.NumbersWithDozenSuffix, Pattern.CASE_INSENSITIVE), "IntegerNum");
-        builder.put(Pattern.compile(EnglishNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE), "IntegerEng");
-        builder.put(Pattern.compile(EnglishNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE), "IntegerEng");
+        builder.put(Pattern.compile(EnglishNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(Pattern.compile(EnglishNumeric.NumbersWithDozenSuffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(Pattern.compile(EnglishNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerEng");
+        builder.put(Pattern.compile(EnglishNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerEng");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum");

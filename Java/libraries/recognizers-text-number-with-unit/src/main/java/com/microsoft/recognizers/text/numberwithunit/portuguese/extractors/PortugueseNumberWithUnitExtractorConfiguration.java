@@ -20,7 +20,7 @@ public abstract class PortugueseNumberWithUnitExtractorConfiguration implements 
         this.cultureInfo = cultureInfo;
 
         this.unitNumExtractor = new NumberExtractor();
-        this.compoundUnitConnectorRegex = Pattern.compile(PortugueseNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE);
+        this.compoundUnitConnectorRegex = Pattern.compile(PortugueseNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public CultureInfo getCultureInfo() { return this.cultureInfo; }
