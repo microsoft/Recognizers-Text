@@ -113,7 +113,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     TimeZoneResolution = new TimeZoneResolutionResult
                     {
                         Value = "UTC+XX:XX",
-                        UtcOffsetMins = Constants.InvalidOffsetValue
+                        UtcOffsetMins = Constants.InvalidOffsetValue,
+                        TimeZoneText = text
                     }
                 };
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": XX:XX";
