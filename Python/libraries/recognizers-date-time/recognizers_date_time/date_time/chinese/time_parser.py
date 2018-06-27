@@ -32,7 +32,7 @@ class ChineseTimeParser(BaseTimeParser):
         extra: DateTimeExtra = source.data
 
         if not extra:
-            inner_result = next(self.inner_extractor.extract(source.text, reference), ExtractResult())
+            inner_result = next(iter(self.inner_extractor.extract(source.text, reference)), ExtractResult())
             extra = inner_result.data
 
         time_result = self.function_map[extra.data_type](extra)
