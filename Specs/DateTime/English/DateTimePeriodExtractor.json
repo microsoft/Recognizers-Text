@@ -892,4 +892,71 @@
     }
   ]
 }
+,
+{
+  "Input": "It will happen 1/1/2015 after 2:00",
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1/1/2015 after 2:00",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen today before 4pm",
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today before 4pm",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen next Wednesday later than 10 in the morning",
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next Wednesday later than 10 in the morning",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It happened on previous Tuesday by 2 in the afternoon",
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "previous Tuesday by 2 in the afternoon",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "Let's go on Feb 1st no later than 6:00",
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb 1st no later than 6:00",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "It happened on next week after 2:00",
+  "NotSupported": "javascript,java",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
 ]

@@ -65,6 +65,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PrefixDayRegex { get; }
 
+        Regex BeforeRegex { get; }
+
+        Regex AfterRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

@@ -1,7 +1,6 @@
 [
   {
-    "Input":
-      "Could you help me and Joan find a time to meet in my office (112/2108) the week of April 10?",
+    "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of April 10?",
     "Context": {
       "ReferenceDateTime": "2018-02-08T00:00:00"
     },
@@ -32,8 +31,7 @@
     ]
   },
   {
-    "Input":
-      "Could you help me and Joan find a time to meet in my office (112/2108) the week of july 23?",
+    "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of july 23?",
     "Context": {
       "ReferenceDateTime": "2018-02-08T00:00:00"
     },
@@ -553,8 +551,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana could try to arrange a Skype call next week on Tuesday or Thursday please?",
+    "Input": "Cortana could try to arrange a Skype call next week on Tuesday or Thursday please?",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
@@ -591,8 +588,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana could try to arrange a Skype call next week on Tuesday 9 am or Thursday 1 pm please?",
+    "Input": "Cortana could try to arrange a Skype call next week on Tuesday 9 am or Thursday 1 pm please?",
     "Context": {
       "ReferenceDateTime": "2017-12-04T00:00:00"
     },
@@ -629,8 +625,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana could try to arrange a Skype call this week or next please?",
+    "Input": "Cortana could try to arrange a Skype call this week or next please?",
     "Context": {
       "ReferenceDateTime": "2018-03-21T00:00:00"
     },
@@ -673,8 +668,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana could you please help me find out which is better last year or next?",
+    "Input": "Cortana could you please help me find out which is better last year or next?",
     "Context": {
       "ReferenceDateTime": "2018-03-21T00:00:00"
     },
@@ -717,8 +711,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana could try to arrange a Skype call next week on tuesday or thursday or friday please?",
+    "Input": "Cortana could try to arrange a Skype call next week on tuesday or thursday or friday please?",
     "Context": {
       "ReferenceDateTime": "2018-04-16T00:00:00"
     },
@@ -832,8 +825,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana, please find us a time monday, Thursday, Friday next week.",
+    "Input": "Cortana, please find us a time monday, Thursday, Friday next week.",
     "Context": {
       "ReferenceDateTime": "2018-04-16T00:00:00"
     },
@@ -890,8 +882,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana, Unfortunately the only dates he can do are the 22nd, 23rd, 30th or 31st of March.",
+    "Input": "Cortana, Unfortunately the only dates he can do are the 22nd, 23rd, 30th or 31st of March.",
     "Context": {
       "ReferenceDateTime": "2018-04-16T00:00:00"
     },
@@ -964,8 +955,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana please schedule a meeting July 17th, 18th, or 19th for an hour.",
+    "Input": "Cortana please schedule a meeting July 17th, 18th, or 19th for an hour.",
     "Context": {
       "ReferenceDateTime": "2018-04-16T00:00:00"
     },
@@ -1502,8 +1492,7 @@
     ]
   },
   {
-    "Input":
-      "The notes are shared out in the LT working session notes attached each week and highlights are shared in the Data insights section. For this week’s special topic the data team has written an overview of some of the new features the dashboard supports and how it is built. If you have not seen the dashboard, this may be a great opportunity to learn something new.I would like to ask Cortana to schedule 45 minutes in November. I would also like to share news that Skype integration with our OWA Rea",
+    "Input": "The notes are shared out in the LT working session notes attached each week and highlights are shared in the Data insights section. For this week’s special topic the data team has written an overview of some of the new features the dashboard supports and how it is built. If you have not seen the dashboard, this may be a great opportunity to learn something new.I would like to ask Cortana to schedule 45 minutes in November. I would also like to share news that Skype integration with our OWA Rea",
     "Context": {
       "ReferenceDateTime": "2018-05-20T00:00:00"
     },
@@ -2180,8 +2169,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana, can you schedule a meeting for us between 3:30pm and 6:30pm AEST?",
+    "Input": "Cortana, can you schedule a meeting for us between 3:30pm and 6:30pm AEST?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
@@ -2280,8 +2268,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana, can you block time for us to meet tomorrow 12PM Singapore time for a quick 30min conference call.",
+    "Input": "Cortana, can you block time for us to meet tomorrow 12PM Singapore time for a quick 30min conference call.",
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
@@ -2323,8 +2310,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana, schedule a skype meeting with Prachi for Tuesday May 22 between 9:30 and 3:00 pm PST.",
+    "Input": "Cortana, schedule a skype meeting with Prachi for Tuesday May 22 between 9:30 and 3:00 pm PST.",
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
@@ -2361,8 +2347,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana, can you please schedule a meeting with Maria either Monday or Tuesday next week between 1pm and 2pm CST",
+    "Input": "Cortana, can you please schedule a meeting with Maria either Monday or Tuesday next week between 1pm and 2pm CST",
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
@@ -2468,8 +2453,7 @@
     ]
   },
   {
-    "Input":
-      "Hi, please arrange a meeting for T6 in the coming weeks or next week.",
+    "Input": "Hi, please arrange a meeting for T6 in the coming weeks or next week.",
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
@@ -2513,8 +2497,7 @@
   },
   {
     "Input": "I want to get the most from this deal.",
-    "Comment":
-      "This test case is for testing the ambiguous single timezone word filter.",
+    "Comment": "This test case is for testing the ambiguous single timezone word filter.",
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
@@ -2746,8 +2729,7 @@
     ]
   },
   {
-    "Input":
-      "OK, let’s find some time to discuss it next week, preferably on Tuesday",
+    "Input": "OK, let’s find some time to discuss it next week, preferably on Tuesday",
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
@@ -2841,8 +2823,7 @@
     ]
   },
   {
-    "Input":
-      "Can we have a quick 30-min meeting @ Chestnut Run Plaza Bldg 450 on January 16th between 830am ET and 9am ET so that we can discuss Microsoft and potential opportunities?",
+    "Input": "Can we have a quick 30-min meeting @ Chestnut Run Plaza Bldg 450 on January 16th between 830am ET and 9am ET so that we can discuss Microsoft and potential opportunities?",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -2894,8 +2875,7 @@
     ]
   },
   {
-    "Input":
-      "Hi Cortana, Please send a 30-minute Skype meeting invite for tomorrow at 1p PT.",
+    "Input": "Hi Cortana, Please send a 30-minute Skype meeting invite for tomorrow at 1p PT.",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -2937,8 +2917,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana please set up a call today for 10 minutes and also set up a 30 minute call Wednesday at 7 PM Eastern.",
+    "Input": "Cortana please set up a call today for 10 minutes and also set up a 30 minute call Wednesday at 7 PM Eastern.",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -3018,8 +2997,7 @@
     ]
   },
   {
-    "Input":
-      "Cortana, schedule 30 minutes next Tuesday around 3pm pacific for us to Skype.",
+    "Input": "Cortana, schedule 30 minutes next Tuesday around 3pm pacific for us to Skype.",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -3061,8 +3039,7 @@
     ]
   },
   {
-    "Input":
-      "Could you please schedule a 30 min skype meeting after 11:00am central today?",
+    "Input": "Could you please schedule a 30 min skype meeting after 11:00am central today?",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -3105,8 +3082,7 @@
     ]
   },
   {
-    "Input":
-      "Could you please schedule a 30 min skype meeting after 11:00am mountain today?",
+    "Input": "Could you please schedule a 30 min skype meeting after 11:00am mountain today?",
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
@@ -3522,8 +3498,7 @@
             }
           ]
         }
-      }
-      ,
+      },
       {
         "Text": "today",
         "Start": 27,
@@ -3565,8 +3540,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Show me the records in 21st century",
     "Context": {
@@ -3591,8 +3565,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Maybe we can leave after 2018",
     "Context": {
@@ -3617,8 +3590,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Maybe we can leave after Feb 2018",
     "Context": {
@@ -3643,8 +3615,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Maybe we can leave after Feb",
     "Context": {
@@ -3664,13 +3635,209 @@
               "Mod": "after",
               "type": "daterange",
               "start": "2018-02-28"
-            }
-            ,
+            },
             {
               "timex": "XXXX-02",
               "Mod": "after",
               "type": "daterange",
               "start": "2019-02-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen 1/1/2015 after 2:00",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1/1/2015 after 2:00",
+        "Start": 15,
+        "End": 33,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01T02:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 02:00:00"
+            },
+            {
+              "timex": "2015-01-01T14:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen today before 4pm",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "today before 4pm",
+        "Start": 15,
+        "End": 30,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-26T16",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-26 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen next Wednesday later than 10 in the morning",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "next wednesday later than 10 in the morning",
+        "Start": 15,
+        "End": 57,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-04T10",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-07-04 10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It happened on previous Tuesday by 2 in the afternoon",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "previous tuesday by 2 in the afternoon",
+        "Start": 15,
+        "End": 52,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-19T14",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-19 14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's go on Feb 1st no later than 6:00",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "feb 1st no later than 6:00",
+        "Start": 12,
+        "End": 37,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-01T06:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-02-01 06:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T06:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2019-02-01 06:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T18:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-02-01 18:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T18:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2019-02-01 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It happened on next week after 2:00",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "next week",
+        "Start": 15,
+        "End": 23,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        }
+      }
+      ,
+      {
+        "Text": "after 2:00",
+        "Start": 25,
+        "End": 34,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T02:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "02:00:00"
+            },
+            {
+              "timex": "T14:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "14:00:00"
             }
           ]
         }

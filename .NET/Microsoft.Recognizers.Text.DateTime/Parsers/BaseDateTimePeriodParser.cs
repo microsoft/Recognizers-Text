@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -54,31 +55,81 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseDateWithPeriodPrefix(er.Text, referenceTime);
                 }
 
+                if (!innerResult.Success)
+                {
+                    // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
+                    innerResult = ParseDateWithTimePeriodSuffix(er.Text, referenceTime);
+                }
+
                 if (innerResult.Success)
                 {
-                    innerResult.FutureResolution = new Dictionary<string, string>
+                    if (!IsBeforeOrAfterMod(innerResult.Mod))
                     {
+                        innerResult.FutureResolution = new Dictionary<string, string>
                         {
-                            TimeTypeConstants.START_DATETIME,
-                            FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
-                        },
-                        {
-                            TimeTypeConstants.END_DATETIME,
-                            FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
-                        }
-                    };
+                            {
+                                TimeTypeConstants.START_DATETIME,
+                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                            },
+                            {
+                                TimeTypeConstants.END_DATETIME,
+                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                            }
+                        };
 
-                    innerResult.PastResolution = new Dictionary<string, string>
+                        innerResult.PastResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.START_DATETIME,
+                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                            },
+                            {
+                                TimeTypeConstants.END_DATETIME,
+                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                            }
+                        };
+                    }
+                    else
                     {
+                        if (innerResult.Mod == Constants.AFTER_MOD)
                         {
-                            TimeTypeConstants.START_DATETIME,
-                            FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
-                        },
-                        {
-                            TimeTypeConstants.END_DATETIME,
-                            FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                            // Cases like "1/1/2015 after 2:00" there is no EndTime
+                            innerResult.FutureResolution = new Dictionary<string, string>
+                            {
+                                {
+                                    TimeTypeConstants.START_DATETIME,
+                                    FormatUtil.FormatDateTime((DateObject)(innerResult.FutureValue))
+                                }
+                            };
+
+                            innerResult.PastResolution = new Dictionary<string, string>
+                            {
+                                {
+                                    TimeTypeConstants.START_DATETIME,
+                                    FormatUtil.FormatDateTime((DateObject)(innerResult.PastValue))
+                                }
+                            };
                         }
-                    };
+                        else
+                        {
+                            // Cases like "1/1/2015 before 5:00 in the afternoon" there is no StartTime
+                            innerResult.FutureResolution = new Dictionary<string, string>
+                            {
+                                {
+                                    TimeTypeConstants.END_DATETIME,
+                                    FormatUtil.FormatDateTime((DateObject)(innerResult.FutureValue))
+                                }
+                            };
+
+                            innerResult.PastResolution = new Dictionary<string, string>
+                            {
+                                {
+                                    TimeTypeConstants.END_DATETIME,
+                                    FormatUtil.FormatDateTime((DateObject)(innerResult.PastValue))
+                                }
+                            };
+                        }
+                    }
 
                     value = innerResult;
                 }
@@ -92,11 +143,93 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
 
             return ret;
+        }
+
+        private bool IsBeforeOrAfterMod(string mod)
+        {
+            return !string.IsNullOrEmpty(mod) && (mod == Constants.BEFORE_MOD || mod == Constants.AFTER_MOD);
+        }
+
+        // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
+        private DateTimeResolutionResult ParseDateWithTimePeriodSuffix(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var dateEr = this.Config.DateExtractor.Extract(text).FirstOrDefault();
+            var timeEr = this.Config.TimeExtractor.Extract(text).FirstOrDefault();
+
+            if (dateEr != null && timeEr != null)
+            {
+                var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
+
+                if (dateStrEnd < timeEr.Start)
+                {
+                    var midStr = text.Substring(dateStrEnd, timeEr.Start.Value - dateStrEnd).Trim();
+
+                    if (IsValidConnectorForDateAndTimePeriod(midStr))
+                    {
+                        var datePr = this.Config.DateParser.Parse(dateEr, referenceTime);
+                        var timePr = this.Config.TimeParser.Parse(timeEr, referenceTime);
+
+                        if (datePr != null && timePr != null)
+                        {
+                            var timeResolutionResult = (DateTimeResolutionResult)timePr.Value;
+                            var dateResolutionResult = (DateTimeResolutionResult)datePr.Value;
+                            var futureDateValue = (DateObject)dateResolutionResult.FutureValue;
+                            var pastDateValue = (DateObject)dateResolutionResult.PastValue;
+                            var futureTimeValue = (DateObject)timeResolutionResult.FutureValue;
+                            var pastTimeValue = (DateObject)timeResolutionResult.PastValue;
+
+                            ret.Comment = timeResolutionResult.Comment;
+                            ret.Timex = $"{datePr.TimexStr}{timePr.TimexStr}";
+
+                            ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDateValue.Year, futureDateValue.Month, futureDateValue.Day, futureTimeValue.Hour, futureTimeValue.Minute, futureTimeValue.Second);
+
+                            ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDateValue.Year, pastDateValue.Month, pastDateValue.Day, pastTimeValue.Hour, pastTimeValue.Minute, pastTimeValue.Second);
+
+                            ret.Mod = this.Config.BeforeRegex.Match(midStr).Success ? Constants.BEFORE_MOD : Constants.AFTER_MOD;
+                            ret.SubDateTimeEntities = new List<object>()
+                            {
+                                datePr,
+                                timePr
+                            };
+
+                            ret.Success = true;
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
+        // Valid connector in English for Before include: "before", "no later than", "in advance of", "prior to", "earlier than", "sooner than", "by", "till", "until"...
+        // Valid connector in English for After include: "after", "later than"
+        private bool IsValidConnectorForDateAndTimePeriod(string text)
+        {
+            var BeforeAfterRegexes = new List<Regex>()
+            {
+                this.Config.BeforeRegex,
+                this.Config.AfterRegex
+            };
+
+            foreach (var regex in BeforeAfterRegexes)
+            {
+                var match = regex.Match(text);
+
+                if (match.Success && match.Length == text.Length)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private DateTimeResolutionResult ParseDateWithPeriodPrefix(string text, DateObject referenceTime)
