@@ -18,3 +18,4 @@ from .merged_extractor_config import *
 from .merged_extractor import *
 from .duration_parser_config import *
 from .duration_parser import *
+from .time_parser import *
