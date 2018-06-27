@@ -822,6 +822,7 @@
 ,
 {
   "Input": "How about more than 2 in 5",
+  "Comment": "As this can be ambiguous, by design the interpretation is left-to-right and the range is extracted first.",
   "NotSupported": "javascript, python, java",
   "Results": [
     {

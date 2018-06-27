@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.Number
 
                     validNum1 = ValidateMatchAndGetStartAndLength(extractNumList1, numberStr1, match, source, ref start, ref length);
                     validNum2 = ValidateMatchAndGetStartAndLength(extractNumList2, numberStr2, match, source, ref start, ref length);
-                    
+
                     if (!validNum1 || !validNum2)
                     {
                         start = NumberRangeConstants.INVALID_NUM;
@@ -145,18 +145,8 @@ namespace Microsoft.Recognizers.Text.Number
             else
             {
                 var numberStr = string.IsNullOrEmpty(numberStr1) ? numberStr2 : numberStr1;
-                
-                var extractNumList = ExtractNumberAndOrdinalFromStr(numberStr);
-
-                // If cases falls into "more/less than NUM" or "NUM or more/less"
-                if (extractNumList != null && (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS))
-                {
-                    // If only cases falls into "more/less than NUM", we process potentially ambiguous fractions
-                    if (match.Value.Trim().EndsWith(numberStr))
-                    {
-                        extractNumList = ProcessAmbiguousFractions(extractNumList);
-                    }
-                }
+                var isAmbiguousRangeOrFraction = IsAmbiguousRangeOrFraction(match, type, numberStr);
+                var extractNumList = ExtractNumberAndOrdinalFromStr(numberStr, isAmbiguousRangeOrFraction);
 
                 if (extractNumList != null)
                 {
@@ -203,36 +193,54 @@ namespace Microsoft.Recognizers.Text.Number
             return validNum;
         }
 
-        private List<ExtractResult> ExtractNumberAndOrdinalFromStr(string numberStr)
+        // TODO: this should not be in the NumberRangeExtractor as it doesn't handle duration concepts
+        private List<ExtractResult> ExtractNumberAndOrdinalFromStr(string numberStr, bool isAmbiguousRangeOrFraction = false)
         {
+            List<ExtractResult> ret = null;
             var extractNumber = numberExtractor.Extract(numberStr);
             var extractOrdinal = ordinalExtractor.Extract(numberStr);
 
             if (extractNumber.Count == 0)
             {
-                return extractOrdinal.Count == 0 ? null : extractOrdinal;
+                ret = extractOrdinal.Count == 0 ? null : extractOrdinal;
             }
-
-            if (extractOrdinal.Count == 0)
+            else if (extractOrdinal.Count == 0)
             {
-                return extractNumber;
+                ret = extractNumber;
+            }
+            else
+            {
+                ret = new List<ExtractResult>();
+                ret.AddRange(extractNumber);
+                ret.AddRange(extractOrdinal);
+                ret = ret.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
             }
 
-            extractNumber.AddRange(extractOrdinal);
-            extractNumber = extractNumber.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
-            return extractNumber;
+            if (ret != null && isAmbiguousRangeOrFraction)
+            {
+                ret = RemoveAmbiguousFractions(ret);
+            }
+
+            return ret;
         }
 
-        // Fractions like "2 in 2009", "in" is ambiguous connector in some of the context
-        // This function is to process and remain only the part before ambiguous connector
-        private List<ExtractResult> ProcessAmbiguousFractions(List<ExtractResult> ers)
+        // Judge whether it's special cases like "more than 30000 in 2010"
+        // For these specific cases, we will not treat "30000 in 2010" as a fraction number
+        private bool IsAmbiguousRangeOrFraction(Match match, string type, string numberStr)
+        {
+            return (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS) && match.Value.Trim().EndsWith(numberStr);
+        }
+
+        // For cases like "more than 30000 in 2010", we will not treate "30000 in 2010" as a fraction number
+        // In this method, "30000 in 2010" will be changed to "30000"
+        private List<ExtractResult> RemoveAmbiguousFractions(List<ExtractResult> ers)
         {
             foreach (var er in ers)
             {
                 if (er.Data != null && er.Data.ToString() == Constants.FRACTION_WITH_CONNECTOR)
                 {
                     var match = AmbiguousFractionConnectorsRegex.Match(er.Text);
-                    
+
                     if (match.Success)
                     {
                         var beforeText = er.Text.Substring(0, match.Index).TrimEnd();
