@@ -305,4 +305,5 @@ class SpanishNumeric:
                            ('m', 1000000),
                            ('g', 1000000000),
                            ('t', 1000000000000)])
+    AmbiguousFractionConnectorsRegex = f'^[.]'
 # pylint: enable=line-too-long

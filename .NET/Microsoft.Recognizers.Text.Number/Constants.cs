@@ -21,5 +21,9 @@ namespace Microsoft.Recognizers.Text.Number
 
         // NARROW NO-BREAK SPACE
         public const char NO_BREAK_SPACE = '\u202f';
+
+        // Fraction
+        public const string FRACTION_IN_PURENUMBER = "FracNum";
+        public const string FRACTION_WITH_CONNECTOR = "FracEng";
     }
 }
