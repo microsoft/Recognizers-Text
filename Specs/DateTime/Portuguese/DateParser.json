@@ -1,1646 +1,1658 @@
-[{
-  "Input": "Voltarei no 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-15",
-        "FutureResolution": {
-          "date": "2016-11-15"
-        },
-        "PastResolution": {
-          "date": "2016-10-15"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "volvere em 2 de Out",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 de Out",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 2-Out",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2-Out",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 2/Out",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2/Out",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 2 de Outubro",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 de Outubro",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-10-02",
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 12 de janeiro, 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 de janeiro, 2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-01-12",
-        "FutureResolution": {
-          "date": "2016-01-12"
-        },
-        "PastResolution": {
-          "date": "2016-01-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei na segunda-feira 12 de janeiro, 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "segunda-feira 12 de janeiro, 2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-01-12",
-        "FutureResolution": {
-          "date": "2016-01-12"
-        },
-        "PastResolution": {
-          "date": "2016-01-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 22/02/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22/02/2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-02-22",
-        "FutureResolution": {
-          "date": "2016-02-22"
-        },
-        "PastResolution": {
-          "date": "2016-02-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 21/04/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-04-21",
-        "FutureResolution": {
-          "date": "2016-04-21"
-        },
-        "PastResolution": {
-          "date": "2016-04-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 21/04/16",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/16",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-04-21",
-        "FutureResolution": {
-          "date": "2016-04-21"
-        },
-        "PastResolution": {
-          "date": "2016-04-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 21-04-2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21-04-2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-04-21",
-        "FutureResolution": {
-          "date": "2016-04-21"
-        },
-        "PastResolution": {
-          "date": "2016-04-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 4.22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 4-22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em     4/22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 22/04",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei     4/22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei 22/04",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-04-22",
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei 2015/08/12",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015/08/12",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-08-12",
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei 08/12,2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "08/12,2015",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-08-12",
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei 08/12,15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "08/12,15",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-08-12",
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei 1o de Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1o de Jan",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 1-Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1-Jan",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em Qua, 22 de Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Qua, 22 de Jan",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-22",
-        "FutureResolution": {
-          "date": "2017-01-22"
-        },
-        "PastResolution": {
-          "date": "2016-01-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em primeiro de Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "primeiro de Jan",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em vinte e um de Maio",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vinte e um de Maio",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-05-21",
-        "FutureResolution": {
-          "date": "2017-05-21"
-        },
-        "PastResolution": {
-          "date": "2016-05-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em Maio vinte e um",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Maio vinte e um",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-05-21",
-        "FutureResolution": {
-          "date": "2017-05-21"
-        },
-        "PastResolution": {
-          "date": "2016-05-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em dois de Ago.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dois de Ago",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-08-02",
-        "FutureResolution": {
-          "date": "2017-08-02"
-        },
-        "PastResolution": {
-          "date": "2016-08-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no vigesimo segundo de Junho",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vigesimo segundo de Junho",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-06-22",
-        "FutureResolution": {
-          "date": "2017-06-22"
-        },
-        "PastResolution": {
-          "date": "2016-06-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei na sexta",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "sexta",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-WXX-5",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei na 6a",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "6a",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-WXX-5",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei hoje",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hoje",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-07",
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei amanhã",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-08",
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltei ontem",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ontem",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltei anteontem",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "anteontem",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-05",
-        "FutureResolution": {
-          "date": "2016-11-05"
-        },
-        "PastResolution": {
-          "date": "2016-11-05"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei depois de amanha",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "depois de amanha",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-09",
-        "FutureResolution": {
-          "date": "2016-11-09"
-        },
-        "PastResolution": {
-          "date": "2016-11-09"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no dia depois de amanha",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dia depois de amanha",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-09",
-        "FutureResolution": {
-          "date": "2016-11-09"
-        },
-        "PastResolution": {
-          "date": "2016-11-09"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no próximo dia",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próximo dia",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-08",
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no dia seguinte",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dia seguinte",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-08",
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei nesta sexta",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "nesta sexta",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-11",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-11"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no proximo domingo",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "proximo domingo",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-20",
-        "FutureResolution": {
-          "date": "2016-11-20"
-        },
-        "PastResolution": {
-          "date": "2016-11-20"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no ultimo domingo",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ultimo domingo",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei na sexta desta semana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "sexta desta semana",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-11",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-11"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no domingo da próxima semana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "domingo da próxima semana",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-20",
-        "FutureResolution": {
-          "date": "2016-11-20"
-        },
-        "PastResolution": {
-          "date": "2016-11-20"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no domingo da última semana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "domingo da última semana",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no último dia",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "último dia",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 15 de Junho de 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 de Junho de 2016",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-06-15",
-        "FutureResolution": {
-          "date": "2016-06-15"
-        },
-        "PastResolution": {
-          "date": "2016-06-15"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei na primeira sexta de julho",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "na primeira sexta de julho",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-07-WXX-5-#1",
-        "FutureResolution": {
-          "date": "2017-07-07"
-        },
-        "PastResolution": {
-          "date": "2016-07-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei na primeira sexta deste mes",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "na primeira sexta deste mes",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-11-WXX-5-#1",
-        "FutureResolution": {
-          "date": "2016-11-04"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 12 de janeiro, 2018",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 de janeiro, 2018",
-      "Type": "date",
-      "Value": {
-        "Timex": "2018-01-12",
-        "FutureResolution": {
-          "date": "2018-01-12"
-        },
-        "PastResolution": {
-          "date": "2018-01-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 9-18-15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9-18-15",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-09-18",
-        "FutureResolution": {
-          "date": "2015-09-18"
-        },
-        "PastResolution": {
-          "date": "2015-09-18"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 2015/08/12",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015/08/12",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-08-12",
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 08/12,2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "08/12,2015",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-08-12",
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em 1o de Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1o de Jan",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em primeiro de Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "primeiro de Jan",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei em vinte e um de Maio",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vinte e um de Maio",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-05-21",
-        "FutureResolution": {
-          "date": "2017-05-21"
-        },
-        "PastResolution": {
-          "date": "2016-05-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no segundo de Ago.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "segundo de Ago",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-08-02",
-        "FutureResolution": {
-          "date": "2017-08-02"
-        },
-        "PastResolution": {
-          "date": "2016-08-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no vigesimo segundo de Junho",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vigesimo segundo de Junho",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-06-22",
-        "FutureResolution": {
-          "date": "2017-06-22"
-        },
-        "PastResolution": {
-          "date": "2016-06-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei na sexta-feira",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "sexta-feira",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-WXX-5",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Voltei no dia antes de ontem",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dia antes de ontem",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-05",
-        "FutureResolution": {
-          "date": "2016-11-05"
-        },
-        "PastResolution": {
-          "date": "2016-11-05"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei depois de amanha",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "depois de amanha",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-09",
-        "FutureResolution": {
-          "date": "2016-11-09"
-        },
-        "PastResolution": {
-          "date": "2016-11-09"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no proximo dia",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "proximo dia",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-08",
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei no próximo domingo",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próximo domingo",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-20",
-        "FutureResolution": {
-          "date": "2016-11-20"
-        },
-        "PastResolution": {
-          "date": "2016-11-20"
-        }
-      }
-    }
-  ]
-},
-{
-  "Input": "Voltarei no 3-7-2017",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3-7-2017",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-07-03",
-        "FutureResolution": {
-          "date": "2017-07-03"
-        },
-        "PastResolution": {
-          "date": "2017-07-03"
-        }
-      }
-    }
-  ]
-},
-{
-  "Input": "Você está livre em 13.5.2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "13.5.2015",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-05-13",
-        "FutureResolution": {
-          "date": "2015-05-13"
-        },
-        "PastResolution": {
-          "date": "2015-05-13"
-        }
-      }
-    }
-  ]
-},
-{
-  "Input": "Você está livre em 2015.5.13",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015.5.13",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-05-13",
-        "FutureResolution": {
-          "date": "2015-05-13"
-        },
-        "PastResolution": {
-          "date": "2015-05-13"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Você está livre em 3-7-07",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3-7-07",
-      "Type": "date",
-      "Value": {
-        "Timex": "2007-07-03",
-        "FutureResolution": {
-          "date": "2007-07-03"
-        },
-        "PastResolution": {
-          "date": "2007-07-03"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Você está livre em 3-7-27",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3-7-27",
-      "Type": "date",
-      "Value": {
-        "Timex": "2027-07-03",
-        "FutureResolution": {
-          "date": "2027-07-03"
-        },
-        "PastResolution": {
-          "date": "2027-07-03"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Você está livre em 05/05/89",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "05/05/89",
-      "Type": "date",
-      "Value": {
-        "Timex": "1989-05-05",
-        "FutureResolution": {
-          "date": "1989-05-05"
-        },
-        "PastResolution": {
-          "date": "1989-05-05"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Você está livre em 05/05/71",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "05/05/71",
-      "Type": "date",
-      "Value": {
-        "Timex": "1971-05-05",
-        "FutureResolution": {
-          "date": "1971-05-05"
-        },
-        "PastResolution": {
-          "date": "1971-05-05"
-        }
-      }
-    }
-  ]
-}
+[
+  {
+    "Input": "Voltarei no 15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-15",
+          "FutureResolution": {
+            "date": "2016-11-15"
+          },
+          "PastResolution": {
+            "date": "2016-10-15"
+          }
+        },
+        "Start": 12,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "volvere em 2 de Out",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 de Out",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        },
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 2-Out",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2-Out",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        },
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 2/Out",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2/Out",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        },
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 2 de Outubro",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 de Outubro",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 12 de janeiro, 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "12 de janeiro, 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "voltarei na segunda-feira 12 de janeiro, 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "segunda-feira 12 de janeiro, 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 12,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 22/02/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "22/02/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-02-22",
+          "FutureResolution": {
+            "date": "2016-02-22"
+          },
+          "PastResolution": {
+            "date": "2016-02-22"
+          }
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 21/04/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 21/04/16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 21-04-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "21-04-2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 4.22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 12,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 4-22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 12,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em     4/22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 22/04",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "voltarei     4/22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "voltarei 22/04",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 9,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "voltarei 2015/08/12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        },
+        "Start": 9,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "voltarei 08/12,2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "08/12,2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        },
+        "Start": 9,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "voltarei 08/12,15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "08/12,15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        },
+        "Start": 9,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "voltarei 1o de Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1o de Jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 9,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 1-Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1-Jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em Qua, 22 de Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Qua, 22 de Jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-22",
+          "FutureResolution": {
+            "date": "2017-01-22"
+          },
+          "PastResolution": {
+            "date": "2016-01-22"
+          }
+        },
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em primeiro de Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "primeiro de Jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em vinte e um de Maio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vinte e um de Maio",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        },
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em Maio vinte e um",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Maio vinte e um",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em dois de Ago.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dois de Ago",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-02",
+          "FutureResolution": {
+            "date": "2017-08-02"
+          },
+          "PastResolution": {
+            "date": "2016-08-02"
+          }
+        },
+        "Start": 12,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no vigesimo segundo de Junho",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vigesimo segundo de Junho",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2016-06-22"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "voltarei na sexta",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sexta",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "voltarei na 6a",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "6a",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 12,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "voltarei hoje",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "hoje",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        },
+        "Start": 9,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "voltarei amanhã",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 9,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "voltei ontem",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "ontem",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 7,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "voltei anteontem",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "anteontem",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "voltarei depois de amanha",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "depois de amanha",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        },
+        "Start": 9,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no dia depois de amanha",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dia depois de amanha",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no próximo dia",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "próximo dia",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 12,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no dia seguinte",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dia seguinte",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "voltarei nesta sexta",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "nesta sexta",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        },
+        "Start": 9,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no proximo domingo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "proximo domingo",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no ultimo domingo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "ultimo domingo",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "voltarei na sexta desta semana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sexta desta semana",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        },
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no domingo da próxima semana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "domingo da próxima semana",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no domingo da última semana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "domingo da última semana",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 12,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no último dia",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "último dia",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 15 de Junho de 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15 de Junho de 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-06-15",
+          "FutureResolution": {
+            "date": "2016-06-15"
+          },
+          "PastResolution": {
+            "date": "2016-06-15"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "voltarei na primeira sexta de julho",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "na primeira sexta de julho",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-07-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2017-07-07"
+          },
+          "PastResolution": {
+            "date": "2016-07-01"
+          }
+        },
+        "Start": 9,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "voltarei na primeira sexta deste mes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "na primeira sexta deste mes",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2016-11-04"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 9,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 12 de janeiro, 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "12 de janeiro, 2018",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-12",
+          "FutureResolution": {
+            "date": "2018-01-12"
+          },
+          "PastResolution": {
+            "date": "2018-01-12"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 9-18-15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-09-18",
+          "FutureResolution": {
+            "date": "2015-09-18"
+          },
+          "PastResolution": {
+            "date": "2015-09-18"
+          }
+        },
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 2015/08/12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 08/12,2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "08/12,2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em 1o de Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1o de Jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em primeiro de Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "primeiro de Jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "voltarei em vinte e um de Maio",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vinte e um de Maio",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        },
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no segundo de Ago.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "segundo de Ago",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-02",
+          "FutureResolution": {
+            "date": "2017-08-02"
+          },
+          "PastResolution": {
+            "date": "2016-08-02"
+          }
+        },
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no vigesimo segundo de Junho",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vigesimo segundo de Junho",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2016-06-22"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "voltarei na sexta-feira",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sexta-feira",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 12,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Voltei no dia antes de ontem",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dia antes de ontem",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        },
+        "Start": 10,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "voltarei depois de amanha",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "depois de amanha",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        },
+        "Start": 9,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no proximo dia",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "proximo dia",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 12,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "voltarei no próximo domingo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "próximo domingo",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei no 3-7-2017",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3-7-2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-07-03",
+          "FutureResolution": {
+            "date": "2017-07-03"
+          },
+          "PastResolution": {
+            "date": "2017-07-03"
+          }
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Você está livre em 13.5.2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        },
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Você está livre em 2015.5.13",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        },
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Você está livre em 3-7-07",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3-7-07",
+        "Type": "date",
+        "Value": {
+          "Timex": "2007-07-03",
+          "FutureResolution": {
+            "date": "2007-07-03"
+          },
+          "PastResolution": {
+            "date": "2007-07-03"
+          }
+        },
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Você está livre em 3-7-27",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3-7-27",
+        "Type": "date",
+        "Value": {
+          "Timex": "2027-07-03",
+          "FutureResolution": {
+            "date": "2027-07-03"
+          },
+          "PastResolution": {
+            "date": "2027-07-03"
+          }
+        },
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Você está livre em 05/05/89",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "05/05/89",
+        "Type": "date",
+        "Value": {
+          "Timex": "1989-05-05",
+          "FutureResolution": {
+            "date": "1989-05-05"
+          },
+          "PastResolution": {
+            "date": "1989-05-05"
+          }
+        },
+        "Start": 19,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Você está livre em 05/05/71",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "05/05/71",
+        "Type": "date",
+        "Value": {
+          "Timex": "1971-05-05",
+          "FutureResolution": {
+            "date": "1971-05-05"
+          },
+          "PastResolution": {
+            "date": "1971-05-05"
+          }
+        },
+        "Start": 19,
+        "Length": 8
+      }
+    ]
+  }
 ]

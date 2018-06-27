@@ -1,473 +1,518 @@
-[{
-  "Input": "Je reviendrai maintenant",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "maintenant",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dès que possible",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dès que possible",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dqp",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dqp",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai en ce moment",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce moment",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 21/04/2016, 8:00pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016, 8:00pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 21/04/2016, 8:00:13pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016, 8:00:13pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 décembre 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 décembre 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 février 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 février 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 août 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 août 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre 8:00:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre 8:00:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre, 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre, 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre, 8:00:01am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre, 8:00:01am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre, 15:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre, 15:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 15:00, 14 Octobre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15:00, 14 Octobre",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 15:00, 14 Oct",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15:00, 14 Oct",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 15:00, 14 Oct.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15:00, 14 Oct",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais demain 8:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demain 8:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais demain vers 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demain vers 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais demain pour 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demain pour 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais demain 8:00:05am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demain 8:00:05am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm dimanche prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm dimanche prochain",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm aujourd'hui",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm aujourd'hui",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 19:00, 2016-12-22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19:00, 2016-12-22",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sept heures lendemain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "sept heures lendemain",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "je reviendrai 14 Octobre 8:00, 14 Octobre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre 8:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "je reviendrai 7, cette matin",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7, cette matin",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm dans la nuit, Lundi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm dans la nuit, Lundi",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "je reviendrai 8pm dans la soiree, 1er Jan",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm dans la soiree, 1er Jan",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm dans la soirée, 1 Jan",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm dans la soirée, 1 Jan",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 10 ce soir",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10 ce soir",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8 ce soir",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8 ce soir",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce soir vers 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce soir vers 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette matin a 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette matin a 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette matinee a 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette matinee a 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette matinée a sept",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette matinée a sept",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette matin à 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette matin à 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce matin 7:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce matin 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette nuit a 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette nuit a 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce soir à 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce soir à 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai fin de dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fin de dimanche",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 2016-12-16T12:23:59",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016-12-16T12:23:59",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dans 5 heures",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans 5 heures",
-      "Type": "datetime"
-    }
-  ]
-}
+[
+  {
+    "Input": "Je reviendrai maintenant",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "maintenant",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dès que possible",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dès que possible",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dqp",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dqp",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai en ce moment",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce moment",
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00pm",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00:13pm",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00:13pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre 8:00am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 décembre 8:00am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 décembre 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 février 8:00am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 février 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 août 8:00am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 août 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre 8:00:00am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre 8:00:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre, 8:00am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre, 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre, 8:00:01am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre, 8:00:01am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 14 Octobre, 15:00",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre, 15:00",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 15:00, 14 Octobre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15:00, 14 Octobre",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 15:00, 14 Oct",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15:00, 14 Oct",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 15:00, 14 Oct.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15:00, 14 Oct",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais demain 8:00",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demain 8:00",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais demain vers 8:00am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demain vers 8:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais demain pour 8:00am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demain pour 8:00am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais demain 8:00:05am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demain 8:00:05am",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8pm dimanche prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm dimanche prochain",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8pm aujourd'hui",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm aujourd'hui",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 19:00, 2016-12-22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "19:00, 2016-12-22",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai sept heures lendemain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "sept heures lendemain",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "je reviendrai 14 Octobre 8:00, 14 Octobre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre 8:00",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "je reviendrai 7, cette matin",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "7, cette matin",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8pm dans la nuit, Lundi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm dans la nuit, Lundi",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "je reviendrai 8pm dans la soiree, 1er Jan",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm dans la soiree, 1er Jan",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8pm dans la soirée, 1 Jan",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm dans la soirée, 1 Jan",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 10 ce soir",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "10 ce soir",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 8 ce soir",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8 ce soir",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce soir vers 7",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce soir vers 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matin a 7",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette matin a 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matinee a 7",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette matinee a 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matinée a sept",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette matinée a sept",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matin à 7",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette matin à 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce matin 7:00",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce matin 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette nuit a 7",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette nuit a 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce soir à 7",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce soir à 7",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai fin de dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fin de dimanche",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 2016-12-16T12:23:59",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016-12-16T12:23:59",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans 5 heures",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans 5 heures",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  }
 ]

@@ -1,185 +1,205 @@
 [
   {
     "Input": "Book me a room at beijing time",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "beijing time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Book me a room at utc4:30",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "utc4:30",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Book me a room at gmt-3",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "gmt-3",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Book me a room at afghanistan standard time",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "afghanistan standard time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Book me a room at aft",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "aft",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Book me a room at beijing-time",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "beijing-time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Book me a room at St. Louis-time",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "St. Louis-time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Book me a room at San José Time",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "San José Time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "For me, Christchurch Time, Colchester-time or Edinburgh time is OK.",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Christchurch Time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 8,
+        "Length": 17
       },
       {
         "Text": "Colchester-time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 27,
+        "Length": 15
       },
       {
         "Text": "Edinburgh time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 46,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Cortana will email you to find a time which works in the Sydney timezone.",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Sydney timezone",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 57,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Cortana will email you to find a time which works in the Montréal time.",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Montréal time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 57,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Cortana will email you to find a time which works in the Montreal time.",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Montreal time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 57,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Book me a room at pt",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "pt",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 2
       }
     ]
   },
   {
     "Input": "Book me a room at et",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "et",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 2
       }
     ]
   },
   {
     "Input": "let's meet Saint Barthélemy time",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Saint Barthélemy time",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 11,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "let's meet saint barthelemy timezone",
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "saint barthelemy timezone",
-        "Type": "timezone"
+        "Type": "timezone",
+        "Start": 11,
+        "Length": 25
       }
     ]
   }

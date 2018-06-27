@@ -1,294 +1,301 @@
 [
-    {
-      "Input": "Reservier doch was für morgen Abend gegen 8 Uhr.",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"dotnet,javascript",
-      "Results": [
-        {
-          "Text": "morgen Abend gegen 8 Uhr",
-          "Type": "datetimeV2.datetime",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-11-08T20",
-                "type": "datetime",
-                "value": "2016-11-08 20:00:00"
-              }
-            ]
-          }
-        }
-      ]
-    }
-    ,
-    {
-      "Input": "An Ostern habe ich Urlaub",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "Ostern",
-          "Type": "datetimeV2.date",
-          "Value": {
-            "values": [
-              {
-                "timex": "",
-                "type": "date",
-                "value": "not resolved"
-              }
-            ]
-          }
-        }
-      ]
+  {
+    "Input": "Reservier doch was für morgen Abend gegen 8 Uhr.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "übermorgen",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "übermorgen",
-          "Type": "datetimeV2.date",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-11-09",
-                "type": "date",
-                "value": "2016-11-09"
-              }
-            ]
-          }
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "morgen Abend gegen 8 Uhr",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08T20",
+              "type": "datetime",
+              "value": "2016-11-08 20:00:00"
+            }
+          ]
         }
-      ]
+      }
+    ]
+  },
+  {
+    "Input": "An Ostern habe ich Urlaub",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Am Freitag Nachmittag mach ich Feierabend",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"dotnet,javascript",
-      "Results": [
-        {
-          "Text": "Freitag Nachmittag",
-          "Type": "datetimeV2.datetimerange",
-          "Value": {
-            "values": [
-              {
-                "timex": "XXXX-WXX-5TAF",
-                "type": "datetimerange",
-                "start": "2016-11-04 12:00:00",
-                "end": "2016-11-04 16:00:00"
-              },
-              {
-                "timex": "XXXX-WXX-5TAF",
-                "type": "datetimerange",
-                "start": "2016-11-11 12:00:00",
-                "end": "2016-11-11 16:00:00"
-              }
-            ]
-          }
-        }
-      ]
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Ostern",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "übermorgen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Ich würde 2016-05 nicht hier",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "2016-05",
-          "Type": "datetimeV2.daterange",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-05",
-                "type": "daterange",
-                "start": "2016-05-01",
-                "end": "2016-06-01"
-              }
-            ]
-          }
-        }
-      ]
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übermorgen",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Am Freitag Nachmittag mach ich Feierabend",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Ich würde 2016/05 nicht hier",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "2016/05",
-          "Type": "datetimeV2.daterange",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-05",
-                "type": "daterange",
-                "start": "2016-05-01",
-                "end": "2016-06-01"
-              }
-            ]
-          }
+    "NotSupported": "dotnet, javascript, python",
+    "Results": [
+      {
+        "Text": "Freitag Nachmittag",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-04 12:00:00",
+              "end": "2016-11-04 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-11 12:00:00",
+              "end": "2016-11-11 16:00:00"
+            }
+          ]
         }
-      ]
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 2016-05 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Ich würde 05/2016 nicht hier",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "05/2016",
-          "Type": "datetimeV2.daterange",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-05",
-                "type": "daterange",
-                "start": "2016-05-01",
-                "end": "2016-06-01"
-              }
-            ]
-          }
-        }
-      ]
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016-05",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-05",
+              "type": "daterange",
+              "start": "2016-05-01",
+              "end": "2016-06-01"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 2016/05 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Ich würde 05-2016 nicht hier",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "05-2016",
-          "Type": "datetimeV2.daterange",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-05",
-                "type": "daterange",
-                "start": "2016-05-01",
-                "end": "2016-06-01"
-              }
-            ]
-          }
-        }
-      ]
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016/05",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-05",
+              "type": "daterange",
+              "start": "2016-05-01",
+              "end": "2016-06-01"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 05/2016 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Ich würde 2016 -  05 nicht hier",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "2016 -  05",
-          "Type": "datetimeV2.daterange",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-05",
-                "type": "daterange",
-                "start": "2016-05-01",
-                "end": "2016-06-01"
-              }
-            ]
-          }
-        }
-      ]
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "05/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-05",
+              "type": "daterange",
+              "start": "2016-05-01",
+              "end": "2016-06-01"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 05-2016 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Ich würde 2016  /05 nicht hier",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "2016  /05",
-          "Type": "datetimeV2.daterange",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-05",
-                "type": "daterange",
-                "start": "2016-05-01",
-                "end": "2016-06-01"
-              }
-            ]
-          }
-        }
-      ]
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "05-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-05",
+              "type": "daterange",
+              "start": "2016-05-01",
+              "end": "2016-06-01"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 2016 -  05 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Ich würde 05/  2016 nicht hier",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "05/  2016",
-          "Type": "datetimeV2.daterange",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-05",
-                "type": "daterange",
-                "start": "2016-05-01",
-                "end": "2016-06-01"
-              }
-            ]
-          }
-        }
-      ]
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016 -  05",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-05",
+              "type": "daterange",
+              "start": "2016-05-01",
+              "end": "2016-06-01"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 2016  /05 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Input": "Ich würde 05 -  2016 nicht hier",
-      "Context": {
-        "ReferenceDateTime": "2016-11-07T00:00:00"
-      },
-      "NotSupportedByDesign": "python",
-      "NotSupported":"javascript",
-      "Results": [
-        {
-          "Text": "05 -  2016",
-          "Type": "datetimeV2.daterange",
-          "Value": {
-            "values": [
-              {
-                "timex": "2016-05",
-                "type": "daterange",
-                "start": "2016-05-01",
-                "end": "2016-06-01"
-              }
-            ]
-          }
-        }
-      ]
-    }
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016  /05",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-05",
+              "type": "daterange",
+              "start": "2016-05-01",
+              "end": "2016-06-01"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 05/  2016 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "05/  2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-05",
+              "type": "daterange",
+              "start": "2016-05-01",
+              "end": "2016-06-01"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich würde 05 -  2016 nicht hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "05 -  2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-05",
+              "type": "daterange",
+              "start": "2016-05-01",
+              "end": "2016-06-01"
+            }
+          ]
+        },
+        "Start": 10,
+        "Length": 10
+      }
+    ]
+  }
 ]

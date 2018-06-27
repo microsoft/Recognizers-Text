@@ -1,696 +1,698 @@
 [
-{
-  "Input": "Me mudarei em 3 anos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "em 3 anos",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Me mudarei em 3 semanas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "em 3 semanas",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4 até 22 deste mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 até 22 deste mes",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4 a 22 deste mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 a 22 deste mes",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora desde o 3 até o 12 de Sept jajaja",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde o 3 até o 12 de Sept",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4 a 23 do proximo mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 a 23 do proximo mes",
-      "Type": "daterange"
-    }
-  ]
-},
-{
-  "Input": "Estarei fora de 4 ao 23 deste mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 ao 23 deste mes",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre 4 e 22 este mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 4 e 22 este mes",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre 3 e 12 de Set jajaja",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 3 e 12 de Set",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4 ao 22 de janeiro, 2017",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 ao 22 de janeiro, 2017",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre 4-22 de janeiro, 2017",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 4-22 de janeiro, 2017",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora esta semana",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta semana",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora em Setembro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "em Setembro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora nesse Setembro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "nesse Setembro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estive fora no ultimo sept",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ultimo sept",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora proximo junho",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "proximo junho",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora em junho 2016",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "em junho 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora em junho do proximo ano",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "em junho do proximo ano",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora este fim de semana",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "este fim de semana",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora a terceira semana deste mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "terceira semana deste mes",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora na ultima semana de julho",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "na ultima semana de julho",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora nos proximos 3 dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "proximos 3 dias",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora pelos proximos 3 meses",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "proximos 3 meses",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estive fora as 3 semanas passadas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 semanas passadas",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estive fora os ultimos 3 anos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ultimos 3 anos",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estive fora as 3 semanas anteriores",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 semanas anteriores",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estareï fora de 2 de Out a 22 de Outubro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 2 de Out a 22 de Outubro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 12 de Janeiro, 2016 - 22/02/2016",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 12 de Janeiro, 2016 - 22/02/2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 1o de Jan até Qua, 22 de Jan",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 1o de Jan até Qua, 22 de Jan",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de hoje até amanhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de hoje até amanhã",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de hoje até 22 de Outubro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de hoje até 22 de Outubro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 2 de Out até o dia depois de amanhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 2 de Out até o dia depois de amanhã",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de hoje até o proximo domingo",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de hoje até o proximo domingo",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora desta sexta até o domingo seguinte",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desta sexta até o domingo seguinte",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora desde 2 de Out até 22 de Outubro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde 2 de Out até 22 de Outubro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora desde 2015/08/12 até 22 de Outubro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde 2015/08/12 até 22 de Outubro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de hoje até amanhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de hoje até amanhã",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora desde esta sexta-feira até proximo domingo",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde esta sexta-feira até proximo domingo",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre 2 de Out e 22 de Outubro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 2 de Out e 22 de Outubro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora 19-20 de Novembro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19-20 de Novembro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 19 a 20 de Novembro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19 a 20 de Novembro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre 19 e 20 de Novembro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 19 e 20 de Novembro",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora o terceiro trimestre de 2016",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "o terceiro trimestre de 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora o terceiro trimestre deste ano",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "o terceiro trimestre deste ano",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora em 2016 no terceiro trimestre",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016 no terceiro trimestre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora 2015.3",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015.3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora 2015-3",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015-3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora 2015/3",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015/3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora 3/2015",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3/2015",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora na terceira semana de 2027",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "na terceira semana de 2027",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora a terceira semana do proximo ano",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "terceira semana do proximo ano",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora este verão",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "este verão",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora na primavera seguinte",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "na primavera seguinte",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora no verao",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "no verao",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora durante o verao",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "o verao",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora no verao 2016",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "no verao 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora o verao de 2016",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "o verao de 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora 4-23 do proximo mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4-23 do proximo mes",
-      "Type": "daterange"
-    }
-  ]
-}
+  {
+    "Input": "Me mudarei em 3 anos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "em 3 anos",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Me mudarei em 3 semanas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "em 3 semanas",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4 até 22 deste mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4 até 22 deste mes",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4 a 22 deste mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4 a 22 deste mes",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora desde o 3 até o 12 de Sept jajaja",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde o 3 até o 12 de Sept",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4 a 23 do proximo mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4 a 23 do proximo mes",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4 ao 23 deste mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4 ao 23 deste mes",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre 4 e 22 este mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre 4 e 22 este mes",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre 3 e 12 de Set jajaja",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre 3 e 12 de Set",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4 ao 22 de janeiro, 2017",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4 ao 22 de janeiro, 2017",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre 4-22 de janeiro, 2017",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre 4-22 de janeiro, 2017",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora esta semana",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta semana",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora em Setembro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "em Setembro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora nesse Setembro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "nesse Setembro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Estive fora no ultimo sept",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "ultimo sept",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora proximo junho",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "proximo junho",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora em junho 2016",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "em junho 2016",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora em junho do proximo ano",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "em junho do proximo ano",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora este fim de semana",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "este fim de semana",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora a terceira semana deste mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "terceira semana deste mes",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora na ultima semana de julho",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "na ultima semana de julho",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora nos proximos 3 dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "proximos 3 dias",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora pelos proximos 3 meses",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "proximos 3 meses",
+        "Type": "daterange",
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Estive fora as 3 semanas passadas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 semanas passadas",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Estive fora os ultimos 3 anos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "ultimos 3 anos",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Estive fora as 3 semanas anteriores",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 semanas anteriores",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Estareï fora de 2 de Out a 22 de Outubro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 2 de Out a 22 de Outubro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 12 de Janeiro, 2016 - 22/02/2016",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 12 de Janeiro, 2016 - 22/02/2016",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 1o de Jan até Qua, 22 de Jan",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 1o de Jan até Qua, 22 de Jan",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de hoje até amanhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de hoje até amanhã",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de hoje até 22 de Outubro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de hoje até 22 de Outubro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 2 de Out até o dia depois de amanhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 2 de Out até o dia depois de amanhã",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de hoje até o proximo domingo",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de hoje até o proximo domingo",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora desta sexta até o domingo seguinte",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desta sexta até o domingo seguinte",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora desde 2 de Out até 22 de Outubro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde 2 de Out até 22 de Outubro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora desde 2015/08/12 até 22 de Outubro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde 2015/08/12 até 22 de Outubro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de hoje até amanhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de hoje até amanhã",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora desde esta sexta-feira até proximo domingo",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde esta sexta-feira até proximo domingo",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre 2 de Out e 22 de Outubro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre 2 de Out e 22 de Outubro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora 19-20 de Novembro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19-20 de Novembro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 19 a 20 de Novembro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19 a 20 de Novembro",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre 19 e 20 de Novembro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre 19 e 20 de Novembro",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora o terceiro trimestre de 2016",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "o terceiro trimestre de 2016",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora o terceiro trimestre deste ano",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "o terceiro trimestre deste ano",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora em 2016 no terceiro trimestre",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016 no terceiro trimestre",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora 2015.3",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2015.3",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora 2015-3",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2015-3",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora 2015/3",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2015/3",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora 3/2015",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3/2015",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora na terceira semana de 2027",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "na terceira semana de 2027",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora a terceira semana do proximo ano",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "terceira semana do proximo ano",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora este verão",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "este verão",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora na primavera seguinte",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "na primavera seguinte",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora no verao",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "no verao",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora durante o verao",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "o verao",
+        "Type": "daterange",
+        "Start": 21,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora no verao 2016",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "no verao 2016",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora o verao de 2016",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "o verao de 2016",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora 4-23 do proximo mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4-23 do proximo mes",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  }
 ]

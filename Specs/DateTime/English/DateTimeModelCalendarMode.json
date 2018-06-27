@@ -1,11 +1,10 @@
 [
   {
-    "Input":
-      "Could you help me and Joan find a time to meet in my office (112/2108) the week of April 10?",
+    "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of April 10?",
     "Context": {
       "ReferenceDateTime": "2018-02-08T00:00:00"
     },
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the week of april 10",
@@ -32,12 +31,11 @@
     ]
   },
   {
-    "Input":
-      "Could you help me and Joan find a time to meet in my office (112/2108) the week of july 23?",
+    "Input": "Could you help me and Joan find a time to meet in my office (112/2108) the week of july 23?",
     "Context": {
       "ReferenceDateTime": "2018-02-08T00:00:00"
     },
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "the week of july 23",
@@ -108,7 +106,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tmr 3",
@@ -126,7 +124,9 @@
               "value": "2017-12-19 15:00:00"
             }
           ]
-        }
+        },
+        "Start": 13,
+        "End": 17
       }
     ]
   },
@@ -135,7 +135,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tomorrow three",
@@ -153,7 +153,9 @@
               "value": "2017-12-19 15:00:00"
             }
           ]
-        }
+        },
+        "Start": 13,
+        "End": 26
       }
     ]
   },
@@ -162,7 +164,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "yesterday at 12",
@@ -180,7 +182,9 @@
               "value": "2017-12-17 00:00:00"
             }
           ]
-        }
+        },
+        "Start": 7,
+        "End": 21
       }
     ]
   },
@@ -189,7 +193,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "before 4",
@@ -209,7 +213,9 @@
               "end": "16:00:00"
             }
           ]
-        }
+        },
+        "Start": 19,
+        "End": 26
       }
     ]
   },
@@ -218,7 +224,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "after three",
@@ -238,7 +244,9 @@
               "start": "15:00:00"
             }
           ]
-        }
+        },
+        "Start": 19,
+        "End": 29
       }
     ]
   },
@@ -247,7 +255,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "no later than 4",
@@ -267,7 +275,9 @@
               "end": "16:00:00"
             }
           ]
-        }
+        },
+        "Start": 19,
+        "End": 33
       }
     ]
   },

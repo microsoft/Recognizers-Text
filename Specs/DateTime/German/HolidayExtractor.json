@@ -1,10 +1,10 @@
-[{
+[
+  {
     "Input": "Ich bin an Ostern wieder zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Ostern",
@@ -17,7 +17,9 @@
           "PastResolution": {
             "date": "0001-01-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 6
       }
     ]
   },
@@ -26,8 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Weihnachten",
@@ -40,7 +41,9 @@
           "PastResolution": {
             "date": "0001-01-01"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 11
       }
     ]
   },
@@ -49,8 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Weihnachten 2010",
@@ -63,7 +65,9 @@
           "PastResolution": {
             "date": "2010-12-25"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -72,8 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Vatertag",
@@ -86,7 +89,9 @@
           "PastResolution": {
             "date": "2016-06-19"
           }
-        }
+        },
+        "Start": 35,
+        "Length": 8
       }
     ]
   }

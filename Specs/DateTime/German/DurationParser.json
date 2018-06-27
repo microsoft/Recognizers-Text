@@ -1,10 +1,10 @@
-[{
+[
+  {
     "Input": "Ich bin für 3 Stunden weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Stunden",
@@ -17,18 +17,18 @@
           "PastResolution": {
             "duration": "10800"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 9
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich komme in 3 Tagen wieder",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Tagen",
@@ -41,18 +41,18 @@
           "PastResolution": {
             "duration": "259200"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 7
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das ganze findet in 3,5 Jahren statt",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 Jahren",
@@ -65,7 +65,9 @@
           "PastResolution": {
             "duration": "110376000"
           }
-        }
+        },
+        "Start": 20,
+        "Length": 10
       }
     ]
   },
@@ -74,8 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 Jahre",
@@ -88,7 +89,9 @@
           "PastResolution": {
             "duration": "110376000"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 9
       }
     ]
   },
@@ -97,8 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vierundzwanzig Stunden",
@@ -111,7 +113,9 @@
           "PastResolution": {
             "duration": "86400"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 22
       }
     ]
   },
@@ -120,8 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Stunden",
@@ -134,7 +137,9 @@
           "PastResolution": {
             "duration": "10800"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 9
       }
     ]
   },
@@ -143,8 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Tage",
@@ -157,18 +161,18 @@
           "PastResolution": {
             "duration": "259200"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bin für 3 Monate weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Monate",
@@ -181,18 +185,18 @@
           "PastResolution": {
             "duration": "7776000"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 8
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bin für 3 Minuten weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Minuten",
@@ -205,18 +209,18 @@
           "PastResolution": {
             "duration": "180"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 9
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bin für 3,5 Sekunden weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3,5 Sekunden",
@@ -229,18 +233,18 @@
           "PastResolution": {
             "duration": "3.5"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "123,45 sek",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "123,45 sek",
@@ -253,18 +257,18 @@
           "PastResolution": {
             "duration": "123.45"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bin für zwei Wochen weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwei Wochen",
@@ -277,18 +281,18 @@
           "PastResolution": {
             "duration": "1209600"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bin für zwanzig min weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwanzig min",
@@ -301,18 +305,18 @@
           "PastResolution": {
             "duration": "1200"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das geht den ganzen Tag lang schon so.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganzen Tag",
@@ -325,18 +329,18 @@
           "PastResolution": {
             "duration": "86400"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das geht die ganze Woche lang schon so.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganze Woche",
@@ -349,18 +353,18 @@
           "PastResolution": {
             "duration": "604800"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das geht den ganzen Monat lang schon so.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganzen Monat",
@@ -373,18 +377,18 @@
           "PastResolution": {
             "duration": "2592000"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das geht das ganze Jahr lang schon so.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "ganze Jahr",
@@ -397,7 +401,9 @@
           "PastResolution": {
             "duration": "31536000"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 10
       }
     ]
   },
@@ -406,8 +412,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halbes Jahr",
@@ -420,18 +425,18 @@
           "PastResolution": {
             "duration": "15768000"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich mach das in 3 min",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 min",
@@ -444,18 +449,18 @@
           "PastResolution": {
             "duration": "180"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "30 Minuten",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "30 Minuten",
@@ -468,7 +473,9 @@
           "PastResolution": {
             "duration": "1800"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -477,8 +484,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwei Stunden",
@@ -491,7 +497,9 @@
           "PastResolution": {
             "duration": "7200"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 12
       }
     ]
   }

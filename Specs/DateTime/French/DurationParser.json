@@ -1,580 +1,611 @@
-[{
-  "Input": "je partirai pour 3h",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3h",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+[
+  {
+    "Input": "je partirai pour 3h",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3h",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 17,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3jour",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3jour",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3D",
-        "FutureResolution": {
-          "duration": "259200"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3jour",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3jour",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
         },
-        "PastResolution": {
-          "duration": "259200"
-        }
+        "Start": 17,
+        "Length": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3,5ans",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5ans",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3.5Y",
-        "FutureResolution": {
-          "duration": "110376000"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3,5ans",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3,5ans",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3.5Y",
+          "FutureResolution": {
+            "duration": "110376000"
+          },
+          "PastResolution": {
+            "duration": "110376000"
+          }
         },
-        "PastResolution": {
-          "duration": "110376000"
-        }
+        "Start": 17,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3 h",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 h",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 h",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 h",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 17,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3 heures",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 heures",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 heures",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 17,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3 hrs",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 hrs",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 hrs",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 hrs",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 17,
+        "Length": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3 hr",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 hr",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 hr",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 hr",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 17,
+        "Length": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3 jour",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 jour",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3D",
-        "FutureResolution": {
-          "duration": "259200"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 jour",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 jour",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
         },
-        "PastResolution": {
-          "duration": "259200"
-        }
+        "Start": 17,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3 mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 mois",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3M",
-        "FutureResolution": {
-          "duration": "7776000"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 mois",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "duration": "7776000"
+          },
+          "PastResolution": {
+            "duration": "7776000"
+          }
         },
-        "PastResolution": {
-          "duration": "7776000"
-        }
+        "Start": 17,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3 minutes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 minutes",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3M",
-        "FutureResolution": {
-          "duration": "180"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 minutes",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
         },
-        "PastResolution": {
-          "duration": "180"
-        }
+        "Start": 17,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3 min",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 min",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3M",
-        "FutureResolution": {
-          "duration": "180"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3 min",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
         },
-        "PastResolution": {
-          "duration": "180"
-        }
+        "Start": 17,
+        "Length": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3,5 seconde ",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5 seconde",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3.5S",
-        "FutureResolution": {
-          "duration": "3.5"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3,5 seconde ",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3,5 seconde",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3.5S",
+          "FutureResolution": {
+            "duration": "3.5"
+          },
+          "PastResolution": {
+            "duration": "3.5"
+          }
         },
-        "PastResolution": {
-          "duration": "3.5"
-        }
+        "Start": 17,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 123,45 sec",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "123,45 sec",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT123.45S",
-        "FutureResolution": {
-          "duration": "123.45"
+    ]
+  },
+  {
+    "Input": "je partirai pour 123,45 sec",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "123,45 sec",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT123.45S",
+          "FutureResolution": {
+            "duration": "123.45"
+          },
+          "PastResolution": {
+            "duration": "123.45"
+          }
         },
-        "PastResolution": {
-          "duration": "123.45"
-        }
+        "Start": 17,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour deux semaines",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "deux semaines",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P2W",
-        "FutureResolution": {
-          "duration": "1209600"
+    ]
+  },
+  {
+    "Input": "je partirai pour deux semaines",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "deux semaines",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
         },
-        "PastResolution": {
-          "duration": "1209600"
-        }
+        "Start": 17,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour vingt min",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vingt min",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT20M",
-        "FutureResolution": {
-          "duration": "1200"
+    ]
+  },
+  {
+    "Input": "je partirai pour vingt min",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vingt min",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT20M",
+          "FutureResolution": {
+            "duration": "1200"
+          },
+          "PastResolution": {
+            "duration": "1200"
+          }
         },
-        "PastResolution": {
-          "duration": "1200"
-        }
+        "Start": 17,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour vingt quatre heures",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vingt quatre heures",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT24H",
-        "FutureResolution": {
-          "duration": "86400"
+    ]
+  },
+  {
+    "Input": "je partirai pour vingt quatre heures",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vingt quatre heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT24H",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
         },
-        "PastResolution": {
-          "duration": "86400"
-        }
+        "Start": 17,
+        "Length": 19
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour toute la journee",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toute la journee",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "duration": "86400"
+    ]
+  },
+  {
+    "Input": "je partirai pour toute la journee",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "toute la journee",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
         },
-        "PastResolution": {
-          "duration": "86400"
-        }
+        "Start": 17,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour toute la semaine",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toute la semaine",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "duration": "604800"
+    ]
+  },
+  {
+    "Input": "je partirai pour toute la semaine",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "toute la semaine",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
         },
-        "PastResolution": {
-          "duration": "604800"
-        }
+        "Start": 17,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour toute le mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toute le mois",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1M",
-        "FutureResolution": {
-          "duration": "2592000"
+    ]
+  },
+  {
+    "Input": "je partirai pour toute le mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "toute le mois",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
         },
-        "PastResolution": {
-          "duration": "2592000"
-        }
+        "Start": 17,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour toute l'annee",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toute l'annee",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "duration": "31536000"
+    ]
+  },
+  {
+    "Input": "je partirai pour toute l'annee",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "toute l'annee",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
         },
-        "PastResolution": {
-          "duration": "31536000"
-        }
+        "Start": 17,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour une heure",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "une heure",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT1H",
-        "FutureResolution": {
-          "duration": "3600"
+    ]
+  },
+  {
+    "Input": "je partirai pour une heure",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "une heure",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
         },
-        "PastResolution": {
-          "duration": "3600"
-        }
+        "Start": 17,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "demi ans",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demi ans",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P0.5Y",
-        "FutureResolution": {
-          "duration": "15768000"
+    ]
+  },
+  {
+    "Input": "demi ans",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demi ans",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P0.5Y",
+          "FutureResolution": {
+            "duration": "15768000"
+          },
+          "PastResolution": {
+            "duration": "15768000"
+          }
         },
-        "PastResolution": {
-          "duration": "15768000"
-        }
+        "Start": 0,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 3-min",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3-min",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3M",
-        "FutureResolution": {
-          "duration": "180"
+    ]
+  },
+  {
+    "Input": "je partirai pour 3-min",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3-min",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
         },
-        "PastResolution": {
-          "duration": "180"
-        }
+        "Start": 17,
+        "Length": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour 30-minutes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "30-minutes",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT30M",
-        "FutureResolution": {
-          "duration": "1800"
+    ]
+  },
+  {
+    "Input": "je partirai pour 30-minutes",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "30-minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT30M",
+          "FutureResolution": {
+            "duration": "1800"
+          },
+          "PastResolution": {
+            "duration": "1800"
+          }
         },
-        "PastResolution": {
-          "duration": "1800"
-        }
+        "Start": 17,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour un et demi heures",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un et demi heures",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT1.5H",
-        "FutureResolution": {
-          "duration": "5400"
+    ]
+  },
+  {
+    "Input": "je partirai pour un et demi heures",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "un et demi heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1.5H",
+          "FutureResolution": {
+            "duration": "5400"
+          },
+          "PastResolution": {
+            "duration": "5400"
+          }
         },
-        "PastResolution": {
-          "duration": "5400"
-        }
+        "Start": 17,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour une et demi heure",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "une et demi heure",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT1.5H",
-        "FutureResolution": {
-          "duration": "5400"
+    ]
+  },
+  {
+    "Input": "je partirai pour une et demi heure",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "une et demi heure",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1.5H",
+          "FutureResolution": {
+            "duration": "5400"
+          },
+          "PastResolution": {
+            "duration": "5400"
+          }
         },
-        "PastResolution": {
-          "duration": "5400"
-        }
+        "Start": 17,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour demi heure",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demi heure",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT0.5H",
-        "FutureResolution": {
-          "duration": "1800"
+    ]
+  },
+  {
+    "Input": "je partirai pour demi heure",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demi heure",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT0.5H",
+          "FutureResolution": {
+            "duration": "1800"
+          },
+          "PastResolution": {
+            "duration": "1800"
+          }
         },
-        "PastResolution": {
-          "duration": "1800"
-        }
+        "Start": 17,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour deux heures",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "deux heures",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT2H",
-        "FutureResolution": {
-          "duration": "7200"
+    ]
+  },
+  {
+    "Input": "je partirai pour deux heures",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "deux heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2H",
+          "FutureResolution": {
+            "duration": "7200"
+          },
+          "PastResolution": {
+            "duration": "7200"
+          }
         },
-        "PastResolution": {
-          "duration": "7200"
-        }
+        "Start": 17,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai pour deux et demi heures",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "deux et demi heures",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT2.5H",
-        "FutureResolution": {
-          "duration": "9000"
+    ]
+  },
+  {
+    "Input": "je partirai pour deux et demi heures",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "deux et demi heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2.5H",
+          "FutureResolution": {
+            "duration": "9000"
+          },
+          "PastResolution": {
+            "duration": "9000"
+          }
         },
-        "PastResolution": {
-          "duration": "9000"
-        }
+        "Start": 17,
+        "Length": 19
       }
-    }
-  ]
-}
+    ]
+  }
 ]

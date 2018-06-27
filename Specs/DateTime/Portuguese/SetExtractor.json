@@ -1,240 +1,242 @@
-[{
-  "Input": "sairei semanalmente",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "semanalmente",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei diariamente",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "diariamente",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saí todo dia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo dia",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "minha saída diária",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "diária",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei todos os dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os dias",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei cada mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada mes",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei todos os meses",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os meses",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei todas as semanas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todas as semanas",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei mensalmente",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mensalmente",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei anualmente",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "anualmente",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "salirei todos os anos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os anos",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "irei a cada dois dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada dois dias",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "virão cada tres semanas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada tres semanas",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "irei a cada 3 semanas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada 3 semanas",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "eu irei às 3pm todos os dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3pm todos os dias",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "eu irei todos os dias as 3pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os dias as 3pm",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei cada 15/4",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada 15/4",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei todos os domingos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os domingos",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei todas as segundas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todas as segundas",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "sairei cada domingo as 4pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada domingo as 4pm",
-      "Type": "set"
-    }
-  ]
-}
+[
+  {
+    "Input": "sairei semanalmente",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "semanalmente",
+        "Type": "set",
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "sairei diariamente",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "diariamente",
+        "Type": "set",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "saí todo dia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todo dia",
+        "Type": "set",
+        "Start": 4,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "minha saída diária",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "diária",
+        "Type": "set",
+        "Start": 12,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "sairei todos os dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os dias",
+        "Type": "set",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "sairei cada mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada mes",
+        "Type": "set",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "sairei todos os meses",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os meses",
+        "Type": "set",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "sairei todas as semanas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todas as semanas",
+        "Type": "set",
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "sairei mensalmente",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "mensalmente",
+        "Type": "set",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "sairei anualmente",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "anualmente",
+        "Type": "set",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "salirei todos os anos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os anos",
+        "Type": "set",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "irei a cada dois dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada dois dias",
+        "Type": "set",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "virão cada tres semanas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada tres semanas",
+        "Type": "set",
+        "Start": 6,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "irei a cada 3 semanas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada 3 semanas",
+        "Type": "set",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "eu irei às 3pm todos os dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3pm todos os dias",
+        "Type": "set",
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "eu irei todos os dias as 3pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os dias as 3pm",
+        "Type": "set",
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "sairei cada 15/4",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada 15/4",
+        "Type": "set",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "sairei todos os domingos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os domingos",
+        "Type": "set",
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "sairei todas as segundas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todas as segundas",
+        "Type": "set",
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "sairei cada domingo as 4pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada domingo as 4pm",
+        "Type": "set",
+        "Start": 7,
+        "Length": 19
+      }
+    ]
+  }
 ]
