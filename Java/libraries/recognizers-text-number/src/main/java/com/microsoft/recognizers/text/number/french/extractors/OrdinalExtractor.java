@@ -26,8 +26,8 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     public OrdinalExtractor() {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(FrenchNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE), "OrdinalNum");
-        builder.put(Pattern.compile(FrenchNumeric.OrdinalFrenchRegex, Pattern.CASE_INSENSITIVE), "OrdFr");
+        builder.put(Pattern.compile(FrenchNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(Pattern.compile(FrenchNumeric.OrdinalFrenchRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdFr");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

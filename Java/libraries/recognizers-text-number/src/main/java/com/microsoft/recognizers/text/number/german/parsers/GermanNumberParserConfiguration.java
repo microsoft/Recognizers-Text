@@ -39,10 +39,10 @@ public class GermanNumberParserConfiguration extends BaseNumberParserConfigurati
                 GermanNumeric.CardinalNumberMap,
                 GermanNumeric.OrdinalNumberMap,
                 GermanNumeric.RoundNumberMap,
-                Pattern.compile(GermanNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(GermanNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(GermanNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(GermanNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE));
+                Pattern.compile(GermanNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(GermanNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(GermanNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(GermanNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS));
     }
 
 

@@ -26,8 +26,8 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     public OrdinalExtractor() {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(PortugueseNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE), "OrdinalNum");
-        builder.put(Pattern.compile(PortugueseNumeric. OrdinalEnglishRegex, Pattern.CASE_INSENSITIVE), "OrdinalPor");
+        builder.put(Pattern.compile(PortugueseNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(Pattern.compile(PortugueseNumeric. OrdinalEnglishRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalPor");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

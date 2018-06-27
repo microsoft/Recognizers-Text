@@ -193,7 +193,7 @@
 {
   "Input": "Er ist ungefähr 40 - 50 Jahre alt.",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, java",
   "Results": [
     {
       "Text": "50 Jahre alt",

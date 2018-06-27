@@ -58,11 +58,11 @@ public class EnglishNumberRangeParserConfiguration implements INumberRangeParser
         this.ordinalExtractor = OrdinalExtractor.getInstance();
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
 
-        this.moreOrEqual = Pattern.compile(EnglishNumeric.MoreOrEqual, Pattern.CASE_INSENSITIVE);
-        this.lessOrEqual = Pattern.compile(EnglishNumeric.LessOrEqual, Pattern.CASE_INSENSITIVE);
-        this.moreOrEqualSuffix = Pattern.compile(EnglishNumeric.MoreOrEqualSuffix, Pattern.CASE_INSENSITIVE);
-        this.lessOrEqualSuffix = Pattern.compile(EnglishNumeric.LessOrEqualSuffix, Pattern.CASE_INSENSITIVE);
-        this.moreOrEqualSeparate = Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeMoreSeparateRegex), Pattern.CASE_INSENSITIVE);
-        this.lessOrEqualSeparate = Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeLessSeparateRegex), Pattern.CASE_INSENSITIVE);
+        this.moreOrEqual = Pattern.compile(EnglishNumeric.MoreOrEqual, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.lessOrEqual = Pattern.compile(EnglishNumeric.LessOrEqual, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.moreOrEqualSuffix = Pattern.compile(EnglishNumeric.MoreOrEqualSuffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.lessOrEqualSuffix = Pattern.compile(EnglishNumeric.LessOrEqualSuffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.moreOrEqualSeparate = Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeMoreSeparateRegex), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.lessOrEqualSeparate = Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeLessSeparateRegex), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 }

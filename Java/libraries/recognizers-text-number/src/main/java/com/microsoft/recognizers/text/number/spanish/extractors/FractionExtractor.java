@@ -26,11 +26,11 @@ public class FractionExtractor extends BaseNumberExtractor {
     public FractionExtractor() {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(SpanishNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE), "FracNum");
-        builder.put(Pattern.compile(SpanishNumeric.FractionNotationWithSpacesRegex, Pattern.CASE_INSENSITIVE), "FracNum");
-        builder.put(Pattern.compile(SpanishNumeric.FractionNounRegex, Pattern.CASE_INSENSITIVE), "FracSpa");
-        builder.put(Pattern.compile(SpanishNumeric.FractionNounWithArticleRegex, Pattern.CASE_INSENSITIVE), "FracSpa");
-        builder.put(Pattern.compile(SpanishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE), "FracSpa");
+        builder.put(Pattern.compile(SpanishNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(Pattern.compile(SpanishNumeric.FractionNotationWithSpacesRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
+        builder.put(Pattern.compile(SpanishNumeric.FractionNounRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
+        builder.put(Pattern.compile(SpanishNumeric.FractionNounWithArticleRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
+        builder.put(Pattern.compile(SpanishNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracSpa");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

@@ -59,7 +59,7 @@ public class NumberExtractor extends BaseNumberExtractor {
 
     private NumberExtractor(NumberMode mode, NumberOptions options) {
         this.options = options;
-        this.negativeNumberTermsRegex = Pattern.compile(EnglishNumeric.NegativeNumberTermsRegex + '$', Pattern.CASE_INSENSITIVE);
+        this.negativeNumberTermsRegex = Pattern.compile(EnglishNumeric.NegativeNumberTermsRegex + '$', Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
 
         HashMap<Pattern, String> builder = new HashMap<>();
 
@@ -70,7 +70,7 @@ public class NumberExtractor extends BaseNumberExtractor {
                 cardinalExtractor = CardinalExtractor.getInstance(EnglishNumeric.PlaceHolderPureNumber);
                 break;
             case Currency:
-                builder.put(Pattern.compile(EnglishNumeric.CurrencyRegex, Pattern.CASE_INSENSITIVE), "IntegerNum");
+                builder.put(Pattern.compile(EnglishNumeric.CurrencyRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
                 break;
             case Default:
                 break;

@@ -31,16 +31,16 @@ public class IntegerExtractor extends BaseNumberExtractor {
     public IntegerExtractor(String placeholder) {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(PortugueseNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE), "IntegerNum");
+        builder.put(Pattern.compile(PortugueseNumeric.NumbersWithPlaceHolder(placeholder), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
         builder.put(Pattern.compile(PortugueseNumeric.NumbersWithSuffix), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum");
         builder.put(generateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum");
-        builder.put(Pattern.compile(PortugueseNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE), "IntegerNum");
-        builder.put(Pattern.compile(PortugueseNumeric.NumbersWithDozen2Suffix, Pattern.CASE_INSENSITIVE), "IntegerNum");
-        builder.put(Pattern.compile(PortugueseNumeric.NumbersWithDozenSuffix, Pattern.CASE_INSENSITIVE), "IntegerNum");
-        builder.put(Pattern.compile(PortugueseNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE), "IntegerPor");
-        builder.put(Pattern.compile(PortugueseNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE), "IntegerPor");
+        builder.put(Pattern.compile(PortugueseNumeric.RoundNumberIntegerRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(Pattern.compile(PortugueseNumeric.NumbersWithDozen2Suffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(Pattern.compile(PortugueseNumeric.NumbersWithDozenSuffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerNum");
+        builder.put(Pattern.compile(PortugueseNumeric.AllIntRegexWithLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerPor");
+        builder.put(Pattern.compile(PortugueseNumeric.AllIntRegexWithDozenSuffixLocks, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "IntegerPor");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

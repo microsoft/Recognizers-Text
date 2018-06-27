@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public abstract class RegExpUtility {
 
-    private static final Pattern matchGroup = Pattern.compile("\\?<(?<name>\\w+)>", Pattern.CASE_INSENSITIVE);
+    private static final Pattern matchGroup = Pattern.compile("\\?<(?<name>\\w+)>", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     private static final Pattern matchGroupNames = Pattern.compile("\\(\\?<([a-zA-Z][a-zA-Z0-9]*)>");
     private static final String groupNameIndexSep = "iii";
     private static final String groupNameIndexSepRegex = Pattern.quote(groupNameIndexSep);

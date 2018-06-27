@@ -40,10 +40,10 @@ public class FrenchNumberParserConfiguration extends BaseNumberParserConfigurati
                 FrenchNumeric.CardinalNumberMap,
                 buildOrdinalNumberMap(),
                 FrenchNumeric.RoundNumberMap,
-                Pattern.compile(FrenchNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(FrenchNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(FrenchNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(FrenchNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE));
+                Pattern.compile(FrenchNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(FrenchNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(FrenchNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(FrenchNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS));
     }
 
     @Override

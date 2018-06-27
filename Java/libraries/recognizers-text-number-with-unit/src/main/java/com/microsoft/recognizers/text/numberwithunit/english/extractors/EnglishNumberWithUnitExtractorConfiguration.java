@@ -19,7 +19,7 @@ public abstract class EnglishNumberWithUnitExtractorConfiguration implements INu
         this.cultureInfo = cultureInfo;
 
         this.unitNumExtractor = NumberExtractor.getInstance();
-        this.compoundUnitConnectorRegex = Pattern.compile(EnglishNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE);
+        this.compoundUnitConnectorRegex = Pattern.compile(EnglishNumericWithUnit.CompoundUnitConnectorRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 
     public CultureInfo getCultureInfo() { return this.cultureInfo; }

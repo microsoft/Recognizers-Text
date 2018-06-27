@@ -26,10 +26,10 @@ public class OrdinalExtractor extends BaseNumberExtractor {
     public OrdinalExtractor() {
         HashMap<Pattern, String> builder = new HashMap<>();
 
-        builder.put(Pattern.compile(GermanNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE), "OrdinalNum");
-        builder.put(Pattern.compile(GermanNumeric.OrdinalNumericRegex, Pattern.CASE_INSENSITIVE), "OrdinalNum");
-        builder.put(Pattern.compile(GermanNumeric.OrdinalGermanRegex, Pattern.CASE_INSENSITIVE), "OrdGer");
-        builder.put(Pattern.compile(GermanNumeric.OrdinalRoundNumberRegex, Pattern.CASE_INSENSITIVE), "OrdGer");
+        builder.put(Pattern.compile(GermanNumeric.OrdinalSuffixRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(Pattern.compile(GermanNumeric.OrdinalNumericRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdinalNum");
+        builder.put(Pattern.compile(GermanNumeric.OrdinalGermanRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdGer");
+        builder.put(Pattern.compile(GermanNumeric.OrdinalRoundNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "OrdGer");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

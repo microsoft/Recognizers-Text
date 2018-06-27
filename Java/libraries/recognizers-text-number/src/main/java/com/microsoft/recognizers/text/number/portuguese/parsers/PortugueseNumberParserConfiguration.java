@@ -41,10 +41,10 @@ public class PortugueseNumberParserConfiguration extends BaseNumberParserConfigu
                 PortugueseNumeric.CardinalNumberMap,
                 buildOrdinalNumberMap(),
                 PortugueseNumeric.RoundNumberMap,
-                Pattern.compile(PortugueseNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(PortugueseNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(PortugueseNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(PortugueseNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE));
+                Pattern.compile(PortugueseNumeric.HalfADozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(PortugueseNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(PortugueseNumeric.NegativeNumberSignRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(PortugueseNumeric.FractionPrepositionRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS));
     }
 
 
