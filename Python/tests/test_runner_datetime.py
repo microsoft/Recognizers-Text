@@ -131,6 +131,10 @@ def create_extractor(language, model, options):
     return extractor(configuration())
 
 def create_parser(language, model, options):
+    parser = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_parser', f'{language}{model}Parser')
+    if parser:
+        return parser()
+
     parser = get_class(f'recognizers_date_time.date_time.{language.lower()}.parsers', f'{language}{model}Parser')
     if not parser:
         parser = get_class(f'recognizers_date_time.date_time.base_{model.lower()}',
