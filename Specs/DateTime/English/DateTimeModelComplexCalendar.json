@@ -2253,6 +2253,7 @@
               "timex": "T11:30",
               "type": "time",
               "timezone": "UTC+XX:XX",
+              "timezoneText": "cst",
               "utcOffsetMins": "-10000",
               "value": "11:30:00"
             }
@@ -2399,6 +2400,7 @@
               "timex": "(2018-06-19T13,2018-06-19T14,PT1H)",
               "type": "datetimerange",
               "timezone": "UTC+XX:XX",
+              "timezoneText": "cst",
               "utcOffsetMins": "-10000",
               "start": "2018-06-19 13:00:00",
               "end": "2018-06-19 14:00:00"
@@ -3369,6 +3371,7 @@
               "timex": "T10:30",
               "type": "time",
               "timezone": "UTC+XX:XX",
+              "timezoneText": "montreal time",
               "utcOffsetMins": "-10000",
               "value": "10:30:00"
             }
