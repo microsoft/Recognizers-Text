@@ -4,6 +4,7 @@ import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.ChineseNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -49,13 +50,13 @@ public class IntegerExtractor extends BaseNumberExtractor {
             case Default:
                 // 一百五十五, 负一亿三百二十二.
                 // Uses an allow list to avoid extracting "四" from "四川"
-                builder.put(Pattern.compile(ChineseNumeric.NumbersWithAllowListRegex), "IntegerChs");
+                builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersWithAllowListRegex, 0), "IntegerChs");
                 break;
 
             case ExtractAll:
                 // 一百五十五, 负一亿三百二十二, "四" from "四川".
                 // Uses no allow lists and extracts all potential integers (useful in Units, for example).
-                builder.put(Pattern.compile(ChineseNumeric.NumbersAggressiveRegex), "IntegerChs");
+                builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.NumbersAggressiveRegex, 0), "IntegerChs");
                 break;
         }
 

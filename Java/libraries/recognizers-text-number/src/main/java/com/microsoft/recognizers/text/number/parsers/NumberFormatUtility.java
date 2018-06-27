@@ -27,7 +27,7 @@ public final class NumberFormatUtility {
         supportedCultures.put(Culture.Portuguese, LongFormatType.DoubleNumDotComma);
         supportedCultures.put(Culture.French, LongFormatType.DoubleNumDotComma);
         supportedCultures.put(Culture.German, LongFormatType.DoubleNumDotComma);
-        supportedCultures.put(Culture.Chinese, LongFormatType.DoubleNumDotComma);
+        supportedCultures.put(Culture.Chinese, null);
         supportedCultures.put(Culture.Japanese, LongFormatType.DoubleNumDotComma);
     }
 
@@ -66,16 +66,18 @@ public final class NumberFormatUtility {
 
         if (supportedCultures.containsKey(culture.cultureCode)) {
             LongFormatType longFormat = supportedCultures.get(culture.cultureCode);
-            Character[] chars = result.chars().mapToObj(i -> (char) i)
-                    .map(c -> changeMark(c, longFormat))
-                    .toArray(Character[]::new);
+            if (longFormat != null) {
+                Character[] chars = result.chars().mapToObj(i -> (char) i)
+                        .map(c -> changeMark(c, longFormat))
+                        .toArray(Character[]::new);
 
-            StringBuilder sb = new StringBuilder(chars.length);
-            for (Character c : chars) {
-                sb.append(c.charValue());
+                StringBuilder sb = new StringBuilder(chars.length);
+                for (Character c : chars) {
+                    sb.append(c.charValue());
+                }
+
+                result = sb.toString();
             }
-
-            result = sb.toString();
         }
 
         return result;

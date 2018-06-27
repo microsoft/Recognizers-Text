@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.chinese.extractors;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.ChineseNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -36,7 +37,7 @@ public class DoubleExtractor extends BaseNumberExtractor {
         //１５.２万
         builder.put(Pattern.compile(ChineseNumeric.DoubleWithThousandsRegex), "DoubleChs");
         //四十五点三三
-        builder.put(Pattern.compile(ChineseNumeric.DoubleAllFloatRegex), "DoubleChs");
+        builder.put(RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleAllFloatRegex, 0), "DoubleChs");
         // 2e6, 21.2e0
         builder.put(Pattern.compile(ChineseNumeric.DoubleExponentialNotationRegex, Pattern.CASE_INSENSITIVE), "DoublePow");
         //2^5
