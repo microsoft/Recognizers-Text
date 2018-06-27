@@ -28,8 +28,8 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._an_unit_regex
 
     @property
-    def in_exact_number_unit_regex(self) -> Pattern:
-        return self._in_exact_number_unit_regex
+    def inexact_number_unit_regex(self) -> Pattern:
+        return self._inexact_number_unit_regex
 
     @property
     def suffix_and_regex(self) -> Pattern:
@@ -49,7 +49,7 @@ class EnglishDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._followed_unit: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.DurationFollowedUnit)
         self._number_combined_with_unit: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.NumberCombinedWithDurationUnit)
         self._an_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AnUnitRegex)
-        self._in_exact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.InexactNumberUnitRegex)
+        self._inexact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.InexactNumberUnitRegex)
         self._suffix_and_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.SuffixAndRegex)
         self._relative_duration_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.RelativeDurationUnitRegex)
         self._cardinal_extractor: BaseNumberExtractor = EnglishCardinalExtractor()

@@ -1,6 +1,5 @@
 [{
   "Input": "Estaré fuera de cinco a siete hoy",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de cinco a siete hoy",
@@ -11,7 +10,6 @@
 ,
 {
   "Input": "Hoy estaré fuera de cinco a siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "Hoy estaré fuera de cinco a siete",
@@ -22,7 +20,6 @@
 ,
 {
   "Input": "Estaré fuera hoy de cinco a siete",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "hoy de cinco a siete",
@@ -33,7 +30,6 @@
 ,
 {
   "Input": "Estaré fuera de cinco a siete mañana",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de cinco a siete mañana",
@@ -44,7 +40,6 @@
 ,
 {
   "Input": "Estaré fuera desde las 5 hasta las 6 el próximo domingo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "desde las 5 hasta las 6 el próximo domingo",
@@ -55,7 +50,6 @@
 ,
 {
   "Input": "Estaré fuera desde las 5 hasta las 6pm el próximo domingo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "desde las 5 hasta las 6pm el próximo domingo",
@@ -66,7 +60,6 @@
 ,
 {
   "Input": "Estaré fuera desde las 5 hasta las 6pm del próximo domingo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "desde las 5 hasta las 6pm del próximo domingo",
@@ -77,7 +70,6 @@
 ,
 {
   "Input": "Estaré afuera de 4pm a 5pm hoy",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 4pm a 5pm hoy",
@@ -88,7 +80,6 @@
 ,
 {
   "Input": "Estaré afuera de 4pm a 5pm de hoy",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 4pm a 5pm de hoy",
@@ -99,7 +90,6 @@
 ,
 {
   "Input": "Estaré afuera de 4pm de hoy a 5pm de mañana",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 4pm de hoy a 5pm de mañana",
@@ -110,7 +100,6 @@
 ,
 {
   "Input": "Estaré afuera de 4pm a 5pm de mañana",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 4pm a 5pm de mañana",
@@ -121,7 +110,6 @@
 ,
 {
   "Input": "Estaré afuera de 4pm a 5pm del 2017-6-6",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 4pm a 5pm del 2017-6-6",
@@ -132,7 +120,6 @@
 ,
 {
   "Input": "Estaré afuera de 4pm a 5pm el 5 de Mayo del 2018",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 4pm a 5pm el 5 de Mayo del 2018",
@@ -143,7 +130,6 @@
 ,
 {
   "Input": "Estaré afuera de 4:00 a 5pm 5 de Mayo, 2018",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 4:00 a 5pm 5 de Mayo, 2018",
@@ -154,7 +140,6 @@
 ,
 {
   "Input": "Estaré afuera de 4pm del 1 de Enero del 2016 a 5pm de hoy",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 4pm del 1 de Enero del 2016 a 5pm de hoy",
@@ -165,7 +150,6 @@
 ,
 {
   "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
@@ -176,7 +160,6 @@
 ,
 {
   "Input": "Estaré afuera desde hoy a las 4 hasta el miercoles siguiente a las 5",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "desde hoy a las 4 hasta el miercoles siguiente a las 5",
@@ -187,7 +170,6 @@
 ,
 {
   "Input": "Estaré afuera entre las 4pm y 5pm de hoy",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "entre las 4pm y 5pm de hoy",
@@ -198,7 +180,6 @@
 ,
 {
   "Input": "Estaré afuera entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
@@ -209,7 +190,6 @@
 ,
 {
   "Input": "Regresaré a la noche",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a la noche",
@@ -220,7 +200,6 @@
 ,
 {
   "Input": "Regresaré a la madrugada",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a la madrugada",
@@ -231,7 +210,6 @@
 ,
 {
   "Input": "Regresaré esta tarde",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "esta tarde",
@@ -242,7 +220,6 @@
 ,
 {
   "Input": "Regresaré esta mañana",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "esta mañana",
@@ -253,7 +230,6 @@
 ,
 {
   "Input": "Regresaré en la mañana",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": " la mañana",
@@ -264,7 +240,6 @@
 ,
 {
   "Input": "Regresaré a la mañana",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a la mañana",
@@ -275,7 +250,6 @@
 ,
 {
   "Input": "Regresaré la próxima noche",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "próxima noche",
@@ -286,7 +260,6 @@
 ,
 {
   "Input": "Regresé anoche",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "anoche",
@@ -297,7 +270,6 @@
 ,
 {
   "Input": "Regresaré mañana por la noche",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "mañana por la noche",
@@ -308,7 +280,6 @@
 ,
 {
   "Input": "Regresaré el próximo lunes a la tarde",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "próximo lunes a la tarde",
@@ -319,7 +290,6 @@
 ,
 {
   "Input": "Regresaré el 5 de mayo en la noche",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 de mayo en la noche",
@@ -330,7 +300,6 @@
 ,
 {
   "Input": "Voy a retroceder los últimos 3 minutos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "últimos 3 minutos",
@@ -341,7 +310,6 @@
 ,
 {
   "Input": "Voy a retroceder los pasados 3 minutos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "pasados 3 minutos",
@@ -352,7 +320,6 @@
 ,
 {
   "Input": "Voy a retroceder los previos 3 minutos",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "previos 3 minutos",
@@ -363,7 +330,6 @@
 ,
 {
   "Input": "Voy a retroceder los anteriores 3mins",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "anteriores 3mins",
@@ -374,7 +340,6 @@
 ,
 {
   "Input": "Voy a volver en 3 horas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "en 3 horas",
@@ -385,7 +350,6 @@
 ,
 {
   "Input": "Voy a volver en 5 h",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "en 5 h",
@@ -396,7 +360,6 @@
 ,
 {
   "Input": "Voy a volver dentro de 5 horas",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dentro de 5 horas",
@@ -407,7 +370,6 @@
 ,
 {
   "Input": "Voy a volver en el último minuto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "último minuto",
@@ -418,7 +380,6 @@
 ,
 {
   "Input": "Voy a volver en la próxima hora",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "próxima hora",

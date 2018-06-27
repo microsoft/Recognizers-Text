@@ -67,8 +67,9 @@ class BaseTimeExtractor(DateTimeExtractor):
 
     def specials_regex_match(self, source: str) -> List[Token]:
         result: List[Token] = list()
-        matches = list(filter(lambda x: x.group(), regex.finditer(self.config.ish_regex, source)))
-        result.extend(map(lambda x: Token(x.start(), x.end()), matches))
+        if self.config.ish_regex:
+            matches = list(filter(lambda x: x.group(), regex.finditer(self.config.ish_regex, source)))
+            result.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return result
 
 class AdjustParams:
