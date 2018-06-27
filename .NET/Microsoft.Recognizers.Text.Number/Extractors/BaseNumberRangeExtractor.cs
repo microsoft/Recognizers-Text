@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         internal abstract System.Collections.Immutable.ImmutableDictionary<Regex, string> Regexes { get; }
 
+        internal abstract Regex AmbiguousFractionConnectorsRegex { get; }
+
         protected virtual string ExtractType { get; } = "";
 
         public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser)
@@ -143,8 +145,18 @@ namespace Microsoft.Recognizers.Text.Number
             else
             {
                 var numberStr = string.IsNullOrEmpty(numberStr1) ? numberStr2 : numberStr1;
-
+                
                 var extractNumList = ExtractNumberAndOrdinalFromStr(numberStr);
+
+                // If cases falls into "more/less than NUM" or "NUM or more/less"
+                if (extractNumList != null && (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS))
+                {
+                    // If only cases falls into "more/less than NUM", we process potentially ambiguous fractions
+                    if (match.Value.Trim().EndsWith(numberStr))
+                    {
+                        extractNumList = ProcessAmbiguousFractions(extractNumList);
+                    }
+                }
 
                 if (extractNumList != null)
                 {
@@ -209,6 +221,31 @@ namespace Microsoft.Recognizers.Text.Number
             extractNumber.AddRange(extractOrdinal);
             extractNumber = extractNumber.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
             return extractNumber;
+        }
+
+        // Fractions like "2 in 2009", "in" is ambiguous connector in some of the context
+        // This function is to process and remain only the part before ambiguous connector
+        private List<ExtractResult> ProcessAmbiguousFractions(List<ExtractResult> ers)
+        {
+            foreach (var er in ers)
+            {
+                if (er.Data != null && er.Data.ToString() == Constants.FRACTION_WITH_CONNECTOR)
+                {
+                    var match = AmbiguousFractionConnectorsRegex.Match(er.Text);
+                    
+                    if (match.Success)
+                    {
+                        var beforeText = er.Text.Substring(0, match.Index).TrimEnd();
+
+                        er.Length = beforeText.Length;
+                        er.Text = beforeText;
+                        er.Type = Constants.SYS_NUM;
+                        er.Data = null;
+                    }
+                }
+            }
+
+            return ers;
         }
     }
 

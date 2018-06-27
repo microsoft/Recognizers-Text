@@ -81,6 +81,7 @@ class EnglishNumeric:
     TwoNumberRangeRegex2 = f'({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(and|but|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})'
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\\s*(and|but|,)\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})'
     TwoNumberRangeRegex4 = f'(from\\s+)?(?<number1>({NumberSplitMark}(?!\\bfrom\\b).)+)\\s*{TillRegex}\\s*(the\\s+)?(?<number2>({NumberSplitMark}.)+)'
+    AmbiguousFractionConnectorsRegex = f'(\\bin\\b)'
     DecimalSeparatorChar = '.'
     FractionMarkerToken = 'over'
     NonDecimalSeparatorChar = ','

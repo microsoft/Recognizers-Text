@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.Number.English
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
+        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
 
         public NumberRangeExtractor() : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance(), new BaseNumberParser(new EnglishNumberParserConfiguration()))
@@ -73,6 +75,8 @@ namespace Microsoft.Recognizers.Text.Number.English
             };
 
             Regexes = regexes.ToImmutableDictionary();
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }
 }

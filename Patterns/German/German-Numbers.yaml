@@ -116,6 +116,9 @@ NumberWithSuffixPercentage: !nestedRegex
 NumberWithPrefixPercentage: !nestedRegex
   def: (Prozent)(\s*)({BaseNumbers.NumberReplaceToken})
   references: [ BaseNumbers.NumberReplaceToken ]
+AmbiguousFractionConnectorsRegex: !simpleRegex
+# TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 #Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: over

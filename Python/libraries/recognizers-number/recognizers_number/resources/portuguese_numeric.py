@@ -63,6 +63,7 @@ class PortugueseNumeric:
     DoubleAllFloatRegex = f'((?<=\\b){AllFloatRegex}(?=\\b))'
     CurrencyRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)'
     NumberWithSuffixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)'
+    AmbiguousFractionConnectorsRegex = f'^[.]'
     DecimalSeparatorChar = ','
     FractionMarkerToken = 'sobre'
     NonDecimalSeparatorChar = '.'
