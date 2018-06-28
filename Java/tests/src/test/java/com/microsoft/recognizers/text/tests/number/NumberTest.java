@@ -23,15 +23,6 @@ public class NumberTest extends AbstractTest {
         super(currentCase);
     }
 
-//    @Override
-//    protected void recognizeAndAssert(TestCase currentCase) {
-//        // parse
-//        List<ModelResult> results = recognize(currentCase);
-//
-//        // assert
-//        assertResults(currentCase, results);
-//    }
-
     @Override
     public List<ModelResult> recognize(TestCase currentCase) {
         try {

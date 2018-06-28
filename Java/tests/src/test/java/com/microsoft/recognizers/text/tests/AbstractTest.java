@@ -54,7 +54,6 @@ public abstract class AbstractTest {
     protected abstract List<ModelResult> recognize(TestCase currentCase);
 
     protected void recognizeAndAssert(TestCase currentCase) {
-        if (currentCase.debug) System.out.println("debug break!");
         List<ModelResult> results = recognize(currentCase);
         assertResults(currentCase, results);
     }
