@@ -62,6 +62,7 @@ export namespace PortugueseNumeric {
 	export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
 	export const CurrencyRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)`;
 	export const NumberWithSuffixPercentage = `(?<!%)(${BaseNumbers.NumberReplaceToken})(\\s*)(%(?!${BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)`;
+	export const AmbiguousFractionConnectorsRegex = `^[.]`;
 	export const DecimalSeparatorChar = ',';
 	export const FractionMarkerToken = 'sobre';
 	export const NonDecimalSeparatorChar = '.';

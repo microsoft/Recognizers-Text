@@ -1,132 +1,146 @@
-[{
-  "Input": "明天2点到4点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "明天2点到4点",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "从昨天下午两点到四点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从昨天下午两点到四点",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "从昨天下午两点到明天四点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从昨天下午两点到明天四点",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "从昨天5:00-6:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从昨天5:00-6:00",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "1月15号4点和2月3号9点之间",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1月15号4点和2月3号9点之间",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "2点-明天4点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2点-明天4点",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "昨晚",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "昨晚",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "昨天晚上",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "昨天晚上",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "明天上午",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "明天上午",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "上个小时",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "上个小时",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "之后5分钟",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "之后5分钟",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "之前3小时",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "之前3小时",
-      "Type": "datetimerange"
-    }
-  ]
-}
+[
+  {
+    "Input": "明天2点到4点",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "明天2点到4点",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "从昨天下午两点到四点",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "从昨天下午两点到四点",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "从昨天下午两点到明天四点",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "从昨天下午两点到明天四点",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "从昨天5:00-6:00",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "从昨天5:00-6:00",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "1月15号4点和2月3号9点之间",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1月15号4点和2月3号9点之间",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "2点-明天4点",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2点-明天4点",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "昨晚",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "昨晚",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "昨天晚上",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "昨天晚上",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "明天上午",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "明天上午",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "上个小时",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "上个小时",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "之后5分钟",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "之后5分钟",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "之前3小时",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "之前3小时",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  }
 ]

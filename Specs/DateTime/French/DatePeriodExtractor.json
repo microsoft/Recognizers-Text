@@ -1,1794 +1,1958 @@
 [
-{
-  "Input": "Je serai dans déc",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "déc",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors de 4 à 22 ce mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 à 22 ce mois",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 3 jusqu'a 12 Sep hahaha",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 jusqu'a 12 Sep",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 4 à 23 mois prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 à 23 mois prochain",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 4 jusqu'a 23 cette mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 jusqu'a 23 cette mois",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors entre 4 et 22 cette mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 4 et 22 cette mois",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors entre 3 et 12 de Sept hahaha",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 3 et 12 de Sept",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors entre septembre 4 à septembre 8",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " septembre 4 à septembre 8",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors entre Novembre 15 jusqu'a 19",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre Novembre 15 jusqu'a 19",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors entre Novembre 15 avant 19",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre Novembre 15 avant 19",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors entre 4 à 22 ce mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 4 à 22 ce mois",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors entre 4-22 Janv, 2017",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 4-22 Janv, 2017",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors dans cette semaine",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette semaine",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors Septembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Septembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors cette Septembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Septembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors prochain jun",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochain jun",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors juin 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "juin 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors cette weekend",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette weekend",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors le 3 semaine cette mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette mois",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors dans 3 annees",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans 3 annees",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors dans 3 semaines",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans 3 semaines",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors dans 3 mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans 3 mois",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors dernier 3 semaines",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dernier 3 semaines",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors l'annee dernier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "l'annee dernier",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Jan",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jan",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Jan",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Jan",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Jan 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jan 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Jan, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jan, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Fev",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Fev",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Fev",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Fev",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Fev 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Fev 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Fev, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Fev, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Mar",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mar",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Mar",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Mar",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Mar 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mar 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Mar, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mar, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Avr",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Avr",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Avr",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Avr",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Avr 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Avr 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Avr, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Avr, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Mai",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mai",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Mai",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Mai",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Mai 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mai 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Mai, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mai, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Jun",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jun",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Jun",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Jun",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Jun 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jun 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Jun, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jun, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Jul",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jul",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Jul",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Jul",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Jul 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jul 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Jul, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jul, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Aout",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Aout",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Aout",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Aout",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Aout 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Aout 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Aout, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Aout, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Sep",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Sep",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Sep",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Sep",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Sep 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Sep 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Sep, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Sep, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Oct",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Oct",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Oct",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Oct",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Oct 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Oct 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Oct, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Oct, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Nov",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Nov",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Nov",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Nov",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Nov 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Nov 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Nov, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Nov, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans août",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "août",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Février",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Février",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dans Dec",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Dec",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai cette Dec",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Dec",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Dec 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Dec 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Dec, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Dec, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Janvier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Janvier",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Janvier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Janvier",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Janvier 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Janvier 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Janvier, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Janvier, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Fevrier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Fevrier",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Fevrier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Fevrier",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Fevrier 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Fevrier 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Fevrier, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Fevrier, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Mars",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mars",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Mars",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Mars",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Mars 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mars 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Mars, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mars, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Avril",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Avril",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Avril",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Avril",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Avril 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Avril 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Avril, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Avril, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Mai",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mai",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Mai",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Mai",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Juin",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Juin",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Juin",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Juin",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Juin 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Juin 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Juin, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Juin, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Juillet",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Juillet",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Juillet",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Juillet",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Juillet 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Juillet 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Juillet, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Juillet, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Aout",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Aout",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Aout",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Aout",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Septembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Septembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Septembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Septembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Septembre 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Septembre 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Septembre, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Septembre, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Octobre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Octobre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Octobre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Octobre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Octobre 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Octobre 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Octobre, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Octobre, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Novembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Novembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Novembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Novembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Novembre 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Novembre 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Novembre, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Novembre, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai Decembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Decembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai cette Decembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Decembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Decembre 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Decembre 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "J'etais disparue Decembre, 2001",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Decembre, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir dans la weekend",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la weekend",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir aujourd'hui jusqu'a demain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " aujourd'hui jusqu'a demain",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir aujourd'hui au Octobre 22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " aujourd'hui au Octobre 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir Oct. 2 jusqu'a le jour suivant",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Oct. 2 jusqu'a le jour suivant",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir aujourd'hui jusqu'a cette Dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " aujourd'hui jusqu'a cette Dimanche",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir cette vendredi jusqu'a Dimanche prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " cette vendredi jusqu'a Dimanche prochain",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir cette mercredi jusqu'a Dimanche prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " cette mercredi jusqu'a Dimanche prochain",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir de Oct. 2 au Octobre 22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de Oct. 2 au Octobre 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir de 2015/08/12 jusqu'a Octobre 22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 2015/08/12 jusqu'a Octobre 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir de aujourd'hui a lendemain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de aujourd'hui a lendemain",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir de cette vendredi jusqu'a dimanche prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de cette vendredi jusqu'a dimanche prochain",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir entre Oct. 2 et Octobre 22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Oct. 2 et Octobre 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir Novembre 19-20",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Novembre 19-20",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir Novembre 19 a 20",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Novembre 19 a 20",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir Novembre entre 19 et 20",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Novembre entre 19 et 20",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir le troisieme quart de 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le troisieme quart de 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir le troisieme quart de cette l'annee",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le troisieme quart de cette l'annee",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 2016 le troisieme quarts",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016 le troisieme quarts",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 2015.3",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015.3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 2015-3",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015-3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 2015/3",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015/3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 3/2015",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3/2015",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir le troisieme semaine de 2027",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le troisieme semaine de 2027",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "semaine de 15 septembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "semaine de 15 septembre",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "mois de septembre.15",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mois de septembre.15",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir cette été",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette été",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir le été",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le été",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir été",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "été",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir été 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "été 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir été de 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "été de 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir prochain printemps",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochain printemps",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir derniere printemps",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "derniere printemps",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "prochain mois fette",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochain mois",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "cette mois fette",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette mois",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11 / 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11 / 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11/ 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11/ 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11 /2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11 /2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11-2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11-2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11  - 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11  - 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016 / 11",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016 / 11",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016/11",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016/11",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016 - 11",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016 - 11",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016-11",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016-11",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016  -11",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016  -11",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti Septembre 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Septembre 2016",
-      "Type": "daterange"
-    }
-  ]
-}
+  {
+    "Input": "Je serai dans déc",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "déc",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors de 4 à 22 ce mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 à 22 ce mois",
+        "Type": "daterange",
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors 3 jusqu'a 12 Sep hahaha",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 jusqu'a 12 Sep",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors 4 à 23 mois prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 à 23 mois prochain",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors 4 jusqu'a 23 cette mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 jusqu'a 23 cette mois",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 4 et 22 cette mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "entre 4 et 22 cette mois",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 3 et 12 de Sept hahaha",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "entre 3 et 12 de Sept",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre septembre 4 à septembre 8",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " septembre 4 à septembre 8",
+        "Type": "daterange",
+        "Start": 21,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre Novembre 15 jusqu'a 19",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "entre Novembre 15 jusqu'a 19",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre Novembre 15 avant 19",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "entre Novembre 15 avant 19",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 4 à 22 ce mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "entre 4 à 22 ce mois",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors entre 4-22 Janv, 2017",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "entre 4-22 Janv, 2017",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors dans cette semaine",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Start": 21,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors Septembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Septembre",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors cette Septembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Septembre",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors prochain jun",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochain jun",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors juin 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "juin 2016",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors cette weekend",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette weekend",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors le 3 semaine cette mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette mois",
+        "Type": "daterange",
+        "Start": 29,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors dans 3 annees",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans 3 annees",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors dans 3 semaines",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans 3 semaines",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors dans 3 mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans 3 mois",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors dernier 3 semaines",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dernier 3 semaines",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors l'annee dernier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "l'annee dernier",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Jan",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jan",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Jan",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Jan",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Jan 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jan 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Jan, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jan, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Fev",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Fev",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Fev",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Fev",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Fev 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Fev 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Fev, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Fev, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Mar",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mar",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Mar",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Mar",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Mar 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mar 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Mar, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mar, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Avr",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Avr",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Avr",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Avr",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Avr 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Avr 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Avr, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Avr, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Mai",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mai",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Mai",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Mai",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Mai 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mai 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Mai, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mai, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Jun",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jun",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Jun",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Jun",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Jun 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jun 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Jun, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jun, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Jul",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jul",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Jul",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Jul",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Jul 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jul 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Jul, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jul, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Aout",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Aout",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Aout",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Aout",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Aout 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Aout 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Aout, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Aout, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Sep",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Sep",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Sep",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Sep",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Sep 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Sep 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Sep, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Sep, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Oct",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Oct",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Oct",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Oct",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Oct 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Oct 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Oct, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Oct, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Nov",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Nov",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Nov",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Nov",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Nov 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Nov 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Nov, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Nov, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans août",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "août",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Février",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Février",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dans Dec",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Dec",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "je vai cette Dec",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Dec",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Dec 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Dec 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Dec, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Dec, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Janvier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Janvier",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Janvier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Janvier",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Janvier 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Janvier 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Janvier, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Janvier, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Fevrier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Fevrier",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Fevrier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Fevrier",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Fevrier 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Fevrier 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Fevrier, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Fevrier, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Mars",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mars",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Mars",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Mars",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Mars 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mars 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Mars, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mars, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Avril",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Avril",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Avril",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Avril",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Avril 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Avril 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Avril, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Avril, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Mai",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mai",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Mai",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Mai",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Juin",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Juin",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Juin",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Juin",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Juin 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Juin 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Juin, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Juin, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Juillet",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Juillet",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Juillet",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Juillet",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Juillet 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Juillet 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Juillet, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Juillet, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Aout",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Aout",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Aout",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Aout",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Septembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Septembre",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Septembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Septembre",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Septembre 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Septembre 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Septembre, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Septembre, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Octobre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Octobre",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Octobre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Octobre",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Octobre 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Octobre 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Octobre, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Octobre, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Novembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Novembre",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Novembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Novembre",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Novembre 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Novembre 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Novembre, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Novembre, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je serai Decembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Decembre",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je vai cette Decembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Decembre",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Decembre 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Decembre 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "J'etais disparue Decembre, 2001",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Decembre, 2001",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir dans la weekend",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la weekend",
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir aujourd'hui jusqu'a demain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " aujourd'hui jusqu'a demain",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir aujourd'hui au Octobre 22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " aujourd'hui au Octobre 22",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir Oct. 2 jusqu'a le jour suivant",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Oct. 2 jusqu'a le jour suivant",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir aujourd'hui jusqu'a cette Dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " aujourd'hui jusqu'a cette Dimanche",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir cette vendredi jusqu'a Dimanche prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " cette vendredi jusqu'a Dimanche prochain",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir cette mercredi jusqu'a Dimanche prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " cette mercredi jusqu'a Dimanche prochain",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir de Oct. 2 au Octobre 22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de Oct. 2 au Octobre 22",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir de 2015/08/12 jusqu'a Octobre 22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de 2015/08/12 jusqu'a Octobre 22",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir de aujourd'hui a lendemain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de aujourd'hui a lendemain",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir de cette vendredi jusqu'a dimanche prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de cette vendredi jusqu'a dimanche prochain",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir entre Oct. 2 et Octobre 22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Oct. 2 et Octobre 22",
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir Novembre 19-20",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Novembre 19-20",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir Novembre 19 a 20",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Novembre 19 a 20",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir Novembre entre 19 et 20",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Novembre entre 19 et 20",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir le troisieme quart de 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le troisieme quart de 2016",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir le troisieme quart de cette l'annee",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le troisieme quart de cette l'annee",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 2016 le troisieme quarts",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016 le troisieme quarts",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 2015.3",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015.3",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 2015-3",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015-3",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 2015/3",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015/3",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 3/2015",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3/2015",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir le troisieme semaine de 2027",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le troisieme semaine de 2027",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "semaine de 15 septembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "semaine de 15 septembre",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "mois de septembre.15",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mois de septembre.15",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir cette été",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette été",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir le été",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le été",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir été",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "été",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir été 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "été 2016",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir été de 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "été de 2016",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir prochain printemps",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochain printemps",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir derniere printemps",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "derniere printemps",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "prochain mois fette",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochain mois",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "cette mois fette",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette mois",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 11 / 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11 / 2016",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 11/ 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11/ 2016",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 11 /2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11 /2016",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 11-2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 11  - 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11  - 2016",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016 / 11",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016 / 11",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016/11",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016/11",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016 - 11",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016 - 11",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016-11",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016  -11",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016  -11",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti Septembre 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Septembre 2016",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  }
 ]

@@ -402,4 +402,7 @@ RoundNumberMap: !dictionary
     m: 1000000
     g: 1000000000
     t: 1000000000000
+AmbiguousFractionConnectorsRegex: !simpleRegex
+# TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 ...

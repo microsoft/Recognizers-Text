@@ -1,981 +1,1068 @@
 [
-{
-  "Input": "Je reviendrai le 2 décembre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 décembre",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le 27e",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le 27e",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le seconde!",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le seconde",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le vingt deux?",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le vingt deux",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai Mardi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai mar. connes nouvelles.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mar",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai Mar",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mar",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai Mercredi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mercredi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai Vendredi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Vendredi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le vendredi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vendredi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai aujourd'hui",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "aujourd'hui",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai lendemain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "lendemain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai hier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hier",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai avant hier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "avant hier",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai apres demain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "apres demain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le jour suivant",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le jour suivant",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette vendredi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette vendredi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dimanche prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dimanche prochain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dimanche derniere",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dimanche derniere",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dernier jour",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dernier jour",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai vendredi cette semaine",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vendredi cette semaine",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 15 Juin 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 Juin 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sixieme Dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Dimanche",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dixieme Lundi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Lundi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le 20e mois prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20e mois prochain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le 20e cette mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20e cette mois",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai seconde Dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "seconde Dimanche",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 1er Dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1er Dimanche",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai troisieme Mardi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "troisieme Mardi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cinquieme Dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cinquieme Dimanche",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le 27",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le 27.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le 27!",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le 27 .",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le seconde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le seconde",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retourne pour le vingt deux",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pour le vingt deux",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens en 15",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 22 avril",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22 avril",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens Jan-1",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jan-1",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens Jan/1",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Jan/1",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le 2 Février",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 Février",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le 2 Août",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 Août",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le 2 Octobre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 Octobre",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le 12 janvier 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 janvier 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "J'y reviendrai 12 janvier 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 janvier 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le lundi 12 janvier 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "lundi 12 janvier 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 22/02/2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22/02/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 21/04/2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 21/04/16",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 9-18-15",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9-18-15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur 4.22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur 4-22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur    4/22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur 22/04",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur       4/22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur 2015/08/12",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015/08/12",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur 11/12,2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11/12,2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 11/12,16",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11/12,16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 1er Jan",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1er Jan",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 1-Jan",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1-Jan",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 28-Nov",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "28-Nov",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens Mer 22 Janvier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mer 22 Janvier",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens 1er Janv",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1er Janv",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retournerai Vendredi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Vendredi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais revenier vendredi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vendredi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens le vendredi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vendredi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens les vendredis",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vendredis",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais y retourner demain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "J'ai alle hier ",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hier",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais revenir avant-hier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "avant-hier",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai retourner lendemain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "lendemain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vai retourner apres-demain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "apres-demain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens le lendemain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "lendemain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "je vai retourner cette vendredi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette vendredi",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "J'y reviendrai cette dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette dimanche",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je suis retournee dimanche dernier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dimanche dernier",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retournerai vendredi cette semaine",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vendredi cette semaine",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retournerai dimanche la semaine prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dimanche la semaine prochain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retournerai dimanche la semaine dernier",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dimanche la semaine dernier",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retournerai 15 Juin 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 Juin 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "un baseball le 10 mai",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10 mai",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retournerai le premier vendredi de juillet",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le premier vendredi de juillet",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retournerai le premier vendredi cette mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le premier vendredi cette mois",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retournerai le premier samedi de Dec",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le premier samedi de Dec",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "deux semaines plus tard, chris est partie",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "deux semaines plus tard",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Je retounerai vendredi prochain",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vendredi prochain",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Qui ai-je envoye un mois il y a",
-  "NotSupportedByDesign": "python",
-  "NotSupported": "javascript,dotnet",
-  "Results": [
-    {
-      "Text": "un mois il y a",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Êtes-vous libre le 13.5.2015",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "13.5.2015",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Êtes-vous libre le 2015.5.13",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015.5.13",
-      "Type": "date"
-    }
-  ]
-}
+  {
+    "Input": "Je reviendrai le 2 décembre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 décembre",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27e",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le 27e",
+        "Type": "date",
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le seconde!",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le seconde",
+        "Type": "date",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le vingt deux?",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le vingt deux",
+        "Type": "date",
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Mardi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai mar. connes nouvelles.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mar",
+        "Type": "date",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Mar",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mar",
+        "Type": "date",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Mercredi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mercredi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Vendredi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Vendredi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le vendredi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vendredi",
+        "Type": "date",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai aujourd'hui",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "aujourd'hui",
+        "Type": "date",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai lendemain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "lendemain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai hier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "hier",
+        "Type": "date",
+        "Start": 14,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai avant hier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "avant hier",
+        "Type": "date",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai apres demain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "apres demain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le jour suivant",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le jour suivant",
+        "Type": "date",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette vendredi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette vendredi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dimanche prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dimanche prochain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dimanche derniere",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dimanche derniere",
+        "Type": "date",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dernier jour",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dernier jour",
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai vendredi cette semaine",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vendredi cette semaine",
+        "Type": "date",
+        "Start": 14,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 15 Juin 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15 Juin 2016",
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai sixieme Dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Dimanche",
+        "Type": "date",
+        "Start": 22,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dixieme Lundi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Lundi",
+        "Type": "date",
+        "Start": 22,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 20e mois prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "20e mois prochain",
+        "Type": "date",
+        "Start": 17,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 20e cette mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "20e cette mois",
+        "Type": "date",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai seconde Dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "seconde Dimanche",
+        "Type": "date",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 1er Dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1er Dimanche",
+        "Type": "date",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai troisieme Mardi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "troisieme Mardi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cinquieme Dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cinquieme Dimanche",
+        "Type": "date",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27!",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le 27 .",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le seconde",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le seconde",
+        "Type": "date",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retourne pour le vingt deux",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "pour le vingt deux",
+        "Type": "date",
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens en 15",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Start": 14,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai 22 avril",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "22 avril",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens Jan-1",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jan-1",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens Jan/1",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Jan/1",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 2 Février",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 Février",
+        "Type": "date",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 2 Août",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 Août",
+        "Type": "date",
+        "Start": 17,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 2 Octobre",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2 Octobre",
+        "Type": "date",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 12 janvier 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "12 janvier 2016",
+        "Type": "date",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "J'y reviendrai 12 janvier 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "12 janvier 2016",
+        "Type": "date",
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le lundi 12 janvier 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "lundi 12 janvier 2016",
+        "Type": "date",
+        "Start": 17,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 22/02/2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "22/02/2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 21/04/2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 21/04/16",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 9-18-15",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 4.22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 15,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 4-22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Start": 15,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur    4/22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 18,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 22/04",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur       4/22",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 21,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 2015/08/12",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens sur 11/12,2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11/12,2016",
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 11/12,16",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11/12,16",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 1er Jan",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1er Jan",
+        "Type": "date",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 1-Jan",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1-Jan",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 28-Nov",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "28-Nov",
+        "Type": "date",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens Mer 22 Janvier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mer 22 Janvier",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 1er Janv",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1er Janv",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai Vendredi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Vendredi",
+        "Type": "date",
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je vais revenier vendredi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vendredi",
+        "Type": "date",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens le vendredi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vendredi",
+        "Type": "date",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens les vendredis",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vendredis",
+        "Type": "date",
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais y retourner demain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demain",
+        "Type": "date",
+        "Start": 20,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "J'ai alle hier ",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "hier",
+        "Type": "date",
+        "Start": 10,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Je vais revenir avant-hier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "avant-hier",
+        "Type": "date",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vai retourner lendemain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "lendemain",
+        "Type": "date",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vai retourner apres-demain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "apres-demain",
+        "Type": "date",
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens le lendemain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "lendemain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "je vai retourner cette vendredi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette vendredi",
+        "Type": "date",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "J'y reviendrai cette dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette dimanche",
+        "Type": "date",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je suis retournee dimanche dernier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dimanche dernier",
+        "Type": "date",
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai vendredi cette semaine",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vendredi cette semaine",
+        "Type": "date",
+        "Start": 15,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai dimanche la semaine prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dimanche la semaine prochain",
+        "Type": "date",
+        "Start": 15,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai dimanche la semaine dernier",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dimanche la semaine dernier",
+        "Type": "date",
+        "Start": 15,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai 15 Juin 2016",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15 Juin 2016",
+        "Type": "date",
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "un baseball le 10 mai",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "10 mai",
+        "Type": "date",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai le premier vendredi de juillet",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le premier vendredi de juillet",
+        "Type": "date",
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai le premier vendredi cette mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le premier vendredi cette mois",
+        "Type": "date",
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai le premier samedi de Dec",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le premier samedi de Dec",
+        "Type": "date",
+        "Start": 15,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "deux semaines plus tard, chris est partie",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "deux semaines plus tard",
+        "Type": "date",
+        "Start": 0,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je retounerai vendredi prochain",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "vendredi prochain",
+        "Type": "date",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Qui ai-je envoye un mois il y a",
+    "NotSupported": "javascript, dotnet, python",
+    "Results": [
+      {
+        "Text": "un mois il y a",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Êtes-vous libre le 13.5.2015",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Êtes-vous libre le 2015.5.13",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  }
 ]

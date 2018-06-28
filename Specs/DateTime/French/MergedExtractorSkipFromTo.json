@@ -1,76 +1,74 @@
-[{
-  "Input": "changer la reunion du 9am au 11am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 22,
-      "Length": 3,
-      "Text": "9am",
-      "Type": "time"
-    },
-    {
-      "Start": 29,
-      "Length": 4,
-      "Text": "11am",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "changer la reunion du 19 Nov au 23 Nov",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 22,
-      "Length": 6,
-      "Text": "19 Nov",
-      "Type": "date"
-    },
-    {
-      "Start": 32,
-      "Length": 6,
-      "Text": "23 Nov",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "changer la reunion du 19 Nov à 23 Nov",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 22,
-      "Length": 6,
-      "Text": "19 Nov",
-      "Type": "date"
-    },
-    {
-      "Start": 31,
-      "Length": 6,
-      "Text": "23 Nov",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "changer la reunion du 19 Nov a 23 Nov",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 22,
-      "Length": 6,
-      "Text": "19 Nov",
-      "Type": "date"
-    },
-    {
-      "Start": 31,
-      "Length": 6,
-      "Text": "23 Nov",
-      "Type": "date"
-    }
-  ]
-}
+[
+  {
+    "Input": "changer la reunion du 9am au 11am",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Start": 22,
+        "Length": 3,
+        "Text": "9am",
+        "Type": "time"
+      },
+      {
+        "Start": 29,
+        "Length": 4,
+        "Text": "11am",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "changer la reunion du 19 Nov au 23 Nov",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Start": 22,
+        "Length": 6,
+        "Text": "19 Nov",
+        "Type": "date"
+      },
+      {
+        "Start": 32,
+        "Length": 6,
+        "Text": "23 Nov",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "changer la reunion du 19 Nov à 23 Nov",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Start": 22,
+        "Length": 6,
+        "Text": "19 Nov",
+        "Type": "date"
+      },
+      {
+        "Start": 31,
+        "Length": 6,
+        "Text": "23 Nov",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "changer la reunion du 19 Nov a 23 Nov",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Start": 22,
+        "Length": 6,
+        "Text": "19 Nov",
+        "Type": "date"
+      },
+      {
+        "Start": 31,
+        "Length": 6,
+        "Text": "23 Nov",
+        "Type": "date"
+      }
+    ]
+  }
 ]

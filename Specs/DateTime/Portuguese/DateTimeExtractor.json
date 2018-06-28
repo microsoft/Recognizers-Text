@@ -1,745 +1,746 @@
-[{
-  "Input": "Vou voltar agora",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "agora",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar assim que possível",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "assim que possível",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vamos voltar assim que possamos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "assim que possamos",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar o mais rápido possível",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "o mais rápido possível",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar o mais cedo possível",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "o mais cedo possível",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar agora mesmo",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "agora mesmo",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar logo agora",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "logo agora",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar neste momento",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "neste momento",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar no 15 as 8:00",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 as 8:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar no 15 as 8:00:30",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 as 8:00:30",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar no 15, 8pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15, 8pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 04/21/2016, 8:00pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "04/21/2016, 8:00pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 04/21/2016, 8:00:13pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "04/21/2016, 8:00:13pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 23 de Out às sete",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "23 de Out às sete",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 14 de Outubro 8:00am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de Outubro 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 14 de Outubro as 8:00:00am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de Outubro as 8:00:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 14 de Outubro, 8:00am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de Outubro, 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 14 de Outubro, 8:00:01am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de Outubro, 8:00:01am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar amanhã 8:00am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar amanhã cerca das 8:00am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã cerca das 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar amanhã por volta das 8:00am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã por volta das 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar amanhã pelas 8:00am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã pelas 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar amanhã umas 8:00:05am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã umas 8:00:05am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar na próxima sexta-feira as tres e meia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próxima sexta-feira as tres e meia",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 5 de Maio, 2016, 20 minutos depois das 8 da tarde",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5 de Maio, 2016, 20 minutos depois das 8 da tarde",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 8pm do 15",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm do 15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as sete no 15",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "sete no 15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vo voltar as 8pm do próximo domingo",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm do próximo domingo",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as 8pm de hoje",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm de hoje",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 19:00, 2016-12-22",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19:00, 2016-12-22",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as 7 em ponto amanha",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7 em ponto amanha",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar amanhã pela manhã às 7",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã pela manhã às 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 5:00 do domingo a tarde",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5:00 do domingo a tarde",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as cinco e vinte amanha de manha",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cinco e vinte amanha de manha",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as cinco e vinte da manha de amanha",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cinco e vinte da manha de amanha",
-      "Type": "datetime"
-    }
-  ]
-}
-
-,
-{
-  "Input": "Vou voltar 14 de outubro 8:00",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de outubro 8:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as 7, esta manhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7, esta manhã",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar esta noite as 8",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noite as 8",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as 8pm da tarde, Segunda-feira",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm da tarde, Segunda-feira",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 8pm da noite, 1o de Janeiro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm da noite, 1o de Janeiro",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 8pm da noite, 1 de Janeiro",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm da noite, 1 de Janeiro",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as 10pm desta noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10pm desta noite",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as 10pm esta noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10pm esta noite",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 8am de amanha",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8am de amanha",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 8pm desta tarde",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm desta tarde",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltei esta manhã às 7",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta manhã às 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltei esta manhã 7am",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta manhã 7am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltei esta manha as sete",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta manha as sete",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvtei esta manha as 7:00",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta manha as 7:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar esta noite as 7",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noite as 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltei esta noite as 7",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noite as 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "para duas pessoas esta noite às 9:30 pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noite às 9:30 pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "para duas pessoas esta noite às 9:30:31 pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noite às 9:30:31 pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei no final do dia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "no final do dia",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei ao fim do dia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ao fim do dia",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei ao fim do dia de amanha",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ao fim do dia de amanha",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei amanhã ao terminar o dia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã ao terminar o dia",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei no fim do domingo",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "no fim do domingo",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar dia 5 as 4 a.m.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dia 5 as 4 a.m.",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 2016-12-16T12:23:59",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016-12-16T12:23:59",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 8am de amanha",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8am de amanha",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar 8pm do dia 15",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm do dia 15",
-      "Type": "datetime"
-    }
-  ]
-}
+[
+  {
+    "Input": "Vou voltar agora",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "agora",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar assim que possível",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "assim que possível",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Vamos voltar assim que possamos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "assim que possamos",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar o mais rápido possível",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "o mais rápido possível",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar o mais cedo possível",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "o mais cedo possível",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar agora mesmo",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "agora mesmo",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar logo agora",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "logo agora",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar neste momento",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "neste momento",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar no 15 as 8:00",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15 as 8:00",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar no 15 as 8:00:30",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15 as 8:00:30",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar no 15, 8pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15, 8pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 04/21/2016, 8:00pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "04/21/2016, 8:00pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 04/21/2016, 8:00:13pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "04/21/2016, 8:00:13pm",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 23 de Out às sete",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "23 de Out às sete",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 14 de Outubro 8:00am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "14 de Outubro 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 14 de Outubro as 8:00:00am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "14 de Outubro as 8:00:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 14 de Outubro, 8:00am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "14 de Outubro, 8:00am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 14 de Outubro, 8:00:01am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "14 de Outubro, 8:00:01am",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar amanhã 8:00am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã 8:00am",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar amanhã cerca das 8:00am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã cerca das 8:00am",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar amanhã por volta das 8:00am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã por volta das 8:00am",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar amanhã pelas 8:00am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã pelas 8:00am",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar amanhã umas 8:00:05am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã umas 8:00:05am",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar na próxima sexta-feira as tres e meia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "próxima sexta-feira as tres e meia",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 5 de Maio, 2016, 20 minutos depois das 8 da tarde",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "5 de Maio, 2016, 20 minutos depois das 8 da tarde",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 49
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 8pm do 15",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8pm do 15",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as sete no 15",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "sete no 15",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Vo voltar as 8pm do próximo domingo",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8pm do próximo domingo",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as 8pm de hoje",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8pm de hoje",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 19:00, 2016-12-22",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19:00, 2016-12-22",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as 7 em ponto amanha",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "7 em ponto amanha",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar amanhã pela manhã às 7",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã pela manhã às 7",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 5:00 do domingo a tarde",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "5:00 do domingo a tarde",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as cinco e vinte amanha de manha",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cinco e vinte amanha de manha",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as cinco e vinte da manha de amanha",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cinco e vinte da manha de amanha",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 14 de outubro 8:00",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "14 de outubro 8:00",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as 7, esta manhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "7, esta manhã",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar esta noite as 8",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta noite as 8",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as 8pm da tarde, Segunda-feira",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8pm da tarde, Segunda-feira",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 8pm da noite, 1o de Janeiro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8pm da noite, 1o de Janeiro",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 8pm da noite, 1 de Janeiro",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8pm da noite, 1 de Janeiro",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as 10pm desta noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "10pm desta noite",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar as 10pm esta noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "10pm esta noite",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 8am de amanha",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8am de amanha",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 8pm desta tarde",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8pm desta tarde",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Voltei esta manhã às 7",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta manhã às 7",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Voltei esta manhã 7am",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta manhã 7am",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Voltei esta manha as sete",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta manha as sete",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Volvtei esta manha as 7:00",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta manha as 7:00",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar esta noite as 7",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta noite as 7",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Voltei esta noite as 7",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta noite as 7",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "para duas pessoas esta noite às 9:30 pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta noite às 9:30 pm",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "para duas pessoas esta noite às 9:30:31 pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta noite às 9:30:31 pm",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei no final do dia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "no final do dia",
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei ao fim do dia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "ao fim do dia",
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei ao fim do dia de amanha",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "ao fim do dia de amanha",
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei amanhã ao terminar o dia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã ao terminar o dia",
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei no fim do domingo",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "no fim do domingo",
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar dia 5 as 4 a.m.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dia 5 as 4 a.m.",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 2016-12-16T12:23:59",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2016-12-16T12:23:59",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 8am de amanha",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8am de amanha",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar 8pm do dia 15",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "8pm do dia 15",
+        "Type": "datetime",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  }
 ]

@@ -1,456 +1,485 @@
-[{
-  "Input": "时间从一月十日到十二日",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从一月十日到十二日",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "时间从一月19到20日",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从一月19到20日",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "从一月十日到20日",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从一月十日到20日",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "明年四月",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "明年四月",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "我们去年5月见过",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "去年5月",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "下周末",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下周末",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "会议在下周",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下周",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "下个月完工",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下个月",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "下周如何",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下周",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "明年",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "明年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "奥运会在2008年",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2008年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "十月的第一周是国庆节",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "十月的第一周",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "三月二十八日到四月15日",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "三月二十八日到四月15日",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "前1周",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "前1周",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "上1月",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "上1月",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "下1年",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下1年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "下1天",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下1天",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "今年夏天",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "今年夏天",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "今年第一季度",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "今年第一季度",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "上世纪90年代",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "上世纪90年代",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "本世纪20年代",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "本世纪20年代",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "20世纪80年代",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20世纪80年代",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "在50年代的时候",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "50年代",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "19世纪70年代，他出生了",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19世纪70年代",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "十九世纪七十年代",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "十九世纪七十年代",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "九十年代",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "九十年代",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "在789年",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "789年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "时间从15年一月十日到十二日",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从15年一月十日到十二日",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "2009 年 到 2010 年，小麦产量翻了一番",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2009 年 到 2010 年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "近 三 年，犯罪数量逐步下降",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "近 三 年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "比 较 一 下 2009年，我们可以看出变化是很明显的",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2009年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "100只是一个数字",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "Input": "1499只是一个数字",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "Input": "2101只是一个数字",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "Input": "2018看起来是一个年份",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2018",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "2100看起来是一个年份",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2100",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "1500看起来是一个年份",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1500",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "他07年以后就没再来过学校",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "07年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "他07 年以前就毕业了",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "07 年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "08年奥运会在北京举办",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "08年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "零八年奥运会在北京举办",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "零八年",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "2008 年 奥运会在北京举办",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2008 年",
-      "Type": "daterange"
-    }
-  ]
-}
+[
+  {
+    "Input": "时间从一月十日到十二日",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "从一月十日到十二日",
+        "Type": "daterange",
+        "Start": 2,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "时间从一月19到20日",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "从一月19到20日",
+        "Type": "daterange",
+        "Start": 2,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "从一月十日到20日",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "从一月十日到20日",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "明年四月",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "明年四月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "我们去年5月见过",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "去年5月",
+        "Type": "daterange",
+        "Start": 2,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "下周末",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "下周末",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "会议在下周",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "下周",
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "下个月完工",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "下个月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "下周如何",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "下周",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "明年",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "明年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "奥运会在2008年",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2008年",
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "十月的第一周是国庆节",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "十月的第一周",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "三月二十八日到四月15日",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "三月二十八日到四月15日",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "前1周",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "前1周",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "上1月",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "上1月",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "下1年",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "下1年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "下1天",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "下1天",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "今年夏天",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "今年夏天",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "今年第一季度",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "今年第一季度",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "上世纪90年代",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "上世纪90年代",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "本世纪20年代",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "本世纪20年代",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "20世纪80年代",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20世纪80年代",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "在50年代的时候",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "50年代",
+        "Type": "daterange",
+        "Start": 1,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "19世纪70年代，他出生了",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "19世纪70年代",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "十九世纪七十年代",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "十九世纪七十年代",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "九十年代",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "九十年代",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "在789年",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "789年",
+        "Type": "daterange",
+        "Start": 1,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "时间从15年一月十日到十二日",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "从15年一月十日到十二日",
+        "Type": "daterange",
+        "Start": 2,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "2009 年 到 2010 年，小麦产量翻了一番",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2009 年 到 2010 年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "近 三 年，犯罪数量逐步下降",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "近 三 年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "比 较 一 下 2009年，我们可以看出变化是很明显的",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2009年",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "100只是一个数字",
+    "NotSupported": "python",
+    "Results": []
+  },
+  {
+    "Input": "1499只是一个数字",
+    "NotSupported": "python",
+    "Results": []
+  },
+  {
+    "Input": "2101只是一个数字",
+    "NotSupported": "python",
+    "Results": []
+  },
+  {
+    "Input": "2018看起来是一个年份",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2018",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "2100看起来是一个年份",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2100",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "1500看起来是一个年份",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "1500",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "他07年以后就没再来过学校",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "07年",
+        "Type": "daterange",
+        "Start": 1,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "他07 年以前就毕业了",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "07 年",
+        "Type": "daterange",
+        "Start": 1,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "08年奥运会在北京举办",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "08年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "零八年奥运会在北京举办",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "零八年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "2008 年 奥运会在北京举办",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2008 年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  }
 ]

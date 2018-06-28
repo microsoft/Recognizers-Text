@@ -142,6 +142,9 @@ CurrencyRegex: !simpleRegex
 NumberWithSuffixPercentage: !nestedRegex
   def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\b)
   references: [ BaseNumbers.NumberReplaceToken ]
+AmbiguousFractionConnectorsRegex: !simpleRegex
+# TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 #Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: sobre

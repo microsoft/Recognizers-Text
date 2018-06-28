@@ -1,10 +1,10 @@
-[{
+[
+  {
     "Input": "Ich bin vom 3. bis zum 12. September weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 3. bis zum 12. September",
@@ -19,7 +19,9 @@
             "startDate": "2016-09-03",
             "endDate": "2016-09-12"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 28
       }
     ]
   },
@@ -28,8 +30,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-01T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 4. bis zum 23.",
@@ -44,7 +45,9 @@
             "startDate": "2015-11-04",
             "endDate": "2015-11-23"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 18
       }
     ]
   },
@@ -53,8 +56,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-01T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten Monat vom 4. bis zum 23.",
@@ -69,16 +71,18 @@
             "startDate": "2016-12-04",
             "endDate": "2016-12-23"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 33
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich bin diesen Monat vom 4. bis zum 22. weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Monat vom 4. bis zum 22.",
@@ -93,7 +97,9 @@
             "startDate": "2016-11-04",
             "endDate": "2016-11-22"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 31
       }
     ]
   },
@@ -102,8 +108,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diese Woche",
@@ -118,7 +123,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -127,8 +134,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Letzten September",
@@ -143,7 +149,9 @@
             "startDate": "2015-09-01",
             "endDate": "2015-10-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -152,8 +160,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "der letzten Woche im Juli",
@@ -168,7 +175,9 @@
             "startDate": "2016-07-25",
             "endDate": "2016-08-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 25
       }
     ]
   },
@@ -177,8 +186,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diese Woche",
@@ -193,7 +201,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -202,8 +212,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 1. Januar bis Mittwoch dem 22. Januar",
@@ -218,7 +227,9 @@
             "startDate": "2016-01-01",
             "endDate": "2016-01-22"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 41
       }
     ]
   },
@@ -227,8 +238,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Zwischen dem 2. und dem 22. Oktober",
@@ -243,7 +253,9 @@
             "startDate": "2016-10-02",
             "endDate": "2016-10-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 35
       }
     ]
   },
@@ -252,8 +264,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im November zwischen dem 19. und dem 20.",
@@ -268,7 +279,9 @@
             "startDate": "2015-11-19",
             "endDate": "2015-11-20"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 40
       }
     ]
   },
@@ -277,8 +290,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Rest der Woche",
@@ -293,7 +305,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-13"
           }
-        }
+        },
+        "Start": 28,
+        "Length": 14
       }
     ]
   },
@@ -302,8 +316,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächstes Jahr",
@@ -318,7 +331,9 @@
             "startDate": "2017-01-01",
             "endDate": "2018-01-01"
           }
-        }
+        },
+        "Start": 24,
+        "Length": 13
       }
     ]
   },
@@ -327,7 +342,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "zwischen dem 4. und dem 22. Januar 1995",
@@ -342,7 +357,9 @@
             "startDate": "1995-01-04",
             "endDate": "1995-01-22"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 39
       }
     ]
   },
@@ -351,7 +368,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "diese Woche",
@@ -366,7 +383,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 11
       }
     ]
   },
@@ -375,7 +394,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "nächsten Woche",
@@ -390,7 +409,9 @@
             "startDate": "2016-11-14",
             "endDate": "2016-11-21"
           }
-        }
+        },
+        "Start": 31,
+        "Length": 14
       }
     ]
   },
@@ -399,7 +420,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "kommende Woche",
@@ -414,7 +435,9 @@
             "startDate": "2016-11-14",
             "endDate": "2016-11-21"
           }
-        }
+        },
+        "Start": 30,
+        "Length": 14
       }
     ]
   },
@@ -423,7 +446,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "kommenden Woche",
@@ -438,7 +461,9 @@
             "startDate": "2016-11-14",
             "endDate": "2016-11-21"
           }
-        }
+        },
+        "Start": 37,
+        "Length": 15
       }
     ]
   },
@@ -447,7 +472,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "Letzten September",
@@ -462,7 +487,9 @@
             "startDate": "2015-09-01",
             "endDate": "2015-10-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -471,7 +498,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "der dritten Woche des Monats",
@@ -486,7 +513,9 @@
             "startDate": "2016-11-21",
             "endDate": "2016-11-28"
           }
-        }
+        },
+        "Start": 19,
+        "Length": 28
       }
     ]
   },
@@ -495,7 +524,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "der letzten Woche im Juli",
@@ -510,7 +539,9 @@
             "startDate": "2016-07-25",
             "endDate": "2016-08-01"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 25
       }
     ]
   },
@@ -519,7 +550,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "In zwei Wochen",
@@ -534,7 +565,9 @@
             "startDate": "2016-11-15",
             "endDate": "2016-11-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
@@ -543,7 +576,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "nächsten 2 Tagen",
@@ -558,17 +591,18 @@
             "startDate": "2016-11-08",
             "endDate": "2016-11-10"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 16
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "in den letzten paar Tagen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "letzten paar Tagen",
@@ -583,17 +617,18 @@
             "startDate": "2016-11-04",
             "endDate": "2016-11-07"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 18
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "diese Woche",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "diese Woche",
@@ -608,7 +643,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -617,7 +654,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "dieses Wochenende",
@@ -632,7 +669,9 @@
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -641,7 +680,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "heute bis morgen",
@@ -656,7 +695,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-08"
           }
-        }
+        },
+        "Start": 21,
+        "Length": 16
       }
     ]
   },
@@ -665,7 +706,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "Rest der Woche",
@@ -680,7 +721,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-13"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 14
       }
     ]
   },
@@ -689,7 +732,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "Rest dieser Woche",
@@ -704,7 +747,9 @@
             "startDate": "2016-11-07",
             "endDate": "2016-11-13"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 17
       }
     ]
   },
@@ -713,7 +758,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "Wochenende",
@@ -728,17 +773,18 @@
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Dieses Wochenende bin ich nicht hier.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "Dieses Wochenende",
@@ -753,7 +799,9 @@
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -762,7 +810,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "Nächstes Jahr",
@@ -777,7 +825,9 @@
             "startDate": "2017-01-01",
             "endDate": "2018-01-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -786,7 +836,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "nächsten 3 Tage",
@@ -801,7 +851,9 @@
             "startDate": "2016-11-08",
             "endDate": "2016-11-11"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 15
       }
     ]
   },
@@ -810,7 +862,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "nächsten 3 Monate",
@@ -825,17 +877,18 @@
             "startDate": "2016-11-08",
             "endDate": "2017-02-08"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "in den letzten 3 Wochen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "letzten 3 Wochen",
@@ -850,17 +903,18 @@
             "startDate": "2016-10-17",
             "endDate": "2016-11-07"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 16
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Die letzten 3 Jahre waren wirklich anstrengend.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "letzten 3 Jahre",
@@ -875,7 +929,9 @@
             "startDate": "2013-11-07",
             "endDate": "2016-11-07"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 15
       }
     ]
   },
@@ -884,8 +940,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zweitausender",
@@ -900,7 +955,9 @@
             "startDate": "2000-01-01",
             "endDate": "2010-01-01"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 13
       }
     ]
   },
@@ -909,8 +966,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016-05",
@@ -925,7 +981,9 @@
             "startDate": "2016-05-01",
             "endDate": "2016-06-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 7
       }
     ]
   },
@@ -934,8 +992,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016/05",
@@ -950,7 +1007,9 @@
             "startDate": "2016-05-01",
             "endDate": "2016-06-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 7
       }
     ]
   },
@@ -959,8 +1018,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05/2016",
@@ -975,7 +1033,9 @@
             "startDate": "2016-05-01",
             "endDate": "2016-06-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 7
       }
     ]
   },
@@ -984,8 +1044,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05-2016",
@@ -1000,7 +1059,9 @@
             "startDate": "2016-05-01",
             "endDate": "2016-06-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 7
       }
     ]
   },
@@ -1009,8 +1070,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016 -  05",
@@ -1025,7 +1085,9 @@
             "startDate": "2016-05-01",
             "endDate": "2016-06-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 10
       }
     ]
   },
@@ -1034,8 +1096,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016  /05",
@@ -1050,7 +1111,9 @@
             "startDate": "2016-05-01",
             "endDate": "2016-06-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 9
       }
     ]
   },
@@ -1059,8 +1122,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05/  2016",
@@ -1075,7 +1137,9 @@
             "startDate": "2016-05-01",
             "endDate": "2016-06-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 9
       }
     ]
   },
@@ -1084,8 +1148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05 -  2016",
@@ -1100,7 +1163,9 @@
             "startDate": "2016-05-01",
             "endDate": "2016-06-01"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 10
       }
     ]
   }

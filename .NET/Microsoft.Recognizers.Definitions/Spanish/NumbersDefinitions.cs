@@ -328,5 +328,6 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			{ "g", 1000000000 },
 			{ "t", 1000000000000 }
 		};
+		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
 	}
 }

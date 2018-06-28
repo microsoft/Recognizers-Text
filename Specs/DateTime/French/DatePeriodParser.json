@@ -1,1645 +1,1714 @@
-[{
-  "Input": "Je serai dehors 4 au 22 cette mois",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 au 22 cette mois",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-04,2016-11-22,P18D)",
-        "FutureResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
+[
+  {
+    "Input": "Je serai dehors 4 au 22 cette mois",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 au 22 cette mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
-        }
+        "Start": 16,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 3 jusqu'a 12 de Sept hahaha",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 jusqu'a 12 de Sept",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
-        "FutureResolution": {
-          "startDate": "2017-09-03",
-          "endDate": "2017-09-12"
+  {
+    "Input": "Je serai dehors 3 jusqu'a 12 de Sept hahaha",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 jusqu'a 12 de Sept",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-03",
-          "endDate": "2016-09-12"
-        }
+        "Start": 16,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 4 au 23 mois prochain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 au 23 mois prochain",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-12-04,2016-12-23,P19D)",
-        "FutureResolution": {
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
+  {
+    "Input": "Je serai dehors 4 au 23 mois prochain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 au 23 mois prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
-        }
+        "Start": 16,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 4 jusqu'a 23 cette mois",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 jusqu'a 23 cette mois",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-04,2016-11-23,P19D)",
-        "FutureResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-23"
+  {
+    "Input": "Je serai dehors 4 jusqu'a 23 cette mois",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 jusqu'a 23 cette mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-23"
-        }
+        "Start": 16,
+        "Length": 23
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 4 et 22 cette mois",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 et 22 cette mois",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-04,2016-11-22,P18D)",
-        "FutureResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
+  {
+    "Input": "Je serai dehors 4 et 22 cette mois",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 et 22 cette mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
-        }
+        "Start": 16,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 3 et 12 de Sept hahaha",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 et 12 de Sept",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
-        "FutureResolution": {
-          "startDate": "2017-09-03",
-          "endDate": "2017-09-12"
+  {
+    "Input": "Je serai dehors 3 et 12 de Sept hahaha",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 et 12 de Sept",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-03",
-          "endDate": "2016-09-12"
-        }
+        "Start": 16,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors 4 au 22 Janv, 1995",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 au 22 Janv, 1995",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(1995-01-04,1995-01-22,P18D)",
-        "FutureResolution": {
-          "startDate": "1995-01-04",
-          "endDate": "1995-01-22"
+  {
+    "Input": "Je serai dehors 4 au 22 Janv, 1995",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 au 22 Janv, 1995",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "1995-01-04",
-          "endDate": "1995-01-22"
-        }
+        "Start": 16,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors entre septembre 4 jusqu'a septembre 8h",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " septembre 4 jusqu'a septembre 8",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
-        "FutureResolution": {
-          "startDate": "2017-09-04",
-          "endDate": "2017-09-08"
+  {
+    "Input": "Je serai dehors entre septembre 4 jusqu'a septembre 8h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " septembre 4 jusqu'a septembre 8",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
+          "FutureResolution": {
+            "startDate": "2017-09-04",
+            "endDate": "2017-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-04",
+            "endDate": "2016-09-08"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-04",
-          "endDate": "2016-09-08"
-        }
+        "Start": 21,
+        "Length": 32
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors cette semaine",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette semaine",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-W45",
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
+  {
+    "Input": "Je serais dehors cette semaine",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        }
+        "Start": 17,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors Fevrier",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Fevrier",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "XXXX-02",
-        "FutureResolution": {
-          "startDate": "2017-02-01",
-          "endDate": "2017-03-01"
+  {
+    "Input": "Je serais dehors Fevrier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Fevrier",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02",
+          "FutureResolution": {
+            "startDate": "2017-02-01",
+            "endDate": "2017-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-02-01",
+            "endDate": "2016-03-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-02-01",
-          "endDate": "2016-03-01"
-        }
+        "Start": 17,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors cette Septembre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Septembre",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-09",
-        "FutureResolution": {
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
+  {
+    "Input": "Je serais dehors cette Septembre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Septembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-09",
+          "FutureResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
-        }
+        "Start": 17,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors prochain Juin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochain Juin",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "XXXX-06",
-        "FutureResolution": {
-          "startDate": "2017-06-01",
-          "endDate": "2017-07-01"
+  {
+    "Input": "Je serais dehors prochain Juin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochain Juin",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-06-01",
-          "endDate": "2016-07-01"
-        }
+        "Start": 17,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "semaine de septembre.16",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "semaine de septembre.16",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "XXXX-09-16",
-        "FutureResolution": {
-          "startDate": "2017-09-11",
-          "endDate": "2017-09-18"
+  {
+    "Input": "semaine de septembre.16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "semaine de septembre.16",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-11",
+            "endDate": "2017-09-18"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-12",
+            "endDate": "2016-09-19"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-12",
-          "endDate": "2016-09-19"
-        }
+        "Start": 0,
+        "Length": 23
       }
-    }
-  ]
-}
-,
-{
-  "Input": "mois de septembre.16",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mois de septembre.16",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "XXXX-09-16",
-        "FutureResolution": {
-          "startDate": "2017-09-01",
-          "endDate": "2017-10-01"
+  {
+    "Input": "mois de septembre.16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mois de septembre.16",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
-        }
+        "Start": 0,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors 2015.3",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015.3",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2015-03",
-        "FutureResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
+  {
+    "Input": "Je serais dehors 2015.3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015.3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        }
+        "Start": 17,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors 2015-3",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015-3",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2015-03",
-        "FutureResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
+  {
+    "Input": "Je serais dehors 2015-3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015-3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        }
+        "Start": 17,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors 2015/3",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015/3",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2015-03",
-        "FutureResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
+  {
+    "Input": "Je serais dehors 2015/3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015/3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        }
+        "Start": 17,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors 3/2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3/2015",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2015-03",
-        "FutureResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
+  {
+    "Input": "Je serais dehors 3/2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3/2015",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        }
+        "Start": 17,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors depuis 2 Oct a 22 Octobre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " 2 Oct a 22 Octobre",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "FutureResolution": {
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
+  {
+    "Input": "Je serais dehors depuis 2 Oct a 22 Octobre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " 2 Oct a 22 Octobre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        }
+        "Start": 23,
+        "Length": 19
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors 12 Janvier, 2016 - 22/01/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " 12 Janvier, 2016 - 22/01/2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-01-12,2016-01-22,P10D)",
-        "FutureResolution": {
-          "startDate": "2016-01-12",
-          "endDate": "2016-01-22"
+  {
+    "Input": "Je serais dehors 12 Janvier, 2016 - 22/01/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " 12 Janvier, 2016 - 22/01/2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-12,2016-01-22,P10D)",
+          "FutureResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-01-12",
-          "endDate": "2016-01-22"
-        }
+        "Start": 16,
+        "Length": 30
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors 1 Jan jusqu'a Mer, 22 Janv",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " 1 Jan jusqu'a Mer, 22 Janv",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
-        "FutureResolution": {
-          "startDate": "2017-01-01",
-          "endDate": "2017-01-22"
+  {
+    "Input": "Je serais dehors 1 Jan jusqu'a Mer, 22 Janv",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " 1 Jan jusqu'a Mer, 22 Janv",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-01-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-01-01",
-          "endDate": "2016-01-22"
-        }
+        "Start": 16,
+        "Length": 27
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors depuis aujourd'hui jusqu'a demain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " aujourd'hui jusqu'a demain",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-07,2016-11-08,P1D)",
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-08"
+  {
+    "Input": "Je serais dehors depuis aujourd'hui jusqu'a demain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " aujourd'hui jusqu'a demain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-08,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-08"
-        }
+        "Start": 23,
+        "Length": 27
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors depuis Oct. 2 au Octobre 22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Oct. 2 au Octobre 22",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "FutureResolution": {
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
+  {
+    "Input": "Je serais dehors depuis Oct. 2 au Octobre 22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Oct. 2 au Octobre 22",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        }
+        "Start": 23,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti depuis Oct. 2 et Oct 22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Oct. 2 et Oct 22",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "FutureResolution": {
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
+  {
+    "Input": "Je serais sorti depuis Oct. 2 et Oct 22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Oct. 2 et Oct 22",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        }
+        "Start": 22,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors 19-20 Novembre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19-20 Novembre",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-        "FutureResolution": {
-          "startDate": "2016-11-19",
-          "endDate": "2016-11-20"
+  {
+    "Input": "Je serais dehors 19-20 Novembre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "19-20 Novembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-11-19",
-          "endDate": "2015-11-20"
-        }
+        "Start": 17,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti Novembre 19 au 20",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Novembre 19 au 20",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-        "FutureResolution": {
-          "startDate": "2016-11-19",
-          "endDate": "2016-11-20"
+  {
+    "Input": "Je serais sorti Novembre 19 au 20",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Novembre 19 au 20",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-11-19",
-          "endDate": "2015-11-20"
-        }
+        "Start": 15,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti Novembre entre 19 et 20",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Novembre entre 19 et 20",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-        "FutureResolution": {
-          "startDate": "2016-11-19",
-          "endDate": "2016-11-20"
+  {
+    "Input": "Je serais sorti Novembre entre 19 et 20",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Novembre entre 19 et 20",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-11-19",
-          "endDate": "2015-11-20"
-        }
+        "Start": 16,
+        "Length": 23
       }
-    }
-  ]
-}
-,
-{
-  "Input": "organiser une reunion en deux semaines",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "en deux semaines",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-15,2016-11-22,P1W)",
-        "FutureResolution": {
-          "startDate": "2016-11-15",
-          "endDate": "2016-11-22"
+  {
+    "Input": "organiser une reunion en deux semaines",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "en deux semaines",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-15,2016-11-22,P1W)",
+          "FutureResolution": {
+            "startDate": "2016-11-15",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-15",
+            "endDate": "2016-11-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-15",
-          "endDate": "2016-11-22"
-        }
+        "Start": 22,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti depuis 4 au 22 cette mois",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 au 22 cette mois",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-04,2016-11-22,P18D)",
-        "FutureResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
+  {
+    "Input": "Je serais sorti depuis 4 au 22 cette mois",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 au 22 cette mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
-        }
+        "Start": 23,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti depuis 4-23 mois prochain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4-23 mois prochain",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-12-04,2016-12-23,P19D)",
-        "FutureResolution": {
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
+  {
+    "Input": "Je serais sorti depuis 4-23 mois prochain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4-23 mois prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
-        }
+        "Start": 23,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti depuis 3 jusqu'a 12 de Sept hahaha",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 jusqu'a 12 de Sept",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
-        "FutureResolution": {
-          "startDate": "2017-09-03",
-          "endDate": "2017-09-12"
+  {
+    "Input": "Je serais sorti depuis 3 jusqu'a 12 de Sept hahaha",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3 jusqu'a 12 de Sept",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-03",
-          "endDate": "2016-09-12"
-        }
+        "Start": 23,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 4 au 23 mois prochain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 au 23 mois prochain",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-12-04,2016-12-23,P19D)",
-        "FutureResolution": {
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
+  {
+    "Input": "Je serais sorti 4 au 23 mois prochain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 au 23 mois prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
-        }
+        "Start": 16,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 4 jusqu'a 23 de cette mois",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4 jusqu'a 23 de cette mois",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-04,2016-11-23,P19D)",
-        "FutureResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-23"
+  {
+    "Input": "Je serais sorti 4 jusqu'a 23 de cette mois",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "4 jusqu'a 23 de cette mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-23"
-        }
+        "Start": 16,
+        "Length": 26
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti cette semaine",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette semaine",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-W45",
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
+  {
+    "Input": "Je serais sorti cette semaine",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        }
+        "Start": 16,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais sortir le weekend",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le weekend",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-W45-WE",
-        "FutureResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
+  {
+    "Input": "Je vais sortir le weekend",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le weekend",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
-        }
+        "Start": 15,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors le weekend",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le weekend",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-W45-WE",
-        "FutureResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
+  {
+    "Input": "Je serais dehors le weekend",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le weekend",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
-        }
+        "Start": 17,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors fevrier",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fevrier",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "XXXX-02",
-        "FutureResolution": {
-          "startDate": "2017-02-01",
-          "endDate": "2017-03-01"
+  {
+    "Input": "Je serais dehors fevrier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fevrier",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02",
+          "FutureResolution": {
+            "startDate": "2017-02-01",
+            "endDate": "2017-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-02-01",
+            "endDate": "2016-03-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-02-01",
-          "endDate": "2016-03-01"
-        }
+        "Start": 17,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais cette Septembre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette Septembre",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-09",
-        "FutureResolution": {
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
+  {
+    "Input": "Je serais cette Septembre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette Septembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-09",
+          "FutureResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
-        }
+        "Start": 10,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors juin 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "juin 2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-06",
-        "FutureResolution": {
-          "startDate": "2016-06-01",
-          "endDate": "2016-07-01"
+  {
+    "Input": "Je serais dehors juin 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "juin 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-06",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-06-01",
-          "endDate": "2016-07-01"
-        }
+        "Start": 17,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors Oct. 2 a Octobre 22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Oct. 2 a Octobre 22",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "FutureResolution": {
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
+  {
+    "Input": "Je serais dehors Oct. 2 a Octobre 22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Oct. 2 a Octobre 22",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        }
+        "Start": 16,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors aujourd'hui jusqu'a lendemain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " aujourd'hui jusqu'a lendemain",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-11-07,2016-11-08,P1D)",
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-08"
+  {
+    "Input": "Je serais dehors aujourd'hui jusqu'a lendemain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " aujourd'hui jusqu'a lendemain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-08,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-08"
-        }
+        "Start": 16,
+        "Length": 30
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors depuis Oct. 2 a Octobre 22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Oct. 2 a Octobre 22",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "FutureResolution": {
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
+  {
+    "Input": "Je serais dehors depuis Oct. 2 a Octobre 22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Oct. 2 a Octobre 22",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        }
+        "Start": 23,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors le troisieme semaine de 2027",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le troisieme semaine de 2027",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2027-01-W03",
-        "FutureResolution": {
-          "startDate": "2027-01-18",
-          "endDate": "2027-01-25"
+  {
+    "Input": "Je serais dehors le troisieme semaine de 2027",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le troisieme semaine de 2027",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-01-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
         },
-        "PastResolution": {
-          "startDate": "2027-01-18",
-          "endDate": "2027-01-25"
-        }
+        "Start": 17,
+        "Length": 28
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors Novembre 19-20",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Novembre 19-20",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-        "FutureResolution": {
-          "startDate": "2016-11-19",
-          "endDate": "2016-11-20"
+  {
+    "Input": "Je serais dehors Novembre 19-20",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Novembre 19-20",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-11-19",
-          "endDate": "2015-11-20"
-        }
+        "Start": 17,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors Novembre 19 au 20",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " Novembre 19 au 20",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-        "FutureResolution": {
-          "startDate": "2016-11-19",
-          "endDate": "2016-11-20"
+  {
+    "Input": "Je serais dehors Novembre 19 au 20",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " Novembre 19 au 20",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-11-19",
-          "endDate": "2015-11-20"
-        }
+        "Start": 16,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais dehors le troisieme quart de 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le troisieme quart de 2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-07-01,2016-10-01,P3M)",
-        "FutureResolution": {
-          "startDate": "2016-07-01",
-          "endDate": "2016-10-01"
+  {
+    "Input": "Je serais dehors le troisieme quart de 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le troisieme quart de 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-07-01",
-          "endDate": "2016-10-01"
-        }
+        "Start": 17,
+        "Length": 26
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai dehors derniere 3 semaines",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "derniere 3 semaines",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-10-17,2016-11-07,P3W)",
-        "FutureResolution": {
-          "startDate": "2016-10-17",
-          "endDate": "2016-11-07"
+  {
+    "Input": "Je serai dehors derniere 3 semaines",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "derniere 3 semaines",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-17,2016-11-07,P3W)",
+          "FutureResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-10-17",
-          "endDate": "2016-11-07"
-        }
+        "Start": 16,
+        "Length": 19
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2015.3",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015.3",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2015-03",
-        "FutureResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
+  {
+    "Input": "Je serais sorti 2015.3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015.3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        }
+        "Start": 16,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2015-3",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015-3",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2015-03",
-        "FutureResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
+  {
+    "Input": "Je serais sorti 2015-3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015-3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        }
+        "Start": 16,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2015/3",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015/3",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2015-03",
-        "FutureResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
+  {
+    "Input": "Je serais sorti 2015/3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015/3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        }
+        "Start": 16,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 3/2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3/2015",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2015-03",
-        "FutureResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
+  {
+    "Input": "Je serais sorti 3/2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3/2015",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        }
+        "Start": 16,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai cette été",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette été",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-SU",
-        "FutureResolution": {},
-        "PastResolution": {}
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai l'été",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "été",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "SU",
-        "FutureResolution": {},
-        "PastResolution": {}
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai été",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "été",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "SU",
-        "FutureResolution": {},
-        "PastResolution": {}
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "je partirai l'été 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "été 2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-SU",
-        "FutureResolution": {},
-        "PastResolution": {}
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "je pars l'été 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "été 2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-SU",
-        "FutureResolution": {},
-        "PastResolution": {}
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11 / 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11 / 2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "je partirai cette été",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette été",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 12,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11/ 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11/ 2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "je partirai l'été",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "été",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 14,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11 /2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11 /2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "je partirai été",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "été",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 12,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11-2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11-2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "je partirai l'été 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "été 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 14,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11  - 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11  - 2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "je pars l'été 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "été 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 10,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016 / 11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016 / 11",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "Je serais sorti 11 / 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11 / 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 16,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016/11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016/11",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "Je serais sorti 11/ 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11/ 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 16,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016 - 11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016 - 11",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "Je serais sorti 11 /2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11 /2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 16,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016-11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016-11",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "Je serais sorti 11-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 16,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016  -11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016  -11",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-11",
-        "FutureResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
+  {
+    "Input": "Je serais sorti 11  - 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11  - 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-11-01",
-          "endDate": "2016-12-01"
-        }
+        "Start": 16,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti Septembre 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Septembre 2016",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "2016-09",
-        "FutureResolution": {
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
+  {
+    "Input": "Je serais sorti 2016 / 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016 / 11",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
         },
-        "PastResolution": {
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
-        }
+        "Start": 16,
+        "Length": 9
       }
-    }
-  ]
-}	
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016/11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016/11",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016 - 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016 - 11",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016-11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016  -11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016  -11",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti Septembre 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Septembre 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-09",
+          "FutureResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  }
 ]

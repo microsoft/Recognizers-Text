@@ -1,575 +1,602 @@
-[{
-  "Input": "Je vais partir a 9am Dimanches",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:16.6159645-03:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9am Dimanches",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-7T09",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-7T09"
+[
+  {
+    "Input": "Je vais partir a 9am Dimanches",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:16.6159645-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9am Dimanches",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-7T09"
-        }
+        "Start": 17,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque de matin a 9am",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:19.4550127-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque de matin a 9am",
-      "Type": "set",
-      "Value": {
-        "Timex": "T09",
-        "FutureResolution": {
-          "set": "Set: T09"
+  {
+    "Input": "Je vais partir chaque de matin a 9am",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:19.4550127-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque de matin a 9am",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T09"
-        }
+        "Start": 15,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque apres-midi a 4pm",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:19.4900115-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque apres-midi a 4pm",
-      "Type": "set",
-      "Value": {
-        "Timex": "T16",
-        "FutureResolution": {
-          "set": "Set: T16"
+  {
+    "Input": "Je vais partir chaque apres-midi a 4pm",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:19.4900115-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque apres-midi a 4pm",
+        "Type": "set",
+        "Value": {
+          "Timex": "T16",
+          "FutureResolution": {
+            "set": "Set: T16"
+          },
+          "PastResolution": {
+            "set": "Set: T16"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T16"
-        }
+        "Start": 15,
+        "Length": 23
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque nuit a 9pm",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:19.5265112-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque nuit a 9pm",
-      "Type": "set",
-      "Value": {
-        "Timex": "T21",
-        "FutureResolution": {
-          "set": "Set: T21"
+  {
+    "Input": "Je vais partir chaque nuit a 9pm",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:19.5265112-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque nuit a 9pm",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T21"
-        }
+        "Start": 15,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque nuit 9",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:19.5560123-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque nuit 9",
-      "Type": "set",
-      "Value": {
-        "Timex": "T21",
-        "FutureResolution": {
-          "set": "Set: T21"
+  {
+    "Input": "Je vais partir chaque nuit 9",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:19.5560123-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque nuit 9",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T21"
-        }
+        "Start": 15,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque nuit a 21",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:19.5920118-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque nuit a 21",
-      "Type": "set",
-      "Value": {
-        "Timex": "T21",
-        "FutureResolution": {
-          "set": "Set: T21"
+  {
+    "Input": "Je vais partir chaque nuit a 21",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:19.5920118-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque nuit a 21",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T21"
-        }
+        "Start": 15,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque nuit 21",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:19.621011-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque nuit 21",
-      "Type": "set",
-      "Value": {
-        "Timex": "T21",
-        "FutureResolution": {
-          "set": "Set: T21"
+  {
+    "Input": "Je vais partir chaque nuit 21",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:19.621011-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque nuit 21",
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T21"
-        }
+        "Start": 15,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir tous les de matin 9am",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:19.6610194-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tous les de matin 9am",
-      "Type": "set",
-      "Value": {
-        "Timex": "T09",
-        "FutureResolution": {
-          "set": "Set: T09"
+  {
+    "Input": "Je vais partir tous les de matin 9am",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:19.6610194-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "tous les de matin 9am",
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T09"
-        }
+        "Start": 15,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir a Lundis",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:21.7045166-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Lundis",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-1",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-1"
+  {
+    "Input": "Je vais partir a Lundis",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:21.7045166-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Lundis",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-1"
-        }
+        "Start": 17,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir Dimanches",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:21.7260153-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Dimanches",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-7",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-7"
+  {
+    "Input": "Je vais partir Dimanches",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:21.7260153-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Dimanches",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-7"
-        }
+        "Start": 15,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir tous les Dimanches",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:21.7855155-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tous les Dimanches",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-7",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-7"
+  {
+    "Input": "Je vais partir tous les Dimanches",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:21.7855155-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "tous les Dimanches",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-7"
-        }
+        "Start": 15,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque Dimanches",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:21.8420111-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque Dimanches",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-7",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-7"
+  {
+    "Input": "Je vais partir chaque Dimanches",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:21.8420111-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque Dimanches",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-7"
-        }
+        "Start": 15,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque semaine",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.3570246-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque semaine",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "set": "Set: P1W"
+  {
+    "Input": "Je vais partir chaque semaine",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.3570246-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque semaine",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1W"
-        }
+        "Start": 15,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir bihebdomadaire",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.3580267-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "bihebdomadaire",
-      "Type": "set",
-      "Value": {
-        "Timex": "P2W",
-        "FutureResolution": {
-          "set": "Set: P2W"
+  {
+    "Input": "Je vais partir bihebdomadaire",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.3580267-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "bihebdomadaire",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "set": "Set: P2W"
+          },
+          "PastResolution": {
+            "set": "Set: P2W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P2W"
-        }
+        "Start": 15,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir hebdomadaire",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.3590265-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hebdomadaire",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "set": "Set: P1W"
+  {
+    "Input": "Je vais partir hebdomadaire",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.3590265-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "hebdomadaire",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1W"
-        }
+        "Start": 15,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir quotidien",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.3600258-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "quotidien",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "set": "Set: P1D"
+  {
+    "Input": "Je vais partir quotidien",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.3600258-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "quotidien",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1D"
-        }
+        "Start": 15,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir journellement",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.3610265-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "journellement",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "set": "Set: P1D"
+  {
+    "Input": "Je vais partir journellement",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.3610265-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "journellement",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1D"
-        }
+        "Start": 15,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque mois",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.3775441-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque mois",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1M",
-        "FutureResolution": {
-          "set": "Set: P1M"
+  {
+    "Input": "Je vais partir chaque mois",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.3775441-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque mois",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1M"
-        }
+        "Start": 15,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir annuellement",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.3785448-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "annuellement",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "set": "Set: P1Y"
+  {
+    "Input": "Je vais partir annuellement",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.3785448-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "annuellement",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1Y"
-        }
+        "Start": 15,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir annuel",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.3795446-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "annuel",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "set": "Set: P1Y"
+  {
+    "Input": "Je vais partir annuel",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.3795446-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "annuel",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1Y"
-        }
+        "Start": 15,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque deux jours",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.4010443-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque deux jours",
-      "Type": "set",
-      "Value": {
-        "Timex": "P2D",
-        "FutureResolution": {
-          "set": "Set: P2D"
+  {
+    "Input": "Je vais partir chaque deux jours",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.4010443-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque deux jours",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "set": "Set: P2D"
+          },
+          "PastResolution": {
+            "set": "Set: P2D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P2D"
-        }
+        "Start": 15,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque trois semaine",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.4250441-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque trois semaine",
-      "Type": "set",
-      "Value": {
-        "Timex": "P3W",
-        "FutureResolution": {
-          "set": "Set: P3W"
+  {
+    "Input": "Je vais partir chaque trois semaine",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.4250441-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque trois semaine",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "set": "Set: P3W"
+          },
+          "PastResolution": {
+            "set": "Set: P3W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P3W"
-        }
+        "Start": 15,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque  15/4",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.447021-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque  15/4",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-04-15",
-        "FutureResolution": {
-          "set": "Set: XXXX-04-15"
+  {
+    "Input": "Je vais partir chaque  15/4",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.447021-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque  15/4",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-04-15",
+          "FutureResolution": {
+            "set": "Set: XXXX-04-15"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-04-15"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-04-15"
-        }
+        "Start": 15,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque Lundi",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.469026-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque Lundi",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-1",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-1"
+  {
+    "Input": "Je vais partir chaque Lundi",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.469026-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque Lundi",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-1"
-        }
+        "Start": 15,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque Lundi 4pm",
-  "Context": {
-    "ReferenceDateTime": "2017-10-09T12:21:35.4960223-03:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque Lundi 4pm",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-1T16",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-1T16"
+  {
+    "Input": "Je vais partir chaque Lundi 4pm",
+    "Context": {
+      "ReferenceDateTime": "2017-10-09T12:21:35.4960223-03:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque Lundi 4pm",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T16",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-1T16"
-        }
+        "Start": 15,
+        "Length": 16
       }
-    }
-  ]
-}
+    ]
+  }
 ]

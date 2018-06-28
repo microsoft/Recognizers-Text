@@ -158,6 +158,9 @@ HalfADozenRegex: !simpleRegex
   def: (?<=\b)+demi\s+douzaine
 DigitalNumberRegex: !simpleRegex
   def: ((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
+AmbiguousFractionConnectorsRegex: !simpleRegex
+# TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:

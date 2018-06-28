@@ -1,252 +1,254 @@
-[{
-  "Input": "me vou por 3h",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3h",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 3 dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 dias",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 3,5 anos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5 anos",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 3 h",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 h",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 3 horas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 horas",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou 3 dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 dias",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 3 meses",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 meses",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 3 minutos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 minutos",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 3 min",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 min",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 3,5 segundos ",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5 segundos",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por 123,45 seg",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "123,45 seg",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por duas semanas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "duas semanas",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou 20 minutos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20 minutos",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por vinte e quatro horas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vinte e quatro horas",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por todo o dia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo o dia",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por toda a semana",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toda a semana",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "estarei fora toda a semana",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toda a semana",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por todo o mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo o mes",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por todo o ano",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo o ano",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por uma hora",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "uma hora",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me vou por um ano",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "um ano",
-      "Type": "duration"
-    }
-  ]
-}
+[
+  {
+    "Input": "me vou por 3h",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3h",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 3 dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 dias",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 3,5 anos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3,5 anos",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 3 h",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 h",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 3 horas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 horas",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "me vou 3 dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 dias",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 3 meses",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 meses",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 3 minutos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 minutos",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 3 min",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 3,5 segundos ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3,5 segundos",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "me vou por 123,45 seg",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "123,45 seg",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "me vou por duas semanas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "duas semanas",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "me vou 20 minutos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20 minutos",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "me vou por vinte e quatro horas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vinte e quatro horas",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "me vou por todo o dia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todo o dia",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "me vou por toda a semana",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "toda a semana",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "estarei fora toda a semana",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "toda a semana",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "me vou por todo o mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todo o mes",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "me vou por todo o ano",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todo o ano",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "me vou por uma hora",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "uma hora",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "me vou por um ano",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "um ano",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  }
 ]

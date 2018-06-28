@@ -73,6 +73,7 @@ class FrenchNumeric:
     WrittenFractionSeparatorTexts = ['et', 'sur']
     HalfADozenRegex = f'(?<=\\b)+demi\\s+douzaine'
     DigitalNumberRegex = f'((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b))(k|t|m|g|b)(?=\\b))'
+    AmbiguousFractionConnectorsRegex = f'^[.]'
     CardinalNumberMap = dict([('zéro', 0),
                               ('zero', 0),
                               ('un', 1),

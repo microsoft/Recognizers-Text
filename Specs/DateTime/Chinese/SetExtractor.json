@@ -1,88 +1,98 @@
-[{
-  "Input": "事件 每天都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每天",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "事件每日都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每日",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "事件每个星期都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每个星期",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "事件每个月都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每个月",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "事件每年都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每年",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周一都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周一",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周一下午八点都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周一下午八点",
-      "Type": "set"
-    }
-  ]
-}
+[
+  {
+    "Input": "事件 每天都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每天",
+        "Type": "set",
+        "Start": 3,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "事件每日都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每日",
+        "Type": "set",
+        "Start": 2,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "事件每周都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每周",
+        "Type": "set",
+        "Start": 2,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "事件每个星期都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每个星期",
+        "Type": "set",
+        "Start": 2,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "事件每个月都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每个月",
+        "Type": "set",
+        "Start": 2,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "事件每年都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每年",
+        "Type": "set",
+        "Start": 2,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "事件每周一都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每周一",
+        "Type": "set",
+        "Start": 2,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "事件每周一下午八点都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每周一下午八点",
+        "Type": "set",
+        "Start": 2,
+        "Length": 7
+      }
+    ]
+  }
 ]

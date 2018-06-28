@@ -80,6 +80,7 @@ export namespace EnglishNumeric {
 	export const TwoNumberRangeRegex2 = `(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})\\s*(and|but|,)\\s*(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})`;
 	export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})\\s*(and|but|,)\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})`;
 	export const TwoNumberRangeRegex4 = `(from\\s+)?(?<number1>(${NumberSplitMark}(?!\\bfrom\\b).)+)\\s*${TillRegex}\\s*(the\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
+	export const AmbiguousFractionConnectorsRegex = `(\\bin\\b)`;
 	export const DecimalSeparatorChar = '.';
 	export const FractionMarkerToken = 'over';
 	export const NonDecimalSeparatorChar = ',';

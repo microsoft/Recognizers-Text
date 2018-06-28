@@ -81,6 +81,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string[] WrittenFractionSeparatorTexts = { "et", "sur" };
 		public const string HalfADozenRegex = @"(?<=\b)+demi\s+douzaine";
 		public const string DigitalNumberRegex = @"((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))";
+		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
 		{
 			{ "zéro", 0 },
