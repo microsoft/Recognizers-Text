@@ -51,11 +51,11 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                 ret = ret.withValue(-(double) ret.value);
             }
 
-            ret = ret.withResolutionStr(ret.value.toString());
+            ret = ret.withResolutionStr(getResolutionString((double) ret.value));
         } else if (extra.contains("Pow")) {
             getExtResult = getExtResult.withText(normalizeCharWidth(getExtResult.text));
             ret = powerNumberParse(getExtResult);
-            ret = ret.withResolutionStr(ret.value.toString());
+            ret = ret.withResolutionStr(getResolutionString((double) ret.value));
         } else if (extra.contains("Frac")) {
             ret = parseFraction(getExtResult);
         } else if (extra.contains("Dou")) {
@@ -68,11 +68,6 @@ public class BaseCJKNumberParser extends BaseNumberParser {
 
         if (ret != null) {
             ret = ret.withText(extResult.text);
-
-            String resolutionStr = config.getCultureInfo() != null
-                    ? NumberFormatUtility.format(ret.value, config.getCultureInfo())
-                    : ret.value.toString();
-            ret = ret.withResolutionStr(resolutionStr);
         }
 
         return ret;
@@ -115,7 +110,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             result = result.withValue(intValue + numValue / demoValue);
         }
 
-        result = result.withResolutionStr(result.value.toString());
+        result = result.withResolutionStr(getResolutionString((double) result.value));
         return result;
     }
 
@@ -231,7 +226,12 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             result = result.withValue(doubleValue);
         }
 
-        result = result.withResolutionStr(result.value + "%");
+        if (result.value instanceof Double) {
+            result = result.withResolutionStr(getResolutionString((double) result.value) + "%");
+        } else if (result.value instanceof Integer) {
+            result = result.withResolutionStr(getResolutionString((int) result.value) + "%");
+        }
+
         return result;
     }
 
@@ -248,7 +248,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         double newValue = isDigit && !isRoundInt ? getDigitValue(resultText, 1) : getIntValue(resultText);
 
         result = result.withValue(newValue)
-                .withResolutionStr(String.valueOf(newValue));
+                .withResolutionStr(getResolutionString(newValue));
 
         return result;
     }
@@ -278,14 +278,14 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             }
         }
 
-        result = result.withResolutionStr(result.value.toString());
+        result = result.withResolutionStr(getResolutionString((double) result.value));
         return result;
     }
 
     // Parse integer phrase
     protected ParseResult parseInteger(ExtractResult extResult) {
         double value = getIntValue(extResult.text);
-        return new ParseResult(extResult.start, extResult.length, extResult.text, extResult.type, extResult.text, value, String.valueOf(value));
+        return new ParseResult(extResult.start, extResult.length, extResult.text, extResult.type, extResult.text, value, getResolutionString(value));
     }
 
     // Replace traditional Chinese characters with simpilified Chinese ones.
@@ -444,5 +444,11 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         }
 
         return pointValue;
+    }
+
+    private String getResolutionString(double value) {
+        return config.getCultureInfo() != null
+                ? NumberFormatUtility.format(value, config.getCultureInfo())
+                : String.valueOf(value);
     }
 }

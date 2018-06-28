@@ -18,6 +18,10 @@ public abstract class RegExpUtility {
     private static final String groupNameIndexSep = "ii";
     private static final String groupNameIndexSepRegex = Pattern.quote(groupNameIndexSep);
 
+    public static Pattern getSafeRegExp(String source) {
+        return getSafeRegExp(source, 0);
+    }
+
     public static Pattern getSafeRegExp(String source, int flags) {
         String sanitizedSource = sanitizeGroups(source);
         return Pattern.compile(sanitizedSource, flags);

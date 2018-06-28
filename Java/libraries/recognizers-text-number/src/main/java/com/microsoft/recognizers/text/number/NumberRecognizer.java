@@ -200,14 +200,12 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         registerModel(NumberModel.class, Culture.Chinese, (options) -> new NumberModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.chinese.extractors.NumberExtractor()));
-//        RegisterModel<PercentModel>(
-//                Culture.Chinese,
-//                (options) => new PercentModel(
-//                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
-//                new Chinese.PercentageExtractor()));
         registerModel(OrdinalModel.class, Culture.Chinese, (options) -> new OrdinalModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new ChineseNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.chinese.extractors.OrdinalExtractor()));
+        registerModel(PercentModel.class, Culture.Chinese, (options) -> new PercentModel(
+                AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
+                new com.microsoft.recognizers.text.number.chinese.extractors.PercentageExtractor()));
 //        RegisterModel<NumberRangeModel>(
 //                Culture.Chinese,
 //                (options) => new NumberRangeModel(
