@@ -1,7 +1,7 @@
-[{
+[
+  {
     "Input": "Ich habe den Alarm auf acht Uhr vierzig eingestellt",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "acht Uhr vierzig",
@@ -14,14 +14,15 @@
           "PastResolution": {
             "time": "08:40:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Ich bin um 7 zurück.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "7",
@@ -34,14 +35,15 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 1
       }
     ]
   },
   {
     "Input": "Es ist 19:56.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19:56",
@@ -54,14 +56,15 @@
           "PastResolution": {
             "time": "19:56:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Es ist acht Uhr morgens, ich will schlafen!",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "acht Uhr morgens",
@@ -74,14 +77,15 @@
           "PastResolution": {
             "time": "08:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Das dürfte gegen halb acht Vormittags sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halb acht Vormittags",
@@ -94,14 +98,15 @@
           "PastResolution": {
             "time": "07:30:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Das dürfte gegen viertel nach 7 Vormittags sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "viertel nach 7 Vormittags",
@@ -114,13 +119,15 @@
           "PastResolution": {
             "time": "07:15:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 25
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich habe den Alarm auf 8:40 eingestellt",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8:40",
@@ -133,14 +140,15 @@
           "PastResolution": {
             "time": "08:40:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 4
       }
     ]
   },
   {
     "Input": "Um sieben bin ich wieder da",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sieben",
@@ -153,15 +161,15 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Um 19 Uhr bin ich wieder da",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19 Uhr",
@@ -174,15 +182,15 @@
           "PastResolution": {
             "time": "19:00:00"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bin um 19:56 wieder da",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19:56",
@@ -195,15 +203,15 @@
           "PastResolution": {
             "time": "19:56:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist 19:56:30",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19:56:30",
@@ -216,15 +224,15 @@
           "PastResolution": {
             "time": "19:56:30"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 8
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich bin um 19:56:30 Uhr wieder zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19:56:30 Uhr",
@@ -237,15 +245,15 @@
           "PastResolution": {
             "time": "19:56:30"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Gegen 12:34 ist das durch",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "12:34",
@@ -258,15 +266,15 @@
           "PastResolution": {
             "time": "12:34:00"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Gegen 12:34:25 ist das durch",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "12:34:25",
@@ -279,15 +287,15 @@
           "PastResolution": {
             "time": "12:34:25"
           }
-        }
+        },
+        "Start": 6,
+        "Length": 8
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist 7 Uhr",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "7 Uhr",
@@ -300,15 +308,15 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist sieben Uhr",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "sieben Uhr",
@@ -321,15 +329,15 @@
           "PastResolution": {
             "time": "07:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "8 Uhr Morgens",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr Morgens",
@@ -342,15 +350,15 @@
           "PastResolution": {
             "time": "08:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "20 Uhr Abends",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20 Uhr Abends",
@@ -363,15 +371,15 @@
           "PastResolution": {
             "time": "20:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist halb 9",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halb 9",
@@ -384,15 +392,15 @@
           "PastResolution": {
             "time": "08:30:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist halb 9",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halb 9",
@@ -405,14 +413,15 @@
           "PastResolution": {
             "time": "08:30:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Es ist 8 Uhr nachts",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr nachts",
@@ -425,14 +434,15 @@
           "PastResolution": {
             "time": "20:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Es ist 8 Uhr Abends",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr Abends",
@@ -445,14 +455,15 @@
           "PastResolution": {
             "time": "20:00:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich bin um 7h01 zurück",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "7h01",
@@ -465,14 +476,15 @@
           "PastResolution": {
             "time": "07:01:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 4
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich bin um 10 h 10 Uhr zurück.",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 h 10 Uhr",
@@ -485,7 +497,9 @@
           "PastResolution": {
             "time": "10:10:00"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 11
       }
     ]
   }

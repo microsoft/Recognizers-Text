@@ -1,10 +1,10 @@
-[{
+[
+  {
     "Input": "An Ostern bin ich wieder zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Ostern",
@@ -17,18 +17,18 @@
           "PastResolution": {
             "date": "0001-01-01"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich freue mich schon auf Weihnachten.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Weihnachten",
@@ -41,18 +41,18 @@
           "PastResolution": {
             "date": "2015-12-25"
           }
-        }
+        },
+        "Start": 25,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Silvester wir eine tolle Feier.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Silvester",
@@ -65,7 +65,9 @@
           "PastResolution": {
             "date": "2015-12-31"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -74,8 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Vatertag",
@@ -88,7 +89,9 @@
           "PastResolution": {
             "date": "2016-06-19"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 8
       }
     ]
   },
@@ -97,8 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Vatertag 2015",
@@ -111,7 +113,9 @@
           "PastResolution": {
             "date": "2015-06-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
   }

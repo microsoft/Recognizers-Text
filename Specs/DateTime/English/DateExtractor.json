@@ -1,1424 +1,1558 @@
-[{
-  "Input": "I'll go back on 15",
-  "Results": [
-    {
-      "Text": "15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back April 22",
-  "Results": [
-    {
-      "Text": "April 22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Jan-1",
-  "Results": [
-    {
-      "Text": "Jan-1",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Jan/1",
-  "Results": [
-    {
-      "Text": "Jan/1",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back October. 2",
-  "Results": [
-    {
-      "Text": "October. 2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back January 12, 2016",
-  "Results": [
-    {
-      "Text": "January 12, 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back January 12 of 2016",
-  "Results": [
-    {
-      "Text": "January 12 of 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Monday January 12th, 2016",
-  "Results": [
-    {
-      "Text": "Monday January 12th, 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 02/22/2016",
-  "Results": [
-    {
-      "Text": "02/22/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 21/04/2016",
-  "Results": [
-    {
-      "Text": "21/04/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 21/04/16",
-  "Results": [
-    {
-      "Text": "21/04/16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 9-18-15",
-  "Results": [
-    {
-      "Text": "9-18-15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on 4.22",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on 4-22",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back at 4.22",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back in 4-22",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on    4/22",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on 22/04",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back       4/22",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 22/04",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 2015/08/12",
-  "Results": [
-    {
-      "Text": "2015/08/12",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 11/12,2016",
-  "Results": [
-    {
-      "Text": "11/12,2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 11/12,16",
-  "Results": [
-    {
-      "Text": "11/12,16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 1st Jan",
-  "Results": [
-    {
-      "Text": "1st Jan",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 1-Jan",
-  "Results": [
-    {
-      "Text": "1-Jan",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 28-Nov",
-  "Results": [
-    {
-      "Text": "28-Nov",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Wed, 22 of Jan",
-  "Results": [
-    {
-      "Text": "Wed, 22 of Jan",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back the first friday of july",
-  "Results": [
-    {
-      "Text": "the first friday of july",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back the first friday in this month",
-  "Results": [
-    {
-      "Text": "the first friday in this month",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back two weeks from now",
-  "Results": [
-    {
-      "Text": "two weeks from now",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back next week on Friday",
-  "Results": [
-    {
-      "Text": "next week on Friday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on Friday next week",
-  "Results": [
-    {
-      "Text": "on Friday next week",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "past Monday",
-  "Results": [
-    {
-      "Text": "past Monday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on Tues.",
-  "Results": [
-    {
-      "Text": "Tues",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on Tues. good news.",
-  "Results": [
-    {
-      "Text": "Tues",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on Tues",
-  "Results": [
-    {
-      "Text": "Tues",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back on Friday",
-  "Results": [
-    {
-      "Text": "Friday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Friday",
-  "Results": [
-    {
-      "Text": "Friday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back today",
-  "Results": [
-    {
-      "Text": "today",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back tomorrow",
-  "Results": [
-    {
-      "Text": "tomorrow",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back yesterday",
-  "Results": [
-    {
-      "Text": "yesterday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back the day before yesterday",
-  "Results": [
-    {
-      "Text": "the day before yesterday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back the day after tomorrow",
-  "Results": [
-    {
-      "Text": "the day after tomorrow",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back the next day",
-  "Results": [
-    {
-      "Text": "the next day",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back next day",
-  "Results": [
-    {
-      "Text": "next day",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back this Friday",
-  "Results": [
-    {
-      "Text": "this Friday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back next Sunday",
-  "Results": [
-    {
-      "Text": "next Sunday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back last Sunday",
-  "Results": [
-    {
-      "Text": "last Sunday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back last day",
-  "Results": [
-    {
-      "Text": "last day",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back the last day",
-  "Results": [
-    {
-      "Text": "the last day",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back the day",
-  "Results": [
-    {
-      "Text": "the day",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back this week Friday",
-  "Results": [
-    {
-      "Text": "this week Friday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back next week Sunday",
-  "Results": [
-    {
-      "Text": "next week Sunday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back last week Sunday",
-  "Results": [
-    {
-      "Text": "last week Sunday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 15 June 2016",
-  "Results": [
-    {
-      "Text": "15 June 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "a baseball on may the eleventh",
-  "Results": [
-    {
-      "Text": "may the eleventh",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back fourth of may",
-  "Results": [
-    {
-      "Text": "fourth of may",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 4th of march",
-  "Results": [
-    {
-      "Text": "4th of march",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Jan first",
-  "Results": [
-    {
-      "Text": "Jan first",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back May twenty-first",
-  "Results": [
-    {
-      "Text": "May twenty-first",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back May twenty one",
-  "Results": [
-    {
-      "Text": "May twenty one",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back second of Aug",
-  "Results": [
-    {
-      "Text": "second of Aug",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back twenty second of June",
-  "Results": [
-    {
-      "Text": "twenty second of June",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back two months ago",
-  "Results": [
-    {
-      "Text": "two months ago",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back two days later",
-  "Results": [
-    {
-      "Text": "two days later",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "who did i email a month ago",
-  "Results": [
-    {
-      "Text": "a month ago",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27",
-  "Results": [
-    {
-      "Text": "for the 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27th",
-  "Results": [
-    {
-      "Text": "for the 27th",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27.",
-  "Results": [
-    {
-      "Text": "for the 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27!",
-  "Results": [
-    {
-      "Text": "for the 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27 .",
-  "Results": [
-    {
-      "Text": "for the 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 21st",
-  "Results": [
-    {
-      "Text": "for the 21st",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 22nd",
-  "Results": [
-    {
-      "Text": "for the 22nd",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the second",
-  "Results": [
-    {
-      "Text": "for the second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the twenty second",
-  "Results": [
-    {
-      "Text": "for the twenty second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the thirty first",
-  "Results": [
-    {
-      "Text": "for the thirty first",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on the 27th",
-  "Results": [
-    {
-      "Text": "on the 27th",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on the 21st",
-  "Results": [
-    {
-      "Text": "on the 21st",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on 22nd",
-  "Results": [
-    {
-      "Text": "on 22nd",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on the second!",
-  "Results": [
-    {
-      "Text": "on the second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I went back on twenty second?",
-  "Results": [
-    {
-      "Text": "on twenty second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "the first prize",
-  "Results": []
-}
-,
-{
-  "Input": "I'll go to the 27th floor",
-  "Results": []
-}
-,
-{
-  "Input": "Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China",
-  "Results": []
-}
-,
-{
-  "Input": "Get tickets for the 17th Door Haunted Experience",
-  "Results": []
-}
-,
-{
-  "Input": "What do I have on Saturday the second",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+[
+  {
+    "Input": "I'll go back on 15",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Start": 16,
+        "Length": 2
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Saturday the second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "A meeting for Wednesday the 27th with Joe Smith",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back April 22",
+    "Results": [
+      {
+        "Text": "April 22",
+        "Type": "date",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Wednesday the 27th",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Thursday the 21st",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back Jan-1",
+    "Results": [
+      {
+        "Text": "Jan-1",
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Thursday the 21st",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Friday the 22nd",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back Jan/1",
+    "Results": [
+      {
+        "Text": "Jan/1",
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Friday the 22nd",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Saturday the 23rd",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back October. 2",
+    "Results": [
+      {
+        "Text": "October. 2",
+        "Type": "date",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Saturday the 23rd",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Friday the 15th",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back January 12, 2016",
+    "Results": [
+      {
+        "Text": "January 12, 2016",
+        "Type": "date",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Friday the 15th",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Thursday the twenty first",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back January 12 of 2016",
+    "Results": [
+      {
+        "Text": "January 12 of 2016",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Thursday the twenty first",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Friday the twenty second",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back Monday January 12th, 2016",
+    "Results": [
+      {
+        "Text": "Monday January 12th, 2016",
+        "Type": "date",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Friday the twenty second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Friday the fifteen",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back 02/22/2016",
+    "Results": [
+      {
+        "Text": "02/22/2016",
+        "Type": "date",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Friday the fifteen",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back Thursday the seventh",
-  "Context": {
-    "ReferenceDateTime": "2017-09-01T00:00:00"
+  {
+    "Input": "I'll go back 21/04/2016",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
   },
-  "Results": [
-    {
-      "Text": "Thursday the seventh",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back second Sunday",
-  "Results": [
-    {
-      "Text": "second Sunday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back first Sunday",
-  "Results": [
-    {
-      "Text": "first Sunday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back third Tuesday",
-  "Results": [
-    {
-      "Text": "third Tuesday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back fifth Sunday",
-  "Results": [
-    {
-      "Text": "fifth Sunday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back sixth Sunday",
-  "Results": [
-    {
-      "Text": "Sunday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back tenth Monday",
-  "Results": [
-    {
-      "Text": "Monday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 20th of next month",
-  "Results": [
-    {
-      "Text": "20th of next month",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back 31st of this month",
-  "Results": [
-    {
-      "Text": "31st of this month",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana could try to arrange a Skype call either Friday this week or Tuesday of next week",
-  "Results": [
-    {
-      "Text": "Friday this week",
-      "Type": "date"
-    }
-    ,
-    {
-      "Text": "Tuesday of next week",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana could try to arrange a Skype call either Friday of this week or this week on Saturday",
-  "Results": [
-    {
-      "Text": "Friday of this week",
-      "Type": "date"
-    }
-    ,
-    {
-      "Text": "this week on Saturday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "16. Nov. 2016",
-  "Results": [
-    {
-      "Text": "16. Nov. 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "We had a meeting 1 month 21 days ago",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "1 month 21 days ago",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I left here 2 years 1 month 21 days ago",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "2 years 1 month 21 days ago",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I will leve here 2 years 21 days later",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "2 years 21 days later",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I left here 1 month 2 years 21 days ago",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "1 month 2 years 21 days ago",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I left here the 20th next month",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "the 20th next month",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I left here 5 December 1391",
-  "Results": [
-    {
-      "Text": "5 December 1391",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Monday, Jan twenty two, 2018",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "Monday, Jan twenty two, 2018",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "on Sunday Jan twenty one two thousand and eighteen",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "Sunday Jan twenty one two thousand and eighteen",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "on September the twenty-first nineteen seventy eight",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "September the twenty-first nineteen seventy eight",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "on September 10, nineteen zero one",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "September 10, nineteen zero one",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "on the tenth of September, two thousand",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "tenth of September, two thousand",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you free on 13.5.2015?",
-  "Results": [
-    {
-      "Text": "13.5.2015",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available on 2015.5.13?",
-  "Results": [
-    {
-      "Text": "2015.5.13",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available two sundays from now?",
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "two sundays from now",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available two monday later?",
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "two monday later",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available two days after today?",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "two days after today",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available three weeks from tomorrow?",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "three weeks from tomorrow",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Where were you two days before yesterday?",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "two days before yesterday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you free on 13.5.2015?",
-  "Results": [
-    {
-      "Text": "13.5.2015",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available on 2015.5.13?",
-  "Results": [
-    {
-      "Text": "2015.5.13",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available two sundays from now?",
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "two sundays from now",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available two monday later?",
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "two monday later",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available two days after today?",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "two days after today",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Are you available three weeks from tomorrow?",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "three weeks from tomorrow",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Where were you two days before yesterday?",
-  "NotSupported": "javascript, python",
-  "Results": [
-    {
-      "Text": "two days before yesterday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please set up a Skype call sometime this Friday-Jun-15 with Jim",
-  "Context": {
-    "ReferenceDateTime": "2018-06-14T00:00:00"
+  {
+    "Input": "I'll go back 21/04/16",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
   },
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "this Friday-Jun-15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please set up a Skype call sometime this Friday(Jun-15) with Jim",
-  "Context": {
-    "ReferenceDateTime": "2018-06-14T00:00:00"
+  {
+    "Input": "I'll go back 9-18-15",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Start": 13,
+        "Length": 7
+      }
+    ]
   },
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "this Friday(Jun-15)",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please set up a Skype call sometime this Friday (Jun-15) with Jim",
-  "Context": {
-    "ReferenceDateTime": "2018-06-14T00:00:00"
+  {
+    "Input": "I'll go back on 4.22",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 16,
+        "Length": 4
+      }
+    ]
   },
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "this Friday (Jun-15)",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please set up a Skype call sometime this Friday June twenty two with Jim",
-  "Context": {
-    "ReferenceDateTime": "2018-06-20T00:00:00"
+  {
+    "Input": "I'll go back on 4-22",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Start": 16,
+        "Length": 4
+      }
+    ]
   },
-  "NotSupported": "javascript,python",
-  "Results": [
-    {
-      "Text": "this Friday June twenty two",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Cortana, please set up a Skype call sometime this Friday June twenty three with Jim",
-  "Context": {
-    "ReferenceDateTime": "2018-06-20T00:00:00"
+  {
+    "Input": "I'll go back at 4.22",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 16,
+        "Length": 4
+      }
+    ]
   },
-  "NotSupported": "python",
-  "Results": [
-    {
-      "Text": "this Friday",
-      "Type": "date"
+  {
+    "Input": "I'll go back in 4-22",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on    4/22",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 19,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on 22/04",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back       4/22",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 19,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 22/04",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 2015/08/12",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 11/12,2016",
+    "Results": [
+      {
+        "Text": "11/12,2016",
+        "Type": "date",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 11/12,16",
+    "Results": [
+      {
+        "Text": "11/12,16",
+        "Type": "date",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 1st Jan",
+    "Results": [
+      {
+        "Text": "1st Jan",
+        "Type": "date",
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 1-Jan",
+    "Results": [
+      {
+        "Text": "1-Jan",
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 28-Nov",
+    "Results": [
+      {
+        "Text": "28-Nov",
+        "Type": "date",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Wed, 22 of Jan",
+    "Results": [
+      {
+        "Text": "Wed, 22 of Jan",
+        "Type": "date",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back the first friday of july",
+    "Results": [
+      {
+        "Text": "the first friday of july",
+        "Type": "date",
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back the first friday in this month",
+    "Results": [
+      {
+        "Text": "the first friday in this month",
+        "Type": "date",
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back two weeks from now",
+    "Results": [
+      {
+        "Text": "two weeks from now",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back next week on Friday",
+    "Results": [
+      {
+        "Text": "next week on Friday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on Friday next week",
+    "Results": [
+      {
+        "Text": "on Friday next week",
+        "Type": "date",
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "past Monday",
+    "Results": [
+      {
+        "Text": "past Monday",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on Tues.",
+    "Results": [
+      {
+        "Text": "Tues",
+        "Type": "date",
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on Tues. good news.",
+    "Results": [
+      {
+        "Text": "Tues",
+        "Type": "date",
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on Tues",
+    "Results": [
+      {
+        "Text": "Tues",
+        "Type": "date",
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on Friday",
+    "Results": [
+      {
+        "Text": "Friday",
+        "Type": "date",
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Friday",
+    "Results": [
+      {
+        "Text": "Friday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back today",
+    "Results": [
+      {
+        "Text": "today",
+        "Type": "date",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tomorrow",
+    "Results": [
+      {
+        "Text": "tomorrow",
+        "Type": "date",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back yesterday",
+    "Results": [
+      {
+        "Text": "yesterday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back the day before yesterday",
+    "Results": [
+      {
+        "Text": "the day before yesterday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back the day after tomorrow",
+    "Results": [
+      {
+        "Text": "the day after tomorrow",
+        "Type": "date",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back the next day",
+    "Results": [
+      {
+        "Text": "the next day",
+        "Type": "date",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back next day",
+    "Results": [
+      {
+        "Text": "next day",
+        "Type": "date",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back this Friday",
+    "Results": [
+      {
+        "Text": "this Friday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back next Sunday",
+    "Results": [
+      {
+        "Text": "next Sunday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back last Sunday",
+    "Results": [
+      {
+        "Text": "last Sunday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back last day",
+    "Results": [
+      {
+        "Text": "last day",
+        "Type": "date",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back the last day",
+    "Results": [
+      {
+        "Text": "the last day",
+        "Type": "date",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back the day",
+    "Results": [
+      {
+        "Text": "the day",
+        "Type": "date",
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back this week Friday",
+    "Results": [
+      {
+        "Text": "this week Friday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back next week Sunday",
+    "Results": [
+      {
+        "Text": "next week Sunday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back last week Sunday",
+    "Results": [
+      {
+        "Text": "last week Sunday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 15 June 2016",
+    "Results": [
+      {
+        "Text": "15 June 2016",
+        "Type": "date",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "a baseball on may the eleventh",
+    "Results": [
+      {
+        "Text": "may the eleventh",
+        "Type": "date",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back fourth of may",
+    "Results": [
+      {
+        "Text": "fourth of may",
+        "Type": "date",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 4th of march",
+    "Results": [
+      {
+        "Text": "4th of march",
+        "Type": "date",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Jan first",
+    "Results": [
+      {
+        "Text": "Jan first",
+        "Type": "date",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back May twenty-first",
+    "Results": [
+      {
+        "Text": "May twenty-first",
+        "Type": "date",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back May twenty one",
+    "Results": [
+      {
+        "Text": "May twenty one",
+        "Type": "date",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back second of Aug",
+    "Results": [
+      {
+        "Text": "second of Aug",
+        "Type": "date",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back twenty second of June",
+    "Results": [
+      {
+        "Text": "twenty second of June",
+        "Type": "date",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I went back two months ago",
+    "Results": [
+      {
+        "Text": "two months ago",
+        "Type": "date",
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back two days later",
+    "Results": [
+      {
+        "Text": "two days later",
+        "Type": "date",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "who did i email a month ago",
+    "Results": [
+      {
+        "Text": "a month ago",
+        "Type": "date",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the 27",
+    "Results": [
+      {
+        "Text": "for the 27",
+        "Type": "date",
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the 27th",
+    "Results": [
+      {
+        "Text": "for the 27th",
+        "Type": "date",
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the 27.",
+    "Results": [
+      {
+        "Text": "for the 27",
+        "Type": "date",
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the 27!",
+    "Results": [
+      {
+        "Text": "for the 27",
+        "Type": "date",
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the 27 .",
+    "Results": [
+      {
+        "Text": "for the 27",
+        "Type": "date",
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the 21st",
+    "Results": [
+      {
+        "Text": "for the 21st",
+        "Type": "date",
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the 22nd",
+    "Results": [
+      {
+        "Text": "for the 22nd",
+        "Type": "date",
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the second",
+    "Results": [
+      {
+        "Text": "for the second",
+        "Type": "date",
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the twenty second",
+    "Results": [
+      {
+        "Text": "for the twenty second",
+        "Type": "date",
+        "Start": 12,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I went back for the thirty first",
+    "Results": [
+      {
+        "Text": "for the thirty first",
+        "Type": "date",
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "I went back on the 27th",
+    "Results": [
+      {
+        "Text": "on the 27th",
+        "Type": "date",
+        "Start": 12,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I went back on the 21st",
+    "Results": [
+      {
+        "Text": "on the 21st",
+        "Type": "date",
+        "Start": 12,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I went back on 22nd",
+    "Results": [
+      {
+        "Text": "on 22nd",
+        "Type": "date",
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I went back on the second!",
+    "Results": [
+      {
+        "Text": "on the second",
+        "Type": "date",
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I went back on twenty second?",
+    "Results": [
+      {
+        "Text": "on twenty second",
+        "Type": "date",
+        "Start": 12,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "the first prize",
+    "Results": []
+  },
+  {
+    "Input": "I'll go to the 27th floor",
+    "Results": []
+  },
+  {
+    "Input": "Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China",
+    "Results": []
+  },
+  {
+    "Input": "Get tickets for the 17th Door Haunted Experience",
+    "Results": []
+  },
+  {
+    "Input": "What do I have on Saturday the second",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    {
-      "Text": "June twenty three",
-      "Type": "date"
-    }
-  ]
-}
+    "Results": [
+      {
+        "Text": "Saturday the second",
+        "Type": "date",
+        "Start": 18,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "A meeting for Wednesday the 27th with Joe Smith",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Wednesday the 27th",
+        "Type": "date",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Thursday the 21st",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Thursday the 21st",
+        "Type": "date",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Friday the 22nd",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday the 22nd",
+        "Type": "date",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Saturday the 23rd",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Saturday the 23rd",
+        "Type": "date",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Friday the 15th",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday the 15th",
+        "Type": "date",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Thursday the twenty first",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Thursday the twenty first",
+        "Type": "date",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Friday the twenty second",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday the twenty second",
+        "Type": "date",
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Friday the fifteen",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday the fifteen",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Thursday the seventh",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Thursday the seventh",
+        "Type": "date",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back second Sunday",
+    "Results": [
+      {
+        "Text": "second Sunday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back first Sunday",
+    "Results": [
+      {
+        "Text": "first Sunday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back third Tuesday",
+    "Results": [
+      {
+        "Text": "third Tuesday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back fifth Sunday",
+    "Results": [
+      {
+        "Text": "fifth Sunday",
+        "Type": "date",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back sixth Sunday",
+    "Results": [
+      {
+        "Text": "Sunday",
+        "Type": "date",
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tenth Monday",
+    "Results": [
+      {
+        "Text": "Monday",
+        "Type": "date",
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 20th of next month",
+    "Results": [
+      {
+        "Text": "20th of next month",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 31st of this month",
+    "Results": [
+      {
+        "Text": "31st of this month",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call either Friday this week or Tuesday of next week",
+    "Results": [
+      {
+        "Text": "Friday this week",
+        "Type": "date",
+        "Start": 49,
+        "Length": 16
+      },
+      {
+        "Text": "Tuesday of next week",
+        "Type": "date",
+        "Start": 69,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Cortana could try to arrange a Skype call either Friday of this week or this week on Saturday",
+    "Results": [
+      {
+        "Text": "Friday of this week",
+        "Type": "date",
+        "Start": 49,
+        "Length": 19
+      },
+      {
+        "Text": "this week on Saturday",
+        "Type": "date",
+        "Start": 72,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "16. Nov. 2016",
+    "Results": [
+      {
+        "Text": "16. Nov. 2016",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "We had a meeting 1 month 21 days ago",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1 month 21 days ago",
+        "Type": "date",
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "I left here 2 years 1 month 21 days ago",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 years 1 month 21 days ago",
+        "Type": "date",
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "I will leve here 2 years 21 days later",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 years 21 days later",
+        "Type": "date",
+        "Start": 17,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I left here 1 month 2 years 21 days ago",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1 month 2 years 21 days ago",
+        "Type": "date",
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "I left here the 20th next month",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the 20th next month",
+        "Type": "date",
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "I left here 5 December 1391",
+    "Results": [
+      {
+        "Text": "5 December 1391",
+        "Type": "date",
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Monday, Jan twenty two, 2018",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Monday, Jan twenty two, 2018",
+        "Type": "date",
+        "Start": 0,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "on Sunday Jan twenty one two thousand and eighteen",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Sunday Jan twenty one two thousand and eighteen",
+        "Type": "date",
+        "Start": 3,
+        "Length": 47
+      }
+    ]
+  },
+  {
+    "Input": "on September the twenty-first nineteen seventy eight",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "September the twenty-first nineteen seventy eight",
+        "Type": "date",
+        "Start": 3,
+        "Length": 49
+      }
+    ]
+  },
+  {
+    "Input": "on September 10, nineteen zero one",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "September 10, nineteen zero one",
+        "Type": "date",
+        "Start": 3,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "on the tenth of September, two thousand",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "tenth of September, two thousand",
+        "Type": "date",
+        "Start": 7,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Are you free on 13.5.2015?",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Are you available on 2015.5.13?",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Are you available two sundays from now?",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "two sundays from now",
+        "Type": "date",
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Are you available two monday later?",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "two monday later",
+        "Type": "date",
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Are you available two days after today?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "two days after today",
+        "Type": "date",
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Are you available three weeks from tomorrow?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "three weeks from tomorrow",
+        "Type": "date",
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Where were you two days before yesterday?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "two days before yesterday",
+        "Type": "date",
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Are you free on 13.5.2015?",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Are you available on 2015.5.13?",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Are you available two sundays from now?",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "two sundays from now",
+        "Type": "date",
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Are you available two monday later?",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "two monday later",
+        "Type": "date",
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Are you available two days after today?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "two days after today",
+        "Type": "date",
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Are you available three weeks from tomorrow?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "three weeks from tomorrow",
+        "Type": "date",
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Where were you two days before yesterday?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "two days before yesterday",
+        "Type": "date",
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime this Friday-Jun-15 with Jim",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "this Friday-Jun-15",
+        "Type": "date",
+        "Start": 45,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime this Friday(Jun-15) with Jim",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "this Friday(Jun-15)",
+        "Type": "date",
+        "Start": 45,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime this Friday (Jun-15) with Jim",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "this Friday (Jun-15)",
+        "Type": "date",
+        "Start": 45,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime this Friday June twenty two with Jim",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "this Friday June twenty two",
+        "Type": "date",
+        "Start": 45,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime this Friday June twenty three with Jim",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "this Friday",
+        "Type": "date",
+        "Start": 45,
+        "Length": 11
+      },
+      {
+        "Text": "June twenty three",
+        "Type": "date",
+        "Start": 57,
+        "Length": 17
+      }
+    ]
+  }
 ]

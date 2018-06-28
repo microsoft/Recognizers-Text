@@ -1,596 +1,662 @@
-[{
+[
+  {
     "Input": "Ich werde diesen Januar nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Januar",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Im Monat Januar werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat Januar",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Im Januar 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Januar 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Ich werde diesen Februar nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Februar",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Im Monat Februar werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat Februar",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Im Februar 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Februar 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Ich werde diesen März nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen März",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Im Monat März werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat März",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Im März 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "März 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Ich werde diesen April nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen April",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Im Monat April werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat April",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Im April 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "April 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Ich werde diesen Mai nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Mai",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "Im Monat Mai werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat Mai",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Im Mai 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Mai 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 8
       }
     ]
   },
   {
     "Input": "Ich werde diesen Juni nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Juni",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Im Monat Juni werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat Juni",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Im Juni 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Juni 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Ich werde diesen Juli nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Juli",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Im Monat Juli werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat Juli",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Im Juli 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Juli 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Ich werde diesen August nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen August",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Im Monat August werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat August",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Im August 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "August 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Ich werde diesen September nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen September",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Im Monat September werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat September",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Im September 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "September 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Ich werde diesen Oktober nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Oktober",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Im Monat Oktober werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat Oktober",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Im Oktober 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Oktober 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Ich werde diesen November nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen November",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Im Monat November werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat November",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Im November 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "November 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ich werde diesen Dezember nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Dezember",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Im Monat Dezember werde ich nicht hier sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Im Monat Dezember",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Im Dezember 2011 habe ich komplett gefehlt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dezember 2011",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Nächsten Monat bin ich nicht hier.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Nächsten Monat",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "Nächstes Jahr im Dezember bin ich nicht hier.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Nächstes Jahr im Dezember",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Ich war zwischen dem 15. und 19. November dort",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwischen dem 15. und 19. November",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 33
       }
     ]
   },
   {
     "Input": "Ich war zwischen dem 15. November und dem 19. November dort",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zwischen dem 15. November und dem 19. November",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 46
       }
     ]
   },
   {
     "Input": "Ich war vom 15. November bis zum 19. November dort",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 15. November bis zum 19. November",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 37
       }
     ]
   },
   {
     "Input": "Ich war diesen Sommer nicht im Urlaub",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Sommer",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Mal sehen ob dieser Sommer auch wieder mieses Wetter mit sich bringt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dieser Sommer",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Der letzte Winter war nicht sonderlich hart.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "letzte Winter",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 4,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Mal sehen ob der nächste Sommer auch wieder mieses Wetter mit sich bringt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächste Sommer",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 14
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich bin diesen Monat vom 4. bis zum 22. weg",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Monat vom 4. bis zum 22.",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 31
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich bin vom 4. bis zum 23. weg",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 4. bis zum 23.",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 18
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich würde 2016-05 nicht hier",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016-05",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 7
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich würde 2016/05 nicht hier",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016/05",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 7
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich würde 05-2016 nicht hier",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05-2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 7
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich würde 05/2016 nicht hier",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05/2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 7
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich würde 2016 - 05 nicht hier",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016 - 05",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 9
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich würde 2016  /05 nicht hier",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2016  /05",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 9
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich würde 05-  2016 nicht hier",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05-  2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 9
       }
     ]
-  },{
+  },
+  {
     "Input": "Ich würde 05 /  2016 nicht hier",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "05 /  2016",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 10
       }
     ]
-  }  
+  }
 ]

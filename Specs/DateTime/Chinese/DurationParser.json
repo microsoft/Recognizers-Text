@@ -1,115 +1,122 @@
-[{
-  "Input": "两年",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "两年",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P2Y",
-        "FutureResolution": {
-          "duration": "63072000"
+[
+  {
+    "Input": "两年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "两年",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2Y",
+          "FutureResolution": {
+            "duration": "63072000"
+          },
+          "PastResolution": {
+            "duration": "63072000"
+          }
         },
-        "PastResolution": {
-          "duration": "63072000"
-        }
+        "Start": 0,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "5分钟",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5分钟",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT5M",
-        "FutureResolution": {
-          "duration": "300"
+  {
+    "Input": "5分钟",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "5分钟",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT5M",
+          "FutureResolution": {
+            "duration": "300"
+          },
+          "PastResolution": {
+            "duration": "300"
+          }
         },
-        "PastResolution": {
-          "duration": "300"
-        }
+        "Start": 0,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "3天",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3天",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3D",
-        "FutureResolution": {
-          "duration": "259200"
+  {
+    "Input": "3天",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3天",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
         },
-        "PastResolution": {
-          "duration": "259200"
-        }
+        "Start": 0,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "15周",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15周",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P15W",
-        "FutureResolution": {
-          "duration": "9072000"
+  {
+    "Input": "15周",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15周",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P15W",
+          "FutureResolution": {
+            "duration": "9072000"
+          },
+          "PastResolution": {
+            "duration": "9072000"
+          }
         },
-        "PastResolution": {
-          "duration": "9072000"
-        }
+        "Start": 0,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "三年半",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "三年",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3.5Y",
-        "FutureResolution": {
-          "duration": "110376000"
+  {
+    "Input": "三年半",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "三年",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3.5Y",
+          "FutureResolution": {
+            "duration": "110376000"
+          },
+          "PastResolution": {
+            "duration": "110376000"
+          }
         },
-        "PastResolution": {
-          "duration": "110376000"
-        }
+        "Start": 0,
+        "Length": 2
       }
-    }
-  ]
-}
+    ]
+  }
 ]

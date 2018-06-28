@@ -1,297 +1,326 @@
-[{
-  "Input": "Je vais partir 9 chaque dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9 chaque dimanche",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 9am chaque lundis",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9am chaque lundis",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 9am lundis",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9am lundis",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 9 lundis",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9 lundis",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir Lundis",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Lundis",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque Dimanche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque Dimanche",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir Dimanches",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Dimanches",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque semaine",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque semaine",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir tous les jours",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tous les jours",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir quotidien",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "quotidien",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir hebdomadaire",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hebdomadaire",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir mensuel",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mensuel",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir bihebdomadaire",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "bihebdomadaire",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque mois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque mois",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir annuellement",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "annuellement",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque deux jours",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque deux jours",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque trois semaine",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque trois semaine",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 3pm tous les jours",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3pm tous les jours",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir 15 tous les jours",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 tous les jours",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque lundi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque lundi",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque lundi 4pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque lundi 4pm",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir tous les matins",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " tous les matin",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir tous les matins a 9",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " tous les matin",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque matin at 9",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " chaque matin",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque apres-midi à 16",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque apres-midi à 16",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque nuit a 9pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque nuit a 9pm",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "Je vais partir chaque nuit a 9",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "chaque nuit a 9",
-      "Type": "set"
-    }
-  ]
-}
+[
+  {
+    "Input": "Je vais partir 9 chaque dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9 chaque dimanche",
+        "Type": "set",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 9am chaque lundis",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9am chaque lundis",
+        "Type": "set",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 9am lundis",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9am lundis",
+        "Type": "set",
+        "Start": 15,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 9 lundis",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9 lundis",
+        "Type": "set",
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir Lundis",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Lundis",
+        "Type": "set",
+        "Start": 15,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque Dimanche",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque Dimanche",
+        "Type": "set",
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir Dimanches",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Dimanches",
+        "Type": "set",
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque semaine",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque semaine",
+        "Type": "set",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les jours",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "tous les jours",
+        "Type": "set",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir quotidien",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "quotidien",
+        "Type": "set",
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir hebdomadaire",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "hebdomadaire",
+        "Type": "set",
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir mensuel",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mensuel",
+        "Type": "set",
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir bihebdomadaire",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "bihebdomadaire",
+        "Type": "set",
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque mois",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque mois",
+        "Type": "set",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir annuellement",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "annuellement",
+        "Type": "set",
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque deux jours",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque deux jours",
+        "Type": "set",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque trois semaine",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque trois semaine",
+        "Type": "set",
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 3pm tous les jours",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3pm tous les jours",
+        "Type": "set",
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir 15 tous les jours",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15 tous les jours",
+        "Type": "set",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque lundi",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque lundi",
+        "Type": "set",
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque lundi 4pm",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque lundi 4pm",
+        "Type": "set",
+        "Start": 15,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les matins",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " tous les matin",
+        "Type": "set",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir tous les matins a 9",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " tous les matin",
+        "Type": "set",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque matin at 9",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": " chaque matin",
+        "Type": "set",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque apres-midi à 16",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque apres-midi à 16",
+        "Type": "set",
+        "Start": 15,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque nuit a 9pm",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque nuit a 9pm",
+        "Type": "set",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir chaque nuit a 9",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "chaque nuit a 9",
+        "Type": "set",
+        "Start": 15,
+        "Length": 15
+      }
+    ]
+  }
 ]

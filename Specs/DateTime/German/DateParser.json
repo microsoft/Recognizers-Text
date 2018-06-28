@@ -1,10 +1,10 @@
-[{
+[
+  {
     "Input": "Ich gehe am 15. zurück.",
     "Context": {
       "ReferenceDateTime": "2016-01-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15.",
@@ -17,7 +17,9 @@
           "PastResolution": {
             "date": "2015-12-15"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 3
       }
     ]
   },
@@ -26,8 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-01-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. Januar",
@@ -40,18 +41,18 @@
           "PastResolution": {
             "date": "2015-01-15"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe am 15. Januar 2011 zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. Januar 2011",
@@ -64,7 +65,9 @@
           "PastResolution": {
             "date": "2011-01-15"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 15
       }
     ]
   },
@@ -73,8 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15.1.2011",
@@ -87,7 +89,9 @@
           "PastResolution": {
             "date": "2011-01-15"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 9
       }
     ]
   },
@@ -96,8 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Montag dem 15. Januar 2017",
@@ -110,7 +113,9 @@
           "PastResolution": {
             "date": "2017-01-15"
           }
-        }
+        },
+        "Start": 41,
+        "Length": 26
       }
     ]
   },
@@ -119,8 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2017-01-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Montag dem 15. Januar",
@@ -133,7 +137,9 @@
           "PastResolution": {
             "date": "2016-01-15"
           }
-        }
+        },
+        "Start": 41,
+        "Length": 21
       }
     ]
   },
@@ -142,8 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21/04/2016",
@@ -156,7 +161,9 @@
           "PastResolution": {
             "date": "2016-04-21"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
@@ -165,8 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "18. April 2016",
@@ -179,7 +185,9 @@
           "PastResolution": {
             "date": "2016-04-18"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 14
       }
     ]
   },
@@ -188,8 +196,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Freitag",
@@ -202,7 +209,9 @@
           "PastResolution": {
             "date": "2016-11-11"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 7
       }
     ]
   },
@@ -211,8 +220,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute",
@@ -225,7 +233,9 @@
           "PastResolution": {
             "date": "2016-11-07"
           }
-        }
+        },
+        "Start": 21,
+        "Length": 5
       }
     ]
   },
@@ -234,7 +244,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -247,7 +257,9 @@
           "PastResolution": {
             "date": "2015-08-12"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 10
       }
     ]
   },
@@ -256,7 +268,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "ersten Januar",
@@ -269,7 +281,9 @@
           "PastResolution": {
             "date": "2016-01-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 13
       }
     ]
   },
@@ -278,7 +292,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "ersten Januar 2018",
@@ -291,7 +305,9 @@
           "PastResolution": {
             "date": "2018-01-01"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -300,7 +316,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "3-7-2017",
@@ -313,7 +329,9 @@
           "PastResolution": {
             "date": "2017-07-03"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 8
       }
     ]
   },
@@ -322,7 +340,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -335,7 +353,9 @@
           "PastResolution": {
             "date": "2015-05-13"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
@@ -344,7 +364,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015.5.13",
@@ -357,7 +377,9 @@
           "PastResolution": {
             "date": "2015-05-13"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
@@ -366,7 +388,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "3-7-07",
@@ -379,17 +401,18 @@
           "PastResolution": {
             "date": "2007-07-03"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bist du am 3-7-27 frei?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "3-7-27",
@@ -402,17 +425,18 @@
           "PastResolution": {
             "date": "2027-07-03"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bist du am 05/05/89 frei?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "05/05/89",
@@ -425,17 +449,18 @@
           "PastResolution": {
             "date": "1989-05-05"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 8
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bist du am 05/05/71 frei?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "05/05/71",
@@ -448,7 +473,9 @@
           "PastResolution": {
             "date": "1971-05-05"
           }
-        }
+        },
+        "Start": 11,
+        "Length": 8
       }
     ]
   }

@@ -1,276 +1,289 @@
-[{
+[
+  {
     "Input": "Ich werde heute von 5 bis 7 Uhr weg sein",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute von 5 bis 7 Uhr",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Ich werde heute von 5 Uhr bis 7 Uhr weg sein",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute von 5 Uhr bis 7 Uhr",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 25
       }
     ]
   },
   {
     "Input": "Das geht nächsten Sonntag von 8 bis 16 Uhr.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten Sonntag von 8 bis 16 Uhr",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 9,
+        "Length": 33
       }
     ]
   },
   {
     "Input": "Das Projekt ging vom 7. April 2017 um 4 Uhr bis heute um 4 Uhr.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7. April 2017 um 4 Uhr bis heute um 4 Uhr",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 45
       }
     ]
   },
   {
     "Input": "Das Projekt ging vom 7. April 2017 um 4 Uhr bis zum 3. Juli 2018 um 4 Uhr.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7. April 2017 um 4 Uhr bis zum 3. Juli 2018 um 4 Uhr",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 56
       }
     ]
   },
   {
     "Input": "Das Projekt ging vom 7/3/2017 15:00 bis zum 8/4/2017 16:30.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vom 7/3/2017 15:00 bis zum 8/4/2017 16:30",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 41
       }
     ]
   },
   {
     "Input": "Das findet diese Nacht statt.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diese Nacht",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Ich gehe innerhalb der nächsten 5 Stunden nach Hause.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten 5 Stunden",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 23,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Ich bin vor einer halben Stunde nach Hause gekommen.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vor einer halben Stunde",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 8,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Ich werde wohl irgendwann diesen Nachmittag zurück gehen.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Nachmittag",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 26,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Ich komme dann heute zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 15,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Diese Nacht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diese Nacht",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Diesen Abend",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diesen Abend",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Diesen Morgen",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diesen Morgen",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Diesen Nachmittag",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Diesen Nachmittag",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Die nächste Nacht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächste Nacht",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 4,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "In der letzten Nacht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "letzten Nacht",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 7,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Morgen Nacht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Morgen Nacht",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "nächsten Montag Nachmittag",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten Montag Nachmittag",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 26
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Am 5. Mai in der Nacht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5. Mai in der Nacht",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 3,
+        "Length": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "in den letzten 3 Minuten",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "letzten 3 Minuten",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 7,
+        "Length": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "in den nächsten 3 Minuten",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten 3 Minuten",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 7,
+        "Length": 18
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "in den vorherigen 3 Minuten",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "vorherigen 3 Minuten",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 7,
+        "Length": 20
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "in den nächsten 3 Stunden",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten 3 Stunden",
-        "Type": "datetimerange"
+        "Type": "datetimerange",
+        "Start": 7,
+        "Length": 18
       }
     ]
   }

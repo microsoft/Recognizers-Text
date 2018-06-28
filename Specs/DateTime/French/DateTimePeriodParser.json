@@ -1,1950 +1,2030 @@
-[{
-  "Input": "Je serai sorti cinq au sept aujourd'hui",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cinq au sept aujourd'hui",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 05:00:00",
-          "endDateTime": "2016-11-07 07:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 05:00:00",
-          "endDateTime": "2016-11-07 07:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti from 5 à 6 de 22/4/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5 à 6 de 22/4/2016",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2016-04-22 05:00:00",
-          "endDateTime": "2016-04-22 06:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-04-22 05:00:00",
-          "endDateTime": "2016-04-22 06:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti de 5 au 6 de Avril 22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 5 au 6 de Avril 22",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2017-04-22 05:00:00",
-          "endDateTime": "2017-04-22 06:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-04-22 05:00:00",
-          "endDateTime": "2016-04-22 06:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti de 5 au 6 de 1 Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 5 au 6 de 1 Jan",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2017-01-01 05:00:00",
-          "endDateTime": "2017-01-01 06:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-01-01 05:00:00",
-          "endDateTime": "2016-01-01 06:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti 3pm a 4pm lendemain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3pm a 4pm lendemain",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 15:00:00",
-          "endDateTime": "2016-11-08 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-08 15:00:00",
-          "endDateTime": "2016-11-08 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti 15 à 16 demain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 à 16 demain",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 15:00:00",
-          "endDateTime": "2016-11-08 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-08 15:00:00",
-          "endDateTime": "2016-11-08 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 20:00:00",
-          "endDateTime": "2016-11-07 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 20:00:00",
-          "endDateTime": "2016-11-07 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 20:00:00",
-          "endDateTime": "2016-11-07 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 20:00:00",
-          "endDateTime": "2016-11-07 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce soir",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce soir",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-07 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-07 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette matin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette matin",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 08:00:00",
-          "endDateTime": "2016-11-07 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 08:00:00",
-          "endDateTime": "2016-11-07 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce matin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce matin",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 08:00:00",
-          "endDateTime": "2016-11-07 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 08:00:00",
-          "endDateTime": "2016-11-07 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendri ce l'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce l'apres-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 12:00:00",
-          "endDateTime": "2016-11-07 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 12:00:00",
-          "endDateTime": "2016-11-07 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai prochaine nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochaine nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-08TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai derniere nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "derniere nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-06TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-06 20:00:00",
-          "endDateTime": "2016-11-06 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-06 20:00:00",
-          "endDateTime": "2016-11-06 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai nuit lendemain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "nuit lendemain",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-08TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai lundi prochain d'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "lundi prochain d'apres-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-14TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-14 12:00:00",
-          "endDateTime": "2016-11-14 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-14 12:00:00",
-          "endDateTime": "2016-11-14 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai derniere 3 minute",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "derniere 3 minute",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai derniere 3mins",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "derniere 3mins",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dernier 3 minutes",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dernier 3 minutes",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai prochain 5 hrs",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochain 5 hrs",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 21:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 21:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dernière minute",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dernière minute",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:11:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:11:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai prochaine heures",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochaine heures",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 17:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 17:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai mardi dans le matin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mardi dans le matin",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 08:00:00",
-          "endDateTime": "2016-11-08 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 08:00:00",
-          "endDateTime": "2016-11-01 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans tôt le matin Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tôt le matin Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 08:00:00",
-          "endDateTime": "2016-11-08 10:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 08:00:00",
-          "endDateTime": "2016-11-01 10:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans le tard matin Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans le tard matin Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 10:00:00",
-          "endDateTime": "2016-11-08 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 10:00:00",
-          "endDateTime": "2016-11-01 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi d'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi d'apres-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 12:00:00",
-          "endDateTime": "2016-11-08 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 12:00:00",
-          "endDateTime": "2016-11-01 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi matin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi matin",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 08:00:00",
-          "endDateTime": "2016-11-08 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 08:00:00",
-          "endDateTime": "2016-11-01 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi soiree",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi soiree",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 20:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous nuit Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "nuit Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 20:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous de la nuit Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la nuit Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 20:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous de la soiree Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la soiree Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous de la matin mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la matin mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 08:00:00",
-          "endDateTime": "2016-11-08 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 08:00:00",
-          "endDateTime": "2016-11-01 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous tot de le soiree mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "le soiree mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous fin de la soiree mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la soiree mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous fin du soiree mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "du soiree mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous tot du soiree mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "du soiree mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi tot d'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi tot d'apres-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 12:00:00",
-          "endDateTime": "2016-11-08 14:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 12:00:00",
-          "endDateTime": "2016-11-01 14:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi fin d'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi fin d'apres-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 14:00:00",
-          "endDateTime": "2016-11-08 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 14:00:00",
-          "endDateTime": "2016-11-01 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans tot le nuit mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tot le nuit mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 22:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 20:00:00",
-          "endDateTime": "2016-11-01 22:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans tard nuit Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tard nuit Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 22:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 22:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi dans la nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi dans la nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 20:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans le tard nuit Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans le tard nuit Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 22:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 22:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi tot le matin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi tot le matin",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 08:00:00",
-          "endDateTime": "2016-11-08 10:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 08:00:00",
-          "endDateTime": "2016-11-01 10:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi fin matin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi fin matin",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 10:00:00",
-          "endDateTime": "2016-11-08 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 10:00:00",
-          "endDateTime": "2016-11-01 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi soir",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi soir",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi fin de nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi fin de nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 22:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 22:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous Mardi fin nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mardi fin nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 22:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 22:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti de 5 a 6pm de Avril 22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 5 a 6pm de Avril 22",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2017-04-22 17:00:00",
-          "endDateTime": "2017-04-22 18:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-04-22 17:00:00",
-          "endDateTime": "2016-04-22 18:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti 3:00 à 4:00 demain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3:00 à 4:00 demain",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 03:00:00",
-          "endDateTime": "2016-11-08 04:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-08 03:00:00",
-          "endDateTime": "2016-11-08 04:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti de 4pm aujourd'hui à 5pm demain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm aujourd'hui à 5pm demain",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-08 17:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-08 17:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti entre 4pm et 5pm aujourd'hui",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre 4pm et 5pm aujourd'hui",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-07 17:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-07 17:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serai sorti de 4pm 1 Jan, 2016 a 5pm aujourd'hui",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm 1 Jan, 2016 a 5pm aujourd'hui",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
-        "FutureResolution": {
-          "startDateTime": "2016-01-01 16:00:00",
-          "endDateTime": "2016-11-07 17:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-01-01 16:00:00",
-          "endDateTime": "2016-11-07 17:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendai cette soiree",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette soiree",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-07 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-07 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette de la soiree",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la soiree",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-07 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:00:00",
-          "endDateTime": "2016-11-07 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce l'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce l'apres-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-07TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 12:00:00",
-          "endDateTime": "2016-11-07 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 12:00:00",
-          "endDateTime": "2016-11-07 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai le prochaine soiree",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochaine soiree",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-08TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai la derniere nuit",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "derniere nuit",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-06TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-06 20:00:00",
-          "endDateTime": "2016-11-06 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-06 20:00:00",
-          "endDateTime": "2016-11-06 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens demain soir",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demain soir",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "2016-11-08TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dernier 3mins",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dernier 3mins",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai prochaine 5 heures",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochaine 5 heures",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 21:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 21:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai derniere minute",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "derniere minute",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:11:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:11:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai prochain heure",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochain heure",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 17:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 17:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai prochain quelques heures",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "prochain quelques heures",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 19:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:12:00",
-          "endDateTime": "2016-11-07 19:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai mardi matinee",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mardi matinee",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 08:00:00",
-          "endDateTime": "2016-11-08 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 08:00:00",
-          "endDateTime": "2016-11-01 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai mardi l'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mardi l'apres-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 12:00:00",
-          "endDateTime": "2016-11-08 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 12:00:00",
-          "endDateTime": "2016-11-01 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai mardi soiree",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mardi soiree",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans le début matin Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans le début matin Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 08:00:00",
-          "endDateTime": "2016-11-08 10:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 08:00:00",
-          "endDateTime": "2016-11-01 10:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans fin de matin Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fin de matin Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 10:00:00",
-          "endDateTime": "2016-11-08 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 10:00:00",
-          "endDateTime": "2016-11-01 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans fin matin Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fin matin Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TMO",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 10:00:00",
-          "endDateTime": "2016-11-08 12:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 10:00:00",
-          "endDateTime": "2016-11-01 12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans mardi tôt d'après-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mardi tôt d'après-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 12:00:00",
-          "endDateTime": "2016-11-08 14:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 12:00:00",
-          "endDateTime": "2016-11-01 14:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Allons nous recontrer mardi fin d'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mardi fin d'apres-midi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TAF",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 14:00:00",
-          "endDateTime": "2016-11-08 16:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 14:00:00",
-          "endDateTime": "2016-11-01 16:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans fin nuit Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fin nuit Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 22:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 22:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans le tôt nuit mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans le tôt nuit mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 20:00:00",
-          "endDateTime": "2016-11-08 22:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 20:00:00",
-          "endDateTime": "2016-11-01 22:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans fin de nuit mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fin de nuit mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 22:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 22:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans tôt le soir mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tôt le soir mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 16:00:00",
-          "endDateTime": "2016-11-08 18:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 16:00:00",
-          "endDateTime": "2016-11-01 18:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous fin de soir mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fin de soir mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TEV",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 18:00:00",
-          "endDateTime": "2016-11-08 20:00:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 18:00:00",
-          "endDateTime": "2016-11-01 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "rencontrons-nous dans le fin de nuit Mardi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans le fin de nuit Mardi",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "XXXX-WXX-2TNI",
-        "FutureResolution": {
-          "startDateTime": "2016-11-08 22:00:00",
-          "endDateTime": "2016-11-08 23:59:59"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-01 22:00:00",
-          "endDateTime": "2016-11-01 23:59:59"
-        }
-      }
-    }
-  ]
-}
+[
+  {
+    "Input": "Je serai sorti cinq au sept aujourd'hui",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cinq au sept aujourd'hui",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti from 5 à 6 de 22/4/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "5 à 6 de 22/4/2016",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti de 5 au 6 de Avril 22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de 5 au 6 de Avril 22",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 05:00:00",
+            "endDateTime": "2017-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti de 5 au 6 de 1 Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de 5 au 6 de 1 Jan",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-01-01 05:00:00",
+            "endDateTime": "2017-01-01 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 05:00:00",
+            "endDateTime": "2016-01-01 06:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti 3pm a 4pm lendemain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3pm a 4pm lendemain",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti 15 à 16 demain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "15 à 16 demain",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce soir",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce soir",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette matin",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce matin",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendri ce l'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce l'apres-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai prochaine nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochaine nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        },
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai derniere nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "derniere nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-06TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          }
+        },
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai nuit lendemain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "nuit lendemain",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        },
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai lundi prochain d'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "lundi prochain d'apres-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-14TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai derniere 3 minute",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "derniere 3 minute",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai derniere 3mins",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "derniere 3mins",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dernier 3 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dernier 3 minutes",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai prochain 5 hrs",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochain 5 hrs",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dernière minute",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dernière minute",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai prochaine heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochaine heures",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai mardi dans le matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mardi dans le matin",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans tôt le matin Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "tôt le matin Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans le tard matin Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans le tard matin Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi d'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi d'apres-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi matin",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi soiree",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi soiree",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous nuit Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "nuit Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous de la nuit Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la nuit Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous de la soiree Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la soiree Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous de la matin mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la matin mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous tot de le soiree mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "le soiree mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 24,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous fin de la soiree mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la soiree mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 24,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous fin du soiree mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "du soiree mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 21,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous tot du soiree mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "du soiree mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 21,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi tot d'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi tot d'apres-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi fin d'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi fin d'apres-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans tot le nuit mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "tot le nuit mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans tard nuit Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "tard nuit Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi dans la nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi dans la nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans le tard nuit Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans le tard nuit Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 17,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi tot le matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi tot le matin",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi fin matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi fin matin",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi soir",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi soir",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi fin de nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi fin de nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 17,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous Mardi fin nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Mardi fin nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti de 5 a 6pm de Avril 22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de 5 a 6pm de Avril 22",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 17:00:00",
+            "endDateTime": "2017-04-22 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 17:00:00",
+            "endDateTime": "2016-04-22 18:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti 3:00 à 4:00 demain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3:00 à 4:00 demain",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti de 4pm aujourd'hui à 5pm demain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de 4pm aujourd'hui à 5pm demain",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti entre 4pm et 5pm aujourd'hui",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "entre 4pm et 5pm aujourd'hui",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai sorti de 4pm 1 Jan, 2016 a 5pm aujourd'hui",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "de 4pm 1 Jan, 2016 a 5pm aujourd'hui",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
+          "FutureResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendai cette soiree",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette soiree",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai cette de la soiree",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la soiree",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 23,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai ce l'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce l'apres-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le prochaine soiree",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochaine soiree",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai la derniere nuit",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "derniere nuit",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-06TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          }
+        },
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens demain soir",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demain soir",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          }
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dernier 3mins",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dernier 3mins",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai prochaine 5 heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochaine 5 heures",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai derniere minute",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "derniere minute",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai prochain heure",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochain heure",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai prochain quelques heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "prochain quelques heures",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          }
+        },
+        "Start": 14,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai mardi matinee",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mardi matinee",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai mardi l'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mardi l'apres-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai mardi soiree",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mardi soiree",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans le début matin Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans le début matin Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans fin de matin Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fin de matin Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans fin matin Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fin matin Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans mardi tôt d'après-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mardi tôt d'après-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Allons nous recontrer mardi fin d'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "mardi fin d'apres-midi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans fin nuit Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fin nuit Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans le tôt nuit mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans le tôt nuit mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans fin de nuit mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fin de nuit mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 22,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans tôt le soir mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "tôt le soir mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous fin de soir mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fin de soir mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        },
+        "Start": 17,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "rencontrons-nous dans le fin de nuit Mardi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dans le fin de nuit Mardi",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        },
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  }
 ]
