@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     public class TestBase
     {
         private TestContext testContextInstance;
+
         public TestContext TestContext
         {
             get { return testContextInstance; }
@@ -62,13 +63,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestNumberWithUnit()
         {
             TestPreValidation();
-            ValidateResults(new string[] { ResolutionKey.Unit });
+            ValidateResults(new[] { ResolutionKey.Unit });
         }
 
         public void TestCurrency()
         {
             TestPreValidation();
-            ValidateResults(new string[] { ResolutionKey.Unit, ResolutionKey.IsoCurrency });
+            ValidateResults(new[] { ResolutionKey.Unit, ResolutionKey.IsoCurrency });
         }
 
         public void TestDateTime()
@@ -99,6 +100,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 {
                    CollectionAssert.AreEqual(t.Item1, t.Item2, GetMessage(TestSpec)); 
                 }
+
             }
         }
 
@@ -139,6 +141,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 {
                     CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
                 }
+
             }
         }
 
@@ -163,6 +166,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Length, actual.Length, GetMessage(TestSpec));
             }
+
         }
 
         public void TestDateTimeParser()
@@ -209,6 +213,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     Assert.AreEqual(expectedValue.TimeZoneResolution.Value, actualValue.TimeZoneResolution.Value, GetMessage(TestSpec));
                     Assert.AreEqual(expectedValue.TimeZoneResolution.UtcOffsetMins, actualValue.TimeZoneResolution.UtcOffsetMins, GetMessage(TestSpec));
                 }
+
             }
         }
 
@@ -247,6 +252,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     {
                         CollectionAssert.AreEqual(results.Item1, results.Item2, GetMessage(TestSpec));
                     }
+
                 }
             }
         }
@@ -332,6 +338,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                     Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
                 }
+
             }
         }
 
@@ -339,5 +346,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         {
             return $"Input: \"{spec.Input}\"";
         }
+
     }
 }
