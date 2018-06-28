@@ -449,7 +449,7 @@ class BaseDateTimeParser(DateTimeParser):
         pr1 = self.config.date_parser.parse(er1, reference)
         pr2 = self.config.time_parser.parse(er2, reference)
 
-        if pr1 is None or pr2 is None:
+        if not pr1.value or not pr2.value:
             return result
 
         future_date: datetime = pr1.value.future_value

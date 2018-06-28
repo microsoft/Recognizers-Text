@@ -1,7 +1,6 @@
 [
   {
     "Input": "esto es 2 dias",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2 dias",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "esto es antes de las 4pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "antes de las 4pm",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "esto es antes de las 4pm mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "antes de las 4pm mañana",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "esto es antes de mañana a las 4pm ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "antes de mañana a las 4pm",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "despues del 7/2 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "despues del 7/2",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "desde el 7/2 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "desde el 7/2",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "antes del  7/2 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "antes del  7/2",
