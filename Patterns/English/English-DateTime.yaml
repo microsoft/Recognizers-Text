@@ -549,10 +549,10 @@ RelativeDecadeRegex: !nestedRegex
 YearAfterRegex: !simpleRegex
   def: \b(or\s+(above|after))\b
 YearPeriodRegex: !nestedRegex
-  def: (((from|during|in|between)\s+)?{YearRegex}\s*({TillRegex}|{RangeConnectorRegex})\s*{YearRegex})
+  def: ((((from|during|in)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((between)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 ComplexDatePeriodRegex: !nestedRegex
-  def: ((from|during|in|between)\s+)?(?<start>.+)\s*({TillRegex}|{RangeConnectorRegex})\s*(?<end>.+)
+  def: (((from|during|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((between)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 UnitMap: !dictionary
   types: [ string, string ]
