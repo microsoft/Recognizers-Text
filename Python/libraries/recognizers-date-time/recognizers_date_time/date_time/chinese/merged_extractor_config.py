@@ -5,9 +5,9 @@ from .duration_extractor import ChineseDurationExtractor
 from .time_extractor import ChineseTimeExtractor
 from .date_extractor import ChineseDateExtractor
 from .datetime_extractor import ChineseDateTimeExtractor
-from .time_period_extractor import ChineseTimePeriodExtractor
-from .date_period_extractor import ChineseDatePeriodExtractor
-from .datetime_period_extractor import ChineseDateTimePeriodExtractor
+from .timeperiod_extractor import ChineseTimePeriodExtractor
+from .dateperiod_extractor import ChineseDatePeriodExtractor
+from .datetimeperiod_extractor import ChineseDateTimePeriodExtractor
 from .set_extractor import ChineseSetExtractor
 from .holiday_extractor_config import ChineseHolidayExtractorConfiguration
 

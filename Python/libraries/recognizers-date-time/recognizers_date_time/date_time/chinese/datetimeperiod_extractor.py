@@ -8,7 +8,7 @@ from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from ..utilities import merge_all_tokens, Token
 from ..base_datetimeperiod import BaseDateTimePeriodExtractor
-from .datetime_period_extractor_config import ChineseDateTimePeriodExtractorConfiguration
+from .datetimeperiod_extractor_config import ChineseDateTimePeriodExtractorConfiguration
 
 class ChineseDateTimePeriodExtractor(BaseDateTimePeriodExtractor):
     def __init__(self):

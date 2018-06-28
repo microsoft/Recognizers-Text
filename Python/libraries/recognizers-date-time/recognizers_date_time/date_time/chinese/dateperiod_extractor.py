@@ -6,7 +6,7 @@ from recognizers_text import ExtractResult
 
 from ..base_dateperiod import BaseDatePeriodExtractor
 from ..utilities import merge_all_tokens, Token
-from .date_period_extractor_config import ChineseDatePeriodExtractorConfiguration
+from .dateperiod_extractor_config import ChineseDatePeriodExtractorConfiguration
 
 class ChineseDatePeriodExtractor(BaseDatePeriodExtractor):
     def __init__(self):
