@@ -2868,6 +2868,7 @@
 {
   "Input": "2222.2222.22222.222",
   "NotSupportedByDesign": "javascript",
+  "NotSupported": "java",
   "Results": [
     {
       "Text": "2222",
