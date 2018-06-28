@@ -9,7 +9,8 @@ from ..extractors import DateTimeExtractor
 class DateTimeExtra:
     def __init__(self):
         self.data_type: any = None
-        self.named_entity: Dict[str, str] = dict()
+        self.named_entity: Dict[str, List[str]] = dict()
+        self.match: Match = None
 
 class TimeResult:
     def __init__(self, hour: int, minute: int, second: int, low_bound: int = -1):
@@ -102,4 +103,5 @@ class ChineseBaseDateTimeExtractor(DateTimeExtractor):
         result = DateTimeExtra()
         result.data_type = source[key]
         result.named_entity = key.capturesdict()
+        result.match = key
         return result

@@ -44,6 +44,7 @@ class ChineseTimeParser(BaseTimeParser):
 
         result = DateTimeParseResult(source)
         result.value = parse_result
+        result.data = time_result
         result.timex_str = parse_result.timex if parse_result is not None else ''
         result.resolution_str = ''
 
