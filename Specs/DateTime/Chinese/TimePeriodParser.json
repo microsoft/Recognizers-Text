@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从五点半到六点",
@@ -30,7 +29,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从下午五点一刻到六点",
@@ -56,7 +54,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "17:55:23-18:33:02",
@@ -82,7 +79,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从17点55分23秒至18点33分02秒",
@@ -108,7 +104,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "早上五到六点",
@@ -134,7 +129,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下午五点到晚上七点半",
@@ -160,7 +154,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下午5:00到凌晨3:00",
@@ -186,7 +179,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下午5:00到6:00",
@@ -212,7 +204,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5:00到6:00",
