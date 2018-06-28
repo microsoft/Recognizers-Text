@@ -12,6 +12,7 @@ namespace Microsoft.Recognizers.Text.Utilities
             // ToString() will return a comma-separated list of enum string values if defined and an int if not.
             return (!int.TryParse(en.ToString(), out int val));
         }
+
         public static T Convert<T>(int value) where T : struct 
         {
 

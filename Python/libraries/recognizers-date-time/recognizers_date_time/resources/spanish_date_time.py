@@ -274,7 +274,7 @@ class SpanishDateTime:
                         ('mayo', 5),
                         ('junio', 6),
                         ('julio', 7),
-                        ('abosto', 8),
+                        ('agosto', 8),
                         ('septiembre', 9),
                         ('setiembre', 9),
                         ('octubre', 10),
