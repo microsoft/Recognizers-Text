@@ -3916,4 +3916,75 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "Show sales in 2007 and 2009",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "ParentText": "2007 and 2009",
+        "Text": "2007",
+        "Start": 14,
+        "End": 17,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2007",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2008-01-01"
+            }
+          ]
+        }
+      }
+      ,
+      {
+        "ParentText": "2007 and 2009",
+        "Text": "2009",
+        "Start": 23,
+        "End": 26,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009",
+              "type": "daterange",
+              "start": "2009-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Show sales between 2007 and 2009",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "between 2007 and 2009",
+        "Start": 11,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P2Y)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  }
 ]
