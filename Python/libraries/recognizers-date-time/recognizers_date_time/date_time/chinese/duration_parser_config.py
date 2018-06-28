@@ -38,7 +38,7 @@ class ChineseDurationParserConfiguration(DurationParserConfiguration):
         return None
 
     @property
-    def in_exact_number_unit_regex(self) -> any:
+    def inexact_number_unit_regex(self) -> any:
         return None
 
     @property
