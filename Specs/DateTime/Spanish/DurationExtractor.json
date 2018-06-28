@@ -1,7 +1,6 @@
 [
   {
     "Input": "me voy por 3h",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3h",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "me voy por 3 dias",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 dias",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "me voy por 3,5 años",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3,5 años",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "me voy por 3 h",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 h",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "me voy por 3 horas",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 horas",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "me voy 3 dias",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 dias",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "me voy por 3 meses",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 meses",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "me voy por 3 minutos",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 minutos",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "me voy por 3 min",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 min",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "me voy por 3,5 segundos ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3,5 segundos",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "me voy por 123,45 seg",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "123,45 seg",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "me voy por dos semanas",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dos semanas",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "me voy 20 minutos",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "20 minutos",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "me voy por veinticuatro horas",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "veinticuatro horas",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "me voy todo el dia",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todo el dia",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "me voy toda la semana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "toda la semana",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "me voy por todo el mes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todo el mes",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "me voy por todo el año",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todo el año",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "me voy por una hora",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "una hora",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "me voy por un año",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un año",

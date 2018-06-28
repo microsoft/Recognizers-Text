@@ -142,11 +142,11 @@ class BaseSetExtractor(DateTimeExtractor):
             after_str = source[extract_result.start + extract_result.length:]
             if not after_str and self.config.before_each_day_regex is not None:
                 before_str = source[0:extract_result.start]
-                before_match = regex.match(self.config.before_each_day_regex, before_str)
+                before_match = regex.search(self.config.before_each_day_regex, before_str)
                 if before_match:
                     yield Token(before_match.start(), extract_result.start + extract_result.length)
             else:
-                after_match = regex.match(self.config.each_day_regex, after_str)
+                after_match = regex.search(self.config.each_day_regex, after_str)
                 if after_match:
                     yield Token(
                         extract_result.start,

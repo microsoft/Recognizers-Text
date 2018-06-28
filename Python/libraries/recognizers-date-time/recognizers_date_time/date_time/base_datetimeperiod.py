@@ -518,10 +518,11 @@ class BaseDateTimePeriodParser(DateTimeParser):
         result = DateTimeResolutionResult()
         source = source.strip().lower()
 
-        er = next(iter(self.config.time_period_extractor.extract(source, reference)), None)
-        if er is None:
+        ers = self.config.time_period_extractor.extract(source, reference)
+        if not len(ers) == 1:
             return self.parse_simple_cases(source, reference)
 
+        er = ers[0]
         time_period_parse_result = self.config.time_period_parser.parse(er)
         time_period_resolution_result = time_period_parse_result.value
 
@@ -755,8 +756,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
         elif has_late:
             matched = MatchedTimeRange(matched.time_str, matched.begin_hour + 2, matched.end_hour, matched.end_min, matched.success)
 
-        match = regex.search(self.config.specific_time_of_day_regex, source)
-        if match and match.group() == source:
+        match = list(self.config.specific_time_of_day_regex.finditer(source))
+        if match and match[-1].start() == 0 and match[-1].group() == source:
             swift = self.config.get_swift_prefix(source)
             date = reference + timedelta(days=swift)
             result.timex = FormatUtil.format_date(date) + matched.time_str
@@ -772,12 +773,12 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
             return result
 
-        match = regex.search(self.config.period_time_of_day_with_date_regex, source)
+        match = list(self.config.period_time_of_day_with_date_regex.finditer(source))
         if not match:
             return result
 
-        before_str = source[0:match.start()].strip()
-        after_str = source[match.end():].strip()
+        before_str = source[0:match[-1].start()].strip()
+        after_str = source[match[-1].end():].strip()
         er = next(iter(self.config.date_extractor.extract(before_str, reference)), None)
 
         # eliminate time period, if any
@@ -814,7 +815,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 period_future = time_pr.value.future_value
                 period_past = time_pr.value.past_value
 
-                if period_future == period_past:
+                if period_future.start == period_past.start and period_future.end == period_past.end:
                     begin_hour: datetime = period_future.start
                     end_hour: datetime = period_future.end
                     matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min, matched.success)

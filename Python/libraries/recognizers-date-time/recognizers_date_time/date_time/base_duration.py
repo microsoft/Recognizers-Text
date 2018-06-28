@@ -10,7 +10,7 @@ from recognizers_number.number.parsers import BaseNumberParser
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, RegExpUtility
 
 class DurationExtractorConfiguration(ABC):
     @property
@@ -40,7 +40,7 @@ class DurationExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
-    def in_exact_number_unit_regex(self) -> Pattern:
+    def inexact_number_unit_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -82,7 +82,7 @@ class BaseDurationExtractor(DateTimeExtractor):
         result: List[Token] = list(filter(None, map(lambda x: self.__cardinal_to_token(x, source), ers)))
         result.extend(self.get_tokens_from_regex(self.config.number_combined_with_unit, source))
         result.extend(self.get_tokens_from_regex(self.config.an_unit_regex, source))
-        result.extend(self.get_tokens_from_regex(self.config.in_exact_number_unit_regex, source))
+        result.extend(self.get_tokens_from_regex(self.config.inexact_number_unit_regex, source))
         return result
 
     def number_with_unit_and_suffix(self, source: str, tokens: List[Token]) -> List[Token]:
@@ -159,7 +159,7 @@ class DurationParserConfiguration(ABC):
 
     @property
     @abstractmethod
-    def in_exact_number_unit_regex(self) -> Pattern:
+    def inexact_number_unit_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -271,8 +271,8 @@ class BaseDurationParser(DateTimeParser):
         match = regex.search(self.config.followed_unit, no_num)
 
         if match is not None:
-            suffix = match.group('suffix') or ''
-            source_unit = match.group('unit') or ''
+            suffix = RegExpUtility.get_group(match, 'suffix')
+            source_unit = RegExpUtility.get_group(match, 'unit')
 
         if source_unit not in self.config.unit_map:
             return result
@@ -349,7 +349,7 @@ class BaseDurationParser(DateTimeParser):
 
     def parse_in_exact_number_unit(self, source: str) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
-        match = regex.search(self.config.in_exact_number_unit_regex, source)
+        match = regex.search(self.config.inexact_number_unit_regex, source)
 
         if match is None:
             return result
