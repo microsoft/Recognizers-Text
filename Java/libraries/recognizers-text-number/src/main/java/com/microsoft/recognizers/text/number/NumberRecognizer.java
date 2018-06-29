@@ -5,6 +5,7 @@ import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.Recognizer;
 import com.microsoft.recognizers.text.number.chinese.parsers.ChineseNumberParserConfiguration;
+import com.microsoft.recognizers.text.number.chinese.parsers.ChineseNumberRangeParserConfiguration;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberRangeParserConfiguration;
 import com.microsoft.recognizers.text.number.french.parsers.FrenchNumberParserConfiguration;
@@ -206,11 +207,9 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
         registerModel(PercentModel.class, Culture.Chinese, (options) -> new PercentModel(
                 AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
                 new com.microsoft.recognizers.text.number.chinese.extractors.PercentageExtractor()));
-//        RegisterModel<NumberRangeModel>(
-//                Culture.Chinese,
-//                (options) => new NumberRangeModel(
-//                new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
-//                new Chinese.NumberRangeExtractor()));
+        registerModel(NumberRangeModel.class, Culture.Chinese, (options) -> new NumberRangeModel(
+                new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
+                new com.microsoft.recognizers.text.number.chinese.extractors.NumberRangeExtractor()));
         //endregion
     }
 }
