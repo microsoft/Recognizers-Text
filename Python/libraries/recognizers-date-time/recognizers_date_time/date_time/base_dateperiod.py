@@ -500,7 +500,6 @@ class DatePeriodParserConfiguration(ABC):
     def is_year_only(self, source: str) -> bool:
         raise NotImplementedError
 
-
 class BaseDatePeriodParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
