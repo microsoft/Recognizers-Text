@@ -31,8 +31,8 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
                 Collections.emptyMap(),
                 ChineseNumeric.RoundNumberMap,
                 null,
-                Pattern.compile(ChineseNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.NegativeNumberTermsRegex, Pattern.CASE_INSENSITIVE),
+                Pattern.compile(ChineseNumeric.DigitalNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.NegativeNumberTermsRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 null,
                 ChineseNumeric.ZeroToNineMap,
                 ChineseNumeric.RoundNumberMapChar,
@@ -40,15 +40,15 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
                 ChineseNumeric.UnitMap,
                 ChineseNumeric.TratoSimMap,
                 ChineseNumeric.RoundDirectList,
-                Pattern.compile(ChineseNumeric.FracSplitRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.DigitNumRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.SpeGetNumberRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.PercentageRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.PointRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.DoubleAndRoundRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.PairRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.DozenRegex, Pattern.CASE_INSENSITIVE),
-                Pattern.compile(ChineseNumeric.RoundNumberIntegerRegex, Pattern.CASE_INSENSITIVE)
+                Pattern.compile(ChineseNumeric.FracSplitRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.DigitNumRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.SpeGetNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.PercentageRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.PointRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.DoubleAndRoundRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.PairRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.DozenRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                Pattern.compile(ChineseNumeric.RoundNumberIntegerRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS)
         );
     }
 

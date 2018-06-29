@@ -92,10 +92,4 @@ public final class NumberFormatUtility {
 
         return c;
     }
-
-    private static int getNumberOfDecimalPlaces(BigDecimal bigDecimal) {
-        String string = bigDecimal.stripTrailingZeros().toPlainString();
-        int index = string.indexOf(".");
-        return index < 0 ? 0 : string.length() - index - 1;
-    }
 }

@@ -27,11 +27,11 @@ public class FractionExtractor extends BaseNumberExtractor {
         HashMap<Pattern, String> builder = new HashMap<>();
 
         // -4 5/2,       ４ ６／３
-        builder.put(Pattern.compile(ChineseNumeric.FractionNotationSpecialsCharsRegex, Pattern.CASE_INSENSITIVE), "FracNum");
+        builder.put(Pattern.compile(ChineseNumeric.FractionNotationSpecialsCharsRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
         // 8/3
-        builder.put(Pattern.compile(ChineseNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE), "FracNum");
+        builder.put(Pattern.compile(ChineseNumeric.FractionNotationRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "FracNum");
         //四分之六十五
-        builder.put(Pattern.compile(ChineseNumeric.AllFractionNumber), "FracChs");
+        builder.put(Pattern.compile(ChineseNumeric.AllFractionNumber, Pattern.UNICODE_CHARACTER_CLASS), "FracChs");
 
         this.regexes = Collections.unmodifiableMap(builder);
     }
