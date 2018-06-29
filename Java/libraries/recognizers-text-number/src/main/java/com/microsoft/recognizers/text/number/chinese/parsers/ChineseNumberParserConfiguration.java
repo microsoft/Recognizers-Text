@@ -6,6 +6,7 @@ import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.parsers.BaseCJKNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.resources.ChineseNumeric;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.Collections;
 import java.util.List;
@@ -43,7 +44,7 @@ public class ChineseNumberParserConfiguration extends BaseCJKNumberParserConfigu
                 Pattern.compile(ChineseNumeric.FracSplitRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 Pattern.compile(ChineseNumeric.DigitNumRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 Pattern.compile(ChineseNumeric.SpeGetNumberRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-                Pattern.compile(ChineseNumeric.PercentageRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
+                RegExpUtility.getSafeRegExp(ChineseNumeric.PercentageRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 Pattern.compile(ChineseNumeric.PointRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 Pattern.compile(ChineseNumeric.DoubleAndRoundRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
                 Pattern.compile(ChineseNumeric.PairRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
