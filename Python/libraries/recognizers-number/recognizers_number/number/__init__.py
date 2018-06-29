@@ -5,3 +5,4 @@ from .english import *
 from .spanish import *
 from .chinese import *
 from .number_recognizer import *
+from .parser_factory import *
