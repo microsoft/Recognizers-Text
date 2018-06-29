@@ -31,5 +31,7 @@ from .datetimeperiod_parser_config import *
 from .datetimeperiod_parser import *
 from .holiday_parser_config import *
 from .holiday_parser import *
+from .set_parser_config import *
+from .set_parser import *
 from .merged_parser_config import *
 from .merged_parser import *

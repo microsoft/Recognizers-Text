@@ -1,7 +1,6 @@
 [
   {
     "Input": "事件 每天都发生",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "每天",
@@ -22,7 +21,6 @@
   },
   {
     "Input": "事件每日都发生",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "每日",
@@ -43,7 +41,6 @@
   },
   {
     "Input": "事件每周都发生",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "每周",
@@ -64,7 +61,6 @@
   },
   {
     "Input": "事件每个星期都发生",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "每个星期",
@@ -85,7 +81,6 @@
   },
   {
     "Input": "事件每个月都发生",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "每个月",
@@ -106,7 +101,6 @@
   },
   {
     "Input": "事件每年都发生",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "每年",
@@ -127,7 +121,6 @@
   },
   {
     "Input": "事件每周一都发生",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "每周一",
@@ -148,7 +141,6 @@
   },
   {
     "Input": "事件每周一下午八点都发生",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "每周一下午八点",
