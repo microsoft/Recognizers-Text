@@ -91,13 +91,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if ((trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour >= 12)
+            if ((trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour >= Constants.HalfDayHourCount)
             {
-                result -= 12;
+                result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour < 12)
+            else if (!(trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour < Constants.HalfDayHourCount)
             {
-                result += 12;
+                result += Constants.HalfDayHourCount;
             }
             return result;
         }

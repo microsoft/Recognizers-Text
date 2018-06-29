@@ -64,13 +64,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 timex = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (trimedText.EndsWith("apres-midi")||trimedText.EndsWith("apres midi") 
                 || trimedText.EndsWith("après midi") || trimedText.EndsWith("après-midi"))
             {
                 timex = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             } 
             else if (trimedText.EndsWith("soir") || trimedText.EndsWith("soiree") || trimedText.EndsWith("soirée"))

@@ -25,8 +25,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var match = EnglishTimeExtractorConfiguration.IshRegex.Match(trimedText);
             if (match.Success && match.Length == trimedText.Length)
             {
-                var hourStr = match.Groups["hour"].Value;
-                var hour = 12;
+                var hourStr = match.Groups[Constants.HourGroupName].Value;
+                var hour = Constants.HalfDayHourCount;
                 if (!string.IsNullOrEmpty(hourStr))
                 {
                     hour = int.Parse(hourStr);

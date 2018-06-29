@@ -81,11 +81,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 for (var idx = 0; idx < timeNumMatches.Count; idx++)
                 {
                     var match = timeNumMatches[idx];
-                    var node = new ExtractResult();
-                    node.Start = match.Index;
-                    node.Length = match.Length;
-                    node.Text = match.Value;
-                    node.Type = Number.Constants.SYS_NUM_INTEGER;
+                    var node = new ExtractResult
+                    {
+                        Start = match.Index,
+                        Length = match.Length,
+                        Text = match.Value,
+                        Type = Number.Constants.SYS_NUM_INTEGER
+                    };
                     numErs.Add(node);
                 }
                 ers.AddRange(numErs);

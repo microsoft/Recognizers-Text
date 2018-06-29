@@ -91,13 +91,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             int result = hour;
 
             //TODO: Replace with a regex
-            if ((trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour >= 12)
+            if ((trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour >= Constants.HalfDayHourCount)
             {
-                result -= 12;
+                result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour < 12)
+            else if (!(trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour < Constants.HalfDayHourCount)
             {
-                result += 12;
+                result += Constants.HalfDayHourCount;
             }
             return result;
         }

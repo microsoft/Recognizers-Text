@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         hour = 0;
                     }
 
-                    if (hour <= 12 && hour != 0)
+                    if (hour <= Constants.HalfDayHourCount && hour != 0)
                     {
                         ret.Comment = Constants.Comment_AmPm;
                     }
@@ -203,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else if (!string.IsNullOrEmpty(match.Groups["midday"].Value))
                 {
-                    hour = 12;
+                    hour = Constants.HalfDayHourCount;
                     min = 0;
                     second = 0;
                 }
@@ -211,7 +211,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 // get hour
-                var hourStr = match.Groups["hour"].Value;
+                var hourStr = match.Groups[Constants.HourGroupName].Value;
                 if (string.IsNullOrEmpty(hourStr))
                 {
                     hourStr = match.Groups["hournum"].Value.ToLower();
@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // get minute
-                var minStr = match.Groups["min"].Value.ToLower();
+                var minStr = match.Groups[Constants.MinuteGroupName].Value.ToLower();
                 if (string.IsNullOrEmpty(minStr))
                 {
                     minStr = match.Groups["minnum"].Value;
@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // get second
-                var secStr = match.Groups["sec"].Value.ToLower();
+                var secStr = match.Groups[Constants.SecondGroupName].Value.ToLower();
                 if (!string.IsNullOrEmpty(secStr))
                 {
                     second = int.Parse(secStr);
@@ -264,42 +264,42 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            //adjust by desc string
-            var descStr = match.Groups["desc"].Value.ToLower();
-            if (!string.IsNullOrEmpty(descStr))
+            // Adjust by desc string
+            var descStr = match.Groups[Constants.DescGroupName].Value.ToLower();
+
+            // ampm is a special case in which at 6ampm = at 6
+            if (config.UtilityConfiguration.AmDescRegex.Match(descStr).Success
+                || config.UtilityConfiguration.AmPmDescRegex.Match(descStr).Success
+                || match.Groups[Constants.ImplicitAmGroupName].Success)
             {
-                //ampm is a special case in which at 6ampm = at 6
-                if (config.UtilityConfiguration.AmDescRegex.Match(descStr.ToLower()).Success
-                    || config.UtilityConfiguration.AmPmDescRegex.Match(descStr.ToLower()).Success)
+                if (hour >= Constants.HalfDayHourCount)
                 {
-                    if (hour >= 12)
-                    {
-                        hour -= 12;
-                    }
-                    if (!config.UtilityConfiguration.AmPmDescRegex.Match(descStr.ToLower()).Success)
-                    {
-                        hasAm = true;
-                    }
+                    hour -= Constants.HalfDayHourCount;
                 }
-                else if (config.UtilityConfiguration.PmDescRegex.Match(descStr.ToLower()).Success)
+                if (!config.UtilityConfiguration.AmPmDescRegex.Match(descStr).Success)
                 {
-                    if (hour < 12)
-                    {
-                        hour += 12;
-                    }
-                    hasPm = true;
+                    hasAm = true;
                 }
+            }
+            else if (config.UtilityConfiguration.PmDescRegex.Match(descStr).Success
+                || match.Groups[Constants.ImplicitPmGroupName].Success)
+            {
+                if (hour < Constants.HalfDayHourCount)
+                {
+                    hour += Constants.HalfDayHourCount;
+                }
+                hasPm = true;
             }
 
             // adjust min by prefix
-            var timePrefix = match.Groups["prefix"].Value.ToLower();
+            var timePrefix = match.Groups[Constants.PrefixGroupName].Value.ToLower();
             if (!string.IsNullOrEmpty(timePrefix))
             {
                 this.config.AdjustByPrefix(timePrefix, ref hour, ref min, ref hasMin);
             }
 
             // adjust hour by suffix
-            var timeSuffix = match.Groups["suffix"].Value.ToLower();
+            var timeSuffix = match.Groups[Constants.SuffixGroupName].Value.ToLower();
             if (!string.IsNullOrEmpty(timeSuffix))
             {
                 this.config.AdjustBySuffix(timeSuffix, ref hour, ref min, ref hasMin, ref hasAm, ref hasPm);
@@ -321,7 +321,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex += ":" + second.ToString("D2");
             }
 
-            if (hour <= 12 && !hasPm && !hasAm && !hasMid)
+            if (hour <= Constants.HalfDayHourCount && !hasPm && !hasAm && !hasMid)
             {
                 ret.Comment = Constants.Comment_AmPm;
             }

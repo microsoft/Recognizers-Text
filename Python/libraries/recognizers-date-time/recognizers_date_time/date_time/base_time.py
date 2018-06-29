@@ -260,20 +260,22 @@ class BaseTimeParser(DateTimeParser):
             if sec_str.strip():
                 second = int(sec_str)
                 has_seconds = True
+
         #adjust by desc string
-        desc_str = RegExpUtility.get_group(match, 'desc')
-        desc_str = desc_str.lower()
-        if desc_str.strip():
-            if any([regex.search(self.config.utility_configuration.am_desc_regex, desc_str),
-                    regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str)]):
-                if hour >= 12:
-                    hour -= 12
-                if regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str) is None:
-                    has_am = True
-            elif regex.search(self.config.utility_configuration.pm_desc__regex, desc_str) is not None:
-                if hour < 12:
-                    hour += 12
-                has_pm = True
+        desc_str = RegExpUtility.get_group(match, 'desc').lower()
+
+        if any([regex.search(self.config.utility_configuration.am_desc_regex, desc_str),
+                regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str)]) or RegExpUtility.get_group(
+                match, 'iam'):
+            if hour >= 12:
+                hour -= 12
+            if regex.search(self.config.utility_configuration.am_pm_desc_regex, desc_str) is None:
+                has_am = True
+        elif regex.search(self.config.utility_configuration.pm_desc__regex,
+                          desc_str) is not None or RegExpUtility.get_group(match, 'ipm'):
+            if hour < 12:
+                hour += 12
+            has_pm = True
 
         #adjust min by prefix
         time_prefix = RegExpUtility.get_group(match, 'prefix')

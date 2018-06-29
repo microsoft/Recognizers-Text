@@ -116,7 +116,7 @@ class EnglishDateTime:
     MidafternoonRegex = f'(?<midafternoon>midafternoon|mid-afternoon|mid afternoon)'
     MiddayRegex = f'(?<midday>midday|mid-day|mid day|((12\\s)?noon))'
     MidTimeRegex = f'(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))'
-    AtRegex = f'\\b(((?<=\\bat\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\\b'
+    AtRegex = f'\\b(((?<=\\bat\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\\s*((?<iam>a)|(?<ipm>p)))?|{MidTimeRegex}))|{MidTimeRegex})\\b'
     IshRegex = f'\\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\\b'
     TimeUnitRegex = f'([^A-Za-z]{{1,}}|\\b)(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b'
     RestrictedTimeUnitRegex = f'(?<unit>hour|minute)\\b'
@@ -228,8 +228,8 @@ class EnglishDateTime:
     DecadeWithCenturyRegex = f'(the\\s+)?(((?<century>\\d|1\\d|2\\d)?(\')?(?<decade>\\d0)(\')?s)|(({CenturyRegex}(\\s+|-)(and\\s+)?)?{DecadeRegex})|({CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))'
     RelativeDecadeRegex = f'\\b((the\\s+)?{RelativeRegex}\\s+((?<number>[\\w,]+)\\s+)?decades?)\\b'
     YearAfterRegex = f'\\b(or\\s+(above|after))\\b'
-    YearPeriodRegex = f'(((from|during|in|between)\\s+)?{YearRegex}\\s*({TillRegex}|{RangeConnectorRegex})\\s*{YearRegex})'
-    ComplexDatePeriodRegex = f'((from|during|in|between)\\s+)?(?<start>.+)\\s*({TillRegex}|{RangeConnectorRegex})\\s*(?<end>.+)'
+    YearPeriodRegex = f'((((from|during|in)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((between)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))'
+    ComplexDatePeriodRegex = f'(((from|during|in)\\s+)?(?<start>.+)\\s*({TillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*({RangeConnectorRegex})\\s*(?<end>.+))'
     UnitMap = dict([('years', 'Y'),
                     ('year', 'Y'),
                     ('months', 'MON'),

@@ -162,13 +162,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var sec = time.Second;
 
             // handle morning, afternoon
-            if (SimplePmRegex.IsMatch(text) && hour < 12)
+            if (SimplePmRegex.IsMatch(text) && hour < Constants.HalfDayHourCount)
             {
-                hour += 12;
+                hour += Constants.HalfDayHourCount;
             }
-            else if (SimpleAmRegex.IsMatch(text) && hour >= 12)
+            else if (SimpleAmRegex.IsMatch(text) && hour >= Constants.HalfDayHourCount)
             {
-                hour -= 12;
+                hour -= Constants.HalfDayHourCount;
             }
 
             var timeStr = pr2.TimexStr;
@@ -181,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var val = (DateTimeResolutionResult) pr2.Value;
 
-            if (hour <= 12 && !SimplePmRegex.IsMatch(text) && !SimpleAmRegex.IsMatch(text) &&
+            if (hour <= Constants.HalfDayHourCount && !SimplePmRegex.IsMatch(text) && !SimpleAmRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
                 //ret.Timex += "ampm";
@@ -228,38 +228,38 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 switch (matchStr)
                 {
                     case "今晚":
-                        if (hour < 12)
+                        if (hour < Constants.HalfDayHourCount)
                         {
-                            hour += 12;
+                            hour += Constants.HalfDayHourCount;
                         }
                         break;
                     case "今早":
                     case "今晨":
-                        if (hour >= 12)
+                        if (hour >= Constants.HalfDayHourCount)
                         {
-                            hour -= 12;
+                            hour -= Constants.HalfDayHourCount;
                         }
                         break;
                     case "明晚":
                         swift = 1;
-                        if (hour < 12)
+                        if (hour < Constants.HalfDayHourCount)
                         {
-                            hour += 12;
+                            hour += Constants.HalfDayHourCount;
                         }
                         break;
                     case "明早":
                     case "明晨":
                         swift = 1;
-                        if (hour >= 12)
+                        if (hour >= Constants.HalfDayHourCount)
                         {
-                            hour -= 12;
+                            hour -= Constants.HalfDayHourCount;
                         }
                         break;
                     case "昨晚":
                         swift = -1;
-                        if (hour < 12)
+                        if (hour < Constants.HalfDayHourCount)
                         {
-                            hour += 12;
+                            hour += Constants.HalfDayHourCount;
                         }
                         break;
                     default:

@@ -299,7 +299,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (rightResult.Comment != null && rightResult.Comment.Equals(Constants.Comment_AmPm) &&
                 leftResult.Comment == null && rightTime < leftTime)
             {
-                rightTime = rightTime.AddHours(12);
+                rightTime = rightTime.AddHours(Constants.HalfDayHourCount);
             }
 
             if (rightTime < leftTime)
@@ -356,7 +356,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         swift = 0;
                         timeStr = "TMO";
                         beginHour = 8;
-                        endHour = 12;
+                        endHour = Constants.HalfDayHourCount;
                         break;
                     case "明晚":
                         swift = 1;
@@ -369,7 +369,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         swift = 1;
                         timeStr = "TMO";
                         beginHour = 8;
-                        endHour = 12;
+                        endHour = Constants.HalfDayHourCount;
                         break;
                     case "昨晚":
                         swift = -1;
@@ -398,12 +398,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 timeStr = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (AFRegex.IsMatch(trimedText))
             {
                 timeStr = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (EVRegex.IsMatch(trimedText))

@@ -114,11 +114,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success && match.Index == 0)
             {
-                // this "from .. to .." pattern is valid if followed by a Date OR "pm"
+                // this "from .. to .." pattern is valid if followed by a Date OR Constants.PmGroupName
                 var isValid = false;
 
                 // get hours
-                var hourGroup = match.Groups["hour"];
+                var hourGroup = match.Groups[Constants.HourGroupName];
                 var hourStr = hourGroup.Captures[0].Value;
                 var afterHourIndex = hourGroup.Captures[0].Index + hourGroup.Captures[0].Length;
 
@@ -141,12 +141,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                             endHour = int.Parse(hourStr);
                         }
 
-                        // parse "pm" 
+                        // parse Constants.PmGroupName 
                         var leftDesc = match.Groups["leftDesc"].Value;
                         var rightDesc = match.Groups["rightDesc"].Value;
-                        var pmStr = match.Groups["pm"].Value;
-                        var amStr = match.Groups["am"].Value;
-                        var descStr = match.Groups["desc"].Value;
+                        var pmStr = match.Groups[Constants.PmGroupName].Value;
+                        var amStr = match.Groups[Constants.AmGroupName].Value;
+                        var descStr = match.Groups[Constants.DescGroupName].Value;
 
                         // The "ampm" only occurs in time, we don't have to consider it here
                         if (string.IsNullOrEmpty(leftDesc))
@@ -159,20 +159,20 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                             if (!string.IsNullOrEmpty(amStr) || rightAmValid)
                             {
-                                if (endHour >= 12)
+                                if (endHour >= Constants.HalfDayHourCount)
                                 {
-                                    endHour -= 12;
+                                    endHour -= Constants.HalfDayHourCount;
                                 }
 
-                                if (beginHour >= 12 && beginHour - 12 < endHour)
+                                if (beginHour >= Constants.HalfDayHourCount && beginHour - Constants.HalfDayHourCount < endHour)
                                 {
-                                    beginHour -= 12;
+                                    beginHour -= Constants.HalfDayHourCount;
                                 }
 
                                 // Resolve case like "11 to 3am"
-                                if (beginHour < 12 && beginHour > endHour)
+                                if (beginHour < Constants.HalfDayHourCount && beginHour > endHour)
                                 {
-                                    beginHour += 12;
+                                    beginHour += Constants.HalfDayHourCount;
                                 }
 
                                 isValid = true;
@@ -181,15 +181,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                             else if (!string.IsNullOrEmpty(pmStr) || rightPmValid)
                             {
 
-                                if (endHour < 12)
+                                if (endHour < Constants.HalfDayHourCount)
                                 {
-                                    endHour += 12;
+                                    endHour += Constants.HalfDayHourCount;
                                 }
 
                                 // Resolve case like "11 to 3pm"
-                                if (beginHour + 12 < endHour)
+                                if (beginHour + Constants.HalfDayHourCount < endHour)
                                 {
-                                    beginHour += 12;
+                                    beginHour += Constants.HalfDayHourCount;
                                 }
 
                                 isValid = true;
@@ -243,7 +243,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success && match.Index == 0 && match.Index + match.Length == trimedText.Length)
             {
                 // Cases like "half past seven" are not handled here
-                if (match.Groups["prefix"].Success)
+                if (match.Groups[Constants.PrefixGroupName].Success)
                 {
                     return ret;
                 }
@@ -259,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 int endSecond = invalidFlag;
 
                 // Get time1 and time2
-                var hourGroup = match.Groups["hour"];
+                var hourGroup = match.Groups[Constants.HourGroupName];
 
                 var hourStr = hourGroup.Captures[0].Value;
 
@@ -290,9 +290,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var time2EndIndex = time2StartIndex + match.Groups["time2"].Length;
 
                 // Get beginMinute (if exists) and endMinute (if exists)
-                for (int i = 0; i < match.Groups["min"].Captures.Count; i++)
+                for (int i = 0; i < match.Groups[Constants.MinuteGroupName].Captures.Count; i++)
                 {
-                    var minuteCapture = match.Groups["min"].Captures[i];
+                    var minuteCapture = match.Groups[Constants.MinuteGroupName].Captures[i];
                     if (minuteCapture.Index >= time1StartIndex && minuteCapture.Index + minuteCapture.Length <= time1EndIndex)
                     {
                         beginMinute = int.Parse(minuteCapture.Value);
@@ -304,9 +304,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Get beginSecond (if exists) and endSecond (if exists)
-                for (int i = 0; i < match.Groups["sec"].Captures.Count; i++)
+                for (int i = 0; i < match.Groups[Constants.SecondGroupName].Captures.Count; i++)
                 {
-                    var secondCapture = match.Groups["sec"].Captures[i];
+                    var secondCapture = match.Groups[Constants.SecondGroupName].Captures[i];
                     if (secondCapture.Index >= time1StartIndex && secondCapture.Index + secondCapture.Length <= time1EndIndex)
                     {
                         beginSecond = int.Parse(secondCapture.Value);
@@ -322,9 +322,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var leftDesc = match.Groups["leftDesc"].Value;
                 var rightDesc = match.Groups["rightDesc"].Value;
 
-                for (int i = 0; i < match.Groups["desc"].Captures.Count; i++)
+                for (int i = 0; i < match.Groups[Constants.DescGroupName].Captures.Count; i++)
                 {
-                    var descCapture = match.Groups["desc"].Captures[i];
+                    var descCapture = match.Groups[Constants.DescGroupName].Captures[i];
                     if (descCapture.Index >= time1StartIndex && descCapture.Index + descCapture.Length <= time1EndIndex && string.IsNullOrEmpty(leftDesc))
                     {
                         leftDesc = descCapture.Value;
@@ -350,31 +350,31 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (hasLeftAm)
                     {
-                        if (beginHour >= 12)
+                        if (beginHour >= Constants.HalfDayHourCount)
                         {
-                            beginDateTime = beginDateTime.AddHours(-12);
+                            beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
                     }
                     else if (hasLeftPm)
                     {
-                        if (beginHour < 12)
+                        if (beginHour < Constants.HalfDayHourCount)
                         {
-                            beginDateTime = beginDateTime.AddHours(12);
+                            beginDateTime = beginDateTime.AddHours(Constants.HalfDayHourCount);
                         }
                     }
 
                     if (hasRightAm)
                     {
-                        if (endHour >= 12)
+                        if (endHour >= Constants.HalfDayHourCount)
                         {
-                            endDateTime = endDateTime.AddHours(-12);
+                            endDateTime = endDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
                     }
                     else if (hasRightPm)
                     {
-                        if (endHour < 12)
+                        if (endHour < Constants.HalfDayHourCount)
                         {
-                            endDateTime = endDateTime.AddHours(12);
+                            endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
                         }
                     }
                 }
@@ -383,38 +383,38 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (hasLeftAm)
                     {
-                        if (beginHour >= 12)
+                        if (beginHour >= Constants.HalfDayHourCount)
                         {
-                            beginDateTime = beginDateTime.AddHours(-12);
+                            beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
 
-                        if (endHour < 12)
+                        if (endHour < Constants.HalfDayHourCount)
                         {
                             if (endDateTime < beginDateTime)
                             {
-                                endDateTime = endDateTime.AddHours(12);
+                                endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
                             }
                         }
                     }
                     else if (hasLeftPm)
                     {
-                        if (beginHour < 12)
+                        if (beginHour < Constants.HalfDayHourCount)
                         {
-                            beginDateTime = beginDateTime.AddHours(12);
+                            beginDateTime = beginDateTime.AddHours(Constants.HalfDayHourCount);
                         }
 
-                        if (endHour < 12)
+                        if (endHour < Constants.HalfDayHourCount)
                         {
                             if (endDateTime < beginDateTime)
                             {
                                 var span = beginDateTime - endDateTime;
-                                if (span.TotalHours >= 12)
+                                if (span.TotalHours >= Constants.HalfDayHourCount)
                                 {
                                     endDateTime = endDateTime.AddHours(24);
                                 }
                                 else
                                 {
-                                    endDateTime = endDateTime.AddHours(12);
+                                    endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
                                 }
                             }
                         }
@@ -422,55 +422,55 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (hasRightAm)
                     {
-                        if (endHour >= 12)
+                        if (endHour >= Constants.HalfDayHourCount)
                         {
-                            endDateTime = endDateTime.AddHours(-12);
+                            endDateTime = endDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
 
-                        if (beginHour < 12)
+                        if (beginHour < Constants.HalfDayHourCount)
                         {
                             if (endDateTime < beginDateTime)
                             {
-                                beginDateTime = beginDateTime.AddHours(-12);
+                                beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
                             }
                         }
                     }
                     else if (hasRightPm)
                     {
-                        if (endHour < 12)
+                        if (endHour < Constants.HalfDayHourCount)
                         {
-                            endDateTime = endDateTime.AddHours(12);
+                            endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
                         }
 
-                        if (beginHour < 12)
+                        if (beginHour < Constants.HalfDayHourCount)
                         {
                             if (endDateTime < beginDateTime)
                             {
-                                beginDateTime = beginDateTime.AddHours(-12);
+                                beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
                             }
                             else
                             {
                                 var span = endDateTime - beginDateTime;
-                                if (span.TotalHours > 12)
+                                if (span.TotalHours > Constants.HalfDayHourCount)
                                 {
-                                    beginDateTime = beginDateTime.AddHours(12);
+                                    beginDateTime = beginDateTime.AddHours(Constants.HalfDayHourCount);
                                 }
                             }
                         }
                     }
                 }
                 // No 'am' or 'pm' indicator
-                else if (!hasLeft && !hasRight && beginHour <= 12 && endHour <= 12)
+                else if (!hasLeft && !hasRight && beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount)
                 {
                     if (beginHour > endHour)
                     {
-                        if (beginHour == 12)
+                        if (beginHour == Constants.HalfDayHourCount)
                         {
-                            beginDateTime = beginDateTime.AddHours(-12);
+                            beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
                         else
                         {
-                            endDateTime = endDateTime.AddHours(12);
+                            endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
                         }
                     }
                     ret.Comment = Constants.Comment_AmPm;
@@ -595,9 +595,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beginTime = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
             var endTime = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
 
-            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && endTime <= beginTime && endTime.AddHours(12) > beginTime)
+            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm) && endTime <= beginTime && endTime.AddHours(Constants.HalfDayHourCount) > beginTime)
             {
-                endTime = endTime.AddHours(12);
+                endTime = endTime.AddHours(Constants.HalfDayHourCount);
                 ((DateTimeResolutionResult)pr2.Value).FutureValue = endTime;
                 pr2.TimexStr = $"T{endTime.Hour}";
                 if (endTime.Minute > 0)
@@ -606,9 +606,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && endTime > beginTime.AddHours(12))
+            if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm) && endTime > beginTime.AddHours(Constants.HalfDayHourCount))
             {
-                beginTime = beginTime.AddHours(12);
+                beginTime = beginTime.AddHours(Constants.HalfDayHourCount);
                 ((DateTimeResolutionResult)pr1.Value).FutureValue = beginTime;
                 pr1.TimexStr = $"T{beginTime.Hour}";
                 if (beginTime.Minute > 0)
