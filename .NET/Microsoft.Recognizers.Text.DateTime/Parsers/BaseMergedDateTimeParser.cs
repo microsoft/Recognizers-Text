@@ -574,7 +574,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (resolution.ContainsKey(DateTimeResolutionKey.START))
                         {
                             var start = Convert.ToDateTime(resolution[DateTimeResolutionKey.START]);
-                            start = start.Hour == 12 ? start.AddHours(-12) : start.AddHours(12);
+                            start = start.Hour == Constants.HalfDayHourCount ? start.AddHours(-Constants.HalfDayHourCount) : start.AddHours(Constants.HalfDayHourCount);
 
                             resolutionPm[DateTimeResolutionKey.START] = FormatUtil.FormatDateTime(start);
                         }
@@ -582,7 +582,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (resolution.ContainsKey(DateTimeResolutionKey.END))
                         {
                             var end = Convert.ToDateTime(resolution[DateTimeResolutionKey.END]);
-                            end = end.Hour == 12 ? end.AddHours(-12) : end.AddHours(12);
+                            end = end.Hour == Constants.HalfDayHourCount ? end.AddHours(-Constants.HalfDayHourCount) : end.AddHours(Constants.HalfDayHourCount);
 
                             resolutionPm[DateTimeResolutionKey.END] = FormatUtil.FormatDateTime(end);
                         }

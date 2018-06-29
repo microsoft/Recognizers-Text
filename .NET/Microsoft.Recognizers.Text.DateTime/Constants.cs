@@ -104,6 +104,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
 
-        public const string NextGroupNameForWithinRegex = "next";
+        // Groups' names for named groups in regexes
+        public const string NextGroupName = "next";
+        public const string AmGroupName = "am";
+        public const string PmGroupName = "pm";
+        public const string ImplicitAmGroupName = "iam";
+        public const string ImplicitPmGroupName = "ipm";
+        public const string PrefixGroupName = "prefix";
+        public const string SuffixGroupName = "suffix";
+        public const string DescGroupName = "desc";
+        public const string SecondGroupName = "sec";
+        public const string MinuteGroupName = "min";
+        public const string HourGroupName = "hour";
     }
 }

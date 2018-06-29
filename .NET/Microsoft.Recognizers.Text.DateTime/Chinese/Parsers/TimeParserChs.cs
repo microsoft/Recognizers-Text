@@ -95,11 +95,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static TimeResult HandleLess(DateTimeExtra<TimeType> extra)
         {
-            var hour = MatchToValue(extra.NamedEntity["hour"].Value);
+            var hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value);
             var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
             var minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter * 15 : 0;
-            var second = MatchToValue(extra.NamedEntity["sec"].Value);
-            var less = MatchToValue(extra.NamedEntity["min"].Value);
+            var second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value);
+            var less = MatchToValue(extra.NamedEntity[Constants.MinuteGroupName].Value);
 
             var all = hour * 60 + minute - less;
             if (all < 0)
@@ -117,10 +117,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static TimeResult HandleChinese(DateTimeExtra<TimeType> extra)
         {
-            var hour = MatchToValue(extra.NamedEntity["hour"].Value);
+            var hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value);
             var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
-            var minute = MatchToValue(extra.NamedEntity["min"].Value);
-            var second = MatchToValue(extra.NamedEntity["sec"].Value);
+            var minute = MatchToValue(extra.NamedEntity[Constants.MinuteGroupName].Value);
+            var second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value);
             minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter * 15 : minute;
 
             return new TimeResult
@@ -135,9 +135,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var timeResult = new TimeResult
             {
-                Hour = MatchToValue(extra.NamedEntity["hour"].Value),
-                Minute = MatchToValue(extra.NamedEntity["min"].Value),
-                Second = MatchToValue(extra.NamedEntity["sec"].Value)
+                Hour = MatchToValue(extra.NamedEntity[Constants.HourGroupName].Value),
+                Minute = MatchToValue(extra.NamedEntity[Constants.MinuteGroupName].Value),
+                Second = MatchToValue(extra.NamedEntity[Constants.SecondGroupName].Value)
             };
             return timeResult;
         }
@@ -241,7 +241,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (LowBoundDesc.ContainsKey(dayDesc) && result.Hour < LowBoundDesc[dayDesc])
             {
-                result.Hour += 12;
+                result.Hour += Constants.HalfDayHourCount;
                 result.LowBound = LowBoundDesc[dayDesc];
             }
             else

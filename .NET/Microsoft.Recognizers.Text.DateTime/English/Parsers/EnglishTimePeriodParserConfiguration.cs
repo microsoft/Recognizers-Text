@@ -63,12 +63,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 timex = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (trimedText.EndsWith("afternoon"))
             {
                 timex = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (trimedText.EndsWith("evening"))

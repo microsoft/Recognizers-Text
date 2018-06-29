@@ -805,5 +805,27 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "Please book Skype call today at 9a.",
+    "Results": [
+      {
+        "Text": "today at 9a",
+        "Type": "datetime",
+        "Start": 23,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Please book Skype call today at 9p.",
+    "Results": [
+      {
+        "Text": "today at 9p",
+        "Type": "datetime",
+        "Start": 23,
+        "Length": 11
+      }
+    ]
   }
 ]

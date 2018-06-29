@@ -653,19 +653,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Groups["EarlyPrefix"].Success)
                 {
                     earlyPrefix = true;
-                    trimedText = match.Groups["suffix"].ToString();
+                    trimedText = match.Groups[Constants.SuffixGroupName].ToString();
                     ret.Mod = Constants.EARLY_MOD;
                 }
                 else if (match.Groups["LatePrefix"].Success)
                 {
                     latePrefix = true;
-                    trimedText = match.Groups["suffix"].ToString();
+                    trimedText = match.Groups[Constants.SuffixGroupName].ToString();
                     ret.Mod = Constants.LATE_MOD;
                 }
                 else if (match.Groups["MidPrefix"].Success)
                 {
                     midPrefix = true;
-                    trimedText = match.Groups["suffix"].ToString();
+                    trimedText = match.Groups[Constants.SuffixGroupName].ToString();
                     ret.Mod = Constants.MID_MOD;
                 }
 

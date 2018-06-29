@@ -4562,5 +4562,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Please book Skype call today at 9a.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "today at 9a",
+        "Start": 23,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-28T09",
+              "type": "datetime",
+              "value": "2018-06-28 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please book Skype call today at 9p.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "today at 9p",
+        "Start": 23,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-28T21",
+              "type": "datetime",
+              "value": "2018-06-28 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

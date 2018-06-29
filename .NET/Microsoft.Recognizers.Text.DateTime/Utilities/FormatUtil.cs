@@ -166,7 +166,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var splited = timeStr.Split(':');
             var hour = int.Parse(splited[0]);
-            hour = hour >= 12 ? hour - 12: hour + 12;
+            hour = hour >= Constants.HalfDayHourCount ? hour - Constants.HalfDayHourCount: hour + Constants.HalfDayHourCount;
             splited[0] = hour.ToString("D2");
 
             return hasT ? "T" + string.Join(":", splited) : string.Join(":", splited);

@@ -846,5 +846,42 @@
   {
     "Input": "Cortana, schedule a meeting for next week.\nBentonville, AR 72716 P: 479.277",
     "Results": []
+  },
+  {
+    "Input": "9p is suitable for me.",
+    "Results": [
+      {
+        "Text": "9p",
+        "Type": "time",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "9a is suitable for me.",
+    "Results": []
+  },
+  {
+    "Input": "I'll be back at 9p.",
+    "Results": [
+      {
+        "Text": "9p",
+        "Type": "time",
+        "Start": 16,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back at 9a.",
+    "Results": [
+      {
+        "Text": "9a",
+        "Type": "time",
+        "Start": 16,
+        "Length": 2
+      }
+    ]
   }
 ]

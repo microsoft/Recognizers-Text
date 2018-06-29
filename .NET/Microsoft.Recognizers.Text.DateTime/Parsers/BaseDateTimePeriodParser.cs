@@ -374,7 +374,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             // AmPm comment is used for later SetParserResult to judge whether this parse result should have two parsing results
                             // Cases like "from 10:30 to 11 on 1/1/2015" should have AmPm comment, as it can be parsed to "10:30am to 11am" and also be parsed to "10:30pm to 11pm"
                             // Cases like "from 10:30 to 3 on 1/1/2015" should not have AmPm comment
-                            if (beginTime.Hour < 12 && endTime.Hour < 12)
+                            if (beginTime.Hour < Constants.HalfDayHourCount && endTime.Hour < Constants.HalfDayHourCount)
                             {
                                 ret.Comment = Constants.Comment_AmPm;
                             }
@@ -408,13 +408,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success && (match.Index == 0 || match.Index + match.Length == trimedText.Length))
             {
-                // This "from .. to .." pattern is valid if followed by a Date OR "pm"
+                // This "from .. to .." pattern is valid if followed by a Date OR Constants.PmGroupName
                 var hasAm = false;
                 var hasPm = false;
                 string dateStr;
 
                 // Get hours
-                var hourGroup = match.Groups["hour"];
+                var hourGroup = match.Groups[Constants.HourGroupName];
                 var hourStr = hourGroup.Captures[0].Value;
                 int beginHour;
 
@@ -468,50 +468,50 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                // Parse "pm" 
-                var pmStr = match.Groups["pm"].Value;
-                var amStr = match.Groups["am"].Value;
-                var descStr = match.Groups["desc"].Value;
+                // Parse Constants.PmGroupName 
+                var pmStr = match.Groups[Constants.PmGroupName].Value;
+                var amStr = match.Groups[Constants.AmGroupName].Value;
+                var descStr = match.Groups[Constants.DescGroupName].Value;
                 if (!string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("a"))
                 {
-                    if (beginHour >= 12)
+                    if (beginHour >= Constants.HalfDayHourCount)
                     {
-                        beginHour -= 12;
+                        beginHour -= Constants.HalfDayHourCount;
                     }
 
-                    if (endHour >= 12)
+                    if (endHour >= Constants.HalfDayHourCount)
                     {
-                        endHour -= 12;
+                        endHour -= Constants.HalfDayHourCount;
                     }
 
                     hasAm = true;
                 }
                 else if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("p"))
                 {
-                    if (beginHour < 12)
+                    if (beginHour < Constants.HalfDayHourCount)
                     {
-                        beginHour += 12;
+                        beginHour += Constants.HalfDayHourCount;
                     }
 
-                    if (endHour < 12)
+                    if (endHour < Constants.HalfDayHourCount)
                     {
-                        endHour += 12;
+                        endHour += Constants.HalfDayHourCount;
                     }
 
                     hasPm = true;
                 }
 
-                if (!hasAm && !hasPm && beginHour <= 12 && endHour <= 12)
+                if (!hasAm && !hasPm && beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount)
                 {
                     if (beginHour > endHour)
                     {
-                        if (beginHour == 12)
+                        if (beginHour == Constants.HalfDayHourCount)
                         {
                             beginHour = 0;
                         }
                         else
                         {
-                            endHour += 12;
+                            endHour += Constants.HalfDayHourCount;
                         }
                     }
                     ret.Comment = Constants.Comment_AmPm;

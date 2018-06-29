@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 minutes = 0;
             }
 
-            if (hours > 12)
+            if (hours > Constants.HalfDayHourCount)
             {
                 return Constants.InvalidOffsetValue;
             }

@@ -197,13 +197,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             var sec = time.Second;
 
             // Handle morning, afternoon
-            if (this.config.PMTimeRegex.IsMatch(text) && hour < 12)
+            if (this.config.PMTimeRegex.IsMatch(text) && hour < Constants.HalfDayHourCount)
             {
-                hour += 12;
+                hour += Constants.HalfDayHourCount;
             }
-            else if (this.config.AMTimeRegex.IsMatch(text) && hour >= 12)
+            else if (this.config.AMTimeRegex.IsMatch(text) && hour >= Constants.HalfDayHourCount)
             {
-                hour -= 12;
+                hour -= Constants.HalfDayHourCount;
             }
 
             var timeStr = pr2.TimexStr;
@@ -215,7 +215,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Timex = pr1.TimexStr + timeStr;
 
             var val = (DateTimeResolutionResult) pr2.Value;
-            if (hour <= 12 && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
+            if (hour <= Constants.HalfDayHourCount && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
                 ret.Comment = Constants.Comment_AmPm;
@@ -257,7 +257,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (wholeMatch.Success && wholeMatch.Length == trimedText.Length)
             {
-                var hourStr = wholeMatch.Groups["hour"].Value;
+                var hourStr = wholeMatch.Groups[Constants.HourGroupName].Value;
                 if (string.IsNullOrEmpty(hourStr))
                 {
                     hourStr = wholeMatch.Groups["hournum"].Value.ToLower();
