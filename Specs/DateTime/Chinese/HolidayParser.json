@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "元旦",
@@ -28,7 +27,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "元旦节",
@@ -52,7 +50,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "教师节",
@@ -76,7 +73,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "青年节",
@@ -100,7 +96,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "儿童节",
@@ -124,7 +119,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "妇女节",
@@ -148,7 +142,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "植树节",
@@ -172,7 +165,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "情人节",
@@ -196,7 +188,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "圣诞节",
@@ -220,7 +211,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "新年",
@@ -244,7 +234,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "愚人节",
@@ -268,7 +257,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "五一",
@@ -292,7 +280,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "劳动节",
@@ -316,7 +303,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "万圣节",
@@ -340,7 +326,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "中秋节",
@@ -364,7 +349,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "中秋",
@@ -388,7 +372,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "春节",
@@ -412,7 +395,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "除夕",
@@ -436,7 +418,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "元宵节",
@@ -460,7 +441,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "清明节",
@@ -484,7 +464,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "清明",
@@ -508,7 +487,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "端午节",
@@ -532,7 +510,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "端午",
@@ -556,7 +533,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "国庆节",
@@ -580,7 +556,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "建军节",
@@ -604,7 +579,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "女生节",
@@ -628,7 +602,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "光棍节",
@@ -652,7 +625,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "双十一",
@@ -676,7 +648,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "重阳节",
@@ -700,7 +671,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "父亲节",
@@ -724,7 +694,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "母亲节",
@@ -748,7 +717,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "感恩节",
