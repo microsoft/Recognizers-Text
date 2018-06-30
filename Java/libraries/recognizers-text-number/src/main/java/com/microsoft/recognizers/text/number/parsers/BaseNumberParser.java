@@ -117,7 +117,7 @@ public class BaseNumberParser implements IParser {
      * @param extractResult input arabic number
      * @return
      */
-    private ParseResult digitNumberParse(ExtractResult extractResult) {
+    protected ParseResult digitNumberParse(ExtractResult extractResult) {
         ParseResult result = new ParseResult(
                 extractResult.start,
                 extractResult.length,
@@ -327,7 +327,7 @@ public class BaseNumberParser implements IParser {
         return result;
     }
 
-    private ParseResult powerNumberParse(ExtractResult extractResult) {
+    protected ParseResult powerNumberParse(ExtractResult extractResult) {
 
         ParseResult result = new ParseResult(extractResult.start, extractResult.length, extractResult.text, extractResult.type, null, null, null);
 
@@ -478,7 +478,7 @@ public class BaseNumberParser implements IParser {
     }
 
 
-    private Double getIntValue(List<String> matchStrs) {
+    protected Double getIntValue(List<String> matchStrs) {
         boolean[] isEnd = new boolean[matchStrs.size()];
         Arrays.fill(isEnd, false);
 

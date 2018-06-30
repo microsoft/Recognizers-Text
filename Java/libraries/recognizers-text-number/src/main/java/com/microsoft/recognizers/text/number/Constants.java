@@ -8,6 +8,7 @@ public class Constants {
     public static final String SYS_NUM = "builtin.num";
     public static final String SYS_NUM_ORDINAL = "builtin.num.ordinal";
     public static final String SYS_NUM_PERCENTAGE = "builtin.num.percentage";
+    public static final String SYS_NUMRANGE = "builtin.num.numberrange";
 
     // Model type name
     public static final String MODEL_NUMBER = "number";

@@ -28,7 +28,7 @@ public abstract class AbstractTest {
 
     private static final String SpecsPath = "../../Specs";
 
-    private static final List<String> SupportedCultures = Arrays.asList("English", "Spanish", "Portuguese", "French", "German");
+    private static final List<String> SupportedCultures = Arrays.asList("English", "Spanish", "Portuguese", "French", "German", "Chinese");
 
     protected final TestCase currentCase;
 
@@ -54,7 +54,6 @@ public abstract class AbstractTest {
     protected abstract List<ModelResult> recognize(TestCase currentCase);
 
     protected void recognizeAndAssert(TestCase currentCase) {
-        if (currentCase.debug) System.out.println("debug break!");
         List<ModelResult> results = recognize(currentCase);
         assertResults(currentCase, results);
     }
