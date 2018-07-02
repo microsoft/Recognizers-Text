@@ -11,7 +11,6 @@ import com.microsoft.recognizers.text.numberwithunit.models.TemperatureModel;
 import com.microsoft.recognizers.text.numberwithunit.parsers.BaseMergedUnitParser;
 import com.microsoft.recognizers.text.numberwithunit.parsers.NumberWithUnitParser;
 
-import java.awt.*;
 import java.util.List;
 import java.util.function.Function;
 
