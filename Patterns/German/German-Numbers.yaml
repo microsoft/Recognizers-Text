@@ -1,4 +1,4 @@
-﻿---
+---
 LangMarker: Ger
 #Integer Regex
 ZeroToNineIntegerRegex: !simpleRegex
