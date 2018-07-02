@@ -27,5 +27,7 @@ from .dateperiod_parser_config import *
 from .dateperiod_parser import *
 from .datetime_parser_config import *
 from .datetime_parser import *
+from .datetimeperiod_parser_config import *
+from .datetimeperiod_parser import *
 from .holiday_parser_config import *
 from .holiday_parser import *
