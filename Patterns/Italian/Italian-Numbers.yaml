@@ -1,4 +1,4 @@
-﻿---
+---
 LangMarker: it
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex

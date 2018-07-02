@@ -1,4 +1,4 @@
-﻿---
+---
 LangMarker: Eng
 #Boolean Recognizers
 TokenizerRegex: !simpleRegex
