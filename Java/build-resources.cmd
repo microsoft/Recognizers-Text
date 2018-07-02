@@ -1,4 +1,3 @@
 @echo off
-mvn compile -pl libraries/resource-generator/
-mvn exec:java -pl libraries/resource-generator/
-
+set MAVEN_OPTS=-Dfile.encoding=utf-8
+mvn compile exec:java -pl libraries/resource-generator/

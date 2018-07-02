@@ -183,6 +183,8 @@ public class PortugueseNumeric {
     public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
+    public static final String AmbiguousFractionConnectorsRegex = "^[.]";
+
     public static final Character DecimalSeparatorChar = ',';
 
     public static final String FractionMarkerToken = "sobre";

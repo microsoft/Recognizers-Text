@@ -44,8 +44,8 @@ public class CodeGenerator {
         // Write to file
         BufferedWriter writer = null;
         try {
-            File outputFile = outputFilePath.toFile();
-            writer = new BufferedWriter(new FileWriter(outputFile));
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFilePath.toFile()), "UTF-8"));
+
             writer.write(headerComment);
             writer.newLine();
             writer.newLine();
