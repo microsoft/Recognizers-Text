@@ -3915,8 +3915,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Show sales in 2007 and 2009",
     "Context": {
@@ -3940,8 +3939,7 @@
             }
           ]
         }
-      }
-      ,
+      },
       {
         "ParentText": "2007 and 2009",
         "Text": "2009",
@@ -3960,8 +3958,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Show sales between 2007 and 2009",
     "Context": {
@@ -4029,6 +4026,97 @@
               "timex": "2018-06-28T21",
               "type": "datetime",
               "value": "2018-06-28 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the year 2008",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "year 2008",
+        "Start": 18,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2008",
+              "type": "daterange",
+              "start": "2008-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the year",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "java,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Show sales in the week",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java,javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "Show sales in the week after next",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "the week after next",
+        "Start": 14,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W29",
+              "type": "daterange",
+              "start": "2018-07-16",
+              "end": "2018-07-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the week 31",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java,javascript,python",
+    "Results": [
+      {
+        "Text": "week 31",
+        "Start": 18,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W31",
+              "type": "daterange",
+              "start": "2018-08-06",
+              "end": "2018-08-13"
             }
           ]
         }
