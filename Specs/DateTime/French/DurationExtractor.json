@@ -1,7 +1,6 @@
 [
   {
     "Input": "je partirai pour 3h",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3h",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "je partirai pour 3jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3jour",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "je partirai pour 3,5ans",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3,5ans",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "je partirai pour 3 h",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 h",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "je partirai pour 3 heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 heures",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "je partirai pour 3 hrs",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 hrs",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "je partirai pour 3 hr",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 hr",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "je partirai pour 3 jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 jour",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "je partirai pour 3 mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 mois",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "je partirai pour 3 minutes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 minutes",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "je partirai pour 3 min",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 min",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "je partirai pour 3,5 seconde",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3,5 seconde",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "je partirai pour 123,45 sec",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "123,45 sec",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "je partirai pour deux semaines",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "deux semaines",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "je partirai pour vingt min",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vingt min",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "je partirai pour vingt quatre heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vingt quatre heures",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Je partirai pour toute la journee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "toute la journee",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Je partirai pour toute la semaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "toute la semaine",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Je partirai pour toute le mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "toute le mois",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "Je partirai pour toute l'année",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "toute l'année",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "Je partirai pour toute l'annee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "toute l'annee",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "Je partirai pour une heure",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "une heure",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "Je partirai pendant un ans",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un ans",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "demi année",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "demi année",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "demi-annee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "demi-annee",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "Je partirai pour 3-min",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3-min",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "Je partirai pour 30-minutes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "30-minutes",
@@ -325,7 +298,6 @@
   },
   {
     "Input": "Je partirai pour demi heure",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "demi heure",
@@ -337,7 +309,6 @@
   },
   {
     "Input": "Je partirai pour une heure et demi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "une heure et demi",
@@ -349,7 +320,6 @@
   },
   {
     "Input": "Je partirai pour un heure et demi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un heure et demi",
@@ -361,7 +331,6 @@
   },
   {
     "Input": "Je partirai pour une demi-heure",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "une demi-heure",
@@ -373,7 +342,6 @@
   },
   {
     "Input": "Je partirai pour deux heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "deux heures",
@@ -385,7 +353,6 @@
   },
   {
     "Input": "Je partirai pour deux et demi heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "deux et demi heures",
@@ -397,7 +364,6 @@
   },
   {
     "Input": "en un semaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un semaine",
@@ -409,7 +375,6 @@
   },
   {
     "Input": "en un jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un jour",
@@ -421,7 +386,6 @@
   },
   {
     "Input": "pour un heure",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un heure",
@@ -433,7 +397,6 @@
   },
   {
     "Input": "pour un mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un mois",
@@ -445,7 +408,6 @@
   },
   {
     "Input": "Je partirai pour quel qués heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quel qués heures",
@@ -457,7 +419,6 @@
   },
   {
     "Input": "Je partirai pour quelques heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quelques heures",
@@ -469,7 +430,6 @@
   },
   {
     "Input": "Je partirai pour quelqués minutes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quelqués minutes",
@@ -481,7 +441,6 @@
   },
   {
     "Input": "Je partirai pour quelque jours",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quelque jours",
@@ -493,7 +452,6 @@
   },
   {
     "Input": "Je partirai pour plusieurs jours",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "plusieurs jours",
@@ -505,7 +463,6 @@
   },
   {
     "Input": "cette coursdu semaines prochaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "semaines prochaine",
