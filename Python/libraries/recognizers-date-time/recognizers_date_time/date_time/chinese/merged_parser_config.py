@@ -13,7 +13,7 @@ from .timeperiod_parser import ChineseTimePeriodParser
 from .datetime_parser import ChineseDateTimeParser
 from .datetimeperiod_parser import ChineseDateTimePeriodParser
 from .holiday_parser import ChineseHolidayParser
-#from .set_parser import ChineseSetParser
+from .set_parser import ChineseSetParser
 
 class ChineseMergedParserConfiguration(MergedParserConfiguration):
     @property
@@ -76,4 +76,4 @@ class ChineseMergedParserConfiguration(MergedParserConfiguration):
         self._time_period_parser = ChineseTimePeriodParser()
         self._date_time_period_parser = ChineseDateTimePeriodParser()
         self._duration_parser = ChineseDurationParser()
-        self._set_parser = None
+        self._set_parser = ChineseSetParser()
