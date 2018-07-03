@@ -1,7 +1,6 @@
 [
   {
     "Input": "Je reviendrai maintenant",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "maintenant",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Je reviendrai dès que possible",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dès que possible",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Je reviendrai dqp",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dqp",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Je reviendrai en ce moment",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce moment",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Je reviendrai 21/04/2016, 8:00pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "21/04/2016, 8:00pm",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Je reviendrai 21/04/2016, 8:00:13pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "21/04/2016, 8:00:13pm",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Je reviendrai 14 Octobre 8:00am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 Octobre 8:00am",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Je reviendrai 14 décembre 8:00am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 décembre 8:00am",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Je reviendrai 14 février 8:00am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 février 8:00am",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Je reviendrai 14 août 8:00am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 août 8:00am",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je reviendrai 14 Octobre 8:00:00am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 Octobre 8:00:00am",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Je reviendrai 14 Octobre, 8:00am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 Octobre, 8:00am",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Je reviendrai 14 Octobre, 8:00:01am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 Octobre, 8:00:01am",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "Je reviendrai 14 Octobre, 15:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 Octobre, 15:00",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "Je reviendrai 15:00, 14 Octobre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15:00, 14 Octobre",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "Je reviendrai 15:00, 14 Oct",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15:00, 14 Oct",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Je reviendrai 15:00, 14 Oct.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15:00, 14 Oct",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Je vais demain 8:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "demain 8:00",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Je vais demain vers 8:00am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "demain vers 8:00am",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "Je vais demain pour 8:00am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "demain pour 8:00am",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "Je vais demain 8:00:05am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "demain 8:00:05am",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "Je reviendrai 8pm dimanche prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8pm dimanche prochain",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "Je reviendrai 8pm aujourd'hui",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8pm aujourd'hui",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "Je reviendrai 19:00, 2016-12-22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "19:00, 2016-12-22",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "Je reviendrai sept heures lendemain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept heures lendemain",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "je reviendrai 14 Octobre 8:00, 14 Octobre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14 Octobre 8:00",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "je reviendrai 7, cette matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7, cette matin",
@@ -325,7 +298,6 @@
   },
   {
     "Input": "Je reviendrai 8pm dans la nuit, Lundi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8pm dans la nuit, Lundi",
@@ -337,7 +309,6 @@
   },
   {
     "Input": "je reviendrai 8pm dans la soiree, 1er Jan",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8pm dans la soiree, 1er Jan",
@@ -349,7 +320,6 @@
   },
   {
     "Input": "Je reviendrai 8pm dans la soirée, 1 Jan",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8pm dans la soirée, 1 Jan",
@@ -361,7 +331,6 @@
   },
   {
     "Input": "Je reviendrai 10 ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 ce soir",
@@ -373,7 +342,6 @@
   },
   {
     "Input": "Je reviendrai 8 ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 ce soir",
@@ -385,7 +353,6 @@
   },
   {
     "Input": "Je reviendrai ce soir vers 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce soir vers 7",
@@ -397,7 +364,6 @@
   },
   {
     "Input": "Je reviendrai cette matin a 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette matin a 7",
@@ -409,7 +375,6 @@
   },
   {
     "Input": "Je reviendrai cette matinee a 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette matinee a 7",
@@ -421,7 +386,6 @@
   },
   {
     "Input": "Je reviendrai cette matinée a sept",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette matinée a sept",
@@ -433,7 +397,6 @@
   },
   {
     "Input": "Je reviendrai cette matin à 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette matin à 7",
@@ -445,7 +408,6 @@
   },
   {
     "Input": "Je reviendrai ce matin 7:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce matin 7",
@@ -457,7 +419,6 @@
   },
   {
     "Input": "Je reviendrai cette nuit a 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette nuit a 7",
@@ -469,7 +430,6 @@
   },
   {
     "Input": "Je reviendrai ce soir à 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce soir à 7",
@@ -481,7 +441,6 @@
   },
   {
     "Input": "Je reviendrai fin de dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin de dimanche",
@@ -493,7 +452,6 @@
   },
   {
     "Input": "Je reviendrai 2016-12-16T12:23:59",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016-12-16T12:23:59",
@@ -505,7 +463,6 @@
   },
   {
     "Input": "Je reviendrai dans 5 heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans 5 heures",
