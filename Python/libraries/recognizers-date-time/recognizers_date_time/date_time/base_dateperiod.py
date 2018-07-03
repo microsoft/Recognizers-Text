@@ -281,7 +281,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         return tokens
 
     def __match_regex_in_prefix(self, source: str, match: Match) -> bool:
-        return match and source[match.end()]
+        return match and not source[match.end():].strip()
 
     def __get_token_for_regex_matching(self, source: str, regexp: Pattern, er: ExtractResult) -> List[Token]:
         tokens = []
