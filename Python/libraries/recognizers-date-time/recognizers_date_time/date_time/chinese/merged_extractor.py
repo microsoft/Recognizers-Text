@@ -48,7 +48,7 @@ class ChineseMergedExtractor(BaseMergedExtractor):
                         while j < len(destination) and destination[j].overlap(value):
                             rm_len = rm_len + 1
                             j = j + 1
-                    continue
+                    break
 
             if not is_found:
                 destination.append(value)
@@ -79,9 +79,9 @@ class ChineseMergedExtractor(BaseMergedExtractor):
         if value_end != len(source):
             last_char = source[value_end]
             if value.text.endswith('周') and value_end < len(source) and last_char == '岁':
-                return False
+                return True
 
         if regex.search(self.day_of_month_regex, value.text):
-            return False
+            return True
 
         return True

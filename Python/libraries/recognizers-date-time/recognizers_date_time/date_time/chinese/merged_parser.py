@@ -56,7 +56,7 @@ class ChineseMergedParser(BaseMergedParser):
         elif source.type == Constants.SYS_DATETIME_DURATION:
             result = self.config.duration_parser.parse(source, reference)
         elif source.type == Constants.SYS_DATETIME_SET:
-            result = None # self.config.set_parser.parse(source, reference)
+            result = self.config.set_parser.parse(source, reference)
         else:
             return None
 
