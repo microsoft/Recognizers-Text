@@ -84,26 +84,30 @@ namespace Microsoft.Recognizers.Text.Number
         protected override void InitializeConfiguration()
         {
             #region English
+
             RegisterModel<NumberModel>(
                 Culture.English,
-                (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration(options)),
-                    English.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+                options => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                        new EnglishNumberParserConfiguration(options)),
+                    English.MergedNumberExtractor.GetInstance(NumberMode.PureNumber, options)));
             RegisterModel<OrdinalModel>(
                 Culture.English,
-                (options) => new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration(options)),
+                options => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal,
+                        new EnglishNumberParserConfiguration(options)),
                     English.OrdinalExtractor.GetInstance()));
             RegisterModel<PercentModel>(
                 Culture.English,
-                (options) => new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration(options)),
+                options => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage,
+                        new EnglishNumberParserConfiguration(options)),
                     new English.PercentageExtractor(options)));
             RegisterModel<NumberRangeModel>(
                 Culture.English,
-                (options) => new NumberRangeModel(
-                            new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
-                            new English.NumberRangeExtractor()));
+                options => new NumberRangeModel(
+                    new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
+                    new English.NumberRangeExtractor()));
             #endregion
 
             #region Chinese
