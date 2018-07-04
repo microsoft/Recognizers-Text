@@ -23,6 +23,8 @@ from .timeperiod_extractor_config import FrenchTimePeriodExtractorConfiguration
 from .datetimeperiod_extractor_config import FrenchDateTimePeriodExtractorConfiguration
 from .duration_parser_config import FrenchDurationParserConfiguration
 from .date_parser_config import FrenchDateParserConfiguration
+from .time_parser_config import FrenchTimeParserConfiguration
+from .parsers import FrenchTimeParser
 
 class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     @property
@@ -159,7 +161,7 @@ class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(FrenchDateTimePeriodExtractorConfiguration())
         self._duration_parser = BaseDurationParser(FrenchDurationParserConfiguration(self))
         self._date_parser = BaseDateParser(FrenchDateParserConfiguration(self))
-        self._time_parser = None # FrenchTimeParser(FrenchTimeParserConfiguration(self))
+        self._time_parser = FrenchTimeParser(FrenchTimeParserConfiguration(self))
         self._date_period_parser = None # BaseDatePeriodParser(FrenchDatePeriodParserConfiguration(self))
         self._time_period_parser = None # BaseTimePeriodParser(FrenchTimePeriodParserConfiguration(self))
         self._date_time_parser = None # BaseDateTimeParser(FrenchDateTimeParserConfiguration(self))
