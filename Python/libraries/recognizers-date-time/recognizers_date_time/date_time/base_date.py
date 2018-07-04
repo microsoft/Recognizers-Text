@@ -793,7 +793,7 @@ class BaseDateParser(DateTimeParser):
         if not ers or not ers[0].text:
             ers = self.config.integer_extractor.extract(trimmed_source)
 
-        if not ers or ers[0].text:
+        if not ers or not ers[0].text:
             return result
 
         day = int(self.config.number_parser.parse(ers[0]).value)
