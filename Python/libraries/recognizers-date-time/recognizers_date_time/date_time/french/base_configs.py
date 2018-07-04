@@ -1,7 +1,7 @@
 from typing import Pattern
 from recognizers_text.utilities import RegExpUtility
-from recognizers_date_time.date_time.base_date import DateTimeUtilityConfiguration
-from recognizers_date_time.resources.french_date_time import FrenchDateTime
+from ...resources.french_date_time import FrenchDateTime
+from ..base_date import DateTimeUtilityConfiguration
 
 class FrenchDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
     @property
