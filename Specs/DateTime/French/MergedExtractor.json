@@ -1,7 +1,6 @@
 [
   {
     "Input": "06/06 12:15",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "06/06 12:15",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "06/06/12 15:15",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "06/06/12 15:15",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "06/06, 2015",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "06/06, 2015",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "C'est 2 jours",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2 jours",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "C'est avant 16h",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "avant 16h",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "C'est avant 16h demain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "avant 16h demain",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "C'est avant lendemain 16h ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "avant lendemain 16h",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "C'est apres 16h",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres 16h",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "C'est apres 16h lendemain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres 16h lendemain",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "C'est apres lendemain 16h ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres lendemain 16h",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je reviendrai dans 5 minutes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans 5 minutes",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "derniere semaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "derniere semaine",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "lundi dernier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "lundi dernier",
@@ -157,17 +144,14 @@
   },
   {
     "Input": "quel courriel a reçu une réponse",
-    "NotSupported": "python",
     "Results": []
   },
   {
     "Input": "il est souvent seul",
-    "NotSupported": "python",
     "Results": []
   },
   {
     "Input": "apres 2/7 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres 2/7",
@@ -179,7 +163,6 @@
   },
   {
     "Input": "depuis 2/7 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "depuis 2/7",
@@ -191,7 +174,6 @@
   },
   {
     "Input": "avant 2/7 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "avant 2/7",
@@ -203,7 +185,6 @@
   },
   {
     "Input": "organiser une réunion du 9am à 11am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "du 9am à 11am",
@@ -215,7 +196,6 @@
   },
   {
     "Input": "organiser une reunion des 9 à 11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9 à 11",
@@ -227,7 +207,6 @@
   },
   {
     "Input": "organiser une reunion des 9am a 11am demain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "des 9am a 11am demain",
@@ -239,7 +218,6 @@
   },
   {
     "Input": "Changer 22 Juillet rencontre Bellevue a 22 Aout",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22 Juillet",
@@ -257,7 +235,6 @@
   },
   {
     "Input": "Je serais sorti 11 / 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11 / 2016",
@@ -269,7 +246,6 @@
   },
   {
     "Input": "Je serais sorti 11/ 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11/ 2016",
@@ -281,7 +257,6 @@
   },
   {
     "Input": "Je serais sorti 11 /2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11 /2016",
@@ -293,7 +268,6 @@
   },
   {
     "Input": "Je serais sorti 11-2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11-2016",
@@ -305,7 +279,6 @@
   },
   {
     "Input": "Je serais sorti 11  - 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11  - 2016",
@@ -317,7 +290,6 @@
   },
   {
     "Input": "Je serais sorti 2016 / 11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016 / 11",
@@ -329,7 +301,6 @@
   },
   {
     "Input": "Je serais sorti 2016/11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016/11",
@@ -341,7 +312,6 @@
   },
   {
     "Input": "Je serais sorti 2016 - 11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016 - 11",
@@ -353,7 +323,6 @@
   },
   {
     "Input": "Je serais sorti 2016-11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016-11",
@@ -365,7 +334,6 @@
   },
   {
     "Input": "Je serais sorti 2016  -11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016  -11",
@@ -377,7 +345,6 @@
   },
   {
     "Input": "Je serais sorti Septembre 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Septembre 2016",
