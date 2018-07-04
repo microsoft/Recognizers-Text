@@ -1,7 +1,6 @@
 [
   {
     "Input": "Je retournerai a sept trente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept trente",
@@ -22,7 +21,6 @@
   },
   {
     "Input": "Je retournerai a 7ampm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7ampm",
@@ -43,7 +41,6 @@
   },
   {
     "Input": "Je retournerai a 7h",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7h",
@@ -64,7 +61,6 @@
   },
   {
     "Input": "Je retournerai a 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7",
@@ -85,7 +81,6 @@
   },
   {
     "Input": "Je retournerai a sept",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept",
@@ -106,7 +101,6 @@
   },
   {
     "Input": "Je retournerai 7pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7pm",
@@ -127,7 +121,6 @@
   },
   {
     "Input": "Je retournerai a 19",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "19",
@@ -148,7 +141,6 @@
   },
   {
     "Input": "Je retournerai à 19",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "19",
@@ -169,7 +161,6 @@
   },
   {
     "Input": "Je retournerai 7:56pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:56pm",
@@ -190,7 +181,6 @@
   },
   {
     "Input": "Je retournerai 7:56:30pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:56:30pm",
@@ -211,7 +201,6 @@
   },
   {
     "Input": "Je retournerai 7:56:30 pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:56:30 pm",
@@ -232,7 +221,6 @@
   },
   {
     "Input": "Je retournerai 12:34",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12:34",
@@ -253,7 +241,6 @@
   },
   {
     "Input": "Je retournerai 22:34",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22:34",
@@ -274,7 +261,6 @@
   },
   {
     "Input": "Je retournerai 12:34:25 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12:34:25",
@@ -295,7 +281,6 @@
   },
   {
     "Input": "C'est 7 heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7 heures",
@@ -316,7 +301,6 @@
   },
   {
     "Input": "C'est sept heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept heures",
@@ -337,7 +321,6 @@
   },
   {
     "Input": "C'est 8 du matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 du matin",
@@ -358,7 +341,6 @@
   },
   {
     "Input": "C'est 10 de matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 de matin",
@@ -379,7 +361,6 @@
   },
   {
     "Input": "C'est 10 du matinée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 du matinée",
@@ -400,7 +381,6 @@
   },
   {
     "Input": "C'est 10 du matinee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 du matinee",
@@ -421,7 +401,6 @@
   },
   {
     "Input": "C'est 11 de matinée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11 de matinée",
@@ -442,7 +421,6 @@
   },
   {
     "Input": "C'est 11 de la matinée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11 de la matinée",
@@ -463,7 +441,6 @@
   },
   {
     "Input": "C'est 8 du soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 du soir",
@@ -484,7 +461,6 @@
   },
   {
     "Input": "C'est 8 dans la nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 dans la nuit",
@@ -505,7 +481,6 @@
   },
   {
     "Input": "C'est 8 de soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 de soir",
@@ -526,7 +501,6 @@
   },
   {
     "Input": "C'est 8 du soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 du soiree",
@@ -547,7 +521,6 @@
   },
   {
     "Input": "C'est 8 du soirée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 du soirée",
@@ -568,7 +541,6 @@
   },
   {
     "Input": "C'est 10 de soirée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 de soirée",
@@ -589,7 +561,6 @@
   },
   {
     "Input": "C'est 10 dans le soirée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 dans le soirée",
@@ -610,7 +581,6 @@
   },
   {
     "Input": "C'est 10 dans la soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 dans la soiree",
@@ -631,7 +601,6 @@
   },
   {
     "Input": "C'est 8 et demie",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 et demie",
@@ -652,7 +621,6 @@
   },
   {
     "Input": "Il est 20 et demie",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "20 et demie",
@@ -673,7 +641,6 @@
   },
   {
     "Input": "C'est huit et demie",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit et demie",
@@ -694,7 +661,6 @@
   },
   {
     "Input": "C'est huit et quart",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit et quart",
@@ -715,7 +681,6 @@
   },
   {
     "Input": "C'est 8 et quart",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 et quart",
@@ -736,7 +701,6 @@
   },
   {
     "Input": "C'est 9pm et trois quarts",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9pm et trois quarts",
@@ -757,7 +721,6 @@
   },
   {
     "Input": "C'est sept et demie heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept et demie heures",
@@ -778,7 +741,6 @@
   },
   {
     "Input": "C'est sept et demie apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept et demie apres-midi",
@@ -799,7 +761,6 @@
   },
   {
     "Input": "C'est sept et demie du matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept et demie du matin",
@@ -820,7 +781,6 @@
   },
   {
     "Input": "Je retournerai apres-midi a 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres-midi a 7",
@@ -841,7 +801,6 @@
   },
   {
     "Input": "Je retournerai apres midi 7:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres midi 7:00",
@@ -862,7 +821,6 @@
   },
   {
     "Input": "Je retournerai l'après-midi 7:00:05",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "après-midi 7:00:05",
@@ -883,7 +841,6 @@
   },
   {
     "Input": "Je retournerai l'après midi sept",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "après midi sept",
@@ -904,7 +861,6 @@
   },
   {
     "Input": "Je retournerai a 7 ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7 ce soir",
@@ -925,7 +881,6 @@
   },
   {
     "Input": "Je retournerai a 7:30 du soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:30 du soir",
@@ -946,7 +901,6 @@
   },
   {
     "Input": "Je retournerai a 7:30 dans la nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:30 dans la nuit",
@@ -967,7 +921,6 @@
   },
   {
     "Input": "C'est peu pres midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "peu pres midi",
@@ -988,7 +941,6 @@
   },
   {
     "Input": "C'est peu près midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "peu près midi",
@@ -1009,7 +961,6 @@
   },
   {
     "Input": "Je retournerai peu pres 11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "peu pres 11",
@@ -1030,7 +981,6 @@
   },
   {
     "Input": "Je retournerai peu près 23",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "peu près 23",
@@ -1051,7 +1001,6 @@
   },
   {
     "Input": "Je retournerai dix-neuf trente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dix-neuf trente",
@@ -1072,7 +1021,6 @@
   },
   {
     "Input": "Je retournerai vingt-trois vingt",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vingt-trois vingt",
@@ -1093,7 +1041,6 @@
   },
   {
     "Input": "Je retournerai 340pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "340pm",
@@ -1114,7 +1061,6 @@
   },
   {
     "Input": "Je retournerai 1140 a.m.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1140 a.m.",
@@ -1135,7 +1081,6 @@
   },
   {
     "Input": "minuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "minuit",
@@ -1156,7 +1101,6 @@
   },
   {
     "Input": "milieu du matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu du matin",
@@ -1177,7 +1121,6 @@
   },
   {
     "Input": "milieu de matinee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu de matinee",
@@ -1198,7 +1141,6 @@
   },
   {
     "Input": "milieu de matinée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu de matinée",
@@ -1219,7 +1161,6 @@
   },
   {
     "Input": "milieu d'apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu d'apres-midi",
@@ -1240,7 +1181,6 @@
   },
   {
     "Input": "milieu d'après-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu d'après-midi",
@@ -1261,7 +1201,6 @@
   },
   {
     "Input": "milieu d'après midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu d'après midi",
@@ -1282,7 +1221,6 @@
   },
   {
     "Input": "milieu de midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu de midi",
@@ -1303,7 +1241,6 @@
   },
   {
     "Input": "milieu du jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu du jour",
@@ -1324,7 +1261,6 @@
   },
   {
     "Input": "apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres-midi",
@@ -1345,7 +1281,6 @@
   },
   {
     "Input": "après-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "après-midi",
@@ -1366,7 +1301,6 @@
   },
   {
     "Input": "après midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "après midi",
@@ -1387,7 +1321,6 @@
   },
   {
     "Input": "Je retournerai à 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7",
@@ -1408,7 +1341,6 @@
   },
   {
     "Input": "Je retournerai à sept",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept",
@@ -1429,7 +1361,6 @@
   },
   {
     "Input": "Je retournerai 7:56:13 pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:56:13 pm",
@@ -1450,7 +1381,6 @@
   },
   {
     "Input": "Je retournerai 12:34:45 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12:34:45",
@@ -1471,7 +1401,6 @@
   },
   {
     "Input": "Je retournerai 22:34:45 ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22:34:45",
@@ -1492,7 +1421,6 @@
   },
   {
     "Input": "C'est 8 dans la soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 dans la soiree",
@@ -1513,7 +1441,6 @@
   },
   {
     "Input": "C'est 8 ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 ce soir",
@@ -1534,7 +1461,6 @@
   },
   {
     "Input": "C'est 8 dans l'apres midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 dans l'apres midi",
@@ -1555,7 +1481,6 @@
   },
   {
     "Input": "C'est 21 et trois quarts",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "21 et trois quarts",
@@ -1576,7 +1501,6 @@
   },
   {
     "Input": "C'est 8 h et vingt minute dans la soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 h et vingt minute dans la soiree",
@@ -1597,7 +1521,6 @@
   },
   {
     "Input": "Je retournerai dans l'apres midi a 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans l'apres midi a 7",
@@ -1618,7 +1541,6 @@
   },
   {
     "Input": "Je retournerai l'après-midi 7:00:25",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "après-midi 7:00:25",
@@ -1639,7 +1561,6 @@
   },
   {
     "Input": "Je retournerai l'apres-midi sept",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres-midi sept",
@@ -1660,7 +1581,6 @@
   },
   {
     "Input": "Je retournerai sept trente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sept trente",
@@ -1681,7 +1601,6 @@
   },
   {
     "Input": "Je retournerai vingt-et-un trente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vingt-et-un trente",
@@ -1702,7 +1621,6 @@
   },
   {
     "Input": "Je retournerai vingt-deux trente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vingt-deux trente",
@@ -1723,7 +1641,6 @@
   },
   {
     "Input": "Je retournerai cinq trente dans la nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq trente dans la nuit",
@@ -1744,7 +1661,6 @@
   },
   {
     "Input": "Je retournerai cinq trente ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq trente ce soir",
@@ -1765,7 +1681,6 @@
   },
   {
     "Input": "Je retournerai cinq trente du soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq trente du soir",
@@ -1786,7 +1701,6 @@
   },
   {
     "Input": "Je retournerai cinq trente dans la soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq trente dans la soiree",
@@ -1807,7 +1721,6 @@
   },
   {
     "Input": "Je retournerai cinq trente du matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq trente du matin",
@@ -1828,7 +1741,6 @@
   },
   {
     "Input": "Je retournerai cinq trente du matinee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq trente du matinee",
@@ -1849,7 +1761,6 @@
   },
   {
     "Input": "Je retournerai cinq trente dans le matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq trente dans le matin",
@@ -1870,7 +1781,6 @@
   },
   {
     "Input": "Je retournerai peu près 12",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "peu près 12",
@@ -1891,7 +1801,6 @@
   },
   {
     "Input": "Je retournerai peu pres 23",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "peu pres 23",
@@ -1912,7 +1821,6 @@
   },
   {
     "Input": "Je retournerai peu pres 5",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "peu pres 5",
@@ -1933,7 +1841,6 @@
   },
   {
     "Input": "Je retournerai peu pres midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "peu pres midi",
@@ -1954,7 +1861,6 @@
   },
   {
     "Input": "milieu d'apres midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu d'apres midi",
@@ -1975,7 +1881,6 @@
   },
   {
     "Input": "milieu de jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "milieu de jour",
@@ -1996,7 +1901,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante",
@@ -2017,7 +1921,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante dans le matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante dans le matin",
@@ -2038,7 +1941,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante du matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante du matin",
@@ -2059,7 +1961,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante ce matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante ce matin",
@@ -2080,7 +1981,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante a.m",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante a.m",
@@ -2101,7 +2001,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante a.m.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante a.m.",
@@ -2122,7 +2021,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante am",
@@ -2143,7 +2041,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante pm",
@@ -2164,7 +2061,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante p.m.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante p.m.",
@@ -2185,7 +2081,6 @@
   },
   {
     "Input": "régler une alarm pour huit quarante p.m",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "huit quarante p.m",
@@ -2206,7 +2101,6 @@
   },
   {
     "Input": "régler une alarm pour dix quarante cinq am",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dix quarante cinq am",
@@ -2227,7 +2121,6 @@
   },
   {
     "Input": "régler une alarm pour quinze quinze p m",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quinze quinze p m",
@@ -2248,7 +2141,6 @@
   },
   {
     "Input": "régler une alarm pour quinze trente p m",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quinze trente p m",
@@ -2269,7 +2161,6 @@
   },
   {
     "Input": "régler une alarm pour dix dix",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dix dix",
@@ -2290,7 +2181,6 @@
   },
   {
     "Input": "régler une alarm pour vingt-deux dix",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vingt-deux dix",
@@ -2311,7 +2201,6 @@
   },
   {
     "Input": "régler une alarm pour dix cinquante cinq p. m.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dix cinquante cinq p. m.",
@@ -2332,7 +2221,6 @@
   },
   {
     "Input": "Je serai de retour à 7h01",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7h01",
@@ -2353,7 +2241,6 @@
   },
   {
     "Input": "Je serai de retour à 10 H 10 pm.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 H 10 pm",
