@@ -24,6 +24,10 @@ from .datetimeperiod_extractor_config import FrenchDateTimePeriodExtractorConfig
 from .duration_parser_config import FrenchDurationParserConfiguration
 from .date_parser_config import FrenchDateParserConfiguration
 from .time_parser_config import FrenchTimeParserConfiguration
+from .datetime_parser_config import FrenchDateTimeParserConfiguration
+from .dateperiod_parser_config import FrenchDatePeriodParserConfiguration
+from .timeperiod_parser_config import FrenchTimePeriodParserConfiguration
+from .datetimeperiod_parser_config import FrenchDateTimePeriodParserConfiguration
 from .parsers import FrenchTimeParser
 
 class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
@@ -162,7 +166,7 @@ class FrenchCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._duration_parser = BaseDurationParser(FrenchDurationParserConfiguration(self))
         self._date_parser = BaseDateParser(FrenchDateParserConfiguration(self))
         self._time_parser = FrenchTimeParser(FrenchTimeParserConfiguration(self))
-        self._date_period_parser = None # BaseDatePeriodParser(FrenchDatePeriodParserConfiguration(self))
-        self._time_period_parser = None # BaseTimePeriodParser(FrenchTimePeriodParserConfiguration(self))
-        self._date_time_parser = None # BaseDateTimeParser(FrenchDateTimeParserConfiguration(self))
-        self._date_time_period_parser = None # BaseDateTimePeriodParser(FrenchDateTimePeriodParserConfiguration(self))
+        self._date_period_parser = BaseDatePeriodParser(FrenchDatePeriodParserConfiguration(self))
+        self._time_period_parser = BaseTimePeriodParser(FrenchTimePeriodParserConfiguration(self))
+        self._date_time_parser = BaseDateTimeParser(FrenchDateTimeParserConfiguration(self))
+        self._date_time_period_parser = BaseDateTimePeriodParser(FrenchDateTimePeriodParserConfiguration(self))

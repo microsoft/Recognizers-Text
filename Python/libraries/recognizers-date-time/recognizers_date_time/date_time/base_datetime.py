@@ -145,8 +145,8 @@ class BaseDateTimeExtractor(DateTimeExtractor):
                     begin = ers[i].start
                     end = ers[j].start + ers[j].length
                     tokens.append(Token(begin, end))
-                    i = j + 1
-                    continue
+                i = j + 1
+                continue
             i = j
 
         tokens = list(map(lambda x: self.verify_end_token(source, x), tokens))
