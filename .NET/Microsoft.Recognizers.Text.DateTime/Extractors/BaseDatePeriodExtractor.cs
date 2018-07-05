@@ -234,7 +234,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var match = this.config.WithinNextPrefixRegex.Match(beforeString);
                             if (match.Success)
                             {
-                                var isNext = !string.IsNullOrEmpty(match.Groups[Constants.NextGroupNameForWithinRegex].Value);
+                                var isNext = !string.IsNullOrEmpty(match.Groups[Constants.NextGroupName].Value);
 
                                 // For "within" case
                                 // Cases like "within the next 5 days before today" is not acceptable

@@ -101,22 +101,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var amStr = match.Groups["am"].Value;
+                    var amStr = match.Groups[Constants.AmGroupName].Value;
                     if (!string.IsNullOrEmpty(amStr))
                     {
-                        if (hour >= 12)
+                        if (hour >= Constants.HalfDayHourCount)
                         {
-                            deltaHour = -12;
+                            deltaHour = -Constants.HalfDayHourCount;
                         }
                         hasAm = true;
                     }
 
-                    var pmStr = match.Groups["pm"].Value;
+                    var pmStr = match.Groups[Constants.PmGroupName].Value;
                     if (!string.IsNullOrEmpty(pmStr))
                     {
-                        if (hour < 12)
+                        if (hour < Constants.HalfDayHourCount)
                         {
-                            deltaHour = 12;
+                            deltaHour = Constants.HalfDayHourCount;
                         }
                         hasPm = true;
                     }

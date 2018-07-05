@@ -62,7 +62,7 @@ public class EnglishNumberRangeParserConfiguration implements INumberRangeParser
         this.lessOrEqual = Pattern.compile(EnglishNumeric.LessOrEqual, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
         this.moreOrEqualSuffix = Pattern.compile(EnglishNumeric.MoreOrEqualSuffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
         this.lessOrEqualSuffix = Pattern.compile(EnglishNumeric.LessOrEqualSuffix, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
-        this.moreOrEqualSeparate = Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeMoreSeparateRegex), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
-        this.lessOrEqualSeparate = Pattern.compile(RegExpUtility.sanitize(EnglishNumeric.OneNumberRangeLessSeparateRegex), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.moreOrEqualSeparate = RegExpUtility.getSafeRegExp(EnglishNumeric.OneNumberRangeMoreSeparateRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+        this.lessOrEqualSeparate = RegExpUtility.getSafeRegExp(EnglishNumeric.OneNumberRangeLessSeparateRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
     }
 }

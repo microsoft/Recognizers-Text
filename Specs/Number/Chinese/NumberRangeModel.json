@@ -438,7 +438,7 @@
 ,
 {
   "Input": "这些苹果大概有20 - 100个",
-  "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python, java",
   "Results": [
     {
       "Text": "20 - 100",

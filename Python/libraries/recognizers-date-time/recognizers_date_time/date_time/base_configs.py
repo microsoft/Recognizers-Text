@@ -2,6 +2,7 @@ from typing import Dict
 from abc import abstractmethod, ABC
 
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
+from ..resources.base_date_time import BaseDateTime
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser
 from .utilities import DateTimeUtilityConfiguration
@@ -128,9 +129,8 @@ class BaseDateParserConfiguration(ABC):
         raise NotImplementedError
 
     @property
-    @abstractmethod
     def day_of_month(self) -> Dict[str, int]:
-        raise NotImplementedError
+        return self._day_of_month
 
     @property
     @abstractmethod
@@ -146,3 +146,6 @@ class BaseDateParserConfiguration(ABC):
     @abstractmethod
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         raise NotImplementedError
+
+    def __init__(self):
+        self._day_of_month = BaseDateTime.DayOfMonthDictionary

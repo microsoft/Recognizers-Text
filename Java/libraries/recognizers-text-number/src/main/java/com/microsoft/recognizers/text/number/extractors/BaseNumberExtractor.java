@@ -5,6 +5,8 @@ import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.resources.BaseNumbers;
+import com.microsoft.recognizers.text.utilities.Match;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.*;
 import java.util.regex.MatchResult;
@@ -31,20 +33,18 @@ public abstract class BaseNumberExtractor implements IExtractor {
         Boolean[] matched = new Boolean[source.length()];
         Arrays.fill(matched, false);
 
-        HashMap<MatchResult, String> matchSource = new HashMap<>();
+        HashMap<Match, String> matchSource = new HashMap<>();
         getRegexes().forEach((k, value) -> {
-            Matcher matcher = k.matcher(source);
-            while (matcher.find()) {
-                MatchResult r = matcher.toMatchResult();
-                int start = r.start();
-                int end = r.end();
-                int length = end - start;
+            Match[] matches = RegExpUtility.getMatches(k, source);
+            for(Match m : matches) {
+                int start = m.index;
+                int length = m.length;
                 for (int j = 0; j < length; j++) {
                     matched[start + j] = true;
                 }
 
                 // Keep Source Data for extra information
-                matchSource.put(r, value);
+                matchSource.put(m, value);
             }
         });
 
@@ -58,9 +58,9 @@ public abstract class BaseNumberExtractor implements IExtractor {
 
                     int finalStart = start;
                     int finalLength = length;
-                    Optional<MatchResult> srcMatches = matchSource.keySet().stream().filter(o -> o.start() == finalStart && o.group().length() == finalLength).findFirst();
+                    Optional<Match> srcMatches = matchSource.keySet().stream().filter(o -> o.index == finalStart && o.length == finalLength).findFirst();
                     if (srcMatches.isPresent()) {
-                        MatchResult srcMatch = srcMatches.get();
+                        Match srcMatch = srcMatches.get();
 
                         // Extract negative numbers
                         if (getNegativeNumberTermsRegex().isPresent()) {

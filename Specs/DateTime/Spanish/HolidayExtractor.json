@@ -2,7 +2,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré para navidad",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 13,
@@ -15,7 +14,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré para navidad del proximo año",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 13,
@@ -28,7 +26,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré en viernes santo",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 11,
@@ -41,7 +38,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré en día de accion de gracias",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 11,
@@ -54,7 +50,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré el dia del padre",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 11,
@@ -67,7 +62,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré el día de san patricio de este año",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 11,
@@ -80,7 +74,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré el dia de la madre del 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 11,
@@ -93,7 +86,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré el dia de la madre 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 11,
@@ -106,7 +98,6 @@
   {
     "TestType": "BasicTest",
     "Input": "Volveré el día blanco",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 11,

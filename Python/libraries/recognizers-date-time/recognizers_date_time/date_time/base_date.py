@@ -457,9 +457,9 @@ class BaseDateParser(DateTimeParser):
             if year_str:
                 year = int(year_str) if year_str.isnumeric() else 0
 
-                if year < 100 and year >= 90:
+                if year < 100 and year >= Constants.MinTwoDigitYearPastNum:
                     year += 1900
-                elif year < 100 and year < 20:
+                elif year >= 0 and year < Constants.MaxTwoDigitYearFutureNum:
                     year += 2000
 
         no_year = False

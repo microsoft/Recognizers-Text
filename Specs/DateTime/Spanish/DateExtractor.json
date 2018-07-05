@@ -1,7 +1,6 @@
 [
   {
     "Input": "Volvere el 15",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Volvere el 22 de Abril",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22 de Abril",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Volvere el 1-Ene",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1-Ene",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Volvere el 1/Ene",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1/Ene",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Volvere el 2. Octubre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2. Octubre",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Volvere el 12 de enero, 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12 de enero, 2016",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Volvere el 12 de Enero de 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12 de Enero de 2016",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Volvere el Lunes 12 de enero, 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Lunes 12 de enero, 2016",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Volvere el 02/22/2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "02/22/2016",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Volvere el 21/04/2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "21/04/2016",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Volvere el 21/04/16",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "21/04/16",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Volvere el 9-18-15",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9-18-15",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Volvere el 4.22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4.22",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "Volvere el 4-22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4-22",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "Volvere el    4/22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4/22",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "Volvere el 22/04",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22/04",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Volvere       4/22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4/22",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Volvere 22/04",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22/04",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Volvere el 2015/08/12",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "Volvere el 11/12,2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11/12,2016",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "Volvere el 11/12,16",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11/12,16",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "Volvere el 1ro de Ene",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1ro de Ene",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "Volvere el 28-Nov",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "28-Nov",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "Volvere el Mi, 22 de Ene",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mi, 22 de Ene",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "Volvere el primero de Ene",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "primero de Ene",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "Volvere el veintiuno de Mayo",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "veintiuno de Mayo",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "Volvere en Mayo veintiuno",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mayo veintiuno",
@@ -325,7 +298,6 @@
   },
   {
     "Input": "Volvere el segundo de Ago",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "segundo de Ago",
@@ -337,7 +309,6 @@
   },
   {
     "Input": "Volvere el vigesimo segundo de Junio",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vigesimo segundo de Junio",
@@ -349,7 +320,6 @@
   },
   {
     "Input": "Volvere el viernes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "viernes",
@@ -361,7 +331,6 @@
   },
   {
     "Input": "Volvere viernes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "viernes",
@@ -373,7 +342,6 @@
   },
   {
     "Input": "Volvere los viernes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "viernes",
@@ -385,7 +353,6 @@
   },
   {
     "Input": "Volvere los sabados",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "sabados",
@@ -397,7 +364,6 @@
   },
   {
     "Input": "Volvere hoy",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "hoy",
@@ -409,7 +375,6 @@
   },
   {
     "Input": "Volvere mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mañana",
@@ -421,7 +386,6 @@
   },
   {
     "Input": "Volvi ayer",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ayer",
@@ -433,7 +397,6 @@
   },
   {
     "Input": "Volvi el dia antes de ayer",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "el dia antes de ayer",
@@ -445,7 +408,6 @@
   },
   {
     "Input": "Volvi anteayer",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "anteayer",
@@ -457,7 +419,6 @@
   },
   {
     "Input": "Volvere el dia despues de mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "el dia despues de mañana",
@@ -469,7 +430,6 @@
   },
   {
     "Input": "Volvere pasado mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pasado mañana",
@@ -481,7 +441,6 @@
   },
   {
     "Input": "Volvere el dia siguiente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "el dia siguiente",
@@ -493,7 +452,6 @@
   },
   {
     "Input": "Volvere el proximo dia",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "el proximo dia",
@@ -505,7 +463,6 @@
   },
   {
     "Input": "Volvere este viernes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "este viernes",
@@ -517,7 +474,6 @@
   },
   {
     "Input": "Volvere el proximo domingo",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "proximo domingo",
@@ -529,7 +485,6 @@
   },
   {
     "Input": "Volvere el siguiente domingo",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "siguiente domingo",
@@ -541,7 +496,6 @@
   },
   {
     "Input": "Volvere el ultimo domingo",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ultimo domingo",
@@ -553,7 +507,6 @@
   },
   {
     "Input": "Volvere ultimo dia",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ultimo dia",
@@ -565,7 +518,6 @@
   },
   {
     "Input": "Volvere el ultimo dia",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "el ultimo dia",
@@ -577,7 +529,6 @@
   },
   {
     "Input": "Volvere el dia",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "el dia",
@@ -589,7 +540,6 @@
   },
   {
     "Input": "Volvere el viernes de esta semana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "viernes de esta semana",
@@ -601,7 +551,6 @@
   },
   {
     "Input": "Volvere el domingo de la siguiente semana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "domingo de la siguiente semana",
@@ -613,7 +562,6 @@
   },
   {
     "Input": "Volvere el domingo de la ultima semana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "domingo de la ultima semana",
@@ -625,7 +573,6 @@
   },
   {
     "Input": "Volvere el 15 Junio 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15 Junio 2016",
@@ -637,7 +584,6 @@
   },
   {
     "Input": "Volvere el undecimo de mayo",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "undecimo de mayo",
@@ -649,7 +595,6 @@
   },
   {
     "Input": "Volvere el primer viernes de julio",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "el primer viernes de julio",
@@ -661,7 +606,6 @@
   },
   {
     "Input": "Volvere el primer viernes de este mes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "el primer viernes de este mes",
@@ -673,7 +617,6 @@
   },
   {
     "Input": "¿Estás libre el 13.5.2015",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -685,7 +628,6 @@
   },
   {
     "Input": "¿Estás libre el 2015.5.13",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015.5.13",

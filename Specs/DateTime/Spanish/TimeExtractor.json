@@ -1,7 +1,6 @@
 [
   {
     "Input": "Volvere a las 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Volvere a las siete",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "siete",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Volvere a las 7pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7pm",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Volvere a las 7p.m.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7p.m.",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Volvere a las 7:56pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:56pm",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Volvere a las 7:56:35pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:56:35pm",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Volvere a las 7:56:35 pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7:56:35 pm",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Volvere a las 12:34",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12:34",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Volvere a las 12:34:20",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12:34:20",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Volvere a las T12:34:20",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "T12:34:20",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Volvere a las 00:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "00:00",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Volvere a las 00:00:30",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "00:00:30",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Son las 7 en punto",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7 en punto",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "Son las siete en punto",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "siete en punto",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "Son las 8 de la mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 de la mañana",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "Son las 8 de la tarde",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 de la tarde",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Son las 8 de la noche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8 de la noche",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Son las ocho y media",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ocho y media",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Son las 8pm y media",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8pm y media",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "Son 30 mins pasadas las ocho",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "30 mins pasadas las ocho",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "Son las ocho y cuarto",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ocho y cuarto",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "Son cuarto pasadas las ocho",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cuarto pasadas las ocho",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "Son cuarto pasadas de las ocho",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cuarto pasadas de las ocho",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "Son 9pm menos cuarto",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9pm menos cuarto",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "Faltan 3 minutos para las ocho",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 minutos para las ocho",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "Son siete y media en punto",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "siete y media en punto",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "Son siete y media de la tarde",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "siete y media de la tarde",
@@ -325,7 +298,6 @@
   },
   {
     "Input": "Son siete y media de la mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "siete y media de la mañana",
@@ -337,7 +309,6 @@
   },
   {
     "Input": "Son ocho menos veinticinco de la mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ocho menos veinticinco de la mañana",
@@ -349,7 +320,6 @@
   },
   {
     "Input": "Son ocho menos veinte de la mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ocho menos veinte de la mañana",
@@ -361,7 +331,6 @@
   },
   {
     "Input": "Son ocho menos cuarto de la mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ocho menos cuarto de la mañana",
@@ -373,7 +342,6 @@
   },
   {
     "Input": "Son ocho menos diez de la mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ocho menos diez de la mañana",
@@ -385,7 +353,6 @@
   },
   {
     "Input": "Son ocho menos cinco de la mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ocho menos cinco de la mañana",
@@ -397,7 +364,6 @@
   },
   {
     "Input": "Son 20 min pasadas las ocho de la tarde",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "20 min pasadas las ocho de la tarde",
@@ -409,7 +375,6 @@
   },
   {
     "Input": "Volvere por la tarde a las 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "por la tarde a las 7",
@@ -421,7 +386,6 @@
   },
   {
     "Input": "Volvere a la tarde a las 7",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "a la tarde a las 7",
@@ -433,7 +397,6 @@
   },
   {
     "Input": "Volvere a la tarde a las 7:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "a la tarde a las 7:00",
@@ -445,7 +408,6 @@
   },
   {
     "Input": "Volvere a la tarde a las 7:00:14",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "a la tarde a las 7:00:14",
@@ -457,7 +419,6 @@
   },
   {
     "Input": "Volvere a la tarde a las siete pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "a la tarde a las siete pm",
@@ -469,7 +430,6 @@
   },
   {
     "Input": "Volvere a las siete treinta pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "siete treinta pm",
@@ -481,7 +441,6 @@
   },
   {
     "Input": "Volvere a las siete treinta y cinco pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "siete treinta y cinco pm",
@@ -493,7 +452,6 @@
   },
   {
     "Input": "Volvere a las once y cinco",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "once y cinco",
@@ -505,7 +463,6 @@
   },
   {
     "Input": "Volvere tres minutos para las cinco treinta",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tres minutos para las cinco treinta",
@@ -517,7 +474,6 @@
   },
   {
     "Input": "Volvere tres minutos antes de las cinco treinta",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tres minutos antes de las cinco treinta",
@@ -529,7 +485,6 @@
   },
   {
     "Input": "Volvere a las cinco treinta de la noche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinco treinta de la noche",
@@ -541,7 +496,6 @@
   },
   {
     "Input": "Volvere a las cinco treinta en la noche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinco treinta en la noche",
@@ -553,7 +507,6 @@
   },
   {
     "Input": "Volvere a las cinco treinta de la madrugada",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinco treinta de la madrugada",
@@ -565,7 +518,6 @@
   },
   {
     "Input": "Volvere a la madrugada",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "a la madrugada",
@@ -577,7 +529,6 @@
   },
   {
     "Input": "Volvere a la mañana",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "a la mañana",
@@ -589,7 +540,6 @@
   },
   {
     "Input": "Volvere al mediodia",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "al mediodia",
@@ -601,7 +551,6 @@
   },
   {
     "Input": "Volvere al medio dia",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "al medio dia",
@@ -613,7 +562,6 @@
   },
   {
     "Input": "Volvere a la tarde",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "a la tarde",
@@ -625,7 +573,6 @@
   },
   {
     "Input": "Volvere al noche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "al noche",
@@ -637,7 +584,6 @@
   },
   {
     "Input": "Volvere 340pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "340pm",
@@ -649,7 +595,6 @@
   },
   {
     "Input": "Volvere 1140 a.m.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1140 a.m.",
@@ -661,7 +606,6 @@
   },
   {
     "Input": "no hay ninguna pm string despues de la hora",
-    "NotSupported": "python",
     "Results": []
   }
 ]

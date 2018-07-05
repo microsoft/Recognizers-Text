@@ -19,5 +19,5 @@ from .datetime_parser_config import *
 from .datetimeperiod_parser_config import *
 from .set_parser_config import *
 from .holiday_parser_config import *
-# from .merged_parser_config import *
+from .merged_parser_config import *
 from .parsers import *

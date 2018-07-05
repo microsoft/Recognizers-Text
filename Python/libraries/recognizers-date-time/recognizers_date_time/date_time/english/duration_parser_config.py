@@ -42,8 +42,8 @@ class EnglishDurationParserConfiguration(DurationParserConfiguration):
         return self._half_date_unit_regex
 
     @property
-    def in_exact_number_unit_regex(self) -> Pattern:
-        return self._in_exact_number_unit_regex
+    def inexact_number_unit_regex(self) -> Pattern:
+        return self._inexact_number_unit_regex
 
     @property
     def unit_map(self) -> Dict[str, str]:
@@ -66,7 +66,7 @@ class EnglishDurationParserConfiguration(DurationParserConfiguration):
         self._an_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AnUnitRegex)
         self._all_date_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.AllRegex)
         self._half_date_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.HalfRegex)
-        self._in_exact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.InexactNumberUnitRegex)
+        self._inexact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(EnglishDateTime.InexactNumberUnitRegex)
         self._unit_map: Dict[str, int] = EnglishDateTime.UnitMap
         self._unit_value_map: Dict[str, int] = EnglishDateTime.UnitValueMap
         self._double_numbers: Dict[str, float] = EnglishDateTime.DoubleNumbers

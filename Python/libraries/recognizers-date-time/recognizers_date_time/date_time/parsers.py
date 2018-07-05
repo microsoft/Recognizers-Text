@@ -8,7 +8,7 @@ from recognizers_text.parser import Parser, ParseResult
 class DateTimeParseResult(ParseResult):
     def __init__(self, source: ExtractResult = None):
         super().__init__(source)
-        self.timex_str: str
+        self.timex_str: str = ''
 
 class DateTimeParser(Parser):
     @property

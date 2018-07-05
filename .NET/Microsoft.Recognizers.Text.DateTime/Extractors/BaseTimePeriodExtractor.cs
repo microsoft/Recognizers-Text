@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 foreach (Match match in matches)
                 {
                     // Cases like "from 10:30 to 11", don't necessarily need "am/pm"
-                    if (match.Groups["min"].Success || match.Groups["sec"].Success)
+                    if (match.Groups[Constants.MinuteGroupName].Success || match.Groups[Constants.SecondGroupName].Success)
                     {
                         // Cases like "from 3:30 to 4" should be supported
                         // Cases like "from 3:30 to 4 on 1/1/2015" should be supported
@@ -74,12 +74,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        // Is there "pm" or "am" ?
-                        var pmStr = match.Groups["pm"].Value;
-                        var amStr = match.Groups["am"].Value;
-                        var descStr = match.Groups["desc"].Value;
+                        // Is there Constants.PmGroupName or Constants.AmGroupName ?
+                        var pmStr = match.Groups[Constants.PmGroupName].Value;
+                        var amStr = match.Groups[Constants.AmGroupName].Value;
+                        var descStr = match.Groups[Constants.DescGroupName].Value;
 
-                        // Check "pm", "am"
+                        // Check Constants.PmGroupName, Constants.AmGroupName
                         if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
                         {
                             ret.Add(new Token(match.Index, match.Index + match.Length));

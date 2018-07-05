@@ -2408,11 +2408,13 @@
 ,
 {
   "Input": "百分之五十五点五七九",
+  "NotSupported": "java",
   "Results": []
 }
 ,
 {
   "Input": "百分之十万零六百五十一",
+  "NotSupported": "java",
   "Results": []
 }
 ,
@@ -2868,6 +2870,7 @@
 {
   "Input": "2222.2222.22222.222",
   "NotSupportedByDesign": "javascript",
+  "NotSupported": "java",
   "Results": [
     {
       "Text": "2222",

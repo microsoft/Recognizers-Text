@@ -66,12 +66,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 timex = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (trimedText.Contains("passado o meio dia") || trimedText.Contains("depois do meio dia"))
             {
                 timex = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (trimedText.EndsWith("tarde"))

@@ -90,13 +90,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var trimedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if (trimedText.EndsWith("matin") && hour >= 12)
+            if (trimedText.EndsWith("matin") && hour >= Constants.HalfDayHourCount)
             {
-                result -= 12;
+                result -= Constants.HalfDayHourCount;
             }
-            else if (!trimedText.EndsWith("matin") && hour < 12)
+            else if (!trimedText.EndsWith("matin") && hour < Constants.HalfDayHourCount)
             {
-                result += 12;
+                result += Constants.HalfDayHourCount;
             }
             return result;
         }

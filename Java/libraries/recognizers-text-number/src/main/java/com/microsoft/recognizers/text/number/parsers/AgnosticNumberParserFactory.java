@@ -16,9 +16,7 @@ public abstract class AgnosticNumberParserFactory {
 
 
         if (isChinese || isJapanese) {
-            // TODO;
-            // parser = new BaseCJKNumberParser(languageConfiguration);
-            throw new UnsupportedOperationException("Chinese/Japanese not yet supported.");
+             parser = new BaseCJKNumberParser(languageConfiguration);
         } else {
             parser = new BaseNumberParser(languageConfiguration);
         }

@@ -1,7 +1,6 @@
 [
   {
     "Input": "Saldré semanalmente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "semanalmente",
@@ -22,7 +21,6 @@
   },
   {
     "Input": "Saldré quincenalmente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quincenalmente",
@@ -43,7 +41,6 @@
   },
   {
     "Input": "Saldré diariamente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "diariamente",
@@ -64,7 +61,6 @@
   },
   {
     "Input": "Saldré a diario",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "a diario",
@@ -85,7 +81,6 @@
   },
   {
     "Input": "Saldré todos los dias",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todos los dias",
@@ -106,7 +101,6 @@
   },
   {
     "Input": "Saldré cada mes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cada mes",
@@ -127,7 +121,6 @@
   },
   {
     "Input": "Saldré todos los meses",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todos los meses",
@@ -148,7 +141,6 @@
   },
   {
     "Input": "Saldré todas las semanas",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todas las semanas",
@@ -169,7 +161,6 @@
   },
   {
     "Input": "Saldré anualmente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "anualmente",
@@ -190,7 +181,6 @@
   },
   {
     "Input": "Saldré todos los años",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todos los años",
@@ -211,7 +201,6 @@
   },
   {
     "Input": "Me iré cada dos dias",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cada dos dias",
@@ -232,7 +221,6 @@
   },
   {
     "Input": "Me iré cada tres semanas",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cada tres semanas",
@@ -253,7 +241,6 @@
   },
   {
     "Input": "Me iré cada 3 semanas",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cada 3 semanas",
@@ -274,7 +261,6 @@
   },
   {
     "Input": "Me iré a las 3pm todos los dias",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3pm todos los dias",
@@ -295,7 +281,6 @@
   },
   {
     "Input": "Me iré todos los dias a las 3pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todos los dias a las 3pm",
@@ -316,7 +301,6 @@
   },
   {
     "Input": "Saldré cada 15/4",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cada 15/4",
@@ -337,7 +321,6 @@
   },
   {
     "Input": "Saldré todos los lunes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "todos los lunes",
@@ -358,7 +341,6 @@
   },
   {
     "Input": "Saldré cada lunes a las 4pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cada lunes a las 4pm",
