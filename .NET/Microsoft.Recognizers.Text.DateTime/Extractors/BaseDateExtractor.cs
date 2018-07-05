@@ -352,14 +352,40 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (match.Success)
                 {                    
-                    ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
-                        er, ret, config.UtilityConfiguration);
+                    ret.AddRange(AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
+                        er, ret, config.UtilityConfiguration));
+                }
+            }
+
+            // Extract cases like "in 3 weeks", which equals to "3 weeks from today"
+            var relativeDurationDateWithInPrefix = ExtractRelativeDurationDateWithInPrefix(text, reference);
+
+            // For cases like "in 3 weeks from today", we should choose "3 weeks from today" as the extract result rather than "in 3 weeks" or "in 3 weeks from today"
+            foreach (var erWithInPrefix in relativeDurationDateWithInPrefix)
+            {
+                if (!IsOverlapWithExistExtractions(erWithInPrefix, ret))
+                {
+                    ret.Add(erWithInPrefix);
                 }
             }
 
             return ret;
         }
 
+        public bool IsOverlapWithExistExtractions(Token er, List<Token> existErs)
+        {
+            foreach (var existEr in existErs)
+            {
+                if (er.Start < existEr.End && er.End > existEr.Start)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
         public List<Token> ExtractRelativeDurationDateWithInPrefix(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -386,68 +412,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                // Match prefix
-                var match = this.config.PastRegex.Match(beforeStr);
-                if (MatchPrefixRegexInSegment(beforeStr, match))
-                {
-                    ret.Add(new Token(match.Index, duration.End));
-                    continue;
-                }
-
-                // within "Days/Weeks/Months/Years" should be handled as dateRange here
-                // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
-                match = Regex.Match(beforeStr, config.WithinNextPrefixRegex.ToString(),
-                    RegexOptions.RightToLeft | config.WithinNextPrefixRegex.Options);
-                if (MatchPrefixRegexInSegment(beforeStr, match))
-                {
-                    var startToken = match.Index;
-                    var matchDate = config.DateUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-                    var matchTime = config.TimeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-
-                    if (matchDate.Success && !matchTime.Success)
-                    {
-                        ret.Add(new Token(startToken, duration.End));
-                    }
-                }
-
-                // For cases like "next five days"
-                match = Regex.Match(beforeStr, config.FutureRegex.ToString(),
-                    RegexOptions.RightToLeft | config.FutureRegex.Options);
-                if (MatchPrefixRegexInSegment(beforeStr, match))
-                {
-                    ret.Add(new Token(match.Index, duration.End));
-                    continue;
-                }
-
-                // Match suffix
-                match = this.config.PastRegex.Match(afterStr);
-                if (MatchSuffixRegexInSegment(afterStr, match))
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
-
-                match = this.config.FutureRegex.Match(afterStr);
-                if (MatchSuffixRegexInSegment(afterStr, match))
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
-
-                match = this.config.FutureSuffixRegex.Match(afterStr);
-                if (MatchSuffixRegexInSegment(afterStr, match))
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
-
-                // in Range Weeks should be handled as dateRange here
-                match = Regex.Match(beforeStr, config.InConnectorRegex.ToString(),
+                var match = Regex.Match(beforeStr, config.InConnectorRegex.ToString(),
                     RegexOptions.RightToLeft | config.InConnectorRegex.Options);
-                if (MatchPrefixRegexInSegment(beforeStr, match))
+
+                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
                     var startToken = match.Index;
                     match = config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+
                     if (match.Success)
                     {
                         ret.Add(new Token(startToken, duration.End));

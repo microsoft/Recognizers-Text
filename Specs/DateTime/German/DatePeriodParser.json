@@ -551,25 +551,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "In zwei Wochen",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-11-15,2016-11-22,P1W)",
-          "FutureResolution": {
-            "startDate": "2016-11-15",
-            "endDate": "2016-11-22"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-15",
-            "endDate": "2016-11-22"
-          }
-        },
-        "Start": 0,
-        "Length": 14
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "in den nächsten 2 Tagen",

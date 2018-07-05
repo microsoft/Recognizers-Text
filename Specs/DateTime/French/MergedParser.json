@@ -202,7 +202,7 @@
     "Results": [
       {
         "Text": "dans 3 semaines",
-        "Type": "datetimeV2.daterange",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": []
         },
@@ -220,7 +220,7 @@
     "Results": [
       {
         "Text": "dans 3 mois",
-        "Type": "datetimeV2.daterange",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": []
         },
@@ -238,7 +238,7 @@
     "Results": [
       {
         "Text": "dans 3 annees",
-        "Type": "datetimeV2.daterange",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": []
         },
