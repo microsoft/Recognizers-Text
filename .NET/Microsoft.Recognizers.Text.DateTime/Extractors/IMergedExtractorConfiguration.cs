@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -26,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor HolidayExtractor { get; }
 
-        IDateTimeExtractor TimeZoneExtractor { get; }
+        IDateTimeZoneExtractor TimeZoneExtractor { get; }
 
         IDateTimeListExtractor DateTimeAltExtractor { get; }
 
@@ -49,6 +50,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex NumberEndingPattern { get; }
 
         Regex YearAfterRegex { get; }
+
+        Regex UnspecificDatePeriodRegex { get; }
+
+        StringMatcher SuperfluousWordMatcher { get; }
 
     }
 }

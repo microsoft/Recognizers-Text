@@ -123,11 +123,49 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var resolution = new List<string>();
             foreach (var timex in candidates)
             {
-                var r = ResolveTime(new TimexProperty(timex), collapsedTimeRanges);
-                resolution.AddRange(r);
+                var t = new TimexProperty(timex);
+                if (t.Types.Contains(Constants.TimexTypes.TimeRange))
+                {
+                    var r = ResolveTimeRange(t, collapsedTimeRanges);
+                    resolution.AddRange(r);
+                }
+                else if (t.Types.Contains(Constants.TimexTypes.Time))
+                {
+                    var r = ResolveTime(t, collapsedTimeRanges);
+                    resolution.AddRange(r);
+                }
             }
 
             return RemoveDuplicates(resolution);
+        }
+        
+        private static IEnumerable<string> ResolveTimeRange(TimexProperty timex, IEnumerable<TimeRange> constraints)
+        {
+            var candidate = TimexHelpers.TimeRangeFromTimex(timex);
+
+            var result = new List<string>();
+            foreach (var constraint in constraints)
+            {
+                if (TimexConstraintsHelper.IsOverlapping(candidate, constraint))
+                {
+                    var start = Math.Max(candidate.Start.GetTime(), constraint.Start.GetTime());
+                    var time = new Time(start);
+
+                    // TODO: consider a method on TimexProperty to do this clone/overwrite pattern
+                    var resolved = timex.Clone();
+                    resolved.PartOfDay = null;
+                    resolved.Seconds = null;
+                    resolved.Minutes = null;
+                    resolved.Hours = null;
+                    resolved.Second = time.Second;
+                    resolved.Minute = time.Minute;
+                    resolved.Hour = time.Hour;
+
+                    result.Add(resolved.TimexValue);
+                }
+            }
+
+            return result;
         }
 
         private static IEnumerable<string> ResolveTime(TimexProperty timex, IEnumerable<TimeRange> constraints)
@@ -185,7 +223,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.DayOfWeek != null)
             {
-                var day = timex.DayOfWeek == 7 ? DayOfWeek.Monday : (DayOfWeek)timex.DayOfWeek;
+                // convert between ISO day of week and .NET day of week
+                var day = timex.DayOfWeek == 7 ? DayOfWeek.Sunday : (DayOfWeek)timex.DayOfWeek;
                 var dates = TimexDateHelpers.DatesMatchingDay(day, constraint.Start, constraint.End);
                 var result = new List<string>();
 

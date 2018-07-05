@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanDateTimePeriodParserConfiguration : BaseOptionsConfiguration,IDateTimePeriodParserConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -64,12 +66,18 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex PrefixDayRegex { get; }
 
+        public Regex BeforeRegex { get; }
+
+        public Regex AfterRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
@@ -99,6 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             PmDescRegex = GermanDateTimePeriodExtractorConfiguration.PmDescRegex;
             WithinNextPrefixRegex = GermanDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
             PrefixDayRegex = GermanDateTimePeriodExtractorConfiguration.PrefixDayRegex;
+            BeforeRegex = GermanDateTimePeriodExtractorConfiguration.BeforeRegex;
+            AfterRegex = GermanDateTimePeriodExtractorConfiguration.AfterRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
@@ -126,12 +136,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 timeStr = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (AfternoonStartEndRegex.IsMatch(trimedText))
             {
                 timeStr = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (EveningStartEndRegex.IsMatch(trimedText))

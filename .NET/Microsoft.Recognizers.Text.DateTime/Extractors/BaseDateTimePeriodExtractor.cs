@@ -32,8 +32,109 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchTimeOfDay(text, reference));
             tokens.AddRange(MatchRelativeUnit(text));
             tokens.AddRange(MatchDateWithPeriodPrefix(text, reference));
+            tokens.AddRange(MergeDateWithTimePeriodSuffix(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
+        private IEnumerable<Token> MergeDateWithTimePeriodSuffix(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+            var dateErs = config.SingleDateExtractor.Extract(text, reference);
+
+            if (!dateErs.Any())
+            {
+                return ret;
+            }
+
+            var timeErs = config.SingleTimeExtractor.Extract(text, reference);
+
+            if (!timeErs.Any())
+            {
+                return ret;
+            }
+
+            var ers = dateErs;
+            ers.AddRange(timeErs);
+
+            ers = ers.OrderBy(o => o.Start).ToList();
+
+            var i = 0;
+            while (i < ers.Count - 1)
+            {
+                var j = i + 1;
+                while (j < ers.Count && ers[i].IsOverlap(ers[j]))
+                {
+                    j++;
+                }
+
+                if (j >= ers.Count)
+                {
+                    break;
+                }
+
+                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME))
+                {
+                    var middleBegin = ers[i].Start + ers[i].Length ?? 0;
+                    var middleEnd = ers[j].Start ?? 0;
+                    if (middleBegin > middleEnd)
+                    {
+                        i = j + 1;
+                        continue;
+                    }
+
+                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+
+                    if (IsValidConnectorForDateAndTimePeriod(middleStr))
+                    {
+                        var begin = ers[i].Start ?? 0;
+                        var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
+                        ret.Add(new Token(begin, end));
+                    }
+
+                    i = j + 1;
+                    continue;
+                }
+                i = j;
+            }
+
+            // Handle "in the afternoon" at the end of entity
+            for (var idx = 0; idx < ret.Count; idx++)
+            {
+                var afterStr = text.Substring(ret[idx].End);
+                var match = this.config.SuffixRegex.Match(afterStr);
+                if (match.Success)
+                {
+                    ret[idx] = new Token(ret[idx].Start, ret[idx].End + match.Length);
+                }
+            }
+
+            return ret;
+        }
+
+        // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
+        // Valid connector in English for Before include: "before", "no later than", "in advance of", "prior to", "earlier than", "sooner than", "by", "till", "until"...
+        // Valid connector in English for After include: "after", "later than"
+        private bool IsValidConnectorForDateAndTimePeriod(string text)
+        {
+            var BeforeAfterRegexes = new List<Regex>()
+            {
+                this.config.BeforeRegex,
+                this.config.AfterRegex
+            };
+
+            foreach (var regex in BeforeAfterRegexes)
+            {
+                var match = regex.Match(text);
+
+                if (match.Success && match.Length == text.Length)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private IEnumerable<Token> MatchDateWithPeriodPrefix(string text, DateObject reference)
@@ -196,6 +297,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Regarding the pharse as-- {Date} {TimePeriod}, like "2015-9-23 1pm to 4"
+            // Or {TimePeriod} on {Date}, like "1:30 to 4 on 2015-9-23"
             er1 = this.config.SingleDateExtractor.Extract(text, reference);
             er2 = this.config.TimePeriodExtractor.Extract(text, reference);
             er1.AddRange(er2);
@@ -215,7 +317,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (midEnd - midBegin > 0)
                 {
                     var midStr = text.Substring(midBegin, midEnd-midBegin);
-                    if (string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr))
+                    if ((string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr)) ||
+                        midStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
                     {
                         ret.Add(new Token(points[idx].Start ?? 0, points[idx + 1].Start + points[idx + 1].Length ?? 0));
                         idx += 2;

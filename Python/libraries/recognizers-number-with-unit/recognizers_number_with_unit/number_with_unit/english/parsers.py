@@ -38,6 +38,8 @@ class EnglishCurrencyParserConfiguration(EnglishNumberWithUnitParserConfiguratio
         super().__init__(culture_info)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.CurrencySuffixList)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.CurrencyPrefixList)
+        self.currency_name_to_iso_code_map = EnglishNumericWithUnit.CurrencyNameToIsoCodeMap
+        self.currency_fraction_code_list = EnglishNumericWithUnit.FractionalUnitNameToCodeMap
 
 class EnglishDimensionParserConfiguration(EnglishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):

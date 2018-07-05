@@ -104,12 +104,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 var oclockStr = match.Groups["oclock"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
-                    var amStr = match.Groups["am"].Value;
+                    var amStr = match.Groups[Constants.AmGroupName].Value;
                     if (!string.IsNullOrEmpty(amStr))
                     {
-                        if (hour >= 12)
+                        if (hour >= Constants.HalfDayHourCount)
                         {
-                            deltaHour = -12;
+                            deltaHour = -Constants.HalfDayHourCount;
                         }
                         else
                         {
@@ -117,21 +117,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                         }
                     }
 
-                    var pmStr = match.Groups["pm"].Value;
+                    var pmStr = match.Groups[Constants.PmGroupName].Value;
                     if (!string.IsNullOrEmpty(pmStr))
                     {
-                        if (hour < 12)
+                        if (hour < Constants.HalfDayHourCount)
                         {
-                            deltaHour = 12;
+                            deltaHour = Constants.HalfDayHourCount;
                         }
 
                         if (LunchRegex.IsMatch(pmStr))
                         {
                             // for hour>=10, <12
-                            if (hour >=10 && hour <=12)
+                            if (hour >=10 && hour <=Constants.HalfDayHourCount)
                             {
                                 deltaHour = 0;
-                                if (hour == 12)
+                                if (hour == Constants.HalfDayHourCount)
                                 {
                                     hasPm = true;
                                 }
@@ -148,9 +148,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                         else if (NightRegex.IsMatch(pmStr))
                         {
                             //For hour <=3 or ==12, we treat it as am, for example 1 in the night (midnight) == 1am
-                            if (hour <= 3 || hour == 12)
+                            if (hour <= 3 || hour == Constants.HalfDayHourCount)
                             {
-                                if (hour == 12)
+                                if (hour == Constants.HalfDayHourCount)
                                 {
                                     hour = 0;
                                 }

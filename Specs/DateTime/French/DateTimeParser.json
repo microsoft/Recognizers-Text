@@ -1,1265 +1,1322 @@
-[{
-  "Input": "Je reviendrai dès que possible",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dès que possible",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "FUTURE_REF",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 00:00:00"
+[
+  {
+    "Input": "Je reviendrai dès que possible",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dès que possible",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "FUTURE_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 00:00:00"
-        }
+        "Start": 14,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 21/04/2016, 8:00pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016, 8:00pm",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-04-21T20:00",
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:00"
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00pm",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:00"
-        }
+        "Start": 14,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 21/04/2016, 20:00",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016, 20:00",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-04-21T20:00",
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:00"
+  {
+    "Input": "Je reviendrai 21/04/2016, 20:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/2016, 20:00",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:00"
-        }
+        "Start": 14,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 20:00, 21/04/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20:00, 21/04/2016",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-04-21T20:00",
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:00"
+  {
+    "Input": "Je reviendrai 20:00, 21/04/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "20:00, 21/04/2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:00"
-        }
+        "Start": 14,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 21/04/2016, 8:00:24pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016, 8:00:24pm",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-04-21T20:00:24",
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:24"
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00:24pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00:24pm",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00:24",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:24"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:24"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:24"
-        }
+        "Start": 14,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 21/04/2016, 20:00:24",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016, 20:00:24",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-04-21T20:00:24",
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:24"
+  {
+    "Input": "Je reviendrai 21/04/2016, 20:00:24",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/2016, 20:00:24",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00:24",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:24"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:24"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:24"
-        }
+        "Start": 14,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 20:00:24, 21/04/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20:00:24, 21/04/2016",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-04-21T20:00:24",
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:24"
+  {
+    "Input": "Je reviendrai 20:00:24, 21/04/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "20:00:24, 21/04/2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00:24",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:24"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:24"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:24"
-        }
+        "Start": 14,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai Octobre 14 8:00am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Octobre 14 8:00am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:00"
+  {
+    "Input": "Je reviendrai Octobre 14 8:00am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Octobre 14 8:00am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:00"
-        }
+        "Start": 14,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai Octobre 14 8:00:13am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Octobre 14 8:00:13am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00:13",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:13"
+  {
+    "Input": "Je reviendrai Octobre 14 8:00:13am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Octobre 14 8:00:13am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:13",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:13"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:13"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:13"
-        }
+        "Start": 14,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai Octobre 14, 8:00am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Octobre 14, 8:00am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:00"
+  {
+    "Input": "Je reviendrai Octobre 14, 8:00am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Octobre 14, 8:00am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:00"
-        }
+        "Start": 14,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai Octobre 14, 8:00:25am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Octobre 14, 8:00:25am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00:25",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:25"
+  {
+    "Input": "Je reviendrai Octobre 14, 8:00:25am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Octobre 14, 8:00:25am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:25",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:25"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:25"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:25"
-        }
+        "Start": 14,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 20:00 sur 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20:00 sur 15",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-XX-15T20:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-15 20:00:00"
+  {
+    "Input": "Je reviendrai 20:00 sur 15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "20:00 sur 15",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T20:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-15 20:00:00"
-        }
+        "Start": 14,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 20:00 sur la 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20:00 sur la 15",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-XX-15T20:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-15 20:00:00"
+  {
+    "Input": "Je reviendrai 20:00 sur la 15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "20:00 sur la 15",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T20:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-15 20:00:00"
-        }
+        "Start": 14,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai a sept sur 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "sept sur 15",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-XX-15T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-15 07:00:00"
+  {
+    "Input": "Je reviendrai a sept sur 15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "sept sur 15",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 07:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-15 07:00:00"
-        }
+        "Start": 16,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm aujourd'hui",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm aujourd'hui",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T20",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 20:00:00"
+  {
+    "Input": "Je reviendrai 8pm aujourd'hui",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm aujourd'hui",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 20:00:00"
-        }
+        "Start": 14,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai a huit ce soir aujourd'hui",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "huit ce soir aujourd'hui",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T20",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 20:00:00"
+  {
+    "Input": "Je reviendrai a huit ce soir aujourd'hui",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "huit ce soir aujourd'hui",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 20:00:00"
-        }
+        "Start": 16,
+        "Length": 24
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 19:00, 2016-12-22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19:00, 2016-12-22",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-12-22T19:00",
-        "FutureResolution": {
-          "dateTime": "2016-12-22 19:00:00"
+  {
+    "Input": "Je reviendrai 19:00, 2016-12-22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "19:00, 2016-12-22",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-12-22T19:00",
+          "FutureResolution": {
+            "dateTime": "2016-12-22 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-12-22 19:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-12-22 19:00:00"
-        }
+        "Start": 14,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai maintenant",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "maintenant",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "PRESENT_REF",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 00:00:00"
+  {
+    "Input": "Je reviendrai maintenant",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "maintenant",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "PRESENT_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 00:00:00"
-        }
+        "Start": 14,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai lendemain 8:00",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "lendemain 8:00",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-08T08:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-08 08:00:00"
+  {
+    "Input": "Je reviendrai lendemain 8:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "lendemain 8:00",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T08:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 08:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-08 08:00:00"
-        }
+        "Start": 14,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai demain du matin a 7",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demain du matin a 7",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-08T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-08 07:00:00"
+  {
+    "Input": "Je reviendrai demain du matin a 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demain du matin a 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 07:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-08 07:00:00"
-        }
+        "Start": 14,
+        "Length": 19
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 7:00 du soiree dimanche prochain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7:00 du soiree dimanche prochain",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-20T19:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-20 19:00:00"
+  {
+    "Input": "Je reviendrai 7:00 du soiree dimanche prochain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "7:00 du soiree dimanche prochain",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-20T19:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-20 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-20 19:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-20 19:00:00"
-        }
+        "Start": 14,
+        "Length": 32
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8 dans la soiree, dimanche",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8 dans la soiree, dimanche",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-WXX-7T20",
-        "FutureResolution": {
-          "dateTime": "2016-11-13 20:00:00"
+  {
+    "Input": "Je reviendrai 8 dans la soiree, dimanche",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8 dans la soiree, dimanche",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-WXX-7T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-13 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-06 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-06 20:00:00"
-        }
+        "Start": 14,
+        "Length": 26
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8 dans la soiree, 1 Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8 dans la soiree, 1 Jan",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-01-01T20",
-        "FutureResolution": {
-          "dateTime": "2017-01-01 20:00:00"
+  {
+    "Input": "Je reviendrai 8 dans la soiree, 1 Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8 dans la soiree, 1 Jan",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-01-01T20",
+          "FutureResolution": {
+            "dateTime": "2017-01-01 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-01-01 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-01-01 20:00:00"
-        }
+        "Start": 14,
+        "Length": 23
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm ce soir, 1 Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm ce soir, 1 Jan",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-01-01T20",
-        "FutureResolution": {
-          "dateTime": "2017-01-01 20:00:00"
+  {
+    "Input": "Je reviendrai 8pm ce soir, 1 Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm ce soir, 1 Jan",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-01-01T20",
+          "FutureResolution": {
+            "dateTime": "2017-01-01 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-01-01 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-01-01 20:00:00"
-        }
+        "Start": 14,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 22 ce soir",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22 ce soir",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T22",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 22:00:00"
+  {
+    "Input": "Je reviendrai 22 ce soir",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "22 ce soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T22",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 22:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 22:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 22:00:00"
-        }
+        "Start": 14,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8 du matin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8 du matin",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T08",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 08:00:00"
+  {
+    "Input": "Je reviendrai 8 du matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8 du matin",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T08",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 08:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 08:00:00"
-        }
+        "Start": 14,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce matin a 7",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce matin a 7",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 07:00:00"
+  {
+    "Input": "Je reviendrai ce matin a 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce matin a 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 07:00:00"
-        }
+        "Start": 14,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai cette matin a 7am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cette matin a 7",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 07:00:00"
+  {
+    "Input": "Je reviendrai cette matin a 7am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "cette matin a 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 07:00:00"
-        }
+        "Start": 14,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce matin a sept",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce matin a sept",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 07:00:00"
+  {
+    "Input": "Je reviendrai ce matin a sept",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce matin a sept",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 07:00:00"
-        }
+        "Start": 14,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce soir a 7",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce soir a 7",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T19",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 19:00:00"
+  {
+    "Input": "Je reviendrai ce soir a 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce soir a 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T19",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 19:00:00"
-        }
+        "Start": 14,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 2016-12-16T12:23:59",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016-12-16T12:23:59",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-12-16T12:23:59",
-        "FutureResolution": {
-          "dateTime": "2016-12-16 12:23:59"
+  {
+    "Input": "Je reviendrai 2016-12-16T12:23:59",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016-12-16T12:23:59",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-12-16T12:23:59",
+          "FutureResolution": {
+            "dateTime": "2016-12-16 12:23:59"
+          },
+          "PastResolution": {
+            "dateTime": "2016-12-16 12:23:59"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-12-16 12:23:59"
-        }
+        "Start": 14,
+        "Length": 19
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai en 5 heures",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "en 5 heures",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T05:00:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 05:00:00"
+  {
+    "Input": "Je reviendrai en 5 heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "en 5 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T05:00:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 05:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 05:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 05:00:00"
-        }
+        "Start": 14,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai dqp",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dqp",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "FUTURE_REF",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 00:00:00"
+  {
+    "Input": "Je reviendrai dqp",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "dqp",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "FUTURE_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 00:00:00"
-        }
+        "Start": 14,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 21/04/2016, 8:00:20pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016, 8:00:20pm",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-04-21T20:00:20",
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:20"
+  {
+    "Input": "Je reviendrai 21/04/2016, 8:00:20pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "21/04/2016, 8:00:20pm",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00:20",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:20"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:20"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:20"
-        }
+        "Start": 14,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre 8:00am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre 8:00am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:00"
+  {
+    "Input": "Je reviendrai 14 Octobre 8:00am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre 8:00am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:00"
-        }
+        "Start": 14,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre 8:00:31am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre 8:00:31am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00:31",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:31"
+  {
+    "Input": "Je reviendrai 14 Octobre 8:00:31am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre 8:00:31am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:31",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:31"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:31"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:31"
-        }
+        "Start": 14,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre pour 8:00:31am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre pour 8:00:31am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00:31",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:31"
+  {
+    "Input": "Je reviendrai 14 Octobre pour 8:00:31am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre pour 8:00:31am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:31",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:31"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:31"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:31"
-        }
+        "Start": 14,
+        "Length": 25
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre, 8:00am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre, 8:00am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:00"
+  {
+    "Input": "Je reviendrai 14 Octobre, 8:00am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre, 8:00am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:00"
-        }
+        "Start": 14,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 14 Octobre, 8:00:25am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 Octobre, 8:00:25am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-10-14T08:00:25",
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:25"
+  {
+    "Input": "Je reviendrai 14 Octobre, 8:00:25am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "14 Octobre, 8:00:25am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:25",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:25"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:25"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:25"
-        }
+        "Start": 14,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm en 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm en 15",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-XX-15T20",
-        "FutureResolution": {
-          "dateTime": "2016-11-15 20:00:00"
+  {
+    "Input": "Je reviendrai 8pm en 15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm en 15",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-10-15 20:00:00"
-        }
+        "Start": 14,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai lendemain 8:00am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "lendemain 8:00am",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-08T08:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-08 08:00:00"
+  {
+    "Input": "Je reviendrai lendemain 8:00am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "lendemain 8:00am",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T08:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 08:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-08 08:00:00"
-        }
+        "Start": 14,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai demain matin a 7",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "demain matin a 7",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-08T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-08 07:00:00"
+  {
+    "Input": "Je reviendrai demain matin a 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "demain matin a 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 07:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-08 07:00:00"
-        }
+        "Start": 14,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai ce soir vers 7",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ce soir vers 7",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T19",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 19:00:00"
+  {
+    "Input": "Je reviendrai ce soir vers 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "ce soir vers 7",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T19",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 19:00:00"
-        }
+        "Start": 14,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 19:00 sur dimanche prochain d'apres-midi",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19:00 sur dimanche prochain d'apres-m",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-20T19:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-20 19:00:00"
+  {
+    "Input": "Je reviendrai 19:00 sur dimanche prochain d'apres-midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "19:00 sur dimanche prochain d'apres-m",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-20T19:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-20 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-20 19:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-20 19:00:00"
-        }
+        "Start": 14,
+        "Length": 37
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 9:00 sur dimanche prochain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9:00 sur dimanche prochain",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-20T09:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-20 09:00:00"
+  {
+    "Input": "Je reviendrai 9:00 sur dimanche prochain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9:00 sur dimanche prochain",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-20T09:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-20 09:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-20 09:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-20 09:00:00"
-        }
+        "Start": 14,
+        "Length": 26
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 9:00 sur dimanche derniere",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9:00 sur dimanche derniere",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-06T09:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-06 09:00:00"
+  {
+    "Input": "Je reviendrai 9:00 sur dimanche derniere",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "9:00 sur dimanche derniere",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-06T09:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-06 09:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-06 09:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-06 09:00:00"
-        }
+        "Start": 14,
+        "Length": 26
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 7, ce matin",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7, ce matin",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 07:00:00"
+  {
+    "Input": "Je reviendrai 7, ce matin",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "7, ce matin",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 07:00:00"
-        }
+        "Start": 14,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 10, ce soir",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10, ce soir",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T22",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 22:00:00"
+  {
+    "Input": "Je reviendrai 10, ce soir",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "10, ce soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T22",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 22:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 22:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 22:00:00"
-        }
+        "Start": 14,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 23, ce soir",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "23, ce soir",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T23",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 23:00:00"
+  {
+    "Input": "Je reviendrai 23, ce soir",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "23, ce soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T23",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 23:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 23:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 23:00:00"
-        }
+        "Start": 14,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 11, du soir",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11, du soir",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T23",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 23:00:00"
+  {
+    "Input": "Je reviendrai 11, du soir",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11, du soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T23",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 23:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 23:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 23:00:00"
-        }
+        "Start": 14,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm dans la soiree, Dimanche",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm dans la soiree, Dimanche",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-WXX-7T20",
-        "FutureResolution": {
-          "dateTime": "2016-11-13 20:00:00"
+  {
+    "Input": "Je reviendrai 8pm dans la soiree, Dimanche",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm dans la soiree, Dimanche",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-WXX-7T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-13 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-06 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-06 20:00:00"
-        }
+        "Start": 14,
+        "Length": 28
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai 8pm dans la soiree, 1 Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm dans la soiree, 1 Jan",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-01-01T20",
-        "FutureResolution": {
-          "dateTime": "2017-01-01 20:00:00"
+  {
+    "Input": "Je reviendrai 8pm dans la soiree, 1 Jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm dans la soiree, 1 Jan",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-01-01T20",
+          "FutureResolution": {
+            "dateTime": "2017-01-01 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-01-01 20:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-01-01 20:00:00"
-        }
+        "Start": 14,
+        "Length": 25
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai la fin de la journee",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la fin de la journee",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T23:59",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 23:59:00"
+  {
+    "Input": "Je reviendrai la fin de la journee",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la fin de la journee",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T23:59",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 23:59:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 23:59:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 23:59:00"
-        }
+        "Start": 14,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai la fin demain",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la fin demain",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-08T23:59",
-        "FutureResolution": {
-          "dateTime": "2016-11-08 23:59:00"
+  {
+    "Input": "Je reviendrai la fin demain",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la fin demain",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T23:59",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 23:59:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 23:59:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-08 23:59:00"
-        }
+        "Start": 14,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai la fin de dimanche",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la fin de dimanche",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-WXX-7T23:59",
-        "FutureResolution": {
-          "dateTime": "2016-11-13 23:59:00"
+  {
+    "Input": "Je reviendrai la fin de dimanche",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la fin de dimanche",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-WXX-7T23:59",
+          "FutureResolution": {
+            "dateTime": "2016-11-13 23:59:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-06 23:59:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-06 23:59:00"
-        }
+        "Start": 14,
+        "Length": 18
       }
-    }
-  ]
-}
+    ]
+  }
 ]

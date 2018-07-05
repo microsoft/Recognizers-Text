@@ -1,0 +1,143 @@
+{
+  "outputPath": "libraries/recognizers-text-number-with-unit/src/main/java/com/microsoft/recognizers/text/numberwithunit/resources/",
+  "configFiles": [
+    {
+      "input": [ "Base-Numbers" ],
+      "output": "BaseNumbers",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "public class BaseNumbers {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Base-Currency" ],
+      "output": "BaseCurrency",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class BaseCurrency {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "English", "English-NumbersWithUnit" ],
+      "output": "EnglishNumericWithUnit",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class EnglishNumericWithUnit {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Chinese", "Chinese-NumbersWithUnit" ],
+      "output": "ChineseNumericWithUnit",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class ChineseNumericWithUnit {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "French", "French-NumbersWithUnit" ],
+      "output": "FrenchNumericWithUnit",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class FrenchNumericWithUnit {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "German", "German-NumbersWithUnit" ],
+      "output": "GermanNumericWithUnit",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class GermanNumericWithUnit {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Japanese", "Japanese-NumbersWithUnit" ],
+      "output": "JapaneseNumericWithUnit",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class JapaneseNumericWithUnit {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Portuguese", "Portuguese-NumbersWithUnit" ],
+      "output": "PortugueseNumericWithUnit",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class PortugueseNumericWithUnit {"
+      ],
+      "footer": [ "}" ]
+    },
+    {
+      "input": [ "Spanish", "Spanish-NumbersWithUnit" ],
+      "output": "SpanishNumericWithUnit",
+      "header": [
+        "package com.microsoft.recognizers.text.numberwithunit.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "import java.util.Map;",
+        "",
+        "import com.google.common.collect.ImmutableMap;",
+        "",
+        "public class SpanishNumericWithUnit {"
+      ],
+      "footer": [ "}" ]
+    }
+  ]
+}

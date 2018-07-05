@@ -1,31 +1,31 @@
-[{
+[
+  {
     "Input": "das sind 2 Tage",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 Tage",
-        "Type": "duration"
+        "Type": "duration",
+        "Start": 9,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "es ist 4 Uhr",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4 Uhr",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das ganze findet dann am Montag um 4 Uhr statt",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript, dotnet, python",
     "Results": [
       {
         "Text": "Montag um 4 Uhr",
@@ -35,30 +35,31 @@
   },
   {
     "Input": "Wie sieht denn dieser Tag so aus?",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dieser Tag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 15,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "letzte Woche",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "letzte Woche",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript, dotnet, python",
     "Results": [
       {
         "Text": "Morgen von 12",
@@ -76,73 +77,78 @@
   },
   {
     "Input": "Verschieb mal das meeting vom 22. August auf den 23. August",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22. August",
-        "Type": "date"
+        "Type": "date",
+        "Start": 30,
+        "Length": 10
       },
       {
         "Text": "23. August",
-        "Type": "date"
+        "Type": "date",
+        "Start": 49,
+        "Length": 10
       }
     ]
   },
   {
     "Input": "06/06 12:15",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "06/06 12:15",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "06/06/12 15:15",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "06/06/12 15:15",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "29. Mai",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "29. Mai",
-        "Type": "date"
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "Ich wurde im August geboren",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "August",
-        "Type": "daterange"
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Das nächste meeting wird am 16. März 2017 sein. Wie wäre es denn mit einer Diskussionsrunde heute um 2 Uhr Nachmittags?",
-    "NotSupported": "javascript,dotnet",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, dotnet, python",
     "Results": [
       {
         "Text": "16. März 2017",
-        "Type": "date" 
-      }
-      ,
+        "Type": "date"
+      },
       {
         "Text": "heute um 2 Uhr Nachmittags",
         "Type": "datetime"

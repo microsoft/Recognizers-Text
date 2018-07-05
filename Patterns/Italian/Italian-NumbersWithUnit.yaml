@@ -480,7 +480,7 @@ InformationSuffixList: !dictionary
     Terabyte: -terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte
     Petabyte: -petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte
 AmbiguousDimensionUnitList: !list
-  types: [ string, string ]
+  types: [ string ]
   entries:
     - barrel
     - barrels

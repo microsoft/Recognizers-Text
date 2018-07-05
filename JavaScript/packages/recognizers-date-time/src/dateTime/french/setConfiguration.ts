@@ -116,10 +116,10 @@ export class FrenchSetParserConfiguration implements ISetParserConfiguration {
         else if (trimedText === "bihebdomadaire") {
             timex = "P2W";
         }
-        else if (trimedText === "mensuel") {
+        else if (trimedText === "mensuel" || trimedText === "mensuelle") {
             timex = "P1M";
         }
-        else if (trimedText === "annuel") {
+        else if (trimedText === "annuel" || trimedText === "annuellement") {
             timex = "P1Y";
         }
         else {

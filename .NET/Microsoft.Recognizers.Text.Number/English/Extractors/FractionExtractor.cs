@@ -39,24 +39,24 @@ namespace Microsoft.Recognizers.Text.Number.English
                 {
                     new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "FracNum"
+                    Constants.FRACTION_IN_PURENUMBER
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNotationRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "FracNum"
+                    Constants.FRACTION_IN_PURENUMBER
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "FracEng"
+                    Constants.FRACTION_WITH_CONNECTOR
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounWithArticleRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "FracEng"
+                    Constants.FRACTION_WITH_CONNECTOR
                 }
             };
 

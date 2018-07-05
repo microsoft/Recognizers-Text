@@ -1,10 +1,10 @@
-[{
+[
+  {
     "Input": "Ich bin heute von fünf bis sieben weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute von fünf bis sieben ",
@@ -19,7 +19,9 @@
             "startDateTime": "2016-11-07 05:00:00",
             "endDateTime": "2016-11-07 07:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 26
       }
     ]
   },
@@ -28,8 +30,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "von 5 bis 6 am 22/4/2016",
@@ -44,7 +45,9 @@
             "startDateTime": "2016-04-22 05:00:00",
             "endDateTime": "2016-04-22 06:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 24
       }
     ]
   },
@@ -53,9 +56,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Comment" : "Parser returns NULL as value. The Parser Returns Null as value. Should not be different to the one above",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "Comment": "Parser returns NULL as value. The Parser Returns Null as value. Should not be different to the one above",
+    "NotSupported": "javascript, dotnet, python",
     "Results": [
       {
         "Text": "22/4/2016 von 5 bis 6 ",
@@ -79,8 +81,7 @@
     "Context": {
       "ReferenceDateTime": "2018-02-07T12:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Montag von fünf bis sieben ",
@@ -95,7 +96,9 @@
             "startDateTime": "2018-02-05 05:00:00",
             "endDateTime": "2018-02-05 07:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 27
       }
     ]
   },
@@ -104,8 +107,7 @@
     "Context": {
       "ReferenceDateTime": "2018-02-07T12:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten Montag von 5 bis 7 ",
@@ -120,7 +122,9 @@
             "startDateTime": "2018-02-12 05:00:00",
             "endDateTime": "2018-02-12 07:00:00"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 28
       }
     ]
   },
@@ -129,8 +133,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dienstag Abend",
@@ -145,7 +148,9 @@
             "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 20:00:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 14
       }
     ]
   },
@@ -154,8 +159,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Rest des Tages",
@@ -170,7 +174,9 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 8,
+        "Length": 14
       }
     ]
   },
@@ -179,8 +185,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dienstag Nacht",
@@ -195,7 +200,9 @@
             "startDateTime": "2016-11-08 20:00:00",
             "endDateTime": "2016-11-08 23:59:59"
           }
-        }
+        },
+        "Start": 21,
+        "Length": 14
       }
     ]
   },
@@ -204,8 +211,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute zwischen 16 und 17 Uhr",
@@ -220,7 +226,9 @@
             "startDateTime": "2016-11-07 16:00:00",
             "endDateTime": "2016-11-07 17:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 28
       }
     ]
   },
@@ -229,8 +237,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "heute Nacht",
@@ -245,7 +252,9 @@
             "startDateTime": "2016-11-07 20:00:00",
             "endDateTime": "2016-11-07 23:59:59"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
@@ -254,8 +263,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Abend",
@@ -270,18 +278,18 @@
             "startDateTime": "2016-11-07 16:00:00",
             "endDateTime": "2016-11-07 20:00:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "An diesem Morgen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesem Morgen",
@@ -296,18 +304,18 @@
             "startDateTime": "2016-11-07 08:00:00",
             "endDateTime": "2016-11-07 12:00:00"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "An diesem Nachmittag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesem Nachmittag",
@@ -322,7 +330,9 @@
             "startDateTime": "2016-11-07 12:00:00",
             "endDateTime": "2016-11-07 16:00:00"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 17
       }
     ]
   },
@@ -331,8 +341,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten 5 Stunden",
@@ -347,7 +356,9 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 21:12:00"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 18
       }
     ]
   },
@@ -356,8 +367,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "letzten Minute",
@@ -372,7 +382,9 @@
             "startDateTime": "2016-11-07 16:11:00",
             "endDateTime": "2016-11-07 16:12:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 14
       }
     ]
   },
@@ -381,8 +393,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten Stunden",
@@ -397,7 +408,9 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 17:12:00"
           }
-        }
+        },
+        "Start": 7,
+        "Length": 16
       }
     ]
   },
@@ -406,8 +419,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten 3 Stunden",
@@ -422,7 +434,9 @@
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 19:12:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 18
       }
     ]
   },
@@ -431,8 +445,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dienstag Morgen",
@@ -447,7 +460,9 @@
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 12:00:00"
           }
-        }
+        },
+        "Start": 41,
+        "Length": 15
       }
     ]
   },
@@ -456,8 +471,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dienstag Abend",
@@ -472,7 +486,9 @@
             "startDateTime": "2016-11-08 16:00:00",
             "endDateTime": "2016-11-08 20:00:00"
           }
-        }
+        },
+        "Start": 26,
+        "Length": 14
       }
     ]
   },
@@ -481,8 +497,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Dienstag am Morgen",
@@ -497,7 +512,9 @@
             "startDateTime": "2016-11-08 08:00:00",
             "endDateTime": "2016-11-08 12:00:00"
           }
-        }
+        },
+        "Start": 20,
+        "Length": 18
       }
     ]
   }

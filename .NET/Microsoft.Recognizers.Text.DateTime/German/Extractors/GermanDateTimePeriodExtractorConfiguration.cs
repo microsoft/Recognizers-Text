@@ -9,8 +9,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     public class GermanDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
         IDateTimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public GermanDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
@@ -74,6 +78,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             new Regex(DateTimeDefinitions.PrefixDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.RightToLeft);
 
+        public static readonly Regex SuffixRegex =
+            new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex BeforeRegex =
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AfterRegex =
+            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
 
         public Regex PrepositionRegex => GermanTimePeriodExtractorConfiguration.PrepositionRegex;
@@ -118,6 +131,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.SuffixRegex => SuffixRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.BeforeRegex => BeforeRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
         public IExtractor CardinalExtractor { get; }
 

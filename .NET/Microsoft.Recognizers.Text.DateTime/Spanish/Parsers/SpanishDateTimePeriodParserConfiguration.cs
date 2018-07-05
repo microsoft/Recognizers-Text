@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -63,12 +65,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PrefixDayRegex { get; }
 
+        public Regex BeforeRegex { get; }
+
+        public Regex AfterRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
+            TokenBeforeDate = Definitions.Spanish.DateTimeDefinitions.TokenBeforeDate;
+
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
@@ -98,6 +106,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             PmDescRegex = SpanishDateTimePeriodExtractorConfiguration.PmDescRegex;
             WithinNextPrefixRegex = SpanishDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
             PrefixDayRegex = SpanishDateTimePeriodExtractorConfiguration.PrefixDayRegex;
+            BeforeRegex = SpanishDateTimePeriodExtractorConfiguration.BeforeRegex;
+            AfterRegex = SpanishDateTimePeriodExtractorConfiguration.AfterRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
@@ -120,12 +130,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 timeStr = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (trimedText.Contains("pasado mediodia") || trimedText.Contains("pasado el mediodia"))
             {
                 timeStr = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (trimedText.EndsWith("tarde"))

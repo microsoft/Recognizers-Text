@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -29,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
             tokens.AddRange(NumberWithMonth(text, reference));
-            tokens.AddRange(DurationWithBeforeAndAfter(text, reference));
+            tokens.AddRange(ExtractRelativeDurationDate(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -42,11 +41,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(yearStr))
             {
                 year = int.Parse(yearStr);
-                if (year < 100 && year >= 90)
+                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                 {
                     year += 1900;
                 }
-                else if (year < 100 && year < 30)
+                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                 {
                     year += 2000;
                 }
@@ -56,10 +55,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
                 if (!string.IsNullOrEmpty(firstTwoYearNumStr))
                 {
-                    ExtractResult er = new ExtractResult();
-                    er.Text = firstTwoYearNumStr;
-                    er.Start = match.Groups["firsttwoyearnum"].Index;
-                    er.Length = match.Groups["firsttwoyearnum"].Length;
+                    var er = new ExtractResult
+                    {
+                        Text = firstTwoYearNumStr,
+                        Start = match.Groups["firsttwoyearnum"].Index,
+                        Length = match.Groups["firsttwoyearnum"].Length
+                    };
 
                     var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
 
@@ -157,7 +158,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var startIndex = match.Index;
                         var endIndex = match.Index + match.Length + (result.Length ?? 0);
 
-                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, text);
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
+                            config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
+                            num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
                         continue;
@@ -204,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
-                                var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToString().ToLower();
+                                var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToLower();
                                 if (!date.Equals(DateObject.MinValue) &&
                                     config.DayOfWeek[numWeekDayStr] == config.DayOfWeek[extractedWeekDayStr])
                                 {
@@ -258,6 +261,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
+                // For cases like "I'll go back twenty second of June"
                 if (result.Start + result.Length < text.Length)
                 {
                     var afterStr = text.Substring(result.Start + result.Length ?? 0);
@@ -268,10 +272,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var startIndex = result.Start ?? 0;
                         var endIndex = (result.Start + result.Length ?? 0) + match.Length;
 
-                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, text);
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
+                            config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value.ToLower(), reference.Month),
+                            num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
-                        continue;
                     }
                 }
             }
@@ -279,36 +284,68 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void ExtendWithWeekdayAndYear(ref int startIndex, ref int endIndex, string text)
+        // TODO: Remove the parsing logic from here
+        private void ExtendWithWeekdayAndYear(ref int startIndex,
+            ref int endIndex, int month, int day, string text, DateObject reference)
         {
-            // Check whether there's weekday
-            var prefix = text.Substring(0, startIndex);
-            var matchWeekDay = this.config.WeekDayEnd.Match(prefix);
-            if (matchWeekDay.Success)
-            {
-                startIndex = matchWeekDay.Index;
-            }
+            var year = reference.Year;
 
-            // Check whether there's year
+            // Check whether there's a year
             var suffix = text.Substring(endIndex);
             var matchYear = this.config.YearSuffix.Match(suffix);
             if (matchYear.Success && matchYear.Index == 0)
             {
+                year = GetYearFromText(matchYear);
                 endIndex += matchYear.Length;
+            }           
+
+            var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+
+            // Check whether there's a weekday
+            var prefix = text.Substring(0, startIndex);
+            var matchWeekDay = this.config.WeekDayEnd.Match(prefix);
+            if (matchWeekDay.Success)
+            {
+
+                // Get weekday from context directly, compare it with the weekday extraction above
+                // to see whether they are referred to the same weekday
+                var extractedWeekDayStr = matchWeekDay.Groups["weekday"].Value.ToLower();
+                var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
+
+                if (config.DayOfWeek.TryGetValue(numWeekDayStr, out var weekDay1) &&
+                    config.DayOfWeek.TryGetValue(extractedWeekDayStr, out var weekDay2))
+                {
+                    if (!date.Equals(DateObject.MinValue) && weekDay1 == weekDay2)
+                    {
+                        startIndex = matchWeekDay.Index;
+                    }
+                }
             }
         }
 
-        private List<Token> DurationWithBeforeAndAfter(string text, DateObject reference)
+        // Cases like "3 days from today", "5 weeks before yesterday", "2 months after tomorrow"
+        // Note that these cases are of type "date"
+        private List<Token> ExtractRelativeDurationDate(string text, DateObject reference)
         {
             var ret = new List<Token>();
             var durationEr = config.DurationExtractor.Extract(text, reference);
 
             foreach (var er in durationEr)
             {
-                // if it is a multiple duration and its type is not equal to Date than skip it.
-                if (er.Data != null && er.Data.ToString() != Constants.MultipleDuration_Date)
+                // if it is a multiple duration but its type is not equal to Date, skip it here
+                if (IsMultipleDuration(er) && !IsMultipleDurationDate(er))
                 {
                     continue;
+                }
+
+                // Some types of duration can be compounded with "before", "after" or "from" suffix to create a "date"
+                // While some other types of durations, when compounded with such suffix, it will not create a "date", but create a "dateperiod"
+                // For example, durations like "3 days", "2 weeks", "1 week and 2 days", can be compounded with such suffix to create a "date"
+                // But "more than 3 days", "less than 2 weeks", when compounded with such suffix, it will become cases like "more than 3 days from today" which is a "dateperiod", not a "date"
+                // As this parent method is aimed to extract RelativeDurationDate, so for cases with "more than" or "less than", we remove the prefix so as to extract the expected RelativeDurationDate
+                if (IsInequalityDuration(er))
+                {
+                    StripInequalityDuration(er);
                 }
 
                 var match = config.DateUnitRegex.Match(er.Text);
@@ -322,5 +359,40 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        private void StripInequalityDuration(ExtractResult er)
+        {
+            StripInequalityPrefix(er, config.MoreThanRegex);
+            StripInequalityPrefix(er, config.LessThanRegex);
+        }
+
+        private void StripInequalityPrefix(ExtractResult er, Regex regex)
+        {
+            var match = regex.Match(er.Text);
+
+            if (match.Success)
+            {
+                var originalLength = er.Text.Length;
+                er.Text = regex.Replace(er.Text, string.Empty).Trim();
+                er.Start += originalLength - er.Text.Length;
+                er.Length = er.Text.Length;
+                er.Data = string.Empty;
+            }
+        }
+
+        private bool IsMultipleDurationDate(ExtractResult er)
+        {
+            return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
+        }
+
+        private bool IsMultipleDuration(ExtractResult er)
+        {
+            return er.Data != null && er.Data.ToString().StartsWith(Constants.MultipleDuration_Prefix);
+        }
+
+        // Cases like "more than 3 days", "less than 4 weeks"
+        private bool IsInequalityDuration(ExtractResult er)
+        {
+            return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
+        }
     }
 }

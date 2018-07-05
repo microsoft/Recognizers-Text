@@ -1,638 +1,640 @@
-[{
-  "Input": "Volvere el 15",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 22 de Abril",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22 de Abril",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 1-Ene",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1-Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 1/Ene",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1/Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 2. Octubre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2. Octubre",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 12 de enero, 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 de enero, 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 12 de Enero de 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 de Enero de 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el Lunes 12 de enero, 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Lunes 12 de enero, 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 02/22/2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "02/22/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 21/04/2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 21/04/16",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "21/04/16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 9-18-15",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9-18-15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 4.22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 4-22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el    4/22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 22/04",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere       4/22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere 22/04",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22/04",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 2015/08/12",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015/08/12",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 11/12,2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11/12,2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 11/12,16",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11/12,16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 1ro de Ene",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1ro de Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 28-Nov",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "28-Nov",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el Mi, 22 de Ene",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mi, 22 de Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el primero de Ene",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "primero de Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el veintiuno de Mayo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "veintiuno de Mayo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere en Mayo veintiuno",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mayo veintiuno",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el segundo de Ago",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "segundo de Ago",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el vigesimo segundo de Junio",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vigesimo segundo de Junio",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el viernes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "viernes",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere viernes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "viernes",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere los viernes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "viernes",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere los sabados",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "sabados",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere hoy",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hoy",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mañana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvi ayer",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ayer",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvi el dia antes de ayer",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el dia antes de ayer",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvi anteayer",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "anteayer",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el dia despues de mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el dia despues de mañana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere pasado mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pasado mañana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el dia siguiente",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el dia siguiente",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el proximo dia",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el proximo dia",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere este viernes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "este viernes",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el proximo domingo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "proximo domingo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el siguiente domingo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siguiente domingo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el ultimo domingo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ultimo domingo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere ultimo dia",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ultimo dia",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el ultimo dia",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el ultimo dia",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el dia",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el dia",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el viernes de esta semana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "viernes de esta semana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el domingo de la siguiente semana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "domingo de la siguiente semana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el domingo de la ultima semana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "domingo de la ultima semana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el 15 Junio 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 Junio 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el undecimo de mayo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "undecimo de mayo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el primer viernes de julio",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el primer viernes de julio",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el primer viernes de este mes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el primer viernes de este mes",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "¿Estás libre el 13.5.2015",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "13.5.2015",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "¿Estás libre el 2015.5.13",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015.5.13",
-      "Type": "date"
-    }
-  ]
-}
+[
+  {
+    "Input": "Volvere el 15",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Start": 11,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 22 de Abril",
+    "Results": [
+      {
+        "Text": "22 de Abril",
+        "Type": "date",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 1-Ene",
+    "Results": [
+      {
+        "Text": "1-Ene",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 1/Ene",
+    "Results": [
+      {
+        "Text": "1/Ene",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 2. Octubre",
+    "Results": [
+      {
+        "Text": "2. Octubre",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 12 de enero, 2016",
+    "Results": [
+      {
+        "Text": "12 de enero, 2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 12 de Enero de 2016",
+    "Results": [
+      {
+        "Text": "12 de Enero de 2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el Lunes 12 de enero, 2016",
+    "Results": [
+      {
+        "Text": "Lunes 12 de enero, 2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 02/22/2016",
+    "Results": [
+      {
+        "Text": "02/22/2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 21/04/2016",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 21/04/16",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 9-18-15",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 4.22",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 11,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 4-22",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Start": 11,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el    4/22",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 14,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 22/04",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere       4/22",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Start": 14,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Volvere 22/04",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 8,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 2015/08/12",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 11/12,2016",
+    "Results": [
+      {
+        "Text": "11/12,2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 11/12,16",
+    "Results": [
+      {
+        "Text": "11/12,16",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 1ro de Ene",
+    "Results": [
+      {
+        "Text": "1ro de Ene",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 28-Nov",
+    "Results": [
+      {
+        "Text": "28-Nov",
+        "Type": "date",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el Mi, 22 de Ene",
+    "Results": [
+      {
+        "Text": "Mi, 22 de Ene",
+        "Type": "date",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el primero de Ene",
+    "Results": [
+      {
+        "Text": "primero de Ene",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el veintiuno de Mayo",
+    "Results": [
+      {
+        "Text": "veintiuno de Mayo",
+        "Type": "date",
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Volvere en Mayo veintiuno",
+    "Results": [
+      {
+        "Text": "Mayo veintiuno",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el segundo de Ago",
+    "Results": [
+      {
+        "Text": "segundo de Ago",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el vigesimo segundo de Junio",
+    "Results": [
+      {
+        "Text": "vigesimo segundo de Junio",
+        "Type": "date",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el viernes",
+    "Results": [
+      {
+        "Text": "viernes",
+        "Type": "date",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Volvere viernes",
+    "Results": [
+      {
+        "Text": "viernes",
+        "Type": "date",
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Volvere los viernes",
+    "Results": [
+      {
+        "Text": "viernes",
+        "Type": "date",
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Volvere los sabados",
+    "Results": [
+      {
+        "Text": "sabados",
+        "Type": "date",
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Volvere hoy",
+    "Results": [
+      {
+        "Text": "hoy",
+        "Type": "date",
+        "Start": 8,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Volvere mañana",
+    "Results": [
+      {
+        "Text": "mañana",
+        "Type": "date",
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Volvi ayer",
+    "Results": [
+      {
+        "Text": "ayer",
+        "Type": "date",
+        "Start": 6,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Volvi el dia antes de ayer",
+    "Results": [
+      {
+        "Text": "el dia antes de ayer",
+        "Type": "date",
+        "Start": 6,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Volvi anteayer",
+    "Results": [
+      {
+        "Text": "anteayer",
+        "Type": "date",
+        "Start": 6,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el dia despues de mañana",
+    "Results": [
+      {
+        "Text": "el dia despues de mañana",
+        "Type": "date",
+        "Start": 8,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Volvere pasado mañana",
+    "Results": [
+      {
+        "Text": "pasado mañana",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el dia siguiente",
+    "Results": [
+      {
+        "Text": "el dia siguiente",
+        "Type": "date",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el proximo dia",
+    "Results": [
+      {
+        "Text": "el proximo dia",
+        "Type": "date",
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Volvere este viernes",
+    "Results": [
+      {
+        "Text": "este viernes",
+        "Type": "date",
+        "Start": 8,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el proximo domingo",
+    "Results": [
+      {
+        "Text": "proximo domingo",
+        "Type": "date",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el siguiente domingo",
+    "Results": [
+      {
+        "Text": "siguiente domingo",
+        "Type": "date",
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el ultimo domingo",
+    "Results": [
+      {
+        "Text": "ultimo domingo",
+        "Type": "date",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Volvere ultimo dia",
+    "Results": [
+      {
+        "Text": "ultimo dia",
+        "Type": "date",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el ultimo dia",
+    "Results": [
+      {
+        "Text": "el ultimo dia",
+        "Type": "date",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el dia",
+    "Results": [
+      {
+        "Text": "el dia",
+        "Type": "date",
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el viernes de esta semana",
+    "Results": [
+      {
+        "Text": "viernes de esta semana",
+        "Type": "date",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el domingo de la siguiente semana",
+    "Results": [
+      {
+        "Text": "domingo de la siguiente semana",
+        "Type": "date",
+        "Start": 11,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el domingo de la ultima semana",
+    "Results": [
+      {
+        "Text": "domingo de la ultima semana",
+        "Type": "date",
+        "Start": 11,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el 15 Junio 2016",
+    "Results": [
+      {
+        "Text": "15 Junio 2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el undecimo de mayo",
+    "Results": [
+      {
+        "Text": "undecimo de mayo",
+        "Type": "date",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el primer viernes de julio",
+    "Results": [
+      {
+        "Text": "el primer viernes de julio",
+        "Type": "date",
+        "Start": 8,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Volvere el primer viernes de este mes",
+    "Results": [
+      {
+        "Text": "el primer viernes de este mes",
+        "Type": "date",
+        "Start": 8,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "¿Estás libre el 13.5.2015",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "¿Estás libre el 2015.5.13",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  }
 ]

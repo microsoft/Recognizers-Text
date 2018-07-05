@@ -60,6 +60,12 @@ module.exports = function getDateTimeRunner(config) {
     return ignoredTest;
 };
 
+function simpleExtractorAssert(t, actual, expected, prop, resolution) {
+    if (expected[resolution]) {
+        t.is(actual[prop], expected[resolution], 'Result.Resolution.' + resolution);
+    }
+}
+
 function getExtractorTestRunner(extractor) {
     return function (t, testCase) {
         var expected = testCase.Results;
@@ -75,10 +81,24 @@ function getExtractorTestRunner(extractor) {
         _.zip(result, expected).forEach(o => {
             var actual = o[0];
             var expected = o[1];
-            t.is(actual.text, expected.Text, 'Result.Text');
-            t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
+            simpleExtractorAssert(t, actual, expected, 'text', 'Text');
+            simpleExtractorAssert(t, actual, expected, 'type', 'Type');
+            simpleExtractorAssert(t, actual, expected, 'start', 'Start');
+            simpleExtractorAssert(t, actual, expected, 'length', 'Length');
         });
     };
+}
+
+function simpleParserAssert(t, actual, expected, prop, resolution) {
+    if (expected[resolution]) {
+        t.is(actual[prop], expected[resolution], 'Result.Value.' + resolution + ' actual:' + JSON.stringify(actual))
+    }
+}
+
+function deepParserAssert(t, actual, expected, prop, resolution) {
+    if (expected[resolution]) {
+        t.deepEqual(actual[prop], expected[resolution], 'Result.Value.' + resolution + ' actual:' + JSON.stringify(actual))
+    }
 }
 
 function getParserTestRunner(extractor, parser) {
@@ -98,21 +118,14 @@ function getParserTestRunner(extractor, parser) {
             var actual = o[0];
             var expected = o[1];
             t.is(actual.text, expected.Text, 'Result.Text');
-            t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
+            t.is(actual.type, expected.Type, 'Result.Type');
 
-            if (actual.value && expected.Value) {
-                // timex
-                t.is(actual.value.timex, expected.Value.Timex, 'Result.Value.Timex');
-
-                // resolutions
-                var actualValue = {
-                    timex: actual.value.timex,
-                    futureResolution: actual.value.futureResolution,
-                    pastResolution: actual.value.pastResolution,
-                }
-
-                t.deepEqual(actualValue.futureResolution, expected.Value.FutureResolution);
-                t.deepEqual(actualValue.pastResolution, expected.Value.PastResolution);
+            t.is(!!actual.value, !!expected.Value, 'Result.Value');
+            if (expected.Value) {
+                simpleParserAssert(t, actual.value, expected.Value, 'timex', 'Timex');
+                simpleParserAssert(t, actual.value, expected.Value, 'mod', 'Mod');
+                deepParserAssert(t, actual.value, expected.Value, 'futureResolution', 'FutureResolution');
+                deepParserAssert(t, actual.value, expected.Value, 'pastResolution', 'PastResolution');
             }
         });
     };
@@ -135,15 +148,17 @@ function getMergedParserTestRunner(extractor, parser) {
             var actual = o[0];
             var expected = o[1];
             t.is(actual.text, expected.Text, 'Result.Text');
-            t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
+            t.is(actual.type, expected.Type, 'Result.Type');
+            simpleParserAssert(t, actual, expected, 'start', 'Start');
+            simpleParserAssert(t, actual, expected, 'end', 'End');
 
-            if (actual.value && expected.Value) {
-                t.is(!!actual.value, true, "Result.value is defined");
+            t.is(!!actual.value, !!expected.Value, 'Result.Value');
+            if (expected.Value) {
                 _.zip(actual.value.values, expected.Value.values).forEach(o => {
                     var actual = o[0];
                     var expected = o[1];
 
-                    t.deepEqual(actual, expected, 'Values');
+                    t.deepEqual(actual, expected, 'Values actual:' + JSON.stringify(actual));
                 });
             }
         });
@@ -166,11 +181,19 @@ function getModelTestRunner(getResults) {
             var expected = o[1];
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
+            simpleParserAssert(t, actual, expected, 'parentText', 'ParentText');
+            simpleParserAssert(t, actual, expected, 'start', 'Start');
+            simpleParserAssert(t, actual, expected, 'end', 'End');
 
-            if (actual.resolution) {
-                var values = actual.resolution.values;
-                t.is(values.length, expected.Resolution.values.length, 'Resolution.Values count');
-                t.deepEqual(values, expected.Resolution.values, 'Resolution.Values');
+            t.is(!!actual.resolution, !!expected.Resolution, 'Result.Resolution');
+            if (expected.Resolution) {
+                t.is(actual.resolution.values.length, expected.Resolution.values.length, 'Resolution.Values count');
+                _.zip(actual.resolution.values, expected.Resolution.values).forEach(o => {
+                    var actual = o[0];
+                    var expected = o[1];
+
+                    t.deepEqual(actual, expected, 'Values actual:' + JSON.stringify(actual));
+                });
             }
         });
     };

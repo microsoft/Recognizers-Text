@@ -1,8 +1,8 @@
 import { IModel, ModelResult, Recognizer, IExtractor, IParser } from "@microsoft/recognizers-text";
 import { Culture } from "@microsoft/recognizers-text-number";
 import { CurrencyModel, TemperatureModel, DimensionModel, AgeModel } from "./models";
-import { NumberWithUnitExtractor } from "./extractors";
-import { NumberWithUnitParser } from "./parsers";
+import { NumberWithUnitExtractor, BaseMergedUnitExtractor } from "./extractors";
+import { NumberWithUnitParser, BaseMergedUnitParser } from "./parsers";
 import { EnglishCurrencyExtractorConfiguration, EnglishCurrencyParserConfiguration } from "./english/currency";
 import { EnglishTemperatureExtractorConfiguration, EnglishTemperatureParserConfiguration } from "./english/temperature";
 import { EnglishDimensionExtractorConfiguration, EnglishDimensionParserConfiguration } from "./english/dimension";
@@ -58,7 +58,7 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
     protected InitializeConfiguration() {
         //#region English
         this.registerModel("CurrencyModel", Culture.English, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
-            [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
+            [new BaseMergedUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new BaseMergedUnitParser(new EnglishCurrencyParserConfiguration())]
         ])));
         this.registerModel("TemperatureModel", Culture.English, (options) => new TemperatureModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new EnglishTemperatureExtractorConfiguration()), new NumberWithUnitParser(new EnglishTemperatureParserConfiguration())]
@@ -103,7 +103,7 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
 
         //#region Chinese
         this.registerModel("CurrencyModel", Culture.Chinese, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
-            [new NumberWithUnitExtractor(new ChineseCurrencyExtractorConfiguration()), new NumberWithUnitParser(new ChineseCurrencyParserConfiguration())],
+            [new BaseMergedUnitExtractor(new ChineseCurrencyExtractorConfiguration()), new BaseMergedUnitParser(new ChineseCurrencyParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
         ])));
         this.registerModel("TemperatureModel", Culture.Chinese, (options) => new TemperatureModel(new Map<IExtractor, IParser>([

@@ -407,4 +407,46 @@
     }
   ]
 }
+,
+{
+  "Input": "这些苹果大概有20–100个",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "20–100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,100)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这些苹果大概有20-100个",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "20-100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,100)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这些苹果大概有20 - 100个",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "20 - 100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,100)"
+      }
+    }
+  ]
+}
 ]

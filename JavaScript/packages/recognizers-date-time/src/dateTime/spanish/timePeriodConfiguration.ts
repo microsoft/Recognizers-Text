@@ -64,6 +64,8 @@ export class SpanishTimePeriodParserConfiguration implements ITimePeriodParserCo
     readonly tillRegex: RegExp;
     readonly numbers: ReadonlyMap<string, number>;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly specificTimeFromToRegex: RegExp;
+    readonly specificTimeBetweenAndRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.timeExtractor = config.timeExtractor;
@@ -75,6 +77,8 @@ export class SpanishTimePeriodParserConfiguration implements ITimePeriodParserCo
         this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd, "gis");
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex, "gis");
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex, "gis");
+        this.specificTimeFromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecificTimeFromTo);
+        this.specificTimeBetweenAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecificTimeBetweenAnd);
     }
 
     getMatchedTimexRange(text: string): { matched: boolean; timex: string; beginHour: number; endHour: number; endMin: number; } {

@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDateTimePeriodParserConfiguration : IOptionsConfiguration
     {
+        string TokenBeforeDate { get; }
+
         IDateTimeExtractor DateExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }
@@ -62,6 +64,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex WithinNextPrefixRegex { get; }
 
         Regex PrefixDayRegex { get; }
+
+        Regex BeforeRegex { get; }
+
+        Regex AfterRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

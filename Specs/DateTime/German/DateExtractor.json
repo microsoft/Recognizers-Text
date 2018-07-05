@@ -1,225 +1,241 @@
-[{
+[
+  {
     "Input": "Ich gehe am 22. April zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22. April",
-        "Type": "date"
+        "Type": "date",
+        "Start": 12,
+        "Length": 9
       }
     ]
-},
-{
+  },
+  {
     "Input": "Ich gehe am 12. Januar 2016 zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "12. Januar 2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 12,
+        "Length": 15
       }
     ]
-}
-,
-{
+  },
+  {
     "Input": "Ich gehe am Dienstag dem 12. Januar 2016 zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
-        {
-            "Text": "Dienstag dem 12. Januar 2016",
-            "Type": "date"
-        }
+      {
+        "Text": "Dienstag dem 12. Januar 2016",
+        "Type": "date",
+        "Start": 12,
+        "Length": 28
+      }
     ]
-},
-{
+  },
+  {
     "Input": "Ich gehe am 21/04/2016 zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21/04/2016",
-        "Type": "date"
+        "Type": "date",
+        "Start": 12,
+        "Length": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe am 22/04 zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "22/04",
-        "Type": "date"
+        "Type": "date",
+        "Start": 12,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das Datum meiner Rückkehr wird 2015/08/12 sein.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2015/08/12",
-        "Type": "date"
+        "Type": "date",
+        "Start": 31,
+        "Length": 10
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich komme wahrscheinlich diesen Dienstag zurück.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Dienstag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 25,
+        "Length": 15
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich bin in 2 Wochen wieder da.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "in 2 Wochen",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Ich bin Sonntag in 2 Wochen wieder da.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Sonntag in 2 Wochen",
-        "Type": "date"
+        "Type": "date",
+        "Start": 8,
+        "Length": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich komme diese Woche Dienstag wieder.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diese Woche Dienstag",
-        "Type": "date"
+        "Type": "date",
+        "Start": 10,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Ich komme nächstes Jahr wieder.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächstes Jahr",
-        "Type": "date"
+        "Type": "date",
+        "Start": 10,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ich bin am 15. wieder hier.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15.",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "Ich bin am 15. November wieder hier.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. November",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Ich bin am 15. November 2011 wieder hier.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. November 2011",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Ich komme irgendwann nächstes Jahr im Sommer wieder.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächstes Jahr im Sommer",
-        "Type": "date"
+        "Type": "date",
+        "Start": 21,
+        "Length": 23
       }
     ]
   },
   {
     "Input": "Ich komme am 23.3.2017 wieder.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "23.3.2017",
-        "Type": "date"
+        "Type": "date",
+        "Start": 13,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Ich bin am zweiten Februar wieder da.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zweiten Februar",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ich bin am zweiten Februar 2018 wieder da.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zweiten Februar 2018",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 20
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Bist du am 13.5.2015 frei?",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "13.5.2015",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "Bist du am 2015.5.13 frei?",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015.5.13",
-        "Type": "date"
+        "Type": "date",
+        "Start": 11,
+        "Length": 9
       }
     ]
   }

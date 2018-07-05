@@ -166,7 +166,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
 
     constructor() {
         this.simpleCasesRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SimpleCasesRegex);
-        this.yearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearRegex);
+        this.yearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearRegex);
         this.seasonRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonRegex);
         this.seasonMap = ChineseDateTime.ParserConfigurationSeasonMap;
         this.quarterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.QuarterRegex);
@@ -283,6 +283,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     private readonly pureNumberYearAndMonthRegex: RegExp;
     private readonly yearToYearRegex: RegExp;
     private readonly chineseYearRegex: RegExp;
+    private readonly seasonWithYearRegex: RegExp;
 
     constructor() {
         let config = new ChineseDatePeriodParserConfiguration();
@@ -296,6 +297,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         this.pureNumberYearAndMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PureNumYearAndMonth);
         this.yearToYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYear);
         this.chineseYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex);
+        this.seasonWithYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear);
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
@@ -436,19 +438,19 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let yearStr = match.value;
         if (this.config.isYearOnly(yearStr)) {
-            yearStr = yearStr.substr(0, yearStr.length - 1);
+            yearStr = yearStr.substr(0, yearStr.length - 1).trim();
         }
 
         let year = this.convertYear(yearStr, isChinese);
         if (yearStr.length === 2) {
-            if (year < 100 && year >= 20) {
+            if (year < 100 && year >= 30) {
                 year += 1900;
-            } else if (year < 20) {
+            } else if (year < 30) {
                 year += 2000;
             }
         }
-        let beginDay = DateUtils.safeCreateFromMinValue(year, 1, 1);
-        let endDay = DateUtils.safeCreateFromMinValue(year + 1, 1, 1);
+        let beginDay = DateUtils.safeCreateFromMinValue(year, 0, 1);
+        let endDay = DateUtils.safeCreateFromMinValue(year + 1, 0, 1);
 
         result.timex = FormatUtil.toString(year, 4);
         result.futureValue = [beginDay, endDay];
@@ -525,7 +527,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
     protected parseSeason(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        let match = RegExpUtility.getMatches(this.config.seasonRegex, source).pop();
+        let match = RegExpUtility.getMatches(this.seasonWithYearRegex, source).pop();
         if (!match || match.length !== source.length) return result;
 
         let year = referenceDate.getFullYear();
@@ -557,7 +559,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             year += 2000;
         }
 
-        let seasonStr = match.groups('seas').value;
+        let seasonStr = match.groups('season').value;
         let season = this.config.seasonMap.get(seasonStr);
 
         if (hasYear) {
@@ -745,7 +747,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let beginDate = DateUtils.safeCreateFromMinValue(year, month, 1);
         let endDate = month === 11
-            ? DateUtils.safeCreateFromMinValue(year + 1, 1, 1)
+            ? DateUtils.safeCreateFromMinValue(year + 1, 0, 1)
             : DateUtils.safeCreateFromMinValue(year, month + 1, 1);
 
         result.timex = FormatUtil.toString(year, 4) + '-' + FormatUtil.toString(month, 2);

@@ -1,611 +1,611 @@
-[{
-  "Input": "Volvere a las 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las siete",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 7pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 7p.m.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7p.m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 7:56pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7:56pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 7:56:35pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7:56:35pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 7:56:35 pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7:56:35 pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 12:34",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12:34",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 12:34:20",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12:34:20",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las T12:34:20",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "T12:34:20",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 00:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "00:00",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las 00:00:30",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "00:00:30",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son las 7 en punto",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7 en punto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son las siete en punto",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete en punto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son las 8 de la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8 de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son las 8 de la tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8 de la tarde",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son las 8 de la noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8 de la noche",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son las ocho y media",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ocho y media",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son las 8pm y media",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm y media",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son 30 mins pasadas las ocho",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "30 mins pasadas las ocho",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son las ocho y cuarto",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ocho y cuarto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son cuarto pasadas las ocho",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cuarto pasadas las ocho",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son cuarto pasadas de las ocho",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cuarto pasadas de las ocho",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son 9pm menos cuarto",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9pm menos cuarto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Faltan 3 minutos para las ocho",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 minutos para las ocho",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son siete y media en punto",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete y media en punto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son siete y media de la tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete y media de la tarde",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son siete y media de la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete y media de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son ocho menos veinticinco de la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ocho menos veinticinco de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son ocho menos veinte de la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ocho menos veinte de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son ocho menos cuarto de la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ocho menos cuarto de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son ocho menos diez de la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ocho menos diez de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son ocho menos cinco de la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ocho menos cinco de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Son 20 min pasadas las ocho de la tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20 min pasadas las ocho de la tarde",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere por la tarde a las 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "por la tarde a las 7",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a la tarde a las 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la tarde a las 7",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a la tarde a las 7:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la tarde a las 7:00",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a la tarde a las 7:00:14",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la tarde a las 7:00:14",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a la tarde a las siete pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la tarde a las siete pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las siete treinta pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete treinta pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las siete treinta y cinco pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete treinta y cinco pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las once y cinco",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "once y cinco",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere tres minutos para las cinco treinta",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tres minutos para las cinco treinta",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere tres minutos antes de las cinco treinta",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tres minutos antes de las cinco treinta",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las cinco treinta de la noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cinco treinta de la noche",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las cinco treinta en la noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cinco treinta en la noche",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a las cinco treinta de la madrugada",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cinco treinta de la madrugada",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a la madrugada",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la madrugada",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere al mediodia",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "al mediodia",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere al medio dia",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "al medio dia",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere a la tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la tarde",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere al noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "al noche",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere 340pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "340pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere 1140 a.m.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1140 a.m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "no hay ninguna pm string despues de la hora",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
+[
+  {
+    "Input": "Volvere a las 7",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Start": 14,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las siete",
+    "Results": [
+      {
+        "Text": "siete",
+        "Type": "time",
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 7pm",
+    "Results": [
+      {
+        "Text": "7pm",
+        "Type": "time",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 7p.m.",
+    "Results": [
+      {
+        "Text": "7p.m.",
+        "Type": "time",
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 7:56pm",
+    "Results": [
+      {
+        "Text": "7:56pm",
+        "Type": "time",
+        "Start": 14,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 7:56:35pm",
+    "Results": [
+      {
+        "Text": "7:56:35pm",
+        "Type": "time",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 7:56:35 pm",
+    "Results": [
+      {
+        "Text": "7:56:35 pm",
+        "Type": "time",
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 12:34",
+    "Results": [
+      {
+        "Text": "12:34",
+        "Type": "time",
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 12:34:20",
+    "Results": [
+      {
+        "Text": "12:34:20",
+        "Type": "time",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las T12:34:20",
+    "Results": [
+      {
+        "Text": "T12:34:20",
+        "Type": "time",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 00:00",
+    "Results": [
+      {
+        "Text": "00:00",
+        "Type": "time",
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las 00:00:30",
+    "Results": [
+      {
+        "Text": "00:00:30",
+        "Type": "time",
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Son las 7 en punto",
+    "Results": [
+      {
+        "Text": "7 en punto",
+        "Type": "time",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Son las siete en punto",
+    "Results": [
+      {
+        "Text": "siete en punto",
+        "Type": "time",
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Son las 8 de la mañana",
+    "Results": [
+      {
+        "Text": "8 de la mañana",
+        "Type": "time",
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Son las 8 de la tarde",
+    "Results": [
+      {
+        "Text": "8 de la tarde",
+        "Type": "time",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Son las 8 de la noche",
+    "Results": [
+      {
+        "Text": "8 de la noche",
+        "Type": "time",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Son las ocho y media",
+    "Results": [
+      {
+        "Text": "ocho y media",
+        "Type": "time",
+        "Start": 8,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Son las 8pm y media",
+    "Results": [
+      {
+        "Text": "8pm y media",
+        "Type": "time",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Son 30 mins pasadas las ocho",
+    "Results": [
+      {
+        "Text": "30 mins pasadas las ocho",
+        "Type": "time",
+        "Start": 4,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Son las ocho y cuarto",
+    "Results": [
+      {
+        "Text": "ocho y cuarto",
+        "Type": "time",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Son cuarto pasadas las ocho",
+    "Results": [
+      {
+        "Text": "cuarto pasadas las ocho",
+        "Type": "time",
+        "Start": 4,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Son cuarto pasadas de las ocho",
+    "Results": [
+      {
+        "Text": "cuarto pasadas de las ocho",
+        "Type": "time",
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Son 9pm menos cuarto",
+    "Results": [
+      {
+        "Text": "9pm menos cuarto",
+        "Type": "time",
+        "Start": 4,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Faltan 3 minutos para las ocho",
+    "Results": [
+      {
+        "Text": "3 minutos para las ocho",
+        "Type": "time",
+        "Start": 7,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Son siete y media en punto",
+    "Results": [
+      {
+        "Text": "siete y media en punto",
+        "Type": "time",
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Son siete y media de la tarde",
+    "Results": [
+      {
+        "Text": "siete y media de la tarde",
+        "Type": "time",
+        "Start": 4,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Son siete y media de la mañana",
+    "Results": [
+      {
+        "Text": "siete y media de la mañana",
+        "Type": "time",
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Son ocho menos veinticinco de la mañana",
+    "Results": [
+      {
+        "Text": "ocho menos veinticinco de la mañana",
+        "Type": "time",
+        "Start": 4,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Son ocho menos veinte de la mañana",
+    "Results": [
+      {
+        "Text": "ocho menos veinte de la mañana",
+        "Type": "time",
+        "Start": 4,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Son ocho menos cuarto de la mañana",
+    "Results": [
+      {
+        "Text": "ocho menos cuarto de la mañana",
+        "Type": "time",
+        "Start": 4,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Son ocho menos diez de la mañana",
+    "Results": [
+      {
+        "Text": "ocho menos diez de la mañana",
+        "Type": "time",
+        "Start": 4,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Son ocho menos cinco de la mañana",
+    "Results": [
+      {
+        "Text": "ocho menos cinco de la mañana",
+        "Type": "time",
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Son 20 min pasadas las ocho de la tarde",
+    "Results": [
+      {
+        "Text": "20 min pasadas las ocho de la tarde",
+        "Type": "time",
+        "Start": 4,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Volvere por la tarde a las 7",
+    "Results": [
+      {
+        "Text": "por la tarde a las 7",
+        "Type": "time",
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a la tarde a las 7",
+    "Results": [
+      {
+        "Text": "a la tarde a las 7",
+        "Type": "time",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a la tarde a las 7:00",
+    "Results": [
+      {
+        "Text": "a la tarde a las 7:00",
+        "Type": "time",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a la tarde a las 7:00:14",
+    "Results": [
+      {
+        "Text": "a la tarde a las 7:00:14",
+        "Type": "time",
+        "Start": 8,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a la tarde a las siete pm",
+    "Results": [
+      {
+        "Text": "a la tarde a las siete pm",
+        "Type": "time",
+        "Start": 8,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las siete treinta pm",
+    "Results": [
+      {
+        "Text": "siete treinta pm",
+        "Type": "time",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las siete treinta y cinco pm",
+    "Results": [
+      {
+        "Text": "siete treinta y cinco pm",
+        "Type": "time",
+        "Start": 14,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las once y cinco",
+    "Results": [
+      {
+        "Text": "once y cinco",
+        "Type": "time",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Volvere tres minutos para las cinco treinta",
+    "Results": [
+      {
+        "Text": "tres minutos para las cinco treinta",
+        "Type": "time",
+        "Start": 8,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Volvere tres minutos antes de las cinco treinta",
+    "Results": [
+      {
+        "Text": "tres minutos antes de las cinco treinta",
+        "Type": "time",
+        "Start": 8,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las cinco treinta de la noche",
+    "Results": [
+      {
+        "Text": "cinco treinta de la noche",
+        "Type": "time",
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las cinco treinta en la noche",
+    "Results": [
+      {
+        "Text": "cinco treinta en la noche",
+        "Type": "time",
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a las cinco treinta de la madrugada",
+    "Results": [
+      {
+        "Text": "cinco treinta de la madrugada",
+        "Type": "time",
+        "Start": 14,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a la madrugada",
+    "Results": [
+      {
+        "Text": "a la madrugada",
+        "Type": "time",
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a la mañana",
+    "Results": [
+      {
+        "Text": "a la mañana",
+        "Type": "time",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Volvere al mediodia",
+    "Results": [
+      {
+        "Text": "al mediodia",
+        "Type": "time",
+        "Start": 8,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Volvere al medio dia",
+    "Results": [
+      {
+        "Text": "al medio dia",
+        "Type": "time",
+        "Start": 8,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Volvere a la tarde",
+    "Results": [
+      {
+        "Text": "a la tarde",
+        "Type": "time",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Volvere al noche",
+    "Results": [
+      {
+        "Text": "al noche",
+        "Type": "time",
+        "Start": 8,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Volvere 340pm",
+    "Results": [
+      {
+        "Text": "340pm",
+        "Type": "time",
+        "Start": 8,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Volvere 1140 a.m.",
+    "Results": [
+      {
+        "Text": "1140 a.m.",
+        "Type": "time",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "no hay ninguna pm string despues de la hora",
+    "Results": []
+  }
 ]

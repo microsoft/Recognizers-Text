@@ -532,6 +532,7 @@
 ,
 {
   "Input": "in 1995 canon introduced the first commercially available slr lens with internal image stabilization , ef 75 -300mm f / 4 - 5 . 6 is usm.",
+  "NotSupported": "java",
   "NotSupportedByDesign": "javascript",
   "Results": [
     {
@@ -626,5 +627,36 @@
 {
   "Input": "I'm a man.",
   "Results": []
+}
+,
+{
+  "Input": "Send them a quick DM and ask for their email address",
+  "Results": []
+}
+,
+{
+  "Input": "1m is equal to 10 dm",
+  "Results": [
+    {
+      "Text": "1m",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "dimension",
+      "Resolution": {
+        "unit": "Meter",
+        "value": "1"
+      }
+    },
+    {
+      "Text": "10 dm",
+      "Start": 15,
+      "End": 19,
+      "TypeName": "dimension",
+      "Resolution": {
+        "unit": "Decimeter",
+        "value": "10"
+      }
+    }
+  ]
 }
 ]

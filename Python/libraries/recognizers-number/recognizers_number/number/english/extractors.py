@@ -1,4 +1,5 @@
 from typing import Pattern, List, NamedTuple
+import regex
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
@@ -72,7 +73,7 @@ class EnglishIntegerExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.NumbersWithPlaceHolder(placeholder)),
                 val='IntegerNum'),
             ReVal(
-                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.NumbersWithSuffix),
+                re=RegExpUtility.get_safe_reg_exp(EnglishNumeric.NumbersWithSuffix, regex.S),
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(LongFormatMode.INTEGER_COMMA, placeholder)),

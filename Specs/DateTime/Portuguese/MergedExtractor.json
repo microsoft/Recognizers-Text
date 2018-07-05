@@ -1,121 +1,122 @@
 [
-{
-  "Input": "isto é 2 dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 dias",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "isto é antes das 4pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "antes das 4pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "isto é antes das 4pm amanhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "antes das 4pm amanhã",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "isto é antes de amanhã às 4pm ",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "antes de amanhã às 4pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "depois de 7/2 ",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "depois de 7/2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "depois do 7/2 ",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "depois do 7/2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "desde o 7/2 ",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde o 7/2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "desde 7/2 ",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde 7/2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "antes do  7/2 ",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "antes do  7/2",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "antes de  7/2 ",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "antes de  7/2",
-      "Type": "date"
-    }
-  ]
-}
+  {
+    "Input": "isto é 2 dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 dias",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "isto é antes das 4pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "antes das 4pm",
+        "Type": "time",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "isto é antes das 4pm amanhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "antes das 4pm amanhã",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "isto é antes de amanhã às 4pm ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "antes de amanhã às 4pm",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "depois de 7/2 ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "depois de 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "depois do 7/2 ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "depois do 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "desde o 7/2 ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde o 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "desde 7/2 ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "antes do  7/2 ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "antes do  7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "antes de  7/2 ",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "antes de  7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  }
 ]

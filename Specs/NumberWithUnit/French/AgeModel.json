@@ -210,7 +210,7 @@
 ,
 {
   "Input": "Il a environ 40 - 50 ans",
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, java",
   "Results": [
     {
       "Text": "50 ans",

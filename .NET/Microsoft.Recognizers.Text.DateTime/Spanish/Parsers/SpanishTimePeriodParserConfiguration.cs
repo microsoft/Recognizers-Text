@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex TimeOfDayRegex { get; }
 
         public Regex GeneralEndingRegex { get; }
@@ -35,6 +39,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = SpanishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = SpanishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = SpanishTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = SpanishTimePeriodExtractorConfiguration.TillRegex;
@@ -60,12 +66,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 timex = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (trimedText.Contains("pasado mediodia") || trimedText.Contains("pasado el mediodia"))
             {
                 timex = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (trimedText.EndsWith("tarde"))

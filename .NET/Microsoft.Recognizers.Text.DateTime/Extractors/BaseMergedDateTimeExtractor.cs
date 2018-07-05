@@ -3,6 +3,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
@@ -23,6 +25,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<ExtractResult>();
 
+            var originText = text;
+            List<MatchResult<string>> superfluousWordMatches = null;
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, out superfluousWordMatches);
+            }
+
             // The order is important, since there is a problem in merging
             AddTo(ret, this.config.DateExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.TimeExtractor.Extract(text, reference), text);
@@ -37,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
                 AddTo(ret, this.config.TimeZoneExtractor.Extract(text, reference), text);
+                ret = this.config.TimeZoneExtractor.RemoveAmbiguousTimezone(ret);
             }
 
             // This should be at the end since if need the extractor to determine the previous text contains time or not
@@ -48,6 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = this.config.DateTimeAltExtractor.Extract(ret, text, reference);
             }
 
+            ret = FilterUnspecificDatePeriod(ret, text);
             AddMod(ret, text);
 
             // filtering
@@ -57,6 +68,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             ret = ret.OrderBy(p => p.Start).ToList();
+
+            if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                ret = MatchingUtil.PosProcessExtractionRecoverSuperfluousWords(ret, superfluousWordMatches, originText);
+            }
 
             return ret;
         }
@@ -144,6 +160,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return config.FromToRegex.IsMatch(er.Text);
         }
 
+        private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers, string text)
+        {
+            ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
+            return ers;
+        }
+
         private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
         {
             if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text.ToLowerInvariant()))
@@ -225,7 +247,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
 
                     var match = config.YearAfterRegex.Match(afterStr.TrimStart());
-                    if (match.Success && match.Index == 0)
+                    if (match.Success && match.Index == 0 && match.Length == afterStr.Trim().Length)
                     {
                         var modLengh = match.Length + afterStr.IndexOf(match.Value);
                         er.Length += modLengh;
@@ -240,10 +262,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             index = -1;
             var match = regex.Match(text);
 
-            if (match.Success && string.IsNullOrWhiteSpace(text.Substring(match.Index+match.Length)))
+            while (match.Success)
             {
-                index = match.Index;
-                return true;
+                if (string.IsNullOrWhiteSpace(text.Substring(match.Index + match.Length)))
+                {
+                    index = match.Index;
+                    return true;
+                }
+
+                // Support cases has two or more specific tokens
+                // For example, "show me sales after 2010 and before 2018 or before 2000"
+                // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
+                match = match.NextMatch();
             }
 
             return false;

@@ -1,429 +1,431 @@
-[{
-  "Input": "Estaré fuera de cinco a siete hoy",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de cinco a siete hoy",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Hoy estaré fuera de cinco a siete",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Hoy estaré fuera de cinco a siete",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré fuera hoy de cinco a siete",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hoy de cinco a siete",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré fuera de cinco a siete mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de cinco a siete mañana",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré fuera desde las 5 hasta las 6 el próximo domingo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde las 5 hasta las 6 el próximo domingo",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré fuera desde las 5 hasta las 6pm el próximo domingo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde las 5 hasta las 6pm el próximo domingo",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré fuera desde las 5 hasta las 6pm del próximo domingo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde las 5 hasta las 6pm del próximo domingo",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 4pm a 5pm hoy",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm hoy",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 4pm a 5pm de hoy",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm de hoy",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 4pm de hoy a 5pm de mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm de hoy a 5pm de mañana",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 4pm a 5pm de mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm de mañana",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 4pm a 5pm del 2017-6-6",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm del 2017-6-6",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 4pm a 5pm el 5 de Mayo del 2018",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm el 5 de Mayo del 2018",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 4:00 a 5pm 5 de Mayo, 2018",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4:00 a 5pm 5 de Mayo, 2018",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 4pm del 1 de Enero del 2016 a 5pm de hoy",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm del 1 de Enero del 2016 a 5pm de hoy",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera desde hoy a las 4 hasta el miercoles siguiente a las 5",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde hoy a las 4 hasta el miercoles siguiente a las 5",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera entre las 4pm y 5pm de hoy",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre las 4pm y 5pm de hoy",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estaré afuera entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré a la noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la noche",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré a la madrugada",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la madrugada",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré esta tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta tarde",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré esta mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta mañana",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré en la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": " la mañana",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré a la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a la mañana",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré la próxima noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próxima noche",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresé anoche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "anoche",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré mañana por la noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mañana por la noche",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré el próximo lunes a la tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próximo lunes a la tarde",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Regresaré el 5 de mayo en la noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5 de mayo en la noche",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a retroceder los últimos 3 minutos",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "últimos 3 minutos",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a retroceder los pasados 3 minutos",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pasados 3 minutos",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a retroceder los previos 3 minutos",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "previos 3 minutos",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a retroceder los anteriores 3mins",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "anteriores 3mins",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver en 3 horas",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "en 3 horas",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver en 5 h",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "en 5 h",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver dentro de 5 horas",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dentro de 5 horas",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver en el último minuto",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "último minuto",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver en la próxima hora",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próxima hora",
-      "Type": "datetimerange"
-    }
-  ]
-}
+[
+  {
+    "Input": "Estaré fuera de cinco a siete hoy",
+    "Results": [
+      {
+        "Text": "de cinco a siete hoy",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Hoy estaré fuera de cinco a siete",
+    "Results": [
+      {
+        "Text": "Hoy estaré fuera de cinco a siete",
+        "Type": "datetimerange",
+        "Start": 0,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Estaré fuera hoy de cinco a siete",
+    "Results": [
+      {
+        "Text": "hoy de cinco a siete",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Estaré fuera de cinco a siete mañana",
+    "Results": [
+      {
+        "Text": "de cinco a siete mañana",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Estaré fuera desde las 5 hasta las 6 el próximo domingo",
+    "Results": [
+      {
+        "Text": "desde las 5 hasta las 6 el próximo domingo",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Estaré fuera desde las 5 hasta las 6pm el próximo domingo",
+    "Results": [
+      {
+        "Text": "desde las 5 hasta las 6pm el próximo domingo",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "Estaré fuera desde las 5 hasta las 6pm del próximo domingo",
+    "Results": [
+      {
+        "Text": "desde las 5 hasta las 6pm del próximo domingo",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 45
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4pm a 5pm hoy",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm hoy",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4pm a 5pm de hoy",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm de hoy",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4pm de hoy a 5pm de mañana",
+    "Results": [
+      {
+        "Text": "de 4pm de hoy a 5pm de mañana",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4pm a 5pm de mañana",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm de mañana",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4pm a 5pm del 2017-6-6",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm del 2017-6-6",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4pm a 5pm el 5 de Mayo del 2018",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm el 5 de Mayo del 2018",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4:00 a 5pm 5 de Mayo, 2018",
+    "Results": [
+      {
+        "Text": "de 4:00 a 5pm 5 de Mayo, 2018",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 4pm del 1 de Enero del 2016 a 5pm de hoy",
+    "Results": [
+      {
+        "Text": "de 4pm del 1 de Enero del 2016 a 5pm de hoy",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+    "Results": [
+      {
+        "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera desde hoy a las 4 hasta el miercoles siguiente a las 5",
+    "Results": [
+      {
+        "Text": "desde hoy a las 4 hasta el miercoles siguiente a las 5",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 54
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera entre las 4pm y 5pm de hoy",
+    "Results": [
+      {
+        "Text": "entre las 4pm y 5pm de hoy",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
+    "Results": [
+      {
+        "Text": "entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 54
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré a la noche",
+    "Results": [
+      {
+        "Text": "a la noche",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré a la madrugada",
+    "Results": [
+      {
+        "Text": "a la madrugada",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré esta tarde",
+    "Results": [
+      {
+        "Text": "esta tarde",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré esta mañana",
+    "Results": [
+      {
+        "Text": "esta mañana",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré en la mañana",
+    "Results": [
+      {
+        "Text": " la mañana",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré a la mañana",
+    "Results": [
+      {
+        "Text": "a la mañana",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré la próxima noche",
+    "Results": [
+      {
+        "Text": "próxima noche",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Regresé anoche",
+    "Results": [
+      {
+        "Text": "anoche",
+        "Type": "datetimerange",
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré mañana por la noche",
+    "Results": [
+      {
+        "Text": "mañana por la noche",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré el próximo lunes a la tarde",
+    "Results": [
+      {
+        "Text": "próximo lunes a la tarde",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré el 5 de mayo en la noche",
+    "Results": [
+      {
+        "Text": "5 de mayo en la noche",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Voy a retroceder los últimos 3 minutos",
+    "Results": [
+      {
+        "Text": "últimos 3 minutos",
+        "Type": "datetimerange",
+        "Start": 21,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Voy a retroceder los pasados 3 minutos",
+    "Results": [
+      {
+        "Text": "pasados 3 minutos",
+        "Type": "datetimerange",
+        "Start": 21,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Voy a retroceder los previos 3 minutos",
+    "Results": [
+      {
+        "Text": "previos 3 minutos",
+        "Type": "datetimerange",
+        "Start": 21,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Voy a retroceder los anteriores 3mins",
+    "Results": [
+      {
+        "Text": "anteriores 3mins",
+        "Type": "datetimerange",
+        "Start": 21,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver en 3 horas",
+    "Results": [
+      {
+        "Text": "en 3 horas",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver en 5 h",
+    "Results": [
+      {
+        "Text": "en 5 h",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver dentro de 5 horas",
+    "Results": [
+      {
+        "Text": "dentro de 5 horas",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver en el último minuto",
+    "Results": [
+      {
+        "Text": "último minuto",
+        "Type": "datetimerange",
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver en la próxima hora",
+    "Results": [
+      {
+        "Text": "próxima hora",
+        "Type": "datetimerange",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  }
 ]

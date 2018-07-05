@@ -3,12 +3,12 @@ import { BaseTimeParser, ITimeParserConfiguration } from "../baseTime";
 import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 
-export class TimeParser extends BaseTimeParser {
+export class FrenchTimeParser extends BaseTimeParser {
     constructor(config: ITimeParserConfiguration) {
         super(config);
     }
 
-    protected InternalParse(text: string, referenceTime: Date): DateTimeResolutionResult {
+    internalParse(text: string, referenceTime: Date): DateTimeResolutionResult {
 
         let ret = super.internalParse(text, referenceTime);
         if (!ret.success) {

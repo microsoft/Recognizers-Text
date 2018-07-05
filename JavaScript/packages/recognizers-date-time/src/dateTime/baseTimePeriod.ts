@@ -68,7 +68,7 @@ export class BaseTimePeriodExtractor implements IDateTimeExtractor {
             // check if it is a ending number
             let endingNumber = false;
             let num = numErs[numErs.length - 1];
-            if (num.start + num.length == text.length)
+            if (num.start + num.length === text.length)
             {
                 endingNumber = true;
             }
@@ -206,6 +206,8 @@ export interface ITimePeriodParserConfiguration {
     tillRegex: RegExp;
     numbers: ReadonlyMap<string, number>;
     utilityConfiguration: IDateTimeUtilityConfiguration;
+    specificTimeFromToRegex: RegExp;
+    specificTimeBetweenAndRegex: RegExp;
     getMatchedTimexRange(text: string): {
         matched: boolean, timex: string, beginHour: number, endHour: number, endMin: number
     };
@@ -249,7 +251,19 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         return ret;
     }
 
-    private parseSimpleCases(text: string, referenceTime: Date): DateTimeResolutionResult {
+    private parseSimpleCases(source: string, reference: Date): DateTimeResolutionResult {
+        // Cases like "from 3 to 5pm" or "between 4 and 6am", time point is pure number without colon
+        let result = this.parsePureNumCases(source, reference);
+
+        if (!result.success) {
+            // Cases like "from 3:30 to 5" or "between 3:30am to 6pm", at least one of the time point contains colon
+            result = this.parseSpecificTimeCases(source, reference);
+        }
+
+        return result;
+    }
+
+    private parsePureNumCases(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let year = referenceTime.getFullYear();
         let month = referenceTime.getMonth();
@@ -268,83 +282,333 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             // get hours
             let hourGroup = matches[0].groups('hour');
             let hourStr = hourGroup.captures[0];
+            let afterHourIndex = hourGroup.index + hourGroup.length;
 
-            let beginHour = this.config.numbers.get(hourStr);
-            if (!beginHour) {
-                beginHour = Number.parseInt(hourStr, 10);
+            // hard to integrate this part into the regex
+            if (afterHourIndex === trimmedText.length || !trimmedText.substr(afterHourIndex).trim().startsWith(':')) {
+                let beginHour = this.config.numbers.get(hourStr);
+                if (!beginHour) {
+                    beginHour = Number.parseInt(hourStr, 10);
+                }
+
+                hourStr = hourGroup.captures[1];
+                afterHourIndex = trimmedText.indexOf(hourStr, hourGroup.index + 1) + hourStr.length;
+
+                if (afterHourIndex === trimmedText.length || !trimmedText.substr(afterHourIndex).trim().startsWith(':')) {
+                    let endHour = this.config.numbers.get(hourStr);
+                    if (!endHour) {
+                        endHour = Number.parseInt(hourStr, 10);
+                    }
+        
+                    // parse "pm"
+                    let leftDesc = matches[0].groups("leftDesc").value;
+                    let rightDesc = matches[0].groups("rightDesc").value;
+                    let pmStr = matches[0].groups("pm").value;
+                    let amStr = matches[0].groups("am").value;
+
+                    // The "ampm" only occurs in time, don't have to consider it here
+                    if (StringUtility.isNullOrWhitespace(leftDesc)) {
+                        let rightAmValid = !StringUtility.isNullOrEmpty(rightDesc) &&
+                            RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, rightDesc.toLowerCase()).length;
+                        let rightPmValid = !StringUtility.isNullOrEmpty(rightDesc) &&
+                            RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.toLowerCase()).length;
+                        if (!StringUtility.isNullOrEmpty(amStr) || rightAmValid) {
+        
+                            if (endHour >= 12) {
+                                endHour -= 12;
+                            }
+        
+                            if (beginHour >= 12 && beginHour - 12 < endHour) {
+                                beginHour -= 12;
+                            }
+        
+                            // Resolve case like "11 to 3am"
+                            if (beginHour < 12 && beginHour > endHour) {
+                                beginHour += 12;
+                            }
+        
+                            isValid = true;
+                        }
+                        else if (!StringUtility.isNullOrEmpty(pmStr) || rightPmValid) {
+                            
+                            if (endHour < 12) {
+                                endHour += 12;
+                            }
+        
+                            // Resolve case like "11 to 3pm"
+                            if (beginHour + 12 < endHour) {
+                                beginHour += 12;
+                            }
+        
+                            isValid = true;
+                        }
+                    }
+        
+                    if (isValid) {
+                        let beginStr = "T" + FormatUtil.toString(beginHour, 2);
+                        let endStr = "T" + FormatUtil.toString(endHour, 2);
+        
+                        if (beginHour >= endHour) {
+                            endHour += 24
+                        }
+        
+                        ret.timex = `(${beginStr},${endStr},PT${endHour - beginHour}H)`;
+        
+                        ret.futureValue = ret.pastValue = {
+                            item1: new Date(year, month, day, beginHour, 0, 0),
+                            item2: new Date(year, month, day, endHour, 0, 0)
+                        };
+        
+                        ret.success = true;
+        
+                        return ret;
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+    
+    private parseSpecificTimeCases(source: string, reference: Date): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let year = reference.getFullYear();
+        let month = reference.getMonth();
+        let day = reference.getDate();
+        let trimmedText = source.trim().toLowerCase();
+
+        // Handle cases like "from 4:30 to 5"
+        let match = RegExpUtility.getMatches(this.config.specificTimeFromToRegex, source).pop();
+        if (!match) {
+            // Handle cases like "between 5:10 and 7"
+            match = RegExpUtility.getMatches(this.config.specificTimeBetweenAndRegex, source).pop();
+        }
+
+        if (match && match.index === 0 && match.index + match.length === trimmedText.length) {
+            // Cases like "half past seven" are not handled here
+            if (match.groups('prefix').value !== '') {
+                return result;
+            }
+
+            // Cases like "4" is different with "4:00" as the Timex is different "T04H" vs "T04H00M"
+            // Uses this invalidFlag to differentiate
+            let beginHour: number;
+            let invalidFlag = -1;
+            let beginMinute = invalidFlag;
+            let beginSecond = invalidFlag;
+            let endHour: number;
+            let endMinute = invalidFlag;
+            let endSecond = invalidFlag;
+
+            // Get time1 and time2
+            let hourGroup = match.groups('hour');
+            let hourStr = hourGroup.captures[0];
+
+            if (this.config.numbers.has(hourStr)) {
+                beginHour = this.config.numbers[hourStr];
+            } else {
+                beginHour = parseInt(hourStr, 10);
             }
 
             hourStr = hourGroup.captures[1];
 
-            let endHour = this.config.numbers.get(hourStr);
-            if (!endHour) {
-                endHour = Number.parseInt(hourStr, 10);
+            if (this.config.numbers.has(hourStr)) {
+                endHour = this.config.numbers[hourStr];
+            } else {
+                endHour = parseInt(hourStr, 10);
             }
 
-            // parse "pm"
-            let leftDesc = matches[0].groups("leftDesc").value;
-            let rightDesc = matches[0].groups("rightDesc").value;
-            let pmStr = matches[0].groups("pm").value;
-            let amStr = matches[0].groups("am").value;
-            // The "ampm" only occurs in time, don't have to consider it here
-            if (StringUtility.isNullOrWhitespace(leftDesc)) {
-                let rightAmValid = !StringUtility.isNullOrEmpty(rightDesc) &&
-                    RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, rightDesc.toLowerCase()).length;
-                let rightPmValid = !StringUtility.isNullOrEmpty(rightDesc) &&
-                    RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.toLowerCase()).length;
-                if (!StringUtility.isNullOrEmpty(amStr) || rightAmValid) {
+            let time1StartIndex = match.groups('time1').index;
+            let time1EndIndex = time1StartIndex + match.groups('time1').length;
+            let time2StartIndex = match.groups('time2').index;
+            let time2EndIndex = time2StartIndex + match.groups('time2').length;
 
-                    if (endHour >= 12) {
-                        endHour -= 12;
-                    }
+            // Get beginMinute (if exists) and endMinute (if exists)
+            let lastGroupIndex = 0;
+            for (let i = 0; i < match.groups('min').captures.length; i++) {
+                let minuteCapture = match.groups('min').captures[i];
 
-                    if (beginHour >= 12 && beginHour - 12 < endHour) {
-                        beginHour -= 12;
-                    }
-
-                    // Resolve case like "11 to 3am"
-                    if (beginHour < 12 && beginHour > endHour) {
-                        beginHour += 12;
-                    }
-
-                    isValid = true;
+                let minuteCaptureIndex = source.indexOf(minuteCapture, lastGroupIndex);
+                
+                if (minuteCaptureIndex >= time1StartIndex && minuteCaptureIndex + minuteCapture.length <= time1EndIndex) {
+                    beginMinute = parseInt(minuteCapture, 10);
+                } else if (minuteCaptureIndex >= time2StartIndex && minuteCaptureIndex + minuteCapture.length <= time2EndIndex) {
+                    endMinute = parseInt(minuteCapture, 10);
                 }
-                else if (!StringUtility.isNullOrEmpty(pmStr) || rightPmValid) {
+                lastGroupIndex = minuteCaptureIndex + 1;
+            }
+
+            lastGroupIndex = 0;
+            
+            // Get beginSecond (if exists) and endSecond (if exists)
+            for (let i = 0; i < match.groups('sec').captures.length; i++) {
+                let secondCapture = match.groups('sec').captures[i];
+
+                let secondCaptureIndex = source.indexOf(secondCapture, lastGroupIndex);
+                
+                if (secondCaptureIndex >= time1StartIndex && secondCaptureIndex + secondCapture.length <= time1EndIndex) {
+                    beginSecond = parseInt(secondCapture, 10);
+                } else if (secondCaptureIndex >= time2StartIndex && secondCaptureIndex + secondCapture.length <= time2EndIndex) {
+                    endSecond = parseInt(secondCapture, 10);
+                }
+                lastGroupIndex = secondCaptureIndex + 1;
+            }
+
+            lastGroupIndex = 0;
+            // Desc here means descriptions like "am / pm / o'clock"
+            // Get leftDesc (if exists) and rightDesc (if exists)
+            let leftDesc = match.groups('leftDesc').value;
+            let rightDesc = match.groups('rightDesc').value;
+            
+            for (let i = 0; i < match.groups('desc').captures.length; i++) {
+                let descCapture = match.groups('desc').captures[i];
+
+                let descCaptureIndex = source.indexOf(descCapture, lastGroupIndex);
+
+                if (descCaptureIndex >= time1StartIndex && descCaptureIndex + descCapture.length <= time1EndIndex && StringUtility.isNullOrEmpty(leftDesc)) {
+                    leftDesc = descCapture;
+                } else if (descCaptureIndex >= time2StartIndex && descCaptureIndex + descCapture.length <= time2EndIndex && StringUtility.isNullOrEmpty(rightDesc)) {
+                    rightDesc = descCapture;
+                }
+
+                lastGroupIndex = descCaptureIndex + 1;
+            }
+
+            let beginDateTime = DateUtils.safeCreateFromMinValue(year, month, day, beginHour, beginMinute >= 0 ? beginMinute : 0, beginSecond >= 0 ? beginSecond : 0);
+            let endDateTime = DateUtils.safeCreateFromMinValue(year, month, day, endHour, endMinute >= 0 ? endMinute : 0, endSecond >= 0 ? endSecond : 0);
+
+            let hasLeftAm = !StringUtility.isNullOrEmpty(leftDesc) && leftDesc.toLowerCase().startsWith('a');
+            let hasLeftPm = !StringUtility.isNullOrEmpty(leftDesc) && leftDesc.toLowerCase().startsWith('p');
+            let hasRightAm = !StringUtility.isNullOrEmpty(rightDesc) && rightDesc.toLowerCase().startsWith('a');
+            let hasRightPm = !StringUtility.isNullOrEmpty(rightDesc) && rightDesc.toLowerCase().startsWith('p');
+            let hasLeft = hasLeftAm || hasLeftPm;
+            let hasRight = hasRightAm || hasRightPm;
+
+            // Both timepoint has description like 'am' or 'pm'
+            if (hasLeft && hasRight) {
+                if (hasLeftAm) {
+                    if (beginHour >= 12) {
+                        beginDateTime = DateUtils.addHours(beginDateTime, -12);
+                    }
+                } else if (hasLeftPm) {
+                    if (beginHour < 12) {
+                        beginDateTime = DateUtils.addHours(beginDateTime, 12);
+                    }
+                }
+
+                if (hasRightAm) {
+                    if (endHour >= 12) {
+                        endDateTime = DateUtils.addHours(endDateTime, -12);
+                    }
+                } else if (hasRightPm) {
+                    if (endHour < 12) {
+                        endDateTime = DateUtils.addHours(endDateTime, 12);
+                    }
+                }
+            } else if (hasLeft || hasRight) {
+                if (hasLeftAm) {
+                    if (beginHour >= 12) {
+                        beginDateTime = DateUtils.addHours(beginDateTime, -12);
+                    }
                     
                     if (endHour < 12) {
-                        endHour += 12;
+                        if (endDateTime < beginDateTime) {
+                            endDateTime = DateUtils.addHours(endDateTime, 12);
+                        }
+                    }
+                } else if (hasLeftPm) {
+                    if (beginHour < 12) {
+                        beginDateTime = DateUtils.addHours(beginDateTime, 12);
                     }
 
-                    // Resolve case like "11 to 3pm"
-                    if (beginHour + 12 < endHour) {
-                        beginHour += 12;
+                    if (endHour < 12) {
+                        if (endDateTime.getTime() < beginDateTime.getTime()) {
+                            let span = DateUtils.totalHoursFloor(beginDateTime, endDateTime);
+                            if (span >= 12) {
+                                endDateTime = DateUtils.addHours(endDateTime, 24);
+                            } else {
+                                endDateTime = DateUtils.addHours(endDateTime, 12);
+                            }
+                        }
                     }
-
-                    isValid = true;
                 }
+
+                if (hasRightAm) {
+                    if (endHour >= 12) {
+                        endDateTime = DateUtils.addHours(endDateTime, -12);
+                    }
+
+                    if (beginHour < 12) {
+                        if (endDateTime.getTime() < beginDateTime.getTime()) {
+                            beginDateTime = DateUtils.addHours(beginDateTime, -12);
+                        }
+                    }
+                } else if (hasRightPm) {
+                    if (endHour < 12) {
+                        endDateTime = DateUtils.addHours(endDateTime, 12);
+                    }
+
+                    if (beginHour < 12) {
+                        if (endDateTime.getTime() < beginDateTime.getTime()) {
+                            beginDateTime = DateUtils.addHours(beginDateTime, -12);
+                        } else {
+                            let span = DateUtils.totalHoursFloor(endDateTime, beginDateTime);
+                            if (span > 12) {
+                                beginDateTime = DateUtils.addHours(beginDateTime, 12);
+                            }
+                        }
+                    }
+                }
+            } else if (!hasLeft && !hasRight && beginHour <= 12 && endHour <= 12) {
+                if (beginHour > endHour) {
+                    if (beginHour === 12) {
+                        beginDateTime = DateUtils.addHours(beginDateTime, -12);
+                    } else {
+                        endDateTime = DateUtils.addHours(endDateTime, 12);
+                    }
+                }
+                result.comment = Constants.CommentAmPm;
             }
 
-            if (isValid) {
-                let beginStr = "T" + FormatUtil.toString(beginHour, 2);
-                let endStr = "T" + FormatUtil.toString(endHour, 2);
+            if (endDateTime.getTime() < beginDateTime.getTime()) {
+                endDateTime = DateUtils.addHours(endDateTime, 24);
+            }
 
-                if (beginHour >= endHour) {
-                    endHour += 24
-                }
+            let beginStr = FormatUtil.shortTime(beginDateTime.getHours(), beginMinute, beginSecond);
+            let endStr = FormatUtil.shortTime(endDateTime.getHours(), endMinute, endSecond);
 
-                ret.timex = `(${beginStr},${endStr},PT${endHour - beginHour}H)`;
+            result.success = true;
+            result.timex = `(${beginStr},${endStr},${FormatUtil.luisTimeSpan(endDateTime, beginDateTime)})`;
 
-                ret.futureValue = ret.pastValue = {
-                    item1: new Date(year, month, day, beginHour, 0, 0),
-                    item2: new Date(year, month, day, endHour, 0, 0)
-                };
+            result.futureValue = result.pastValue = { item1: beginDateTime, item2: endDateTime };
 
-                ret.success = true;
+            result.subDateTimeEntities = [];
 
-                return ret;
+            // In SplitDateAndTime mode, time points will be get from these SubDateTimeEntities
+            // Cases like "from 4 to 5pm", "4" should not be treated as SubDateTimeEntity
+            if (hasLeft || beginMinute !== invalidFlag || beginSecond !== invalidFlag) {
+                let er = {
+                    start: time1StartIndex,
+                    length: time1EndIndex - time1StartIndex,
+                    text: source.substring(time1StartIndex, time1EndIndex),
+                    type: Constants.SYS_DATETIME_TIME
+                } as ExtractResult;
+                let pr = this.config.timeParser.parse(er, reference);
+                result.subDateTimeEntities.push(pr);
+            }
+
+            // Cases like "from 4am to 5", "5" should not be treated as SubDateTimeEntity
+            if (hasRight || endMinute !== invalidFlag || endSecond !== invalidFlag) {
+                let er = {
+                    start: time2StartIndex,
+                    length: time2EndIndex - time2StartIndex,
+                    text: source.substring(time2StartIndex, time2EndIndex),
+                    type: Constants.SYS_DATETIME_TIME
+                } as ExtractResult;
+                let pr = this.config.timeParser.parse(er, reference);
+                result.subDateTimeEntities.push(pr);
             }
         }
-        return ret;
+        return result;
     }
 
     private mergeTwoTimePoints(text: string, referenceTime: Date): DateTimeResolutionResult {
@@ -360,7 +624,8 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 let numErs = this.config.integerExtractor.extract(text);
 
                 for (let num of numErs) {
-                    let midStrBegin = 0, midStrEnd = 0;
+                    let midStrBegin = 0;
+                    let midStrEnd = 0;
                     // ending number
                     if (num.start > ers[0].start + ers[0].length)
                     {
@@ -374,8 +639,8 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                     }
 
                     // check if the middle string between the time point and the valid number is a connect string.
-                    var middleStr = text.substr(midStrBegin, midStrEnd);
-                    var tillMatch = middleStr.match(this.config.tillRegex);
+                    let middleStr = text.substr(midStrBegin, midStrEnd);
+                    let tillMatch = middleStr.match(this.config.tillRegex);
                     if (tillMatch)
                     {
                         num.type = Constants.SYS_DATETIME_TIME;

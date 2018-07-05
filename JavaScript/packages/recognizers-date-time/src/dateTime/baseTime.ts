@@ -270,22 +270,26 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
 
                     // adjust by desc string
                     let descStr = match.groups('desc').value.toLowerCase();
-                    if (!StringUtility.isNullOrWhitespace(descStr)) {
-                        if (RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, descStr).length > 0
-                         || RegExpUtility.getMatches(this.config.utilityConfiguration.amPmDescRegex, descStr).length > 0) {
-                            if (hour >= 12) {
-                                hour -= 12;
-                            }
-                            if (RegExpUtility.getMatches(this.config.utilityConfiguration.amPmDescRegex, descStr).length === 0) {
-                                hasAm = true;
-                            }
-                         }
-                        else if (RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, descStr).length > 0) {
-                            if (hour < 12) {
-                                hour += 12;
-                            }
-                            hasPm = true;
+                    if (RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, descStr).length > 0
+                        || RegExpUtility.getMatches(this.config.utilityConfiguration.amPmDescRegex, descStr).length > 0
+                        || !StringUtility.isNullOrEmpty(match.groups('iam').value)) {
+
+                        if (hour >= 12) {
+                            hour -= 12;
                         }
+
+                        if (RegExpUtility.getMatches(this.config.utilityConfiguration.amPmDescRegex, descStr).length === 0) {
+                            hasAm = true;
+                        }
+                    }
+                    else if (RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, descStr).length > 0
+                        || !StringUtility.isNullOrEmpty(match.groups('ipm').value)) {
+
+                        if (hour < 12) {
+                            hour += 12;
+                        }
+
+                        hasPm = true;
                     }
 
                     // adjust min by prefix

@@ -4,8 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "beijing time",
@@ -15,7 +14,9 @@
             "Value": "UTC+08:00",
             "UtcOffsetMins": 480
           }
-        }
+        },
+        "Start": 18,
+        "Length": 12
       }
     ]
   },
@@ -24,8 +25,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "utc4:30",
@@ -35,7 +35,9 @@
             "Value": "UTC+04:30",
             "UtcOffsetMins": 270
           }
-        }
+        },
+        "Start": 18,
+        "Length": 7
       }
     ]
   },
@@ -44,8 +46,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "gmt-3",
@@ -55,7 +56,9 @@
             "Value": "UTC-03:00",
             "UtcOffsetMins": -180
           }
-        }
+        },
+        "Start": 18,
+        "Length": 5
       }
     ]
   },
@@ -64,8 +67,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "afghanistan standard time",
@@ -75,7 +77,9 @@
             "Value": "UTC+04:30",
             "UtcOffsetMins": 270
           }
-        }
+        },
+        "Start": 18,
+        "Length": 25
       }
     ]
   },
@@ -84,8 +88,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "aft",
@@ -95,7 +98,9 @@
             "Value": "UTC+04:30",
             "UtcOffsetMins": 270
           }
-        }
+        },
+        "Start": 18,
+        "Length": 3
       }
     ]
   },
@@ -104,8 +109,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "utc±0",
@@ -115,7 +119,9 @@
             "Value": "UTC+00:00",
             "UtcOffsetMins": 0
           }
-        }
+        },
+        "Start": 18,
+        "Length": 5
       }
     ]
   },
@@ -124,8 +130,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "pdst",
@@ -135,18 +140,18 @@
             "Value": "UTC-07:00",
             "UtcOffsetMins": -420
           }
-        }
+        },
+        "Start": 18,
+        "Length": 4
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at awdt",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "awdt",
@@ -156,18 +161,18 @@
             "Value": "UTC+09:00",
             "UtcOffsetMins": 540
           }
-        }
+        },
+        "Start": 18,
+        "Length": 4
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at cot",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "cot",
@@ -177,18 +182,18 @@
             "Value": "UTC-05:00",
             "UtcOffsetMins": -300
           }
-        }
+        },
+        "Start": 18,
+        "Length": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at hkt",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "hkt",
@@ -198,18 +203,18 @@
             "Value": "UTC+08:00",
             "UtcOffsetMins": 480
           }
-        }
+        },
+        "Start": 18,
+        "Length": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at pacific daylight saving time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "pacific daylight saving time",
@@ -219,18 +224,18 @@
             "Value": "UTC-07:00",
             "UtcOffsetMins": -420
           }
-        }
+        },
+        "Start": 18,
+        "Length": 28
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at austrialian western daylight time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "austrialian western daylight time",
@@ -240,18 +245,18 @@
             "Value": "UTC+09:00",
             "UtcOffsetMins": 540
           }
-        }
+        },
+        "Start": 18,
+        "Length": 33
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at austrialian west daylight time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "austrialian west daylight time",
@@ -261,18 +266,18 @@
             "Value": "UTC+09:00",
             "UtcOffsetMins": 540
           }
-        }
+        },
+        "Start": 18,
+        "Length": 30
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at colombia time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "colombia time",
@@ -282,18 +287,18 @@
             "Value": "UTC-05:00",
             "UtcOffsetMins": -300
           }
-        }
+        },
+        "Start": 18,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at hong kong time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "hong kong time",
@@ -303,18 +308,18 @@
             "Value": "UTC+08:00",
             "UtcOffsetMins": 480
           }
-        }
+        },
+        "Start": 18,
+        "Length": 14
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at aedt",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "aedt",
@@ -324,18 +329,18 @@
             "Value": "UTC+11:00",
             "UtcOffsetMins": 660
           }
-        }
+        },
+        "Start": 18,
+        "Length": 4
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at pdt",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "pdt",
@@ -345,18 +350,18 @@
             "Value": "UTC-07:00",
             "UtcOffsetMins": -420
           }
-        }
+        },
+        "Start": 18,
+        "Length": 3
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at tost",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tost",
@@ -366,18 +371,18 @@
             "Value": "UTC+14:00",
             "UtcOffsetMins": 840
           }
-        }
+        },
+        "Start": 18,
+        "Length": 4
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Book me a room at pacific daylight time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "pacific daylight time",
@@ -387,7 +392,51 @@
             "Value": "UTC-07:00",
             "UtcOffsetMins": -420
           }
-        }
+        },
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at 10:30am montreal time.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "montreal time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 26,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at Saint Barthélemy time.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Saint Barthélemy time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 18,
+        "Length": 21
       }
     ]
   }

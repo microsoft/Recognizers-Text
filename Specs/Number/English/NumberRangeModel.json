@@ -749,4 +749,117 @@
     }
   ]
 }
+,
+{
+  "Input": "The number range is 1000-5000",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "1000-5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is 1000 - 5000",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "1000 - 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is 1000–5000",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "1000–5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is 1000 – 5000",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "1000 – 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "How about 2 in 5 or more",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "2 in 5 or more",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[0.4,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "How about more than 2 in 5",
+  "Comment": "As this can be ambiguous, by design the interpretation is left-to-right and the range is extracted first.",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "more than 2",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(2,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Can you show me records more than 30000 in 2009",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "more than 30000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(30000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Can you show me records less than 3000 in 2009",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "less than 3000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,3000)"
+      }
+    }
+  ]
+}
 ]

@@ -312,7 +312,7 @@ SpecialsFoldsPercentageRegex: !simpleRegex
   def: 半\s*成|(?<=打)[对對]\s*折|半\s*折
 #NumberRangeExtractor
 TillRegex: !simpleRegex
-  def: (到|至|--|-|—|——|~)
+  def: (到|至|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
   def: (大于|多于|高于|超过|大於|多於|高於|超過|>)
 LessRegex: !simpleRegex
@@ -364,4 +364,7 @@ TwoNumberRangeRegex3: !nestedRegex
 TwoNumberRangeRegex4: !nestedRegex
   def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*{TillRegex}\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)
   references: [ TillRegex ]
+AmbiguousFractionConnectorsRegex: !simpleRegex
+# TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 ...

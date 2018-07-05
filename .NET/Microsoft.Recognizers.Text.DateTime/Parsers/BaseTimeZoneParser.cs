@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 minutes = 0;
             }
 
-            if (hours > 12)
+            if (hours > Constants.HalfDayHourCount)
             {
                 return Constants.InvalidOffsetValue;
             }
@@ -90,35 +90,34 @@ namespace Microsoft.Recognizers.Text.DateTime
                 result.Value = GetDateTimeResolutionResult(offsetInMinutes, text);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + offsetInMinutes;
             }
-            else if (TimeZoneDefinitions.AbbrToMinMapping.ContainsKey(text))
+            else if (TimeZoneDefinitions.AbbrToMinMapping.ContainsKey(text) &&
+                     TimeZoneDefinitions.AbbrToMinMapping[text] != Constants.InvalidOffsetValue)
             {
                 int utcMinuteShift = TimeZoneDefinitions.AbbrToMinMapping[text];
 
-                // TODO: Temporary solution for ambiguous data
-                if (utcMinuteShift == Constants.InvalidOffsetValue)
-                {
-                    result.Value = new DateTimeResolutionResult
-                    {
-                        Success = true,
-                        TimeZoneResolution = new TimeZoneResolutionResult
-                        {
-                            Value = "UTC+XX:XX",
-                            UtcOffsetMins = Constants.InvalidOffsetValue
-                        }
-                    };
-                    result.ResolutionStr = Constants.UtcOffsetMinsKey + ": XX:XX";
-                }
-                else
-                {
-                    result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);
-                    result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
-                }
+                result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);
+                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
             }
             else if (TimeZoneDefinitions.FullToMinMapping.ContainsKey(text))
             {
                 int utcMinuteShift = TimeZoneDefinitions.FullToMinMapping[text.ToLower()];
                 result.Value = GetDateTimeResolutionResult(utcMinuteShift, text);
                 result.ResolutionStr = Constants.UtcOffsetMinsKey + ": " + utcMinuteShift;
+            }
+            else
+            {
+                // TODO: Temporary solution for city timezone and ambiguous data
+                result.Value = new DateTimeResolutionResult
+                {
+                    Success = true,
+                    TimeZoneResolution = new TimeZoneResolutionResult
+                    {
+                        Value = "UTC+XX:XX",
+                        UtcOffsetMins = Constants.InvalidOffsetValue,
+                        TimeZoneText = text
+                    }
+                };
+                result.ResolutionStr = Constants.UtcOffsetMinsKey + ": XX:XX";
             }
 
             return result;

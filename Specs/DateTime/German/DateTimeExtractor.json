@@ -1,158 +1,169 @@
-[{
+[
+  {
     "Input": "Ich gehe jetzt zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "jetzt",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "ich gehe so früh wie möglich zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "so früh wie möglich",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 19
       }
     ]
   },
   {
     "Input": "Ich gehe genau jetzt weg.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "genau jetzt",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 9,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe am 15. November um 8 Uhr weg.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. November um 8 Uhr",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Ich gehe am 15.08. um 8 Uhr weg.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15.08. um 8 Uhr",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "Ich gehe am 15. um 8 Uhr weg.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. um 8 Uhr",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 12
       }
     ]
   },
   {
     "Input": "Ich gehe am 23. Oktober um 7 los.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "23. Oktober um 7",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 16
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe am 14. Oktober um 8:00 los.",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "14. Oktober um 8:00",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das ganze ist am 14. Oktober um 8:00:00 Uhr",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "14. Oktober um 8:00:00 Uhr",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 26
       }
     ]
   },
   {
     "Input": "Ich gehe dann diesen Montag um 8:00 los",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Montag um 8:00",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Um 8 Uhr diesen Morgen",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr diesen Morgen",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe dann gegen 8 Uhr diesen Abend nach Hause",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr diesen Abend",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 20,
+        "Length": 18
       }
     ]
   },
   {
     "Input": "Am Ende des Tages",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Am Ende des Tages",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
     "Input": "Am Ende des Monats",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Am Ende des Monats",
-        "Type": "datetime"
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 18
       }
     ]
   }

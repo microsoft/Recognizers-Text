@@ -5,6 +5,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDateTimePeriodExtractorConfiguration : IOptionsConfiguration
     {
+        string TokenBeforeDate { get; }
+
         IEnumerable<Regex> SimpleCasesRegex { get; }
 
         Regex PrepositionRegex { get; }
@@ -48,6 +50,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex DateUnitRegex { get; }
 
         Regex PrefixDayRegex { get; }
+
+        Regex SuffixRegex { get; }
+
+        Regex BeforeRegex { get; }
+
+        Regex AfterRegex { get; }
 
         IExtractor CardinalExtractor { get; }
 

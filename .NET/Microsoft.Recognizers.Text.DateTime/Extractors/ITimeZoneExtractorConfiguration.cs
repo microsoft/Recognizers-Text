@@ -8,8 +8,10 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         IEnumerable<Regex> TimeZoneRegexes { get; }
 
-        Regex CityTimeSuffixRegex { get; }
+        Regex LocationTimeSuffixRegex { get; }
 
         StringMatcher CityMatcher { get; }
+
+        List<string> AmbiguousTimezoneList { get; }
     }
 }

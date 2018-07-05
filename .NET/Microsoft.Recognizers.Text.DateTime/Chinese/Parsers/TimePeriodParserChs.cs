@@ -129,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             //the right side doesn't contain desc while the left side does
             if (rightResult.LowBound == -1 && leftResult.LowBound != -1 && rightResult.Hour <= leftResult.LowBound)
             {
-                rightResult.Hour += 12;
+                rightResult.Hour += Constants.HalfDayHourCount;
             }
 
             int day = refTime.Day,

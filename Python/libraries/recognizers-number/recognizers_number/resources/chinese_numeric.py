@@ -177,7 +177,7 @@ class ChineseNumeric:
     NumbersSpecialsPercentageRegex = f'({ZeroToNineFullHalfRegex}[\\.．]{ZeroToNineFullHalfRegex}|[1１][0０])\\s*成'
     SimpleSpecialsPercentageRegex = f'{ZeroToNineIntegerRegex}\\s*[点點]\\s*{ZeroToNineIntegerRegex}\\s*成'
     SpecialsFoldsPercentageRegex = f'半\\s*成|(?<=打)[对對]\\s*折|半\\s*折'
-    TillRegex = f'(到|至|--|-|—|——|~)'
+    TillRegex = f'(到|至|--|-|—|——|~|–)'
     MoreRegex = f'(大于|多于|高于|超过|大於|多於|高於|超過|>)'
     LessRegex = f'(小于|少于|低于|小於|少於|低於|不到|不足|<)'
     EqualRegex = f'(等于|等於|=)'
@@ -198,4 +198,5 @@ class ChineseNumeric:
     TwoNumberRangeRegex2 = f'({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})'
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})'
     TwoNumberRangeRegex4 = f'(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)'
+    AmbiguousFractionConnectorsRegex = f'^[.]'
 # pylint: enable=line-too-long

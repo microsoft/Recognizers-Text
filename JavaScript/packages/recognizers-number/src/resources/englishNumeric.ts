@@ -55,7 +55,7 @@ export namespace EnglishNumeric {
 	export const FractionNumberWithSuffixPercentage = `((${BaseNumbers.FractionNumberReplaceToken})\\s+of)`;
 	export const NumberWithPrefixPercentage = `(per cent of|percent of|percents of)(\\s*)(${BaseNumbers.NumberReplaceToken})`;
 	export const NumberWithPrepositionPercentage = `(${BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*(${BaseNumbers.NumberReplaceToken})`;
-	export const TillRegex = `(to|through|--|-|—|——|~)`;
+	export const TillRegex = `(to|through|--|-|—|——|~|–)`;
 	export const MoreRegex = `((bigger|greater|more|higher|larger)(\\s+than)?|above|over|>)`;
 	export const LessRegex = `((less|lower|smaller|fewer)(\\s+than)?|below|under|<)`;
 	export const EqualRegex = `(equal(s|ing)?(\\s+(to|than))?|=)`;
@@ -80,6 +80,7 @@ export namespace EnglishNumeric {
 	export const TwoNumberRangeRegex2 = `(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})\\s*(and|but|,)\\s*(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})`;
 	export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2})\\s*(and|but|,)\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2})`;
 	export const TwoNumberRangeRegex4 = `(from\\s+)?(?<number1>(${NumberSplitMark}(?!\\bfrom\\b).)+)\\s*${TillRegex}\\s*(the\\s+)?(?<number2>(${NumberSplitMark}.)+)`;
+	export const AmbiguousFractionConnectorsRegex = `(\\bin\\b)`;
 	export const DecimalSeparatorChar = '.';
 	export const FractionMarkerToken = 'over';
 	export const NonDecimalSeparatorChar = ',';

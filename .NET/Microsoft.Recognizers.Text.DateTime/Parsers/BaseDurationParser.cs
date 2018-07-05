@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     srcUnit = match.Groups["unit"].Value.ToLower();
-                    suffixStr = match.Groups["suffix"].Value.ToLower();
+                    suffixStr = match.Groups[Constants.SuffixGroupName].Value.ToLower();
                 }
 
                 if (this.config.UnitMap.ContainsKey(srcUnit))

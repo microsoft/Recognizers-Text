@@ -61,19 +61,21 @@ export class RegExpUtility {
 
         let negativeLookbehindRegexes = new Array<RegExp>();
 
+        let flags = regex.flags;
+
         let closePos = 0;
         let startPos = rawRegex.indexOf('(?<nlb__', 0);
         while (startPos >= 0) {
             closePos = this.getClosePos(rawRegex, startPos);
-            let nlbRegex = XRegExp(rawRegex.substring(startPos, closePos + 1), 'gis');
+            let nlbRegex = XRegExp(rawRegex.substring(startPos, closePos + 1), flags);
             let nextRegex = RegExpUtility.getNextRegex(rawRegex, startPos);
-            (nlbRegex as any).nextRegex = nextRegex ? XRegExp(nextRegex, 'gis') : null;
+            (nlbRegex as any).nextRegex = nextRegex ? XRegExp(nextRegex, flags) : null;
             negativeLookbehindRegexes.push(nlbRegex);
             rawRegex = rawRegex.substr(0, startPos) + rawRegex.substr(closePos + 1);
             startPos = rawRegex.indexOf('(?<nlb__', 0);
         }
 
-        let tempRegex = XRegExp(rawRegex, 'gis');
+        let tempRegex = XRegExp(rawRegex, flags);
         let tempMatches = RegExpUtility.getMatchesSimple(tempRegex, source);
         tempMatches.forEach(match => {
             let clean = true;

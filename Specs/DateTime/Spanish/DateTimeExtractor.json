@@ -1,638 +1,640 @@
-[{
-  "Input": "Voy a volver ahora",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ahora",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver tan pronto como sea posible",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tan pronto como sea posible",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Vamos a volver tan pronto como podamos",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tan pronto como podamos",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver lo mas pronto posible",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "lo mas pronto posible",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver ahora mismo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ahora mismo",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver justo ahora",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "justo ahora",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver en este momento",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "en este momento",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 15 a las 8:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 a las 8:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 15 a las 8:00:30",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 a las 8:00:30",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 15, 8pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15, 8pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 04/21/2016, 8:00pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "04/21/2016, 8:00pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 04/21/2016, 8:00:13pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "04/21/2016, 8:00:13pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 23 de Oct a las siete",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "23 de Oct a las siete",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 14 de Octubre 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de Octubre 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 14 de Octubre a las 8:00:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de Octubre a las 8:00:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 14 de Octubre, 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de Octubre, 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 14 de Octubre, 8:00:01am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de Octubre, 8:00:01am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver mañana 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mañana 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver mañana cerca de las 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mañana cerca de las 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver mañana para las 8:00am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mañana para las 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver mañana a las 8:00:05am",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mañana a las 8:00:05am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el próximo viernes a las tres y media",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próximo viernes a las tres y media",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 8pm del 15",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm del 15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las siete del 15",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete del 15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 8pm del próximo domingo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm del próximo domingo",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las 8pm de hoy",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm de hoy",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las siete menos cuarto de mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "siete menos cuarto de mañana",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 19:00, 2016-12-22",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19:00, 2016-12-22",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las 7 en punto mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7 en punto mañana",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver mañana por la mañana a las 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mañana por la mañana a las 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 7:00 el domingo a la tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7:00 el domingo a la tarde",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las cinco y veinte mañana por la mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cinco y veinte mañana por la mañana",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 14 de octubre 8:00, 14 de Octubre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "14 de octubre 8:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las 7, esta mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7, esta mañana",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver esta noche a las 8",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noche a las 8",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las 8pm de la tarde, Lunes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm de la tarde, Lunes",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 8pm de la tarde, 1ro de Enero",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm de la tarde, 1ro de Enero",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 8pm de la tarde, 1 de Enero",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm de la tarde, 1 de Enero",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las 10pm de esta noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10pm de esta noche",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver a las 10pm esta noche",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10pm esta noche",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 8am de esta mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8am de esta mañana",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 8pm de esta tarde",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm de esta tarde",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volví esta mañana a las 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta mañana a las 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volví esta mañana 7pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta mañana 7pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volví esta mañana a las siete",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta mañana a las siete",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volví esta mañana a las 7:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta mañana a las 7:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver esta noche a las 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noche a las 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volví esta noche a las 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noche a las 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "para dos personas esta noche a las 9:30 pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noche a las 9:30 pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "para dos personas esta noche a las 9:30:31 pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta noche a las 9:30:31 pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volveré al final del día",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "al final del día",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volveré al finalizar el día",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "al finalizar el día",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volveré al finalizar el día de mañana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "al finalizar el día de mañana",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volveré mañana al finalizar el día",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mañana al finalizar el día",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Volveré al finalizar el domingo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "al finalizar el domingo",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver el 5 a las 4 a.m.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5 a las 4 a.m.",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "Voy a volver 2016-12-16T12:23:59",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016-12-16T12:23:59",
-      "Type": "datetime"
-    }
-  ]
-}
+[
+  {
+    "Input": "Voy a volver ahora",
+    "Results": [
+      {
+        "Text": "ahora",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver tan pronto como sea posible",
+    "Results": [
+      {
+        "Text": "tan pronto como sea posible",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Vamos a volver tan pronto como podamos",
+    "Results": [
+      {
+        "Text": "tan pronto como podamos",
+        "Type": "datetime",
+        "Start": 15,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver lo mas pronto posible",
+    "Results": [
+      {
+        "Text": "lo mas pronto posible",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver ahora mismo",
+    "Results": [
+      {
+        "Text": "ahora mismo",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver justo ahora",
+    "Results": [
+      {
+        "Text": "justo ahora",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver en este momento",
+    "Results": [
+      {
+        "Text": "en este momento",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 15 a las 8:00",
+    "Results": [
+      {
+        "Text": "15 a las 8:00",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 15 a las 8:00:30",
+    "Results": [
+      {
+        "Text": "15 a las 8:00:30",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 15, 8pm",
+    "Results": [
+      {
+        "Text": "15, 8pm",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 04/21/2016, 8:00pm",
+    "Results": [
+      {
+        "Text": "04/21/2016, 8:00pm",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 04/21/2016, 8:00:13pm",
+    "Results": [
+      {
+        "Text": "04/21/2016, 8:00:13pm",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 23 de Oct a las siete",
+    "Results": [
+      {
+        "Text": "23 de Oct a las siete",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 14 de Octubre 8:00am",
+    "Results": [
+      {
+        "Text": "14 de Octubre 8:00am",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 14 de Octubre a las 8:00:00am",
+    "Results": [
+      {
+        "Text": "14 de Octubre a las 8:00:00am",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 14 de Octubre, 8:00am",
+    "Results": [
+      {
+        "Text": "14 de Octubre, 8:00am",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 14 de Octubre, 8:00:01am",
+    "Results": [
+      {
+        "Text": "14 de Octubre, 8:00:01am",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver mañana 8:00am",
+    "Results": [
+      {
+        "Text": "mañana 8:00am",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver mañana cerca de las 8:00am",
+    "Results": [
+      {
+        "Text": "mañana cerca de las 8:00am",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver mañana para las 8:00am",
+    "Results": [
+      {
+        "Text": "mañana para las 8:00am",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver mañana a las 8:00:05am",
+    "Results": [
+      {
+        "Text": "mañana a las 8:00:05am",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el próximo viernes a las tres y media",
+    "Results": [
+      {
+        "Text": "próximo viernes a las tres y media",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
+    "Results": [
+      {
+        "Text": "5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 56
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 8pm del 15",
+    "Results": [
+      {
+        "Text": "8pm del 15",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las siete del 15",
+    "Results": [
+      {
+        "Text": "siete del 15",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 8pm del próximo domingo",
+    "Results": [
+      {
+        "Text": "8pm del próximo domingo",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las 8pm de hoy",
+    "Results": [
+      {
+        "Text": "8pm de hoy",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las siete menos cuarto de mañana",
+    "Results": [
+      {
+        "Text": "siete menos cuarto de mañana",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 19:00, 2016-12-22",
+    "Results": [
+      {
+        "Text": "19:00, 2016-12-22",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las 7 en punto mañana",
+    "Results": [
+      {
+        "Text": "7 en punto mañana",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver mañana por la mañana a las 7",
+    "Results": [
+      {
+        "Text": "mañana por la mañana a las 7",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 7:00 el domingo a la tarde",
+    "Results": [
+      {
+        "Text": "7:00 el domingo a la tarde",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las cinco y veinte mañana por la mañana",
+    "Results": [
+      {
+        "Text": "cinco y veinte mañana por la mañana",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 14 de octubre 8:00, 14 de Octubre",
+    "Results": [
+      {
+        "Text": "14 de octubre 8:00",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las 7, esta mañana",
+    "Results": [
+      {
+        "Text": "7, esta mañana",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver esta noche a las 8",
+    "Results": [
+      {
+        "Text": "esta noche a las 8",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las 8pm de la tarde, Lunes",
+    "Results": [
+      {
+        "Text": "8pm de la tarde, Lunes",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 8pm de la tarde, 1ro de Enero",
+    "Results": [
+      {
+        "Text": "8pm de la tarde, 1ro de Enero",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 8pm de la tarde, 1 de Enero",
+    "Results": [
+      {
+        "Text": "8pm de la tarde, 1 de Enero",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las 10pm de esta noche",
+    "Results": [
+      {
+        "Text": "10pm de esta noche",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las 10pm esta noche",
+    "Results": [
+      {
+        "Text": "10pm esta noche",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 8am de esta mañana",
+    "Results": [
+      {
+        "Text": "8am de esta mañana",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 8pm de esta tarde",
+    "Results": [
+      {
+        "Text": "8pm de esta tarde",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Volví esta mañana a las 7",
+    "Results": [
+      {
+        "Text": "esta mañana a las 7",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Volví esta mañana 7pm",
+    "Results": [
+      {
+        "Text": "esta mañana 7pm",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Volví esta mañana a las siete",
+    "Results": [
+      {
+        "Text": "esta mañana a las siete",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Volví esta mañana a las 7:00",
+    "Results": [
+      {
+        "Text": "esta mañana a las 7:00",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver esta noche a las 7",
+    "Results": [
+      {
+        "Text": "esta noche a las 7",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Volví esta noche a las 7",
+    "Results": [
+      {
+        "Text": "esta noche a las 7",
+        "Type": "datetime",
+        "Start": 6,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "para dos personas esta noche a las 9:30 pm",
+    "Results": [
+      {
+        "Text": "esta noche a las 9:30 pm",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "para dos personas esta noche a las 9:30:31 pm",
+    "Results": [
+      {
+        "Text": "esta noche a las 9:30:31 pm",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Volveré al final del día",
+    "Results": [
+      {
+        "Text": "al final del día",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Volveré al finalizar el día",
+    "Results": [
+      {
+        "Text": "al finalizar el día",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Volveré al finalizar el día de mañana",
+    "Results": [
+      {
+        "Text": "al finalizar el día de mañana",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Volveré mañana al finalizar el día",
+    "Results": [
+      {
+        "Text": "mañana al finalizar el día",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Volveré al finalizar el domingo",
+    "Results": [
+      {
+        "Text": "al finalizar el domingo",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver el 5 a las 4 a.m.",
+    "Results": [
+      {
+        "Text": "5 a las 4 a.m.",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 2016-12-16T12:23:59",
+    "Results": [
+      {
+        "Text": "2016-12-16T12:23:59",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 19
+      }
+    ]
+  }
 ]

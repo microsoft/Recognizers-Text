@@ -1,7 +1,8 @@
-from typing import Dict, List
+from typing import Dict, List, Pattern
 
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
+from recognizers_text.utilities import RegExpUtility
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.portuguese.extractors import PortugueseNumberExtractor
 from recognizers_number_with_unit.number_with_unit.constants import Constants
@@ -26,6 +27,10 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
     def connector_token(self) -> str:
         return self._connector_token
 
+    @property
+    def compound_unit_connector_regex(self) -> Pattern:
+        return self._compound_unit_connector_regex
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Portuguese)
@@ -34,6 +39,7 @@ class PortugueseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConf
         self._build_prefix = PortugueseNumericWithUnit.BuildPrefix
         self._build_suffix = PortugueseNumericWithUnit.BuildSuffix
         self._connector_token = PortugueseNumericWithUnit.ConnectorToken
+        self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(PortugueseNumericWithUnit.CompoundUnitConnectorRegex)
 # pylint: enable=abstract-method
 
 class PortugueseAgeExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):

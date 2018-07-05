@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string FractionNumberWithSuffixPercentage = $@"(({BaseNumbers.FractionNumberReplaceToken})\s+of)";
 		public static readonly string NumberWithPrefixPercentage = $@"(per cent of|percent of|percents of)(\s*)({BaseNumbers.NumberReplaceToken})";
 		public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(in|out\s+of)\s*({BaseNumbers.NumberReplaceToken})";
-		public const string TillRegex = @"(to|through|--|-|—|——|~)";
+		public const string TillRegex = @"(to|through|--|-|—|——|~|–)";
 		public const string MoreRegex = @"((bigger|greater|more|higher|larger)(\s+than)?|above|over|>)";
 		public const string LessRegex = @"((less|lower|smaller|fewer)(\s+than)?|below|under|<)";
 		public const string EqualRegex = @"(equal(s|ing)?(\s+(to|than))?|=)";
@@ -89,6 +89,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
 		public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
 		public static readonly string TwoNumberRangeRegex4 = $@"(from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)";
+		public const string AmbiguousFractionConnectorsRegex = @"(\bin\b)";
 		public const char DecimalSeparatorChar = '.';
 		public const string FractionMarkerToken = "over";
 		public const char NonDecimalSeparatorChar = ',';

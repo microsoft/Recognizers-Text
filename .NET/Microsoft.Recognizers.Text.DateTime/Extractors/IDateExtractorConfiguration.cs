@@ -33,6 +33,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearSuffix { get; }
 
+        Regex MoreThanRegex { get; }
+
+        Regex LessThanRegex { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }
@@ -44,5 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         IImmutableDictionary<string, int> DayOfWeek { get; }
+
+        IImmutableDictionary<string, int> MonthOfYear { get; }
     }
 }

@@ -1,607 +1,572 @@
-[{
-  "TestType": "BasicTest",
-  "Input": "Volveré en pascuas",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+[
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en pascuas",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "",
+        "Value": {
+          "Success": true,
+          "Timex": "",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          },
+          "FutureValue": "0001-01-01T00:00:00",
+          "PastValue": "0001-01-01T00:00:00"
+        },
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 7,
+        "Text": "pascuas",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "",
-      "Value": {
-        "Success": true,
-        "Timex": "",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "0001-01-01"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en navidad",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-12-25",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-12-25",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          },
+          "FutureValue": "2016-12-25T00:00:00",
+          "PastValue": "2015-12-25T00:00:00"
         },
-        "PastResolution": {
-          "date": "0001-01-01"
-        },
-        "FutureValue": "0001-01-01T00:00:00",
-        "PastValue": "0001-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 7,
-      "Text": "pascuas",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en navidad",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 7,
+        "Text": "navidad",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-12-25",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-12-25",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-12-25"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en año nuevo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-01-01",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-01-01",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          },
+          "FutureValue": "2017-01-01T00:00:00",
+          "PastValue": "2016-01-01T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-12-25"
-        },
-        "FutureValue": "2016-12-25T00:00:00",
-        "PastValue": "2015-12-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 7,
-      "Text": "navidad",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en año nuevo",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 9,
+        "Text": "año nuevo",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-01-01",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-01-01",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-01-01"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en noche vieja",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-12-31",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-12-31",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          },
+          "FutureValue": "2016-12-31T00:00:00",
+          "PastValue": "2015-12-31T00:00:00"
         },
-        "PastResolution": {
-          "date": "2016-01-01"
-        },
-        "FutureValue": "2017-01-01T00:00:00",
-        "PastValue": "2016-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 9,
-      "Text": "año nuevo",
-      "Type": "date"
-    }
-  ]
-},
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en noche vieja",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 11,
+        "Text": "noche vieja",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-12-31",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-12-31",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-12-31"
+  {
+    "TestType": "BasicTest",
+    "Input": "volveré el dia de navidad",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-12-25",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-12-25",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          },
+          "FutureValue": "2016-12-25T00:00:00",
+          "PastValue": "2015-12-25T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-12-31"
-        },
-        "FutureValue": "2016-12-31T00:00:00",
-        "PastValue": "2015-12-31T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 11,
-      "Text": "noche vieja",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el dia de navidad",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 18,
+        "Length": 7,
+        "Text": "navidad",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-12-25",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-12-25",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-12-25"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el dia de accion de gracias",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-11-WXX-4-4",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-11-WXX-4-4",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          },
+          "FutureValue": "2016-11-24T00:00:00",
+          "PastValue": "2015-11-26T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-12-25"
-        },
-        "FutureValue": "2016-12-25T00:00:00",
-        "PastValue": "2015-12-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 18,
-      "Length": 7,
-      "Text": "navidad",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el dia de accion de gracias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 24,
+        "Text": "dia de accion de gracias",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-11-WXX-4-4",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-11-WXX-4-4",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-24"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en accion de gracias",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-11-WXX-4-4",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-11-WXX-4-4",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          },
+          "FutureValue": "2016-11-24T00:00:00",
+          "PastValue": "2015-11-26T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-11-26"
-        },
-        "FutureValue": "2016-11-24T00:00:00",
-        "PastValue": "2015-11-26T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 24,
-      "Text": "dia de accion de gracias",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en accion de gracias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 17,
+        "Text": "accion de gracias",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-11-WXX-4-4",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-11-WXX-4-4",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-24"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el dia del padre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-06-WXX-7-3",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-06-WXX-7-3",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          },
+          "FutureValue": "2017-06-18T00:00:00",
+          "PastValue": "2016-06-19T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-11-26"
-        },
-        "FutureValue": "2016-11-24T00:00:00",
-        "PastValue": "2015-11-26T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 17,
-      "Text": "accion de gracias",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el dia del padre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 13,
+        "Text": "dia del padre",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-06-WXX-7-3",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-06-WXX-7-3",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-06-18"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en Yuandan del próximo año",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "2017-01-01",
+        "Value": {
+          "Success": true,
+          "Timex": "2017-01-01",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          },
+          "FutureValue": "2017-01-01T00:00:00",
+          "PastValue": "2017-01-01T00:00:00"
         },
-        "PastResolution": {
-          "date": "2016-06-19"
-        },
-        "FutureValue": "2017-06-18T00:00:00",
-        "PastValue": "2016-06-19T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 13,
-      "Text": "dia del padre",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en Yuandan del próximo año",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 23,
+        "Text": "Yuandan del próximo año",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2017-01-01",
-      "Value": {
-        "Success": true,
-        "Timex": "2017-01-01",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-01-01"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volví el día de accion de gracias del 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "2010-11-WXX-4-4",
+        "Value": {
+          "Success": true,
+          "Timex": "2010-11-WXX-4-4",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          },
+          "FutureValue": "2010-11-25T00:00:00",
+          "PastValue": "2010-11-25T00:00:00"
         },
-        "PastResolution": {
-          "date": "2017-01-01"
-        },
-        "FutureValue": "2017-01-01T00:00:00",
-        "PastValue": "2017-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 20,
-      "Text": "Yuandan del próximo año",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volví el día de accion de gracias del 2010",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 9,
+        "Length": 33,
+        "Text": "día de accion de gracias del 2010",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2010-11-WXX-4-4",
-      "Value": {
-        "Success": true,
-        "Timex": "2010-11-WXX-4-4",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2010-11-25"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volví el día del padre del 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "2015-06-WXX-7-3",
+        "Value": {
+          "Success": true,
+          "Timex": "2015-06-WXX-7-3",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          },
+          "FutureValue": "2015-06-21T00:00:00",
+          "PastValue": "2015-06-21T00:00:00"
         },
-        "PastResolution": {
-          "date": "2010-11-25"
-        },
-        "FutureValue": "2010-11-25T00:00:00",
-        "PastValue": "2010-11-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 22,
-      "Text": "día de accion de gracias del 2010",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volví el día del padre del 2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 9,
+        "Length": 22,
+        "Text": "día del padre del 2015",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2015-06-WXX-7-3",
-      "Value": {
-        "Success": true,
-        "Timex": "2015-06-WXX-7-3",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2015-06-21"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en navidad",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-12-25",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-12-25",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          },
+          "FutureValue": "2016-12-25T00:00:00",
+          "PastValue": "2015-12-25T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-06-21"
-        },
-        "FutureValue": "2015-06-21T00:00:00",
-        "PastValue": "2015-06-21T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 20,
-      "Text": "día del padre del 2015",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en navidad",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 7,
+        "Text": "navidad",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-12-25",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-12-25",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-12-25"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el día de navidad",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-12-25",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-12-25",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          },
+          "FutureValue": "2016-12-25T00:00:00",
+          "PastValue": "2015-12-25T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-12-25"
-        },
-        "FutureValue": "2016-12-25T00:00:00",
-        "PastValue": "2015-12-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 9,
-      "Text": "navidad",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el día de navidad",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 18,
+        "Length": 7,
+        "Text": "navidad",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-12-25",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-12-25",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-12-25"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en Yuandan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-01-01",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-01-01",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          },
+          "FutureValue": "2017-01-01T00:00:00",
+          "PastValue": "2016-01-01T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-12-25"
-        },
-        "FutureValue": "2016-12-25T00:00:00",
-        "PastValue": "2015-12-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 13,
-      "Text": "navidad",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en Yuandan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 7,
+        "Text": "Yuandan",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-01-01",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-01-01",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-01-01"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el día de accion de gracias",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-11-WXX-4-4",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-11-WXX-4-4",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          },
+          "FutureValue": "2016-11-24T00:00:00",
+          "PastValue": "2015-11-26T00:00:00"
         },
-        "PastResolution": {
-          "date": "2016-01-01"
-        },
-        "FutureValue": "2017-01-01T00:00:00",
-        "PastValue": "2016-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 7,
-      "Text": "Yuandan",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el día de accion de gracias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 24,
+        "Text": "día de accion de gracias",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-11-WXX-4-4",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-11-WXX-4-4",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-24"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el día del padre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "XXXX-06-WXX-7-3",
+        "Value": {
+          "Success": true,
+          "Timex": "XXXX-06-WXX-7-3",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          },
+          "FutureValue": "2017-06-18T00:00:00",
+          "PastValue": "2016-06-19T00:00:00"
         },
-        "PastResolution": {
-          "date": "2015-11-26"
-        },
-        "FutureValue": "2016-11-24T00:00:00",
-        "PastValue": "2015-11-26T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 17,
-      "Text": "día de accion de gracias",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el día del padre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 13,
+        "Text": "día del padre",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-06-WXX-7-3",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-06-WXX-7-3",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-06-18"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en Yuandan del próximo año",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "2017-01-01",
+        "Value": {
+          "Success": true,
+          "Timex": "2017-01-01",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          },
+          "FutureValue": "2017-01-01T00:00:00",
+          "PastValue": "2017-01-01T00:00:00"
         },
-        "PastResolution": {
-          "date": "2016-06-19"
-        },
-        "FutureValue": "2017-06-18T00:00:00",
-        "PastValue": "2016-06-19T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 12,
-      "Text": "día del padre",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en Yuandan del próximo año",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 23,
+        "Text": "Yuandan del próximo año",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2017-01-01",
-      "Value": {
-        "Success": true,
-        "Timex": "2017-01-01",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-01-01"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el día de accion de gracias del 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "2010-11-WXX-4-4",
+        "Value": {
+          "Success": true,
+          "Timex": "2010-11-WXX-4-4",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          },
+          "FutureValue": "2010-11-25T00:00:00",
+          "PastValue": "2010-11-25T00:00:00"
         },
-        "PastResolution": {
-          "date": "2017-01-01"
-        },
-        "FutureValue": "2017-01-01T00:00:00",
-        "PastValue": "2017-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 20,
-      "Text": "Yuandan del próximo año",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el día de accion de gracias del 2010",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+        "ResolutionStr": "",
+        "Start": 11,
+        "Length": 33,
+        "Text": "día de accion de gracias del 2010",
+        "Type": "date"
+      }
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2010-11-WXX-4-4",
-      "Value": {
-        "Success": true,
-        "Timex": "2010-11-WXX-4-4",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2010-11-25"
+  {
+    "TestType": "BasicTest",
+    "Input": "Volví el dia del padre del 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "TimexStr": "2015-06-WXX-7-3",
+        "Value": {
+          "Success": true,
+          "Timex": "2015-06-WXX-7-3",
+          "IsLunar": false,
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          },
+          "FutureValue": "2015-06-21T00:00:00",
+          "PastValue": "2015-06-21T00:00:00"
         },
-        "PastResolution": {
-          "date": "2010-11-25"
-        },
-        "FutureValue": "2010-11-25T00:00:00",
-        "PastValue": "2010-11-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 22,
-      "Text": "día de accion de gracias del 2010",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volví el dia del padre del 2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2015-06-WXX-7-3",
-      "Value": {
-        "Success": true,
-        "Timex": "2015-06-WXX-7-3",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2015-06-21"
-        },
-        "PastResolution": {
-          "date": "2015-06-21"
-        },
-        "FutureValue": "2015-06-21T00:00:00",
-        "PastValue": "2015-06-21T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 20,
-      "Text": "dia del padre del 2015",
-      "Type": "date"
-    }
-  ]
-}
+        "ResolutionStr": "",
+        "Start": 9,
+        "Length": 22,
+        "Text": "dia del padre del 2015",
+        "Type": "date"
+      }
+    ]
+  }
 ]

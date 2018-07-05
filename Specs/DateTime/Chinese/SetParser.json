@@ -1,160 +1,170 @@
-[{
-  "Input": "事件 每天都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每天",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "set": "Set: P1D"
+[
+  {
+    "Input": "事件 每天都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每天",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1D"
-        }
+        "Start": 3,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每日都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每日",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "set": "Set: P1D"
+    ]
+  },
+  {
+    "Input": "事件每日都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每日",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1D"
-        }
+        "Start": 2,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "set": "Set: P1W"
+    ]
+  },
+  {
+    "Input": "事件每周都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每周",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1W"
-        }
+        "Start": 2,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每个星期都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每个星期",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "set": "Set: P1W"
+    ]
+  },
+  {
+    "Input": "事件每个星期都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每个星期",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1W"
-        }
+        "Start": 2,
+        "Length": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每个月都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每个月",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1M",
-        "FutureResolution": {
-          "set": "Set: P1M"
+    ]
+  },
+  {
+    "Input": "事件每个月都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每个月",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1M"
-        }
+        "Start": 2,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每年都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每年",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "set": "Set: P1Y"
+    ]
+  },
+  {
+    "Input": "事件每年都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每年",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1Y"
-        }
+        "Start": 2,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周一都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周一",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-1",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-1"
+    ]
+  },
+  {
+    "Input": "事件每周一都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每周一",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-1"
-        }
+        "Start": 2,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周一下午八点都发生",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周一下午八点",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-1T20",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-1T20"
+    ]
+  },
+  {
+    "Input": "事件每周一下午八点都发生",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "每周一下午八点",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T20",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T20"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T20"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-1T20"
-        }
+        "Start": 2,
+        "Length": 7
       }
-    }
-  ]
-}
+    ]
+  }
 ]

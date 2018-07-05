@@ -9,3 +9,8 @@ class Constants:
     SYS_UNIT_TEMPERATURE: str = 'builtin.unit.temperature'
     SYS_UNIT_VOLUME: str = 'builtin.unit.volume'
     SYS_UNIT_WEIGHT: str = 'builtin.unit.weight'
+    SYS_NUM: str = "builtin.num";
+
+    # For currencies without ISO codes, we use internal values prefixed by '_'. 
+    # These values should never be present in parse output.
+    FAKE_ISO_CODE_PREFIX = '_'

@@ -1,198 +1,200 @@
-[{
-  "Input": "saldré semanalmente",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "semanalmente",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saltré diariamente",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "diariamente",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saltré a diario",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a diario",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré todos los dias",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos los dias",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré cada mes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada mes",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré todos los meses",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos los meses",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré todos las semanas",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos las semanas",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré mensualmente",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "mensualmente",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré anualmente",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "anualmente",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré todos los años",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos los años",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "me iré cada dos dias",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada dos dias",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "me iré cada tres semanas",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada tres semanas",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "me iré cada 3 semanas",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada 3 semanas",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "me iré a las 3pm todos los dias",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3pm todos los dias",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "me iré todos los dias a las 3pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos los dias a las 3pm",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré cada 15/4",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada 15/4",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré todos los lunes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos los lunes",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "Input": "saldré cada lunes a las 4pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada lunes a las 4pm",
-      "Type": "set"
-    }
-  ]
-}
+[
+  {
+    "Input": "saldré semanalmente",
+    "Results": [
+      {
+        "Text": "semanalmente",
+        "Type": "set",
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "saltré diariamente",
+    "Results": [
+      {
+        "Text": "diariamente",
+        "Type": "set",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "saltré a diario",
+    "Results": [
+      {
+        "Text": "a diario",
+        "Type": "set",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "saldré todos los dias",
+    "Results": [
+      {
+        "Text": "todos los dias",
+        "Type": "set",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "saldré cada mes",
+    "Results": [
+      {
+        "Text": "cada mes",
+        "Type": "set",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "saldré todos los meses",
+    "Results": [
+      {
+        "Text": "todos los meses",
+        "Type": "set",
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "saldré todos las semanas",
+    "Results": [
+      {
+        "Text": "todos las semanas",
+        "Type": "set",
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "saldré mensualmente",
+    "Results": [
+      {
+        "Text": "mensualmente",
+        "Type": "set",
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "saldré anualmente",
+    "Results": [
+      {
+        "Text": "anualmente",
+        "Type": "set",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "saldré todos los años",
+    "Results": [
+      {
+        "Text": "todos los años",
+        "Type": "set",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "me iré cada dos dias",
+    "Results": [
+      {
+        "Text": "cada dos dias",
+        "Type": "set",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "me iré cada tres semanas",
+    "Results": [
+      {
+        "Text": "cada tres semanas",
+        "Type": "set",
+        "Start": 7,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "me iré cada 3 semanas",
+    "Results": [
+      {
+        "Text": "cada 3 semanas",
+        "Type": "set",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "me iré a las 3pm todos los dias",
+    "Results": [
+      {
+        "Text": "3pm todos los dias",
+        "Type": "set",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "me iré todos los dias a las 3pm",
+    "Results": [
+      {
+        "Text": "todos los dias a las 3pm",
+        "Type": "set",
+        "Start": 7,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "saldré cada 15/4",
+    "Results": [
+      {
+        "Text": "cada 15/4",
+        "Type": "set",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "saldré todos los lunes",
+    "Results": [
+      {
+        "Text": "todos los lunes",
+        "Type": "set",
+        "Start": 7,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "saldré cada lunes a las 4pm",
+    "Results": [
+      {
+        "Text": "cada lunes a las 4pm",
+        "Type": "set",
+        "Start": 7,
+        "Length": 20
+      }
+    ]
+  }
 ]

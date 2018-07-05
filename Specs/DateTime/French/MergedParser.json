@@ -1,549 +1,574 @@
-[{
-  "Input": "Changer 22 Juillet rencontre Bellevue a 22 Aout",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "22 Juillet",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-07-22",
-            "type": "date",
-            "value": "2016-07-22"
-          },
-          {
-            "timex": "XXXX-07-22",
-            "type": "date",
-            "value": "2017-07-22"
-          }
-        ]
-      }
+[
+  {
+    "Input": "Changer 22 Juillet rencontre Bellevue a 22 Aout",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Text": "22 Aout",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-08-22",
-            "type": "date",
-            "value": "2016-08-22"
-          },
-          {
-            "timex": "XXXX-08-22",
-            "type": "date",
-            "value": "2017-08-22"
-          }
-        ]
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "22 Juillet",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2016-07-22"
+            },
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2017-07-22"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 10
+      },
+      {
+        "Text": "22 Aout",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2016-08-22"
+            },
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2017-08-22"
+            }
+          ]
+        },
+        "Start": 40,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "planifier une reunion a 8pm chaque semaine ",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm",
-      "Type": "datetimeV2.time",
-      "Value": {
-        "values": [
-          {
-            "timex": "T20",
-            "type": "time",
-            "value": "20:00:00"
-          }
-        ]
-      }
+  {
+    "Input": "planifier une reunion a 8pm chaque semaine ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    {
-      "Text": "chaque semaine",
-      "Type": "datetimeV2.set",
-      "Value": {
-        "values": [
-          {
-            "timex": "P1W",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "8pm",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 3
+      },
+      {
+        "Text": "chaque semaine",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "apres 8pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "apres 8pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "T20",
-            "Mod": "after",
-            "type": "timerange",
-            "start": "20:00:00"
-          }
-        ]
+  {
+    "Input": "apres 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "apres 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "avant 8pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "avant 8pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "T20",
-            "Mod": "before",
-            "type": "timerange",
-            "end": "20:00:00"
-          }
-        ]
+  {
+    "Input": "avant 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "avant 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "20:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "depuis 8pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "depuis 8pm",
-      "Type": "datetimeV2.timerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "T20",
-            "Mod": "since",
-            "type": "timerange",
-            "start": "20:00:00"
-          }
-        ]
+  {
+    "Input": "depuis 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "depuis 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "20:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Vendredi d'apres-midis",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Vendredi d'apres-midis",
-      "Type": "datetimeV2.datetimerange",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-5TAF",
-            "type": "datetimerange",
-            "start": "2016-11-04 12:00:00",
-            "end": "2016-11-04 16:00:00"
-          },
-          {
-            "timex": "XXXX-WXX-5TAF",
-            "type": "datetimerange",
-            "start": "2016-11-11 12:00:00",
-            "end": "2016-11-11 16:00:00"
-          }
-        ]
+  {
+    "Input": "Vendredi d'apres-midis",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Vendredi d'apres-midis",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-04 12:00:00",
+              "end": "2016-11-04 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-11 12:00:00",
+              "end": "2016-11-11 16:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 22
       }
-    }
-  ]
-}
-,
-{
-  "Input": "organiser une réunion dans 3 semaines",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans 3 semaines",
-      "Type": "datetimeV2.daterange",
-	  "Value": {
-		"values": []
-	  }
-    }
-  ]
-}
-,
-{
-  "Input": "organiser une réunion dans 3 mois",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans 3 mois",
-      "Type": "datetimeV2.daterange",
-	  "Value": {
-		"values": []
-	  }
-    }
-  ]
-}
-,
-{
-  "Input": "organiser une réunion dans 3 annees",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dans 3 annees",
-      "Type": "datetimeV2.daterange",
-	  "Value": {
-		"values": []
-	  }
-    }
-  ]
-}
-,
-{
-  "Input": "2016-2-30",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016-2-30",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-02-30",
-            "type": "date",
-            "value": "not resolved"
-          }
-        ]
+  {
+    "Input": "organiser une réunion dans 3 semaines",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dans 3 semaines",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": []
+        },
+        "Start": 22,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "2015-1-32",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2015-1",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2015-01",
-            "type": "daterange",
-            "start": "2015-01-01",
-            "end": "2015-02-01"
-          }
-        ]
+  {
+    "Input": "organiser une réunion dans 3 mois",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dans 3 mois",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": []
+        },
+        "Start": 22,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11 / 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11 / 2016",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "organiser une réunion dans 3 annees",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dans 3 annees",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": []
+        },
+        "Start": 22,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11/ 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11/ 2016",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "2016-2-30",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016-2-30",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11 /2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11 /2016",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "2015-1-32",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2015-1",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015-01",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2015-02-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11-2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11-2016",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "Je serais sorti 11 / 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11 / 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 11  - 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "11  - 2016",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "Je serais sorti 11/ 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11/ 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016 / 11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016 / 11",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "Je serais sorti 11 /2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11 /2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016/11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016/11",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "Je serais sorti 11-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016 - 11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016 - 11",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "Je serais sorti 11  - 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11  - 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016-11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016-11",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "Je serais sorti 2016 / 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016 / 11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti 2016  -11",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2016  -11",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-11",
-            "type": "daterange",
-            "start": "2016-11-01",
-            "end": "2016-12-01"
-          }
-        ]
+  {
+    "Input": "Je serais sorti 2016/11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016/11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je serais sorti Septembre 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Septembre 2016",
-      "Type": "datetimeV2.daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2016-09",
-            "type": "daterange",
-            "start": "2016-09-01",
-            "end": "2016-10-01"
-          }
-        ]
+  {
+    "Input": "Je serais sorti 2016 - 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016 - 11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 9
       }
-    }
-  ]
-}	
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016-11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti 2016  -11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "2016  -11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serais sorti Septembre 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Septembre 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-09",
+              "type": "daterange",
+              "start": "2016-09-01",
+              "end": "2016-10-01"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  }
 ]

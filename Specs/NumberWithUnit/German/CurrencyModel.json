@@ -337,7 +337,7 @@
 {
   "Input": "zwei Euro fünfzig",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript,dotnet,java",
   "Results": [
     {
       "Text": "zwei Euro fünfzig",

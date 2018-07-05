@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     public class TestBase
     {
         private TestContext testContextInstance;
+
         public TestContext TestContext
         {
             get { return testContextInstance; }
@@ -62,19 +63,19 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestNumberWithUnit()
         {
             TestPreValidation();
-            ValidateResults(new string[] { ResolutionKey.Unit });
+            ValidateResults(new[] { ResolutionKey.Unit });
         }
 
         public void TestCurrency()
         {
             TestPreValidation();
-            ValidateResults(new string[] { ResolutionKey.Unit, ResolutionKey.IsoCurrency });
+            ValidateResults(new[] { ResolutionKey.Unit, ResolutionKey.IsoCurrency });
         }
 
         public void TestDateTime()
         {
             TestPreValidation();
-            
+
             var actualResults = TestContext.GetModelParseResults(TestSpec);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
@@ -87,17 +88,19 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
-                if (expected.Start != 0) Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
-                if (expected.End != 0) Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
+                Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
-                var actualValues = listValues.FirstOrDefault();
+                var actualValues = (values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>).ToList();
+                var expectedValues = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
-                var expectedValues = expectedObj.FirstOrDefault();
+                Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(TestSpec));
+                foreach (var t in expectedValues.Zip(actualValues, Tuple.Create))
+                {
+                   CollectionAssert.AreEqual(t.Item1, t.Item2, GetMessage(TestSpec)); 
+                }
 
-                CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
             }
         }
 
@@ -117,6 +120,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
+                Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
 
                 if (expected.ParentText != null)
                 {
@@ -136,6 +141,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 {
                     CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
                 }
+
             }
         }
 
@@ -157,7 +163,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.Type, actual.Type, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Length, actual.Length, GetMessage(TestSpec));
             }
+
         }
 
         public void TestDateTimeParser()
@@ -179,6 +188,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var actual = tuple.Item2;
                 Assert.AreEqual(expected.Type, actual.Type, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Length, actual.Length, GetMessage(TestSpec));
 
                 var actualValue = actual.Value as DateTimeResolutionResult;
                 var expectedValue = JsonConvert.DeserializeObject<DateTimeResolutionResult>(expected.Value.ToString());
@@ -202,6 +213,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     Assert.AreEqual(expectedValue.TimeZoneResolution.Value, actualValue.TimeZoneResolution.Value, GetMessage(TestSpec));
                     Assert.AreEqual(expectedValue.TimeZoneResolution.UtcOffsetMins, actualValue.TimeZoneResolution.UtcOffsetMins, GetMessage(TestSpec));
                 }
+
             }
         }
 
@@ -225,6 +237,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Type, actual.Type, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Length, actual.Length, GetMessage(TestSpec));
 
                 var values = actual.Value as IDictionary<string, object>;
                 if (values != null)
@@ -238,6 +252,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     {
                         CollectionAssert.AreEqual(results.Item1, results.Item2, GetMessage(TestSpec));
                     }
+
                 }
             }
         }
@@ -323,6 +338,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                     Assert.AreEqual(expected.Resolution[key], actual.Resolution[key], GetMessage(TestSpec));
                 }
+
             }
         }
 
@@ -330,5 +346,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         {
             return $"Input: \"{spec.Input}\"";
         }
+
     }
 }

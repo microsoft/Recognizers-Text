@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex TimeOfDayRegex { get; }
 
         public Regex GeneralEndingRegex { get; }
@@ -34,7 +38,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo; 
-            PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd; 
+            PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = FrenchTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = FrenchTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = FrenchTimePeriodExtractorConfiguration.TillRegex;
@@ -58,13 +64,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 timex = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (trimedText.EndsWith("apres-midi")||trimedText.EndsWith("apres midi") 
                 || trimedText.EndsWith("après midi") || trimedText.EndsWith("après-midi"))
             {
                 timex = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             } 
             else if (trimedText.EndsWith("soir") || trimedText.EndsWith("soiree") || trimedText.EndsWith("soirée"))

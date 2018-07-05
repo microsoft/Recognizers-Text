@@ -1,644 +1,674 @@
-[{
-  "Input": "Je reviendrai sur Yuandan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Yuandan",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
+[
+  {
+    "Input": "Je reviendrai sur Yuandan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "Yuandan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
         },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
+        "Start": 18,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur thanksgiving",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "thanksgiving",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-11-WXX-4-4",
-        "FutureResolution": {
-          "date": "2016-11-24"
+  {
+    "Input": "Je reviendrai sur thanksgiving",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "thanksgiving",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
         },
-        "PastResolution": {
-          "date": "2015-11-26"
-        }
+        "Start": 18,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur le jour de thanksgiving",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "jour de thanksgiving",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-11-WXX-4-4",
-        "FutureResolution": {
-          "date": "2016-11-24"
+  {
+    "Input": "Je reviendrai sur le jour de thanksgiving",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "jour de thanksgiving",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
         },
-        "PastResolution": {
-          "date": "2015-11-26"
-        }
+        "Start": 21,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur fete des peres",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fete des peres",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-06-WXX-7-3",
-        "FutureResolution": {
-          "date": "2017-06-18"
+  {
+    "Input": "Je reviendrai sur fete des peres",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fete des peres",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
         },
-        "PastResolution": {
-          "date": "2016-06-19"
-        }
+        "Start": 18,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur fete des meres",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fete des meres",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-05-WXX-7-2",
-        "FutureResolution": {
-          "date": "2017-05-14"
+  {
+    "Input": "Je reviendrai sur fete des meres",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fete des meres",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-WXX-7-2",
+          "FutureResolution": {
+            "date": "2017-05-14"
+          },
+          "PastResolution": {
+            "date": "2016-05-08"
+          }
         },
-        "PastResolution": {
-          "date": "2016-05-08"
-        }
+        "Start": 18,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur jour de thanks giving 2010",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "jour de thanks giving 2010",
-      "Type": "date",
-      "Value": {
-        "Timex": "2010-11-WXX-4-4",
-        "FutureResolution": {
-          "date": "2010-11-25"
+  {
+    "Input": "Je reviendrai sur jour de thanks giving 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "jour de thanks giving 2010",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          }
         },
-        "PastResolution": {
-          "date": "2010-11-25"
-        }
+        "Start": 18,
+        "Length": 26
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur noel",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "noel",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-25",
-        "FutureResolution": {
-          "date": "2016-12-25"
+  {
+    "Input": "Je reviendrai sur noel",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "noel",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-25"
-        }
+        "Start": 18,
+        "Length": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur la veille de noel",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "veille de noel",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-24",
-        "FutureResolution": {
-          "date": "2016-12-24"
+  {
+    "Input": "Je reviendrai sur la veille de noel",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "veille de noel",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-24",
+          "FutureResolution": {
+            "date": "2016-12-24"
+          },
+          "PastResolution": {
+            "date": "2015-12-24"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-24"
-        }
+        "Start": 21,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur reveillon de noel",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "reveillon de noel",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-24",
-        "FutureResolution": {
-          "date": "2016-12-24"
+  {
+    "Input": "Je reviendrai sur reveillon de noel",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "reveillon de noel",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-24",
+          "FutureResolution": {
+            "date": "2016-12-24"
+          },
+          "PastResolution": {
+            "date": "2015-12-24"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-24"
-        }
+        "Start": 18,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur le nouvel an",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "nouvel an",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
+  {
+    "Input": "Je reviendrai sur le nouvel an",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "nouvel an",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
         },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
+        "Start": 21,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur fete des peres de 2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fete des peres de 2015",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-06-WXX-7-3",
-        "FutureResolution": {
-          "date": "2015-06-21"
+  {
+    "Input": "Je reviendrai sur fete des peres de 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fete des peres de 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
         },
-        "PastResolution": {
-          "date": "2015-06-21"
-        }
+        "Start": 18,
+        "Length": 22
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviendrai sur la saint-sylvestre",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "la saint-sylvestre",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-31",
-        "FutureResolution": {
-          "date": "2016-12-31"
+  {
+    "Input": "Je reviendrai sur la saint-sylvestre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "la saint-sylvestre",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-31"
-        }
+        "Start": 18,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reveindrai sur réveillon de Nouvel an",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "réveillon de Nouvel an",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-31",
-        "FutureResolution": {
-          "date": "2016-12-31"
+  {
+    "Input": "Je reveindrai sur réveillon de Nouvel an",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "réveillon de Nouvel an",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-31"
-        }
+        "Start": 18,
+        "Length": 22
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur noël",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "noël",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-25",
-        "FutureResolution": {
-          "date": "2016-12-25"
+  {
+    "Input": "Je reviens sur noël",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "noël",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-25"
-        }
+        "Start": 15,
+        "Length": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur yuandan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "yuandan",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
+  {
+    "Input": "Je reviens sur yuandan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "yuandan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
         },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
+        "Start": 15,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur nouvel an chinois",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "nouvel an chinois",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
+  {
+    "Input": "Je reviens sur nouvel an chinois",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "nouvel an chinois",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
         },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
+        "Start": 15,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur le jour de thanks giving",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "jour de thanks giving",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-11-WXX-4-4",
-        "FutureResolution": {
-          "date": "2016-11-24"
+  {
+    "Input": "Je reviens sur le jour de thanks giving",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "jour de thanks giving",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
         },
-        "PastResolution": {
-          "date": "2015-11-26"
-        }
+        "Start": 18,
+        "Length": 21
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur l'action de grace",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "l'action de grace",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-11-WXX-4-4",
-        "FutureResolution": {
-          "date": "2016-11-24"
+  {
+    "Input": "Je reviens sur l'action de grace",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "l'action de grace",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
         },
-        "PastResolution": {
-          "date": "2015-11-26"
-        }
+        "Start": 15,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur thanksgiving",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "thanksgiving",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-11-WXX-4-4",
-        "FutureResolution": {
-          "date": "2016-11-24"
+  {
+    "Input": "Je reviens sur thanksgiving",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "thanksgiving",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2016-11-24"
+          },
+          "PastResolution": {
+            "date": "2015-11-26"
+          }
         },
-        "PastResolution": {
-          "date": "2015-11-26"
-        }
+        "Start": 15,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur fete des peres",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fete des peres",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-06-WXX-7-3",
-        "FutureResolution": {
-          "date": "2017-06-18"
+  {
+    "Input": "Je reviens sur fete des peres",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fete des peres",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
         },
-        "PastResolution": {
-          "date": "2016-06-19"
-        }
+        "Start": 15,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur fete des meres",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fete des meres",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-05-WXX-7-2",
-        "FutureResolution": {
-          "date": "2017-05-14"
+  {
+    "Input": "Je reviens sur fete des meres",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fete des meres",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-WXX-7-2",
+          "FutureResolution": {
+            "date": "2017-05-14"
+          },
+          "PastResolution": {
+            "date": "2016-05-08"
+          }
         },
-        "PastResolution": {
-          "date": "2016-05-08"
-        }
+        "Start": 15,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur fete du travail",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fete du travail",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-09-WXX-1-1",
-        "FutureResolution": {
-          "date": "2017-09-04"
+  {
+    "Input": "Je reviens sur fete du travail",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fete du travail",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-09-WXX-1-1",
+          "FutureResolution": {
+            "date": "2017-09-04"
+          },
+          "PastResolution": {
+            "date": "2016-09-05"
+          }
         },
-        "PastResolution": {
-          "date": "2016-09-05"
-        }
+        "Start": 15,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Je reviens sur le jour de thanks giving 2010",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "jour de thanks giving 2010",
-      "Type": "date",
-      "Value": {
-        "Timex": "2010-11-WXX-4-4",
-        "FutureResolution": {
-          "date": "2010-11-25"
+  {
+    "Input": "Je reviens sur le jour de thanks giving 2010",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "jour de thanks giving 2010",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-11-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-11-25"
+          },
+          "PastResolution": {
+            "date": "2010-11-25"
+          }
         },
-        "PastResolution": {
-          "date": "2010-11-25"
-        }
+        "Start": 18,
+        "Length": 26
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je reviens sur fete des peres 2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "fete des peres 2015",
-      "Type": "date",
-      "Value": {
-        "Timex": "2015-06-WXX-7-3",
-        "FutureResolution": {
-          "date": "2015-06-21"
+  {
+    "Input": "je reviens sur fete des peres 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fete des peres 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
         },
-        "PastResolution": {
-          "date": "2015-06-21"
-        }
+        "Start": 15,
+        "Length": 19
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je reviens sur noel",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "noel",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-25",
-        "FutureResolution": {
-          "date": "2016-12-25"
+  {
+    "Input": "je reviens sur noel",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "noel",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-25"
-        }
+        "Start": 15,
+        "Length": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je reviens sur la veille de noel",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "veille de noel",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-24",
-        "FutureResolution": {
-          "date": "2016-12-24"
+  {
+    "Input": "je reviens sur la veille de noel",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "veille de noel",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-24",
+          "FutureResolution": {
+            "date": "2016-12-24"
+          },
+          "PastResolution": {
+            "date": "2015-12-24"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-24"
-        }
+        "Start": 18,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je reviens sur reveillon de noel",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "reveillon de noel",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-12-24",
-        "FutureResolution": {
-          "date": "2016-12-24"
+  {
+    "Input": "je reviens sur reveillon de noel",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "reveillon de noel",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-24",
+          "FutureResolution": {
+            "date": "2016-12-24"
+          },
+          "PastResolution": {
+            "date": "2015-12-24"
+          }
         },
-        "PastResolution": {
-          "date": "2015-12-24"
-        }
+        "Start": 15,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "je reviens sur nouvel an",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "nouvel an",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-01-01",
-        "FutureResolution": {
-          "date": "2017-01-01"
+  {
+    "Input": "je reviens sur nouvel an",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "nouvel an",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
         },
-        "PastResolution": {
-          "date": "2016-01-01"
-        }
+        "Start": 15,
+        "Length": 9
       }
-    }
-  ]
-}
+    ]
+  }
 ]

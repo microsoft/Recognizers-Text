@@ -142,14 +142,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var ers = extractor.Extract(trimedText, reference);
                     foreach (var er in ers)
                     {
-                        if (er.Start <= match.Index)
+                        if (er.Start <= match.Index && er.Text.Contains(match.Groups["weekday"].Value))
                         {
                             var len = (er.Length ?? 0) + 1;
-                            if (match.Groups["prefix"].ToString() != string.Empty)
+                            if (match.Groups[Constants.PrefixGroupName].ToString() != string.Empty)
                             {
-                                len += match.Groups["prefix"].ToString().Length;
+                                len += match.Groups[Constants.PrefixGroupName].ToString().Length;
                             }
-                            ret.Add(new Token(er.Start ?? 0, (er.Start + len) ?? 0));
+                            ret.Add(new Token(er.Start ?? 0, er.Start + len ?? 0));
                         }
                     }
                 }
