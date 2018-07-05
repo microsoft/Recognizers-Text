@@ -1555,4 +1555,20 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "I will leave in 3 weeks",
+    "Context": {
+      "ReferenceDateTime": "2018-06-20T00:00:00"
+    },
+    "NotSupported": "python,java,javascript",
+    "Results": [
+      {
+        "Text": "in 3 weeks",
+        "Type": "date",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  }
 ]

@@ -654,6 +654,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
@@ -1483,6 +1484,7 @@
   },
   {
     "Input": "I'll be out in 3 years",
+    "NotSupported": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3995,7 +3997,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {

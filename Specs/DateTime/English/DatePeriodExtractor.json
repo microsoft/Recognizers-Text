@@ -1882,14 +1882,17 @@
   },
   {
     "Input": "I'll be out in 3 years",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "I'll be out in 3 weeks",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "I'll be out in 3 months",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
