@@ -37,6 +37,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex LessThanRegex { get; }
 
+        Regex InConnectorRegex { get; }
+
+        Regex RangeUnitRegex { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }

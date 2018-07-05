@@ -229,37 +229,23 @@
   },
   {
     "Input": "Je serai dehors dans 3 annees",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "dans 3 annees",
-        "Type": "daterange",
-        "Start": 16,
-        "Length": 13
-      }
-    ]
+    "NotSupported": "python, javascript, java",
+    "Results": []
   },
   {
     "Input": "Je serai dehors dans 3 semaines",
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "dans 3 semaines",
-        "Type": "daterange",
-        "Start": 16,
-        "Length": 15
-      }
-    ]
+    "NotSupported": "python, javascript, java",
+    "Results": []
   },
   {
     "Input": "Je serai dehors dans 3 mois",
-    "NotSupported": "python",
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
-        "Text": "dans 3 mois",
+        "Text": "mois",
         "Type": "daterange",
-        "Start": 16,
-        "Length": 11
+        "Start": 23,
+        "Length": 4
       }
     ]
   },

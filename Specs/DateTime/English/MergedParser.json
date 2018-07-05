@@ -475,17 +475,17 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "in 3 weeks",
-        "Type": "datetimeV2.daterange",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
-              "timex": "(2016-11-22,2016-11-29,P1W)",
-              "type": "daterange",
-              "start": "2016-11-22",
-              "end": "2016-11-29"
+              "timex": "2016-11-28",
+              "type": "date",
+              "value": "2016-11-28"
             }
           ]
         },
@@ -499,17 +499,17 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "in 3 months",
-        "Type": "datetimeV2.daterange",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
-              "timex": "(2017-01-08,2017-02-08,P1M)",
-              "type": "daterange",
-              "start": "2017-01-08",
-              "end": "2017-02-08"
+              "timex": "2017-02-07",
+              "type": "date",
+              "value": "2017-02-07"
             }
           ]
         },
@@ -519,26 +519,26 @@
     ]
   },
   {
-    "Input": "I'll be out in 3 year",
+    "Input": "I'll be out in 3 years",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "in 3 year",
-        "Type": "datetimeV2.daterange",
+        "Text": "in 3 years",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
-              "timex": "(2018-11-08,2019-11-08,P1Y)",
-              "type": "daterange",
-              "start": "2018-11-08",
-              "end": "2019-11-08"
+              "timex": "2019-11-07",
+              "type": "date",
+              "value": "2019-11-07"
             }
           ]
         },
         "Start": 12,
-        "Length": 9
+        "Length": 10
       }
     ]
   },
@@ -4059,6 +4059,156 @@
         },
         "Start": 18,
         "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 3 hours",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript,java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 3 hours",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-05T03:00:00",
+              "type": "datetime",
+              "value": "2018-07-05 03:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 weeks",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript,java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 2 weeks",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-19",
+              "type": "date",
+              "value": "2018-07-19"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 days",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript,java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 2 days",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 months",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript,java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 2 months",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-09-05",
+              "type": "date",
+              "value": "2018-09-05"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 years",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript,java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 2 years",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020-07-05",
+              "type": "date",
+              "value": "2020-07-05"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 days from today",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript,java",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2 days from today",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 17
       }
     ]
   }

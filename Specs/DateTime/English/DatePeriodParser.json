@@ -654,25 +654,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "in two weeks",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-11-15,2016-11-22,P1W)",
-          "FutureResolution": {
-            "startDate": "2016-11-15",
-            "endDate": "2016-11-22"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-15",
-            "endDate": "2016-11-22"
-          }
-        },
-        "Start": 19,
-        "Length": 12
-      }
-    ]
+    "NotSupported": "javascript, python, java",
+    "Results": []
   },
   {
     "Input": "next 2 days",
@@ -1500,29 +1483,12 @@
     ]
   },
   {
-    "Input": "I'll be out in 3 year",
+    "Input": "I'll be out in 3 years",
+    "NotSupported": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "in 3 year",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2018-11-08,2019-11-08,P1Y)",
-          "FutureResolution": {
-            "startDate": "2018-11-08",
-            "endDate": "2019-11-08"
-          },
-          "PastResolution": {
-            "startDate": "2018-11-08",
-            "endDate": "2019-11-08"
-          }
-        },
-        "Start": 12,
-        "Length": 9
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "I'll be out past 3 weeks",
@@ -4031,26 +3997,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
-    "Results": [
-      {
-        "Text": "in couple of weeks",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-11-15,2016-11-22,P1W)",
-          "FutureResolution": {
-            "startDate": "2016-11-15",
-            "endDate": "2016-11-22"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-15",
-            "endDate": "2016-11-22"
-          }
-        },
-        "Start": 19,
-        "Length": 18
-      }
-    ]
+    "NotSupported": "javascript, python, java",
+    "Results": []
   },
   {
     "Input": "I'll be out 2016 june",

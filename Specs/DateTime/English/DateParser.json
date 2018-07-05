@@ -2803,5 +2803,29 @@
         "Length": 25
       }
     ]
+  },
+  {
+    "Input": "I will leave in 3 weeks",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "in 3 weeks",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-07-26",
+          "FutureResolution": {
+            "date": "2018-07-26"
+          },
+          "PastResolution": {
+            "date": "2018-07-26"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
   }
 ]

@@ -357,19 +357,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
                     continue;
                 }
-
-                // in Range Weeks should be handled as dateRange here
-                match = Regex.Match(beforeStr, config.InConnectorRegex.ToString(),
-                    RegexOptions.RightToLeft | config.InConnectorRegex.Options);
-                if (MatchPrefixRegexInSegment(beforeStr, match))
-                {
-                    var startToken = match.Index;
-                    match = config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
-                    if (match.Success)
-                    {
-                        ret.Add(new Token(startToken, duration.End));
-                    }
-                }
             }
 
             return ret;

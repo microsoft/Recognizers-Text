@@ -827,5 +827,27 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "I will leave in 2 minutes",
+    "Results": [
+      {
+        "Text": "in 2 minutes",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 hours",
+    "Results": [
+      {
+        "Text": "in 2 hours",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
   }
 ]
