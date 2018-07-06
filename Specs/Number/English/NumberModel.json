@@ -1882,5 +1882,215 @@
 {
   "Input": "1m isn't a number.",
   "Results": []
+},
+{
+  "Input": "I can give you 3 hundred and 21 yuan.",
+  "NotSupported": "javascript, java, python",
+  "Results": [
+    {
+      "Text": "3 hundred and 21",
+      "Start": 15,
+      "End": 30,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "321"
+      }
+    }
+  ]
+},
+{
+  "Input": "4 thousand 3 hundred and 21 is a valid number.",
+  "NotSupported": "javascript, java, python",
+  "Results": [
+    {
+      "Text": "4 thousand 3 hundred and 21",
+      "Start": 0,
+      "End": 26,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4321"
+      }
+    }
+  ]
+},
+{
+  "Input": "4 thousand 3 hundred and 0 are two valid numbers.",
+  "NotSupported": "javascript, java, python",
+  "Results": [
+    {
+      "Text": "4 thousand 3 hundred",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4300"
+      }
+    },
+    {
+      "Text": "0",
+      "Start": 25,
+      "End": 25,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0"
+      }
+    },
+    {
+      "Text": "two",
+      "Start": 31,
+      "End": 33,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+},
+{
+  "Input": "4000 3 hundred and 21 are two valid numbers.",
+  "NotSupported": "javascript, java, python",
+  "Results": [
+    {
+      "Text": "4000",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4000"
+      }
+    },
+    {
+      "Text": "3 hundred and 21",
+      "Start": 5,
+      "End": 20,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "321"
+      }
+    },
+    {
+      "Text": "two",
+      "Start": 26,
+      "End": 28,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+},
+{
+  "Input": "3 hundred and 2 hundred are two valid numbers.",
+  "NotSupported": "javascript, java, python",
+  "Results": [
+    {
+      "Text": "3 hundred",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "300"
+      }
+    },
+    {
+      "Text": "2 hundred",
+      "Start": 14,
+      "End": 22,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200"
+      }
+    },
+    {
+      "Text": "two",
+      "Start": 28,
+      "End": 30,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+},
+{
+  "Input": "3 hundred and 2.12 hundred are two valid numbers.",
+  "NotSupported": "javascript, java, python",
+  "Results": [
+    {
+      "Text": "3 hundred",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "300"
+      }
+    },
+    {
+      "Text": "2.12 hundred",
+      "Start": 14,
+      "End": 25,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "212"
+      }
+    },
+    {
+      "Text": "two",
+      "Start": 31,
+      "End": 33,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+},
+{
+  "Input": "3 hundred and negative one are two valid numbers.",
+  "NotSupported": "javascript, java, python",
+  "Results": [
+    {
+      "Text": "3 hundred",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "300"
+      }
+    },
+    {
+      "Text": "negative one",
+      "Start": 14,
+      "End": 25,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1"
+      }
+    },
+    {
+      "Text": "two",
+      "Start": 31,
+      "End": 33,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+},
+{
+  "Input": "3 hundred and one is a valid numbers.",
+  "NotSupported": "javascript, java, python",
+  "Results": [
+    {
+      "Text": "3 hundred and one",
+      "Start": 0,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "301"
+      }
+    }
+  ]
 }
 ]

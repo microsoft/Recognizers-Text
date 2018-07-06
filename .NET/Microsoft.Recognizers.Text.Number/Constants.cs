@@ -25,5 +25,7 @@ namespace Microsoft.Recognizers.Text.Number
         // Fraction
         public const string FRACTION_IN_PURENUMBER = "FracNum";
         public const string FRACTION_WITH_CONNECTOR = "FracEng";
+
+        public const string INTEGER_PREFIX = "Integer";
     }
 }
