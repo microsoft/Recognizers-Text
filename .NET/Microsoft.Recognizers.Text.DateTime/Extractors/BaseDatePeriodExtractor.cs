@@ -71,11 +71,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> MatchYearPeriod(string text, DateObject referece)
         {
             var ret = new List<Token>();
+            var metadata = new Metadata()
+            {
+                PossiblyIncludePeriodEnd = true
+            };
 
             var matches = this.config.YearPeriodRegex.Matches(text);
             foreach (Match match in matches)
             {
                 var matchYear = this.config.YearRegex.Match(match.Value);
+
+                // Single year cases like "1998"
                 if (matchYear.Success && matchYear.Length == match.Value.Length)
                 {
                     var year = ((BaseDateExtractor)this.config.DatePointExtractor).GetYearFromText(matchYear);
@@ -83,8 +89,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         continue;
                     }
+                    else
+                    {
+                        // Possibly include period end only apply for cases like "2014-2018", which are not single year cases
+                        metadata.PossiblyIncludePeriodEnd = false;
+                    }
                 }
-                ret.Add(new Token(match.Index, match.Index + match.Length));
+
+                ret.Add(new Token(match.Index, match.Index + match.Length, metadata));
             }
 
             return ret;
@@ -132,13 +144,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> MergeTwoTimePoints(string text, DateObject reference)
         {
             var er = this.config.DatePointExtractor.Extract(text, reference);
-
+            
             return MergeMultipleExtractions(text, er);
         }
 
         private List<Token> MergeMultipleExtractions(string text, List<ExtractResult> extractionResults)
         {
             var ret = new List<Token>();
+            var metadata = new Metadata()
+            {
+                PossiblyIncludePeriodEnd = true
+            };
 
             if (extractionResults.Count <= 1)
             {
@@ -172,7 +188,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         periodBegin = fromIndex;
                     }
 
-                    ret.Add(new Token(periodBegin, periodEnd));
+                    ret.Add(new Token(periodBegin, periodEnd, metadata));
 
                     // merge two tokens here, increase the index by two
                     idx += 2;
@@ -189,7 +205,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (this.config.GetBetweenTokenIndex(beforeStr, out int beforeIndex))
                     {
                         periodBegin = beforeIndex;
-                        ret.Add(new Token(periodBegin, periodEnd));
+                        ret.Add(new Token(periodBegin, periodEnd, metadata));
 
                         // merge two tokens here, increase the index by two
                         idx += 2;

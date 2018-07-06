@@ -255,5 +255,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         {
             base.TestDateTimeAlt();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelExperimentalMode-English.csv", "DateTimeModelExperimentalMode-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimeModelExperimentalMode()
+        {
+            base.TestDateTimeAlt();
+        }
     }
 }
