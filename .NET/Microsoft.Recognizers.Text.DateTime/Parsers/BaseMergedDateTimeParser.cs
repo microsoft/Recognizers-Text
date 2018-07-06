@@ -309,7 +309,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 values["end"] = FormatUtil.LuisDate(endDate);
                             }
                         }
-                            
                     }
 
                     slot.Value = value;

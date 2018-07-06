@@ -119,5 +119,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Timex
         public static readonly string[] DatePeriodTimexSplitter = new string[] { ",", "(", ")" };
+        public const string TimexYear = "Y";
+        public const string TimexMonth = "M";
+        public const string TimexWeek = "W";
+        public const string TimexDay = "D";
     }
 }
