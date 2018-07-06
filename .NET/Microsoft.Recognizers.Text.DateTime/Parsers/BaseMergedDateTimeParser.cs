@@ -222,6 +222,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr = SetParseResult(pr, hasModifier);
             }
 
+            // In this version, ExperimentalMode only cope with the "IncludePeriodEnd" case
+            if ((this.Config.Options & DateTimeOptions.ExperimentalMode) != 0)
+            {
+                if (pr.Metadata != null && pr.Metadata.PossiblyIncludePeriodEnd)
+                {
+                    pr = SetInclusivePeriodEnd(pr);
+                }
+            }
+
             if ((this.Config.Options & DateTimeOptions.EnablePreview) != 0)
             {
                 pr.Length += originText.Length - pr.Text.Length;
@@ -260,6 +269,53 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Change the type at last for the after or before modes
             slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, hasMod)}";
+            return slot;
+        }
+
+        public DateTimeParseResult SetInclusivePeriodEnd(DateTimeParseResult slot)
+        {
+            if (slot.Type == $"{ParserTypeName}.{Constants.SYS_DATETIME_DATEPERIOD}")
+            {
+                var timexComponents = slot.TimexStr.Split(Constants.DatePeriodTimexSplitter, StringSplitOptions.RemoveEmptyEntries);
+
+                // Only handle DatePeriod like "(StartDate,EndDate,Duration)"
+                if (timexComponents.Length == 3)
+                {
+                    var startDate = DateObject.Parse(timexComponents[0]);
+                    var endDate = DateObject.Parse(timexComponents[1]);
+                    var durationStr = timexComponents[2];
+                    var datePeriodTimexType = TimexUtility.GetDatePeriodTimexType(durationStr);
+                    endDate = TimexUtility.OffsetDateObject(endDate, offset: 1, timexType: datePeriodTimexType);
+
+                    slot.TimexStr = TimexUtility.GenerateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
+
+                    var value = (SortedDictionary<string, object>)slot.Value;
+
+                    if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
+                    {
+                        var valueSet = value[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
+
+                        if (valueSet != null && valueSet.Any())
+                        {
+                            var values = valueSet[0];
+
+                            if (values.ContainsKey("timex"))
+                            {
+                                values["timex"] = slot.TimexStr;
+                            }
+
+                            if (values.ContainsKey("end"))
+                            {
+                                values["end"] = FormatUtil.LuisDate(endDate);
+                            }
+                        }
+                            
+                    }
+
+                    slot.Value = value;
+                }
+            }
+
             return slot;
         }
 

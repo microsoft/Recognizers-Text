@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 if (innerResult.Success)
-                {
+                {                                     
                     if (innerResult.Mod == Constants.BEFORE_MOD)
                     {
                         innerResult.FutureResolution = new Dictionary<string, string>
@@ -121,6 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Length = er.Length,
                 Type = er.Type,
                 Data = er.Data,
+                Metadata = er.Metadata,
                 Value = value,
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""

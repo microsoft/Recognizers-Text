@@ -10,6 +10,11 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
+        private static readonly HashSet<char> NumberComponents = new HashSet<char>()
+        {
+            '0','1','2','3','4','5','6','7','8','9','.'
+        };
+
         public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType)
         {
             var datePeriodTimex = string.Empty;
@@ -87,6 +92,51 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return date.Year.ToString("D4");
             }
+        }
+        
+        public static DatePeriodTimexType GetDatePeriodTimexType(string durationTimex)
+        {
+            var minimumUnit = durationTimex.Substring(durationTimex.Length - 1);
+            var ret = DatePeriodTimexType.ByDay;
+
+            if (minimumUnit == "Y")
+            {
+                ret = DatePeriodTimexType.ByYear;
+            }
+            else if (minimumUnit == "M")
+            {
+                ret = DatePeriodTimexType.ByMonth;
+            }
+            else if (minimumUnit == "W")
+            {
+                ret = DatePeriodTimexType.ByWeek;
+            }
+
+            return ret;
+        }
+
+        public static DateObject OffsetDateObject(DateObject date, int offset, DatePeriodTimexType timexType)
+        {
+            var ret = date;
+
+            if (timexType == DatePeriodTimexType.ByYear)
+            {
+                ret = date.AddYears(offset);
+            }
+            else if (timexType == DatePeriodTimexType.ByMonth)
+            {
+                ret = date.AddMonths(offset);
+            }
+            else if (timexType == DatePeriodTimexType.ByWeek)
+            {
+                ret = date.AddDays(7 * offset);
+            }
+            else if (timexType == DatePeriodTimexType.ByDay)
+            {
+                ret = date.AddDays(offset);
+            }
+
+            return ret;
         }
     }
 }
