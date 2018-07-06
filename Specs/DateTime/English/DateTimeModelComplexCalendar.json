@@ -4122,8 +4122,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "I will leave in 2 minutes",
     "Context": {
@@ -4147,8 +4146,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "I will leave in two months",
     "Context": {
@@ -4172,8 +4170,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "I will leave in two weeks",
     "Context": {
@@ -4197,8 +4194,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "I will leave in two years",
     "Context": {
@@ -4222,8 +4218,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "I will leave in two days from today",
     "Context": {
@@ -4242,6 +4237,113 @@
               "timex": "2018-07-07",
               "type": "date",
               "value": "2018-07-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime on Friday 7.6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday 7.6",
+        "Start": 48,
+        "End": 57,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-06",
+              "type": "date",
+              "value": "2018-07-06"
+            },
+            {
+              "timex": "XXXX-07-06",
+              "type": "date",
+              "value": "2019-07-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime Friday 7/6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday 7/6",
+        "Start": 45,
+        "End": 54,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-06",
+              "type": "date",
+              "value": "2018-07-06"
+            },
+            {
+              "timex": "XXXX-07-06",
+              "type": "date",
+              "value": "2019-07-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime on Friday 7-6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday 7-6",
+        "Start": 48,
+        "End": 57,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-06",
+              "type": "date",
+              "value": "2018-07-06"
+            },
+            {
+              "timex": "XXXX-07-06",
+              "type": "date",
+              "value": "2019-07-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime Friday 2018-7-6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday 2018-7-6",
+        "Start": 45,
+        "End": 59,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-06",
+              "type": "date",
+              "value": "2018-07-06"
             }
           ]
         }

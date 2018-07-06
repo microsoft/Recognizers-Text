@@ -1570,5 +1570,61 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime on Friday 7.6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday 7.6",
+        "Type": "date",
+        "Start": 48,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime Friday 7/6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday 7/6",
+        "Type": "date",
+        "Start": 45,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime on Friday 7-6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday 7-6",
+        "Type": "date",
+        "Start": 48,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime Friday 2018-7-6 with Jim.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-06T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday 2018-7-6",
+        "Type": "date",
+        "Start": 45,
+        "Length": 15
+      }
+    ]
   }
 ]
