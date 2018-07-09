@@ -26,4 +26,4 @@ The links below provide tips and an overview on how to contribute. Thank you!
 
 * [Overview and language resources](https://blog.botframework.com/2018/01/24/contributing-luis-microsoft-recognizers-text-part-1/)
 * [Implementing language specific behaviour](https://blog.botframework.com/2018/02/01/contributing-luis-microsoft-recognizers-text-part-2/)
-* [Test specs and testing in general](https://blog.botframework.com/2018/02/01/contributing-luis-microsoft-recognizers-text-part-3/)
+* [Test specs and testing in general](https://blog.botframework.com/2018/02/12/contributing-luis-microsoft-recognizers-text-part-3/)
