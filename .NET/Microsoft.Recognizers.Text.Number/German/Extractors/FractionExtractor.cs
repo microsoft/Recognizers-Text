@@ -34,29 +34,29 @@ namespace Microsoft.Recognizers.Text.Number.German
                 {
                     new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNotationRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracGer"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.GERMAN)
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracGer"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.GERMAN)
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionPrepositionRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracGer"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.GERMAN)
                 }
             };
 

@@ -105,11 +105,11 @@ namespace Microsoft.Recognizers.Text.Number
 
                 ret = new ParseResult(extResult) {Value = val, Data = mergedPrs};
             }
-            else if (extra.Contains("Num"))
+            else if (extra.Contains(Constants.NUMBER_SUFFIX))
             {
                 ret = DigitNumberParse(extResult);
             }
-            else if (extra.Contains($"Frac{Config.LangMarker}")) //Frac is a special number, parse via another method
+            else if (extra.Contains($"{Constants.FRACTION_PREFIX}{Config.LangMarker}")) //Frac is a special number, parse via another method
             {
                 ret = FracLikeNumberParse(extResult);
             }
@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 ret = TextNumberParse(extResult);
             }
-            else if (extra.Contains("Pow"))
+            else if (extra.Contains(Constants.POWER_SUFFIX))
             {
                 ret = PowerNumberParse(extResult);
             }
@@ -141,7 +141,37 @@ namespace Microsoft.Recognizers.Text.Number
                 ret.ResolutionStr = GetResolutionStr(ret.Value);
             }
 
+            ret.Type = DetermineType(extResult);
+            
             return ret;
+        }
+
+        private static string DetermineType(ExtractResult er)
+        {
+            var data = er.Data as string;
+            var subType = string.Empty;
+
+            if (!string.IsNullOrEmpty(data))
+            {
+                if (data.StartsWith(Constants.FRACTION_PREFIX))
+                {
+                    subType = Constants.FRACTION;
+                }
+                else if (data.Contains(Constants.POWER_SUFFIX))
+                {
+                    subType = Constants.POWER;
+                }
+                else if (data.StartsWith(Constants.INTEGER_PREFIX))
+                {
+                    subType = Constants.INTEGER;
+                }
+                else if (data.StartsWith(Constants.DOUBLE_PREFIX))
+                {
+                    subType = Constants.DECIMAL;
+                }
+            }
+
+            return subType;
         }
 
         private static bool IsMergeable(double former, double later)

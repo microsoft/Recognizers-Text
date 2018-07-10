@@ -19,13 +19,12 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             {
                 {
                     //第一百五十四
-                    new Regex(NumbersDefinitions.OrdinalRegex, RegexOptions.Singleline)
-                    , "OrdinalChs"
+                    new Regex(NumbersDefinitions.OrdinalRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.CHINESE)
                 },
                 {
                     //第２５６５,  第1234
                     new Regex(NumbersDefinitions.OrdinalNumbersRegex, RegexOptions.Singleline)
-                    , "OrdinalChs"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.CHINESE)
                 }
             };
 

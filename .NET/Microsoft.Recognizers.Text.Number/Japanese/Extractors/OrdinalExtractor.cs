@@ -19,17 +19,17 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                 {
                     //だい一百五十四
                     new Regex(NumbersDefinitions.OrdinalRegex, RegexOptions.Singleline)
-                    , "OrdinalJpn"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.JAPANESE)
                 },
                 {
                     //だい２５６５
                     new Regex(NumbersDefinitions.OrdinalNumbersRegex, RegexOptions.Singleline)
-                    , "OrdinalJpn"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.JAPANESE)
                 },
                 {
                     //2折 ２.５折
                     new Regex(NumbersDefinitions.NumbersFoldsPercentageRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "PerSpe"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 }
             };
 
