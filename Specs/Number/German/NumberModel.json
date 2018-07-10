@@ -377,8 +377,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
     "NotSupportedByDesign": "python",
@@ -392,8 +391,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
     "NotSupportedByDesign": "python",

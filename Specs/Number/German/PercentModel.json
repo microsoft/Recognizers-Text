@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "100%",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
@@ -11,8 +12,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": " 100% ",
     "NotSupportedByDesign": "python",
@@ -26,8 +26,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": " 100 Prozent",
     "NotSupportedByDesign": "python",
@@ -41,8 +40,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "240 Prozent",
     "NotSupportedByDesign": "python",
@@ -56,8 +54,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "zwanzig Prozent",
     "NotSupportedByDesign": "python",
@@ -71,8 +68,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "dreißig Prozent",
     "NotSupportedByDesign": "python",
@@ -86,8 +82,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "einhundert Prozent",
     "NotSupportedByDesign": "python",
@@ -101,8 +96,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "10 Prozent",
     "NotSupportedByDesign": "python",
@@ -116,8 +110,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "siebenunddreißig Prozent",
     "NotSupportedByDesign": "python",
@@ -131,8 +124,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "einhundertneunundneunzig Prozent",
     "NotSupportedByDesign": "python",
@@ -146,8 +138,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Wenn er nicht einhundert Prozent gibt, wird er damit nicht mehr rechtzeitig fertig",
     "NotSupportedByDesign": "python",
