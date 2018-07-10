@@ -5230,34 +5230,60 @@
     ]
   },
   {
-    "Input": "show me sales recorded from Jan. 4th to Feb. 4th",
+    "Input": "Find records last for less than 2 hours or more than 4 days, and not less than 30 minutes.",
     "Context": {
-      "ReferenceDateTime": "2018-07-09T00:00:00"
+      "ReferenceDateTime": "2018-07-09T22:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "from jan. 4th to feb. 4th",
-        "Start": 23,
-        "End": 47,
-        "TypeName": "datetimeV2.daterange",
+        "Text": "less than 2 hours",
+        "Start": 22,
+        "End": 38,
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-01-04,XXXX-02-04,P31D)",
-              "type": "daterange",
-              "start": "2018-01-04",
-              "end": "2018-02-04"
-            },
-            {
-              "timex": "(XXXX-01-04,XXXX-02-04,P31D)",
-              "type": "daterange",
-              "start": "2019-01-04",
-              "end": "2019-02-04"
+              "timex": "PT2H",
+              "Mod": "less",
+              "type": "duration",
+              "value": "7200"
             }
           ]
         }
-      }
+      },
+      {
+        "Text": "more than 4 days",
+        "Start": 43,
+        "End": 58,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P4D",
+              "Mod": "more",
+              "type": "duration",
+              "value": "345600"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "less than 30 minutes",
+        "Start": 69,
+        "End": 88,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "Mod": "less",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      } 
     ]
   }
 ]

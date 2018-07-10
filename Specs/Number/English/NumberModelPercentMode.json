@@ -1,43 +1,46 @@
 [
-{
-  "Input": "one out of three",
-  "NotSupported": "javascript,python",
-  "Results": [
-    {
-    "Text": "one",
-    "TypeName": "number",
-    "Resolution": {
-        "value": "1"
-    }
-    },
-    {
-      "Text": "three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
+  {
+    "Input": "one out of three",
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "1 in twenty-one",
-  "NotSupported": "javascript,python",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
+    ]
+  },
+  {
+    "Input": "1 in twenty-one",
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "twenty-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21"
+        }
       }
-    },
-    {
-      "Text": "twenty-one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "21"
-      }
-    }
-  ]
-}
+    ]
+  }
 ]

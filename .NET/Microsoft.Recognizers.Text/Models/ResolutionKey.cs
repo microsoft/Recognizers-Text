@@ -8,5 +8,6 @@
         public const string Unit = "unit";
         public const string Score = "score";
         public const string IsoCurrency = "isoCurrency";
+        public const string SubType = "subtype";
     }
 }

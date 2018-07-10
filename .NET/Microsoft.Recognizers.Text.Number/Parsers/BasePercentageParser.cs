@@ -61,6 +61,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             ret.Data = extResult.Text;
             ret.Text = originText;
+            ret.Type = string.Empty;
 
             return ret;
         }

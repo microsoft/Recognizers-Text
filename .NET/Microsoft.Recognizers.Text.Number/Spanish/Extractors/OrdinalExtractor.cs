@@ -20,12 +20,12 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                     new Regex(
                         NumbersDefinitions.OrdinalSuffixRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.OrdinalNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalSpa"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.SPANISH)
                 }
             };
 

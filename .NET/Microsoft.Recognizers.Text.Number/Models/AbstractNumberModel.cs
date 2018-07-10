@@ -49,11 +49,22 @@ namespace Microsoft.Recognizers.Text.Number
             return parsedNumbers.Select(o =>
             {
                 var end = o.Start.Value + o.Length.Value - 1;
+                var resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } };
+
+                var extractorType = Extractor.GetType().ToString();
+
+                // Only support "subtype" for English for now
+                // As some languages like German, we miss handling some subtypes between "decimal" and "integer"
+                if (!string.IsNullOrEmpty(o.Type) && Constants.ValidSubTypes.Contains(o.Type) && extractorType.Contains(Constants.ENGLISH))
+                {
+                    resolution.Add(ResolutionKey.SubType, o.Type);
+                }
+
                 return new ModelResult
                 {
                     Start = o.Start.Value,
                     End = end,
-                    Resolution = new SortedDictionary<string, object> {{ResolutionKey.Value, o.ResolutionStr}},
+                    Resolution = resolution,
                     Text = o.Text,
                     TypeName = ModelTypeName
                 };
