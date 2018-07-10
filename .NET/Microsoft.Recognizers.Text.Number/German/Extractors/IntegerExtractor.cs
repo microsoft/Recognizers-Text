@@ -30,27 +30,27 @@ namespace Microsoft.Recognizers.Text.Number.German
             var regexes = new Dictionary<Regex, string> {
                 {
                     new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder),
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerNum"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {
-                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexOptions.Singleline), "IntegerNum"
+                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {
                     new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerNum"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {
                     new Regex(NumbersDefinitions.NumbersWithDozenSuffix,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerNum"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {
                     new Regex(NumbersDefinitions.AllIntRegexWithLocks,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerGer"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.GERMAN)
                 }, {
                     new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerGer"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.GERMAN)
                 }, {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), "IntegerNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), "IntegerNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }
             };
 

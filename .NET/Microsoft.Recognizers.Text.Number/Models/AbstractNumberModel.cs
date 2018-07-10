@@ -49,11 +49,18 @@ namespace Microsoft.Recognizers.Text.Number
             return parsedNumbers.Select(o =>
             {
                 var end = o.Start.Value + o.Length.Value - 1;
+                var resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } };
+
+                if (!string.IsNullOrEmpty(o.Type) && Constants.ValidSubTypes.Contains(o.Type))
+                {
+                    resolution.Add(ResolutionKey.SubType, o.Type);
+                }
+
                 return new ModelResult
                 {
                     Start = o.Start.Value,
                     End = end,
-                    Resolution = new SortedDictionary<string, object> {{ResolutionKey.Value, o.ResolutionStr}},
+                    Resolution = resolution,
                     Text = o.Text,
                     TypeName = ModelTypeName
                 };

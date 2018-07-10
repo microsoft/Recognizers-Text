@@ -19,27 +19,27 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                 {
                     // 123456,  －１２３４５６
                     new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                              "IntegerNum"
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     //15k,  16 G
                     new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexOptions.Singleline),
-                              "IntegerNum"
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     //1,234,  ２，３３２，１１１
                     new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                              "IntegerNum"
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     //半百  半ダース
                     new Regex(NumbersDefinitions.NumbersWithHalfDozen, RegexOptions.Singleline),
-                              "IntegerJpn"
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
                 },
                 {
                     //一ダース  五十ダース
                     new Regex(NumbersDefinitions.NumbersWithDozen, RegexOptions.Singleline),
-                              "IntegerJpn"
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
                 }
             };
 
@@ -49,14 +49,14 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     // 一百五十五, 负一亿三百二十二. 
                     // Uses an allow list to avoid extracting "西九条" from "九"
                     regexes.Add(new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexOptions.Singleline),
-                                "IntegerJpn");
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
                     break;
 
                 case JapaneseNumberExtractorMode.ExtractAll:
                     // 一百五十五, 负一亿三百二十二, "西九条" from "九"
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexOptions.Singleline),
-                                "IntegerJpn");
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
                     break;
             }
 

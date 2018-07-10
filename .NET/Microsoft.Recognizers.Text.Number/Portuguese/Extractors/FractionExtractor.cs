@@ -19,27 +19,27 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                 {
                     new Regex(NumbersDefinitions.FractionNotationRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracPor"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.PORTUGUESE)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNounWithArticleRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracPor"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.PORTUGUESE)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionPrepositionRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracPor"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.PORTUGUESE)
                 },
             };
 
