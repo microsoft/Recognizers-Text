@@ -1,1436 +1,1331 @@
-[{
-  "Input": "un cinquieme",
-  "Results": [
-    {
-      "Text": "un cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un demi",
-  "Results": [
-    {
-      "Text": "un demi",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,5"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un billionieme",
-  "Results": [
-    {
-      "Text": "un billionieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-12"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent mille billionieme",
-  "Results": [
-    {
-      "Text": "cent mille billionieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-07"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois cinquieme",
-  "Results": [
-    {
-      "Text": "trois cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un vingt cinquieme",
-  "Results": [
-    {
-      "Text": "un vingt cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,04"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois et un cinquieme",
-  "Results": [
-    {
-      "Text": "trois et un cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3,2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt et un cinquieme",
-  "Results": [
-    {
-      "Text": "vingt et un cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "20,2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "une vingt et unieme",
-  "Results": [
-    {
-      "Text": "une vingt et unieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un vingt-cinquieme",
-  "Results": [
-    {
-      "Text": "un vingt-cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,04"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur trois",
-  "Results": [
-    {
-      "Text": "un sur trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sur vingt-un",
-  "Results": [
-    {
-      "Text": "1 sur vingt-un",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sur cent vingt et un",
-  "Results": [
-    {
-      "Text": "1 sur cent vingt et un",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,00826446280991736"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sur trois",
-  "Results": [
-    {
-      "Text": "1 sur trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sur 3",
-  "Results": [
-    {
-      "Text": "1 sur 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur 3",
-  "Results": [
-    {
-      "Text": "un sur 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur 20",
-  "Results": [
-    {
-      "Text": "un sur 20",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,05"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur cent",
-  "Results": [
-    {
-      "Text": "un sur cent",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,01"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur cent vingt cinq",
-  "Results": [
-    {
-      "Text": "un sur cent vingt cinq",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,008"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent trente cinquiemes",
-  "Results": [
-    {
-      "Text": "cent trente cinquiemes",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "192,",
-  "Results": [
-    {
-      "Text": "192",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "192.168.1.2",
-  "Results": [
-    {
-      "Text": "192.168",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192168"
-      }
-    },
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "2",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "le liquide de 180ml",
-  "Results": []
-}
-,
-{
-  "Input": "le liquide de .25ml",
-  "Results": []
-}
-,
-{
-  "Input": " route de 29km ",
-  "Results": []
-}
-,
-{
-  "Input": "9,2321312",
-  "Results": [
-    {
-      "Text": "9,2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "9,2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -9,2321312",
-  "Results": [
-    {
-      "Text": "-9,2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-9,2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt",
-  "Results": [
-    {
-      "Text": "vingt",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "20"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent",
-  "Results": [
-    {
-      "Text": "cent",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "100"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": ",08",
-  "Results": [
-    {
-      "Text": ",08",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,08"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt quatre",
-  "Results": [
-    {
-      "Text": "vingt quatre",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "24"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt-quatre",
-  "Results": [
-    {
-      "Text": "vingt-quatre",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "24"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trente trois",
-  "Results": [
-    {
-      "Text": "trente trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "33"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trente-trois",
-  "Results": [
-    {
-      "Text": "trente-trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "33"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dix-sept",
-  "Results": [
-    {
-      "Text": "dix-sept",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "17"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dix sept",
-  "Results": [
-    {
-      "Text": "dix sept",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "17"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "nonante",
-  "Results": [
-    {
-      "Text": "nonante",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "90"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois million",
-  "Results": [
-    {
-      "Text": "trois million",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois million sept",
-  "Results": [
-    {
-      "Text": "trois million sept",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3000007"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": ",23456000",
-  "Results": [
-    {
-      "Text": ",23456000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,23456"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "4,800",
-  "Results": [
-    {
-      "Text": "4,800",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4,8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent trois et deux tiers",
-  "Results": [
-    {
-      "Text": "cent trois et deux tiers",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "103,666666666667"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "seize",
-  "Results": [
-    {
-      "Text": "seize",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "16"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "deux tiers",
-  "Results": [
-    {
-      "Text": "deux tiers",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,666666666666667"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent six",
-  "Results": [
-    {
-      "Text": "cent six",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "106"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cinq cent trente cinq",
-  "Results": [
-    {
-      "Text": "cinq cent trente cinq",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "535"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "soixante et un",
-  "Results": [
-    {
-      "Text": "soixante et un",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "61"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 3 douzaines",
-  "Results": [
-    {
-      "Text": "3 douzaines",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "36"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2 douzaine",
-  "Results": [
-    {
-      "Text": "2 douzaine",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "24"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " trois cent douze",
-  "Results": [
-    {
-      "Text": "trois cent douze",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois cent vingt quatre",
-  "Results": [
-    {
-      "Text": "trois cent vingt quatre",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "324"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent seize",
-  "Results": [
-    {
-      "Text": "cent seize",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "116"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 322 cent ",
-  "Results": [
-    {
-      "Text": "322 cent",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "32200"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1, 234, 567",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "234",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "234"
-      }
-    },
-    {
-      "Text": "567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -1",
-  "Results": [
-    {
-      "Text": "-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-4/5",
-  "Results": [
-    {
-      "Text": "-4/5",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0,8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "- 1 4/5",
-  "Results": [
-    {
-      "Text": "- 1 4/5",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1,8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois",
-  "Results": [
-    {
-      "Text": "trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 123456789101231",
-  "Results": [
-    {
-      "Text": "123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-123456789101231",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -123456789101231",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10k",
-  "Results": [
-    {
-      "Text": "10k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10G",
-  "Results": [
-    {
-      "Text": "10G",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "- 10  k",
-  "Results": [
-    {
-      "Text": "- 10  k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-10000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2 million",
-  "Results": [
-    {
-      "Text": "2 million",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2000000"
-      }
-    }
-  ]
-}
-,{
-  "Input": "2 millions",
-  "Results": [
-    {
-      "Text": "2 millions",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 billion",
-  "Results": [
-    {
-      "Text": "1 billion",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1000000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 billions",
-  "Results": [
-    {
-      "Text": "1 billions",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1000000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " trois ",
-  "Results": [
-    {
-      "Text": "trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un billion",
-  "Results": [
-    {
-      "Text": "un billion",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1000000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un centieme",
-  "Results": [
-    {
-      "Text": "un centieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,01"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1,1^+23",
-  "Results": [
-    {
-      "Text": "1,1^+23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2,5^-1",
-  "Results": [
-    {
-      "Text": "2,5^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-1,1^+23",
-  "Results": [
-    {
-      "Text": "-1,1^+23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-2,5^-1",
-  "Results": [
-    {
-      "Text": "-2,5^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0,4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2  1/4",
-  "Results": [
-    {
-      "Text": "2  1/4",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2,25"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "3/4",
-  "Results": [
-    {
-      "Text": "3/4",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,75"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-1,1^--23",
-  "Results": [
-    {
-      "Text": "-1,1^--23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-127,32e13",
-  "Results": [
-    {
-      "Text": "-127,32e13",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1,2732E+15"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "12,32e+14",
-  "Results": [
-    {
-      "Text": "12,32e+14",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1,232E+15"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-12e-1",
-  "Results": [
-    {
-      "Text": "-12e-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1,2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1e10",
-  "Results": [
-    {
-      "Text": "1e10",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1,1^23",
-  "Results": [
-    {
-      "Text": "1,1^23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent et trois quarts",
-  "Results": [
-    {
-      "Text": "cent et trois quarts",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "100,75"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "deux cent deux mille",
-  "Results": [
-    {
-      "Text": "deux cent deux mille",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "202000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois cent trente et un",
-  "Results": [
-    {
-      "Text": "trois cent trente et un",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "331"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "soixante-dix",
-  "Results": [
-    {
-      "Text": "soixante-dix",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "70"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois quarts",
-  "Results": [
-    {
-      "Text": "trois quarts",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,75"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt et trois cinquiemes",
-  "Results": [
-    {
-      "Text": "vingt et trois cinquiemes",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "20,6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un huitieme",
-  "Results": [
-    {
-      "Text": "un huitieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,125"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cinq huitieme",
-  "Results": [
-    {
-      "Text": "cinq huitieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,625"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2,33 k",
-  "Results": [
-    {
-      "Text": "2,33 k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2330"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt-trois cinquiemes",
-  "Results": [
-    {
-      "Text": "vingt-trois cinquiemes",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4,6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un et un demi",
-  "Results": [
-    {
-      "Text": "un et un demi",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1,5"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un et un quatrieme",
-  "Results": [
-    {
-      "Text": "un et un quatrieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1,25"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cinq et un quart",
-  "Results": [
-    {
-      "Text": "cinq et un quart",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "5,25"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cinquante-deux",
-  "Results": [
-    {
-      "Text": "cinquante-deux",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "52"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cinquante  deux",
-  "Results": [
-    {
-      "Text": "cinquante  deux",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "52"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt et trois et trois cinquiemes",
-  "Results": [
-    {
-      "Text": "vingt et trois et trois cinquiemes",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "23,6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "deux  cent  deux  mille",
-  "Results": [
-    {
-      "Text": "deux  cent  deux  mille",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "202000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "deux cent virgule trois",
-  "Results": [
-    {
-      "Text": "deux cent virgule trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "200,3"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "deux cent virgule cinquante deux",
-  "Results": [
-    {
-      "Text": "deux cent virgule cinquante deux",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "200,52"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 234 567",
-  "Results": [
-    {
-      "Text": "1 234 567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1234567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "40 000 est le même que 40 000",
-  "Results": [
-    {
-      "Text": "40 000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "40000"
-      }
-    },
-    {
-      "Text": "40 000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "40000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Pour l'instant, la population de la Chine est de 1 414 021 100.",
-  "Results": [
-    {
-      "Text": "1 414 021 100",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1414021100"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "423 0000 seront reconnus comme deux nombres.",
-  "NotSupported": "javascript,python",
-  "Results": [
-    {
-      "Text": "423",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "423"
-      }
-    },
-    {
-      "Text": "0000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0"
-      }
-    },
-    {
-      "Text": "deux",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 234 567,89 est un format numérique valide.",
-  "Results": [
-    {
-      "Text": "1 234 567,89",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1234567,89"
-      }
-    },
-    {
-      "Text": "un",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    }
-  ]
-}
+[
+  {
+    "Input": "un cinquieme",
+    "Results": [
+      {
+        "Text": "un cinquieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un demi",
+    "Results": [
+      {
+        "Text": "un demi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un billionieme",
+    "Results": [
+      {
+        "Text": "un billionieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-12"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cent mille billionieme",
+    "Results": [
+      {
+        "Text": "cent mille billionieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1E-07"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trois cinquieme",
+    "Results": [
+      {
+        "Text": "trois cinquieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un vingt cinquieme",
+    "Results": [
+      {
+        "Text": "un vingt cinquieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,04"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trois et un cinquieme",
+    "Results": [
+      {
+        "Text": "trois et un cinquieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vingt et un cinquieme",
+    "Results": [
+      {
+        "Text": "vingt et un cinquieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "une vingt et unieme",
+    "Results": [
+      {
+        "Text": "une vingt et unieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0476190476190476"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un vingt-cinquieme",
+    "Results": [
+      {
+        "Text": "un vingt-cinquieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,04"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un sur trois",
+    "Results": [
+      {
+        "Text": "un sur trois",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 sur vingt-un",
+    "Results": [
+      {
+        "Text": "1 sur vingt-un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,0476190476190476"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 sur cent vingt et un",
+    "Results": [
+      {
+        "Text": "1 sur cent vingt et un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,00826446280991736"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 sur trois",
+    "Results": [
+      {
+        "Text": "1 sur trois",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 sur 3",
+    "Results": [
+      {
+        "Text": "1 sur 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un sur 3",
+    "Results": [
+      {
+        "Text": "un sur 3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un sur 20",
+    "Results": [
+      {
+        "Text": "un sur 20",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un sur cent",
+    "Results": [
+      {
+        "Text": "un sur cent",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,01"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un sur cent vingt cinq",
+    "Results": [
+      {
+        "Text": "un sur cent vingt cinq",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,008"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cent trente cinquiemes",
+    "Results": [
+      {
+        "Text": "cent trente cinquiemes",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "26"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "192,",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "Results": [
+      {
+        "Text": "192.168",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192168"
+        }
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "le liquide de 180ml",
+    "Results": []
+  },
+  {
+    "Input": "le liquide de .25ml",
+    "Results": []
+  },
+  {
+    "Input": " route de 29km ",
+    "Results": []
+  },
+  {
+    "Input": "9,2321312",
+    "Results": [
+      {
+        "Text": "9,2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9,2321312"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -9,2321312",
+    "Results": [
+      {
+        "Text": "-9,2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-9,2321312"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vingt",
+    "Results": [
+      {
+        "Text": "vingt",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cent",
+    "Results": [
+      {
+        "Text": "cent",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": ",08",
+    "Results": [
+      {
+        "Text": ",08",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,08"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vingt quatre",
+    "Results": [
+      {
+        "Text": "vingt quatre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "24"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vingt-quatre",
+    "Results": [
+      {
+        "Text": "vingt-quatre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "24"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trente trois",
+    "Results": [
+      {
+        "Text": "trente trois",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "33"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trente-trois",
+    "Results": [
+      {
+        "Text": "trente-trois",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "33"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dix-sept",
+    "Results": [
+      {
+        "Text": "dix-sept",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "17"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dix sept",
+    "Results": [
+      {
+        "Text": "dix sept",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "17"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nonante",
+    "Results": [
+      {
+        "Text": "nonante",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "90"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trois million",
+    "Results": [
+      {
+        "Text": "trois million",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trois million sept",
+    "Results": [
+      {
+        "Text": "trois million sept",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3000007"
+        }
+      }
+    ]
+  },
+  {
+    "Input": ",23456000",
+    "Results": [
+      {
+        "Text": ",23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,23456"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4,800",
+    "Results": [
+      {
+        "Text": "4,800",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cent trois et deux tiers",
+    "Results": [
+      {
+        "Text": "cent trois et deux tiers",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "103,666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "seize",
+    "Results": [
+      {
+        "Text": "seize",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "16"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "deux tiers",
+    "Results": [
+      {
+        "Text": "deux tiers",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,666666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cent six",
+    "Results": [
+      {
+        "Text": "cent six",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "106"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinq cent trente cinq",
+    "Results": [
+      {
+        "Text": "cinq cent trente cinq",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "535"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "soixante et un",
+    "Results": [
+      {
+        "Text": "soixante et un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "61"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 3 douzaines",
+    "Results": [
+      {
+        "Text": "3 douzaines",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "36"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 douzaine",
+    "Results": [
+      {
+        "Text": "2 douzaine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "24"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " trois cent douze",
+    "Results": [
+      {
+        "Text": "trois cent douze",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "312"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trois cent vingt quatre",
+    "Results": [
+      {
+        "Text": "trois cent vingt quatre",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "324"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cent seize",
+    "Results": [
+      {
+        "Text": "cent seize",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "116"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 322 cent ",
+    "Results": [
+      {
+        "Text": "322 cent",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "32200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1, 234, 567",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "234"
+        }
+      },
+      {
+        "Text": "567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -1",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "- 1 4/5",
+    "Results": [
+      {
+        "Text": "- 1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trois",
+    "Results": [
+      {
+        "Text": "trois",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 123456789101231",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10k",
+    "Results": [
+      {
+        "Text": "10k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10G",
+    "Results": [
+      {
+        "Text": "10G",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 million",
+    "Results": [
+      {
+        "Text": "2 million",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 millions",
+    "Results": [
+      {
+        "Text": "2 millions",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 billion",
+    "Results": [
+      {
+        "Text": "1 billion",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 billions",
+    "Results": [
+      {
+        "Text": "1 billions",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " trois ",
+    "Results": [
+      {
+        "Text": "trois",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un billion",
+    "Results": [
+      {
+        "Text": "un billion",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un centieme",
+    "Results": [
+      {
+        "Text": "un centieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,01"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,1^+23",
+    "Results": [
+      {
+        "Text": "1,1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8,95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2,5^-1",
+    "Results": [
+      {
+        "Text": "2,5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-1,1^+23",
+    "Results": [
+      {
+        "Text": "-1,1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8,95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-2,5^-1",
+    "Results": [
+      {
+        "Text": "-2,5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-1,1^--23",
+    "Results": [
+      {
+        "Text": "-1,1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-8,95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-127,32e13",
+    "Results": [
+      {
+        "Text": "-127,32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,2732E+15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "12,32e+14",
+    "Results": [
+      {
+        "Text": "12,32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,232E+15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1,2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,1^23",
+    "Results": [
+      {
+        "Text": "1,1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8,95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cent et trois quarts",
+    "Results": [
+      {
+        "Text": "cent et trois quarts",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100,75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "deux cent deux mille",
+    "Results": [
+      {
+        "Text": "deux cent deux mille",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "202000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trois cent trente et un",
+    "Results": [
+      {
+        "Text": "trois cent trente et un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "331"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "soixante-dix",
+    "Results": [
+      {
+        "Text": "soixante-dix",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "70"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trois quarts",
+    "Results": [
+      {
+        "Text": "trois quarts",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vingt et trois cinquiemes",
+    "Results": [
+      {
+        "Text": "vingt et trois cinquiemes",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "20,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un huitieme",
+    "Results": [
+      {
+        "Text": "un huitieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinq huitieme",
+    "Results": [
+      {
+        "Text": "cinq huitieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,625"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2,33 k",
+    "Results": [
+      {
+        "Text": "2,33 k",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2330"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vingt-trois cinquiemes",
+    "Results": [
+      {
+        "Text": "vingt-trois cinquiemes",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un et un demi",
+    "Results": [
+      {
+        "Text": "un et un demi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un et un quatrieme",
+    "Results": [
+      {
+        "Text": "un et un quatrieme",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinq et un quart",
+    "Results": [
+      {
+        "Text": "cinq et un quart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5,25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinquante-deux",
+    "Results": [
+      {
+        "Text": "cinquante-deux",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cinquante  deux",
+    "Results": [
+      {
+        "Text": "cinquante  deux",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "52"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vingt et trois et trois cinquiemes",
+    "Results": [
+      {
+        "Text": "vingt et trois et trois cinquiemes",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "23,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "deux  cent  deux  mille",
+    "Results": [
+      {
+        "Text": "deux  cent  deux  mille",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "202000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "deux cent virgule trois",
+    "Results": [
+      {
+        "Text": "deux cent virgule trois",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200,3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "deux cent virgule cinquante deux",
+    "Results": [
+      {
+        "Text": "deux cent virgule cinquante deux",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200,52"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567",
+    "Results": [
+      {
+        "Text": "1 234 567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "40 000 est le même que 40 000",
+    "Results": [
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        }
+      },
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "40000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Pour l'instant, la population de la Chine est de 1 414 021 100.",
+    "Results": [
+      {
+        "Text": "1 414 021 100",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1414021100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "423 0000 seront reconnus comme deux nombres.",
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "423"
+        }
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        }
+      },
+      {
+        "Text": "deux",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567,89 est un format numérique valide.",
+    "Results": [
+      {
+        "Text": "1 234 567,89",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567,89"
+        }
+      },
+      {
+        "Text": "un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  }
 ]
