@@ -6,6 +6,7 @@
         "Text": "2 mil millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2000000000"
         }
       }
@@ -18,6 +19,7 @@
         "Text": "123456789101231",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "123456789101231"
         }
       }
@@ -30,6 +32,7 @@
         "Text": "-123456789101231",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "-123456789101231"
         }
       }
@@ -42,6 +45,7 @@
         "Text": "-123456789101231",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "-123456789101231"
         }
       }
@@ -54,6 +58,7 @@
         "Text": "-1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "-1"
         }
       }
@@ -66,6 +71,7 @@
         "Text": "1.234.567",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1234567"
         }
       }
@@ -78,6 +84,7 @@
         "Text": "3 docenas",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "36"
         }
       }
@@ -90,6 +97,7 @@
         "Text": "dos mil millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2000000000"
         }
       }
@@ -102,6 +110,7 @@
         "Text": "una docena",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "12"
         }
       }
@@ -114,6 +123,7 @@
         "Text": "quince docenas",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "180"
         }
       }
@@ -126,6 +136,7 @@
         "Text": "dos mil y cuatro docenas",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2048"
         }
       }
@@ -138,6 +149,7 @@
         "Text": "siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "7"
         }
       }
@@ -150,6 +162,7 @@
         "Text": "cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "47"
         }
       }
@@ -162,6 +175,7 @@
         "Text": "trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "347"
         }
       }
@@ -174,6 +188,7 @@
         "Text": "dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2347"
         }
       }
@@ -186,6 +201,7 @@
         "Text": "cincuenta y dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "52347"
         }
       }
@@ -198,6 +214,7 @@
         "Text": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "452347"
         }
       }
@@ -210,6 +227,7 @@
         "Text": "tres millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3000000"
         }
       }
@@ -222,6 +240,7 @@
         "Text": "tres millones siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3000007"
         }
       }
@@ -234,6 +253,7 @@
         "Text": "tres millones cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3000047"
         }
       }
@@ -246,6 +266,7 @@
         "Text": "tres millones trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3000347"
         }
       }
@@ -258,6 +279,7 @@
         "Text": "tres millones dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3002347"
         }
       }
@@ -270,6 +292,7 @@
         "Text": "tres millones cincuenta y dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3052347"
         }
       }
@@ -282,6 +305,7 @@
         "Text": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3452347"
         }
       }
@@ -294,6 +318,7 @@
         "Text": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "13452347"
         }
       }
@@ -306,6 +331,7 @@
         "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "513452347"
         }
       }
@@ -318,6 +344,7 @@
         "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "513452340"
         }
       }
@@ -330,6 +357,7 @@
         "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "513452300"
         }
       }
@@ -342,6 +370,7 @@
         "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "513452000"
         }
       }
@@ -354,6 +383,7 @@
         "Text": "quinientos trece millones cuatrocientos cincuenta mil",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "513450000"
         }
       }
@@ -366,6 +396,7 @@
         "Text": "quinientos trece millones cuatrocientos mil",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "513400000"
         }
       }
@@ -378,6 +409,7 @@
         "Text": "quinientos trece millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "513000000"
         }
       }
@@ -390,6 +422,7 @@
         "Text": "quinientos diez millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "510000000"
         }
       }
@@ -402,6 +435,7 @@
         "Text": "quinientos millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "500000000"
         }
       }
@@ -414,6 +448,7 @@
         "Text": "mil quinientos veintitres",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1523"
         }
       }
@@ -426,6 +461,7 @@
         "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3455228556832"
         }
       }
@@ -438,6 +474,7 @@
         "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3455228556000"
         }
       }
@@ -450,6 +487,7 @@
         "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3455228000000"
         }
       }
@@ -462,6 +500,7 @@
         "Text": "tres billones cuatrocientos cincuenta y cinco mil millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3455000000000"
         }
       }
@@ -474,6 +513,7 @@
         "Text": "tres billones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3000000000000"
         }
       }
@@ -486,6 +526,7 @@
         "Text": "un mil",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1000"
         }
       }
@@ -498,6 +539,7 @@
         "Text": "un",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }
@@ -510,6 +552,7 @@
         "Text": "una",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }
@@ -522,6 +565,7 @@
         "Text": "doscientas",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "200"
         }
       }
@@ -534,6 +578,7 @@
         "Text": "mil cien",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1100"
         }
       }
@@ -546,6 +591,7 @@
         "Text": "siete mil doscientos treinta y cinco",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "7235"
         }
       }
@@ -558,6 +604,7 @@
         "Text": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "13452347"
         }
       }
@@ -570,6 +617,7 @@
         "Text": "101231,2353",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "101231,2353"
         }
       }
@@ -582,6 +630,7 @@
         "Text": "-101231,4323",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "-101231,4323"
         }
       }
@@ -594,6 +643,7 @@
         "Text": "-89101231,5127",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "-89101231,5127"
         }
       }
@@ -606,6 +656,7 @@
         "Text": "-1,1234567",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "-1,1234567"
         }
       }
@@ -618,6 +669,7 @@
         "Text": "1.234.567,51274",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "1234567,51274"
         }
       }
@@ -630,6 +682,7 @@
         "Text": "192",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "192"
         }
       }
@@ -642,6 +695,7 @@
         "Text": ",23456000",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "0,23456"
         }
       }
@@ -654,6 +708,7 @@
         "Text": "4,800",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "4,8"
         }
       }
@@ -666,6 +721,7 @@
         "Text": ",08",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "0,08"
         }
       }
@@ -678,6 +734,7 @@
         "Text": "9,2321312",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "9,2321312"
         }
       }
@@ -690,6 +747,7 @@
         "Text": "-9,2321312",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "-9,2321312"
         }
       }
@@ -702,6 +760,7 @@
         "Text": "1e10",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "10000000000"
         }
       }
@@ -714,6 +773,7 @@
         "Text": "1,1^23",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "8,95430243255239"
         }
       }
@@ -726,6 +786,7 @@
         "Text": "siete con cincuenta",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "7,5"
         }
       }
@@ -738,6 +799,7 @@
         "Text": "cuarenta y siete coma veintiocho",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "47,28"
         }
       }
@@ -750,6 +812,7 @@
         "Text": "trescientos cuarenta y siete con quinientos doce",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "347,512"
         }
       }
@@ -762,6 +825,7 @@
         "Text": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "2347,1578"
         }
       }
@@ -774,6 +838,7 @@
         "Text": "cincuenta y dos mil trescientos cuarenta y siete con doscientos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "52347,2"
         }
       }
@@ -786,6 +851,7 @@
         "Text": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "452347,22"
         }
       }
@@ -798,6 +864,7 @@
         "Text": "1,1^+23",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "8,95430243255239"
         }
       }
@@ -810,6 +877,7 @@
         "Text": "2,5^-1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "0,4"
         }
       }
@@ -822,6 +890,7 @@
         "Text": "-2500^-1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "-0,0004"
         }
       }
@@ -834,6 +903,7 @@
         "Text": "-1,1^+23",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "-8,95430243255239"
         }
       }
@@ -846,6 +916,7 @@
         "Text": "-2,5^-1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "-0,4"
         }
       }
@@ -858,6 +929,7 @@
         "Text": "-1,1^--23",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "-8,95430243255239"
         }
       }
@@ -870,6 +942,7 @@
         "Text": "-127,32e13",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "-1,2732E+15"
         }
       }
@@ -882,6 +955,7 @@
         "Text": "12,32e+14",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "1,232E+15"
         }
       }
@@ -894,6 +968,7 @@
         "Text": "-12e-1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "power",
           "value": "-1,2"
         }
       }
@@ -906,6 +981,7 @@
         "Text": "192",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "192"
         }
       }
@@ -918,6 +994,7 @@
         "Text": "192.168",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "192168"
         }
       },
@@ -925,6 +1002,7 @@
         "Text": "1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       },
@@ -932,6 +1010,7 @@
         "Text": "2",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2"
         }
       }
@@ -964,6 +1043,7 @@
         "Text": "uno",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }
@@ -976,6 +1056,7 @@
         "Text": "un",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }
@@ -988,6 +1069,7 @@
         "Text": "ciento tres con dos tercios",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "103,666666666667"
         }
       }
@@ -1000,6 +1082,7 @@
         "Text": "dieciseis",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "16"
         }
       }
@@ -1012,6 +1095,7 @@
         "Text": "dos tercios",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,666666666666667"
         }
       }
@@ -1024,6 +1108,7 @@
         "Text": "ciento dieciseis",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "116"
         }
       }
@@ -1036,6 +1121,7 @@
         "Text": "ciento seis",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "106"
         }
       }
@@ -1048,6 +1134,7 @@
         "Text": "ciento sesenta y un",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "161"
         }
       }
@@ -1060,6 +1147,7 @@
         "Text": "un billonesimo",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "1E-12"
         }
       }
@@ -1072,6 +1160,7 @@
         "Text": "cien billonesimos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "1E-10"
         }
       }
@@ -1084,6 +1173,7 @@
         "Text": "media   docena",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "6"
         }
       }
@@ -1096,6 +1186,7 @@
         "Text": "3 docenas",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "36"
         }
       }
@@ -1108,6 +1199,7 @@
         "Text": "tres docenas",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "36"
         }
       }
@@ -1120,6 +1212,7 @@
         "Text": "1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       },
@@ -1127,6 +1220,7 @@
         "Text": "234",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "234"
         }
       },
@@ -1134,6 +1228,7 @@
         "Text": "567",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "567"
         }
       }
@@ -1146,6 +1241,7 @@
         "Text": "-4/5",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "-0,8"
         }
       }
@@ -1158,6 +1254,7 @@
         "Text": "- 1 4/5",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "-1,8"
         }
       }
@@ -1170,6 +1267,7 @@
         "Text": "tres",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3"
         }
       }
@@ -1182,6 +1280,7 @@
         "Text": "1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }
@@ -1194,6 +1293,7 @@
         "Text": "10k",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "10000"
         }
       }
@@ -1206,6 +1306,7 @@
         "Text": "10G",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "10000000000"
         }
       }
@@ -1218,6 +1319,7 @@
         "Text": "- 10  k",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "-10000"
         }
       }
@@ -1230,6 +1332,7 @@
         "Text": "2 millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2000000"
         }
       }
@@ -1242,6 +1345,7 @@
         "Text": "1 billon",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1000000000000"
         }
       }
@@ -1254,6 +1358,7 @@
         "Text": "tres",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3"
         }
       }
@@ -1266,6 +1371,7 @@
         "Text": "un billon",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1000000000000"
         }
       }
@@ -1278,6 +1384,7 @@
         "Text": "veintiun billones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "21000000000000"
         }
       }
@@ -1290,6 +1397,7 @@
         "Text": "veintiun billones trescientos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "21000000000300"
         }
       }
@@ -1302,6 +1410,7 @@
         "Text": "cincuenta   y   dos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "52"
         }
       }
@@ -1314,6 +1423,7 @@
         "Text": "trescientos   treinta  y   uno",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "331"
         }
       }
@@ -1326,6 +1436,7 @@
         "Text": "doscientos dos mil",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "202000"
         }
       }
@@ -1338,6 +1449,7 @@
         "Text": "dos mil doscientos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2200"
         }
       }
@@ -1350,6 +1462,7 @@
         "Text": "2,33 k",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "2330"
         }
       }
@@ -1362,6 +1475,7 @@
         "Text": "doscientos coma cero tres",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "200,03"
         }
       }
@@ -1374,6 +1488,7 @@
         "Text": "doscientos con setenta y uno",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "200,71"
         }
       }
@@ -1386,6 +1501,7 @@
         "Text": "322 millones",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "322000000"
         }
       }
@@ -1398,6 +1514,7 @@
         "Text": "setenta",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "70"
         }
       }
@@ -1410,6 +1527,7 @@
         "Text": "cincuenta y dos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "52"
         }
       }
@@ -1422,6 +1540,7 @@
         "Text": "2  1/4",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "2,25"
         }
       }
@@ -1434,6 +1553,7 @@
         "Text": "3/4",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,75"
         }
       }
@@ -1446,6 +1566,7 @@
         "Text": "un octavo",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,125"
         }
       }
@@ -1458,6 +1579,7 @@
         "Text": "cinco octavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,625"
         }
       }
@@ -1470,6 +1592,7 @@
         "Text": "un medio",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,5"
         }
       }
@@ -1482,6 +1605,7 @@
         "Text": "tres cuartos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,75"
         }
       }
@@ -1494,6 +1618,7 @@
         "Text": "veinte con tres quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "20,6"
         }
       }
@@ -1506,6 +1631,7 @@
         "Text": "veintitres quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "4,6"
         }
       }
@@ -1518,6 +1644,7 @@
         "Text": "veintitres con tres quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "23,6"
         }
       }
@@ -1530,6 +1657,7 @@
         "Text": "un millon dos mil doscientos tres quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "200440,6"
         }
       }
@@ -1542,6 +1670,7 @@
         "Text": "uno con un medio",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "1,5"
         }
       }
@@ -1554,6 +1683,7 @@
         "Text": "uno con un cuarto",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "1,25"
         }
       }
@@ -1566,6 +1696,7 @@
         "Text": "cinco con un cuarto",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "5,25"
         }
       }
@@ -1578,6 +1709,7 @@
         "Text": "cien con tres cuartos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "100,75"
         }
       }
@@ -1590,6 +1722,7 @@
         "Text": "un centesimo",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,01"
         }
       }
@@ -1602,6 +1735,7 @@
         "Text": "un quinto",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,2"
         }
       }
@@ -1614,6 +1748,7 @@
         "Text": "cien mil billonesima",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "1E-07"
         }
       }
@@ -1626,6 +1761,7 @@
         "Text": "tres quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,6"
         }
       }
@@ -1638,6 +1774,7 @@
         "Text": "veinte quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "4"
         }
       }
@@ -1650,6 +1787,7 @@
         "Text": "veintitres quintas",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "4,6"
         }
       }
@@ -1662,6 +1800,7 @@
         "Text": "tres con un quinto",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "3,2"
         }
       }
@@ -1674,6 +1813,7 @@
         "Text": "veintiun quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "4,2"
         }
       }
@@ -1686,6 +1826,7 @@
         "Text": "un veintiunavo",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,0476190476190476"
         }
       }
@@ -1698,6 +1839,7 @@
         "Text": "ciento treinta y tres veintiunavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "6,33333333333333"
         }
       }
@@ -1710,6 +1852,7 @@
         "Text": "ciento treinta con tres veintiunavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "130,142857142857"
         }
       }
@@ -1722,6 +1865,7 @@
         "Text": "veintidos treintavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,733333333333333"
         }
       }
@@ -1734,6 +1878,7 @@
         "Text": "un veinticincoavo",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,04"
         }
       }
@@ -1746,6 +1891,7 @@
         "Text": "veinte veinticincoavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,8"
         }
       }
@@ -1758,6 +1904,7 @@
         "Text": "tres veintiunavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,142857142857143"
         }
       }
@@ -1770,6 +1917,7 @@
         "Text": "tres veinteavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,15"
         }
       }
@@ -1782,6 +1930,7 @@
         "Text": "tres doscientosavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,015"
         }
       }
@@ -1794,6 +1943,7 @@
         "Text": "tres dosmilesimos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,0015"
         }
       }
@@ -1806,6 +1956,7 @@
         "Text": "tres veintemilesimos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,00015"
         }
       }
@@ -1818,6 +1969,7 @@
         "Text": "tres doscientosmilesimos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "1,5E-05"
         }
       }
@@ -1830,6 +1982,7 @@
         "Text": "tres dosmillonesimos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "1,5E-06"
         }
       }
@@ -1842,6 +1995,7 @@
         "Text": "ciento treinta quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "26"
         }
       }
@@ -1854,6 +2008,7 @@
         "Text": "cien treintaicincoavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "2,85714285714286"
         }
       }
@@ -1866,6 +2021,7 @@
         "Text": "ciento treinta y dos cincoavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "26,4"
         }
       }
@@ -1878,6 +2034,7 @@
         "Text": "ciento treinta con dos cincoavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "130,4"
         }
       }
@@ -1890,6 +2047,7 @@
         "Text": "ciento treinta y dos quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "26,4"
         }
       }
@@ -1902,6 +2060,7 @@
         "Text": "ciento treinta con dos quintos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "130,4"
         }
       }
@@ -1914,6 +2073,7 @@
         "Text": "un cientocincoavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,00952380952380952"
         }
       }
@@ -1926,6 +2086,7 @@
         "Text": "cien milcincoavos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,0995024875621891"
         }
       }
@@ -1938,6 +2099,7 @@
         "Text": "uno sobre tres",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,333333333333333"
         }
       }
@@ -1950,6 +2112,7 @@
         "Text": "1 sobre 21",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,0476190476190476"
         }
       }
@@ -1962,6 +2125,7 @@
         "Text": "1 sobre tres",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,333333333333333"
         }
       }
@@ -1974,6 +2138,7 @@
         "Text": "1 sobre 3",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,333333333333333"
         }
       }
@@ -1986,6 +2151,7 @@
         "Text": "uno sobre 3",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,333333333333333"
         }
       }
@@ -1998,6 +2164,7 @@
         "Text": "uno sobre 20",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,05"
         }
       }
@@ -2010,6 +2177,7 @@
         "Text": "uno sobre veinte",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,05"
         }
       }
@@ -2022,6 +2190,7 @@
         "Text": "uno sobre cien",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,01"
         }
       }
@@ -2034,6 +2203,7 @@
         "Text": "1 sobre ciento veintiuno",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,00826446280991736"
         }
       }
@@ -2046,6 +2216,7 @@
         "Text": "uno sobre ciento treinta y cinco",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,00740740740740741"
         }
       }
@@ -2058,6 +2229,7 @@
         "Text": "cinco medios",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "2,5"
         }
       }
@@ -2070,6 +2242,7 @@
         "Text": "ciento treinta y cinco medios",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "67,5"
         }
       }
@@ -2082,6 +2255,7 @@
         "Text": "once con uno y medio",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "11,5"
         }
       }
@@ -2094,6 +2268,7 @@
         "Text": "diez con un medio",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "10,5"
         }
       }
@@ -2106,6 +2281,7 @@
         "Text": "diez con un cuarto",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "10,25"
         }
       }
@@ -2118,6 +2294,7 @@
         "Text": "1 234 567",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1234567"
         }
       }
@@ -2130,6 +2307,7 @@
         "Text": "40 000",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "40000"
         }
       },
@@ -2137,6 +2315,7 @@
         "Text": "40 000",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "40000"
         }
       }
@@ -2149,6 +2328,7 @@
         "Text": "1 414 021 100",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1414021100"
         }
       }
@@ -2162,6 +2342,7 @@
         "Text": "423",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "423"
         }
       },
@@ -2169,6 +2350,7 @@
         "Text": "0000",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "0"
         }
       },
@@ -2176,6 +2358,7 @@
         "Text": "dos",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2"
         }
       }
@@ -2188,6 +2371,7 @@
         "Text": "1 234 567,89",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "1234567,89"
         }
       },
@@ -2195,6 +2379,7 @@
         "Text": "un",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }

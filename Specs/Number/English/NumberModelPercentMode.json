@@ -7,6 +7,7 @@
         "Text": "one",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       },
@@ -14,6 +15,7 @@
         "Text": "three",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3"
         }
       }
@@ -27,6 +29,7 @@
         "Text": "1",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       },
@@ -34,6 +37,7 @@
         "Text": "twenty-one",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "21"
         }
       }

@@ -1,13 +1,14 @@
 [
   {
     "Input": "2",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "2",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2"
         }
       }
@@ -15,13 +16,14 @@
   },
   {
     "Input": "ein",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ein",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }
@@ -29,13 +31,14 @@
   },
   {
     "Input": "1/2",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1/2",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,5"
         }
       }
@@ -43,13 +46,14 @@
   },
   {
     "Input": "ein halbes Schwein",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ein halbes",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,5"
         }
       }
@@ -57,13 +61,14 @@
   },
   {
     "Input": "drei halbe Schweine",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "drei halbe",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "1,5"
         }
       }
@@ -71,13 +76,14 @@
   },
   {
     "Input": "zwei drittel Brot",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "zwei drittel",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "0,666666666666667"
         }
       }
@@ -85,13 +91,14 @@
   },
   {
     "Input": "fünf halbe Brötchen",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "fünf halbe",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "fraction",
           "value": "2,5"
         }
       }
@@ -99,14 +106,14 @@
   },
   {
     "Input": "zwei Komma drei",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
-    "Comment": "does not yet recognize 'Komma' as ','",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "zwei Komma drei",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "2,3"
         }
       }
@@ -114,13 +121,14 @@
   },
   {
     "Input": "2,35",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "2,35",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "2,35"
         }
       }
@@ -128,13 +136,14 @@
   },
   {
     "Input": "2.000,352",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "2.000,352",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "2000,352"
         }
       }
@@ -142,13 +151,14 @@
   },
   {
     "Input": "2,357",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "2,357",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2,357"
         }
       }
@@ -156,13 +166,14 @@
   },
   {
     "Input": "2,3",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "2,3",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "2,3"
         }
       }
@@ -170,13 +181,14 @@
   },
   {
     "Input": "2.300",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "2.300",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "2300"
         }
       }
@@ -184,13 +196,14 @@
   },
   {
     "Input": "zwei",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "zwei",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2"
         }
       }
@@ -198,13 +211,14 @@
   },
   {
     "Input": "eins",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "eins",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }
@@ -212,13 +226,14 @@
   },
   {
     "Input": "4.800",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "4.800",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "4800"
         }
       }
@@ -226,13 +241,14 @@
   },
   {
     "Input": "4,800",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "4,800",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "4,8"
         }
       }
@@ -240,13 +256,14 @@
   },
   {
     "Input": "Das sind einhundert Leute.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "einhundert",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "100"
         }
       }
@@ -254,13 +271,14 @@
   },
   {
     "Input": "sechzehn",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "sechzehn",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "16"
         }
       }
@@ -268,13 +286,14 @@
   },
   {
     "Input": "ein dutzend",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ein dutzend",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "12"
         }
       }
@@ -282,13 +301,14 @@
   },
   {
     "Input": "Da kommen wohl ein halbes dutzend Leute hin.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ein halbes dutzend",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "6"
         }
       }
@@ -296,13 +316,14 @@
   },
   {
     "Input": "Das sind mindestens fünf dutzend Bananen.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "fünf dutzend",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "60"
         }
       }
@@ -310,13 +331,14 @@
   },
   {
     "Input": "dreißig dutzend",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "dreißig dutzend",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "360"
         }
       }
@@ -324,13 +346,14 @@
   },
   {
     "Input": "einhunderteinunddreißig",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "einhunderteinunddreißig",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "131"
         }
       }
@@ -338,13 +361,14 @@
   },
   {
     "Input": "einhundertdrei",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "einhundertdrei",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "103"
         }
       }
@@ -352,13 +376,14 @@
   },
   {
     "Input": "eintausendeinhundertfünfzig",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "eintausendeinhundertfünfzig",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1150"
         }
       }
@@ -366,13 +391,14 @@
   },
   {
     "Input": "zwei Millionen eintausendeinhundertfünfzig",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "zwei Millionen eintausendeinhundertfünfzig",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2001150"
         }
       }
@@ -380,13 +406,14 @@
   },
   {
     "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1399509"
         }
       }
@@ -394,13 +421,14 @@
   },
   {
     "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1399509"
         }
       }
@@ -408,13 +436,14 @@
   },
   {
     "Input": "Zwei Millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Zwei Millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2399549"
         }
       }
@@ -422,13 +451,14 @@
   },
   {
     "Input": "Die dreihundert waren wohl eher zehntausend",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "dreihundert",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "300"
         }
       },
@@ -436,6 +466,7 @@
         "Text": "zehntausend",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "10000"
         }
       }
@@ -443,13 +474,14 @@
   },
   {
     "Input": "Eine 8 Bit Variable kann bis zu zweihundertsechsundfuenfzig verschiedene Zustände annehmen. Das reicht aus um Zahlen von null bis zweihundertfünfundfünfzig darzustellen.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "Eine",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       },
@@ -457,6 +489,7 @@
         "Text": "8",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "8"
         }
       },
@@ -464,6 +497,7 @@
         "Text": "zweihundertsechsundfuenfzig",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "256"
         }
       },
@@ -471,6 +505,7 @@
         "Text": "null",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "0"
         }
       },
@@ -478,6 +513,7 @@
         "Text": "zweihundertfünfundfünfzig",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "255"
         }
       }
@@ -485,13 +521,14 @@
   },
   {
     "Input": "Der hiernach folgende Text wird lang. Hier werden ein dutzend Zahlen benutzt um zu schauen wie sich das Programm bei längeren Strings verhält. Das Wort Ein wird als Zahl erkannt, was hier die erste wäre. Womit wir jetzt schon bei Zahl Nummer 3 wären. Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig ist mit Leerzeichen 74 Zeichen lang. Schon ist die Hälfte durch. Jetzt folgt nur noch ein halbes dutzend Zahlen. Die Summe aus 2 und 6 ist acht. Das hier ist momentan Zeile Nummer vierhundertachtundachtzig und der Test müsste 13 Zahlen angeben. Was noch nicht ganz stimmt, da sich hier zwei Ordinale eingeschlichen haben, es sind also erst jetzt dreizehn.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ein dutzend",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "12"
         }
       },
@@ -499,6 +536,7 @@
         "Text": "Ein",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       },
@@ -506,6 +544,7 @@
         "Text": "3",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "3"
         }
       },
@@ -513,6 +552,7 @@
         "Text": "Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2377988"
         }
       },
@@ -520,6 +560,7 @@
         "Text": "74",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "74"
         }
       },
@@ -527,6 +568,7 @@
         "Text": "ein halbes dutzend",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "6"
         }
       },
@@ -534,6 +576,7 @@
         "Text": "2",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2"
         }
       },
@@ -541,6 +584,7 @@
         "Text": "6",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "6"
         }
       },
@@ -548,6 +592,7 @@
         "Text": "acht",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "8"
         }
       },
@@ -555,6 +600,7 @@
         "Text": "vierhundertachtundachtzig",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "488"
         }
       },
@@ -562,6 +608,7 @@
         "Text": "13",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "13"
         }
       },
@@ -569,6 +616,7 @@
         "Text": "zwei",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2"
         }
       },
@@ -576,6 +624,7 @@
         "Text": "dreizehn",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "13"
         }
       }
@@ -583,14 +632,14 @@
   },
   {
     "Input": "Die Milchstraße besteht nach heutiger Schätzung aus ca. 100 bis 300 Milliarden Sternen.",
-    "Comment": "Whitespace at the end of second result currently necessary because of the possible follow-up-numbers. Regex needs refinement here.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "100",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "100"
         }
       },
@@ -598,6 +647,7 @@
         "Text": "300 Milliarden ",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "300000000000"
         }
       }
@@ -605,13 +655,14 @@
   },
   {
     "Input": "100 bis 300 Milliarden",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "100",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "100"
         }
       },
@@ -619,6 +670,7 @@
         "Text": "300 Milliarden",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "300000000000"
         }
       }
@@ -626,13 +678,14 @@
   },
   {
     "Input": "1 234 567",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1 234 567",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1234567"
         }
       }
@@ -640,13 +693,14 @@
   },
   {
     "Input": "40 000 ist das gleiche wie 40 000",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "40 000",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "40000"
         }
       },
@@ -654,6 +708,7 @@
         "Text": "40 000",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "40000"
         }
       }
@@ -661,13 +716,14 @@
   },
   {
     "Input": "Fürs Erste ist Chinas Bevölkerung 1 414 021 100.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1 414 021 100",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1414021100"
         }
       }
@@ -675,13 +731,14 @@
   },
   {
     "Input": "423 0000 wird als zwei Nummern erkannt.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "423",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "423"
         }
       },
@@ -689,6 +746,7 @@
         "Text": "0000",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "0"
         }
       },
@@ -696,6 +754,7 @@
         "Text": "zwei",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "2"
         }
       }
@@ -703,13 +762,14 @@
   },
   {
     "Input": "1 234 567,89 ist ein gültiges Zahlenformat.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1 234 567,89",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "decimal",
           "value": "1234567,89"
         }
       },
@@ -717,6 +777,7 @@
         "Text": "ein",
         "TypeName": "number",
         "Resolution": {
+          "subtype": "integer",
           "value": "1"
         }
       }
