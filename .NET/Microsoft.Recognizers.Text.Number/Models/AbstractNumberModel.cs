@@ -51,7 +51,11 @@ namespace Microsoft.Recognizers.Text.Number
                 var end = o.Start.Value + o.Length.Value - 1;
                 var resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } };
 
-                if (!string.IsNullOrEmpty(o.Type) && Constants.ValidSubTypes.Contains(o.Type))
+                var extractorType = Extractor.GetType().ToString();
+
+                // Only support "subtype" for English for now
+                // As some languages like German, we miss handling some subtypes between "decimal" and "integer"
+                if (!string.IsNullOrEmpty(o.Type) && Constants.ValidSubTypes.Contains(o.Type) && extractorType.Contains(Constants.ENGLISH))
                 {
                     resolution.Add(ResolutionKey.SubType, o.Type);
                 }
