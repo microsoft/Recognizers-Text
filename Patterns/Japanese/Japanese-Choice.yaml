@@ -1,4 +1,4 @@
-﻿---
+---
 LangMarker: Jpn
 #Boolean Recognizers
 TokenizerRegex: !simpleRegex
