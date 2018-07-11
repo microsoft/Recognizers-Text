@@ -20,11 +20,11 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                     new Regex(
                         NumbersDefinitions.OrdinalSuffixRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalPor"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.PORTUGUESE)
                 }
             };
 

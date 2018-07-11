@@ -1,207 +1,192 @@
-[{
-  "Input": "100%",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+[
+  {
+    "Input": "100%",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": " 100% ",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": " 100 percent",
-  "Results": [
-    {
-      "Text": "100 percent",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": " 100 percent",
+    "Results": [
+      {
+        "Text": "100 percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": " 100 percentage",
-  "Results": [
-    {
-      "Text": "100 percentage",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": " 100 percentage",
+    "Results": [
+      {
+        "Text": "100 percentage",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "240 percent",
-  "Results": [
-    {
-      "Text": "240 percent",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "240%"
+    ]
+  },
+  {
+    "Input": "240 percent",
+    "Results": [
+      {
+        "Text": "240 percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty percent",
-  "Results": [
-    {
-      "Text": "twenty percent",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "20%"
+    ]
+  },
+  {
+    "Input": "twenty percent",
+    "Results": [
+      {
+        "Text": "twenty percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "thirty percentage",
-  "Results": [
-    {
-      "Text": "thirty percentage",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "30%"
+    ]
+  },
+  {
+    "Input": "thirty percentage",
+    "Results": [
+      {
+        "Text": "thirty percentage",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred percent",
-  "Results": [
-    {
-      "Text": "one hundred percent",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": "one hundred percent",
+    "Results": [
+      {
+        "Text": "one hundred percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred percents",
-  "Results": [
-    {
-      "Text": "one hundred percents",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
+    ]
+  },
+  {
+    "Input": "one hundred percents",
+    "Results": [
+      {
+        "Text": "one hundred percents",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "percents of twenty",
-  "Results": [
-    {
-      "Text": "percents of twenty",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "20%"
+    ]
+  },
+  {
+    "Input": "percents of twenty",
+    "Results": [
+      {
+        "Text": "percents of twenty",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "percent of 10",
-  "Results": [
-    {
-      "Text": "percent of 10",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "10%"
+    ]
+  },
+  {
+    "Input": "percent of 10",
+    "Results": [
+      {
+        "Text": "percent of 10",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "per cent of twenty-two",
-  "Results": [
-    {
-      "Text": "per cent of twenty-two",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "22%"
+    ]
+  },
+  {
+    "Input": "per cent of twenty-two",
+    "Results": [
+      {
+        "Text": "per cent of twenty-two",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "per cent of 210",
-  "Results": [
-    {
-      "Text": "per cent of 210",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "210%"
+    ]
+  },
+  {
+    "Input": "per cent of 210",
+    "Results": [
+      {
+        "Text": "per cent of 210",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "10 percent",
-  "Results": [
-    {
-      "Text": "10 percent",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "10%"
+    ]
+  },
+  {
+    "Input": "10 percent",
+    "Results": [
+      {
+        "Text": "10 percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "Input": "just need minus five percent",
-  "Results": [
-    {
-      "Text": "minus five percent",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "-5%"
+    ]
+  },
+  {
+    "Input": "just need minus five percent",
+    "Results": [
+      {
+        "Text": "minus five percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        }
       }
-    }
-  ]
-}
-,
-{
-  "NotSupported": "javascript",
-  "Input": "You can go to http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 for more details.",
-  "Results": []
-}
-,
-{
-  "NotSupported": "javascript",
-  "Input": "You can go to https://www.test.com/search?q=30%25%2020%",
-  "Results": []
-}
+    ]
+  },
+  {
+    "NotSupported": "javascript",
+    "Input": "You can go to http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 for more details.",
+    "Results": []
+  },
+  {
+    "NotSupported": "javascript",
+    "Input": "You can go to https://www.test.com/search?q=30%25%2020%",
+    "Results": []
+  }
 ]

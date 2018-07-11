@@ -5335,5 +5335,62 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Find records last for less than 2 hours or more than 4 days, and not less than 30 minutes.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-09T22:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "less than 2 hours",
+        "Start": 22,
+        "End": 38,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "Mod": "less",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "more than 4 days",
+        "Start": 43,
+        "End": 58,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P4D",
+              "Mod": "more",
+              "type": "duration",
+              "value": "345600"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "less than 30 minutes",
+        "Start": 69,
+        "End": 88,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "Mod": "less",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      } 
+    ]
   }
 ]

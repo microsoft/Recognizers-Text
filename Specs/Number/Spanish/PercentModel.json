@@ -1,844 +1,780 @@
-[{
-  "Input": "100%",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 100% ",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 100 por ciento",
-  "Results": [
-    {
-      "Text": "100 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " cien por cien",
-  "Results": [
-    {
-      "Text": "cien por cien",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cien por ciento",
-  "Results": [
-    {
-      "Text": "cien por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "243 por ciento",
-  "Results": [
-    {
-      "Text": "243 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "243%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "veinte por ciento",
-  "Results": [
-    {
-      "Text": "veinte por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "20%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "treinta y cinco por ciento",
-  "Results": [
-    {
-      "Text": "treinta y cinco por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "35%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "quinientos treinta y cinco por ciento",
-  "Results": [
-    {
-      "Text": "quinientos treinta y cinco por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "535%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10 por ciento",
-  "Results": [
-    {
-      "Text": "10 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "10%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "diez por ciento",
-  "Results": [
-    {
-      "Text": "diez por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "10%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres millones cincuenta y dos mil trescientos cuarenta y siete por ciento",
-  "Results": [
-    {
-      "Text": "tres millones cincuenta y dos mil trescientos cuarenta y siete por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "3052347%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-  "Results": [
-    {
-      "Text": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "3452347%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-  "Results": [
-    {
-      "Text": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "13452347%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-  "Results": [
-    {
-      "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "513452347%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta por ciento",
-  "Results": [
-    {
-      "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "513452340%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos por ciento",
-  "Results": [
-    {
-      "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "513452300%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil por ciento",
-  "Results": [
-    {
-      "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "513452000%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos por ciento",
-  "Results": [
-    {
-      "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "3455228556832%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "algo asi como un 11%",
-  "Results": [
-    {
-      "Text": "11%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "11%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "claro, solamente un 15 por ciento",
-  "Results": [
-    {
-      "Text": "15 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "15%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "si, nada mas un veinticinco por ciento",
-  "Results": [
-    {
-      "Text": "veinticinco por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "25%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "todo, dejame el cien por cien del combustible",
-  "Results": [
-    {
-      "Text": "cien por cien",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un porcentaje del 25%",
-  "Results": [
-    {
-      "Text": "25%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "25%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un porcentaje del treinta y seis por ciento del total",
-  "Results": [
-    {
-      "Text": "treinta y seis por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "36%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un porcentaje del ochenta y cuatro por cien solamente",
-  "Results": [
-    {
-      "Text": "ochenta y cuatro por cien",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "84%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 101231,2353%",
-  "Results": [
-    {
-      "Text": "101231,2353%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "101231,2353%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-101231,4323%",
-  "Results": [
-    {
-      "Text": "-101231,4323%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "-101231,4323%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -89101231,5127 por ciento",
-  "Results": [
-    {
-      "Text": "-89101231,5127 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "-89101231,5127%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -1,1234567 por cien",
-  "Results": [
-    {
-      "Text": "-1,1234567 por cien",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "-1,1234567%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1.234.567,51274 por ciento",
-  "Results": [
-    {
-      "Text": "1.234.567,51274 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "1234567,51274%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": ",23456000%",
-  "Results": [
-    {
-      "Text": ",23456000%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,23456%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "4,800%",
-  "Results": [
-    {
-      "Text": "4,800%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "4,8%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": ",08 por ciento",
-  "Results": [
-    {
-      "Text": ",08 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,08%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "9,2321312%",
-  "Results": [
-    {
-      "Text": "9,2321312%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "9,2321312%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -9,2321312 por cien",
-  "Results": [
-    {
-      "Text": "-9,2321312 por cien",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "-9,2321312%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1e10%",
-  "Results": [
-    {
-      "Text": "1e10%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "10000000000%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1,1^23 por ciento",
-  "Results": [
-    {
-      "Text": "1,1^23 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "8,95430243255239%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "siete con cincuenta por ciento",
-  "Results": [
-    {
-      "Text": "siete con cincuenta por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "7,5%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cuarenta y siete coma veintiocho por ciento",
-  "Results": [
-    {
-      "Text": "cuarenta y siete coma veintiocho por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "47,28%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trescientos cuarenta y siete con quinientos doce por ciento",
-  "Results": [
-    {
-      "Text": "trescientos cuarenta y siete con quinientos doce por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "347,512%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho por ciento",
-  "Results": [
-    {
-      "Text": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "2347,1578%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cincuenta y dos mil trescientos cuarenta y siete con doscientos por ciento",
-  "Results": [
-    {
-      "Text": "cincuenta y dos mil trescientos cuarenta y siete con doscientos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "52347,2%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos por ciento",
-  "Results": [
-    {
-      "Text": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "452347,22%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres quintos por ciento",
-  "Results": [
-    {
-      "Text": "tres quintos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,6%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dos coma cinco por ciento",
-  "Results": [
-    {
-      "Text": "dos coma cinco por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "2,5%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un quinto por ciento",
-  "Results": [
-    {
-      "Text": "un quinto por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,2%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un billonesimo por cien",
-  "Results": [
-    {
-      "Text": "un billonesimo por cien",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "1E-12%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un veintiunavo por ciento",
-  "Results": [
-    {
-      "Text": "un veintiunavo por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,0476190476190476%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ciento treinta y tres veintiunavos por ciento",
-  "Results": [
-    {
-      "Text": "ciento treinta y tres veintiunavos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "6,33333333333333%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ciento treinta con tres veintiunavos por ciento",
-  "Results": [
-    {
-      "Text": "ciento treinta con tres veintiunavos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "130,142857142857%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "veintidos treintavos por ciento",
-  "Results": [
-    {
-      "Text": "veintidos treintavos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,733333333333333%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres dosmilesimos por ciento",
-  "Results": [
-    {
-      "Text": "tres dosmilesimos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,0015%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres veintemilesimos por ciento",
-  "Results": [
-    {
-      "Text": "tres veintemilesimos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,00015%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ciento treinta quintos por ciento",
-  "Results": [
-    {
-      "Text": "ciento treinta quintos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "26%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cien treintaicincoavos por ciento",
-  "Results": [
-    {
-      "Text": "cien treintaicincoavos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "2,85714285714286%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ciento treinta y dos cincoavos por ciento",
-  "Results": [
-    {
-      "Text": "ciento treinta y dos cincoavos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "26,4%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ciento treinta con dos cincoavos por ciento",
-  "Results": [
-    {
-      "Text": "ciento treinta con dos cincoavos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "130,4%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ciento treinta y dos quintos por ciento",
-  "Results": [
-    {
-      "Text": "ciento treinta y dos quintos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "26,4%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ciento treinta con dos quintos por ciento",
-  "Results": [
-    {
-      "Text": "ciento treinta con dos quintos por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "130,4%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "uno sobre tres por ciento",
-  "Results": [
-    {
-      "Text": "uno sobre tres por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,333333333333333%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sobre 3 por ciento",
-  "Results": [
-    {
-      "Text": "1 sobre 3 por ciento",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,333333333333333%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "3/4%",
-  "Results": [
-    {
-      "Text": "3/4%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,75%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2/3%",
-  "Results": [
-    {
-      "Text": "2/3%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,666666666666667%"
-      }
-    }
-  ]
-}
-,
-{
-  "NotSupported": "javascript",
-  "Input": "puedes ir a http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 para más detalles",
-  "Results": []
-}
-,
-{
-  "NotSupported": "javascript",
-  "Input": "puedes ir a https://www.test.com/search?q=30%25%2020% para más detalles",
-  "Results": []
-}
+[
+  {
+    "Input": "100%",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 100% ",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 100 por ciento",
+    "Results": [
+      {
+        "Text": "100 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " cien por cien",
+    "Results": [
+      {
+        "Text": "cien por cien",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cien por ciento",
+    "Results": [
+      {
+        "Text": "cien por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "243 por ciento",
+    "Results": [
+      {
+        "Text": "243 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "243%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "veinte por ciento",
+    "Results": [
+      {
+        "Text": "veinte por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "treinta y cinco por ciento",
+    "Results": [
+      {
+        "Text": "treinta y cinco por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "35%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quinientos treinta y cinco por ciento",
+    "Results": [
+      {
+        "Text": "quinientos treinta y cinco por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "535%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10 por ciento",
+    "Results": [
+      {
+        "Text": "10 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "diez por ciento",
+    "Results": [
+      {
+        "Text": "diez por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tres millones cincuenta y dos mil trescientos cuarenta y siete por ciento",
+    "Results": [
+      {
+        "Text": "tres millones cincuenta y dos mil trescientos cuarenta y siete por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "3052347%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
+    "Results": [
+      {
+        "Text": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "3452347%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
+    "Results": [
+      {
+        "Text": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "13452347%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "513452347%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta por ciento",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "513452340%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos por ciento",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "513452300%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil por ciento",
+    "Results": [
+      {
+        "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "513452000%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos por ciento",
+    "Results": [
+      {
+        "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "3455228556832%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "algo asi como un 11%",
+    "Results": [
+      {
+        "Text": "11%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "11%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "claro, solamente un 15 por ciento",
+    "Results": [
+      {
+        "Text": "15 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "15%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "si, nada mas un veinticinco por ciento",
+    "Results": [
+      {
+        "Text": "veinticinco por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "todo, dejame el cien por cien del combustible",
+    "Results": [
+      {
+        "Text": "cien por cien",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un porcentaje del 25%",
+    "Results": [
+      {
+        "Text": "25%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un porcentaje del treinta y seis por ciento del total",
+    "Results": [
+      {
+        "Text": "treinta y seis por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "36%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un porcentaje del ochenta y cuatro por cien solamente",
+    "Results": [
+      {
+        "Text": "ochenta y cuatro por cien",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "84%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 101231,2353%",
+    "Results": [
+      {
+        "Text": "101231,2353%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "101231,2353%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-101231,4323%",
+    "Results": [
+      {
+        "Text": "-101231,4323%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-101231,4323%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -89101231,5127 por ciento",
+    "Results": [
+      {
+        "Text": "-89101231,5127 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-89101231,5127%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -1,1234567 por cien",
+    "Results": [
+      {
+        "Text": "-1,1234567 por cien",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-1,1234567%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1.234.567,51274 por ciento",
+    "Results": [
+      {
+        "Text": "1.234.567,51274 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "1234567,51274%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": ",23456000%",
+    "Results": [
+      {
+        "Text": ",23456000%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,23456%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4,800%",
+    "Results": [
+      {
+        "Text": "4,800%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "4,8%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": ",08 por ciento",
+    "Results": [
+      {
+        "Text": ",08 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,08%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "9,2321312%",
+    "Results": [
+      {
+        "Text": "9,2321312%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "9,2321312%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -9,2321312 por cien",
+    "Results": [
+      {
+        "Text": "-9,2321312 por cien",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-9,2321312%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1e10%",
+    "Results": [
+      {
+        "Text": "1e10%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10000000000%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,1^23 por ciento",
+    "Results": [
+      {
+        "Text": "1,1^23 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "8,95430243255239%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "siete con cincuenta por ciento",
+    "Results": [
+      {
+        "Text": "siete con cincuenta por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "7,5%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cuarenta y siete coma veintiocho por ciento",
+    "Results": [
+      {
+        "Text": "cuarenta y siete coma veintiocho por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "47,28%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "trescientos cuarenta y siete con quinientos doce por ciento",
+    "Results": [
+      {
+        "Text": "trescientos cuarenta y siete con quinientos doce por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "347,512%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho por ciento",
+    "Results": [
+      {
+        "Text": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2347,1578%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cincuenta y dos mil trescientos cuarenta y siete con doscientos por ciento",
+    "Results": [
+      {
+        "Text": "cincuenta y dos mil trescientos cuarenta y siete con doscientos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "52347,2%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos por ciento",
+    "Results": [
+      {
+        "Text": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "452347,22%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tres quintos por ciento",
+    "Results": [
+      {
+        "Text": "tres quintos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,6%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dos coma cinco por ciento",
+    "Results": [
+      {
+        "Text": "dos coma cinco por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2,5%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un quinto por ciento",
+    "Results": [
+      {
+        "Text": "un quinto por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,2%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un billonesimo por cien",
+    "Results": [
+      {
+        "Text": "un billonesimo por cien",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "1E-12%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "un veintiunavo por ciento",
+    "Results": [
+      {
+        "Text": "un veintiunavo por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,0476190476190476%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ciento treinta y tres veintiunavos por ciento",
+    "Results": [
+      {
+        "Text": "ciento treinta y tres veintiunavos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "6,33333333333333%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ciento treinta con tres veintiunavos por ciento",
+    "Results": [
+      {
+        "Text": "ciento treinta con tres veintiunavos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "130,142857142857%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "veintidos treintavos por ciento",
+    "Results": [
+      {
+        "Text": "veintidos treintavos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,733333333333333%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tres dosmilesimos por ciento",
+    "Results": [
+      {
+        "Text": "tres dosmilesimos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,0015%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tres veintemilesimos por ciento",
+    "Results": [
+      {
+        "Text": "tres veintemilesimos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,00015%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ciento treinta quintos por ciento",
+    "Results": [
+      {
+        "Text": "ciento treinta quintos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "26%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "cien treintaicincoavos por ciento",
+    "Results": [
+      {
+        "Text": "cien treintaicincoavos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "2,85714285714286%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ciento treinta y dos cincoavos por ciento",
+    "Results": [
+      {
+        "Text": "ciento treinta y dos cincoavos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "26,4%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ciento treinta con dos cincoavos por ciento",
+    "Results": [
+      {
+        "Text": "ciento treinta con dos cincoavos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "130,4%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ciento treinta y dos quintos por ciento",
+    "Results": [
+      {
+        "Text": "ciento treinta y dos quintos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "26,4%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ciento treinta con dos quintos por ciento",
+    "Results": [
+      {
+        "Text": "ciento treinta con dos quintos por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "130,4%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "uno sobre tres por ciento",
+    "Results": [
+      {
+        "Text": "uno sobre tres por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,333333333333333%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 sobre 3 por ciento",
+    "Results": [
+      {
+        "Text": "1 sobre 3 por ciento",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,333333333333333%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3/4%",
+    "Results": [
+      {
+        "Text": "3/4%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,75%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2/3%",
+    "Results": [
+      {
+        "Text": "2/3%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "0,666666666666667%"
+        }
+      }
+    ]
+  },
+  {
+    "NotSupported": "javascript",
+    "Input": "puedes ir a http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 para más detalles",
+    "Results": []
+  },
+  {
+    "NotSupported": "javascript",
+    "Input": "puedes ir a https://www.test.com/search?q=30%25%2020% para más detalles",
+    "Results": []
+  }
 ]

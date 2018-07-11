@@ -123,5 +123,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexMonth = "M";
         public const string TimexWeek = "W";
         public const string TimexDay = "D";
+        public const char TimexFuzzy = 'X';
     }
 }

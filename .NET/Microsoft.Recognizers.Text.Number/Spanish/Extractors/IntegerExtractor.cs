@@ -19,44 +19,37 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 {
                     new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder),
                     RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "IntegerNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.NumbersWithSuffix,
                         RegexOptions.Singleline)
-                    , "IntegerNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder),
-                    "IntegerNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder),
-                    "IntegerNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder),
-                    "IntegerNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.NumbersWithDozenSuffix,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.AllIntRegexWithLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerSpa"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.SPANISH)
                 },
                 {
                 new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerSpa"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.SPANISH)
                 }
             };
 

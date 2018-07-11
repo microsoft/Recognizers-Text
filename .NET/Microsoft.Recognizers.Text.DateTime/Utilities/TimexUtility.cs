@@ -41,6 +41,33 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"({FormatUtil.LuisDate(begin)},{FormatUtil.LuisDate(end)},{datePeriodTimex})";
         }
 
+        // In some mode, we would need to alter the timex, e.g. alter the timex to include the period end
+        // However, sometimes the originalTimex is fuzzy, like "(XXXX-05-31,XXXX-06-05,P5D)"
+        // For these cases, we first generate a concreteTimex without any fuzzy character, then we merge the altered Timex with the originalTimex to keep the fuzzy part
+        public static string GenerateAlterTimex(string originalTimex, string alterTimex)
+        {
+            if (originalTimex.Length == alterTimex.Length)
+            {
+                var timexCharSet = new char[alterTimex.Length];
+
+                for (int i = 0; i < originalTimex.Length; i++)
+                {
+                    if (originalTimex[i] != Constants.TimexFuzzy)
+                    {
+                        timexCharSet[i] = alterTimex[i];
+                    }
+                    else
+                    {
+                        timexCharSet[i] = Constants.TimexFuzzy;
+                    }
+                }
+
+                originalTimex = new string(timexCharSet);
+            }
+
+            return originalTimex;
+        }
+
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
         {
             if (monday == default(DateObject))
