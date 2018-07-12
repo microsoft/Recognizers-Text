@@ -5417,5 +5417,34 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I left there january twenty fourth one thirty p m.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-11T20:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "january twenty fourth one thirty p m",
+        "Start": 13,
+        "End": 48,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-24T13:30",
+              "type": "datetime",
+              "value": "2018-01-24 13:30:00"
+            },
+            {
+              "timex": "XXXX-01-24T13:30",
+              "type": "datetime",
+              "value": "2019-01-24 13:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
