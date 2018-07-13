@@ -5446,5 +5446,77 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I will go back to China in the mid-November.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-13T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "mid-november",
+        "Start": 31,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11",
+              "Mod": "mid",
+              "type": "daterange",
+              "start": "2017-11-10",
+              "end": "2017-11-21"
+            },
+            {
+              "timex": "XXXX-11",
+              "Mod": "mid",
+              "type": "daterange",
+              "start": "2018-11-10",
+              "end": "2018-11-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Suprise office party for Ted on Sat at 5.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-13T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "sat at 5",
+        "Start": 32,
+        "End": 39,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6T05",
+              "type": "datetime",
+              "value": "2018-07-07 05:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-6T05",
+              "type": "datetime",
+              "value": "2018-07-14 05:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-6T17",
+              "type": "datetime",
+              "value": "2018-07-07 17:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-6T17",
+              "type": "datetime",
+              "value": "2018-07-14 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
