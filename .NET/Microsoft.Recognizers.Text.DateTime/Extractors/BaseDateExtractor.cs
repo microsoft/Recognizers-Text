@@ -362,7 +362,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Extract cases like "in 3 weeks", which equals to "3 weeks from today"
-            var relativeDurationDateWithInPrefix = ExtractRelativeDurationDateWithInPrefix(text, reference);
+            var relativeDurationDateWithInPrefix = ExtractRelativeDurationDateWithInPrefix(text, durationEr, reference);
 
             // For cases like "in 3 weeks from today", we should choose "3 weeks from today" as the extract result rather than "in 3 weeks" or "in 3 weeks from today"
             foreach (var erWithInPrefix in relativeDurationDateWithInPrefix)
@@ -390,19 +390,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // "In 3 days/weeks/months/years" = "3 days/weeks/months/years from now"
-        public List<Token> ExtractRelativeDurationDateWithInPrefix(string text, DateObject reference)
+        public List<Token> ExtractRelativeDurationDateWithInPrefix(string text, List<ExtractResult> durationEr, DateObject reference)
         {
             var ret = new List<Token>();
 
             var durations = new List<Token>();
-            var durationExtractions = config.DurationExtractor.Extract(text, reference);
-            foreach (var durationExtraction in durationExtractions)
+
+            foreach (var durationExtraction in durationEr)
             {
                 var match = config.DateUnitRegex.Match(durationExtraction.Text);
                 if (match.Success)
                 {
                     durations.Add(new Token(durationExtraction.Start ?? 0,
-                        (durationExtraction.Start + durationExtraction.Length ?? 0)));
+                        durationExtraction.Start + durationExtraction.Length ?? 0));
                 }
             }
 
@@ -440,11 +440,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             StripInequalityPrefix(er, config.LessThanRegex);
         }
 
-        private void StripInequalityPrefix(ExtractResult er, Regex regex)
+        private static void StripInequalityPrefix(ExtractResult er, Regex regex)
         {
-            var match = regex.Match(er.Text);
-
-            if (match.Success)
+            if (regex.IsMatch(er.Text))
             {
                 var originalLength = er.Text.Length;
                 er.Text = regex.Replace(er.Text, string.Empty).Trim();
@@ -454,18 +452,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        private bool IsMultipleDurationDate(ExtractResult er)
+        private static bool IsMultipleDurationDate(ExtractResult er)
         {
             return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
         }
 
-        private bool IsMultipleDuration(ExtractResult er)
+        private static bool IsMultipleDuration(ExtractResult er)
         {
             return er.Data != null && er.Data.ToString().StartsWith(Constants.MultipleDuration_Prefix);
         }
 
         // Cases like "more than 3 days", "less than 4 weeks"
-        private bool IsInequalityDuration(ExtractResult er)
+        private static bool IsInequalityDuration(ExtractResult er)
         {
             return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
         }
