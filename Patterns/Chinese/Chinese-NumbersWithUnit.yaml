@@ -1,4 +1,4 @@
----
+﻿---
 #AgeExtractorConfiguration
 AgeAmbiguousValues: !list
   types: [string]
@@ -91,6 +91,7 @@ CurrencySuffixList: !dictionary
     Israeli new shekel: ₪|ils|以色列币|以色列新克尔|谢克尔
 #Japanese yen
     Japanese yen: 日元|日本元|日币|日圆
+    Sen: 日本銭
 #Kazakhstani tenge
     Kazakhstani tenge: 哈萨克斯坦坚戈
 #Kenyan shilling

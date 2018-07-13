@@ -72,6 +72,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 			{ "Yemeni rial", "イエメン・リアル" },
 			{ "Israeli new shekel", "₪|ils|イスラエル・新シェケル|イスラエル新シェケル" },
 			{ "Japanese yen", "円" },
+			{ "Sen", "銭" },
 			{ "Kazakhstani tenge", "テンゲ|カザフスタン・テンゲ|カザフスタンテンゲ" },
 			{ "Kenyan shilling", "ケニア・シリング" },
 			{ "North Korean won", "北朝鮮ウォン" },
@@ -527,7 +528,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 			{ "New Taiwan dollar", "nt$|nt $" },
 			{ "Samoan tālā", "ws$" },
 			{ "Chinese yuan", "￥" },
-			{ "Japanese yen", "¥" },
+			{ "Japanese yen", "¥|\\" },
 			{ "Turkish lira", "₺" },
 			{ "Euro", "€" },
 			{ "Pound", "£" },
@@ -535,7 +536,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		};
 		public static readonly IList<string> CurrencyAmbiguousValues = new List<string>
 		{
-			"円"
+			"円",
+			"銭",
+			"\\"
 		};
 	}
 }
