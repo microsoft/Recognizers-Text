@@ -1,1886 +1,2078 @@
-[{
-  "Input": "192.",
-  "Results": [
-    {
-      "Text": "192",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "192.168.1.2",
-  "Results": [
-    {
-      "Text": "192",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192"
-      }
-    },
-    {
-      "Text": "168",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "168"
-      }
-    },
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "2",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "the 180.25ml liquid",
-  "Results": []
-}
-,
-{
-  "Input": "the 180ml liquid",
-  "Results": []
-}
-,
-{
-  "Input": " 29km Road ",
-  "Results": []
-}
-,
-{
-  "Input": " the May 4th ",
-  "Results": []
-}
-,
-{
-  "Input": "the .25ml liquid",
-  "Results": []
-}
-,
-{
-  "Input": ".08",
-  "Results": [
-    {
-      "Text": ".08",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.08"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "an",
-  "Results": []
-}
-,
-{
-  "Input": "a",
-  "Results": []
-}
-,
-{
-  "Input": ".23456000",
-  "Results": [
-    {
-      "Text": ".23456000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.23456"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "4.800",
-  "Results": [
-    {
-      "Text": "4.800",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4.8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and three and two thirds",
-  "Results": [
-    {
-      "Text": "one hundred and three and two thirds",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "103.666666666667"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "sixteen",
-  "Results": [
-    {
-      "Text": "sixteen",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "16"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "two thirds",
-  "Results": [
-    {
-      "Text": "two thirds",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.666666666666667"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and sixteen",
-  "Results": [
-    {
-      "Text": "one hundred and sixteen",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "116"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and six",
-  "Results": [
-    {
-      "Text": "one hundred and six",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "106"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and sixty-one",
-  "Results": [
-    {
-      "Text": "one hundred and sixty-one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "161"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a trillionth",
-  "Results": [
-    {
-      "Text": "a trillionth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-12"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a hundred trillionths",
-  "Results": [
-    {
-      "Text": "a hundred trillionths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-10"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " half a  dozen",
-  "Results": [
-    {
-      "Text": "half a  dozen",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 3 dozens",
-  "Results": [
-    {
-      "Text": "3 dozens",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "36"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a dozen",
-  "Results": [
-    {
-      "Text": "a dozen",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "12"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " three dozens ",
-  "Results": [
-    {
-      "Text": "three dozens",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "36"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " three hundred and two dozens",
-  "Results": [
-    {
-      "Text": "three hundred and two dozens",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "324"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1,234,567",
-  "Results": [
-    {
-      "Text": "1,234,567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1234567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1, 234, 567",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "234",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "234"
-      }
-    },
-    {
-      "Text": "567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "9.2321312",
-  "Results": [
-    {
-      "Text": "9.2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "9.2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -9.2321312",
-  "Results": [
-    {
-      "Text": "-9.2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-9.2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -1",
-  "Results": [
-    {
-      "Text": "-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-4/5",
-  "Results": [
-    {
-      "Text": "-4/5",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0.8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "- 1 4/5",
-  "Results": [
-    {
-      "Text": "- 1 4/5",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1.8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three",
-  "Results": [
-    {
-      "Text": "three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 123456789101231",
-  "Results": [
-    {
-      "Text": "123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-123456789101231",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -123456789101231",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10k",
-  "Results": [
-    {
-      "Text": "10k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10G",
-  "Results": [
-    {
-      "Text": "10G",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "- 10  k",
-  "Results": [
-    {
-      "Text": "- 10  k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-10000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2 million",
-  "Results": [
-    {
-      "Text": "2 million",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 trillion",
-  "Results": [
-    {
-      "Text": "1 trillion",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1000000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " three ",
-  "Results": [
-    {
-      "Text": "three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one trillion",
-  "Results": [
-    {
-      "Text": "one trillion",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1000000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty-one trillion",
-  "Results": [
-    {
-      "Text": "twenty-one trillion",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "21000000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty-one trillion three hundred",
-  "Results": [
-    {
-      "Text": "twenty-one trillion three hundred",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "21000000000300"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty-one trillion and three hundred",
-  "Results": [
-    {
-      "Text": "twenty-one trillion and three hundred",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "21000000000300"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "fifty - two",
-  "Results": [
-    {
-      "Text": "fifty - two",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "52"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "fifty   two",
-  "Results": [
-    {
-      "Text": "fifty   two",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "52"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Three hundred  and  thirty one",
-  "Results": [
-    {
-      "Text": "Three hundred  and  thirty one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "331"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "two hundred and two thousand",
-  "Results": [
-    {
-      "Text": "two hundred and two thousand",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "202000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "two  thousand  and  two hundred",
-  "Results": [
-    {
-      "Text": "two  thousand  and  two hundred",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2200"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 2.33 k",
-  "Results": [
-    {
-      "Text": "2.33 k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2330"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " two hundred point zero three",
-  "Results": [
-    {
-      "Text": "two hundred point zero three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "200.03"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " two hundred point seventy-one",
-  "Results": [
-    {
-      "Text": "two hundred point seventy-one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "200.71"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1e10",
-  "Results": [
-    {
-      "Text": "1e10",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1.1^23",
-  "Results": [
-    {
-      "Text": "1.1^23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "8.95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 322 hundred ",
-  "Results": [
-    {
-      "Text": "322 hundred",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "32200"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "seventy",
-  "Results": [
-    {
-      "Text": "seventy",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "70"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "fifty-two",
-  "Results": [
-    {
-      "Text": "fifty-two",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "52"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2  1/4",
-  "Results": [
-    {
-      "Text": "2  1/4",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2.25"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "3/4",
-  "Results": [
-    {
-      "Text": "3/4",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.75"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one eighth",
-  "Results": [
-    {
-      "Text": "one eighth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.125"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "five eighths",
-  "Results": [
-    {
-      "Text": "five eighths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.625"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a half",
-  "Results": [
-    {
-      "Text": "a half",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.5"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three quarters",
-  "Results": [
-    {
-      "Text": "three quarters",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.75"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty and three fifths",
-  "Results": [
-    {
-      "Text": "twenty and three fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "20.6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty-three fifths",
-  "Results": [
-    {
-      "Text": "twenty-three fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4.6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty and three and three fifths",
-  "Results": [
-    {
-      "Text": "twenty and three and three fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "23.6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one million two thousand two hundred three fifths",
-  "Results": [
-    {
-      "Text": "one million two thousand two hundred three fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "200440.6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one and a half",
-  "Results": [
-    {
-      "Text": "one and a half",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1.5"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one and a fourth",
-  "Results": [
-    {
-      "Text": "one and a fourth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1.25"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "five and a quarter",
-  "Results": [
-    {
-      "Text": "five and a quarter",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "5.25"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and three quarters",
-  "Results": [
-    {
-      "Text": "one hundred and three quarters",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "100.75"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a hundredth",
-  "Results": [
-    {
-      "Text": "a hundredth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.01"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1.1^+23",
-  "Results": [
-    {
-      "Text": "1.1^+23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "8.95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2.5^-1",
-  "Results": [
-    {
-      "Text": "2.5^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-2500^-1",
-  "Results": [
-    {
-      "Text": "-2500^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0.0004"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-1.1^+23",
-  "Results": [
-    {
-      "Text": "-1.1^+23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-8.95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-2.5^-1",
-  "Results": [
-    {
-      "Text": "-2.5^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-1.1^--23",
-  "Results": [
-    {
-      "Text": "-1.1^--23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-8.95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-127.32e13",
-  "Results": [
-    {
-      "Text": "-127.32e13",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1.2732E+15"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "12.32e+14",
-  "Results": [
-    {
-      "Text": "12.32e+14",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1.232E+15"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-12e-1",
-  "Results": [
-    {
-      "Text": "-12e-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1.2b",
-  "Results": [
-    {
-      "Text": "1.2b",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1200000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a fifth",
-  "Results": [
-    {
-      "Text": "a fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a hundred thousand trillionths",
-  "Results": [
-    {
-      "Text": "a hundred thousand trillionths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-07"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one fifth",
-  "Results": [
-    {
-      "Text": "one fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three fifths",
-  "Results": [
-    {
-      "Text": "three fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty fifths",
-  "Results": [
-    {
-      "Text": "twenty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three and a fifth",
-  "Results": [
-    {
-      "Text": "three and a fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty one fifths",
-  "Results": [
-    {
-      "Text": "twenty one fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a twenty-first",
-  "Results": [
-    {
-      "Text": "a twenty-first",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one twenty-fifth",
-  "Results": [
-    {
-      "Text": "one twenty-fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.04"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three twenty-firsts",
-  "Results": [
-    {
-      "Text": "three twenty-firsts",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.142857142857143"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three twenty firsts",
-  "Results": [
-    {
-      "Text": "three twenty firsts",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.142857142857143"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty twenty fifths",
-  "Results": [
-    {
-      "Text": "twenty twenty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and thirty fifths",
-  "Results": [
-    {
-      "Text": "one hundred and thirty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred thirty fifths",
-  "Results": [
-    {
-      "Text": "one hundred thirty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2.85714285714286"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred thirty two fifths",
-  "Results": [
-    {
-      "Text": "one hundred thirty two fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred thirty-two fifths",
-  "Results": [
-    {
-      "Text": "one hundred thirty-two fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and thirty-two fifths",
-  "Results": [
-    {
-      "Text": "one hundred and thirty-two fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and thirty and two fifths",
-  "Results": [
-    {
-      "Text": "one hundred and thirty and two fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "130.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred thirty-fifths",
-  "Results": [
-    {
-      "Text": "one hundred thirty-fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2.85714285714286"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one one hundred fifth",
-  "Results": [
-    {
-      "Text": "one one hundred fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.00952380952380952"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one one hundred and fifth",
-  "Results": [
-    {
-      "Text": "one one hundred and fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.00952380952380952"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred one thousand fifths",
-  "Results": [
-    {
-      "Text": "one hundred one thousand fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.0995024875621891"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over three",
-  "Results": [
-    {
-      "Text": "one over three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 over twenty-one",
-  "Results": [
-    {
-      "Text": "1 over twenty-one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 over one hundred and twenty one",
-  "Results": [
-    {
-      "Text": "1 over one hundred and twenty one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.00826446280991736"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 over three",
-  "Results": [
-    {
-      "Text": "1 over three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 over 3",
-  "Results": [
-    {
-      "Text": "1 over 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over 3",
-  "Results": [
-    {
-      "Text": "one over 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over 20",
-  "Results": [
-    {
-      "Text": "one over 20",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.05"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over twenty",
-  "Results": [
-    {
-      "Text": "one over twenty",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.05"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over one hundred",
-  "Results": [
-    {
-      "Text": "one over one hundred",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.01"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over one hundred and twenty five",
-  "Results": [
-    {
-      "Text": "one over one hundred and twenty five",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.008"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ninety - five hundred fifths",
-  "Results": [
-    {
-      "Text": "ninety - five hundred fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1900"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Book a first class seat to seattle",
-  "Results": []
-}
-,
-{
-  "Input": "The answer is negative ninety - five hundred fifths",
-  "Results": [
-    {
-      "Text": "negative ninety - five hundred fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1900"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "The answer is minus ninety - five hundred fifths",
-  "Results": [
-    {
-      "Text": "minus ninety - five hundred fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1900"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "The answer is minus one",
-  "Results": [
-    {
-      "Text": "minus one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "The answer is minus one hundred thirty fifths",
-  "Results": [
-    {
-      "Text": "minus one hundred thirty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-2.85714285714286"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "The answer is negative one over 20",
-  "Results": [
-    {
-      "Text": "negative one over 20",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0.05"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "The answer is minus five point five",
-  "Results": [
-    {
-      "Text": "minus five point five",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-5.5"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "The answer is minus 5",
-  "Results": [
-    {
-      "Text": "minus 5",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-5"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one - fourth",
-  "Results": [
-    {
-      "Text": "one - fourth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.25"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one-eighth",
-  "Results": [
-    {
-      "Text": "one-eighth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.125"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "five - eighths",
-  "Results": [
-    {
-      "Text": "five - eighths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.625"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ninety - five hundred-fifths",
-  "Results": [
-    {
-      "Text": "ninety - five hundred-fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1900"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one out of three",
-  "Results": [
-    {
-      "Text": "one out of three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 in twenty-one",
-  "NotSupported": "javascript,python",
-  "Results": [
-    {
-      "Text": "1 in twenty-one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "five eighths of",
-  "Results": [
-    {
-      "Text": "five eighths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.625"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 234 567",
-  "Results": [
-    {
-      "Text": "1 234 567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1234567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "40 000 is the same as 40 000",
-  "Results": [
-    {
-      "Text": "40 000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "40000"
-      }
-    },
-    {
-      "Text": "40 000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "40000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "For now, China's population is 1 414 021 100.",
-  "Results": [
-    {
-      "Text": "1 414 021 100",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1414021100"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "423 0000 will be recognized as two numbers.",
-  "NotSupported": "javascript,python",
-  "Results": [
-    {
-      "Text": "423",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "423"
-      }
-    },
-    {
-      "Text": "0000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0"
-      }
-    },
-    {
-      "Text": "two",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 234 567.89 is a valid number format.",
-  "Results": [
-    {
-      "Text": "1 234 567.89",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1234567.89"
-      }
-    }
-  ]
-},
-{
-  "Input": "zero is 0",
-  "Results": [
-    {
-      "Text": "zero",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0"
-      }
-    },
-    {
-      "Text": "0",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0"
-      }
-    }
-  ]
-},
-{
-  "Input": "Any time to meet on 5/17/2018?",
-  "NotSupported": "javascript",
-  "Results": [
-    {
-      "Text": "5",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "5"
-      }
-    },
-    {
-      "Text": "17",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "17"
-      }
-    },
-    {
-      "Text": "2018",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2018"
-      }
-    }
-  ]
-},
-{
-  "Input": "My phone number is +1-222-2222/2222",
-  "NotSupported": "javascript,java",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "222",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "222"
-      }
-    },
-    {
-      "Text": "2222",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2222"
-      }
-    },
-    {
-      "Text": "2222",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2222"
-      }
-    }
-  ]
-},
-{
-  "Input": "I can give you 1M.",
-  "Results": [
-    {
-      "Text": "1M",
-      "Start": 15,
-      "End": 16,
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1000000"
-      }
-    }
-  ]
-},
-{
-  "Input": "1m isn't a number.",
-  "Results": []
-}
+[
+  {
+    "Input": "192.",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "192.168.1.2",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        }
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "168"
+        }
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "the 180.25ml liquid",
+    "Results": []
+  },
+  {
+    "Input": "the 180ml liquid",
+    "Results": []
+  },
+  {
+    "Input": " 29km Road ",
+    "Results": []
+  },
+  {
+    "Input": " the May 4th ",
+    "Results": []
+  },
+  {
+    "Input": "the .25ml liquid",
+    "Results": []
+  },
+  {
+    "Input": ".08",
+    "Results": [
+      {
+        "Text": ".08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.08"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "an",
+    "Results": []
+  },
+  {
+    "Input": "a",
+    "Results": []
+  },
+  {
+    "Input": ".23456000",
+    "Results": [
+      {
+        "Text": ".23456000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.23456"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4.800",
+    "Results": [
+      {
+        "Text": "4.800",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and three and two thirds",
+    "Results": [
+      {
+        "Text": "one hundred and three and two thirds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "103.666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sixteen",
+    "Results": [
+      {
+        "Text": "sixteen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "two thirds",
+    "Results": [
+      {
+        "Text": "two thirds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.666666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and sixteen",
+    "Results": [
+      {
+        "Text": "one hundred and sixteen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "116"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and six",
+    "Results": [
+      {
+        "Text": "one hundred and six",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "106"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and sixty-one",
+    "Results": [
+      {
+        "Text": "one hundred and sixty-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a trillionth",
+    "Results": [
+      {
+        "Text": "a trillionth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-12"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a hundred trillionths",
+    "Results": [
+      {
+        "Text": "a hundred trillionths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " half a  dozen",
+    "Results": [
+      {
+        "Text": "half a  dozen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 3 dozens",
+    "Results": [
+      {
+        "Text": "3 dozens",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a dozen",
+    "Results": [
+      {
+        "Text": "a dozen",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " three dozens ",
+    "Results": [
+      {
+        "Text": "three dozens",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " three hundred and two dozens",
+    "Results": [
+      {
+        "Text": "three hundred and two dozens",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "324"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1,234,567",
+    "Results": [
+      {
+        "Text": "1,234,567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1, 234, 567",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "234",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "234"
+        }
+      },
+      {
+        "Text": "567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "9.2321312",
+    "Results": [
+      {
+        "Text": "9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "9.2321312"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -9.2321312",
+    "Results": [
+      {
+        "Text": "-9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-9.2321312"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -1",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-4/5",
+    "Results": [
+      {
+        "Text": "-4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "- 1 4/5",
+    "Results": [
+      {
+        "Text": "- 1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "three",
+    "Results": [
+      {
+        "Text": "three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 123456789101231",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " -123456789101231",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10k",
+    "Results": [
+      {
+        "Text": "10k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "10G",
+    "Results": [
+      {
+        "Text": "10G",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "- 10  k",
+    "Results": [
+      {
+        "Text": "- 10  k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2 million",
+    "Results": [
+      {
+        "Text": "2 million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 trillion",
+    "Results": [
+      {
+        "Text": "1 trillion",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " three ",
+    "Results": [
+      {
+        "Text": "three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one trillion",
+    "Results": [
+      {
+        "Text": "one trillion",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty-one trillion",
+    "Results": [
+      {
+        "Text": "twenty-one trillion",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty-one trillion three hundred",
+    "Results": [
+      {
+        "Text": "twenty-one trillion three hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty-one trillion and three hundred",
+    "Results": [
+      {
+        "Text": "twenty-one trillion and three hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fifty - two",
+    "Results": [
+      {
+        "Text": "fifty - two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fifty   two",
+    "Results": [
+      {
+        "Text": "fifty   two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Three hundred  and  thirty one",
+    "Results": [
+      {
+        "Text": "Three hundred  and  thirty one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "two hundred and two thousand",
+    "Results": [
+      {
+        "Text": "two hundred and two thousand",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "202000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "two  thousand  and  two hundred",
+    "Results": [
+      {
+        "Text": "two  thousand  and  two hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 2.33 k",
+    "Results": [
+      {
+        "Text": "2.33 k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "2330"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " two hundred point zero three",
+    "Results": [
+      {
+        "Text": "two hundred point zero three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.03"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " two hundred point seventy-one",
+    "Results": [
+      {
+        "Text": "two hundred point seventy-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.71"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "10000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1.1^23",
+    "Results": [
+      {
+        "Text": "1.1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": " 322 hundred ",
+    "Results": [
+      {
+        "Text": "322 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "32200"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "seventy",
+    "Results": [
+      {
+        "Text": "seventy",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "70"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fifty-two",
+    "Results": [
+      {
+        "Text": "fifty-two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2  1/4",
+    "Results": [
+      {
+        "Text": "2  1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3/4",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one eighth",
+    "Results": [
+      {
+        "Text": "one eighth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "five eighths",
+    "Results": [
+      {
+        "Text": "five eighths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a half",
+    "Results": [
+      {
+        "Text": "a half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "three quarters",
+    "Results": [
+      {
+        "Text": "three quarters",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty and three fifths",
+    "Results": [
+      {
+        "Text": "twenty and three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty-three fifths",
+    "Results": [
+      {
+        "Text": "twenty-three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty and three and three fifths",
+    "Results": [
+      {
+        "Text": "twenty and three and three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "23.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one million two thousand two hundred three fifths",
+    "Results": [
+      {
+        "Text": "one million two thousand two hundred three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "200440.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one and a half",
+    "Results": [
+      {
+        "Text": "one and a half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one and a fourth",
+    "Results": [
+      {
+        "Text": "one and a fourth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "five and a quarter",
+    "Results": [
+      {
+        "Text": "five and a quarter",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5.25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and three quarters",
+    "Results": [
+      {
+        "Text": "one hundred and three quarters",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "100.75"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a hundredth",
+    "Results": [
+      {
+        "Text": "a hundredth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1.1^+23",
+    "Results": [
+      {
+        "Text": "1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2.5^-1",
+    "Results": [
+      {
+        "Text": "2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-2500^-1",
+    "Results": [
+      {
+        "Text": "-2500^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0.0004"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^+23",
+    "Results": [
+      {
+        "Text": "-1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-8.95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-2.5^-1",
+    "Results": [
+      {
+        "Text": "-2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-1.1^--23",
+    "Results": [
+      {
+        "Text": "-1.1^--23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-8.95430243255239"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-127.32e13",
+    "Results": [
+      {
+        "Text": "-127.32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2732E+15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "12.32e+14",
+    "Results": [
+      {
+        "Text": "12.32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1.232E+15"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1.2b",
+    "Results": [
+      {
+        "Text": "1.2b",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1200000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a fifth",
+    "Results": [
+      {
+        "Text": "a fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a hundred thousand trillionths",
+    "Results": [
+      {
+        "Text": "a hundred thousand trillionths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-07"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one fifth",
+    "Results": [
+      {
+        "Text": "one fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "three fifths",
+    "Results": [
+      {
+        "Text": "three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty fifths",
+    "Results": [
+      {
+        "Text": "twenty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "three and a fifth",
+    "Results": [
+      {
+        "Text": "three and a fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty one fifths",
+    "Results": [
+      {
+        "Text": "twenty one fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "a twenty-first",
+    "Results": [
+      {
+        "Text": "a twenty-first",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one twenty-fifth",
+    "Results": [
+      {
+        "Text": "one twenty-fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.04"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "three twenty-firsts",
+    "Results": [
+      {
+        "Text": "three twenty-firsts",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "three twenty firsts",
+    "Results": [
+      {
+        "Text": "three twenty firsts",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "twenty twenty fifths",
+    "Results": [
+      {
+        "Text": "twenty twenty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and thirty fifths",
+    "Results": [
+      {
+        "Text": "one hundred and thirty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred thirty fifths",
+    "Results": [
+      {
+        "Text": "one hundred thirty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred thirty two fifths",
+    "Results": [
+      {
+        "Text": "one hundred thirty two fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred thirty-two fifths",
+    "Results": [
+      {
+        "Text": "one hundred thirty-two fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and thirty-two fifths",
+    "Results": [
+      {
+        "Text": "one hundred and thirty-two fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred and thirty and two fifths",
+    "Results": [
+      {
+        "Text": "one hundred and thirty and two fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "130.4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred thirty-fifths",
+    "Results": [
+      {
+        "Text": "one hundred thirty-fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one one hundred fifth",
+    "Results": [
+      {
+        "Text": "one one hundred fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one one hundred and fifth",
+    "Results": [
+      {
+        "Text": "one one hundred and fifth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one hundred one thousand fifths",
+    "Results": [
+      {
+        "Text": "one hundred one thousand fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0995024875621891"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one over three",
+    "Results": [
+      {
+        "Text": "one over three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 over twenty-one",
+    "Results": [
+      {
+        "Text": "1 over twenty-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 over one hundred and twenty one",
+    "Results": [
+      {
+        "Text": "1 over one hundred and twenty one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00826446280991736"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 over three",
+    "Results": [
+      {
+        "Text": "1 over three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 over 3",
+    "Results": [
+      {
+        "Text": "1 over 3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one over 3",
+    "Results": [
+      {
+        "Text": "one over 3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one over 20",
+    "Results": [
+      {
+        "Text": "one over 20",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one over twenty",
+    "Results": [
+      {
+        "Text": "one over twenty",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one over one hundred",
+    "Results": [
+      {
+        "Text": "one over one hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one over one hundred and twenty five",
+    "Results": [
+      {
+        "Text": "one over one hundred and twenty five",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.008"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ninety - five hundred fifths",
+    "Results": [
+      {
+        "Text": "ninety - five hundred fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book a first class seat to seattle",
+    "Results": []
+  },
+  {
+    "Input": "The answer is negative ninety - five hundred fifths",
+    "Results": [
+      {
+        "Text": "negative ninety - five hundred fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1900"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus ninety - five hundred fifths",
+    "Results": [
+      {
+        "Text": "minus ninety - five hundred fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1900"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus one",
+    "Results": [
+      {
+        "Text": "minus one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus one hundred thirty fifths",
+    "Results": [
+      {
+        "Text": "minus one hundred thirty fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-2.85714285714286"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The answer is negative one over 20",
+    "Results": [
+      {
+        "Text": "negative one over 20",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.05"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus five point five",
+    "Results": [
+      {
+        "Text": "minus five point five",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-5.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The answer is minus 5",
+    "Results": [
+      {
+        "Text": "minus 5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one - fourth",
+    "Results": [
+      {
+        "Text": "one - fourth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one-eighth",
+    "Results": [
+      {
+        "Text": "one-eighth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "five - eighths",
+    "Results": [
+      {
+        "Text": "five - eighths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ninety - five hundred-fifths",
+    "Results": [
+      {
+        "Text": "ninety - five hundred-fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "one out of three",
+    "Results": [
+      {
+        "Text": "one out of three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 in twenty-one",
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "1 in twenty-one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "five eighths of",
+    "Results": [
+      {
+        "Text": "five eighths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567",
+    "Results": [
+      {
+        "Text": "1 234 567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "40 000 is the same as 40 000",
+    "Results": [
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        }
+      },
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "For now, China's population is 1 414 021 100.",
+    "Results": [
+      {
+        "Text": "1 414 021 100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1414021100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "423 0000 will be recognized as two numbers.",
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "423"
+        }
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        }
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567.89 is a valid number format.",
+    "Results": [
+      {
+        "Text": "1 234 567.89",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1234567.89"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "zero is 0",
+    "Results": [
+      {
+        "Text": "zero",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        }
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Any time to meet on 5/17/2018?",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "17"
+        }
+      },
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2018"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +1-222-2222/2222",
+    "NotSupported": "javascript,java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "222"
+        }
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        }
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I can give you 1M.",
+    "Results": [
+      {
+        "Text": "1M",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1m isn't a number.",
+    "Results": []
+  },
+  {
+    "Input": "I can give you 3 hundred and 21 yuan.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred and 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4 thousand 3 hundred and 21 is a valid number.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4 thousand 3 hundred and 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4321"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4 thousand 3 hundred and 0 are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4 thousand 3 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4300"
+        }
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        }
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4000 3 hundred and 21 are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "4000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "4000"
+        }
+      },
+      {
+        "Text": "3 hundred and 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        }
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3 hundred and 2 hundred are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        }
+      },
+      {
+        "Text": "2 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        }
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3 hundred and 2.12 hundred are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        }
+      },
+      {
+        "Text": "2.12 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "212"
+        }
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3 hundred and negative one are two valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        }
+      },
+      {
+        "Text": "negative one",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        }
+      },
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3 hundred and one is a valid numbers.",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "3 hundred and one",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "301"
+        }
+      }
+    ]
+  }
 ]

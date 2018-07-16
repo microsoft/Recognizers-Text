@@ -1,4 +1,4 @@
-﻿---
+---
 #AgeExtractorConfiguration
 # "歳" can be ambiguous, as in "歳月", "歳出", or "何歳", but by itself (with no nearby number) it will be filtered out.
 AgeAmbiguousValues: !list

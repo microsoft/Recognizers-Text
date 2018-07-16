@@ -33,12 +33,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private List<ExtractResult> MergeCompoundUnits(string source)
         {
+            var result = new List<ExtractResult>();
+
             var ers = new NumberWithUnitExtractor(config).Extract(source);
             MergePureNumber(source, ers);
 
-            var result = new List<ExtractResult>();
+            if (ers.Count == 0)
+            {
+                return result;
+            }
+
             var groups = new int[ers.Count];
             groups[0] = 0;
+
             for (var idx = 0; idx < ers.Count - 1; idx++)
             {
                 if (ers[idx].Type != ers[idx + 1].Type && !ers[idx].Type.Equals(Constants.SYS_NUM) &&

@@ -1,7 +1,6 @@
 [
   {
     "Input": "时间从一月十日到十二日",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从一月十日到十二日",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "时间从一月19到20日",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从一月19到20日",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "从一月十日到20日",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "从一月十日到20日",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "明年四月",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "明年四月",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "我们去年5月见过",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "去年5月",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "下周末",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下周末",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "会议在下周",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下周",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "下个月完工",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下个月",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "下周如何",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下周",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "明年",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "明年",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "奥运会在2008年",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2008年",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "十月的第一周是国庆节",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "十月的第一周",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "三月二十八日到四月15日",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "三月二十八日到四月15日",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "前1周",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "前1周",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "上1月",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "上1月",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "下1年",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下1年",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "下1天",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "下1天",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "今年夏天",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "今年夏天",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "今年第一季度",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "今年第一季度",
@@ -229,7 +210,7 @@
   },
   {
     "Input": "上世纪90年代",
-    "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "上世纪90年代",
@@ -241,7 +222,7 @@
   },
   {
     "Input": "本世纪20年代",
-    "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "本世纪20年代",
@@ -253,7 +234,7 @@
   },
   {
     "Input": "20世纪80年代",
-    "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20世纪80年代",
@@ -265,7 +246,7 @@
   },
   {
     "Input": "在50年代的时候",
-    "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "50年代",
@@ -277,7 +258,7 @@
   },
   {
     "Input": "19世纪70年代，他出生了",
-    "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19世纪70年代",
@@ -289,7 +270,7 @@
   },
   {
     "Input": "十九世纪七十年代",
-    "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "十九世纪七十年代",
@@ -301,7 +282,7 @@
   },
   {
     "Input": "九十年代",
-    "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "九十年代",
@@ -337,7 +318,6 @@
   },
   {
     "Input": "2009 年 到 2010 年，小麦产量翻了一番",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2009 年 到 2010 年",
@@ -349,7 +329,6 @@
   },
   {
     "Input": "近 三 年，犯罪数量逐步下降",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "近 三 年",
@@ -361,7 +340,6 @@
   },
   {
     "Input": "比 较 一 下 2009年，我们可以看出变化是很明显的",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2009年",
@@ -373,22 +351,18 @@
   },
   {
     "Input": "100只是一个数字",
-    "NotSupported": "python",
     "Results": []
   },
   {
     "Input": "1499只是一个数字",
-    "NotSupported": "python",
     "Results": []
   },
   {
     "Input": "2101只是一个数字",
-    "NotSupported": "python",
     "Results": []
   },
   {
     "Input": "2018看起来是一个年份",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2018",
@@ -400,7 +374,6 @@
   },
   {
     "Input": "2100看起来是一个年份",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2100",
@@ -412,7 +385,6 @@
   },
   {
     "Input": "1500看起来是一个年份",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1500",
@@ -424,7 +396,6 @@
   },
   {
     "Input": "他07年以后就没再来过学校",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "07年",
@@ -436,7 +407,6 @@
   },
   {
     "Input": "他07 年以前就毕业了",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "07 年",
@@ -448,7 +418,6 @@
   },
   {
     "Input": "08年奥运会在北京举办",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "08年",
@@ -460,7 +429,6 @@
   },
   {
     "Input": "零八年奥运会在北京举办",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "零八年",
@@ -472,7 +440,6 @@
   },
   {
     "Input": "2008 年 奥运会在北京举办",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2008 年",

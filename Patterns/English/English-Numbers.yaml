@@ -1,4 +1,4 @@
-﻿---
+---
 LangMarker: Eng
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
@@ -111,6 +111,8 @@ DoubleAllFloatRegex: !nestedRegex
 #Number Regex
 CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
+ConnectorRegex: !simpleRegex
+    def: (?<spacer>and)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
   def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per cents|per cent|cents|cent|percentage|percents|percent)\b)
@@ -190,7 +192,7 @@ TwoNumberRangeRegex3: !nestedRegex
 TwoNumberRangeRegex4: !nestedRegex
   def: (from\s+)?(?<number1>({NumberSplitMark}(?!\bfrom\b).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>({NumberSplitMark}.)+)
   references: [ TillRegex, NumberSplitMark ]
-AmbiguousFractionConnectorsRegex: !simpleRegex 
+AmbiguousFractionConnectorsRegex: !simpleRegex
   def: (\bin\b)
 # "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser

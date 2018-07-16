@@ -140,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var result in er)
             {
 
-                Int32.TryParse((this.config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
+                int.TryParse((this.config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
 
                 if (num < 1 || num > 31)
                 {
@@ -296,7 +296,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (matchYear.Success && matchYear.Index == 0)
             {
                 year = GetYearFromText(matchYear);
-                endIndex += matchYear.Length;
+
+                if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum)
+                {
+                    endIndex += matchYear.Length;
+                }
             }           
 
             var date = DateObject.MinValue.SafeCreateFromValue(year, month, day);

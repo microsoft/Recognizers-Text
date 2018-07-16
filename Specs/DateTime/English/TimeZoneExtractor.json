@@ -202,5 +202,17 @@
         "Length": 25
       }
     ]
+  },
+  {
+    "Input": "It is the outcome of the vote that counts.",
+    "Comment": "This case is to verify that the utc substring won't be extracted from the word outcome.",
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Show me times at Lincoln Square",
+    "Comment": "This case is to verify that the 'me time' substring won't be extracted from the 'me times'.",
+    "NotSupported": "javascript, python",
+    "Results": []
   }
 ]

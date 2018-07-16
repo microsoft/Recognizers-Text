@@ -1,4 +1,4 @@
-﻿---
+---
 #AgeExtractorConfiguration
 AgeAmbiguousValues: !list
   types: [string]

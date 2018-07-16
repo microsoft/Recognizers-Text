@@ -18,7 +18,10 @@
             Data = er.Data;
             Text = er.Text;
             Type = er.Type;
+            Metadata = er.Metadata;
         }
+
+        public Metadata Metadata { get; set; } = null;
 
         //Value is for resolution. 
         //e.g. 1000 for "one thousand".

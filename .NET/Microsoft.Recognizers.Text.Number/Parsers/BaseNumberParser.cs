@@ -50,22 +50,16 @@ namespace Microsoft.Recognizers.Text.Number
                 return null;
             }
 
-            string extra;
             ParseResult ret = null;
+
+            string extra;
             if ((extra = extResult.Data as string) == null)
             {
-                if (LongFormatRegex.Match(extResult.Text).Success)
-                {
-                    extra = "Num";
-                }
-                else
-                {
-                    extra = Config.LangMarker;
-                }
+                extra = LongFormatRegex.Match(extResult.Text).Success ? "Num" : Config.LangMarker;
             }
 
             // Resolve symbol prefix
-            bool isNegative = false;
+            var isNegative = false;
             var matchNegative = Config.NegativeNumberSignRegex.Match(extResult.Text);
 
             if (matchNegative.Success)
@@ -74,11 +68,48 @@ namespace Microsoft.Recognizers.Text.Number
                 extResult.Text = extResult.Text.Substring(matchNegative.Groups[1].Length);
             }
 
-            if (extra.Contains("Num"))
+            if (extResult.Data is List<ExtractResult> ers)
+            {
+                var innerPrs = ers.Select(Parse).ToList();
+                var mergedPrs = new List<ParseResult>();
+
+                double val = 0;
+                var count = 0;
+
+                for (var idx = 0; idx < innerPrs.Count; idx++)
+                {
+                    val += (double)innerPrs[idx].Value;
+
+                    if (idx + 1 >= innerPrs.Count || !IsMergeable((double)innerPrs[idx].Value, (double)innerPrs[idx + 1].Value))
+                    {
+                        var start = (int)ers[idx - count].Start;
+                        var length = (int)(ers[idx].Start + ers[idx].Length - start);
+                        mergedPrs.Add(new ParseResult
+                        {
+                            Start = start,
+                            Length = length,
+                            Text = extResult.Text.Substring((int)(start - extResult.Start), length),
+                            Type = extResult.Type,
+                            Value = val,
+                            Data = null
+                        });
+
+                        val = 0;
+                        count = 0;
+                    }
+                    else 
+                    {
+                        count++;
+                    }
+                }
+
+                ret = new ParseResult(extResult) {Value = val, Data = mergedPrs};
+            }
+            else if (extra.Contains(Constants.NUMBER_SUFFIX))
             {
                 ret = DigitNumberParse(extResult);
             }
-            else if (extra.Contains($"Frac{Config.LangMarker}")) //Frac is a special number, parse via another method
+            else if (extra.Contains($"{Constants.FRACTION_PREFIX}{Config.LangMarker}")) //Frac is a special number, parse via another method
             {
                 ret = FracLikeNumberParse(extResult);
             }
@@ -86,12 +117,19 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 ret = TextNumberParse(extResult);
             }
-            else if (extra.Contains("Pow"))
+            else if (extra.Contains(Constants.POWER_SUFFIX))
             {
                 ret = PowerNumberParse(extResult);
             }
 
-            if (ret?.Value != null)
+            if (ret?.Data is List<ParseResult> prs)
+            {
+                foreach (var parseResult in prs)
+                {
+                    parseResult.ResolutionStr = GetResolutionStr(parseResult.Value);
+                }
+            }
+            else if (ret?.Value != null)
             {
                 if (isNegative)
                 {
@@ -100,12 +138,54 @@ namespace Microsoft.Recognizers.Text.Number
                     ret.Value = -(double)ret.Value;
                 }
 
-                ret.ResolutionStr = Config.CultureInfo != null
-                    ? ((double)ret.Value).ToString(Config.CultureInfo)
-                    : ret.Value.ToString();
+                ret.ResolutionStr = GetResolutionStr(ret.Value);
             }
 
+            ret.Type = DetermineType(extResult);
+            
             return ret;
+        }
+
+        private static string DetermineType(ExtractResult er)
+        {
+            var data = er.Data as string;
+            var subType = string.Empty;
+
+            if (!string.IsNullOrEmpty(data))
+            {
+                if (data.StartsWith(Constants.FRACTION_PREFIX))
+                {
+                    subType = Constants.FRACTION;
+                }
+                else if (data.Contains(Constants.POWER_SUFFIX))
+                {
+                    subType = Constants.POWER;
+                }
+                else if (data.StartsWith(Constants.INTEGER_PREFIX))
+                {
+                    subType = Constants.INTEGER;
+                }
+                else if (data.StartsWith(Constants.DOUBLE_PREFIX))
+                {
+                    subType = Constants.DECIMAL;
+                }
+            }
+
+            return subType;
+        }
+
+        private static bool IsMergeable(double former, double later)
+        {
+            // The former number is an order of magnitude larger than the later number, and they must be integers
+            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
+                   former > later && former.ToString().Length > later.ToString().Length && later > 0;
+        }
+
+        private string GetResolutionStr(object value)
+        {
+            return Config.CultureInfo != null
+                ? ((double)value).ToString(Config.CultureInfo)
+                : value.ToString();
         }
 
         protected ParseResult PowerNumberParse(ExtractResult extResult)

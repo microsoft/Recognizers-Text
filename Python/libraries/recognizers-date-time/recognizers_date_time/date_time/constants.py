@@ -23,13 +23,12 @@ class Constants:
 
     SemesterMonthCount: int = 6
     TrimesterMonthCount: int = 3
-
-    DefaultLanguageFallback_MDY: str = 'MDY'
-    DefaultLanguageFallback_DMY: str = 'DMY'
-
+    
+    DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
+    DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
+    
     MaxTwoDigitYearFutureNum: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MinTwoDigitYearPastNum: int = int(BaseDateTime.MinTwoDigitYearPastNum)
-
 class TimeTypeConstants:
     DATE: str = 'date'
     START_DATE: str = 'startDate'

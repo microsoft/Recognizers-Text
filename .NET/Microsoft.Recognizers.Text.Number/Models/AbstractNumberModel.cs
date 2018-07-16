@@ -29,13 +29,16 @@ namespace Microsoft.Recognizers.Text.Number
 
                 foreach (var result in extractResults)
                 {
-                    var parsedResult = Parser.Parse(result);
-                    if (parsedResult != null)
+                    var parseResult = Parser.Parse(result);
+                    if (parseResult.Data is List<ParseResult> parseResults)
                     {
-                        parsedNumbers.Add(parsedResult);
+                        parsedNumbers.AddRange(parseResults);
+                    }
+                    else
+                    {
+                        parsedNumbers.Add(parseResult);
                     }
                 }
-
             }
             catch (Exception)
             {
@@ -43,13 +46,28 @@ namespace Microsoft.Recognizers.Text.Number
                 // No result.
             }
 
-            return parsedNumbers.Select(o => new ModelResult
+            return parsedNumbers.Select(o =>
             {
-                Start = o.Start.Value,
-                End = o.Start.Value + o.Length.Value - 1,
-                Resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } },
-                Text = o.Text,
-                TypeName = ModelTypeName
+                var end = o.Start.Value + o.Length.Value - 1;
+                var resolution = new SortedDictionary<string, object> { { ResolutionKey.Value, o.ResolutionStr } };
+
+                var extractorType = Extractor.GetType().ToString();
+
+                // Only support "subtype" for English for now
+                // As some languages like German, we miss handling some subtypes between "decimal" and "integer"
+                if (!string.IsNullOrEmpty(o.Type) && Constants.ValidSubTypes.Contains(o.Type) && extractorType.Contains(Constants.ENGLISH))
+                {
+                    resolution.Add(ResolutionKey.SubType, o.Type);
+                }
+
+                return new ModelResult
+                {
+                    Start = o.Start.Value,
+                    End = end,
+                    Resolution = resolution,
+                    Text = o.Text,
+                    TypeName = ModelTypeName
+                };
             }).ToList();
         }
     }

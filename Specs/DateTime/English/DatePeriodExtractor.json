@@ -3631,5 +3631,16 @@
   {
     "Input": "4832 North Kedvale Avenue https://t.co/Jzruq4pTxp",
     "Results": []
+  },
+  {
+    "Input": "I was missing Oct. 2001",
+    "Results": [
+      {
+        "Text": "Oct. 2001",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 9
+      }
+    ]
   }
 ]

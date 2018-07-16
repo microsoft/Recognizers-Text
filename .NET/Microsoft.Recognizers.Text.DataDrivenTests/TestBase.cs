@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestNumber()
         {
             TestPreValidation();
-            ValidateResults();
+            ValidateResults(new[] { ResolutionKey.Value, ResolutionKey.SubType });
         }
 
         public void TestNumberWithUnit()

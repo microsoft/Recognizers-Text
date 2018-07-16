@@ -210,6 +210,8 @@ public class FrenchNumeric {
 
     public static final String DigitalNumberRegex = "((?<=\\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\\b))|((?<=(\\d|\\b))(k|t|m|g|b)(?=\\b))";
 
+    public static final String AmbiguousFractionConnectorsRegex = "^[.]";
+
     public static final Map<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("zéro", 0L)
         .put("zero", 0L)

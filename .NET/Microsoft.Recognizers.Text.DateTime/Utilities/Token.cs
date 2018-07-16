@@ -7,14 +7,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class Token
     {
-        public Token(int s, int e)
+        public Token(int s, int e, Metadata metadata = null)
         {
             Start = s;
             End = e;
+            Metadata = metadata;
         }
 
         public int Start { get; }
         public int End { get; }
+        public Metadata Metadata { get; }
+
 
         public int Length
         {
@@ -80,7 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     Length = length,
                     Text = substr,
                     Type = extractorName,
-                    Data = null
+                    Data = null,
+                    Metadata = token.Metadata
                 };
 
                 ret.Add(er);

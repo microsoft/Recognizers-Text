@@ -38,25 +38,21 @@ namespace Microsoft.Recognizers.Text.Number.English
             {
                 {
                     new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    Constants.FRACTION_IN_PURENUMBER
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNotationRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    Constants.FRACTION_IN_PURENUMBER
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    Constants.FRACTION_WITH_CONNECTOR
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounWithArticleRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    Constants.FRACTION_WITH_CONNECTOR
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 }
             };
 
@@ -65,8 +61,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                 regexes.Add(
                     new Regex(
                         NumbersDefinitions.FractionPrepositionWithinPercentModeRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "FracEng"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 );
             }
             else
@@ -74,8 +69,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                 regexes.Add(
                     new Regex(
                         NumbersDefinitions.FractionPrepositionRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "FracEng"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 );
             }
 
