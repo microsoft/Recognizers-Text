@@ -73,7 +73,7 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         return self._utility_configuration
 
     def __init__(self):
-        if SpanishDateTime.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY:
+        if SpanishDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = SpanishDateTime.DateExtractor5
             date_extractor_5 = SpanishDateTime.DateExtractor4
         else:

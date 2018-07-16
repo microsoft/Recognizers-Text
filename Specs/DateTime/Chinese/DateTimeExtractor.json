@@ -1,7 +1,6 @@
 [
   {
     "Input": "2010-01-29早上七点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2010-01-29早上七点",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "2010.01.29晚上六点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2010.01.29晚上六点",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "2010/01/29中午十二点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2010/01/29中午十二点",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "2010 01 29五点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2010 01 29五点",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "1987年1月11日八点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1987年1月11日八点",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "农历2015年十月初一早上九点二十",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "农历2015年十月初一早上九点二十",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "1月19号下午5:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1月19号下午5:00",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "明天下午5:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "明天下午5:00",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "今晚6点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "今晚6点",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "昨晚6点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "昨晚6点",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "今晨5点",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "今晨5点",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "今早8点十五分",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "今早8点十五分",

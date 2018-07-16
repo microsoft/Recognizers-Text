@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2010-01-29早上七点",
@@ -28,7 +27,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2010.01.29晚上六点",
@@ -52,7 +50,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2010/01/29中午十二点",
@@ -76,7 +73,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2010 01 29五点",
@@ -100,7 +96,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1987年1月11日八点",
@@ -124,7 +119,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "农历2015年十月初一早上九点二十",
@@ -148,7 +142,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1月19号下午5:00",
@@ -172,7 +165,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "明天下午5:00",
@@ -196,7 +188,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "今晚6点",
@@ -220,7 +211,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "今晨5点",
@@ -244,7 +234,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "今早8点十五分",

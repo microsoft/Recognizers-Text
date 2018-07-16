@@ -1,7 +1,6 @@
 [
   {
     "Input": "两年",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "两年",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "6 天",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "6 天",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "7 周",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "7 周",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "5 小时",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 小时",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "三年半",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "三年半",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "三天半",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "三天半",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "三个月半",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "三个月半",
