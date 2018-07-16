@@ -256,6 +256,8 @@ public class EnglishNumeric {
             .replace("{TillRegex}", TillRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
+    public static final String AmbiguousFractionConnectorsRegex = "(\\bin\\b)";
+
     public static final Character DecimalSeparatorChar = '.';
 
     public static final String FractionMarkerToken = "over";

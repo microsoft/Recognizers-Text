@@ -451,4 +451,6 @@ public class SpanishNumeric {
         .put("g", 1000000000L)
         .put("t", 1000000000000L)
         .build();
+
+    public static final String AmbiguousFractionConnectorsRegex = "^[.]";
 }
