@@ -6,9 +6,11 @@ from recognizers_suite import Culture, ModelResult
 # Use English for the Recognizers culture
 DEFAULT_CULTURE = Culture.English
 
+
 def main():
     show_intro()
     run_recognition()
+
 
 # Read from Console and recognize
 def run_recognition():
@@ -28,10 +30,11 @@ def run_recognition():
             print()
 
             for result in results:
-                print(json.dumps(result, default=lambda o: o.__dict__, indent='\t'))
+                print(json.dumps(result, default=lambda o: o.__dict__, indent='\t', ensure_ascii=False))
                 print()
 
-def parse_all(user_input: str, culture: str) -> List[ModelResult]:
+
+def parse_all(user_input: str, culture: str) -> List[List[ModelResult]]:
     return [
         # Number recognizer - This function will find any number from the input
         # E.g "I have two apples" will return "2".
@@ -40,7 +43,7 @@ def parse_all(user_input: str, culture: str) -> List[ModelResult]:
         # Ordinal number recognizer - This function will find any ordinal number
         # E.g "eleventh" will return "11".
         Recognizers.recognize_ordinal(user_input, culture),
-        
+
         # Percentage recognizer - This function will find any number presented as percentage
         # E.g "one hundred percents" will return "100%"
         Recognizers.recognize_percentage(user_input, culture),
@@ -53,8 +56,8 @@ def parse_all(user_input: str, culture: str) -> List[ModelResult]:
         # E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
         Recognizers.recognize_currency(user_input, culture),
 
-        # Dimension recognizer - This function will find any dimension presented
-        # E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
+        # Dimension recognizer - This function will find any dimension presented E.g "The six-mile trip to my airport
+        #  hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
         Recognizers.recognize_dimension(user_input, culture),
 
         # Temperature recognizer - This function will find any temperature presented
@@ -65,6 +68,7 @@ def parse_all(user_input: str, culture: str) -> List[ModelResult]:
         # E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
         Recognizers.recognize_datetime(user_input, culture)
     ]
+
 
 # Show Introduction
 def show_intro():
@@ -84,6 +88,7 @@ Here are some examples you could try:
 \" It happened when the baby was only ten months old\"
 \" No, I don\'t think that we can make 100k USD today\"
 ''')
+
 
 if __name__ == '__main__':
     main()

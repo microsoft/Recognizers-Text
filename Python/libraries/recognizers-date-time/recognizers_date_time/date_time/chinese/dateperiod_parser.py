@@ -36,7 +36,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
 
             inner_result = self._parse_simple_cases(source_text, reference)
             if not inner_result.success:
-                inner_result = self._parse_one_world_period(source_text, reference)
+                inner_result = self._parse_one_word_period(source_text, reference)
 
             if not inner_result.success:
                 inner_result = self._merge_two_times_points(source_text, reference)

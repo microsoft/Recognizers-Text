@@ -524,7 +524,7 @@ class BaseDatePeriodParser(DateTimeParser):
                 inner_result = self._parse_simple_case(source_text, reference)
 
             if not inner_result.success:
-                inner_result = self._parse_one_world_period(source_text, reference)
+                inner_result = self._parse_one_word_period(source_text, reference)
 
             if not inner_result.success:
                 inner_result = self._merge_two_times_points(source_text, reference)
@@ -689,7 +689,7 @@ class BaseDatePeriodParser(DateTimeParser):
         result.success = True
         return result
 
-    def _parse_one_world_period(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+    def _parse_one_word_period(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         year = reference.year
         month = reference.month
