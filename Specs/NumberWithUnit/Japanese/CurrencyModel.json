@@ -1,5 +1,81 @@
 [
 {
+  "Input": "今日の日経平均は2222円13銭です。",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "2222円13銭",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "JPY",
+        "value": "2222.13",
+        "unit": "Japanese yen"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "次の停車駅は銭函",
+  "NotSupported": "javascript,python",
+  "Results": []
+}
+,
+{
+  "Input": "35億円",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "35億円",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "JPY",
+        "value": "3500000000",
+        "unit": "Japanese yen"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "そのシュークリームは1個\\100です",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "\\100",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "JPY",
+        "value": "100",
+        "unit": "Japanese yen"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "printf(\"1\\n2\\n\");",
+  "NotSupported": "javascript,python",
+  "Results": []
+}
+,
+{
+  "Input": "1,280円",
+  "NotSupported": "javascript,python",
+  "Results": [
+    {
+      "Text": "1,280円",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "JPY",
+        "value": "1280",
+        "unit": "Japanese yen"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "その中で、四川の彩友の中で1注1000万人民元の基本的なトップ賞を得ました。",
   "NotSupported": "javascript,python",
   "Results": [
