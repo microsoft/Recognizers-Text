@@ -697,7 +697,7 @@ class BaseDatePeriodParser(DateTimeParser):
         if self.config.is_year_to_date(source):
             result.timex = f'{year:04d}'
             result.future_value = [DateUtils.safe_create_from_value(DateUtils.min_value, year, 1, 1), reference]
-            result.past_value = [DateUtils.safe_create_from_value(DateUtils.min_value, year, month, 1, 1), reference]
+            result.past_value = [DateUtils.safe_create_from_value(DateUtils.min_value, year, 1, 1), reference]
             result.success = True
             return result
 
