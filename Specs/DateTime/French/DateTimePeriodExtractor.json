@@ -1,7 +1,6 @@
 [
   {
     "Input": "Je serai sorti cinq au sept aujourd'hui",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq au sept aujourd'hui",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Je serai sorti cinq à sept demain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinq à sept demain",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Je serai sorti de cinq au sept dimanche prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de cinq au sept dimanche prochain",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Je serai sorti de 5 au 6pm dimanche prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 5 au 6pm dimanche prochain",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Je serai sorti de 4pm à 5pm aujourd'hui",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4pm à 5pm aujourd'hui",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Je serai sorti de 4pm aujourd'hui à 5pm demain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4pm aujourd'hui à 5pm demain",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Je serai sorti de 4pm à 5pm lendemain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4pm à 5pm lendemain",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Je serai sorti de 4pm à 5pm de 2017-6-6",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4pm à 5pm de 2017-6-6",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Je serai sorti de 4pm à 5pm 5 Mai, 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4pm à 5pm 5 Mai, 2018",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Je serai sorti de 4:00 a 5pm 5 Mai, 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4:00 a 5pm 5 Mai, 2018",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je serai sorti de 4pm 1 Jan, 2016 a 5pm aujourd'hui",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4pm 1 Jan, 2016 a 5pm aujourd'hui",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Je serai sorti entre 4pm et 5pm aujourd'hui",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 4pm et 5pm aujourd'hui",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Je reviendrai ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce soir",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "Je reviendrai cette nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette nuit",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "Je reviendrai cette soirée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette soirée",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "Je reviendrai ce matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce matin",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Je reviendrai cette d'apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette d'apres-midi",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Je reviendrai nuit lendemain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "nuit lendemain",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Je reviendrai cette Lundi l'apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Lundi l'apres-midi",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "Je reviendrai nuit 5 Mai",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "nuit 5 Mai",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "Je reviendrai derniere 3 minute",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "derniere 3 minute",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "Je reviendrai derniere 3mins",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "derniere 3mins",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "Je reviendrai prochain 5 hrs",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "prochain 5 hrs",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "Je reviendrai derniere minute",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "derniere minute",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "Je reviendrai prochaine heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "prochaine heures",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "Je reviendrai derniere quel ques minutes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "derniere quel ques minutes",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "Je reviendrai derniere plusieur minutes",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "derniere plusieur minutes",
@@ -325,7 +298,6 @@
   },
   {
     "Input": "Je reviendrai mardi dans le matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi dans le matin",
@@ -337,7 +309,6 @@
   },
   {
     "Input": "Je reviendrai mardi l'apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi l'apres-midi",
@@ -349,7 +320,6 @@
   },
   {
     "Input": "Je reviendrai mardi l'apres midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi l'apres midi",
@@ -361,7 +331,6 @@
   },
   {
     "Input": "Je reviendrai mardi l'après midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi l'après midi",
@@ -373,7 +342,6 @@
   },
   {
     "Input": "Je reviendrai mardi dans la nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi dans la nuit",
@@ -385,7 +353,6 @@
   },
   {
     "Input": "Je reviendrai mardi dans la soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi dans la soiree",
@@ -397,7 +364,6 @@
   },
   {
     "Input": "Je reviendrai mardi dans la soirée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi dans la soirée",
@@ -409,7 +375,6 @@
   },
   {
     "Input": "Je reviendrai mardi du soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi du soir",
@@ -421,7 +386,6 @@
   },
   {
     "Input": "rencontrons-nous dans tôt le matin Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tôt le matin Mardi",
@@ -433,7 +397,6 @@
   },
   {
     "Input": "rencontrons-nous dans le tard matin Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le tard matin Mardi",
@@ -445,7 +408,6 @@
   },
   {
     "Input": "rencontrons-nous dans le début d'après-midi Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le début d'après-midi Mardi",
@@ -457,7 +419,6 @@
   },
   {
     "Input": "rencontrons-nous dans tot d'après-midi Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tot d'après-midi Mardi",
@@ -469,7 +430,6 @@
   },
   {
     "Input": "rencontrons-nous dans le tard d'apres-midi Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le tard d'apres-midi Mardi",
@@ -481,7 +441,6 @@
   },
   {
     "Input": "rencontrons-nous dans tôt le soir mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tôt le soir mardi",
@@ -493,7 +452,6 @@
   },
   {
     "Input": "rencontrons-nous dans fin de soirée mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin de soirée mardi",
@@ -505,7 +463,6 @@
   },
   {
     "Input": "rencontrons-nous dans le tôt le soiree mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le tôt le soiree mardi",
@@ -517,7 +474,6 @@
   },
   {
     "Input": "rencontrons-nous dans le tard nuit Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le tard nuit Mardi",
@@ -529,7 +485,6 @@
   },
   {
     "Input": "rencontrons-nous dans le tôt nuit mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le tôt nuit mardi",
@@ -541,7 +496,6 @@
   },
   {
     "Input": "rencontrons-nous dans fin de nuit mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin de nuit mardi",
@@ -553,7 +507,6 @@
   },
   {
     "Input": "rencontrons-nous dans tot le matin Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tot le matin Mardi",
@@ -565,7 +518,6 @@
   },
   {
     "Input": "rencontrons-nous dans tard matin Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard matin Mardi",
@@ -577,7 +529,6 @@
   },
   {
     "Input": "rencontrons-nous dans début d'après-midi Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "début d'après-midi Mardi",
@@ -589,7 +540,6 @@
   },
   {
     "Input": "rencontrons-nous dans tard d'apres-midi Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard d'apres-midi Mardi",
@@ -601,7 +551,6 @@
   },
   {
     "Input": "rencontrons-nous dans debut soiree mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut soiree mardi",
@@ -613,7 +562,6 @@
   },
   {
     "Input": "rencontrons-nous dans fin de soiree mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin de soiree mardi",
@@ -625,7 +573,6 @@
   },
   {
     "Input": "rencontrons-nous dans tot le nuit mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tot le nuit mardi",
@@ -637,7 +584,6 @@
   },
   {
     "Input": "rencontrons-nous dans debut nuit mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut nuit mardi",
@@ -649,7 +595,6 @@
   },
   {
     "Input": "rencontrons-nous dans tard nuit Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard nuit Mardi",
@@ -661,7 +606,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi matin",
@@ -673,7 +617,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi tot le matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi tot le matin",
@@ -685,7 +628,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi d'apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi d'apres-midi",
@@ -697,7 +639,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi dans la soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi dans la soiree",
@@ -709,7 +650,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi dans la nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi dans la nuit",
@@ -721,7 +661,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi soiree",
@@ -733,7 +672,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi nuit",
@@ -745,7 +683,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi de soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi de soir",
@@ -757,7 +694,6 @@
   },
   {
     "Input": "rencontrons-nous Mardi ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi ce soir",
@@ -769,7 +705,6 @@
   },
   {
     "Input": "Je serai sorti le reste du jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "reste du jour",
@@ -781,7 +716,6 @@
   },
   {
     "Input": "Je serai sorti le reste du ce jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "reste du ce jour",
@@ -793,7 +727,6 @@
   },
   {
     "Input": "Je serai sorti le fin du jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin du jour",
@@ -805,7 +738,6 @@
   },
   {
     "Input": "Retrouvons-nous dans le matin Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le matin Mardi",
@@ -817,7 +749,6 @@
   },
   {
     "Input": "Retrouvons-nous l'apres-midi Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "l'apres-midi Mardi",
@@ -829,7 +760,6 @@
   },
   {
     "Input": "Retrouvons-nous debut d'apres-midi Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut d'apres-midi Mardi",
@@ -841,7 +771,6 @@
   },
   {
     "Input": "Retrouvons-nous dans le fin d'apres-midi mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le fin d'apres-midi mardi",
@@ -853,7 +782,6 @@
   },
   {
     "Input": "Retrouvons-nous en debut soiree Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut soiree Mardi",
@@ -865,7 +793,6 @@
   },
   {
     "Input": "Retrouvons-nous dans le fin de soiree mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le fin de soiree mardi",
@@ -877,7 +804,6 @@
   },
   {
     "Input": "Retrouvons-nous dans le debut nuit mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le debut nuit mardi",
@@ -889,7 +815,6 @@
   },
   {
     "Input": "Retrouvons-nous dans le fin nuit mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le fin nuit mardi",
@@ -901,7 +826,6 @@
   },
   {
     "Input": "retrouvons-nouse dans le fin de nuit mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le fin de nuit mardi",
@@ -913,7 +837,6 @@
   },
   {
     "Input": "retrouvons-nous dans le fin nuit au mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le fin nuit",
@@ -925,7 +848,6 @@
   },
   {
     "Input": "retrouvons-nous dans le debut soiree au mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le debut soiree",
@@ -937,7 +859,6 @@
   },
   {
     "Input": "retrouvons-nous dans le fin matin au mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le fin matin",
@@ -949,7 +870,6 @@
   },
   {
     "Input": "retrouvons-nous dans le debut d'apres-midi au mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le debut d'apres-midi",
@@ -961,7 +881,6 @@
   },
   {
     "Input": "retrouvons-nous dans le début nuit mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le début nuit mardi",
@@ -973,7 +892,6 @@
   },
   {
     "Input": "retrouvons-nous mardi début matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi début matin",
@@ -985,7 +903,6 @@
   },
   {
     "Input": "retrouvons-nous mardi fin de matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi fin de matin",
@@ -997,7 +914,6 @@
   },
   {
     "Input": "retrouvons-nous mardi début d'après-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi début d'après-midi",
@@ -1009,7 +925,6 @@
   },
   {
     "Input": "retrouvons-nous mardi debut soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi debut soiree",
@@ -1021,7 +936,6 @@
   },
   {
     "Input": "retrouvons-nous mardi fin de nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi fin de nuit",
@@ -1033,7 +947,6 @@
   },
   {
     "Input": "retrouvons-nous mardi fin nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi fin nuit",
@@ -1045,7 +958,6 @@
   },
   {
     "Input": "retrouvons-nous mardi debut nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mardi debut nuit",

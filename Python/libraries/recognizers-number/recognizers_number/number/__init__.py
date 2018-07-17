@@ -4,5 +4,6 @@ from .parsers import *
 from .english import *
 from .spanish import *
 from .chinese import *
+from .french import *
 from .number_recognizer import *
 from .parser_factory import *

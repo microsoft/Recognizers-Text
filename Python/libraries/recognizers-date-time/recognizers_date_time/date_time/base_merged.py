@@ -625,6 +625,12 @@ class BaseMergedParser(DateTimeParser):
             split_value = resolution[TimeTypeConstants.VALUE].split(' ')
             resolution_pm[TimeTypeConstants.VALUE] = f'{split_value[0]} {FormatUtil.to_pm(split_value[1])}'
             resolution_pm['timex'] = FormatUtil.all_str_to_pm(timex)
+        elif values_map['type'] == Constants.SYS_DATETIME_TIMEPERIOD:
+            if TimeTypeConstants.START in resolution:
+                resolution_pm[TimeTypeConstants.START] = FormatUtil.to_pm(resolution[TimeTypeConstants.START])
+            if TimeTypeConstants.END in resolution:
+                resolution_pm[TimeTypeConstants.END] = FormatUtil.to_pm(resolution[TimeTypeConstants.END])
+            resolution_pm['timex'] = FormatUtil.all_str_to_pm(timex)
         elif values_map['type'] == Constants.SYS_DATETIME_DATETIMEPERIOD:
             if TimeTypeConstants.START in resolution:
                 split_value = resolution[TimeTypeConstants.START].split(' ')

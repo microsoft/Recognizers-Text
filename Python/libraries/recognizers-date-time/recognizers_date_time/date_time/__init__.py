@@ -18,3 +18,4 @@ from .base_merged import *
 from .english import *
 from .spanish import *
 from .chinese import *
+from .french import *

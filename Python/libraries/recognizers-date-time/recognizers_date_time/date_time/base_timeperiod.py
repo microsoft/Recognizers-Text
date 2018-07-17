@@ -159,6 +159,11 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                 if from_index.matched:
                     period_begin = from_index.index
 
+                # handle "between"
+                between_index: MatchedIndex = self.config.get_between_token_index(before)
+                if between_index.matched:
+                    period_begin = between_index.index
+
                 result.append(Token(period_begin, period_end))
                 i += 2
                 continue
@@ -176,6 +181,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
                     result.append(Token(period_begin, period_end))
                     i += 2
                     continue
+
             i += 1
 
         return result
@@ -247,8 +253,7 @@ class BaseTimePeriodParser(DateTimeParser):
         if reference is None:
             reference = datetime.now()
 
-        result = DateTimeParseResult(source)
-
+        value = None
         if source.type is self.parser_type_name:
             source_text = source.text.lower()
 
@@ -265,9 +270,12 @@ class BaseTimePeriodParser(DateTimeParser):
                 inner_result.future_resolution[TimeTypeConstants.END_TIME] = FormatUtil.format_time(inner_result.future_value.end)
                 inner_result.past_resolution[TimeTypeConstants.START_TIME] = FormatUtil.format_time(inner_result.past_value.start)
                 inner_result.past_resolution[TimeTypeConstants.END_TIME] = FormatUtil.format_time(inner_result.past_value.end)
-                result.value = inner_result
-                result.timex_str = inner_result.timex if inner_result is not None else ''
-                result.resolution_str = ''
+                value = inner_result
+        
+        result = DateTimeParseResult(source)
+        result.value = value
+        result.timex_str = value.timex if value is not None else ''
+        result.resolution_str = ''
 
         return result
 

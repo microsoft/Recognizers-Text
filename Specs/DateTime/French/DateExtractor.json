@@ -1,7 +1,6 @@
 [
   {
     "Input": "Je reviendrai le 2 décembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2 décembre",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Je suis retourne pour le 27e",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le 27e",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Je suis retourne pour le seconde!",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le seconde",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Je suis retourne pour le vingt deux?",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le vingt deux",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Je reviendrai Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mardi",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Je reviendrai mar. connes nouvelles.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mar",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Je reviendrai Mar",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mar",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Je reviendrai Mercredi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mercredi",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Je reviendrai Vendredi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Vendredi",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Je reviendrai le vendredi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vendredi",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je reviendrai aujourd'hui",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "aujourd'hui",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Je reviendrai lendemain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "lendemain",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Je reviendrai hier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "hier",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "Je reviendrai avant hier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "avant hier",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "Je reviendrai apres demain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres demain",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "Je reviendrai le jour suivant",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le jour suivant",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Je reviendrai cette vendredi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette vendredi",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Je reviendrai dimanche prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dimanche prochain",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Je reviendrai dimanche derniere",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dimanche derniere",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "Je reviendrai dernier jour",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dernier jour",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "Je reviendrai vendredi cette semaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vendredi cette semaine",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "Je reviendrai 15 Juin 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15 Juin 2016",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "Je reviendrai sixieme Dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Dimanche",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "Je reviendrai dixieme Lundi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Lundi",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "Je reviendrai le 20e mois prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "20e mois prochain",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "Je reviendrai le 20e cette mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "20e cette mois",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "Je reviendrai seconde Dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "seconde Dimanche",
@@ -325,7 +298,6 @@
   },
   {
     "Input": "Je reviendrai 1er Dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1er Dimanche",
@@ -337,7 +309,6 @@
   },
   {
     "Input": "Je reviendrai troisieme Mardi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "troisieme Mardi",
@@ -349,7 +320,6 @@
   },
   {
     "Input": "Je reviendrai cinquieme Dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cinquieme Dimanche",
@@ -361,7 +331,6 @@
   },
   {
     "Input": "Je suis retourne pour le 27",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le 27",
@@ -373,7 +342,6 @@
   },
   {
     "Input": "Je suis retourne pour le 27.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le 27",
@@ -385,7 +353,6 @@
   },
   {
     "Input": "Je suis retourne pour le 27!",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le 27",
@@ -397,7 +364,6 @@
   },
   {
     "Input": "Je suis retourne pour le 27 .",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le 27",
@@ -409,7 +375,6 @@
   },
   {
     "Input": "Je suis retourne pour le seconde",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le seconde",
@@ -421,7 +386,6 @@
   },
   {
     "Input": "Je suis retourne pour le vingt deux",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "pour le vingt deux",
@@ -433,7 +397,6 @@
   },
   {
     "Input": "Je reviens en 15",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15",
@@ -445,7 +408,6 @@
   },
   {
     "Input": "Je reviendrai 22 avril",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22 avril",
@@ -457,7 +419,6 @@
   },
   {
     "Input": "Je reviens Jan-1",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jan-1",
@@ -469,7 +430,6 @@
   },
   {
     "Input": "Je reviens Jan/1",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jan/1",
@@ -481,7 +441,6 @@
   },
   {
     "Input": "Je reviendrai le 2 Février",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2 Février",
@@ -493,7 +452,6 @@
   },
   {
     "Input": "Je reviendrai le 2 Août",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2 Août",
@@ -505,7 +463,6 @@
   },
   {
     "Input": "Je reviendrai le 2 Octobre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2 Octobre",
@@ -517,7 +474,6 @@
   },
   {
     "Input": "Je reviendrai le 12 janvier 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12 janvier 2016",
@@ -529,7 +485,6 @@
   },
   {
     "Input": "J'y reviendrai 12 janvier 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12 janvier 2016",
@@ -541,7 +496,6 @@
   },
   {
     "Input": "Je reviendrai le lundi 12 janvier 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "lundi 12 janvier 2016",
@@ -553,7 +507,6 @@
   },
   {
     "Input": "Je reviens 22/02/2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22/02/2016",
@@ -565,7 +518,6 @@
   },
   {
     "Input": "Je reviens 21/04/2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "21/04/2016",
@@ -577,7 +529,6 @@
   },
   {
     "Input": "Je reviens 21/04/16",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "21/04/16",
@@ -589,7 +540,6 @@
   },
   {
     "Input": "Je reviens 9-18-15",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9-18-15",
@@ -601,7 +551,6 @@
   },
   {
     "Input": "Je reviens sur 4.22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4.22",
@@ -613,7 +562,6 @@
   },
   {
     "Input": "Je reviens sur 4-22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4-22",
@@ -625,7 +573,6 @@
   },
   {
     "Input": "Je reviens sur    4/22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4/22",
@@ -637,7 +584,6 @@
   },
   {
     "Input": "Je reviens sur 22/04",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22/04",
@@ -649,7 +595,6 @@
   },
   {
     "Input": "Je reviens sur       4/22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4/22",
@@ -661,7 +606,6 @@
   },
   {
     "Input": "Je reviens sur 2015/08/12",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -673,7 +617,6 @@
   },
   {
     "Input": "Je reviens sur 11/12,2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11/12,2016",
@@ -685,7 +628,6 @@
   },
   {
     "Input": "Je reviens 11/12,16",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11/12,16",
@@ -697,7 +639,6 @@
   },
   {
     "Input": "Je reviens 1er Jan",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1er Jan",
@@ -709,7 +650,6 @@
   },
   {
     "Input": "Je reviens 1-Jan",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1-Jan",
@@ -721,7 +661,6 @@
   },
   {
     "Input": "Je reviens 28-Nov",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "28-Nov",
@@ -733,7 +672,6 @@
   },
   {
     "Input": "Je reviens Mer 22 Janvier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mer 22 Janvier",
@@ -745,7 +683,6 @@
   },
   {
     "Input": "Je reviens 1er Janv",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1er Janv",
@@ -757,7 +694,6 @@
   },
   {
     "Input": "Je retournerai Vendredi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Vendredi",
@@ -769,7 +705,6 @@
   },
   {
     "Input": "Je vais revenier vendredi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vendredi",
@@ -781,7 +716,6 @@
   },
   {
     "Input": "Je reviens le vendredi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vendredi",
@@ -793,7 +727,6 @@
   },
   {
     "Input": "Je reviens les vendredis",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vendredis",
@@ -805,7 +738,6 @@
   },
   {
     "Input": "Je vais y retourner demain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "demain",
@@ -817,7 +749,6 @@
   },
   {
     "Input": "J'ai alle hier ",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "hier",
@@ -829,7 +760,6 @@
   },
   {
     "Input": "Je vais revenir avant-hier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "avant-hier",
@@ -841,7 +771,6 @@
   },
   {
     "Input": "Je vai retourner lendemain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "lendemain",
@@ -853,7 +782,6 @@
   },
   {
     "Input": "Je vai retourner apres-demain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres-demain",
@@ -865,7 +793,6 @@
   },
   {
     "Input": "Je reviens le lendemain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "lendemain",
@@ -877,7 +804,6 @@
   },
   {
     "Input": "je vai retourner cette vendredi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette vendredi",
@@ -889,7 +815,6 @@
   },
   {
     "Input": "J'y reviendrai cette dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette dimanche",
@@ -901,7 +826,6 @@
   },
   {
     "Input": "Je suis retournee dimanche dernier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dimanche dernier",
@@ -913,7 +837,6 @@
   },
   {
     "Input": "Je retournerai vendredi cette semaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vendredi cette semaine",
@@ -925,7 +848,6 @@
   },
   {
     "Input": "Je retournerai dimanche la semaine prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dimanche la semaine prochain",
@@ -937,7 +859,6 @@
   },
   {
     "Input": "Je retournerai dimanche la semaine dernier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dimanche la semaine dernier",
@@ -949,7 +870,6 @@
   },
   {
     "Input": "Je retournerai 15 Juin 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15 Juin 2016",
@@ -961,7 +881,6 @@
   },
   {
     "Input": "un baseball le 10 mai",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "10 mai",
@@ -973,7 +892,6 @@
   },
   {
     "Input": "Je retournerai le premier vendredi de juillet",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le premier vendredi de juillet",
@@ -985,7 +903,6 @@
   },
   {
     "Input": "Je retournerai le premier vendredi cette mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le premier vendredi cette mois",
@@ -997,7 +914,6 @@
   },
   {
     "Input": "Je retournerai le premier samedi de Dec",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le premier samedi de Dec",
@@ -1009,7 +925,6 @@
   },
   {
     "Input": "deux semaines plus tard, chris est partie",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "deux semaines plus tard",
@@ -1021,7 +936,6 @@
   },
   {
     "Input": "Je retounerai vendredi prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vendredi prochain",
@@ -1043,7 +957,6 @@
   },
   {
     "Input": "Êtes-vous libre le 13.5.2015",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -1055,7 +968,6 @@
   },
   {
     "Input": "Êtes-vous libre le 2015.5.13",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015.5.13",

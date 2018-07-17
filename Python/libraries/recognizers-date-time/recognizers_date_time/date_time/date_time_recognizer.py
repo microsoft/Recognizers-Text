@@ -13,6 +13,9 @@ from .spanish.merged_extractor_config import SpanishMergedExtractorConfiguration
 from .spanish.merged_parser_config import SpanishMergedParserConfiguration
 from .chinese.merged_extractor import ChineseMergedExtractor
 from .chinese.merged_parser import ChineseMergedParser
+from .french.common_configs import FrenchCommonDateTimeParserConfiguration
+from .french.merged_extractor_config import FrenchMergedExtractorConfiguration
+from .french.merged_parser_config import FrenchMergedParserConfiguration
 
 class DateTimeRecognizer(Recognizer[DateTimeOptions]):
     def __init__(self, target_culture: str = None,
@@ -39,8 +42,8 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
         ))
 
         self.register_model('DateTimeModel', Culture.French, lambda options: DateTimeModel(
-            None,
-            None
+            BaseMergedParser(FrenchMergedParserConfiguration(FrenchCommonDateTimeParserConfiguration()), options),
+            BaseMergedExtractor(FrenchMergedExtractorConfiguration(), options)
         ))
 
         self.register_model('DateTimeModel', Culture.Portuguese, lambda options: DateTimeModel(

@@ -221,7 +221,7 @@ class BaseHolidayParserConfiguration(HolidayParserConfiguration):
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         return dict([
             ('fathers', BaseHolidayParserConfiguration.fathers_day),
-            ('Mothers', BaseHolidayParserConfiguration.mothers_day),
+            ('mothers', BaseHolidayParserConfiguration.mothers_day),
             ('thanksgivingday', BaseHolidayParserConfiguration.thanksgiving_day),
             ('thanksgiving', BaseHolidayParserConfiguration.thanksgiving_day),
             ('martinlutherking', BaseHolidayParserConfiguration.martin_luther_king_day),
