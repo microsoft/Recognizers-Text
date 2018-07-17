@@ -27,7 +27,7 @@ class ChineseMergedExtractor(BaseMergedExtractor):
         result = self.add_to(result, self.config.date_time_period_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.set_extractor.extract(source, reference), source)
         result = self.add_to(result, self.config.holiday_extractor.extract(source, reference), source)
-        result = self.add_mod(result, source)
+        result = self.check_black_list(result, source)
 
         result = sorted(result, key=lambda x: x.start)
 
@@ -70,7 +70,7 @@ class ChineseMergedExtractor(BaseMergedExtractor):
             del destination[index]
         return destination
 
-    def add_mod(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
+    def check_black_list(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
         return list(filter(lambda x: self.filter_item(x, source), ers))
 
     def filter_item(self, value: ExtractResult, source: str) -> bool:
@@ -79,9 +79,9 @@ class ChineseMergedExtractor(BaseMergedExtractor):
         if value_end != len(source):
             last_char = source[value_end]
             if value.text.endswith('周') and value_end < len(source) and last_char == '岁':
-                return True
+                return False
 
         if regex.search(self.day_of_month_regex, value.text):
-            return True
+            return False
 
         return True

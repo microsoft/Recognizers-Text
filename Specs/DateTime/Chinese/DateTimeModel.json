@@ -153,28 +153,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "12号",
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-XX-12",
-              "type": "date",
-              "value": "2017-03-12"
-            },
-            {
-              "timex": "XXXX-XX-12",
-              "type": "date",
-              "value": "2017-04-12"
-            }
-          ]
-        },
-        "Start": 0,
-        "End": 2
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "二零零四年八月十五",
@@ -1834,6 +1813,30 @@
         },
         "Start": 0,
         "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "我今年18周岁了",
+    "Context": {
+      "ReferenceDateTime": "2018-07-16T16:00:00"
+    },
+    "Results": [
+      {
+        "Text": "今年",
+        "Start": 1,
+        "End": 2,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-07-16"
+            }
+          ]
+        }
       }
     ]
   }
