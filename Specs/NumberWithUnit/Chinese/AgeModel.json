@@ -98,7 +98,7 @@
 ,
 {
   "Input": "70 - 90天大的小孩应该去医院做检查",
-  "NotSupported": "javascript",
+  "NotSupported": "javascript, java",
   "Results": [
     {
       "Text": "90天大",

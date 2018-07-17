@@ -588,8 +588,8 @@ class BaseMergedParser(DateTimeParser):
         result[key] = value
 
     def __add_period_to_resolution(self, resolutions: Dict[str, str], start_type: str, end_type: str, mod: str, result: Dict[str, str]):
-        start = resolutions[start_type]
-        end = resolutions[end_type]
+        start = resolutions.get(start_type, None)
+        end = resolutions.get(end_type, None)
         if mod:
             if mod == TimeTypeConstants.BEFORE_MOD:
                 result[TimeTypeConstants.END] = start

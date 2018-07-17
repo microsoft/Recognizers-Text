@@ -433,4 +433,6 @@ public class ChineseNumeric {
 
     public static final String TwoNumberRangeRegex4 = "(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)"
             .replace("{TillRegex}", TillRegex);
+
+    public static final String AmbiguousFractionConnectorsRegex = "^[.]";
 }

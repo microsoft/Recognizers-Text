@@ -2,11 +2,11 @@ package com.microsoft.recognizers.text.resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.stream.Collectors;
 
 public class ResourcesGenerator {
 
@@ -17,7 +17,7 @@ public class ResourcesGenerator {
             throw new Exception("Please specify path to pattern/resource file.");
         }
 
-        for(String resourceDefinitionFilePath : args) {
+        for (String resourceDefinitionFilePath : args) {
 
             ResourceDefinitions definition = Parse(resourceDefinitionFilePath);
             definition.configFiles.forEach(config -> {
@@ -38,8 +38,10 @@ public class ResourcesGenerator {
     }
 
     private static ResourceDefinitions Parse(String resourceDefinitionFile) throws IOException {
-        Path path = FileSystems.getDefault().getPath(resourceDefinitionFile);
-        String json = new String(Files.readAllBytes(path));
+        Reader reader = new InputStreamReader(new FileInputStream(resourceDefinitionFile), "utf-8");
+        BufferedReader br = new BufferedReader(reader);
+
+        String json = br.lines().collect(Collectors.joining());
 
         return new ObjectMapper().readValue(json, ResourceDefinitions.class);
     }

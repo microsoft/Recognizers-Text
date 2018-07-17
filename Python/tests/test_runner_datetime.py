@@ -110,6 +110,10 @@ def simple_parser_assert(actual, expected, prop, resolution):
         assert getattr(actual, prop) == expected[resolution]
 
 def create_extractor(language, model, options):
+    extractor = get_class('recognizers_date_time', f'{language}{model}Extractor')
+    if extractor:
+        return extractor()
+
     extractor = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}',
                           f'{language}{model}Extractor')
     if extractor:
@@ -127,6 +131,10 @@ def create_extractor(language, model, options):
     return extractor(configuration())
 
 def create_parser(language, model, options):
+    parser = get_class(f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_parser', f'{language}{model}Parser')
+    if parser:
+        return parser()
+
     parser = get_class(f'recognizers_date_time.date_time.{language.lower()}.parsers', f'{language}{model}Parser')
     if not parser:
         parser = get_class(f'recognizers_date_time.date_time.base_{model.lower()}',

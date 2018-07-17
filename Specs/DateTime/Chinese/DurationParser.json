@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "两年",
@@ -28,7 +27,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5分钟",
@@ -52,7 +50,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3天",
@@ -76,7 +73,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15周",
@@ -100,7 +96,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "三年",
