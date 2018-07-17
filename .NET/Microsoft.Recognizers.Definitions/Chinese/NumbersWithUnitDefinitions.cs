@@ -72,6 +72,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "Yemeni rial", "叶门莱尔|叶门里亚尔" },
 			{ "Israeli new shekel", "₪|ils|以色列币|以色列新克尔|谢克尔" },
 			{ "Japanese yen", "日元|日本元|日币|日圆" },
+			{ "Sen", "日本銭" },
 			{ "Kazakhstani tenge", "哈萨克斯坦坚戈" },
 			{ "Kenyan shilling", "肯尼亚先令" },
 			{ "North Korean won", "朝鲜圆|朝鲜元" },

@@ -1,0 +1,295 @@
+---
+#Korean
+LangMarker: '' 
+DecimalSeperatorChar: !char '.'
+FractionMarkerToken: ''
+NonDecimalSeparatorChar: !char ' '
+HalfADozenText: ''
+WordSeparatorToken: ''
+RoundNumberMap: !dictionary
+  types: [string, long]
+  entries:
+    k: 1000
+    m: 1000000
+    g: 1000000000
+    t: 1000000000000
+RoundNumberMapChar: !dictionary
+  types: [char, long]
+  entries:
+    십: 10
+    백: 100
+    천: 1000
+    만: 10000
+    억: 100000000
+    조: 1000000000000
+    경: 10000000000000000
+    열: 10
+    온: 100
+    즈믄: 1000
+ZeroToNineMap: !dictionary
+  types: [char, double]
+  entries:
+    영: 0
+    일: 1
+    이: 2
+    삼: 3
+    사: 4
+    오: 5
+    육: 6
+    칠: 7
+    팔: 8
+    구: 9
+    빵: 0
+    하나: 1
+    둘: 2
+    셋: 3
+    넷: 4
+    다섯: 5
+    여섯: 6
+    일곱: 7
+    여덟: 8
+    아홉: 9
+    ０: 0
+    １: 1
+    ２: 2
+    ３: 3
+    ４: 4
+    ５: 5
+    ６: 6
+    ７: 7
+    ８: 8
+    ９: 9
+    0: 0
+    1: 1
+    2: 2
+    3: 3
+    4: 4
+    5: 5
+    6: 6
+    7: 7
+    8: 8
+    9: 9
+    반: 0.5
+FullToHalfMap: !dictionary
+  types: [char, char]
+  entries:
+    ０: '0'
+    １: '1'
+    ２: '2'
+    ３: '3'
+    ４: '4'
+    ５: '5'
+    ６: '6'
+    ７: '7'
+    ８: '8'
+    ９: '9'
+    ／: '/'
+    －: '-'
+    ，: \'
+    Ｇ: G
+    Ｍ: M
+    Ｔ: T
+    Ｋ: K
+    ｋ: k
+    ．: .
+# TratoSimMap: !dictionary
+#   types: [char, char]
+#   entries:
+#     佰: 百
+#     點: 点
+#     個: 个
+#     幾: 几
+#     對: 对
+#     雙: 双
+UnitMap: !dictionary
+  types: [string, string]
+  entries:
+    ' ' : ''
+    몇: ''
+NumberReplaceToken: '@builtin.num'
+FractionNumberReplaceToken: '@builtin.num.fraction'
+
+DigitalNumberRegex: !simpleRegex
+  def: ((?<=(\d|\b))(k|t|m|g)(?=\b))
+ZeroToNineFullHalfRegex: !simpleRegex
+  def: '[\d１２３４５６７８９０]'
+DigitNumRegex: !nestedRegex
+  def: '{ZeroToNineFullHalfRegex}+'
+  references: [ZeroToNineFullHalfRegex]
+DozenRegex: !simpleRegex
+  def: .*타$
+PercentageRegex: !simpleRegex
+  def: (?<=백\s*분\s*의).+|.+(?=퍼\s*센\s*트)|.*(?=[％%])
+DoubleAndRoundRegex: !nestedRegex
+  def: '{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*[만억]{1,2}(\s*(이상))?'
+  references: [ZeroToNineFullHalfRegex]
+FracSplitRegex: !simpleRegex
+  def: 분\s*의
+ZeroToNineIntegerRegex: !simpleRegex
+  def: '[일이삼사오육륙칠팔구영공]'
+NegativeNumberTermsRegex: !simpleRegex
+  def: '[\s*마\s*이\s*너\s*스|\s*음\s*수]'
+NegativeNumberTermsRegexNum: !simpleRegex
+  def: ((?<!(\d+\s*)|[-－])[-－])
+NegativeNumberSignRegex: !nestedRegex
+  def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
+  references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
+SpeGetNumberRegex: !nestedRegex
+  def: '{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[십반]'
+  references: [ZeroToNineFullHalfRegex, ZeroToNineIntegerRegex]
+PairRegex: .*[쌍짝]$
+#IntegerExtractor
+RoundNumberIntegerRegex: !simpleRegex
+  def: '[십백천만억조경열]'
+WhiteListRegex: !simpleRegex
+  def: (。|，|、|（|）|“|”|까지|가지|가치|갓|거리|국|[곳|군데]|개|그루|급|기|길|[까풀|꺼풀]|꼭지|닢|다스|대|돈|롤|리|미터|[밀리|미리]|마리|매|모|[면|페이지]|벌|박|배|부|분|살|술|승|쌈|[옴큼|웅큼]|원|일|잎|잔|장|전|점|제곱|주|종|평|평방|척|채|차|첩|켤레|쾌|탕|푼|[연|년]|월|일|\s|$)
+NotSingleRegex: !nestedRegex
+  def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[십])\s*(\s*{RoundNumberIntegerRegex}){1,2}|십|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){1,2}|영)\s*)*{ZeroToNineIntegerRegex}?
+  references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
+SingleRegex: !nestedRegex
+  def: (?<!{ZeroToNineIntegerRegex}){ZeroToNineIntegerRegex}(?={WhiteListRegex})
+  references: [ZeroToNineIntegerRegex, WhiteListRegex]
+AllIntRegex: !nestedRegex
+  def: ((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|십)\s*(\s*{RoundNumberIntegerRegex}){1,2}|[십]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){1,2}|영)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})
+  references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
+NumbersSpecialsChars: !nestedRegex
+  def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex, NegativeNumberTermsRegex ]
+NumbersSpecialsCharsWithSuffix: !nestedRegex
+  def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)'
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+DottedNumbersSpecialsChar: !nestedRegex
+  def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+'
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+PointRegexStr: !simpleRegex
+  def: '[점\.．]'
+AllFloatRegex: !nestedRegex
+  def: '{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[일이삼사오육칠팔구영](\s*{ZeroToNineIntegerRegex})*'
+  references: [NegativeNumberTermsRegex, AllIntRegex, PointRegexStr, ZeroToNineIntegerRegex]
+NumbersWithAllowListRegex: !nestedRegex
+  def: (?<!백\s*분\s*의\s*({AllIntRegex}점*|{AllFloatRegex})*){NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*(점{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*개\s*백\s*분\s*점)
+  references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, ZeroToNineIntegerRegex]
+NumbersAggressiveRegex: !nestedRegex
+  def: (?<!백\s*분\s*의\s*({AllIntRegex}점*|{AllFloatRegex})*){NegativeNumberTermsRegex}?{AllIntRegex}(?!({AllIntRegex}*(점{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*개\s*백\s*분\s*점)
+  references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex]
+
+#DoubleExtractor
+PointRegex: !nestedRegex
+  def: '{PointRegexStr}'
+  references: [PointRegexStr]
+DoubleSpecialsChars: !nestedRegex
+  def: (?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+)
+  references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
+DoubleSpecialsCharsWithNegatives: !nestedRegex
+  def: (?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))
+  references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
+SimpleDoubleSpecialsChars: !nestedRegex
+  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+[\.．]{ZeroToNineFullHalfRegex}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+DoubleWithMultiplierRegex: !nestedRegex
+  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+DoubleWithThousandsRegex: !nestedRegex
+  def: '{NegativeNumberTermsRegex}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?\s*?[백천만억]{1,2}'
+  references: [NegativeNumberTermsRegex, ZeroToNineFullHalfRegex]
+DoubleAllFloatRegex: !nestedRegex
+  def: (?<!백\s*분\s*의\s*(({AllIntRegex}점*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*개\s*백\s*분\s*점)
+  references: [AllIntRegex, AllFloatRegex, ZeroToNineIntegerRegex]
+DoubleExponentialNotationRegex: !nestedRegex
+  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)|[0０](?!{ZeroToNineFullHalfRegex}+))
+  references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
+DoubleScientificNotationRegex: !nestedRegex
+  def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{ZeroToNineFullHalfRegex}*)
+  references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
+#OrdinalExtractor
+OrdinalRegex: !nestedRegex
+  def: {AllIntRegex}번째
+  references: [AllIntRegex]
+OrdinalNumbersRegex: !nestedRegex
+  def: {ZeroToNineFullHalfRegex}+번째
+  references: [ZeroToNineFullHalfRegex]
+#FractionExtractor
+AllFractionNumber: !nestedRegex
+  def: '{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*[와|과]\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*분\s*의\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})'
+  references: [NegativeNumberTermsRegex, ZeroToNineFullHalfRegex, AllIntRegex]
+FractionNotationSpecialsCharsRegex: !nestedRegex
+  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+FractionNotationRegex: !nestedRegex
+  def: ({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+#PercentageExtractor
+PercentagePointRegex: !nestedRegex
+  def: (?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*개\s*백\s*분\s*점
+  references: [AllIntRegex, AllFloatRegex]
+SimplePercentageRegex: !nestedRegex
+  def: (?<!{ZeroToNineIntegerRegex})백\s*분\s*의\s*({AllFloatRegex}|{AllIntRegex}|백)(?!{AllIntRegex})
+  references: [ZeroToNineIntegerRegex, AllFloatRegex, AllIntRegex]
+NumbersPercentagePointRegex: !nestedRegex
+  def: (?<!{ZeroToNineIntegerRegex})백\s*분\s*의\s*{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))
+  references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex]
+NumbersPercentageWithSeparatorRegex: !nestedRegex
+  def: (?<!{ZeroToNineIntegerRegex})백\s*분\s*의\s*{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+[\.．]{ZeroToNineFullHalfRegex}+
+  references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex]
+NumbersPercentageWithMultiplierRegex: !nestedRegex
+  def: (?<!{ZeroToNineIntegerRegex})백\s*분\s*의\s*{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)
+  references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex]
+FractionPercentagePointRegex: !nestedRegex
+  def: (?<!({ZeroToNineFullHalfRegex}+[\.．])){ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))\s*개\s*백\s*분\s*점
+  references: [ZeroToNineFullHalfRegex]
+FractionPercentageWithSeparatorRegex: !nestedRegex
+  def: '{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+[\.．]{ZeroToNineFullHalfRegex}+\s*개\s*백\s*분\s*점'
+  references: [ZeroToNineFullHalfRegex]
+FractionPercentageWithMultiplierRegex: !nestedRegex
+  def: '{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\s*개\s*백\s*분\s*점'
+  references: [ZeroToNineFullHalfRegex]
+SimpleNumbersPercentageRegex: !nestedRegex
+  def: (?<!{ZeroToNineIntegerRegex})백\s*분\s*의\s*{ZeroToNineFullHalfRegex}+(?!([\.．]{ZeroToNineFullHalfRegex}+))
+  references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex]
+SimpleNumbersPercentageWithMultiplierRegex: !nestedRegex
+  def: (?<!{ZeroToNineIntegerRegex})백\s*분\s*의\s*{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)
+  references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex]
+SimpleNumbersPercentagePointRegex: !nestedRegex
+  def: (?!{ZeroToNineIntegerRegex})백\s*분\s*의\s*{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+
+  references: [ZeroToNineIntegerRegex,ZeroToNineFullHalfRegex]
+IntegerPercentageRegex: !nestedRegex
+  def: '{ZeroToNineFullHalfRegex}+\s*개\s*백\s*분\s*점'
+  references: [ZeroToNineFullHalfRegex]
+IntegerPercentageWithMultiplierRegex: !nestedRegex
+  def: '{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\s*개\s*백\s*분\s*점'
+  references: [ZeroToNineFullHalfRegex]
+NumbersFractionPercentageRegex: !nestedRegex
+  def: '{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+\s*개\s*백\s*분\s*점'
+  references: [ZeroToNineFullHalfRegex]
+SimpleIntegerPercentageRegex: !nestedRegex
+  def: '(?<!%|\d){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%](?!\d)'
+  references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+#NumberRangeExtractor
+TillRegex: !simpleRegex
+  def: (부터|까지|--|-|—|——|~)
+MoreRegex: !simpleRegex
+  def: (초과|많|높|크|더많|더높|더크|>)
+LessRegex: !simpleRegex
+  def: (미만|적|낮|작|더적|더낮|더적|<)
+EqualRegex: !simpleRegex
+  def: (동일|같|=)
+MoreOrEqual: !nestedRegex
+  def: (({MoreRegex}\s*(거나)?\s*{EqualRegex}))
+  references: [ MoreRegex, EqualRegex ]
+MoreOrEqualSuffix: !simpleRegex
+  def: \s*(이상)
+LessOrEqual: !nestedRegex
+  def: (({LessRegex}\s*(거나)?\s*{EqualRegex}))
+  references: [ LessRegex, EqualRegex ]
+LessOrEqualSuffix: !simpleRegex
+  def: \s*(이상)
+
+# Original code from English
+# IntegerRegexDefinition: !paramsRegex
+#   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{1,3}({thousandsmark}\d{3})+(?={placeholder})
+#   params: [ placeholder, thousandsmark  ]
+# DoubleRegexDefinition: !paramsRegex
+#   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}({thousandsmark}\d{3})+{decimalmark}\d+(?={placeholder})
+#   params: [ placeholder, thousandsmark, decimalmark ]
+# PlaceHolderDefault: \\D|\\b
+...

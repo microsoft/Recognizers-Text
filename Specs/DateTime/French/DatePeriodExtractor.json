@@ -1,7 +1,6 @@
 [
   {
     "Input": "Je serai dans déc",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "déc",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Je serai dehors de 4 à 22 ce mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4 à 22 ce mois",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Je serai dehors 3 jusqu'a 12 Sep hahaha",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 jusqu'a 12 Sep",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Je serai dehors 4 à 23 mois prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4 à 23 mois prochain",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Je serai dehors 4 jusqu'a 23 cette mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4 jusqu'a 23 cette mois",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Je serai dehors entre 4 et 22 cette mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 4 et 22 cette mois",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Je serai dehors entre 3 et 12 de Sept hahaha",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 3 et 12 de Sept",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Je serai dehors entre septembre 4 à septembre 8",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " septembre 4 à septembre 8",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Je serai dehors entre Novembre 15 jusqu'a 19",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre Novembre 15 jusqu'a 19",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Je serai dehors entre Novembre 15 avant 19",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre Novembre 15 avant 19",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je serai dehors entre 4 à 22 ce mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 4 à 22 ce mois",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Je serai dehors entre 4-22 Janv, 2017",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 4-22 Janv, 2017",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Je serai dehors dans cette semaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette semaine",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "Je serai dehors Septembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Septembre",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "Je serai dehors cette Septembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Septembre",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "Je serai dehors prochain jun",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "prochain jun",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Je serai dehors juin 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "juin 2016",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Je serai dehors cette weekend",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette weekend",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Je serai dehors le 3 semaine cette mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette mois",
@@ -229,17 +210,17 @@
   },
   {
     "Input": "Je serai dehors dans 3 annees",
-    "NotSupported": "python, javascript, java",
+	"NotSupported": "python, javascript, java",
     "Results": []
   },
   {
     "Input": "Je serai dehors dans 3 semaines",
-    "NotSupported": "python, javascript, java",
+	"NotSupported": "python, javascript, java",
     "Results": []
   },
   {
     "Input": "Je serai dehors dans 3 mois",
-    "NotSupported": "python, javascript, java",
+	"NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "mois",
@@ -251,7 +232,6 @@
   },
   {
     "Input": "Je serai dehors dernier 3 semaines",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dernier 3 semaines",
@@ -263,7 +243,6 @@
   },
   {
     "Input": "Je serai dehors l'annee dernier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "l'annee dernier",
@@ -275,7 +254,6 @@
   },
   {
     "Input": "Je serai dans Jan",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jan",
@@ -287,7 +265,6 @@
   },
   {
     "Input": "je vai cette Jan",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Jan",
@@ -299,7 +276,6 @@
   },
   {
     "Input": "J'etais disparue Jan 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jan 2001",
@@ -311,7 +287,6 @@
   },
   {
     "Input": "J'etais disparue Jan, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jan, 2001",
@@ -323,7 +298,6 @@
   },
   {
     "Input": "Je serai dans Fev",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fev",
@@ -335,7 +309,6 @@
   },
   {
     "Input": "je vai cette Fev",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Fev",
@@ -347,7 +320,6 @@
   },
   {
     "Input": "J'etais disparue Fev 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fev 2001",
@@ -359,7 +331,6 @@
   },
   {
     "Input": "J'etais disparue Fev, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fev, 2001",
@@ -371,7 +342,6 @@
   },
   {
     "Input": "Je serai dans Mar",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mar",
@@ -383,7 +353,6 @@
   },
   {
     "Input": "je vai cette Mar",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Mar",
@@ -395,7 +364,6 @@
   },
   {
     "Input": "J'etais disparue Mar 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mar 2001",
@@ -407,7 +375,6 @@
   },
   {
     "Input": "J'etais disparue Mar, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mar, 2001",
@@ -419,7 +386,6 @@
   },
   {
     "Input": "Je serai dans Avr",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Avr",
@@ -431,7 +397,6 @@
   },
   {
     "Input": "je vai cette Avr",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Avr",
@@ -443,7 +408,6 @@
   },
   {
     "Input": "J'etais disparue Avr 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Avr 2001",
@@ -455,7 +419,6 @@
   },
   {
     "Input": "J'etais disparue Avr, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Avr, 2001",
@@ -467,7 +430,6 @@
   },
   {
     "Input": "Je serai dans Mai",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mai",
@@ -479,7 +441,6 @@
   },
   {
     "Input": "je vai cette Mai",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Mai",
@@ -491,7 +452,6 @@
   },
   {
     "Input": "J'etais disparue Mai 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mai 2001",
@@ -503,7 +463,6 @@
   },
   {
     "Input": "J'etais disparue Mai, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mai, 2001",
@@ -515,7 +474,6 @@
   },
   {
     "Input": "Je serai dans Jun",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jun",
@@ -527,7 +485,6 @@
   },
   {
     "Input": "je vai cette Jun",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Jun",
@@ -539,7 +496,6 @@
   },
   {
     "Input": "J'etais disparue Jun 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jun 2001",
@@ -551,7 +507,6 @@
   },
   {
     "Input": "J'etais disparue Jun, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jun, 2001",
@@ -563,7 +518,6 @@
   },
   {
     "Input": "Je serai dans Jul",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jul",
@@ -575,7 +529,6 @@
   },
   {
     "Input": "je vai cette Jul",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Jul",
@@ -587,7 +540,6 @@
   },
   {
     "Input": "J'etais disparue Jul 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jul 2001",
@@ -599,7 +551,6 @@
   },
   {
     "Input": "J'etais disparue Jul, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Jul, 2001",
@@ -611,7 +562,6 @@
   },
   {
     "Input": "Je serai dans Aout",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Aout",
@@ -623,7 +573,6 @@
   },
   {
     "Input": "je vai cette Aout",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Aout",
@@ -635,7 +584,6 @@
   },
   {
     "Input": "J'etais disparue Aout 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Aout 2001",
@@ -647,7 +595,6 @@
   },
   {
     "Input": "J'etais disparue Aout, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Aout, 2001",
@@ -659,7 +606,6 @@
   },
   {
     "Input": "Je serai dans Sep",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Sep",
@@ -671,7 +617,6 @@
   },
   {
     "Input": "je vai cette Sep",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Sep",
@@ -683,7 +628,6 @@
   },
   {
     "Input": "J'etais disparue Sep 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Sep 2001",
@@ -695,7 +639,6 @@
   },
   {
     "Input": "J'etais disparue Sep, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Sep, 2001",
@@ -707,7 +650,6 @@
   },
   {
     "Input": "Je serai dans Oct",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Oct",
@@ -719,7 +661,6 @@
   },
   {
     "Input": "je vai cette Oct",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Oct",
@@ -731,7 +672,6 @@
   },
   {
     "Input": "J'etais disparue Oct 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Oct 2001",
@@ -743,7 +683,6 @@
   },
   {
     "Input": "J'etais disparue Oct, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Oct, 2001",
@@ -755,7 +694,6 @@
   },
   {
     "Input": "Je serai dans Nov",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Nov",
@@ -767,7 +705,6 @@
   },
   {
     "Input": "je vai cette Nov",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Nov",
@@ -779,7 +716,6 @@
   },
   {
     "Input": "J'etais disparue Nov 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Nov 2001",
@@ -791,7 +727,6 @@
   },
   {
     "Input": "J'etais disparue Nov, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Nov, 2001",
@@ -803,7 +738,6 @@
   },
   {
     "Input": "Je serai dans août",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "août",
@@ -815,7 +749,6 @@
   },
   {
     "Input": "Je serai dans Février",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Février",
@@ -827,7 +760,6 @@
   },
   {
     "Input": "Je serai dans Dec",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Dec",
@@ -839,7 +771,6 @@
   },
   {
     "Input": "je vai cette Dec",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Dec",
@@ -851,7 +782,6 @@
   },
   {
     "Input": "J'etais disparue Dec 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Dec 2001",
@@ -863,7 +793,6 @@
   },
   {
     "Input": "J'etais disparue Dec, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Dec, 2001",
@@ -875,7 +804,6 @@
   },
   {
     "Input": "Je serai Janvier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Janvier",
@@ -887,7 +815,6 @@
   },
   {
     "Input": "Je vai cette Janvier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Janvier",
@@ -899,7 +826,6 @@
   },
   {
     "Input": "J'etais disparue Janvier 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Janvier 2001",
@@ -911,7 +837,6 @@
   },
   {
     "Input": "J'etais disparue Janvier, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Janvier, 2001",
@@ -923,7 +848,6 @@
   },
   {
     "Input": "Je serai Fevrier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fevrier",
@@ -935,7 +859,6 @@
   },
   {
     "Input": "Je vai cette Fevrier",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Fevrier",
@@ -947,7 +870,6 @@
   },
   {
     "Input": "J'etais disparue Fevrier 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fevrier 2001",
@@ -959,7 +881,6 @@
   },
   {
     "Input": "J'etais disparue Fevrier, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fevrier, 2001",
@@ -971,7 +892,6 @@
   },
   {
     "Input": "Je serai Mars",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mars",
@@ -983,7 +903,6 @@
   },
   {
     "Input": "Je vai cette Mars",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Mars",
@@ -995,7 +914,6 @@
   },
   {
     "Input": "J'etais disparue Mars 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mars 2001",
@@ -1007,7 +925,6 @@
   },
   {
     "Input": "J'etais disparue Mars, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mars, 2001",
@@ -1019,7 +936,6 @@
   },
   {
     "Input": "Je serai Avril",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Avril",
@@ -1031,7 +947,6 @@
   },
   {
     "Input": "Je vai cette Avril",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Avril",
@@ -1043,7 +958,6 @@
   },
   {
     "Input": "J'etais disparue Avril 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Avril 2001",
@@ -1055,7 +969,6 @@
   },
   {
     "Input": "J'etais disparue Avril, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Avril, 2001",
@@ -1067,7 +980,6 @@
   },
   {
     "Input": "Je serai Mai",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mai",
@@ -1079,7 +991,6 @@
   },
   {
     "Input": "Je vai cette Mai",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Mai",
@@ -1091,7 +1002,6 @@
   },
   {
     "Input": "Je serai Juin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Juin",
@@ -1103,7 +1013,6 @@
   },
   {
     "Input": "Je vai cette Juin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Juin",
@@ -1115,7 +1024,6 @@
   },
   {
     "Input": "J'etais disparue Juin 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Juin 2001",
@@ -1127,7 +1035,6 @@
   },
   {
     "Input": "J'etais disparue Juin, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Juin, 2001",
@@ -1139,7 +1046,6 @@
   },
   {
     "Input": "Je serai Juillet",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Juillet",
@@ -1151,7 +1057,6 @@
   },
   {
     "Input": "Je vai cette Juillet",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Juillet",
@@ -1163,7 +1068,6 @@
   },
   {
     "Input": "J'etais disparue Juillet 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Juillet 2001",
@@ -1175,7 +1079,6 @@
   },
   {
     "Input": "J'etais disparue Juillet, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Juillet, 2001",
@@ -1187,7 +1090,6 @@
   },
   {
     "Input": "Je serai Aout",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Aout",
@@ -1199,7 +1101,6 @@
   },
   {
     "Input": "Je vai cette Aout",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Aout",
@@ -1211,7 +1112,6 @@
   },
   {
     "Input": "Je serai Septembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Septembre",
@@ -1223,7 +1123,6 @@
   },
   {
     "Input": "Je vai cette Septembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Septembre",
@@ -1235,7 +1134,6 @@
   },
   {
     "Input": "J'etais disparue Septembre 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Septembre 2001",
@@ -1247,7 +1145,6 @@
   },
   {
     "Input": "J'etais disparue Septembre, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Septembre, 2001",
@@ -1259,7 +1156,6 @@
   },
   {
     "Input": "Je serai Octobre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Octobre",
@@ -1271,7 +1167,6 @@
   },
   {
     "Input": "Je vai cette Octobre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Octobre",
@@ -1283,7 +1178,6 @@
   },
   {
     "Input": "J'etais disparue Octobre 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Octobre 2001",
@@ -1295,7 +1189,6 @@
   },
   {
     "Input": "J'etais disparue Octobre, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Octobre, 2001",
@@ -1307,7 +1200,6 @@
   },
   {
     "Input": "Je serai Novembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Novembre",
@@ -1319,7 +1211,6 @@
   },
   {
     "Input": "Je vai cette Novembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Novembre",
@@ -1331,7 +1222,6 @@
   },
   {
     "Input": "J'etais disparue Novembre 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Novembre 2001",
@@ -1343,7 +1233,6 @@
   },
   {
     "Input": "J'etais disparue Novembre, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Novembre, 2001",
@@ -1355,7 +1244,6 @@
   },
   {
     "Input": "Je serai Decembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Decembre",
@@ -1367,7 +1255,6 @@
   },
   {
     "Input": "Je vai cette Decembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette Decembre",
@@ -1379,7 +1266,6 @@
   },
   {
     "Input": "J'etais disparue Decembre 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Decembre 2001",
@@ -1391,7 +1277,6 @@
   },
   {
     "Input": "J'etais disparue Decembre, 2001",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Decembre, 2001",
@@ -1403,7 +1288,6 @@
   },
   {
     "Input": "Je vais partir dans la weekend",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "la weekend",
@@ -1415,7 +1299,6 @@
   },
   {
     "Input": "Je vais partir aujourd'hui jusqu'a demain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " aujourd'hui jusqu'a demain",
@@ -1427,7 +1310,6 @@
   },
   {
     "Input": "Je vais partir aujourd'hui au Octobre 22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " aujourd'hui au Octobre 22",
@@ -1439,7 +1321,6 @@
   },
   {
     "Input": "Je vais partir Oct. 2 jusqu'a le jour suivant",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " Oct. 2 jusqu'a le jour suivant",
@@ -1451,7 +1332,6 @@
   },
   {
     "Input": "Je vais partir aujourd'hui jusqu'a cette Dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " aujourd'hui jusqu'a cette Dimanche",
@@ -1463,7 +1343,6 @@
   },
   {
     "Input": "Je vais partir cette vendredi jusqu'a Dimanche prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " cette vendredi jusqu'a Dimanche prochain",
@@ -1475,7 +1354,6 @@
   },
   {
     "Input": "Je vais partir cette mercredi jusqu'a Dimanche prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " cette mercredi jusqu'a Dimanche prochain",
@@ -1487,7 +1365,6 @@
   },
   {
     "Input": "Je vais partir de Oct. 2 au Octobre 22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de Oct. 2 au Octobre 22",
@@ -1499,7 +1376,6 @@
   },
   {
     "Input": "Je vais partir de 2015/08/12 jusqu'a Octobre 22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 2015/08/12 jusqu'a Octobre 22",
@@ -1511,7 +1387,6 @@
   },
   {
     "Input": "Je vais partir de aujourd'hui a lendemain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de aujourd'hui a lendemain",
@@ -1523,7 +1398,6 @@
   },
   {
     "Input": "Je vais partir de cette vendredi jusqu'a dimanche prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de cette vendredi jusqu'a dimanche prochain",
@@ -1535,7 +1409,6 @@
   },
   {
     "Input": "Je vais partir entre Oct. 2 et Octobre 22",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " Oct. 2 et Octobre 22",
@@ -1547,7 +1420,6 @@
   },
   {
     "Input": "Je vais partir Novembre 19-20",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Novembre 19-20",
@@ -1559,7 +1431,6 @@
   },
   {
     "Input": "Je vais partir Novembre 19 a 20",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " Novembre 19 a 20",
@@ -1571,7 +1442,6 @@
   },
   {
     "Input": "Je vais partir Novembre entre 19 et 20",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Novembre entre 19 et 20",
@@ -1583,7 +1453,6 @@
   },
   {
     "Input": "Je vais partir le troisieme quart de 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le troisieme quart de 2016",
@@ -1595,7 +1464,6 @@
   },
   {
     "Input": "Je vais partir le troisieme quart de cette l'annee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le troisieme quart de cette l'annee",
@@ -1607,7 +1475,6 @@
   },
   {
     "Input": "Je vais partir 2016 le troisieme quarts",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016 le troisieme quarts",
@@ -1619,7 +1486,6 @@
   },
   {
     "Input": "Je vais partir 2015.3",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015.3",
@@ -1631,7 +1497,6 @@
   },
   {
     "Input": "Je vais partir 2015-3",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015-3",
@@ -1643,7 +1508,6 @@
   },
   {
     "Input": "Je vais partir 2015/3",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015/3",
@@ -1655,7 +1519,6 @@
   },
   {
     "Input": "Je vais partir 3/2015",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3/2015",
@@ -1667,7 +1530,6 @@
   },
   {
     "Input": "Je vais partir le troisieme semaine de 2027",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le troisieme semaine de 2027",
@@ -1679,7 +1541,6 @@
   },
   {
     "Input": "semaine de 15 septembre",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "semaine de 15 septembre",
@@ -1691,7 +1552,6 @@
   },
   {
     "Input": "mois de septembre.15",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mois de septembre.15",
@@ -1703,7 +1563,6 @@
   },
   {
     "Input": "Je vais partir cette été",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette été",
@@ -1715,7 +1574,6 @@
   },
   {
     "Input": "Je vais partir le été",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "le été",
@@ -1727,7 +1585,6 @@
   },
   {
     "Input": "Je vais partir été",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "été",
@@ -1739,7 +1596,6 @@
   },
   {
     "Input": "Je vais partir été 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "été 2016",
@@ -1751,7 +1607,6 @@
   },
   {
     "Input": "Je vais partir été de 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "été de 2016",
@@ -1763,7 +1618,6 @@
   },
   {
     "Input": "Je vais partir prochain printemps",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "prochain printemps",
@@ -1775,7 +1629,6 @@
   },
   {
     "Input": "Je vais partir derniere printemps",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "derniere printemps",
@@ -1787,7 +1640,6 @@
   },
   {
     "Input": "prochain mois fette",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "prochain mois",
@@ -1799,7 +1651,6 @@
   },
   {
     "Input": "cette mois fette",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "cette mois",
@@ -1811,7 +1662,6 @@
   },
   {
     "Input": "Je serais sorti 11 / 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11 / 2016",
@@ -1823,7 +1673,6 @@
   },
   {
     "Input": "Je serais sorti 11/ 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11/ 2016",
@@ -1835,7 +1684,6 @@
   },
   {
     "Input": "Je serais sorti 11 /2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11 /2016",
@@ -1847,7 +1695,6 @@
   },
   {
     "Input": "Je serais sorti 11-2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11-2016",
@@ -1859,7 +1706,6 @@
   },
   {
     "Input": "Je serais sorti 11  - 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11  - 2016",
@@ -1871,7 +1717,6 @@
   },
   {
     "Input": "Je serais sorti 2016 / 11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016 / 11",
@@ -1883,7 +1728,6 @@
   },
   {
     "Input": "Je serais sorti 2016/11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016/11",
@@ -1895,7 +1739,6 @@
   },
   {
     "Input": "Je serais sorti 2016 - 11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016 - 11",
@@ -1907,7 +1750,6 @@
   },
   {
     "Input": "Je serais sorti 2016-11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016-11",
@@ -1919,7 +1761,6 @@
   },
   {
     "Input": "Je serais sorti 2016  -11",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016  -11",
@@ -1931,7 +1772,6 @@
   },
   {
     "Input": "Je serais sorti Septembre 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Septembre 2016",

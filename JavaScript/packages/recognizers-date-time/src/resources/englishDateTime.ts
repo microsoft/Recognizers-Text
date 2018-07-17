@@ -27,7 +27,7 @@ export namespace EnglishDateTime {
 	export const YearNumRegex = `\\b(?<year>((1[5-9]|20)\\d{2})|2100)\\b`;
 	export const YearRegex = `(${YearNumRegex}|${FullTextYearRegex})`;
 	export const WeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\\b`;
-	export const SingleWeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\\s+(Sat|Sun)))\\b`;
+	export const SingleWeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on\\s+)(Sat|Sun)))\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>(of\\s+)?${RelativeRegex}\\s+month)\\b`;
 	export const WrittenMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))`;
 	export const MonthSuffixRegex = `(?<msuf>(in\\s+|of\\s+|on\\s+)?(${RelativeMonthRegex}|${WrittenMonthRegex}))`;
@@ -52,7 +52,7 @@ export namespace EnglishDateTime {
 	export const HalfYearRelativeRegex = `(the\\s+)?${HalfYearTermRegex}(\\s+of|\\s*,\\s*)?\\s+(${RelativeRegex}\\s+year)`;
 	export const AllHalfYearRegex = `(${HalfYearFrontRegex})|(${HalfYearBackRegex})|(${HalfYearRelativeRegex})`;
 	export const EarlyPrefixRegex = `(?<EarlyPrefix>early|beginning of|start of|(?<RelEarly>earlier(\\s+in)?))`;
-	export const MidPrefixRegex = `(?<MidPrefix>mid|middle of)`;
+	export const MidPrefixRegex = `(?<MidPrefix>mid-?|middle of)`;
 	export const LaterPrefixRegex = `(?<LatePrefix>late|end of|(?<RelLate>later(\\s+in)?))`;
 	export const PrefixPeriodRegex = `(${EarlyPrefixRegex}|${MidPrefixRegex}|${LaterPrefixRegex})`;
 	export const PrefixDayRegex = `((?<EarlyPrefix>early)|(?<MidPrefix>mid|middle)|(?<LatePrefix>late|later))(\\s+in)?(\\s+the\\s+day)?$`;
@@ -212,7 +212,7 @@ export namespace EnglishDateTime {
 	export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>lunchtime)\\b`;
 	export const NumberEndingPattern = `^(\\s+(?<meeting>meeting|appointment|conference|call|skype call)\\s+to\\s+(?<newTime>${PeriodHourNumRegex}|${HourRegex})((\\.)?$|(\\.,|,|!|\\?)))`;
 	export const OneOnOneRegex = `\\b(1\\s*:\\s*1)|(one (on )?one|one\\s*-\\s*one|one\\s*:\\s*one)\\b`;
-	export const LaterEarlyPeriodRegex = `\\b(${PrefixPeriodRegex})\\s+(?<suffix>${OneWordPeriodRegex})\\b`;
+	export const LaterEarlyPeriodRegex = `\\b(${PrefixPeriodRegex})\\s*\\b\\s*(?<suffix>${OneWordPeriodRegex})\\b`;
 	export const WeekWithWeekDayRangeRegex = `\\b((?<week>(${NextPrefixRegex}|${PastPrefixRegex}|this)\\s+week)((\\s+between\\s+${WeekDayRegex}\\s+and\\s+${WeekDayRegex})|(\\s+from\\s+${WeekDayRegex}\\s+to\\s+${WeekDayRegex})))\\b`;
 	export const GeneralEndingRegex = `^\\s*((\\.,)|\\.|,|!|\\?)?\\s*$`;
 	export const MiddlePauseRegex = `\\s*(,)\\s*`;

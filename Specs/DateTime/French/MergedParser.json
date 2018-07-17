@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22 Juillet",
@@ -53,7 +52,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "8pm",
@@ -92,7 +90,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres 8pm",
@@ -117,7 +114,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "avant 8pm",
@@ -142,7 +138,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "depuis 8pm",
@@ -167,7 +162,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Vendredi d'apres-midis",
@@ -252,7 +246,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016-2-30",
@@ -276,7 +269,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2015-1",
@@ -301,7 +293,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11 / 2016",
@@ -326,7 +317,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11/ 2016",
@@ -351,7 +341,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11 /2016",
@@ -376,7 +365,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11-2016",
@@ -401,7 +389,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "11  - 2016",
@@ -426,7 +413,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016 / 11",
@@ -451,7 +437,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016/11",
@@ -476,7 +461,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016 - 11",
@@ -501,7 +485,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016-11",
@@ -526,7 +509,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2016  -11",
@@ -551,7 +533,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Septembre 2016",

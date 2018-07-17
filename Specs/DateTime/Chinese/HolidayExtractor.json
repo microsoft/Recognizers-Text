@@ -1,7 +1,6 @@
 [
   {
     "Input": "明天元旦去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "元旦",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "明天元旦节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "元旦节",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "明天教师节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "教师节",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "明天青年节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "青年节",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "明天儿童节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "儿童节",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "明天妇女节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "妇女节",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "明天植树节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "植树节",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "明天情人节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "情人节",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "明天圣诞节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "圣诞节",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "明天新年去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "新年",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "明天愚人节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "愚人节",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "明天五一去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "五一",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "明天劳动节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "劳动节",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "明天万圣节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "万圣节",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "明天中秋节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "中秋节",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "明天中秋去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "中秋",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "明天春节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "春节",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "明天除夕去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "除夕",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "明天元宵节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "元宵节",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "明天清明节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "清明节",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "明天清明去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "清明",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "明天端午节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "端午节",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "明天端午去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "端午",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "明天国庆节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "国庆节",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "明天建军节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "建军节",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "明天女生节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "女生节",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "明天光棍节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "光棍节",
@@ -325,7 +298,6 @@
   },
   {
     "Input": "明天双十一去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "双十一",
@@ -337,7 +309,6 @@
   },
   {
     "Input": "明天重阳节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "重阳节",
@@ -349,7 +320,6 @@
   },
   {
     "Input": "明天父亲节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "父亲节",
@@ -361,7 +331,6 @@
   },
   {
     "Input": "明天母亲节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "母亲节",
@@ -373,7 +342,6 @@
   },
   {
     "Input": "明天感恩节去哪里",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "感恩节",

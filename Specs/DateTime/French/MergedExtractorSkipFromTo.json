@@ -1,7 +1,6 @@
 [
   {
     "Input": "changer la reunion du 9am au 11am",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 22,
@@ -19,7 +18,6 @@
   },
   {
     "Input": "changer la reunion du 19 Nov au 23 Nov",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 22,
@@ -37,7 +35,6 @@
   },
   {
     "Input": "changer la reunion du 19 Nov à 23 Nov",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 22,
@@ -55,7 +52,6 @@
   },
   {
     "Input": "changer la reunion du 19 Nov a 23 Nov",
-    "NotSupported": "python",
     "Results": [
       {
         "Start": 22,

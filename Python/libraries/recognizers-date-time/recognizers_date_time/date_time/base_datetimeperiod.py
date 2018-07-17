@@ -16,8 +16,16 @@ from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, RegExpUtility, FormatUtil, DateTimeResolutionResult, DateUtils
 
+class MatchedTimeRange:
+    def __init__(self, time_str: str = '', begin_hour: int = 0, end_hour: int = 0, end_min: int = 0, success: bool = False,  swift: int = 0):
+        self.time_str = time_str
+        self.begin_hour = begin_hour
+        self.end_hour = end_hour
+        self.end_min = end_min
+        self.swift = swift
+        self.success = success
+
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
-MatchedTimeRange = namedtuple('MatchedTimeRange', ['time_str', 'begin_hour', 'end_hour', 'end_min', 'success'])
 BeginEnd = namedtuple('BeginEnd', ['begin', 'end'])
 
 class DateTimePeriodExtractorConfiguration(ABC):

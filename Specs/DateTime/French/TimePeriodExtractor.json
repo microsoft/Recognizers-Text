@@ -1,7 +1,6 @@
 [
   {
     "Input": "Rendez-vouz dans le matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le matin",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Rendez-vouz dans l'apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans l'apres-midi",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Rendez-vouz dans le nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le nuit",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Rendez-vouz dans la soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans la soiree",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Rendez-vouz dans le soirée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans le soirée",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Je vais dehors 5 au 6 ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 au 6 ce soir",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Je vais dehors 5 au 6 du soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 au 6 du soir",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Je vais dehors 5 au 6 dans l'apres midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 au 6 dans l'apres midi",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Je vais dehors 5 au sept dans le matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 au sept dans le matin",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Je vais dehors de 5 au 6 ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 5 au 6 ce soir",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je vais dehors entre 5 au 6 dans la nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 5 au 6 dans la nuit",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Je vais dehors entre 5 au 6 dans la soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 5 au 6 dans la soiree",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Je vais dehors entre 5 au 6 dans l'apres midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 5 au 6 dans l'apres midi",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "Allons nous recontrer ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce soir",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "Allons nous recontrer du matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "du matin",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "Rendez-vouz ce soir",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce soir",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Allons nous recontrer debut matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut matin",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Allons nous recontrer fin de matinee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin de matinee",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Allons nous recontrer tard matinee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard matinee",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "Allons nous recontrer tard matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard matin",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "Allons nous recontrer tard matinée",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard matinée",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "Allons nous recontrer tot matin",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tot matin",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "Allons nous recontrer tôt soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tôt soiree",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "Allons nous recontrer tôt nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tôt nuit",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "Allons nous recontrer tard apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard apres-midi",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "Allons nous recontrer tot apres midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tot apres midi",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "Allons nous recontrer tard soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard soiree",
@@ -325,7 +298,6 @@
   },
   {
     "Input": "Allons nous recontrer tard nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard nuit",
@@ -337,7 +309,6 @@
   },
   {
     "Input": "Allons nous recontrer debut nuit",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut nuit",
@@ -349,7 +320,6 @@
   },
   {
     "Input": "Allons nous recontrer debut soiree",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut soiree",
@@ -361,7 +331,6 @@
   },
   {
     "Input": "Je vais dehors 4pm au 5pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4pm au 5pm",
@@ -373,7 +342,6 @@
   },
   {
     "Input": "Je vais dehors 4:00 jusqu'a 5pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4:00 jusqu'a 5pm",
@@ -385,7 +353,6 @@
   },
   {
     "Input": "Je vais dehors 14:00 jusqu'a 15:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "14:00 jusqu'a 15:00",
@@ -397,7 +364,6 @@
   },
   {
     "Input": "Je vais dehors 18:00 jusqu'a 20:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "18:00 jusqu'a 20:00",
@@ -409,7 +375,6 @@
   },
   {
     "Input": "Je vais dehors de 4:00 et 7 heures",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4:00 et 7 heures",
@@ -421,7 +386,6 @@
   },
   {
     "Input": "Je vais dehors 3pm a sept trente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3pm a sept trente",
@@ -433,7 +397,6 @@
   },
   {
     "Input": "Je vais dehors 4pm-5pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4pm-5pm",
@@ -445,7 +408,6 @@
   },
   {
     "Input": "Je vais dehors 4:00 -5:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4:00 -5:00",
@@ -457,7 +419,6 @@
   },
   {
     "Input": "Je vais dehors 4:00- 5:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4:00- 5:00",
@@ -469,7 +430,6 @@
   },
   {
     "Input": "Je vais dehors 4:00 - 5:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4:00 - 5:00",
@@ -481,7 +441,6 @@
   },
   {
     "Input": "Je vais dehors de 4pm au 5pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4pm au 5pm",
@@ -493,7 +452,6 @@
   },
   {
     "Input": "Je vais dehors de 14:00 au 15:00",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 14:00 au 15:00",
@@ -505,7 +463,6 @@
   },
   {
     "Input": "Je vais dehors de 4pm au cinq trente",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 4pm au cinq trente",
@@ -517,7 +474,6 @@
   },
   {
     "Input": "Je vais dehors de 3 du matin jusqu'a 5pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 3 du matin jusqu'a 5pm",
@@ -529,7 +485,6 @@
   },
   {
     "Input": "Je vais dehors de 3 du matinee jusqu'a cinq dans l'apres-midi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 3 du matinee jusqu'a cinq dans l'apres-midi",

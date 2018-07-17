@@ -1,7 +1,6 @@
 [
   {
     "Input": "Je vais partir 9 chaque dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9 chaque dimanche",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Je vais partir 9am chaque lundis",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9am chaque lundis",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Je vais partir 9am lundis",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9am lundis",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Je vais partir 9 lundis",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9 lundis",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Je vais partir Lundis",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Lundis",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Je vais partir chaque Dimanche",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque Dimanche",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Je vais partir Dimanches",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Dimanches",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Je vais partir chaque semaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque semaine",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Je vais partir tous les jours",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tous les jours",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Je vais partir quotidien",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quotidien",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je vais partir hebdomadaire",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "hebdomadaire",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Je vais partir mensuel",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "mensuel",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Je vais partir bihebdomadaire",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "bihebdomadaire",
@@ -157,7 +144,6 @@
   },
   {
     "Input": "Je vais partir chaque mois",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque mois",
@@ -169,7 +155,6 @@
   },
   {
     "Input": "Je vais partir annuellement",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "annuellement",
@@ -181,7 +166,6 @@
   },
   {
     "Input": "Je vais partir chaque deux jours",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque deux jours",
@@ -193,7 +177,6 @@
   },
   {
     "Input": "Je vais partir chaque trois semaine",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque trois semaine",
@@ -205,7 +188,6 @@
   },
   {
     "Input": "Je vais partir 3pm tous les jours",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3pm tous les jours",
@@ -217,7 +199,6 @@
   },
   {
     "Input": "Je vais partir 15 tous les jours",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15 tous les jours",
@@ -229,7 +210,6 @@
   },
   {
     "Input": "Je vais partir chaque lundi",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque lundi",
@@ -241,7 +221,6 @@
   },
   {
     "Input": "Je vais partir chaque lundi 4pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque lundi 4pm",
@@ -253,7 +232,6 @@
   },
   {
     "Input": "Je vais partir tous les matins",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " tous les matin",
@@ -265,7 +243,6 @@
   },
   {
     "Input": "Je vais partir tous les matins a 9",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " tous les matin",
@@ -277,7 +254,6 @@
   },
   {
     "Input": "Je vais partir chaque matin at 9",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " chaque matin",
@@ -289,7 +265,6 @@
   },
   {
     "Input": "Je vais partir chaque apres-midi à 16",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque apres-midi à 16",
@@ -301,7 +276,6 @@
   },
   {
     "Input": "Je vais partir chaque nuit a 9pm",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque nuit a 9pm",
@@ -313,7 +287,6 @@
   },
   {
     "Input": "Je vais partir chaque nuit a 9",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "chaque nuit a 9",

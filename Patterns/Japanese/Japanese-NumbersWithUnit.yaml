@@ -1,4 +1,4 @@
----
+﻿---
 #AgeExtractorConfiguration
 # "歳" can be ambiguous, as in "歳月", "歳出", or "何歳", but by itself (with no nearby number) it will be filtered out.
 AgeAmbiguousValues: !list
@@ -92,6 +92,7 @@ CurrencySuffixList: !dictionary
     Israeli new shekel: ₪|ils|イスラエル・新シェケル|イスラエル新シェケル
 #Japanese yen
     Japanese yen: 円
+    Sen: 銭
 #Kazakhstani tenge
     Kazakhstani tenge: テンゲ|カザフスタン・テンゲ|カザフスタンテンゲ
 #Kenyan shilling
@@ -600,7 +601,7 @@ CurrencyPrefixList: !dictionary
     New Taiwan dollar: nt$|nt $
     Samoan tālā: ws$
     Chinese yuan: ￥
-    Japanese yen: ¥
+    Japanese yen: ¥|\\
     Turkish lira: ₺
     Euro: €
     Pound: £
@@ -609,4 +610,6 @@ CurrencyAmbiguousValues: !list
   types: [string]
   entries:
     - 円
+    - 銭
+    - \\
 ...

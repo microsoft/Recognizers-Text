@@ -1,7 +1,6 @@
 [
   {
     "Input": "Je reviendrai sur Yuandan",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Yuandan",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Je reviendrai sur jour de thanks giving",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "jour de thanks giving",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Je reviendrai sur fete de pere",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fete de pere",
@@ -37,7 +34,6 @@
   },
   {
     "Input": "Je reviendrai sur noel",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "noel",
@@ -49,7 +45,6 @@
   },
   {
     "Input": "Je reviendrai sur jour de noël",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "noël",
@@ -61,7 +56,6 @@
   },
   {
     "Input": "Je reviendrai sur fete des meres",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fete des meres",
@@ -73,7 +67,6 @@
   },
   {
     "Input": "Je reviendrai sur le fete du travail",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fete du travail",
@@ -85,7 +78,6 @@
   },
   {
     "Input": "Je reviendrai sur halloween d'annee prochain",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "halloween d'annee prochain",
@@ -97,7 +89,6 @@
   },
   {
     "Input": "Je reviendrai sur thanksgiving",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "thanksgiving",
@@ -109,7 +100,6 @@
   },
   {
     "Input": "Je reviendrai sur Yuandan cette annee",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Yuandan cette annee",
@@ -121,7 +111,6 @@
   },
   {
     "Input": "Je reviendrai sur Yuandan de 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Yuandan de 2016",
@@ -133,7 +122,6 @@
   },
   {
     "Input": "Je reviendrai sur Yuandan 2016",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Yuandan 2016",
@@ -145,7 +133,6 @@
   },
   {
     "Input": "Je reviendrai sur le Vendredi Saint",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Vendredi Saint",

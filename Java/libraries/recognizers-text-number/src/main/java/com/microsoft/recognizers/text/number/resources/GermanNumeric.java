@@ -155,6 +155,8 @@ public class GermanNumeric {
     public static final String NumberWithPrefixPercentage = "(Prozent)(\\s*)({BaseNumbers.NumberReplaceToken})"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
+    public static final String AmbiguousFractionConnectorsRegex = "^[.]";
+
     public static final Character DecimalSeparatorChar = ',';
 
     public static final String FractionMarkerToken = "over";

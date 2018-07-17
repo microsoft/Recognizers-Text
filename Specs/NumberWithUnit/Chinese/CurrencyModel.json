@@ -150,6 +150,22 @@
 }
 ,
 {
+  "Input": "10日元5日本銭",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "10日元5日本銭",
+      "TypeName": "currency",
+      "Resolution": {
+        "isoCurrency": "JPY",
+        "value": "10.05",
+        "unit": "Japanese yen"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "达到445奈拉兑换",
   "Results": [
     {

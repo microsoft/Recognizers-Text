@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 au 6pm",
@@ -30,7 +29,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 5 au 6 p.m",
@@ -56,7 +54,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 au sept dans le matin",
@@ -82,7 +79,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 au 6 ce soir",
@@ -108,7 +104,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 5pm et 6pm",
@@ -134,7 +129,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4pm jusqu'a 5pm",
@@ -160,7 +154,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "16 jusqu'a 17",
@@ -186,7 +179,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4:00 au 7 heures",
@@ -212,7 +204,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4pm-5pm",
@@ -238,7 +229,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "16-17",
@@ -264,7 +254,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "16 - 17",
@@ -290,7 +279,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4pm - 5pm",
@@ -316,7 +304,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 du matin au 5pm",
@@ -342,7 +329,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 du matin jusqu'a 5pm",
@@ -368,7 +354,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": " matin",
@@ -394,7 +379,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "l'apres-midi",
@@ -420,7 +404,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans la nuit",
@@ -446,7 +429,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "ce soir",
@@ -472,7 +454,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tot matin",
@@ -498,7 +479,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard matinee",
@@ -524,7 +504,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de matin",
@@ -550,7 +529,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard d'apres midi",
@@ -576,7 +554,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tôt soirée",
@@ -602,7 +579,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard soiree",
@@ -628,7 +604,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tot nuit",
@@ -654,7 +629,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tard nuit",
@@ -680,7 +654,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut nuit",
@@ -706,7 +679,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin de nuit",
@@ -732,7 +704,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "de 1am au 5pm",
@@ -758,7 +729,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "16:00 - 17:00",
@@ -784,7 +754,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3 du matin et 5pm",
@@ -810,7 +779,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "entre 4pm au 5pm",
@@ -836,7 +804,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "apres midi",
@@ -862,7 +829,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dans la soiree",
@@ -888,7 +854,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin de matin",
@@ -914,7 +879,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin matinee",
@@ -940,7 +904,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "debut matin",
@@ -966,7 +929,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin de matinee",
@@ -992,7 +954,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tôt après midi",
@@ -1018,7 +979,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "tôt d'après-midi",
@@ -1044,7 +1004,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin d'apres midi",
@@ -1070,7 +1029,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin soiree",
@@ -1096,7 +1054,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fin nuit",
