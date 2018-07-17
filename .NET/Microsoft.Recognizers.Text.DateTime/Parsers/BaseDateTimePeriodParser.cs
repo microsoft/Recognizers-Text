@@ -408,7 +408,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success && (match.Index == 0 || match.Index + match.Length == trimedText.Length))
             {
-                // This "from .. to .." pattern is valid if followed by a Date OR Constants.PmGroupName
+                // This "from .. to .." pattern is valid if followed by a Date OR "pm"
                 var hasAm = false;
                 var hasPm = false;
                 string dateStr;
@@ -468,7 +468,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                // Parse Constants.PmGroupName 
+                // Parse "pm"
                 var pmStr = match.Groups[Constants.PmGroupName].Value;
                 var amStr = match.Groups[Constants.AmGroupName].Value;
                 var descStr = match.Groups[Constants.DescGroupName].Value;

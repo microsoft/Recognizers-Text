@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success && match.Index == 0)
             {
-                // this "from .. to .." pattern is valid if followed by a Date OR Constants.PmGroupName
+                // this "from .. to .." pattern is valid if followed by a Date OR "pm"
                 var isValid = false;
 
                 // get hours
@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             endHour = int.Parse(hourStr);
                         }
 
-                        // parse Constants.PmGroupName 
+                        // parse "pm"
                         var leftDesc = match.Groups["leftDesc"].Value;
                         var rightDesc = match.Groups["rightDesc"].Value;
                         var pmStr = match.Groups[Constants.PmGroupName].Value;

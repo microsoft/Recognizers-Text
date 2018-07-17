@@ -74,12 +74,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        // Is there Constants.PmGroupName or Constants.AmGroupName ?
+                        // Is there "pm" or "am"?
                         var pmStr = match.Groups[Constants.PmGroupName].Value;
                         var amStr = match.Groups[Constants.AmGroupName].Value;
                         var descStr = match.Groups[Constants.DescGroupName].Value;
 
-                        // Check Constants.PmGroupName, Constants.AmGroupName
+                        // Check "pm", "am" 
                         if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
                         {
                             ret.Add(new Token(match.Index, match.Index + match.Length));
