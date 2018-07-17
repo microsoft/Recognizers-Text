@@ -151,7 +151,7 @@
 ,
 {
   "Input": "10日元5日本銭",
-  "NotSupported": "javascript, python",
+  "NotSupported": "javascript, python, java",
   "Results": [
     {
       "Text": "10日元5日本銭",
