@@ -149,7 +149,7 @@ export namespace EnglishDateTime {
 	export const TimeOfTodayAfterRegex = `^\\s*(,\\s*)?(in\\s+)?${DateTimeSpecificTimeOfDayRegex}`;
 	export const TimeOfTodayBeforeRegex = `${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around|in|on))?\\s*$`;
 	export const SimpleTimeOfTodayAfterRegex = `(${HourNumRegex}|${BaseDateTime.HourRegex})\\s*(,\\s*)?(in\\s+)?${DateTimeSpecificTimeOfDayRegex}`;
-	export const SimpleTimeOfTodayBeforeRegex = `${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around))?\\s*(${HourNumRegex}|${BaseDateTime.HourRegex})`;
+	export const SimpleTimeOfTodayBeforeRegex = `\\b${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around))?\\s*(${HourNumRegex}|${BaseDateTime.HourRegex})\\b`;
 	export const TheEndOfRegex = `(the\\s+)?end of(\\s+the)?\\s*$`;
 	export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b`;
 	export const PeriodSpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;

@@ -5518,5 +5518,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Last night 26 people disappeared",
+    "Context": {
+      "ReferenceDateTime": "2018-07-17T13:00:00"
+    },
+    "Results": [
+      {
+        "Text": "last night",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-16TNI",
+              "type": "datetimerange",
+              "start": "2018-07-16 20:00:00",
+              "end": "2018-07-16 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
