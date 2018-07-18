@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
 		public static readonly string FractionNotationSpecialsCharsRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+\s+{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
 		public static readonly string FractionNotationRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[/／]{ZeroToNineFullHalfRegex}+";
 		public static readonly string PercentagePointRegex = $@"(?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*パ\s*ー\s*セ\s*ン\s*ト";
-		public static readonly string SimplePercentageRegex = $@"({AllFloatRegex}|{{AllIntRegex|{ZeroToNineIntegerRegex}|[百])\s*パ\s*ー\s*セ\s*ン\s*ト";
+		public static readonly string SimplePercentageRegex = $@"({AllFloatRegex}|{AllIntRegex}|{ZeroToNineIntegerRegex}|[百])\s*パ\s*ー\s*セ\s*ン\s*ト";
 		public static readonly string NumbersPercentagePointRegex = $@"({ZeroToNineFullHalfRegex})+([\.．]({ZeroToNineFullHalfRegex})+)?\s*パ\s*ー\s*セ\s*ン\s*ト";
 		public static readonly string NumbersPercentageWithSeparatorRegex = $@"({ZeroToNineFullHalfRegex}{{1,3}}[,，、]{ZeroToNineFullHalfRegex}{{3}})+([\.．]{ZeroToNineFullHalfRegex}+)*\s*パ\s*ー\s*セ\s*ン\s*ト";
 		public static readonly string NumbersPercentageWithMultiplierRegex = $@"(?<!{ZeroToNineIntegerRegex}){ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\s*パ\s*ー\s*セ\s*ン\s*ト";

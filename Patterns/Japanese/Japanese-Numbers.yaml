@@ -202,7 +202,7 @@ PercentagePointRegex: !nestedRegex
   def: (?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*パ\s*ー\s*セ\s*ン\s*ト
   references: [AllIntRegex, AllFloatRegex]
 SimplePercentageRegex: !nestedRegex
-  def: ({AllFloatRegex}|{AllIntRegex|{ZeroToNineIntegerRegex}|[百])\s*パ\s*ー\s*セ\s*ン\s*ト
+  def: ({AllFloatRegex}|{AllIntRegex}|{ZeroToNineIntegerRegex}|[百])\s*パ\s*ー\s*セ\s*ン\s*ト
   references: [ZeroToNineIntegerRegex, AllFloatRegex, AllIntRegex]
 NumbersPercentagePointRegex: !nestedRegex
   def: ({ZeroToNineFullHalfRegex})+([\.．]({ZeroToNineFullHalfRegex})+)?\s*パ\s*ー\s*セ\s*ン\s*ト
