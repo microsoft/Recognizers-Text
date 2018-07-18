@@ -71,6 +71,7 @@ public class JapaneseNumericWithUnit {
         .put("Yemeni rial", "イエメン・リアル")
         .put("Israeli new shekel", "₪|ils|イスラエル・新シェケル|イスラエル新シェケル")
         .put("Japanese yen", "円")
+        .put("Sen", "銭")
         .put("Kazakhstani tenge", "テンゲ|カザフスタン・テンゲ|カザフスタンテンゲ")
         .put("Kenyan shilling", "ケニア・シリング")
         .put("North Korean won", "北朝鮮ウォン")
@@ -527,12 +528,12 @@ public class JapaneseNumericWithUnit {
         .put("New Taiwan dollar", "nt$|nt $")
         .put("Samoan tālā", "ws$")
         .put("Chinese yuan", "￥")
-        .put("Japanese yen", "¥")
+        .put("Japanese yen", "¥|\\\\")
         .put("Turkish lira", "₺")
         .put("Euro", "€")
         .put("Pound", "£")
         .put("Costa Rican colón", "₡")
         .build();
 
-    public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円");
+    public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "\\\\");
 }
