@@ -76,7 +76,7 @@ public class PortugueseNumeric {
             .replace("{AllIntRegex}", AllIntRegex);
 
     public static String NumbersWithPlaceHolder(String placeholder) {
-        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))([1-9]\\d*|0)(?!(,\\d+[a-zA-Z]))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 

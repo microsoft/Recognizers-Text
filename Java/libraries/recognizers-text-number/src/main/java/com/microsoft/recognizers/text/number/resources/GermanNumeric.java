@@ -53,7 +53,7 @@ public class GermanNumeric {
     public static final String PlaceHolderDefault = "\\D|\\b";
 
     public static String NumbersWithPlaceHolder(String placeholder) {
-        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\,\\d+[a-zA-Z]))(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))([1-9]\\d*|0)(?!(\\,\\d+[a-zA-Z]))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 
@@ -132,7 +132,7 @@ public class GermanNumeric {
     public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.)))(\\d+(\\.\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)";
 
     public static String DoubleDecimalPointRegex(String placeholder) {
-        return "((\\d{1,3})(\\.\\d{3})*(\\,\\d+)?)(?={placeholder})"
+        return "\\b((\\d{1,3})(\\.\\d{3})*(\\,\\d+)?)(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 
