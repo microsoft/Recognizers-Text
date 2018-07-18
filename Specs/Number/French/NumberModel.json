@@ -1284,20 +1284,12 @@
   },
   {
     "Input": "423 0000 seront reconnus comme deux nombres.",
-    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "423",
         "TypeName": "number",
         "Resolution": {
           "value": "423"
-        }
-      },
-      {
-        "Text": "0000",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0"
         }
       },
       {

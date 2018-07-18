@@ -686,13 +686,6 @@
         }
       },
       {
-        "Text": "0000",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0"
-        }
-      },
-      {
         "Text": "zwei",
         "TypeName": "number",
         "Resolution": {

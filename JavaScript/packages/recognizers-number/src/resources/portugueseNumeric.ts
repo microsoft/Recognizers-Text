@@ -28,7 +28,7 @@ export namespace PortugueseNumeric {
 	export const PlaceHolderPureNumber = `\\b`;
 	export const AllIntRegexWithLocks = `((?<=\\b)${AllIntRegex}(?=\\b))`;
 	export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(((meia)?\\s+(d[úu]zia))|(${AllIntRegex}\\s+(e|com)\\s+)?(${AllIntRegex}\\s+(d[úu]zia(s)?|dezena(s)?)))(?=\\b)`;
-	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }
+	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))([1-9]\\d*|0)(?!(,\\d+[a-zA-Z]))(?=${placeholder})`; }
 	export const NumbersWithSuffix = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(k|M|T|G)(?=\\b)`;
 	export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)(${DigitsNumberRegex})+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
 	export const NumbersWithDozenSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dezena(s)?(?=\\b)`;

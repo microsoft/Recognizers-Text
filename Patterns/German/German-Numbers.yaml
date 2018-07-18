@@ -28,7 +28,7 @@ PlaceHolderPureNumber: !simpleRegex
 PlaceHolderDefault: !simpleRegex
   def: \D|\b
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\,\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))([1-9]\d*|0)(?!(\,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)
@@ -95,7 +95,7 @@ DoubleExponentialNotationRegex: !simpleRegex
 DoubleCaretExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
-  def: ((\d{1,3})(\.\d{3})*(\,\d+)?)(?={placeholder})
+  def: \b((\d{1,3})(\.\d{3})*(\,\d+)?)(?={placeholder})
   params: [ placeholder ]
 DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+))\.\d+(?!(\.\d+))(?={placeholder})
