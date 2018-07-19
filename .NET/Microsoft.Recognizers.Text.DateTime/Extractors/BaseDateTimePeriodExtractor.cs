@@ -137,6 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
+        // For cases like "Early in the day Wednesday"
         private IEnumerable<Token> MatchDateWithPeriodPrefix(string text, DateObject reference, List<ExtractResult> dateErs)
         {
             var ret = new List<Token>();
@@ -172,7 +173,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (er.Count > 0)
                         {
                             var begin = er[0].Start ?? 0;
-                            var end = (er[0].Start ?? 0) + (er[0].Length ?? 0);
 
                             var middleStr = beforeStr.Substring(begin + (er[0].Length ?? 0)).Trim().ToLower();
                             if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsMatch(middleStr))
@@ -348,13 +348,43 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var match = this.config.PeriodTimeOfDayWithDateRegex.Match(afterStr);
 
+                if (match.Success)
+                {
+
+                    // For cases like "Friday afternoon between 1PM and 4 PM" which "Friday afternoon" need to be extracted first
+                    if (string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                    {
+                        var start = er.Start ?? 0;
+                        var end = er.Start + er.Length + match.Groups[Constants.TimeOfDayGroupName].Index +
+                                  match.Groups[Constants.TimeOfDayGroupName].Length ?? 0;
+
+                        ret.Add(new Token(start, end));
+                        continue;
+                    }
+
+                    var connectorStr = afterStr.Substring(0, match.Index);
+                    var pauseMatch = config.MiddlePauseRegex.Match(connectorStr);
+
+                    if (pauseMatch.Success && pauseMatch.Length == connectorStr.Length)
+                    {
+                        var suffix = afterStr.Substring(match.Index + match.Length).TrimStart();
+    
+                        var endingMatch = config.GeneralEndingRegex.Match(suffix);
+                        if (endingMatch.Success)
+                        {
+                            ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
+                        }
+                    }
+                }
+
                 if (!match.Success)
                 {
                     match = this.config.AmDescRegex.Match(afterStr);
-                    if (!match.Success)
-                    {
-                        match = this.config.PmDescRegex.Match(afterStr);
-                    }
+                }
+
+                if (!match.Success)
+                {
+                    match = this.config.PmDescRegex.Match(afterStr);
                 }
 
                 if (match.Success)
@@ -362,22 +392,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                     {
                         ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
-                    }
-                    else
-                    {
-                        var connectorStr = afterStr.Substring(0, match.Index);
-                        var pauseMatch = config.MiddlePauseRegex.Match(connectorStr);
-
-                        if (pauseMatch.Success && pauseMatch.Length == connectorStr.Length)
-                        {
-                            var suffix = afterStr.Substring(match.Index + match.Length).TrimStart(' ');
-    
-                            var endingMatch = config.GeneralEndingRegex.Match(suffix);
-                            if (endingMatch.Success)
-                            {
-                                ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
-                            }
-                        }
                     }
                 }
 

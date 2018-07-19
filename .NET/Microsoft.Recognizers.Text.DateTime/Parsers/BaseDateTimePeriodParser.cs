@@ -685,7 +685,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             bool hasEarly = false, hasLate = false;
             if (match.Success)
             {
-                timeText = match.Groups["timeOfDay"].Value;
+                timeText = match.Groups[Constants.TimeOfDayGroupName].Value;
                 if (!string.IsNullOrEmpty(match.Groups["early"].Value))
                 {
                     hasEarly = true;

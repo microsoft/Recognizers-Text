@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         ers[j].Data = new Dictionary<string, object>
                         {
-                            {Constants.SubType, ers[i].Type},
+                            {Constants.SubType, ers[j].Type},
                             {ExtendedModelResult.ParentTextKey, parentText}
                         };
                         ers[j].Type = Constants.SYS_DATETIME_DATETIMEALT;
@@ -304,6 +304,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 data = ExtractDateRange_DateRange(former, latter);
             }
 
+            if (data.Count == 0)
+            {
+                data = ExtractDateTimeRange_Date(former, latter);
+            }
+
             return data;
         }
 
@@ -439,6 +444,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
             
+            return data;
+        }
+
+        private Dictionary<string, object> ExtractDateTimeRange_Date(ExtractResult former, ExtractResult latter)
+        {
+            var data = new Dictionary<string, object>();
+
+            // Modify time entity to an alternative DateTimeRange expression, such as "9-10 am" in "Monday 7-8 am or 9-10 am"
+            if (former.Type == Constants.SYS_DATETIME_DATETIMEPERIOD &&
+                latter.Type == Constants.SYS_DATETIME_DATE)
+            {
+                var ers = config.DateExtractor.Extract(former.Text);
+                if (ers.Count == 1)
+                {
+                    ers[0].Text = former.Text.Substring(0, (int)ers[0].Start) +
+                                  former.Text.Substring((int)(ers[0].Start + ers[0].Length));
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIMEPERIOD);
+                }
+            }
+
             return data;
         }
     }

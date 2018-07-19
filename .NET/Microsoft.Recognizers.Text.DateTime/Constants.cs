@@ -116,6 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SecondGroupName = "sec";
         public const string MinuteGroupName = "min";
         public const string HourGroupName = "hour";
+        public const string TimeOfDayGroupName = "timeOfDay";
 
         // Timex
         public static readonly string[] DatePeriodTimexSplitter = new string[] { ",", "(", ")" };

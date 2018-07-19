@@ -2420,49 +2420,50 @@
   {
     "Input": "Cortana, can you please schedule a meeting with Maria either Monday or Tuesday next week between 1pm and 2pm CST",
     "Context": {
-      "ReferenceDateTime": "2018-06-12T00:00:00"
+      "ReferenceDateTime": "2018-07-19T20:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
+        "ParentText": "monday or tuesday next week between 1pm and 2pm cst",
         "Text": "monday",
         "Start": 61,
         "End": 66,
-        "TypeName": "datetimeV2.date",
+        "TypeName": "datetimeV2.datetimealt",
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-1",
-              "type": "date",
-              "value": "2018-06-11"
+              "timex": "(XXXX-WXX-1T13,XXXX-WXX-1T14,PT1H)",
+              "type": "datetimerange",
+              "start": "2018-07-16 13:00:00",
+              "end": "2018-07-16 14:00:00"
             },
             {
-              "timex": "XXXX-WXX-1",
-              "type": "date",
-              "value": "2018-06-18"
+              "timex": "(XXXX-WXX-1T13,XXXX-WXX-1T14,PT1H)",
+              "type": "datetimerange",
+              "start": "2018-07-23 13:00:00",
+              "end": "2018-07-23 14:00:00"
             }
           ]
         }
       },
       {
+        "ParentText": "monday or tuesday next week between 1pm and 2pm cst",
         "Text": "tuesday next week between 1pm and 2pm cst",
         "Start": 71,
         "End": 111,
-        "TypeName": "datetimeV2.datetimerange",
+        "TypeName": "datetimeV2.datetimealt",
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-06-19T13,2018-06-19T14,PT1H)",
+              "timex": "(2018-07-24T13,2018-07-24T14,PT1H)",
               "type": "datetimerange",
-              "timezone": "UTC+XX:XX",
-              "timezoneText": "cst",
-              "utcOffsetMins": "-10000",
-              "start": "2018-06-19 13:00:00",
-              "end": "2018-06-19 14:00:00"
+              "start": "2018-07-24 13:00:00",
+              "end": "2018-07-24 14:00:00"
             }
           ]
         }
-      }
+      } 
     ]
   },
   {
@@ -4426,6 +4427,76 @@
               "type": "daterange",
               "start": "2008-01-01",
               "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, please schedule 30 minutes on Tuesday or Wednesday morning with a Skype bridge.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-19T20:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 25,
+        "End": 34,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "tuesday or wednesday morning",
+        "Text": "tuesday",
+        "Start": 39,
+        "End": 45,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2018-07-17 08:00:00",
+              "end": "2018-07-17 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2018-07-24 08:00:00",
+              "end": "2018-07-24 12:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "tuesday or wednesday morning",
+        "Text": "wednesday morning",
+        "Start": 50,
+        "End": 66,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3TMO",
+              "type": "datetimerange",
+              "start": "2018-07-18 08:00:00",
+              "end": "2018-07-18 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3TMO",
+              "type": "datetimerange",
+              "start": "2018-07-25 08:00:00",
+              "end": "2018-07-25 12:00:00"
             }
           ]
         }

@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             // Original type of the extracted entity
-            var subType = ((Dictionary<string, object>)(er.Data))[Constants.SubType].ToString();
+            var subType = ((Dictionary<string, object>)er.Data)[Constants.SubType].ToString();
             var dateTimeEr = new ExtractResult();
 
             // e.g. {next week Mon} or {Tue}, formmer--"next week Mon" doesn't contain "context" key
@@ -131,11 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (subType == Constants.SYS_DATETIME_DATETIMEPERIOD)
             {
-                if (!hasContext)
-                {
-                    dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
-                    dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
-                }
+                dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
+                dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
             }
             else if (subType == Constants.SYS_DATETIME_DATEPERIOD)
             {
