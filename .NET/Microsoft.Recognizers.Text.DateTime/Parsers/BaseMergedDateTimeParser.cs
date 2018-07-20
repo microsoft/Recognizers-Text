@@ -292,7 +292,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             foreach (var values in valueSet)
                             {
-                                // This is only a sanity check
+                                // This is only a sanity check, as here we only handle DatePeriod like "(StartDate,EndDate,Duration)"
                                 if (values.ContainsKey(DateTimeResolutionKey.START) && values.ContainsKey(DateTimeResolutionKey.END) && values.ContainsKey(DateTimeResolutionKey.Timex))
                                 {
                                     var startDate = DateObject.Parse(values[DateTimeResolutionKey.START]);
@@ -300,9 +300,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     var durationStr = timexComponents[2];
                                     var datePeriodTimexType = TimexUtility.GetDatePeriodTimexType(durationStr);
                                     endDate = TimexUtility.OffsetDateObject(endDate, offset: 1, timexType: datePeriodTimexType);
-                                    var timex = TimexUtility.GenerateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
-                                    values[DateTimeResolutionKey.Timex] = TimexUtility.GenerateAlterTimex(slot.TimexStr, timex);
                                     values[DateTimeResolutionKey.END] = FormatUtil.LuisDate(endDate);
+                                    values[DateTimeResolutionKey.Timex] = GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
 
                                     if (string.IsNullOrEmpty(altTimex))
                                     {
@@ -319,6 +318,34 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return slot;
+        }
+
+        public string GenerateEndInclusiveTimex(string originalTimex, DatePeriodTimexType datePeriodTimexType, DateObject startDate, DateObject endDate)
+        {
+            var timexEndInclusive = TimexUtility.GenerateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
+
+            // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
+            // The fuzzy part needs to stay the same in the new end-inclusive timex
+            if (originalTimex.Contains(Constants.TimexFuzzy) && originalTimex.Length == timexEndInclusive.Length)
+            {
+                var timexCharSet = new char[timexEndInclusive.Length];
+
+                for (int i = 0; i < originalTimex.Length; i++)
+                {
+                    if (originalTimex[i] != Constants.TimexFuzzy)
+                    {
+                        timexCharSet[i] = timexEndInclusive[i];
+                    }
+                    else
+                    {
+                        timexCharSet[i] = Constants.TimexFuzzy;
+                    }
+                }
+
+                timexEndInclusive = new string(timexCharSet);
+            }
+
+            return timexEndInclusive;
         }
 
         public string DetermineDateTimeType(string type, bool hasMod)
