@@ -4431,5 +4431,107 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let’s try for Wednesday after 3 PM PT or Thursday after 1:30 PM PT?",
+    "Context": {
+      "ReferenceDateTime": "2018-07-20T06:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "wednesday after 3 pm pt",
+        "Start": 14,
+        "End": 36,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T15",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pt",
+              "utcOffsetMins": "-420",
+              "start": "2018-07-18 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T15",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pt",
+              "utcOffsetMins": "-420",
+              "start": "2018-07-25 15:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "thursday after 1:30 pm pt",
+        "Start": 41,
+        "End": 65,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4T13:30",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pt",
+              "utcOffsetMins": "-420",
+              "start": "2018-07-19 13:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-4T13:30",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pt",
+              "utcOffsetMins": "-420",
+              "start": "2018-07-26 13:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Can we meet monday after 3pm PST.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-20T06:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "monday after 3pm pst",
+        "Start": 12,
+        "End": 31,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T15",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-08:00",
+              "timezoneText": "pst",
+              "utcOffsetMins": "-480",
+              "start": "2018-07-16 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T15",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-08:00",
+              "timezoneText": "pst",
+              "utcOffsetMins": "-480",
+              "start": "2018-07-23 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
