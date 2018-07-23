@@ -1201,5 +1201,75 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana, please schedule 30 minutes on Tuesday or Wednesday morning with a Skype bridge.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-19T20:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Start": 25,
+        "End": 34,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "tuesday or wednesday morning",
+        "Text": "tuesday",
+        "Start": 39,
+        "End": 45,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2018-07-17 08:00:00",
+              "end": "2018-07-17 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "type": "datetimerange",
+              "start": "2018-07-24 08:00:00",
+              "end": "2018-07-24 12:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "tuesday or wednesday morning",
+        "Text": "wednesday morning",
+        "Start": 50,
+        "End": 66,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3TMO",
+              "type": "datetimerange",
+              "start": "2018-07-18 08:00:00",
+              "end": "2018-07-18 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3TMO",
+              "type": "datetimerange",
+              "start": "2018-07-25 08:00:00",
+              "end": "2018-07-25 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

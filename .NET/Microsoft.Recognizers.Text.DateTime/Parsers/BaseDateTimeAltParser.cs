@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             // Original type of the extracted entity
-            var subType = ((Dictionary<string, object>)(er.Data))[Constants.SubType].ToString();
+            var subType = ((Dictionary<string, object>)er.Data)[Constants.SubType].ToString();
             var dateTimeEr = new ExtractResult();
 
             // e.g. {next week Mon} or {Tue}, formmer--"next week Mon" doesn't contain "context" key
@@ -131,11 +131,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (subType == Constants.SYS_DATETIME_DATETIMEPERIOD)
             {
-                if (!hasContext)
-                {
-                    dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
-                    dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
-                }
+                dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
+                dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
             }
             else if (subType == Constants.SYS_DATETIME_DATEPERIOD)
             {
@@ -150,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = dateTimePr.TimexStr;
                 
                 // Create resolution
-                GetResolution(er, dateTimePr, ret);
+                ret = GetResolution(er, dateTimePr, ret);
                 
                 ret.Success = true;
             }
@@ -158,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void GetResolution(ExtractResult er, DateTimeParseResult pr, DateTimeResolutionResult ret)
+        private static DateTimeResolutionResult GetResolution(ExtractResult er, DateTimeParseResult pr, DateTimeResolutionResult ret)
         {
             var parentText = (string)((Dictionary<string, object>)er.Data)[ExtendedModelResult.ParentTextKey];
             var type = pr.Type;
@@ -260,6 +257,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {ExtendedModelResult.ParentTextKey, parentText}
                 };
             }
+
+            if (((DateTimeResolutionResult)pr.Value).TimeZoneResolution != null)
+            {
+                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
+            }
+
+            return ret;
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
