@@ -199,6 +199,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 timePr
                             };
 
+                            if (((DateTimeResolutionResult)timePr.Value).TimeZoneResolution != null)
+                            {
+                                ret.TimeZoneResolution = ((DateTimeResolutionResult)timePr.Value).TimeZoneResolution;
+                            }
+
                             ret.Success = true;
                         }
                     }
