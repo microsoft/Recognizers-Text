@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = dateTimePr.TimexStr;
                 
                 // Create resolution
-                GetResolution(er, dateTimePr, ret);
+                ret = GetResolution(er, dateTimePr, ret);
                 
                 ret.Success = true;
             }
@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void GetResolution(ExtractResult er, DateTimeParseResult pr, DateTimeResolutionResult ret)
+        private static DateTimeResolutionResult GetResolution(ExtractResult er, DateTimeParseResult pr, DateTimeResolutionResult ret)
         {
             var parentText = (string)((Dictionary<string, object>)er.Data)[ExtendedModelResult.ParentTextKey];
             var type = pr.Type;
@@ -257,6 +257,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {ExtendedModelResult.ParentTextKey, parentText}
                 };
             }
+
+            if (((DateTimeResolutionResult)pr.Value).TimeZoneResolution != null)
+            {
+                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
+            }
+
+            return ret;
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)

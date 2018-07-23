@@ -460,6 +460,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ers[0].Text = former.Text.Substring(0, (int)ers[0].Start) +
                                   former.Text.Substring((int)(ers[0].Start + ers[0].Length));
+                    ers[0].Type = Constants.ContextType_RelativeSuffix;
                     data.Add(Constants.Context, ers[0]);
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIMEPERIOD);
                 }
