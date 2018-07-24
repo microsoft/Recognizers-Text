@@ -448,5 +448,16 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "过去十年中国有了巨大的变化",
+    "Results": [
+      {
+        "Text": "过去十年",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
   }
 ]

@@ -62,7 +62,7 @@ export namespace ChineseDateTime {
 	export const NumberCombinedWithUnit = `(?<num>\\d+(\\.\\d*)?)${UnitRegex}`;
 	export const YearToYear = `((从|在|自)\\s*)?(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})\\s*${DatePeriodTillRegex}\\s*(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})`;
 	export const MonthToMonth = `(${MonthRegex})${DatePeriodTillRegex}(${MonthRegex})`;
-	export const PastRegex = `(?<past>(前|上|之前|近))`;
+	export const PastRegex = `(?<past>(前|上|之前|近|过去))`;
 	export const FutureRegex = `(?<future>(后|(?<![一两几]\\s*)下|之后|未来(的)?))`;
 	export const SeasonRegex = `(?<season>春|夏|秋|冬)(天|季)?`;
 	export const SeasonWithYear = `((${DatePeriodYearRegex}|${DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?${SeasonRegex}`;
