@@ -1746,7 +1746,6 @@
   },
   {
     "Input": "423 0000 will be recognized as two numbers.",
-    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "423",
@@ -1754,14 +1753,6 @@
         "Resolution": {
           "subtype": "integer",
           "value": "423"
-        }
-      },
-      {
-        "Text": "0000",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "0"
         }
       },
       {

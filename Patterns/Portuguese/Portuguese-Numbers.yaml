@@ -51,7 +51,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
   def: (?<=\b)(((meia)?\s+(d[úu]zia))|({AllIntRegex}\s+(e|com)\s+)?({AllIntRegex}\s+(d[úu]zia(s)?|dezena(s)?)))(?=\b)
   references: [ AllIntRegex ]
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))([1-9]\d*|0)(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)

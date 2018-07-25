@@ -2020,20 +2020,12 @@
   },
   {
     "Input": "423 0000 serão reconhecidos como dois números.",
-    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "423",
         "TypeName": "number",
         "Resolution": {
           "value": "423"
-        }
-      },
-      {
-        "Text": "0000",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0"
         }
       },
       {
