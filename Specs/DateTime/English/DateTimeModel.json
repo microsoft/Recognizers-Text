@@ -5589,5 +5589,35 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I plan to leave before independence day.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-24T13:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before independence day",
+        "Start": 16,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-04",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-07-04"
+            },
+            {
+              "timex": "XXXX-07-04",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2019-07-04"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

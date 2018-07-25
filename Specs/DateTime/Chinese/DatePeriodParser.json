@@ -1054,5 +1054,30 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "过去十年中国有了巨大的变化",
+    "Context": {
+      "ReferenceDateTime": "2018-07-24T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "过去十年",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2008-07-24,2018-07-24,P10Y)",
+          "FutureResolution": {
+            "startDate": "2008-07-24",
+            "endDate": "2018-07-24"
+          },
+          "PastResolution": {
+            "startDate": "2008-07-24",
+            "endDate": "2018-07-24"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
   }
 ]
