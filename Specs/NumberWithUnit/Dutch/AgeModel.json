@@ -211,7 +211,7 @@
   },
   {
     "Input": "Hij is tussen de 40 en 50 jaar.",
-    "NotSupported": "javascript",
+    "NotSupported": "dotNet,javascript,python,java,",
     "Results": [
       {
         "Text": "50 jaar",
