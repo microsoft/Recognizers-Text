@@ -1,6 +1,6 @@
 [{
   "Input": "15일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "15",
@@ -11,7 +11,7 @@
 ,
 {
   "Input": "4월 22일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2월 22일",
@@ -22,7 +22,7 @@
 ,
 {
   "Input": "1월-1일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "1월-1일",
@@ -33,7 +33,7 @@
 ,
 {
   "Input": "1월/1일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "1월/1일",
@@ -44,7 +44,7 @@
 ,
 {
   "Input": "10월.2일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "10월.2일",
@@ -55,7 +55,7 @@
 ,
 {
   "Input": "1월 12일, 2016에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "1월 12일, 2016",
@@ -66,7 +66,7 @@
 ,
 {
   "Input": "2016년 1월 12일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2016년 1월 12일",
@@ -77,7 +77,7 @@
 ,
 {
   "Input": "1월 12일 월요일, 2016에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "1월 12일 월요일, 2016",
@@ -88,7 +88,7 @@
 ,
 {
   "Input": "02/22/2016에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "02/22/2016",
@@ -99,7 +99,7 @@
 ,
 {
   "Input": "21/04/2016에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "21/04/2016",
@@ -110,7 +110,7 @@
 ,
 {
   "Input": "21/04/16에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "21/04/16",
@@ -121,7 +121,7 @@
 ,
 {
   "Input": "9-18-15에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "9-18-15",
@@ -132,7 +132,7 @@
 ,
 {
   "Input": "4.22에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "4.22",
@@ -143,7 +143,7 @@
 ,
 {
   "Input": "4-22에 돌아가요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "4-22",
@@ -154,7 +154,7 @@
 ,
 {
   "Input": "4.22에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "4.22",
@@ -165,7 +165,7 @@
 ,
 {
   "Input": "4-22에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "4-22",
@@ -176,7 +176,7 @@
 ,
 {
   "Input": "4/22 에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "4/22",
@@ -187,7 +187,7 @@
 ,
 {
   "Input": "22/04에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "22/04",
@@ -198,7 +198,7 @@
 ,
 {
   "Input": "4/22에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "4/22",
@@ -209,7 +209,7 @@
 ,
 {
   "Input": "22/04에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "22/04",
@@ -220,7 +220,7 @@
 ,
 {
   "Input": "2015/08/12에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2015/08/12",
@@ -231,7 +231,7 @@
 ,
 {
   "Input": "11/12,2016에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "11/12,2016",
@@ -242,7 +242,7 @@
 ,
 {
   "Input": "11/12,16에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "11/12,16",
@@ -253,7 +253,7 @@
 ,
 {
   "Input": "1월 1일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "1월 1일",
@@ -264,7 +264,7 @@
 ,
 {
   "Input": "1월-1일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "1월-1일",
@@ -275,7 +275,7 @@
 ,
 {
   "Input": "11월-28일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "11월-28일",
@@ -286,7 +286,7 @@
 ,
 {
   "Input": "1월 22일 수요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "1월 22일 수요일",
@@ -297,7 +297,7 @@
 ,
 {
   "Input": "7월 첫째 주 금요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "7월 첫째 주 금요일",
@@ -308,7 +308,7 @@
 ,
 {
   "Input": "이번 달 첫 번째 금요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이번 달 첫 번째 금요일",
@@ -319,7 +319,7 @@
 ,
 {
   "Input": "2주 후에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2주 후",
@@ -330,7 +330,7 @@
 ,
 {
   "Input": "다음 주 금요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "다음 주 금요일",
@@ -341,7 +341,7 @@
 ,
 {
   "Input": "다음 금요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "다음 금요일",
@@ -352,7 +352,7 @@
 ,
 {
   "Input": "지난 월요일",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "지난 월요일",
@@ -363,7 +363,7 @@
 ,
 {
   "Input": "화요일에 돌아갈게요.",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "화요일",
@@ -374,7 +374,7 @@
 ,
 {
   "Input": "좋은 소식. 화요일에 돌아갈게요.",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "화요일",
@@ -385,7 +385,7 @@
 ,
 {
   "Input": "화요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "화요일",
@@ -396,7 +396,7 @@
 ,
 {
   "Input": "금요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "금요일",
@@ -407,7 +407,7 @@
 ,
 {
   "Input": "금요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "금요일",
@@ -418,7 +418,7 @@
 ,
 {
   "Input": "오늘 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "오늘",
@@ -429,7 +429,7 @@
 ,
 {
   "Input": "내일 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "내일",
@@ -440,7 +440,7 @@
 ,
 {
   "Input": "어제로 돌아갈거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "어제",
@@ -451,7 +451,7 @@
 ,
 {
   "Input": "그제로 돌아갈거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "그제",
@@ -462,7 +462,7 @@
 ,
 {
   "Input": "모레 돌아올게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "모레",
@@ -473,7 +473,7 @@
 ,
 {
   "Input": "그 다음날 돌아올거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "그 다음날",
@@ -484,7 +484,7 @@
 ,
 {
   "Input": "다음날 돌아올거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "다음날",
@@ -495,7 +495,7 @@
 ,
 {
   "Input": "이번 금요일에 돌아올거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이번 금요일",
@@ -506,7 +506,7 @@
 ,
 {
   "Input": "다음주 일요일에 돌아올거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "다음주 일요일",
@@ -517,7 +517,7 @@
 ,
 {
   "Input": "지난 주 일요일로 돌아갈거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "지난 주 일요일",
@@ -528,7 +528,7 @@
 ,
 {
   "Input": "전날로 돌아갈거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "전날",
@@ -539,7 +539,7 @@
 ,
 {
   "Input": "그 전날로 돌아갈거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "그 전날",
@@ -550,7 +550,7 @@
 ,
 {
   "Input": "그 날로 돌아갈거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "그 날",
@@ -561,7 +561,7 @@
 ,
 {
   "Input": "이번 금요일에 돌아올거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이번 금요일",
@@ -572,7 +572,7 @@
 ,
 {
   "Input": "다음 주 일요일에 돌아올거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "다음주 일요일",
@@ -583,7 +583,7 @@
 ,
 {
   "Input": "지난 주 일요일로 돌아갈거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "지난 주 일요일",
@@ -594,7 +594,7 @@
 ,
 {
   "Input": "2016년 6월 15에 돌아올거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2016년 6월 15",
@@ -605,7 +605,7 @@
 ,
 {
   "Input": "5월 11에 야구",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "5월 11",
@@ -616,7 +616,7 @@
 ,
 {
   "Input": "5월 4일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "5월 4일",
@@ -627,7 +627,7 @@
 ,
 {
   "Input": "3월 4일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "3월 4일",
@@ -638,7 +638,7 @@
 ,
 {
   "Input": "새해 첫 날에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "새해 첫 날",
@@ -649,7 +649,7 @@
 ,
 {
   "Input": "5월 21일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "5월 21일",
@@ -660,7 +660,7 @@
 ,
 {
   "Input": "5월 21에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "5월 21",
@@ -671,7 +671,7 @@
 ,
 {
   "Input": "8월 2일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "8월 2일",
@@ -682,7 +682,7 @@
 ,
 {
   "Input": "6월 22일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "6월 22일에 돌아갈게요",
@@ -693,7 +693,7 @@
 ,
 {
   "Input": "두달 전에 돌아왔어요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "두달 전",
@@ -704,7 +704,7 @@
 ,
 {
   "Input": "이틀 후에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이틀 후",
@@ -715,7 +715,7 @@
 ,
 {
   "Input": "한달 전에 누구한테 메일 보냈지",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "한달 전",
@@ -726,7 +726,7 @@
 ,
 {
   "Input": "27일에 돌아왔다.",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "27일에",
@@ -737,7 +737,7 @@
 ,
 {
   "Input": "27일에 돌아왔다!",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "27일에",
@@ -748,7 +748,7 @@
 ,
 {
   "Input": "27일에 돌아왔다 .",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "27일에",
@@ -759,7 +759,7 @@
 ,
 {
   "Input": "27일에 돌아옴!",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "27일에",
@@ -770,7 +770,7 @@
 ,
 {
   "Input": "27일에 돌아옴 .",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "27일에",
@@ -781,7 +781,7 @@
 ,
 {
   "Input": "21일에 돌아왔다",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "21일에",
@@ -792,7 +792,7 @@
 ,
 {
   "Input": "22일에 돌아왔다",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "22일에",
@@ -803,7 +803,7 @@
 ,
 {
   "Input": "이일에 돌아왔다",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이일",
@@ -814,7 +814,7 @@
 ,
 {
   "Input": "이십이일에 돌아옴",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이십이일",
@@ -825,7 +825,7 @@
 ,
 {
   "Input": "삼십일일에 돌아왔다",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "삼십일일",
@@ -836,7 +836,7 @@
 ,
 {
   "Input": "27일에 돌아왔다",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "27일에",
@@ -847,7 +847,7 @@
 ,
 {
   "Input": "21일에 돌아왔다",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "21일에",
@@ -858,7 +858,7 @@
 ,
 {
   "Input": "22일에 돌아왔다",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "22일에",
@@ -869,7 +869,7 @@
 ,
 {
   "Input": "2일에 돌아왔어!",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2일에",
@@ -880,7 +880,7 @@
 ,
 {
   "Input": "22일에 돌아왔어?",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "22일에",
@@ -891,25 +891,25 @@
 ,
 {
   "Input": "1등상",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": []
 }
 ,
 {
   "Input": "27층으로 갈거야",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": []
 }
 ,
 {
   "Input": "싱가포르와 중국의 외교 관계 수립 25 주년 기념 행사",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": []
 }
 ,
 {
   "Input": "17번째 방탈출 체험 티켓 구하기",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": []
 }
 ,
@@ -918,7 +918,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "둘째 토요일",
@@ -932,7 +932,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "27일 수요일",
@@ -946,7 +946,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "21일 목요일",
@@ -960,7 +960,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "22일 금요일",
@@ -974,7 +974,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "23일 토요일",
@@ -988,7 +988,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "15일 금요일",
@@ -1002,7 +1002,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이십일일 목요일",
@@ -1016,7 +1016,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이십이일 금요일",
@@ -1030,7 +1030,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "십오일 금요일",
@@ -1044,7 +1044,7 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "칠일 목요일",
@@ -1055,7 +1055,7 @@
 ,
 {
   "Input": "두번째 일요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "두번째 일요일",
@@ -1066,7 +1066,7 @@
 ,
 {
   "Input": "첫번째 일요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "첫번째 일요일",
@@ -1077,7 +1077,7 @@
 ,
 {
   "Input": "세번째 화요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "세번째 화요일",
@@ -1088,7 +1088,7 @@
 ,
 {
   "Input": "다섯 번째 일요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "다섯 번째 일요일",
@@ -1099,7 +1099,7 @@
 ,
 {
   "Input": "여섯 번째 일요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "여섯 번째 일요일",
@@ -1110,7 +1110,7 @@
 ,
 {
   "Input": "열번 째 월요일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "열번 째 월요일",
@@ -1121,7 +1121,7 @@
 ,
 {
   "Input": "다음 달 20일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "다음 달 20일",
@@ -1132,7 +1132,7 @@
 ,
 {
   "Input": "이번 달 31일에 돌아갈게요",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이번 달 31일",
@@ -1143,7 +1143,7 @@
 ,
 {
   "Input": "Cortana는 이번 주 금요일이나 다음 주 화요일에 Skype통화를 하려고 합니다.",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이번 주 금요일",
@@ -1159,7 +1159,7 @@
 ,
 {
   "Input": "Cortana는 이번 주 금요일이나 이번 주 토요일에 Skype통화를 하려고 합니다.",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이번 주 금요일",
@@ -1175,7 +1175,7 @@
 ,
 {
   "Input": "16. 11월. 2016",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "16. 11월. 2016",
@@ -1187,7 +1187,7 @@
 {
   "Input": "우리는 한달 21일 전에 회의가 있었다.",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "한달 21일 전",
@@ -1199,7 +1199,7 @@
 {
   "Input": "나는 2년 1개월 21일 전에 이곳을 떠났다",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2년 1개월 21일 전",
@@ -1211,7 +1211,7 @@
 {
   "Input": "나는 2년 21일 후에 이곳을 떠날 것이다",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2년 21일 후",
@@ -1223,7 +1223,7 @@
 {
   "Input": "나는 1개월 2년 21일 전에 이 곳을 떠났다.",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "1개월 2년 21일 전",
@@ -1235,7 +1235,7 @@
 {
   "Input": "나는 다음 달 20일에 여기를 떠났다.",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "다음 달 20일",
@@ -1246,7 +1246,7 @@
 ,
 {
   "Input": "나는 5 12월 1391에 이곳을 떠났다.",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "5 12월 1391",
@@ -1258,7 +1258,7 @@
 {
   "Input": "월요일, 1월 22일, 2018",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "월요일, 1월 22일, 2018",
@@ -1270,7 +1270,7 @@
 {
   "Input": "일요일 1월 이십일일 이천팔년에",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "일요일 1월 이십일일 이천팔년",
@@ -1282,7 +1282,7 @@
 {
   "Input": "9월 21일 1978에",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "9월 21일 1978",
@@ -1294,7 +1294,7 @@
 {
   "Input": "9월 10일, 1901에",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "9월 10일, 1901",
@@ -1306,7 +1306,7 @@
 {
   "Input": "구월 십일, 2000에",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "구월 십일, 2000",
@@ -1317,7 +1317,7 @@
 ,
 {
   "Input": "13.5.2015에 한가해?",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "13.5.2015",
@@ -1328,7 +1328,7 @@
 ,
 {
   "Input": "2015.5.13에 시간 괜찮아?",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2015.5.13",
@@ -1339,7 +1339,7 @@
 ,
 {
   "Input": "앞으로 2주 동안 일요일에 시간 괜찮아?",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "앞으로 2주 동안 일요일에",
@@ -1350,7 +1350,7 @@
 ,
 {
   "Input": "2주 동안 월요일에 시간 괜찮아?",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "2주 동안 월요일",
