@@ -1,7 +1,7 @@
 [ 
 {
   "Input": "100%",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "100%",
@@ -15,7 +15,7 @@
 ,
 {
   "Input": "이십 퍼센트",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이십퍼센트",
@@ -29,7 +29,7 @@
 ,
 {
   "Input": "백퍼센트",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "백퍼센트",
@@ -43,7 +43,7 @@
 ,
 {
   "Input": "이십퍼센트",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이십퍼센트",
@@ -57,7 +57,7 @@
 ,
 {
   "Input": "삼분의 일",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "삼분의 일",
@@ -71,7 +71,7 @@
 ,
 {
   "Input": "이분의 일",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이분의 일",
@@ -85,7 +85,7 @@
 ,
 {
   "Input": "사분의 일의",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "사분의 일의",
@@ -99,7 +99,7 @@
 ,
 {
   "Input": "이십오퍼센트",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이십오퍼센트",
@@ -113,7 +113,7 @@
 ,
 {
   "Input": "절반의",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "절반의",
@@ -127,7 +127,7 @@
 ,
 {
   "Input": "반의",
-  "NotSupported": "javascript,python",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "반의",

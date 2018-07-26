@@ -1,5 +1,6 @@
 [{
   "Input": "3조 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "3조 번째",
@@ -13,6 +14,7 @@
 ,
 {
   "Input": "조 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "조 번째",
@@ -26,6 +28,7 @@
 ,
 {
   "Input": "백조 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "백조 번째",
@@ -39,6 +42,7 @@
 ,
 {
   "Input": "열한 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "열한 번째",
@@ -52,6 +56,7 @@
 ,
 {
   "Input": "스물한 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "스물한 번째",
@@ -65,6 +70,7 @@
 ,
 {
   "Input": "서른 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "서른 번째",
@@ -78,6 +84,7 @@
 ,
 {
   "Input": "두 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "두 번째",
@@ -91,6 +98,7 @@
 ,
 {
   "Input": "열한 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "열한 번째",
@@ -104,6 +112,7 @@
 ,
 {
   "Input": "스무 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "스무 번째",
@@ -117,6 +126,7 @@
 ,
 {
   "Input": "스물다섯 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "스물다섯 번째",
@@ -130,6 +140,7 @@
 ,
 {
   "Input": "스물한 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "스물한 번째",
@@ -143,6 +154,7 @@
 ,
 {
   "Input": "백스물다섯 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "백스물다섯 번째",
@@ -156,6 +168,7 @@
 ,
 {
   "Input": "백이십오 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "백이십오 번째",
@@ -169,6 +182,7 @@
 ,
 {
   "Input": "조번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "조번째",
@@ -182,6 +196,7 @@
 ,
 {
   "Input": "이십일조 삼백이십이 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이십일조 삼백이십이 번째",
@@ -195,6 +210,7 @@
 ,
 {
   "Input": "이백 번째",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "이백 번째",
@@ -207,6 +223,7 @@
 },
 {
   "Input": "시애틀로 가는 일등석을 예약해주십시오.",
+  "NotSupportedByDesign": "dotNet,javascript,python,java,",
   "Results": [
     {
       "Text": "일등",
