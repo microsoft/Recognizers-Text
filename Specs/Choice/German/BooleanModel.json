@@ -1,6 +1,6 @@
 [{
   "Input": "Ja klar!",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "Ja klar",
@@ -14,8 +14,8 @@
 }
 ,
 {
-  "Input": "Ich denke nicht. Nein."I
-  "NotSupportedByDesign": "python",
+  "Input": "Ich denke nicht. Nein.",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "nein",
@@ -30,7 +30,7 @@
 ,
 {
   "Input": "Das sollte funktionieren, also mache ich es.",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "ja",
@@ -45,7 +45,7 @@
 ,
 {
   "Input": "Nein. Ich sagte vierter Juli",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "nein",
@@ -60,7 +60,7 @@
 ,
 {
   "Input": "Ja... ich sagte keine Zwiebeln",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "ja",
@@ -75,7 +75,7 @@
 ,
 {
   "Input": "Ich sagte NEIN NICHT ja!",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "NO",
@@ -90,7 +90,7 @@
 ,
 {
   "Input": "Ja. Ich sagte nein",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "Ja",
@@ -105,7 +105,7 @@
 ,
 {
   "Input": "👌 Alles klar",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "👌",
@@ -120,7 +120,7 @@
 ,
 {
   "Input": "👌👌👌",
-  "NotSupportedByDesign": "python",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "👌",
