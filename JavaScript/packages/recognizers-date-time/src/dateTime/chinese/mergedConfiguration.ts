@@ -112,7 +112,7 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
                 destination.push(er);
             } else if (rmIndex >= 0) {
                 destination.splice(rmIndex, rmLength);
-                this.moveOverlap(destination, er);
+                destination.splice(0, destination.length, ...this.moveOverlap(destination, er));
                 destination.splice(rmIndex, 0, er);
             }
         });
@@ -126,7 +126,7 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
                 duplicated.push(i);
             }
         }
-        duplicated.forEach(index => destination.splice(index, 1));
+        return destination.filter((_, i) => duplicated.indexOf(i) < 0);
     }
 
     // ported from CheckBlackList
