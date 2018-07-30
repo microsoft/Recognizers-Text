@@ -111,8 +111,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 //}
 
                 var isFound = false;
-                List<int> overlapIndexes=new List<int>();
-                int firstIndex = -1;
+                var overlapIndexes = new List<int>();
+                var firstIndex = -1;
                 for (var i = 0; i < dst.Count; i++)
                 {
                     if (dst[i].IsOverlap(result))
@@ -124,6 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 firstIndex = i;
                             }
+
                             overlapIndexes.Add(i);
                         }
                         else
@@ -137,16 +138,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     dst.Add(result);
                 }
-                else if (overlapIndexes.Count>0)
+                else if (overlapIndexes.Any())
                 {
-                    var tempDst = new List<ExtractResult>();
-                    for (var i = 0; i < dst.Count; i++)
-                    {
-                        if (!overlapIndexes.Contains(i))
-                        {
-                            tempDst.Add(dst[i]);
-                        }
-                    }
+                    var tempDst = dst.Where((_, i) => !overlapIndexes.Contains(i)).ToList();
 
                     //insert at the first overlap occurence to keep the order
                     tempDst.Insert(firstIndex, result);

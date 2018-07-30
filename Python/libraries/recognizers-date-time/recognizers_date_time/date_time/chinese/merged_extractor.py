@@ -66,9 +66,7 @@ class ChineseMergedExtractor(BaseMergedExtractor):
             if includes_text and same_boundary:
                 duplicated.append(index)
 
-        for index in duplicated:
-            del destination[index]
-        return destination
+        return [value for (idx, value) in enumerate(destination) if idx not in duplicated]
 
     def check_black_list(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
         return list(filter(lambda x: self.filter_item(x, source), ers))
