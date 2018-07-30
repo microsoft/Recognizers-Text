@@ -7,6 +7,7 @@ from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
 from ..base_date import DateParserConfiguration
 
+
 class ChineseDateParserConfiguration(DateParserConfiguration):
     @property
     def ordinal_extractor(self) -> any:
@@ -125,17 +126,17 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
         swift = 0
         if source in ['今天', '今日', '最近']:
             swift = 0
-        elif source in ['明天', '明日']:
+        elif source.startswith('明'):
             swift = 1
-        elif source in ['昨天']:
+        elif source.startswith('昨'):
             swift = -1
-        elif source.endswith('大后天'):
+        elif source == '大后天':
             swift = 3
-        elif source.endswith('大前天'):
+        elif source == '大前天':
             swift = -3
-        elif source.endswith('后天'):
+        elif source == '后天':
             swift = 2
-        elif source.endswith('前天'):
+        elif source == '前天':
             swift = -2
         return swift
 
