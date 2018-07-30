@@ -217,7 +217,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 else if (rmIndex >= 0)
                 {
                     dst.RemoveRange(rmIndex, rmLength);
-                    dst = MoveOverlap(dst, result);
+                    var tmpDst = MoveOverlap(dst, result);
+                    dst.Clear();
+                    dst.AddRange(tmpDst);
                     dst.Insert(rmIndex, result);
                 }
             }
