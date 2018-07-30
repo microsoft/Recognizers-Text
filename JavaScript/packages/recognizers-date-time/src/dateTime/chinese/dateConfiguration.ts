@@ -128,17 +128,17 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         let swift = 0;
         if (trimmedSource === '今天' || trimmedSource === '今日' || trimmedSource === '最近') {
             swift = 0;
-        } else if (trimmedSource === '明天' || trimmedSource ===  '明日') {
+        } else if (trimmedSource.startsWith('明')) {
             swift = 1;
-        } else if (trimmedSource === '昨天') {
+        } else if (trimmedSource.startsWith('昨')) {
             swift = -1;
-        } else if (trimmedSource.endsWith('大后天')) {
+        } else if (trimmedSource === '大后天') {
             swift = 3;
-        } else if (trimmedSource.endsWith('大前天')) {
+        } else if (trimmedSource === '大前天') {
             swift = -3;
-        } else if (trimmedSource.endsWith('后天')) {
+        } else if (trimmedSource === '后天') {
             swift = 2;
-        } else if (trimmedSource.endsWith('前天')) {
+        } else if (trimmedSource === '前天') {
             swift = -2;
         }
         return swift;
@@ -312,7 +312,7 @@ export class ChineseDateParser extends BaseDateParser {
             return result;
         }
 
-        // handle "today", "the day before yesterday"
+        // handle cases like "昨日", "明日", "大后天"
         match = RegExpUtility.getMatches(this.config.specialDayRegex, trimmedSource).pop();
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let swift = this.config.getSwiftDay(match.value);

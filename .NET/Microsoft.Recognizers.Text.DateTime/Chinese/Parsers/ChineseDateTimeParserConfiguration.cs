@@ -127,5 +127,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
             }.ToImmutableDictionary();
         }
+
+        public int GetSwiftDay(string text)
+        {
+            var value = 0;
+
+            if (text.Equals("今天") || text.Equals("今日") || text.Equals("最近"))
+            {
+                value = 0;
+            }
+            else if (text.StartsWith("明"))
+            {
+                value = 1;
+            }
+            else if (text.StartsWith("昨"))
+            {
+                value = -1;
+            }
+            else if (text.Equals("大后天"))
+            {
+                value = 3;
+            }
+            else if (text.Equals("大前天"))
+            {
+                value = -3;
+            }
+            else if (text.Equals("后天"))
+            {
+                value = 2;
+            }
+            else if (text.Equals("前天"))
+            {
+                value = -2;
+            }
+
+            return value;
+        }
     }
 }

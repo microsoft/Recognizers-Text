@@ -895,5 +895,28 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "昨日我不在家。",
+    "Context": {
+      "ReferenceDateTime": "2018-07-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "昨日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-07-29",
+          "FutureResolution": {
+            "date": "2018-07-29"
+          },
+          "PastResolution": {
+            "date": "2018-07-29"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
   }
 ]
