@@ -1273,7 +1273,7 @@
     ]
   },
   {
-    "Input": "Cortana, please schedule 30 minutes on Tuesday or Wednesday morning with a Skype bridge.",
+    "Input": "Cortana, can find us a time Tuesday or Wednesday from 10-4",
     "Context": {
       "ReferenceDateTime": "2018-07-30T20:00:00"
     },
