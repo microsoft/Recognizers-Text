@@ -169,12 +169,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var beforeStr = text.Substring(0, match.Index);
                     if (!string.IsNullOrEmpty(beforeStr))
                     {
-                        var er = this.config.SingleDateExtractor.Extract(beforeStr, reference);
-                        if (er.Count > 0)
+                        var ers = this.config.SingleDateExtractor.Extract(beforeStr, reference);
+                        if (ers.Count > 0)
                         {
-                            var begin = er[0].Start ?? 0;
+                            var er = ers.Last();
+                            var begin = er.Start ?? 0;
 
-                            var middleStr = beforeStr.Substring(begin + (er[0].Length ?? 0)).Trim().ToLower();
+                            var middleStr = beforeStr.Substring(begin + (er.Length ?? 0)).Trim().ToLower();
                             if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsMatch(middleStr))
                             {
                                 ret.Add(new Token(begin, match.Index + match.Length));
