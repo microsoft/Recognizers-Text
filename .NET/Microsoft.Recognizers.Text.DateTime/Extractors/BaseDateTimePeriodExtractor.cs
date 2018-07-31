@@ -383,7 +383,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     match = this.config.AmDescRegex.Match(afterStr);
                 }
 
-                if (!match.Success)
+                if (!match.Success || !string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                 {
                     match = this.config.PmDescRegex.Match(afterStr);
                 }

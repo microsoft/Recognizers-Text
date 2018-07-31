@@ -79,7 +79,7 @@ export namespace EnglishDateTime {
 	export const WeekDayOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
 	export const RelativeWeekDayRegex = `\\b(${WrittenNumRegex}\\s+${WeekDayRegex}\\s+(from\\s+now|later))\\b`;
 	export const SpecialDate = `(?=\\b(on|at)\\s+the\\s+)${DayRegex}\\b`;
-	export const DateExtractor1 = `\\b((this\\s+)?${WeekDayRegex}\\s*[,-]?\\s*)?((${MonthRegex}(\\.)?\\s*[/\\\\\\.\\-]?\\s*${DayRegex})|(\\(${MonthRegex}\\s*[-.]\\s*${DayRegex}\\)))`;
+	export const DateExtractor1 = `\\b((this\\s+)?${WeekDayRegex}\\s*[,-]?\\s*)?((${MonthRegex}(\\.)?\\s*[/\\\\\\.\\-]?\\s*${DayRegex})|(\\(${MonthRegex}\\s*[-.]\\s*${DayRegex}\\)))(\\s*\\(\\s*${WeekDayRegex}\\s*\\))?`;
 	export const DateExtractor2 = `\\b${DateExtractor1}(\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex}\\b`;
 	export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\.)?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*)${MonthRegex}(\\.)?((\\s+|\\s*,\\s*)${DateYearRegex})?\\b`;
 	export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*${DateYearRegex}`;
