@@ -323,6 +323,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 data = ExtractDateTimeRange_Date(former, latter);
             }
 
+            if (data.Count == 0)
+            {
+                data = ExtractDate_DateRange(former, latter);
+            }
+
             return data;
         }
 
@@ -477,6 +482,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ers[0].Type = Constants.ContextType_RelativeSuffix;
                     data.Add(Constants.Context, ers[0]);
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIMEPERIOD);
+                }
+            }
+
+            return data;
+        }
+
+        private Dictionary<string, object> ExtractDate_DateRange(ExtractResult former, ExtractResult latter)
+        {
+            var data = new Dictionary<string, object>();
+
+            // For cases like "monday this week or next week"
+            if (former.Type == Constants.SYS_DATETIME_DATE &&
+                latter.Type == Constants.SYS_DATETIME_DATEPERIOD)
+            {
+                var ers = config.DatePeriodExtractor.Extract(former.Text);
+                if (ers.Count == 1)
+                {
+                    ers[0].Text = former.Text.Substring(0, (int)ers[0].Start);
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
                 }
             }
 
