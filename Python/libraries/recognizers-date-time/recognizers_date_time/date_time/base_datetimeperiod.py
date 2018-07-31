@@ -16,8 +16,10 @@ from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, RegExpUtility, FormatUtil, DateTimeResolutionResult, DateUtils
 
+
 class MatchedTimeRange:
-    def __init__(self, time_str: str = '', begin_hour: int = 0, end_hour: int = 0, end_min: int = 0, success: bool = False,  swift: int = 0):
+    def __init__(self, time_str: str = '', begin_hour: int = 0, end_hour: int = 0, end_min: int = 0,
+                 success: bool = False, swift: int = 0):
         self.time_str = time_str
         self.begin_hour = begin_hour
         self.end_hour = end_hour
@@ -25,8 +27,10 @@ class MatchedTimeRange:
         self.swift = swift
         self.success = success
 
+
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
 BeginEnd = namedtuple('BeginEnd', ['begin', 'end'])
+
 
 class DateTimePeriodExtractorConfiguration(ABC):
     @property
@@ -146,6 +150,7 @@ class DateTimePeriodExtractorConfiguration(ABC):
     def has_connector_token(self, source: str) -> bool:
         raise NotImplementedError
 
+
 class BaseDateTimePeriodExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
@@ -180,7 +185,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
                 before_str = source[0:match.start()].strip()
                 if before_str:
-                    er = next(iter(self.config.single_date_extractor.extract(before_str, reference)), None)
+                    er = next(reversed(self.config.single_date_extractor.extract(before_str, reference)), None)
                     if er:
                         begin = er.start
                         end = er.start + er.length
@@ -347,7 +352,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                         for er_time in ers_time:
                             middle_str = before_str[er_time.start + er_time.length:].strip()
                             if not middle_str:
-                                tokens.append(Token(er_time.start, er_time.start + er_time.length + len(middle_str) + token.length))
+                                tokens.append(Token(er_time.start,
+                                                    er_time.start + er_time.length + len(middle_str) + token.length))
 
                 if token.start + token.length <= len(source):
                     after_str = source[token.start + token.length:]
@@ -370,6 +376,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
 
         tokens.extend(map(lambda x: Token(x.start(), x.end()), matches))
         return tokens
+
 
 class DateTimePeriodParserConfiguration:
     @property
@@ -480,6 +487,7 @@ class DateTimePeriodParserConfiguration:
     def get_swift_prefix(self, source: str) -> int:
         raise NotImplementedError
 
+
 class BaseDateTimePeriodParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
@@ -512,10 +520,14 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 inner_result = self.parse_relative_unit(source_text, reference)
 
             if inner_result.success:
-                inner_result.future_resolution[TimeTypeConstants.START_DATETIME] = FormatUtil.format_date_time(inner_result.future_value[0])
-                inner_result.future_resolution[TimeTypeConstants.END_DATETIME] = FormatUtil.format_date_time(inner_result.future_value[1])
-                inner_result.past_resolution[TimeTypeConstants.START_DATETIME] = FormatUtil.format_date_time(inner_result.past_value[0])
-                inner_result.past_resolution[TimeTypeConstants.END_DATETIME] = FormatUtil.format_date_time(inner_result.past_value[1])
+                inner_result.future_resolution[TimeTypeConstants.START_DATETIME] = FormatUtil.format_date_time(
+                    inner_result.future_value[0])
+                inner_result.future_resolution[TimeTypeConstants.END_DATETIME] = FormatUtil.format_date_time(
+                    inner_result.future_value[1])
+                inner_result.past_resolution[TimeTypeConstants.START_DATETIME] = FormatUtil.format_date_time(
+                    inner_result.past_value[0])
+                inner_result.past_resolution[TimeTypeConstants.END_DATETIME] = FormatUtil.format_date_time(
+                    inner_result.past_value[1])
                 result.value = inner_result
                 result.timex_str = inner_result.timex if inner_result is not None else ''
                 result.resolution_str = ''
@@ -567,12 +579,16 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
                     result.timex = f'({begin_str},{end_str},{time_period_timex_array[2]})'
                     result.future_value = [
-                        DateUtils.safe_create_from_min_value(future_time.year, future_time.month, future_time.day, begin_time.hour, begin_time.minute, begin_time.second),
-                        DateUtils.safe_create_from_min_value(future_time.year, future_time.month, future_time.day, end_time.hour, end_time.minute, end_time.second)
+                        DateUtils.safe_create_from_min_value(future_time.year, future_time.month, future_time.day,
+                                                             begin_time.hour, begin_time.minute, begin_time.second),
+                        DateUtils.safe_create_from_min_value(future_time.year, future_time.month, future_time.day,
+                                                             end_time.hour, end_time.minute, end_time.second)
                     ]
                     result.past_value = [
-                        DateUtils.safe_create_from_min_value(past_time.year, past_time.month, past_time.day, begin_time.hour, begin_time.minute, begin_time.second),
-                        DateUtils.safe_create_from_min_value(past_time.year, past_time.month, past_time.day, end_time.hour, end_time.minute, end_time.second)
+                        DateUtils.safe_create_from_min_value(past_time.year, past_time.month, past_time.day,
+                                                             begin_time.hour, begin_time.minute, begin_time.second),
+                        DateUtils.safe_create_from_min_value(past_time.year, past_time.month, past_time.day,
+                                                             end_time.hour, end_time.minute, end_time.second)
                     ]
 
                     if time_period_resolution_result.comment == 'ampm':
@@ -650,7 +666,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
         result.timex = f'({begin_str},{end_str},PT{end_hour - begin_hour}H)'
         result.future_value = [
-            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, begin_hour, 0, 0),
+            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, begin_hour, 0,
+                                                 0),
             DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, end_hour, 0, 0)
         ]
         result.past_value = [
@@ -661,7 +678,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
         result.success = True
         return result
 
-    def get_two_points(self, begin_er: ExtractResult, end_er: ExtractResult, begin_parser: DateTimeParser, end_parser: DateTimeParser, reference: datetime) -> BeginEnd:
+    def get_two_points(self, begin_er: ExtractResult, end_er: ExtractResult, begin_parser: DateTimeParser,
+                       end_parser: DateTimeParser, reference: datetime) -> BeginEnd:
         return BeginEnd(begin=begin_parser.parse(begin_er, reference), end=end_parser.parse(end_er, reference))
 
     def merge_two_time_points(self, source: str, reference: datetime) -> DateTimeResolutionResult:
@@ -676,21 +694,26 @@ class BaseDateTimePeriodParser(DateTimeParser):
         end_has_date = False
 
         if len(datetime_ers) == 2:
-            prs = self.get_two_points(datetime_ers[0], datetime_ers[1], self.config.date_time_parser, self.config.date_time_parser, reference)
+            prs = self.get_two_points(datetime_ers[0], datetime_ers[1], self.config.date_time_parser,
+                                      self.config.date_time_parser, reference)
             both_has_date = True
         elif len(datetime_ers) == 1 and len(time_ers) == 2:
             if datetime_ers[0].overlap(time_ers[0]):
-                prs = self.get_two_points(datetime_ers[0], time_ers[1], self.config.date_time_parser, self.config.time_parser, reference)
+                prs = self.get_two_points(datetime_ers[0], time_ers[1], self.config.date_time_parser,
+                                          self.config.time_parser, reference)
                 begin_has_date = True
             else:
-                prs = self.get_two_points(time_ers[0], datetime_ers[0], self.config.time_parser, self.config.date_time_parser, reference)
+                prs = self.get_two_points(time_ers[0], datetime_ers[0], self.config.time_parser,
+                                          self.config.date_time_parser, reference)
                 end_has_date = True
         elif len(datetime_ers) == 1 and len(time_ers) == 1:
             if time_ers[0].start < datetime_ers[0].start:
-                prs = self.get_two_points(time_ers[0], datetime_ers[0], self.config.time_parser, self.config.date_time_parser, reference)
+                prs = self.get_two_points(time_ers[0], datetime_ers[0], self.config.time_parser,
+                                          self.config.date_time_parser, reference)
                 end_has_date = True
             else:
-                prs = self.get_two_points(datetime_ers[0], time_ers[0], self.config.date_time_parser, self.config.time_parser, reference)
+                prs = self.get_two_points(datetime_ers[0], time_ers[0], self.config.date_time_parser,
+                                          self.config.time_parser, reference)
                 begin_has_date = True
 
         if prs is None or not prs.begin.value or not prs.end.value:
@@ -737,7 +760,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
         return result
 
     def get_datetime(self, date: datetime, time: datetime) -> datetime:
-        return DateUtils.safe_create_from_min_value(date.year, date.month, date.day, time.hour, time.minute, time.second)
+        return DateUtils.safe_create_from_min_value(date.year, date.month, date.day, time.hour, time.minute,
+                                                    time.second)
 
     def parse_specific_time_of_day(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
@@ -760,9 +784,11 @@ class BaseDateTimePeriodParser(DateTimeParser):
             return result
 
         if has_early:
-            matched = MatchedTimeRange(matched.time_str, matched.begin_hour, matched.begin_hour + 2, 0 if matched.end_min == 59 else matched.end_min, matched.success)
+            matched = MatchedTimeRange(matched.time_str, matched.begin_hour, matched.begin_hour + 2,
+                                       0 if matched.end_min == 59 else matched.end_min, matched.success)
         elif has_late:
-            matched = MatchedTimeRange(matched.time_str, matched.begin_hour + 2, matched.end_hour, matched.end_min, matched.success)
+            matched = MatchedTimeRange(matched.time_str, matched.begin_hour + 2, matched.end_hour, matched.end_min,
+                                       matched.success)
 
         match = list(self.config.specific_time_of_day_regex.finditer(source))
         if match and match[-1].start() == 0 and match[-1].group() == source:
@@ -771,11 +797,13 @@ class BaseDateTimePeriodParser(DateTimeParser):
             result.timex = FormatUtil.format_date(date) + matched.time_str
             result.future_value = [
                 DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.begin_hour, 0, 0),
-                DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min, matched.end_min)
+                DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min,
+                                                     matched.end_min)
             ]
             result.past_value = [
                 DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.begin_hour, 0, 0),
-                DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min, matched.end_min)
+                DateUtils.safe_create_from_min_value(date.year, date.month, date.day, matched.end_hour, matched.end_min,
+                                                     matched.end_min)
             ]
             result.success = True
 
@@ -826,16 +854,19 @@ class BaseDateTimePeriodParser(DateTimeParser):
                 if period_future.start == period_past.start and period_future.end == period_past.end:
                     begin_hour: datetime = period_future.start
                     end_hour: datetime = period_future.end
-                    matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min, matched.success)
+                    matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min,
+                                               matched.success)
                 else:
                     if period_future.start.hour >= matched.begin_hour or period_future.end.hour <= matched.end_hour:
                         begin_hour: datetime = period_future.start
                         end_hour: datetime = period_future.end
-                        matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min, matched.success)
+                        matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min,
+                                                   matched.success)
                     else:
                         begin_hour: datetime = period_past.start
                         end_hour: datetime = period_past.end
-                        matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min, matched.success)
+                        matched = MatchedTimeRange(matched.time_str, begin_hour.hour, end_hour.hour, matched.end_min,
+                                                   matched.success)
 
                 has_specific_time_period = True
 
@@ -852,12 +883,16 @@ class BaseDateTimePeriodParser(DateTimeParser):
             result.timex = f'({pr.timex_str}T{matched.begin_hour},{pr.timex_str}T{matched.end_hour},PT{matched.end_hour - matched.begin_hour}H)'
 
         result.future_value = [
-            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, matched.begin_hour, 0, 0),
-            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, matched.end_hour, matched.end_min, matched.end_min)
+            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day,
+                                                 matched.begin_hour, 0, 0),
+            DateUtils.safe_create_from_min_value(future_date.year, future_date.month, future_date.day, matched.end_hour,
+                                                 matched.end_min, matched.end_min)
         ]
         result.past_value = [
-            DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day, matched.begin_hour, 0, 0),
-            DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day, matched.end_hour, matched.end_min, matched.end_min)
+            DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day, matched.begin_hour, 0,
+                                                 0),
+            DateUtils.safe_create_from_min_value(past_date.year, past_date.month, past_date.day, matched.end_hour,
+                                                 matched.end_min, matched.end_min)
         ]
         result.success = True
 
@@ -943,7 +978,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
         pt_timex = ''
 
         if unit_str == 'D':
-            end_time = DateUtils.safe_create_from_min_value(begin_time.year, begin_time.month, begin_time.day) + timedelta(days=1, seconds=-1)
+            end_time = DateUtils.safe_create_from_min_value(begin_time.year, begin_time.month,
+                                                            begin_time.day) + timedelta(days=1, seconds=-1)
             difference = int((end_time - begin_time).total_seconds())
             pt_timex = f'PT{difference}S'
         elif unit_str == 'H':

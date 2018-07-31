@@ -67,7 +67,7 @@ export class BaseDateTimePeriodExtractor implements IDateTimeExtractor {
                 if (!StringUtility.isNullOrWhitespace(beforeStr)) {
                     let ers = this.config.singleDateExtractor.extract(beforeStr, refDate);
                     if (ers && ers.length > 0) {
-                        let er = ers[0];
+                        let er = ers[ers.length - 1];
                         let begin = er.start;
                         let end = er.start + er.length;
                         let middleStr = beforeStr.substr(begin + er.length).trim().toLowerCase();
