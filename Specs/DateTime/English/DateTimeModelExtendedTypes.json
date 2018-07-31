@@ -1335,6 +1335,21 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
+        "Text": "30 minute",
+        "Start": 17,
+        "End": 25,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      {
         "Text": "thursday",
         "Start": 36,
         "End": 43,
