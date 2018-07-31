@@ -44,10 +44,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             while (i < ers.Count - 1)
             {
                 var j = i + 1;
+                var types = new HashSet<string> {ers[i].Type};
 
                 while (j < ers.Count)
                 {
-                    // check whether middle string is a connector
+                    // Currently only support merge two kinds of types
+                    if (!types.Contains(ers[j].Type) && types.Count > 1)
+                    {
+                        break;
+                    }
+
+                    // Check whether middle string is a connector
                     var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
 
@@ -65,6 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         break;
                     }
 
+                    types.Add(ers[j].Type);
                     j++;
                 }
 
@@ -208,6 +216,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 relativeTermsMatches.AddRange(regex.Matches(text).Cast<Match>());
             }
 
+            // Remove overlapping matches
+            relativeTermsMatches.RemoveAll(m =>
+                ers.Any(e => e.Start <= m.Index && e.Start + e.Length >= m.Index + m.Length));
+
             var relativeDatePeriodErs = new List<ExtractResult>();
             foreach (var result in ers)
             {
@@ -309,6 +321,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (data.Count == 0)
             {
                 data = ExtractDateTimeRange_Date(former, latter);
+            }
+
+            if (data.Count == 0)
+            {
+                data = ExtractDate_DateRange(former, latter);
             }
 
             return data;
@@ -465,6 +482,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ers[0].Type = Constants.ContextType_RelativeSuffix;
                     data.Add(Constants.Context, ers[0]);
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIMEPERIOD);
+                }
+            }
+
+            return data;
+        }
+
+        private Dictionary<string, object> ExtractDate_DateRange(ExtractResult former, ExtractResult latter)
+        {
+            var data = new Dictionary<string, object>();
+
+            // For cases like "monday this week or next week"
+            if (former.Type == Constants.SYS_DATETIME_DATE &&
+                latter.Type == Constants.SYS_DATETIME_DATEPERIOD)
+            {
+                var ers = config.DatePeriodExtractor.Extract(former.Text);
+                if (ers.Count == 1)
+                {
+                    ers[0].Text = former.Text.Substring(0, (int)ers[0].Start);
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
                 }
             }
 

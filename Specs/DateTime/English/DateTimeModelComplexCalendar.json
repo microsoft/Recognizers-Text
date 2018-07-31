@@ -4742,5 +4742,81 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll leave on May/22(Tue)-11:30 AM PT.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-30T20:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "may/22(tue)-11:30 am pt",
+        "Start": 14,
+        "End": 36,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-22T11:30",
+              "type": "datetime",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pt",
+              "utcOffsetMins": "-420",
+              "value": "2018-05-22 11:30:00"
+            },
+            {
+              "timex": "XXXX-05-22T11:30",
+              "type": "datetime",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pt",
+              "utcOffsetMins": "-420",
+              "value": "2019-05-22 11:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The door is opened from today pm to tomorrow am.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-31T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "today pm",
+        "Start": 24,
+        "End": 31,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-31TAF",
+              "type": "datetimerange",
+              "start": "2018-07-31 12:00:00",
+              "end": "2018-07-31 16:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "tomorrow am",
+        "Start": 36,
+        "End": 46,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-01TMO",
+              "type": "datetimerange",
+              "start": "2018-08-01 08:00:00",
+              "end": "2018-08-01 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

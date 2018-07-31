@@ -80,7 +80,7 @@ class EnglishDateTime:
     WeekDayOfMonthRegex = f'(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'\\b({WrittenNumRegex}\\s+{WeekDayRegex}\\s+(from\\s+now|later))\\b'
     SpecialDate = f'(?=\\b(on|at)\\s+the\\s+){DayRegex}\\b'
-    DateExtractor1 = f'\\b((this\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\\\.\\-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\)))'
+    DateExtractor1 = f'\\b((this\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\\\.\\-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\)))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?'
     DateExtractor2 = f'\\b{DateExtractor1}(\\s+|\\s*,\\s*|\\s+of\\s+){DateYearRegex}\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\.)?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*){MonthRegex}(\\.)?((\\s+|\\s*,\\s*){DateYearRegex})?\\b'
     DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*{DateYearRegex}'

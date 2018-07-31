@@ -180,7 +180,7 @@ SpecialDate: !nestedRegex
   def: (?=\b(on|at)\s+the\s+){DayRegex}\b
   references: [ DayRegex ]
 DateExtractor1: !nestedRegex
-  def: \b((this\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\\.\-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))
+  def: \b((this\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\\.\-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?
   references: [ WeekDayRegex, MonthRegex, DayRegex ]
 DateExtractor2: !nestedRegex
   def: \b{DateExtractor1}(\s+|\s*,\s*|\s+of\s+){DateYearRegex}\b

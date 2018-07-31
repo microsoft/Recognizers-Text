@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b";
 		public static readonly string SpecialDate = $@"(?=\b(on|at)\s+the\s+){DayRegex}\b";
-		public static readonly string DateExtractor1 = $@"\b((this\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\\.\-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))";
+		public static readonly string DateExtractor1 = $@"\b((this\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\\.\-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\(\s*{WeekDayRegex}\s*\))?";
 		public static readonly string DateExtractor2 = $@"\b{DateExtractor1}(\s+|\s*,\s*|\s+of\s+){DateYearRegex}\b";
 		public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s+of\s+|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*){DateYearRegex})?\b";
 		public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}";
