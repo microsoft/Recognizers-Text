@@ -4674,7 +4674,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
-    "NotSupported": ", python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "following week",
@@ -4699,7 +4699,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
-    "NotSupported": ", python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "next couple weeks",
@@ -4724,7 +4724,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-31T13:00:00"
     },
-    "NotSupported": ", python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "on monday of the following week",
