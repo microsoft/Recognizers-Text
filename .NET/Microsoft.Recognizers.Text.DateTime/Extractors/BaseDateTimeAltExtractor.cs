@@ -44,10 +44,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             while (i < ers.Count - 1)
             {
                 var j = i + 1;
+                var types = new HashSet<string> {ers[i].Type};
 
                 while (j < ers.Count)
                 {
-                    // check whether middle string is a connector
+                    // Currently only support merge two kinds of types
+                    if (!types.Contains(ers[j].Type) && types.Count > 1)
+                    {
+                        break;
+                    }
+
+                    // Check whether middle string is a connector
                     var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
 
@@ -65,6 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         break;
                     }
 
+                    types.Add(ers[j].Type);
                     j++;
                 }
 
@@ -205,6 +213,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 relativeTermsMatches.AddRange(regex.Matches(text).Cast<Match>());
             }
+
+            // Remove overlapping matches
+            relativeTermsMatches.RemoveAll(m =>
+                ers.Any(e => e.Start <= m.Index && e.Start + e.Length >= m.Index + m.Length));
 
             var relativeDatePeriodErs = new List<ExtractResult>();
             foreach (var result in ers)

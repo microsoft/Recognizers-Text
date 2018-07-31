@@ -1326,5 +1326,65 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Could you find a 30 minute timeslot Thursday or Friday this week or next week.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-31T14:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "thursday",
+        "Start": 36,
+        "End": 43,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4",
+              "type": "date",
+              "value": "2018-07-26"
+            },
+            {
+              "timex": "XXXX-WXX-4",
+              "type": "date",
+              "value": "2018-08-02"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "friday this week",
+        "Start": 48,
+        "End": 63,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-03",
+              "type": "date",
+              "value": "2018-08-03"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "next week",
+        "Start": 68,
+        "End": 76,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W32",
+              "type": "daterange",
+              "start": "2018-08-06",
+              "end": "2018-08-13"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
