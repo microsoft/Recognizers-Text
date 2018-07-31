@@ -90,6 +90,7 @@
     <Compile Include="Number\TestNumber_French.cs" />
     <Compile Include="Number\TestNumber_German.cs" />
     <Compile Include="Number\TestNumber_Japanese.cs" />
+    <Compile Include="Number\TestNumber_Korean.cs" />
     <Compile Include="Number\TestNumber_Portuguese.cs" />
     <Compile Include="Number\TestNumber_Chinese.cs" />
     <Compile Include="Number\TestNumber_Spanish.cs" />
