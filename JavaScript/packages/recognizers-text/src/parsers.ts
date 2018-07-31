@@ -14,6 +14,7 @@ export class ParseResult extends ExtractResult {
             this.text = er.text;
             this.type = er.type;
         }
+        this.resolutionStr = "";
     }
 
     // Value is for resolution.

@@ -1340,7 +1340,7 @@
 ,
 {
   "Input": "dollar : 143.80 yen , up 0 . 95 ; 1 . 8500 marks , up 0 . 0085 .",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "dollar",
@@ -1365,7 +1365,7 @@
 ,
 {
   "Input": "it only cost 3 dollars 50 cents.",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3 dollars 50 cents",
@@ -1380,7 +1380,7 @@
 ,
 {
   "Input": "it only cost thirteen dollars and forty-five cents",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "thirteen dollars and forty-five cents",
@@ -1395,7 +1395,7 @@
 ,
 {
   "Input": "it only cost thirteen dollars forty-five cents",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "thirteen dollars forty-five cents",
@@ -1410,7 +1410,7 @@
 ,
 {
   "Input": "it only cost thirteen dollars forty five",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "thirteen dollars forty five",
@@ -1425,7 +1425,7 @@
 ,
 {
   "Input": "It costs one dollar and one and one point of your credit points.",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "one dollar and one",
@@ -1466,7 +1466,7 @@
 ,
 {
   "Input": "It costs you 10 us dollar and me c $ 100 and fifty.",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "10 us dollar",
@@ -1508,7 +1508,7 @@
 ,
 {
   "Input": "It costs one dollar and two and three points of your credit points.",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "one dollar and two",
@@ -1523,7 +1523,7 @@
 ,
 {
   "Input": "Hey, the cost is $4.25 and 32 is the quantity!",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "$4.25",

@@ -22,7 +22,7 @@ export class DictionaryUtils {
                 return;
             }
 
-            dictionary[token] = key;
+            dictionary.set(token, key);
         });
     }
 }
