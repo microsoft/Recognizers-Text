@@ -1,6 +1,6 @@
 [{
   "Input": "100%",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "100%",
@@ -14,7 +14,7 @@
 ,
 {
   "Input": " 100% ",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "100%",
@@ -28,7 +28,7 @@
 ,
 {
   "Input": " 100 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "100 퍼센트",
@@ -42,7 +42,7 @@
 ,
 {
   "Input": " 100 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "100 퍼센트",
@@ -56,7 +56,7 @@
 ,
 {
   "Input": " 100 프로",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "100 프로",
@@ -70,7 +70,7 @@
 ,
 {
   "Input": "240 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "240 퍼센트",
@@ -84,7 +84,7 @@
 ,
 {
   "Input": "20프로",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "20프로",
@@ -98,7 +98,7 @@
 ,
 {
   "Input": "이십 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "이십 퍼센트",
@@ -112,7 +112,7 @@
 ,
 {
   "Input": "삼십 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "삼십 퍼센트",
@@ -126,7 +126,7 @@
 ,
 {
   "Input": "백퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "백퍼센트",
@@ -140,7 +140,7 @@
 ,
 {
   "Input": "백 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "백 퍼센트",
@@ -154,7 +154,7 @@
 ,
 {
   "Input": "이십 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "이십 퍼센트",
@@ -168,7 +168,7 @@
 ,
 {
   "Input": "십퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "십퍼센트",
@@ -182,7 +182,7 @@
 ,
 {
   "Input": "이십이 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "이십이 퍼센트",
@@ -196,7 +196,7 @@
 ,
 {
   "Input": "이백십 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "이백십 퍼센트",
@@ -210,7 +210,7 @@
 ,
 {
   "Input": "십 퍼센트",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "십 퍼센트",
@@ -224,7 +224,7 @@
 ,
 {
   "Input": "-5퍼센트가 필요합니다.",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupported": "javascript,python,java,",
   "Results": [
     {
       "Text": "-5퍼센트",
