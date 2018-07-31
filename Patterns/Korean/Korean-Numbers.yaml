@@ -119,7 +119,7 @@ FracSplitRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: '[일이삼사오육륙칠팔구영공]'
 NegativeNumberTermsRegex: !simpleRegex
-  def: (마\s*이\s*너\s*스\s*|음\s*수\s*)
+  def: ((마\s*이\s*너\s*스|음\s*수)\s*)
 NegativeNumberTermsRegexNum: !simpleRegex
   def: ((?<!(\d+\s*)|[-－])[-－])
 NegativeNumberSignRegex: !nestedRegex
@@ -149,6 +149,9 @@ NumbersSpecialsChars: !nestedRegex
 NumbersSpecialsCharsWithSuffix: !nestedRegex
   def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)'
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+ZeroToNineIntegerSpecialsChars: !nestedRegex
+  def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineIntegerRegex}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineIntegerRegex, NegativeNumberTermsRegex ]
 DottedNumbersSpecialsChar: !nestedRegex
   def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+'
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]

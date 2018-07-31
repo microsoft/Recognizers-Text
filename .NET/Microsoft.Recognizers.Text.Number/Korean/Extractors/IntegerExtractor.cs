@@ -30,19 +30,24 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     //1,234,  ２，３３２，１１１
                     new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
+                    //마이너스 일, 마이너스 오
+                    new Regex(NumbersDefinitions.ZeroToNineIntegerSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN)
                 }
             };
 
             switch (mode)
             {
                 case KoreanNumberExtractorMode.Default:
-                    //일백오십오, 마이너스일억삼백이십이
+                    //일백오십오
                     regexes.Add(new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexOptions.Singleline),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
 
                 case KoreanNumberExtractorMode.ExtractAll:
-                    // 일백오십오, 마이너스일억삼백이십이,사직구장, "사직구장" from "사(it is homonym, seems like four(4) or other chinese character)"
+                    // 일백오십오, 사직구장, "사직구장" from "사(it is homonym, seems like four(4) or other chinese character)"
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexOptions.Singleline),
                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));

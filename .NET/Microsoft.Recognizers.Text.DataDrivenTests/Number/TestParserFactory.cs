@@ -74,10 +74,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         public void TestKoreanParser()
         {
             IParser parserNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration());
-            IParser parserCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new KoreanNumberParserConfiguration());
 
             Assert.IsTrue(parserNumber is BaseCJKNumberParser);
-            Assert.IsTrue(parserCardinal is BaseCJKNumberParser);
         }
 
         [TestMethod]
