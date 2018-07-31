@@ -148,9 +148,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<ExtractResult> AddImplicitDates(List<ExtractResult> originalErs, string text)
         {
             var ret = new List<ExtractResult>();
-            var implicitDateMatches = config.DayRegex.Matches(text);
             var i = 0;
+
             originalErs = originalErs.OrderBy(o => o.Start).ToList();
+
+            var implicitDateMatches = config.DayRegex.Matches(text);
 
             foreach (Match dateMatch in implicitDateMatches)
             {
