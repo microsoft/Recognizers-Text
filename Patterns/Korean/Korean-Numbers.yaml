@@ -119,7 +119,7 @@ FracSplitRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: '[일이삼사오육륙칠팔구영공]'
 NegativeNumberTermsRegex: !simpleRegex
-  def: (마\s*이\s*너\s*스|음\s*수)
+  def: (마\s*이\s*너\s*스\s*|음\s*수\s*)
 NegativeNumberTermsRegexNum: !simpleRegex
   def: ((?<!(\d+\s*)|[-－])[-－])
 NegativeNumberSignRegex: !nestedRegex

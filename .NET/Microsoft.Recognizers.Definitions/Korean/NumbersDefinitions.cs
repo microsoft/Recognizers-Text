@@ -116,7 +116,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
 		public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*[만억]{{1,2}}(\s*(이상))?";
 		public const string FracSplitRegex = @"분\s*의";
 		public const string ZeroToNineIntegerRegex = @"[일이삼사오육륙칠팔구영공]";
-		public const string NegativeNumberTermsRegex = @"(마\s*이\s*너\s*스|음\s*수)";
+		public const string NegativeNumberTermsRegex = @"(마\s*이\s*너\s*스\s*|음\s*수\s*)";
 		public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
 		public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[십반]";
