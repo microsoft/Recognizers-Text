@@ -32,6 +32,7 @@ namespace Microsoft.Recognizers.Text.Number
         public const string JAPANESE = "Jpn";
         public const string PORTUGUESE = "Por";
         public const string SPANISH = "Spa";
+        public const string KOREAN = "Kor";
 
         // Regex Prefixes / Suffixes
         public const string FRACTION_PREFIX = "Frac";
