@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, IParser, FormatUtility } from "@microsoft/recognizers-text";
+import { IModel, ModelResult, ParseResult, IExtractor, IParser, FormatUtility } from "@microsoft/recognizers-text";
 import { UnitValue, UnitValueIso } from "./parsers";
 
 export enum CompositeEntityType {
@@ -25,8 +25,19 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
             let extractor = kv[0];
             let parser = kv[1];
             let extractResults = extractor.extract(query);
-            let parseResults = extractResults.map(r => parser.parse(r))
-                .filter(o => o.value !== null);
+            let parseResults: Array<ParseResult> = [];
+            for (let i = 0; i < extractResults.length; i++) {
+                let r = parser.parse(extractResults[i]);
+                if (r.value !== null) {
+                    if (r.value instanceof Array) {
+                        for (let j = 0; j < r.value.length; j++) {
+                            parseResults.push(r.value[j]);
+                        }
+                    } else {
+                        parseResults.push(r);
+                    }
+                }
+            }
             let modelResults = parseResults.map(o =>
                 ({
                     start: o.start,
