@@ -5825,5 +5825,80 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for Wednesday evening next week.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-01T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "wednesday evening next week",
+        "Start": 45,
+        "End": 71,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-08TEV",
+              "type": "datetimerange",
+              "start": "2018-08-08 16:00:00",
+              "end": "2018-08-08 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the first Monday evening of next month.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-01T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "first monday evening of next month",
+        "Start": 49,
+        "End": 82,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-WXX-1-#1TEV",
+              "type": "datetimerange",
+              "start": "2018-09-03 16:00:00",
+              "end": "2018-09-03 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the first Monday 1pm to 3pm of next month.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-01T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "first monday 1pm to 3pm of next month",
+        "Start": 49,
+        "End": 85,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-09-WXX-1-#1T13,XXXX-09-WXX-1-#1T15,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-09-03 13:00:00",
+              "end": "2018-09-03 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -297,12 +297,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Regarding the pharse as-- {Date} {TimePeriod}, like "2015-9-23 1pm to 4"
             // Or {TimePeriod} on {Date}, like "1:30 to 4 on 2015-9-23"
-            var timePeriodErs = this.config.TimePeriodExtractor.Extract(text, reference);
+            var timePeriodErs = config.TimePeriodExtractor.Extract(text, reference);
             dateErs.AddRange(timePeriodErs);
 
             var points = dateErs.OrderBy(x => x.Start).ToList();
 
-            for (idx = 0; idx < points.Count-1; idx++)
+            for (idx = 0; idx < points.Count - 1; idx++)
             {
                 if (points[idx].Type == points[idx + 1].Type)
                 {
@@ -310,15 +310,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var midBegin = points[idx].Start + points[idx].Length ?? 0;
-                var midEnd = points[idx + 1].Start?? 0;
+                var midEnd = points[idx + 1].Start ?? 0;
 
                 if (midEnd - midBegin > 0)
                 {
-                    var midStr = text.Substring(midBegin, midEnd-midBegin);
-                    if ((string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr)) ||
-                        midStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
+                    var midStr = text.Substring(midBegin, midEnd - midBegin);
+                    if (string.IsNullOrWhiteSpace(midStr) || midStr.TrimStart().StartsWith(config.TokenBeforeDate))
                     {
-                        ret.Add(new Token(points[idx].Start ?? 0, points[idx + 1].Start + points[idx + 1].Length ?? 0));
+                        // Extend date extraction for cases like "Monday evening next week"
+                        var extendedStr = points[idx].Text + text.Substring((int)(points[idx + 1].Start + points[idx + 1].Length));
+                        var extendedDateEr = config.SingleDateExtractor.Extract(extendedStr).FirstOrDefault();
+                        var offset = 0;
+                        if (extendedDateEr != null && extendedDateEr.Start == 0)
+                        {
+                            offset = (int)(extendedDateEr.Length - points[idx].Length);
+                        }
+
+                        ret.Add(new Token(points[idx].Start ?? 0, offset + points[idx + 1].Start + points[idx + 1].Length ?? 0));
                         idx += 2;
                     }
                 }
