@@ -123,7 +123,7 @@ NegativeNumberTermsRegex: !simpleRegex
 NegativeNumberTermsRegexNum: !simpleRegex
   def: ((?<!(\d+\s*)|[-－])[-－])
 NegativeNumberSignRegex: !nestedRegex
-  def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
+  def: ^{NegativeNumberTermsRegex}|^{NegativeNumberTermsRegexNum}
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
 SpeGetNumberRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[십반]'

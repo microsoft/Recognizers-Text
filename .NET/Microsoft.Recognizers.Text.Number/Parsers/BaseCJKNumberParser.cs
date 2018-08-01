@@ -477,10 +477,9 @@ namespace Microsoft.Recognizers.Text.Number
             if (Config.NegativeNumberSignRegex.IsMatch(intStr))
             {
                 isNegative = true;
-                //I'm so sorry thie code because i want to use 'NegativeNumberTermsRegex' but it is not in the CJKInterface
                 if (Config.CultureInfo.Name == "ko-KR")
                 {
-                    intStr = Regex.Replace(intStr, @"(마\s*이\s*너\s*스\s*|음\s*수\s*)", "");
+                    intStr = Regex.Replace(intStr, Config.NegativeNumberSignRegex.ToString(), "");
                 }
                 else
                 {

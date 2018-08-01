@@ -1,12 +1,12 @@
 [{
   "Input": "1995-01",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": []
 }
 ,
 {
   "Input": "이 숫자는 이십보다 크고 삼십오보다 작거나 같다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "이십보다 크고 삼십오보다 작거나 같다",
@@ -20,7 +20,7 @@
 ,
 {
   "Input": "이 숫자는 스물보다 크고 서른다섯보다 작거나 같다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "스물보다 크고 서른다섯보다 작거나 같다",
@@ -34,7 +34,7 @@
 ,
 {
   "Input": "이 숫자는 20과 30 사이에 있다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "20과 30 사이",
@@ -48,7 +48,7 @@
 ,
 {
   "Input": "그는 십등에서 십오등 사이에 위치했다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "십등에서 십오등 사이",
@@ -62,7 +62,7 @@
 ,
 {
   "Input": "그는 열 번째에서 열다섯 번째 사이에 위치했다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "열 번째에서 열다섯 번째 사이",
@@ -76,7 +76,7 @@
 ,
 {
   "Input": "그는 마이너스 십점에서 십오점 사이의 점수를 얻었다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "마이너스 십점에서 십오점",
@@ -90,7 +90,7 @@
 ,
 {
   "Input": "그는 십보다 높고 십오보다 낮은 등수이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "십보다는 높고 십오보다는 낮은",
@@ -104,7 +104,7 @@
 ,
 {
   "Input": "그는 십 등 보다 높고 십오 등 보다 낮다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "십 등 보다 높고 십오 등 보다 낮다",
@@ -118,7 +118,7 @@
 ,
 {
   "Input": "이 숫자는 100보다 크고 300보다 작다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "100보다 크고 300보다 작다",
@@ -132,7 +132,7 @@
 ,
 {
   "Input": "이 숫자는 백보다 크거나 같고, 삼백보다는 작거나 같다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "백보다 크거나 같고, 삼백보다는 작거나 같다",
@@ -146,7 +146,7 @@
 ,
 {
   "Input": "최대 100개에서 최소 20개의 사과가 있다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "최대 100개에서 최소 20개",
@@ -160,7 +160,7 @@
 ,
 {
   "Input": "사과는 20~100개 이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "20~100개",
@@ -174,7 +174,7 @@
 ,
 {
   "Input": "숫자의 범위는 20부터 100까지 이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "20부터 100까지",
@@ -188,7 +188,7 @@
 ,
 {
   "Input": "숫자의 범위는 천에서 천오백이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "천에서 천오백",
@@ -202,7 +202,7 @@
 ,
 {
   "Input": "숫자는 1000보다 높고 1500보다 낮다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "1000보다 높고 1500보다 낮다",
@@ -216,7 +216,7 @@
 ,
 {
   "Input": "숫자는 0.25보다 높고 0.5보다 낮다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "0.25보다 높고 0.5보다 낮다",
@@ -230,7 +230,7 @@
 ,
 {
   "Input": "이 숫자는 삼천구백육십오보다 크거나 같다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "삼천구백육십오보다 크거나 같다",
@@ -244,7 +244,7 @@
 ,
 {
   "Input": "이 숫자는 4,565보다 크다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "4,565보다 크다",
@@ -258,7 +258,7 @@
 ,
 {
   "Input": "그는 삼십 세 이상이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "삼십 세 이상",
@@ -272,7 +272,7 @@
 ,
 {
   "Input": "그는 서른 살이 넘는다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "서른 살이 넘는다",
@@ -286,7 +286,7 @@
 ,
 {
   "Input": "그의 나이는 서른이 넘는다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "서른이 넘는다",
@@ -300,7 +300,7 @@
 ,
 {
   "Input": "이 제품은 약 오백 개 이상의 종류가 있다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "약 오백 개 이상",
@@ -314,7 +314,7 @@
 ,
 {
   "Input": "절반이 넘는 사람들이 이곳에 왔다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "절반이 넘는",
@@ -328,7 +328,7 @@
 ,
 {
   "Input": "100보다 작거나 같은 소수를 찾으시오.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "100보다 작거나 같은",
@@ -342,7 +342,7 @@
 ,
 {
   "Input": "100과 같거나 작은 소수를 찾으시오.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "100과 같거나 작은",
@@ -356,7 +356,7 @@
 ,
 {
   "Input": "이 제품은 약 오백개 이하의 종류가 있다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "약 오백개 이하",
@@ -370,7 +370,7 @@
 ,
 {
   "Input": "100 > = 의 소수를 찾으시오.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "100 > =",
@@ -384,7 +384,7 @@
 ,
 {
   "Input": "그의 신장은 170 미만이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "170 미만",
@@ -398,7 +398,7 @@
 ,
 {
   "Input": "그의 키는 170 보다 작다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "170 보다 작다",
@@ -412,7 +412,7 @@
 ,
 {
   "Input": "천 마리 미만의 자이언트 판다가 아직 야생에 살고 있다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "천 마리 미만",
@@ -426,7 +426,7 @@
 ,
 {
   "Input": "x는 170과 같다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "170과 같다",
@@ -440,7 +440,7 @@
 ,
 {
   "Input": "x>10 그리고 y<20",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": ">10",
@@ -461,7 +461,7 @@
 ,
 {
   "Input": "x는 10보다 크고 20보다 작다. y는 50 이하, 20 이상이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "10보다 크고 20보다 작다",
@@ -482,7 +482,7 @@
 ,
 {
   "Input": "그 숫자는 20과 같다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "20과 같다",
@@ -496,7 +496,7 @@
 ,
 {
   "Input": "우리 학급의 학생수는 정확히 20명으로 큰 규모는 아니다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "정확히 20",
@@ -510,19 +510,19 @@
 ,
 {
   "Input": "+1-222-2222/2222는 전화번호이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": []
 }
 ,
 {
   "Input": "+1-222-2222-2222는 전화번호다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": []
 }
 ,
 {
   "Input": "그의 점수는 200 혹은 그 이상이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "200 혹은 그 이상",
@@ -536,7 +536,7 @@
 ,
 {
   "Input": "그의 점수는 200 혹은 190 이상이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "190 이상",
@@ -550,7 +550,7 @@
 ,
 {
   "Input": "그의 점수는 200 이상이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "200 이상",
@@ -564,7 +564,7 @@
 ,
 {
   "Input": "그의 점수는 30 이하이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "30 이하",
@@ -578,7 +578,7 @@
 ,
 {
   "Input": "그의 점수는 30 이하다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "30 이하",
@@ -592,7 +592,7 @@
 ,
 {
   "Input": "그의 점수는 최소 30 이상이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "최소 30 이상",
@@ -606,7 +606,7 @@
 ,
 {
   "Input": "그의 점수는 30 이상이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "30 이상",
@@ -620,7 +620,7 @@
 ,
 {
   "Input": "그의 점수는 5000 이하이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000 이하",
@@ -634,7 +634,7 @@
 ,
 {
   "Input": "그의 점수는 5000 혹은 6000 이하이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000",
@@ -655,7 +655,7 @@
 ,
 {
   "Input": "그의 점수는 5000 혹은 그 이상이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000 혹은 그 이상",
@@ -669,7 +669,7 @@
 ,
 {
   "Input": "그의 점수는 5000 이거나 4500 보다 높다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000",
@@ -690,7 +690,7 @@
 ,
 {
   "Input": "그의 점수는 5000 이하이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000 이하",
@@ -704,7 +704,7 @@
 ,
 {
   "Input": "그의 점수는 5000 보다 크거나 같다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000 보다 크거나 같다",
@@ -718,7 +718,7 @@
 ,
 {
   "Input": "그의 점수는 5000 보다 높거나 같다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000 보다 높거나 같다",
@@ -732,7 +732,7 @@
 ,
 {
   "Input": "그의 점수는 5000 보다 높거나 6000이다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000 보다 높거나",
@@ -753,7 +753,7 @@
 ,
 {
   "Input": "그의 점수는 5000과 같거나 5000 보다 작다.",
-  "NotSupported": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "5000과 같거나",

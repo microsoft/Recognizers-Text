@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
 		public const string ZeroToNineIntegerRegex = @"[일이삼사오육륙칠팔구영공]";
 		public const string NegativeNumberTermsRegex = @"((마\s*이\s*너\s*스|음\s*수)\s*)";
 		public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";
-		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
+		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}|^{NegativeNumberTermsRegexNum}";
 		public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[십반]";
 		public const string PairRegex = ".*[쌍짝]$";
 		public const string RoundNumberIntegerRegex = @"[십백천만억조경열]";
