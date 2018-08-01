@@ -1,0 +1,101 @@
+[
+  {
+    "Input": "Ik ga terug met kerst",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "kerst",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": " Ik ga terug met kerst ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "kerst",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op Nieuwjaarsdag.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Nieuwjaarsdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug met thanks giving",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "thanks giving",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op vaderdag.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vaderdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op Nieuwjaarsdag dit jaar",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Nieuwjaarsdag dit jaar",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": " Ik ga terug op Nieuwjaarsdag 2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " Nieuwjaarsdag 2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": " Ik ga terug op Nieuwjaarsdag 2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": " Nieuwjaarsdag 2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op clean monday",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "clean monday",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  }
+]

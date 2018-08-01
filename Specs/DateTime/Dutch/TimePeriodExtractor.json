@@ -1,0 +1,768 @@
+[
+  {
+    "Input": "Ik ben weg van 5 tot 6PM",
+    "Results": [
+      {
+        "Text": "van 5 tot 6PM",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 17:00 tot 18:00",
+    "Results": [
+      {
+        "Text": "van 17:00 tot 18:00",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 17:00 tot 18:00 uur",
+    "Results": [
+      {
+        "Text": "van 17:00 tot 18:00 uur",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 5 tot 6 ʼs middags",
+    "Results": [
+      {
+        "Text": "van 5 tot 6 ʼs middags",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 5 tot zeven in de ochtend",
+    "Results": [
+      {
+        "Text": "van 5 tot zeven in de ochtend",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 5:00 tot 6:00PM",
+    "Results": [
+      {
+        "Text": "van 5:00 tot 6:00PM",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg tussen 5 en 6PM",
+    "Results": [
+      {
+        "Text": "tussen 5 en 6PM",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg tussen 5PM en 6PM",
+    "Results": [
+      {
+        "Text": "tussen 5PM en 6PM",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg tussen 5 en 6 ʼs middags",
+    "Results": [
+      {
+        "Text": "tussen 5 en 6 ʼs middags",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 4pm tot 5pm",
+    "Results": [
+      {
+        "Text": "4pm tot 5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 4-5pm",
+    "Results": [
+      {
+        "Text": "4-5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 4:00 tot 5pm",
+    "Results": [
+      {
+        "Text": "4:00 tot 5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 4:00-5pm",
+    "Results": [
+      {
+        "Text": "4:00-5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 4:00 tot 7 uur",
+    "Results": [
+      {
+        "Text": "van 4:00 tot 7 uur",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 3pm tot half acht ",
+    "Results": [
+      {
+        "Text": "van 3pm tot half acht",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 4pm-5pm",
+    "Results": [
+      {
+        "Text": "van 4pm-5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 4pm – 5pm",
+    "Results": [
+      {
+        "Text": "4pm - 5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 16:00 – 17:00",
+    "Results": [
+      {
+        "Text": "16:00 – 17:00",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 16:00–17:00",
+    "Results": [
+      {
+        "Text": "van 16:00–17:00",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 16:00 – 17:00",
+    "Results": [
+      {
+        "Text": "van 16:00 – 17:00",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 16:00–17:00",
+    "Results": [
+      {
+        "Text": "16:00–17:00",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg 20 minuten tot drie voor acht ʼs avonds",
+    "Results": [
+      {
+        "Text": "20 minuten tot drie voor acht ʼs avonds",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 4pm tot 5 pm",
+    "Results": [
+      {
+        "Text": "van 4pm tot 5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 4pm tot half zes",
+    "Results": [
+      {
+        "Text": "van 4pm tot half zes",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 16:00 tot 5 pm",
+    "Results": [
+      {
+        "Text": "van 16:00 tot 5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 16:00 tot half zes",
+    "Results": [
+      {
+        "Text": "van 16:00 tot half zes",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 3 uur in de ochtend tot 5pm",
+    "Results": [
+      {
+        "Text": "van 3 uur in de ochtend tot 5pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 3 uur in de ochtend tot vijf uur in de middag",
+    "Results": [
+      {
+        "Text": "van 3 uur in de ochtend tot vijf uur in de middag",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg tussen 16:00 uur en half zes",
+    "Results": [
+      {
+        "Text": "tussen 16:00 uur en half zes",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg tussen 3 uur in de ochtend en 17:00 uur",
+    "Results": [
+      {
+        "Text": "tussen 3 uur in de ochtend en 17:00 uur",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in de ochtend afspreken",
+    "Results": [
+      {
+        "Text": "in de ochtend",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in de middag afspreken",
+    "Results": [
+      {
+        "Text": "in de middag",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in de avond afspreken ",
+    "Results": [
+      {
+        "Text": "in de avond",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we ʼs avonds afspreken ",
+    "Results": [
+      {
+        "Text": "ʼs avonds",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in de nacht afspreken ",
+    "Results": [
+      {
+        "Text": "in de nacht",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we ʼs nachts afspreken ",
+    "Results": [
+      {
+        "Text": "ʼs nachts",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in de avonden afspreken",
+    "Results": [
+      {
+        "Text": "in de avonden",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in de vroege ochtenden afspreken",
+    "Results": [
+      {
+        "Text": "in de vroege ochtenden",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in de late ochtenden afspreken",
+    "Results": [
+      {
+        "Text": "in de late ochtenden",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we vroeg in de ochtend afspreken",
+    "Results": [
+      {
+        "Text": "vroeg in de ochtend",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we laat in de ochtend afspreken",
+    "Results": [
+      {
+        "Text": "laat in de ochtend",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we vroeg in de middag afspreken",
+    "Results": [
+      {
+        "Text": "vroeg in de middag",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we laat in de middag afspreken",
+    "Results": [
+      {
+        "Text": "laat in de middag",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we vroeg in de avond afspreken",
+    "Results": [
+      {
+        "Text": "vroeg in de avond",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we laat in de avond afspreken",
+    "Results": [
+      {
+        "Text": "laat in de avond",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we vroeg in de nacht afspreken",
+    "Results": [
+      {
+        "Text": "vroeg in de nacht",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we ʼs nachts laat afspreken",
+    "Results": [
+      {
+        "Text": "ʼs nachts laat",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we ʼs nachts vroeg afspreken",
+    "Results": [
+      {
+        "Text": "ʼs nachts vroeg",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken van twee tot vijf ʼs middags",
+    "Results": [
+      {
+        "Text": "van twee tot vijf ʼs middags",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Feestje bij Jean van 18:00 tot 23:00 uur",
+    "Results": [
+      {
+        "Text": "van 18:00 tot 23:00 uur",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken van 14:00 tot 16:30",
+    "Results": [
+      {
+        "Text": "van 14:00 tot 16:30",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken van twee tot vijf in de middag",
+    "Results": [
+      {
+        "Text": "van twee tot vijf in de middag",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken van 1 uur ʼs middags tot 4",
+    "Results": [
+      {
+        "Text": "van 1 uur ʼs middags tot 4",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken van 1 uur in de middag tot 4.",
+    "Results": [
+      {
+        "Text": "van 1 uur in de middag tot 4",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken van 13:30 tot 4!",
+    "Results": [
+      {
+        "Text": "van 13:30 tot 4",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken van 13:30 uur tot 4!",
+    "Results": [
+      {
+        "Text": "van 13:30 uur tot 4",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken 13:30 voor 4 personen",
+    "Results": [],
+    "NotSupported": "",
+    "NotSupportedByDesign": "dotNet,javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken 13:30 uur voor 4 personen",
+    "Results": [],
+    "NotSupported": "",
+    "NotSupportedByDesign": "dotNet,javascript,python,java"
+  },
+  {
+    "Input": "afspraak maken om 13:30 uur voor 4 personen",
+    "Results": [],
+    "NotSupported": "",
+    "NotSupportedByDesign": "dotNet,javascript,python,java"
+  },
+  {
+    "Input": "Hi Cortana- Maak alsjeblieft een skype afspraak met Jennifer.  Ik heb een afspraak van 30 minuten in de middag nodig, deze vrijdag zal ik vertrekken.",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "in de middag",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hi Cortana- Maak alsjeblieft een skype afspraak met Jennifer. Ik heb vrijdag een afspraak van 30 minuten nodig, in de middag zal ik vertrekken.",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "in de middag",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "maak afspraak van 1:30 tot 3:30",
+    "Results": [
+      {
+        "Text": "van 1:30 tot 3:30",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "maak afspraak van 1:30 pm tot 3:30",
+    "Results": [
+      {
+        "Text": "van 1:30 pm tot 3:30",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "maak afspraak van 1:30 pm tot 3:30 pm",
+    "Results": [
+      {
+        "Text": "van 1:30 pm tot 3:30 pm",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "maak afspraak van 1 tot 3:30",
+    "Results": [
+      {
+        "Text": "van 1 tot t3:30",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "maak afspraak van 1:30 tot 3",
+    "Results": [
+      {
+        "Text": "van 1:30 tot 3",
+        "Type": "timerange"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "maak afspraak tussen 10 en 11:30",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 10 en 11:30",
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "maak afspraak tussen 10:10am en 12:50",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 10:10am en 12:50",
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "maak afspraak tussen 10:10pm en 3",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tussen 10:10pm en 3",
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "maak afspraak van 22:10 tot 10",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 22:10 tot 10",
+        "Type": "timerange"
+      }
+    ]
+  },
+  {
+    "Input": "maak afspraak van 10:30am tot 23",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "van 10:30am tot 23",
+        "Type": "timerange"
+      }
+    ]
+  }
+]

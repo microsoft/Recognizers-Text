@@ -1,0 +1,534 @@
+[
+    {
+        "Input": "Ik ben om 7 uur terug",
+        "Results": [
+            {
+                "Text": "7",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om zeven uur terug",
+        "Results": [
+            {
+                "Text": "zeven",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 7 uur ‘s avonds terug",
+        "Results": [
+            {
+                "Text": "7 uur ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 7 uur ‘s avonds terug",
+        "Results": [
+            {
+                "Text": "7 uur ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 7:56 ‘s avonds terug",
+        "Results": [
+            {
+                "Text": "7:56 ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": " Ik ben om 7:56:35 ‘s avonds terug",
+        "Results": [
+            {
+                "Text": "7:56:35 ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 12:34 terug",
+        "Results": [
+            {
+                "Text": "12:34",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 12:34:20 terug",
+        "Results": [
+            {
+                "Text": "12:34:20",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om T12:34:20 terug",
+        "Results": [
+            {
+                "Text": "T12:34:20",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 00:00 terug",
+        "Results": [
+            {
+                "Text": "00:00",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": " Ik ben om 00:00:30 terug",
+        "Results": [
+            {
+                "Text": "00:00:30",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is 7 uur",
+        "Results": [
+            {
+                "Text": "7 uur",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is zeven uur",
+        "Results": [
+            {
+                "Text": "zeven uur",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is 8 uur ‘s ochtends",
+        "Results": [
+            {
+                "Text": "8 uur ‘s ochtends",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is 8 uur ‘s nachts",
+        "Results": [
+            {
+                "Text": "8 uur ‘s nachts",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is half negen",
+        "Results": [
+            {
+                "Text": "half negen",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is kwart over acht",
+        "Results": [
+            {
+                "Text": "kwart over 8",
+                "Type": "time"
+            }
+        ]
+    }
+  
+  {
+        "Input": "Het is kwart voor 10 ‘s avonds",
+        "Results": [
+            {
+                "Text": " kwart voor 10 ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is drie minuten voor acht",
+        "Results": [
+            {
+                "Text": " drie minuten voor acht",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is half acht",
+        "Results": [
+            {
+                "Text": "half acht",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": " Het is half acht ‘s avonds",
+        "Results": [
+            {
+                "Text": " half acht ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is half acht ‘s ochtends",
+        "Results": [
+            {
+                "Text": "half acht ‘s ochtends",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is kwart voor 8 in de ochtend",
+        "Results": [
+            {
+                "Text": " kwart voor 8 in de ochtend ",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Het is 10 voor half negen in de avond",
+        "Results": [
+            {
+                "Text": "10 voor half negen in de avond",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 7 uur in de avond terug",
+        "Results": [
+            {
+                "Text": "7 uur in de avond",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 7:00 ‘s avonds terug",
+        "Results": [
+            {
+                "Text": "7:00 ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": " Ik ben om 7:00:14 ‘s avonds terug",
+        "Results": [
+            {
+                "Text": "7:00:14 ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om vier uur ‘s middags terug",
+        "Results": [
+            {
+                "Text": " vier uur ‘s middags",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ga terug om zeven uur dertig ‘s avonds",
+        "Results": [
+            {
+                "Text": " zeven uur dertig ‘s avonds",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ga terug om vier uur vijfendertig ‘s middags",
+        "Results": [
+            {
+                "Text": " vier uur vijfendertig ‘s middags",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ga om vijf over elf",
+        "Results": [
+            {
+                "Text": " vijf over elf",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ga om drie minuten voor vijf ",
+        "Results": [
+            {
+                "Text": " drie minuten voor vijf",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ga om half zes vanavond",
+        "Results": [
+            {
+                "Text": " half zes vanavond",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "I'll be back noonish",
+        "Results": [
+            {
+                "Text": "noonish",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben ‘s middags terug",
+        "Results": [
+            {
+                "Text": "‘s middags",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 12 uur ‘s middags terug",
+        "Results": [
+            {
+                "Text": "12 uur ‘s middags",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben tegen 11’en terug",
+        "Results": [
+            {
+                "Text": " tegen 11’en",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": " Ik ben tegen 11-en terug",
+        "Results": [
+            {
+                "Text": " tegen 11-en",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 340pm terug",
+        "Results": [
+            {
+                "Text": "340pm",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 1140 a.m. terug",
+        "Results": [
+            {
+                "Text": "1140 a.m.",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "middernacht",
+        "Results": [
+            {
+                "Text": "middernacht",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "mid morgen",
+        "Results": [
+            {
+                "Text": "mid morgen",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "mid-morgen",
+        "Results": [
+            {
+                "Text": "mid-morgen",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "mid morgen",
+        "Results": [
+            {
+                "Text": "mid morgen",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "middag",
+        "Results": [
+            {
+                "Text": "middag",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "mid afternoon",
+        "Results": [
+            {
+                "Text": "mid afternoon",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "mid-day",
+        "Results": [
+            {
+                "Text": "mid-day",
+                "Type": "time"
+            }
+        ]
+    },
+    ,
+    {
+        "Input": "I'll be back 7 p m",
+        "Results": [
+            {
+                "Text": "7 p m",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 7 uur p.m. terug",
+        "Results": [
+            {
+                "Text": "7 uur p. m",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 7:56 a m terug",
+        "Results": [
+            {
+                "Text": "7:56 a m",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 7:56:35 a.m. terug",
+        "Results": [
+            {
+                "Text": "7:56:35 a.m.",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ga om 7:56:35 am",
+        "Results": [
+            {
+                "Text": "7:56:35 am",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ga om 7:56:35 a. m.",
+        "Results": [
+            {
+                "Text": "7:56:35 a. m.",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ga om zeven uur dertig p.m.",
+        "Results": [
+            {
+                "Text": " zeven uur dertig p.m.",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 340 pm terug",
+        "Results": [
+            {
+                "Text": "340 pm",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben om 1140 a m terug",
+        "Results": [
+            {
+                "Text": "1140 a m",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "welke emails hebben p als onderwerp gekregen",
+        "Results": []
+    },
+    {
+        "Input": "welke emails hebben een antwoord gehad",
+        "Results": []
+    },
+    {
+        "Input": "Ik ben om 12 uur lunchtijd terug",
+        "Results": [
+            {
+                "Text": "12 uur lunchtijd",
+                "Type": "time"
+            }
+        ]
+    },
+    {
+        "Input": "Ik ben met lunchtijd 12 uur terug",
+        "Results": [
+            {
+                "Text": "at lunchtijd 12 uur ",
+                "Type": "time"
+            }
+        ]
+    }
+]

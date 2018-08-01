@@ -1,0 +1,1259 @@
+[
+  {
+    "Input": "Ik ga terug op de 15e",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15e",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 22 april",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22 april",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 1 januari",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 januari",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 1 jan.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 jan.",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 2 oktober",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 oktober",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 12 januari 2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12 januari 2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 12 jan. 2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12 jan. 2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op maandag 12 januari 2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "maandag 12 januari 2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 22/02/2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22/02/2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 21/04/2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 21/04/16",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 9-18-15",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 22.4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22.4.",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 22-4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22-4",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 22/4",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22/4",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 22/04",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 12 augustus 2015",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12 augustus 2015",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 12/11/2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12/11/2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 12-11-16",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "12-11-16",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 1 januari",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 januari",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 1 jan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 jan",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 28 november",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "28 november",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op wo. 22 jan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "wo. 22 jan",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op de eerste vrijdag van Juli",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de eerste vrijdag van Juli",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op de eerste vrijdag van deze maand",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de eerste vrijdag van deze maand",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug over twee weken",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "over twee weken",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga volgende week vrijdag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week vrijdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug volgende week vrijdag",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week vrijdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "afgelopen maandag",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "afgelopen maandag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kom terug op dinsdag.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Goed nieuws, ik ga terug op dinsdag.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dinsdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op dinsdag",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Dinsdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op vrijdag",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kom terug op vrijdag",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga vandaag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vandaag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga morgen terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ben gisteren teruggekomen",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "gisteren",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ben eergisteren teruggekomen",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eergisteren",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kom overmorgen terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "overmorgen",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga morgen terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kom morgen terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "morgen",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga deze vrijdag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "deze vrijdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga volgende week zondag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kwam afgelopen zondag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "afgelopen zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de laatste dag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "laatste dag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kom de laatste dag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "laatste dag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kom vandaag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vandaag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kom deze week vrijdag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "deze week vrijdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga volgende week zondag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kwam vorige week zondag terug.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vorige week zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 15 juni 2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15 juni 2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik speel honkbal op elf mei",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "elf mei",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op vier mei",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vier mei",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op 4 maart",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4 maart",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de eerste van januari terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerste van januari",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga eenentwintig mei terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eenentwintig mei",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kom eenentwintig mei terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eenentwintig mei",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de tweede dag van augustus terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tweede dag van augustus",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga twintig juni terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twintig juni",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ben twee maanden geleden teruggekomen",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee maanden geleden",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga twee dagen later terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "twee dagen later",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "wie heb ik een maand geleden een email gestuurd",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "een maand geleden",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ging terug voor de 27ste",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor de 27ste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ging terug voor de 27",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor de 27",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ging terug voor de 21ste",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor de 21ste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ging terug voor de 22e",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor de 22e",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ging voor de tweede terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor de tweede",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ging terug voor de eenendertigste",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor de eenendertigste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ging terug op de 27e",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op de 27e",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kwam terug op de 21ste",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op de 21ste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ging terug op de 22e",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op de 22e",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik kwam terug op de tweede!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op de tweede",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Kwam je terug op de tweeëntwintigste?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "op de tweeëntwintigste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "de eerste prijs",
+    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Results": [],
+    "NotSupported": ""
+  },
+  {
+    "Input": "Ik ga naar de 27ste verdieping",
+    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Results": [],
+    "NotSupported": ""
+  },
+  {
+    "Input": " Herdenkingsevenementen voor de 25ste verjaardag van de diplomatieke betrekkingen tussen Singapore en China",
+    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Results": [],
+    "NotSupported": ""
+  },
+  {
+    "Input": "Koop kaartjes voor de 17de voor het evenement",
+    "NotSupportedByDesign": "dotNet,javascript,python,java",
+    "Results": [],
+    "NotSupported": ""
+  },
+  {
+    "Input": "Wat heb ik op zaterdag de tweede?",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zaterdag de tweede",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Een ontmoeting voor woensdag de 27e met Joe Smith",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor woensdag de 27e",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op donderdag de 21ste",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "donderdag de 21ste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op vrijdag de 22ste",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag de 22ste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga zaterdag de 23ste terug",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zaterdag de 23ste ",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga vrijdag de 15e terug",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag de 15e",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga donderdag de eenentwintigste terug",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "donderdag de eenentwintigste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug voor vrijdag de tweeëntwintigste",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag de tweeëntwintigste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op vrijdag de vijftiende",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag de vijftiende",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga terug op donderdag de zevende",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "donderdag de zevende",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de tweede zondag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tweede zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de eerste zondag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerste zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de derde dinsdag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "derde dinsdag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de vijfde zondag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vijfde zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de zesde zondag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zesde zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de tiende maandag terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tiende maandag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga volgende maand de 20ste terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende maand de 20ste",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ik ga de 31ste deze maand terug",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "31ste deze maand",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Cortana kan een Skype call organiseren op vrijdag deze week of donderdag volgende week",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag deze week",
+        "Type": "date"
+      },
+      {
+        "Text": "donderdag volgende week",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Cortana kan een Skype call organiseren voor vrijdag of zondag deze week",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vrijdag of zondag deze week",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "16 nov 2016",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16 nov 2016",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "We hadden een meeting 1 maand 21 dagen geleden",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 maand 21 dagen geleden",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben hier 2 jaar 1 maand en 21 dagen geleden weggegaan",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 jaar 1 maand en 21 dagen geleden",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga hier 2 jaar en 21 dagen later weg",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 jaar en 21 dagen later",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ik ging 1 maand 2 jaar 21 dagen geleden weg",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "1 maand 2 jaar 21 dagen geleden",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ik vertrek de 20ste volgende maand",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "de 20ste volgende maand",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 5 december 1391 vertrokken",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5 december 1391",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Maandag, tweeëntwintig jan. 2018",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Maandag, tweeëntwintig jan. 2018",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "op zondag eenentwintig januari tweeduizend en achttien",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zondag eenentwintig januari tweeduizend en achttien",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "op eenentwintig september negentien achtenzeventig",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eenentwintig september negentien achtenzeventig",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "op 20 september negentienhonderd een één",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "20 september negentienhonderd een één ",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "op de tiende van september tweeduizend",
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tiende van september tweeduizend",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ben je vrij op 13-5-2015?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "13-5-2015",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ben je beschikbaar op 13-05-2015?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "13-05-2015",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ben je volgende week zondag beschikbaar?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week zondag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
+    "Input": "Ben je volgende week maandag beschikbaar?",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "volgende week maandag",
+        "Type": "date"
+      }
+    ],
+    "NotSupported": "dotNet"
+  }
+]
