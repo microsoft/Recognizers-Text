@@ -1,7 +1,7 @@
 [
   {
     "Input": "100%",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "100%",
@@ -10,11 +10,12 @@
           "value": "100%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "twintig procent",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintig procent",
@@ -23,11 +24,12 @@
           "value": "20%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "percents of twenty",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "percents of twenty",
@@ -36,11 +38,12 @@
           "value": "20%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een van de drie",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een van de drie",
@@ -49,11 +52,12 @@
           "value": "33,3333333333333%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een uit twee",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een uit twee",
@@ -62,11 +66,12 @@
           "value": "50%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "1/4 van",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1/4 van",
@@ -75,11 +80,12 @@
           "value": "25%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een vierde van",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een vierde van",
@@ -88,11 +94,12 @@
           "value": "25%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "de helft van",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "de helft van",
@@ -101,11 +108,12 @@
           "value": "50%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een kwart van",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een kwart van",
@@ -114,11 +122,13 @@
           "value": "25%"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een derde",
-    "NotSupported": "dotNet,javascript,python",
-    "Results": []
+    "NotSupported": "",
+    "Results": [],
+    "NotSupportedByDesign": "dotNet,javascript,python,java"
   }
 ]
