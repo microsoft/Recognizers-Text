@@ -75,7 +75,6 @@ UnitMap: !dictionary
     万万: 億
     億万: 兆
     万億: 兆
-    万万: 億
     ' ' : ''
 RoundDirectList: !list
   types: [char]
