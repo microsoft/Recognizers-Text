@@ -3,7 +3,7 @@
     "Input": "Ik ben om 7 uur terug",
     "Results": [
       {
-        "Text": "7",
+        "Text": "7 uur",
         "Type": "time"
       }
     ],
@@ -14,7 +14,7 @@
     "Input": "Ik ben om zeven uur terug",
     "Results": [
       {
-        "Text": "zeven",
+        "Text": "zeven uur",
         "Type": "time"
       }
     ],
@@ -410,7 +410,7 @@
     "Input": " Ik ben tegen 11-en terug",
     "Results": [
       {
-        "Text": " tegen 11-en",
+        "Text": "tegen 11-en",
         "Type": "time"
       }
     ],

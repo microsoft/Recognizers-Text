@@ -1,1461 +1,1622 @@
 [
-    {
-        "Input": "zet de wekker op tien over half negen",
-        "Results": [
-            {
-                "Text": "tien over half negen",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T08:40",
-                    "FutureResolution": {
-                        "time": "08:40:00"
-                    },
-                    "PastResolution": {
-                        "time": "08:40:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": " zet de wekker op tien over half negen ‘s ochtends",
-        "Results": [
-            {
-                "Text": "tien over half negen ‘s ochtends",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T08:40",
-                    "FutureResolution": {
-                        "time": "08:40:00"
-                    },
-                    "PastResolution": {
-                        "time": "08:40:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": " zet de wekker op tien over half negen ‘s avonds",
-        "Results": [
-            {
-                "Text": " tien over half negen ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T20:40",
-                    "FutureResolution": {
-                        "time": "20:40:00"
-                    },
-                    "PastResolution": {
-                        "time": "20:40:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "zet de wekker op kwart voor elf",
-        "Results": [
-            {
-                "Text": "kwart voor elf",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T10:45",
-                    "FutureResolution": {
-                        "time": "10:45:00"
-                    },
-                    "PastResolution": {
-                        "time": "10:45:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "zet de wekker op vijftien uur vijftien",
-        "Results": [
-            {
-                "Text": " vijftien uur vijftien",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T15:15",
-                    "FutureResolution": {
-                        "time": "15:15:00"
-                    },
-                    "PastResolution": {
-                        "time": "15:15:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "zet de wekker op vijftien uur dertig",
-        "Results": [
-            {
-                "Text": "zet de wekker op vijftien uur dertig",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T15:30",
-                    "FutureResolution": {
-                        "time": "15:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "15:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "zet de wekker op tien over tien",
-        "Results": [
-            {
-                "Text": "tien over tien",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T10:10",
-                    "FutureResolution": {
-                        "time": "10:10:00"
-                    },
-                    "PastResolution": {
-                        "time": "10:10:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "zet de wekker op vijf voor elf ‘s avonds",
-        "Results": [
-            {
-                "Text": " vijf voor elf ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T22:55",
-                    "FutureResolution": {
-                        "time": "22:55:00"
-                    },
-                    "PastResolution": {
-                        "time": "22:55:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "ik ben om 7 uur terug",
-        "Results": [
-            {
-                "Text": "7 uur",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07",
-                    "FutureResolution": {
-                        "time": "07:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": " ik ben om 7 uur terug",
-        "Results": [
-            {
-                "Text": "7",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07",
-                    "FutureResolution": {
-                        "time": "07:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": " ik ben om zeven uur terug",
-        "Results": [
-            {
-                "Text": "zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07",
-                    "FutureResolution": {
-                        "time": "07:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": " ik ben om 7 uur ‘s avonds",
-        "Results": [
-            {
-                "Text": "7 uur ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19",
-                    "FutureResolution": {
-                        "time": "19:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "19:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "ik ben om 7:56pm terug",
-        "Results": [
-            {
-                "Text": "7:56pm",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:56",
-                    "FutureResolution": {
-                        "time": "19:56:00"
-                    },
-                    "PastResolution": {
-                        "time": "19:56:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "ik ben om 7:56:30pm terug",
-        "Results": [
-            {
-                "Text": "7:56:30pm",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:56:30",
-                    "FutureResolution": {
-                        "time": "19:56:30"
-                    },
-                    "PastResolution": {
-                        "time": "19:56:30"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "ik ben om 7:56:30 pm terug",
-        "Results": [
-            {
-                "Text": "7:56:30 pm",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:56:30",
-                    "FutureResolution": {
-                        "time": "19:56:30"
-                    },
-                    "PastResolution": {
-                        "time": "19:56:30"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "ik ben om 12:34 terug",
-        "Results": [
-            {
-                "Text": "12:34",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12:34",
-                    "FutureResolution": {
-                        "time": "12:34:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:34:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "ik ben om 12:34:25 terug",
-        "Results": [
-            {
-                "Text": "12:34:25",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12:34:25",
-                    "FutureResolution": {
-                        "time": "12:34:25"
-                    },
-                    "PastResolution": {
-                        "time": "12:34:25"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is 7 uur",
-        "Results": [
-            {
-                "Text": "7 uur",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07",
-                    "FutureResolution": {
-                        "time": "07:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is zeven uur",
-        "Results": [
-            {
-                "Text": "zeven uur",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07",
-                    "FutureResolution": {
-                        "time": "07:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is 8 uur ‘s ochtends",
-        "Results": [
-            {
-                "Text": "8 uur ‘s ochtends",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T08",
-                    "FutureResolution": {
-                        "time": "08:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "08:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is 8 uur ‘s avonds",
-        "Results": [
-            {
-                "Text": "8 uur ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T20",
-                    "FutureResolution": {
-                        "time": "20:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "20:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is half negen",
-        "Results": [
-            {
-                "Text": "half negen",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T08:30",
-                    "FutureResolution": {
-                        "time": "08:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "08:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": " Het is half negen ‘s avonds",
-        "Results": [
-            {
-                "Text": " half negen ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T20:30",
-                    "FutureResolution": {
-                        "time": "20:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "20:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is half negen",
-        "Results": [
-            {
-                "Text": "half negen",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T08:30",
-                    "FutureResolution": {
-                        "time": "08:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "08:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is kwart over acht",
-        "Results": [
-            {
-                "Text": "kwart over acht",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T08:15",
-                    "FutureResolution": {
-                        "time": "08:15:00"
-                    },
-                    "PastResolution": {
-                        "time": "08:15:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": " Het is kwart over acht",
-        "Results": [
-            {
-                "Text": "kwart over acht",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T08:15",
-                    "FutureResolution": {
-                        "time": "08:15:00"
-                    },
-                    "PastResolution": {
-                        "time": "08:15:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is kwart voor tien",
-        "Results": [
-            {
-                "Text": "kwart voor tien",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T21:45",
-                    "FutureResolution": {
-                        "time": "21:45:00"
-                    },
-                    "PastResolution": {
-                        "time": "21:45:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is drie minuten voor acht",
-        "Results": [
-            {
-                "Text": " Het is drie minuten voor acht",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07:57",
-                    "FutureResolution": {
-                        "time": "07:57:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:57:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is half acht",
-        "Results": [
-            {
-                "Text": "half acht",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07:30",
-                    "FutureResolution": {
-                        "time": "07:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is half acht ‘s avonds",
-        "Results": [
-            {
-                "Text": "half acht ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:30",
-                    "FutureResolution": {
-                        "time": "19:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "19:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is half acht ‘s ochtends",
-        "Results": [
-            {
-                "Text": "half acht ‘s ochtends",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07:30",
-                    "FutureResolution": {
-                        "time": "07:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is kwart voor acht ‘s ochtends",
-        "Results": [
-            {
-                "Text": "kwart voor acht ‘s ochtends",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07:45",
-                    "FutureResolution": {
-                        "time": "07:45:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:45:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Het is 20 minuten over acht in de avond",
-        "Results": [
-            {
-                "Text": "20 minuten over acht in de avond",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T20:20",
-                    "FutureResolution": {
-                        "time": "20:20:00"
-                    },
-                    "PastResolution": {
-                        "time": "20:20:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 7 uur ‘s avonds terug",
-        "Results": [
-            {
-                "Text": "7 uur ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19",
-                    "FutureResolution": {
-                        "time": "19:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "19:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "I'll be back afternoon 7:00",
-        "Results": [
-            {
-                "Text": "afternoon 7:00",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:00",
-                    "FutureResolution": {
-                        "time": "19:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "19:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 7:00:05 ‘s avonds terug",
-        "Results": [
-            {
-                "Text": "7:00:05 ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:00:05",
-                    "FutureResolution": {
-                        "time": "19:00:05"
-                    },
-                    "PastResolution": {
-                        "time": "19:00:05"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 7 uur vanavond terug",
-        "Results": [
-            {
-                "Text": "7 uur vanavond",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19",
-                    "FutureResolution": {
-                        "time": "19:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "19:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om half acht ‘s avonds terug",
-        "Results": [
-            {
-                "Text": " half acht ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:30",
-                    "FutureResolution": {
-                        "time": "19:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "19:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om vijf over half acht ‘s avonds terug",
-        "Results": [
-            {
-                "Text": " vijf over half acht ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:35",
-                    "FutureResolution": {
-                        "time": "19:35:00"
-                    },
-                    "PastResolution": {
-                        "time": "19:35:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om tien voor half twaalf ’s avonds",
-        "Results": [
-            {
-                "Text": " tien voor half twaalf ’s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T23:20",
-                    "FutureResolution": {
-                        "time": "23:20:00"
-                    },
-                    "PastResolution": {
-                        "time": "23:20:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben rond de middag terug",
-        "Results": [
-            {
-                "Text": " rond de middag",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12",
-                    "FutureResolution": {
-                        "time": "12:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 12 uur ‘s middags terug",
-        "Results": [
-            {
-                "Text": "12 uur ‘s middags",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12",
-                    "FutureResolution": {
-                        "time": "12:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben tegen 11’en terug",
-        "Results": [
-            {
-                "Text": "11’en",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T11",
-                    "FutureResolution": {
-                        "time": "11:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "11:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": " Ik ben tegen 11-en terug",
-        "Results": [
-            {
-                "Text": "11-en",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T11",
-                    "FutureResolution": {
-                        "time": "11:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "11:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 340pm terug",
-        "Results": [
-            {
-                "Text": "340pm",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T15:40",
-                    "FutureResolution": {
-                        "time": "15:40:00"
-                    },
-                    "PastResolution": {
-                        "time": "15:40:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 1140 a.m. terug",
-        "Results": [
-            {
-                "Text": "1140 a.m.",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T11:40",
-                    "FutureResolution": {
-                        "time": "11:40:00"
-                    },
-                    "PastResolution": {
-                        "time": "11:40:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "middernacht",
-        "Results": [
-            {
-                "Text": "middernacht",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T00",
-                    "FutureResolution": {
-                        "time": "00:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "00:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "middernacht",
-        "Results": [
-            {
-                "Text": "middernacht",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T00",
-                    "FutureResolution": {
-                        "time": "00:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "00:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "midmorning",
-        "Results": [
-            {
-                "Text": "midmorning",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T10",
-                    "FutureResolution": {
-                        "time": "10:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "10:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "halverwege de ochtend",
-        "Results": [
-            {
-                "Text": " halverwege de ochtend",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T10",
-                    "FutureResolution": {
-                        "time": "10:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "10:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "halverwege de middag",
-        "Results": [
-            {
-                "Text": "halverwege de middag",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T14",
-                    "FutureResolution": {
-                        "time": "14:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "14:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "middag",
-        "Results": [
-            {
-                "Text": "middag",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12",
-                    "FutureResolution": {
-                        "time": "12:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "mid day",
-        "Results": [
-            {
-                "Text": "mid day",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12",
-                    "FutureResolution": {
-                        "time": "12:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "12 uur ‘s middags",
-        "Results": [
-            {
-                "Text": "12 uur ‘s middags",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12",
-                    "FutureResolution": {
-                        "time": "12:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben met lunchtijd terug",
-        "Results": [
-            {
-                "Text": "lunchtijd",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12",
-                    "FutureResolution": {
-                        "time": "12:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om middernacht terug",
-        "Results": [
-            {
-                "Text": "middernacht",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T00",
-                    "FutureResolution": {
-                        "time": "00:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "00:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 12 uur in de nacht terug",
-        "Results": [
-            {
-                "Text": "12 uur in the nacht",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T00",
-                    "FutureResolution": {
-                        "time": "00:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "00:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 1 uur terug",
-        "Results": [
-            {
-                "Text": "1 uur",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T01",
-                    "FutureResolution": {
-                        "time": "01:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "01:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 12 uur lunchtijd terug",
-        "Results": [
-            {
-                "Text": "12 uur lunchtijd",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12",
-                    "FutureResolution": {
-                        "time": "12:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 1 uur lunchtijd terug",
-        "Results": [
-            {
-                "Text": "1 uur lunchtijd",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T13",
-                    "FutureResolution": {
-                        "time": "13:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "13:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 7:56:13 pm terug",
-        "Results": [
-            {
-                "Text": "7:56:13 pm",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:56:13",
-                    "FutureResolution": {
-                        "time": "19:56:13"
-                    },
-                    "PastResolution": {
-                        "time": "19:56:13"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "I'll ben om 12:34:45 terug",
-        "Results": [
-            {
-                "Text": "12:34:45",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12:34:45",
-                    "FutureResolution": {
-                        "time": "12:34:45"
-                    },
-                    "PastResolution": {
-                        "time": "12:34:45"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 7:00:25 ‘s avonds terug",
-        "Results": [
-            {
-                "Text": "7:00:25 ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T19:00:25",
-                    "FutureResolution": {
-                        "time": "19:00:25"
-                    },
-                    "PastResolution": {
-                        "time": "19:00:25"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om zeven uur dertig ‘s ochtends terug",
-        "Results": [
-            {
-                "Text": " zeven uur dertig ‘s ochtends",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07:30",
-                    "FutureResolution": {
-                        "time": "07:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om vijf over elf",
-        "Results": [
-            {
-                "Text": "vijf over elf",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T11:05",
-                    "FutureResolution": {
-                        "time": "11:05:00"
-                    },
-                    "PastResolution": {
-                        "time": "11:05:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om drie minuten voor half zes",
-        "Results": [
-            {
-                "Text": " drie minuten voor half zes",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T05:27",
-                    "FutureResolution": {
-                        "time": "05:27:00"
-                    },
-                    "PastResolution": {
-                        "time": "05:27:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om half zes ’s avonds terug",
-        "Results": [
-            {
-                "Text": "half zes ‘s avonds",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T17:30",
-                    "FutureResolution": {
-                        "time": "17:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "17:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben op de middag terug",
-        "Results": [
-            {
-                "Text": "middag",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T12",
-                    "FutureResolution": {
-                        "time": "12:00:00"
-                    },
-                    "PastResolution": {
-                        "time": "12:00:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 7h01 terug",
-        "NotSupported": "python",
-        "Results": [
-            {
-                "Text": "7h01",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T07:01",
-                    "FutureResolution": {
-                        "time": "07:01:00"
-                    },
-                    "PastResolution": {
-                        "time": "07:01:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ben om 10 H 10 pm terug",
-        "NotSupported": "python",
-        "Results": [
-            {
-                "Text": "10 H 10 pm",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T22:10",
-                    "FutureResolution": {
-                        "time": "22:10:00"
-                    },
-                    "PastResolution": {
-                        "time": "22:10:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om vijf over zes terug",
-        "Results": [
-            {
-                "Text": " vijf over zes",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:05",
-                    "FutureResolution": {
-                        "time": "18:05:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:05:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om tien over zes terug",
-        "Results": [
-            {
-                "Text": " tien over zes",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:05",
-                    "FutureResolution": {
-                        "time": "18:05:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:05:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om kwart over zes terug",
-        "Results": [
-            {
-                "Text": " kwart over zes",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:15",
-                    "FutureResolution": {
-                        "time": "18:15:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:15:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om tien voor half zeven terug",
-        "Results": [
-            {
-                "Text": "tien voor half zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:20",
-                    "FutureResolution": {
-                        "time": "18:20:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:20:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om vijf voor half zeven terug",
-        "Results": [
-            {
-                "Text": "vijf voor half zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:25",
-                    "FutureResolution": {
-                        "time": "18:25:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:25:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om half zeven terug",
-        "Results": [
-            {
-                "Text": "half zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:30",
-                    "FutureResolution": {
-                        "time": "18:30:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:30:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om vijf over half zeven terug",
-        "Results": [
-            {
-                "Text": "vijf over half zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:35",
-                    "FutureResolution": {
-                        "time": "18:35:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:35:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om tien over half zeven terug",
-        "Results": [
-            {
-                "Text": "tien over half zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:40",
-                    "FutureResolution": {
-                        "time": "18:40:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:40:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om kwart voor zeven terug",
-        "Results": [
-            {
-                "Text": "kwart voor zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:45",
-                    "FutureResolution": {
-                        "time": "18:45:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:45:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om tien voor zeven terug",
-        "Results": [
-            {
-                "Text": "tien voor zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:50",
-                    "FutureResolution": {
-                        "time": "18:50:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:50:00"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "Input": "Ik ga om vijf voor zeven terug",
-        "Results": [
-            {
-                "Text": "vijf voor zeven",
-                "Type": "time",
-                "Value": {
-                    "Timex": "T18:55",
-                    "FutureResolution": {
-                        "time": "18:55:00"
-                    },
-                    "PastResolution": {
-                        "time": "18:55:00"
-                    }
-                }
-            }
-        ]
-    }
+  {
+    "Input": "zet de wekker op tien over half negen",
+    "Results": [
+      {
+        "Text": "tien over half negen",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " zet de wekker op tien over half negen ‘s ochtends",
+    "Results": [
+      {
+        "Text": "tien over half negen ‘s ochtends",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " zet de wekker op tien over half negen ‘s avonds",
+    "Results": [
+      {
+        "Text": " tien over half negen ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:40",
+          "FutureResolution": {
+            "time": "20:40:00"
+          },
+          "PastResolution": {
+            "time": "20:40:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zet de wekker op kwart voor elf",
+    "Results": [
+      {
+        "Text": "kwart voor elf",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:45",
+          "FutureResolution": {
+            "time": "10:45:00"
+          },
+          "PastResolution": {
+            "time": "10:45:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zet de wekker op vijftien uur vijftien",
+    "Results": [
+      {
+        "Text": " vijftien uur vijftien",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:15",
+          "FutureResolution": {
+            "time": "15:15:00"
+          },
+          "PastResolution": {
+            "time": "15:15:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zet de wekker op vijftien uur dertig",
+    "Results": [
+      {
+        "Text": "zet de wekker op vijftien uur dertig",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:30",
+          "FutureResolution": {
+            "time": "15:30:00"
+          },
+          "PastResolution": {
+            "time": "15:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zet de wekker op tien over tien",
+    "Results": [
+      {
+        "Text": "tien over tien",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:10",
+          "FutureResolution": {
+            "time": "10:10:00"
+          },
+          "PastResolution": {
+            "time": "10:10:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zet de wekker op vijf voor elf ‘s avonds",
+    "Results": [
+      {
+        "Text": "vijf voor elf ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:55",
+          "FutureResolution": {
+            "time": "22:55:00"
+          },
+          "PastResolution": {
+            "time": "22:55:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben om 7 uur terug",
+    "Results": [
+      {
+        "Text": "7 uur",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " ik ben om 7 uur terug",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " ik ben om zeven uur terug",
+    "Results": [
+      {
+        "Text": "zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " ik ben er om 7 uur ‘s avonds",
+    "Results": [
+      {
+        "Text": "7 uur ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben om 7:56pm terug",
+    "Results": [
+      {
+        "Text": "7:56pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56",
+          "FutureResolution": {
+            "time": "19:56:00"
+          },
+          "PastResolution": {
+            "time": "19:56:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben om 7:56:30pm terug",
+    "Results": [
+      {
+        "Text": "7:56:30pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben om 7:56:30 pm terug",
+    "Results": [
+      {
+        "Text": "7:56:30 pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben om 12:34 terug",
+    "Results": [
+      {
+        "Text": "12:34",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34",
+          "FutureResolution": {
+            "time": "12:34:00"
+          },
+          "PastResolution": {
+            "time": "12:34:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben om 12:34:25 terug",
+    "Results": [
+      {
+        "Text": "12:34:25",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:25",
+          "FutureResolution": {
+            "time": "12:34:25"
+          },
+          "PastResolution": {
+            "time": "12:34:25"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is 7 uur",
+    "Results": [
+      {
+        "Text": "7 uur",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is zeven uur",
+    "Results": [
+      {
+        "Text": "zeven uur",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is 8 uur ‘s ochtends",
+    "Results": [
+      {
+        "Text": "8 uur ‘s ochtends",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is 8 uur ‘s avonds",
+    "Results": [
+      {
+        "Text": "8 uur ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is half negen",
+    "Results": [
+      {
+        "Text": "half negen",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Het is half negen ‘s avonds",
+    "Results": [
+      {
+        "Text": " half negen ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:30",
+          "FutureResolution": {
+            "time": "20:30:00"
+          },
+          "PastResolution": {
+            "time": "20:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is half negen",
+    "Results": [
+      {
+        "Text": "half negen",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is kwart over acht",
+    "Results": [
+      {
+        "Text": "kwart over acht",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Het is kwart over acht",
+    "Results": [
+      {
+        "Text": "kwart over acht",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is kwart voor tien",
+    "Results": [
+      {
+        "Text": "kwart voor tien",
+        "Type": "time",
+        "Value": {
+          "Timex": "T21:45",
+          "FutureResolution": {
+            "time": "21:45:00"
+          },
+          "PastResolution": {
+            "time": "21:45:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is drie minuten voor acht",
+    "Results": [
+      {
+        "Text": " Het is drie minuten voor acht",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:57",
+          "FutureResolution": {
+            "time": "07:57:00"
+          },
+          "PastResolution": {
+            "time": "07:57:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is half acht",
+    "Results": [
+      {
+        "Text": "half acht",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is half acht ‘s avonds",
+    "Results": [
+      {
+        "Text": "half acht ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is half acht ‘s ochtends",
+    "Results": [
+      {
+        "Text": "half acht ‘s ochtends",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is kwart voor acht ‘s ochtends",
+    "Results": [
+      {
+        "Text": "kwart voor acht ‘s ochtends",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:45",
+          "FutureResolution": {
+            "time": "07:45:00"
+          },
+          "PastResolution": {
+            "time": "07:45:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is 20 minuten over acht in de avond",
+    "Results": [
+      {
+        "Text": "20 minuten over acht in de avond",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:20",
+          "FutureResolution": {
+            "time": "20:20:00"
+          },
+          "PastResolution": {
+            "time": "20:20:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7 uur ‘s avonds terug",
+    "Results": [
+      {
+        "Text": "7 uur ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik kom 3 uur in de middag terug",
+    "Results": [
+      {
+        "Text": "3 uur in de middag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:00",
+          "FutureResolution": {
+            "time": "15:00:00"
+          },
+          "PastResolution": {
+            "time": "15:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7:00:05 ‘s avonds terug",
+    "Results": [
+      {
+        "Text": "7:00:05 ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:05",
+          "FutureResolution": {
+            "time": "19:00:05"
+          },
+          "PastResolution": {
+            "time": "19:00:05"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7 uur vanavond terug",
+    "Results": [
+      {
+        "Text": "7 uur vanavond",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om half acht ‘s avonds terug",
+    "Results": [
+      {
+        "Text": " half acht ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om vijf over half acht ‘s avonds terug",
+    "Results": [
+      {
+        "Text": " vijf over half acht ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:35",
+          "FutureResolution": {
+            "time": "19:35:00"
+          },
+          "PastResolution": {
+            "time": "19:35:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om tien voor half twaalf ’s avonds",
+    "Results": [
+      {
+        "Text": " tien voor half twaalf ’s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T23:20",
+          "FutureResolution": {
+            "time": "23:20:00"
+          },
+          "PastResolution": {
+            "time": "23:20:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben rond de middag terug",
+    "Results": [
+      {
+        "Text": " rond de middag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 12 uur ‘s middags terug",
+    "Results": [
+      {
+        "Text": "12 uur ‘s middags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben tegen 11’en terug",
+    "Results": [
+      {
+        "Text": "11’en",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Ik ben tegen 11-en terug",
+    "Results": [
+      {
+        "Text": "11-en",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 340pm terug",
+    "Results": [
+      {
+        "Text": "340pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:40",
+          "FutureResolution": {
+            "time": "15:40:00"
+          },
+          "PastResolution": {
+            "time": "15:40:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 1140 a.m. terug",
+    "Results": [
+      {
+        "Text": "1140 a.m.",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:40",
+          "FutureResolution": {
+            "time": "11:40:00"
+          },
+          "PastResolution": {
+            "time": "11:40:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "middernacht",
+    "Results": [
+      {
+        "Text": "middernacht",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "middernacht",
+    "Results": [
+      {
+        "Text": "middernacht",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "midmorning",
+    "Results": [
+      {
+        "Text": "midmorning",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "halverwege de ochtend",
+    "Results": [
+      {
+        "Text": " halverwege de ochtend",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "halverwege de middag",
+    "Results": [
+      {
+        "Text": "halverwege de middag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T14",
+          "FutureResolution": {
+            "time": "14:00:00"
+          },
+          "PastResolution": {
+            "time": "14:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "middag",
+    "Results": [
+      {
+        "Text": "middag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "mid day",
+    "Results": [
+      {
+        "Text": "mid day",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "12 uur ‘s middags",
+    "Results": [
+      {
+        "Text": "12 uur ‘s middags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben met lunchtijd terug",
+    "Results": [
+      {
+        "Text": "lunchtijd",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om middernacht terug",
+    "Results": [
+      {
+        "Text": "middernacht",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 12 uur in de nacht terug",
+    "Results": [
+      {
+        "Text": "12 uur in the nacht",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 1 uur terug",
+    "Results": [
+      {
+        "Text": "1 uur",
+        "Type": "time",
+        "Value": {
+          "Timex": "T01",
+          "FutureResolution": {
+            "time": "01:00:00"
+          },
+          "PastResolution": {
+            "time": "01:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 12 uur lunchtijd terug",
+    "Results": [
+      {
+        "Text": "12 uur lunchtijd",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 1 uur lunchtijd terug",
+    "Results": [
+      {
+        "Text": "1 uur lunchtijd",
+        "Type": "time",
+        "Value": {
+          "Timex": "T13",
+          "FutureResolution": {
+            "time": "13:00:00"
+          },
+          "PastResolution": {
+            "time": "13:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7:56:13 pm terug",
+    "Results": [
+      {
+        "Text": "7:56:13 pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:13",
+          "FutureResolution": {
+            "time": "19:56:13"
+          },
+          "PastResolution": {
+            "time": "19:56:13"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "I'll ben om 12:34:45 terug",
+    "Results": [
+      {
+        "Text": "12:34:45",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34:45",
+          "FutureResolution": {
+            "time": "12:34:45"
+          },
+          "PastResolution": {
+            "time": "12:34:45"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7:00:25 ‘s avonds terug",
+    "Results": [
+      {
+        "Text": "7:00:25 ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:00:25",
+          "FutureResolution": {
+            "time": "19:00:25"
+          },
+          "PastResolution": {
+            "time": "19:00:25"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om zeven uur dertig ‘s ochtends terug",
+    "Results": [
+      {
+        "Text": " zeven uur dertig ‘s ochtends",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om vijf over elf",
+    "Results": [
+      {
+        "Text": "vijf over elf",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:05",
+          "FutureResolution": {
+            "time": "11:05:00"
+          },
+          "PastResolution": {
+            "time": "11:05:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om drie minuten voor half zes",
+    "Results": [
+      {
+        "Text": " drie minuten voor half zes",
+        "Type": "time",
+        "Value": {
+          "Timex": "T05:27",
+          "FutureResolution": {
+            "time": "05:27:00"
+          },
+          "PastResolution": {
+            "time": "05:27:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om half zes ’s avonds terug",
+    "Results": [
+      {
+        "Text": "half zes ‘s avonds",
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:30",
+          "FutureResolution": {
+            "time": "17:30:00"
+          },
+          "PastResolution": {
+            "time": "17:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben op de middag terug",
+    "Results": [
+      {
+        "Text": "middag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 7h01 terug",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "7h01",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:01",
+          "FutureResolution": {
+            "time": "07:01:00"
+          },
+          "PastResolution": {
+            "time": "07:01:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben om 10 H 10 pm terug",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "10 H 10 pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22:10",
+          "FutureResolution": {
+            "time": "22:10:00"
+          },
+          "PastResolution": {
+            "time": "22:10:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om vijf over zes terug",
+    "Results": [
+      {
+        "Text": " vijf over zes",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:05",
+          "FutureResolution": {
+            "time": "18:05:00"
+          },
+          "PastResolution": {
+            "time": "18:05:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om tien over zes terug",
+    "Results": [
+      {
+        "Text": " tien over zes",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:05",
+          "FutureResolution": {
+            "time": "18:05:00"
+          },
+          "PastResolution": {
+            "time": "18:05:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om kwart over zes terug",
+    "Results": [
+      {
+        "Text": " kwart over zes",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:15",
+          "FutureResolution": {
+            "time": "18:15:00"
+          },
+          "PastResolution": {
+            "time": "18:15:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om tien voor half zeven terug",
+    "Results": [
+      {
+        "Text": "tien voor half zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:20",
+          "FutureResolution": {
+            "time": "18:20:00"
+          },
+          "PastResolution": {
+            "time": "18:20:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om vijf voor half zeven terug",
+    "Results": [
+      {
+        "Text": "vijf voor half zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:25",
+          "FutureResolution": {
+            "time": "18:25:00"
+          },
+          "PastResolution": {
+            "time": "18:25:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om half zeven terug",
+    "Results": [
+      {
+        "Text": "half zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:30",
+          "FutureResolution": {
+            "time": "18:30:00"
+          },
+          "PastResolution": {
+            "time": "18:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om vijf over half zeven terug",
+    "Results": [
+      {
+        "Text": "vijf over half zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:35",
+          "FutureResolution": {
+            "time": "18:35:00"
+          },
+          "PastResolution": {
+            "time": "18:35:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om tien over half zeven terug",
+    "Results": [
+      {
+        "Text": "tien over half zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:40",
+          "FutureResolution": {
+            "time": "18:40:00"
+          },
+          "PastResolution": {
+            "time": "18:40:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om kwart voor zeven terug",
+    "Results": [
+      {
+        "Text": "kwart voor zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:45",
+          "FutureResolution": {
+            "time": "18:45:00"
+          },
+          "PastResolution": {
+            "time": "18:45:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om tien voor zeven terug",
+    "Results": [
+      {
+        "Text": "tien voor zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:50",
+          "FutureResolution": {
+            "time": "18:50:00"
+          },
+          "PastResolution": {
+            "time": "18:50:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga om vijf voor zeven terug",
+    "Results": [
+      {
+        "Text": "vijf voor zeven",
+        "Type": "time",
+        "Value": {
+          "Timex": "T18:55",
+          "FutureResolution": {
+            "time": "18:55:00"
+          },
+          "PastResolution": {
+            "time": "18:55:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  }
+]
