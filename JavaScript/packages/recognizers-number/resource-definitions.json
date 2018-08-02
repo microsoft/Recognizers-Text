@@ -46,6 +46,15 @@
             "footer": [ "}" ]
         },
         {
+            "input": [ "Japanese", "Japanese-Numbers" ],
+            "output": "japaneseNumeric",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace JapaneseNumeric {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
             "input": [ "French", "French-Numbers" ],
             "output": "frenchNumeric",
             "header": [

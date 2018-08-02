@@ -1,7 +1,7 @@
 [
 {
   "Input": "今日は九パーセントの確率は雨",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "九パーセント",
@@ -15,7 +15,7 @@
 ,
 {
   "Input": "この車は19パーセントの確率が遅れた",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "19パーセント",
@@ -29,7 +29,7 @@
 ,
 {
   "Input": "彼女は50パーセントこのことはできません",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "50パーセント",
@@ -43,7 +43,7 @@
 ,
 {
   "Input": "共有29.5パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "29.5パーセント",
@@ -57,7 +57,7 @@
 ,
 {
   "Input": "彼は13,000.2パーセント告白失败",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "13,000.2パーセント",
@@ -71,7 +71,7 @@
 ,
 {
   "Input": "彼は3500パーセント告白失败",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3500パーセント",
@@ -85,7 +85,7 @@
 ,
 {
   "Input": "僕2,100パーセント告白失败",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "2,100パーセント",
@@ -99,7 +99,7 @@
 ,
 {
   "Input": "僕１，１２３パーセント告白失败",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "１，１２３パーセント",
@@ -113,7 +113,7 @@
 ,
 {
   "Input": "今日は3.2kパーセントの確率で雪が降る",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3.2kパーセント",
@@ -127,7 +127,7 @@
 ,
 {
   "Input": "今日は3.2kパ ーセ ントの確率で雪が降る",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3.2kパ ーセ ント",
@@ -141,7 +141,7 @@
 ,
 {
   "Input": "今日は15kパ ーセ ントの確率で雪が降る",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "15kパ ーセ ント",
@@ -155,7 +155,7 @@
 ,
 {
   "Input": "今日は１２０パ ーセ ントの確率で雪が降る",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "１２０パ ーセ ント",
@@ -169,7 +169,7 @@
 ,
 {
   "Input": "今日は９，９９９パ ーセ ントの確率で雪が降る",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "９，９９９パ ーセ ント",
@@ -183,7 +183,7 @@
 ,
 {
   "Input": "２．４パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "２．４パーセント",
@@ -197,7 +197,7 @@
 ,
 {
   "Input": "-22.2%",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "-22.2%",
@@ -211,7 +211,7 @@
 ,
 {
   "Input": "２２％",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "２２％",
@@ -225,7 +225,7 @@
 ,
 {
   "Input": "－1２２％",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "－1２２％",
@@ -239,7 +239,7 @@
 ,
 {
   "Input": "－1２２％",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "－1２２％",
@@ -253,7 +253,7 @@
 ,
 {
   "Input": "22パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "22パーセント",
@@ -267,7 +267,7 @@
 ,
 {
   "Input": "１２０パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "１２０パーセント",
@@ -281,7 +281,7 @@
 ,
 {
   "Input": "15kパーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "15kパーセント",
@@ -295,7 +295,7 @@
 ,
 {
   "Input": "1,111パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "1,111パーセント",
@@ -309,7 +309,7 @@
 ,
 {
   "Input": "９，９９９パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "９，９９９パーセント",
@@ -323,7 +323,7 @@
 ,
 {
   "Input": "５６.２パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "５６.２パーセント",
@@ -337,7 +337,7 @@
 ,
 {
   "Input": "3.2Mパーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3.2Mパーセント",
@@ -351,7 +351,7 @@
 ,
 {
   "Input": "12.56パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "12.56パーセント",
@@ -365,7 +365,7 @@
 ,
 {
   "Input": "０.４パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "０.４パーセント",
@@ -379,7 +379,7 @@
 ,
 {
   "Input": "15,123パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "15,123パーセント",
@@ -393,7 +393,7 @@
 ,
 {
   "Input": "１１１，１１１パーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "１１１，１１１パーセント",
@@ -407,7 +407,7 @@
 ,
 {
   "Input": "１５kパーセント",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "１５kパーセント",
@@ -421,7 +421,7 @@
 ,
 {
   "Input": "５．５％",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "５．５％",
@@ -435,7 +435,7 @@
 ,
 {
   "Input": "２．４パ ー   セ    ン ト",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "２．４パ ー   セ    ン ト",
@@ -449,7 +449,7 @@
 ,
 {
   "Input": "５２.５ k   パ ー セ  ン     ト",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "５２.５ k   パ ー セ  ン     ト",
@@ -463,7 +463,7 @@
 ,
 {
   "Input": "今日この服は5割引になります",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "5割引",
@@ -477,7 +477,7 @@
 ,
 {
   "Input": "今日この服はの5.6割引になります",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "5.6割引",
@@ -491,7 +491,7 @@
 ,
 {
   "Input": "今日この服はの２.５割引になります",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "２.５割引",
@@ -505,7 +505,7 @@
 ,
 {
   "Input": "９割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "９割",
@@ -519,7 +519,7 @@
 ,
 {
   "Input": "7.２割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "7.２割",
@@ -533,7 +533,7 @@
 ,
 {
   "Input": "１０ 割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "１０ 割",
@@ -547,7 +547,7 @@
 ,
 {
   "Input": "１0 割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "１0 割",
@@ -561,7 +561,7 @@
 ,
 {
   "Input": "十 割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "十 割",
@@ -575,7 +575,7 @@
 ,
 {
   "Input": "9.9割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "9.9割",
@@ -589,7 +589,7 @@
 ,
 {
   "Input": "10割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "10割",
@@ -603,7 +603,7 @@
 ,
 {
   "Input": "十割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "十割",
@@ -617,7 +617,7 @@
 ,
 {
   "Input": "２.５割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "２.５割",
@@ -631,7 +631,7 @@
 ,
 {
   "Input": "２割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "２割",
@@ -645,7 +645,7 @@
 ,
 {
   "Input": "2割,2.5割,２．１割，２割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "2割",
@@ -680,7 +680,7 @@
 ,
 {
   "Input": "五割",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "五割",
@@ -694,7 +694,7 @@
 ,
 {
   "Input": "クラスの女子は3割を占める",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3割",
@@ -708,7 +708,7 @@
 ,
 {
   "Input": "クラスの女子は5割半を占める",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "5割半",
@@ -722,7 +722,7 @@
 ,
 {
   "Input": "女子学生は七割半を占めている",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "七割半",
@@ -736,7 +736,7 @@
 ,
 {
   "Input": "女子学生は3.8割を占めている",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3.8割",
@@ -750,7 +750,7 @@
 ,
 {
   "Input": "女子学生は三割を占めている",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "三割",
@@ -764,7 +764,7 @@
 ,
 {
   "Input": "今シーズンの打率は3割8分7厘でした",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3割8分7厘",

@@ -11,7 +11,7 @@ export class Culture extends BaseCulture {
     new Culture("Spanish", Culture.Spanish, new LongFormatType('.', ',')),
     new Culture("Portuguese", Culture.Portuguese, new LongFormatType('.', ',')),
     new Culture("French", Culture.French, new LongFormatType('.', ',')),
-    new Culture("Japanese", Culture.Japanese, new LongFormatType('.', ','))
+    new Culture("Japanese", Culture.Japanese, new LongFormatType(',', '.'))
   ]
 
   readonly longFormat: LongFormatType

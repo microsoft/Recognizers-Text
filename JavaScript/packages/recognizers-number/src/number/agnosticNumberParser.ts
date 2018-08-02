@@ -2,8 +2,9 @@
 import { INumberParserConfiguration, BaseNumberParser, BasePercentageParser } from "./parsers";
 import { Culture } from "../culture";
 import { Constants } from "./constants";
-import { ChineseNumberParser } from "./chinese/parsers";
+import { BaseCJKNumberParser } from "./cjkParsers";
 import { ChineseNumberParserConfiguration } from "./chinese/parserConfiguration";
+import { JapaneseNumberParserConfiguration } from "./japanese/parserConfiguration";
 
 export enum AgnosticNumberParserType {
     Cardinal,
@@ -19,11 +20,15 @@ export class AgnosticNumberParserFactory {
     static getParser(type: AgnosticNumberParserType, languageConfiguration: INumberParserConfiguration): BaseNumberParser {
 
         let isChinese = languageConfiguration.cultureInfo.code.toLowerCase() === Culture.Chinese;
+        let isJapanese = languageConfiguration.cultureInfo.code.toLowerCase() === Culture.Japanese;
 
         let parser: BaseNumberParser;
 
         if (isChinese) {
-            parser = new ChineseNumberParser(languageConfiguration as ChineseNumberParserConfiguration);
+            parser = new BaseCJKNumberParser(languageConfiguration as ChineseNumberParserConfiguration);
+        }
+        else if (isJapanese) {
+            parser = new BaseCJKNumberParser(languageConfiguration as JapaneseNumberParserConfiguration);        
         }
         else {
             parser = new BaseNumberParser(languageConfiguration);
@@ -46,7 +51,7 @@ export class AgnosticNumberParserFactory {
                 parser.supportedTypes = [Constants.SYS_NUM_ORDINAL];
                 break;
             case AgnosticNumberParserType.Percentage:
-                if (!isChinese) {
+                if (!isChinese && !isJapanese) {
                     parser = new BasePercentageParser(languageConfiguration);
                 }
                 break;

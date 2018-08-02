@@ -1,7 +1,7 @@
 [
 {
   "Input": "だい12",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "だい12",
@@ -15,7 +15,7 @@
 ,
 {
   "Input": "第二百五十",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第二百五十",
@@ -29,7 +29,7 @@
 ,
 {
   "Input": "だい二百五十",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "だい二百五十",
@@ -43,7 +43,7 @@
 ,
 {
   "Input": "第２５０",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第２５０",
@@ -57,7 +57,7 @@
 ,
 {
   "Input": "だい２５０",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "だい２５０",
@@ -71,7 +71,7 @@
 ,
 {
   "Input": "だい一億",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "だい一億",
@@ -85,7 +85,7 @@
 ,
 {
   "Input": "第一億",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第一億",
@@ -99,7 +99,7 @@
 ,
 {
   "Input": "だい一万回だい十万回",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "だい一万",
@@ -121,7 +121,7 @@
 ,
 {
   "Input": "第一位第二位第三位第四位",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第一",
@@ -156,7 +156,7 @@
 ,
 {
   "Input": "第1位第2位第3位第4位",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第1",
@@ -191,7 +191,7 @@
 ,
 {
   "Input": "第3万回",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第3万",
@@ -205,7 +205,7 @@
 ,
 {
   "Input": "第三万回",
-  "NotSupported": "javascript, python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "第三万",
