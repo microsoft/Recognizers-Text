@@ -421,51 +421,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                 }
             }
         }
-        // for(let index = 0; index < resultStr.length; index++) {
-        //     let currentChar = resultStr.charAt(index);
-        //     if (this.config.roundNumberMapChar.has(currentChar)) {
-        //         let roundRecent = this.config.roundNumberMapChar.get(currentChar);
-        //         beforeValue = beforeValue == 0 ? 1 : beforeValue;
-        //         if (roundBefore !== -1 && roundRecent > roundBefore) {
-        //             if (isRoundBefore) {
-        //                 intValue += partValue * roundRecent;
-        //                 isRoundBefore = false;
-        //             } else {
-        //                 partValue += beforeValue * roundDefault;
-        //                 intValue += partValue * roundRecent;
-        //             }
-
-        //             roundBefore = -1;
-        //             partValue = 0;
-        //         } else {
-        //             isRoundBefore = true;
-        //             partValue += beforeValue * roundRecent;
-        //             roundBefore = roundRecent;
-
-        //             if ((index === resultStr.length - 1) || this.config.roundDirectList.some(o => o === currentChar)) {
-        //                 intValue += partValue;
-        //                 partValue = 0;
-        //             }
-        //         }
-
-        //         beforeValue = 0;
-        //         roundDefault = roundRecent / 10;
-        //     } else if (this.config.zeroToNineMap.has(currentChar)) {
-        //         if (index !== resultStr.length - 1) {
-        //             if ((currentChar === "零") && !this.config.roundNumberMapChar.has(resultStr.charAt(index + 1))) {
-        //                 roundDefault = 1;
-        //             }
-        //             beforeValue = beforeValue * 10 + this.config.zeroToNineMap.get(currentChar);
-        //             isRoundBefore = false;
-        //         } else {
-        //             partValue += beforeValue * 10;
-        //             partValue += this.config.zeroToNineMap.get(currentChar) * roundDefault;
-        //             intValue += partValue;
-        //             partValue = 0;
-        //         }
-        //     }
-        // }
-
+ 
         if (isNegative) {
             intValue = - intValue;
         }
