@@ -1,6 +1,6 @@
 [
   {
-    "Input": "Boek een kamer in Beijing",
+    "Input": "Boek een kamer in Beijing tijd",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -8,7 +8,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "beijing time",
+        "Text": "Beijing tijd",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -68,7 +68,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "afghanistan standard time",
+        "Text": "standaardtijd van afghanistan",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -88,7 +88,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "aft",
+        "Text": "in de middag",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -108,7 +108,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "utc±0",
+        "Text": "utc 0",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -128,7 +128,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "pdst",
+        "Text": "PDST",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -148,7 +148,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "awdt",
+        "Text": "AWDT",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -168,7 +168,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "cot",
+        "Text": "COT",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
