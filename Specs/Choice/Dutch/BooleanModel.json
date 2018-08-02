@@ -1,23 +1,23 @@
 [
   {
     "Input": "Prima!",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "Prima",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 1.0
+          "score": 1
         }
       }
     ]
   },
   {
     "Input": "Ik denk het niet.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "niet",
@@ -31,23 +31,23 @@
   },
   {
     "Input": "Ik denk dat het wel gaat werken, dus ja ik zal het doen.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "ja",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.44615384615384618
+          "score": 0.4461538461538462
         }
       }
     ]
   },
   {
     "Input": "Nee, ik zei 4 juli.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "Nee",
@@ -61,8 +61,8 @@
   },
   {
     "Input": "Ja... Ik heb dat nooit gezegd",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "Ja",
@@ -76,23 +76,23 @@
   },
   {
     "Input": "Ik zei NEE in plaats van ja!",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "NEE",
         "TypeName": "boolean",
         "Resolution": {
           "value": false,
-          "score": 0.48571428571428571
+          "score": 0.4857142857142857
         }
       }
     ]
   },
   {
     "Input": "Ja. Ik zei nee",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "Ja",
@@ -106,8 +106,8 @@
   },
   {
     "Input": "👌 Dat is ok",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "👌",
@@ -121,8 +121,8 @@
   },
   {
     "Input": "👌👌👌",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "👌",
