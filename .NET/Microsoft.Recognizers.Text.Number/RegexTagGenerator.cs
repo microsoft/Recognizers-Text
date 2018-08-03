@@ -2,10 +2,10 @@
 {
     public static class RegexTagGenerator
     {
-        private static int _priority;
+        private static int priority;
         public static TypeTag GenerateRegexTag(string extractorType, string suffix)
         {
-            return new TypeTag($"{extractorType}{suffix}", ++_priority);
+            return new TypeTag($"{extractorType}{suffix}", ++priority);
         }
     }
 
