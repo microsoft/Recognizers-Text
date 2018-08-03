@@ -37,7 +37,7 @@ export namespace JapaneseNumeric {
 	export const WhiteListRegex = `(。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|\\s|$)`;
 	export const NotSingleRegex = `(?<!(第|だい))((${RoundNumberIntegerRegex}+(${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*))|((${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*(${RoundNumberIntegerRegex}\\s*){1,2})\\s*(([零]?(${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*${RoundNumberIntegerRegex}{0,1})\\s*)*\\s*(\\s*(以上)?)`;
 	export const SingleRegex = `((${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex}|十)(?=${WhiteListRegex}))`;
-	export const AllIntRegex = `((${ZeroToNineIntegerRegex}|${ZeroToNineFullHalfRegex}|[十百千])\\s*${RoundNumberIntegerRegex}*){1,2}\\s*(\\s*[以上]?)`;
+	export const AllIntRegex = `((((${ZeroToNineIntegerRegex}|[十百千])\\s*${RoundNumberIntegerRegex}*)|(${ZeroToNineFullHalfRegex}\\s*${RoundNumberIntegerRegex})){1,2}(\\s*[以上])?)`;
 	export const NumbersSpecialsChars = `((${NegativeNumberTermsRegexNum}|${NegativeNumberTermsRegex})\\s*)?${ZeroToNineFullHalfRegex}+`;
 	export const NumbersSpecialsCharsWithSuffix = `${NegativeNumberTermsRegexNum}?${ZeroToNineFullHalfRegex}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)`;
 	export const DottedNumbersSpecialsChar = `${NegativeNumberTermsRegexNum}?${ZeroToNineFullHalfRegex}{1,3}([,，、]${ZeroToNineFullHalfRegex}{3})+`;
@@ -62,7 +62,7 @@ export namespace JapaneseNumeric {
 	export const FractionNotationSpecialsCharsRegex = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+\\s+${ZeroToNineFullHalfRegex}+[/／]${ZeroToNineFullHalfRegex}+`;
 	export const FractionNotationRegex = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[/／]${ZeroToNineFullHalfRegex}+`;
 	export const PercentagePointRegex = `(?<!${AllIntRegex})(${AllFloatRegex}|${AllIntRegex})\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト`;
-	export const SimplePercentageRegex = `(${AllFloatRegex}|${AllIntRegex}|${ZeroToNineIntegerRegex}|[百])\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト`;
+	export const SimplePercentageRegex = `(${AllFloatRegex}|${AllIntRegex}|[百])\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト`;
 	export const NumbersPercentagePointRegex = `(${ZeroToNineFullHalfRegex})+([\\.．](${ZeroToNineFullHalfRegex})+)?\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト`;
 	export const NumbersPercentageWithSeparatorRegex = `(${ZeroToNineFullHalfRegex}{1,3}[,，、]${ZeroToNineFullHalfRegex}{3})+([\\.．]${ZeroToNineFullHalfRegex}+)*\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト`;
 	export const NumbersPercentageWithMultiplierRegex = `(?<!${ZeroToNineIntegerRegex})${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}+\\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)\\s*パ\\s*ー\\s*セ\\s*ン\\s*ト`;

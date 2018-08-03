@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
         public NumberRangeExtractor() : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new JapaneseNumberParserConfiguration()))
         {
-            var regexes = new Dictionary<Regex, string>()
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     // ...と...の間

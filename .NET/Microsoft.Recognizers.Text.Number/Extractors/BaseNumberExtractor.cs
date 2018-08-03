@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class BaseNumberExtractor : IExtractor
     {
-        internal abstract ImmutableDictionary<Regex, string> Regexes { get; }
+        internal abstract ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected virtual string ExtractType { get; } = "";
 
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             var result = new List<ExtractResult>();
-            var matchSource = new Dictionary<Match, string>();
+            var matchSource = new Dictionary<Match, TypeTag>();
             var matched = new bool[source.Length];
 
             var collections = Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value);
@@ -56,7 +56,8 @@ namespace Microsoft.Recognizers.Text.Number
 
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
-                            var srcMatch = matchSource.Keys.First(o => o.Index == start && o.Length == length);
+                            var type = matchSource.Where(p => p.Key.Index == start && p.Key.Length == length)
+                                .Select(p => (p.Value.Priority, p.Value.Name)).Min().Item2;
 
                             // Extract negative numbers
                             if (NegativeNumberTermsRegex != null) {
@@ -75,7 +76,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 Length = length,
                                 Text = substr,
                                 Type = ExtractType,
-                                Data = matchSource.ContainsKey(srcMatch) ? matchSource[srcMatch] : null
+                                Data = type
                             };
                             result.Add(er);
                         }
