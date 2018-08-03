@@ -5,13 +5,13 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class NumberExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
 
         public NumberExtractor(ChineseNumberExtractorMode mode = ChineseNumberExtractorMode.Default)
         {
-            var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
+            var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Cardinal
             var cardExtractChs = new CardinalExtractor(mode);

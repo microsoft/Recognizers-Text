@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         protected override ImmutableHashSet<Regex> InitRegexes()
         {
-            HashSet<string> regexStrs = new HashSet<string>
+            var regexStrs = new HashSet<string>
             {
                 NumbersDefinitions.NumberWithSuffixPercentage,
                 NumbersDefinitions.NumberWithPrefixPercentage

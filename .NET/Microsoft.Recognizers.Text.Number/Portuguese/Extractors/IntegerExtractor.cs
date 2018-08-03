@@ -8,13 +8,13 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
     public class IntegerExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER;
 
         public IntegerExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
-            var regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder),

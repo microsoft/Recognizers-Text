@@ -8,13 +8,13 @@ namespace Microsoft.Recognizers.Text.Number.French
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
         public FractionExtractor()
         {
-            this.Regexes = new Dictionary<Regex, string>
+            this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)

@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.Number.German
 {
     public class NumberExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         private NumberExtractor(NumberMode mode = NumberMode.Default)
         {
-            var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
+            var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
             
             //Add Cardinal
             CardinalExtractor cardExtract = null;

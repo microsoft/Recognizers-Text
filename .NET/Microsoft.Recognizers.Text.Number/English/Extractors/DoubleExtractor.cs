@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public class DoubleExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE; // "Double";
 
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         private DoubleExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
-            var regexes = new Dictionary<Regex, string> {
+            var regexes = new Dictionary<Regex, TypeTag> {
                 {
                     new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder),
                               RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)

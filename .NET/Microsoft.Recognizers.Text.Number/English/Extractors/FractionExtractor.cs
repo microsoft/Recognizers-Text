@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override NumberOptions Options { get; }
 
@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.Number.English
         {
             Options = options;
 
-            var regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex,
