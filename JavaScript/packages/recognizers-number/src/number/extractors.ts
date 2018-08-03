@@ -52,7 +52,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
                 if (i + 1 === source.length || !matched[i + 1]) {
                     let start = last + 1;
                     let length = i - last;
-                    let substr = source.substring(start, start + length).trim();
+                    let substr = source.substring(start, start + length);
                     let srcMatch = Array.from(matchSource.keys()).find(m => m.index === start && m.length === length);
 
                     // Extract negative numbers

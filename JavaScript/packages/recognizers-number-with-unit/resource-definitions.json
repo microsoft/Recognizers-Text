@@ -54,6 +54,15 @@
             "footer": [ "}" ]
         },
         {
+            "input": [ "Japanese", "Japanese-NumbersWithUnit" ],
+            "output": "japaneseNumericWithUnit",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace JapaneseNumericWithUnit {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
             "input": [ "French", "French-NumbersWithUnit" ],
             "output": "frenchNumericWithUnit",
             "header": [
