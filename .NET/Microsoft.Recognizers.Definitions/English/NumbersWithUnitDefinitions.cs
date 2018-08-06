@@ -686,7 +686,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		};
 		public const string BuildPrefix = @"(?<=(\s|^))";
 		public const string BuildSuffix = @"(?=(\s|\W|$))";
-		public static readonly Dictionary<string, string> LenghtSuffixList = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
 		{
 			{ "Kilometer", "km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre" },
 			{ "Hectometer", "hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre" },

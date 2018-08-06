@@ -589,7 +589,7 @@ BuildSuffix: !simpleRegex
   def: (?=(\s|\P{L}|$))
 ConnectorToken: 'de'
 #LengthExtractorConfiguration
-LenghtSuffixList: !dictionary
+LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Quilômetro: km|quilometro|quilômetro|quilómetro|quilometros|quilômetros|quilómetros

@@ -421,7 +421,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public const string BuildPrefix = @"(?<=(\s|^))";
 		public const string BuildSuffix = @"(?=(\s|\W|$))";
-		public static readonly Dictionary<string, string> LenghtSuffixList = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
 		{
 			{ "Kilometer", "km|kilometer|kilometern" },
 			{ "Hectometer", "hm|hektometer|hektometern" },

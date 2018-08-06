@@ -588,7 +588,7 @@ class EnglishNumericWithUnit:
     AmbiguousDimensionUnitList = ['barrel', 'barrels', 'grain', 'pound', 'stone', 'yards', 'yard', 'cord', 'dram', 'feet', 'foot', 'gill', 'knot', 'peck', 'cup', 'fps', 'pts', 'in', 'dm', '\"']
     BuildPrefix = f'(?<=(\\s|^))'
     BuildSuffix = f'(?=(\\s|\\W|$))'
-    LenghtSuffixList = dict([('Kilometer', 'km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre'),
+    LengthSuffixList = dict([('Kilometer', 'km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre'),
                              ('Hectometer', 'hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre'),
                              ('Decameter', 'dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre'),
                              ('Meter', 'm|meter|metre|meters|metres'),

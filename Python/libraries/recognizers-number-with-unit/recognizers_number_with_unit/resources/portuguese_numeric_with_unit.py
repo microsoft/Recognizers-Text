@@ -389,7 +389,7 @@ class PortugueseNumericWithUnit:
     BuildPrefix = f'(?<=(\\s|^|\\P{{L}}))'
     BuildSuffix = f'(?=(\\s|\\P{{L}}|$))'
     ConnectorToken = 'de'
-    LenghtSuffixList = dict([('Quilômetro', 'km|quilometro|quilômetro|quilómetro|quilometros|quilômetros|quilómetros'),
+    LengthSuffixList = dict([('Quilômetro', 'km|quilometro|quilômetro|quilómetro|quilometros|quilômetros|quilómetros'),
                              ('Hectômetro', 'hm|hectometro|hectômetro|hectómetro|hectometros|hectômetros|hectómetros'),
                              ('Decâmetro', 'decametro|decâmetro|decámetro|decametros|decâmetro|decámetros|dam'),
                              ('Metro', 'm|m.|metro|metros'),

@@ -45,7 +45,7 @@ class PortugueseDimensionParserConfiguration(PortugueseNumberWithUnitParserConfi
         super().__init__(culture_info)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.InformationSuffixList)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.AreaSuffixList)
-        self.add_dict_to_unit_map(PortugueseNumericWithUnit.LenghtSuffixList)
+        self.add_dict_to_unit_map(PortugueseNumericWithUnit.LengthSuffixList)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.SpeedSuffixList)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.VolumeSuffixList)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.WeightSuffixList)

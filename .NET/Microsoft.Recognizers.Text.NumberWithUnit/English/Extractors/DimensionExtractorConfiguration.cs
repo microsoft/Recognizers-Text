@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.InformationSuffixList
             .Concat(AreaExtractorConfiguration.AreaSuffixList)
-            .Concat(LengthExtractorConfiguration.LenghtSuffixList)
+            .Concat(LengthExtractorConfiguration.LengthSuffixList)
             .Concat(SpeedExtractorConfiguration.SpeedSuffixList)
             .Concat(VolumeExtractorConfiguration.VolumeSuffixList)
             .Concat(WeightExtractorConfiguration.WeightSuffixList)

@@ -46,7 +46,7 @@ class EnglishDimensionParserConfiguration(EnglishNumberWithUnitParserConfigurati
         super().__init__(culture_info)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.InformationSuffixList)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.AreaSuffixList)
-        self.add_dict_to_unit_map(EnglishNumericWithUnit.LenghtSuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.LengthSuffixList)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.SpeedSuffixList)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.VolumeSuffixList)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.WeightSuffixList)
