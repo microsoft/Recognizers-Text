@@ -662,6 +662,7 @@
 ,
 {
   "Input": "He has a pen that is 10 \" long.",
+  "NotSupported": "java",
   "Results": [
     {
       "Text": "10 \"",
