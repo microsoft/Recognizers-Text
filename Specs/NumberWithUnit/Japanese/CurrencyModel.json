@@ -39,7 +39,7 @@
 ,
 {
   "Input": "そのシュークリームは1個\\100です",
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "\\100",

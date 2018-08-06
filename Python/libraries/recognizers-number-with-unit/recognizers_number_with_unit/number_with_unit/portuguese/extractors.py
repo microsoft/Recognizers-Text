@@ -110,7 +110,7 @@ class PortugueseDimensionExtractorConfiguration(PortugueseNumberWithUnitExtracto
         self._suffix_list = {
             **PortugueseNumericWithUnit.InformationSuffixList,
             **PortugueseNumericWithUnit.AreaSuffixList,
-            **PortugueseNumericWithUnit.LenghtSuffixList,
+            **PortugueseNumericWithUnit.LengthSuffixList,
             **PortugueseNumericWithUnit.SpeedSuffixList,
             **PortugueseNumericWithUnit.VolumeSuffixList,
             **PortugueseNumericWithUnit.WeightSuffixList

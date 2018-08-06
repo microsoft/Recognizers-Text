@@ -6,7 +6,7 @@ import { PortugueseNumericWithUnit } from "../../resources/portugueseNumericWith
 const dimensionSuffixList = new Map<string, string>([
     ...PortugueseNumericWithUnit.InformationSuffixList,
     ...PortugueseNumericWithUnit.AreaSuffixList,
-    ...PortugueseNumericWithUnit.LenghtSuffixList,
+    ...PortugueseNumericWithUnit.LengthSuffixList,
     ...PortugueseNumericWithUnit.SpeedSuffixList,
     ...PortugueseNumericWithUnit.VolumeSuffixList,
     ...PortugueseNumericWithUnit.WeightSuffixList

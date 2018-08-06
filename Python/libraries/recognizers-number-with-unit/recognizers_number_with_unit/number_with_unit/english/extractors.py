@@ -109,7 +109,7 @@ class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfi
         self._suffix_list = {
             **EnglishNumericWithUnit.InformationSuffixList,
             **EnglishNumericWithUnit.AreaSuffixList,
-            **EnglishNumericWithUnit.LenghtSuffixList,
+            **EnglishNumericWithUnit.LengthSuffixList,
             **EnglishNumericWithUnit.SpeedSuffixList,
             **EnglishNumericWithUnit.VolumeSuffixList,
             **EnglishNumericWithUnit.WeightSuffixList
