@@ -7,7 +7,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 1.0
+        "score": 1.0
       }
     } 
   ]
@@ -22,7 +22,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.5
+        "score": 0.5
       }
     }
   ]
@@ -37,7 +37,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.4666666666666667
+        "score": 0.4666666666666667
       }
     }
   ]
@@ -52,7 +52,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.4857142857142857
+        "score": 0.4857142857142857
       }
     }
   ]
@@ -67,7 +67,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.52
+        "score": 0.52
       }
     }
   ]
@@ -82,7 +82,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 0.52
+        "score": 0.52
       }
     }
   ]
@@ -97,7 +97,82 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.55
+        "score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "disagree, it is not ok",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "not ok",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.64
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "agree, it is ok",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "agree",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "agree, it is not ok",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "not ok",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.64
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "disagree",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "disagree",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "it's not ok",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "not ok",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.7
       }
     }
   ]
@@ -112,7 +187,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.55
+        "score": 0.55
       }
     }
   ]
@@ -127,7 +202,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 0.6
+        "score": 0.6
       }
     }
   ]
