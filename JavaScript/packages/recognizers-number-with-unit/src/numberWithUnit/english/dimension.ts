@@ -6,7 +6,7 @@ import { EnglishNumericWithUnit } from "../../resources/englishNumericWithUnit";
 const dimensionSuffixList = new Map<string, string>([
     ...EnglishNumericWithUnit.InformationSuffixList,
     ...EnglishNumericWithUnit.AreaSuffixList,
-    ...EnglishNumericWithUnit.LenghtSuffixList,
+    ...EnglishNumericWithUnit.LengthSuffixList,
     ...EnglishNumericWithUnit.SpeedSuffixList,
     ...EnglishNumericWithUnit.VolumeSuffixList,
     ...EnglishNumericWithUnit.WeightSuffixList

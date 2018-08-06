@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 {
     public class CardinalExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
 
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
-            var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
+            var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Integer Regexes
             var intExtract = new IntegerExtractor(placeholder);

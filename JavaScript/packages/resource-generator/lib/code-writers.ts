@@ -27,7 +27,7 @@ class SimpleRegexWriter extends CodeWriter {
 
     constructor (name: string, definition: string) {
         super(name);
-        this.definition = sanitize(definition);
+        this.definition = sanitize(definition, 'regex');
     }
 
     write() {
@@ -45,7 +45,7 @@ class NestedRegexWriter extends CodeWriter {
             let token = `\${${value}}`;
             definition = definition.replace(regex, token);
         });
-        this.definition = sanitize(definition);
+        this.definition = sanitize(definition, 'regex');
     }
 
     write() {
@@ -65,7 +65,7 @@ class ParamsRegexWriter extends CodeWriter {
             definition = definition.replace(regex, token);
         });
         this.params = params.join(': string, ').concat(': string');
-        this.definition = sanitize(definition);
+        this.definition = sanitize(definition, 'regex');
     }
 
     write() {
@@ -107,7 +107,8 @@ class DictionaryWriter extends CodeWriter {
 
 function sanitize(value: string, valueType: string = null) : string {
     if (!valueType) valueType = typeof value;
-    if(valueType === 'number') return value;
+    if (valueType === 'number') return value;
+    else if (valueType === 'string') return value;
 
     let stringified = JSON.stringify(value);
     return stringified.slice(1, stringified.length - 1);

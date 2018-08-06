@@ -237,7 +237,7 @@ namespace Microsoft.Recognizers.Text.Number
         {
             foreach (var er in ers)
             {
-                if (er.Data != null && er.Data.ToString() == RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH))
+                if (er.Data != null && er.Data.ToString() == RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH).Name)
                 {
                     var match = AmbiguousFractionConnectorsRegex.Match(er.Text);
 

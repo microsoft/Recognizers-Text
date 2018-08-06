@@ -659,4 +659,19 @@
     }
   ]
 }
+,
+{
+  "Input": "He has a pen that is 10 \" long.",
+  "NotSupported": "java",
+  "Results": [
+    {
+      "Text": "10 \"",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": "10",
+        "unit": "Inch"
+      }
+    }
+  ]
+}
 ]

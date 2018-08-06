@@ -775,7 +775,7 @@ BuildPrefix: !simpleRegex
 BuildSuffix: !simpleRegex
   def: (?=(\s|\W|$))
 #LengthExtractorConfiguration
-LenghtSuffixList: !dictionary
+LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Kilometer: km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre

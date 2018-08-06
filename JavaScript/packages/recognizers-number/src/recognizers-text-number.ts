@@ -6,6 +6,7 @@ export { EnglishNumeric } from "./resources/englishNumeric";
 export { SpanishNumeric } from "./resources/spanishNumeric";
 export { FrenchNumeric } from "./resources/frenchNumeric";
 export { ChineseNumeric } from "./resources/chineseNumeric";
+export { JapaneseNumeric } from "./resources/japaneseNumeric";
 export { Constants } from "./number/constants";
 export { RegExpValue, BaseNumberExtractor, BasePercentageExtractor } from "./number/extractors";
 export { NumberMode, LongFormatType, AbstractNumberModel, NumberModel, OrdinalModel, PercentModel } from "./number/models";
@@ -21,4 +22,5 @@ export { FrenchCardinalExtractor, FrenchDoubleExtractor, FrenchFractionExtractor
 export { FrenchNumberParserConfiguration } from "./number/french/parserConfiguration";
 export { ChineseCardinalExtractor, ChineseDoubleExtractor, ChineseFractionExtractor, ChineseIntegerExtractor, ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor, ChineseNumberExtractorMode } from "./number/chinese/extractors";
 export { ChineseNumberParserConfiguration } from "./number/chinese/parserConfiguration";
-export { ChineseNumberParser } from "./number/chinese/parsers";
+export { JapaneseCardinalExtractor, JapaneseDoubleExtractor, JapaneseFractionExtractor, JapaneseIntegerExtractor, JapaneseNumberExtractor, JapaneseOrdinalExtractor, JapanesePercentageExtractor, JapaneseNumberExtractorMode } from "./number/japanese/extractors";
+export { JapaneseNumberParserConfiguration } from "./number/japanese/parserConfiguration";

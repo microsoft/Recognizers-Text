@@ -1,10 +1,10 @@
 import { ParseResult } from "@microsoft/recognizers-text";
-import { INumberParserConfiguration } from "../parsers";
+import { ICJKNumberParserConfiguration } from "../cjkParsers";
 import { CultureInfo, Culture } from "../../culture";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
 import { RegExpUtility } from "@microsoft/recognizers-text"
 
-export class ChineseNumberParserConfiguration implements INumberParserConfiguration {
+export class ChineseNumberParserConfiguration implements ICJKNumberParserConfiguration {
 
     readonly cardinalNumberMap: ReadonlyMap<string, number>;
     readonly ordinalNumberMap: ReadonlyMap<string, number>;

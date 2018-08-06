@@ -9,6 +9,7 @@ export class Constants {
     static readonly SYS_UNIT_TEMPERATURE: string = "builtin.unit.temperature";
     static readonly SYS_UNIT_VOLUME: string = "builtin.unit.volume";
     static readonly SYS_UNIT_WEIGHT: string = "builtin.unit.weight";
+    static readonly SYS_NUM: string = "builtin.num";
 
     // For currencies without ISO codes, we use internal values prefixed by '_'. 
     // These values should never be present in parse output.

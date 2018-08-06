@@ -79,6 +79,11 @@ export class NumberWithUnitParser implements IParser {
         if (extResult.data && typeof extResult.data === "object") {
             numberResult = extResult.data as ExtractResult;
         }
+        else if (extResult.type === Constants.SYS_NUM)
+        {
+            ret.value = this.config.internalNumberParser.parse(extResult).value;
+            return ret;
+        }
         else // if there is no unitResult, means there is just unit
         {
             numberResult = { start: -1, length: 0, text: null, type: null };
@@ -192,7 +197,7 @@ export class BaseCurrencyParser implements IParser {
             let extractResult = compoundUnit[i];
             let parseResult = this.numberWithUnitParser.parse(extractResult);
             let parseResultValue: UnitValue = parseResult.value;
-            let unitValue = parseResultValue.unit;
+            let unitValue = parseResultValue != null ? parseResultValue.unit : null;
 
             // Process a new group
             if (count === 0) {
@@ -223,8 +228,8 @@ export class BaseCurrencyParser implements IParser {
                     continue;
                 }
 
-                if (this.config.currencyFractionCodeList.has(mainUnitIsoCode)) {
-                    fractionUnitsString = this.config.currencyFractionCodeList.get(mainUnitIsoCode);
+                if (this.config.currencyFractionMapping.has(mainUnitIsoCode)) {
+                    fractionUnitsString = this.config.currencyFractionMapping.get(mainUnitIsoCode);
                 }
             } else {
                 // Match pure number as fraction unit.
@@ -239,12 +244,12 @@ export class BaseCurrencyParser implements IParser {
                 let fractionUnitCode: string;
                 let fractionNumValue: number;
 
-                if (this.config.currencyNameToIsoCodeMap.has(unitValue)) {
-                    fractionUnitCode = this.config.currencyNameToIsoCodeMap.get(unitValue);
+                if (this.config.currencyFractionCodeList.has(unitValue)) {
+                    fractionUnitCode = this.config.currencyFractionCodeList.get(unitValue);
                 }
 
-                if (this.config.currencyFractionNumMap.has(parseResultValue.number)) {
-                    fractionNumValue = this.config.currencyFractionNumMap.get(parseResultValue.number);
+                if (this.config.currencyFractionNumMap.has(unitValue)) {
+                    fractionNumValue = this.config.currencyFractionNumMap.get(unitValue);
                 }
 
                 if (fractionUnitCode && fractionNumValue !== 0 && this.checkUnitsStringContains(fractionUnitCode, fractionUnitsString)) {

@@ -794,9 +794,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                var ers = this.Config.DateExtractor.Extract(beforeStr, referenceTime);
+                var ers = this.Config.DateExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime);
 
-                if (ers.Count == 0 || ers[0].Length != beforeStr.Length)
+                if (ers.Count == 0 || ers[0].Length < beforeStr.Length)
                 {
                     var valid = false;
 

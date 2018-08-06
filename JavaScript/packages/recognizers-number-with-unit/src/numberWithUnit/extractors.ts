@@ -370,7 +370,7 @@ export class BaseMergedUnitExtractor implements IExtractor {
                 continue;
             }
 
-            if ((ers[i].data as ExtractResult).data != null && !ers[i].data.data.startsWith('Integer')) {
+            if (ers[i].data != null && (ers[i].data as ExtractResult).data != null && !ers[i].data.data.startsWith('Integer')) {
                 groups[i + 1] = groups[i] + 1
                 continue;
             }

@@ -1,8 +1,7 @@
 [
   {
     "Input": "Prima!",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Prima",
@@ -16,8 +15,7 @@
   },
   {
     "Input": "Ik denk het niet.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "niet",
@@ -31,8 +29,7 @@
   },
   {
     "Input": "Ik denk dat het wel gaat werken, dus ja ik zal het doen.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "ja",
@@ -46,8 +43,7 @@
   },
   {
     "Input": "Nee, ik zei 4 juli.",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Nee",
@@ -61,8 +57,7 @@
   },
   {
     "Input": "Ja... Ik heb dat nooit gezegd",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Ja",
@@ -76,8 +71,7 @@
   },
   {
     "Input": "Ik zei NEE in plaats van ja!",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "NEE",
@@ -91,8 +85,7 @@
   },
   {
     "Input": "Ja. Ik zei nee",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Ja",
@@ -106,8 +99,7 @@
   },
   {
     "Input": "👌 Dat is ok",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "👌",
@@ -121,8 +113,7 @@
   },
   {
     "Input": "👌👌👌",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "👌",

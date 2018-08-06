@@ -75,7 +75,6 @@ UnitMap: !dictionary
     万万: 億
     億万: 兆
     万億: 兆
-    万万: 億
     ' ' : ''
 RoundDirectList: !list
   types: [char]
@@ -124,7 +123,7 @@ SingleRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|十)(?={WhiteListRegex}))
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, WhiteListRegex]
 AllIntRegex: !nestedRegex
-  def: (({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|[十百千])\s*{RoundNumberIntegerRegex}*){1,2}\s*(\s*[以上]?)
+  def: (((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|({ZeroToNineFullHalfRegex}\s*{RoundNumberIntegerRegex})){1,2}(\s*[以上])?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 NumbersSpecialsChars: !nestedRegex
   def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineFullHalfRegex}+
@@ -202,7 +201,7 @@ PercentagePointRegex: !nestedRegex
   def: (?<!{AllIntRegex})({AllFloatRegex}|{AllIntRegex})\s*パ\s*ー\s*セ\s*ン\s*ト
   references: [AllIntRegex, AllFloatRegex]
 SimplePercentageRegex: !nestedRegex
-  def: ({AllFloatRegex}|{AllIntRegex}|{ZeroToNineIntegerRegex}|[百])\s*パ\s*ー\s*セ\s*ン\s*ト
+  def: ({AllFloatRegex}|{AllIntRegex}|[百])\s*パ\s*ー\s*セ\s*ン\s*ト
   references: [ZeroToNineIntegerRegex, AllFloatRegex, AllIntRegex]
 NumbersPercentagePointRegex: !nestedRegex
   def: ({ZeroToNineFullHalfRegex})+([\.．]({ZeroToNineFullHalfRegex})+)?\s*パ\s*ー\s*セ\s*ン\s*ト

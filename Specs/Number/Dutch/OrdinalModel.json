@@ -1,7 +1,7 @@
 [
   {
     "Input": "drie biljoenste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie biljoenste",
@@ -10,16 +10,18 @@
           "value": "3000000000000"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een biljoenste",
-    "NotSupported": "dotNet,javascript,python",
-    "Results": []
+    "NotSupported": "",
+    "Results": [],
+    "NotSupportedByDesign": "dotNet,javascript,python,java"
   },
   {
     "Input": "honderd biljoenste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderd biljoenste",
@@ -28,11 +30,12 @@
           "value": "100000000000000"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "11e",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "11e",
@@ -41,11 +44,12 @@
           "value": "11"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "derde",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "derde",
@@ -54,11 +58,12 @@
           "value": "3"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "30ste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "30ste",
@@ -67,11 +72,12 @@
           "value": "30"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "tweede",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweede",
@@ -80,11 +86,12 @@
           "value": "2"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "elfde",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "elfde",
@@ -93,11 +100,12 @@
           "value": "11"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "nulde",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "nulde",
@@ -106,11 +114,12 @@
           "value": "0"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "twintigste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintigste",
@@ -119,11 +128,12 @@
           "value": "20"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "vijfentwintigste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijfentwintigste",
@@ -132,11 +142,12 @@
           "value": "25"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "eenentwintigste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eenentwintigste",
@@ -145,11 +156,12 @@
           "value": "21"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "honderdvijfentwintigste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdvijfentwintigste",
@@ -158,11 +170,12 @@
           "value": "125"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "biljoenste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "biljoenste",
@@ -171,11 +184,12 @@
           "value": "1000000000000"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "eerste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eerste",
@@ -184,11 +198,12 @@
           "value": "1"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "tweehonderdste",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweehonderdste",
@@ -197,11 +212,12 @@
           "value": "200"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Boek een eerste klas ticket naar Amsterdam",
-    "NotSupported": "dotNet,javascript,python",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eerste",
@@ -210,6 +226,7 @@
           "value": "1"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]

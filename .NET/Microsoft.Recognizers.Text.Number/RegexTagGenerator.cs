@@ -1,14 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Microsoft.Recognizers.Text.Number
+﻿namespace Microsoft.Recognizers.Text.Number
 {
-    public class RegexTagGenerator
+    public static class RegexTagGenerator
     {
-        public static string GenerateRegexTag(string extractorType, string suffix)
+        private static int priority;
+        public static TypeTag GenerateRegexTag(string extractorType, string suffix)
         {
-            return $"{extractorType}{suffix}";
+            return new TypeTag($"{extractorType}{suffix}", ++priority);
+        }
+    }
+
+    public class TypeTag
+    {
+        public string Name { get; }
+        public int Priority { get; }
+
+        public TypeTag(string name, int priority)
+        {
+            Name = name;
+            Priority = priority;
         }
     }
 }
