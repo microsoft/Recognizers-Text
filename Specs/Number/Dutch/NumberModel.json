@@ -1,7 +1,6 @@
 [
   {
     "Input": "192.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "192",
@@ -15,7 +14,6 @@
   },
   {
     "Input": "192.168.1.2",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "192",
@@ -70,7 +68,6 @@
   },
   {
     "Input": ",08",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": ",08",
@@ -88,7 +85,6 @@
   },
   {
     "Input": ",23456000",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": ",23456000",
@@ -102,7 +98,6 @@
   },
   {
     "Input": "4,800",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "4,800",
@@ -116,7 +111,6 @@
   },
   {
     "Input": "honderddrie en twee derde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderddrie en twee derde",
@@ -130,7 +124,6 @@
   },
   {
     "Input": "honderdendrie en twee derde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdendrie en twee derde",
@@ -144,7 +137,6 @@
   },
   {
     "Input": "zestien",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "zestien",
@@ -158,7 +150,6 @@
   },
   {
     "Input": "twee derde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twee derde",
@@ -172,7 +163,6 @@
   },
   {
     "Input": "honderdzestien",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdzestien",
@@ -186,7 +176,6 @@
   },
   {
     "Input": "honderdzes",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdzes",
@@ -200,7 +189,6 @@
   },
   {
     "Input": "honderdeenenzestig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdeenenzestig",
@@ -214,7 +202,6 @@
   },
   {
     "Input": "een half  dozijn",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een half dozijn",
@@ -228,7 +215,6 @@
   },
   {
     "Input": " 3 dozijn",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "3 dozijn",
@@ -242,7 +228,6 @@
   },
   {
     "Input": "een dozijn",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een dozijn",
@@ -256,7 +241,6 @@
   },
   {
     "Input": " drie dozijnen ",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie dozijnen",
@@ -270,7 +254,6 @@
   },
   {
     "Input": " driehonderd en twee dozijn",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "driehonderd en twee dozijn",
@@ -284,7 +267,6 @@
   },
   {
     "Input": "1.234,567",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1.234,567",
@@ -298,7 +280,6 @@
   },
   {
     "Input": "1, 234, 567",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1",
@@ -326,7 +307,6 @@
   },
   {
     "Input": "9,2321312",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "9,2321312",
@@ -340,7 +320,6 @@
   },
   {
     "Input": " -9,2321312",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-9,2321312",
@@ -354,7 +333,6 @@
   },
   {
     "Input": " -1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-1",
@@ -368,7 +346,6 @@
   },
   {
     "Input": "-4/5",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-4/5",
@@ -382,7 +359,6 @@
   },
   {
     "Input": "- 1 4/5",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "- 1 4/5",
@@ -396,7 +372,6 @@
   },
   {
     "Input": "drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie",
@@ -410,7 +385,6 @@
   },
   {
     "Input": " 123456789101231",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "123456789101231",
@@ -424,7 +398,6 @@
   },
   {
     "Input": "-123456789101231",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -438,7 +411,6 @@
   },
   {
     "Input": " -123456789101231",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -452,7 +424,6 @@
   },
   {
     "Input": "1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1",
@@ -466,7 +437,6 @@
   },
   {
     "Input": "10k",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "10k",
@@ -480,7 +450,6 @@
   },
   {
     "Input": "10G",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "10G",
@@ -494,7 +463,6 @@
   },
   {
     "Input": "- 10  k",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "- 10  k",
@@ -508,7 +476,6 @@
   },
   {
     "Input": "2 miljoen",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2 miljoen",
@@ -522,7 +489,6 @@
   },
   {
     "Input": "1 biljoen",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 biljoen",
@@ -536,7 +502,6 @@
   },
   {
     "Input": " drie ",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie",
@@ -550,7 +515,6 @@
   },
   {
     "Input": "een biljoen",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een biljoen",
@@ -564,7 +528,6 @@
   },
   {
     "Input": "eenentwintig biljoen",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eenentwintig biljoen",
@@ -578,7 +541,6 @@
   },
   {
     "Input": "tweeënvijftig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeënvijftig",
@@ -592,7 +554,6 @@
   },
   {
     "Input": "tweeenvijftig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeenvijftig",
@@ -606,7 +567,6 @@
   },
   {
     "Input": "tweeduizend tweehonderd",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeduizend tweehonderd",
@@ -620,7 +580,6 @@
   },
   {
     "Input": "tweeduizend tweehonderdtwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeduizend tweehonderdtwintig",
@@ -634,7 +593,6 @@
   },
   {
     "Input": "tweeëntwintighonderd",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeëntwintighonderd",
@@ -648,7 +606,6 @@
   },
   {
     "Input": " 2,33 k",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2,33 k",
@@ -662,7 +619,6 @@
   },
   {
     "Input": "1e10",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1e10",
@@ -676,7 +632,6 @@
   },
   {
     "Input": "1,1^23",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1,1^23",
@@ -690,7 +645,6 @@
   },
   {
     "Input": " tweeendertigduizend tweehonderd  ",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeendertigduizend tweehonderd ",
@@ -704,7 +658,6 @@
   },
   {
     "Input": "zeventig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "zeventig",
@@ -718,7 +671,6 @@
   },
   {
     "Input": "2  1/4",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2  1/4",
@@ -732,7 +684,6 @@
   },
   {
     "Input": "3/4",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "3/4",
@@ -746,7 +697,6 @@
   },
   {
     "Input": "een achtste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een achtste",
@@ -760,7 +710,6 @@
   },
   {
     "Input": "vijf achtste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf achtste",
@@ -774,7 +723,6 @@
   },
   {
     "Input": "een halve",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een halve",
@@ -788,7 +736,6 @@
   },
   {
     "Input": "drie kwart",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie kwart",
@@ -802,7 +749,6 @@
   },
   {
     "Input": "twintig drie vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintig drie vijfde",
@@ -816,7 +762,6 @@
   },
   {
     "Input": "drieëntwintig vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drieëntwintig vijfde",
@@ -830,7 +775,6 @@
   },
   {
     "Input": "drieëntwintig en drie vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drieëntwintig en drie vijfde",
@@ -844,7 +788,6 @@
   },
   {
     "Input": "een miljoen tweeduizend tweehonderd drie vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een miljoen tweeduizend tweehonderd drie vijfde",
@@ -858,7 +801,6 @@
   },
   {
     "Input": "anderhalf",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "anderhalf",
@@ -872,7 +814,6 @@
   },
   {
     "Input": "een en een vierde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een en een vierde",
@@ -886,7 +827,6 @@
   },
   {
     "Input": "vijf en een kwart",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf en een kwart",
@@ -900,7 +840,6 @@
   },
   {
     "Input": "honderd driekwart",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderd driekwart",
@@ -914,7 +853,6 @@
   },
   {
     "Input": "een honderdste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een honderdste",
@@ -928,7 +866,6 @@
   },
   {
     "Input": "1,1^+23",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1,1^+23",
@@ -942,7 +879,6 @@
   },
   {
     "Input": "2,5^-1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2,5^-1",
@@ -956,7 +892,6 @@
   },
   {
     "Input": "-2500^-1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-2500^-1",
@@ -970,7 +905,6 @@
   },
   {
     "Input": "-1,1^+23",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-1,1^+23",
@@ -984,7 +918,6 @@
   },
   {
     "Input": "-2,5^-1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-2,5^-1",
@@ -998,7 +931,6 @@
   },
   {
     "Input": "-1,1^--23",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-1,1^--23",
@@ -1012,7 +944,6 @@
   },
   {
     "Input": "-127,32e13",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-127,32e13",
@@ -1026,7 +957,6 @@
   },
   {
     "Input": "12,32e+14",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "12,32e+14",
@@ -1040,7 +970,6 @@
   },
   {
     "Input": "-12e-1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-12e-1",
@@ -1054,7 +983,6 @@
   },
   {
     "Input": "1,2b",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1,2b",
@@ -1068,7 +996,6 @@
   },
   {
     "Input": "een vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een vijfde",
@@ -1082,7 +1009,6 @@
   },
   {
     "Input": "honderdduizend biljoensten",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdduizend biljoensten",
@@ -1096,7 +1022,6 @@
   },
   {
     "Input": "drie vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie vijfde",
@@ -1110,7 +1035,6 @@
   },
   {
     "Input": "twintig vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintig vijfde",
@@ -1124,7 +1048,6 @@
   },
   {
     "Input": "drie een vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie een vijfde",
@@ -1138,7 +1061,6 @@
   },
   {
     "Input": "eenentwintig vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eenentwintig vijfde",
@@ -1152,7 +1074,6 @@
   },
   {
     "Input": "een eenentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een eenentwintigste",
@@ -1166,7 +1087,6 @@
   },
   {
     "Input": "een vijfentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een vijfentwintigste",
@@ -1180,7 +1100,6 @@
   },
   {
     "Input": "drie eenentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie eenentwintigste",
@@ -1194,7 +1113,6 @@
   },
   {
     "Input": "twintig vijventwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintig vijventwintigste",
@@ -1208,7 +1126,6 @@
   },
   {
     "Input": "honderd en dertig vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderd en dertig vijfde",
@@ -1222,7 +1139,6 @@
   },
   {
     "Input": "een van de drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een van de drie",
@@ -1236,7 +1152,6 @@
   },
   {
     "Input": "1 uit eenentwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 uit eenentwintig",
@@ -1250,7 +1165,6 @@
   },
   {
     "Input": "1 uit drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 uit drie",
@@ -1264,7 +1178,6 @@
   },
   {
     "Input": "1 op de 3",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 op de 3",
@@ -1278,7 +1191,6 @@
   },
   {
     "Input": "1 van de 3",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 van de 3",
@@ -1292,7 +1204,6 @@
   },
   {
     "Input": "één uit de 20",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "één uit de 20",
@@ -1306,7 +1217,6 @@
   },
   {
     "Input": "één van de twintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "één van de twintig",
@@ -1324,7 +1234,6 @@
   },
   {
     "Input": "Het antwoord is min een",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "min een",
@@ -1338,7 +1247,6 @@
   },
   {
     "Input": "Een op de twintig is hier niet tevreden mee",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "Een op de twintig",
@@ -1352,7 +1260,6 @@
   },
   {
     "Input": "Het antwoord is vijf en een half",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf en een half",
@@ -1366,7 +1273,6 @@
   },
   {
     "Input": "Het antwoord is min 5 punt vijf",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "min 5 punt vijf",
@@ -1380,7 +1286,6 @@
   },
   {
     "Input": "Het antwoord is min 5",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "min 5",
@@ -1394,7 +1299,6 @@
   },
   {
     "Input": "een - vierde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een - vierde",
@@ -1408,7 +1312,6 @@
   },
   {
     "Input": "een-achtste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een-achtste",
@@ -1422,7 +1325,6 @@
   },
   {
     "Input": "vijf / achtste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf / achtste",
@@ -1436,7 +1338,6 @@
   },
   {
     "Input": "een van de drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een van de drie",
@@ -1450,7 +1351,6 @@
   },
   {
     "Input": "1 van de eenentwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 van de eenentwintig",
@@ -1464,7 +1364,6 @@
   },
   {
     "Input": "vijf achtsten van",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf achtsten",
@@ -1478,7 +1377,6 @@
   },
   {
     "Input": "1 234 567",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 234 567",
@@ -1492,7 +1390,6 @@
   },
   {
     "Input": "40 000 is hetzelfde als 40 000",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "40 000",
@@ -1513,7 +1410,6 @@
   },
   {
     "Input": "Op dit moment de populatie van China is 1 414 021 100.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 414 021 100",
@@ -1527,7 +1423,6 @@
   },
   {
     "Input": "423 0000 zal worden herkend als twee nummers.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "423",
@@ -1555,7 +1450,6 @@
   },
   {
     "Input": "1 234 567,89 is een geldig nummer.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 234 567,89",
@@ -1569,7 +1463,6 @@
   },
   {
     "Input": "Nul is hetzelfde als 0",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "nul",
@@ -1590,7 +1483,6 @@
   },
   {
     "Input": "Heb je op 17/5/2018 tijd om af te spreken?",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "17",
@@ -1618,7 +1510,6 @@
   },
   {
     "Input": "Mijn telefoonnummer is +1-222-2222/2222",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1",
@@ -1653,7 +1544,6 @@
   },
   {
     "Input": "tweeentwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeentwintig",
@@ -1667,7 +1557,6 @@
   },
   {
     "Input": "tweeëntwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeëntwintig",
@@ -1681,7 +1570,6 @@
   },
   {
     "Input": "één",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "één",
