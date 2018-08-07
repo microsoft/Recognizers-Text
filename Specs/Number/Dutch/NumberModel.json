@@ -201,7 +201,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "een half  dozijn",
+    "Input": "een half dozijn",
     "Results": [
       {
         "Text": "een half dozijn",
@@ -1576,6 +1576,19 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een gros eieren.",
+    "Results": [
+      {
+        "Text": "gros",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "144"
         }
       }
     ],
