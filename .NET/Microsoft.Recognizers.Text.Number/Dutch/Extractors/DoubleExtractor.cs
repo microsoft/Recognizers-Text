@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                     new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.Dutch)
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.DUTCH)
                 },
                 {
                     new Regex(NumbersDefinitions.DoubleExponentialNotationRegex,

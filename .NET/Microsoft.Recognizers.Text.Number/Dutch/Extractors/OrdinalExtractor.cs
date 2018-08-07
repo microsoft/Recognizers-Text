@@ -38,10 +38,10 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                     new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalDutchRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.Dutch)
+                    new Regex(NumbersDefinitions.OrdinalDutchRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.DUTCH)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.Dutch)
+                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.DUTCH)
                 }
             };
 

@@ -41,10 +41,10 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                               RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {
                     new Regex(NumbersDefinitions.AllIntRegexWithLocks,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.Dutch)
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.DUTCH)
                 }, {
                     new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.Dutch)
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.DUTCH)
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {

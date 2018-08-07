@@ -47,12 +47,12 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.Dutch)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH)
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounWithArticleRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.Dutch)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH)
                 }
             };
 
@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                 regexes.Add(
                     new Regex(
                         NumbersDefinitions.FractionPrepositionWithinPercentModeRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.Dutch)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH)
                 );
             }
             else
@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                 regexes.Add(
                     new Regex(
                         NumbersDefinitions.FractionPrepositionRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.Dutch)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.DUTCH)
                 );
             }
 
