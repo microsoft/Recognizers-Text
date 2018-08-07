@@ -50,33 +50,23 @@
   },
   {
     "Input": "180,25ml vloeistof",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": "180ml vloeistof",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": " 29km weg ",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": " 4 mei ",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": ",25ml vloeistof",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": ",08",
@@ -94,9 +84,7 @@
   },
   {
     "Input": "en",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": ",23456000",
@@ -1332,9 +1320,7 @@
   },
   {
     "Input": "Boek een eerste klas ticket naar Amsterdam",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": "Het antwoord is min een",
