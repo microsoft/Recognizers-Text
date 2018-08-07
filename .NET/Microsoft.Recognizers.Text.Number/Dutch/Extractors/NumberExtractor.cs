@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 {
     public class NumberExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override NumberOptions Options { get; }
 
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
 
             Options = options;
 
-            var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
+            var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
             
             //Add Cardinal
             CardinalExtractor cardExtract = null;
@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), "IntegerNum");
+                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;

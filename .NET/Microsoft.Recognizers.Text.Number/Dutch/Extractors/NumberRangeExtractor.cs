@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
+        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
 
         public NumberRangeExtractor() : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance(), new BaseNumberParser(new DutchNumberParserConfiguration()))
@@ -59,10 +61,22 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                     // equal to ...
                     new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , NumberRangeConstants.EQUAL
+                },
+                {
+                    // equal to 30 or more than, larger than 30 or equal to ...
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    , NumberRangeConstants.MORE
+                },
+                {
+                    // equal to 30 or less, smaller than 30 or equal ...
+                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    , NumberRangeConstants.LESS
                 }
             };
 
             Regexes = regexes.ToImmutableDictionary();
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }
 }
