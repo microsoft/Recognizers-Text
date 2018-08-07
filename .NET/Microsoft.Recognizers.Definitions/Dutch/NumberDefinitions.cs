@@ -72,6 +72,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string MoreOrEqualSuffix = @"(en|of)\s+(meer|groter|hoger|grotere)(?!\s+dan|?!\s+als)";
 		public static readonly string LessOrEqual = $@"(({LessRegex}\s+of\s+{EqualRegex})|maximum|niet\s+{MoreRegex}|<\s*=)";
 		public const string LessOrEqualSuffix = @"(en|of)\s+(minder|lager|kleiner)(?!\s+dan|?!\s+als)";
+		public const string NumberSplitMark = @"(?![,.](?!\d+))";
+		public const string MoreRegexNoNumberSucceed = @"((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+)))";
+		public const string LessRegexNoNumberSucceed = @"((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+)))";
+		public const string EqualRegexNoNumberSucceed = @"(equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+)))))";
 		public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(de\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
 		public static readonly string OneNumberRangeMoreRegex2 = $@"(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*{MoreOrEqualSuffix}";
 		public static readonly string OneNumberRangeMoreSeparateRegex = $@"({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+of\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+of\s+){EqualRegexNoNumberSucceed})";
