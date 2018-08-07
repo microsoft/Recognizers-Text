@@ -146,11 +146,11 @@ LessOrEqualSuffix: !simpleRegex
 NumberSplitMark: !simpleRegex
   def: (?![,.](?!\d+))
 MoreRegexNoNumberSucceed: !simpleRegex
-  def: ((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+))) # TODO
+  def: ((groter|hoger|meer)((?!\s+dan|?!\s+als)|\s+(dan(?!(\s*\d+))))|(boven|over)(?!(\s*\d+))) 
 LessRegexNoNumberSucceed: !simpleRegex
-  def: ((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+))) # TODO
+  def: ((minder|lager|kleiner)((?!\s+dan|?!\s+als)|\s+(dan(?!(\s*\d+))))|(beneden|onder)(?!(\s*\d+))) 
 EqualRegexNoNumberSucceed: !simpleRegex
-  def: (equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+))))) # TODO 
+  def: (gelijk?((?!\s+(aan|tot))|(\s+(aan|tot)(?!(\s*\d+))))) 
 OneNumberRangeMoreRegex1: !nestedRegex
   def: ({MoreOrEqual}|{MoreRegex})\s*(de\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ MoreOrEqual, MoreRegex ]
@@ -167,7 +167,7 @@ OneNumberRangeLessRegex2: !nestedRegex
   def: (?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*{LessOrEqualSuffix}
   references: [ LessOrEqualSuffix ]
 OneNumberRangeLessSeparateRegex: !nestedRegex
-  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+or\s+){EqualRegexNoNumberSucceed})
+  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+of\s+){LessRegexNoNumberSucceed})|({LessRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+of\s+){EqualRegexNoNumberSucceed})
   references: [ EqualRegex, LessRegex, EqualRegexNoNumberSucceed, LessRegexNoNumberSucceed, NumberSplitMark ]  
 OneNumberRangeEqualRegex: !nestedRegex
   def: '{EqualRegex}\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)'
@@ -184,7 +184,7 @@ TwoNumberRangeRegex3: !nestedRegex
 TwoNumberRangeRegex4: !nestedRegex
   def: (van\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\van\b)).)+)\s*{TillRegex}\s*(de\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ TillRegex ]
-AmbiguousFractionConnectorsRegex: !simpleRegex
+AmbiguousFractionConnectorsRegex: !simpleRegex # TODO
   def: (\bin\b)
 #Parser
 DecimalSeparatorChar: !char ','
@@ -192,8 +192,8 @@ FractionMarkerToken: over
 NonDecimalSeparatorChar: !char '.'
 HalfADozenText: zes
 WordSeparatorToken: en
-WrittenDecimalSeparatorTexts: [punt]
-WrittenGroupSeparatorTexts: [punto] #??
+WrittenDecimalSeparatorTexts: [komma]
+WrittenGroupSeparatorTexts: [punt]
 WrittenIntegerSeparatorTexts: [en]
 WrittenFractionSeparatorTexts: [en]
 HalfADozenRegex: !simpleRegex
