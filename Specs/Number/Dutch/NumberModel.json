@@ -589,20 +589,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "fifty - two",
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "fifty - two",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "tweeënvijftig",
     "NotSupported": "dotNet",
     "Results": [
@@ -737,20 +723,6 @@
         "TypeName": "number",
         "Resolution": {
           "value": "70"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "tweeenvijftig",
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "tweeenvijftig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
         }
       }
     ],
