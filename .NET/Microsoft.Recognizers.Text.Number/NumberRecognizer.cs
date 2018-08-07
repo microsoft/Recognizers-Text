@@ -85,7 +85,6 @@ namespace Microsoft.Recognizers.Text.Number
         protected override void InitializeConfiguration()
         {
             #region English
-
             RegisterModel<NumberModel>(
                 Culture.English,
                 options => new NumberModel(

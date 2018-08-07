@@ -143,6 +143,14 @@ LessOrEqual: !nestedRegex
   references: [ LessRegex, EqualRegex, MoreRegex ]
 LessOrEqualSuffix: !simpleRegex
   def: (en|of)\s+(minder|lager|kleiner)(?!\s+dan|?!\s+als)
+NumberSplitMark: !simpleRegex
+  def: (?![,.](?!\d+))
+MoreRegexNoNumberSucceed: !simpleRegex
+  def: ((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+))) # TODO
+LessRegexNoNumberSucceed: !simpleRegex
+  def: ((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+))) # TODO
+EqualRegexNoNumberSucceed: !simpleRegex
+  def: (equal(s|ing)?((?!\s+(to|than))|(\s+(to|than)(?!(\s*\d+))))) # TODO 
 OneNumberRangeMoreRegex1: !nestedRegex
   def: ({MoreOrEqual}|{MoreRegex})\s*(de\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ MoreOrEqual, MoreRegex ]
