@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
             {
-                pr = this.Config.GetParser.Parse(er, referenceTime);
+                pr = this.Config.SetParser.Parse(er, referenceTime);
             }
             else
             {

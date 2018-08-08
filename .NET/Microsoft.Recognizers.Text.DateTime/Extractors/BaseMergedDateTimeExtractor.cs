@@ -35,8 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             // The order is important, since there is a problem in merging
             AddTo(ret, this.config.DateExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.TimeExtractor.Extract(text, reference), text);
-            AddTo(ret, this.config.DurationExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.DatePeriodExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.DurationExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.DateTimeExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.TimePeriodExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text, reference), text);

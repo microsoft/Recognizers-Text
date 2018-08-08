@@ -185,10 +185,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             ReferenceDatePeriodRegex
         };
 
-        public EnglishDatePeriodExtractorConfiguration()
+        public EnglishDatePeriodExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None)
         {
-            Options = DateTimeOptions.None;
-            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+            Options = options;
+            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(options));
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());

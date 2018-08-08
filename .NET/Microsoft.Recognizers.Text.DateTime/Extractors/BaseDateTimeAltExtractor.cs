@@ -1,27 +1,19 @@
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDateTimeAltExtractor: IDateTimeListExtractor
     {
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEALT; // "DateTimeALT";
+        private const string ExtractorName = Constants.SYS_DATETIME_DATETIMEALT; // "DateTimeALT";
 
         private readonly IDateTimeAltExtractorConfiguration config;
 
         public BaseDateTimeAltExtractor(IDateTimeAltExtractorConfiguration config)
         {
             this.config = config;
-        }
-
-        public List<ExtractResult> Extract(List<ExtractResult> extractResult, string text)
-        {
-            return Extract(extractResult, text, DateObject.Now);
         }
 
         public List<ExtractResult> Extract(List<ExtractResult> extractResult, string text, DateObject reference)
@@ -101,11 +93,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {Constants.SubType, ers[i].Type},
                             {ExtendedModelResult.ParentTextKey, parentText}
                         };
-                    ers[i].Type = Constants.SYS_DATETIME_DATETIMEALT;
+                    ers[i].Type = ExtractorName;
 
                     for (var k = i + 1; k <= j; k++)
                     {
-                        ers[k].Type = Constants.SYS_DATETIME_DATETIMEALT;
+                        ers[k].Type = ExtractorName;
                         ers[k].Data = data;
                     }
 
@@ -124,11 +116,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {Constants.SubType, ers[j].Type},
                             {ExtendedModelResult.ParentTextKey, parentText}
                         };
-                        ers[j].Type = Constants.SYS_DATETIME_DATETIMEALT;
+                        ers[j].Type = ExtractorName;
 
                         for (var k = i; k < j; k++)
                         {
-                            ers[k].Type = Constants.SYS_DATETIME_DATETIMEALT;
+                            ers[k].Type = ExtractorName;
                             ers[k].Data = data;
                         }
 
@@ -183,7 +175,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Start = dateMatch.Index,
                         Length = dateMatch.Length,
                         Text = dateMatch.Value,
-                        Type = Constants.SYS_DATETIME_DATE
+                        Type = Constants.SYS_DATETIME_DATE,
+                        Data = ExtractorName
                     });
                 }
             }
@@ -195,16 +188,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private void PruneInvalidImplicitDate(List<ExtractResult> ers)
         {
-            ers.RemoveAll(er =>
-            {
-                if (er.Data != null || !er.Type.Equals(Constants.SYS_DATETIME_DATE))
-                {
-                    return false;
-                }
-
-                var match = config.DayRegex.Match(er.Text);
-                return match.Success && match.Index == 0 && match.Length == er.Length;
-            });
+            ers.RemoveAll(er => er.Data != null && er.Type.Equals(Constants.SYS_DATETIME_DATE) && er.Data.Equals(ExtractorName));
         }
 
         // Resolve cases like "this week or next".
@@ -223,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var relativeDatePeriodErs = new List<ExtractResult>();
             foreach (var result in ers)
             {
-                if (!result.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
+                if (!result.Type.Equals(ExtractorName))
                 {
                     var resultEnd = result.Start + result.Length;
                     foreach (var relativeTermsMatch in relativeTermsMatches)
@@ -262,7 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     Text = relativeTermsMatch.Value,
                                     Start = relativeTermsMatch.Index,
                                     Length = relativeTermsMatch.Length,
-                                    Type = Constants.SYS_DATETIME_DATETIMEALT,
+                                    Type = ExtractorName,
                                     Data = new Dictionary<string, object>
                                     {
                                         {Constants.SubType, result.Type},
@@ -276,7 +260,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     {Constants.SubType, result.Type},
                                     {ExtendedModelResult.ParentTextKey, parentText}
                                 };
-                                result.Type = Constants.SYS_DATETIME_DATETIMEALT;
+                                result.Type = ExtractorName;
                             }
                         }
                     }

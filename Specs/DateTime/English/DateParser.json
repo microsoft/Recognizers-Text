@@ -1409,7 +1409,7 @@
     },
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "the 27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1417,11 +1417,11 @@
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-11-27"
+            "date": "2016-10-27"
           }
         },
-        "Start": 12,
-        "Length": 10
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -1432,7 +1432,7 @@
     },
     "Results": [
       {
-        "Text": "for the 27th",
+        "Text": "the 27th",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1440,11 +1440,11 @@
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-11-27"
+            "date": "2016-10-27"
           }
         },
-        "Start": 12,
-        "Length": 12
+        "Start": 16,
+        "Length": 8
       }
     ]
   },
@@ -1455,7 +1455,7 @@
     },
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "the 27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1463,11 +1463,11 @@
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-11-27"
+            "date": "2016-10-27"
           }
         },
-        "Start": 12,
-        "Length": 10
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -1478,7 +1478,7 @@
     },
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "the 27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1486,11 +1486,11 @@
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-11-27"
+            "date": "2016-10-27"
           }
         },
-        "Start": 12,
-        "Length": 10
+        "Start": 16,
+        "Length": 6 
       }
     ]
   },
@@ -1501,7 +1501,7 @@
     },
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "the 27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1509,11 +1509,11 @@
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2016-11-27"
+            "date": "2016-10-27"
           }
         },
-        "Start": 12,
-        "Length": 10
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -1524,7 +1524,7 @@
     },
     "Results": [
       {
-        "Text": "for the 21st",
+        "Text": "the 21st",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-21",
@@ -1532,11 +1532,11 @@
             "date": "2016-11-21"
           },
           "PastResolution": {
-            "date": "2016-11-21"
+            "date": "2016-10-21"
           }
         },
-        "Start": 12,
-        "Length": 12
+        "Start": 16,
+        "Length": 8
       }
     ]
   },
@@ -1547,7 +1547,7 @@
     },
     "Results": [
       {
-        "Text": "for the 22nd",
+        "Text": "the 22nd",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -1555,11 +1555,11 @@
             "date": "2016-11-22"
           },
           "PastResolution": {
-            "date": "2016-11-22"
+            "date": "2016-10-22"
           }
         },
-        "Start": 12,
-        "Length": 12
+        "Start": 16,
+        "Length": 8
       }
     ]
   },
@@ -1570,19 +1570,19 @@
     },
     "Results": [
       {
-        "Text": "for the second",
+        "Text": "the second",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-02",
           "FutureResolution": {
-            "date": "2016-11-02"
+            "date": "2016-12-02"
           },
           "PastResolution": {
             "date": "2016-11-02"
           }
         },
-        "Start": 12,
-        "Length": 14
+        "Start": 16,
+        "Length": 10
       }
     ]
   },
@@ -1593,7 +1593,7 @@
     },
     "Results": [
       {
-        "Text": "for the twenty second",
+        "Text": "the twenty second",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -1601,11 +1601,11 @@
             "date": "2016-11-22"
           },
           "PastResolution": {
-            "date": "2016-11-22"
+            "date": "2016-10-22"
           }
         },
-        "Start": 12,
-        "Length": 21
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
@@ -1616,7 +1616,7 @@
     },
     "Results": [
       {
-        "Text": "for the thirty",
+        "Text": "the thirty",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-30",
@@ -1624,11 +1624,11 @@
             "date": "2016-11-30"
           },
           "PastResolution": {
-            "date": "2016-11-30"
+            "date": "2016-10-30"
           }
         },
-        "Start": 12,
-        "Length": 14
+        "Start": 16,
+        "Length": 10
       }
     ]
   },

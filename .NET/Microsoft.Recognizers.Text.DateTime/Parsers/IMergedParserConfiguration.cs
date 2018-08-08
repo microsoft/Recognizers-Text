@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearRegex { get; }
 
-        IDateTimeParser GetParser { get; }
+        IDateTimeParser SetParser { get; }
 
         IDateTimeParser HolidayParser { get; }
 

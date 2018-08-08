@@ -75,10 +75,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishMergedExtractorConfiguration(DateTimeOptions options)
         {
             Options = options;
-            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(options));
             TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
             DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(options));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
