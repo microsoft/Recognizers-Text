@@ -184,11 +184,11 @@ TwoNumberRangeRegex3: !nestedRegex
 TwoNumberRangeRegex4: !nestedRegex
   def: (van\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\van\b)).)+)\s*{TillRegex}\s*(de\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ TillRegex ]
-AmbiguousFractionConnectorsRegex: !simpleRegex # TODO
-  def: (\bin\b)
+AmbiguousFractionConnectorsRegex: !simpleRegex 
+  def: ^[.]  # TODO: modify regex according to the counterpart in English
 #Parser
 DecimalSeparatorChar: !char ','
-FractionMarkerToken: over
+FractionMarkerToken: [uit, van de, op de]
 NonDecimalSeparatorChar: !char '.'
 HalfADozenText: zes
 WordSeparatorToken: en
