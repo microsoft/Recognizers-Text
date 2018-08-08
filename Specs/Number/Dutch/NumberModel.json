@@ -188,6 +188,19 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "honderdenzes",
+    "Results": [
+      {
+        "Text": "honderdenzes",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "106"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "honderdeenenzestig",
     "Results": [
       {
@@ -1589,6 +1602,84 @@
         "TypeName": "number",
         "Resolution": {
           "value": "144"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "driehonderdeenentachtigduizend",
+    "Results": [
+      {
+        "Text": "driehonderdeenentachtigduizend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "381000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vierduizend twee",
+    "Results": [
+      {
+        "Text": "vierduizend twee",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4002"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vierduizend en twee",
+    "Results": [
+      {
+        "Text": "vierduizend en twee",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4002"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zesduizend achtentwintig",
+    "Results": [
+      {
+        "Text": "zesduizend achtentwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6028"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "drie miljoen",
+    "Results": [
+      {
+        "Text": "drie miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vijf miljard tweehonderd miljoen",
+    "Results": [
+      {
+        "Text": "vijf miljard tweehonderd miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5200000000"
         }
       }
     ],
