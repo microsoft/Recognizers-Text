@@ -5990,6 +5990,7 @@
   },
   {
     "Input": "Cortana, can you please set something up between the 21st and 23rd.",
+    "Comment": "Only supported in CalendarMode",
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
@@ -5997,6 +5998,7 @@
   },
   {
     "Input": "Cortana, can you please set something up the 21st.",
+    "Comment": "Only supported in CalendarMode",
     "Context": {
       "ReferenceDateTime": "2018-08-08T10:00:00"
     },
