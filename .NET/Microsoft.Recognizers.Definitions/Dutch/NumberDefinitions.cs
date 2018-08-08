@@ -87,9 +87,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(en|maar|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
 		public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(en|maar|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
 		public static readonly string TwoNumberRangeRegex4 = $@"(van\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\van\b)).)+)\s*{TillRegex}\s*(de\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
-		public const string AmbiguousFractionConnectorsRegex = @"(\bin\b)";
+		public const string AmbiguousFractionConnectorsRegex = @"^[.]";
 		public const char DecimalSeparatorChar = ',';
-		public const string FractionMarkerToken = "over";
+		public const string FractionMarkerToken = "van de";
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = "zes";
 		public const string WordSeparatorToken = "en";

@@ -188,7 +188,7 @@ AmbiguousFractionConnectorsRegex: !simpleRegex
   def: ^[.]  # TODO: modify regex according to the counterpart in English
 #Parser
 DecimalSeparatorChar: !char ','
-FractionMarkerToken: [uit, van de, op de]
+FractionMarkerToken: van de
 NonDecimalSeparatorChar: !char '.'
 HalfADozenText: zes
 WordSeparatorToken: en
