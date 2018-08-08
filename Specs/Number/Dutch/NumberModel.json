@@ -1478,7 +1478,7 @@
     "Input": "Nul is hetzelfde als 0",
     "Results": [
       {
-        "Text": "nul",
+        "Text": "Nul",
         "TypeName": "number",
         "Resolution": {
           "value": "0"
