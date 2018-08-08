@@ -7,6 +7,7 @@ using Microsoft.Recognizers.Text.Number.German;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.Korean;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -226,6 +227,14 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberRangeModel(
                             new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration()),
                             new Japanese.NumberRangeExtractor()));
+            #endregion
+
+            #region Korean
+            RegisterModel<NumberModel>(
+                Culture.Korean,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration()),
+                    new Korean.NumberExtractor()));
             #endregion
         }
     }

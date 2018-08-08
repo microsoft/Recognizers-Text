@@ -1,7 +1,7 @@
 [
 {
   "Input": "삼분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
     "Text": "일",
@@ -22,7 +22,7 @@
 ,
 {
   "Input": "이십일분의 1",
-  "NotSupportedByDesign": "dotNet,javascript,python,java,",
+  "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
       "Text": "1",

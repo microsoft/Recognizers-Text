@@ -4,6 +4,7 @@ using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -67,6 +68,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.IsTrue(parserNumber is BaseCJKNumberParser);
             Assert.IsTrue(parserCardinal is BaseCJKNumberParser);
             Assert.IsTrue(parserPercentaje is BaseCJKNumberParser);
+        }
+
+        [TestMethod]
+        public void TestKoreanParser()
+        {
+            IParser parserNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration());
+
+            Assert.IsTrue(parserNumber is BaseCJKNumberParser);
         }
 
         [TestMethod]

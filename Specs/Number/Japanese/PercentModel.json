@@ -15,7 +15,7 @@
 ,
 {
   "Input": "この車は19パーセントの確率が遅れた",
-  "NotSupported": "python",
+  "NotSupported": "dotNet, python",
   "Results": [
     {
       "Text": "19パーセント",
@@ -29,7 +29,7 @@
 ,
 {
   "Input": "彼女は50パーセントこのことはできません",
-  "NotSupported": "python",
+  "NotSupported": "dotNet, python",
   "Results": [
     {
       "Text": "50パーセント",
@@ -253,7 +253,7 @@
 ,
 {
   "Input": "22パーセント",
-  "NotSupported": "python",
+  "NotSupported": "dotNet, python",
   "Results": [
     {
       "Text": "22パーセント",

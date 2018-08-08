@@ -2,6 +2,7 @@
 
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.Japanese;
+using Microsoft.Recognizers.Text.Number.Korean;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -22,10 +23,11 @@ namespace Microsoft.Recognizers.Text.Number
         {
             var isChinese = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Chinese;
             var isJapanese = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Japanese;
+            var isKorean = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Korean;
 
             BaseNumberParser parser;
 
-            if (isChinese || isJapanese)
+            if (isChinese || isJapanese || isKorean)
             {
                 parser = new BaseCJKNumberParser(languageConfiguration);
             }
@@ -52,7 +54,7 @@ namespace Microsoft.Recognizers.Text.Number
                     parser.SupportedTypes = new List<string> { Constants.SYS_NUM_ORDINAL };
                     break;
                 case AgnosticNumberParserType.Percentage:
-                    if (!isChinese && !isJapanese)
+                    if (!isChinese && !isJapanese || isKorean)
                     {
                         parser = new BasePercentageParser(languageConfiguration);
                     }
