@@ -1272,10 +1272,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Het antwoord is min 5 punt vijf",
+    "Input": "Het antwoord is min 5 komma vijf",
     "Results": [
       {
-        "Text": "min 5 punt vijf",
+        "Text": "min 5 komma vijf",
         "TypeName": "number",
         "Resolution": {
           "value": "-5,5"

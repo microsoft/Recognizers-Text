@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string[] WrittenDecimalSeparatorTexts = { "komma" };
 		public static readonly string[] WrittenGroupSeparatorTexts = { "punt" };
 		public static readonly string[] WrittenIntegerSeparatorTexts = { "en" };
-		public static readonly string[] WrittenFractionSeparatorTexts = { "en" };
+		public static readonly string[] WrittenFractionSeparatorTexts = { "uit", "van de", "op de" };
 		public const string HalfADozenRegex = @"half\s+dozijn";
 		public const string DigitalNumberRegex = @"((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>

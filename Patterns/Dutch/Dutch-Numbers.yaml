@@ -195,7 +195,7 @@ WordSeparatorToken: en
 WrittenDecimalSeparatorTexts: [komma]
 WrittenGroupSeparatorTexts: [punt]
 WrittenIntegerSeparatorTexts: [en]
-WrittenFractionSeparatorTexts: [en]
+WrittenFractionSeparatorTexts: [uit, van de, op de]
 HalfADozenRegex: !simpleRegex
   def: half\s+dozijn
 DigitalNumberRegex: !simpleRegex
