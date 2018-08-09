@@ -764,7 +764,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 maanden 1 dag en 2 uur geleden ",
+        "Text": "2 maanden 1 dag en 2 uur geleden",
         "Type": "datetime"
       }
     ]
@@ -775,7 +775,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 maanden 1 dag 2 uur geleden ",
+        "Text": "2 maanden 1 dag 2 uur geleden",
         "Type": "datetime"
       }
     ]
@@ -786,7 +786,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 dag en 30 minuten later ",
+        "Text": "1 dag en 30 minuten later",
         "Type": "datetime"
       }
     ]

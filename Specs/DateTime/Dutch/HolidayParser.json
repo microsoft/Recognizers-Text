@@ -237,7 +237,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " Nieuwjaarsdag volgend jaar",
+        "Text": "Nieuwjaarsdag volgend jaar",
         "Type": "date",
         "Value": {
           "Timex": "2017-01-01",
@@ -319,7 +319,7 @@
         }
       },
       {
-        "Text": "Dag van de Arbeid ",
+        "Text": "Dag van de Arbeid",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-05-01",

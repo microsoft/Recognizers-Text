@@ -43,7 +43,7 @@
     "Input": " zet de wekker op tien over half negen ‘s avonds",
     "Results": [
       {
-        "Text": " tien over half negen ‘s avonds",
+        "Text": "tien over half negen ‘s avonds",
         "Type": "time",
         "Value": {
           "Timex": "T20:40",
@@ -83,7 +83,7 @@
     "Input": "zet de wekker op vijftien uur vijftien",
     "Results": [
       {
-        "Text": " vijftien uur vijftien",
+        "Text": "vijftien uur vijftien",
         "Type": "time",
         "Value": {
           "Timex": "T15:15",
@@ -443,7 +443,7 @@
     "Input": " Het is half negen ‘s avonds",
     "Results": [
       {
-        "Text": " half negen ‘s avonds",
+        "Text": "half negen ‘s avonds",
         "Type": "time",
         "Value": {
           "Timex": "T20:30",
@@ -543,7 +543,7 @@
     "Input": "Het is drie minuten voor acht",
     "Results": [
       {
-        "Text": " Het is drie minuten voor acht",
+        "Text": "Het is drie minuten voor acht",
         "Type": "time",
         "Value": {
           "Timex": "T07:57",
@@ -743,7 +743,7 @@
     "Input": "Ik ga om half acht ‘s avonds terug",
     "Results": [
       {
-        "Text": " half acht ‘s avonds",
+        "Text": "half acht ‘s avonds",
         "Type": "time",
         "Value": {
           "Timex": "T19:30",
@@ -763,7 +763,7 @@
     "Input": "Ik ga om vijf over half acht ‘s avonds terug",
     "Results": [
       {
-        "Text": " vijf over half acht ‘s avonds",
+        "Text": "vijf over half acht ‘s avonds",
         "Type": "time",
         "Value": {
           "Timex": "T19:35",
@@ -783,7 +783,7 @@
     "Input": "Ik ga om tien voor half twaalf ’s avonds",
     "Results": [
       {
-        "Text": " tien voor half twaalf ’s avonds",
+        "Text": "tien voor half twaalf ’s avonds",
         "Type": "time",
         "Value": {
           "Timex": "T23:20",
@@ -803,7 +803,7 @@
     "Input": "Ik ben rond de middag terug",
     "Results": [
       {
-        "Text": " rond de middag",
+        "Text": "rond de middag",
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -983,7 +983,7 @@
     "Input": "halverwege de ochtend",
     "Results": [
       {
-        "Text": " halverwege de ochtend",
+        "Text": "halverwege de ochtend",
         "Type": "time",
         "Value": {
           "Timex": "T10",
@@ -1263,7 +1263,7 @@
     "Input": "Ik ga om zeven uur dertig ‘s ochtends terug",
     "Results": [
       {
-        "Text": " zeven uur dertig ‘s ochtends",
+        "Text": "zeven uur dertig ‘s ochtends",
         "Type": "time",
         "Value": {
           "Timex": "T07:30",
@@ -1303,7 +1303,7 @@
     "Input": "Ik ga om drie minuten voor half zes",
     "Results": [
       {
-        "Text": " drie minuten voor half zes",
+        "Text": "drie minuten voor half zes",
         "Type": "time",
         "Value": {
           "Timex": "T05:27",
@@ -1403,7 +1403,7 @@
     "Input": "Ik ga om vijf over zes terug",
     "Results": [
       {
-        "Text": " vijf over zes",
+        "Text": "vijf over zes",
         "Type": "time",
         "Value": {
           "Timex": "T18:05",
@@ -1423,7 +1423,7 @@
     "Input": "Ik ga om tien over zes terug",
     "Results": [
       {
-        "Text": " tien over zes",
+        "Text": "tien over zes",
         "Type": "time",
         "Value": {
           "Timex": "T18:05",
@@ -1443,7 +1443,7 @@
     "Input": "Ik ga om kwart over zes terug",
     "Results": [
       {
-        "Text": " kwart over zes",
+        "Text": "kwart over zes",
         "Type": "time",
         "Value": {
           "Timex": "T18:15",

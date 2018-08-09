@@ -882,7 +882,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "zaterdag de 23ste ",
+        "Text": "zaterdag de 23ste",
         "Type": "date"
       }
     ],
@@ -1188,7 +1188,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20 september negentienhonderd een één ",
+        "Text": "20 september negentienhonderd een één",
         "Type": "date"
       }
     ]

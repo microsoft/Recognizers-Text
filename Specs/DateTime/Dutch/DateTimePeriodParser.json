@@ -231,7 +231,7 @@
     },
     "Results": [
       {
-        "Text": " van 2016-2-21 14:00 tot 2016-04-23 15:32",
+        "Text": "van 2016-2-21 14:00 tot 2016-04-23 15:32",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
@@ -1531,7 +1531,7 @@
     },
     "Results": [
       {
-        "Text": " van 2016-02-21 14:00 uur tot 2016-02-21 15:32",
+        "Text": "van 2016-02-21 14:00 uur tot 2016-02-21 15:32",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
@@ -1606,7 +1606,7 @@
     },
     "Results": [
       {
-        "Text": " morgen tussen 8 uur ‘s ochtends en 2 uur ’s middags ",
+        "Text": "morgen tussen 8 uur ‘s ochtends en 2 uur ’s middags",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
@@ -2032,7 +2032,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " binnen een dag en 5 uur ",
+        "Text": "binnen een dag en 5 uur",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
@@ -2057,7 +2057,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "2 dagen, 1 uur, 5 minuten en 30 seconden ",
+        "Text": "2 dagen, 1 uur, 5 minuten en 30 seconden",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
@@ -2082,7 +2082,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " binnen 2 dagen, 1 uur, 5 minuten en 30 seconden",
+        "Text": "binnen 2 dagen, 1 uur, 5 minuten en 30 seconden",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
@@ -2107,7 +2107,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " binnen aankomende 2 dagen, 1 uur, 5 minuten en 30 seconden",
+        "Text": "binnen aankomende 2 dagen, 1 uur, 5 minuten en 30 seconden",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
@@ -2232,7 +2232,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " op 1/1/2015 tussen 10 en 11:30 ",
+        "Text": "op 1/1/2015 tussen 10 en 11:30",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
@@ -2307,7 +2307,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "tussen 3 en 5 op 1/1/2015 ",
+        "Text": "tussen 3 en 5 op 1/1/2015",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2015-01-01T03,2015-01-01T05,PT2H)",

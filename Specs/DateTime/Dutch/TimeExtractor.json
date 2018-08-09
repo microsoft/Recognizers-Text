@@ -190,7 +190,7 @@
     "Input": "Het is kwart voor 10 ‘s avonds",
     "Results": [
       {
-        "Text": " kwart voor 10 ‘s avonds",
+        "Text": "kwart voor 10 ‘s avonds",
         "Type": "time"
       }
     ],
@@ -201,7 +201,7 @@
     "Input": "Het is drie minuten voor acht",
     "Results": [
       {
-        "Text": " drie minuten voor acht",
+        "Text": "drie minuten voor acht",
         "Type": "time"
       }
     ],
@@ -223,7 +223,7 @@
     "Input": " Het is half acht ‘s avonds",
     "Results": [
       {
-        "Text": " half acht ‘s avonds",
+        "Text": "half acht ‘s avonds",
         "Type": "time"
       }
     ],
@@ -245,7 +245,7 @@
     "Input": "Het is kwart voor 8 in de ochtend",
     "Results": [
       {
-        "Text": " kwart voor 8 in de ochtend ",
+        "Text": "kwart voor 8 in de ochtend",
         "Type": "time"
       }
     ],
@@ -300,7 +300,7 @@
     "Input": "Ik ben om vier uur ‘s middags terug",
     "Results": [
       {
-        "Text": " vier uur ‘s middags",
+        "Text": "vier uur ‘s middags",
         "Type": "time"
       }
     ],
@@ -311,7 +311,7 @@
     "Input": "Ik ga terug om zeven uur dertig ‘s avonds",
     "Results": [
       {
-        "Text": " zeven uur dertig ‘s avonds",
+        "Text": "zeven uur dertig ‘s avonds",
         "Type": "time"
       }
     ],
@@ -322,7 +322,7 @@
     "Input": "Ik ga terug om vier uur vijfendertig ‘s middags",
     "Results": [
       {
-        "Text": " vier uur vijfendertig ‘s middags",
+        "Text": "vier uur vijfendertig ‘s middags",
         "Type": "time"
       }
     ],
@@ -333,7 +333,7 @@
     "Input": "Ik ga om vijf over elf",
     "Results": [
       {
-        "Text": " vijf over elf",
+        "Text": "vijf over elf",
         "Type": "time"
       }
     ],
@@ -344,7 +344,7 @@
     "Input": "Ik ga om drie minuten voor vijf ",
     "Results": [
       {
-        "Text": " drie minuten voor vijf",
+        "Text": "drie minuten voor vijf",
         "Type": "time"
       }
     ],
@@ -355,7 +355,7 @@
     "Input": "Ik ga om half zes vanavond",
     "Results": [
       {
-        "Text": " half zes vanavond",
+        "Text": "half zes vanavond",
         "Type": "time"
       }
     ],
@@ -399,7 +399,7 @@
     "Input": "Ik ben tegen 11’en terug",
     "Results": [
       {
-        "Text": " tegen 11’en",
+        "Text": "tegen 11’en",
         "Type": "time"
       }
     ],
@@ -586,7 +586,7 @@
     "Input": "Ik ga om zeven uur dertig p.m.",
     "Results": [
       {
-        "Text": " zeven uur dertig p.m.",
+        "Text": "zeven uur dertig p.m.",
         "Type": "time"
       }
     ],
@@ -638,7 +638,7 @@
     "Input": "Ik ben met lunchtijd 12 uur terug",
     "Results": [
       {
-        "Text": "at lunchtijd 12 uur ",
+        "Text": "at lunchtijd 12 uur",
         "Type": "time"
       }
     ],
