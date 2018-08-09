@@ -804,27 +804,19 @@
   },
   {
     "Input": "de eerste prijs",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [],
-    "NotSupported": ""
+    "Results": []
   },
   {
     "Input": "Ik ga naar de 27ste verdieping",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [],
-    "NotSupported": ""
+    "Results": []
   },
   {
     "Input": " Herdenkingsevenementen voor de 25ste verjaardag van de diplomatieke betrekkingen tussen Singapore en China",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [],
-    "NotSupported": ""
+    "Results": []
   },
   {
     "Input": "Koop kaartjes voor de 17de voor het evenement",
-    "NotSupportedByDesign": "dotNet,javascript,python,java",
-    "Results": [],
-    "NotSupported": ""
+    "Results": []
   },
   {
     "Input": "Wat heb ik op zaterdag de tweede?",
