@@ -690,13 +690,13 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben tweeeneenhalf uur weg",
+    "Input": "Ik ben tweeëneenhalf uur weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": " tweeeneenhalf uur",
+        "Text": "tweeëneenhalf uur",
         "Type": "duration",
         "Value": {
           "Timex": "PT2.5H",
@@ -766,7 +766,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " een week en drie dagen",
+        "Text": "een week en drie dagen",
         "Type": "duration",
         "Value": {
           "Timex": "P1W3D",

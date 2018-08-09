@@ -20,7 +20,7 @@
     ]
   },
   {
-    "Input": "Boek een kamer voor mij om 16:30 uur",
+    "Input": "Boek een kamer voor mij om UTC4:30",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -28,7 +28,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "utc4:30",
+        "Text": "UTC4:30",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -200,7 +200,7 @@
     ]
   },
   {
-    "Input": "boek me een kamer in pacific daylight saving tijd",
+    "Input": "boek me een kamer in pacific daylight saving time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -228,7 +228,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "austrialian western daylight time",
+        "Text": "austrialian western daylight tijd",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -248,7 +248,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "austrialian west daylight time",
+        "Text": "austrialian west daylight tijd",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -268,7 +268,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "colombia time",
+        "Text": "colombia tijd",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -288,7 +288,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "hong kong time",
+        "Text": "hong kong tijd",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "Input": "boek me een kamer in pdt",
+    "Input": "boek me een kamer in PDT",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -328,7 +328,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "pdt",
+        "Text": "PDT",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -340,7 +340,7 @@
     ]
   },
   {
-    "Input": "boek me een kamer in tost",
+    "Input": "boek me een kamer in TOST",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -348,7 +348,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tost",
+        "Text": "TOST",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
@@ -368,7 +368,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "pacific daylight time",
+        "Text": "pacific daylight tijd",
         "Type": "timezone",
         "Value": {
           "TimeZoneResolution": {
