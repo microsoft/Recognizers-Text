@@ -46,6 +46,29 @@
     "NotSupported": "dotNet"
   },
   {
+    "Input": "Ik ga terug op eerste kerstdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerste kerstdag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet"
+  },
+  {
     "Input": "Ik ga terug op nieuwjaarsdag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -230,14 +253,14 @@
     "NotSupported": "dotNet"
   },
   {
-    "Input": "Ik ga terug op thanks giving day 2010",
+    "Input": "Ik ga terug op thanksgiving day 2010",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "thanks giving day 2010",
+        "Text": "thanksgiving day 2010",
         "Type": "date",
         "Value": {
           "Timex": "2010-11-WXX-4-4",
@@ -296,7 +319,7 @@
         }
       },
       {
-        "Text": " Dag van de Arbeid ",
+        "Text": "Dag van de Arbeid ",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-05-01",
