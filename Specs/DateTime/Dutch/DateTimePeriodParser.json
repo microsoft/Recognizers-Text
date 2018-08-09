@@ -775,7 +775,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Kan je een tijdstip in de ochtend van aankomende dinsdag voor ons vinden?",
+    "Input": "Kan je aankomende dinsdagochtend een tijdstip voor ons vinden?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -906,7 +906,7 @@
     },
     "Results": [
       {
-        "Text": "dinsdagochtend vroeg",
+        "Text": "vroeg op de dinsdagochtend",
         "Type": "datetimerange",
         "Value": {
           "Timex": "XXXX-WXX-2TMO",
@@ -2282,7 +2282,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " van 10:30 tot 3 op 1/1/2015",
+        "Text": "van 10:30 tot 3 op 1/1/2015",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2015-01-01T10:30,2015-01-01T15,PT4H30M)",
@@ -2307,7 +2307,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " tussen 3 en 5 op 1/1/2015 ",
+        "Text": "tussen 3 en 5 op 1/1/2015 ",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2015-01-01T03,2015-01-01T05,PT2H)",

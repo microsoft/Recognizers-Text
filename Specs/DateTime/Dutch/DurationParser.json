@@ -789,7 +789,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " een paar weken",
+        "Text": "een paar weken",
         "Type": "duration",
         "Value": {
           "Timex": "P2W",
@@ -812,7 +812,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " een paar dagen",
+        "Text": "een paar dagen",
         "Type": "duration",
         "Value": {
           "Timex": "P2D",
@@ -835,7 +835,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " minder dan een paar dagen",
+        "Text": "minder dan een paar dagen",
         "Type": "duration",
         "Value": {
           "Mod": "less",
@@ -859,7 +859,7 @@
     "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": " meer dan een uur",
+        "Text": "meer dan een uur",
         "Type": "duration",
         "Value": {
           "Timex": "PT1H",
@@ -882,7 +882,7 @@
     },
     "Results": [
       {
-        "Text": " nog een uur",
+        "Text": "nog een uur",
         "Type": "duration",
         "Value": {
           "Timex": "PT1H",
@@ -905,7 +905,7 @@
     },
     "Results": [
       {
-        "Text": " nog een week",
+        "Text": "nog een week",
         "Type": "duration",
         "Value": {
           "Timex": "P1W",
