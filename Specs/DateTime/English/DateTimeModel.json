@@ -5900,5 +5900,108 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the week of the 18th.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-07T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the week of the 18th",
+        "Start": 45,
+        "End": 64,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-18",
+              "type": "daterange",
+              "start": "2018-07-16",
+              "end": "2018-07-23"
+            },
+            {
+              "timex": "XXXX-XX-18",
+              "type": "daterange",
+              "start": "2018-08-13",
+              "end": "2018-08-20"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up on the 18th.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-07T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the 18th",
+        "Start": 44,
+        "End": 51,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-18",
+              "type": "date",
+              "value": "2018-07-18"
+            },
+            {
+              "timex": "XXXX-XX-18",
+              "type": "date",
+              "value": "2018-08-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up on the 4th.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-07T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the 4th",
+        "Start": 44,
+        "End": 50,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-04",
+              "type": "date",
+              "value": "2018-08-04"
+            },
+            {
+              "timex": "XXXX-XX-04",
+              "type": "date",
+              "value": "2018-09-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up between the 21st and 23rd.",
+    "Comment": "Only supported in CalendarMode",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Cortana, can you please set something up the 21st.",
+    "Comment": "Only supported in CalendarMode",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "Results": []
   }
 ]

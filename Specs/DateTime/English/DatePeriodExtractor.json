@@ -3642,5 +3642,17 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the week of the 18th.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the week of the 18th",
+        "Type": "daterange",
+        "Start": 45,
+        "Length": 20
+      }
+    ]
   }
 ]

@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDatePeriodExtractor : IDateTimeExtractor
     {
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
+        private const string ExtractorName = Constants.SYS_DATETIME_DATEPERIOD;
 
         private readonly IDatePeriodExtractorConfiguration config;
 
@@ -28,24 +28,26 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
+
             var simpleCasesResults = Token.MergeAllTokens(tokens, text, ExtractorName);
+            var ordinalExtractions = config.OrdinalExtractor.Extract(text);
+
             tokens.AddRange(MergeTwoTimePoints(text, reference));
             tokens.AddRange(MatchDuration(text, reference));
-            tokens.AddRange(SingleTimePointWithPatterns(text, reference));
+            tokens.AddRange(SingleTimePointWithPatterns(text, new List<ExtractResult>(ordinalExtractions), reference));
             tokens.AddRange(MatchComplexCases(text, simpleCasesResults, reference));
             tokens.AddRange(MatchYearPeriod(text, reference));
-            tokens.AddRange(MatchOrdinalNumberWithCenturySuffix(text, reference));
+            tokens.AddRange(MatchOrdinalNumberWithCenturySuffix(text, new List<ExtractResult>(ordinalExtractions)));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
         // Cases like "21st century"
-        private List<Token> MatchOrdinalNumberWithCenturySuffix(string text, DateObject reference)
+        private List<Token> MatchOrdinalNumberWithCenturySuffix(string text, List<ExtractResult> ordinalExtractions)
         {
             var ret = new List<Token>();
-            var ers = this.config.OrdinalExtractor.Extract(text);
 
-            foreach (var er in ers)
+            foreach (var er in ordinalExtractions)
             {
                 if (er.Start + er.Length >= text.Length)
                 {
@@ -71,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> MatchYearPeriod(string text, DateObject referece)
         {
             var ret = new List<Token>();
-            var metadata = new Metadata()
+            var metadata = new Metadata
             {
                 PossiblyIncludePeriodEnd = true
             };
@@ -89,11 +91,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         continue;
                     }
-                    else
-                    {
-                        // Possibly include period end only apply for cases like "2014-2018", which are not single year cases
-                        metadata.PossiblyIncludePeriodEnd = false;
-                    }
+
+                    // Possibly include period end only apply for cases like "2014-2018", which are not single year cases
+                    metadata.PossiblyIncludePeriodEnd = false;
                 }
 
                 ret.Add(new Token(match.Index, match.Index + match.Length, metadata));
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> MergeMultipleExtractions(string text, List<ExtractResult> extractionResults)
         {
             var ret = new List<Token>();
-            var metadata = new Metadata()
+            var metadata = new Metadata
             {
                 PossiblyIncludePeriodEnd = true
             };
@@ -220,20 +220,24 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // 1. Extract the month of date, week of date to a date range
         // 2. Extract cases like within two weeks from/before today/tomorrow/yesterday
-        private List<Token> SingleTimePointWithPatterns(string text, DateObject reference)
+        private List<Token> SingleTimePointWithPatterns(string text, List<ExtractResult> ordinalExtractions, DateObject reference)
         {
             var ret = new List<Token>();
-            var er = this.config.DatePointExtractor.Extract(text, reference);
-            if (er.Count < 1)
+            var datePoints = this.config.DatePointExtractor.Extract(text, reference);
+
+            // For cases like "week of the 18th"
+            datePoints.AddRange(ordinalExtractions.Where(o => !datePoints.Any(er => er.IsOverlap(o))));
+
+            if (datePoints.Count < 1)
             {
                 return ret;
             }
 
-            foreach (var extractionResult in er)
+            foreach (var extractionResult in datePoints)
             {
                 if (extractionResult.Start != null && extractionResult.Length != null)
                 {
-                    string beforeString = text.Substring(0, (int)extractionResult.Start);
+                    var beforeString = text.Substring(0, (int)extractionResult.Start);
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.WeekOfRegex, extractionResult));
                     ret.AddRange(GetTokenForRegexMatching(beforeString, config.MonthOfRegex, extractionResult));
 
