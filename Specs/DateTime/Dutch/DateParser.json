@@ -192,7 +192,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "02/22/2016",
+        "Text": "22-2-2016",
         "Type": "date",
         "Value": {
           "Timex": "2016-02-22",
@@ -207,53 +207,7 @@
     ]
   },
   {
-    "Input": "Ik ga terug op 04-21-2016.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "21/04/2016",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-04-21",
-          "FutureResolution": {
-            "date": "2016-04-21"
-          },
-          "PastResolution": {
-            "date": "2016-04-21"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga terug op 04-21-2016.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "21/04/16",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-04-21",
-          "FutureResolution": {
-            "date": "2016-04-21"
-          },
-          "PastResolution": {
-            "date": "2016-04-21"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga terug op 04-21-2016.",
+    "Input": "Ik ga terug op 21-04-2016.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -276,7 +230,7 @@
     ]
   },
   {
-    "Input": " Ik ga terug op 04-22.",
+    "Input": "Ik ga terug op 21/04/2016.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -284,7 +238,53 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4.22",
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op 21-04-2016.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21-04-2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": " Ik ga terug op 22-04.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "22-04",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-22",
@@ -299,7 +299,7 @@
     ]
   },
   {
-    "Input": " Ik ga terug op 4-22.",
+    "Input": " Ik ga terug op 22/4.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -307,30 +307,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4-22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga terug op 4-22.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4.22",
+        "Text": "22/4",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-22",
@@ -368,7 +345,7 @@
     ]
   },
   {
-    "Input": "Ik ga terug op 4-22. ",
+    "Input": "Ik ga terug op 4/22. ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -391,53 +368,7 @@
     ]
   },
   {
-    "Input": "Ik ga terug op 4-22.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "22/04",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": " Ik ga terug op 4-22.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4/22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": " Ik ga terug op 4-22.",
+    "Input": " Ik ga terug op 22/04.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -468,7 +399,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015/08/12",
+        "Text": "12-08-2015",
         "Type": "date",
         "Value": {
           "Timex": "2015-08-12",
@@ -483,7 +414,7 @@
     ]
   },
   {
-    "Input": "Ik ga terug op 12-08-2015.",
+    "Input": "Ik ga terug op 12-08, 2015.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -491,7 +422,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "08/12,2015",
+        "Text": "12-08, 2015",
         "Type": "date",
         "Value": {
           "Timex": "2015-08-12",
@@ -529,7 +460,7 @@
     ]
   },
   {
-    "Input": "Ik ga de 1e Januari terug.",
+    "Input": "Ik kom 1 januari terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -537,7 +468,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1st Jan",
+        "Text": "1 januari",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-01",
@@ -552,7 +483,7 @@
     ]
   },
   {
-    "Input": "Ik ga de 1e Januari terug.",
+    "Input": "Ik kom de 1e van januari terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -560,7 +491,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Jan-1",
+        "Text": "1e van januari",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-01",
@@ -575,7 +506,7 @@
     ]
   },
   {
-    "Input": "Ik ga op woensdag 22 Januari terug.",
+    "Input": "Ik ga op woensdag 22 januari terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -583,7 +514,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Wed, 22 of Jan",
+        "Text": "woensdag 22 januari",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-22",
@@ -598,7 +529,7 @@
     ]
   },
   {
-    "Input": "Ik ga de 1e Januari terug.",
+    "Input": "Ik kom de eerste van januari terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -606,7 +537,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Jan first",
+        "Text": "eerste van januari",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-01",
@@ -621,7 +552,7 @@
     ]
   },
   {
-    "Input": "Ik ga 21 Mei terug.",
+    "Input": "Ik ga 21 mei terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -629,7 +560,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "May twenty-first",
+        "Text": "21 mei",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-05-21",
@@ -644,7 +575,7 @@
     ]
   },
   {
-    "Input": "Ik ga 21 Mei terug.",
+    "Input": "Ik ga eenentwintig mei terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -652,7 +583,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "May twenty one",
+        "Text": "eenentwintig mei",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-05-21",
@@ -667,7 +598,7 @@
     ]
   },
   {
-    "Input": "Ik ga de 2e dag van Augustus terug.",
+    "Input": "Ik ga de tweede dag van Augustus terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -675,7 +606,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "second of Aug",
+        "Text": "tweede dag van Augustus",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-08-02",
@@ -690,7 +621,7 @@
     ]
   },
   {
-    "Input": "Ik ga 22 Juni terug.",
+    "Input": "Ik ga tweeëntwintig juni terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -698,7 +629,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "twenty second of June",
+        "Text": "tweeëntwintig juni",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-06-22",
@@ -713,29 +644,6 @@
     ]
   },
   {
-    "Input": "Ik ga op Vrijdag terug.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "Friday",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-WXX-5",
-          "FutureResolution": {
-            "date": "2016-11-11"
-          },
-          "PastResolution": {
-            "date": "2016-11-04"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "Ik ga op vrijdag terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -744,7 +652,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Friday",
+        "Text": "vrijdag",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-WXX-5",
@@ -767,7 +675,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "today",
+        "Text": "vandaag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-07",
@@ -790,7 +698,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tomorrow",
+        "Text": "morgen",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-08",
@@ -813,7 +721,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "yesterday",
+        "Text": "gisteren",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-06",
@@ -836,7 +744,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the day before yesterday",
+        "Text": "eergisteren",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-05",
@@ -859,7 +767,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the day after tomorrow",
+        "Text": "overmorgen",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-09",
@@ -874,7 +782,7 @@
     ]
   },
   {
-    "Input": "Overmorgen.",
+    "Input": "Overmorgen komt er visite.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -882,7 +790,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "The day after tomorrow",
+        "Text": "Overmorgen",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-09",
@@ -905,30 +813,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the next day",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-08",
-          "FutureResolution": {
-            "date": "2016-11-08"
-          },
-          "PastResolution": {
-            "date": "2016-11-08"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga de volgende dag terug.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "next day",
+        "Text": "volgende dag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-08",
@@ -951,7 +836,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "this Friday",
+        "Text": "aanstaande vrijdag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-11",
@@ -974,7 +859,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "next Sunday",
+        "Text": "aankomende zondag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-20",
@@ -989,7 +874,7 @@
     ]
   },
   {
-    "Input": "Ik ga de laatste zondag terug.",
+    "Input": "Ik kwam de laatste zondag terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -997,7 +882,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "last Sunday",
+        "Text": "laatste zondag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-06",
@@ -1012,7 +897,7 @@
     ]
   },
   {
-    "Input": "Ik ga deze week op Vrijdag terug.",
+    "Input": "Ik kwam de vorige zondag terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1020,7 +905,53 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "this week Friday",
+        "Text": "vorige zondag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik kwam de voorgaande zondag terug.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voorgaande zondag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga deze week op vrijdag terug.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "deze week op vrijdag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-11",
@@ -1043,7 +974,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "next week Sunday",
+        "Text": "volgende week zondag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-20",
@@ -1058,7 +989,7 @@
     ]
   },
   {
-    "Input": "Ik ga de laatste week op zondag terug.",
+    "Input": "Ik kwam vorige week zondag terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1066,7 +997,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "last week Sunday",
+        "Text": "vorige week zondag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-06",
@@ -1089,7 +1020,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "last day",
+        "Text": "laatste dag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-06",
@@ -1112,7 +1043,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the last day",
+        "Text": "de laatste dag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-06",
@@ -1127,7 +1058,7 @@
     ]
   },
   {
-    "Input": "Ik ga terug tijdens de dag.",
+    "Input": "Ik ga op 15 juni 2016 terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1135,30 +1066,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the day",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-07",
-          "FutureResolution": {
-            "date": "2016-11-07"
-          },
-          "PastResolution": {
-            "date": "2016-11-07"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga op 15 Juni 2016 terug.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "15 June 2016",
+        "Text": "15 juni 2016",
         "Type": "date",
         "Value": {
           "Timex": "2016-06-15",
@@ -1173,7 +1081,7 @@
     ]
   },
   {
-    "Input": "Ik ga de laatste vrijdag van Juli terug.",
+    "Input": "Ik ga de eerste vrijdag van juli terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1181,7 +1089,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the first friday of july",
+        "Text": "de eerste vrijdag van juli",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-07-WXX-5-#1",
@@ -1196,7 +1104,7 @@
     ]
   },
   {
-    "Input": "Ik ga de laatste vrijdag van de maand terug.",
+    "Input": "Ik ga de eerste vrijdag van de maand terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1204,7 +1112,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the first friday in this month",
+        "Text": "de eerste vrijdag van de maand",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-11-WXX-5-#1",
@@ -1227,7 +1135,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "next week on Friday",
+        "Text": "volgende week vrijdag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-18",
@@ -1242,7 +1150,7 @@
     ]
   },
   {
-    "Input": "Ik ga volgende week vrijdag terug.",
+    "Input": "Ik ga volgende week op vrijdag terug.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1250,7 +1158,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "on Friday next week",
+        "Text": "volgende week op vrijdag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-18",
@@ -1259,29 +1167,6 @@
           },
           "PastResolution": {
             "date": "2016-11-18"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga mijn dag terug.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "my day",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-07",
-          "FutureResolution": {
-            "date": "2016-11-07"
-          },
-          "PastResolution": {
-            "date": "2016-11-07"
           }
         }
       }
@@ -1296,7 +1181,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "this day",
+        "Text": "vandaag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-07",
@@ -1319,7 +1204,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "past day",
+        "Text": "gisteren",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-06",
@@ -1342,7 +1227,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "two weeks from now",
+        "Text": "over 2 weken",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-21",
@@ -1365,7 +1250,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "a month ago",
+        "Text": "een maand geleden",
         "Type": "date",
         "Value": {
           "Timex": "2016-10-07",
@@ -1403,7 +1288,7 @@
     ]
   },
   {
-    "Input": "wie heb i keen paar dagen geleden een email gestuurd",
+    "Input": "wie heb ik een paar dagen geleden een email gestuurd",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1411,7 +1296,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "a few day ago",
+        "Text": "een paar dagen geleden",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-04",
@@ -1434,7 +1319,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "op de 27ste",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1449,7 +1334,7 @@
     ]
   },
   {
-    "Input": "Ben op de 27ste terug gegaan",
+    "Input": "Ben op de 27e terug gegaan",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1457,76 +1342,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "for the 27th",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-11-27"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ben op de 27ste terug gegaan.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "for the 27",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-11-27"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ben op de 27ste terug gegaan!",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "for the 27",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-11-27"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ben op de 27ste terug gegaan.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "for the 27",
+        "Text": "op de 27e",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1549,7 +1365,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "for the 21st",
+        "Text": "op de 21ste",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-21",
@@ -1564,7 +1380,7 @@
     ]
   },
   {
-    "Input": "Ben naar de 22ste terug gegaan",
+    "Input": "Ben speciaal op de 22ste terug gegaan",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1572,7 +1388,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "for the 22nd",
+        "Text": "op de 22ste",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -1587,7 +1403,7 @@
     ]
   },
   {
-    "Input": "Ben naar de tweede terug gegaan",
+    "Input": "Ben op de tweede terug gegaan",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1595,7 +1411,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "for the second",
+        "Text": "op de tweede",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-02",
@@ -2147,7 +1963,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 month 2 years 21 days ago",
+        "Text": "2 jaar en 21 dagen geleden",
         "Type": "date",
         "Value": {
           "Timex": "2015-10-02",
@@ -2162,7 +1978,7 @@
     ]
   },
   {
-    "Input": "We hebben 1 maand en 21 dagen gelden een vergadering gehad.",
+    "Input": "We hebben 1 maand en 21 dagen geleden een vergadering gehad.",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
@@ -2170,7 +1986,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 month and 21 days ago",
+        "Text": "1 maand en 21 dagen geleden",
         "Type": "date",
         "Value": {
           "Timex": "2017-10-02",
@@ -2185,7 +2001,7 @@
     ]
   },
   {
-    "Input": "We hebben 1 maand en 21 dagen gelden een vergadering gehad.",
+    "Input": "We hebben 1 maand en 21 dagen geleden een vergadering gehad.",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
@@ -2193,7 +2009,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1 month, 21 days ago",
+        "Text": "1 maand en 21 dagen geleden",
         "Type": "date",
         "Value": {
           "Timex": "2017-10-02",
@@ -2216,7 +2032,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 20th of next month",
+        "Text": "volgende maand op de 20ste",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-20",
@@ -2231,7 +2047,7 @@
     ]
   },
   {
-    "Input": "We hebben een afspraak gehad op 5 December 1391.",
+    "Input": "We hebben een afspraak gehad op 5 december 1391.",
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
@@ -2239,7 +2055,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5 December 1391",
+        "Text": "5 december 1391",
         "Type": "date",
         "Value": {
           "Timex": "1391-12-05",
@@ -2254,7 +2070,7 @@
     ]
   },
   {
-    "Input": "Maandag 21ste Januari, 2018",
+    "Input": "Maandag eenentwintig jan. 2018",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2262,7 +2078,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Monday, Jan twenty two, 2018",
+        "Text": "Maandag eenentwintig jan. 2018",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-22",
@@ -2277,7 +2093,7 @@
     ]
   },
   {
-    "Input": "op zondag een en twintig januari tweeduizend achttien.",
+    "Input": "op zondag eenentwintig januari tweeduizend achttien.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2285,7 +2101,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Sunday Jan twenty one two thousand and eighteen",
+        "Text": "op zondag eenentwintig januari tweeduizend achttien",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-21",
@@ -2300,7 +2116,7 @@
     ]
   },
   {
-    "Input": "op een en twintig September negentien zeven en tachtig",
+    "Input": "op eenentwintig September negentien zeven en tachtig",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2308,7 +2124,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "September the twenty-first nineteen seventy eight",
+        "Text": "op eenentwintig September negentien zeven en tachtig",
         "Type": "date",
         "Value": {
           "Timex": "1978-09-21",
@@ -2323,7 +2139,7 @@
     ]
   },
   {
-    "Input": "op 10 September, negentien en een",
+    "Input": "op 10 september, negentien en een",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2331,7 +2147,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "September 10, nineteen zero one",
+        "Text": "op 10 september, negentien en een",
         "Type": "date",
         "Value": {
           "Timex": "1901-09-10",
@@ -2346,7 +2162,7 @@
     ]
   },
   {
-    "Input": "op September de tiende, tweeduizend",
+    "Input": "de tiende van september, tweeduizend",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2354,7 +2170,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "tenth of September, two thousand",
+        "Text": "de tiende van september, tweeduizend",
         "Type": "date",
         "Value": {
           "Timex": "2000-09-10",
@@ -2377,7 +2193,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the first Friday of next month",
+        "Text": "de eerste vrijdag van de volgende maand",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-WXX-5-#1",
@@ -2392,7 +2208,7 @@
     ]
   },
   {
-    "Input": "Dus, stel voor op de tweede Maandag van de volgende maand?",
+    "Input": "Dus, ik stel voor om op de tweede maandag van de volgende maand af te spreken?",
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
@@ -2400,7 +2216,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the second Monday of next month",
+        "Text": "de tweede maandag van de volgende maand",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-WXX-1-#2",
@@ -2423,7 +2239,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the third Wednesday of previous month",
+        "Text": "de derde woensdag van de vorige maand",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-02-WXX-3-#3",
@@ -2446,7 +2262,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Tuesday next week",
+        "Text": "Volgende week dinsdag",
         "Type": "date",
         "Value": {
           "Timex": "2018-03-27",
@@ -2469,7 +2285,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "on Sunday of next week",
+        "Text": "volgende week zondag",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-01",
@@ -2484,7 +2300,7 @@
     ]
   },
   {
-    "Input": "Ik ga terug over twee dagen na morgen.",
+    "Input": "Ik ga terug over twee dagen vanaf morgen.",
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
@@ -2492,7 +2308,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "two days from tomorrow",
+        "Text": "twee dagen vanaf morgen",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-23",
@@ -2515,7 +2331,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "four days from yesterday",
+        "Text": "4 dagen gerekend vanaf gisteren",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-23",
@@ -2561,7 +2377,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015.5.13",
+        "Text": "13-5-2015",
         "Type": "date",
         "Value": {
           "Timex": "2015-05-13",
@@ -2576,7 +2392,7 @@
     ]
   },
   {
-    "Input": "Ik ga terug op 3-7-2017",
+    "Input": "Ik ga terug op 7-3-2017",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2584,7 +2400,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3-7-2017",
+        "Text": "7-3-2017",
         "Type": "date",
         "Value": {
           "Timex": "2017-03-07",
@@ -2593,29 +2409,6 @@
           },
           "PastResolution": {
             "date": "2017-03-07"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Ik ga terug op 3-7-07",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotNet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "3-7-07",
-        "Type": "date",
-        "Value": {
-          "Timex": "2007-03-07",
-          "FutureResolution": {
-            "date": "2007-03-07"
-          },
-          "PastResolution": {
-            "date": "2007-03-07"
           }
         }
       }
@@ -2737,7 +2530,7 @@
     ]
   },
   {
-    "Input": "Are you available two days after today?",
+    "Input": "Ben je twee dagen vanaf vandaag gezien beschikbaar?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
@@ -2745,7 +2538,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "two days after today",
+        "Text": "twee dagen vanaf vandaag",
         "Type": "date",
         "Value": {
           "Timex": "2018-06-02",
@@ -2760,7 +2553,7 @@
     ]
   },
   {
-    "Input": "Are you available three weeks from tomorrow?",
+    "Input": "Ben je drie weken na morgen beschikbaar?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
@@ -2768,7 +2561,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "three weeks from tomorrow",
+        "Text": "drie weken na morgen",
         "Type": "date",
         "Value": {
           "Timex": "2018-06-22",
@@ -2783,7 +2576,7 @@
     ]
   },
   {
-    "Input": "Where were you two days before yesterday?",
+    "Input": "Waar was je twee dagen voor gisteren?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
@@ -2791,7 +2584,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "two days before yesterday",
+        "Text": "twee dagen voor gisteren",
         "Type": "date",
         "Value": {
           "Timex": "2018-05-28",
