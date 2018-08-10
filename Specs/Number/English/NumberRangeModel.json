@@ -861,5 +861,72 @@
       }
     }
   ]
+},
+{
+  "Input": "Is it still the case when >30",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": ">30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(30,)"
+      }
+    }
+  ]
+},
+{
+  "Input": "Is it still the case when >= 30",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": ">= 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[30,)"
+      }
+    }
+  ]
+},
+{
+  "Input": "Is it still the case when <-30",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "<-30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,-30)"
+      }
+    }
+  ]
+},
+{
+  "Input": "Is it still the case when <=  -30",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "<=  -30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,-30]"
+      }
+    }
+  ]
+},
+{
+  "Input": "<>30",
+  "NotSupported": "javascript, python, java",
+  "Results": []
+},
+{
+  "Input": "=>30",
+  "NotSupported": "javascript, python, java",
+  "Results": []
+},
+{
+  "Input": "=<30",
+  "NotSupported": "javascript, python, java",
+  "Results": []
 }
 ]
