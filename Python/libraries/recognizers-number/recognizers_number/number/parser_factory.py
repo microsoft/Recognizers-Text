@@ -2,8 +2,9 @@ from enum import Enum
 
 from recognizers_number.number.parsers import NumberParserConfiguration, BaseNumberParser, BasePercentageParser
 from recognizers_number.number.constants import Constants
-from recognizers_number.number.chinese.parsers import ChineseNumberParserConfiguration, ChineseNumberParser
-from recognizers_number.number.japanese.parsers import JapaneseNumberParserConfiguration, JapaneseNumberParser
+from recognizers_number.number.cjk_parsers import CJKNumberParser
+from recognizers_number.number.chinese.parsers import ChineseNumberParserConfiguration
+from recognizers_number.number.japanese.parsers import JapaneseNumberParserConfiguration
 
 class ParserType(Enum):
     NUMBER = 0
@@ -23,9 +24,9 @@ class AgnosticNumberParserFactory:
         japanese = isinstance(language_config, JapaneseNumberParserConfiguration)
 
         if chinese:
-            parser = ChineseNumberParser(language_config)
+            parser = CJKNumberParser(language_config)
         elif japanese:
-            parser = JapaneseNumberParser(language_config)
+            parser = CJKNumberParser(language_config)
 
         if parser_type is ParserType.CARDINAL:
             parser.supported_types = [
