@@ -1,0 +1,530 @@
+[
+  {
+    "Input": "Ik ga 3u weg",
+    "Results": [
+      {
+        "Text": "3u",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 dgn weg",
+    "Results": [
+      {
+        "Text": "3 dgn",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3,5 jr weg",
+    "Results": [
+      {
+        "Text": "3,5 jr",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 u weg",
+    "Results": [
+      {
+        "Text": "3 u",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 uur weg",
+    "Results": [
+      {
+        "Text": "3 uur",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 uren weg",
+    "Results": [
+      {
+        "Text": "3 uren",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 dagen weg",
+    "Results": [
+      {
+        "Text": "3 dagen",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 maanden weg",
+    "Results": [
+      {
+        "Text": "3 maanden",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 minuten weg",
+    "Results": [
+      {
+        "Text": "3 minuten",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 min weg",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3,5 seconden weg ",
+    "Results": [
+      {
+        "Text": "3,5 seconden",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 123,45 seconden weg",
+    "Results": [
+      {
+        "Text": "123,45 seconden",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3,5 sec weg ",
+    "Results": [
+      {
+        "Text": "3,5 sec",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 123,45 sec weg",
+    "Results": [
+      {
+        "Text": "123,45 sec",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga twee weken weg",
+    "Results": [
+      {
+        "Text": "twee weken",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga twintig minuten weg",
+    "Results": [
+      {
+        "Text": "twintig minuten",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga vierentwintig uur weg",
+    "Results": [
+      {
+        "Text": "vierentwintig uur",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga de hele dag weg",
+    "Results": [
+      {
+        "Text": "de hele dag",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga de hele week weg",
+    "Results": [
+      {
+        "Text": "de hele week",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga de hele maand weg",
+    "Results": [
+      {
+        "Text": "de hele maand",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga het hele jaar weg",
+    "Results": [
+      {
+        "Text": "het hele jaar",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een hele dag weg",
+    "Results": [
+      {
+        "Text": "een hele dag",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een hele week weg",
+    "Results": [
+      {
+        "Text": "een hele week",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een hele maand weg",
+    "Results": [
+      {
+        "Text": "een hele maand",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een heel jaar weg",
+    "Results": [
+      {
+        "Text": "een heel jaar",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een uur weg",
+    "Results": [
+      {
+        "Text": "een uur",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een jaar weg",
+    "Results": [
+      {
+        "Text": "een jaar",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "half jaar",
+    "Results": [
+      {
+        "Text": "half jaar",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een half jaar",
+    "Results": [
+      {
+        "Text": "een half jaar",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 min. weg",
+    "Results": [
+      {
+        "Text": "3 min.",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 30 min. weg",
+    "Results": [
+      {
+        "Text": "30 min.",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een half uur weg",
+    "Results": [
+      {
+        "Text": "een half uur",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een halfuur weg",
+    "Results": [
+      {
+        "Text": "een halfuur",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga anderhalf uur weg",
+    "Results": [
+      {
+        "Text": "anderhalf uur",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga twee uren weg",
+    "Results": [
+      {
+        "Text": "twee uren",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga tweeëneenhalf uur weg",
+    "Results": [
+      {
+        "Text": "tweeëneenhalf uur",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "over een week",
+    "Results": [
+      {
+        "Text": "een week",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Over een dag",
+    "Results": [
+      {
+        "Text": "een dag",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een uur lang",
+    "Results": [
+      {
+        "Text": "een uur lang",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een maand lang",
+    "Results": [
+      {
+        "Text": "een maand lang",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een paar uur lang weg",
+    "Results": [
+      {
+        "Text": "een paar uur lang",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een paar minuten lang weg",
+    "Results": [
+      {
+        "Text": "een paar minuten lang",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga een paar dagen weg",
+    "Results": [
+      {
+        "Text": "een paar dagen",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga enkele dagen weg",
+    "Results": [
+      {
+        "Text": "enkele dagen",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 1 jaar, 1 maand en 21 dagen weg",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "1 jaar, 1 maand en 21 dagen",
+        "Type": "duration"
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 1 maand en 2 dagen weg",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "1 maand en 2 dagen",
+        "Type": "duration"
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik realiseerde me dat jij nog een week weg bent.",
+    "Results": [
+      {
+        "Text": "nog een week",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Kunnen we nog een maand wachten?",
+    "Results": [
+      {
+        "Text": "nog een maand",
+        "Type": "duration"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  }
+]
