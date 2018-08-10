@@ -12,7 +12,6 @@ namespace Microsoft.Recognizers.Text.Number.Korean
         // CardinalExtractor = Int + Double
         public CardinalExtractor(KoreanNumberExtractorMode mode = KoreanNumberExtractorMode.Default)
         {
-            var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             var intExtract = new IntegerExtractor(mode);
