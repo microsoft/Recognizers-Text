@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Collections.Immutable;
+using System.Linq;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -15,8 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthNumRegex =
             new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -118,13 +119,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.DateExtractorA, RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
-
-        public static readonly Regex[] ImplicitDateList =
-        {
-            OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
-            SingleWeekDayRegex, WeekDayOfMonthRegex, SpecialDate, SpecialDayWithNumRegex, RelativeWeekDayRegex
-        };
-
         public static readonly Regex OfMonth = 
             new Regex(DateTimeDefinitions.OfMonth, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -155,14 +149,35 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly ImmutableDictionary<string, int> MonthOfYear = 
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-        public EnglishDateExtractorConfiguration()
+        public EnglishDateExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None)
         {
-            Options = DateTimeOptions.None;
+            Options = options;
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
+            var implicitDateList = new List<Regex>
+            {
+                OnRegex,
+                RelaxedOnRegex,
+                SpecialDayRegex,
+                ThisRegex,
+                LastDateRegex,
+                NextDateRegex,
+                SingleWeekDayRegex,
+                WeekDayOfMonthRegex,
+                SpecialDate,
+                SpecialDayWithNumRegex,
+                RelativeWeekDayRegex
+            };
+
+            if ((Options & DateTimeOptions.CalendarMode) != 0)
+            {
+               implicitDateList.Add(DayRegex);
+            }
+
+            ImplicitDateList = implicitDateList;
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -175,9 +190,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        IEnumerable<Regex> IDateExtractorConfiguration.DateRegexList => DateRegexList;
+        public IEnumerable<Regex> ImplicitDateList { get; }
 
-        IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
+        IEnumerable<Regex> IDateExtractorConfiguration.DateRegexList => DateRegexList;
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
 

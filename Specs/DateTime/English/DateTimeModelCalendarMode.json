@@ -581,5 +581,65 @@
     },
     "NotSupported": "javascript, python",
     "Results": []
+  },
+  {
+    "Input": "Cortana, can you please set something up between the 21st and 23rd.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "between the 21st and 23rd",
+        "Start": 41,
+        "End": 65,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-21,XXXX-XX-23,P2D)",
+              "type": "daterange",
+              "start": "2018-07-21",
+              "end": "2018-07-23"
+            },
+            {
+              "timex": "(XXXX-XX-21,XXXX-XX-23,P2D)",
+              "type": "daterange",
+              "start": "2018-08-21",
+              "end": "2018-08-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up the 21st.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the 21st",
+        "Start": 41,
+        "End": 48,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-21",
+              "type": "date",
+              "value": "2018-07-21"
+            },
+            {
+              "timex": "XXXX-XX-21",
+              "type": "date",
+              "value": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

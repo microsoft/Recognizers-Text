@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex YearRegex { get; }
 
-        public IDateTimeParser GetParser { get; }
+        public IDateTimeParser SetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
 
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
-            GetParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
+            SetParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
             TimeZoneParser = new BaseTimeZoneParser();
         }

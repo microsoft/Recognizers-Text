@@ -5460,5 +5460,57 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the week of the 18th.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the week of the 18th",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX-18",
+          "FutureResolution": {
+            "startDate": "2018-08-13",
+            "endDate": "2018-08-20"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-16",
+            "endDate": "2018-07-23"
+          }
+        },
+        "Start": 45,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the week of the 18th.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-28T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the week of the 18th",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX-18",
+          "FutureResolution": {
+            "startDate": "2018-09-17",
+            "endDate": "2018-09-24"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-13",
+            "endDate": "2018-08-20"
+          }
+        },
+        "Start": 45,
+        "Length": 20
+      }
+    ]
   }
 ]

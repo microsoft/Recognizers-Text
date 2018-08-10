@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 {
     public class CardinalExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
 
@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
         public CardinalExtractor(KoreanNumberExtractorMode mode = KoreanNumberExtractorMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
+            var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             var intExtract = new IntegerExtractor(mode);
             builder.AddRange(intExtract.Regexes);

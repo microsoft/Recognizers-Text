@@ -8,13 +8,13 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 {
     public class DoubleExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
 
         public DoubleExtractor()
         {
-            var regexes = new Dictionary<Regex, string>()
+            var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexOptions.IgnoreCase | RegexOptions.Singleline),

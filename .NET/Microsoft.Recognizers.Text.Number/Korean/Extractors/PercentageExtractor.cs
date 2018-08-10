@@ -8,13 +8,13 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 {
     public class PercentageExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_PERCENTAGE;
 
         public PercentageExtractor()
         {
-            var regexes = new Dictionary<Regex, string>()
+            var regexes = new Dictionary<Regex, TypeTag>()
             {
                 {
                     //백퍼센트 십오퍼센트
