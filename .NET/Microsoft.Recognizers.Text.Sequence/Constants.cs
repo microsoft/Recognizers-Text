@@ -46,7 +46,13 @@ namespace Microsoft.Recognizers.Text.Sequence
         public const string PHONE_NUMBER_REGEX_US = "USPhoneNumber";
 
         public const string PHONE_NUMBER_REGEX_CN = "CNPhoneNumber";
-        
+
+        public const string PHONE_NUMBER_REGEX_DENMARK = "DenmarkPhoneNumber";
+
+        public const string PHONE_NUMBER_REGEX_ITALY = "ItalyPhoneNumber";
+
+        public const string PHONE_NUMBER_REGEX_NETHERLANDS = "NetherlandsPhoneNumber";
+
         public const string PHONE_NUMBER_REGEX_SPECIAL = "SpecialPhoneNumber";
 
         public const string MENTION_REGEX = "Mention";

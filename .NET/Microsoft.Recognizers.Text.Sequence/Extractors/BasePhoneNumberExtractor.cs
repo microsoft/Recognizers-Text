@@ -37,6 +37,15 @@ namespace Microsoft.Recognizers.Text.Sequence
                     new Regex(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN
                 },
                 {
+                    new Regex(BasePhoneNumbers.DenmarkPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DENMARK
+                },
+                {
+                    new Regex(BasePhoneNumbers.ItalyPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_ITALY
+                },
+                {
+                    new Regex(BasePhoneNumbers.NetherlandsPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NETHERLANDS
+                },
+                {
                     new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL
                 }
             };
