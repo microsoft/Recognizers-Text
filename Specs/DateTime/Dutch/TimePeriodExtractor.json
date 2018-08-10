@@ -617,15 +617,21 @@
   },
   {
     "Input": "afspraak maken 13:30 voor 4 personen",
-    "Results": []
+    "Results": [],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "afspraak maken 13:30 uur voor 4 personen",
-    "Results": []
+    "Results": [],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "afspraak maken om 13:30 uur voor 4 personen",
-    "Results": []
+    "Results": [],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Hi Cortana- Maak alsjeblieft een skype afspraak met Jennifer.  Ik heb een afspraak van 30 minuten in de middag nodig, deze vrijdag zal ik vertrekken.",
