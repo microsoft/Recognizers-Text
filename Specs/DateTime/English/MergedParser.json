@@ -4211,5 +4211,153 @@
         "Length": 17
       }
     ]
+  },
+  {
+    "Input": "Will you leave > 6pm today?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "> 6pm today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-08-10 18:00:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Will you leave >= 6pm today?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript,java,python",
+    "Results": [
+      {
+        "Text": ">= 6pm today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2018-08-10 18:00:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Will you arrive <6pm today?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "<6pm today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-08-10 18:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Will you arrive <=6pm today?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "<=6pm today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "until",
+              "type": "datetimerange",
+              "end": "2018-08-10 18:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "<div>6pm</div>",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "6pm",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        },
+        "Start": 5,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "The time is <>6pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "6pm",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 3
+      }
+    ]
   }
 ]
