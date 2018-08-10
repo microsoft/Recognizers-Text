@@ -617,11 +617,15 @@
   },
   {
     "Input": "welke emails hebben p als onderwerp gekregen",
-    "Results": []
+    "Results": [],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "welke emails hebben een antwoord gehad",
-    "Results": []
+    "Results": [],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben om 12 uur lunchtijd terug",
