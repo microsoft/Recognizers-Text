@@ -4218,7 +4218,6 @@
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
     "NotSupported": "javascript,java,python",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "> 6pm today",
@@ -4244,7 +4243,6 @@
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
     "NotSupported": "javascript,java,python",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": ">= 6pm today",
@@ -4270,7 +4268,6 @@
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
     "NotSupported": "javascript,java,python",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "<6pm today",
@@ -4296,7 +4293,6 @@
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
     "NotSupported": "javascript,java,python",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "<=6pm today",
@@ -4322,7 +4318,6 @@
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
     "NotSupported": "javascript,java,python",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "6pm",
@@ -4347,7 +4342,6 @@
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
     "NotSupported": "javascript,java,python",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "6pm",
