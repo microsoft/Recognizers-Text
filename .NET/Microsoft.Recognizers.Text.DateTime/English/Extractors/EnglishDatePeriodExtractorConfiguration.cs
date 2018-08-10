@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(options));
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         }
 

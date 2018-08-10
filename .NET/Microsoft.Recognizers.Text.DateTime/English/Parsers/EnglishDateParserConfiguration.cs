@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
-            DateRegexes = EnglishDateExtractorConfiguration.DateRegexList;
+            DateRegexes = new EnglishDateExtractorConfiguration(config.Options).DateRegexList;
             OnRegex = EnglishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = EnglishDateExtractorConfiguration.SpecialDayWithNumRegex;

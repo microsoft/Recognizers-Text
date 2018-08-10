@@ -7,9 +7,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
     {
-        public EnglishDateTimeAltExtractorConfiguration()
+        public EnglishDateTimeAltExtractorConfiguration(DateTimeOptions options)
         {
-            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(options));
             DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
         }
 

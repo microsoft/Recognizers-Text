@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+            SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(options));
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));

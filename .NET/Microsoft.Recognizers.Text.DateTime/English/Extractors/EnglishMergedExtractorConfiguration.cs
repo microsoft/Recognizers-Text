@@ -82,10 +82,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
-            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration(options));
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
             TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration());
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(options));
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
 
             if ((options & DateTimeOptions.EnablePreview) != 0)

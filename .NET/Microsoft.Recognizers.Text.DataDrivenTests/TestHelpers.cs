@@ -157,6 +157,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 case Culture.English:
                     return GetEnglishExtractor(extractorName);
+                case Culture.EnglishOthers:
+                    return GetEnglishOthersExtractor(extractorName);
                 case Culture.Spanish:
                     return GetSpanishExtractor(extractorName);
                 case Culture.Portuguese:
@@ -180,6 +182,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 case Culture.English:
                     return GetEnglishParser(parserName);
+                case Culture.EnglishOthers:
+                    return GetEnglishOthersParser(parserName);
                 case Culture.Spanish:
                     return GetSpanishParser(parserName);
                 case Culture.Portuguese:
@@ -231,6 +235,71 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public static IDateTimeParser GetEnglishParser(DateTimeParsers parserName)
         {
             var commonConfiguration = new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None);
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new EnglishDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.English.TimeParser(new EnglishTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new EnglishDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None));
+            }
+
+            throw new Exception($"Parser '{parserName}' for English not supported");
+        }
+
+        public static IDateTimeExtractor GetEnglishOthersExtractor(DateTimeExtractors extractorName)
+        {
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new EnglishDateExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview | DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new EnglishSetExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.EnableMdy));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge | DateTimeOptions.EnableMdy));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for English not supported");
+        }
+
+        public static IDateTimeParser GetEnglishOthersParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.EnableMdy);
             switch (parserName)
             {
                 case DateTimeParsers.Date:

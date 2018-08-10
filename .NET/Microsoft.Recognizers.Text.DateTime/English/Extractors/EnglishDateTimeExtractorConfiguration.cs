@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
-            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(options));
             TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();

@@ -9,19 +9,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
     [TestClass]
     public class TestDateTimeRecognizerInitialization
     {
-        private const string TestInput = "today";
+        private const string TestInput = "today and 18-7-8";
 
         private const string EnglishCulture = Culture.English;
         private const string SpanishCulture = Culture.Spanish;
         private const string InvalidCulture = "vo-id";
+        private const string UnrecordedEnglishOthersCulture = "en-029";
 
-        private readonly IModel controlModel;
+        private readonly IModel englishUsControlModel;
+        private readonly IModel englishOthersControlModel;
 
         public TestDateTimeRecognizerInitialization()
         {
-            controlModel = new DateTimeModel(
+            englishUsControlModel = new DateTimeModel(
                     new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.None)),
                     new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.None)));
+
+            englishOthersControlModel = new DateTimeModel(
+                    new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(DateTimeOptions.EnableMdy)),
+                    new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(DateTimeOptions.EnableMdy)));
         }
 
         [TestMethod]
@@ -30,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             var recognizer = new DateTimeRecognizer(EnglishCulture);
             var testedModel = recognizer.GetDateTimeModel();
 
-            TestDateTime(testedModel, controlModel, TestInput);
+            TestDateTime(testedModel, englishUsControlModel, TestInput);
         }
 
         [TestMethod]
@@ -39,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             var recognizer = new DateTimeRecognizer(SpanishCulture);
             var testedModel = recognizer.GetDateTimeModel(EnglishCulture);
 
-            TestDateTime(testedModel, controlModel, TestInput);
+            TestDateTime(testedModel, englishUsControlModel, TestInput);
         }
 
         [TestMethod]
@@ -48,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             var recognizer = new DateTimeRecognizer(EnglishCulture);
             var testedModel = recognizer.GetDateTimeModel(InvalidCulture);
 
-            TestDateTime(testedModel, controlModel, TestInput);
+            TestDateTime(testedModel, englishUsControlModel, TestInput);
         }
 
         [TestMethod]
@@ -57,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             var recognizer = new DateTimeRecognizer();
             var testedModel = recognizer.GetDateTimeModel(InvalidCulture);
 
-            TestDateTime(testedModel, controlModel, TestInput);
+            TestDateTime(testedModel, englishUsControlModel, TestInput);
         }
 
         [TestMethod]
@@ -66,7 +72,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             var recognizer = new DateTimeRecognizer();
             var testedModel = recognizer.GetDateTimeModel();
 
-            TestDateTime(testedModel, controlModel, TestInput);
+            TestDateTime(testedModel, englishUsControlModel, TestInput);
+        }
+
+        [TestMethod]
+        public void WithUnrecordedEnglishCulture_FallbackToEnglishOthersCulture()
+        {
+            var recognizer = new DateTimeRecognizer(UnrecordedEnglishOthersCulture);
+            var testedModel = recognizer.GetDateTimeModel(UnrecordedEnglishOthersCulture);
+
+            TestDateTime(testedModel, englishOthersControlModel, TestInput);
         }
 
         [TestMethod]
@@ -104,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             Assert.AreEqual(expectedResults.Count, actualResults.Count, source);
             Assert.IsTrue(expectedResults.Count > 0, source);
 
-            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+            foreach (var tuple in expectedResults.Zip(actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
