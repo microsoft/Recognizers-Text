@@ -326,7 +326,7 @@
       "Text": "九百九",
       "TypeName": "number",
       "Resolution": {
-        "value": "990"
+        "value": "909"
       }
     }
   ]
@@ -354,7 +354,7 @@
       "Text": "一万三",
       "TypeName": "number",
       "Resolution": {
-        "value": "13000"
+        "value": "10003"
       }
     }
   ]
@@ -396,7 +396,7 @@
       "Text": "九万四",
       "TypeName": "number",
       "Resolution": {
-        "value": "94000"
+        "value": "90004"
       }
     }
   ]
@@ -410,7 +410,7 @@
       "Text": "九十二万四",
       "TypeName": "number",
       "Resolution": {
-        "value": "924000"
+        "value": "920004"
       }
     }
   ]
@@ -536,7 +536,7 @@
       "Text": "五兆六十二億四万五千二",
       "TypeName": "number",
       "Resolution": {
-        "value": "5006200045200"
+        "value": "5006200045002"
       }
     }
   ]
@@ -550,7 +550,7 @@
       "Text": "五十五兆一十二億四万五千二",
       "TypeName": "number",
       "Resolution": {
-        "value": "55001200045200"
+        "value": "55001200045002"
       }
     }
   ]
@@ -662,21 +662,21 @@
       "Text": "二百五",
       "TypeName": "number",
       "Resolution": {
-        "value": "250"
+        "value": "205"
       }
     },
     {
       "Text": "二百五",
       "TypeName": "number",
       "Resolution": {
-        "value": "250"
+        "value": "205"
       }
     },
     {
       "Text": "二百五",
       "TypeName": "number",
       "Resolution": {
-        "value": "250"
+        "value": "205"
       }
     }
   ]

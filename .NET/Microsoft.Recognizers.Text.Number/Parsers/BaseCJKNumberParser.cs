@@ -540,6 +540,10 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                     else
                     {
+                        if (i == intStr.Length - 1 && Config.CultureInfo.Name == "ja-JP")
+                        {
+                            roundDefault = 1;
+                        }
                         partValue += Config.ZeroToNineMap[intStr[i]] * roundDefault;
                         intValue += partValue;
                         partValue = 0;
