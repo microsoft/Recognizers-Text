@@ -29,12 +29,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex NumberAsTimeRegex = new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public PortugueseDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public PortugueseDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             IntegerExtractor = new IntegerExtractor();
-            DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
-            TimePointExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            TimePointExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
         }
 

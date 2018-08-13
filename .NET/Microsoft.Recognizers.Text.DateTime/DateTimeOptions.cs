@@ -11,7 +11,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         CalendarMode = 4,
         ExtendedTypes = 8,
         ExperimentalMode = 16,
-        EnableMdy = 32,
         EnablePreview = 8388608, // 2 ^23
     }
 }

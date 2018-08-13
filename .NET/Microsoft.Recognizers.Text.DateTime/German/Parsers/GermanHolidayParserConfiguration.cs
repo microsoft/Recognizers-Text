@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public GermanHolidayParserConfiguration() : base()
+        public GermanHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             this.HolidayRegexList = GermanHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();

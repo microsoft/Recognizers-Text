@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; 
             AtRegex = FrenchTimeExtractorConfiguration.AtRegex;

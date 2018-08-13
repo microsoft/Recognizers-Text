@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDatePeriodExtractorConfiguration : IDatePeriodExtractorConfiguration
+    public class EnglishDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // Base regexes
         public static readonly Regex TillRegex = 
@@ -185,13 +185,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             ReferenceDatePeriodRegex
         };
 
-        public EnglishDatePeriodExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None)
+        public EnglishDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            Options = options;
-            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(options));
+            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         }
 
@@ -284,8 +283,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var match = Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex);
             return match.Success && match.Length == text.Trim().Length;
         }
-
-        public DateTimeOptions Options { get; }
 
     }
 }

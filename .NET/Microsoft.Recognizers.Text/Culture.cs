@@ -18,7 +18,6 @@ namespace Microsoft.Recognizers.Text
         public readonly string CultureName;
         public readonly string CultureCode;
 
-        // The order of this array is important for GetCultureCodeWithFallback
         public static readonly Culture[] SupportedCultures = {
             new Culture("EnglishOthers", EnglishOthers),
             new Culture("English", English),
@@ -40,20 +39,25 @@ namespace Microsoft.Recognizers.Text
             this.CultureCode = cultureCode;
         }
 
+        public static string[] GetSupportedCultureCodes()
+        {
+            return SupportedCultureCodes;
+        }
+
         // If the input culture code isn't in the supported cultures list,
         // the first culture with the same prefix as the input one will be returned.
         // Otherwise, the original input culture code will be returned.
         // e.g. "en-029"->"en-*" "vo-id"->"vo-id" "en-us"->"en-us"
-        public static string GetCultureCodeWithFallback(string cultureCode)
+        public static string MapToMoreSpecificLanguage(string cultureCode)
         {
             cultureCode = cultureCode.ToLowerInvariant();
 
             if (SupportedCultureCodes.All(o => o != cultureCode))
             {
                 var fallbackCultureCodes = SupportedCultureCodes
-                    .Where(o => cultureCode.StartsWith(o.Split('-').First())).ToList();
+                    .Where(o => o.EndsWith("*") && cultureCode.StartsWith(o.Split('-').First())).ToList();
 
-                if (fallbackCultureCodes.Count > 0)
+                if (fallbackCultureCodes.Count == 1)
                 {
                     return fallbackCultureCodes.First();
                 }

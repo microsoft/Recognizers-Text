@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public GermanCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
+        public GermanCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
 
@@ -30,13 +30,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
 
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
-            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(this));
             DurationParser = new BaseDurationParser(new GermanDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new GermanDateParserConfiguration(this));
             TimeParser = new TimeParser(new GermanTimeParserConfiguration(this));

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Collections.Immutable;
+using System.Linq;
 
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -10,7 +11,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateExtractorConfiguration : IDateExtractorConfiguration
+    public class EnglishDateExtractorConfiguration : BaseOptionsConfiguration, IDateExtractorConfiguration
     {
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -109,15 +110,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly ImmutableDictionary<string, int> MonthOfYear =
             DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-        public EnglishDateExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None)
+        public EnglishDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            Options = options;
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
-            var implicitDateList = new List<Regex>
+            ImplicitDateList = new List<Regex>
             {
                 OnRegex,
                 RelaxedOnRegex,
@@ -134,55 +134,51 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             if ((Options & DateTimeOptions.CalendarMode) != 0)
             {
-               implicitDateList.Add(DayRegex);
+                ImplicitDateList = ImplicitDateList.Concat(new[] {DayRegex});
             }
 
-            ImplicitDateList = implicitDateList;
+            const RegexOptions dateRegexOption = RegexOptions.IgnoreCase | RegexOptions.Singleline;
 
-            var enableMdy = (Options & DateTimeOptions.EnableMdy) != 0;
+            // 3-23-2017
+            var dateRegex4 = new Regex(DateTimeDefinitions.DateExtractor4, dateRegexOption);
+
+            // 23-3-2015
+            var dateRegex5 = new Regex(DateTimeDefinitions.DateExtractor5, dateRegexOption);
+
+            // on (Sunday,)? 1.3
+            var dateRegex6 = new Regex(DateTimeDefinitions.DateExtractor6, dateRegexOption);
+
+            // on (Sunday,)? 24-12
+            var dateRegex8 = new Regex(DateTimeDefinitions.DateExtractor8, dateRegexOption);
+
+            // (Sunday,)? 7/23
+            var dateRegex7 = new Regex(DateTimeDefinitions.DateExtractor7, dateRegexOption);
+
+            // (Sunday,)? 23/7
+            var dateRegex9 = new Regex(DateTimeDefinitions.DateExtractor9, dateRegexOption);
+
+            // (Sunday,)? 2015-12-23
+            var dateRegexA = new Regex(DateTimeDefinitions.DateExtractorA, dateRegexOption);
 
             DateRegexList = new List<Regex>
             {
                 // ((this)? Sunday,)? April 5
-                new Regex(DateTimeDefinitions.DateExtractor1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                new Regex(DateTimeDefinitions.DateExtractor1, dateRegexOption),
 
                 // ((this)? Sunday,)? April 5, 2016
-                new Regex(DateTimeDefinitions.DateExtractor2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                new Regex(DateTimeDefinitions.DateExtractor2, dateRegexOption),
 
                 // (Sunday,)? 6th of April
-                new Regex(DateTimeDefinitions.DateExtractor3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                new Regex(DateTimeDefinitions.DateExtractor3, dateRegexOption),
 
-                !enableMdy
-                    ?
-                    // 3-23-2017
-                    new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    :
-                    // 23-3-2015
-                    new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-                !enableMdy
-                    ?
-                    // 23-3-2015
-                    new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    :
-                    // 3-23-2017
-                    new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-                // on (Sunday,)? 1.3
-                new Regex(DateTimeDefinitions.DateExtractor6, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-                // (Sunday,)? 7/23
-                new Regex(DateTimeDefinitions.DateExtractor7, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-                // on (Sunday,)? 24-12
-                new Regex(DateTimeDefinitions.DateExtractor8, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-                // (Sunday,)? 23/7
-                new Regex(DateTimeDefinitions.DateExtractor9, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-                // (Sunday,)? 2015-12-23
-                new Regex(DateTimeDefinitions.DateExtractorA, RegexOptions.IgnoreCase | RegexOptions.Singleline)
             };
+
+            var enableDmy = EnableDmy || 
+                            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
+
+            DateRegexList = DateRegexList.Concat(enableDmy
+                ? new[] {dateRegex5, dateRegex8, dateRegex9, dateRegex4, dateRegex6, dateRegex7, dateRegexA}
+                : new[] {dateRegex4, dateRegex6, dateRegex7, dateRegex5, dateRegex8, dateRegex9, dateRegexA});
         }
 
         public IEnumerable<Regex> DateRegexList { get; }
@@ -231,6 +227,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
-        public DateTimeOptions Options { get; }
     }
 }

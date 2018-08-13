@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableList<string> InStringList { get; }
 
-        public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

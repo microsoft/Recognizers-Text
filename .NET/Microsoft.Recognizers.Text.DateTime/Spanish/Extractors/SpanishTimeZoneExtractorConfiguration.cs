@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
         };
 
-        public SpanishTimeZoneExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

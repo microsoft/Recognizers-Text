@@ -65,17 +65,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
-            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(options));
-            SetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration(this));
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
             IntegerExtractor = new Number.Spanish.IntegerExtractor();
         }
 

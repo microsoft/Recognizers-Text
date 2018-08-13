@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishMergedExtractorConfiguration : IMergedExtractorConfiguration
+    public class EnglishMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex = 
             new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -46,8 +46,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
-        public DateTimeOptions Options { get; }
-
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -72,23 +70,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor IntegerExtractor { get; }
 
-        public EnglishMergedExtractorConfiguration(DateTimeOptions options)
+        public EnglishMergedExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            Options = options;
-            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(options));
-            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(options));
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
-            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration(options));
-            HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(options));
+            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(this));
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
 
-            if ((options & DateTimeOptions.EnablePreview) != 0)
+            if ((Options & DateTimeOptions.EnablePreview) != 0)
             {
                 SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
             }

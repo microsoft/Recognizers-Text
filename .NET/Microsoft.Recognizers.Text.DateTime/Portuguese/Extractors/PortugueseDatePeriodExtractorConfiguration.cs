@@ -191,12 +191,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             RelativeDecadeRegex
         };
 
-        public PortugueseDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
             OrdinalExtractor = new Number.Portuguese.OrdinalExtractor();
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
         }
 

@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public PortugueseCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
+        public PortugueseCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
 
@@ -29,13 +29,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             OrdinalExtractor = new OrdinalExtractor();
 
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
-            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration(this));
             DateParser = new BaseDateParser(new PortugueseDateParserConfiguration(this));
             TimeParser = new BaseTimeParser(new PortugueseTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new PortugueseDateTimeParserConfiguration(this));

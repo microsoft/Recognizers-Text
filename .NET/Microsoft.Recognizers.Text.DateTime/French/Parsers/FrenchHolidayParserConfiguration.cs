@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public FrenchHolidayParserConfiguration() : base()
+        public FrenchHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             this.HolidayRegexList = FrenchHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();

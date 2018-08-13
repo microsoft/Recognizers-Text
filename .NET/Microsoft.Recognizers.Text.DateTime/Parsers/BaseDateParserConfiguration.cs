@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public abstract class BaseDateParserConfiguration : BaseOptionsConfiguration, ICommonDateTimeParserConfiguration
     {
 
-        protected BaseDateParserConfiguration(DateTimeOptions options) : base(options)
+        protected BaseDateParserConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

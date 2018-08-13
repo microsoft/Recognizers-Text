@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             H3
         };
 
-        public GermanHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        public GermanHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

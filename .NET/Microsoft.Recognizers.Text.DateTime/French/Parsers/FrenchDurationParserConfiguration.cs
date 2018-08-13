@@ -41,11 +41,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public FrenchDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(), false);
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = FrenchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = FrenchDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = FrenchDurationExtractorConfiguration.DuringRegex;

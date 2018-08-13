@@ -36,12 +36,12 @@ namespace Microsoft.Recognizers.Text
 
         private void InitializeModel(Type modelType, string culture, TModelOptions options)
         {
-            this.TryGetModel(modelType, culture, options, out _);
+            this.TryGetModel(modelType, culture, options, out IModel model);
         }
 
         private bool TryGetModel<T>(string culture, TModelOptions options, out T model) where T : IModel
         {
-            var result = this.TryGetModel(typeof(T), culture, options, out var outModel);
+            var result = this.TryGetModel(typeof(T), culture, options, out IModel outModel);
             model = (T)outModel;
             return result;
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text
                 return false;
             }
 
-            culture = Culture.GetCultureCodeWithFallback(culture);
+            culture = Culture.MapToMoreSpecificLanguage(culture);
 
             // Look in cache
             var cacheKey = (culture, modelType, options.ToString());

@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IImmutableList<string> InStringList { get; }
 
-        public GermanDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public GermanDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

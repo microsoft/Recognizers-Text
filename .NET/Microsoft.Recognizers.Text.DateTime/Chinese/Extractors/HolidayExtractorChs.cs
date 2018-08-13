@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
 
-        public ChineseHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        public ChineseHolidayExtractorConfiguration() : base()
         {
         }
 
