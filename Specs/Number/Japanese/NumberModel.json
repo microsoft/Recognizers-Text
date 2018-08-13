@@ -1,13 +1,11 @@
 [
 {
   "Input": "西九条",
-  "NotSupported": "python",
   "Results": []
 }
 ,
 {
   "Input": "一匹",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "一",
@@ -21,7 +19,6 @@
 ,
 {
   "Input": "十キロ",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "十",
@@ -35,7 +32,6 @@
 ,
 {
   "Input": "九年八トン",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "九",
@@ -56,7 +52,6 @@
 ,
 {
   "Input": "十万以上",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "十万以上",
@@ -70,19 +65,16 @@
 ,
 {
   "Input": "万",
-  "NotSupported": "python",
   "Results": []
 }
 ,
 {
   "Input": "万万",
-  "NotSupported": "python",
   "Results": []
 }
 ,
 {
   "Input": "二",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "二",
@@ -96,7 +88,6 @@
 ,
 {
   "Input": "40k",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "40k",
@@ -110,7 +101,6 @@
 ,
 {
   "Input": "二十億",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "二十億",
@@ -124,7 +114,6 @@
 ,
 {
   "Input": "６、５４４",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "６、５４４",
@@ -138,7 +127,6 @@
 ,
 {
   "Input": "5万4千6百",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "5万4千6百",
@@ -152,7 +140,6 @@
 ,
 {
   "Input": "5億1万4千6百",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "5億1万4千6百",
@@ -166,7 +153,6 @@
 ,
 {
   "Input": "5、450",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "5、450",
@@ -180,7 +166,6 @@
 ,
 {
   "Input": "マイナス10000",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "マイナス10000",
@@ -194,7 +179,6 @@
 ,
 {
   "Input": "マイナス8452",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "マイナス8452",
@@ -208,7 +192,6 @@
 ,
 {
   "Input": "-10000",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-10000",
@@ -222,7 +205,6 @@
 ,
 {
   "Input": "一ダース",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "一ダース",
@@ -236,7 +218,6 @@
 ,
 {
   "Input": "五十ダース",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "五十ダース",
@@ -250,7 +231,6 @@
 ,
 {
   "Input": "半ダース",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "半ダース",
@@ -264,7 +244,6 @@
 ,
 {
   "Input": "十",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "十",
@@ -278,7 +257,6 @@
 ,
 {
   "Input": "十五",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "十五",
@@ -292,7 +270,6 @@
 ,
 {
   "Input": "一百",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "一百",
@@ -306,7 +283,6 @@
 ,
 {
   "Input": "九百九十九",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "九百九十九",
@@ -320,7 +296,6 @@
 ,
 {
   "Input": "九百九",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "九百九",
@@ -334,7 +309,6 @@
 ,
 {
   "Input": "二百五十",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "二百五十",
@@ -348,7 +322,6 @@
 ,
 {
   "Input": "一万三",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "一万三",
@@ -362,7 +335,6 @@
 ,
 {
   "Input": "一万二百五十",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "一万二百五十",
@@ -376,7 +348,6 @@
 ,
 {
   "Input": "一万零二百五十",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "一万零二百五十",
@@ -390,7 +361,6 @@
 ,
 {
   "Input": "九万四",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "九万四",
@@ -404,7 +374,6 @@
 ,
 {
   "Input": "九十二万四",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "九十二万四",
@@ -418,7 +387,6 @@
 ,
 {
   "Input": "九万零四百",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "九万零四百",
@@ -432,7 +400,6 @@
 ,
 {
   "Input": "九百万零四百",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "九百万零四百",
@@ -446,7 +413,6 @@
 ,
 {
   "Input": "四千零五万",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四千零五万",
@@ -460,7 +426,6 @@
 ,
 {
   "Input": "四千万",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四千万",
@@ -474,7 +439,6 @@
 ,
 {
   "Input": "四千万零六千",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四千万零六千",
@@ -488,7 +452,6 @@
 ,
 {
   "Input": "四億",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四億",
@@ -502,7 +465,6 @@
 ,
 {
   "Input": "四億五千六百四十二万零一十五",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四億五千六百四十二万零一十五",
@@ -516,7 +478,6 @@
 ,
 {
   "Input": "四万五千六百二十二",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四万五千六百二十二",
@@ -530,7 +491,6 @@
 ,
 {
   "Input": "五兆六十二億四万五千二",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "五兆六十二億四万五千二",
@@ -544,7 +504,6 @@
 ,
 {
   "Input": "五十五兆一十二億四万五千二",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "五十五兆一十二億四万五千二",
@@ -558,7 +517,6 @@
 ,
 {
   "Input": "一百万零四",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "一百万零四",
@@ -572,7 +530,6 @@
 ,
 {
   "Input": "四十万",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四十万",
@@ -586,7 +543,6 @@
 ,
 {
   "Input": "四千零四万",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四千零四万",
@@ -600,7 +556,6 @@
 ,
 {
   "Input": "四十五億四千零四万",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "四十五億四千零四万",
@@ -614,7 +569,6 @@
 ,
 {
   "Input": "1, 234, 567",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "1",
@@ -642,7 +596,6 @@
 ,
 {
   "Input": "1、234、567",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "1、234、567",
@@ -656,7 +609,6 @@
 ,
 {
   "Input": "二百五, 二百五, ど二百五。",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "二百五",
@@ -684,7 +636,6 @@
 ,
 {
   "Input": "199个",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "199",
@@ -698,7 +649,6 @@
 ,
 {
   "Input": "1,050,000,000",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "1,050,000,000",
@@ -712,7 +662,6 @@
 ,
 {
   "Input": "一百 五 十 二",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "一百 五 十 二",
@@ -726,7 +675,6 @@
 ,
 {
   "Input": "7万 5千 4百",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "7万 5千 4百",
@@ -740,7 +688,6 @@
 ,
 {
   "Input": "三千 八百 九十六 万 四千 九百 六十五",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "三千 八百 九十六 万 四千 九百 六十五",
@@ -754,7 +701,6 @@
 ,
 {
   "Input": "十ダースりんご",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "十ダース",
@@ -768,7 +714,6 @@
 ,
 {
   "Input": "１９９１年１月１６日夜パリ時間２０時：フランスのミトラン大統領がテレビの談話を発表し、海湾の危機の解決を宣言した。",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "１９９１",
@@ -803,7 +748,6 @@
 ,
 {
   "Input": "2^5",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "2^5",
@@ -817,7 +761,6 @@
 ,
 {
   "Input": "2e5",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "2e5",
@@ -831,7 +774,6 @@
 ,
 {
   "Input": "10,000.233",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "10,000.233",
@@ -845,7 +787,6 @@
 ,
 {
   "Input": ".23456000",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": ".23456000",
@@ -859,7 +800,6 @@
 ,
 {
   "Input": "4.800",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "4.800",
@@ -873,7 +813,6 @@
 ,
 {
   "Input": "２.７８９０",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "２.７８９０",
@@ -887,7 +826,6 @@
 ,
 {
   "Input": "2.3",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "2.3",
@@ -901,7 +839,6 @@
 ,
 {
   "Input": "2.3万",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "2.3万",
@@ -915,7 +852,6 @@
 ,
 {
   "Input": "２.７８９０e－１",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "２.７８９０e－１",
@@ -929,7 +865,6 @@
 ,
 {
   "Input": "1, 234, 567.3",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "1",
@@ -1006,7 +941,6 @@
 ,
 {
   "Input": "－－9",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "9",
@@ -1020,7 +954,6 @@
 ,
 {
   "Input": "-127.32e13",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-127.32e13",
@@ -1034,7 +967,6 @@
 ,
 {
   "Input": "12.32e+14",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "12.32e+14",
@@ -1048,7 +980,6 @@
 ,
 {
   "Input": "-12e-1",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-12e-1",
@@ -1062,7 +993,6 @@
 ,
 {
   "Input": "１２/３",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "１２/３",
@@ -1076,7 +1006,6 @@
 ,
 {
   "Input": "6/5",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "6/5",
@@ -1090,7 +1019,6 @@
 ,
 {
   "Input": "-3/2",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-3/2",
@@ -1104,7 +1032,6 @@
 ,
 {
   "Input": "12.32e+14",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "12.32e+14",
@@ -1118,7 +1045,6 @@
 ,
 {
   "Input": "-12e-1",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-12e-1",
@@ -1132,7 +1058,6 @@
 ,
 {
   "Input": "-1.1^--23",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-1.1^--23",
@@ -1146,7 +1071,6 @@
 ,
 {
   "Input": "2.5^-1",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "2.5^-1",
@@ -1160,7 +1084,6 @@
 ,
 {
   "Input": "-1.1^+23",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-1.1^+23",
@@ -1174,7 +1097,6 @@
 ,
 {
   "Input": "-2.5^-1",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-2.5^-1",
@@ -1223,7 +1145,6 @@
 ,
 {
   "Input": "4.800",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "4.800",
@@ -1237,7 +1158,6 @@
 ,
 {
   "Input": "-1e1",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-1e1",
@@ -1251,7 +1171,6 @@
 ,
 {
   "Input": "-2.5 M",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "-2.5 M",
@@ -1265,7 +1184,6 @@
 ,
 {
   "Input": "10.233",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "10.233",
@@ -1279,7 +1197,6 @@
 ,
 {
   "Input": "2^-1",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "2^-1",
@@ -1293,7 +1210,6 @@
 ,
 {
   "Input": "21.2E0",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "21.2E0",
@@ -1307,7 +1223,6 @@
 ,
 {
   "Input": "五 分の 一",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "五 分の 一",
@@ -1321,7 +1236,6 @@
 ,
 {
   "Input": "五 は 四 分の 一",  
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "五 は 四 分の 一",
@@ -1335,7 +1249,6 @@
 ,
 {
   "Input": "五 と 四 分の 一",  
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "五 と 四 分の 一",
@@ -1349,7 +1262,6 @@
 ,
 {
   "Input": "３／５",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "３／５",
@@ -1363,7 +1275,6 @@
 ,
 {
   "Input": "1 ３/5",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "1 ３/5",
@@ -1377,7 +1288,6 @@
 ,
 {
   "Input": "１６/5",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "１６/5",
@@ -1391,7 +1301,6 @@
 ,
 {
   "Input": "１６分の5",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "１６分の5",
@@ -1405,7 +1314,6 @@
 ,
 {
   "Input": "１６分の2225",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "１６分の2225",
@@ -1419,7 +1327,6 @@
 ,
 {
   "Input": "マイナス一と二分の一",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "マイナス一と二分の一",
@@ -1433,7 +1340,6 @@
 ,
 {
   "Input": "３分の27",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "３分の27",
@@ -1447,7 +1353,6 @@
 ,
 {
   "Input": "マイナス３分の27",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "マイナス３分の27",
@@ -1461,7 +1366,6 @@
 ,
 {
   "Input": "12/3の夢、1/2の努力",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "12/3",
@@ -1482,13 +1386,11 @@
 ,
 {
   "Input": "四川",
-  "NotSupported": "python",
   "Results": []
 }
 ,
 {
   "Input": "小明十本の指",
-  "NotSupported": "python",
   "Results": [
     {
       "Text": "十",
@@ -1504,7 +1406,6 @@
 ,
 {
   "Input": "私の家は四川にあります",
-  "NotSupported": "python",
   "Results": []
 }
 ]
