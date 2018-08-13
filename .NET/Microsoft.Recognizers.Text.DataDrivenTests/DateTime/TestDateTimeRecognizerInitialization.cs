@@ -11,24 +11,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
     {
         private const string TestInput = "today and 18-7-8";
 
-        private const string EnglishCulture = Culture.English;
+        private const string DefaultEnglishCulture = Culture.English;
         private const string SpanishCulture = Culture.Spanish;
         private const string InvalidCulture = "vo-id";
-        private const string UnrecordedEnglishOthersCulture = "en-029";
+        private const string OtherEnglishCulture = "en-029";
 
-        private readonly IModel englishUsControlModel;
-        private readonly IModel englishOthersControlModel;
+        private readonly IModel defaultEnglishControlModel;
+        private readonly IModel otherEnglishControlModel;
 
         public TestDateTimeRecognizerInitialization()
         {
             var config = new BaseOptionsConfiguration();
             var configEnableDmy = new BaseOptionsConfiguration(DateTimeOptions.None, true);
 
-            englishUsControlModel = new DateTimeModel(
+            defaultEnglishControlModel = new DateTimeModel(
                     new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(config)),
                     new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(config)));
 
-            englishOthersControlModel = new DateTimeModel(
+            otherEnglishControlModel = new DateTimeModel(
                     new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(configEnableDmy)),
                     new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(configEnableDmy)));
         }
@@ -36,28 +36,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void WithoutCulture_UseTargetCulture()
         {
-            var recognizer = new DateTimeRecognizer(EnglishCulture);
+            var recognizer = new DateTimeRecognizer(DefaultEnglishCulture);
             var testedModel = recognizer.GetDateTimeModel();
 
-            TestDateTime(testedModel, englishUsControlModel, TestInput);
+            TestDateTime(testedModel, defaultEnglishControlModel, TestInput);
         }
 
         [TestMethod]
         public void WithOtherCulture_NotUseTargetCulture()
         {
             var recognizer = new DateTimeRecognizer(SpanishCulture);
-            var testedModel = recognizer.GetDateTimeModel(EnglishCulture);
+            var testedModel = recognizer.GetDateTimeModel(DefaultEnglishCulture);
 
-            TestDateTime(testedModel, englishUsControlModel, TestInput);
+            TestDateTime(testedModel, defaultEnglishControlModel, TestInput);
         }
 
         [TestMethod]
         public void WithInvalidCulture_UseTargetCulture()
         {
-            var recognizer = new DateTimeRecognizer(EnglishCulture);
+            var recognizer = new DateTimeRecognizer(DefaultEnglishCulture);
             var testedModel = recognizer.GetDateTimeModel(InvalidCulture);
 
-            TestDateTime(testedModel, englishUsControlModel, TestInput);
+            TestDateTime(testedModel, defaultEnglishControlModel, TestInput);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             var recognizer = new DateTimeRecognizer();
             var testedModel = recognizer.GetDateTimeModel(InvalidCulture);
 
-            TestDateTime(testedModel, englishUsControlModel, TestInput);
+            TestDateTime(testedModel, defaultEnglishControlModel, TestInput);
         }
 
         [TestMethod]
@@ -75,16 +75,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             var recognizer = new DateTimeRecognizer();
             var testedModel = recognizer.GetDateTimeModel();
 
-            TestDateTime(testedModel, englishUsControlModel, TestInput);
+            TestDateTime(testedModel, defaultEnglishControlModel, TestInput);
         }
 
         [TestMethod]
         public void WithUnrecordedEnglishCulture_FallbackToEnglishOthersCulture()
         {
-            var recognizer = new DateTimeRecognizer(UnrecordedEnglishOthersCulture);
-            var testedModel = recognizer.GetDateTimeModel(UnrecordedEnglishOthersCulture);
+            var recognizer = new DateTimeRecognizer(OtherEnglishCulture);
+            var testedModel = recognizer.GetDateTimeModel(OtherEnglishCulture);
 
-            TestDateTime(testedModel, englishOthersControlModel, TestInput);
+            TestDateTime(testedModel, otherEnglishControlModel, TestInput);
         }
 
         [TestMethod]
@@ -104,14 +104,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         [TestMethod]
         public void InitializationWithIntOption_ResolveOptionsEnum()
         {
-            var recognizer = new DateTimeRecognizer(EnglishCulture, 5);
+            var recognizer = new DateTimeRecognizer(DefaultEnglishCulture, 5);
             Assert.IsTrue(recognizer.Options.HasFlag(DateTimeOptions.SkipFromToMerge | DateTimeOptions.CalendarMode));
         }
 
         [TestMethod]
         public void InitializationWithInvalidOptions_ThrowError()
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new DateTimeRecognizer(EnglishCulture, -1));
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new DateTimeRecognizer(DefaultEnglishCulture, -1));
         }
 
         private void TestDateTime(IModel testedModel, IModel controlModel, string source)
