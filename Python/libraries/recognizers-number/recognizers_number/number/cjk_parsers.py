@@ -398,6 +398,8 @@ class CJKNumberParser(BaseNumberParser):
                         before_value = before_value * 10 + self.config.zero_to_nine_map[c]
                         is_round_before = False
                 else:
+                    if i == len(result_str)-1 and self.config.culture_info.code == Culture.Japanese:
+                        round_default = 1
                     part_value += before_value * 10
                     part_value += self.config.zero_to_nine_map[c] * round_default
                     int_value += part_value
