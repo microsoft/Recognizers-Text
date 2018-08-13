@@ -19,16 +19,16 @@ namespace Microsoft.Recognizers.Text.Sequence
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BasePhoneNumbers.BrazilPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BRAZIL
+                    new Regex(BasePhoneNumbers.BRPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BR
                 },
                 {
                     new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GENERAL
                 },
                 {
-                    new Regex(BasePhoneNumbers.UkPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK
+                    new Regex(BasePhoneNumbers.UKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK
                 },
                 {
-                    new Regex(BasePhoneNumbers.GermanyPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GERMANY
+                    new Regex(BasePhoneNumbers.DEPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DE
                 },
                 {
                     new Regex(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US
@@ -37,13 +37,13 @@ namespace Microsoft.Recognizers.Text.Sequence
                     new Regex(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN
                 },
                 {
-                    new Regex(BasePhoneNumbers.DenmarkPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DENMARK
+                    new Regex(BasePhoneNumbers.DKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DK
                 },
                 {
-                    new Regex(BasePhoneNumbers.ItalyPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_ITALY
+                    new Regex(BasePhoneNumbers.ITPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_IT
                 },
                 {
-                    new Regex(BasePhoneNumbers.NetherlandsPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NETHERLANDS
+                    new Regex(BasePhoneNumbers.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL
                 },
                 {
                     new Regex(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL

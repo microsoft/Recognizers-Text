@@ -2613,7 +2613,6 @@
   {
     "Input": "My phone number is 06-12345678.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
     "Results": [
       {
         "Text": "06-12345678",
@@ -2640,7 +2639,6 @@
   {
     "Input": "My phone number is 0111-123456.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
     "Results": [
       {
         "Text": "0111-123456",
@@ -2693,7 +2691,6 @@
   {
     "Input": "My phone number is +31(0) 10123 4567.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
     "Results": [
       {
         "Text": "+31(0) 10123 4567",
@@ -2707,7 +2704,6 @@
   {
     "Input": "My phone number is +3110-1234567.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
     "Results": [
       {
         "Text": "+3110-1234567",
@@ -2734,7 +2730,6 @@
   {
     "Input": "My phone number is +316 123 456 78.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
     "Results": [
       {
         "Text": "+316 123 456 78",
@@ -2748,7 +2743,6 @@
   {
     "Input": "My phone number is +31(0)6 123 45678.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet,javascript",
     "Results": [
       {
         "Text": "+31(0)6 123 45678",
@@ -3397,5 +3391,694 @@
         }
       }
     ]
+  },
+  {
+    "Input": "My phone number is (+45) 12-34-56-78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45) 12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12-34-56-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (0045) 12 34 56 78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(0045) 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(0045) 12 34 56 78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+45) 12 34 56 78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45) 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12 34 56 78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+45)-12-34-56-78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45)-12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45)-12-34-56-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+45)12-34-56-78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45)12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45)12-34-56-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is(+45)12-34-56-78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45)12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45)12-34-56-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+45) 12 345 678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45) 12 345 678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12 345 678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+45) 12-345-678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45) 12-345-678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12-345-678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+45) 1234 5678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45) 1234 5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 1234 5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+45) 1234-5678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45) 1234-5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 1234-5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+45) 12345678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+45) 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+45) 12345678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +45 12-34-56-78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+45 12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12-34-56-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +4512-34-56-78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+4512-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+4512-34-56-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is+45 12-34-56-78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+45 12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12-34-56-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 12-34-56-78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "12-34-56-78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "12-34-56-78"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +45 12 345 678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+45 12 345 678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12 345 678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 12 345 678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "12 345 678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "12 345 678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +45 1234 5678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+45 1234 5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 1234 5678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 1234 5678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "1234 5678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "1234 5678"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "My phone number is +45 12345678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+45 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12345678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 12345678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "12345678"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 012-3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "012-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "012-3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 012 3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "012 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "012 3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (012) 3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(012) 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(012) 3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +31 12-3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+31 12-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 12-3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +31 12 3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+31 12 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 12 3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+31) 12-3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+31) 12-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) 12-3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+31) 12 3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+31) 12 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) 12 3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+31)12-3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+31)12-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31)12-3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is(+31) 12 3456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+31) 12 3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) 12 3456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 0123-456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "0123-456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0123-456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 0123 456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "0123 456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0123 456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 06-23456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "06-23456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "06-23456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 06 23456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "06 23456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "06 23456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 0623456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "0623456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0623456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 061223456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "061223456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "061223456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +31 061223456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+31 061223456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 061223456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 0031 061223456789.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "0031 061223456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0031 061223456789"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +31 (6) 12234567.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+31 (6) 12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 (6) 12234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (06) 12234567.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(06) 12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(06) 12234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (06)-12234567.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(06)-12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(06)-12234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+31)(6) 12234567.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+31)(6) 12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31)(6) 12234567"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+39) 012234.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+39) 012234",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+39) 012234"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is (+39) 012 23411111.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "(+39) 012 23411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+39) 012 23411111"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 012234.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "012234",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "012234"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +39 012-23411111.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+39 012-23411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+39 012-23411111"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +39 3122 411111.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+39 3122 411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+39 3122 411111"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +39 31 22411111.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+39 31 22411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+39 31 22411111"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 312 2411111.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "312 2411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "312 2411111"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 0039 3122411111.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "0039 3122411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "0039 3122411111"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 3122411111.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "3122411111",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "3122411111"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "(45)+(31)-278394 is not a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "Formula 45+31-339243873 is not a phone number",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "Formula 45*31-339243873 is not a phone number",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "0039 3122411111-26737 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "(39 (6)) 345276 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
   }
 ]
