@@ -26,7 +26,7 @@
       "Text": "between 20 and 30",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(20,30)"
+        "value": "[20,30)"
       }
     }
   ]
@@ -40,7 +40,7 @@
       "Text": "between the tenth and the fifteenth",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(10,15)"
+        "value": "[10,15)"
       }
     }
   ]
@@ -54,7 +54,7 @@
       "Text": "between negative ten and fifteen",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(-10,15)"
+        "value": "[-10,15)"
       }
     }
   ]

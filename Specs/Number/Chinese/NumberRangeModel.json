@@ -20,7 +20,7 @@
       "Text": "位于20和30之间",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(20,30)"
+        "value": "[20,30)"
       }
     }
   ]
@@ -34,7 +34,7 @@
       "Text": "在第十和第十五之间",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(10,15)"
+        "value": "[10,15)"
       }
     }
   ]
