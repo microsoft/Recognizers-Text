@@ -107,6 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var trimedText = text.Trim().ToLower();
 
             var match = this.config.PureNumberFromToRegex.Match(trimedText);
+
             if (!match.Success)
             {
                 match = this.config.PureNumberBetweenAndRegex.Match(trimedText);
@@ -152,9 +153,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (string.IsNullOrEmpty(leftDesc))
                         {
 
-                            bool rightAmValid = !string.IsNullOrEmpty(rightDesc) &&
+                            var rightAmValid = !string.IsNullOrEmpty(rightDesc) &&
                                                     config.UtilityConfiguration.AmDescRegex.Match(rightDesc.ToLower()).Success;
-                            bool rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
+                            var rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
                                             config.UtilityConfiguration.PmDescRegex.Match(rightDesc.ToLower()).Success;
 
                             if (!string.IsNullOrEmpty(amStr) || rightAmValid)
@@ -209,6 +210,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                             else
                             {
                                 ret.Timex = $"({beginStr},{endStr},PT{endHour - beginHour + 24}H)";
+                            }
+
+                            // Try to get the timezone resolution
+                            var timeErs = config.TimeExtractor.Extract(trimedText);
+                            foreach (var er in timeErs)
+                            {
+                                var pr = config.TimeParser.Parse(er, referenceTime);
+                                if (((DateTimeResolutionResult)pr.Value).TimeZoneResolution != null)
+                                {
+                                    ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
+                                    break;
+                                }
                             }
 
                             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
@@ -459,8 +472,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
+
                 // No 'am' or 'pm' indicator
-                else if (!hasLeft && !hasRight && beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount)
+                else if (beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount)
                 {
                     if (beginHour > endHour)
                     {
@@ -506,14 +520,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Type = $"{Constants.SYS_DATETIME_TIME}"
                     };
 
-                    DateTimeParseResult pr = this.config.TimeParser.Parse(er, referenceTime);
+                    var pr = this.config.TimeParser.Parse(er, referenceTime);
                     ret.SubDateTimeEntities.Add(pr);
                 }
 
                 // Cases like "from 4am to 5", "5" should not be treated as SubDateTimeEntity
                 if (hasRight || endMinute != invalidFlag || endSecond != invalidFlag)
                 {
-                    var er = new ExtractResult()
+                    var er = new ExtractResult
                     {
                         Start = time2StartIndex,
                         Length = time2EndIndex - time2StartIndex,
@@ -521,7 +535,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         Type = $"{Constants.SYS_DATETIME_TIME}"
                     };
 
-                    DateTimeParseResult pr = this.config.TimeParser.Parse(er, referenceTime);
+                    var pr = this.config.TimeParser.Parse(er, referenceTime);
                     ret.SubDateTimeEntities.Add(pr);
                 }
 
