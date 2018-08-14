@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
-    class PortugueseDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
+    class PortugueseDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public PortugueseDateTimeAltExtractorConfiguration()
+        public PortugueseDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DateExtractor { get; }

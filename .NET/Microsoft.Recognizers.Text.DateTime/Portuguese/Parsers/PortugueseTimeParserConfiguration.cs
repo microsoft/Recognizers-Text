@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public PortugueseTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public PortugueseTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = PortugueseTimeExtractorConfiguration.AtRegex;

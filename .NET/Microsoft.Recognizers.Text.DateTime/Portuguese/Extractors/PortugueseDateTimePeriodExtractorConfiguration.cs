@@ -15,17 +15,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public PortugueseDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
 
-            SingleDateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
-            SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration());
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration());
+            SingleDateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
         }
 
         public IExtractor CardinalExtractor { get; }

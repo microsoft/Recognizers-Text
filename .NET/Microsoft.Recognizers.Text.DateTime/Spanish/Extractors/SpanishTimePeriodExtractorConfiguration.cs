@@ -35,10 +35,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
+            SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }

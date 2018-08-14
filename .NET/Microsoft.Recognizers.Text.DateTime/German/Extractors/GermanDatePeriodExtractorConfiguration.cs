@@ -184,12 +184,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             RelativeDecadeRegex
         };
 
-        public GermanDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public GermanDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
         }
 

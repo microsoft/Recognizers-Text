@@ -10,16 +10,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         public string TokenBeforeDate { get; }
 
-        public FrenchDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            SingleDateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-            SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
+            SingleDateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
         }
 
         private static readonly Regex[] SimpleCases =

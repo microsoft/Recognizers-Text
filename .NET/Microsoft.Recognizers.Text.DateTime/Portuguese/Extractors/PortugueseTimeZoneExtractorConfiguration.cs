@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
         };
 
-        public PortugueseTimeZoneExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

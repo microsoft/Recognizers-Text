@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex SetEachRegex { get; }
 
-        public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;

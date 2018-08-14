@@ -40,10 +40,22 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"):
                 RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"),
 
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"),
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"),
+                
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor10, "gis"),
         ];
         this.implicitDateList = [

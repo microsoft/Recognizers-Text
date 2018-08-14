@@ -76,10 +76,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
-            DateRegexes = SpanishDateExtractorConfiguration.DateRegexList;
+            DateRegexes = new SpanishDateExtractorConfiguration(config).DateRegexList;
             OnRegex = SpanishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = SpanishDateExtractorConfiguration.SpecialDayWithNumRegex;

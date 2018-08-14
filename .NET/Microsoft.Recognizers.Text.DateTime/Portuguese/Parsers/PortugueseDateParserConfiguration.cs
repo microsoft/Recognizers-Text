@@ -77,10 +77,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public PortugueseDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public PortugueseDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
-            DateRegexes = PortugueseDateExtractorConfiguration.DateRegexList;
+            DateRegexes = new PortugueseDateExtractorConfiguration(config).DateRegexList;
             OnRegex = PortugueseDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = PortugueseDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = PortugueseDateExtractorConfiguration.SpecialDayWithNumRegex;

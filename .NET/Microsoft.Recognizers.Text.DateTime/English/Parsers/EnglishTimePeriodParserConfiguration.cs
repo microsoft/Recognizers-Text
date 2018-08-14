@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;

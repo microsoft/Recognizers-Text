@@ -7,9 +7,10 @@ namespace Microsoft.Recognizers.Text
 {
     internal class ModelFactory<TModelOptions> : Dictionary<(string culture, Type modelType), Func<TModelOptions, IModel>>
     {
-        private static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> cache = new ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>();
+        private static ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel> cache =
+            new ConcurrentDictionary<(string culture, Type modelType, string modelOptions), IModel>();
 
-        private static readonly string fallbackCulture = Culture.English;
+        private const string FallbackCulture = Culture.English;
 
         public T GetModel<T>(string culture, bool fallbackToDefaultCulture, TModelOptions options) where T : IModel
         {
@@ -17,7 +18,7 @@ namespace Microsoft.Recognizers.Text
             {
                 return model;
             }
-            else if (fallbackToDefaultCulture && TryGetModel(fallbackCulture, options, out model))
+            else if (fallbackToDefaultCulture && TryGetModel(FallbackCulture, options, out model))
             {
                 return model;
             }
@@ -53,8 +54,10 @@ namespace Microsoft.Recognizers.Text
                 return false;
             }
 
+            culture = Culture.MapToMoreSpecificLanguage(culture);
+
             // Look in cache
-            var cacheKey = (culture.ToLowerInvariant(), modelType, options.ToString());
+            var cacheKey = (culture, modelType, options.ToString());
             if (cache.ContainsKey(cacheKey))
             {
                 model = cache[cacheKey];

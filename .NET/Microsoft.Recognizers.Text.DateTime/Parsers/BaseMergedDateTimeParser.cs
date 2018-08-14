@@ -286,9 +286,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
                     {
-                        var valueSet = value[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
-
-                        if (valueSet != null && valueSet.Any())
+                        if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, string>> valueSet && valueSet.Any())
                         {
                             foreach (var values in valueSet)
                             {

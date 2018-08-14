@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public FrenchCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
+        public FrenchCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
 
@@ -30,13 +30,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             OrdinalExtractor = new OrdinalExtractor();
 
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
-            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration(this));
             // DurationParser should be assigned first, as DateParser would reference the DurationParser
             DurationParser = new BaseDurationParser(new FrenchDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new FrenchDateParserConfiguration(this));
