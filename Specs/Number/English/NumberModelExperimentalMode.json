@@ -1,6 +1,7 @@
 [
   {
     "Input": "192.",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "192",
@@ -14,6 +15,7 @@
   },
   {
     "Input": "192.168.1.2",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "192",
@@ -51,26 +53,32 @@
   },
   {
     "Input": "the 180.25ml liquid",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "the 180ml liquid",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
     "Input": " 29km Road ",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
     "Input": " the May 4th ",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "the .25ml liquid",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
     "Input": ".08",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": ".08",
@@ -84,14 +92,17 @@
   },
   {
     "Input": "an",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "a",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
     "Input": ".23456000",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": ".23456000",
@@ -105,6 +116,7 @@
   },
   {
     "Input": "4.800",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "4.800",
@@ -118,6 +130,7 @@
   },
   {
     "Input": "one hundred and three and two thirds",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred and three and two thirds",
@@ -131,6 +144,7 @@
   },
   {
     "Input": "sixteen",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "sixteen",
@@ -144,6 +158,7 @@
   },
   {
     "Input": "two thirds",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "two thirds",
@@ -157,6 +172,7 @@
   },
   {
     "Input": "one hundred and sixteen",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred and sixteen",
@@ -170,6 +186,7 @@
   },
   {
     "Input": "one hundred and six",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred and six",
@@ -183,6 +200,7 @@
   },
   {
     "Input": "one hundred and sixty-one",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred and sixty-one",
@@ -196,6 +214,7 @@
   },
   {
     "Input": "a trillionth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "a trillionth",
@@ -209,6 +228,7 @@
   },
   {
     "Input": "a hundred trillionths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "a hundred trillionths",
@@ -222,6 +242,7 @@
   },
   {
     "Input": " half a  dozen",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "half a  dozen",
@@ -235,6 +256,7 @@
   },
   {
     "Input": " 3 dozens",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "3 dozens",
@@ -248,6 +270,7 @@
   },
   {
     "Input": "a dozen",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "a dozen",
@@ -261,6 +284,7 @@
   },
   {
     "Input": " three dozens ",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three dozens",
@@ -274,6 +298,7 @@
   },
   {
     "Input": " three hundred and two dozens",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three hundred and two dozens",
@@ -287,6 +312,7 @@
   },
   {
     "Input": "1,234,567",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1,234,567",
@@ -300,6 +326,7 @@
   },
   {
     "Input": "1, 234, 567",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1",
@@ -329,6 +356,7 @@
   },
   {
     "Input": "9.2321312",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "9.2321312",
@@ -342,6 +370,7 @@
   },
   {
     "Input": " -9.2321312",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-9.2321312",
@@ -355,6 +384,7 @@
   },
   {
     "Input": " -1",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-1",
@@ -368,6 +398,7 @@
   },
   {
     "Input": "-4/5",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-4/5",
@@ -381,6 +412,7 @@
   },
   {
     "Input": "- 1 4/5",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "- 1 4/5",
@@ -394,6 +426,7 @@
   },
   {
     "Input": "three",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three",
@@ -407,6 +440,7 @@
   },
   {
     "Input": " 123456789101231",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "123456789101231",
@@ -420,6 +454,7 @@
   },
   {
     "Input": "-123456789101231",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -433,6 +468,7 @@
   },
   {
     "Input": " -123456789101231",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -446,6 +482,7 @@
   },
   {
     "Input": "1",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1",
@@ -459,6 +496,7 @@
   },
   {
     "Input": "10k",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "10k",
@@ -472,6 +510,7 @@
   },
   {
     "Input": "10G",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "10G",
@@ -485,6 +524,7 @@
   },
   {
     "Input": "- 10  k",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "- 10  k",
@@ -498,6 +538,7 @@
   },
   {
     "Input": "2 million",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "2 million",
@@ -511,6 +552,7 @@
   },
   {
     "Input": "1 trillion",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1 trillion",
@@ -524,6 +566,7 @@
   },
   {
     "Input": " three ",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three",
@@ -537,6 +580,7 @@
   },
   {
     "Input": "one trillion",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one trillion",
@@ -550,6 +594,7 @@
   },
   {
     "Input": "twenty-one trillion",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty-one trillion",
@@ -563,6 +608,7 @@
   },
   {
     "Input": "twenty-one trillion three hundred",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty-one trillion three hundred",
@@ -576,6 +622,7 @@
   },
   {
     "Input": "twenty-one trillion and three hundred",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty-one trillion and three hundred",
@@ -589,6 +636,7 @@
   },
   {
     "Input": "fifty - two",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "fifty - two",
@@ -602,6 +650,7 @@
   },
   {
     "Input": "fifty   two",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "fifty   two",
@@ -615,6 +664,7 @@
   },
   {
     "Input": "Three hundred  and  thirty one",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "Three hundred  and  thirty one",
@@ -628,6 +678,7 @@
   },
   {
     "Input": "two hundred and two thousand",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "two hundred and two thousand",
@@ -641,6 +692,7 @@
   },
   {
     "Input": "two  thousand  and  two hundred",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "two  thousand  and  two hundred",
@@ -654,6 +706,7 @@
   },
   {
     "Input": " 2.33 k",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "2.33 k",
@@ -667,6 +720,7 @@
   },
   {
     "Input": " two hundred point zero three",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "two hundred point zero three",
@@ -680,6 +734,7 @@
   },
   {
     "Input": " two hundred point seventy-one",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "two hundred point seventy-one",
@@ -693,6 +748,7 @@
   },
   {
     "Input": "1e10",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1e10",
@@ -706,6 +762,7 @@
   },
   {
     "Input": "1.1^23",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1.1^23",
@@ -719,6 +776,7 @@
   },
   {
     "Input": " 322 hundred ",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "322 hundred",
@@ -732,6 +790,7 @@
   },
   {
     "Input": "seventy",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "seventy",
@@ -745,6 +804,7 @@
   },
   {
     "Input": "fifty-two",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "fifty-two",
@@ -758,6 +818,7 @@
   },
   {
     "Input": "2  1/4",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "2  1/4",
@@ -771,6 +832,7 @@
   },
   {
     "Input": "3/4",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "3/4",
@@ -784,6 +846,7 @@
   },
   {
     "Input": "one eighth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one eighth",
@@ -797,6 +860,7 @@
   },
   {
     "Input": "five eighths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "five eighths",
@@ -810,6 +874,7 @@
   },
   {
     "Input": "a half",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "a half",
@@ -823,6 +888,7 @@
   },
   {
     "Input": "three quarters",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three quarters",
@@ -836,6 +902,7 @@
   },
   {
     "Input": "twenty and three fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty and three fifths",
@@ -849,6 +916,7 @@
   },
   {
     "Input": "twenty-three fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty-three fifths",
@@ -862,6 +930,7 @@
   },
   {
     "Input": "twenty and three and three fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty and three and three fifths",
@@ -875,6 +944,7 @@
   },
   {
     "Input": "one million two thousand two hundred three fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one million two thousand two hundred three fifths",
@@ -888,6 +958,7 @@
   },
   {
     "Input": "one and a half",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one and a half",
@@ -901,6 +972,7 @@
   },
   {
     "Input": "one and a fourth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one and a fourth",
@@ -914,6 +986,7 @@
   },
   {
     "Input": "five and a quarter",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "five and a quarter",
@@ -927,6 +1000,7 @@
   },
   {
     "Input": "one hundred and three quarters",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred and three quarters",
@@ -940,6 +1014,7 @@
   },
   {
     "Input": "a hundredth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "a hundredth",
@@ -953,6 +1028,7 @@
   },
   {
     "Input": "1.1^+23",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1.1^+23",
@@ -966,6 +1042,7 @@
   },
   {
     "Input": "2.5^-1",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "2.5^-1",
@@ -979,6 +1056,7 @@
   },
   {
     "Input": "-2500^-1",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-2500^-1",
@@ -992,6 +1070,7 @@
   },
   {
     "Input": "-1.1^+23",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-1.1^+23",
@@ -1005,6 +1084,7 @@
   },
   {
     "Input": "-2.5^-1",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-2.5^-1",
@@ -1018,6 +1098,7 @@
   },
   {
     "Input": "-1.1^--23",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-1.1^--23",
@@ -1031,6 +1112,7 @@
   },
   {
     "Input": "-127.32e13",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-127.32e13",
@@ -1044,6 +1126,7 @@
   },
   {
     "Input": "12.32e+14",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "12.32e+14",
@@ -1057,6 +1140,7 @@
   },
   {
     "Input": "-12e-1",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "-12e-1",
@@ -1070,6 +1154,7 @@
   },
   {
     "Input": "1.2b",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1.2b",
@@ -1083,6 +1168,7 @@
   },
   {
     "Input": "a fifth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "a fifth",
@@ -1096,6 +1182,7 @@
   },
   {
     "Input": "a hundred thousand trillionths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "a hundred thousand trillionths",
@@ -1109,6 +1196,7 @@
   },
   {
     "Input": "one fifth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one fifth",
@@ -1122,6 +1210,7 @@
   },
   {
     "Input": "three fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three fifths",
@@ -1135,6 +1224,7 @@
   },
   {
     "Input": "twenty fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty fifths",
@@ -1148,6 +1238,7 @@
   },
   {
     "Input": "three and a fifth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three and a fifth",
@@ -1161,6 +1252,7 @@
   },
   {
     "Input": "twenty one fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty one fifths",
@@ -1174,6 +1266,7 @@
   },
   {
     "Input": "a twenty-first",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "a twenty-first",
@@ -1187,6 +1280,7 @@
   },
   {
     "Input": "one twenty-fifth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one twenty-fifth",
@@ -1200,6 +1294,7 @@
   },
   {
     "Input": "three twenty-firsts",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three twenty-firsts",
@@ -1213,6 +1308,7 @@
   },
   {
     "Input": "three twenty firsts",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "three twenty firsts",
@@ -1226,6 +1322,7 @@
   },
   {
     "Input": "twenty twenty fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "twenty twenty fifths",
@@ -1239,6 +1336,7 @@
   },
   {
     "Input": "one hundred and thirty fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred and thirty fifths",
@@ -1252,6 +1350,7 @@
   },
   {
     "Input": "one hundred thirty fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred thirty fifths",
@@ -1265,6 +1364,7 @@
   },
   {
     "Input": "one hundred thirty two fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred thirty two fifths",
@@ -1278,6 +1378,7 @@
   },
   {
     "Input": "one hundred thirty-two fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred thirty-two fifths",
@@ -1291,6 +1392,7 @@
   },
   {
     "Input": "one hundred and thirty-two fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred and thirty-two fifths",
@@ -1304,6 +1406,7 @@
   },
   {
     "Input": "one hundred and thirty and two fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred and thirty and two fifths",
@@ -1317,6 +1420,7 @@
   },
   {
     "Input": "one hundred thirty-fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred thirty-fifths",
@@ -1330,6 +1434,7 @@
   },
   {
     "Input": "one one hundred fifth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one one hundred fifth",
@@ -1343,6 +1448,7 @@
   },
   {
     "Input": "one one hundred and fifth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one one hundred and fifth",
@@ -1356,6 +1462,7 @@
   },
   {
     "Input": "one hundred one thousand fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one hundred one thousand fifths",
@@ -1369,6 +1476,7 @@
   },
   {
     "Input": "one over three",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one over three",
@@ -1382,6 +1490,7 @@
   },
   {
     "Input": "1 over twenty-one",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1 over twenty-one",
@@ -1395,6 +1504,7 @@
   },
   {
     "Input": "1 over one hundred and twenty one",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1 over one hundred and twenty one",
@@ -1408,6 +1518,7 @@
   },
   {
     "Input": "1 over three",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1 over three",
@@ -1421,6 +1532,7 @@
   },
   {
     "Input": "1 over 3",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1 over 3",
@@ -1434,6 +1546,7 @@
   },
   {
     "Input": "one over 3",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one over 3",
@@ -1447,6 +1560,7 @@
   },
   {
     "Input": "one over 20",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one over 20",
@@ -1460,6 +1574,7 @@
   },
   {
     "Input": "one over twenty",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one over twenty",
@@ -1473,6 +1588,7 @@
   },
   {
     "Input": "one over one hundred",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one over one hundred",
@@ -1486,6 +1602,7 @@
   },
   {
     "Input": "one over one hundred and twenty five",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one over one hundred and twenty five",
@@ -1499,6 +1616,7 @@
   },
   {
     "Input": "ninety - five hundred fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "ninety - five hundred fifths",
@@ -1512,10 +1630,12 @@
   },
   {
     "Input": "Book a first class seat to seattle",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "The answer is negative ninety - five hundred fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "negative ninety - five hundred fifths",
@@ -1529,6 +1649,7 @@
   },
   {
     "Input": "The answer is minus ninety - five hundred fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "minus ninety - five hundred fifths",
@@ -1542,6 +1663,7 @@
   },
   {
     "Input": "The answer is minus one",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "minus one",
@@ -1555,6 +1677,7 @@
   },
   {
     "Input": "The answer is minus one hundred thirty fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "minus one hundred thirty fifths",
@@ -1568,6 +1691,7 @@
   },
   {
     "Input": "The answer is negative one over 20",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "negative one over 20",
@@ -1581,6 +1705,7 @@
   },
   {
     "Input": "The answer is minus five point five",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "minus five point five",
@@ -1594,6 +1719,7 @@
   },
   {
     "Input": "The answer is minus 5",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "minus 5",
@@ -1607,6 +1733,7 @@
   },
   {
     "Input": "one - fourth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one - fourth",
@@ -1620,6 +1747,7 @@
   },
   {
     "Input": "one-eighth",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one-eighth",
@@ -1633,6 +1761,7 @@
   },
   {
     "Input": "five - eighths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "five - eighths",
@@ -1646,6 +1775,7 @@
   },
   {
     "Input": "ninety - five hundred-fifths",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "ninety - five hundred-fifths",
@@ -1659,6 +1789,7 @@
   },
   {
     "Input": "one out of three",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "one out of three",
@@ -1694,6 +1825,7 @@
   },
   {
     "Input": "five eighths of",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "five eighths",
@@ -1707,6 +1839,7 @@
   },
   {
     "Input": "1 234 567",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1 234 567",
@@ -1720,6 +1853,7 @@
   },
   {
     "Input": "40 000 is the same as 40 000",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "40 000",
@@ -1741,6 +1875,7 @@
   },
   {
     "Input": "For now, China's population is 1 414 021 100.",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1 414 021 100",
@@ -1784,6 +1919,7 @@
   },
   {
     "Input": "1 234 567.89 is a valid number format.",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1 234 567.89",
@@ -1797,6 +1933,7 @@
   },
   {
     "Input": "zero is 0",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "zero",
@@ -1886,6 +2023,7 @@
   },
   {
     "Input": "I can give you 1M.",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1M",
@@ -1899,6 +2037,7 @@
   },
   {
     "Input": "1m isn't a number.",
+    "NotSupported": "javascript, java, python",
     "Results": []
   },
   {
