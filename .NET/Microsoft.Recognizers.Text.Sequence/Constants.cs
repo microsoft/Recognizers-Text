@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public const string PHONE_NUMBER_REGEX_IT = "ITPhoneNumber";
 
-        public const string PHONE_NUMBER_REGEX_NL = "NLlandsPhoneNumber";
+        public const string PHONE_NUMBER_REGEX_NL = "NLPhoneNumber";
 
         public const string PHONE_NUMBER_REGEX_SPECIAL = "SpecialPhoneNumber";
 
