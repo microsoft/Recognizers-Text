@@ -3744,19 +3744,6 @@
     ]
   },
   {
-    "Input": "My phone number is (012)-3456789.",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "(012)-3456789",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "(012)-3456789"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is +31 12-3456789.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -3791,19 +3778,6 @@
         "TypeName": "phonenumber",
         "Resolution": {
           "value": "(+31) 12-3456789"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "My phone number is (+31) (12)-3456789.",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "(+31) (12)-3456789",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "(+31) (12)-3456789"
         }
       }
     ]
@@ -4030,19 +4004,6 @@
     ]
   },
   {
-    "Input": "My phone number is (06)-12234567.",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "(06)-12234567",
-        "TypeName": "phonenumber",
-        "Resolution": {
-          "value": "(06)-12234567"
-        }
-      }
-    ]
-  },
-  {
     "Input": "My phone number is (+31)(6) 12234567.",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -4206,5 +4167,33 @@
     "Input": "323456 seems too short to be a phone number.",
     "NotSupportedByDesign": "python",
     "Results": []
+  },
+  {
+    "Input": "My phone number is (06)-12234567, ')-' is not allowed.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is (+31) (12)-3456789, ')-' is not allowed.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is (012)-3456789, ')-' is not allowed.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is+45 12 34 56 78.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+45 12 34 56 78",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+45 12 34 56 78"
+        }
+      }
+    ]
   }
 ]
