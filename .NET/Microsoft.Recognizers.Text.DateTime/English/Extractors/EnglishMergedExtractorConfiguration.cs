@@ -70,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor IntegerExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
         public EnglishMergedExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
@@ -89,6 +91,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
             }
+
+            var ambiguityFiltersDict = new Dictionary<Regex, Regex>();
+
+            foreach (var item in DateTimeDefinitions.AmbiguityFiltersDict)
+            {
+                ambiguityFiltersDict.Add(new Regex(item.Key, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(item.Value, RegexOptions.IgnoreCase | RegexOptions.Singleline));
+            }
+
+            AmbiguityFiltersDict = ambiguityFiltersDict;
 
         }
 

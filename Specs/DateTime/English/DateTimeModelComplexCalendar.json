@@ -4993,5 +4993,21 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Good Morning Paul",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Good night Cortana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
   }
 ]

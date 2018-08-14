@@ -12,9 +12,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
 
-        public new static readonly Regex AmbiguousMonthP0Regex =
-            new Regex(DateTimeDefinitions.AmbiguousMonthP0Regex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         public EnglishCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
@@ -51,8 +48,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
             DateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
         }
-
-        Regex ICommonDateTimeParserConfiguration.AmbiguousMonthP0Regex => AmbiguousMonthP0Regex;
 
         public override IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary().AddRange(DateTimeDefinitions.DayOfMonth);
     }

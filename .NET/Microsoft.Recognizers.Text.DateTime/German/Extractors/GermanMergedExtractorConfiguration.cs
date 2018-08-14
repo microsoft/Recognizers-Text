@@ -67,6 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public GermanMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
             DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
