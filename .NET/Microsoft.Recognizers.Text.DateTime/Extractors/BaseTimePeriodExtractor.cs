@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // check connector string
                     var midStr = text.Substring(numEndPoint?? 0, ers[j].Start-numEndPoint?? 0);
                     var match = this.config.TillRegex.Match(midStr);
-                    if (match.Success && match.Length == midStr.Trim().Length)
+                    if (match.Success && match.Length == midStr.Trim().Length || config.IsConnectorToken(midStr.Trim()))
                     {
                         timeNumbers.Add(numErs[i]);
                     }
@@ -216,7 +216,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Handle "between {TimePoint} and {TimePoint}"
-                if (this.config.HasConnectorToken(middleStr))
+                if (this.config.IsConnectorToken(middleStr))
                 {
                     var periodBegin = ers[idx].Start ?? 0;
                     var periodEnd = (ers[idx + 1].Start ?? 0) + (ers[idx + 1].Length ?? 0);

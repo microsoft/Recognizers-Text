@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             return false;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return text.Equals("and");
         }

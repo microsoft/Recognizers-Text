@@ -4965,5 +4965,49 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana, find time for us to meet between 7 and 9 PM EST .",
+    "Context": {
+      "ReferenceDateTime": "2018-08-14T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "between 7 and 9 pm est",
+        "Start": 34,
+        "End": 55,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T19,T21,PT2H)",
+              "type": "timerange",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "start": "19:00:00",
+              "end": "21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Good Morning Paul",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Good night Cortana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
   }
 ]

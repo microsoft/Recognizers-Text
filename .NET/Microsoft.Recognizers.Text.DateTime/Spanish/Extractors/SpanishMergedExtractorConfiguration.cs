@@ -63,6 +63,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor IntegerExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public SpanishMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));

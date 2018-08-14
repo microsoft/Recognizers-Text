@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return false;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return text.Equals("und");
         }

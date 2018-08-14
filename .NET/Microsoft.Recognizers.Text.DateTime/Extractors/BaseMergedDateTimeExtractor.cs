@@ -58,7 +58,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = this.config.DateTimeAltExtractor.Extract(ret, text, reference);
             }
 
-            ret = FilterUnspecificDatePeriod(ret, text);
+            ret = FilterUnspecificDatePeriod(ret);
+
+            ret = FilterAmbiguity(ret, text);
+
             AddMod(ret, text);
 
             // filtering
@@ -154,9 +157,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             return config.FromToRegex.IsMatch(er.Text);
         }
 
-        private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers, string text)
+        private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers)
         {
             ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
+            return ers;
+        }
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        {
+            if (this.config.AmbiguityFiltersDict != null)
+            {
+                foreach (var regex in config.AmbiguityFiltersDict)
+                {
+                    if (regex.Key.IsMatch(text))
+                    {
+                        var matches = regex.Value.Matches(text).Cast<Match>();
+                        ers = ers.Where(er =>
+                                !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                            .ToList();
+                    }
+                }
+            }
             return ers;
         }
 

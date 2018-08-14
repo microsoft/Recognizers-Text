@@ -242,24 +242,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
-            if (Config.AmbiguousMonthP0Regex != null)
-            {
-                if (candidateResults != null && candidateResults.Any())
-                {
-
-                    var matches = Config.AmbiguousMonthP0Regex.Matches(query);
-
-                    foreach (Match match in matches)
-                    {
-
-                        // Check for intersections/overlaps
-                        candidateResults = candidateResults.Where(c => !(match.Index < c.Start + c.Length &&
-                                                                         c.Start < match.Index + match.Length)).ToList();
-                    }
-
-                }
-            }
-
             return candidateResults;
         }
 

@@ -132,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return beforeMatch.Success;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return ConnectorAndRegex.IsMatch(text);
         }

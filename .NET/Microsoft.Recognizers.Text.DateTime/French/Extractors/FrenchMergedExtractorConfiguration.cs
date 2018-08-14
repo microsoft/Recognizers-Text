@@ -68,6 +68,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor IntegerExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public FrenchMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
 
