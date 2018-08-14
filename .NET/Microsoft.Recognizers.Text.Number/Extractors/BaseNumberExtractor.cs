@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected virtual Regex NegativeNumberTermsRegex { get; } = null;
 
+        protected virtual Regex AmbiguousFractionConnectorsRegex { get; } = null;
+
         public virtual List<ExtractResult> Extract(string source)
         {
             if (string.IsNullOrEmpty(source))
@@ -33,6 +35,12 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 foreach (Match m in collection.Key)
                 {
+                    // In ExperimentalMode, AmbigiuousFraction like "30000 in 2009" needs to be skipped
+                    if (Options == NumberOptions.ExperimentalMode && AmbiguousFractionConnectorsRegex.Match(m.Value).Success)
+                    {
+                        continue;
+                    }
+
                     for (var j = 0; j < m.Length; j++)
                     {
                         matched[m.Index + j] = true;
