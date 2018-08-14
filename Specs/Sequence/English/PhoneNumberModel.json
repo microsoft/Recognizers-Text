@@ -2767,6 +2767,32 @@
     ]
   },
   {
+    "Input": "My phone number is +31 (20) 5001234.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+31 (20) 5001234",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 (20) 5001234"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +31 (0)6 12345678.",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "+31 (0)6 12345678",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+31 (0)6 12345678"
+        }
+      }
+    ]
+  },
+  {
     "Input": "My phone number is +31111-123456.",
     "NotSupportedByDesign": "python",
     "Results": [
