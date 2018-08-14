@@ -36,6 +36,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             base.TestNumber();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelExperimentalMode-English.csv", "NumberModelExperimentalMode-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberModelExperimentalMode()
+        {
+            base.TestNumber();
+        }
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-English.csv", "OrdinalModel-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
