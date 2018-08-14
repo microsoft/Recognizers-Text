@@ -56,13 +56,9 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                               RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
-                },
-                {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankDot, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
-                },
-                {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceDot, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 }
             };
 
