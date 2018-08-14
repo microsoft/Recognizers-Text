@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
 
-        public NumberRangeExtractor() : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new JapaneseNumberParserConfiguration()))
+        public NumberRangeExtractor(NumberOptions options = NumberOptions.None) : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new JapaneseNumberParserConfiguration()), options: options)
         {
             var regexes = new Dictionary<Regex, string>
             {

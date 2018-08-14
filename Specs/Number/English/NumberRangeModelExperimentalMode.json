@@ -20,13 +20,13 @@
 ,
 {
   "Input": "The number is between 20 and 30.",
-  "NotSupported": "java, javascript, python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between 20 and 30",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[20,30)"
+        "value": "[20,30]"
       }
     }
   ]
@@ -34,13 +34,13 @@
 ,
 {
   "Input": "He ranks between the tenth and the fifteenth.",
-  "NotSupported": "java, javascript, python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between the tenth and the fifteenth",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[10,15)"
+        "value": "[10,15]"
       }
     }
   ]
@@ -48,13 +48,13 @@
 ,
 {
   "Input": "He scores between negative ten and fifteen.",
-  "NotSupported": "java, javascript, python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "between negative ten and fifteen",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[-10,15)"
+        "value": "[-10,15]"
       }
     }
   ]
@@ -124,7 +124,7 @@
       "Text": "20~100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[20,100)"
+        "value": "[20,100]"
       }
     }
   ]
@@ -138,7 +138,7 @@
       "Text": "20 through 100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[20,100)"
+        "value": "[20,100]"
       }
     }
   ]
@@ -152,7 +152,7 @@
       "Text": "from one thousand to one thousand and five hundred",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[1000,1500)"
+        "value": "[1000,1500]"
       }
     }
   ]
@@ -758,7 +758,7 @@
       "Text": "1000-5000",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[1000,5000)"
+        "value": "[1000,5000]"
       }
     }
   ]
@@ -772,7 +772,7 @@
       "Text": "1000 - 5000",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[1000,5000)"
+        "value": "[1000,5000]"
       }
     }
   ]
@@ -786,7 +786,7 @@
       "Text": "1000–5000",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[1000,5000)"
+        "value": "[1000,5000]"
       }
     }
   ]
@@ -800,7 +800,7 @@
       "Text": "1000 – 5000",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[1000,5000)"
+        "value": "[1000,5000]"
       }
     }
   ]

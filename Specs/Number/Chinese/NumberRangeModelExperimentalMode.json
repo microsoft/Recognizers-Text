@@ -14,13 +14,13 @@
 ,
 {
   "Input": "这个数字是位于20和30之间的",
-  "NotSupported": "java, javascript, python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "位于20和30之间",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[20,30)"
+        "value": "[20,30]"
       }
     }
   ]
@@ -28,13 +28,13 @@
 ,
 {
   "Input": "他的排名在第十和第十五之间",
-  "NotSupported": "java, javascript, python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "在第十和第十五之间",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[10,15)"
+        "value": "[10,15]"
       }
     }
   ]
@@ -90,7 +90,7 @@
       "Text": "20~100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[20,100)"
+        "value": "[20,100]"
       }
     }
   ]
@@ -104,7 +104,7 @@
       "Text": "一千到一千五百",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[1000,1500)"
+        "value": "[1000,1500]"
       }
     }
   ]
@@ -386,7 +386,7 @@
       "End": 5,
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[1,5)"
+        "value": "[1,5]"
       }
     }
   ]
@@ -416,7 +416,7 @@
       "Text": "20–100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[20,100)"
+        "value": "[20,100]"
       }
     }
   ]
@@ -430,7 +430,7 @@
       "Text": "20-100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[20,100)"
+        "value": "[20,100]"
       }
     }
   ]
@@ -444,7 +444,7 @@
       "Text": "20 - 100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "[20,100)"
+        "value": "[20,100]"
       }
     }
   ]
