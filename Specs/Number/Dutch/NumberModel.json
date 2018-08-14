@@ -1,5 +1,83 @@
 [
   {
+    "Input": "tweehonderd",
+    "Results": [
+      {
+        "Text": "tweehonderd",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "eenentwintig",
+    "Results": [
+      {
+        "Text": "eenentwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "eenentwintig",
+    "Results": [
+      {
+        "Text": "eenentwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "22"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeentwintig",
+    "Results": [
+      {
+        "Text": "tweeentwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "22"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeëntwintig",
+    "Results": [
+      {
+        "Text": "tweeëntwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "22"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "achthonderd",
+    "Results": [
+      {
+        "Text": "achthonderd",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "800"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "192.",
     "Results": [
       {
@@ -1560,19 +1638,6 @@
     "Results": [
       {
         "Text": "tweeentwintig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "22"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
-    "Input": "tweeëntwintig",
-    "Results": [
-      {
-        "Text": "tweeëntwintig",
         "TypeName": "number",
         "Resolution": {
           "value": "22"
