@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
-            DateRegexes = GermanDateExtractorConfiguration.DateRegexList;
+            DateRegexes = new GermanDateExtractorConfiguration(config).DateRegexList;
             OnRegex = GermanDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = GermanDateExtractorConfiguration.SpecialDayWithNumRegex;

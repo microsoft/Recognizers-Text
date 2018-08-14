@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
         };
 
-        public GermanTimeZoneExtractorConfiguration() : base(DateTimeOptions.None)
+        public GermanTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

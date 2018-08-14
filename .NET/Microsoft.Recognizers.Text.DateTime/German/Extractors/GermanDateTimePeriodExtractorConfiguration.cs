@@ -11,16 +11,16 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     {
         public string TokenBeforeDate { get; }
 
-        public GermanDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public GermanDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
-            SingleDateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
-            SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration());
+            SingleDateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(this));
         }
 
         private static readonly Regex[] SimpleCases =

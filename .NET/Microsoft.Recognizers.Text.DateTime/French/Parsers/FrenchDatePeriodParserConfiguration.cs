@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableList<string> InStringList { get; }
 
-        public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

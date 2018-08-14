@@ -13,17 +13,20 @@ namespace Microsoft.Recognizers.Text.Number
 
         private readonly BaseNumberParser numberParser;
 
+        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+
         internal abstract System.Collections.Immutable.ImmutableDictionary<Regex, string> Regexes { get; }
 
         internal abstract Regex AmbiguousFractionConnectorsRegex { get; }
 
         protected virtual string ExtractType { get; } = "";
 
-        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser)
+        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser, NumberOptions options = NumberOptions.None)
         {
             this.numberExtractor = numberExtractor;
             this.ordinalExtractor = ordinalExtractor;
             this.numberParser = numberParser;
+            Options = options;
         }
 
         public virtual List<ExtractResult> Extract(string source)
@@ -33,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Number
                 return new List<ExtractResult>();
             }
 
-            var result = new List<ExtractResult>();
+            var results = new List<ExtractResult>();
             var matchSource = new Dictionary<Tuple<int, int>, string>();
             var matched = new bool[source.Length];
 
@@ -79,7 +82,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 Type = ExtractType,
                                 Data = matchSource.ContainsKey(srcMatch) ? matchSource[srcMatch] : null
                             };
-                            result.Add(er);
+                            results.Add(er);
                         }
                     }
                 }
@@ -89,7 +92,20 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
-            return result;
+            // In ExperimentalMode, cases like "from 3 to 5" and "between 10 and 15" are set to closed at both start and end
+            if (Options == NumberOptions.ExperimentalMode)
+            {
+                foreach (var result in results)
+                {
+                    if (result.Data.ToString() == NumberRangeConstants.TWONUMBETWEEN
+                        || result.Data.ToString() == NumberRangeConstants.TWONUMTILL)
+                    {
+                        result.Data = NumberRangeConstants.TWONUMCLOSED;
+                    }
+                }
+            }
+
+            return results;
         }
 
         private void GetMatchedStartAndLength(Match match, string type, string source, out int start, out int length)
@@ -263,6 +279,7 @@ namespace Microsoft.Recognizers.Text.Number
         public const string TWONUM = "TwoNum";
         public const string TWONUMBETWEEN = "TwoNumBetween";
         public const string TWONUMTILL = "TwoNumTill";
+        public const string TWONUMCLOSED = "TwoNumClosed";
         public const string MORE = "More";
         public const string LESS = "Less";
         public const string EQUAL = "Equal";

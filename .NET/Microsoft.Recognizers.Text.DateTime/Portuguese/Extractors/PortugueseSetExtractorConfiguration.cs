@@ -16,15 +16,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex SetWeekDayRegex = new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex SetEachRegex = new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public PortugueseSetExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration());
-            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
+            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DurationExtractor { get; }

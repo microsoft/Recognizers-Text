@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         #endregion
 
 
-        public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

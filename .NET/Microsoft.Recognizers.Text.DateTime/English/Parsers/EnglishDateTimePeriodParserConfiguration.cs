@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public EnglishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 

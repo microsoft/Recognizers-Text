@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public StringMatcher SuperfluousWordMatcher { get; }
 
-        public EnglishMergedParserConfiguration(DateTimeOptions options) : base(options)
+        public EnglishMergedParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             BeforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = EnglishMergedExtractorConfiguration.AfterRegex;
@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+            HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration(this));
             TimeZoneParser = new BaseTimeZoneParser();
         }
     }

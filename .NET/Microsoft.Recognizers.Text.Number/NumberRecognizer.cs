@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.English,
                 options => new NumberRangeModel(
                     new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
-                    new English.NumberRangeExtractor()));
+                    new English.NumberRangeExtractor(options)));
             #endregion
 
             #region Chinese
@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.Chinese,
                 (options) => new NumberRangeModel(
                             new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
-                            new Chinese.NumberRangeExtractor()));
+                            new Chinese.NumberRangeExtractor(options)));
             #endregion
 
             #region Spanish
@@ -226,7 +226,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.Japanese,
                 (options) => new NumberRangeModel(
                             new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration()),
-                            new Japanese.NumberRangeExtractor()));
+                            new Japanese.NumberRangeExtractor(options)));
             #endregion
 
             #region Korean

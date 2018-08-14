@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 

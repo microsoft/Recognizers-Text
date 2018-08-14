@@ -134,7 +134,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
 
             if (resultText === "半額" || resultText === "半折" || resultText === "半折") {
                 result.value = 50;
-            } else if (resultText === "10成" || resultText == "10割" || resultText === "十割") {
+            } else if (resultText === "10成" || resultText === "10割" || resultText === "十割") {
                 result.value = 100;
             } else {
                 let matches = RegExpUtility.getMatches(this.config.speGetNumberRegex, resultText);
@@ -161,7 +161,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                     }
 
                     result.value = (intNumber + pointNumber) * 10;
-                } else if (matches.length == 5) {
+                } else if (matches.length === 5) {
                     // Deal the Japanese percentage case like "xxx割xxx分xxx厘", get the integer value and convert into result.
                     let intNumberChar = matches[0].value.charAt(0);
                     let pointNumberChar = matches[1].value.charAt(0);
@@ -176,7 +176,7 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                 } else {
                     let intNumberChar = matches[0].value.charAt(0);
 
-                    if (intNumberChar == '対' || intNumberChar === "对") {
+                    if (intNumberChar === '対' || intNumberChar === "对") {
                         intNumber = 5;
                     } else if (intNumberChar === "十" || intNumberChar === "拾") {
                         intNumber = 10;
@@ -414,6 +414,9 @@ export class BaseCJKNumberParser extends BaseNumberParser {
                         isRoundBefore = false;
                     }
                 } else {
+                    if (index === resultStr.length - 1 && this.config.cultureInfo.code.toLowerCase() === Culture.Japanese) {
+                        roundDefault = 1;
+                    }
                     partValue += beforeValue * 10;
                     partValue += this.config.zeroToNineMap.get(currentChar) * roundDefault;
                     intValue += partValue;

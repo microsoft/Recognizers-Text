@@ -54,12 +54,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public EnglishDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public EnglishDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
-            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-            TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
+            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
+            TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
         }
 

@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
-        public PortugueseHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

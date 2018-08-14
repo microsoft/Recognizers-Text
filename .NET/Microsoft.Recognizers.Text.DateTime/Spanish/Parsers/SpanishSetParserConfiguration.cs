@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex SetEachRegex { get; }
 
-        public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;

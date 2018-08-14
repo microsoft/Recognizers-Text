@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
 
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;

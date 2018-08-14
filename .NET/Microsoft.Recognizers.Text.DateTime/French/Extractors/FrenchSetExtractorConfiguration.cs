@@ -38,15 +38,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex SetEachRegex =
             new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchSetExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
-            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
+            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DurationExtractor { get; }

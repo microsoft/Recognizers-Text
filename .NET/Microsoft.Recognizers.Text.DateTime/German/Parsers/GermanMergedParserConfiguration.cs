@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public StringMatcher SuperfluousWordMatcher { get; }
 
-        public GermanMergedParserConfiguration(DateTimeOptions options) : base(options)
+        public GermanMergedParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = GermanMergedExtractorConfiguration.AfterRegex;
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new GermanSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration());
+            HolidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration(this));
             TimeZoneParser = new BaseTimeZoneParser();
         }
     }

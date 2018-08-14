@@ -41,11 +41,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(), false);
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = SpanishDurationExtractorConfiguration.NumberCombinedWithUnit;
             AnUnitRegex = SpanishDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = SpanishDurationExtractorConfiguration.DuringRegex;

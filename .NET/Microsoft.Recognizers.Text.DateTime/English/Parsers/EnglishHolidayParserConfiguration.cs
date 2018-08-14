@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public EnglishHolidayParserConfiguration() : base()
+        public EnglishHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             this.HolidayRegexList = EnglishHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();

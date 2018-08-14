@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public SpanishCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
+        public SpanishCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
 
@@ -29,13 +29,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             OrdinalExtractor = new OrdinalExtractor();
 
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
-            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(this));
             DateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
             TimeParser = new BaseTimeParser(new SpanishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));

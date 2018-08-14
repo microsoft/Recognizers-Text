@@ -51,6 +51,16 @@
             "footer": [ "# pylint: enable=line-too-long" ]
         },
         {
+            "input": [ "Japanese", "Japanese-Numbers" ],
+            "output": "japanese_numeric",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "class JapaneseNumeric:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
             "input": [ "French", "French-Numbers" ],
             "output": "french_numeric",
             "header": [

@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import regex
 
 from recognizers_text import RegExpUtility
-from recognizers_number import ExtractResult, ChineseCardinalExtractor, ChineseNumberParser, ChineseNumberParserConfiguration
+from recognizers_number import ExtractResult, ChineseCardinalExtractor, CJKNumberParser, ChineseNumberParserConfiguration
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import TimeTypeConstants
@@ -22,7 +22,7 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
         self.unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateTimePeriodUnitRegex)
         self.time_of_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.TimeOfDayRegex)
         self.cardinal_extractor = ChineseCardinalExtractor()
-        self.cardinal_parser = ChineseNumberParser(ChineseNumberParserConfiguration())
+        self.cardinal_parser = CJKNumberParser(ChineseNumberParserConfiguration())
 
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if reference is None:

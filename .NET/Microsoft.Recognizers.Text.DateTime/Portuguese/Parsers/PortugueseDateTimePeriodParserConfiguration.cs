@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public PortugueseDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public PortugueseDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = Definitions.Portuguese.DateTimeDefinitions.TokenBeforeDate;
 
