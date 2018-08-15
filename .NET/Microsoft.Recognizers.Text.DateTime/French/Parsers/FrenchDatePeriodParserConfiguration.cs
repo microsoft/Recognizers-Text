@@ -2,7 +2,6 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -72,7 +71,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex LaterRegex { get; }
         public Regex LessThanRegex { get; }
         public Regex MoreThanRegex { get; }
-
         public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
@@ -115,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableList<string> InStringList { get; }
 
-        public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

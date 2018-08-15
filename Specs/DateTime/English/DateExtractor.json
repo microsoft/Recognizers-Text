@@ -729,10 +729,10 @@
     "Input": "I went back for the 27",
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "the 27",
         "Type": "date",
-        "Start": 12,
-        "Length": 10
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -740,10 +740,10 @@
     "Input": "I went back for the 27th",
     "Results": [
       {
-        "Text": "for the 27th",
+        "Text": "the 27th",
         "Type": "date",
-        "Start": 12,
-        "Length": 12
+        "Start": 16,
+        "Length": 8
       }
     ]
   },
@@ -751,10 +751,10 @@
     "Input": "I went back for the 27.",
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "the 27",
         "Type": "date",
-        "Start": 12,
-        "Length": 10
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -762,10 +762,10 @@
     "Input": "I went back for the 27!",
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "the 27",
         "Type": "date",
-        "Start": 12,
-        "Length": 10
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -773,10 +773,10 @@
     "Input": "I went back for the 27 .",
     "Results": [
       {
-        "Text": "for the 27",
+        "Text": "the 27",
         "Type": "date",
-        "Start": 12,
-        "Length": 10
+        "Start": 16,
+        "Length": 6
       }
     ]
   },
@@ -784,10 +784,10 @@
     "Input": "I went back for the 21st",
     "Results": [
       {
-        "Text": "for the 21st",
+        "Text": "the 21st",
         "Type": "date",
-        "Start": 12,
-        "Length": 12
+        "Start": 16,
+        "Length": 8
       }
     ]
   },
@@ -795,10 +795,10 @@
     "Input": "I went back for the 22nd",
     "Results": [
       {
-        "Text": "for the 22nd",
+        "Text": "the 22nd",
         "Type": "date",
-        "Start": 12,
-        "Length": 12
+        "Start": 16,
+        "Length": 8
       }
     ]
   },
@@ -806,10 +806,10 @@
     "Input": "I went back for the second",
     "Results": [
       {
-        "Text": "for the second",
+        "Text": "the second",
         "Type": "date",
-        "Start": 12,
-        "Length": 14
+        "Start": 16,
+        "Length": 10
       }
     ]
   },
@@ -817,10 +817,10 @@
     "Input": "I went back for the twenty second",
     "Results": [
       {
-        "Text": "for the twenty second",
+        "Text": "the twenty second",
         "Type": "date",
-        "Start": 12,
-        "Length": 21
+        "Start": 16,
+        "Length": 17
       }
     ]
   },
@@ -828,10 +828,10 @@
     "Input": "I went back for the thirty first",
     "Results": [
       {
-        "Text": "for the thirty first",
+        "Text": "the thirty first",
         "Type": "date",
-        "Start": 12,
-        "Length": 20
+        "Start": 16,
+        "Length": 16
       }
     ]
   },
@@ -839,10 +839,10 @@
     "Input": "I went back on the 27th",
     "Results": [
       {
-        "Text": "on the 27th",
+        "Text": "the 27th",
         "Type": "date",
-        "Start": 12,
-        "Length": 11
+        "Start": 15,
+        "Length": 8
       }
     ]
   },
@@ -850,10 +850,10 @@
     "Input": "I went back on the 21st",
     "Results": [
       {
-        "Text": "on the 21st",
+        "Text": "the 21st",
         "Type": "date",
-        "Start": 12,
-        "Length": 11
+        "Start": 15,
+        "Length": 8
       }
     ]
   },
@@ -861,10 +861,10 @@
     "Input": "I went back on 22nd",
     "Results": [
       {
-        "Text": "on 22nd",
+        "Text": "22nd",
         "Type": "date",
-        "Start": 12,
-        "Length": 7
+        "Start": 15,
+        "Length": 4
       }
     ]
   },
@@ -872,10 +872,10 @@
     "Input": "I went back on the second!",
     "Results": [
       {
-        "Text": "on the second",
+        "Text": "the second",
         "Type": "date",
-        "Start": 12,
-        "Length": 13
+        "Start": 15,
+        "Length": 10
       }
     ]
   },
@@ -883,10 +883,10 @@
     "Input": "I went back on twenty second?",
     "Results": [
       {
-        "Text": "on twenty second",
+        "Text": "twenty second",
         "Type": "date",
-        "Start": 12,
-        "Length": 16
+        "Start": 15,
+        "Length": 13
       }
     ]
   },

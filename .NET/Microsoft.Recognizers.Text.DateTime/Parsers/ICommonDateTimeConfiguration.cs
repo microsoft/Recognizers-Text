@@ -46,8 +46,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser DateTimeAltParser { get; }
 
-        Regex AmbiguousMonthP0Regex { get; }
-
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

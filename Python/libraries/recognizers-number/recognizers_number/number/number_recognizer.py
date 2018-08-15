@@ -8,6 +8,8 @@ from recognizers_number.number.english.parsers import EnglishNumberParserConfigu
 from recognizers_number.number.spanish.extractors import SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor
 from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor
 from recognizers_number.number.chinese.parsers import ChineseNumberParserConfiguration
+from recognizers_number.number.japanese.extractors import JapaneseNumberExtractor, JapaneseOrdinalExtractor, JapanesePercentageExtractor
+from recognizers_number.number.japanese.parsers import JapaneseNumberParserConfiguration
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
 from recognizers_number.number.portuguese.extractors import PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor
 from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration
@@ -51,6 +53,21 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('PercentModel', Culture.Chinese, lambda options: PercentModel(
             AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, ChineseNumberParserConfiguration()),
             ChinesePercentageExtractor()
+        ))
+        #endregion
+
+        #region Japanese
+        self.register_model('NumberModel', Culture.Japanese, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.NUMBER, JapaneseNumberParserConfiguration()),
+            JapaneseNumberExtractor()
+        ))
+        self.register_model('OrdinalModel', Culture.Japanese, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.ORDINAL, JapaneseNumberParserConfiguration()),
+            JapaneseOrdinalExtractor()
+        ))
+        self.register_model('PercentModel', Culture.Japanese, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(ParserType.PERCENTAGE, JapaneseNumberParserConfiguration()),
+            JapanesePercentageExtractor()
         ))
         #endregion
 

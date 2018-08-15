@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex SetEachRegex { get; }
 
 
-        public GermanSetParserConfiguration(ICommonDateTimeParserConfiguration config): base(config.Options)
+        public GermanSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;

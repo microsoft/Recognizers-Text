@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanDurationExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public GermanDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

@@ -160,10 +160,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public GermanTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public GermanTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
         }
     }
 }

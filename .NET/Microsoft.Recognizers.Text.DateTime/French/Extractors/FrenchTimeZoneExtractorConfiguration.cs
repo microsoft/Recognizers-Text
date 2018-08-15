@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
@@ -12,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
         };
 
-        public FrenchTimeZoneExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

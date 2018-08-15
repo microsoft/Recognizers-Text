@@ -73,12 +73,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public FrenchDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             IntegerExtractor = new IntegerExtractor();
-            DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-            TimePointExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            TimePointExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
         }
 

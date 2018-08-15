@@ -2,8 +2,8 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; 
             AtRegex = FrenchTimeExtractorConfiguration.AtRegex;

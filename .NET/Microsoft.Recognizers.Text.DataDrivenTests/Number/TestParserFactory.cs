@@ -2,8 +2,10 @@
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
+using Microsoft.Recognizers.Text.Number.Italian;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.Korean;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -70,6 +72,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         }
 
         [TestMethod]
+        public void TestKoreanParser()
+        {
+            IParser parserNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration());
+
+            Assert.IsTrue(parserNumber is BaseCJKNumberParser);
+        }
+
+        [TestMethod]
         public void TestFrenchParser()
         {
             IParser parseNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration());
@@ -92,5 +102,17 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.IsTrue(parseCardinal is BaseNumberParser);
             Assert.IsTrue(parsePercentage is BasePercentageParser);
         }
-}
+
+        [TestMethod]
+        public void TestItalianParser()
+        {
+            IParser parseNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ItalianNumberParserConfiguration());
+            IParser parseCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new ItalianNumberParserConfiguration());
+            IParser parsePercentage = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ItalianNumberParserConfiguration());
+
+            Assert.IsTrue(parseNumber is BaseNumberParser);
+            Assert.IsTrue(parseCardinal is BaseNumberParser);
+            Assert.IsTrue(parsePercentage is BasePercentageParser);
+        }
+    }
 }

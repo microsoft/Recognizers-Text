@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public PortugueseDurationExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public PortugueseDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

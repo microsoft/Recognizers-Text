@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
@@ -77,52 +78,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 DateTimeDefinitions.PrefixArticleRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex[] DateRegexList =
-        {
-            // (domingo,)? 5 de Abril
-            new Regex(DateTimeDefinitions.DateExtractor1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // (domingo,)? 5 de Abril 5, 2016
-            new Regex(DateTimeDefinitions.DateExtractor2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // (domingo,)? 6 de Abril
-            new Regex(DateTimeDefinitions.DateExtractor3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
-                ?
-                // 23-3-2015
-                new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                :
-                // 3-23-2017
-                new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY
-                ?
-                // 3-23-2017
-                new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                :
-                // 23-3-2015
-                new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // no|em 1/3
-            new Regex(DateTimeDefinitions.DateExtractor6, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 7/23
-            new Regex(DateTimeDefinitions.DateExtractor7, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // no|em 24-12
-            new Regex(DateTimeDefinitions.DateExtractor8, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 23/7
-            new Regex(DateTimeDefinitions.DateExtractor9, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 2015-12-23
-            new Regex(DateTimeDefinitions.DateExtractor10, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // dia 15
-            new Regex(DateTimeDefinitions.DateExtractor11, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-        };
-
         public static readonly Regex[] ImplicitDateList =
         {
             OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
@@ -153,14 +108,63 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
 
-        public PortugueseDateExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             IntegerExtractor = new IntegerExtractor();
             OrdinalExtractor = new OrdinalExtractor();
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
+
+            const RegexOptions dateRegexOption = RegexOptions.IgnoreCase | RegexOptions.Singleline;
+
+            // 3-23-2017
+            var dateRegex4 = new Regex(DateTimeDefinitions.DateExtractor4, dateRegexOption);
+
+            // 23-3-2015
+            var dateRegex5 = new Regex(DateTimeDefinitions.DateExtractor5, dateRegexOption);
+
+            // no|em 1.3
+            var dateRegex6 = new Regex(DateTimeDefinitions.DateExtractor6, dateRegexOption);
+
+            // no|em 24-12
+            var dateRegex8 = new Regex(DateTimeDefinitions.DateExtractor8, dateRegexOption);
+
+            // 7/23
+            var dateRegex7 = new Regex(DateTimeDefinitions.DateExtractor7, dateRegexOption);
+
+            // 23/7
+            var dateRegex9 = new Regex(DateTimeDefinitions.DateExtractor9, dateRegexOption);
+
+            // 2015-12-23
+            var dateRegex10 = new Regex(DateTimeDefinitions.DateExtractor10, dateRegexOption);
+
+            // dia 15
+            var dateRegex11 = new Regex(DateTimeDefinitions.DateExtractor11, dateRegexOption);
+
+            DateRegexList = new List<Regex>
+            {
+                // (domingo,)? 5 de Abril
+                new Regex(DateTimeDefinitions.DateExtractor1, dateRegexOption),
+
+                // (domingo,)? 5 de Abril 5, 2016
+                new Regex(DateTimeDefinitions.DateExtractor2, dateRegexOption),
+
+                // (domingo,)? 6 de Abril
+                new Regex(DateTimeDefinitions.DateExtractor3, dateRegexOption),
+
+            };
+
+            var enableDmy = EnableDmy ||
+                            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
+
+            DateRegexList = DateRegexList.Concat(enableDmy
+                ? new[] { dateRegex5, dateRegex8, dateRegex9, dateRegex4, dateRegex6, dateRegex7, dateRegex10, dateRegex11 }
+                : new[] { dateRegex4, dateRegex6, dateRegex7, dateRegex5, dateRegex8, dateRegex9, dateRegex10, dateRegex11 });
+
         }
+
+        public IEnumerable<Regex> DateRegexList { get; }
 
         public IExtractor IntegerExtractor { get; }
 
@@ -171,8 +175,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
-
-        IEnumerable<Regex> IDateExtractorConfiguration.DateRegexList => DateRegexList;
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
 

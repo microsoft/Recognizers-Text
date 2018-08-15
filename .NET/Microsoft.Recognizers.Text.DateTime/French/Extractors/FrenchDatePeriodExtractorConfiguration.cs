@@ -213,9 +213,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex ReferenceDatePeriodRegex =
             new Regex(DateTimeDefinitions.ReferenceDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex FromRegex = 
+            new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex ConnectorAndRegex = 
+            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex BeforeRegex = 
+            new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AgoRegex =
             new Regex(DateTimeDefinitions.AgoRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -258,12 +263,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             RelativeDecadeRegex
         };
 
-        public FrenchDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
             OrdinalExtractor = new Number.French.OrdinalExtractor();
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
         }
 

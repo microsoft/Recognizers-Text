@@ -12,10 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
 
-        public new static readonly Regex AmbiguousMonthP0Regex =
-            new Regex(DateTimeDefinitions.AmbiguousMonthP0Regex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public EnglishCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
+        public EnglishCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 
@@ -35,13 +32,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
 
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
-            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(options));
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(options));
+            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(this));
             DurationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
             TimeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
@@ -51,8 +48,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
             DateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
         }
-
-        Regex ICommonDateTimeParserConfiguration.AmbiguousMonthP0Regex => AmbiguousMonthP0Regex;
 
         public override IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary().AddRange(DateTimeDefinitions.DayOfMonth);
     }

@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public IEnumerable<Regex> HolidayRegexList { get; protected set; }
 
-        protected BaseHolidayParserConfiguration() : base(DateTimeOptions.None)
+        protected BaseHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             this.VariableHolidaysTimexDictionary = BaseDateTime.VariableHolidaysTimexDictionary.ToImmutableDictionary();
             this.HolidayFuncDictionary = InitHolidayFuncs().ToImmutableDictionary();

@@ -24,6 +24,8 @@ export { ChineseNumberWithUnitExtractorConfiguration, ChineseNumberWithUnitParse
 export { ChineseCurrencyExtractorConfiguration, ChineseCurrencyParserConfiguration } from "./numberWithUnit/chinese/currency";
 export { ChineseDimensionExtractorConfiguration, ChineseDimensionParserConfiguration } from "./numberWithUnit/chinese/dimension";
 export { ChineseTemperatureExtractorConfiguration, ChineseTemperatureParserConfiguration } from "./numberWithUnit/chinese/temperature";
+export { JapaneseAgeExtractorConfiguration, JapaneseAgeParserConfiguration } from "./numberWithUnit/japanese/age";
+export { JapaneseNumberWithUnitExtractorConfiguration, JapaneseNumberWithUnitParserConfiguration } from "./numberWithUnit/japanese/base";
 export { JapaneseCurrencyExtractorConfiguration, JapaneseCurrencyParserConfiguration } from "./numberWithUnit/japanese/currency";
 export { EnglishNumericWithUnit } from "./resources/englishNumericWithUnit";
 export { SpanishNumericWithUnit } from "./resources/spanishNumericWithUnit";

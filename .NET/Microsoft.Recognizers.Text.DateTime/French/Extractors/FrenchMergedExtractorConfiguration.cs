@@ -1,9 +1,8 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Matcher;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -68,20 +67,22 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor IntegerExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public FrenchMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
 
-            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(options));
-            SetExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration());
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration(this));
             IntegerExtractor = new Number.French.IntegerExtractor();
         }
 

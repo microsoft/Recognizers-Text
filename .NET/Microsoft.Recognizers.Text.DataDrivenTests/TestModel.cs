@@ -27,6 +27,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             Results = Enumerable.Empty<object>();
             Debug = false;
         }
+
+        public bool IsSupportedDotNet()
+        {
+            return (NotSupported & Platform.dotNet) == 0 && (NotSupportedByDesign & Platform.dotNet) == 0;
+        }
     }
 
     [Flags]

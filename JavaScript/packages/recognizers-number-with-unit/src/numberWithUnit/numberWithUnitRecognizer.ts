@@ -20,6 +20,7 @@ import { ChineseTemperatureExtractorConfiguration, ChineseTemperatureParserConfi
 import { ChineseDimensionExtractorConfiguration, ChineseDimensionParserConfiguration } from "./chinese/dimension";
 import { ChineseAgeExtractorConfiguration, ChineseAgeParserConfiguration } from "./chinese/age";
 import { JapaneseCurrencyExtractorConfiguration, JapaneseCurrencyParserConfiguration } from "./japanese/currency";
+import { JapaneseAgeExtractorConfiguration, JapaneseAgeParserConfiguration } from "./japanese/age";
 import { FrenchCurrencyExtractorConfiguration, FrenchCurrencyParserConfiguration } from "./french/currency";
 import { FrenchTemperatureExtractorConfiguration, FrenchTemperatureParserConfiguration } from "./french/temperature";
 import { FrenchDimensionExtractorConfiguration, FrenchDimensionParserConfiguration } from "./french/dimension";
@@ -125,6 +126,10 @@ export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitO
         this.registerModel("CurrencyModel", Culture.Japanese, (options) => new CurrencyModel(new Map<IExtractor, IParser>([
             [new BaseMergedUnitExtractor(new JapaneseCurrencyExtractorConfiguration()), new BaseMergedUnitParser(new JapaneseCurrencyParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
+        ])));
+        this.registerModel("AgeModel", Culture.Japanese, (options) => new AgeModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new JapaneseAgeExtractorConfiguration()), new NumberWithUnitParser(new JapaneseAgeParserConfiguration())],
+            [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
         //#endregion
 

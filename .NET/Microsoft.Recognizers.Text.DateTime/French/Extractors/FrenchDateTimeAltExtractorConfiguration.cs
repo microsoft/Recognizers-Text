@@ -1,19 +1,20 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.French;
-using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
+    public class FrenchDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public FrenchDateTimeAltExtractorConfiguration()
+        public FrenchDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeExtractor DatePeriodExtractor { get; }
 
         private static readonly Regex OrRegex =

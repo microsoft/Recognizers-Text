@@ -1,7 +1,7 @@
 [
 {
   "Input": "私は29歳です。",
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "29歳",
@@ -16,7 +16,7 @@
 ,
 {
   "Input": "これは、赤ちゃんがわずか10ヶ月だったときに起こった",
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "10ヶ月",
@@ -31,7 +31,7 @@
 ,
 {
   "Input": "12月初旬に生まれたのはすでに3週間です",
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "3週間",
@@ -46,7 +46,7 @@
 ,
 {
   "Input": "彼女は1945年5月8日に生まれ、現在60歳です。",
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "60歳",
@@ -61,7 +61,7 @@
 ,
 {
   "Input": "彼女はもう7歳になったので,小学校に行くことができた",
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "7歳",
@@ -76,7 +76,7 @@
 ,
 {
   "Input": "90日齢の子供は病院に行って検査をするべきです",
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": [
     {
       "Text": "90日齢",
@@ -106,7 +106,7 @@
 ,
 {
   "Input": "完成に一〇年の歳月を要する",
-  "NotSupported": "javascript,python",
+  "NotSupported": "python",
   "Results": []
 }
 ]

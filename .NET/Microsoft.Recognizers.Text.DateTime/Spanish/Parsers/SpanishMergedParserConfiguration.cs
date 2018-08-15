@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex YearRegex { get; }
 
-        public IDateTimeParser GetParser { get; }
+        public IDateTimeParser SetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
 
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public StringMatcher SuperfluousWordMatcher { get; }
 
-        public SpanishMergedParserConfiguration(DateTimeOptions options) : base(options)
+        public SpanishMergedParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
@@ -37,8 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
-            GetParser = new BaseSetParser(new SpanishSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration());
+            SetParser = new BaseSetParser(new SpanishSetParserConfiguration(this));
+            HolidayParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
             TimeZoneParser = new BaseTimeZoneParser();
         }
     }

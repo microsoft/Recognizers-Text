@@ -7,6 +7,9 @@ using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 
+using Microsoft.Recognizers.Text.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Italian;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
@@ -47,38 +50,52 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             RegisterModel<DateTimeModel>(
                 Culture.English,
-                (options) => new DateTimeModel(
-                    new BaseMergedDateTimeParser(new EnglishMergedParserConfiguration(options)),
-                    new BaseMergedDateTimeExtractor(new EnglishMergedExtractorConfiguration(options))));
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new EnglishMergedParserConfiguration(new BaseOptionsConfiguration(options))),
+                    new BaseMergedDateTimeExtractor(
+                        new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(options)))));
+
+            RegisterModel<DateTimeModel>(
+                Culture.EnglishOthers,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new EnglishMergedParserConfiguration(new BaseOptionsConfiguration(options, true))),
+                    new BaseMergedDateTimeExtractor(
+                        new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(options, true)))));
 
             RegisterModel<DateTimeModel>(
                 Culture.Chinese,
-                (options) => new DateTimeModel(
+                options => new DateTimeModel(
                     new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
                     new MergedExtractorChs(options)));
 
             RegisterModel<DateTimeModel>(
                 Culture.Spanish,
-                (options) => new DateTimeModel(
-                    new BaseMergedDateTimeParser(new SpanishMergedParserConfiguration(options)),
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new SpanishMergedParserConfiguration(new BaseOptionsConfiguration(options))),
                     new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(options))));
 
             RegisterModel<DateTimeModel>(
                 Culture.French,
-                (options) => new DateTimeModel(
-                    new BaseMergedDateTimeParser(new FrenchMergedParserConfiguration(options)),
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new FrenchMergedParserConfiguration(new BaseOptionsConfiguration(options))),
                     new BaseMergedDateTimeExtractor(new FrenchMergedExtractorConfiguration(options))));
 
             RegisterModel<DateTimeModel>(
                 Culture.Portuguese,
-                (options) => new DateTimeModel(
-                    new BaseMergedDateTimeParser(new PortugueseMergedParserConfiguration(options)),
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new PortugueseMergedParserConfiguration(new BaseOptionsConfiguration(options))),
                     new BaseMergedDateTimeExtractor(new PortugueseMergedExtractorConfiguration(options))));
 
             RegisterModel<DateTimeModel>(
                 Culture.German,
-                (options) => new DateTimeModel(
-                    new BaseMergedDateTimeParser(new GermanMergedParserConfiguration(options)),
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new GermanMergedParserConfiguration(new BaseOptionsConfiguration(options))),
                     new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(options))));
         }
     }

@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         #endregion
 
-        public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

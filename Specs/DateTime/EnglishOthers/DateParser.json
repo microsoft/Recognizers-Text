@@ -1,0 +1,72 @@
+[
+  {
+    "Input": "I'll go back 3-7-2017",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "3-7-2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-07-03",
+          "FutureResolution": {
+            "date": "2017-07-03"
+          },
+          "PastResolution": {
+            "date": "2017-07-03"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 3-7-07",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "3-7-07",
+        "Type": "date",
+        "Value": {
+          "Timex": "2007-07-03",
+          "FutureResolution": {
+            "date": "2007-07-03"
+          },
+          "PastResolution": {
+            "date": "2007-07-03"
+          }
+        },
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 3-7-27",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "3-7-27",
+        "Type": "date",
+        "Value": {
+          "Timex": "2027-07-03",
+          "FutureResolution": {
+            "date": "2027-07-03"
+          },
+          "PastResolution": {
+            "date": "2027-07-03"
+          }
+        },
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 ---
 #Korean
 LangMarker: '' 
-DecimalSeperatorChar: !char '.'
+DecimalSeparatorChar: !char '.'
 FractionMarkerToken: ''
 NonDecimalSeparatorChar: !char ' '
 HalfADozenText: ''
@@ -24,8 +24,6 @@ RoundNumberMapChar: !dictionary
     조: 1000000000000
     경: 10000000000000000
     열: 10
-    온: 100
-    즈믄: 1000
 ZeroToNineMap: !dictionary
   types: [char, double]
   entries:
@@ -40,15 +38,6 @@ ZeroToNineMap: !dictionary
     팔: 8
     구: 9
     빵: 0
-    하나: 1
-    둘: 2
-    셋: 3
-    넷: 4
-    다섯: 5
-    여섯: 6
-    일곱: 7
-    여덟: 8
-    아홉: 9
     ０: 0
     １: 1
     ２: 2
@@ -106,9 +95,11 @@ UnitMap: !dictionary
   entries:
     ' ' : ''
     몇: ''
-NumberReplaceToken: '@builtin.num'
-FractionNumberReplaceToken: '@builtin.num.fraction'
-
+RoundDirectList: !list
+  types: [char]
+  entries:
+    - 빵
+    - 열
 DigitalNumberRegex: !simpleRegex
   def: ((?<=(\d|\b))(k|t|m|g)(?=\b))
 ZeroToNineFullHalfRegex: !simpleRegex
@@ -128,11 +119,11 @@ FracSplitRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: '[일이삼사오육륙칠팔구영공]'
 NegativeNumberTermsRegex: !simpleRegex
-  def: '[\s*마\s*이\s*너\s*스|\s*음\s*수]'
+  def: ((마\s*이\s*너\s*스|음\s*수)\s*)
 NegativeNumberTermsRegexNum: !simpleRegex
   def: ((?<!(\d+\s*)|[-－])[-－])
 NegativeNumberSignRegex: !nestedRegex
-  def: ^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*
+  def: ^{NegativeNumberTermsRegex}|^{NegativeNumberTermsRegexNum}
   references: [NegativeNumberTermsRegex, NegativeNumberTermsRegexNum]
 SpeGetNumberRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[십반]'
@@ -158,6 +149,9 @@ NumbersSpecialsChars: !nestedRegex
 NumbersSpecialsCharsWithSuffix: !nestedRegex
   def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)'
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
+ZeroToNineIntegerSpecialsChars: !nestedRegex
+  def: (({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?{ZeroToNineIntegerRegex}+
+  references: [NegativeNumberTermsRegexNum, ZeroToNineIntegerRegex, NegativeNumberTermsRegex ]
 DottedNumbersSpecialsChar: !nestedRegex
   def: '{NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}{1,3}([,，]{ZeroToNineFullHalfRegex}{3})+'
   references: [NegativeNumberTermsRegexNum, ZeroToNineFullHalfRegex]
@@ -203,10 +197,10 @@ DoubleScientificNotationRegex: !nestedRegex
   references: [ZeroToNineFullHalfRegex, NegativeNumberTermsRegexNum]
 #OrdinalExtractor
 OrdinalRegex: !nestedRegex
-  def: {AllIntRegex}번째
+  def: '{AllIntRegex}번째'
   references: [AllIntRegex]
 OrdinalNumbersRegex: !nestedRegex
-  def: {ZeroToNineFullHalfRegex}+번째
+  def: '{ZeroToNineFullHalfRegex}+번째'
   references: [ZeroToNineFullHalfRegex]
 #FractionExtractor
 AllFractionNumber: !nestedRegex

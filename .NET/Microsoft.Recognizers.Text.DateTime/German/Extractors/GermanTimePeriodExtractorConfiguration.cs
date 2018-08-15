@@ -62,10 +62,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanTimePeriodExtractorConfiguration():base(DateTimeOptions.None)
+        public GermanTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
+            SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
         }
@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return false;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return text.Equals("und");
         }

@@ -160,10 +160,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public EnglishTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public EnglishTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(options));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
         }
     }
 }

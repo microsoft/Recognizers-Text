@@ -1,7 +1,7 @@
 from typing import List, Pattern, Dict
 
 from recognizers_text import RegExpUtility, Extractor, Parser
-from recognizers_number import ChineseIntegerExtractor, ChineseNumberParser, ChineseNumberParserConfiguration
+from recognizers_number import CJKNumberParser, ChineseIntegerExtractor, ChineseNumberParserConfiguration
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import Constants
@@ -180,4 +180,4 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
         self._last_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DateLastRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.WeekDayRegex)
         self._integer_extractor = ChineseIntegerExtractor()
-        self._number_parser = ChineseNumberParser(ChineseNumberParserConfiguration())
+        self._number_parser = CJKNumberParser(ChineseNumberParserConfiguration())

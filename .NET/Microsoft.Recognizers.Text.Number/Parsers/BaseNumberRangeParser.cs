@@ -74,15 +74,16 @@ namespace Microsoft.Recognizers.Text.Number
 
             char leftBracket, rightBracket;
             var type = extResult.Data as string;
-            if (type.Contains(NumberRangeConstants.TWONUMBETWEEN))
+
+            if (type.Contains(NumberRangeConstants.TWONUMCLOSED))
             {
-                // between 20 and 30: (20,30)
-                leftBracket = NumberRangeConstants.LEFT_OPEN;
-                rightBracket = NumberRangeConstants.RIGHT_OPEN;
+                leftBracket = NumberRangeConstants.LEFT_CLOSED;
+                rightBracket = NumberRangeConstants.RIGHT_CLOSED;
             }
-            else if (type.Contains(NumberRangeConstants.TWONUMTILL))
+            else if (type.Contains(NumberRangeConstants.TWONUMTILL) || type.Contains(NumberRangeConstants.TWONUMBETWEEN))
             {
                 // 20~30: [20,30)
+                // between 20 and 30: [20,30)
                 leftBracket = NumberRangeConstants.LEFT_CLOSED;
                 rightBracket = NumberRangeConstants.RIGHT_OPEN;
             }

@@ -67,20 +67,22 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public GermanMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
-            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(options));
-            SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration());
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;

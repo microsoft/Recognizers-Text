@@ -477,7 +477,14 @@ namespace Microsoft.Recognizers.Text.Number
             if (Config.NegativeNumberSignRegex.IsMatch(intStr))
             {
                 isNegative = true;
-                intStr = intStr.Substring(1);
+                if (Config.CultureInfo.Name == "ko-KR")
+                {
+                    intStr = Regex.Replace(intStr, Config.NegativeNumberSignRegex.ToString(), "");
+                }
+                else
+                {
+                    intStr = intStr.Substring(1);
+                }
             }
 
             for (var i = 0; i < intStr.Length; i++)
@@ -533,6 +540,10 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                     else
                     {
+                        if (i == intStr.Length - 1 && Config.CultureInfo.Name == "ja-JP")
+                        {
+                            roundDefault = 1;
+                        }
                         partValue += Config.ZeroToNineMap[intStr[i]] * roundDefault;
                         intValue += partValue;
                         partValue = 0;

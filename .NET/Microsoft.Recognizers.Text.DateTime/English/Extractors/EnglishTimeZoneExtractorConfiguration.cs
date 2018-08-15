@@ -39,9 +39,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly List<string> AmbiguousTimezoneList = TimeZoneDefinitions.AmbiguousTimezoneList.ToList();
 
-        public EnglishTimeZoneExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public EnglishTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            if ((options & DateTimeOptions.EnablePreview) != 0)
+            if ((Options & DateTimeOptions.EnablePreview) != 0)
             {
                 CityMatcher.Init(TimeZoneDefinitions.MajorLocations.Select(o => FormatUtility.RemoveDiacritics(o.ToLowerInvariant())));
             }

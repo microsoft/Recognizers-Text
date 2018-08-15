@@ -30,15 +30,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex SetEachRegex =
             new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanSetExtractorConfiguration() : base(DateTimeOptions.None)
+        public GermanSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
-            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
+            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DurationExtractor { get; }

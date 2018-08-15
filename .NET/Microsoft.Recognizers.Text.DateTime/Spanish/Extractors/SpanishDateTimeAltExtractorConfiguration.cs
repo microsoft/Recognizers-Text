@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
+    public class SpanishDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public SpanishDateTimeAltExtractorConfiguration()
+        public SpanishDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DateExtractor { get; }

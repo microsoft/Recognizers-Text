@@ -54,12 +54,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public GermanDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
-            DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
-            TimePointExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            TimePointExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
         }
 

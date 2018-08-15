@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex SetEachRegex { get; }
 
-        public PortugueseSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public PortugueseSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;

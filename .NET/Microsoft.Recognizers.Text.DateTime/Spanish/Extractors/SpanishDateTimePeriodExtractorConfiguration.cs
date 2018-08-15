@@ -67,17 +67,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
 
-            SingleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
+            SingleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
         }
 
         public IExtractor CardinalExtractor { get; }

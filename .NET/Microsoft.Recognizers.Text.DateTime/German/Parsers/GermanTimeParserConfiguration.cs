@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = GermanTimeExtractorConfiguration.AtRegex;

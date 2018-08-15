@@ -2,10 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
-using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
-
-using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -134,7 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
             {
-                pr = this.Config.GetParser.Parse(er, referenceTime);
+                pr = this.Config.SetParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
@@ -242,24 +239,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
-            if (Config.AmbiguousMonthP0Regex != null)
-            {
-                if (candidateResults != null && candidateResults.Any())
-                {
-
-                    var matches = Config.AmbiguousMonthP0Regex.Matches(query);
-
-                    foreach (Match match in matches)
-                    {
-
-                        // Check for intersections/overlaps
-                        candidateResults = candidateResults.Where(c => !(match.Index < c.Start + c.Length &&
-                                                                         c.Start < match.Index + match.Length)).ToList();
-                    }
-
-                }
-            }
-
             return candidateResults;
         }
 
@@ -286,9 +265,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
                     {
-                        var valueSet = value[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
-
-                        if (valueSet != null && valueSet.Any())
+                        if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, string>> valueSet && valueSet.Any())
                         {
                             foreach (var values in valueSet)
                             {

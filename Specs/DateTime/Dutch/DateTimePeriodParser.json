@@ -1,0 +1,2352 @@
+[
+  {
+    "Input": "ik ben vandaag weg tussen vijf en zeven",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vijf tot zeven vandaag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben weg tussen 5 en 6 op 22/4/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "van 5 tot 6 op 22/4/2016",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben weg van 5 tot 6 op 22 april",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "van 5 tot 6 op 22 april",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 05:00:00",
+            "endDateTime": "2017-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 5 to 6 ‘s middags op 22 april",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "van 5 tot 6 ‘s middags op 22 april",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 17:00:00",
+            "endDateTime": "2017-04-22 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 17:00:00",
+            "endDateTime": "2016-04-22 18:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben op 1 januari weg van 5 tot 6",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "op 1 januari van 5 tot 6",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-01-01 05:00:00",
+            "endDateTime": "2017-01-01 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 05:00:00",
+            "endDateTime": "2016-01-01 06:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Morgen ben ik weg tussen 3 en 4 uur ’s middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "morgen tussen 3 en 4 uur ‘s middags",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Morgen ben ik weg tussen 3 en 4 uur ‘s middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "Morgen van 3 tot 4 uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Morgen ben ik weg van half acht tot 4 uur ‘s middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "morgen van half acht tot 4 uur ‘s middags",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg vanaf 4 uur vandaag tot morgen 5 uur ’s middags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "Vandaag van 4 tot morgen 5 uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben weg van 2016-2-21 vanaf 14:00 tot 2016-04-23 15:32",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "van 2016-2-21 14:00 tot 2016-04-23 15:32",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "FutureResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Vandaag ben ik tussen 4 en 5 uur in de middag weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "Vanmiddag tussen 4 en 5",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben niet beschikbaar tussen 1 januari 2016 vanaf 4 uur tot vandaag 5 uur in de middag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "Tussen 4 uur van 1 jan 2016 en 5 uur vandaag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
+          "FutureResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga vanavond terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vanavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben vanavond beschikbaar",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vanavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga deze avond terug ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "deze avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga vanavond terug ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "deze avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga deze ochtend terug ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "deze ochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga deze middag terugI'll go back this afternoon",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "deze middag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga morgenavond terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "morgenavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ga de laatste avond terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "laatste avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-06TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ga morgenavond terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "morgenavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ga aankomende maandagmiddag terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "aankomende maandagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-14TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga drie minute terug ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "laatste 3 minuten",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga de laatste 3 minuten terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "laatste 3 minuten",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga 3 minuten terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vorige 3 minuten",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga drie minuten terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vorige 3 minuten",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ga binnen 5 uur terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "binnen 5 uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ga een minuut terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "een minuut terug",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga over een uur terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "over een uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga binnen een paar uur terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "binnen een paar uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ga dinsdagochtend terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Kan je aankomende dinsdagochtend een tijdstip voor ons vinden?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "aankomende dinsdagochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Organizeer een vergadering van 30 minuten op dinsdagochtend alsjeblieft. ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga dinsdagmiddag terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ga dinsdagavond terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Laten we dinsdagochtend vroeg afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagochtend vroeg",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we vroeg op de dinsdagochtend afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vroeg op de dinsdagochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we dinsdag laat in de ochtend afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdag laat in de ochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in het begin van dinsdagmiddag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "begin van dinsdagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we op dinsdag later in de middag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdag later in de middag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we dinsdag vroeg in de avond afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdag vroeg in de avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we dinsdag in het begin van de avond afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "begin van de avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we dinsdagavond laat afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond laat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Laten we dinsdagvond laat afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond laat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we dinsdagavond afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zullen we dinsdagavond laat afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond laat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zullen we dinsdag vroeg in de ochtend afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdag vroeg in de ochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we aan het einde van dinsdagochtend afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "einde van dinsdagochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we in het begin van dinsdagmiddag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "begin van dinsdagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zullen we aan het einde van dinsdagmiddag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "het einde van dinsdagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Zullen we op dinsdag aan het einde van de middag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdag aan het einde van de middag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we op dinsdag in de avond afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdag in de avond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zullen we dinsdag in de avond afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we dinsdagavond laat afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond laat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we dinsdagavond afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we laat op dinsdagavond afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "laat op dinsdagavond",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we de rest van de dag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "rest van de dag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we de rest van deze dag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "rest van deze dag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we de rest van mijn dag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "rest van mijn dag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we rest van vandaag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "rest van vandaag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we de rest van vandaag afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "de rest van vandaag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben afwezig van 2016-02-21 14:00 uur tot 2016-02-21 15:32",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "van 2016-02-21 14:00 uur tot 2016-02-21 15:32",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "FutureResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we dinsdagavond laat afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "dinsdagavond laat",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Cortana, plan een skype for business meeting met Wayne op vrijdag tussen 1 en 4 uur ‘s middags.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vrijdag tussen 1 en 4 uur ‘s middags",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-03 13:00:00",
+            "endDateTime": "2017-11-03 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Kan je ons morgen tussen 8 uur ‘s ochtends en 2 uur ’s middags inplannen?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "morgen tussen 8 uur ‘s ochtends en 2 uur ’s middags",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Kan je ons op 9 december tussen 8 uur ‘s ochtends en 2 uur ‘s middags in plannen?",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "9 december tussen 8 en 2",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-12-09 08:00:00",
+            "endDateTime": "2017-12-09 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-12-09 08:00:00",
+            "endDateTime": "2016-12-09 14:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hi Cortana, plan een skype meeting in met Jennifer. Ik heb een afspraak van 30 minuten op vrijdagmiddag aanstaande nodig. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vrijdagmiddag aanstaande",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-17TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hi Coratna – plan aub een skype meeting met Jennifer in. Ik heb een afspraak van 30 minuten op deze vrijdagmiddag nodig.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "deze vrijdagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-17TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hi Cortana- maak een skype meeting met Jennifer aan. Ik wil volgende vrijdagmiddag een afspraak van 30 minuten!",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "volgende vrijdagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-24TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-24 12:00:00",
+            "endDateTime": "2017-11-24 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-24 12:00:00",
+            "endDateTime": "2017-11-24 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Hi Cortana- maak een skype meeting met Jennifer aan. Ik wil een afspraak van 30 minuten op afgelopen vrijdagmiddag! ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "afgelopen vrijdagmiddag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-10TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 12:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 12:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Cortane, maak een afspraak met skype for business met Wayne op vrijdagmiddag tussen 1 en 4. ",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "Results": [
+      {
+        "Text": "vrijdagmiddag tussen 1 en 4",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 13:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Cortana, plan een skype for business afspraak met Wanye in op vrijdagmiddag tussen 1 en 4.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "vrijdagmiddag tussen 1 en 4",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 13:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Cortana, plan een skype meeting op 2018-09-03 tussen 14:00 en 16:00",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T19:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "2018-09-03 tussen 14:00 en 16:00",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2018-09-23T13,2018-09-23T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2018-09-23 13:00:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-09-23 13:00:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Cortana, plan au been skype meeting op 2018-08-23 tussen 13:30 en 16:00",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T19:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "2018-08-23 tussen 13:30 en 16:00",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2018-09-23T13:30,2018-09-23T16,PT2H30M)",
+          "FutureResolution": {
+            "startDateTime": "2018-09-23 13:30:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-09-23 13:30:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "laten we 5 februari in ochtend afspreken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "5 februari in ochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-02-05TMO",
+          "FutureResolution": {
+            "startDateTime": "2017-02-05 08:00:00",
+            "endDateTime": "2017-02-05 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-05 08:00:00",
+            "endDateTime": "2016-02-05 12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ga dinsdagochtend terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "dinsdagochtend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ga dinsdag in de middag terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "dinsdag in de middag",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het zal over 2 uur in de toekomst gebeuren ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "2 uur in de toekomst",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 18:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 18:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben terug binnen 15 seconden",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "binnen 15 seconden",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:12:15"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:12:15"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben binnen 5 minuten terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "binnen 5 minuten",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:17:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 16:17:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben binnen 5 uur terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "binnen 5 uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben binnen een dag en 5 uur terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "binnen een dag en 5 uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-08 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-08 21:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Deze taak is af binnen 2 dagen, 1 uur, 5 minuten en 30 seconden ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "2 dagen, 1 uur, 5 minuten en 30 seconden",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Deze taak is compleet binnen 2 dagen, 1 uur, 5 minuten en 30 seconden",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "binnen 2 dagen, 1 uur, 5 minuten en 30 seconden",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Deze taak is klaar binnen aankomende 2 dagen, 1 uur, 5 minuten en 30 seconden",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "binnen aankomende 2 dagen, 1 uur, 5 minuten en 30 seconden",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-09 17:17:30"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik ben binnen 5 uur terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "binnen 5 uur",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "ik ben maandag tussen 8 en  terug",
+    "Context": {
+      "ReferenceDateTime": "2018-04-19T08:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "maandag tussen 8 en 9",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2018-04-23 08:00:00",
+            "endDateTime": "2018-04-23 09:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-04-16 08:00:00",
+            "endDateTime": "2018-04-16 09:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Cortana, kan je een tijd op maandag 12-4 vinden.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "maandag 12-4",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T00,XXXX-WXX-1T04,PT4H)",
+          "FutureResolution": {
+            "startDateTime": "2018-05-21 00:00:00",
+            "endDateTime": "2018-05-21 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-05-14 00:00:00",
+            "endDateTime": "2018-05-14 04:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Cortana kan je een tijd voor ons vinden op maandag 11-4 ",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "maandag 11-4",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T11,XXXX-WXX-1T16,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2018-05-21 11:00:00",
+            "endDateTime": "2018-05-21 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-05-14 11:00:00",
+            "endDateTime": "2018-05-14 16:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het zal op 1/1/2015 tussen 10 en 11:30 plaatsvinden",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "op 1/1/2015 tussen 10 en 11:30",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het zal gebeuren op 1/1/2015 tussen 10 en 11:30",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "1/1/2015 tussen 10 en 11:30",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10,2015-01-01T11:30,PT1H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:00:00",
+            "endDateTime": "2015-01-01 11:30:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het zal gebeuren van 10:30 tot 3 op 1/1/2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "van 10:30 tot 3 op 1/1/2015",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T10:30,2015-01-01T15,PT4H30M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 10:30:00",
+            "endDateTime": "2015-01-01 15:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 10:30:00",
+            "endDateTime": "2015-01-01 15:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "het zal tussen 3 en 5 op 1/1/2015 gebeuren.",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "tussen 3 en 5 op 1/1/2015",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T03,2015-01-01T05,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 03:00:00",
+            "endDateTime": "2015-01-01 05:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 03:00:00",
+            "endDateTime": "2015-01-01 05:00:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het is op 1/1/2015 van 3:30 tot 5:55",
+    "Context": {
+      "ReferenceDateTime": "2018-05-16T08:12:00"
+    },
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "op 1/1/2015 van 3:30 tot 5:55",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2015-01-01T03:30,2015-01-01T05:55,PT2H25M)",
+          "FutureResolution": {
+            "startDateTime": "2015-01-01 03:30:00",
+            "endDateTime": "2015-01-01 05:55:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2015-01-01 03:30:00",
+            "endDateTime": "2015-01-01 05:55:00"
+          }
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  }
+]
