@@ -1320,10 +1320,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Boek een eerste klas ticket naar Amsterdam",
-    "Results": []
-  },
-  {
     "Input": "Het antwoord is min een",
     "Results": [
       {
