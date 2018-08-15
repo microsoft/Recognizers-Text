@@ -11,6 +11,7 @@
                 Text = extResult.Text,
                 Type = extResult.Type,
                 ResolutionStr = extResult.Text,
+                Score = extResult.Score,
             };
 
             return result;
