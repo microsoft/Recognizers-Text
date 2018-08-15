@@ -1,0 +1,727 @@
+[{
+  "Input": "Tornerò alle 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle sette",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:56pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:56:35pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:56:35 pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 12:34",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:34",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 12:34:20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:34:20",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle T12:34:20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "T12:34:20",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 00:00",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "00:00",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 00:00:30",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "00:00:30",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le sette",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le 8 del mattino",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 del mattino",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le 8 di notte",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 di notte",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le otto e mezza",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "otto e mezza",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le 8 e mezza pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 e mezza pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le otto e 30 min",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "otto e 30 min",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le otto e un quarto",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "otte e un quarto",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le 9pm e tre quarti",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9pm e tre quarti",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le otto meno tre minuti",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "otto meno tre minuti",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le sette e mezza",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e mezza",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le sette e mezza di pomeriggio",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e mezza di pomeriggio",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le sette e mezza del mattino",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e mezza del mattino",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le 8 meno un quarto del mattino",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "otto meno un quarto del mattino",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Sono le otto e un quarto di sera",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "otto e un quarto di sera",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò nel pomeriggio alle 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "nel pomeriggio alle 7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò di pomeriggio alle 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "di pomeriggio alle 7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:00 di pomeriggio",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:00 di pomeriggio",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:00:14 di pomeriggio",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:00:14 di pomeriggio",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle sette pm di pomeriggio",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette pm di pomeriggio",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle sette e trenta pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e trenta pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle sette e trentacinque pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e trentacinque",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle undici e cinque",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "undici e cinque",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle cinque e trenta meno tre min",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinque e trenta meno tre min",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle cinque e trenta di notte",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinque e trenta di notte",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò di notte alle cinque e trenta",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "di notte alle cinque e trenta",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò più o meno a mezzogiorno",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "più o meno a mezzogiorno",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò a mezzogiorno",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mezzogiorno",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò più o meno alle 11",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "più o meno alle 11",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 340pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "340pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 1140 a.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1140 a.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mezzanotte",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mezzanotte",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "metà mattinata",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "metà mattinata",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "metà mattina",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "metà mattina",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "metà pomeriggio",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "metà pomeriggio",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "mezzogiorno",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mezzogiorno",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "metà giornata",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "metà giornata",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7 p m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7 p. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7 p. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7 p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:56 a m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56 a m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:56:35 a. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 a. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:56:35 am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 am",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 7:56:35 a. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 a. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle sette e trenta p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e trenta p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle sette e trenta p m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e trenta p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle sette e trenta p. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e trenta p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle sette e trenta p. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sette e trenta p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 340 pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "340 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò alle 1140 a m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1140 a m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "quali email hanno ottenuto p come oggetto",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "quali email hanno avuto una risposta",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "Tornerò alle 12 ora di pranzo",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12 ora di pranzo",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Tornerò a ora di pranzo alle 12",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ora di pranzo alle 12",
+      "Type": "time"
+    }
+  ]
+}
+]

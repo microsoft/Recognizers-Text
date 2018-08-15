@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             get { return testContextInstance; }
             set { testContextInstance = value; }
         }
-        
+
         public IDateTimeExtractor Extractor { get; set; }
         public IDateTimeParser DateTimeParser { get; set; }
         public TestModel TestSpec { get; set; }
@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestDateTimeAlt()
         {
             TestPreValidation();
-            
+
             var actualResults = TestContext.GetModelParseResults(TestSpec);
             var expectedResults = TestSpec.CastResults<ExtendedModelResult>();
 
@@ -182,7 +182,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count(), GetMessage(TestSpec));
 
-            foreach(var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
@@ -225,7 +225,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var extractResults = Extractor.Extract(TestSpec.Input, referenceDateTime);
             var actualResults = extractResults.Select(o => DateTimeParser.Parse(o, referenceDateTime)).ToArray();
-            
+
             var expectedResults = TestSpec.CastResults<DateTimeParseResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count(), GetMessage(TestSpec));
@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 }
             }
         }
-        
+
         public void TestIpAddress()
         {
             TestPreValidation();
@@ -328,7 +328,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
                 Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
-                
+
                 foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
                 {
                     if (!actual.Resolution.ContainsKey(key) && !expected.Resolution.ContainsKey(key))

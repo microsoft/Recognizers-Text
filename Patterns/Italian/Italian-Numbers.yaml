@@ -1,16 +1,28 @@
----
 LangMarker: it
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (cento|mille|milione|miliardo|trilione)
+  def: (cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni)
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (tre|sette|otto|quattro|cinque|zero|nove|uno|due|sei)
-AnIntRegex: !simpleRegex
-  def: (un|uno|una)(?=\s)
+  def: (e uno|un|uno|una|due|tre|quattro|cinque|sei|sette|otto|nove|zero)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (diciassette|tredici|quattordici|diciotto|diciannove|quindici|sedici|undici|dodici|dieci)
 TensNumberIntegerRegex: !simpleRegex
   def: (settanta|venti|trenta|ottanta|novanta|quaranta|cinquanta|sessanta)
+DigitsNumberRegex: !simpleRegex
+  def: \d|\d{1,3}(\.\d{3})
+HundredsNumberIntegerRegex: !nestedRegex
+  # TODO: Work on this one
+  def: (({ZeroToNineIntegerRegex}(\s+cento))|cento|((\s+cento\s)+{TensNumberIntegerRegex}))
+  references: [ ZeroToNineIntegerRegex, TensNumberIntegerRegex ]
+BelowHundredsRegex: !nestedRegex
+  def: (({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\W+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})
+  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex ]
+BelowThousandsRegex: !nestedRegex
+  def: (({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cento\s+{TenToNineteenIntegerRegex})
+  references: [ HundredsNumberIntegerRegex, BelowHundredsRegex, TenToNineteenIntegerRegex ]
+SupportThousandsRegex: !nestedRegex
+  def: (({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)
+  references: [ BelowThousandsRegex, BelowHundredsRegex, RoundNumberIntegerRegex ]
 NegativeNumberTermsRegex: !simpleRegex
    # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -18,23 +30,19 @@ NegativeNumberSignRegex: !nestedRegex
   def: ^({NegativeNumberTermsRegex}\s+).*
   references: [ NegativeNumberTermsRegex ]
 SeparaIntRegex: !nestedRegex
-  def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(e\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
-  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
+  def: ({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})
+  references: [ SupportThousandsRegex, BelowThousandsRegex ]
 AllIntRegex: !nestedRegex
-  def: (((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(e\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})
-  references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex ]
-PlaceHolderPureNumber: !simpleRegex
-  def: \b
-PlaceHolderDefault: !simpleRegex
-  def: \D|\b
+  def: ({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)
+  references: [ SeparaIntRegex, BelowThousandsRegex ]
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
-  references: [ RoundNumberIntegerRegex ]
+  def: (?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)
+  references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]
 NumbersWithDozenSuffix: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dozzina(e)?(?=\b)
 AllIntRegexWithLocks: !nestedRegex
@@ -44,27 +52,46 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
   def: (?<=\b)(((half\s+)?a\s+dozzina)|({AllIntRegex}\s+dozzina(e)?))(?=\b)
   references: [ AllIntRegex ]
 #Ordinal Regex
-RoundNumberOrdinalRegex: !simpleRegex
-  def: (centesimo(a)|millesimo(a)|milionesimo(a)|miliardesimo(a)|trilionesimo(a))
-BasicOrdinalRegex: !simpleRegex
-  def: (primo(a)|secondo(a)|terzo(a)|quarto(a)|quinto(a)|sesto(a)|settimo(a)|ottavo(a)|nono(a)|decimo(a)|undicesimo(a)|dodicesimo(a)|tredicesimo(a)|quattordicesimo(a)|quindicesimo(a)|sedicesimo(a)|diciassettesimo(a)|diciottesimo(a)|diciannovesimo(a)|ventesimo(a)|trentesimo(a)|quarantesimo(a)|cinquantesimo(a)|sessantesimo(a)|settantesimo(a)|otantesimo(a)|novantesimo(a))
-SuffixBasicOrdinalRegex: !nestedRegex
-  def: ((((({TensNumberIntegerRegex}(\s+(e\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(e\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})
-  references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
-SuffixRoundNumberOrdinalRegex: !nestedRegex
-  def: (({AllIntRegex}\s+){RoundNumberOrdinalRegex})
-  references: [ AllIntRegex, RoundNumberOrdinalRegex ]
+SimpleRoundOrdinalRegex: !simpleRegex
+  def: (centesim[oa]|millesim[oa]|milionesim[oa]|miliardesim[oa]|trilionesim[oa])
+OneToNineOrdinalRegex: !simpleRegex
+  def: (prim[oa]|secondo[oa]|terz[oa]|quart[oa]|quint[oa]|sest[oa]|settim[oa]|ottav[oa]|non[oa])
+SpecialUnderHundredOrdinalRegex: !simpleRegex
+  def: (onzi[eè]me|douzi[eè]me)
+TensOrdinalRegex: !simpleRegex
+  def: (|decim[oa]|undicesim[oa]|dodicesim[oa]|tredicesim[oa]|quattordicesim[oa]|quindicesim[oa]|sedicesim[oa]|diciassettesim[oa]|diciottesim[oa]|diciannovesim[oa]|ventesim[oa]|trentesim[oa]|quarantesim[oa]|cinquantesim[oa]|sessantesim[oa]|settantesim[oa]|otantesim[oa]|novantesim[oa])
+HundredOrdinalRegex: !nestedRegex
+  # un centieme, deux centieme, trois centieme, etc
+  def: ({AllIntRegex}(\s+(centesim[oa]\s)))
+  references: [ AllIntRegex ]
+UnderHundredOrdinalRegex: !nestedRegex
+  def: ((({AllIntRegex}(\W)?)?{OneToNineOrdinalRegex})|({TensNumberIntegerRegex}(\W)?)?{OneToNineOrdinalRegex}|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})
+  references: [ AllIntRegex, OneToNineOrdinalRegex, TensNumberIntegerRegex, TensOrdinalRegex, SpecialUnderHundredOrdinalRegex ]
+UnderThousandOrdinalRegex: !nestedRegex
+  def: ((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})
+  references: [ HundredOrdinalRegex, UnderHundredOrdinalRegex, AllIntRegex, SimpleRoundOrdinalRegex ]
+OverThousandOrdinalRegex: !nestedRegex
+  def: (({AllIntRegex})(i[eè]me))
+  references: [ AllIntRegex ]
+ComplexOrdinalRegex: !nestedRegex
+  def: (({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})
+  references: [ OverThousandOrdinalRegex, UnderThousandOrdinalRegex, UnderHundredOrdinalRegex ]
+SuffixOrdinalRegex: !nestedRegex
+  def: (({AllIntRegex})({SimpleRoundOrdinalRegex}))
+  references: [ AllIntRegex, SimpleRoundOrdinalRegex ]
+ComplexRoundOrdinalRegex: !nestedRegex
+  def: ((({SuffixOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SuffixOrdinalRegex})
+  references: [ SuffixOrdinalRegex, ComplexOrdinalRegex ]
 AllOrdinalRegex: !nestedRegex
-  def: ({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
-  references: [ SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex ]
+  def: ({ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex})
+  references: [ ComplexOrdinalRegex, SimpleRoundOrdinalRegex, ComplexRoundOrdinalRegex ]
+PlaceHolderPureNumber: !simpleRegex
+  def: \b
+PlaceHolderDefault: !simpleRegex
+  def: \D|\b
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)((\d*(1°|2°|3°|4°|5°|6°|7°|8°|9°|0°))|(11°|12°))(?=\b)
-OrdinalNumericRegex: !simpleRegex
-  def: (?<=\b)(\d{1,3}(\s*,\s*\d{3})*\s*°)(?=\b)
-OrdinalRoundNumberRegex: !nestedRegex
-  def: (?<!(un|uno|una)\s+){RoundNumberOrdinalRegex}
-  references: [ RoundNumberOrdinalRegex ]
-OrdinalEnglishRegex: !nestedRegex
+OrdinalFrenchRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
 #Fraction Regex
@@ -73,45 +100,45 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
+  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({SuffixOrdinalRegex}))s|mezzo|quarto)(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(un|uno|una)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|mezzo|quarto)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
+  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(un|uno|una)(\s+|\s*-\s*)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|mezzo|quarto)(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
   references: [ AllIntRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex
-  def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
+  def:  ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
   references: [ ZeroToNineIntegerRegex, SeparaIntRegex ]
 AllFloatRegex: !nestedRegex
-  def: '{AllIntRegex}(\s+point){AllPointRegex}'
+  def: ({AllIntRegex}(\s+(virgule|point)){AllPointRegex})
   references: [ AllIntRegex, AllPointRegex ]
-DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)
-DoubleExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)e([+-]*[1-9]\d*)(?=\b)
-DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+(?!(\.\d+))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithoutIntegralRegex: !paramsRegex
-  def: (?<=\s|^)(?<!(\d+))\.\d+(?!(\.\d+))(?={placeholder})
+  def: (?<=\s|^)(?<!(\d+)),\d+(?!(,\d+))(?={placeholder})
   params: [ placeholder ]
+DoubleWithMultiplierRegex: !simpleRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(K|k|M|G|T)(?=\b)
 DoubleWithRoundNumber: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [ AllFloatRegex ]
+DoubleExponentialNotationRegex: !simpleRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
+DoubleCaretExponentialNotationRegex: !simpleRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 #Number Regex
 CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: (?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(percento|per cento)\b)
+  def: ({BaseNumbers.NumberReplaceToken})(\s*)(%|percento|per cento|percentuale)
   references: [ BaseNumbers.NumberReplaceToken ]
 NumberWithPrefixPercentage: !nestedRegex
   def: (percento di|per cento di)(\s*)({BaseNumbers.NumberReplaceToken})
@@ -122,145 +149,293 @@ FractionMarkerToken: su
 NonDecimalSeparatorChar: !char '.'
 HalfADozenText: sei
 WordSeparatorToken: e
-WrittenDecimalSeparatorTexts: [punto]
-WrittenGroupSeparatorTexts: [punto]
-WrittenIntegerSeparatorTexts: [e]
-WrittenFractionSeparatorTexts: [e]
+WrittenDecimalSeparatorTexts: [virgule]
+WrittenGroupSeparatorTexts: [point, points]
+WrittenIntegerSeparatorTexts: [e, '-']
+WrittenFractionSeparatorTexts: [e, su]
 HalfADozenRegex: !simpleRegex
   def: mezza\s+dozzina
 DigitalNumberRegex: !simpleRegex
-  def: ((?<=\b)(cento|mille|milione|miliardo|trilione|dozzina(e)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
+  def: ((?<=\b)(cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni|dozzina|dozzine)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
-    a: 1
     zero: 0
-    an: 1
-    one: 1
-    two: 2
-    three: 3
-    four: 4
-    five: 5
-    six: 6
-    seven: 7
-    eight: 8
-    nine: 9
-    ten: 10
-    eleven: 11
-    twelve: 12
-    dozen: 12
-    dozens: 12
-    thirteen: 13
-    fourteen: 14
-    fifteen: 15
-    sixteen: 16
-    seventeen: 17
-    eighteen: 18
-    nineteen: 19
-    twenty: 20
-    thirty: 30
-    forty: 40
-    fifty: 50
-    sixty: 60
-    seventy: 70
-    eighty: 80
-    ninety: 90
-    hundred: 100
-    thousand: 1000
-    million: 1000000
-    billion: 1000000000
-    trillion: 1000000000000
+    un: 1
+    una: 1
+    uno: 1
+    due: 2
+    tre: 3
+    quattro: 4
+    cinque: 5
+    sei: 6
+    sette: 7
+    otto: 8
+    nove: 9
+    dieci: 10
+    undici: 11
+    dodici: 12
+    dozzina: 12
+    dozzine: 12
+    tredici: 13
+    quattordici: 14
+    quindici: 15
+    sedici: 16
+    diciassette: 17
+    diciotto: 18
+    diciannove: 19
+    venti: 20
+    trenta: 30
+    quaranta: 40
+    cinquanta: 50
+    sessanta: 60
+    settanta: 70
+    ottanta: 80
+    novanta: 90
+    cento: 100
+    mille: 1000
+    un milione: 1000000
+    milione: 1000000
+    milioni: 1000000
+    un miliardo: 1000000000
+    miliardo: 1000000000
+    miliardi: 1000000000
+    un trilione: 1000000000000
+    trilione: 1000000000000
+    trilioni: 1000000000000
 OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
-    first: 1
-    second: 2
-    secondary: 2
-    half: 2
-    third: 3
-    fourth: 4
-    quarter: 4
-    fifth: 5
-    sixth: 6
-    seventh: 7
-    eighth: 8
-    ninth: 9
-    tenth: 10
-    eleventh: 11
-    twelfth: 12
-    thirteenth: 13
-    fourteenth: 14
-    fifteenth: 15
-    sixteenth: 16
-    seventeenth: 17
-    eighteenth: 18
-    nineteenth: 19
-    twentieth: 20
-    thirtieth: 30
-    fortieth: 40
-    fiftieth: 50
-    sixtieth: 60
-    seventieth: 70
-    eightieth: 80
-    ninetieth: 90
-    hundredth: 100
-    thousandth: 1000
-    millionth: 1000000
-    billionth: 1000000000
-    trillionth: 1000000000000
-    firsts: 1
-    halves: 2
-    thirds: 3
-    fourths: 4
-    quarters: 4
-    fifths: 5
-    sixths: 6
-    sevenths: 7
-    eighths: 8
-    ninths: 9
-    tenths: 10
-    elevenths: 11
-    twelfths: 12
-    thirteenths: 13
-    fourteenths: 14
-    fifteenths: 15
-    sixteenths: 16
-    seventeenths: 17
-    eighteenths: 18
-    nineteenths: 19
-    twentieths: 20
-    thirtieths: 30
-    fortieths: 40
-    fiftieths: 50
-    sixtieths: 60
-    seventieths: 70
-    eightieths: 80
-    ninetieths: 90
-    hundredths: 100
-    thousandths: 1000
-    millionths: 1000000
-    billionths: 1000000000
-    trillionths: 1000000000000
+    primo: 1
+    prima: 1
+    secondo: 2
+    seconda: 2
+    metà: 2
+    terzo: 3
+    terza: 3
+    quarto: 4
+    quarta: 4
+    quinto: 5
+    quinta: 5
+    sesto: 6
+    sesta: 6
+    settimo: 7
+    settima: 7
+    ottavo: 8
+    ottava: 8
+    nono: 9
+    nona: 9
+    decimo: 10
+    decima: 10
+    undicesimo: 11
+    undicesima: 11
+    dodicesimo: 12
+    dodicesima: 12
+    tredicesimo: 13
+    tredicesima: 13
+    quattordicesimo: 14
+    quattordicesima: 14
+    quindicisimo: 15
+    quindicisima: 15
+    sedicesimo: 16
+    sedicesima: 16
+    diciassettesimo: 17
+    diciassettesima: 17
+    diciottesimo: 18
+    diciottesima: 18
+    diciannovesimo: 19
+    diciannovesima: 19
+    ventesimo: 20
+    ventesima: 20
+    ventunesimo: 21
+    ventunesima: 21
+    trentesimo: 30
+    trentesima: 30
+    quarantesimo: 40
+    quarantesima: 40
+    cinquantesimo: 50
+    cinquantesima: 50
+    sessantesimo: 60
+    sessantesima: 60
+    settantesimo: 70
+    settantesima: 70
+    ottantesimo: 80
+    ottantesima: 80
+    novantesimo: 90
+    novantesima: 90
+    centesimo: 100
+    centesima: 100
+    millesimo: 1000
+    millesima: 1000
+    milionesimo: 1000000
+    milionesima: 1000000
+    miliardesimo: 1000000000
+    miliardesima: 1000000000
+    trilionesimo: 1000000000000
+    trilionesima: 1000000000000
+    primi: 1
+    prime: 1
+    secondi: 2
+    seconde: 2
+    terzi: 3
+    terze: 3
+    quarti: 4
+    quarte: 4
+    quinti: 5
+    quinte: 5
+    sesti: 6
+    seste: 6
+    settimi: 7
+    settime: 7
+    ottavi: 8
+    ottave: 8
+    noni: 9
+    none: 9
+    decimi: 10
+    decime: 10
+    undicesimi: 11
+    undicesime: 11
+    dodicesimi: 12
+    dodicesime: 12
+    tredicesimi: 13
+    tredicesime: 13
+    quattordicesimi: 14
+    quattordicesime: 14
+    quindicesimi: 15
+    quindicesime: 15
+    sedicesimi: 16
+    sedicesime: 16
+    diciassettesimi: 17
+    diciassettesime: 17
+    diciottesimi: 18
+    diciottesime: 18
+    diciannovesimi: 19
+    diciannovesime: 19
+    ventesimi: 20
+    ventesime: 20
+    trentesimi: 30
+    trentesime: 30
+    quarantesimi: 40
+    quarantesime: 40
+    cinquantesimi: 50
+    cinquantesime: 50
+    sessantesimi: 60
+    sessantesime: 60
+    settantesimi: 70
+    settantesime: 70
+    ottantesimi: 80
+    ottantesime: 80
+    novantesimi: 90
+    novantesime: 90
+    centesimi: 100
+    centesime: 100
+    millesimi: 1000
+    millesime: 1000
+    milionesimi: 1000000
+    milionesime: 1000000
+    miliardersimi: 1000000000
+    miliardersime: 1000000000
+    trilioneisimi: 1000000000000
+    trilionesime: 1000000000000
+PrefixCardinalDictionary: !dictionary
+  types: [ string, long ]
+  entries:
+    due: 2 
+    tre: 3 
+    quattro: 4 
+    cinque: 5 
+    sei: 6 
+    sette: 7 
+    otto: 8 
+    nove: 9 
+    dieci: 10 
+    undici: 11 
+    dodici: 12 
+    tredici: 13
+    quattordici: 14
+    quindici: 15
+    sedici: 16
+    diciassette: 17
+    diciotto: 18
+    diciannove: 19
+    venti: 20
+    ventuno: 21 
+    ventidue: 22
+    ventitre: 23 
+    ventiquattro: 24
+    venticinque: 25 
+    ventisei: 26
+    ventisette: 27 
+    ventotto: 28 
+    ventinove: 29 
+    trenta: 30
+    trentuno: 31
+    quaranta: 40
+    cinquanta: 50
+    sessanta: 60
+    settanta: 70
+    ottanta: 80
+    novanta: 90
+    cento: 100 
+    due cento: 200
+    duecento: 200
+    tre cento: 300
+    trecento: 300
+    quattro cento: 400
+    quattrocento: 400
+    cinque cento: 500
+    cinquecento: 500
+    sei cento: 600
+    seicento: 600
+    sette cento: 700
+    settecento: 700
+    otto cento: 800
+    ottocento: 800
+    nove cento: 900
+    novecento: 900
+SufixOrdinalDictionary: !dictionary
+  types: [ string, long ]
+  entries:
+    mille: 1000 
+    milione: 1000000 
+    miliardo: 1000000000
 RoundNumberMap: !dictionary
   types: [ string, long ]
   entries:
-    hundred: 100
-    thousand: 1000
-    million: 1000000
-    billion: 1000000000
-    trillion: 1000000000000
-    hundredth: 100
-    thousandth: 1000
-    millionth: 1000000
-    billionth: 1000000000
-    trillionth: 1000000000000
-    hundredths: 100
-    thousandths: 1000
-    millionths: 1000000
-    billionths: 1000000000
-    trillionths: 1000000000000
-    dozen: 12
-    dozens: 12
+    cento: 100
+    mille: 1000
+    milione: 1000000
+    milioni: 1000000
+    miliardo: 1000000000
+    miliardi: 1000000000
+    trilione: 1000000000000
+    trilioni: 1000000000000
+    centinaio: 100
+    centinai: 100
+    centinaie: 100
+    millesimo: 1000
+    milionesimo: 1000000
+    miliardersimo: 1000000000
+    trilioneisimo: 1000000000000
+    millesima: 1000
+    milionesima: 1000000
+    miliardersima: 1000000000
+    trilioneisima: 1000000000000
+    millesimi: 1000
+    milionesimi: 1000000
+    miliardersimi: 1000000000
+    trilioneisimi: 1000000000000
+    millesime: 1000
+    milionesime: 1000000
+    miliardersime: 1000000000
+    trilioneisime: 1000000000000
+    centinaia: 100
+    migliaia: 1000
+    milionata: 1000000
+    miliardata: 1000000000
+    trilionata: 1000000000000
+    dozzina: 12
+    dozzine: 12
     k: 1000
     m: 1000000
     g: 1000000000

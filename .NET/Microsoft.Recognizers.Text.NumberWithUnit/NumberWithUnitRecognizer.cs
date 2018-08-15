@@ -75,6 +75,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         protected override void InitializeConfiguration()
         {
             #region English
+            
             RegisterModel<CurrencyModel>(
                 Culture.English,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -111,9 +112,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region Chinese
+            
             RegisterModel<CurrencyModel>(
                 Culture.Chinese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -166,9 +169,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region Spanish
+            
             RegisterModel<CurrencyModel>(
                 Culture.Spanish,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -205,9 +210,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region Portuguese
+            
             RegisterModel<CurrencyModel>(
                 Culture.Portuguese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -244,9 +251,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Portuguese.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region French
+            
             RegisterModel<CurrencyModel>(
                 Culture.French,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -283,9 +292,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new French.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region German
+            
             RegisterModel<CurrencyModel>(
                 Culture.German,
                 (options) => new CurrencyModel(
@@ -326,9 +337,50 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                     new NumberWithUnitParser(new German.AgeParserConfiguration())
                                 }
                             }));
+                            
             #endregion
 
+            /*
+            #region Italian
+            RegisterModel<CurrencyModel>(
+                Culture.Italian,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Italian.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new Italian.CurrencyParserConfiguration())
+                    }
+                }));
+            RegisterModel<TemperatureModel>(
+                Culture.Italian,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Italian.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Italian.TemperatureParserConfiguration())
+                    }
+                }));
+            RegisterModel<DimensionModel>(
+                Culture.Italian,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Italian.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Italian.DimensionParserConfiguration())
+                    }
+                }));
+            RegisterModel<AgeModel>(
+                Culture.Italian,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Italian.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Italian.AgeParserConfiguration())
+            #endregion
+            */
+
             #region Japanese
+            
             RegisterModel<CurrencyModel>(
                 Culture.Japanese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -355,6 +407,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
         }
     }
