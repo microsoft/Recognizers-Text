@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public SpanishHolidayParserConfiguration() : base()
+        public SpanishHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             this.HolidayRegexList = SpanishHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();

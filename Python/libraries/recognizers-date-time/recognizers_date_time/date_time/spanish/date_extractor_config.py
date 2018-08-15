@@ -76,9 +76,17 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         if SpanishDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = SpanishDateTime.DateExtractor5
             date_extractor_5 = SpanishDateTime.DateExtractor4
+            date_extractor_6 = SpanishDateTime.DateExtractor8
+            date_extractor_8 = SpanishDateTime.DateExtractor6
+            date_extractor_7 = SpanishDateTime.DateExtractor9
+            date_extractor_9 = SpanishDateTime.DateExtractor7
         else:
             date_extractor_4 = SpanishDateTime.DateExtractor4
             date_extractor_5 = SpanishDateTime.DateExtractor5
+            date_extractor_6 = SpanishDateTime.DateExtractor6
+            date_extractor_8 = SpanishDateTime.DateExtractor8
+            date_extractor_7 = SpanishDateTime.DateExtractor7
+            date_extractor_9 = SpanishDateTime.DateExtractor9
 
         self._date_regex_list = [
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateExtractor1),
@@ -86,10 +94,10 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateExtractor3),
             RegExpUtility.get_safe_reg_exp(date_extractor_4),
             RegExpUtility.get_safe_reg_exp(date_extractor_5),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateExtractor7),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateExtractor8),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateExtractor9),
+            RegExpUtility.get_safe_reg_exp(date_extractor_6),
+            RegExpUtility.get_safe_reg_exp(date_extractor_7),
+            RegExpUtility.get_safe_reg_exp(date_extractor_8),
+            RegExpUtility.get_safe_reg_exp(date_extractor_9),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.DateExtractor10),
         ]
 

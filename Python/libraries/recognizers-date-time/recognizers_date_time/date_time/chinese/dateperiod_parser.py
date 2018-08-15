@@ -4,7 +4,7 @@ from datedelta import datedelta
 import regex
 
 from recognizers_text import RegExpUtility, ExtractResult
-from recognizers_number import ChineseIntegerExtractor, ChineseNumberParser, ChineseNumberParserConfiguration, Constants as NumberConstants
+from recognizers_number import ChineseIntegerExtractor, CJKNumberParser, ChineseNumberParserConfiguration, Constants as NumberConstants
 
 from ...resources.chinese_date_time import ChineseDateTime
 from ..constants import TimeTypeConstants
@@ -17,7 +17,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
     def __init__(self):
         super().__init__(ChineseDatePeriodParserConfiguration())
         self.integer_extractor = ChineseIntegerExtractor()
-        self.number_parser = ChineseNumberParser(ChineseNumberParserConfiguration())
+        self.number_parser = CJKNumberParser(ChineseNumberParserConfiguration())
         self.year_in_chinese_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodYearInChineseRegex)
         self.number_combined_with_unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.NumberCombinedWithUnit)
         self.unit_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.UnitRegex)

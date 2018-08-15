@@ -16,6 +16,8 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override Regex NegativeNumberTermsRegex { get; }
 
+        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
@@ -34,6 +36,8 @@ namespace Microsoft.Recognizers.Text.Number.English
         private NumberExtractor(NumberMode mode, NumberOptions options)
         {
             NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
             Options = options;
 

@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = EnglishTimeExtractorConfiguration.AtRegex;

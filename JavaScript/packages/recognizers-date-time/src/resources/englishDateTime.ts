@@ -182,9 +182,9 @@ export namespace EnglishDateTime {
 	export const AMTimeRegex = `(?<am>morning)`;
 	export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
 	export const InclusiveModPrepositions = `(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))`;
-	export const BeforeRegex = `\\b${InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)${InclusiveModPrepositions}?\\b\\s*`;
-	export const AfterRegex = `\\b${InclusiveModPrepositions}?(after(?!\\s+or equal to)|(?<!no\\s+)later than)${InclusiveModPrepositions}?\\b\\s*`;
-	export const SinceRegex = `\\b(since|after or equal to|starting (from|on|with))\\b\\s*`;
+	export const BeforeRegex = `(\\b${InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)${InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|>)((?<include><=)|<)`;
+	export const AfterRegex = `(\\b${InclusiveModPrepositions}?(after(?!\\s+or equal to)|(?<!no\\s+)later than)${InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|<)((?<include>>=)|>)`;
+	export const SinceRegex = `(\\b(since|after or equal to|starting (from|on|with))\\b\\s*)|(?<!\\w|<)(>=)`;
 	export const AgoRegex = `\\b(ago|before (?<day>yesterday|today))\\b`;
 	export const LaterRegex = `\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;

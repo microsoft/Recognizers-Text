@@ -41,11 +41,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(), false);
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = EnglishDurationExtractorConfiguration.DuringRegex;

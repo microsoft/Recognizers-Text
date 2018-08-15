@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public StringMatcher SuperfluousWordMatcher { get; }
 
-        public PortugueseMergedParserConfiguration(DateTimeOptions options) : base(options)
+        public PortugueseMergedParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             BeforeRegex = PortugueseMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = PortugueseMergedExtractorConfiguration.AfterRegex;
@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimePeriodParser = new BaseTimePeriodParser(new PortugueseTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new DateTimePeriodParser(new PortugueseDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new PortugueseSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration());
+            HolidayParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration(this));
             TimeZoneParser = new BaseTimeZoneParser();
         }
     }

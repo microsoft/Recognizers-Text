@@ -14,13 +14,13 @@
 ,
 {
   "Input": "这个数字是位于20和30之间的",
-  "NotSupported": "javascript, python",
+  "NotSupported": "java, javascript, python",
   "Results": [
     {
       "Text": "位于20和30之间",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(20,30)"
+        "value": "[20,30)"
       }
     }
   ]
@@ -28,13 +28,13 @@
 ,
 {
   "Input": "他的排名在第十和第十五之间",
-  "NotSupported": "javascript, python",
+  "NotSupported": "java, javascript, python",
   "Results": [
     {
       "Text": "在第十和第十五之间",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(10,15)"
+        "value": "[10,15)"
       }
     }
   ]

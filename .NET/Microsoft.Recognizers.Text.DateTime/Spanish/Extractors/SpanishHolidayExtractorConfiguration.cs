@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.HolidayRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
-        public SpanishHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

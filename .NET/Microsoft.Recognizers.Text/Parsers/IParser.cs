@@ -21,8 +21,6 @@
             Metadata = er.Metadata;
         }
 
-        public Metadata Metadata { get; set; } = null;
-
         //Value is for resolution. 
         //e.g. 1000 for "one thousand".
         //The resolutions are different for different parsers.

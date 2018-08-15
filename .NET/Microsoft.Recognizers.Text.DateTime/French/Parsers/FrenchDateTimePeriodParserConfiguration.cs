@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public FrenchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             DateExtractor = config.DateExtractor;

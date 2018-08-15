@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             H4
         };
 
-        public FrenchHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

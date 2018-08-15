@@ -63,20 +63,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public PortugueseMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
-            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(options));
-            SetExtractor = new BaseSetExtractor(new PortugueseSetExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new PortugueseSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
             IntegerExtractor = new Number.Portuguese.IntegerExtractor();
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new PortugueseDateTimeAltExtractorConfiguration());
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new PortugueseDateTimeAltExtractorConfiguration(this));
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;

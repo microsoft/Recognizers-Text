@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = SpanishTimeExtractorConfiguration.AtRegex;

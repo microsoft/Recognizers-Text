@@ -52,8 +52,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             ParseResult ret = null;
 
-            string extra;
-            if ((extra = extResult.Data as string) == null)
+            if (!(extResult.Data is string extra))
             {
                 extra = LongFormatRegex.Match(extResult.Text).Success ? "Num" : Config.LangMarker;
             }

@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDurationExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public FrenchDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

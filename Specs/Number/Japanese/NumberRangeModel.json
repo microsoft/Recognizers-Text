@@ -21,7 +21,7 @@
       "Text": "20と30の間",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(20,30)"
+        "value": "[20,30)"
       }
     }
   ]
@@ -35,7 +35,7 @@
       "Text": "第10と第15の間",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(10,15)"
+        "value": "[10,15)"
       }
     }
   ]

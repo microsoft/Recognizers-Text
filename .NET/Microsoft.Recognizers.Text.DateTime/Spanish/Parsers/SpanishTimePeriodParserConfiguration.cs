@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public SpanishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;

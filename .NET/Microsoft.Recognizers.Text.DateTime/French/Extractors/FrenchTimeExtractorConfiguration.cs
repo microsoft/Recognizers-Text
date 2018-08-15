@@ -193,10 +193,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public FrenchTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public FrenchTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
-            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
         }
     }
 }

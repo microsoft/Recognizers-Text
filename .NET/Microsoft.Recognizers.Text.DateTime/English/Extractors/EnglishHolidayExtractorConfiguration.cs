@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             H3
         };
 
-        public EnglishHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        public EnglishHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

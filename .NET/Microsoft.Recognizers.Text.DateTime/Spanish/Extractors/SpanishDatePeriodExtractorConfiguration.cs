@@ -191,12 +191,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             RelativeDecadeRegex
         };
 
-        public SpanishDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             OrdinalExtractor = new Number.Spanish.OrdinalExtractor();
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
         }
 

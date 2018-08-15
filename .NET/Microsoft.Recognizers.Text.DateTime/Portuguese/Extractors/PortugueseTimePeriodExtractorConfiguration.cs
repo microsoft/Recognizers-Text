@@ -35,10 +35,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public PortugueseTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration());
+            SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return match.Success;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return ConnectorAndRegex.IsMatch(text);
         }

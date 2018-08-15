@@ -1,0 +1,288 @@
+[
+  {
+    "Input": "Ik zal wekelijks vertrekken",
+    "Results": [
+      {
+        "Text": "wekelijks",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal dagelijks vertrekken",
+    "Results": [
+      {
+        "Text": "dagelijks",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke dag vertrekken",
+    "Results": [
+      {
+        "Text": "elke dag",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke maand vertrekken",
+    "Results": [
+      {
+        "Text": "elke maand",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal jaarlijks vertrekken",
+    "Results": [
+      {
+        "Text": "jaarlijks",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal jaarlijks vertrekken",
+    "Results": [
+      {
+        "Text": "jaarlijks",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke twee dagen vertrekken",
+    "Results": [
+      {
+        "Text": "elke twee dagen",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke drie weken vertrekken",
+    "Results": [
+      {
+        "Text": "elke drie weken",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke dag om 15:00 vertrekken",
+    "Results": [
+      {
+        "Text": "15:00 elke dag",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal iedere dag om 15:00 vertrekken",
+    "Results": [
+      {
+        "Text": "15:00 iedere dag",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke 4/15 vertrekken",
+    "Results": [
+      {
+        "Text": "elke 4/15",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke maandag vertrekken",
+    "Results": [
+      {
+        "Text": "elke maandag",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke maandag om 16:00 vertrekken",
+    "Results": [
+      {
+        "Text": "elke maandag om 16:00",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke ochtend vertrekken",
+    "Results": [
+      {
+        "Text": "elke ochtend",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke ochtend om 09:00 vertrekken",
+    "Results": [
+      {
+        "Text": "elke ochtend om 09:00",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke middag om 16:00 vertrekken",
+    "Results": [
+      {
+        "Text": "elke middag om 16:00",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke dag om 21:00 vertrekken",
+    "Results": [
+      {
+        "Text": "elke dag om 21:00",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke avond vertrekken om 9",
+    "Results": [
+      {
+        "Text": "elke avond om 9",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal vertrekken om 09:00 's ochtends",
+    "Results": [
+      {
+        "Text": "09:00 's ochtends",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal vertrekken 's ochtends om 9",
+    "Results": [
+      {
+        "Text": "'s ochtends om 9",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik vertrek elke zondag ochtend om 9 uur",
+    "Results": [
+      {
+        "Text": "9am every Sunday",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke maandag vertrekken om 09:00",
+    "Results": [
+      {
+        "Text": "maandag vertrekken om 09:00",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal vertrekken om 9 uur 's ochtends elke maandag",
+    "Results": [
+      {
+        "Text": "9 uur 's ochtends elke maandag",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke maandag vertrekken",
+    "Results": [
+      {
+        "Text": "elke maandag",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke zondag vertrekken",
+    "Results": [
+      {
+        "Text": "elke zondag",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik zal elke zondag vertrekken",
+    "Results": [
+      {
+        "Text": "elke zondag",
+        "Type": "set"
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  }
+]

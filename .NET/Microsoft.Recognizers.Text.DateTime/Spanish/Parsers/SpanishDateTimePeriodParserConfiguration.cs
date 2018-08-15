@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = Definitions.Spanish.DateTimeDefinitions.TokenBeforeDate;
 

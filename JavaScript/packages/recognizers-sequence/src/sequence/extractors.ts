@@ -72,12 +72,15 @@ export class BasePhoneNumberExtractor extends BaseSequenceExtractor {
     constructor(){
         super();
         this.regexes = new Map<RegExp, string>()
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.BrazilPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BRAZIL)
+            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.BRPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BR)
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.GeneralPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GENERAL)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.UkPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK)
-            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.GermanyPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GERMANY)
+            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.UKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK)
+            .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.DEPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DE)
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US)
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.CNPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_CN)
+			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.DKPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_DK)
+			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.ITPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_IT)
+			.set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.NLPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_NL)
             .set(RegExpUtility.getSafeRegExp(BasePhoneNumbers.SpecialPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_SPECIAL)
     }
     extract(source: string): Array<ExtractResult> {

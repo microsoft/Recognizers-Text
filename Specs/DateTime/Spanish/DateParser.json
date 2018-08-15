@@ -423,12 +423,12 @@
         "Text": "08/12,2015",
         "Type": "date",
         "Value": {
-          "Timex": "2015-08-12",
+          "Timex": "2015-12-08",
           "FutureResolution": {
-            "date": "2015-08-12"
+            "date": "2015-12-08"
           },
           "PastResolution": {
-            "date": "2015-08-12"
+            "date": "2015-12-08"
           }
         },
         "Start": 8,
@@ -446,12 +446,12 @@
         "Text": "08/12,15",
         "Type": "date",
         "Value": {
-          "Timex": "2015-08-12",
+          "Timex": "2015-12-08",
           "FutureResolution": {
-            "date": "2015-08-12"
+            "date": "2015-12-08"
           },
           "PastResolution": {
-            "date": "2015-08-12"
+            "date": "2015-12-08"
           }
         },
         "Start": 8,
@@ -1274,12 +1274,12 @@
         "Text": "08/12,2015",
         "Type": "date",
         "Value": {
-          "Timex": "2015-08-12",
+          "Timex": "2015-12-08",
           "FutureResolution": {
-            "date": "2015-08-12"
+            "date": "2015-12-08"
           },
           "PastResolution": {
-            "date": "2015-08-12"
+            "date": "2015-12-08"
           }
         },
         "Start": 11,

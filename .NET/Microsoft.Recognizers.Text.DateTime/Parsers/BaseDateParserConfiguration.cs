@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public abstract class BaseDateParserConfiguration : BaseOptionsConfiguration, ICommonDateTimeParserConfiguration
     {
 
-        protected BaseDateParserConfiguration(DateTimeOptions options) : base(options)
+        protected BaseDateParserConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 
@@ -50,8 +50,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IDateTimeParser DateTimePeriodParser { get; protected set; }
 
         public virtual IDateTimeParser DateTimeAltParser { get; protected set; }
-
-        public virtual Regex AmbiguousMonthP0Regex { get; protected set; }
 
         public virtual IImmutableDictionary<string, int> MonthOfYear { get; protected set; }
 

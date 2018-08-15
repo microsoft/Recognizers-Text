@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
-            DateRegexes = FrenchDateExtractorConfiguration.DateRegexList;
+            DateRegexes = new FrenchDateExtractorConfiguration(config).DateRegexList;
             OnRegex = FrenchDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = FrenchDateExtractorConfiguration.SpecialDayWithNumRegex;

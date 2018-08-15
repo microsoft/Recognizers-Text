@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public StringMatcher SuperfluousWordMatcher { get; }
 
-        public FrenchMergedParserConfiguration(DateTimeOptions options) : base(options)
+        public FrenchMergedParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             BeforeRegex = FrenchMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = FrenchMergedExtractorConfiguration.AfterRegex;
@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SuperfluousWordMatcher = FrenchMergedExtractorConfiguration.SuperfluousWordMatcher;
             YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
             SetParser = new BaseSetParser(new FrenchSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration());
+            HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
             TimeZoneParser = new BaseTimeZoneParser();
         }
     }

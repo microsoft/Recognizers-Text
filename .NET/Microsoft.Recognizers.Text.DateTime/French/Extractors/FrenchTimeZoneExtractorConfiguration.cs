@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
         };
 
-        public FrenchTimeZoneExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

@@ -438,13 +438,13 @@ PMTimeRegex: !simpleRegex
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))
 BeforeRegex: !nestedRegex
-  def: \b{InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until){InclusiveModPrepositions}?\b\s*
+  def: (\b{InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)
   references: [ InclusiveModPrepositions ]
 AfterRegex: !nestedRegex
-  def: \b{InclusiveModPrepositions}?(after(?!\s+or equal to)|(?<!no\s+)later than){InclusiveModPrepositions}?\b\s*
+  def: (\b{InclusiveModPrepositions}?(after(?!\s+or equal to)|(?<!no\s+)later than){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
-  def: \b(since|after or equal to|starting (from|on|with))\b\s*
+  def: (\b(since|after or equal to|starting (from|on|with))\b\s*)|(?<!\w|<)(>=)
 AgoRegex: !simpleRegex
   def: \b(ago|before (?<day>yesterday|today))\b
 LaterRegex: !simpleRegex
@@ -933,4 +933,9 @@ SuperfluousWordList: !list
     - around
 DurationDateRestrictions: [ today, now ]
 # For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty. 
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '\\bmorning|afternoon|evening|night|day\\b': '\\bgood\\s+(morning|afternoon|evening|night|day)\\b'
+    '\\bmay\\b': '\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b'
 ...
