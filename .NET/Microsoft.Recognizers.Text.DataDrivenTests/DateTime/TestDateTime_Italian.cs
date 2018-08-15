@@ -205,7 +205,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeMergedParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModel-French.csv", "DateTimeModel-French#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModel-Italian.csv", "DateTimeModel-French#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateTimeModel()
         {
