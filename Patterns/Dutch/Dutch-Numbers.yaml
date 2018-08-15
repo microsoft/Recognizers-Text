@@ -11,13 +11,13 @@ NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]
 AnIntRegex: !simpleRegex
-  def: (een)(?=\s)
+  def: (een|één)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (zeventien|dertien|veertien|achttien|negentien|vijftien|zestien|elf|twaalf|tien)
 TensNumberIntegerRegex: !simpleRegex
   def: (zeventig|twintig|dertig|tachtig|negentig|veertig|vijftig|zestig)
 SeparaIntRegex: !nestedRegex
-  def: ((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))
+  def: ((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|{RoundNumberIntegerRegex}|(({AnIntRegex}?(\s*{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
 AllIntRegex: !nestedRegex
   def: (((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})
@@ -198,6 +198,8 @@ WrittenIntegerSeparatorTexts: [en]
 WrittenFractionSeparatorTexts: [uit, van de, op de]
 HalfADozenRegex: !simpleRegex
   def: (een\s+)?half\s+dozijn
+GrossRegex: !simpleRegex
+  def: (een\s+)?gros
 DigitalNumberRegex: !simpleRegex
   def: ((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
 CardinalNumberMap: !dictionary

@@ -22,10 +22,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string ZeroToNineIntegerRegex = @"(drie|zeven|acht|vier|vijf|nul|negen|een|één|twee|zes)";
 		public const string NegativeNumberTermsRegex = @"((min|negatief)\s+)";
 		public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
-		public const string AnIntRegex = @"(een)(?=\s)";
+		public const string AnIntRegex = @"(een|één)(?=\s)";
 		public const string TenToNineteenIntegerRegex = @"(zeventien|dertien|veertien|achttien|negentien|vijftien|zestien|elf|twaalf|tien)";
 		public const string TensNumberIntegerRegex = @"(zeventig|twintig|dertig|tachtig|negentig|veertig|vijftig|zestig)";
-		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
+		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|{RoundNumberIntegerRegex}|(({AnIntRegex}?(\s*{RoundNumberIntegerRegex})+))";
 		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
@@ -98,6 +98,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string[] WrittenIntegerSeparatorTexts = { "en" };
 		public static readonly string[] WrittenFractionSeparatorTexts = { "uit", "van de", "op de" };
 		public const string HalfADozenRegex = @"(een\s+)?half\s+dozijn";
+		public const string GrossRegex = @"(een\s+)?gros";
 		public const string DigitalNumberRegex = @"((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
 		{
