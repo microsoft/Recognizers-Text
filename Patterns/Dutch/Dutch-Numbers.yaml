@@ -198,6 +198,8 @@ WrittenIntegerSeparatorTexts: [en]
 WrittenFractionSeparatorTexts: [uit, van de, op de]
 HalfADozenRegex: !simpleRegex
   def: (een\s+)?half\s+dozijn
+GrossRegex: !simpleRegex
+  def: (een\s+)?gros
 DigitalNumberRegex: !simpleRegex
   def: ((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
 CardinalNumberMap: !dictionary
