@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 text = MatchingUtil.PreProcessTextRemoveSuperfluousWords(text, this.config.SuperfluousWordMatcher, out superfluousWordMatches);
             }
 
-            // The order is important, since there is a problem in merging
+            // The order is important, since there can be conflicts in merging
             AddTo(ret, this.config.DateExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.TimeExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.DatePeriodExtractor.Extract(text, reference), text);
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // This should be at the end since if need the extractor to determine the previous text contains time or not
             AddTo(ret, NumberEndingRegexMatch(text, ret), text);
 
-            // modify time entity to an alternative DateTime expression if it follows a DateTime entity
+            // Modify time entity to an alternative DateTime expression if it follows a DateTime entity
             if ((this.config.Options & DateTimeOptions.ExtendedTypes) != 0)
             {
                 ret = this.config.DateTimeAltExtractor.Extract(ret, text, reference);
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             AddMod(ret, text);
 
-            // filtering
+            // Filtering
             if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
             {
                 CheckCalendarFilterList(ret, text);
@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                // comment this code for now
+                // @TODO: Is this really no longer necessary?
                 //if (FilterAmbiguousSingleWord(result, text))
                 //{
                 //    continue;
@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var tempDst = dst.Where((_, i) => !overlapIndexes.Contains(i)).ToList();
 
-                    //insert at the first overlap occurence to keep the order
+                    // Insert at the first overlap occurence to keep the order
                     tempDst.Insert(firstIndex, result);
                     dst.Clear();
                     dst.AddRange(tempDst);
@@ -184,7 +184,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text.ToLowerInvariant()))
             {
-                var stringBefore = text.Substring(0, (int) er.Start).TrimEnd();
+                var stringBefore = text.Substring(0, (int)er.Start).TrimEnd();
                 if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
                 {
                     return true;
@@ -194,7 +194,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return false;
         }
 
-        // handle cases like "move 3pm appointment to 4"
+        // Handle cases like "move 3pm appointment to 4"
         private List<ExtractResult> NumberEndingRegexMatch(string text, List<ExtractResult> extractResults)
         {
             var tokens = new List<Token>();

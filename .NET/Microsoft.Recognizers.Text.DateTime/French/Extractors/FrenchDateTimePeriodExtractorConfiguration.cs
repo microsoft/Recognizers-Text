@@ -5,8 +5,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration,
-        IDateTimePeriodExtractorConfiguration
+    public class FrenchDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
         public string TokenBeforeDate { get; }
 

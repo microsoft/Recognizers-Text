@@ -8,6 +8,7 @@ export class Culture {
   static readonly German: string = "de-de"
   static readonly Japanese: string = "ja-jp"
   static readonly Dutch: string = "nl-nl"
+  static readonly Italian: string = "it-it"
 
   static readonly supportedCultures: Array<Culture> = [
     new Culture("English", Culture.English),
@@ -17,7 +18,8 @@ export class Culture {
     new Culture("French", Culture.French),
     new Culture("German", Culture.German),
     new Culture("Japanese", Culture.Japanese),
-    new Culture("Dutch", Culture.Dutch)
+    new Culture("Dutch", Culture.Dutch),
+    new Culture("Italian", Culture.Italian)
   ]
 
   readonly cultureName: string

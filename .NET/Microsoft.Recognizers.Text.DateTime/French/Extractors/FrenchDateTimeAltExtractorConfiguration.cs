@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.French;
-using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         }
 
         public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeExtractor DatePeriodExtractor { get; }
 
         private static readonly Regex OrRegex =

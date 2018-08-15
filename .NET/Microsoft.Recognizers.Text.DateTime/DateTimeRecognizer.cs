@@ -7,6 +7,9 @@ using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 
+using Microsoft.Recognizers.Text.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Italian;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
