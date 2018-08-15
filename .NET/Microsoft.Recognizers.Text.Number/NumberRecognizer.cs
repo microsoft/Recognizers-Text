@@ -232,8 +232,8 @@ namespace Microsoft.Recognizers.Text.Number
             RegisterModel<NumberModel>(
                 Culture.Dutch,
                 (options) => new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration(options)),
-                    Dutch.NumberExtractor.GetInstance(NumberMode.PureNumber, options)));
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration()),
+                    Dutch.NumberExtractor.GetInstance(NumberMode.PureNumber)));
             #endregion
         }
     }
