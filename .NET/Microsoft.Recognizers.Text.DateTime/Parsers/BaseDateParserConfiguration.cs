@@ -1,15 +1,15 @@
 ﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public abstract class BaseDateParserConfiguration : BaseOptionsConfiguration, ICommonDateTimeParserConfiguration
     {
 
-        protected BaseDateParserConfiguration(DateTimeOptions options) : base(options)
+        protected BaseDateParserConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

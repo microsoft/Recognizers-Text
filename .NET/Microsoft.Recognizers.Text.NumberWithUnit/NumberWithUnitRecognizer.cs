@@ -75,13 +75,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         protected override void InitializeConfiguration()
         {
             #region English
+            
             RegisterModel<CurrencyModel>(
                 Culture.English,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new English.CurrencyParserConfiguration())
                     }
                 }));
             RegisterModel<TemperatureModel>(
@@ -111,16 +112,18 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region Chinese
+            
             RegisterModel<CurrencyModel>(
                 Culture.Chinese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Chinese.CurrencyParserConfiguration())
                     },
                     {
                         new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
@@ -166,9 +169,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new English.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region Spanish
+            
             RegisterModel<CurrencyModel>(
                 Culture.Spanish,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -205,9 +210,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region Portuguese
+            
             RegisterModel<CurrencyModel>(
                 Culture.Portuguese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -244,9 +251,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new Portuguese.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region French
+            
             RegisterModel<CurrencyModel>(
                 Culture.French,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
@@ -283,9 +292,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new NumberWithUnitParser(new French.AgeParserConfiguration())
                     }
                 }));
+                
             #endregion
 
             #region German
+            
             RegisterModel<CurrencyModel>(
                 Culture.German,
                 (options) => new CurrencyModel(
@@ -326,8 +337,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                     new NumberWithUnitParser(new German.AgeParserConfiguration())
                                 }
                             }));
+                            
             #endregion
 
+            /*
             #region Italian
             RegisterModel<CurrencyModel>(
                 Culture.Italian,
@@ -363,8 +376,38 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new Italian.AgeExtractorConfiguration()),
                         new NumberWithUnitParser(new Italian.AgeParserConfiguration())
+            #endregion
+            */
+
+            #region Japanese
+            
+            RegisterModel<CurrencyModel>(
+                Culture.Japanese,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Japanese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Japanese.CurrencyParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
                     }
                 }));
+            RegisterModel<AgeModel>(
+                Culture.Japanese,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Japanese.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Japanese.AgeParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
+                    }
+                }));
+                
             #endregion
         }
     }

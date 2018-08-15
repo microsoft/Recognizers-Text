@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public sealed class GermanMergedParserConfiguration : GermanCommonDateTimeParserConfiguration, IMergedParserConfiguration
@@ -14,22 +16,28 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex YearRegex { get; }
 
-        public IDateTimeParser GetParser { get; }
+        public IDateTimeParser SetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
 
-        public GermanMergedParserConfiguration(DateTimeOptions options) : base(options)
+        public IDateTimeParser TimeZoneParser { get; }
+
+        public StringMatcher SuperfluousWordMatcher { get; }
+
+        public GermanMergedParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = GermanMergedExtractorConfiguration.AfterRegex;
             SinceRegex = GermanMergedExtractorConfiguration.SinceRegex;
             YearAfterRegex = GermanMergedExtractorConfiguration.YearAfterRegex;
             YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = GermanMergedExtractorConfiguration.SuperfluousWordMatcher;
             DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));
-            GetParser = new BaseSetParser(new GermanSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration());
+            SetParser = new BaseSetParser(new GermanSetParserConfiguration(this));
+            HolidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration(this));
+            TimeZoneParser = new BaseTimeZoneParser();
         }
     }
 }

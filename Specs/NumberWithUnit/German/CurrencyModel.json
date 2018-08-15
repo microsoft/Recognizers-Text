@@ -254,10 +254,10 @@
   ]
 }
 ,
-{//DIN 1333
+{
   "Input": "Der Haushalt beläuft sich auf 12 500 EUR.",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "12 500 EUR",
@@ -286,17 +286,17 @@
   ]
 }
 ,
-{//Age-Model currently does not work with ordinals
+{
   "Input": "Der Umsatz sank in der zweiten Jahreshälfte um 27% auf 300 000 GBP",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "Results": [
     {
       "Text": "300 000 GBP",
       "TypeName": "currency",
       "Resolution": {
         "value": "300000",
-        "unit": "Pound"
+        "unit": "British pound"
       }
     }
   ]
@@ -337,7 +337,7 @@
 {
   "Input": "zwei Euro fünfzig",
   "NotSupportedByDesign": "python",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript,dotnet,java",
   "Results": [
     {
       "Text": "zwei Euro fünfzig",

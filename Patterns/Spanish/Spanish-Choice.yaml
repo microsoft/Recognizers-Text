@@ -1,4 +1,4 @@
-﻿---
+---
 LangMarker: Spa
 #Boolean Recognizers
 TokenizerRegex: !simpleRegex

@@ -1,8 +1,8 @@
-import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
+import { ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants"
 import { Constants as NumberConstants } from "@microsoft/recognizers-text-number"
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek, StringMap } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
@@ -190,6 +190,7 @@ export interface IDateParserConfiguration {
     dateRegex: RegExp[]
     onRegex: RegExp
     specialDayRegex: RegExp
+    specialDayWithNumRegex: RegExp
     nextRegex: RegExp
     unitRegex: RegExp
     monthRegex: RegExp
@@ -200,6 +201,7 @@ export interface IDateParserConfiguration {
     forTheRegex: RegExp
     weekDayAndDayOfMonthRegex: RegExp
     relativeMonthRegex: RegExp
+    relativeWeekDayRegex: RegExp
     utilityConfiguration: IDateTimeUtilityConfiguration
     dateTokenPrefix: string
     getSwiftDay(source: string): number
@@ -315,6 +317,45 @@ export class BaseDateParser implements IDateTimeParser {
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let swift = this.config.getSwiftDay(match.value);
             let value = DateUtils.addDays(referenceDate, swift);
+            result.timex = FormatUtil.luisDateFromDate(value);
+            result.futureValue = value;
+            result.pastValue = value;
+            result.success = true;
+            return result;
+        }
+
+        // handle "two days from tomorrow"
+        match = RegExpUtility.getMatches(this.config.specialDayWithNumRegex, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
+            let swift = this.config.getSwiftDay(match.groups('day').value);
+            let numErs = this.config.integerExtractor.extract(trimmedSource);
+            let numOfDays = Number.parseInt(this.config.numberParser.parse(numErs[0]).value);
+
+            let value = DateUtils.addDays(referenceDate, swift + numOfDays);
+            result.timex = FormatUtil.luisDateFromDate(value);
+            result.futureValue = value;
+            result.pastValue = value;
+            result.success = true;
+            return result;
+        }
+        
+        // handle "two sundays from now"
+        match = RegExpUtility.getMatches(this.config.relativeWeekDayRegex, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
+            let numErs = this.config.integerExtractor.extract(trimmedSource);
+            let num = Number.parseInt(this.config.numberParser.parse(numErs[0]).value);
+            let weekdayStr = match.groups('weekday').value.toLowerCase();
+            let value = referenceDate;
+
+            // Check whether the determined day of this week has passed.
+            if (value.getDay() > this.config.dayOfWeek.get(weekdayStr)) {
+                num--;
+            }
+
+            while (num-- > 0) {
+                value = DateUtils.next(value, this.config.dayOfWeek.get(weekdayStr));
+            }
+
             result.timex = FormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
@@ -592,8 +633,8 @@ export class BaseDateParser implements IDateTimeParser {
             day = this.config.dayOfMonth.get(dayStr);
             if (!StringUtility.isNullOrEmpty(yearStr)) {
                 year = Number.parseInt(yearStr, 10);
-                if (year < 100 && year >= 90) year += 1900;
-                else if (year < 100 && year < 20) year += 2000;
+                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) year += 1900;
+                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum) year += 2000;
             }
         }
         let noYear = false;
@@ -621,8 +662,10 @@ export class BaseDateParser implements IDateTimeParser {
     private computeDate(cardinal: number, weekday: number, month: number, year: number) {
         let firstDay = new Date(year, month, 1);
         let firstWeekday = DateUtils.this(firstDay, weekday);
+        let dayOfWeekOfFirstDay = firstDay.getDay();
         if (weekday === 0) weekday = 7;
-        if (weekday < firstDay.getDay()) firstWeekday = DateUtils.next(firstDay, weekday);
+        if (dayOfWeekOfFirstDay === 0) dayOfWeekOfFirstDay = 7;
+        if (weekday < dayOfWeekOfFirstDay) firstWeekday = DateUtils.next(firstDay, weekday);
         firstWeekday.setDate(firstWeekday.getDate() + (7 * (cardinal - 1)));
         return firstWeekday;
     }

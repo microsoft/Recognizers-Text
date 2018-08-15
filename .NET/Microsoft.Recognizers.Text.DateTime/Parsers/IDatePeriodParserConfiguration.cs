@@ -7,15 +7,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDatePeriodParserConfiguration : IOptionsConfiguration
     {
-        int MinYearNum { get; }
-
-        int MaxYearNum { get; }
-
         string TokenBeforeDate { get; }
 
         IDateTimeExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
+
+        IExtractor OrdinalExtractor { get; }
 
         IExtractor IntegerExtractor { get; }
 
@@ -91,7 +89,21 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearPeriodRegex { get; }
 
+        Regex ComplexDatePeriodRegex { get; }
+
         Regex RelativeDecadeRegex { get; }
+
+        Regex ReferenceDatePeriodRegex { get; }
+
+        Regex AgoRegex { get; }
+
+        Regex LaterRegex { get; }
+
+        Regex LessThanRegex { get; }
+
+        Regex MoreThanRegex { get; }
+
+        Regex CenturySuffixRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

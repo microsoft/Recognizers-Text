@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex AnUnitRegex { get; }
 
+        public Regex DuringRegex { get; }
+
         public Regex AllDateUnitRegex { get; }
 
         public Regex HalfDateUnitRegex { get; }
@@ -27,9 +29,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex ConjunctionRegex { get; }
 
-        public Regex InExactNumberRegex { get; }
+        public Regex InexactNumberRegex { get; }
 
-        public Regex InExactNumberUnitRegex { get; }
+        public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 
@@ -39,20 +41,21 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public GermanDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public GermanDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(), false);
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = GermanDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = GermanDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = GermanDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = GermanDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = GermanDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = GermanDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = GermanDurationExtractorConfiguration.DurationFollowedUnit;
             ConjunctionRegex = GermanDurationExtractorConfiguration.ConjunctionRegex;
-            InExactNumberRegex = GermanDurationExtractorConfiguration.InExactNumberRegex;
-            InExactNumberUnitRegex = GermanDurationExtractorConfiguration.InExactNumberUnitRegex;
+            InexactNumberRegex = GermanDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = GermanDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = GermanDurationExtractorConfiguration.DurationUnitRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;

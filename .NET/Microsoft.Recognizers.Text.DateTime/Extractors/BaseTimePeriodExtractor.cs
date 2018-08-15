@@ -2,8 +2,6 @@
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimePeriodExtractor : IDateTimeExtractor
@@ -32,22 +30,60 @@ namespace Microsoft.Recognizers.Text.DateTime
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
+        // Cases like "from 3 to 5am" or "between 3:30 and 5" are extracted here
+        // Note that cases like "from 3 to 5" will not be extracted here because no "am/pm" or "hh:mm" to infer it's a time period
+        // Also cases like "from 3:30 to 4 people" shuold not be extracted as a time period
         private List<Token> MatchSimpleCases(string text)
         {
             var ret = new List<Token>();
             foreach (var regex in this.config.SimpleCasesRegex)
             {
                 var matches = regex.Matches(text);
+
                 foreach (Match match in matches)
                 {
-                    // Is there "pm" or "am" ?
-                    var pmStr = match.Groups["pm"].Value;
-                    var amStr = match.Groups["am"].Value;
-                    var descStr = match.Groups["desc"].Value;
-                    // Check "pm", "am"
-                    if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
+                    // Cases like "from 10:30 to 11", don't necessarily need "am/pm"
+                    if (match.Groups[Constants.MinuteGroupName].Success || match.Groups[Constants.SecondGroupName].Success)
                     {
-                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                        // Cases like "from 3:30 to 4" should be supported
+                        // Cases like "from 3:30 to 4 on 1/1/2015" should be supported
+                        // Cases like "from 3:30 to 4 people" is considered not valid
+                        bool endWithValidToken = false;
+
+                        // "No extra tokens after the time period"
+                        if (match.Index + match.Length == text.Length)
+                        {
+                            endWithValidToken = true;
+                        }
+                        else
+                        {
+                            var afterStr = text.Substring(match.Index + match.Length);
+
+                            // "End with general ending tokens or "TokenBeforeDate" (like "on")
+                            var endingMatch = this.config.GeneralEndingRegex.Match(afterStr);
+                            if (endingMatch.Success || afterStr.TrimStart().StartsWith(this.config.TokenBeforeDate))
+                            {
+                                endWithValidToken = true;
+                            }
+                        }
+
+                        if (endWithValidToken)
+                        {
+                            ret.Add(new Token(match.Index, match.Index + match.Length));
+                        }
+                    }
+                    else
+                    {
+                        // Is there "pm" or "am"?
+                        var pmStr = match.Groups[Constants.PmGroupName].Value;
+                        var amStr = match.Groups[Constants.AmGroupName].Value;
+                        var descStr = match.Groups[Constants.DescGroupName].Value;
+
+                        // Check "pm", "am" 
+                        if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
+                        {
+                            ret.Add(new Token(match.Index, match.Index + match.Length));
+                        }
                     }
                 }
             }
@@ -111,10 +147,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // check connector string
                     var midStr = text.Substring(numEndPoint?? 0, ers[j].Start-numEndPoint?? 0);
                     var match = this.config.TillRegex.Match(midStr);
-                    if (match.Success && match.Length == midStr.Trim().Length)
+                    if (match.Success && match.Length == midStr.Trim().Length || config.IsConnectorToken(midStr.Trim()))
                     {
                         timeNumbers.Add(numErs[i]);
                     }
+
                     i++;
                 }
 
@@ -136,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                ers.Sort((x, y) => (x.Start - y.Start ?? 0));
+                ers.Sort((x, y) => x.Start - y.Start ?? 0);
             }
 
             var idx = 0;
@@ -162,9 +199,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handle "from"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
-                    if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex))
+                    if (this.config.GetFromTokenIndex(beforeStr, out var fromIndex))
                     {
+                        // Handle "from"
                         periodBegin = fromIndex;
+                    }
+                    else if (this.config.GetBetweenTokenIndex(beforeStr, out var betweenIndex))
+                    {
+                        // Handle "between"
+                        periodBegin = betweenIndex;
                     }
 
                     ret.Add(new Token(periodBegin, periodEnd));
@@ -173,7 +216,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Handle "between {TimePoint} and {TimePoint}"
-                if (this.config.HasConnectorToken(middleStr))
+                if (this.config.IsConnectorToken(middleStr))
                 {
                     var periodBegin = ers[idx].Start ?? 0;
                     var periodEnd = (ers[idx + 1].Start ?? 0) + (ers[idx + 1].Length ?? 0);

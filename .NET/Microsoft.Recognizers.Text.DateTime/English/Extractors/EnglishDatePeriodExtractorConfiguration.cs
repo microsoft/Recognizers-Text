@@ -8,13 +8,9 @@ using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDatePeriodExtractorConfiguration : IDatePeriodExtractorConfiguration
+    public class EnglishDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
-        public static readonly int MinYearNum = int.Parse(DateTimeDefinitions.MinYearNum);
-
-        public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
-        
-        // base regexes
+        // Base regexes
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -36,8 +32,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex RelativeMonthRegex = 
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EngMonthRegex =
-            new Regex(DateTimeDefinitions.EngMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WrittenMonthRegex =
+            new Regex(DateTimeDefinitions.WrittenMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthSuffixRegex =
             new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -139,8 +135,29 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex YearPeriodRegex =
             new Regex(DateTimeDefinitions.YearPeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex ComplexDatePeriodRegex =
+            new Regex(DateTimeDefinitions.ComplexDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex RelativeDecadeRegex =
             new Regex(DateTimeDefinitions.RelativeDecadeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex ReferenceDatePeriodRegex =
+            new Regex(DateTimeDefinitions.ReferenceDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AgoRegex =
+            new Regex(DateTimeDefinitions.AgoRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex LaterRegex =
+            new Regex(DateTimeDefinitions.LaterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex LessThanRegex =
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MoreThanRegex =
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex CenturySuffixRegex =
+            new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -150,7 +167,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             MonthWithYear,
             MonthNumWithYear,
             YearRegex,
-            YearPeriodRegex,
             WeekOfMonthRegex,
             WeekOfYearRegex,
             MonthFrontBetweenRegex,
@@ -165,15 +181,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
             DecadeWithCenturyRegex,
-            RelativeDecadeRegex
+            RelativeDecadeRegex,
+            ReferenceDatePeriodRegex
         };
 
-        public EnglishDatePeriodExtractorConfiguration()
+        public EnglishDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            Options = DateTimeOptions.None;
-            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         }
 
@@ -181,13 +198,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor OrdinalExtractor { get; }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
-
-        int IDatePeriodExtractorConfiguration.MinYearNum => MinYearNum;
-
-        int IDatePeriodExtractorConfiguration.MaxYearNum => MaxYearNum;
 
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 
@@ -221,7 +236,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
 
+        Regex IDatePeriodExtractorConfiguration.ComplexDatePeriodRegex => ComplexDatePeriodRegex;
+
         Regex IDatePeriodExtractorConfiguration.RelativeDecadeRegex => RelativeDecadeRegex;
+
+        Regex IDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex => ReferenceDatePeriodRegex;
+
+        Regex IDatePeriodExtractorConfiguration.AgoRegex => AgoRegex;
+
+        Regex IDatePeriodExtractorConfiguration.LaterRegex => LaterRegex;
+
+        Regex IDatePeriodExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
+
+        Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
+
+        string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
         public bool GetFromTokenIndex(string text, out int index)
         {
@@ -252,8 +283,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var match = Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex);
             return match.Success && match.Length == text.Trim().Length;
         }
-
-        public DateTimeOptions Options { get; }
 
     }
 }

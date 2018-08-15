@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -59,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public SpanishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
@@ -92,13 +91,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             int result = hour;
 
             //TODO: Replace with a regex
-            if ((trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour >= 12)
+            if ((trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour >= Constants.HalfDayHourCount)
             {
-                result -= 12;
+                result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour < 12)
+            else if (!(trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour < Constants.HalfDayHourCount)
             {
-                result += 12;
+                result += Constants.HalfDayHourCount;
             }
             return result;
         }
@@ -145,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText)
+        public bool ContainsAmbiguousToken(string text, string matchedText)
         {
             return text.Contains("esta mañana") && matchedText.Contains("mañana");
         }

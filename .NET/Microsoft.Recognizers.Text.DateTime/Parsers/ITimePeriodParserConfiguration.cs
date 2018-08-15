@@ -16,6 +16,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex PureNumberFromToRegex { get; }
 
         Regex PureNumberBetweenAndRegex { get; }
+
+        Regex SpecificTimeFromToRegex { get; }
+
+        Regex SpecificTimeBetweenAndRegex { get; }
         
         Regex TimeOfDayRegex { get; }
 

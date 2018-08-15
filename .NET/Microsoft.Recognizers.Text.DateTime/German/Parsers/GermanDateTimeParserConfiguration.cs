@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
@@ -91,13 +91,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if ((trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour >= 12)
+            if ((trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour >= Constants.HalfDayHourCount)
             {
-                result -= 12;
+                result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour < 12)
+            else if (!(trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour < Constants.HalfDayHourCount)
             {
-                result += 12;
+                result += Constants.HalfDayHourCount;
             }
             return result;
         }
@@ -143,6 +143,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText) => false;
+        public bool ContainsAmbiguousToken(string text, string matchedText) => false;
     }
 }

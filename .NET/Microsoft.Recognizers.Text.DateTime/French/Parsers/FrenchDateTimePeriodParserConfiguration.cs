@@ -2,12 +2,13 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -62,12 +63,19 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex WithinNextPrefixRegex { get; }
 
+        public Regex PrefixDayRegex { get; }
+
+        public Regex BeforeRegex { get; }
+
+        public Regex AfterRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public FrenchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
@@ -96,6 +104,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             AmDescRegex = FrenchDateTimePeriodExtractorConfiguration.AmDescRegex;
             PmDescRegex = FrenchDateTimePeriodExtractorConfiguration.PmDescRegex;
             WithinNextPrefixRegex = FrenchDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            PrefixDayRegex = FrenchDateTimePeriodExtractorConfiguration.PrefixDayRegex;
+            BeforeRegex = FrenchDateTimePeriodExtractorConfiguration.BeforeRegex;
+            AfterRegex = FrenchDateTimePeriodExtractorConfiguration.AfterRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
@@ -118,16 +129,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
             if (MorningStartEndRegex.IsMatch(trimedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (AfternoonStartEndRegex.IsMatch(trimedText))
             {
                 timeStr = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (EveningStartEndRegex.IsMatch(trimedText))
@@ -157,6 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
+
             if (trimedText.StartsWith("prochain") || trimedText.EndsWith("prochain") ||
                 trimedText.StartsWith("prochaine") || trimedText.EndsWith("prochaine"))
             {
@@ -167,6 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 swift = -1;
             }
+
             return swift;
         }
     }

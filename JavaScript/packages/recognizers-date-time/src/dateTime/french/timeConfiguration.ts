@@ -34,6 +34,7 @@ export class FrenchTimeExtractorConfiguration implements ITimeExtractorConfigura
             RegExpUtility.getSafeRegExp(FrenchDateTime.TimeRegex7, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.TimeRegex8, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.TimeRegex9, "gis"),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.TimeRegex10, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectNumRegex, "gis")
         ]
     }

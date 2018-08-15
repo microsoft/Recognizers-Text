@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex TensTimeRegex = new Regex(DateTimeDefinitions.TensTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // handle "seis treinta", "seis veintiuno", "seis menos diez"
-        public static readonly Regex LangTimeRegex = new Regex(DateTimeDefinitions.LangTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WrittenTimeRegex = new Regex(DateTimeDefinitions.WrittenTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimePrefix = new Regex(DateTimeDefinitions.TimePrefix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             // (tres min pasadas las)? 3:00(:00)? (pm)?
             new Regex(DateTimeDefinitions.TimeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (tres min pasadas las)? 3.00 (pm)?
+            // (tres min pasadas las)? 3.00 (pm)
             new Regex(DateTimeDefinitions.TimeRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
             
             // (tres min pasadas las) (cinco treinta|siete|7|7:00(:00)?) (pm)?
@@ -85,7 +85,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             // (tres menos veinte) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex11, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            LangTimeRegex,
+            // (tres min pasadas las)? 3h00 (pm)?
+            new Regex(DateTimeDefinitions.TimeRegex12, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            WrittenTimeRegex,
 
             // 340pm
             ConnectNumRegex
@@ -101,9 +104,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public PortugueseTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public PortugueseTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
         }
     }
 }

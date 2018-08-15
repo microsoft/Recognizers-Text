@@ -1,8 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
-
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.French;
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.French
@@ -16,6 +15,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+            this.CompoundUnitConnectorRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.IgnoreCase);
         }
 
         public abstract string ExtractType { get; }
@@ -29,6 +29,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         public string BuildSuffix { get; }
 
         public string ConnectorToken { get; }
+
+        public Regex CompoundUnitConnectorRegex { get; set; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

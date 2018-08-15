@@ -1,399 +1,401 @@
-[{
-  "Input": "Sairei semanalmente",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "semanalmente",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "set": "Set: P1W"
+[
+  {
+    "Input": "Sairei semanalmente",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "semanalmente",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1W"
-        }
+        "Start": 7,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei quinzenalmente",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "quinzenalmente",
-      "Type": "set",
-      "Value": {
-        "Timex": "P2W",
-        "FutureResolution": {
-          "set": "Set: P2W"
+    ]
+  },
+  {
+    "Input": "Sairei quinzenalmente",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "quinzenalmente",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "set": "Set: P2W"
+          },
+          "PastResolution": {
+            "set": "Set: P2W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P2W"
-        }
+        "Start": 7,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei diariamente",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "diariamente",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "set": "Set: P1D"
+    ]
+  },
+  {
+    "Input": "Sairei diariamente",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "diariamente",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1D"
-        }
+        "Start": 7,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Minha saída diária",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "diária",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "set": "Set: P1D"
+    ]
+  },
+  {
+    "Input": "Minha saída diária",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "diária",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1D"
-        }
+        "Start": 12,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei todos os dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os dias",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "set": "Set: P1D"
+    ]
+  },
+  {
+    "Input": "Sairei todos os dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os dias",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1D"
-        }
+        "Start": 7,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei a cada mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada mes",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1M",
-        "FutureResolution": {
-          "set": "Set: P1M"
+    ]
+  },
+  {
+    "Input": "Sairei a cada mes",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada mes",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1M"
-        }
+        "Start": 9,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei todos os meses",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os meses",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1M",
-        "FutureResolution": {
-          "set": "Set: P1M"
+    ]
+  },
+  {
+    "Input": "Sairei todos os meses",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os meses",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1M"
-        }
+        "Start": 7,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei todas as semanas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todas as semanas",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "set": "Set: P1W"
+    ]
+  },
+  {
+    "Input": "Sairei todas as semanas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todas as semanas",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1W"
-        }
+        "Start": 7,
+        "Length": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei anualmente",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "anualmente",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "set": "Set: P1Y"
+    ]
+  },
+  {
+    "Input": "Sairei anualmente",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "anualmente",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1Y"
-        }
+        "Start": 7,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei todos os anos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os anos",
-      "Type": "set",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "set": "Set: P1Y"
+    ]
+  },
+  {
+    "Input": "Sairei todos os anos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os anos",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P1Y"
-        }
+        "Start": 7,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me irei a cada dois dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada dois dias",
-      "Type": "set",
-      "Value": {
-        "Timex": "P2D",
-        "FutureResolution": {
-          "set": "Set: P2D"
+    ]
+  },
+  {
+    "Input": "Me irei a cada dois dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada dois dias",
+        "Type": "set",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "set": "Set: P2D"
+          },
+          "PastResolution": {
+            "set": "Set: P2D"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P2D"
-        }
+        "Start": 10,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me irei a cada tres semanas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada tres semanas",
-      "Type": "set",
-      "Value": {
-        "Timex": "P3W",
-        "FutureResolution": {
-          "set": "Set: P3W"
+    ]
+  },
+  {
+    "Input": "Me irei a cada tres semanas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada tres semanas",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "set": "Set: P3W"
+          },
+          "PastResolution": {
+            "set": "Set: P3W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P3W"
-        }
+        "Start": 10,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me irei a cada 3 semanas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada 3 semanas",
-      "Type": "set",
-      "Value": {
-        "Timex": "P3W",
-        "FutureResolution": {
-          "set": "Set: P3W"
+    ]
+  },
+  {
+    "Input": "Me irei a cada 3 semanas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada 3 semanas",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "set": "Set: P3W"
+          },
+          "PastResolution": {
+            "set": "Set: P3W"
+          }
         },
-        "PastResolution": {
-          "set": "Set: P3W"
-        }
+        "Start": 10,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Vou-me às 3pm todos os dias",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3pm todos os dias",
-      "Type": "set",
-      "Value": {
-        "Timex": "T15",
-        "FutureResolution": {
-          "set": "Set: T15"
+    ]
+  },
+  {
+    "Input": "Vou-me às 3pm todos os dias",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3pm todos os dias",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T15"
-        }
+        "Start": 10,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Vou-me todos os dias as 3pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todos os dias as 3pm",
-      "Type": "set",
-      "Value": {
-        "Timex": "T15",
-        "FutureResolution": {
-          "set": "Set: T15"
+    ]
+  },
+  {
+    "Input": "Vou-me todos os dias as 3pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todos os dias as 3pm",
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
         },
-        "PastResolution": {
-          "set": "Set: T15"
-        }
+        "Start": 7,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei em cada 15/4",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada 15/4",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-04-15",
-        "FutureResolution": {
-          "set": "Set: XXXX-04-15"
+    ]
+  },
+  {
+    "Input": "Sairei em cada 15/4",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada 15/4",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-04-15",
+          "FutureResolution": {
+            "set": "Set: XXXX-04-15"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-04-15"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-04-15"
-        }
+        "Start": 10,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei todas as segundas-feiras",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todas as segundas-feiras",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-1",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-1"
+    ]
+  },
+  {
+    "Input": "Sairei todas as segundas-feiras",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todas as segundas-feiras",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-1"
-        }
+        "Start": 7,
+        "Length": 24
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei toda segunda-feira",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toda segunda-feira",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-1",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-1"
+    ]
+  },
+  {
+    "Input": "Sairei toda segunda-feira",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "toda segunda-feira",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-1"
-        }
+        "Start": 7,
+        "Length": 18
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Sairei cada segunda-feira as 4pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cada segunda-feira as 4pm",
-      "Type": "set",
-      "Value": {
-        "Timex": "XXXX-WXX-1T16",
-        "FutureResolution": {
-          "set": "Set: XXXX-WXX-1T16"
+    ]
+  },
+  {
+    "Input": "Sairei cada segunda-feira as 4pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "cada segunda-feira as 4pm",
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T16",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          }
         },
-        "PastResolution": {
-          "set": "Set: XXXX-WXX-1T16"
-        }
+        "Start": 7,
+        "Length": 25
       }
-    }
-  ]
-}
+    ]
+  }
 ]

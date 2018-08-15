@@ -24,6 +24,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 numberResult = unitResult;
             }
+            else if (extResult.Type.Equals(Constants.SYS_NUM))
+            {
+                ret.Value = config.InternalNumberParser.Parse(extResult).Value;
+                return ret;
+            }
             else // if there is no unitResult, means there is just unit
             {
                 numberResult = new ExtractResult { Start = -1, Length = 0 };
@@ -65,7 +70,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             /* Unit type depends on last unit in suffix.*/
             var lastUnit = unitKeys.Last().ToLowerInvariant();
-            if ((!string.IsNullOrEmpty(this.config.ConnectorToken)) && lastUnit.StartsWith(this.config.ConnectorToken))
+            if (!string.IsNullOrEmpty(this.config.ConnectorToken) && lastUnit.StartsWith(this.config.ConnectorToken))
             {
                 lastUnit = lastUnit.Substring(this.config.ConnectorToken.Length).Trim();
             }

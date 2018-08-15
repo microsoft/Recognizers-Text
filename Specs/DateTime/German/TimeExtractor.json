@@ -1,218 +1,229 @@
-[{
+[
+  {
     "Input": "Um 7 bin ich zurück",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "7",
-        "Type": "time"
+        "Type": "time",
+        "Start": 3,
+        "Length": 1
       }
     ]
   },
   {
     "Input": "Ich werde um 12:34 zurück sein",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "12:34",
-        "Type": "time"
+        "Type": "time",
+        "Start": 13,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Es ist 7 Uhr",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "7 Uhr",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 5
       }
     ]
   },
   {
     "Input": "Es ist 8 Uhr morgens",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr morgens",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Es ist halb 8",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halb 8",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 6
       }
     ]
   },
   {
     "Input": "Es ist viertel nach 8",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "viertel nach 8",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 14
       }
     ]
   },
   {
     "Input": "3 Minuten nach 8",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "3 Minuten nach 8",
-        "Type": "time"
+        "Type": "time",
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "nachts um 3 Uhr",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nachts um 3 Uhr",
-        "Type": "time"
+        "Type": "time",
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "um drei Uhr in der Nacht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "drei Uhr in der Nacht",
-        "Type": "time"
+        "Type": "time",
+        "Start": 3,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "Nachmittags gegen 4",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Nachmittags gegen 4",
-        "Type": "time"
+        "Type": "time",
+        "Start": 0,
+        "Length": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist 8 Uhr Morgens",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr Morgens",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist 8 Uhr Abends",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "8 Uhr Abends",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "es ist halb 8",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halb 8",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 6
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist 30 min nach acht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "30 min nach acht",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 16
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist viertel nach acht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "viertel nach acht",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Es ist viertel vor acht",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "viertel vor acht",
-        "Type": "time"
+        "Type": "time",
+        "Start": 7,
+        "Length": 16
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "drei Minuten vor 8",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "drei Minuten vor 8",
-        "Type": "time"
+        "Type": "time",
+        "Start": 0,
+        "Length": 18
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "halb 7 Nachmittags",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halb 7 Nachmittags",
-        "Type": "time"
+        "Type": "time",
+        "Start": 0,
+        "Length": 18
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "halb 7 Morgens",
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "halb 7 Morgens",
-        "Type": "time"
+        "Type": "time",
+        "Start": 0,
+        "Length": 14
       }
     ]
   }

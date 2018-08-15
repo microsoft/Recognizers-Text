@@ -82,7 +82,8 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
         this.addTo(result, this.config.dateTimePeriodExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.setExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.holidayExtractor.extract(source, referenceDate), source);
-        this.addMod(result, source);
+
+        result = this.checkBlackList(result, source);
 
         result = result.sort((a, b) => a.start - b.start);
         return result;
@@ -111,7 +112,7 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
                 destination.push(er);
             } else if (rmIndex >= 0) {
                 destination.splice(rmIndex, rmLength);
-                this.moveOverlap(destination, er);
+                destination.splice(0, destination.length, ...this.moveOverlap(destination, er));
                 destination.splice(rmIndex, 0, er);
             }
         });
@@ -125,17 +126,16 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
                 duplicated.push(i);
             }
         }
-        duplicated.forEach(index => destination.splice(index, 1));
+        return destination.filter((_, i) => duplicated.indexOf(i) < 0);
     }
 
     // ported from CheckBlackList
-    protected addMod(destination: ExtractResult[], source: string) {
-        let result = new Array<ExtractResult>();
-        destination = destination.filter(value => {
+    protected checkBlackList(destination: ExtractResult[], source: string) {
+        return destination.filter(value => {
             let valueEnd = value.start + value.length;
             if (valueEnd !== source.length) {
                 let lastChar = source.substr(valueEnd, 1);
-                if (value.text.endsWith('周') && valueEnd < source.length && lastChar === '岁') {
+                if (value.text.endsWith('周') && lastChar === '岁') {
                     return false;
                 }
             }

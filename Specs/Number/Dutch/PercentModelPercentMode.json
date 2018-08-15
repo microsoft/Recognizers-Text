@@ -1,0 +1,134 @@
+[
+  {
+    "Input": "100%",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "twintig procent",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "twintig procent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "percents of twenty",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "percents of twenty",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een van de drie",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "een van de drie",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "33,3333333333333%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een uit twee",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "een uit twee",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "1/4 van",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "1/4 van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een vierde van",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "een vierde van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "de helft van",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "de helft van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een kwart van",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "een kwart van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een derde",
+    "NotSupported": "",
+    "Results": [],
+    "NotSupportedByDesign": "dotNet,javascript,python,java"
+  }
+]

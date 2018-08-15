@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.Number;
-
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -28,17 +26,38 @@ namespace Microsoft.Recognizers.Text.DateTime
             object value = null;
             if (er.Type.Equals(ParserName))
             {
-                var innerResult = InternalParse(er.Text, referenceTime);
+                DateTimeResolutionResult innerResult;
+
+                // Resolve timezome
+                if ((config.Options & DateTimeOptions.EnablePreview) != 0 &&
+                    er.Data is KeyValuePair<string, ExtractResult>)
+                {
+                    var timezoneEr = ((KeyValuePair<string, ExtractResult>) er.Data).Value;
+                    var timezonePr = config.TimeZoneParser.Parse(timezoneEr);
+
+                    innerResult = InternalParse(er.Text.Substring(0, (int)(er.Length - timezoneEr.Length)),
+                        referenceTime);
+
+                    if (timezonePr.Value != null)
+                    {
+                        innerResult.TimeZoneResolution = ((DateTimeResolutionResult)timezonePr.Value).TimeZoneResolution;
+                    }
+                }
+                else
+                {
+                    innerResult = InternalParse(er.Text, referenceTime);
+                }
+
                 if (innerResult.Success)
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject)innerResult.FutureValue)}
                     };
 
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject)innerResult.PastValue)}
                     };
 
                     value = innerResult;
@@ -98,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         hour = 0;
                     }
 
-                    if (hour <= 12 && hour != 0)
+                    if (hour <= Constants.HalfDayHourCount && hour != 0)
                     {
                         ret.Comment = Constants.Comment_AmPm;
                     }
@@ -131,16 +150,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult Match2Time(Match match, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
+            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
             int hour = 0,
                 min = 0,
                 second = 0,
                 day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
-            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
 
-            var engTimeStr = match.Groups["engtime"].Value;
-            if (!string.IsNullOrEmpty(engTimeStr))
+            var writtenTimeStr = match.Groups["writtentime"].Value;
+
+            if (!string.IsNullOrEmpty(writtenTimeStr))
             {
                 // get hour
                 var hourStr = match.Groups["hournum"].Value.ToLower();
@@ -183,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else if (!string.IsNullOrEmpty(match.Groups["midday"].Value))
                 {
-                    hour = 12;
+                    hour = Constants.HalfDayHourCount;
                     min = 0;
                     second = 0;
                 }
@@ -191,7 +211,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 // get hour
-                var hourStr = match.Groups["hour"].Value;
+                var hourStr = match.Groups[Constants.HourGroupName].Value;
                 if (string.IsNullOrEmpty(hourStr))
                 {
                     hourStr = match.Groups["hournum"].Value.ToLower();
@@ -212,7 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // get minute
-                var minStr = match.Groups["min"].Value.ToLower();
+                var minStr = match.Groups[Constants.MinuteGroupName].Value.ToLower();
                 if (string.IsNullOrEmpty(minStr))
                 {
                     minStr = match.Groups["minnum"].Value;
@@ -236,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // get second
-                var secStr = match.Groups["sec"].Value.ToLower();
+                var secStr = match.Groups[Constants.SecondGroupName].Value.ToLower();
                 if (!string.IsNullOrEmpty(secStr))
                 {
                     second = int.Parse(secStr);
@@ -244,42 +264,42 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            //adjust by desc string
-            var descStr = match.Groups["desc"].Value.ToLower();
-            if (!string.IsNullOrEmpty(descStr))
+            // Adjust by desc string
+            var descStr = match.Groups[Constants.DescGroupName].Value.ToLower();
+
+            // ampm is a special case in which at 6ampm = at 6
+            if (config.UtilityConfiguration.AmDescRegex.Match(descStr).Success
+                || config.UtilityConfiguration.AmPmDescRegex.Match(descStr).Success
+                || match.Groups[Constants.ImplicitAmGroupName].Success)
             {
-                //ampm is a special case in which at 6ampm = at 6
-                if (config.UtilityConfiguration.AmDescRegex.Match(descStr.ToLower()).Success
-                    || config.UtilityConfiguration.AmPmDescRegex.Match(descStr.ToLower()).Success)
+                if (hour >= Constants.HalfDayHourCount)
                 {
-                    if (hour >= 12)
-                    {
-                        hour -= 12;
-                    }
-                    if (!config.UtilityConfiguration.AmPmDescRegex.Match(descStr.ToLower()).Success)
-                    {
-                        hasAm = true;
-                    }
+                    hour -= Constants.HalfDayHourCount;
                 }
-                else if (config.UtilityConfiguration.PmDescRegex.Match(descStr.ToLower()).Success)
+                if (!config.UtilityConfiguration.AmPmDescRegex.Match(descStr).Success)
                 {
-                    if (hour < 12)
-                    {
-                        hour += 12;
-                    }
-                    hasPm = true;
+                    hasAm = true;
                 }
+            }
+            else if (config.UtilityConfiguration.PmDescRegex.Match(descStr).Success
+                || match.Groups[Constants.ImplicitPmGroupName].Success)
+            {
+                if (hour < Constants.HalfDayHourCount)
+                {
+                    hour += Constants.HalfDayHourCount;
+                }
+                hasPm = true;
             }
 
             // adjust min by prefix
-            var timePrefix = match.Groups["prefix"].Value.ToLower();
+            var timePrefix = match.Groups[Constants.PrefixGroupName].Value.ToLower();
             if (!string.IsNullOrEmpty(timePrefix))
             {
                 this.config.AdjustByPrefix(timePrefix, ref hour, ref min, ref hasMin);
             }
 
             // adjust hour by suffix
-            var timeSuffix = match.Groups["suffix"].Value.ToLower();
+            var timeSuffix = match.Groups[Constants.SuffixGroupName].Value.ToLower();
             if (!string.IsNullOrEmpty(timeSuffix))
             {
                 this.config.AdjustBySuffix(timeSuffix, ref hour, ref min, ref hasMin, ref hasAm, ref hasPm);
@@ -301,7 +321,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex += ":" + second.ToString("D2");
             }
 
-            if (hour <= 12 && !hasPm && !hasAm && !hasMid)
+            if (hour <= Constants.HalfDayHourCount && !hasPm && !hasAm && !hasMid)
             {
                 ret.Comment = Constants.Comment_AmPm;
             }
@@ -310,6 +330,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

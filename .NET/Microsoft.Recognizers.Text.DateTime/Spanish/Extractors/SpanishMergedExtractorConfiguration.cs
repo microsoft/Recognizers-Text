@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.Spanish;
-using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -16,22 +17,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         //TODO: change the following three regexes to Spanish if there is same requirement of split from A to B as two time points
         public static readonly Regex FromToRegex = 
-            new Regex(@"\b(from).+(to)\b.+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(@"\b(may|march)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(@"\b(on|in|at|around|for|during|since|from|to)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberEndingPattern = new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnspecificDatePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] FilterWordRegexList =
         {
         };
+
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -51,22 +57,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
+
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public SpanishMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
-            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration(this));
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
             IntegerExtractor = new Number.Spanish.IntegerExtractor();
         }
 
@@ -78,6 +89,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

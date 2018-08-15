@@ -1,126 +1,110 @@
-[{
-  "TestType": "BasicTest",
-  "Input": "Volveré para navidad",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 7,
-      "Text": "navidad",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré para navidad del proximo año",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 23,
-      "Text": "navidad del proximo año",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en viernes santo",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 13,
-      "Text": "viernes santo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré en día de accion de gracias",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 24,
-      "Text": "día de accion de gracias",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el dia del padre",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 13,
-      "Text": "dia del padre",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el día de san patricio de este año",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 31,
-      "Text": "día de san patricio de este año",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el dia de la madre del 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 24,
-      "Text": "dia de la madre del 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el dia de la madre 2016",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 20,
-      "Text": "dia de la madre 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el día blanco",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 10,
-      "Text": "día blanco",
-      "Type": "date"
-    }
-  ]
-}
+[
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré para navidad",
+    "Results": [
+      {
+        "Start": 13,
+        "Length": 7,
+        "Text": "navidad",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré para navidad del proximo año",
+    "Results": [
+      {
+        "Start": 13,
+        "Length": 23,
+        "Text": "navidad del proximo año",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en viernes santo",
+    "Results": [
+      {
+        "Start": 11,
+        "Length": 13,
+        "Text": "viernes santo",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré en día de accion de gracias",
+    "Results": [
+      {
+        "Start": 11,
+        "Length": 24,
+        "Text": "día de accion de gracias",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el dia del padre",
+    "Results": [
+      {
+        "Start": 11,
+        "Length": 13,
+        "Text": "dia del padre",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el día de san patricio de este año",
+    "Results": [
+      {
+        "Start": 11,
+        "Length": 31,
+        "Text": "día de san patricio de este año",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el dia de la madre del 2016",
+    "Results": [
+      {
+        "Start": 11,
+        "Length": 24,
+        "Text": "dia de la madre del 2016",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el dia de la madre 2016",
+    "Results": [
+      {
+        "Start": 11,
+        "Length": 20,
+        "Text": "dia de la madre 2016",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Volveré el día blanco",
+    "Results": [
+      {
+        "Start": 11,
+        "Length": 10,
+        "Text": "día blanco",
+        "Type": "date"
+      }
+    ]
+  }
 ]

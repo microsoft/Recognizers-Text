@@ -1,14 +1,12 @@
 [{
   "Input": "1995-01",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": []
 }
 ,
 {
   "Input": "This number is larger than twenty and less or equal than thirty five.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "larger than twenty and less or equal than thirty five",
@@ -22,14 +20,13 @@
 ,
 {
   "Input": "The number is between 20 and 30.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "java, javascript, python",
   "Results": [
     {
       "Text": "between 20 and 30",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(20,30)"
+        "value": "[20,30)"
       }
     }
   ]
@@ -37,14 +34,13 @@
 ,
 {
   "Input": "He ranks between the tenth and the fifteenth.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "java, javascript, python",
   "Results": [
     {
       "Text": "between the tenth and the fifteenth",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(10,15)"
+        "value": "[10,15)"
       }
     }
   ]
@@ -52,14 +48,13 @@
 ,
 {
   "Input": "He scores between negative ten and fifteen.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "java, javascript, python",
   "Results": [
     {
       "Text": "between negative ten and fifteen",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": "(-10,15)"
+        "value": "[-10,15)"
       }
     }
   ]
@@ -67,8 +62,7 @@
 ,
 {
   "Input": "He ranks higher than the tenth but lower than the fifteenth.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "higher than the tenth but lower than the fifteenth",
@@ -82,8 +76,7 @@
 ,
 {
   "Input": "This is a number which is greater than 100 and smaller than 300",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "greater than 100 and smaller than 300",
@@ -97,8 +90,7 @@
 ,
 {
   "Input": "This number is higher or equal than one hundred, lower or equal than three hundred",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "higher or equal than one hundred, lower or equal than three hundred",
@@ -112,8 +104,7 @@
 ,
 {
   "Input": "There're at most 100 and at least 20 apples.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "at most 100 and at least 20",
@@ -127,8 +118,7 @@
 ,
 {
   "Input": "These apples are about 20~100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "20~100",
@@ -142,8 +132,7 @@
 ,
 {
   "Input": "The number range is 20 through 100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "20 through 100",
@@ -157,8 +146,7 @@
 ,
 {
   "Input": "The number range is from one thousand to one thousand and five hundred.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "from one thousand to one thousand and five hundred",
@@ -172,8 +160,7 @@
 ,
 {
   "Input": "The number is above 1000 and below 1500",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "above 1000 and below 1500",
@@ -187,8 +174,7 @@
 ,
 {
   "Input": "The number is above one quarter and below a half.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "above one quarter and below a half",
@@ -202,8 +188,7 @@
 ,
 {
   "Input": "This number is bigger or equal than three thousand nine hundred and sixty five.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "bigger or equal than three thousand nine hundred and sixty five",
@@ -217,8 +202,7 @@
 ,
 {
   "Input": "This number is greater than 4,565",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "greater than 4,565",
@@ -232,8 +216,7 @@
 ,
 {
   "Input": "He is more than thirty years old.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "more than thirty",
@@ -247,8 +230,7 @@
 ,
 {
   "Input": "He is over thirty years old.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "over thirty",
@@ -262,8 +244,7 @@
 ,
 {
   "Input": "His age is no less than thirty.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "no less than thirty",
@@ -277,8 +258,7 @@
 ,
 {
   "Input": "There're about five hundred and more in these products.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "five hundred and more",
@@ -292,8 +272,7 @@
 ,
 {
   "Input": "There're about five hundred or more in these products.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "five hundred or more",
@@ -307,8 +286,7 @@
 ,
 {
   "Input": "More than 1/2 of the people came here.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "More than 1/2",
@@ -322,8 +300,7 @@
 ,
 {
   "Input": "Find the prime numbers which are smaller or equal than 100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "smaller or equal than 100",
@@ -337,8 +314,7 @@
 ,
 {
   "Input": "Find the prime numbers which are less than or equal to 100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "less than or equal to 100",
@@ -352,8 +328,7 @@
 ,
 {
   "Input": "There're about five hundred or less in these products.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "five hundred or less",
@@ -367,8 +342,7 @@
 ,
 {
   "Input": "Find the prime numbers which are < = 100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "< = 100",
@@ -382,8 +356,7 @@
 ,
 {
   "Input": "His height is below 170.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "below 170",
@@ -397,8 +370,7 @@
 ,
 {
   "Input": "His height is under 170.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "under 170",
@@ -412,8 +384,7 @@
 ,
 {
   "Input": "Fewer than a thousand giant pandas still live in the wild.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "Fewer than a thousand",
@@ -427,8 +398,7 @@
 ,
 {
   "Input": "x is equal to one hundred and seventy.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "equal to one hundred and seventy",
@@ -442,8 +412,7 @@
 ,
 {
   "Input": "x>10 and y<20",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": ">10",
@@ -464,8 +433,7 @@
 ,
 {
   "Input": "x is larger than 10 and smaller than 20. y is no more than 50 and no less than 20.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript, python",
   "Results": [
     {
       "Text": "larger than 10 and smaller than 20",
@@ -482,5 +450,483 @@
       }
     }
   ]
+}
+,
+{
+  "Input": "One-fourth is a fraction number.",
+  "NotSupported": "javascript, python",
+  "Results": []
+}
+,
+{
+  "Input": "The number equals 20.",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equals 20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,20]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Equaling to 20, the number of students in our class is not significant.",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "Equaling to 20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,20]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "+1-222-2222/2222 is a phone number.",
+  "NotSupported": "javascript, python",
+  "Results": []
+}
+,
+{
+  "Input": "+1-222-2222-2222 is a phone number.",
+  "NotSupported": "javascript, python",
+  "Results": []
+}
+,
+{
+  "Input": "His score is 200 or greater than",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "200 or greater than",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[200,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is 200 or greater than 190",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "greater than 190",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(190,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is 200 or greater",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "200 or greater",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[200,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is less than or equal to 30",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "less than or equal to 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,30]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to or less than 30",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to or less than 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,30]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is at least or equal to 30",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "at least or equal to 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[30,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to or more than 30",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to or more than 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[30,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or less",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000 or less",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,5000]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or less than 6000",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,5000]"
+      }
+    },
+	{
+      "Text": "less than 6000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,6000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or more than",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000 or more than",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or more than 4500",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,5000]"
+      }
+    },
+	{
+      "Text": "more than 4500",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(4500,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is less than 5000 or equal",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "less than 5000 or equal",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,5000]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is more than 5000 or equal to",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "more than 5000 or equal to",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is more than 5000 or equal to it",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "more than 5000 or equal to",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is more than 5000 or equal to 6000",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "more than 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(5000,)"
+      }
+    },
+	{
+      "Text": "equal to 6000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[6000,6000]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His score is equal to 5000 or less than 5000",
+  "NotSupported": "javascript, python",
+  "Results": [
+    {
+      "Text": "equal to 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[5000,5000]"
+      }
+    },
+	{
+      "Text": "less than 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is 1000-5000",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "1000-5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is 1000 - 5000",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "1000 - 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is 1000–5000",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "1000–5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is 1000 – 5000",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "1000 – 5000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,5000)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "How about 2 in 5 or more",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "2 in 5 or more",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[0.4,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "How about more than 2 in 5",
+  "Comment": "As this can be ambiguous, by design the interpretation is left-to-right and the range is extracted first.",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "more than 2",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(2,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Can you show me records more than 30000 in 2009",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "more than 30000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(30000,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Can you show me records less than 3000 in 2009",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "less than 3000",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,3000)"
+      }
+    }
+  ]
+},
+{
+  "Input": "Is it still the case when >30",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": ">30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(30,)"
+      }
+    }
+  ]
+},
+{
+  "Input": "Is it still the case when >= 30",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": ">= 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[30,)"
+      }
+    }
+  ]
+},
+{
+  "Input": "Is it still the case when <-30",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "<-30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,-30)"
+      }
+    }
+  ]
+},
+{
+  "Input": "Is it still the case when <=  -30",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "<=  -30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,-30]"
+      }
+    }
+  ]
+},
+{
+  "Input": "<>30",
+  "NotSupported": "javascript, python, java",
+  "Results": []
+},
+{
+  "Input": "=>30",
+  "NotSupported": "javascript, python, java",
+  "Results": []
+},
+{
+  "Input": "=<30",
+  "NotSupported": "javascript, python, java",
+  "Results": []
 }
 ]

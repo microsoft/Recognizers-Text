@@ -34,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -55,6 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex RelativeMonthRegex { get; }
 
         public Regex YearSuffix { get; }
+
+        public Regex RelativeWeekDayRegex { get; }
 
         //The following three regexes only used in this configuration
         //They are not used in the base parser, therefore they are not extracted
@@ -81,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
@@ -91,9 +95,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
-            DateRegexes = EnglishDateExtractorConfiguration.DateRegexList;
+            DateRegexes = new EnglishDateExtractorConfiguration(this).DateRegexList;
             OnRegex = EnglishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = EnglishDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = EnglishDateExtractorConfiguration.NextDateRegex;
             ThisRegex = EnglishDateExtractorConfiguration.ThisRegex;
             LastRegex = EnglishDateExtractorConfiguration.LastDateRegex;
@@ -105,6 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WeekDayAndDayOfMothRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
+            RelativeWeekDayRegex = EnglishDateExtractorConfiguration.RelativeWeekDayRegex;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

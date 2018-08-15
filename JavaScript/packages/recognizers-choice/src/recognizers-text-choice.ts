@@ -7,6 +7,8 @@ export { IChoiceParserConfiguration, ChoiceParser, BooleanParser } from "./choic
 export { EnglishBooleanExtractorConfiguration } from "./choice/english/boolean";
 export { PortugueseBooleanExtractorConfiguration } from "./choice/portuguese/boolean";
 export { JapaneseBooleanExtractorConfiguration } from "./choice/japanese/boolean";
+export { SpanishBooleanExtractorConfiguration } from "./choice/spanish/boolean";
 export { EnglishChoice } from "./resources/englishChoice";
 export { PortugueseChoice } from "./resources/portugueseChoice";
 export { JapaneseChoice } from "./resources/japaneseChoice";
+export { SpanishChoice } from "./resources/spanishChoice";

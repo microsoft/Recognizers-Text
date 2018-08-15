@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
+    public class SpanishDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public SpanishDateTimeAltExtractorConfiguration()
+        public SpanishDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DateExtractor { get; }
@@ -18,6 +18,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         private static readonly Regex OrRegex =
             new Regex(DateTimeDefinitions.OrRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -49,5 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.AmPmRegexList => AmPmRegexList;
 
         Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
+
+        Regex IDateTimeAltExtractorConfiguration.DayRegex => DayRegex;
     }
 }

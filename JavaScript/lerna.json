@@ -1,7 +1,8 @@
 {
   "lerna": "2.5.1",
   "packages": [
-    "packages/recognizers-*"
+    "packages/recognizers-*",
+    "packages/datatypes-date-time"
   ],
   "version": "1.0.0"
 }

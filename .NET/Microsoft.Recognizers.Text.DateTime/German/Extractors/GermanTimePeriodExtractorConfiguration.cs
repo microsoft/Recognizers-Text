@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -35,6 +37,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex PureNumBetweenAnd =
             new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecificTimeFromTo = new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex SpecificTimeBetweenAnd = new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex PrepositionRegex = 
             new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -56,9 +62,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanTimePeriodExtractorConfiguration():base(DateTimeOptions.None)
+        public GermanTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
         }
@@ -101,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return false;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return text.Equals("und");
         }

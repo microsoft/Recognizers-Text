@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
-using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
@@ -16,18 +17,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         //TODO: change the following three regexes to Portuguese if there are the same requirement of splitting from A to B as two time points
         public static readonly Regex FromToRegex = 
-            new Regex(@"\b(from).+(to)\b.+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(@"\b(may|march)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(@"\b(on|in|at|around|for|during|since|from|to)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberEndingPattern = new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex UnspecificDatePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public static readonly Regex[] FilterWordRegexList =
         {
@@ -51,23 +57,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public PortugueseMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
-            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new PortugueseSetExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new PortugueseSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
             IntegerExtractor = new Number.Portuguese.IntegerExtractor();
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new PortugueseDateTimeAltExtractorConfiguration());
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new PortugueseDateTimeAltExtractorConfiguration(this));
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
@@ -78,6 +89,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

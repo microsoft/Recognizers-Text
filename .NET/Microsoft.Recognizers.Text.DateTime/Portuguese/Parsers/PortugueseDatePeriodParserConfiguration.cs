@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor OrdinalExtractor { get; }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
@@ -63,7 +65,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
+        public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
+        public Regex ReferenceDatePeriodRegex { get; }
+        public Regex AgoRegex { get; }
+        public Regex LaterRegex { get; }
+        public Regex LessThanRegex { get; }
+        public Regex MoreThanRegex { get; }
+
+        public Regex CenturySuffixRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -96,18 +106,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         #endregion
 
-        public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = PortugueseDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = PortugueseDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = PortugueseDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = PortugueseDatePeriodExtractorConfiguration.DayBetweenRegex;
             MonthFrontSimpleCasesRegex = PortugueseDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -135,9 +144,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             YearPlusNumberRegex = PortugueseDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = PortugueseDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             YearPeriodRegex = PortugueseDatePeriodExtractorConfiguration.YearPeriodRegex;
+            ComplexDatePeriodRegex = PortugueseDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
             RelativeDecadeRegex = PortugueseDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = PortugueseDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            ReferenceDatePeriodRegex = PortugueseDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            AgoRegex = PortugueseDatePeriodExtractorConfiguration.AgoRegex;
+            LaterRegex = PortugueseDatePeriodExtractorConfiguration.LaterRegex;
+            LessThanRegex = PortugueseDatePeriodExtractorConfiguration.LessThanRegex;
+            MoreThanRegex = PortugueseDatePeriodExtractorConfiguration.MoreThanRegex;
+            CenturySuffixRegex = PortugueseDatePeriodExtractorConfiguration.CenturySuffixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

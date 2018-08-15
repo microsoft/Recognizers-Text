@@ -1,16 +1,10 @@
-﻿ using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
- using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDatePeriodExtractorConfiguration : IOptionsConfiguration
     {
-        int MinYearNum { get; }
-
-        int MaxYearNum { get; }
-
         IEnumerable<Regex> SimpleCasesRegexes { get; }
 
         Regex YearRegex { get; }
@@ -45,9 +39,25 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeDecadeRegex { get; }
 
+        Regex ComplexDatePeriodRegex { get; }
+
+        Regex ReferenceDatePeriodRegex { get; }
+
+        Regex AgoRegex { get; }
+
+        Regex LaterRegex { get; }
+
+        Regex LessThanRegex { get; }
+
+        Regex MoreThanRegex { get; }
+
+        Regex CenturySuffixRegex { get; }
+
         IDateTimeExtractor DatePointExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
+
+        IExtractor OrdinalExtractor { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
 
@@ -58,5 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool HasConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
+
+        string[] DurationDateRestrictions { get; }
     }
 }

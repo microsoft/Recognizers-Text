@@ -61,6 +61,8 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
     tillRegex: RegExp;
     numbers: ReadonlyMap<string, number>;
     utilityConfiguration: IDateTimeUtilityConfiguration;
+    specificTimeFromToRegex: RegExp;
+    specificTimeBetweenAndRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.timeExtractor = config.timeExtractor;
@@ -72,6 +74,8 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
         this.numbers = config.numbers;
         this.utilityConfiguration = config.utilityConfiguration;
+        this.specificTimeFromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeFromTo);
+        this.specificTimeBetweenAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeBetweenAnd);
     }
 
     getMatchedTimexRange(text: string): {

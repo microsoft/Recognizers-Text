@@ -1,10 +1,10 @@
-[{
+[
+  {
     "Input": "Ich gehe jetzt zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "jetzt",
@@ -17,18 +17,18 @@
           "PastResolution": {
             "dateTime": "2016-11-07 00:00:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich komme so früh wie möglich zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "so früh wie möglich",
@@ -41,18 +41,18 @@
           "PastResolution": {
             "dateTime": "2016-11-07 00:00:00"
           }
-        }
+        },
+        "Start": 10,
+        "Length": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe denke ich am 15. um 8 Uhr",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. um 8 Uhr",
@@ -65,18 +65,18 @@
           "PastResolution": {
             "dateTime": "2016-10-15 08:00:00"
           }
-        }
+        },
+        "Start": 22,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe denke ich  am 15. November um 8 Uhr",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15. November um 8 Uhr",
@@ -89,7 +89,9 @@
           "PastResolution": {
             "dateTime": "2015-11-15 08:00:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 21
       }
     ]
   },
@@ -98,8 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21.04.2016, 16:00",
@@ -112,7 +113,9 @@
           "PastResolution": {
             "dateTime": "2016-04-21 16:00:00"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 17
       }
     ]
   },
@@ -121,8 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21.04.2016 um 16 Uhr",
@@ -135,7 +137,9 @@
           "PastResolution": {
             "dateTime": "2016-04-21 16:00:00"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 20
       }
     ]
   },
@@ -144,8 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21.09. um 16 Uhr",
@@ -158,7 +161,9 @@
           "PastResolution": {
             "dateTime": "2016-09-21 16:00:00"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 16
       }
     ]
   },
@@ -167,8 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "14. Oktober um 8:00 Uhr",
@@ -181,18 +185,18 @@
           "PastResolution": {
             "dateTime": "2016-10-14 08:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 23
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe am 14. Oktober um 8:00:25 zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "14. Oktober um 8:00:25",
@@ -205,18 +209,18 @@
           "PastResolution": {
             "dateTime": "2016-10-14 08:00:25"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 22
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe am 5. Mai 2016 um 20 Minuten nach 8 Abends nach Hause",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5. Mai 2016 um 20 Minuten nach 8 Abends",
@@ -229,7 +233,9 @@
           "PastResolution": {
             "dateTime": "2016-05-05 20:20:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 39
       }
     ]
   },
@@ -238,8 +244,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19:00 am 22.12.2016",
@@ -252,7 +257,9 @@
           "PastResolution": {
             "dateTime": "2016-12-22 19:00:00"
           }
-        }
+        },
+        "Start": 22,
+        "Length": 19
       }
     ]
   },
@@ -261,8 +268,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "In 5 Stunden",
@@ -275,18 +281,18 @@
           "PastResolution": {
             "dateTime": "2016-11-07 05:00:00"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 12
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "am 15 um 8:00:24",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "15 um 8:00:24",
@@ -299,18 +305,18 @@
           "PastResolution": {
             "dateTime": "2016-10-15 08:00:24"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 13
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe dann am 21/04/2016 um 20:00:24 zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "21/04/2016 um 20:00:24",
@@ -323,18 +329,18 @@
           "PastResolution": {
             "dateTime": "2016-04-21 20:00:24"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 22
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich bin dann am 14. Oktober 8:00:13 wieder zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "14. Oktober 8:00:13",
@@ -347,18 +353,18 @@
           "PastResolution": {
             "dateTime": "2016-10-14 08:00:13"
           }
-        }
+        },
+        "Start": 16,
+        "Length": 19
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich gehe diesen Morgen um 7 los",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Morgen um 7",
@@ -371,7 +377,9 @@
           "PastResolution": {
             "dateTime": "2016-11-07 07:00:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 18
       }
     ]
   },
@@ -380,8 +388,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "diesen Morgen um sieben",
@@ -394,7 +401,9 @@
           "PastResolution": {
             "dateTime": "2016-11-07 07:00:00"
           }
-        }
+        },
+        "Start": 9,
+        "Length": 23
       }
     ]
   }

@@ -6,7 +6,7 @@ const chaiAsPromised = require('chai-as-promised');
 const https = require('https');
 const querystring = require('querystring');
 
-const { Timex, resolver, creator } = require('../index.js');
+const { TimexProperty, resolver, creator } = require('../index.js');
 
 const assert = chai.assert;
 const expect = chai.expect;
@@ -97,7 +97,7 @@ describe('With LUIS', function () {
                     .then(function(result) {
                         // it should just return a TIMEX version of that concrete solution...
                         const entity = result[0];
-                        const timex = new Timex(entity.timex[0]);
+                        const timex = new TimexProperty(entity.timex[0]);
                         if (timex.types.has('datetime')) {
                             // which we can convert back into natural language again...
                             const text = timex.toNaturalLanguage(today);

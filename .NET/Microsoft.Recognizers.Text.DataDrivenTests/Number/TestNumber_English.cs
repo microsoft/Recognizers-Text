@@ -29,6 +29,20 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             base.TestNumber();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelPercentMode-English.csv", "NumberModelPercentMode-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberModelPercentMode()
+        {
+            base.TestNumber();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelExperimentalMode-English.csv", "NumberModelExperimentalMode-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberModelExperimentalMode()
+        {
+            base.TestNumber();
+        }
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-English.csv", "OrdinalModel-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
@@ -43,9 +57,23 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             base.TestNumber();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModelPercentMode-English.csv", "PercentModelPercentMode-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void PercentModelPercentMode()
+        {
+            base.TestNumber();
+        }
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-English.csv", "NumberRangeModel-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberRangeModel()
+        {
+            base.TestNumber();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModelExperimentalMode-English.csv", "NumberRangeModelExperimentalMode-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberRangeModelExperimentalMode()
         {
             base.TestNumber();
         }

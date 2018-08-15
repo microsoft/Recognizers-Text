@@ -15,6 +15,21 @@ export class ModelResult {
     resolution: { [key: string]: any }
 }
 
+export class ExtendedModelResult extends ModelResult {
+    parentText: string
+
+    constructor(source: ModelResult = null) {
+        super()
+        if (source) {
+            this.text = source.text;
+            this.start = source.start;
+            this.end = source.end;
+            this.typeName = source.typeName;
+            this.resolution = source.resolution;
+        }
+    }
+}
+
 class ModelFactoryKey<TModelOptions> {
     culture: string;
     modelType: string;

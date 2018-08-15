@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex AnUnitRegex { get; }
 
+        public Regex DuringRegex { get; }
+
         public Regex AllDateUnitRegex { get; }
 
         public Regex HalfDateUnitRegex { get; }
@@ -27,9 +29,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex ConjunctionRegex { get; }
 
-        public Regex InExactNumberRegex { get; }
+        public Regex InexactNumberRegex { get; }
 
-        public Regex InExactNumberUnitRegex { get; }
+        public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 
@@ -39,13 +41,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(), false);
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = SpanishDurationExtractorConfiguration.NumberCombinedWithUnit;
             AnUnitRegex = SpanishDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = SpanishDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = SpanishDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = SpanishDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = SpanishDurationExtractorConfiguration.SuffixAndRegex;
@@ -54,8 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DoubleNumbers = config.DoubleNumbers;
             FollowedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
             ConjunctionRegex = SpanishDurationExtractorConfiguration.ConjunctionRegex;
-            InExactNumberRegex = SpanishDurationExtractorConfiguration.InExactNumberRegex;
-            InExactNumberUnitRegex = SpanishDurationExtractorConfiguration.InExactNumberUnitRegex;
+            InexactNumberRegex = SpanishDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = SpanishDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = SpanishDurationExtractorConfiguration.DurationUnitRegex;
         }
     }

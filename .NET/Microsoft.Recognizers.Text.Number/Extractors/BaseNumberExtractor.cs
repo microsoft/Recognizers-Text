@@ -9,11 +9,15 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class BaseNumberExtractor : IExtractor
     {
-        internal abstract ImmutableDictionary<Regex, string> Regexes { get; }
+        internal abstract ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected virtual string ExtractType { get; } = "";
 
+        protected virtual NumberOptions Options { get; } = NumberOptions.None;
+
         protected virtual Regex NegativeNumberTermsRegex { get; } = null;
+
+        protected virtual Regex AmbiguousFractionConnectorsRegex { get; } = null;
 
         public virtual List<ExtractResult> Extract(string source)
         {
@@ -23,7 +27,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             var result = new List<ExtractResult>();
-            var matchSource = new Dictionary<Match, string>();
+            var matchSource = new Dictionary<Match, TypeTag>();
             var matched = new bool[source.Length];
 
             var collections = Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value);
@@ -31,6 +35,12 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 foreach (Match m in collection.Key)
                 {
+                    // In ExperimentalMode, AmbigiuousFraction like "30000 in 2009" needs to be skipped
+                    if (Options == NumberOptions.ExperimentalMode && AmbiguousFractionConnectorsRegex.Match(m.Value).Success)
+                    {
+                        continue;
+                    }
+
                     for (var j = 0; j < m.Length; j++)
                     {
                         matched[m.Index + j] = true;
@@ -54,7 +64,8 @@ namespace Microsoft.Recognizers.Text.Number
 
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
-                            var srcMatch = matchSource.Keys.First(o => o.Index == start && o.Length == length);
+                            var type = matchSource.Where(p => p.Key.Index == start && p.Key.Length == length)
+                                .Select(p => (p.Value.Priority, p.Value.Name)).Min().Item2;
 
                             // Extract negative numbers
                             if (NegativeNumberTermsRegex != null) {
@@ -73,7 +84,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 Length = length,
                                 Text = substr,
                                 Type = ExtractType,
-                                Data = matchSource.ContainsKey(srcMatch) ? matchSource[srcMatch] : null
+                                Data = type
                             };
                             result.Add(er);
                         }
@@ -124,6 +135,9 @@ namespace Microsoft.Recognizers.Text.Number
         // 1 234 567
         public static LongFormatType IntegerNumBlank = new LongFormatType(' ', '\0');
 
+        // 1 234 567
+        public static LongFormatType IntegerNumNoBreakSpace = new LongFormatType(Constants.NO_BREAK_SPACE, '\0');
+
         // 1'234'567
         public static LongFormatType IntegerNumQuote = new LongFormatType('\'', '\0');
 
@@ -136,8 +150,14 @@ namespace Microsoft.Recognizers.Text.Number
         // 1 234 567,89
         public static LongFormatType DoubleNumBlankComma = new LongFormatType(' ', ',');
 
+        // 1 234 567,89
+        public static LongFormatType DoubleNumNoBreakSpaceComma = new LongFormatType(Constants.NO_BREAK_SPACE, ',');
+
         // 1 234 567.89
         public static LongFormatType DoubleNumBlankDot = new LongFormatType(' ', '.');
+
+        // 1 234 567.89
+        public static LongFormatType DoubleNumNoBreakSpaceDot = new LongFormatType(Constants.NO_BREAK_SPACE, '.');
 
         // 1.234.567,89
         public static LongFormatType DoubleNumDotComma = new LongFormatType('.', ',');

@@ -8,24 +8,24 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class OrdinalExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
         
         public OrdinalExtractor()
         {
-            var regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     new Regex(
                         NumbersDefinitions.OrdinalSuffixRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalNum"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.OrdinalNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalSpa"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.SPANISH)
                 }
             };
 

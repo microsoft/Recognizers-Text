@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDateTimePeriodExtractorConfiguration : IOptionsConfiguration
     {
+        string TokenBeforeDate { get; }
+
         IEnumerable<Regex> SimpleCasesRegex { get; }
 
         Regex PrepositionRegex { get; }
@@ -46,6 +46,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex PmDescRegex { get; }
 
         Regex WithinNextPrefixRegex { get; }
+
+        Regex DateUnitRegex { get; }
+
+        Regex PrefixDayRegex { get; }
+
+        Regex SuffixRegex { get; }
+
+        Regex BeforeRegex { get; }
+
+        Regex AfterRegex { get; }
 
         IExtractor CardinalExtractor { get; }
 

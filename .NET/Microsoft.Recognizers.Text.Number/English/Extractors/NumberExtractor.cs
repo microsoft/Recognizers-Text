@@ -8,32 +8,40 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public class NumberExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override NumberOptions Options { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
         protected sealed override Regex NegativeNumberTermsRegex { get; }
 
-        private static readonly ConcurrentDictionary<string, NumberExtractor> Instances = new ConcurrentDictionary<string, NumberExtractor>();
+        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
 
-        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default) {
+        private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
+            new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
 
-            var placeholder = mode.ToString();
-
-            if (!Instances.ContainsKey(placeholder))
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default, NumberOptions options = NumberOptions.None)
+        {
+            var cacheKey = (mode, options);
+            if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new NumberExtractor(mode);
-                Instances.TryAdd(placeholder, instance);
+                var instance = new NumberExtractor(mode, options);
+                Instances.TryAdd(cacheKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[cacheKey];
         }
 
-        private NumberExtractor(NumberMode mode = NumberMode.Default)
+        private NumberExtractor(NumberMode mode, NumberOptions options)
         {
             NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-            var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+            Options = options;
+
+            var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
             
             //Add Cardinal
             CardinalExtractor cardExtract = null;
@@ -43,7 +51,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                     cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), "IntegerNum");
+                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
                 case NumberMode.Default:
                     break;
@@ -57,7 +65,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             builder.AddRange(cardExtract.Regexes);
             
             //Add Fraction
-            var fracExtract = FractionExtractor.GetInstance();
+            var fracExtract = FractionExtractor.GetInstance(Options);
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();

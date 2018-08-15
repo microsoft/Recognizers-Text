@@ -1,552 +1,554 @@
-[{
-  "Input": "Me vou por 3h",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3h",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+[
+  {
+    "Input": "Me vou por 3h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3h",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 11,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 dias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 dias",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3D",
-        "FutureResolution": {
-          "duration": "259200"
+  {
+    "Input": "Me vou por 3 dias",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 dias",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
         },
-        "PastResolution": {
-          "duration": "259200"
-        }
+        "Start": 11,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3,5 anos",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5 anos",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3.5Y",
-        "FutureResolution": {
-          "duration": "110376000"
+  {
+    "Input": "Me vou por 3,5 anos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3,5 anos",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3.5Y",
+          "FutureResolution": {
+            "duration": "110376000"
+          },
+          "PastResolution": {
+            "duration": "110376000"
+          }
         },
-        "PastResolution": {
-          "duration": "110376000"
-        }
+        "Start": 11,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 h",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 h",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+  {
+    "Input": "Me vou por 3 h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 h",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 11,
+        "Length": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 horas",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 horas",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+  {
+    "Input": "Me vou por 3 horas",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 horas",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 11,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 hrs",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 hrs",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+  {
+    "Input": "Me vou por 3 hrs",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 hrs",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 11,
+        "Length": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 hr",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 hr",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
+  {
+    "Input": "Me vou por 3 hr",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 hr",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
         },
-        "PastResolution": {
-          "duration": "10800"
-        }
+        "Start": 11,
+        "Length": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 dias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 dias",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3D",
-        "FutureResolution": {
-          "duration": "259200"
+  {
+    "Input": "Me vou por 3 dias",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 dias",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
         },
-        "PastResolution": {
-          "duration": "259200"
-        }
+        "Start": 11,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 dias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 dias",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3D",
-        "FutureResolution": {
-          "duration": "259200"
+  {
+    "Input": "Me vou por 3 dias",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 dias",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
         },
-        "PastResolution": {
-          "duration": "259200"
-        }
+        "Start": 11,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 meses",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 meses",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3M",
-        "FutureResolution": {
-          "duration": "7776000"
+  {
+    "Input": "Me vou por 3 meses",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 meses",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "duration": "7776000"
+          },
+          "PastResolution": {
+            "duration": "7776000"
+          }
         },
-        "PastResolution": {
-          "duration": "7776000"
-        }
+        "Start": 11,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 minutos",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 minutos",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3M",
-        "FutureResolution": {
-          "duration": "180"
+  {
+    "Input": "Me vou por 3 minutos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 minutos",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
         },
-        "PastResolution": {
-          "duration": "180"
-        }
+        "Start": 11,
+        "Length": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3 min",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 min",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3M",
-        "FutureResolution": {
-          "duration": "180"
+  {
+    "Input": "Me vou por 3 min",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
         },
-        "PastResolution": {
-          "duration": "180"
-        }
+        "Start": 11,
+        "Length": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 3,5 segundos ",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5 segundos",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3.5S",
-        "FutureResolution": {
-          "duration": "3.5"
+  {
+    "Input": "Me vou por 3,5 segundos ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3,5 segundos",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3.5S",
+          "FutureResolution": {
+            "duration": "3.5"
+          },
+          "PastResolution": {
+            "duration": "3.5"
+          }
         },
-        "PastResolution": {
-          "duration": "3.5"
-        }
+        "Start": 11,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por 123,45 seg",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "123,45 seg",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT123.45S",
-        "FutureResolution": {
-          "duration": "123.45"
+  {
+    "Input": "Me vou por 123,45 seg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "123,45 seg",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT123.45S",
+          "FutureResolution": {
+            "duration": "123.45"
+          },
+          "PastResolution": {
+            "duration": "123.45"
+          }
         },
-        "PastResolution": {
-          "duration": "123.45"
-        }
+        "Start": 11,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por duas semanas",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "duas semanas",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P2W",
-        "FutureResolution": {
-          "duration": "1209600"
+  {
+    "Input": "Me vou por duas semanas",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "duas semanas",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
         },
-        "PastResolution": {
-          "duration": "1209600"
-        }
+        "Start": 11,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou em 20 minutos",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20 minutos",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT20M",
-        "FutureResolution": {
-          "duration": "1200"
+  {
+    "Input": "Me vou em 20 minutos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "20 minutos",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT20M",
+          "FutureResolution": {
+            "duration": "1200"
+          },
+          "PastResolution": {
+            "duration": "1200"
+          }
         },
-        "PastResolution": {
-          "duration": "1200"
-        }
+        "Start": 10,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por vinte e quatro horas",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vinte e quatro horas",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT24H",
-        "FutureResolution": {
-          "duration": "86400"
+  {
+    "Input": "Me vou por vinte e quatro horas",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vinte e quatro horas",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT24H",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
         },
-        "PastResolution": {
-          "duration": "86400"
-        }
+        "Start": 11,
+        "Length": 20
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por todo o dia",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo o dia",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "duration": "86400"
+  {
+    "Input": "Me vou por todo o dia",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todo o dia",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
         },
-        "PastResolution": {
-          "duration": "86400"
-        }
+        "Start": 11,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou toda a semana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toda a semana",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1W",
-        "FutureResolution": {
-          "duration": "604800"
+  {
+    "Input": "Me vou toda a semana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "toda a semana",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
         },
-        "PastResolution": {
-          "duration": "604800"
-        }
+        "Start": 7,
+        "Length": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por todo o mes",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo o mes",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1M",
-        "FutureResolution": {
-          "duration": "2592000"
+  {
+    "Input": "Me vou por todo o mes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todo o mes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
         },
-        "PastResolution": {
-          "duration": "2592000"
-        }
+        "Start": 11,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por todo o ano",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo o ano",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1Y",
-        "FutureResolution": {
-          "duration": "31536000"
+  {
+    "Input": "Me vou por todo o ano",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "todo o ano",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
         },
-        "PastResolution": {
-          "duration": "31536000"
-        }
+        "Start": 11,
+        "Length": 10
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por uma hora",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "uma hora",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT1H",
-        "FutureResolution": {
-          "duration": "3600"
+  {
+    "Input": "Me vou por uma hora",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "uma hora",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
         },
-        "PastResolution": {
-          "duration": "3600"
-        }
+        "Start": 11,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "Me vou por um dia",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
+    ]
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "um dia",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P1D",
-        "FutureResolution": {
-          "duration": "86400"
+  {
+    "Input": "Me vou por um dia",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "um dia",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
         },
-        "PastResolution": {
-          "duration": "86400"
-        }
+        "Start": 11,
+        "Length": 6
       }
-    }
-  ]
-}
+    ]
+  }
 ]

@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IMergedParserConfiguration : ICommonDateTimeParserConfiguration
@@ -15,8 +17,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearRegex { get; }
 
-        IDateTimeParser GetParser { get; }
+        IDateTimeParser SetParser { get; }
 
         IDateTimeParser HolidayParser { get; }
+
+        IDateTimeParser TimeZoneParser { get; }
+
+        StringMatcher SuperfluousWordMatcher { get; }
     }
 }

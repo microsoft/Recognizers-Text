@@ -50,39 +50,53 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             RegisterModel<DateTimeModel>(
                 Culture.English,
-                (options) => new DateTimeModel(
-                    new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
-                    new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))));
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new EnglishMergedParserConfiguration(new BaseOptionsConfiguration(options))),
+                    new BaseMergedDateTimeExtractor(
+                        new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(options)))));
+
+            RegisterModel<DateTimeModel>(
+                Culture.EnglishOthers,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new EnglishMergedParserConfiguration(new BaseOptionsConfiguration(options, true))),
+                    new BaseMergedDateTimeExtractor(
+                        new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(options, true)))));
 
             RegisterModel<DateTimeModel>(
                 Culture.Chinese,
-                (options) => new DateTimeModel(
+                options => new DateTimeModel(
                     new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
                     new MergedExtractorChs(options)));
 
             RegisterModel<DateTimeModel>(
                 Culture.Spanish,
-                (options) => new DateTimeModel(
-                    new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
-                    new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))));
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new SpanishMergedParserConfiguration(new BaseOptionsConfiguration(options))),
+                    new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(options))));
 
             RegisterModel<DateTimeModel>(
                 Culture.French,
-                (options) => new DateTimeModel(
-                    new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
-                    new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))));
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new FrenchMergedParserConfiguration(new BaseOptionsConfiguration(options))),
+                    new BaseMergedDateTimeExtractor(new FrenchMergedExtractorConfiguration(options))));
 
             RegisterModel<DateTimeModel>(
                 Culture.Portuguese,
-                (options) => new DateTimeModel(
-                    new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
-                    new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))));
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new PortugueseMergedParserConfiguration(new BaseOptionsConfiguration(options))),
+                    new BaseMergedDateTimeExtractor(new PortugueseMergedExtractorConfiguration(options))));
 
             RegisterModel<DateTimeModel>(
-              Culture.Italian,
-              (options) => new DateTimeModel(
-                  new BaseMergedParser(new ItalianMergedParserConfiguration(options)),
-                  new BaseMergedExtractor(new ItalianMergedExtractorConfiguration(options))));
+                Culture.German,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new GermanMergedParserConfiguration(new BaseOptionsConfiguration(options))),
+                    new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(options))));
         }
     }
 }

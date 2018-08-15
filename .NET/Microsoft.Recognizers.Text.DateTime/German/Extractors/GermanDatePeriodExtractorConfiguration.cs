@@ -10,10 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
-        public static readonly int MinYearNum = int.Parse(DateTimeDefinitions.MinYearNum);
-
-        public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
-
         // base regexes
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -36,8 +32,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex RelativeMonthRegex = 
             new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EngMonthRegex =
-            new Regex(DateTimeDefinitions.EngMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WrittenMonthRegex =
+            new Regex(DateTimeDefinitions.WrittenMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthSuffixRegex =
             new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -139,8 +135,29 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex YearPeriodRegex =
             new Regex(DateTimeDefinitions.YearPeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex ComplexDatePeriodRegex =
+            new Regex(DateTimeDefinitions.ComplexDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex RelativeDecadeRegex =
             new Regex(DateTimeDefinitions.RelativeDecadeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex ReferenceDatePeriodRegex =
+            new Regex(DateTimeDefinitions.ReferenceDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AgoRegex =
+            new Regex(DateTimeDefinitions.AgoRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex LaterRegex =
+            new Regex(DateTimeDefinitions.LaterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex LessThanRegex =
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MoreThanRegex =
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex CenturySuffixRegex =
+            new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -167,11 +184,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             RelativeDecadeRegex
         };
 
-        public GermanDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public GermanDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
+            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
         }
 
@@ -179,13 +197,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor OrdinalExtractor { get; }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
-
-        int IDatePeriodExtractorConfiguration.MinYearNum => MinYearNum;
-
-        int IDatePeriodExtractorConfiguration.MaxYearNum => MaxYearNum;
 
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 
@@ -219,7 +235,23 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
 
+        Regex IDatePeriodExtractorConfiguration.ComplexDatePeriodRegex => ComplexDatePeriodRegex;
+
         Regex IDatePeriodExtractorConfiguration.RelativeDecadeRegex => RelativeDecadeRegex;
+
+        Regex IDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex => ReferenceDatePeriodRegex;
+
+        Regex IDatePeriodExtractorConfiguration.AgoRegex => AgoRegex;
+
+        Regex IDatePeriodExtractorConfiguration.LaterRegex => LaterRegex;
+
+        Regex IDatePeriodExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MoreThanRegex => MoreThanRegex;
+
+        Regex IDatePeriodExtractorConfiguration.CenturySuffixRegex => CenturySuffixRegex;
+
+        string[] IDatePeriodExtractorConfiguration.DurationDateRestrictions => DateTimeDefinitions.DurationDateRestrictions;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

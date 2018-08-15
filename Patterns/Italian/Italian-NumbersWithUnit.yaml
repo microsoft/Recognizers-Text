@@ -1,4 +1,4 @@
-﻿---
+---
 #AgeExtractorConfiguration
 AgeSuffixList: !dictionary
   types: [ string, string ]
@@ -368,6 +368,8 @@ CurrencySuffixList: !dictionary
 #Additional
     Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka|marco finlandese|marchi finlandesi
     Penni: penniä|penni
+CompoundUnitConnectorRegex: !simpleRegex
+    def: (?<spacer>[^.])
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
@@ -478,7 +480,7 @@ InformationSuffixList: !dictionary
     Terabyte: -terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte
     Petabyte: -petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte
 AmbiguousDimensionUnitList: !list
-  types: [ string, string ]
+  types: [ string ]
   entries:
     - barile
     - barili
@@ -501,7 +503,7 @@ AmbiguousDimensionUnitList: !list
     - \"
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
-  def: (?<=(\s|^|\P{L}))
+  def: (?<=(\s|^))
 BuildSuffix: !simpleRegex
   def: (?=(\s|\P{L}|$))
 ConnectorToken: di

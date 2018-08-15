@@ -48,5 +48,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             base.TestNumber();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModelExperimentalMode-Chinese.csv", "NumberRangeModelExperimentalMode-Chinese#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberRangeModelExperimentalMode()
+        {
+            base.TestNumber();
+        }
     }
 }

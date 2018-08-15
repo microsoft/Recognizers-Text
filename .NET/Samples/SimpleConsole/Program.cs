@@ -15,7 +15,7 @@ namespace SimpleConsole
     class Program
     {
         // Use English for the Recognizers culture
-        private const string defaultCulture = Culture.English;
+        private const string DefaultCulture = Culture.English;
 
         static void Main(string[] args)
         {
@@ -25,7 +25,7 @@ namespace SimpleConsole
             {
                 // Read the text to recognize
                 Console.WriteLine("Enter the text to recognize:");
-                string input = Console.ReadLine().Trim();
+                var input = Console.ReadLine().Trim();
                 Console.WriteLine();
 
                 if (input.ToLower() == "exit")
@@ -33,19 +33,17 @@ namespace SimpleConsole
                     // Close application if user types "exit"
                     break;
                 }
-                else
-                {
-                    // Validate input 
-                    if (input.Length > 0)
-                    {
-                        // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
-                        var results = ParseAll(input, defaultCulture);
 
-                        // Write output
-                        Console.WriteLine(results.Count() > 0 ? (string.Format("I found the following entities ({0:d}):", results.Count())) : "I found no entities.");
-                        results.ToList().ForEach(result => Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
-                        Console.WriteLine();
-                    }
+                // Validate input 
+                if (input.Length > 0)
+                {
+                    // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
+                    var results = ParseAll(input, DefaultCulture);
+
+                    // Write output
+                    Console.WriteLine(results.Any() ? string.Format("I found the following entities ({0:d}):", results.Count()) : "I found no entities.");
+                    results.ToList().ForEach(result => Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
+                    Console.WriteLine();
                 }
             }
         }
@@ -99,6 +97,22 @@ namespace SimpleConsole
                 // Add IP recognizer - This recognizer will find any Ipv4/Ipv6 presented
                 // E.g "My Ip is 8.8.8.8"
                 SequenceRecognizer.RecognizeIpAddress(query, culture),
+
+                // Mention recognizer will find all the mention usages
+                // E.g "@Cicero"
+                SequenceRecognizer.RecognizeMention(query, culture),
+
+                // Hashtag recognizer will find all the hash tag usages
+                // E.g "task #123"
+                SequenceRecognizer.RecognizeHashtag(query, culture),
+                
+                // Email recognizer will find all the emails
+                // E.g "a@b.com"
+                SequenceRecognizer.RecognizeEmail(query, culture),
+
+                // URL recognizer will find all the urls
+                // E.g "bing.com"
+                SequenceRecognizer.RecognizeURL(query, culture),
 
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"

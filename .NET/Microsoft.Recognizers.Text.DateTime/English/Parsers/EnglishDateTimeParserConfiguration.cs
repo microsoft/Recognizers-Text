@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
 
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
@@ -96,13 +96,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if (trimedText.EndsWith("morning") && hour >= 12)
+            if (trimedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
             {
-                result -= 12;
+                result -= Constants.HalfDayHourCount;
             }
-            else if (!trimedText.EndsWith("morning") && hour < 12)
+            else if (!trimedText.EndsWith("morning") && hour < Constants.HalfDayHourCount)
             {
-                result += 12;
+                result += Constants.HalfDayHourCount;
             }
             return result;
         }
@@ -148,6 +148,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText) => false;
+        public bool ContainsAmbiguousToken(string text, string matchedText) => false;
     }
 }

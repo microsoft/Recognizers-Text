@@ -39,5 +39,33 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         {
             TestIpAddress();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "MentionModel-English.csv", "MentionModel-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void MentionModel()
+        {
+            TestMention();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HashtagModel-English.csv", "HashtagModel-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void HashtagModel()
+        {
+            TestHashtag();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "EmailModel-English.csv", "EmailModel-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void EmailModel()
+        {
+            TestEmail();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "URLModel-English.csv", "URLModel-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void URLModel()
+        {
+            TestURL();
+        }
     }
 }

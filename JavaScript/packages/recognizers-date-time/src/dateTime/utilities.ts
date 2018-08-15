@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult } from "@microsoft/recognizers-text";
+import { IExtractor, ExtractResult, FormatUtility } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers"
 import { TimeTypeConstants } from "../dateTime/constants"
@@ -170,7 +170,7 @@ export class MatchingUtil {
     public static getAgoLaterIndex(source: string, regex: RegExp): MatchedIndex {
         let result: MatchedIndex = { matched: false, index: -1 };
         let referencedMatches = RegExpUtility.getMatches(regex, source.trim().toLowerCase());
-        if (referencedMatches && referencedMatches.length > 0) {
+        if (referencedMatches && referencedMatches.length > 0 && referencedMatches[0].index === 0) {
             result.index = source.toLowerCase().lastIndexOf(referencedMatches[0].value) + referencedMatches[0].length;
             result.matched = true;
         }
@@ -247,6 +247,35 @@ export class FormatUtil {
 
     public static formatDateTime(datetime: Date): string {
         return `${FormatUtil.formatDate(datetime)} ${FormatUtil.formatTime(datetime)}`;
+    }
+
+    public static shortTime(hour: number, minute: number, second: number): string {
+        if (minute < 0 && second < 0) {
+            return `T${FormatUtil.toString(hour, 2)}`;
+        } else if (second < 0) {
+            return `T${FormatUtil.toString(hour, 2)}:${FormatUtil.toString(minute, 2)}`;
+        }
+        return `T${FormatUtil.toString(hour, 2)}:${FormatUtil.toString(minute, 2)}:${FormatUtil.toString(second, 2)}`;
+    }
+
+    public static luisTimeSpan(from: Date, to: Date): string {
+        let result = 'PT';
+        let span = DateUtils.totalHoursFloor(from, to);
+        if (span > 0) {
+            result = `${result}${span}H`;
+        }
+
+        span = DateUtils.totalMinutesFloor(from, to) - (span * 60);
+        if (span > 0 && span < 60) {
+            result = `${result}${span}M`;
+        }
+        
+        span = DateUtils.totalSeconds(from, to) - (span * 60);
+        if (span > 0 && span < 60) {
+            result = `${result}${span}S`;
+        }
+
+        return result;
     }
 
     public static allStringToPm(timeStr: string): string {

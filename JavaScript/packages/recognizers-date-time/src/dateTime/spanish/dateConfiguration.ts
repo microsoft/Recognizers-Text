@@ -7,6 +7,7 @@ import { IDateTimeUtilityConfiguration } from "../utilities";
 import { SpanishDateTimeUtilityConfiguration, SpanishCommonDateTimeParserConfiguration } from "./baseConfiguration";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
 import { IDateTimeExtractor } from "../baseDateTime";
+import { Constants } from "../constants";
 
 export class SpanishDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -30,12 +31,31 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor1, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor2, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor3, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"),
+
+            SpanishDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY?
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"):
+                RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"),
+                
             RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor10, "gis"),
         ];
         this.implicitDateList = [
@@ -81,6 +101,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     readonly dateRegex: RegExp[];
     readonly onRegex: RegExp;
     readonly specialDayRegex: RegExp;
+    readonly specialDayWithNumRegex: RegExp;
     readonly nextRegex: RegExp;
     readonly unitRegex: RegExp;
     readonly monthRegex: RegExp;
@@ -91,6 +112,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
     readonly dateTokenPrefix: string;
 
@@ -111,20 +133,10 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         this.dayOfWeek = config.dayOfWeek;
         this.unitMap = config.unitMap;
         this.cardinalMap = config.cardinalMap;
-        this.dateRegex = [
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor1, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor2, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor3, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor4, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor5, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor6, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor7, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor8, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor9, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DateExtractor10, "gis"),
-        ];
+        this.dateRegex = new SpanishDateExtractorConfiguration().dateRegexList;
         this.onRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecialDayRegex, "gis");
+        this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecialDayWithNumRegex, "gis");
         this.nextRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextDateRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateUnitRegex, "gis");
         this.monthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthRegex, "gis");
@@ -135,6 +147,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
         this.forTheRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ForTheRegex, "gis");
         this.weekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayAndDayOfMonthRegex, "gis");
         this.relativeMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeMonthRegex, "gis");
+        this.relativeWeekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeWeekDayRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = SpanishDateTime.DateTokenPrefix;
     }

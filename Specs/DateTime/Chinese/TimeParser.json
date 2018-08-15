@@ -1,253 +1,255 @@
-[{
-  "Input": "下午5:00",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午5:00",
-      "Type": "time",
-      "Value": {
-        "Timex": "T17:00",
-        "FutureResolution": {
-          "time": "17:00:00"
+[
+  {
+    "Input": "下午5:00",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "下午5:00",
+        "Type": "time",
+        "Value": {
+          "Timex": "T17:00",
+          "FutureResolution": {
+            "time": "17:00:00"
+          },
+          "PastResolution": {
+            "time": "17:00:00"
+          }
         },
-        "PastResolution": {
-          "time": "17:00:00"
-        }
+        "Start": 0,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "晚上9:30",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "晚上9:30",
-      "Type": "time",
-      "Value": {
-        "Timex": "T21:30",
-        "FutureResolution": {
-          "time": "21:30:00"
+  {
+    "Input": "晚上9:30",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "晚上9:30",
+        "Type": "time",
+        "Value": {
+          "Timex": "T21:30",
+          "FutureResolution": {
+            "time": "21:30:00"
+          },
+          "PastResolution": {
+            "time": "21:30:00"
+          }
         },
-        "PastResolution": {
-          "time": "21:30:00"
-        }
+        "Start": 0,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "晚上19:30",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "晚上19:30",
-      "Type": "time",
-      "Value": {
-        "Timex": "T19:30",
-        "FutureResolution": {
-          "time": "19:30:00"
+  {
+    "Input": "晚上19:30",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "晚上19:30",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
         },
-        "PastResolution": {
-          "time": "19:30:00"
-        }
+        "Start": 0,
+        "Length": 7
       }
-    }
-  ]
-}
-,
-{
-  "Input": "下午十一点半",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午十一点半",
-      "Type": "time",
-      "Value": {
-        "Timex": "T23:30",
-        "FutureResolution": {
-          "time": "23:30:00"
+  {
+    "Input": "下午十一点半",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "下午十一点半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T23:30",
+          "FutureResolution": {
+            "time": "23:30:00"
+          },
+          "PastResolution": {
+            "time": "23:30:00"
+          }
         },
-        "PastResolution": {
-          "time": "23:30:00"
-        }
+        "Start": 0,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "大约十点以后",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "大约十点以后",
-      "Type": "time",
-      "Value": {
-        "Timex": "T10",
-        "FutureResolution": {
-          "time": "10:00:00"
+  {
+    "Input": "大约十点以后",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "大约十点以后",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
         },
-        "PastResolution": {
-          "time": "10:00:00"
-        }
+        "Start": 0,
+        "Length": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "大约早上十点左右",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "大约早上十点左右",
-      "Type": "time",
-      "Value": {
-        "Timex": "T10",
-        "FutureResolution": {
-          "time": "10:00:00"
+  {
+    "Input": "大约早上十点左右",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "大约早上十点左右",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10",
+          "FutureResolution": {
+            "time": "10:00:00"
+          },
+          "PastResolution": {
+            "time": "10:00:00"
+          }
         },
-        "PastResolution": {
-          "time": "10:00:00"
-        }
+        "Start": 0,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "大约晚上十点以后",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "大约晚上十点以后",
-      "Type": "time",
-      "Value": {
-        "Timex": "T22",
-        "FutureResolution": {
-          "time": "22:00:00"
+  {
+    "Input": "大约晚上十点以后",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "大约晚上十点以后",
+        "Type": "time",
+        "Value": {
+          "Timex": "T22",
+          "FutureResolution": {
+            "time": "22:00:00"
+          },
+          "PastResolution": {
+            "time": "22:00:00"
+          }
         },
-        "PastResolution": {
-          "time": "22:00:00"
-        }
+        "Start": 0,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "早上11点",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "早上11点",
-      "Type": "time",
-      "Value": {
-        "Timex": "T11",
-        "FutureResolution": {
-          "time": "11:00:00"
+  {
+    "Input": "早上11点",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "早上11点",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11",
+          "FutureResolution": {
+            "time": "11:00:00"
+          },
+          "PastResolution": {
+            "time": "11:00:00"
+          }
         },
-        "PastResolution": {
-          "time": "11:00:00"
-        }
+        "Start": 0,
+        "Length": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "凌晨2点半",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "凌晨2点半",
-      "Type": "time",
-      "Value": {
-        "Timex": "T02:30",
-        "FutureResolution": {
-          "time": "02:30:00"
+  {
+    "Input": "凌晨2点半",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "凌晨2点半",
+        "Type": "time",
+        "Value": {
+          "Timex": "T02:30",
+          "FutureResolution": {
+            "time": "02:30:00"
+          },
+          "PastResolution": {
+            "time": "02:30:00"
+          }
         },
-        "PastResolution": {
-          "time": "02:30:00"
-        }
+        "Start": 0,
+        "Length": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "零点",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "零点",
-      "Type": "time",
-      "Value": {
-        "Timex": "T00",
-        "FutureResolution": {
-          "time": "00:00:00"
+  {
+    "Input": "零点",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "零点",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
         },
-        "PastResolution": {
-          "time": "00:00:00"
-        }
+        "Start": 0,
+        "Length": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "零点整",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "零点整",
-      "Type": "time",
-      "Value": {
-        "Timex": "T00",
-        "FutureResolution": {
-          "time": "00:00:00"
+  {
+    "Input": "零点整",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "零点整",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
         },
-        "PastResolution": {
-          "time": "00:00:00"
-        }
+        "Start": 0,
+        "Length": 3
       }
-    }
-  ]
-}
+    ]
+  }
 ]

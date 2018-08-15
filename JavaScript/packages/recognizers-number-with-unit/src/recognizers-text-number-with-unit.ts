@@ -1,9 +1,9 @@
 export { default as NumberWithUnitRecognizer, NumberWithUnitOptions, recognizeTemperature, recognizeDimension, recognizeCurrency, recognizeAge } from "./numberWithUnit/numberWithUnitRecognizer";
 export { Culture, CultureInfo } from "@microsoft/recognizers-text-number";
 export { Constants } from "./numberWithUnit/constants";
-export { INumberWithUnitExtractorConfiguration, NumberWithUnitExtractor, PrefixUnitResult } from "./numberWithUnit/extractors";
+export { INumberWithUnitExtractorConfiguration, NumberWithUnitExtractor, PrefixUnitResult, BaseMergedUnitExtractor } from "./numberWithUnit/extractors";
 export { CompositeEntityType, AbstractNumberWithUnitModel, AgeModel, CurrencyModel, DimensionModel, TemperatureModel } from "./numberWithUnit/models";
-export { UnitValue, NumberWithUnitParser, INumberWithUnitParserConfiguration, BaseNumberWithUnitParserConfiguration } from "./numberWithUnit/parsers";
+export { UnitValue, UnitValueIso, NumberWithUnitParser, INumberWithUnitParserConfiguration, BaseNumberWithUnitParserConfiguration, BaseCurrencyParser, BaseMergedUnitParser } from "./numberWithUnit/parsers";
 export { EnglishAgeExtractorConfiguration, EnglishAgeParserConfiguration } from "./numberWithUnit/english/age";
 export { EnglishNumberWithUnitExtractorConfiguration, EnglishNumberWithUnitParserConfiguration } from "./numberWithUnit/english/base";
 export { EnglishCurrencyExtractorConfiguration, EnglishCurrencyParserConfiguration } from "./numberWithUnit/english/currency";
@@ -24,7 +24,11 @@ export { ChineseNumberWithUnitExtractorConfiguration, ChineseNumberWithUnitParse
 export { ChineseCurrencyExtractorConfiguration, ChineseCurrencyParserConfiguration } from "./numberWithUnit/chinese/currency";
 export { ChineseDimensionExtractorConfiguration, ChineseDimensionParserConfiguration } from "./numberWithUnit/chinese/dimension";
 export { ChineseTemperatureExtractorConfiguration, ChineseTemperatureParserConfiguration } from "./numberWithUnit/chinese/temperature";
+export { JapaneseAgeExtractorConfiguration, JapaneseAgeParserConfiguration } from "./numberWithUnit/japanese/age";
+export { JapaneseNumberWithUnitExtractorConfiguration, JapaneseNumberWithUnitParserConfiguration } from "./numberWithUnit/japanese/base";
+export { JapaneseCurrencyExtractorConfiguration, JapaneseCurrencyParserConfiguration } from "./numberWithUnit/japanese/currency";
 export { EnglishNumericWithUnit } from "./resources/englishNumericWithUnit";
 export { SpanishNumericWithUnit } from "./resources/spanishNumericWithUnit";
 export { PortugueseNumericWithUnit } from "./resources/portugueseNumericWithUnit";
 export { ChineseNumericWithUnit } from "./resources/chineseNumericWithUnit";
+export { JapaneseNumericWithUnit } from "./resources/japaneseNumericWithUnit";

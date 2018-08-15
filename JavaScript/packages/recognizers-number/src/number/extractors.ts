@@ -52,12 +52,12 @@ export abstract class BaseNumberExtractor implements IExtractor {
                 if (i + 1 === source.length || !matched[i + 1]) {
                     let start = last + 1;
                     let length = i - last;
-                    let substr = source.substring(start, start + length).trim();
+                    let substr = source.substring(start, start + length);
                     let srcMatch = Array.from(matchSource.keys()).find(m => m.index === start && m.length === length);
 
                     // Extract negative numbers
                     if (this.negativeNumberTermsRegex !== null) {
-                        var match = source.substr(0, start).match(this.negativeNumberTermsRegex);
+                        let match = source.substr(0, start).match(this.negativeNumberTermsRegex);
                         if (match) {
                             start = match.index;
                             length = length + match[0].length;
@@ -72,7 +72,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
                             text: substr,
                             type: this.extractType,
                             data: matchSource.has(srcMatch) ? matchSource.get(srcMatch) : null
-                        });
+                        } as ExtractResult);
                     }
                 }
             }
@@ -89,7 +89,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
         let thousandsMark = escapeRegExp(type.thousandsMark);
         let decimalsMark = escapeRegExp(type.decimalsMark);
 
-        let  regexDefinition = type.decimalsMark === '\0'
+        let regexDefinition = type.decimalsMark === '\0'
             ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark)
             : BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 

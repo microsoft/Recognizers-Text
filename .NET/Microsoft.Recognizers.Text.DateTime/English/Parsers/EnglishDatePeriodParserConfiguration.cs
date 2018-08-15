@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor OrdinalExtractor { get; }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
@@ -63,7 +65,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
+        public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
+        public Regex ReferenceDatePeriodRegex { get; }
+        public Regex AgoRegex { get; }
+        public Regex LaterRegex { get; }
+        public Regex LessThanRegex { get; }
+        public Regex MoreThanRegex { get; }
+
+        public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -109,18 +119,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableList<string> InStringList { get; }
 
-        public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = EnglishDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = EnglishDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = EnglishDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -148,9 +157,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             YearPlusNumberRegex = EnglishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = EnglishDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             YearPeriodRegex = EnglishDatePeriodExtractorConfiguration.YearPeriodRegex;
+            ComplexDatePeriodRegex = EnglishDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
             RelativeDecadeRegex = EnglishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = EnglishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            ReferenceDatePeriodRegex = EnglishDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            AgoRegex = EnglishDatePeriodExtractorConfiguration.AgoRegex;
+            LaterRegex = EnglishDatePeriodExtractorConfiguration.LaterRegex;
+            LessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
+            MoreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
+            CenturySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

@@ -117,7 +117,7 @@ export class BaseSetExtractor implements IDateTimeExtractor {
         RegExpUtility.getMatches(this.config.setWeekDayRegex, source).forEach(match => {
             let trimmedSource = source.substr(0, match.index) + match.groups('weekday').value + source.substr(match.index + match.length);
             extractor.extract(trimmedSource, refDate).forEach(er => {
-                if (er.start <= match.index) {
+                if (er.start <= match.index && er.text.includes(match.groups('weekday').value)) {
                     let length = er.length + 1;
                     if (!StringUtility.isNullOrEmpty(match.groups('prefix').value)) {
                         length += match.groups('prefix').value.length;

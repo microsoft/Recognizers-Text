@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Chinese;
 
 using DateObject = System.DateTime;
 
@@ -15,20 +14,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly int[] MonthMaxDays = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-        private readonly IFullDateTimeParserConfiguration config;
+        private readonly ChineseDateTimeParserConfiguration config;
 
         private readonly IExtractor integerExtractor;
         private readonly IExtractor ordinalExtractor;
         private readonly IParser numberParser;
         private readonly IDateTimeExtractor durationExtractor;
 
-        public DateParser(IFullDateTimeParserConfiguration configuration)
+        public DateParser(ChineseDateTimeParserConfiguration configuration)
         {
             config = configuration;
             integerExtractor = new IntegerExtractor();
             ordinalExtractor = new OrdinalExtractor();
             durationExtractor = new DurationExtractorChs();
-            numberParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
+            numberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
         }
         
         public ParseResult Parse(ExtractResult extResult)
@@ -39,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public virtual DateTimeParseResult Parse(ExtractResult er, DateObject referenceDate)
         {
             object value = null;
+
             if (er.Type.Equals(ParserName))
             {
                 value = InnerParser(er.Text, referenceDate);
@@ -55,12 +55,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
 
         protected DateTimeResolutionResult InnerParser(string text, DateObject reference)
         {
             var innerResult = ParseBasicRegexMatch(text, reference);
+
             if (!innerResult.Success)
             {
                 innerResult = ParseImplicitDate(text, reference);
@@ -97,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // parse if lunar contains
-        private bool IsLunarCalendar(string text)
+        private static bool IsLunarCalendar(string text)
         {
             var trimedText = text.Trim();
             var match = DateExtractorChs.LunarRegex.Match(trimedText);
@@ -111,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var trimedText = text.Trim();
             foreach (var regex in DateExtractorChs.DateRegexList)
             {
-                var offset = 0;
+                const int offset = 0;
                 var match = regex.Match(trimedText);
 
                 if (match.Success && match.Index == offset && match.Length == trimedText.Length)
@@ -137,11 +139,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var match = DateExtractorChs.SpecialDate.Match(trimedText);
             if (match.Success && match.Length == trimedText.Length)
             {
-                int day = 0, month = referenceDate.Month, year = referenceDate.Year;
                 var yearStr = match.Groups["thisyear"].Value.ToLower();
                 var monthStr = match.Groups["thismonth"].Value.ToLower();
                 var dayStr = match.Groups["day"].Value.ToLower();
-                day = this.config.DayOfMonth[dayStr];
+
+                int month = referenceDate.Month, year = referenceDate.Year;
+                var day = this.config.DayOfMonth[dayStr];
+
                 bool hasYear = false, hasMonth = false;
 
                 if (!string.IsNullOrEmpty(monthStr))
@@ -197,7 +201,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         if (futureDate < referenceDate)
                         {
-                            futureDate = futureDate.AddMonths(+1);
+                            futureDate = futureDate.AddMonths(1);
                         }
 
                         if (pastDate >= referenceDate)
@@ -205,11 +209,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             pastDate = pastDate.AddMonths(-1);
                         }
                     }
-                    else if (hasMonth && !hasYear)
+                    else if (!hasYear)
                     {
                         if (futureDate < referenceDate)
                         {
-                            futureDate = futureDate.AddYears(+1);
+                            futureDate = futureDate.AddYears(1);
                         }
 
                         if (pastDate >= referenceDate)
@@ -226,41 +230,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            // handle "today", "the day before yesterday"
+            // handle cases like "昨日", "明日", "大后天"
             match = DateExtractorChs.SpecialDayRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
-                var value = referenceDate;
-                if (match.Value.ToLower().Equals("今天") || match.Value.ToLower().Equals("今日") ||
-                    match.Value.ToLower().Equals("最近"))
-                {
-                    value = referenceDate;
-                }
-                else if (match.Value.ToLower().Equals("明天") || match.Value.ToLower().Equals("明日"))
-                {
-                    value = referenceDate.AddDays(1);
-                }
-                else if (match.Value.ToLower().Equals("昨天"))
-                {
-                    value = referenceDate.AddDays(-1);
-                }
-                else if (match.Value.ToLower().EndsWith("大后天"))
-                {
-                    value = referenceDate.AddDays(3);
-                }
-                else if (match.Value.ToLower().EndsWith("大前天"))
-                {
-                    value = referenceDate.AddDays(-3);
-                }
-                else if (match.Value.ToLower().EndsWith("后天"))
-                {
-                    value = referenceDate.AddDays(2);
-                }
-                else if (match.Value.ToLower().EndsWith("前天"))
-                {
-                    value = referenceDate.AddDays(-2);
-                }
-
+                var value = referenceDate.AddDays(config.GetSwiftDay(match.Value.ToLower()));
                 ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
@@ -465,7 +439,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // here is a very special case, timeX followe future date
-            ret.Timex = $@"XXXX-{month.ToString("D2")}-WXX-{weekday}-#{cardinal}";
+            ret.Timex = $@"XXXX-{month:D2}-WXX-{weekday}-#{cardinal}";
             ret.FutureValue = futureDate;
             ret.PastValue = pastDate;
             ret.Success = true;
@@ -473,7 +447,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
@@ -490,7 +464,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return firstWeekday.AddDays(7 * (cadinal - 1));
         }
 
-        // handle like "三天前" 
+        // handle cases like "三天前" 
         private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -596,11 +570,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
-                    if (year < 100 && year >= 30)
+                    if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 30)
+                    else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
                         year += 2000;
                     }
@@ -688,6 +662,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             year = num;
 
             return year < 10 ? -1 : year;
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

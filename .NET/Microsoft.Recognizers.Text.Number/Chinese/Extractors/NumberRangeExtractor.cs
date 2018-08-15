@@ -9,9 +9,11 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
+        internal sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
 
-        public NumberRangeExtractor() : base(new NumberExtractor(), new OrdinalExtractor(), new ChineseNumberParser(new ChineseNumberParserConfiguration()))
+        public NumberRangeExtractor(NumberOptions options = NumberOptions.None) : base(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new ChineseNumberParserConfiguration()), options: options)
         {
             var regexes = new Dictionary<Regex, string>()
             {
@@ -73,6 +75,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             };
 
             Regexes = regexes.ToImmutableDictionary();
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }
 }

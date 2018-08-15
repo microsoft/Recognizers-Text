@@ -1,132 +1,134 @@
-[{
-  "Input": "从晚上9:30到凌晨3:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从晚上9:30到凌晨3:00",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "下午5点到6点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午5点到6点",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "下午五点到六点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午五点到六点",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "下午五点半到六点半",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午五点半到六点半",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "清晨四点到六点之间",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "清晨四点到六点之间",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "4:00到6:00",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4:00到6:00",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "午夜12点到凌晨2点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "午夜12点到凌晨2点",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "下午四点到晚上八点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午四点到晚上八点",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "凌晨四到六点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "凌晨四到六点",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "下午2点~4点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午2点~4点",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "上午8点45分至上午9点30分",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "上午8点45分至上午9点30分",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "深夜20点～凌晨4点",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "深夜20点～凌晨4点",
-      "Type": "timerange"
-    }
-  ]
-}
+[
+  {
+    "Input": "从晚上9:30到凌晨3:00",
+    "Results": [
+      {
+        "Text": "从晚上9:30到凌晨3:00",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "下午5点到6点",
+    "Results": [
+      {
+        "Text": "下午5点到6点",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "下午五点到六点",
+    "Results": [
+      {
+        "Text": "下午五点到六点",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "下午五点半到六点半",
+    "Results": [
+      {
+        "Text": "下午五点半到六点半",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "清晨四点到六点之间",
+    "Results": [
+      {
+        "Text": "清晨四点到六点之间",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "4:00到6:00",
+    "Results": [
+      {
+        "Text": "4:00到6:00",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "午夜12点到凌晨2点",
+    "Results": [
+      {
+        "Text": "午夜12点到凌晨2点",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "下午四点到晚上八点",
+    "Results": [
+      {
+        "Text": "下午四点到晚上八点",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "凌晨四到六点",
+    "Results": [
+      {
+        "Text": "凌晨四到六点",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "下午2点~4点",
+    "Results": [
+      {
+        "Text": "下午2点~4点",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "上午8点45分至上午9点30分",
+    "Results": [
+      {
+        "Text": "上午8点45分至上午9点30分",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "深夜20点～凌晨4点",
+    "Results": [
+      {
+        "Text": "深夜20点～凌晨4点",
+        "Type": "timerange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  }
 ]

@@ -1,468 +1,470 @@
-[{
-  "Input": "Estarei fora de cinco a sete hoje",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de cinco a sete hoje",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora hoje de cinco a sete",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hoje de cinco a sete",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de cinco a sete amanhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de cinco a sete amanhã",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 5 até as 6 no próximo domingo",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "das 5 até as 6 no próximo domingo",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 5 as 6pm no próximo domingo",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "das 5 as 6pm no próximo domingo",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 5 até as 6pm do próximo domingo",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "das 5 até as 6pm do próximo domingo",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm a 5pm hoje",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm hoje",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm a 5pm de hoje",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm de hoje",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm de hoje a 5pm de amanhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm de hoje a 5pm de amanhã",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm a 5pm de amanhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm de amanhã",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm a 5pm de 2017-6-6",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm de 2017-6-6",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm a 5pm no 5 de Maio de 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm no 5 de Maio de 2018",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4:00 a 5pm 5 de Maio, 2018",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4:00 a 5pm 5 de Maio, 2018",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estive fora de 4pm de 1 de Janeiro de 2016 a 5pm de hoje",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm de 1 de Janeiro de 2016 a 5pm de hoje",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora desde hoje às 4 até a próxima quarta-feira as 5",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde hoje às 4 até a próxima quarta-feira as 5",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre as 4pm e 5pm de hoje",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre as 4pm e 5pm de hoje",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estive fora entre as 4pm de 1 de janeiro de 2016 e as 5pm de hoje",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre as 4pm de 1 de janeiro de 2016 e as 5pm de hoje",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei à noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "noite",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei de madrugada",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "madrugada",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei esta tarde",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta tarde",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltei esta manhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta manhã",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei pela manhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "manhã",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei de manhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "manhã",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "voltarei na próxima noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próxima noite",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltei ontem à noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ontem à noite",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltei de noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "noite",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei amanhã à noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "amanhã à noite",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei próxima segunda-feira à tarde",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próxima segunda-feira à tarde",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei no 5 de maio de noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5 de maio de noite",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou rebobinar os últimos 3 minutos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "últimos 3 minutos",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou rebobinar os 3 minutos passados",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 minutos passados",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou rebobinar os previos 3 minutos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "previos 3 minutos",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou rebobinar os 3 mins anteriores",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 mins anteriores",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 3 horas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "em 3 horas",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar em 5 h",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "em 5 h",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar dentro de 5 horas",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dentro de 5 horas",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar no último minuto",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "último minuto",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar na próxima hora",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "próxima hora",
-      "Type": "datetimerange"
-    }
-  ]
-}
+[
+  {
+    "Input": "Estarei fora de cinco a sete hoje",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de cinco a sete hoje",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora hoje de cinco a sete",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "hoje de cinco a sete",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de cinco a sete amanhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de cinco a sete amanhã",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 5 até as 6 no próximo domingo",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "das 5 até as 6 no próximo domingo",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 5 as 6pm no próximo domingo",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "das 5 as 6pm no próximo domingo",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 5 até as 6pm do próximo domingo",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "das 5 até as 6pm do próximo domingo",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm a 5pm hoje",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm hoje",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm a 5pm de hoje",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm de hoje",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm de hoje a 5pm de amanhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm de hoje a 5pm de amanhã",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm a 5pm de amanhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm de amanhã",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm a 5pm de 2017-6-6",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm de 2017-6-6",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm a 5pm no 5 de Maio de 2018",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm no 5 de Maio de 2018",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4:00 a 5pm 5 de Maio, 2018",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4:00 a 5pm 5 de Maio, 2018",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Estive fora de 4pm de 1 de Janeiro de 2016 a 5pm de hoje",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm de 1 de Janeiro de 2016 a 5pm de hoje",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora desde hoje às 4 até a próxima quarta-feira as 5",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde hoje às 4 até a próxima quarta-feira as 5",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 47
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre as 4pm e 5pm de hoje",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 4pm e 5pm de hoje",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Estive fora entre as 4pm de 1 de janeiro de 2016 e as 5pm de hoje",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 4pm de 1 de janeiro de 2016 e as 5pm de hoje",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 53
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei à noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei de madrugada",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "madrugada",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei esta tarde",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta tarde",
+        "Type": "datetimerange",
+        "Start": 9,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Voltei esta manhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "esta manhã",
+        "Type": "datetimerange",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei pela manhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "manhã",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei de manhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "manhã",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "voltarei na próxima noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "próxima noite",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Voltei ontem à noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "ontem à noite",
+        "Type": "datetimerange",
+        "Start": 7,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Voltei de noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Type": "datetimerange",
+        "Start": 10,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei amanhã à noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "amanhã à noite",
+        "Type": "datetimerange",
+        "Start": 9,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei próxima segunda-feira à tarde",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "próxima segunda-feira à tarde",
+        "Type": "datetimerange",
+        "Start": 9,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Voltarei no 5 de maio de noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "5 de maio de noite",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Vou rebobinar os últimos 3 minutos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "últimos 3 minutos",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Vou rebobinar os 3 minutos passados",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 minutos passados",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Vou rebobinar os previos 3 minutos",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "previos 3 minutos",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Vou rebobinar os 3 mins anteriores",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 mins anteriores",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 3 horas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "em 3 horas",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar em 5 h",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "em 5 h",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar dentro de 5 horas",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dentro de 5 horas",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar no último minuto",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "último minuto",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Vou voltar na próxima hora",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "próxima hora",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  }
 ]

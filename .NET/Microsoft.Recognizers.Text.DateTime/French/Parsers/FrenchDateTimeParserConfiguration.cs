@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public FrenchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
@@ -90,13 +90,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var trimedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if (trimedText.EndsWith("matin") && hour >= 12)
+            if (trimedText.EndsWith("matin") && hour >= Constants.HalfDayHourCount)
             {
-                result -= 12;
+                result -= Constants.HalfDayHourCount;
             }
-            else if (!trimedText.EndsWith("matin") && hour < 12)
+            else if (!trimedText.EndsWith("matin") && hour < Constants.HalfDayHourCount)
             {
-                result += 12;
+                result += Constants.HalfDayHourCount;
             }
             return result;
         }
@@ -140,6 +140,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText) => false;
+        public bool ContainsAmbiguousToken(string text, string matchedText) => false;
     }
 }

@@ -13,21 +13,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.EachPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.EachDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex BeforeEachDayRegex = new Regex(DateTimeDefinitions.BeforeEachDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        //TODO: write the below regex according to the corresponding one of English
-        public static readonly Regex SetWeekDayRegex = new Regex($@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
+        public static readonly Regex SetWeekDayRegex = new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex SetEachRegex = new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishSetExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
+            DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DurationExtractor { get; }

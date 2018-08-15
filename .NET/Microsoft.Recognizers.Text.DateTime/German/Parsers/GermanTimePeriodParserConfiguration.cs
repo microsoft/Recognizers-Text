@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex TimeOfDayRegex { get; }
 
         public Regex GeneralEndingRegex { get; }
@@ -28,13 +32,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public GermanTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public GermanTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = GermanTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = GermanTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = GermanTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = GermanTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = GermanTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = GermanTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = GermanTimePeriodExtractorConfiguration.TillRegex;
@@ -57,12 +63,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 timex = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (trimedText.EndsWith("nachmittag"))
             {
                 timex = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (trimedText.EndsWith("abend"))

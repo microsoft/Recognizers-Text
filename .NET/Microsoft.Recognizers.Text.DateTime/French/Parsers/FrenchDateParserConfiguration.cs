@@ -34,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -58,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex YearSuffix { get; }
 
+        public Regex RelativeWeekDayRegex { get; }
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
@@ -68,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
@@ -78,9 +82,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
-            DateRegexes = FrenchDateExtractorConfiguration.DateRegexList;
+            DateRegexes = new FrenchDateExtractorConfiguration(config).DateRegexList;
             OnRegex = FrenchDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = FrenchDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = FrenchDateExtractorConfiguration.NextRegex;
             ThisRegex = FrenchDateExtractorConfiguration.ThisRegex;
             LastRegex = FrenchDateExtractorConfiguration.LastRegex;
@@ -93,6 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
+            RelativeWeekDayRegex = FrenchDateExtractorConfiguration.RelativeWeekDayRegex;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

@@ -1,220 +1,222 @@
-[{
-  "Input": "me voy por 3h",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3h",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 3 dias",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 dias",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 3,5 años",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5 años",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 3 h",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 h",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 3 horas",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 horas",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy 3 dias",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 dias",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 3 meses",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 meses",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 3 minutos",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 minutos",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 3 min",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 min",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 3,5 segundos ",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5 segundos",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por 123,45 seg",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "123,45 seg",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por dos semanas",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dos semanas",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy 20 minutos",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20 minutos",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por veinticuatro horas",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "veinticuatro horas",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy todo el dia",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo el dia",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy toda la semana",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "toda la semana",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por todo el mes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo el mes",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por todo el año",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "todo el año",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por una hora",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "una hora",
-      "Type": "duration"
-    }
-  ]
-}
-,
-{
-  "Input": "me voy por un año",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un año",
-      "Type": "duration"
-    }
-  ]
-}
+[
+  {
+    "Input": "me voy por 3h",
+    "Results": [
+      {
+        "Text": "3h",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 3 dias",
+    "Results": [
+      {
+        "Text": "3 dias",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 3,5 años",
+    "Results": [
+      {
+        "Text": "3,5 años",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 3 h",
+    "Results": [
+      {
+        "Text": "3 h",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 3 horas",
+    "Results": [
+      {
+        "Text": "3 horas",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "me voy 3 dias",
+    "Results": [
+      {
+        "Text": "3 dias",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 3 meses",
+    "Results": [
+      {
+        "Text": "3 meses",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 3 minutos",
+    "Results": [
+      {
+        "Text": "3 minutos",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 3 min",
+    "Results": [
+      {
+        "Text": "3 min",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 3,5 segundos ",
+    "Results": [
+      {
+        "Text": "3,5 segundos",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "me voy por 123,45 seg",
+    "Results": [
+      {
+        "Text": "123,45 seg",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "me voy por dos semanas",
+    "Results": [
+      {
+        "Text": "dos semanas",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "me voy 20 minutos",
+    "Results": [
+      {
+        "Text": "20 minutos",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "me voy por veinticuatro horas",
+    "Results": [
+      {
+        "Text": "veinticuatro horas",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "me voy todo el dia",
+    "Results": [
+      {
+        "Text": "todo el dia",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "me voy toda la semana",
+    "Results": [
+      {
+        "Text": "toda la semana",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "me voy por todo el mes",
+    "Results": [
+      {
+        "Text": "todo el mes",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "me voy por todo el año",
+    "Results": [
+      {
+        "Text": "todo el año",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "me voy por una hora",
+    "Results": [
+      {
+        "Text": "una hora",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "me voy por un año",
+    "Results": [
+      {
+        "Text": "un año",
+        "Type": "duration",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  }
 ]

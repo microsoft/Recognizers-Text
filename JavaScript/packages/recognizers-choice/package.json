@@ -1,14 +1,16 @@
 {
   "name": "@microsoft/recognizers-text-choice",
-  "version": "1.0.0",
-  "description": "recognizers-text-choice abstract",
+  "version": "1.0.1",
+  "description": "recognizers-text-choice provides recognition of Boolean (yes/no) answers expressed in multiple languages, as well as base classes to support lists of alternative choices.",
   "author": "Microsoft Corp.",
   "license": "MIT",
   "keywords": [
     "nlp",
     "nlp-entity-extraction",
     "entity-extraction",
-    "numex",
+    "boolean",
+    "alternatives",
+    "choices",
     "parser-library"
   ],
   "main": "dist/recognizers-text-choice.umd.js",
@@ -26,12 +28,12 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "build-resources": "ts-node --project ../resource-generator/ ../resource-generator/ ../recognizers-choice/resource-definitions.json",
+    "build-resources": "ts-node --project ../resource-generator/tsconfig.json ../resource-generator/ ../recognizers-choice/resource-definitions.json",
     "clean-build": "rimraf dist && rimraf compiled",
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "@microsoft/recognizers-text": "^1.0.0",
+    "@microsoft/recognizers-text": "~1.0.1",
     "grapheme-splitter": "^1.0.2"
   }
 }

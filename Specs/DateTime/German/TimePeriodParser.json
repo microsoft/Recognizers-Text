@@ -1,10 +1,10 @@
-[{
+[
+  {
     "Input": "Ich bin von 5 bis 6 Uhr weg",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "5 bis 6 Uhr",
@@ -19,18 +19,18 @@
             "startTime": "05:00:00",
             "endTime": "06:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich werde von 17 Uhr bis 18 Uhr ausgehen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "17 Uhr bis 18 Uhr",
@@ -45,18 +45,18 @@
             "startTime": "17:00:00",
             "endTime": "18:00:00"
           }
-        }
+        },
+        "Start": 14,
+        "Length": 17
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Ich bin dann mal von 7 Uhr morgens bis 8 Uhr morgens weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "7 Uhr morgens bis 8 Uhr morgens",
@@ -71,7 +71,9 @@
             "startTime": "07:00:00",
             "endTime": "08:00:00"
           }
-        }
+        },
+        "Start": 21,
+        "Length": 31
       }
     ]
   },
@@ -80,8 +82,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "16 bis 17 Uhr",
@@ -96,7 +97,9 @@
             "startTime": "16:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 13
       }
     ]
   },
@@ -105,8 +108,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "4 Uhr Abends bis 5 Uhr Abends",
@@ -121,7 +123,9 @@
             "startTime": "16:00:00",
             "endTime": "17:00:00"
           }
-        }
+        },
+        "Start": 12,
+        "Length": 29
       }
     ]
   },
@@ -130,8 +134,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Morgens",
@@ -146,7 +149,9 @@
             "startTime": "08:00:00",
             "endTime": "12:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 7
       }
     ]
   },
@@ -155,8 +160,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Nachmittags",
@@ -171,18 +175,18 @@
             "startTime": "12:00:00",
             "endTime": "16:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 11
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Wir treffen uns in der Nacht",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Nacht",
@@ -197,18 +201,18 @@
             "startTime": "20:00:00",
             "endTime": "23:59:59"
           }
-        }
+        },
+        "Start": 23,
+        "Length": 5
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Lass mal gegen Abend treffen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Abend",
@@ -223,7 +227,9 @@
             "startTime": "16:00:00",
             "endTime": "20:00:00"
           }
-        }
+        },
+        "Start": 15,
+        "Length": 5
       }
     ]
   },
@@ -232,8 +238,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "13:30 bis 16:00",
@@ -248,18 +253,18 @@
             "startTime": "13:30:00",
             "endTime": "16:00:00"
           }
-        }
+        },
+        "Start": 17,
+        "Length": 15
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Das Treffen geht über den Morgen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "Morgen",
@@ -274,7 +279,9 @@
             "startTime": "08:00:00",
             "endTime": "12:00:00"
           }
-        }
+        },
+        "Start": 26,
+        "Length": 6
       }
     ]
   },
@@ -283,8 +290,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1:30 bis 3",
@@ -299,7 +305,9 @@
             "startTime": "01:30:00",
             "endTime": "03:00:00"
           }
-        }
+        },
+        "Start": 13,
+        "Length": 10
       }
     ]
   }

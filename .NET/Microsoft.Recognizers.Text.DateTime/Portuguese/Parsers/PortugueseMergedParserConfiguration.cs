@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public sealed class PortugueseMergedParserConfiguration : PortugueseCommonDateTimeParserConfiguration, IMergedParserConfiguration
@@ -15,23 +17,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex YearRegex { get; }
 
-        public IDateTimeParser GetParser { get; }
+        public IDateTimeParser SetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
 
-        public PortugueseMergedParserConfiguration(DateTimeOptions options) : base(options)
+        public IDateTimeParser TimeZoneParser { get; }
+
+        public StringMatcher SuperfluousWordMatcher { get; }
+
+        public PortugueseMergedParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             BeforeRegex = PortugueseMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = PortugueseMergedExtractorConfiguration.AfterRegex;
             SinceRegex = PortugueseMergedExtractorConfiguration.SinceRegex;
             YearAfterRegex = PortugueseMergedExtractorConfiguration.YearAfterRegex;
             YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
+            SuperfluousWordMatcher = PortugueseMergedExtractorConfiguration.SuperfluousWordMatcher;
 
             DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new PortugueseTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new DateTimePeriodParser(new PortugueseDateTimePeriodParserConfiguration(this));
-            GetParser = new BaseSetParser(new PortugueseSetParserConfiguration(this));
-            HolidayParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration());
+            SetParser = new BaseSetParser(new PortugueseSetParserConfiguration(this));
+            HolidayParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration(this));
+            TimeZoneParser = new BaseTimeZoneParser();
         }
     }
 }

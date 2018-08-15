@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Definitions.English;
@@ -8,11 +9,12 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration
+    public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration, ICommonDateTimeParserConfiguration
     {
-        public EnglishCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
+
+        public EnglishCommonDateTimeParserConfiguration(IOptionsConfiguration config) : base(config)
         {
-            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+            UtilityConfiguration = new EnglishDatetimeUtilityConfiguration();
 
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
@@ -30,13 +32,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
 
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
-            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(this));
             DurationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
             TimeParser = new TimeParser(new EnglishTimeParserConfiguration(this));

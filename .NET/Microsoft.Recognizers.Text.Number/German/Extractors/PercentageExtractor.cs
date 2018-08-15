@@ -8,11 +8,18 @@ namespace Microsoft.Recognizers.Text.Number.German
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
-        public PercentageExtractor() : base(NumberExtractor.GetInstance()) { }
+        protected override NumberOptions Options { get; }
+
+        public PercentageExtractor(NumberOptions options = NumberOptions.None) : base(
+            NumberExtractor.GetInstance(options: options))
+        {
+            Options = options;
+            Regexes = InitRegexes();
+        }
 
         protected override ImmutableHashSet<Regex> InitRegexes()
         {
-            HashSet<string> regexStrs = new HashSet<string>
+            var regexStrs = new HashSet<string>
             {
                 NumbersDefinitions.NumberWithSuffixPercentage,
                 NumbersDefinitions.NumberWithPrefixPercentage

@@ -126,15 +126,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.OnRegex.Match(this.config.DateTokenPrefix + trimedText);
             if (match.Success && match.Index == 3 && match.Length == trimedText.Length)
             {
-                int day = 0, month = referenceDate.Month, year = referenceDate.Year;
+                int month = referenceDate.Month, year = referenceDate.Year;
                 var dayStr = match.Groups["day"].Value.ToLower();
-                day = this.config.DayOfMonth[dayStr];
+                var day = this.config.DayOfMonth[dayStr];
 
                 ret.Timex = FormatUtil.LuisDate(-1, -1, day);
 
                 DateObject futureDate, pastDate;
                 var tryStr = FormatUtil.LuisDate(year, month, day);
-                if (DateObject.TryParse(tryStr, out DateObject temp))
+                if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                     pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -169,6 +169,50 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var swift = this.config.GetSwiftDay(match.Value);
 
                 var value = referenceDate.AddDays(swift);
+
+                ret.Timex = FormatUtil.LuisDate(value);
+                ret.FutureValue = ret.PastValue = value;
+                ret.Success = true;
+
+                return ret;
+            }
+
+            // handle "two days from tomorrow"
+            match = this.config.SpecialDayWithNumRegex.Match(trimedText);
+            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            {
+                var swift = this.config.GetSwiftDay(match.Groups["day"].Value);
+                var numErs = this.config.IntegerExtractor.Extract(trimedText);
+                var numOfDays = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
+
+                var value = referenceDate.AddDays(numOfDays + swift);
+
+                ret.Timex = FormatUtil.LuisDate(value);
+                ret.FutureValue = ret.PastValue = value;
+                ret.Success = true;
+
+                return ret;
+            }
+            
+            // handle "two sundays from now"
+            match = this.config.RelativeWeekDayRegex.Match(trimedText);
+            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            {
+                var numErs = this.config.IntegerExtractor.Extract(trimedText);
+                var num = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
+                var weekdayStr = match.Groups["weekday"].Value.ToLower();
+                var value = referenceDate;
+
+                // Check whether the determined day of this week has passed.
+                if (value.DayOfWeek > (DayOfWeek)this.config.DayOfWeek[weekdayStr])
+                {
+                    num--;
+                }
+
+                while (num-- > 0)
+                {
+                    value = value.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
+                }
 
                 ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
@@ -265,10 +309,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var dayStr = match.Groups["DayOfMonth"].Value.ToLower();
 
                 // create a extract result which content ordinal string of text
-                ExtractResult er = new ExtractResult();
-                er.Text = dayStr;
-                er.Start = match.Groups["DayOfMonth"].Index;
-                er.Length = match.Groups["DayOfMonth"].Length;
+                ExtractResult er = new ExtractResult
+                {
+                    Text = dayStr,
+                    Start = match.Groups["DayOfMonth"].Index,
+                    Length = match.Groups["DayOfMonth"].Length
+                };
 
                 day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
 
@@ -276,7 +322,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 DateObject futureDate;
                 var tryStr = FormatUtil.LuisDate(year, month, day);
-                if (DateObject.TryParse(tryStr, out DateObject temp))
+                if (DateObject.TryParse(tryStr, out DateObject _))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                 }
@@ -298,11 +344,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 int month = referenceDate.Month, year = referenceDate.Year;
                 // create a extract result which content ordinal string of text
-                ExtractResult erTmp = new ExtractResult();
-                erTmp.Text = match.Groups["DayOfMonth"].Value.ToString();
-                erTmp.Start = match.Groups["DayOfMonth"].Index;
-                erTmp.Length = match.Groups["DayOfMonth"].Length;
-                
+                ExtractResult erTmp = new ExtractResult
+                {
+                    Text = match.Groups["DayOfMonth"].Value,
+                    Start = match.Groups["DayOfMonth"].Index,
+                    Length = match.Groups["DayOfMonth"].Length
+                };
+
                 // parse the day in text into number
                 var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
                 
@@ -386,8 +434,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var firstDate = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, 1);
                     var firstWeekDay = (int)firstDate.DayOfWeek;
                     var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
-                    var AnswerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
-                    day = AnswerDay;
+                    var answerDay = firstWantedWeekDay.Day + (num - 1) * 7;
+                    day = answerDay;
                     ambiguous = false;
                 }
             }
@@ -475,7 +523,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceDate,
                 config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex,
-                config.UtilityConfiguration);
+                config.UtilityConfiguration, config.GetSwiftDay);
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
@@ -495,11 +543,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
-                    if (year < 100 && year >= 90)
+                    if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 30)
+                    else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
                         year += 2000;
                     }
@@ -555,15 +603,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var noYear = false;
             int year;
 
-            int cardinal;
-            if (this.config.IsCardinalLast(cardinalStr))
-            {
-                cardinal = 5;
-            }
-            else
-            {
-                cardinal = this.config.CardinalMap[cardinalStr];
-            }
+            var cardinal = this.config.IsCardinalLast(cardinalStr) ? 5 : this.config.CardinalMap[cardinalStr];
 
             var weekday = this.config.DayOfWeek[weekdayStr];
             int month;
@@ -621,18 +661,29 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            int dayOfWeekOfFirstDay = (int)firstDay.DayOfWeek;
 
             if (weekday == 0)
             {
                 weekday = 7;
             }
 
-            if (weekday < (int)firstDay.DayOfWeek)
+            if (dayOfWeekOfFirstDay == 0)
+            {
+                dayOfWeekOfFirstDay = 7;
+            }
+
+            if (weekday < dayOfWeekOfFirstDay)
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
 
             return firstWeekday.AddDays(7 * (cardinal - 1));
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
     }
 }

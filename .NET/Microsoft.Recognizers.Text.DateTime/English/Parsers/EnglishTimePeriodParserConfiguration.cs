@@ -14,6 +14,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor IntegerExtractor { get; }
 
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
@@ -28,13 +32,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = EnglishTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = EnglishTimePeriodExtractorConfiguration.TillRegex;
@@ -57,12 +63,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 timex = "TMO";
                 beginHour = 8;
-                endHour = 12;
+                endHour = Constants.HalfDayHourCount;
             }
             else if (trimedText.EndsWith("afternoon"))
             {
                 timex = "TAF";
-                beginHour = 12;
+                beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (trimedText.EndsWith("evening"))

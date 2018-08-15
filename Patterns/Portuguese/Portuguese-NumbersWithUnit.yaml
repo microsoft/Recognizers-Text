@@ -1,4 +1,4 @@
-﻿---
+---
 #AgeExtractorConfiguration
 AgeSuffixList: !dictionary
   types: [ string, string ]
@@ -504,6 +504,8 @@ CurrencySuffixList: !dictionary
 #Zâmbia
     Kwacha zambiano: kwacha zambiano|kwacha zambianos|kwachas zambianos|zmw
     Ngwee zambiano: ngwee zambiano|ngwee zambianos|ngwees zambianos
+CompoundUnitConnectorRegex: !simpleRegex
+    def: (?<spacer>[^.])
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
@@ -570,7 +572,7 @@ InformationSuffixList: !dictionary
     tebibyte: tebibyte|tebibytes|TiB|TiByte
     pebibyte: pebibyte|pebibytes|PiB|PiByte
 AmbiguousDimensionUnitList: !list
-  types: [ string, string ]
+  types: [ string ]
   entries:
     - ton
     - tonelada
@@ -587,7 +589,7 @@ BuildSuffix: !simpleRegex
   def: (?=(\s|\P{L}|$))
 ConnectorToken: 'de'
 #LengthExtractorConfiguration
-LenghtSuffixList: !dictionary
+LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Quilômetro: km|quilometro|quilômetro|quilómetro|quilometros|quilômetros|quilómetros

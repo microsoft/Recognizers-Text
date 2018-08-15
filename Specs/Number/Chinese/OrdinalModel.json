@@ -1,6 +1,5 @@
 [{
   "Input": "第二百五十",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第二百五十",
@@ -14,7 +13,6 @@
 ,
 {
   "Input": "第２５０",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第２５０",
@@ -28,7 +26,6 @@
 ,
 {
   "Input": "第一名第二名第三名第四名",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第一",
@@ -63,7 +60,6 @@
 ,
 {
   "Input": "第十四",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第十四",
@@ -77,13 +73,40 @@
 ,
 {
   "Input": "第三",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第三",
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第3万回",
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "第3万",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "30000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第三万回",
+  "NotSupported": "python",
+  "Results": [
+    {
+      "Text": "第三万",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "30000"
       }
     }
   ]

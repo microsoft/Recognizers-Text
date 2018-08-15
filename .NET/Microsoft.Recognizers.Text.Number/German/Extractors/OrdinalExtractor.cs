@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.German
 {
     public class OrdinalExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
@@ -29,23 +29,23 @@ namespace Microsoft.Recognizers.Text.Number.German
 
         private OrdinalExtractor()
         {
-            var regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "OrdinalNum"
+                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "OrdinalNum"
+                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.OrdinalGermanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "OrdGer"
+                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.GERMAN)
                 },
                 {
                     new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "OrdGer"
+                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.GERMAN)
                 }
             };
 

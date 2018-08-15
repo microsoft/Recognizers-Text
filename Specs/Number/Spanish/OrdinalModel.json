@@ -1,6 +1,5 @@
 [{
   "Input": "tresmillonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresmillonesimo",
@@ -14,7 +13,6 @@
 ,
 {
   "Input": "dos mil millonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dos mil millonesimo",
@@ -28,7 +26,6 @@
 ,
 {
   "Input": "septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "septimo",
@@ -42,7 +39,6 @@
 ,
 {
   "Input": "cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cuadragesimo septimo",
@@ -56,7 +52,6 @@
 ,
 {
   "Input": "tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tricentesimo cuadragesimo septimo",
@@ -70,7 +65,6 @@
 ,
 {
   "Input": "dosmilesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dosmilesimo tricentesimo cuadragesimo septimo",
@@ -84,7 +78,6 @@
 ,
 {
   "Input": "cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
@@ -98,7 +91,6 @@
 ,
 {
   "Input": "cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
@@ -112,7 +104,6 @@
 ,
 {
   "Input": "tresmillonesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresmillonesimo septimo",
@@ -126,7 +117,6 @@
 ,
 {
   "Input": "tresmillonesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresmillonesimo cuadragesimo septimo",
@@ -140,7 +130,6 @@
 ,
 {
   "Input": "tresmillonesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresmillonesimo tricentesimo cuadragesimo septimo",
@@ -154,7 +143,6 @@
 ,
 {
   "Input": "tres millones dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones dos milesimo tricentesimo cuadragesimo septimo",
@@ -168,7 +156,6 @@
 ,
 {
   "Input": "tres millones cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
@@ -182,7 +169,6 @@
 ,
 {
   "Input": "tres millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
@@ -196,7 +182,6 @@
 ,
 {
   "Input": "trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
@@ -210,7 +195,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
@@ -224,7 +208,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo",
@@ -238,7 +221,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo",
@@ -252,7 +234,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo",
@@ -266,7 +247,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta milesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta milesimo",
@@ -280,7 +260,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos milesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos milesimo",
@@ -294,7 +273,6 @@
 ,
 {
   "Input": "quinientos trece millonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millonesimo",
@@ -308,7 +286,6 @@
 ,
 {
   "Input": "quinientos diez millonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos diez millonesimo",
@@ -322,7 +299,6 @@
 ,
 {
   "Input": "quinientosmillonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientosmillonesimo",
@@ -336,7 +312,6 @@
 ,
 {
   "Input": "milesimo quingentesimo vigesimo tercero",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "milesimo quingentesimo vigesimo tercero",
@@ -350,7 +325,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo octingentesimo trigesimo segundo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo octingentesimo trigesimo segundo",
@@ -364,7 +338,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo",
@@ -378,7 +351,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millonesimo",
@@ -392,7 +364,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil millonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil millonesimo",
@@ -406,7 +377,6 @@
 ,
 {
   "Input": "tresbillonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresbillonesimo",
@@ -420,7 +390,6 @@
 ,
 {
   "Input": "vigesimo quinto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo quinto",
@@ -434,7 +403,6 @@
 ,
 {
   "Input": "vigesimo primero",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo primero",
@@ -448,7 +416,6 @@
 ,
 {
   "Input": "centesimo vigesimo quinto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "centesimo vigesimo quinto",
@@ -462,7 +429,6 @@
 ,
 {
   "Input": "ducentesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ducentesimo",
@@ -476,7 +442,6 @@
 ,
 {
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
@@ -490,7 +455,6 @@
 ,
 {
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo",
@@ -504,7 +468,6 @@
 ,
 {
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo",
@@ -518,7 +481,6 @@
 ,
 {
   "Input": "tres mil quinientos veinticuatro millones seiscientos milesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinientos veinticuatro millones seiscientos milesimo",
@@ -532,7 +494,6 @@
 ,
 {
   "Input": "tres mil millonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millonesimo",
@@ -546,7 +507,6 @@
 ,
 {
   "Input": "tres mil millonesimo tercero",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millonesimo tercero",
@@ -560,7 +520,6 @@
 ,
 {
   "Input": "tres mil millonesimo septuagesimo tercero",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millonesimo septuagesimo tercero",
@@ -574,7 +533,6 @@
 ,
 {
   "Input": "tres mil millonesimo sexcentesimo septuagesimo tercero",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millonesimo sexcentesimo septuagesimo tercero",
@@ -588,7 +546,6 @@
 ,
 {
   "Input": "tres mil millones cuatro milesimo sexcentesimo septuagesimo tercero",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millones cuatro milesimo sexcentesimo septuagesimo tercero",
@@ -602,7 +559,6 @@
 ,
 {
   "Input": "tres mil veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
@@ -616,7 +572,6 @@
 ,
 {
   "Input": "11mo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11mo",
@@ -630,7 +585,6 @@
 ,
 {
   "Input": "11vo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11vo",
@@ -644,7 +598,6 @@
 ,
 {
   "Input": "12vo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12vo",
@@ -658,7 +611,6 @@
 ,
 {
   "Input": "111ro",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "111ro",
@@ -672,7 +624,6 @@
 ,
 {
   "Input": "21ro",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21ro",
@@ -686,7 +637,6 @@
 ,
 {
   "Input": "30ma",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30ma",
@@ -700,7 +650,6 @@
 ,
 {
   "Input": "2da",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2da",
@@ -714,7 +663,6 @@
 ,
 {
   "Input": "undecimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "undecimo",
@@ -728,7 +676,6 @@
 ,
 {
   "Input": "veintidosmilesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintidosmilesimo",
@@ -742,7 +689,6 @@
 ,
 {
   "Input": "cincuenta y cinco billones quinientos cincuenta y cinco mil quinientos cincuenta y cinco millones quinientos cincuenta y cinco milesimo quingentesimo quincuagesimo quinto",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cincuenta y cinco billones quinientos cincuenta y cinco mil quinientos cincuenta y cinco millones quinientos cincuenta y cinco milesimo quingentesimo quincuagesimo quinto",
@@ -756,7 +702,6 @@
 ,
 {
   "Input": "vigesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo",
@@ -770,7 +715,6 @@
 ,
 {
   "Input": "centesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "centesimo",
@@ -784,7 +728,6 @@
 ,
 {
   "Input": "tres billonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billonesimo",
@@ -798,7 +741,6 @@
 ,
 {
   "Input": "tres billonesima",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billonesima",
@@ -812,7 +754,6 @@
 ,
 {
   "Input": "cien billonesimo",
-  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cien billonesimo",

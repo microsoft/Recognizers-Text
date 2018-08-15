@@ -267,6 +267,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Jiao", "jiao" },
 			{ "Mark Finlandais", "marks finlandais|mark finlandais|fim|mark" }
 		};
+		public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
 			{ "Dollar", "$" },

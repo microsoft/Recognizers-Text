@@ -347,6 +347,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 			{ "Kwacha zambiano", "kwacha zambiano|kwacha zambianos|kwachas zambianos|zmw" },
 			{ "Ngwee zambiano", "ngwee zambiano|ngwee zambianos|ngwees zambianos" }
 		};
+		public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
 			{ "Dólar", "$" },
@@ -424,7 +425,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
 		public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
 		public const string ConnectorToken = "de";
-		public static readonly Dictionary<string, string> LenghtSuffixList = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
 		{
 			{ "Quilômetro", "km|quilometro|quilômetro|quilómetro|quilometros|quilômetros|quilómetros" },
 			{ "Hectômetro", "hm|hectometro|hectômetro|hectómetro|hectometros|hectômetros|hectómetros" },

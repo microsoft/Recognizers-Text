@@ -1,22 +1,27 @@
 ﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.German;
 using System.Collections.Generic;
+
+using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    class GermanDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
+    class GermanDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public GermanDateTimeAltExtractorConfiguration()
+        public GermanDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeExtractor DatePeriodExtractor { get; }
 
         private static readonly Regex OrRegex =
             new Regex(DateTimeDefinitions.OrRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -48,5 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.AmPmRegexList => AmPmRegexList;
 
         Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
+
+        Regex IDateTimeAltExtractorConfiguration.DayRegex => DayRegex;
     }
 }

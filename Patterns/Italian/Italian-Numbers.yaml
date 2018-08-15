@@ -1,5 +1,4 @@
-﻿---
-LangMarker: It
+LangMarker: it
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
   def: (cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni)
@@ -107,7 +106,7 @@ FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(un|uno|una)(\s+|\s*-\s*)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|mezzo|quarto)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
+  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
   references: [ AllIntRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex

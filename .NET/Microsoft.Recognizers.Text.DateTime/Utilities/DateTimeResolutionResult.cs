@@ -28,5 +28,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         public object PastValue { get; set; }
 
         public List<object> SubDateTimeEntities { get; set; }
+
+        public TimeZoneResolutionResult TimeZoneResolution { get; set; }
+    }
+
+    public class TimeZoneResolutionResult
+    {
+        public string Value { get; set; }
+
+        public int UtcOffsetMins { get; set; }
+
+        public string TimeZoneText { get; set; }
     }
 }

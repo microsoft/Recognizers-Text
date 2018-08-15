@@ -1,10 +1,10 @@
 import { ParseResult } from "@microsoft/recognizers-text";
-import { INumberParserConfiguration } from "../parsers";
+import { ICJKNumberParserConfiguration } from "../cjkParsers";
 import { CultureInfo, Culture } from "../../culture";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
 import { RegExpUtility } from "@microsoft/recognizers-text"
 
-export class ChineseNumberParserConfiguration implements INumberParserConfiguration {
+export class ChineseNumberParserConfiguration implements ICJKNumberParserConfiguration {
 
     readonly cardinalNumberMap: ReadonlyMap<string, number>;
     readonly ordinalNumberMap: ReadonlyMap<string, number>;
@@ -23,21 +23,22 @@ export class ChineseNumberParserConfiguration implements INumberParserConfigurat
     readonly writtenIntegerSeparatorTexts: ReadonlyArray<string>;
     readonly writtenFractionSeparatorTexts: ReadonlyArray<string>;
     
-    readonly zeroToNineMapChs: ReadonlyMap<string, number>;
-    readonly roundNumberMapChs: ReadonlyMap<string, number>;
-    readonly fullToHalfMapChs: ReadonlyMap<string, string>;
-    readonly tratoSimMapChs: ReadonlyMap<string, string>;
-    readonly unitMapChs: ReadonlyMap<string, string>;
-    readonly roundDirectListChs: ReadonlyArray<string>;
+    readonly zeroToNineMap: ReadonlyMap<string, number>;
+    readonly roundNumberMapChar: ReadonlyMap<string, number>;
+    readonly fullToHalfMap: ReadonlyMap<string, string>;
+    readonly tratoSimMap: ReadonlyMap<string, string>;
+    readonly unitMap: ReadonlyMap<string, string>;
+    readonly roundDirectList: ReadonlyArray<string>;
     readonly digitNumRegex: RegExp;
     readonly dozenRegex: RegExp;
     readonly percentageRegex: RegExp;
-    readonly doubleAndRoundChsRegex: RegExp;
+    readonly doubleAndRoundRegex: RegExp;
     readonly fracSplitRegex: RegExp;
     readonly negativeNumberSignRegex: RegExp;
-    readonly pointRegexChs: RegExp;
+    readonly pointRegex: RegExp;
     readonly speGetNumberRegex: RegExp;
     readonly pairRegex: RegExp;
+    readonly roundNumberIntegerRegex: RegExp;
 
     constructor(ci?: CultureInfo) {
         if (!ci) {
@@ -64,21 +65,22 @@ export class ChineseNumberParserConfiguration implements INumberParserConfigurat
         this.halfADozenRegex = null;
         this.digitalNumberRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DigitalNumberRegex, "gis");
 
-        this.zeroToNineMapChs = ChineseNumeric.ZeroToNineMapChs;
-        this.roundNumberMapChs = ChineseNumeric.RoundNumberMapChs;
-        this.fullToHalfMapChs = ChineseNumeric.FullToHalfMapChs;
-        this.tratoSimMapChs = ChineseNumeric.TratoSimMapChs;
-        this.unitMapChs = ChineseNumeric.UnitMapChs;
-        this.roundDirectListChs = ChineseNumeric.RoundDirectListChs;
+        this.zeroToNineMap = ChineseNumeric.ZeroToNineMap;
+        this.roundNumberMapChar = ChineseNumeric.RoundNumberMapChar;
+        this.fullToHalfMap = ChineseNumeric.FullToHalfMap;
+        this.tratoSimMap = ChineseNumeric.TratoSimMap;
+        this.unitMap = ChineseNumeric.UnitMap;
+        this.roundDirectList = ChineseNumeric.RoundDirectList;
         this.digitNumRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DigitNumRegex, "gis");
         this.dozenRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DozenRegex, "gis");
         this.percentageRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PercentageRegex, "gis");
-        this.doubleAndRoundChsRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleAndRoundChsRegex, "gis");
+        this.doubleAndRoundRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.DoubleAndRoundRegex, "gis");
         this.fracSplitRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.FracSplitRegex, "gis");
         this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.NegativeNumberSignRegex, "gis");
-        this.pointRegexChs = RegExpUtility.getSafeRegExp(ChineseNumeric.PointRegexChs, "gis");
+        this.pointRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PointRegex, "gis");
         this.speGetNumberRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.SpeGetNumberRegex, "gis");
         this.pairRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.PairRegex, "gis");
+        this.roundNumberIntegerRegex = RegExpUtility.getSafeRegExp(ChineseNumeric.RoundNumberIntegerRegex, "gis");
     }
 
     normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {

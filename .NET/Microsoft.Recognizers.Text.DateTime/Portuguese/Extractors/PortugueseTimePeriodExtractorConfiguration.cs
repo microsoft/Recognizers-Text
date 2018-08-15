@@ -10,11 +10,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
 
         public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.TimeHourNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex PureNumFromTo = new Regex(DateTimeDefinitions.PureNumFromTo, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex PureNumBetweenAnd = new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeFromTo = new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeBetweenAnd = new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -31,9 +35,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public PortugueseTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public PortugueseTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration());
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            SingleTimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
@@ -74,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return match.Success;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return ConnectorAndRegex.IsMatch(text);
         }

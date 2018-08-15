@@ -1,5 +1,5 @@
-import { IModel, ModelResult, IExtractor, IParser, FormatUtility } from "@microsoft/recognizers-text";
-import { UnitValue } from "./parsers";
+import { IModel, ModelResult, ParseResult, IExtractor, IParser, FormatUtility } from "@microsoft/recognizers-text";
+import { UnitValue, UnitValueIso } from "./parsers";
 
 export enum CompositeEntityType {
     Age,
@@ -25,8 +25,19 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
             let extractor = kv[0];
             let parser = kv[1];
             let extractResults = extractor.extract(query);
-            let parseResults = extractResults.map(r => parser.parse(r))
-                .filter(o => o.value !== null);
+            let parseResults: Array<ParseResult> = [];
+            for (let i = 0; i < extractResults.length; i++) {
+                let r = parser.parse(extractResults[i]);
+                if (r.value !== null) {
+                    if (r.value instanceof Array) {
+                        for (let j = 0; j < r.value.length; j++) {
+                            parseResults.push(r.value[j]);
+                        }
+                    } else {
+                        parseResults.push(r);
+                    }
+                }
+            }
             let modelResults = parseResults.map(o =>
                 ({
                     start: o.start,
@@ -57,9 +68,15 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
     private getResolution(data: any): any {
         if(typeof data === 'undefined') return null;
 
-        return typeof data === "string"
+        let result =  typeof data === "string"
             ? { value: data.toString() }
             : { value: (data as UnitValue).number, unit: (data as UnitValue).unit };
+
+        if ((data as UnitValueIso).isoCurrency) {
+            result['isoCurrency'] = data.isoCurrency;
+        }
+
+        return result;
     }
 }
 

@@ -9,23 +9,22 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class OrdinalExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL;
 
         public OrdinalExtractor()
         {
-            var regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     //第一百五十四
-                    new Regex(NumbersDefinitions.OrdinalRegexChs, RegexOptions.Singleline)
-                    , "OrdinalChs"
+                    new Regex(NumbersDefinitions.OrdinalRegex, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.CHINESE)
                 },
                 {
                     //第２５６５,  第1234
                     new Regex(NumbersDefinitions.OrdinalNumbersRegex, RegexOptions.Singleline)
-                    , "OrdinalChs"
+                    , RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.CHINESE)
                 }
             };
 

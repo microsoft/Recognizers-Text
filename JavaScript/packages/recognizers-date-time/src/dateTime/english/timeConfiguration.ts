@@ -10,7 +10,7 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex1, "gis"),
         // (three min past)? 3:00(:00)? (pm)?
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex2, "gis"),
-        // (three min past)? 3.00 (pm)?
+        // (three min past)? 3.00 (pm)
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex3, "gis"),
         // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex4, "gis"),
@@ -23,6 +23,8 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
         // (in the night) (five thirty|seven|7|7:00(:00)?) (pm)?
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex8, "gis"),
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex9, "gis"),
+        // (three min past)? 3h00 (pm)?
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex10, "gis"),
         // 340pm
         RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectNumRegex, "gis")
     ];

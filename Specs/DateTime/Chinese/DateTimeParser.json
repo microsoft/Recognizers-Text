@@ -1,253 +1,255 @@
-[{
-  "Input": "2010-01-29早上七点",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2010-01-29早上七点",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2010-01-29T07",
-        "FutureResolution": {
-          "dateTime": "2010-01-29 07:00:00"
+[
+  {
+    "Input": "2010-01-29早上七点",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "2010-01-29早上七点",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2010-01-29T07",
+          "FutureResolution": {
+            "dateTime": "2010-01-29 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2010-01-29 07:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2010-01-29 07:00:00"
-        }
+        "Start": 0,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "2010.01.29晚上六点",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2010.01.29晚上六点",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2010-01-29T18",
-        "FutureResolution": {
-          "dateTime": "2010-01-29 18:00:00"
+  {
+    "Input": "2010.01.29晚上六点",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "2010.01.29晚上六点",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2010-01-29T18",
+          "FutureResolution": {
+            "dateTime": "2010-01-29 18:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2010-01-29 18:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2010-01-29 18:00:00"
-        }
+        "Start": 0,
+        "Length": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "2010/01/29中午十二点",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2010/01/29中午十二点",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2010-01-29T12",
-        "FutureResolution": {
-          "dateTime": "2010-01-29 12:00:00"
+  {
+    "Input": "2010/01/29中午十二点",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "2010/01/29中午十二点",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2010-01-29T12",
+          "FutureResolution": {
+            "dateTime": "2010-01-29 12:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2010-01-29 12:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2010-01-29 12:00:00"
-        }
+        "Start": 0,
+        "Length": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "2010 01 29五点",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2010 01 29五点",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2010-01-29T05",
-        "FutureResolution": {
-          "dateTime": "2010-01-29 05:00:00"
+  {
+    "Input": "2010 01 29五点",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "2010 01 29五点",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2010-01-29T05",
+          "FutureResolution": {
+            "dateTime": "2010-01-29 05:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2010-01-29 05:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2010-01-29 05:00:00"
-        }
+        "Start": 0,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "1987年1月11日八点",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1987年1月11日八点",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "1987-01-11T08",
-        "FutureResolution": {
-          "dateTime": "1987-01-11 08:00:00"
+  {
+    "Input": "1987年1月11日八点",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "1987年1月11日八点",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "1987-01-11T08",
+          "FutureResolution": {
+            "dateTime": "1987-01-11 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "1987-01-11 08:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "1987-01-11 08:00:00"
-        }
+        "Start": 0,
+        "Length": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "农历2015年十月初一早上九点二十",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "农历2015年十月初一早上九点二十",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2015-10-01T09:20",
-        "FutureResolution": {
-          "dateTime": "2015-10-01 09:20:00"
+  {
+    "Input": "农历2015年十月初一早上九点二十",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "农历2015年十月初一早上九点二十",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2015-10-01T09:20",
+          "FutureResolution": {
+            "dateTime": "2015-10-01 09:20:00"
+          },
+          "PastResolution": {
+            "dateTime": "2015-10-01 09:20:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2015-10-01 09:20:00"
-        }
+        "Start": 0,
+        "Length": 17
       }
-    }
-  ]
-}
-,
-{
-  "Input": "1月19号下午5:00",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1月19号下午5:00",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-01-19T17:00",
-        "FutureResolution": {
-          "dateTime": "2017-01-19 17:00:00"
+  {
+    "Input": "1月19号下午5:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "1月19号下午5:00",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-01-19T17:00",
+          "FutureResolution": {
+            "dateTime": "2017-01-19 17:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-01-19 17:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-01-19 17:00:00"
-        }
+        "Start": 0,
+        "Length": 11
       }
-    }
-  ]
-}
-,
-{
-  "Input": "明天下午5:00",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "明天下午5:00",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-08T17:00",
-        "FutureResolution": {
-          "dateTime": "2016-11-08 17:00:00"
+  {
+    "Input": "明天下午5:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "明天下午5:00",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T17:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 17:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 17:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-08 17:00:00"
-        }
+        "Start": 0,
+        "Length": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "今晚6点",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "今晚6点",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T18",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 18:00:00"
+  {
+    "Input": "今晚6点",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "今晚6点",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T18",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 18:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 18:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 18:00:00"
-        }
+        "Start": 0,
+        "Length": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "今晨5点",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "今晨5点",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T05",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 05:00:00"
+  {
+    "Input": "今晨5点",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "今晨5点",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T05",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 05:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 05:00:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 05:00:00"
-        }
+        "Start": 0,
+        "Length": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "今早8点十五分",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T14:07:00"
+    ]
   },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "今早8点十五分",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T08:15",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 08:15:00"
+  {
+    "Input": "今早8点十五分",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "Results": [
+      {
+        "Text": "今早8点十五分",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T08:15",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 08:15:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 08:15:00"
+          }
         },
-        "PastResolution": {
-          "dateTime": "2016-11-07 08:15:00"
-        }
+        "Start": 0,
+        "Length": 7
       }
-    }
-  ]
-}
+    ]
+  }
 ]

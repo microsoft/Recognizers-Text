@@ -1,120 +1,106 @@
-[{
-  "TestType": "BasicTest",
-  "Input": "Voltarei pro natal",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 5,
-      "Text": "natal",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estarei de volta pro natal do próximo ano",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 21,
-      "Length": 20,
-      "Text": "natal do próximo ano",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Voltarei no dia de ação de graças",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 21,
-      "Text": "dia de ação de graças",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Voltarei no dia dos pais",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 12,
-      "Text": "dia dos pais",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Voltarei no dia de são francisco deste ano",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 30,
-      "Text": "dia de são francisco deste ano",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Voltarei no dia das mães de 2016",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 20,
-      "Text": "dia das mães de 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Voltarei no dia das mães 2016",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 17,
-      "Text": "dia das mães 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Voltarei no dia do trabalho",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 15,
-      "Text": "dia do trabalho",
-      "Type": "date"
-    }
-  ]
-}
+[
+  {
+    "TestType": "BasicTest",
+    "Input": "Voltarei pro natal",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Start": 13,
+        "Length": 5,
+        "Text": "natal",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Estarei de volta pro natal do próximo ano",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Start": 21,
+        "Length": 20,
+        "Text": "natal do próximo ano",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Voltarei no dia de ação de graças",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Start": 12,
+        "Length": 21,
+        "Text": "dia de ação de graças",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Voltarei no dia dos pais",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Start": 12,
+        "Length": 12,
+        "Text": "dia dos pais",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Voltarei no dia de são francisco deste ano",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Start": 12,
+        "Length": 30,
+        "Text": "dia de são francisco deste ano",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Voltarei no dia das mães de 2016",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Start": 12,
+        "Length": 20,
+        "Text": "dia das mães de 2016",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Voltarei no dia das mães 2016",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Start": 12,
+        "Length": 17,
+        "Text": "dia das mães 2016",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "TestType": "BasicTest",
+    "Input": "Voltarei no dia do trabalho",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Start": 12,
+        "Length": 15,
+        "Text": "dia do trabalho",
+        "Type": "date"
+      }
+    ]
+  }
 ]

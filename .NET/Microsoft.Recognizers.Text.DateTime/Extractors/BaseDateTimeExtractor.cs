@@ -81,11 +81,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 for (var idx = 0; idx < timeNumMatches.Count; idx++)
                 {
                     var match = timeNumMatches[idx];
-                    var node = new ExtractResult();
-                    node.Start = match.Index;
-                    node.Length = match.Length;
-                    node.Text = match.Value;
-                    node.Type = Number.Constants.SYS_NUM_INTEGER;
+                    var node = new ExtractResult
+                    {
+                        Start = match.Index,
+                        Length = match.Length,
+                        Text = match.Value,
+                        Type = Number.Constants.SYS_NUM_INTEGER
+                    };
                     numErs.Add(node);
                 }
                 ers.AddRange(numErs);
@@ -299,7 +301,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationEr = config.DurationExtractor.Extract(text, reference);
             foreach (var er in durationEr)
             {
-                // if it is a multiple duration and its type is equal to Date than skip it.
+                // if it is a multiple duration and its type is equal to Date then skip it.
                 if (er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date)
                 {
                     continue;

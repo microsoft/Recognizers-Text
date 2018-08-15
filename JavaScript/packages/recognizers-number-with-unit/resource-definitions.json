@@ -10,6 +10,14 @@
             "footer": [ "}" ]
         },
         {
+            "input": [ "Base-Currency" ],
+            "output": "baseCurrency",
+            "header": [
+                "export namespace BaseCurrency {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
             "input": [ "English", "English-NumbersWithUnit" ],
             "output": "englishNumericWithUnit",
             "header": [
@@ -42,6 +50,15 @@
             "header": [
                 "import { BaseNumbers } from \"./baseNumbers\";",
                 "export namespace ChineseNumericWithUnit {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Japanese", "Japanese-NumbersWithUnit" ],
+            "output": "japaneseNumericWithUnit",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace JapaneseNumericWithUnit {"
             ],
             "footer": [ "}" ]
         },

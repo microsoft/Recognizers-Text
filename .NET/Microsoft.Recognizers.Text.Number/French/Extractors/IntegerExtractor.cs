@@ -8,41 +8,41 @@ namespace Microsoft.Recognizers.Text.Number.French
 {
     public class IntegerExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";
 
         public IntegerExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
-            this.Regexes = new Dictionary<Regex, string>
+            this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
+                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    , RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexOptions.Singleline),
-                    "IntegerNum"
+                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder),
-                    "IntegerNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
+                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
+                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerFr"
+                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.FRENCH)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerFr"
+                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.FRENCH)
+                },
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumBlank, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumNoBreakSpace, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 }
             }.ToImmutableDictionary();
         }

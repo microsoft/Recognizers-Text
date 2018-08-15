@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return Extract(text, DateObject.Now);
         }
 
-            public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var ret = DateExtractor.Extract(text, referenceTime);
 
@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AddTo(ret, SetExtractor.Extract(text, referenceTime));
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
-            CheckBlackList(ret, text);
+            CheckBlackList(ref ret, text);
 
             AddMod(ret, text);
 
@@ -61,29 +61,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // add some negative case
-        private void CheckBlackList(List<ExtractResult> dst, string text)
+        private static void CheckBlackList(ref List<ExtractResult> extractResults, string text)
         {
             var ret = new List<ExtractResult>();
             var regex = new Regex(@"^\d{1,2}号", RegexOptions.IgnoreCase);
-            foreach (var d in dst)
+
+            foreach (var extractResult in extractResults)
             {
-                var tmp = (int)d.Start + (int)d.Length;
-                if (tmp != text.Length)
+                var endIndex = (int)extractResult.Start + (int)extractResult.Length;
+                if (endIndex != text.Length)
                 {
-                    var tmpchar = text.Substring(tmp, 1);
-                    if (d.Text.EndsWith("周") && tmp < text.Length && tmpchar.Equals("岁"))
+                    var tmpChar = text.Substring(endIndex, 1);
+
+                    // for cases like "12周岁"
+                    if (extractResult.Text.EndsWith("周") && endIndex < text.Length && tmpChar.Equals("岁"))
                     {
                         continue;
                     }
                 }
 
-                if (regex.Match(d.Text).Success)
+                // for cases like "12号"
+                if (regex.Match(extractResult.Text).Success)
                 {
                     continue;
                 }
-                ret.Add(d);
+
+                ret.Add(extractResult);
             }
-            dst = ret;
+
+            extractResults = ret;
         }
 
         private void AddMod(List<ExtractResult> ers, string text)
@@ -162,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return false;
         }
 
-        private void MoveOverlap(List<ExtractResult> dst, ExtractResult result)
+        private static List<ExtractResult> MoveOverlap(List<ExtractResult> dst, ExtractResult result)
         {
             var duplicate = new List<int>();
             for (var i = 0; i < dst.Count; ++i)
@@ -174,10 +180,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
             }
 
-            foreach (var dup in duplicate)
-            {
-                dst.RemoveAt(dup);
-            }
+            var tempDst = dst.Where((_, i) => !duplicate.Contains(i)).ToList();
+
+            return tempDst;
         }
 
         private void AddTo(List<ExtractResult> dst, List<ExtractResult> src)
@@ -212,7 +217,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 else if (rmIndex >= 0)
                 {
                     dst.RemoveRange(rmIndex, rmLength);
-                    MoveOverlap(dst, result);
+                    var tmpDst = MoveOverlap(dst, result);
+                    dst.Clear();
+                    dst.AddRange(tmpDst);
                     dst.Insert(rmIndex, result);
                 }
             }

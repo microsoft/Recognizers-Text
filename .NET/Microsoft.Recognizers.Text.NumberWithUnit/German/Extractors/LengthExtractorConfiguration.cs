@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 
         public LengthExtractorConfiguration(CultureInfo ci) : base(ci) { }
 
-        public override ImmutableDictionary<string, string> SuffixList => LenghtSuffixList;
+        public override ImmutableDictionary<string, string> SuffixList => LengthSuffixList;
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
 
-        public static readonly ImmutableDictionary<string, string> LenghtSuffixList = NumbersWithUnitDefinitions.LenghtSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> LengthSuffixList = NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
     }

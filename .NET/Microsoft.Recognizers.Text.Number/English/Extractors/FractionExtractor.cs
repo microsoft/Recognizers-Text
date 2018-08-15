@@ -9,56 +9,69 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override NumberOptions Options { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
-        private static readonly ConcurrentDictionary<string, FractionExtractor> Instances = new ConcurrentDictionary<string, FractionExtractor>();
+        private static readonly ConcurrentDictionary<(NumberOptions, string), FractionExtractor> Instances =
+            new ConcurrentDictionary<(NumberOptions, string), FractionExtractor>();
 
-        public static FractionExtractor GetInstance(string placeholder = "")
+        public static FractionExtractor GetInstance(NumberOptions options = NumberOptions.None, string placeholder = "")
         {
-
-            if (!Instances.ContainsKey(placeholder))
+            var cacheKey = (options, placeholder);
+            if (!Instances.ContainsKey(cacheKey))
             {
-                var instance = new FractionExtractor();
-                Instances.TryAdd(placeholder, instance);
+                var instance = new FractionExtractor(options);
+                Instances.TryAdd(cacheKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[cacheKey];
         }
 
-        private FractionExtractor()
+        private FractionExtractor(NumberOptions options)
         {
-            var regexes = new Dictionary<Regex, string>
+            Options = options;
+
+            var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
                     new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracNum"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(NumbersDefinitions.FractionNotationRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracNum"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracEng"
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 },
                 {
                     new Regex(
-                        NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracEng"
-                },
-                {
-                    new Regex(
-                        NumbersDefinitions.FractionPrepositionRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracEng"
+                        NumbersDefinitions.FractionNounWithArticleRegex,
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
                 }
             };
+
+            if ((Options & NumberOptions.PercentageMode) != 0)
+            {
+                regexes.Add(
+                    new Regex(
+                        NumbersDefinitions.FractionPrepositionWithinPercentModeRegex,
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                );
+            }
+            else
+            {
+                regexes.Add(
+                    new Regex(
+                        NumbersDefinitions.FractionPrepositionRegex,
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline), RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ENGLISH)
+                );
+            }
 
             Regexes = regexes.ToImmutableDictionary();
         }

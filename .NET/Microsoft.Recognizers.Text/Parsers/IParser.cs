@@ -18,6 +18,7 @@
             Data = er.Data;
             Text = er.Text;
             Type = er.Type;
+            Metadata = er.Metadata;
         }
 
         //Value is for resolution. 

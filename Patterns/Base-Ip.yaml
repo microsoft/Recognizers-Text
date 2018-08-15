@@ -31,7 +31,7 @@ Ipv6EllipsisRegex8: !nestedRegex
   def: (({BasicIpv6Element}:){7}(:))
   references: [BasicIpv6Element]
 Ipv6EllipsisRegexOther: !nestedRegex
-  def: \B::\B|\B:(:{BasicIpv6Element}){0,7}\b|\b({BasicIpv6Element}:){0,7}:\B
+  def: \B::\B|\B:(:{BasicIpv6Element}){1,7}\b|\b({BasicIpv6Element}:){1,7}:\B
   references: [BasicIpv6Element]
 MergedIpv6Regex: !nestedRegex
   def: ({BasicIpv6Regex}|{Ipv6EllipsisRegex1}|{Ipv6EllipsisRegex2}|{Ipv6EllipsisRegex3}|{Ipv6EllipsisRegex4}|{Ipv6EllipsisRegex5}|{Ipv6EllipsisRegex6}|{Ipv6EllipsisRegex7}|{Ipv6EllipsisRegex8})

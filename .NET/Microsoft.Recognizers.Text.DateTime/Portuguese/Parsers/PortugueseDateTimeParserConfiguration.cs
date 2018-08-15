@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public PortugueseDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public PortugueseDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
@@ -88,13 +88,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             int result = hour;
 
             //TODO: Replace with a regex
-            if ((trimedText.EndsWith("manha") || trimedText.EndsWith("madrugada")) && hour >= 12)
+            if ((trimedText.EndsWith("manha") || trimedText.EndsWith("madrugada")) && hour >= Constants.HalfDayHourCount)
             {
-                result -= 12;
+                result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimedText.EndsWith("manha") || trimedText.EndsWith("madrugada")) && hour < 12)
+            else if (!(trimedText.EndsWith("manha") || trimedText.EndsWith("madrugada")) && hour < Constants.HalfDayHourCount)
             {
-                result += 12;
+                result += Constants.HalfDayHourCount;
             }
             return result;
         }
@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText)
+        public bool ContainsAmbiguousToken(string text, string matchedText)
         {
             return false;
         }

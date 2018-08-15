@@ -33,8 +33,15 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList3),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
+
+            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7):
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
+
+            ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY? 
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6):
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
+
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
         ];
         this.implicitDateList = [
@@ -101,6 +108,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     readonly dateRegex: RegExp[]
     readonly onRegex: RegExp
     readonly specialDayRegex: RegExp
+    readonly specialDayWithNumRegex: RegExp
     readonly nextRegex: RegExp
     readonly unitRegex: RegExp
     readonly monthRegex: RegExp
@@ -111,6 +119,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     readonly forTheRegex: RegExp;
     readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
+    readonly relativeWeekDayRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string
 
@@ -119,17 +128,17 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         let swift = 0;
         if (trimmedSource === '今天' || trimmedSource === '今日' || trimmedSource === '最近') {
             swift = 0;
-        } else if (trimmedSource === '明天' || trimmedSource ===  '明日') {
+        } else if (trimmedSource.startsWith('明')) {
             swift = 1;
-        } else if (trimmedSource === '昨天') {
+        } else if (trimmedSource.startsWith('昨')) {
             swift = -1;
-        } else if (trimmedSource.endsWith('大后天')) {
+        } else if (trimmedSource === '大后天') {
             swift = 3;
-        } else if (trimmedSource.endsWith('大前天')) {
+        } else if (trimmedSource === '大前天') {
             swift = -3;
-        } else if (trimmedSource.endsWith('后天')) {
+        } else if (trimmedSource === '后天') {
             swift = 2;
-        } else if (trimmedSource.endsWith('前天')) {
+        } else if (trimmedSource === '前天') {
             swift = -2;
         }
         return swift;
@@ -155,20 +164,12 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     }
 
     constructor() {
-        this.dateRegex = [
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList3),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
-        ];
+        this.dateRegex = new ChineseDateExtractorConfiguration().dateRegexList;
         this.monthOfYear = ChineseDateTime.ParserConfigurationMonthOfYear;
         this.dayOfMonth = ChineseDateTime.ParserConfigurationDayOfMonth;
         this.dayOfWeek = ChineseDateTime.ParserConfigurationDayOfWeek;
         this.specialDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SpecialDayRegex);
+        this.specialDayWithNumRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SpecialDayWithNumRegex);
         this.thisRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateThisRegex);
         this.nextRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateNextRegex);
         this.lastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateLastRegex);
@@ -311,7 +312,7 @@ export class ChineseDateParser extends BaseDateParser {
             return result;
         }
 
-        // handle "today", "the day before yesterday"
+        // handle cases like "昨日", "明日", "大后天"
         match = RegExpUtility.getMatches(this.config.specialDayRegex, trimmedSource).pop();
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let swift = this.config.getSwiftDay(match.value);
@@ -404,8 +405,8 @@ export class ChineseDateParser extends BaseDateParser {
             day = this.getDayOfMonth(dayStr);
             if (!StringUtility.isNullOrEmpty(yearStr)) {
                 year = Number.parseInt(yearStr, 10);
-                if (year < 100 && year >= 90) year += 1900;
-                else if (year < 100 && year < 20) year += 2000;
+                if (year < 100 && year >= Constants.MinTwoDigitYearPastNum) year += 1900;
+                else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum) year += 2000;
             }
         }
         let noYear = false;

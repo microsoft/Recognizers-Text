@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Collections.Immutable;
+using System.Linq;
 
 using Microsoft.Recognizers.Text.DateTime.German.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -51,8 +52,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex SpecialDayRegex =
             new Regex(DateTimeDefinitions.SpecialDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecialDayWithNumRegex =
+            new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex WeekDayOfMonthRegex =
             new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex RelativeWeekDayRegex =
+            new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecialDate = 
             new Regex(DateTimeDefinitions.SpecialDate, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -73,43 +80,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 DateTimeDefinitions.PrefixArticleRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex[] DateRegexList =
-        {
-            // (Sonntag,)? 5. April 
-            new Regex(DateTimeDefinitions.DateExtractor1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // (Sonntag,)? 5. April, 2016
-            new Regex(DateTimeDefinitions.DateExtractor2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // (Sonntag,)? der 6. April, 2016
-            new Regex(DateTimeDefinitions.DateExtractor3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 23.3.2017
-            new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 23-3-2015
-            new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // am 1.3
-            new Regex(DateTimeDefinitions.DateExtractor6, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 7/23
-            new Regex(DateTimeDefinitions.DateExtractor7, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // am 24-12
-            new Regex(DateTimeDefinitions.DateExtractor8, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 23/7
-            new Regex(DateTimeDefinitions.DateExtractor9, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            //Nächstes Jahr (im Sommer)?
-            new Regex(DateTimeDefinitions.DateExtractor10, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 2015-12-23
-            new Regex(DateTimeDefinitions.DateExtractorA, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-        };
-
-
         public static readonly Regex[] ImplicitDateList =
         {
             OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
@@ -128,17 +98,81 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex YearSuffix =
             new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex LessThanRegex =
+            new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MoreThanRegex =
+            new Regex(DateTimeDefinitions.MoreThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex InConnectorRegex =
+            new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex RangeUnitRegex =
+            new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek = 
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
-        public GermanDateExtractorConfiguration() : base(DateTimeOptions.None)
+        public static readonly ImmutableDictionary<string, int> MonthOfYear = 
+            DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
+
+        public GermanDateExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
+
+            const RegexOptions dateRegexOption = RegexOptions.IgnoreCase | RegexOptions.Singleline;
+
+            // 3-23-2017
+            var dateRegex4 = new Regex(DateTimeDefinitions.DateExtractor4, dateRegexOption);
+
+            // 23-3-2015
+            var dateRegex5 = new Regex(DateTimeDefinitions.DateExtractor5, dateRegexOption);
+
+            // am 1.3
+            var dateRegex6 = new Regex(DateTimeDefinitions.DateExtractor6, dateRegexOption);
+
+            // am 24-12
+            var dateRegex8 = new Regex(DateTimeDefinitions.DateExtractor8, dateRegexOption);
+
+            // 7/23
+            var dateRegex7 = new Regex(DateTimeDefinitions.DateExtractor7, dateRegexOption);
+
+            // 23/7
+            var dateRegex9 = new Regex(DateTimeDefinitions.DateExtractor9, dateRegexOption);
+
+            //Nächstes Jahr (im Sommer)?
+            var dateRegex10 = new Regex(DateTimeDefinitions.DateExtractor10, dateRegexOption);
+
+            // 2015-12-23
+            var dateRegexA = new Regex(DateTimeDefinitions.DateExtractorA, dateRegexOption);
+
+            DateRegexList = new List<Regex>
+            {
+                // (Sonntag,)? 5. April 
+                new Regex(DateTimeDefinitions.DateExtractor1, dateRegexOption),
+
+                // (Sonntag,)? 5. April, 2016
+                new Regex(DateTimeDefinitions.DateExtractor2, dateRegexOption),
+
+                // (Sonntag,)? der 6. April, 2016
+                new Regex(DateTimeDefinitions.DateExtractor3, dateRegexOption),
+
+            };
+
+            var enableDmy = EnableDmy ||
+                            DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
+
+            DateRegexList = DateRegexList.Concat(enableDmy
+                ? new[] { dateRegex5, dateRegex8, dateRegex9, dateRegex4, dateRegex6, dateRegex7, dateRegex10, dateRegexA}
+                : new[] { dateRegex4, dateRegex6, dateRegex7, dateRegex5, dateRegex8, dateRegex9, dateRegex10, dateRegexA });
+
         }
+
+        public IEnumerable<Regex> DateRegexList { get; }
 
         public IExtractor IntegerExtractor { get; }
 
@@ -152,11 +186,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
 
-        IEnumerable<Regex> IDateExtractorConfiguration.DateRegexList => DateRegexList;
-
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
 
         IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
+
+        IImmutableDictionary<string, int> IDateExtractorConfiguration.MonthOfYear => MonthOfYear;
 
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 
@@ -175,5 +209,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 
         Regex IDateExtractorConfiguration.YearSuffix => YearSuffix;
+
+        Regex IDateExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDateExtractorConfiguration.MoreThanRegex => MoreThanRegex;
+
+        Regex IDateExtractorConfiguration.InConnectorRegex => InConnectorRegex;
+
+        Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
     }
 }

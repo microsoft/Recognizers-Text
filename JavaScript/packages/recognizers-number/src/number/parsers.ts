@@ -4,10 +4,8 @@ import { Constants } from "./constants";
 import trimEnd = require("lodash.trimend");
 import sortBy = require("lodash.sortby");
 import { RegExpUtility } from "@microsoft/recognizers-text";
-import { BigNumber } from 'bignumber.js';
+import { BigNumber } from 'bignumber.js/bignumber';
 
-// Disable BigNumber errors when passing number with more than 15 significant digits
-BigNumber.config({ ERRORS: false });
 // The exponent value(s) at which toString returns exponential notation.
 BigNumber.config({ EXPONENTIAL_AT: [-5, 15] });
 
@@ -96,7 +94,7 @@ export class BaseNumberParser implements IParser {
             ret = this.powerNumberParse(extResult);
         }
 
-        if (ret && ret.value) {
+        if (ret && ret.value !== null) {
             if (isNegative)
             {
                 // Recover to the original extracted Text
@@ -591,14 +589,14 @@ export class BaseNumberParser implements IParser {
         let scale = new BigNumber(10);
         let dot = false;
         let isNegative = false;
-        let isFrac = false;
+        let isFrac = digitStr.includes('/');
 
         let calStack = new Array<BigNumber>();
 
         for (let i = 0; i < digitStr.length; i++) {
             let ch = digitStr[i];
-            if (ch === '/') {
-                isFrac = true;
+            if (!isFrac && (ch === this.config.nonDecimalSeparatorChar || ch === ' ')) {
+                continue;
             }
 
             if (ch === ' ' || ch === '/') {

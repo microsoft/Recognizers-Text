@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishMergedExtractorConfiguration : IMergedExtractorConfiguration
+    public class EnglishMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex = 
             new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -32,13 +33,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnspecificDatePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] FilterWordRegexList =
         {
             // one on one
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+            // (the)? (day|week|month|year)
+            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
-        public DateTimeOptions Options { get; }
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -58,24 +64,44 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
+
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 
-        public EnglishMergedExtractorConfiguration(DateTimeOptions options)
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
+        public EnglishMergedExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            Options = options;
-            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new EnglishDateTimeAltExtractorConfiguration(this));
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+
+            if ((Options & DateTimeOptions.EnablePreview) != 0)
+            {
+                SuperfluousWordMatcher.Init(DateTimeDefinitions.SuperfluousWordList);
+            }
+
+            var ambiguityFiltersDict = new Dictionary<Regex, Regex>();
+
+            foreach (var item in DateTimeDefinitions.AmbiguityFiltersDict)
+            {
+                ambiguityFiltersDict.Add(new Regex(item.Key, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(item.Value, RegexOptions.IgnoreCase | RegexOptions.Singleline));
+            }
+
+            AmbiguityFiltersDict = ambiguityFiltersDict;
+
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
@@ -86,6 +112,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

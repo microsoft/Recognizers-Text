@@ -1,0 +1,135 @@
+[{
+  "Input": "Ja klar!",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "Ja klar",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ich denke nicht. Nein.",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "nein",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.5
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Das sollte funktionieren, also mache ich es.",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "ja",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.4666666666666667
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Nein. Ich sagte vierter Juli",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "nein",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.4857142857142857
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ja... ich sagte keine Zwiebeln",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "ja",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.52
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ich sagte NEIN NICHT ja!",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "NO",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.52
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ja. Ich sagte nein",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "Ja",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌 Alles klar",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌👌👌",
+  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.6
+      }
+    }
+  ]
+}
+]

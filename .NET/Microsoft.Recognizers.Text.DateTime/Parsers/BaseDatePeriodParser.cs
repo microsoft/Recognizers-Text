@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -8,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseDatePeriodParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; //"DatePeriod";
-        
+
         private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         private readonly IDatePeriodParserConfiguration config;
@@ -27,87 +28,56 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
-            var referenceDate = refDate;
-
             object value = null;
-            
+
             if (er.Type.Equals(ParserName))
             {
-                var innerResult = ParseMonthWithYear(er.Text, referenceDate);
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseSimpleCases(er.Text, referenceDate);
-                }
+                var innerResult = ParseBaseDatePeriod(er.Text, refDate);
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseOneWordPeriod(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = MergeTwoTimePoints(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseYear(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseWeekOfMonth(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseWeekOfYear(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseHalfYear(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseQuarter(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseSeason(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseWhichWeek(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseWeekOfDate(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseMonthOfDate(er.Text, referenceDate);
-                }
-
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseDecade(er.Text, referenceDate);
-                }
-
-                // Parse duration should be at the end since it will extract "the last week" from "the last week of July"
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseDuration(er.Text, referenceDate);
+                    innerResult = ParseComplexDatePeriod(er.Text, refDate);
                 }
 
                 if (innerResult.Success)
-                {
-                    if (innerResult.FutureValue != null && innerResult.PastValue != null)
+                {                                     
+                    if (innerResult.Mod == Constants.BEFORE_MOD)
+                    {
+                        innerResult.FutureResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.END_DATE,
+                                FormatUtil.FormatDate((DateObject)innerResult.FutureValue)
+                            }
+                        };
+
+                        innerResult.PastResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.END_DATE,
+                                FormatUtil.FormatDate((DateObject)innerResult.PastValue)
+                            }
+                        };
+                    }
+                    else if (innerResult.Mod == Constants.AFTER_MOD)
+                    {
+                        innerResult.FutureResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.START_DATE,
+                                FormatUtil.FormatDate((DateObject)innerResult.FutureValue)
+                            }
+                        };
+
+                        innerResult.PastResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.START_DATE,
+                                FormatUtil.FormatDate((DateObject)innerResult.PastValue)
+                            }
+                        };
+                    }
+                    else if (innerResult.FutureValue != null && innerResult.PastValue != null)
                     {
                         innerResult.FutureResolution = new Dictionary<string, string>
                         {
@@ -149,10 +119,374 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Length = er.Length,
                 Type = er.Type,
                 Data = er.Data,
+                Metadata = er.Metadata,
                 Value = value,
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
+
+            return ret;
+        }
+
+        // Process case like "from|between START to|and END" where START/END can be daterange or datepoint
+        private DateTimeResolutionResult ParseComplexDatePeriod(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var match = this.config.ComplexDatePeriodRegex.Match(text);
+
+            if (match.Success)
+            {
+                var futureBegin = DateObject.MinValue;
+                var futureEnd = DateObject.MinValue;
+                var pastBegin = DateObject.MinValue;
+                var pastEnd = DateObject.MinValue;
+                var isSpecificDate = false;
+                var isStartByWeek = false;
+                var isEndByWeek = false;
+
+                var startResolution = ParseSingleTimePoint(match.Groups["start"].Value.Trim(), referenceDate);
+
+                if (startResolution.Success)
+                {
+                    futureBegin = (DateObject)startResolution.FutureValue;
+                    pastBegin = (DateObject)startResolution.PastValue;
+                    isSpecificDate = true;
+                }
+                else
+                {
+                    startResolution = ParseBaseDatePeriod(match.Groups["start"].Value.Trim(), referenceDate);
+
+                    if (startResolution.Success)
+                    {
+                        futureBegin = ((Tuple<DateObject, DateObject>)startResolution.FutureValue).Item1;
+                        pastBegin = ((Tuple<DateObject, DateObject>)startResolution.PastValue).Item1;
+
+                        if (startResolution.Timex.Contains("-W"))
+                        {
+                            isStartByWeek = true;
+                        }
+                    }
+                }
+
+                if (startResolution.Success)
+                {
+                    var endResolution = ParseSingleTimePoint(match.Groups["end"].Value.Trim(), referenceDate);
+
+                    if (endResolution.Success)
+                    {
+                        futureEnd = (DateObject)endResolution.FutureValue;
+                        pastEnd = (DateObject)endResolution.PastValue;
+                        isSpecificDate = true;
+                    }
+                    else
+                    {
+                        endResolution = ParseBaseDatePeriod(match.Groups["end"].Value.Trim(), referenceDate);
+
+                        if (endResolution.Success)
+                        {
+                            futureEnd = ((Tuple<DateObject, DateObject>)endResolution.FutureValue).Item1;
+                            pastEnd = ((Tuple<DateObject, DateObject>)endResolution.PastValue).Item1;
+                            if (endResolution.Timex.Contains("-W"))
+                            {
+                                isEndByWeek = true;
+                            }
+                        }
+                    }
+
+                    if (endResolution.Success)
+                    {
+                        if (futureBegin > futureEnd)
+                        {
+                            futureBegin = pastBegin;
+                        }
+
+                        if (pastEnd < pastBegin)
+                        {
+                            pastEnd = futureEnd;
+                        }
+
+                        // If both begin/end are date ranges in "Month", the Timex should be ByMonth
+                        // The year period case should already be handled in Basic Cases
+                        var datePeriodTimexType = DatePeriodTimexType.ByMonth;
+
+                        if (isSpecificDate)
+                        {
+                            // If at least one of the begin/end is specific date, the Timex should be    ByDay
+                            datePeriodTimexType = DatePeriodTimexType.ByDay;
+                        }
+                        else if (isStartByWeek && isEndByWeek)
+                        {
+                            // If both begin/end are date ranges in "Week", the Timex should be ByWeek
+                            datePeriodTimexType = DatePeriodTimexType.ByWeek;
+                        }
+
+                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType);
+
+                        ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
+                        ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
+                        ret.Success = true;
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseBaseDatePeriod(string text, DateObject referenceDate)
+        {
+            var innerResult = ParseMonthWithYear(text, referenceDate);
+            if (!innerResult.Success)
+            {
+                innerResult = ParseSimpleCases(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseOneWordPeriod(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = MergeTwoTimePoints(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseYear(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseWeekOfMonth(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseWeekOfYear(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseHalfYear(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseQuarter(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseSeason(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseWhichWeek(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseWeekOfDate(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseMonthOfDate(text, referenceDate);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseDecade(text, referenceDate);
+            }
+
+            // Cases like "within/less than/more than x weeks from/before/after today"
+            if (!innerResult.Success)
+            {
+                innerResult = ParseDatePointWithAgoAndLater(text, referenceDate);
+            }
+
+            // Parse duration should be at the end since it will extract "the last week" from "the last week of July"
+            if (!innerResult.Success)
+            {
+                innerResult = ParseDuration(text, referenceDate);
+            }
+
+            // Cases like "21st century"
+            if (!innerResult.Success)
+            {
+                innerResult = ParseOrdinalNumberWithCenturySuffix(text, referenceDate);
+            }
+
+            return innerResult;
+        }
+
+        // Cases like "21st century"
+        private DateTimeResolutionResult ParseOrdinalNumberWithCenturySuffix(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var er = this.config.OrdinalExtractor.Extract(text).FirstOrDefault();
+
+            if (er != null && er.Start + er.Length < text.Length)
+            {
+                var afterString = text.Substring((er.Start + er.Length).Value).Trim();
+
+                // It falls into the cases like "21st century"
+                if (this.config.CenturySuffixRegex.Match(afterString).Success)
+                {
+                    var number = this.config.NumberParser.Parse(er);
+
+                    if (number.Value != null)
+                    {
+                        // Note that 1st century means from year 0 - 100
+                        var startYear = (Convert.ToInt32((double)(number.Value)) - 1) * Constants.CenturyYearsCount;
+                        var startDate = new DateObject(startYear, 1, 1);
+                        var endDate = new DateObject(startYear + Constants.CenturyYearsCount, 1, 1);
+                        var duration = endDate - startDate;
+
+                        var startLuisStr = FormatUtil.LuisDate(startDate);
+                        var endLuisStr = FormatUtil.LuisDate(endDate);
+                        var durationTimex = $"P{Constants.CenturyYearsCount}Y";
+
+                        ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
+                        ret.FutureValue = new Tuple<DateObject, DateObject>(startDate,
+                            endDate);
+                        ret.PastValue = new Tuple<DateObject, DateObject>(startDate,
+                            endDate);
+                        ret.Success = true;
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        // Only handle cases like "within/less than/more than x weeks from/before/after today"
+        private DateTimeResolutionResult ParseDatePointWithAgoAndLater(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var er = this.config.DateExtractor.Extract(text, referenceDate).FirstOrDefault();
+
+            if (er != null)
+            {
+                string beforeString = text.Substring(0, (int)er.Start);
+                var isAgo = this.config.AgoRegex.Match(er.Text).Success;
+                var isLater = this.config.LaterRegex.Match(er.Text).Success;
+
+                if (!string.IsNullOrEmpty(beforeString) && (isAgo || isLater))
+                {
+                    var isLessThanOrWithIn = false;
+                    var isMoreThan = false;
+
+                    // cases like "within 3 days from yesterday/tomorrow" does not make any sense
+                    if (er.Text.Contains("today") || er.Text.Contains("now"))
+                    {
+                        var match = this.config.WithinNextPrefixRegex.Match(beforeString);
+                        if (match.Success)
+                        {
+                            var isNext = !string.IsNullOrEmpty(match.Groups["next"].Value);
+
+                            // cases like "within the next 5 days before today" is not acceptable
+                            if (!(isNext && isAgo))
+                            {
+                                isLessThanOrWithIn = true;
+                            }
+                        }
+                    }
+
+                    isLessThanOrWithIn = isLessThanOrWithIn || this.config.LessThanRegex.Match(beforeString).Success;
+                    isMoreThan = this.config.MoreThanRegex.Match(beforeString).Success;
+
+                    var pr = this.config.DateParser.Parse(er, referenceDate);
+                    var durationExtractionResult = this.config.DurationExtractor.Extract(er.Text).FirstOrDefault();
+
+                    if (durationExtractionResult != null)
+                    {
+                        var duration = this.config.DurationParser.Parse(durationExtractionResult);
+                        var durationInSeconds = (double)((DateTimeResolutionResult)(duration.Value)).PastValue;
+
+                        if (isLessThanOrWithIn)
+                        {
+                            var startDate = DateObject.MinValue;
+                            var endDate = DateObject.MinValue;
+
+                            if (isAgo)
+                            {
+                                startDate = (DateObject)((DateTimeResolutionResult)(pr.Value)).PastValue;
+                                endDate = startDate.AddSeconds(durationInSeconds);
+                            }
+                            else if (isLater)
+                            {
+                                endDate = (DateObject)((DateTimeResolutionResult)(pr.Value)).FutureValue;
+                                startDate = endDate.AddSeconds(-durationInSeconds);
+                            }
+
+                            if (startDate != DateObject.MinValue)
+                            {
+                                var startLuisStr = FormatUtil.LuisDate(startDate);
+                                var endLuisStr = FormatUtil.LuisDate(endDate);
+                                var durationTimex = ((DateTimeResolutionResult)(duration.Value)).Timex;
+
+                                ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
+                                ret.FutureValue = new Tuple<DateObject, DateObject>(startDate,
+                                    endDate);
+                                ret.PastValue = new Tuple<DateObject, DateObject>(startDate,
+                                    endDate);
+                                ret.Success = true;
+                            }
+                        }
+                        else if (isMoreThan && (isAgo || isLater))
+                        {
+                            if (isAgo)
+                            {
+                                ret.Mod = Constants.BEFORE_MOD;
+                            }
+                            else if (isLater)
+                            {
+                                ret.Mod = Constants.AFTER_MOD;
+                            }
+
+                            ret.Timex = $"{pr.TimexStr}";
+                            ret.FutureValue = (DateObject)((DateTimeResolutionResult)(pr.Value)).FutureValue;
+                            ret.PastValue = (DateObject)((DateTimeResolutionResult)(pr.Value)).PastValue;
+                            ret.Success = true;
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseSingleTimePoint(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var er = this.config.DateExtractor.Extract(text, referenceDate).FirstOrDefault();
+
+            if (er != null)
+            {
+                var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
+                string weekPrefix = null;
+                if (match.Success)
+                {
+                    weekPrefix = match.Groups["week"].ToString();
+                }
+
+                if (!string.IsNullOrEmpty(weekPrefix))
+                {
+                    er.Text = weekPrefix + " " + er.Text;
+                }
+
+                var pr = this.config.DateParser.Parse(er, referenceDate);
+
+                if (pr != null)
+                {
+                    ret.Timex = $"({pr.TimexStr}";
+                    ret.FutureValue = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                    ret.PastValue = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
+                    ret.Success = true;
+                }
+            }
 
             return ret;
         }
@@ -247,7 +581,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return ret;
             }
-            
+
             if (noYear)
             {
                 beginLuisStr = FormatUtil.LuisDate(-1, month, beginDay);
@@ -292,6 +626,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             var earlyPrefix = false;
             var latePrefix = false;
             var midPrefix = false;
+            var isRef = false;
+
+            var earlierPrefix = false;
+            var laterPrefix = false;
 
             var trimedText = text.Trim().ToLower();
             var match = this.config.OneWordPeriodRegex.Match(trimedText);
@@ -301,25 +639,44 @@ namespace Microsoft.Recognizers.Text.DateTime
                 match = this.config.LaterEarlyPeriodRegex.Match(trimedText);
             }
 
+            // For cases "that week|month|year"
+            if (!(match.Success && match.Index == 0 && match.Length == trimedText.Length))
+            {
+                match = this.config.ReferenceDatePeriodRegex.Match(trimedText);
+                isRef = true;
+                ret.Mod = Constants.REF_UNDEF_MOD;
+            }
+
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 if (match.Groups["EarlyPrefix"].Success)
                 {
                     earlyPrefix = true;
-                    trimedText = match.Groups["suffix"].ToString();
+                    trimedText = match.Groups[Constants.SuffixGroupName].ToString();
                     ret.Mod = Constants.EARLY_MOD;
                 }
                 else if (match.Groups["LatePrefix"].Success)
                 {
                     latePrefix = true;
-                    trimedText = match.Groups["suffix"].ToString();
+                    trimedText = match.Groups[Constants.SuffixGroupName].ToString();
                     ret.Mod = Constants.LATE_MOD;
                 }
                 else if (match.Groups["MidPrefix"].Success)
                 {
                     midPrefix = true;
-                    trimedText = match.Groups["suffix"].ToString();
+                    trimedText = match.Groups[Constants.SuffixGroupName].ToString();
                     ret.Mod = Constants.MID_MOD;
+                }
+
+                if (match.Groups["RelEarly"].Success)
+                {
+                    earlierPrefix = true;
+                    ret.Mod = null;
+                }
+                else if (match.Groups["RelLate"].Success)
+                {
+                    laterPrefix = true;
+                    ret.Mod = null;
                 }
 
                 var monthStr = match.Groups["month"].Value;
@@ -378,7 +735,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
 
-                        ret.Timex = FormatUtil.ToIsoWeekTimex(monday);
+                        ret.Timex = isRef ? TimexUtility.GenerateWeekTimex() : TimexUtility.GenerateWeekTimex(monday);
                         var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         var endDate = InclusiveEndPeriod
                                         ? referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift)
@@ -402,6 +759,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                             beginDate = referenceDate.This(DayOfWeek.Thursday).AddDays(7 * swift);
                         }
 
+                        if (earlierPrefix && swift == 0)
+                        {
+                            if (endDate > referenceDate)
+                            {
+                                endDate = referenceDate;
+                            }
+                        }
+                        else if (laterPrefix && swift == 0)
+                        {
+                            if (beginDate < referenceDate)
+                            {
+                                beginDate = referenceDate;
+                            }
+                        }
+
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(beginDate, endDate);
@@ -415,9 +787,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
-                        ret.Timex = beginDate.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                        .ToString("D2") + "-WE";
+                        ret.Timex = isRef ? TimexUtility.GenerateWeekendTimex() : TimexUtility.GenerateWeekendTimex(beginDate);
 
                         endDate = InclusiveEndPeriod ? endDate : endDate.AddDays(1);
 
@@ -430,14 +800,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (this.config.IsMonthOnly(trimedText))
                     {
-                        month = referenceDate.AddMonths(swift).Month;
-                        year = referenceDate.AddMonths(swift).Year;
-                        ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+                        var date = referenceDate.AddMonths(swift);
+                        month = date.Month;
+                        year = date.Year;
+                        ret.Timex = isRef
+                            ? TimexUtility.GenerateMonthTimex() :
+                                TimexUtility.GenerateMonthTimex(date);
                         futureYear = pastYear = year;
                     }
                     else if (this.config.IsYearOnly(trimedText))
                     {
-                        year = referenceDate.AddYears(swift).Year;
+                        var date = referenceDate.AddYears(swift);
+                        year = date.Year;
 
                         var beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                         var endDate = InclusiveEndPeriod
@@ -461,7 +835,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                             beginDate = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                         }
 
-                        ret.Timex = year.ToString("D4");
+                        if (earlierPrefix && swift == 0)
+                        {
+                            if (endDate > referenceDate)
+                            {
+                                endDate = referenceDate;
+                            }
+                        }
+                        else if (laterPrefix && swift == 0)
+                        {
+                            if (beginDate < referenceDate)
+                            {
+                                beginDate = referenceDate;
+                            }
+                        }
+
+                        ret.Timex = isRef ? TimexUtility.GenerateYearTimex() : TimexUtility.GenerateYearTimex(date);
 
                         ret.FutureValue =
                             ret.PastValue =
@@ -512,6 +901,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastStart = DateObject.MinValue.SafeCreateFromValue(pastYear, month, 16);
             }
 
+            if (earlierPrefix && futureEnd == pastEnd)
+            {
+                if (futureEnd > referenceDate)
+                {
+                    futureEnd = pastEnd = referenceDate;
+                }
+            }
+            else if (laterPrefix && futureStart == pastStart)
+            {
+                if (futureStart < referenceDate)
+                {
+                    futureStart = pastStart = referenceDate;
+                }
+            }
+
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureStart, futureEnd);
 
             ret.PastValue = new Tuple<DateObject, DateObject>(pastStart, pastEnd);
@@ -538,7 +942,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var month = this.config.MonthOfYear[monthStr.ToLower()];
 
-                int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
                 if (year == Constants.InvalidYear)
                 {
                     var swift = this.config.GetSwiftYear(orderStr);
@@ -566,13 +970,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            int year = Constants.InvalidYear;
+            var year = Constants.InvalidYear;
 
             var match = this.config.YearPeriodRegex.Match(text);
-            if (match.Success)
+            var matchMonth = this.config.MonthWithYear.Match(text);
+
+            if (match.Success && !matchMonth.Success)
             {
-                int beginYear = Constants.InvalidYear;
-                int endYear = Constants.InvalidYear;
+                var beginYear = Constants.InvalidYear;
+                var endYear = Constants.InvalidYear;
 
                 var matches = this.config.YearRegex.Matches(text);
                 if (matches.Count == 2)
@@ -581,7 +987,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (matches[0].Success)
                     {
                         beginYear = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matches[0]);
-                        if (!(beginYear >= this.config.MinYearNum && beginYear <= this.config.MaxYearNum))
+                        if (!(beginYear >= Constants.MinYearNum && beginYear <= Constants.MaxYearNum))
                         {
                             beginYear = Constants.InvalidYear;
                         }
@@ -590,7 +996,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (matches[1].Success)
                     {
                         endYear = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matches[1]);
-                        if (!(endYear >= this.config.MinYearNum && endYear <= this.config.MaxYearNum))
+                        if (!(endYear >= Constants.MinYearNum && endYear <= Constants.MaxYearNum))
                         {
                             endYear = Constants.InvalidYear;
                         }
@@ -618,7 +1024,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success && match.Length == text.Trim().Length)
                 {
                     year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
-                    if (!(year >= this.config.MinYearNum && year <= this.config.MaxYearNum))
+                    if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum))
                     {
                         year = Constants.InvalidYear;
                     }
@@ -688,7 +1094,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            ret.SubDateTimeEntities= new List<object> { pr1, pr2 };
+            ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
 
             DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
                 futureEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
@@ -705,7 +1111,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 pastEnd = futureEnd;
             }
-            
+
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
@@ -719,8 +1125,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             DateObject beginDate;
             var endDate = beginDate = referenceDate;
-            string timex = string.Empty;
-            bool restNowSunday = false;
+            var timex = string.Empty;
+            var restNowSunday = false;
 
             var ers = config.DurationExtractor.Extract(text, referenceDate);
             if (ers.Count == 1)
@@ -732,7 +1138,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (pr.Value != null)
                 {
-                    var durationResult = (DateTimeResolutionResult) pr.Value;
+                    var durationResult = (DateTimeResolutionResult)pr.Value;
 
                     if (string.IsNullOrEmpty(durationResult.Timex))
                     {
@@ -754,9 +1160,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handle the "within two weeks" case which means from today to the end of next two weeks
+                    // Cases like "within 3 days before/after today" is not handled here (4th condition)
                     prefixMatch = config.WithinNextPrefixRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
-                        DurationParsingUtil.IsDateDuration(durationResult.Timex))
+                        DurationParsingUtil.IsDateDuration(durationResult.Timex) &&
+                        string.IsNullOrEmpty(afterStr))
                     {
                         GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, future: true, mod: out mod);
 
@@ -787,7 +1195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Handle the "in two weeks" case which means the second week
                     prefixMatch = config.InConnectorRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length && 
+                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length &&
                         !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
                     {
                         GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod);
@@ -797,11 +1205,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         durationResult.Timex = "P1" + unit;
                         beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
-                    }                    
+                    }
 
                     if (!string.IsNullOrEmpty(mod))
                     {
-                        ((DateTimeResolutionResult) pr.Value).Mod = mod;
+                        ((DateTimeResolutionResult)pr.Value).Mod = mod;
                     }
 
                     timex = durationResult.Timex;
@@ -809,7 +1217,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.SubDateTimeEntities = new List<object> { pr };
                 }
             }
-            
+
             // Parse "rest of"
             var match = this.config.RestOfDateRegex.Match(text);
             if (match.Success)
@@ -819,7 +1227,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 switch (durationUnit)
                 {
                     case "W":
-                        var diff = 7 - (((int)beginDate.DayOfWeek) == 0? 7: (int)beginDate.DayOfWeek);
+                        var diff = 7 - (((int)beginDate.DayOfWeek) == 0 ? 7 : (int)beginDate.DayOfWeek);
                         endDate = beginDate.AddDays(diff);
                         timex = "P" + diff + "D";
                         if (diff == 0)
@@ -935,7 +1343,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var cardinalStr = match.Groups["cardinal"].Value;
             var orderStr = match.Groups["order"].Value.ToLower();
 
-            int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+            var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
             if (year == Constants.InvalidYear)
             {
                 var swift = this.config.GetSwiftYear(orderStr);
@@ -947,11 +1355,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             DateObject targetWeekMonday;
-            int weekNum = 0;
+            int weekNum;
             if (this.config.IsLastCardinal(cardinalStr))
             {
                 var lastDay = DateObject.MinValue.SafeCreateFromValue(year, 12, 31);
-                DateObject lastDayWeekMonday = lastDay.This(DayOfWeek.Monday);
+                var lastDayWeekMonday = lastDay.This(DayOfWeek.Monday);
                 weekNum = Cal.GetWeekOfYear(lastDay, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
                 if (weekNum == 1)
                 {
@@ -960,24 +1368,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                 targetWeekMonday = lastDayWeekMonday;
                 weekNum = Cal.GetWeekOfYear(targetWeekMonday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
-                ret.Timex = $"{year.ToString("D4")}-{targetWeekMonday.Month.ToString("D2")}-W{weekNum}";
+                ret.Timex = $"{year:D4}-{targetWeekMonday.Month:D2}-W{weekNum}";
             }
             else
             {
                 var firstDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                 DateObject firstDayWeekMonday = firstDay.This(DayOfWeek.Monday);
-                
+
                 weekNum = Cal.GetWeekOfYear(firstDay, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
                 if (weekNum != 1)
                 {
                     firstDayWeekMonday = firstDay.AddDays(7).This(DayOfWeek.Monday);
                 }
-                
+
                 var cardinal = this.config.CardinalMap[cardinalStr];
-                targetWeekMonday = firstDayWeekMonday.AddDays(7 * (cardinal-1));
+                targetWeekMonday = firstDayWeekMonday.AddDays(7 * (cardinal - 1));
                 var targetWeekSunday = targetWeekMonday.This(DayOfWeek.Sunday);
 
-                ret.Timex = $"{year.ToString("D4")}-{targetWeekSunday.Month.ToString("D2")}-W{cardinal.ToString("D2")}";
+                ret.Timex = $"{year:D4}-{targetWeekSunday.Month:D2}-W{cardinal:D2}";
             }
 
             ret.FutureValue = InclusiveEndPeriod
@@ -1106,7 +1514,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                 }
-            } 
+            }
             else
             {
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
@@ -1125,7 +1533,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success && match.Length == text.Length)
             {
                 var seasonStr = this.config.SeasonMap[match.Groups["seas"].Value.ToLowerInvariant()];
-                var orderStr = match.Groups["order"].Value.ToLower();
 
                 if (match.Groups["EarlyPrefix"].Success)
                 {
@@ -1140,7 +1547,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Mod = Constants.LATE_MOD;
                 }
 
-                int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
                 if (year == Constants.InvalidYear)
                 {
                     var swift = this.config.GetSwiftYear(text);
@@ -1166,10 +1573,21 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             var match = config.WeekOfRegex.Match(text);
-            var ex = config.DateExtractor.Extract(text, referenceDate);
-            if (match.Success && ex.Count==1)
+            var dateErs = config.DateExtractor.Extract(text, referenceDate);
+
+            if (!dateErs.Any())
             {
-                var pr= (DateTimeResolutionResult)config.DateParser.Parse(ex[0], referenceDate).Value;
+                // For cases like "week of the 18th"
+                dateErs.AddRange(config.CardinalExtractor.Extract(text).Where(o =>
+                {
+                    o.Type = Constants.SYS_DATETIME_DATE;
+                    return !dateErs.Any(er => er.IsOverlap(o));
+                }));
+            }
+
+            if (match.Success && dateErs.Count == 1)
+            {
+                var pr = (DateTimeResolutionResult)config.DateParser.Parse(dateErs[0], referenceDate).Value;
                 if ((config.Options & DateTimeOptions.CalendarMode) != 0)
                 {
                     var monday = ((DateObject)pr.FutureValue).This(DayOfWeek.Monday);
@@ -1180,8 +1598,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Timex = pr.Timex;
                 }
                 ret.Comment = Constants.Comment_WeekOf;
-                ret.FutureValue= GetWeekRangeFromDate((DateObject)pr.FutureValue);
-                ret.PastValue= GetWeekRangeFromDate((DateObject)pr.PastValue);
+                ret.FutureValue = GetWeekRangeFromDate((DateObject)pr.FutureValue);
+                ret.PastValue = GetWeekRangeFromDate((DateObject)pr.PastValue);
                 ret.Success = true;
             }
             return ret;
@@ -1231,10 +1649,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             var match = this.config.WhichWeekRegex.Match(text);
-            if (match.Success)
+            if (match.Success && match.Length == text.Length)
             {
                 var num = int.Parse(match.Groups["number"].ToString());
-                int year = referenceDate.Year;
+                var year = referenceDate.Year;
                 ret.Timex = year.ToString("D4");
                 var firstDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
                 var firstWeekday = firstDay.This((DayOfWeek)1);
@@ -1248,7 +1666,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             return ret;
         }
-        
+
         private static DateTimeResolutionResult GetWeekOfMonth(int cardinal, int month, int year, DateObject referenceDate, bool noYear)
         {
             var ret = new DateTimeResolutionResult();
@@ -1328,7 +1746,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             int firstTwoNumOfYear = referenceDate.Year / 100;
             int decade;
-            int beginYear;
             int decadeLastYear = 10;
             int swift = 1;
             var inputCentury = false;
@@ -1420,7 +1837,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            beginYear = firstTwoNumOfYear * 100 + decade;
+            var beginYear = firstTwoNumOfYear * 100 + decade;
             var totalLastYear = decadeLastYear * Math.Abs(swift);
 
             if (inputCentury)
@@ -1430,11 +1847,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                var beginYearStr = "XX" + decade.ToString();
+                var beginYearStr = "XX" + decade;
                 beginLuisStr = FormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (decade + totalLastYear).ToString();
+                var endYearStr = "XX" + (decade + totalLastYear);
                 endLuisStr = FormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
@@ -1465,15 +1882,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public bool GetInclusiveEndPeriodFlag()
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
-            return InclusiveEndPeriod;
+            return candidateResults;
         }
-    }
-
-    public enum CalculateRangeMode
-    {
-        Week,
-        Month
     }
 }

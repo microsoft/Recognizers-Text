@@ -10,6 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
+        public string TokenBeforeDate { get; }
+
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
 
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
@@ -49,6 +51,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(
                 DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SpecificTimeFromTo = new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex SpecificTimeBetweenAnd = new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -82,9 +88,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
@@ -125,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return beforeMatch.Success;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return ConnectorAndRegex.IsMatch(text);
         }

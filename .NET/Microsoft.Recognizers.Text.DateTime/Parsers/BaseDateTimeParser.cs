@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDateTimeParser : IDateTimeParser
@@ -121,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // This is to understand if there is an ambiguous token in the text. For some languages (e.g. spanish),
                 // the same word could mean different things (e.g a time in the day or an specific day).
-                if (this.config.HaveAmbiguousToken(text, er1[0].Text))
+                if (this.config.ContainsAmbiguousToken(text, er1[0].Text))
                 {
                     return ret;
                 }
@@ -199,13 +197,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             var sec = time.Second;
 
             // Handle morning, afternoon
-            if (this.config.PMTimeRegex.IsMatch(text) && hour < 12)
+            if (this.config.PMTimeRegex.IsMatch(text) && hour < Constants.HalfDayHourCount)
             {
-                hour += 12;
+                hour += Constants.HalfDayHourCount;
             }
-            else if (this.config.AMTimeRegex.IsMatch(text) && hour >= 12)
+            else if (this.config.AMTimeRegex.IsMatch(text) && hour >= Constants.HalfDayHourCount)
             {
-                hour -= 12;
+                hour -= Constants.HalfDayHourCount;
             }
 
             var timeStr = pr2.TimexStr;
@@ -217,7 +215,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Timex = pr1.TimexStr + timeStr;
 
             var val = (DateTimeResolutionResult) pr2.Value;
-            if (hour <= 12 && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
+            if (hour <= Constants.HalfDayHourCount && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
                 ret.Comment = Constants.Comment_AmPm;
@@ -236,6 +234,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             
             // Add the date and time object in case we want to split them
             ret.SubDateTimeEntities = new List<object> {pr1, pr2};
+
+            // Add timezone
+            ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
 
             return ret;
         }
@@ -256,7 +257,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (wholeMatch.Success && wholeMatch.Length == trimedText.Length)
             {
-                var hourStr = wholeMatch.Groups["hour"].Value;
+                var hourStr = wholeMatch.Groups[Constants.HourGroupName].Value;
                 if (string.IsNullOrEmpty(hourStr))
                 {
                     hourStr = wholeMatch.Groups["hournum"].Value.ToLower();
@@ -359,7 +360,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceTime,
                 config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex, 
-                config.UtilityConfiguration);
+                config.UtilityConfiguration, config.GetSwiftDay);
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
         }
 
     }

@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Input": "100%",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
@@ -11,8 +12,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": " 100% ",
     "NotSupportedByDesign": "python",
@@ -26,8 +26,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": " 100 Prozent",
     "NotSupportedByDesign": "python",
@@ -41,8 +40,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "240 Prozent",
     "NotSupportedByDesign": "python",
@@ -56,8 +54,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "zwanzig Prozent",
     "NotSupportedByDesign": "python",
@@ -71,8 +68,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "dreißig Prozent",
     "NotSupportedByDesign": "python",
@@ -86,8 +82,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "einhundert Prozent",
     "NotSupportedByDesign": "python",
@@ -101,8 +96,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "10 Prozent",
     "NotSupportedByDesign": "python",
@@ -116,8 +110,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "siebenunddreißig Prozent",
     "NotSupportedByDesign": "python",
@@ -131,8 +124,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "einhundertneunundneunzig Prozent",
     "NotSupportedByDesign": "python",
@@ -146,8 +138,7 @@
         }
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "Wenn er nicht einhundert Prozent gibt, wird er damit nicht mehr rechtzeitig fertig",
     "NotSupportedByDesign": "python",
@@ -175,5 +166,17 @@
         }
       }
     ]
+  },
+  {
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Input": "Sie können zu http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 für mehr Details gehen",
+    "Results": []
+  },
+  {
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Input": "Sie können zu https://www.test.com/search?q=30%25%2020% für mehr Details gehen",
+    "Results": []
   }
-  ]
+]

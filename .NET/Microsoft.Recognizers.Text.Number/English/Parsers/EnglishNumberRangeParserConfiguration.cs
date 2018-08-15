@@ -22,6 +22,10 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public Regex LessOrEqualSuffix { get; private set; }
 
+        public Regex MoreOrEqualSeparate { get; private set; }
+
+        public Regex LessOrEqualSeparate { get; private set; }
+
         public EnglishNumberRangeParserConfiguration() : this(new CultureInfo(Culture.English))
         {
         }
@@ -37,6 +41,8 @@ namespace Microsoft.Recognizers.Text.Number.English
             LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }
 }

@@ -140,6 +140,7 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
                 idx += 2;
                 continue;
             }
+
             if (this.config.hasConnectorToken(middleStr)) {
                 let periodBegin = er[idx].start || 0;
                 let periodEnd = (er[idx + 1].start || 0) + (er[idx + 1].length || 0);
@@ -461,6 +462,11 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let month = referenceDate.getMonth();
         let earlyPrefix = false;
         let latePrefix = false;
+        let midPrefix = false;
+        let isRef = false;
+
+        let earlierPrefix = false;
+        let laterPrefix = false;
 
         if (this.config.isYearToDate(source)) {
             result.timex = FormatUtil.toString(year, 4);
@@ -493,12 +499,33 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         {
             earlyPrefix = true;
             trimedText = match.groups("suffix").value;
+            result.mod = Constants.EARLY_MOD;
         }
 
         if (match.groups("LatePrefix").value)
         {
             latePrefix = true;
             trimedText = match.groups("suffix").value;
+            result.mod = Constants.LATE_MOD;
+        }
+
+        if (match.groups("MidPrefix").value)
+        {
+            latePrefix = true;
+            trimedText = match.groups("suffix").value;
+            result.mod = Constants.MID_MOD;
+        }
+
+        if (match.groups("RelEarly").value)
+        {
+            earlierPrefix = true;
+            result.mod = null;
+        }
+
+        if (match.groups("RelLate").value)
+        {
+            laterPrefix = true;
+            result.mod = null;
         }
 
         let monthStr = match.groups('month').value;
@@ -537,6 +564,16 @@ export class BaseDatePeriodParser implements IDateTimeParser {
 
                 if (latePrefix) {
                     beginDate = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Thursday), 7 * swift);
+                }
+
+                if (earlierPrefix && swift === 0) {
+                    if (endDate > referenceDate) {
+                        endDate = referenceDate;
+                    }
+                } else if (laterPrefix && swift === 0) {
+                    if (beginDate < referenceDate) {
+                        beginDate = referenceDate;
+                    }
                 }
 
                 result.futureValue = [beginDate, endDate];
@@ -581,6 +618,16 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                     beginDate = DateUtils.safeCreateFromMinValue(year, 6, 1);
                 }
 
+                if (earlierPrefix && swift === 0) {
+                    if (endDate > referenceDate) {
+                        endDate = referenceDate;
+                    }
+                } else if (laterPrefix && swift === 0) {
+                    if (beginDate < referenceDate) {
+                        beginDate = referenceDate;
+                    }
+                }
+
                 result.timex = FormatUtil.toString(year, 4);
                 result.futureValue = [beginDate, endDate];
                 result.pastValue = [beginDate, endDate];
@@ -589,6 +636,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             }
         }
         
+        // only "month" will come to here
         let futureStart = DateUtils.safeCreateFromMinValue(futureYear, month, 1);
         let futureEnd = this.inclusiveEndPeriod
             ? DateUtils.addDays(
@@ -617,6 +665,16 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         {
             futureStart = DateUtils.safeCreateFromMinValue(futureYear, month, 16);
             pastStart = DateUtils.safeCreateFromMinValue(pastYear, month, 16);
+        }
+
+        if (earlierPrefix && futureYear === pastYear) {
+            if (futureEnd > referenceDate) {
+                futureEnd = pastEnd = referenceDate;
+            }
+        } else if (laterPrefix && futureYear === pastYear) {
+            if (futureStart < referenceDate) {
+                futureStart = pastStart = referenceDate;
+            }
         }
 
         result.futureValue = [futureStart, futureEnd];

@@ -36,6 +36,8 @@ class ChineseTimePeriodParserConfiguration implements ITimePeriodParserConfigura
     tillRegex: RegExp;
     numbers: ReadonlyMap<string, number>;
     utilityConfiguration: any;
+    specificTimeFromToRegex: RegExp;
+    specificTimeBetweenAndRegex: RegExp;
 
     constructor() {
         this.timeParser = new ChineseTimeParser();

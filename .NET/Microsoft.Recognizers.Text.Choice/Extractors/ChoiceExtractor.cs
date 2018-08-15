@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using NeoSmart.Unicode;
+using Microsoft.Recognizers.Text.Choice.Utilities;
 
 namespace Microsoft.Recognizers.Text.Choice
 {
@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.Choice
                                 Source = text,
                                 Score = topScore,
                                 OtherMatches = new List<ExtractResult>()
-                            } 
+                            }
                         });
                     }
                 }
@@ -144,20 +144,19 @@ namespace Microsoft.Recognizers.Text.Choice
             {
                 return -1;
             }
-            
+
             return tokens.FindIndex(startPos, x => x == token);
         }
 
         private IList<string> Tokenize(string text)
         {
             var tokens = new List<string>();
-            var letters = text.Letters();
+            var letters = UnicodeUtils.Letters(text);
 
             var token = string.Empty;
             foreach (var letter in letters)
             {
-                var codePoint = letter.Codepoints().FirstOrDefault();
-                if (codePoint > 0xFFFF)
+                if (UnicodeUtils.IsEmoji(letter))
                 {
                     // Character is in a Supplementary Unicode Plane. This is where emoji live so
                     // we're going to just break each character in this range out as its own token.
@@ -172,7 +171,7 @@ namespace Microsoft.Recognizers.Text.Choice
                 {
                     token = token + letter;
                 }
-                else if(!string.IsNullOrWhiteSpace(token))
+                else if (!string.IsNullOrWhiteSpace(token))
                 {
                     tokens.Add(token);
                     token = string.Empty;

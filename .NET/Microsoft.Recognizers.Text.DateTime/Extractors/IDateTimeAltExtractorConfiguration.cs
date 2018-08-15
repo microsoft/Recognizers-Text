@@ -14,5 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IEnumerable<Regex> AmPmRegexList { get; }
 
         Regex OrRegex { get; }
+
+        Regex DayRegex { get; }
     }
 }

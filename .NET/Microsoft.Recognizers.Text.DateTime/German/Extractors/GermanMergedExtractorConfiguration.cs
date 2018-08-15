@@ -1,7 +1,9 @@
 ﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.German;
 using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Number;
+
+using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Text.Matcher;
+
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
@@ -30,6 +32,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnspecificDatePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
+
         public static readonly Regex[] FilterWordRegexList =
         {
             // one on one
@@ -54,23 +61,28 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public GermanMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
-            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration());
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
@@ -81,6 +93,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

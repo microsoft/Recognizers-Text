@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.French;
-using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
@@ -33,10 +34,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnspecificDatePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] FilterWordRegexList =
         {
 
         };
+
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -56,23 +62,28 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
+
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public FrenchMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
 
-            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration(this));
             IntegerExtractor = new Number.French.IntegerExtractor();
         }
 
@@ -84,6 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

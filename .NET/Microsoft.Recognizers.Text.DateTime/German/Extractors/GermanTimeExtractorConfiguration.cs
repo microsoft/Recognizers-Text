@@ -43,9 +43,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 DateTimeDefinitions.LessThanOneHour, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // handle "six thirty", "six twenty one" 
-        public static readonly Regex EngTimeRegex =
+        public static readonly Regex WrittenTimeRegex =
             new Regex(
-                DateTimeDefinitions.EngTimeRegex,
+                DateTimeDefinitions.WrittenTimeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimePrefix =
@@ -113,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             new Regex(
                 DateTimeDefinitions.TimeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (three min past)? 3.00 (pm)?
+            // (three min past)? 3.00 (pm)
             new Regex(DateTimeDefinitions.TimeRegex3,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
@@ -140,6 +140,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             new Regex(DateTimeDefinitions.TimeRegex9,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
+            // (three min past)? 3h00 (pm)?
+            new Regex(DateTimeDefinitions.TimeRegex10,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
             // 340pm
             ConnectNumRegex
         };
@@ -154,9 +158,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public GermanTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public GermanTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
         }
     }
 }

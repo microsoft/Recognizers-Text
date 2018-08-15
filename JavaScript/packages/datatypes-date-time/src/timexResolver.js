@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
-const Timex = require('./timex.js').Timex;
+const TimexProperty = require('./timexProperty.js').TimexProperty;
 const timexValue = require('./timexValue.js');
 const timexInference = require('./timexInference.js');
 const timexHelpers = require('./timexHelpers.js');
@@ -88,6 +88,7 @@ const partOfDayTimeRange = function (timex) {
         case 'MO': return { start: '08:00:00', end: '12:00:00' };
         case 'AF': return { start: '12:00:00', end: '16:00:00' };
         case 'EV': return { start: '16:00:00', end: '20:00:00' };
+        case 'NI': return { start: '20:00:00', end: '24:00:00' };
     }
     return { start: 'not resolved', end: 'not resolved' };
 };
@@ -177,7 +178,7 @@ const resolveTimex = function (timex, date) {
 const resolve = function (timexArray, date) {
     const resolution = { values: [] };
     for (const timex of timexArray) {
-        const t = new Timex(timex);
+        const t = new TimexProperty(timex);
         const r = resolveTimex(t, date);
         Array.prototype.push.apply(resolution.values, r);        
     }

@@ -37,6 +37,26 @@ namespace Microsoft.Recognizers.Text.Sequence
             return GetModel<IpAddressModel>(Culture.English, fallbackToDefaultCulture);
         }
 
+        public IModel GetMentionModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<MentionModel>(Culture.English, fallbackToDefaultCulture);
+        }
+
+        public IModel GetHashtagModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<HashtagModel>(Culture.English, fallbackToDefaultCulture);
+        }
+
+        public IModel GetEmailModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<EmailModel>(Culture.English, fallbackToDefaultCulture);
+        }
+
+        public IModel GetURLModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<URLModel>(Culture.English, fallbackToDefaultCulture);
+        }
+
         public static List<ModelResult> RecognizePhoneNumber(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
         {
             return RecognizeByModel(recognizer => recognizer.GetPhoneNumberModel(culture, fallbackToDefaultCulture), query, options);
@@ -45,6 +65,26 @@ namespace Microsoft.Recognizers.Text.Sequence
         public static List<ModelResult> RecognizeIpAddress(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
         {
             return RecognizeByModel(recognizer => recognizer.GetIpAddressModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizeMention(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetMentionModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizeHashtag(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetHashtagModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizeEmail(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetEmailModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizeURL(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetURLModel(culture, fallbackToDefaultCulture), query, options);
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)
@@ -63,6 +103,22 @@ namespace Microsoft.Recognizers.Text.Sequence
             RegisterModel<IpAddressModel>(
                 Culture.English,
                 (options) => new IpAddressModel(new IpParser(), new IpExtractor()));
+
+            RegisterModel<MentionModel>(
+                Culture.English,
+                (options) => new MentionModel(new MentionParser(), new MentionExtractor()));
+
+            RegisterModel<HashtagModel>(
+                Culture.English,
+                (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
+
+            RegisterModel<EmailModel>(
+                Culture.English,
+                (options) => new EmailModel(new EmailParser(), new EmailExtractor()));
+
+            RegisterModel<URLModel>(
+                Culture.English,
+                (options) => new URLModel(new URLParser(), new URLExtractor()));
         }
     }
 }

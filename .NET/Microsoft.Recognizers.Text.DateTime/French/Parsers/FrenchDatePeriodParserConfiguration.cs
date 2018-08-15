@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor OrdinalExtractor { get; }
+
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
@@ -63,7 +65,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
+        public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
+        public Regex ReferenceDatePeriodRegex { get; }
+        public Regex AgoRegex { get; }
+        public Regex LaterRegex { get; }
+        public Regex LessThanRegex { get; }
+        public Regex MoreThanRegex { get; }
+
+        public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -105,18 +115,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableList<string> InStringList { get; }
 
-        public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
+        public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = FrenchDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = FrenchDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = FrenchDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -144,9 +153,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             YearPlusNumberRegex = FrenchDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = FrenchDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             YearPeriodRegex = FrenchDatePeriodExtractorConfiguration.YearPeriodRegex;
+            ComplexDatePeriodRegex = FrenchDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
             RelativeDecadeRegex = FrenchDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = FrenchDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            ReferenceDatePeriodRegex = FrenchDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            AgoRegex = FrenchDatePeriodExtractorConfiguration.AgoRegex;
+            LaterRegex = FrenchDatePeriodExtractorConfiguration.LaterRegex;
+            LessThanRegex = FrenchDatePeriodExtractorConfiguration.LessThanRegex;
+            MoreThanRegex = FrenchDatePeriodExtractorConfiguration.MoreThanRegex;
+            CenturySuffixRegex = FrenchDatePeriodExtractorConfiguration.CenturySuffixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

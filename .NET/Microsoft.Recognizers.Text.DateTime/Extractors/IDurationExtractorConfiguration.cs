@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AnUnitRegex { get; }
 
+        Regex DuringRegex { get; }
+
         Regex AllRegex { get; }
 
         Regex HalfRegex { get; }
@@ -21,15 +23,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ConjunctionRegex { get; }
 
-        Regex InExactNumberRegex { get; }
+        Regex InexactNumberRegex { get; }
 
-        Regex InExactNumberUnitRegex { get; }
+        Regex InexactNumberUnitRegex { get; }
 
         Regex RelativeDurationUnitRegex { get; }
 
         Regex DurationUnitRegex { get; }
 
         Regex DurationConnectorRegex { get; }
+
+        Regex LessThanRegex { get; }
+
+        Regex MoreThanRegex { get; }
 
         IExtractor CardinalExtractor { get; }
 

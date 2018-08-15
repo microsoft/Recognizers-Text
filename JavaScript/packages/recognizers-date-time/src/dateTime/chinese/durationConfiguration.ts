@@ -76,7 +76,7 @@ class ChineseDurationParserConfiguration implements IDurationParserConfiguration
     readonly anUnitRegex: RegExp;
     readonly allDateUnitRegex: RegExp;
     readonly halfDateUnitRegex: RegExp;
-    readonly inExactNumberUnitRegex: RegExp;
+    readonly inexactNumberUnitRegex: RegExp;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly unitValueMap: ReadonlyMap<string, number>;
     readonly doubleNumbers: ReadonlyMap<string, number>;

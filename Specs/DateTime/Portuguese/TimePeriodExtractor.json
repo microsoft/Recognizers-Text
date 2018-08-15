@@ -1,360 +1,362 @@
-[{
-  "Input": "Estarei fora de 5 a 6pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 5 a 6pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 5 as 6pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "das 5 as 6pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 5 as 6pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 5 as 6pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 5 até as 6pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "das 5 até as 6pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 5 a 6p.m.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 5 a 6p.m.",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 5 a 6 da tarde",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 5 a 6 da tarde",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 5 até as 6p.m.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "das 5 até as 6p.m.",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre as 5 e as 6p.m.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre as 5 e as 6p.m.",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre as 5 e 6p.m.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre as 5 e 6p.m.",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre as 5 e as 6 da manhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre as 5 e as 6 da manhã",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre as 5 e as seis da madrugada",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre as 5 e as seis da madrugada",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora desde as 4pm até as 5pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde as 4pm até as 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 4:00 até as 5pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4:00 até as 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 4:00 até as 7 em ponto",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4:00 até as 7 em ponto",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 3pm a sete e meia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 3pm a sete e meia",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora 4pm-5pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4pm-5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora 4pm - 5pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4pm - 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm a 5pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm a cinco e meia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a cinco e meia",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 4pm a cinco e trinta",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 4pm a cinco e trinta",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora de 3 da manhã até as 5pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "de 3 da manhã até as 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora das 3 da madrugada até as cinco da tarde",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 da madrugada até as cinco da tarde",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre as 4pm e as cinco e meia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre as 4pm e as cinco e meia",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora entre as 3 da manhã e as 5pm",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "entre as 3 da manhã e as 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Nos vemos de manhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "manhã",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Nos vemos pela manhã",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "manhã",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Nos vemos pela tarde",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tarde",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Te vejo à noite",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "noite",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Nos vemos de madrugada",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "madrugada",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "Input": "Nos vemos na madrugada",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "madrugada",
-      "Type": "timerange"
-    }
-  ]
-}
+[
+  {
+    "Input": "Estarei fora de 5 a 6pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 5 a 6pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 5 as 6pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "das 5 as 6pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 5 as 6pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 5 as 6pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 5 até as 6pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "das 5 até as 6pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 5 a 6p.m.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 5 a 6p.m.",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 5 a 6 da tarde",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 5 a 6 da tarde",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 5 até as 6p.m.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "das 5 até as 6p.m.",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre as 5 e as 6p.m.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 5 e as 6p.m.",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre as 5 e 6p.m.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 5 e 6p.m.",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre as 5 e as 6 da manhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 5 e as 6 da manhã",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre as 5 e as seis da madrugada",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 5 e as seis da madrugada",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora desde as 4pm até as 5pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "desde as 4pm até as 5pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 4:00 até as 5pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4:00 até as 5pm",
+        "Type": "timerange",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 4:00 até as 7 em ponto",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4:00 até as 7 em ponto",
+        "Type": "timerange",
+        "Start": 17,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 3pm a sete e meia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 3pm a sete e meia",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora 4pm-5pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4pm-5pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora 4pm - 5pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "4pm - 5pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm a 5pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm a 5pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm a cinco e meia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm a cinco e meia",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 4pm a cinco e trinta",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 4pm a cinco e trinta",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora de 3 da manhã até as 5pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "de 3 da manhã até as 5pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora das 3 da madrugada até as cinco da tarde",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "3 da madrugada até as cinco da tarde",
+        "Type": "timerange",
+        "Start": 17,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre as 4pm e as cinco e meia",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 4pm e as cinco e meia",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora entre as 3 da manhã e as 5pm",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 3 da manhã e as 5pm",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos de manhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "manhã",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos pela manhã",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "manhã",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos pela tarde",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Type": "timerange",
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Te vejo à noite",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Type": "timerange",
+        "Start": 10,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos de madrugada",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "madrugada",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Nos vemos na madrugada",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "madrugada",
+        "Type": "timerange",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  }
 ]
