@@ -1941,5 +1941,18 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderd",
+    "Results": [
+      {
+        "Text": "honderd",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]
