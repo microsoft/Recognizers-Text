@@ -1954,5 +1954,18 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdduizend",
+    "Results": [
+      {
+        "Text": "honderdduizend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]
