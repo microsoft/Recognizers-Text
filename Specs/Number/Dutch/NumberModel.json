@@ -1,6 +1,7 @@
 [
   {
     "Input": "tweehonderd",
+    "Comment": "https://onzetaal.nl/taaladvies/getallen-uitschrijven",
     "Results": [
       {
         "Text": "tweehonderd",
@@ -1741,6 +1742,214 @@
         "TypeName": "number",
         "Resolution": {
           "value": "5200000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdacht",
+    "Results": [
+      {
+        "Text": "honderdacht",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "108"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdenacht",
+    "Results": [
+      {
+        "Text": "honderdenacht",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "108"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zeshonderdachtenzeventig",
+    "Results": [
+      {
+        "Text": "zeshonderdachtenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "678"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zeshonderdenachtenzeventig",
+    "Results": [
+      {
+        "Text": "zeshonderdenachtenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "678"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend zestien",
+    "Results": [
+      {
+        "Text": "tweeduizend zestien",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2016"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend en zestien",
+    "Results": [
+      {
+        "Text": "tweeduizend en zestien",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2016"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend vijfhonderdzevenenzeventig",
+    "Results": [
+      {
+        "Text": "tweeduizend vijfhonderdzevenenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2577"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vijfentwintighonderdzevenenzeventig",
+    "Results": [
+      {
+        "Text": "vijfentwintighonderdzevenenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2577"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "",
+    "Results": [
+      {
+        "Text": "",
+        "TypeName": "number",
+        "Resolution": {
+          "value": ""
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend en vijfhonderdzevenenzeventig",
+    "Results": [
+      {
+        "Text": "tweeduizend en vijfhonderdzevenenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2577"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vijfentwintighonderdenzevenenzeventig",
+    "Results": [
+      {
+        "Text": "vijfentwintighonderdenzevenenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2577"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zeventien miljoen drieënvijftigduizend negenhonderdtachtig",
+    "Results": [
+      {
+        "Text": "zeventien miljoen drieënvijftigduizend negenhonderdtachtig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "17053980"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeënhalf",
+    "Results": [
+      {
+        "Text": "tweeënhalf",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "twee en een half",
+    "Results": [
+      {
+        "Text": "twee en een half",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "twaalfenhalve",
+    "Results": [
+      {
+        "Text": "twaalfenhalve",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "twaalf en een halve",
+    "Results": [
+      {
+        "Text": "twaalf en een halve",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12,5"
         }
       }
     ],
