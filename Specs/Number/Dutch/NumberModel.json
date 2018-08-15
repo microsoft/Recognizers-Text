@@ -27,19 +27,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "eenentwintig",
-    "Results": [
-      {
-        "Text": "eenentwintig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "22"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "tweeentwintig",
     "Results": [
       {
