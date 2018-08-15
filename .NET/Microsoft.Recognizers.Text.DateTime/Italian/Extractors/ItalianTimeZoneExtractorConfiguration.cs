@@ -3,15 +3,15 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Matcher;
 
-namespace Microsoft.Recognizers.Text.DateTime.French
+namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    class FrenchTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    class ItalianTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
         public static readonly Regex[] TimeZoneRegexList =
         {
         };
 
-        public FrenchTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
+        public ItalianTimeZoneExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

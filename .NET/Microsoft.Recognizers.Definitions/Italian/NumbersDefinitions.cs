@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 
 	public static class NumbersDefinitions
 	{
-		public const string LangMarker = "It";
+		public const string LangMarker = "Ita";
 		public const string RoundNumberIntegerRegex = @"(cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni)";
 		public const string ZeroToNineIntegerRegex = @"(e uno|un|uno|una|due|tre|quattro|cinque|sei|sette|otto|nove|zero)";
 		public const string TenToNineteenIntegerRegex = @"(diciassette|tredici|quattordici|diciotto|diciannove|quindici|sedici|undici|dodici|dieci)";
@@ -52,12 +52,12 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
 		public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1°|2°|3°|4°|5°|6°|7°|8°|9°|0°))|(11°|12°))(?=\b)";
-		public static readonly string OrdinalFrenchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
+		public static readonly string OrdinalItalianRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
 		public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
 		public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
 		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({SuffixOrdinalRegex}))s|mezzo|quarto)(?=\b)";
 		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(un|uno|una)(\s+|\s*-\s*)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|mezzo|quarto)(?=\b)";
-		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)";
+		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
 		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
 		public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s+(virgule|point)){AllPointRegex})";
 		public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})";

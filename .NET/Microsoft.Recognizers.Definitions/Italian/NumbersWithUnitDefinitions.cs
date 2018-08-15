@@ -290,6 +290,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka|marco finlandese|marchi finlandesi" },
 			{ "Penni", "penniä|penni" }
 		};
+		public const string CompoundUnitConnectorRegex = @"(?<spacer>[^.])";
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
 			{ "Dollaro", "$" },
@@ -418,7 +419,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			"in",
 			"\""
 		};
-		public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
+		public const string BuildPrefix = @"(?<=(\s|^))";
 		public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
 		public const string ConnectorToken = "di";
 		public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>

@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Definitions.Italian;
-using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -14,10 +14,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         }
 
         public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeExtractor DatePeriodExtractor { get; }
 
         private static readonly Regex OrRegex =
             new Regex(DateTimeDefinitions.OrRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex DayRegex =
+            new Regex(DateTimeDefinitions.DayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -43,5 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         IEnumerable<Regex> IDateTimeAltExtractorConfiguration.AmPmRegexList => AmPmRegexList;
 
         Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
+
+        Regex IDateTimeAltExtractorConfiguration.DayRegex => DayRegex;
     }
 }

@@ -1,9 +1,8 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Matcher;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {

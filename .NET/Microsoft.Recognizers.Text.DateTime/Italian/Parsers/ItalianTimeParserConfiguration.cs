@@ -2,8 +2,8 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.Italian;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public ItalianTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; 
@@ -26,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimeRegexes = ItalianTimeExtractorConfiguration.TimeRegexList;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
+            TimeZoneParser = new BaseTimeZoneParser();
         }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)

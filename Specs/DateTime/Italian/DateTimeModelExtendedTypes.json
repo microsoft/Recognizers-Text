@@ -3,8 +3,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la prossima settimana lun alle 9 am",
@@ -41,8 +41,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la prossima settimana lun",
@@ -79,8 +79,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "di mattina alle 9",
@@ -117,8 +117,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il prossimo lunedì 1-3 pm",
@@ -157,8 +157,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "lunedì 8-9am",
@@ -209,8 +209,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la prossima settimana martedì",
@@ -247,8 +247,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la prossima settimana martedì alle 9 am",

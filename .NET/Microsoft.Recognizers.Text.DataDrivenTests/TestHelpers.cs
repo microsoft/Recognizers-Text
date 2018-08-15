@@ -672,9 +672,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new ItalianSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.None));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Italian not supported");
@@ -682,7 +682,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetItalianParser(DateTimeParsers parserName)
         {
-            var commonConfiguration = new ItalianCommonDateTimeParserConfiguration(DateTimeOptions.None);
+            var commonConfiguration = new ItalianCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
             switch (parserName)
             {
                 case DateTimeParsers.Date:
@@ -700,11 +700,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Duration:
                     return new BaseDurationParser(new ItalianDurationParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Holiday:
-                    return new BaseHolidayParser(new ItalianHolidayParserConfiguration());
+                    return new BaseHolidayParser(new ItalianHolidayParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new ItalianSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedParser(new ItalianMergedParserConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeParser(new ItalianMergedParserConfiguration(commonConfiguration));
             }
 
             throw new Exception($"Parser '{parserName}' for Italian not supported");

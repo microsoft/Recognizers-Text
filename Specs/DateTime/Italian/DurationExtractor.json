@@ -1,6 +1,7 @@
 [{
   "Input": "Andrò via per 3h",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3h",
@@ -11,7 +12,8 @@
 ,
 {
   "Input": "Andrò via per 3 giorni",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 giorni",
@@ -22,7 +24,8 @@
 ,
 {
   "Input": "Andrò via per 3,5anni",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3,5anni",
@@ -33,7 +36,8 @@
 ,
 {
   "Input": "Andrò via per 3 h",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 h",
@@ -44,7 +48,8 @@
 ,
 {
   "Input": "Andrò via per 3 ore",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 ore",
@@ -55,7 +60,8 @@
 ,
 {
   "Input": "Andrò via per 3 mesi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 mesi",
@@ -66,7 +72,8 @@
 ,
 {
   "Input": "Andrò via per 3 minuti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 minuti",
@@ -77,7 +84,8 @@
 ,
 {
   "Input": "Andrò via per 3 min",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 min",
@@ -88,7 +96,8 @@
 ,
 {
   "Input": "Andrò via per 3.5 secondi ",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3.5 secondi",
@@ -99,7 +108,8 @@
 ,
 {
   "Input": "Andrò via per 123.45 sec",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "123.45 sec",
@@ -110,7 +120,8 @@
 ,
 {
   "Input": "Andrò via per due settimane",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due settimane",
@@ -121,7 +132,8 @@
 ,
 {
   "Input": "Andrò via per venti min",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "venti min",
@@ -132,7 +144,8 @@
 ,
 {
   "Input": "Andrò via per ventiquattro ore",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventiquattro ore",
@@ -143,7 +156,8 @@
 ,
 {
   "Input": "Andrò via per tutto il giorno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tutto il giorno",
@@ -154,7 +168,8 @@
 ,
 {
   "Input": "Andrò via per tutta la settimana",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tutta la settimana",
@@ -165,7 +180,8 @@
 ,
 {
   "Input": "Andrò via per tutto il mese",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tutto il mese",
@@ -176,7 +192,8 @@
 ,
 {
   "Input": "Andrò via per tutto l'anno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tutto l'anno",
@@ -187,7 +204,8 @@
 ,
 {
   "Input": "Andrò via per il giorno intero",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "giorno intero",
@@ -198,7 +216,8 @@
 ,
 {
   "Input": "Andrò via per la settimana intera",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "settimana intera",
@@ -209,7 +228,8 @@
 ,
 {
   "Input": "Andrò via per il mese intero",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "mese intero",
@@ -220,7 +240,8 @@
 ,
 {
   "Input": "Andrò via per l'anno intero",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "anno intero",
@@ -231,7 +252,8 @@
 ,
 {
   "Input": "Andrò via per l'intero giorno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "intero giorno",
@@ -242,7 +264,8 @@
 ,
 {
   "Input": "Andrò via per l'intera settimana",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "intera settimana",
@@ -253,7 +276,8 @@
 ,
 {
   "Input": "Andrò via per l'intero mese",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "intero mese",
@@ -264,7 +288,8 @@
 ,
 {
   "Input": "Andrò via per l'intero anno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "intero anno",
@@ -275,7 +300,8 @@
 ,
 {
   "Input": "Andrò via per un'ora",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un'ora",
@@ -286,7 +312,8 @@
 ,
 {
   "Input": "Andrò via per un anno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un anno",
@@ -297,7 +324,8 @@
 ,
 {
   "Input": "metà anno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "metà anno",
@@ -308,7 +336,8 @@
 ,
 {
   "Input": "Andrò via per 3 min",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 min",
@@ -319,7 +348,8 @@
 ,
 {
   "Input": "Andrò via per 30 minuti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "30 minuti",
@@ -330,7 +360,8 @@
 ,
 {
   "Input": "Andrò via per una mezzora",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "una mezzora",
@@ -341,7 +372,8 @@
 ,
 {
   "Input": "Andrò via per mezzora",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "mezzora",
@@ -352,7 +384,8 @@
 ,
 {
   "Input": "Andrò via per un'ora e mezza",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un'ora e mezza",
@@ -363,7 +396,8 @@
 ,
 {
   "Input": "Andrò via per due ore",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due ore",
@@ -374,7 +408,8 @@
 ,
 {
   "Input": "Andrò via due ore e mezza",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due ore e mezza",
@@ -385,7 +420,8 @@
 ,
 {
   "Input": "In una settimana",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "una settimana",
@@ -396,7 +432,8 @@
 ,
 {
   "Input": "In un giorno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un giorno",
@@ -407,7 +444,8 @@
 ,
 {
   "Input": "per un'ora",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un'ora",
@@ -418,7 +456,8 @@
 ,
 {
   "Input": "per un mese",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un mese",
@@ -429,7 +468,8 @@
 ,
 {
   "Input": "Andrò via per poche ore",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "poche ore",
@@ -440,7 +480,8 @@
 ,
 {
   "Input": "Andrò via per pochi minuti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "pochi minuti",
@@ -451,7 +492,8 @@
 ,
 {
   "Input": "Andrò via per alcuni giorni",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "alcuni giorni",
@@ -462,7 +504,8 @@
 ,
 {
   "Input": "Andrò via per diversi giorni",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "diversi giorni",
@@ -474,7 +517,8 @@
 {
   "Input": "Andrò via per 1 anno 1 mese 21 giorni",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 anno 1 mese 21 giorni",
@@ -486,7 +530,8 @@
 {
   "Input": "Andrò via per 2 giorni 1 mese",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2 giorni 1 mese",

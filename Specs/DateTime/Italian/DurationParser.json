@@ -3,7 +3,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3h",
@@ -26,7 +27,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3giorni",
@@ -49,7 +51,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3,5anni",
@@ -72,7 +75,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 h",
@@ -95,7 +99,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 ore",
@@ -118,7 +123,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 giorni",
@@ -141,7 +147,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 mesi",
@@ -164,7 +171,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 minuti",
@@ -187,7 +195,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 min",
@@ -210,7 +219,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3.5 secondi",
@@ -233,7 +243,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "123.45 sec",
@@ -256,7 +267,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due settimane",
@@ -279,7 +291,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "venti min",
@@ -302,7 +315,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventiquattro ore",
@@ -325,7 +339,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tutto il giorno",
@@ -348,7 +363,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tutta la settimana",
@@ -371,7 +387,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tutto il mese",
@@ -394,7 +411,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tutto l'anno",
@@ -417,7 +435,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il giorno intero",
@@ -440,7 +459,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "l'intero weekend",
@@ -463,7 +483,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "l'intero mese",
@@ -486,7 +507,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "l'intero anno",
@@ -509,7 +531,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un'ora",
@@ -532,7 +555,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "metà anno",
@@ -555,7 +579,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "semestre",
@@ -578,7 +603,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3-min",
@@ -601,7 +627,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "30-minuti",
@@ -624,7 +651,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un'ora e mezza",
@@ -647,7 +675,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "mezzora",
@@ -670,7 +699,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due ore",
@@ -693,7 +723,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due ore e mezza",
@@ -717,7 +748,8 @@
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 anno 1 mese 21 giorni",
@@ -741,7 +773,8 @@
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2 giorni 1 mese",
@@ -765,7 +798,8 @@
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "una settimana e tre giorni",

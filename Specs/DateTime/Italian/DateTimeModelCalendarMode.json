@@ -4,8 +4,8 @@
   "Context": {
     "ReferenceDateTime": "2018-02-08T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la settimana del 10 aprile",
@@ -37,8 +37,8 @@
   "Context": {
     "ReferenceDateTime": "2018-02-08T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la settimana del 23 luglio",
@@ -70,8 +70,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
@@ -80,8 +80,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "domani alle 3",
@@ -104,8 +104,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "alle tre di domani",
@@ -128,8 +128,8 @@
   "Context": {
     "ReferenceDateTime": "2017-12-18T00:00:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ieri alle 12",
@@ -152,8 +152,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "prima delle 4",
@@ -177,8 +177,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "dopo le tre",
@@ -202,8 +202,8 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "non più tardi delle 4",

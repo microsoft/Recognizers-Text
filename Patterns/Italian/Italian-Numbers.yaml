@@ -1,4 +1,5 @@
-LangMarker: it
+---
+LangMarker: Ita
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
   def: (cento|mille|milione|milioni|miliardo|miliardi|trilione|trilioni)
@@ -91,7 +92,7 @@ PlaceHolderDefault: !simpleRegex
   def: \D|\b
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)((\d*(1°|2°|3°|4°|5°|6°|7°|8°|9°|0°))|(11°|12°))(?=\b)
-OrdinalFrenchRegex: !nestedRegex
+OrdinalItalianRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
 #Fraction Regex

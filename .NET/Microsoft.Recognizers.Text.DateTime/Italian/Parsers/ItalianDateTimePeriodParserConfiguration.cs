@@ -2,12 +2,14 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Italian;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+
+        public string TokenBeforeDate { get; }
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -62,12 +64,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex WithinNextPrefixRegex { get; }
 
+        public Regex PrefixDayRegex { get; }
+
+        public Regex BeforeRegex { get; }
+
+        public Regex AfterRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public ItalianDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
@@ -96,6 +105,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             AmDescRegex = ItalianDateTimePeriodExtractorConfiguration.AmDescRegex;
             PmDescRegex = ItalianDateTimePeriodExtractorConfiguration.PmDescRegex;
             WithinNextPrefixRegex = ItalianDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            PrefixDayRegex = ItalianDateTimePeriodExtractorConfiguration.PrefixDayRegex;
+            BeforeRegex = ItalianDateTimePeriodExtractorConfiguration.BeforeRegex;
+            AfterRegex = ItalianDateTimePeriodExtractorConfiguration.AfterRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

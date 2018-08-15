@@ -1,6 +1,7 @@
 [{
   "Input": "tre trilionesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre trilionesimo",
@@ -14,7 +15,8 @@
 ,
 {
   "Input": "trilionesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
 	{
       "Text": "trilionesimo",
@@ -28,7 +30,8 @@
 ,
 {
   "Input": "cento trilioni",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cento trilioni",
@@ -42,7 +45,8 @@
 ,
 {
   "Input": "11th",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "11th",
@@ -56,7 +60,8 @@
 ,
 {
   "Input": "21st",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "21st",
@@ -70,7 +75,8 @@
 ,
 {
   "Input": "30th",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "30th",
@@ -84,7 +90,8 @@
 ,
 {
   "Input": "2nd",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2nd",
@@ -98,7 +105,8 @@
 ,
 {
   "Input": "undicesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "undicesimo",
@@ -112,7 +120,8 @@
 ,
 {
   "Input": "ventesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventesimo",
@@ -126,7 +135,8 @@
 ,
 {
   "Input": "venticinquesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "venticinquesimo",
@@ -140,7 +150,8 @@
 ,
 {
   "Input": "ventunesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventunesimo",
@@ -154,7 +165,8 @@
 ,
 {
   "Input": "centoventicinquensimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centoventicinquensimo",
@@ -168,7 +180,8 @@
 ,
 {
   "Input": "trilionesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "trilionesimo",
@@ -182,7 +195,8 @@
 ,
 {
   "Input": "duecentesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "duecentesimo",
@@ -195,7 +209,8 @@
 },
 {
   "Input": "Prenota un posto in prima classe per Seattle",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "prima",

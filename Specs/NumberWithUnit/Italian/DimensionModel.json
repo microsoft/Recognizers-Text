@@ -1,6 +1,7 @@
 [{
   "Input": "75ml",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "75ml",
@@ -15,7 +16,8 @@
 ,
 {
   "Input": "il suo più grande svantaggio potrebbe essere il suo spessore di 3 pollici , grande abbastanza da ocnsentire ad un consulente di descriverlo come ingombrante.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 pollici",
@@ -30,7 +32,8 @@
 ,
 {
   "Input": "un tornado ha attraversato un'area lunga circa dieci miglia , uccidendo almeno quattordici persone e trasformando decine di case in macerie.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "dieci miglia",
@@ -45,7 +48,8 @@
 ,
 {
   "Input": "ha preso molto di più di 10 1/2 miglia di cavo e filo per agganciale tutto , e 23 computer .",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "10 1/2 miglia",
@@ -60,7 +64,8 @@
 ,
 {
   "Input": "il viaggio di sei miglia al mio hotel in aeroporto che doveva prendere 20 minuti prima nella giornata ha preso più di tre ore.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sei miglia",
@@ -75,7 +80,8 @@
 ,
 {
   "Input": "industrywide , la produzione di olio in questo paese è sceso di 500.000 barili al giorno rispetto ai barili nei primi otto mesi di quest'anno.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "500.000 barili",
@@ -90,7 +96,8 @@
 ,
 {
   "Input": "è quello che 1 ) spiega perchè noi siamo come , beh , noi stessi invece che bo jackson ; 2 ) avverte che è possibile affogare in un lago che è in media profondo due piedi ; e 3 ) prevede che 10 . 000 scimmie collocate prima di 10 . 000 pianoforti produrranno 1 . 118 brani pubblicabili di rock ' n ' roll.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due piedi",
@@ -105,7 +112,8 @@
 ,
 {
   "Input": "il 19 maggio, fda, ha iniziato a trattenere funghi cinesi il scatole da 68 once dopo che più di 100 persone in mississippi, new york e pennsylvania si sono ammalati mangiando funghi contaminati.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "68 once",
@@ -120,7 +128,8 @@
 ,
 {
   "Input": "mr . hulings si compiace che ha venduto tutte le sue azioni una settimana prima che il mercato crollasse di 190 punti il 13 ottobre , e sta usando i soldi per comprare un maneggio di 45 acri.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "45 acri",
@@ -135,7 +144,8 @@
 ,
 {
   "Input": "quindi, per far diventare questo gardenettes letteralmente una stanza, ha abbattuto muri senza finestre (mattone, lattice, siepe) otto su 10 piedi alti, proiettando i suoi interni in sfumature di un lungo giorno stigio.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "10 piedi",
@@ -150,7 +160,8 @@
 ,
 {
   "Input": "` ` l'amministrazione non vuole sorprese, ' ' osserva jack zaves , che , come direttore dei servizi di carburante delle compagnie aeree americane, compra circa 2,4 miliardi di galloni di carburante per aerei all'anno.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2,4 miliardi di galloni",
@@ -165,7 +176,8 @@
 ,
 {
   "Input": "un raffredatore di acqua da 10 galloni si è rovesciato sul pavimento , bagnando il tappeto rosso.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "10 galloni",
@@ -180,7 +192,8 @@
 ,
 {
   "Input": "nelle vicinanze, sei delfini salteranno in un acquario da 1,5 milioni di galloni di acqua salata.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1,5 milioni di galloni",
@@ -195,7 +208,8 @@
 ,
 {
   "Input": "e questo bambino è più di due libbre.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due libbre",
@@ -210,7 +224,8 @@
 ,
 {
   "Input": "``non mi fido delle persone che non mangiano,'' ha detto ms. volokh, anche se lei stessa ha smesso di mangiare qualche anno fa per perdere 25 libbre.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "25 libbre",
@@ -225,7 +240,8 @@
 ,
 {
   "Input": "shell , una filiale di royal dutch / shell group , gli sarà concesso di esportare 0,9 trilioni di piedi cubi , e  gulf , una unità di olympia & york developments ltd. gli sarà concesso di esportare",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "0,9 trilioni di piedi cubi",
@@ -240,7 +256,8 @@
 ,
 {
   "Input": "i punti salienti del documento, come attualmente inquadrati , sono: - - una restrizione sulla quantità di beni immobili che una famiglia può possedere , a 660 metri quadri nelle sei città più grandi della nazione , ma di più nelle città più piccole e nelle aree rurali.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "660 metri quadri",
@@ -255,7 +272,8 @@
 ,
 {
   "Input": "gli eserciti di tigrea sono ora 200 miglia a nord di of addis ababa , minacciando la cittè di dese , che taglierebbe fuori il capitale di mr . mengistu ' s dal porto di assab , grazie al quale tutto il combustibile e e le altre forniture raggiungono addis ababa.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "200 miglia",
@@ -270,7 +288,8 @@
 ,
 {
   "Input": "ha detto che uno dei computer ha intrapreso un viaggio di tre piedi scivolando sul pavimento.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre piedi",
@@ -285,7 +304,8 @@
 ,
 {
   "Input": "il cuore delle sue partecipazioni è 190.000 metri quadri di proprietà incredibilmente costose nel distretto marunouchi , il centro finanziario ed economico di tokyo , spesso chiamato scherzosamente` ` mitsubishi village. ' '",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "190.000 metri quadri",
@@ -300,7 +320,8 @@
 ,
 {
   "Input": "il satellite, costruito da hughes per la international telecommunications satellite organization , è parte di un contratto da $ 700 milioni conferiti a hughes nel 1982 per sviluppare cinque satelliti da tre tonnellate.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre tonnellate",
@@ -315,7 +336,8 @@
 ,
 {
   "Input": "in un rapporto del 1996 sulle armi biologiche, il centro per gli studi strategici e internazionali, un istituto di ricerca di politica pubblica a washington , avvisano che era molto facile per aspiranti terroristi assemblare armi biologiche _ usando  attrezzatura commerciale con una capacità di 130 galloni.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "130 galloni",
@@ -330,7 +352,8 @@
 ,
 {
   "Input": "la raccolta dei dati del dipartimento del commercio del gruppo ha mostrato le importazioni agosto , il secondo totale mensile più grande dell'anno, era sopra del 5 % dalle 1.458.000 tonnellate di luglio ma al di sotto del massimo dell'anno scorso, nel giugno 1988.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1.458.000 tonnellate",
@@ -345,7 +368,8 @@
 ,
 {
   "Input": "al n . 1 , singh ha colpito un ferro 9 lanciando a meno di sei piedi dalla coppa.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sei piedi",
@@ -360,7 +384,8 @@
 ,
 {
   "Input": "così quando il raccolto di psyllium del prossimo anno viene raccolto a marzo , forse sarà più piccolo delle 16.000 tonnellate dei cinque anni scorsi - -  proprio sulla cresta del boom del pysllium.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "16.000 tonnellate",
@@ -375,7 +400,8 @@
 ,
 {
   "Input": "il 486 è il discendente di una lunga serie di chip intel che hanno iniziato a dominare il merceto da quando ibm utilizzò il chip a 16-bit 8088 pr i suoi primi personal computer.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "16-bit",
@@ -390,7 +416,8 @@
 ,
 {
   "Input": "Il 'jiotto caspita' può correre oltre i 188 miglia all'ora, disse un portavoce dell'azienda.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "188 miglia all'ora",
@@ -405,7 +432,8 @@
 ,
 {
   "Input": "la marina ha allestito una zona di atterraggio per elicotteri a soli 100 metri da una sala operatoria mobile, proprio alla periferia di Baghdad.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "100 metri",
@@ -420,7 +448,8 @@
 ,
 {
   "Input": "caltrans prevede di aggiungere un secondo ponte per autobus e parcheggi sopra la media di un tratto di 2,5 miglia dell'autostrada del porto appena a sud di Los Angeles, vicino al colosseo.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2,5 miglia",
@@ -435,7 +464,8 @@
 ,
 {
   "Input": "sulla mia guida di quattro miglia al quartier generale della fattoria ogni mattina, guido da altre quattro case vuote.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "quattro miglia",
@@ -450,7 +480,8 @@
 ,
 {
   "Input": "siamo insultati, ha detto langa dal quartier generale greco cattolico, a circa 325 chilometri a nord-ovest di Bucarest.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "325 chilometri",
@@ -465,7 +496,8 @@
 ,
 {
   "Input": "rotich è un piccolo ( 5 piedi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "5 piedi",
@@ -480,7 +512,8 @@
 ,
 {
   "Input": "4 pollici) 28enne che non ha iniziato a correre seriamente fino a tre anni fa e non ha gareggiato in casa fino a questo mese.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "4 pollici",
@@ -495,7 +528,8 @@
 ,
 {
   "Input": "raceway park (minnesota) a Shakopee è un ovale pavimentato di 1/4 di miglio.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1/4 di miglio",
@@ -510,7 +544,8 @@
 ,
 {
   "Input": "La montagna di castlecrag si trova a sud del lago del fossato, a 1,6 km a ovest del monte frink lungo la stessa linea di cresta.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1,6 km",
@@ -525,7 +560,8 @@
 ,
 {
   "Input": "le colline di javadi si trovano a circa 17 km da ambur.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "17 km",
@@ -540,7 +576,8 @@
 ,
 {
   "Input": "dopo aver circondato il lago Michigan in prossimità dell'esposizione per due ore, il comandante hugo eckener ha atterrato il dirigibile di 776 piedi nel vicino aeroporto di curtiss-wright a glenview.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "776 piedi",
@@ -555,7 +592,8 @@
 ,
 {
   "Input": "lo svincolo con l'autostrada 35 e l'autostrada 115 per Lindsay e Peterborough (uscita 436) si trova a 500 metri ad est di Bennett Road.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "500 metri",
@@ -570,7 +608,8 @@
 ,
 {
   "Input": "nel 1995 Canon ha introdotto il primo obiettivo SLR disponibile in commercio con stabilizzazione dell'immagine interna, ef 75-300mm f / 4-5.6 è usm.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "300mm",
@@ -585,7 +624,8 @@
 ,
 {
   "Input": "Gli sterili armamenti di dagenham, essex produssero un kit di conversione comprendente un nuovo barilotto da 7,62 mm, un caricatore, un estrattore e un eiettore per la vendita commerciale.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7,62 mm",
@@ -600,7 +640,8 @@
 ,
 {
   "Input": "il progetto costa $ 46. 8 milioni, e ha lo scopo di aumentare la capacità produttiva dell'azienda del 25% a 34.500 tonnellate di catodo di rame all'anno.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "34.500 tonnellate",
@@ -615,7 +656,8 @@
 ,
 {
   "Input": "acciaio canadese - la produzione di lingotti ha totalizzato 291.890 tonnellate nel week end ott. 7, in alto 14. 8% dal totale della settimana precedente, statistiche canada, un'agenzia federale, ha detto.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "291.890 tonnellate",
@@ -630,7 +672,8 @@
 ,
 {
   "Input": "le pantere florida vivono in una gamma di case tra 190 km2.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "190 km2",
@@ -645,7 +688,8 @@
 ,
 {
   "Input": "una tonnellata è pari a 2.204,62 libbre.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2.204,62 libbre",

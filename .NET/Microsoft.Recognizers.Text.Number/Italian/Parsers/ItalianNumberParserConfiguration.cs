@@ -49,11 +49,15 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
 
+        public NumberOptions Options { get; }
+
         public CultureInfo CultureInfo { get; set; }
 
         public char DecimalSeparatorChar { get; private set; }
 
         public Regex DigitalNumberRegex { get; private set; }
+
+        public Regex FractionPrepositionRegex { get; }
 
         public Regex NegativeNumberSignRegex { get; private set; }
 

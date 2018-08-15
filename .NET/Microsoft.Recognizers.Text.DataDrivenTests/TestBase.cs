@@ -314,6 +314,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         private void ValidateResults(IEnumerable<string> testResolutionKeys = null)
         {
+
             var actualResults = TestContext.GetModelParseResults(TestSpec);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
@@ -327,7 +328,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
-                Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value], GetMessage(TestSpec));
+                Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value],
+                                GetMessage(TestSpec));
 
                 foreach (var key in testResolutionKeys ?? Enumerable.Empty<string>())
                 {
@@ -340,6 +342,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 }
 
             }
+            
         }
 
         private static string GetMessage(TestModel spec)

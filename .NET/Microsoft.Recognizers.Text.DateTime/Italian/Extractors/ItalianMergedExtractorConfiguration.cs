@@ -1,8 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Italian;
-using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -33,10 +33,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex YearAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnspecificDatePeriodRegex =
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] FilterWordRegexList =
         {
 
         };
+
+        public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -56,9 +61,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeZoneExtractor TimeZoneExtractor { get; }
+
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
         public ItalianMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
@@ -72,6 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
             SetExtractor = new BaseSetExtractor(new ItalianSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration());
+            TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
             DateTimeAltExtractor = new BaseDateTimeAltExtractor(new ItalianDateTimeAltExtractorConfiguration());
             IntegerExtractor = new Number.Italian.IntegerExtractor();
         }
@@ -84,6 +94,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
         Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
+        StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
     }
 }

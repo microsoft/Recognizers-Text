@@ -1,6 +1,7 @@
 [{
   "Input": "192.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "192",
@@ -14,7 +15,8 @@
 ,
 {
   "Input": "192.168.1.2",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "192",
@@ -49,37 +51,43 @@
 ,
 {
   "Input": "il liquido da 180,25ml",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "il liquido da 180ml",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": " strada di 29km",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": " il 4 maggio ",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "il liquido da 0,25ml",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "0,08",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "0,08",
@@ -93,31 +101,36 @@
 ,
 {
   "Input": "un", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "un'", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "uno", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "una", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "0,23456000",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "0,23456000",
@@ -131,7 +144,8 @@
 ,
 {
   "Input": "4,800",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "4,800",
@@ -145,7 +159,8 @@
 ,
 {
   "Input": "centrotre e due terzi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centrotre e due terzi",
@@ -159,7 +174,8 @@
 ,
 {
   "Input": "sedici",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sedici",
@@ -173,7 +189,8 @@
 ,
 {
   "Input": "due terzi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due terzi",
@@ -187,7 +204,8 @@
 ,
 {
   "Input": "centosedici",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centosedici",
@@ -201,7 +219,8 @@
 ,
 {
   "Input": "centosei",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centosei",
@@ -215,7 +234,8 @@
 ,
 {
   "Input": "centosessantuno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centosessantuno",
@@ -229,7 +249,8 @@
 ,
 {
   "Input": "un bilionesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un bilionesimo",
@@ -243,7 +264,8 @@
 ,
 {
   "Input": "cento bilionesimi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cento bilionesimi",
@@ -257,7 +279,8 @@
 ,
 {
   "Input": " mezza dozzina",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "mezza dozzina",
@@ -271,7 +294,8 @@
 ,
 {
   "Input": " 3 dozzine",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3 dozzine",
@@ -285,7 +309,8 @@
 ,
 {
   "Input": "una dozzina",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "una dozzina",
@@ -299,7 +324,8 @@
 ,
 {
   "Input": " tre dozzine ",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre dozzine",
@@ -313,7 +339,8 @@
 ,
 {
   "Input": " trecento e due dozzine",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "trecento e due dozzine",
@@ -327,7 +354,8 @@
 ,
 {
   "Input": "1.234.567",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1.234.567",
@@ -341,7 +369,8 @@
 ,
 {
   "Input": "1, 234, 567",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1",
@@ -369,7 +398,8 @@
 ,
 {
   "Input": "9,2321312",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "9,2321312",
@@ -383,7 +413,8 @@
 ,
 {
   "Input": " -9,2321312",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-9,2321312",
@@ -397,7 +428,8 @@
 ,
 {
   "Input": " -1",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-1",
@@ -411,7 +443,8 @@
 ,
 {
   "Input": "-4/5",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-4/5",
@@ -425,7 +458,8 @@
 ,
 {
   "Input": "- 1 e 4/5", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "- 1 e 4/5",
@@ -439,7 +473,8 @@
 ,
 {
   "Input": "tre",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre",
@@ -453,7 +488,8 @@
 ,
 {
   "Input": " 123456789101231",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "123456789101231",
@@ -467,7 +503,8 @@
 ,
 {
   "Input": "-123456789101231",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-123456789101231",
@@ -481,7 +518,8 @@
 ,
 {
   "Input": " -123456789101231",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-123456789101231",
@@ -495,7 +533,8 @@
 ,
 {
   "Input": "1",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1",
@@ -509,7 +548,8 @@
 ,
 {
   "Input": "10k",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "10k",
@@ -523,7 +563,8 @@
 ,
 {
   "Input": "10G",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "10G",
@@ -537,7 +578,8 @@
 ,
 {
   "Input": "- 10  k",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "- 10  k",
@@ -551,7 +593,8 @@
 ,
 {
   "Input": "2 milioni",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2 milioni",
@@ -565,7 +608,8 @@
 ,
 {
   "Input": "1 bilione",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 bilione",
@@ -579,7 +623,8 @@
 ,
 {
   "Input": " tre ",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre",
@@ -593,7 +638,8 @@
 ,
 {
   "Input": "un bilione",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un bilione",
@@ -607,7 +653,8 @@
 ,
 {
   "Input": "ventuno bilioni",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventuno bilioni",
@@ -621,7 +668,8 @@
 ,
 {
   "Input": "ventunbilionitrecento",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventunbilionitrecento",
@@ -635,7 +683,8 @@
 ,
 {
   "Input": "cinquantadue",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinquantadue",
@@ -649,7 +698,8 @@
 ,
 {
   "Input": "Trecentotrentuno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Trecentotrentuno",
@@ -663,7 +713,8 @@
 ,
 {
   "Input": "duecentoduemila", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "duecentoduemila",
@@ -677,7 +728,8 @@
 ,
 {
   "Input": "duemiladuecento",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "duemiladuecento",
@@ -691,7 +743,8 @@
 ,
 {
   "Input": " 2,33 k", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2,33 k",
@@ -705,7 +758,8 @@
 ,
 {
   "Input": " duecento punto zero tre",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "duecento punto zero tre",
@@ -719,7 +773,8 @@
 ,
 {
   "Input": " duecento punto settantuno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "duecento punto settantuno",
@@ -733,7 +788,8 @@
 ,
 {
   "Input": "1e10",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1e10",
@@ -747,7 +803,8 @@
 ,
 {
   "Input": "1,1^23",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1,1^23",
@@ -761,7 +818,8 @@
 ,
 {
   "Input": "settanta",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "seventy",
@@ -775,7 +833,8 @@
 ,
 {
   "Input": "cinquantadue",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinquantadue",
@@ -789,7 +848,8 @@
 ,
 {
   "Input": "2 e 1/4", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2 e 1/4",
@@ -803,7 +863,8 @@
 ,
 {
   "Input": "3/4",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "3/4",
@@ -817,7 +878,8 @@
 ,
 {
   "Input": "un ottavo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un ottavo",
@@ -831,7 +893,8 @@
 ,
 {
   "Input": "cinque ottavi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinque ottav",
@@ -845,7 +908,8 @@
 ,
 {
   "Input": "un mezzo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un mezzo",
@@ -859,7 +923,8 @@
 ,
 {
   "Input": "tre quarti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre quarti",
@@ -873,7 +938,8 @@
 ,
 {
   "Input": "venti e tre quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "venti e tre quinti",
@@ -887,7 +953,8 @@
 ,
 {
   "Input": "ventitre quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventitre quinti",
@@ -901,7 +968,8 @@
 ,
 {
   "Input": "ventitre e tre quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventitre e tre quinti",
@@ -915,7 +983,8 @@
 ,
 {
   "Input": "unmilioneduemiladuecento quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "unmilioneduemiladuecento quinti",
@@ -929,7 +998,8 @@
 ,
 {
   "Input": "uno e mezzo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uno e mezzo",
@@ -943,7 +1013,8 @@
 ,
 {
   "Input": "uno e un quarto",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uno e un quarto",
@@ -957,7 +1028,8 @@
 ,
 {
   "Input": "cinque e un quarto",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinque e un quarto",
@@ -971,7 +1043,8 @@
 ,
 {
   "Input": "cento e tre quarti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cento e tre quarti",
@@ -985,7 +1058,8 @@
 ,
 {
   "Input": "un centesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un centesimo",
@@ -999,7 +1073,8 @@
 ,
 {
   "Input": "1,1^+23",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1,1^+23",
@@ -1013,7 +1088,8 @@
 ,
 {
   "Input": "2,5^-1",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2,5^-1",
@@ -1027,7 +1103,8 @@
 ,
 {
   "Input": "-2500^-1",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-2500^-1",
@@ -1041,7 +1118,8 @@
 ,
 {
   "Input": "-1,1^+23",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-1,1^+23",
@@ -1055,7 +1133,8 @@
 ,
 {
   "Input": "-2,5^-1",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-2,5^-1",
@@ -1069,7 +1148,8 @@
 ,
 {
   "Input": "-1,1^--23",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-1,1^--23",
@@ -1083,7 +1163,8 @@
 ,
 {
   "Input": "-127,32e13",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-127,32e13",
@@ -1097,7 +1178,8 @@
 ,
 {
   "Input": "12,32e+14",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "12,32e+14",
@@ -1111,7 +1193,8 @@
 ,
 {
   "Input": "-12e-1",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-12e-1",
@@ -1125,7 +1208,8 @@
 ,
 {
   "Input": "1,2b", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1,2b",
@@ -1139,7 +1223,8 @@
 ,
 {
   "Input": "un quinto",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un quinto",
@@ -1153,7 +1238,8 @@
 ,
 {
   "Input": "centomila bilionesimi", 
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centomila bilionesimi",
@@ -1167,7 +1253,8 @@
 ,
 {
   "Input": "tre quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre quinti",
@@ -1181,7 +1268,8 @@
 ,
 {
   "Input": "venti quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "venti quinti",
@@ -1195,7 +1283,8 @@
 ,
 {
   "Input": "tre e un quinto",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre e un quinto",
@@ -1209,7 +1298,8 @@
 ,
 {
   "Input": "ventuno quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventuno quinti",
@@ -1223,7 +1313,8 @@
 ,
 {
   "Input": "un ventunesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un ventunesimo",
@@ -1237,7 +1328,8 @@
 ,
 {
   "Input": "un venticinquesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un venticinquesimo",
@@ -1251,7 +1343,8 @@
 ,
 {
   "Input": "tre ventunesimi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tre ventunesimi",
@@ -1265,7 +1358,8 @@
 ,
 {
   "Input": "venti venticinquesimi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "venti venticinquesimi",
@@ -1279,7 +1373,8 @@
 ,
 {
   "Input": "centotrenta quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centotrenta quinti",
@@ -1293,7 +1388,8 @@
 ,
 {
   "Input": "cento trentacinquesimi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cento trentacinquesimi",
@@ -1307,7 +1403,8 @@
 ,
 {
   "Input": "centotrentadue quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centotrentadue quinti",
@@ -1321,7 +1418,8 @@
 ,
 {
   "Input": "centotrenta e due quinti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "centotrenta e due quinti",
@@ -1335,7 +1433,8 @@
 ,
 {
   "Input": "un centocinquesimo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "one one hundred fifth",
@@ -1349,7 +1448,8 @@
 ,
 {
   "Input": "cento millecinquesimi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cento millecinquesimi",
@@ -1363,7 +1463,8 @@
 ,
 {
   "Input": "uno su tre",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uno su tre",
@@ -1377,7 +1478,8 @@
 ,
 {
   "Input": "1 su ventuno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 su ventuno",
@@ -1391,7 +1493,8 @@
 ,
 {
   "Input": "1 su centoventunesimi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 su centoventunesimi",
@@ -1405,7 +1508,8 @@
 ,
 {
   "Input": "1 su tre",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 su tre",
@@ -1419,7 +1523,8 @@
 ,
 {
   "Input": "1 su 3",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 su 3",
@@ -1433,7 +1538,8 @@
 ,
 {
   "Input": "uno su 3",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uno su 3",
@@ -1447,7 +1553,8 @@
 ,
 {
   "Input": "uno su 20",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uno su 20",
@@ -1461,7 +1568,8 @@
 ,
 {
   "Input": "uno su venti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uno si venti",
@@ -1475,7 +1583,8 @@
 ,
 {
   "Input": "uno su cento",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uno su cento",
@@ -1489,7 +1598,8 @@
 ,
 {
   "Input": "uno su centoventicinque",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uno su centoventicinque",
@@ -1503,7 +1613,8 @@
 ,
 {
   "Input": "Prenota un posto di prima classe per seattle",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ]

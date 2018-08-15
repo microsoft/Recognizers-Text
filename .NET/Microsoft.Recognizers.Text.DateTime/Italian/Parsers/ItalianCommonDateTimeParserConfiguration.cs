@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public ItalianCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
+        public ItalianCommonDateTimeParserConfiguration(IOptionsConfiguration options) : base(options)
         {
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
 

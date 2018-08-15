@@ -1,8 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
@@ -17,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex AnUnitRegex { get; }
 
+        public Regex DuringRegex { get; }
+
         public Regex AllDateUnitRegex { get; }
 
         public Regex HalfDateUnitRegex { get; }
@@ -27,9 +27,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex ConjunctionRegex { get; }
 
-        public Regex InExactNumberRegex { get; }
+        public Regex InexactNumberRegex { get; }
 
-        public Regex InExactNumberUnitRegex { get; }
+        public Regex InexactNumberUnitRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 
@@ -46,13 +46,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(), false);
             NumberCombinedWithUnit = ItalianDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = ItalianDurationExtractorConfiguration.AnUnitRegex;
+            DuringRegex = ItalianDurationExtractorConfiguration.DuringRegex;
             AllDateUnitRegex = ItalianDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = ItalianDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = ItalianDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = ItalianDurationExtractorConfiguration.DurationFollowedUnit;
             ConjunctionRegex = ItalianDurationExtractorConfiguration.ConjunctionRegex;
-            InExactNumberRegex = ItalianDurationExtractorConfiguration.InExactNumberRegex;
-            InExactNumberUnitRegex = ItalianDurationExtractorConfiguration.InExactNumberUnitRegex;
+            InexactNumberRegex = ItalianDurationExtractorConfiguration.InexactNumberRegex;
+            InexactNumberUnitRegex = ItalianDurationExtractorConfiguration.InexactNumberUnitRegex;
             DurationUnitRegex = ItalianDurationExtractorConfiguration.DurationUnitRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;

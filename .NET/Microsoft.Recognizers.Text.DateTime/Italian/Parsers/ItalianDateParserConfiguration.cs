@@ -2,9 +2,8 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.Italian;
-using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -34,6 +33,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex SpecialDayRegex { get; }
 
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex NextRegex { get; }
 
         public Regex ThisRegex { get; }
@@ -58,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Regex YearSuffix { get; }
 
+        public Regex RelativeWeekDayRegex { get; }
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
@@ -81,6 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateRegexes = ItalianDateExtractorConfiguration.DateRegexList;
             OnRegex = ItalianDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
+            SpecialDayWithNumRegex = ItalianDateExtractorConfiguration.SpecialDayWithNumRegex;
             NextRegex = ItalianDateExtractorConfiguration.NextRegex;
             ThisRegex = ItalianDateExtractorConfiguration.ThisRegex;
             LastRegex = ItalianDateExtractorConfiguration.LastRegex;
@@ -93,6 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             WeekDayAndDayOfMothRegex = ItalianDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = ItalianDateExtractorConfiguration.RelativeMonthRegex;
             YearSuffix = ItalianDateExtractorConfiguration.YearSuffix;
+            RelativeWeekDayRegex = ItalianDateExtractorConfiguration.RelativeWeekDayRegex;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

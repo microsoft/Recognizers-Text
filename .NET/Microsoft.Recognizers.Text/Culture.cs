@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text
             new Culture("French", French),
             new Culture("German", German),
             new Culture("Italian", Italian),
-            new Culture("Japanese", Japanese)
+            new Culture("Japanese", Japanese),
             new Culture("Dutch", Dutch),
             new Culture("Korean", Korean)
         };

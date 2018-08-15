@@ -1,9 +1,8 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.Italian;
-using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -100,6 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             }
             return result;
         }
+
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimedText = text.Trim().ToLowerInvariant();
@@ -140,6 +140,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             return swift;
         }
 
-        public bool HaveAmbiguousToken(string text, string matchedText) => false;
+        public bool ContainsAmbiguousToken(string text, string matchedText) => false;
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
@@ -17,6 +16,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
+
+        public Regex SpecificTimeFromToRegex { get; }
+
+        public Regex SpecificTimeBetweenAndRegex { get; }
 
         public Regex TimeOfDayRegex { get; }
 
@@ -34,7 +37,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo; 
-            PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd; 
+            PureNumberBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            SpecificTimeFromToRegex = ItalianTimePeriodExtractorConfiguration.SpecificTimeFromTo;
+            SpecificTimeBetweenAndRegex = ItalianTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
             TimeOfDayRegex = ItalianTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = ItalianTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = ItalianTimePeriodExtractorConfiguration.TillRegex;

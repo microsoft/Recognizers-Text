@@ -1,6 +1,7 @@
 [{
   "Input": "Tornerò il 15",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "15",
@@ -11,7 +12,8 @@
 ,
 {
   "Input": "Tornerò il 22 Aprile",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "22 Aprile",
@@ -22,7 +24,8 @@
 ,
 {
   "Input": "Tornerò il 1 Gen",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 Gen",
@@ -33,7 +36,8 @@
 ,
 {
   "Input": "Tornerò il 2 Ottobre",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2 Ottobre",
@@ -44,7 +48,8 @@
 ,
 {
   "Input": "Tornerò il 12 Gennaio 2016",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "12 Gennaio 2016",
@@ -55,7 +60,8 @@
 ,
 {
   "Input": "Tornerò il 12 Gennaio del 2016",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "12 Gennaio del 2016",
@@ -66,7 +72,8 @@
 ,
 {
   "Input": "Tornerò Lunedì 12 Gennaio 2016",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Lunedì 12 Gennaio 2016",
@@ -77,7 +84,8 @@
 ,
 {
   "Input": "Tornerò il 02/22/2016",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "02/22/2016",
@@ -88,7 +96,8 @@
 ,
 {
   "Input": "Tornerò il 21/04/2016",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "21/04/2016",
@@ -99,7 +108,8 @@
 ,
 {
   "Input": "Tornerò il 21/04/16",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "21/04/16",
@@ -110,7 +120,8 @@
 ,
 {
   "Input": "Tornerò il 9-18-15",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "9-18-15",
@@ -121,7 +132,8 @@
 ,
 {
   "Input": "Tornerò il 4.22",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "4.22",
@@ -132,7 +144,8 @@
 ,
 {
   "Input": "Tornerò il 4-22",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "4-22",
@@ -143,7 +156,8 @@
 ,
 {
   "Input": "Tornerò il    4/22",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "4/22",
@@ -154,7 +168,8 @@
 ,
 {
   "Input": "Tornerò il 22/04",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "22/04",
@@ -165,7 +180,8 @@
 ,
 {
   "Input": "Tornerò il 22/04",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "22/04",
@@ -176,7 +192,8 @@
 ,
 {
   "Input": "Tornerò il 2015/08/12",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2015/08/12",
@@ -187,7 +204,8 @@
 ,
 {
   "Input": "Tornerò il 11/12,2016",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "11/12,2016",
@@ -198,7 +216,8 @@
 ,
 {
   "Input": "Tornerò il 11/12,16",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "11/12,16",
@@ -209,7 +228,8 @@
 ,
 {
   "Input": "Tornerò il 1 Gen",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 Gen",
@@ -220,7 +240,8 @@
 ,
 {
   "Input": "Tornerò il 1-Gen",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1-Gen",
@@ -231,7 +252,8 @@
 ,
 {
   "Input": "Tornerò il 28-Nov",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "28-Nov",
@@ -242,7 +264,8 @@
 ,
 {
   "Input": "Tornerò Mer, 22 Gen",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Mer, 22 Gen",
@@ -253,7 +276,8 @@
 ,
 {
   "Input": "Tornerò il primo venerdì di luglio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il primo venerdì di luglio",
@@ -264,7 +288,8 @@
 ,
 {
   "Input": "Tornerò il primo venerdì di questo mese",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il primo venerdì di questo mese",
@@ -275,7 +300,8 @@
 ,
 {
   "Input": "Tornerò tra due settimane da adesso",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tra due settimane da adesso",
@@ -286,7 +312,8 @@
 ,
 {
   "Input": "Tornerò la prossima settimana il venerdì",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "prossima settimana il venerdì",
@@ -297,7 +324,8 @@
 ,
 {
   "Input": "Tornerò il venerdì della prossima settimana",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il venerdì della prossima settimana",
@@ -308,7 +336,8 @@
 ,
 {
   "Input": "lo scorso Lunedì",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "lo scorso Lunedì",
@@ -319,7 +348,8 @@
 ,
 {
   "Input": "Tornerò Mar.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Mar",
@@ -330,7 +360,8 @@
 ,
 {
   "Input": "Tornerò Mar. buone notizie.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Mar",
@@ -341,7 +372,8 @@
 ,
 {
   "Input": "Tornerò Mar",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Mar",
@@ -352,7 +384,8 @@
 ,
 {
   "Input": "Tornerò Venerdì",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Venerdì",
@@ -363,7 +396,8 @@
 ,
 {
   "Input": "Tornerò oggi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "oggi",
@@ -374,7 +408,8 @@
 ,
 {
   "Input": "Tornerò domani",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "domani",
@@ -385,7 +420,8 @@
 ,
 {
   "Input": "Sono tornato ieri",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ieri",
@@ -396,7 +432,8 @@
 ,
 {
   "Input": "Sono tornato l'altroieri",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "l'altroieri",
@@ -407,7 +444,8 @@
 ,
 {
   "Input": "Tornerò dopodomani",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "dopodomani",
@@ -418,7 +456,8 @@
 ,
 {
   "Input": "Tornerò il giorno dopo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il giorno dopo",
@@ -429,7 +468,8 @@
 ,
 {
   "Input": "Tornerò questo Venerdì",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "questo Venerdì",
@@ -440,7 +480,8 @@
 ,
 {
   "Input": "Tornerò Domenica prossima",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Domenica prossima",
@@ -451,7 +492,8 @@
 ,
 {
   "Input": "Sono tornato Domenica scorsa",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Domenica scorsa",
@@ -462,7 +504,8 @@
 ,
 {
   "Input": "Tornerò l'ultimo giorno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ultimo giorno",
@@ -473,7 +516,8 @@
 ,
 {
   "Input": "Tornerò in giornata",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "in giornata",
@@ -484,7 +528,8 @@
 ,
 {
   "Input": "Tornerò questa settimana, di Venerdì",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "questa settimana, di Venerdì",
@@ -495,7 +540,8 @@
 ,
 {
   "Input": "Tornerò la prossima settimana, di Domenica",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la prossima settimana, di Domenica",
@@ -506,7 +552,8 @@
 ,
 {
   "Input": "Sono tornato la scorsa settimana, di Domenica",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la scorsa settimana, di Domenica",
@@ -517,7 +564,8 @@
 ,
 {
   "Input": "Tornerò il 15 Giugno 2016",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "15 Giugno 2016",
@@ -528,7 +576,8 @@
 ,
 {
   "Input": "baseball l'undici maggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "l'undici maggio",
@@ -539,7 +588,8 @@
 ,
 {
   "Input": "Tornerò il quattro maggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il quattro maggio",
@@ -550,7 +600,8 @@
 ,
 {
   "Input": "Tornerò il 4 marzo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "4 marzo",
@@ -561,7 +612,8 @@
 ,
 {
   "Input": "Tornerò il primo Gen",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "primo Gen",
@@ -572,7 +624,8 @@
 ,
 {
   "Input": "Tornerò il ventuno Maggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventuno Maggio",
@@ -583,7 +636,8 @@
 ,
 {
   "Input": "Tornnerò il due Ago",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due Ago",
@@ -594,7 +648,8 @@
 ,
 {
   "Input": "Tornerò il ventidue Giugno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ventidue Giugno",
@@ -605,7 +660,8 @@
 ,
 {
   "Input": "Sono tornato due mesi fa",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due mesi fa",
@@ -616,7 +672,8 @@
 ,
 {
   "Input": "Tornerò due giorni dopo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "due giorni dopo",
@@ -627,7 +684,8 @@
 ,
 {
   "Input": "a chi ho mandato una email un mese fa",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "un mese fa",
@@ -638,7 +696,8 @@
 ,
 {
   "Input": "Sono tornato per il 27",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il 27",
@@ -649,7 +708,8 @@
 ,
 {
   "Input": "Sono tornato per il 27.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il 27",
@@ -660,7 +720,8 @@
 ,
 {
   "Input": "Sono tornato per il 27!",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il 27",
@@ -671,7 +732,8 @@
 ,
 {
   "Input": "Sono tornato per il 27 .",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il 27",
@@ -682,7 +744,8 @@
 ,
 {
   "Input": "Sono tornato per il 21",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il 21",
@@ -693,7 +756,8 @@
 ,
 {
   "Input": "Sono tornato per il 22",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il 22",
@@ -704,7 +768,8 @@
 ,
 {
   "Input": "Sono tornato per il due",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il due",
@@ -715,7 +780,8 @@
 ,
 {
   "Input": "Sono tornato per il ventidue",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il ventidue",
@@ -726,7 +792,8 @@
 ,
 {
   "Input": "Sono tornato per il trentuno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "per il trentuno",
@@ -737,7 +804,8 @@
 ,
 {
   "Input": "Sono tornato il 27",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il 27",
@@ -748,7 +816,8 @@
 ,
 {
   "Input": "Sono tornato il 21",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il 21",
@@ -759,7 +828,8 @@
 ,
 {
   "Input": "Sono tornato il 22",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il 22",
@@ -770,7 +840,8 @@
 ,
 {
   "Input": "Sono tornato il due!",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il due",
@@ -781,7 +852,8 @@
 ,
 {
   "Input": "Sono tornato il ventidue?",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il ventidue",
@@ -792,25 +864,29 @@
 ,
 {
   "Input": "il primo premio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "Andrò al 27° piano",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "L'evento commemorativo per il 25° anniversario delle relazioni diplomatiche tra Singapore e China",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "Prendi i biglietti per il 17° Door Haunted Experience",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
@@ -819,7 +895,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sabato due",
@@ -833,7 +910,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Mercoledì 27",
@@ -847,7 +925,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Giovedì 21",
@@ -861,7 +940,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Venerdì 22",
@@ -875,7 +955,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Sabato 23",
@@ -889,7 +970,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Venerdì 15",
@@ -903,7 +985,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Giovedì ventuno",
@@ -917,7 +1000,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Venerdì ventidue",
@@ -931,7 +1015,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Venerdì quindici",
@@ -945,7 +1030,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-01T00:00:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Giovedì sette",
@@ -956,7 +1042,8 @@
 ,
 {
   "Input": "Tornerò la seconda Domenica",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la seconda Domenica",
@@ -967,7 +1054,8 @@
 ,
 {
   "Input": "Tornerò la prima Domenica",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la prima Domenica",
@@ -978,7 +1066,8 @@
 ,
 {
   "Input": "Tornerò il terzo Martedì",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il terzo Martedì",
@@ -989,7 +1078,8 @@
 ,
 {
   "Input": "Tornerò la quinta Domenica",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "quinta Domenica",
@@ -1000,7 +1090,8 @@
 ,
 {
   "Input": "Tornerò la sesta Domenica",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sesta Domenica",
@@ -1011,7 +1102,8 @@
 ,
 {
   "Input": "Tornerò il decimo Lunedì",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Lunedì",
@@ -1022,7 +1114,8 @@
 ,
 {
   "Input": "Tornerò il 20 del prossimo mese",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il 20 del prossimo mese",
@@ -1033,7 +1126,8 @@
 ,
 {
   "Input": "Tornerò il 31 di questo mese",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il 31 di questo mese",
@@ -1044,7 +1138,8 @@
 ,
 {
   "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o Martedì della prossima settimana",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Venerdì di questa settimana",
@@ -1060,7 +1155,8 @@
 ,
 {
   "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o questa settimana di Domenica",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Venerdì di questa settimana",
@@ -1076,7 +1172,8 @@
 ,
 {
   "Input": "16. Nov. 2016",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "16. Nov. 2016",
@@ -1088,7 +1185,8 @@
 {
   "Input": "Abbiamo avuto un appuntamento 1 mese e 21 giorni fa",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 mese e 21 giorni fa",
@@ -1100,7 +1198,8 @@
 {
   "Input": "Sono partito 2 anni 1 mese e 21 giorni fa",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2 anni 1 mese e 21 giorni fa",
@@ -1112,7 +1211,8 @@
 {
   "Input": "Partirò 2 anni e 21 giorni dopo",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "2 anni e 21 giorni dopo",
@@ -1124,7 +1224,8 @@
 {
   "Input": "Sono partito 1 mese 2 anni e 21 giorni fa",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 mese 2 anni e 21 giorni fa",
@@ -1136,7 +1237,8 @@
 {
   "Input": "Sono partito il 20 del prossimo mese",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il 20 del prossimo mese",
@@ -1147,7 +1249,8 @@
 ,
 {
   "Input": "Sono partito il 5 Dicembre 1391",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "5 Dicembre 1391",
@@ -1159,7 +1262,8 @@
 {
   "Input": "Lunedì, Gen ventidue, 2018",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Lunedì, Gen ventidue, 2018",
@@ -1171,7 +1275,8 @@
 {
   "Input": "Domenica ventuno Gen duemiladiciotto",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Domenica ventuno Gen duemiladiciotto",
@@ -1183,7 +1288,8 @@
 {
   "Input": "a Settembre, il ventuno, millenovecentosettantatre",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Settembre, il ventuno, millenovecentosettantatre",
@@ -1195,7 +1301,8 @@
 {
   "Input": "il 10 Settembre, millenovecentouno",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "10 Settembre, millenovecentouno",
@@ -1207,7 +1314,8 @@
 {
   "Input": "il dieci di Settembre, duemila",
   "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "dieci di Settembre, duemila",

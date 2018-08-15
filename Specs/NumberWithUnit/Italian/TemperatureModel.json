@@ -1,6 +1,7 @@
 [{
   "Input": "la temperatura esterna è di 40 gradi celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "40 gradi celsius",
@@ -15,7 +16,8 @@
 ,
 {
   "Input": "In texas ci sono 90 fahrenheit",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "90 fahrenheit",
@@ -30,7 +32,8 @@
 ,
 {
   "Input": "-5 gradi fahrenheit",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "-5 gradi fahrenheit",
@@ -45,7 +48,8 @@
 ,
 {
   "Input": "6 gradi celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "6 gradi celsius",
@@ -60,7 +64,8 @@
 ,
 {
   "Input": "98,6 gradi f è una temperatura normale",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "98,6 gradi f",
@@ -75,7 +80,8 @@
 ,
 {
   "Input": "imposta la temperatura a 30 gradi celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "30 gradi celsius",
@@ -90,7 +96,8 @@
 ,
 {
   "Input": "normalmente la temperatura è di 98,6 gradi fahrenheit",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "98,6 gradi fahrenheit",
@@ -105,7 +112,8 @@
 ,
 {
   "Input": "100 gradi f",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "100 gradi f",
@@ -120,7 +128,8 @@
 ,
 {
   "Input": "20 gradi c",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "20 gradi c",
@@ -135,7 +144,8 @@
 ,
 {
   "Input": "100,2 gradi farenheit sono pochi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "100,2 gradi farenheit",
@@ -150,7 +160,8 @@
 ,
 {
   "Input": "10,5 celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "10,5 celsius",
@@ -165,7 +176,8 @@
 ,
 {
   "Input": "20 gradi celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "20 gradi celsius",
@@ -180,7 +192,8 @@
 ,
 {
   "Input": "20,3 celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "20,3 celsius",
@@ -195,7 +208,8 @@
 ,
 {
   "Input": "34,5 celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "34,5 celsius",
@@ -210,7 +224,8 @@
 ,
 {
   "Input": "la temperatura esterna è di 98 gradi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "98 gradi",
@@ -225,7 +240,8 @@
 ,
 {
   "Input": "imposta il termostato a 85°",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "85°",
@@ -240,7 +256,8 @@
 ,
 {
   "Input": "alza la temperatura di 5 gradi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "5 gradi",
@@ -255,7 +272,8 @@
 ,
 {
   "Input": "imposta la temperatura a 70 gradi f",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "70 gradi f",
@@ -270,7 +288,8 @@
 ,
 {
   "Input": "alza la temperatura di 20 gradi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "20 gradi",
@@ -285,7 +304,8 @@
 ,
 {
   "Input": "imposta la temperatura a 100 gradi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "100 gradi",
@@ -300,7 +320,8 @@
 ,
 {
   "Input": "mantieni la temperatura a 75 gradi f",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "75 gradi f",
@@ -315,7 +336,8 @@
 ,
 {
   "Input": "let the temperatura be at 40 celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "40 celsius",
@@ -330,7 +352,8 @@
 ,
 {
   "Input": "lascia la temperatura a 50 gradi",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "50 gradi",
@@ -345,7 +368,8 @@
 ,
 {
   "Input": "converti 10 celsius in fahrenheit",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "10 celsius",
@@ -368,7 +392,8 @@
 ,
 {
   "Input": "34,9 centigradi in farenheit",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "34,9 centigradi",
@@ -391,7 +416,8 @@
 ,
 {
   "Input": "converti 200 celsius celsius in fahrenheit",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "200 celsius",
@@ -422,7 +448,8 @@
 ,
 {
   "Input": "fahrenheit in celsius 101 fahrenheit è troppo celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "101 fahrenheit",
@@ -461,7 +488,8 @@
 ,
 {
   "Input": "50 gradi celsius celsius in fahrenheit",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "50 gradi celsius",
@@ -492,7 +520,8 @@
 ,
 {
   "Input": "puoi convertire 51 fahrenheit in gradi celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "51 fahrenheit",
@@ -515,7 +544,8 @@
 ,
 {
   "Input": "converti 106 gradi fahrenheit in gradi celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "106 gradi fahrenheit",
@@ -538,7 +568,8 @@
 ,
 {
   "Input": "converti 45 gradi fahrenheit in celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "45 gradi fahrenheit",
@@ -561,7 +592,8 @@
 ,
 {
   "Input": "come convertire - 20 gradi fahrenheit in celsius",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "- 20 gradi fahrenheit",

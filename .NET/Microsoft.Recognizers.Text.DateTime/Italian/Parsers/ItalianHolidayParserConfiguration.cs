@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
-        public ItalianHolidayParserConfiguration() : base()
+        public ItalianHolidayParserConfiguration(IOptionsConfiguration config) : base(config)
         {
             this.HolidayRegexList = ItalianHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();

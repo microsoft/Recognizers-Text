@@ -3,7 +3,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "settimanalmente",
@@ -26,7 +27,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2754476+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni due settimane",
@@ -49,7 +51,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "quotidianamente",
@@ -72,7 +75,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2794445+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni giorno",
@@ -95,7 +99,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2829445+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni mese",
@@ -118,7 +123,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2844439+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "annualmente",
@@ -140,7 +146,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "una volta all'anno",
@@ -163,7 +170,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2909444+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni due giorni",
@@ -186,7 +194,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2959472+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni tre settimane",
@@ -209,7 +218,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.2989494+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "alle 3pm ogni giorno",
@@ -232,7 +242,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3109498+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni 4/15",
@@ -255,7 +266,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3259514+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni lunedì",
@@ -278,7 +290,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3379507+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni lunedì alle 4pm",
@@ -301,7 +314,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3429518+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni mattina",
@@ -324,7 +338,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3609535+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni mattina alle 9am",
@@ -347,7 +362,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3730732+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni pomeriggio alle 4pm",
@@ -370,7 +386,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3840706+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni notte alle 9pm",
@@ -393,7 +410,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.3930718+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ogni notte alle 9",
@@ -416,7 +434,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4065719+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la mattina alle 9am",
@@ -439,7 +458,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "di mattina alle 9",
@@ -462,7 +482,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4295727+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "alle 9am ogni domenica",
@@ -485,7 +506,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4505726+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "alle 9am la domenica",
@@ -508,7 +530,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4570731+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "il lunedì",
@@ -531,7 +554,8 @@
   "Context": {
     "ReferenceDateTime": "2017-09-27T17:25:54.4635727+08:00"
   },
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "la domenica",

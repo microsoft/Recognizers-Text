@@ -2,7 +2,6 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Italian;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -19,6 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IDateTimeExtractor DateExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor OrdinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
 
@@ -63,7 +64,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
+        public Regex ComplexDatePeriodRegex { get; }
         public Regex RelativeDecadeRegex { get; }
+        public Regex ReferenceDatePeriodRegex { get; }
+        public Regex AgoRegex { get; }
+        public Regex LaterRegex { get; }
+        public Regex LessThanRegex { get; }
+        public Regex MoreThanRegex { get; }
+        public Regex CenturySuffixRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -109,6 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
+            OrdinalExtractor = config.OrdinalExtractor;
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
@@ -144,9 +153,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             YearPlusNumberRegex = ItalianDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = ItalianDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             YearPeriodRegex = ItalianDatePeriodExtractorConfiguration.YearPeriodRegex;
+            ComplexDatePeriodRegex = ItalianDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
             RelativeDecadeRegex = ItalianDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = ItalianDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            ReferenceDatePeriodRegex = ItalianDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            AgoRegex = ItalianDatePeriodExtractorConfiguration.AgoRegex;
+            LaterRegex = ItalianDatePeriodExtractorConfiguration.LaterRegex;
+            LessThanRegex = ItalianDatePeriodExtractorConfiguration.LessThanRegex;
+            MoreThanRegex = ItalianDatePeriodExtractorConfiguration.MoreThanRegex;
+            CenturySuffixRegex = ItalianDatePeriodExtractorConfiguration.CenturySuffixRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

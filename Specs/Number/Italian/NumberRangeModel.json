@@ -1,14 +1,14 @@
 [{
   "Input": "1995-01",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": []
 }
 ,
 {
   "Input": "Questo numero è più grande di venti e minore o uguale a trentacinque.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più grande di venti e minore o uguale a trentacinque",
@@ -22,8 +22,8 @@
 ,
 {
   "Input": "Il numero è tra 20 e 30.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tra 20 e 30",
@@ -37,8 +37,8 @@
 ,
 {
   "Input": "Lui si classifica tra il decimo e il quindicesimo.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "tra il decimo e il quindicesimo",
@@ -52,8 +52,8 @@
 ,
 {
   "Input": "Lui si classifica più in alto del decimo, ma più in basso del quindicesimo.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più in alto del decimo, ma più in basso del quindicesimo",
@@ -67,8 +67,8 @@
 ,
 {
   "Input": "Questo è un numero che è più grande di 100 e più piccolo di 300", 
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più grande di 100 e più piccolo di 300",
@@ -82,8 +82,8 @@
 ,
 {
   "Input": "Questo numero è maggiore o uguale a cento, minore o uguale a trecento",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "maggiore o uguale a cento, minore o uguale a trecento",
@@ -97,8 +97,8 @@
 ,
 {
   "Input": "Ci sono alpiù 100 e almeno 20 mele.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "alpiù 100 e almeno 20",
@@ -112,8 +112,8 @@
 ,
 {
   "Input": "Queste mele sono circa 20-100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "20-100",
@@ -127,8 +127,8 @@
 ,
 {
   "Input": "L'intervallo di numeri è compreso tra 20 e 100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "compreso tra 20 e 100",
@@ -142,8 +142,8 @@
 ,
 {
   "Input": "L'intervallo di numeri è da mille a millecinquecento.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "da mille a millecinquecento",
@@ -157,8 +157,8 @@
 ,
 {
   "Input": "Il numero è superiore a 1000 e inferiore a 1500",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "superiore a 1000 e inferiore a 1500",
@@ -172,8 +172,8 @@
 ,
 {
   "Input": "Il numero è superiore a un quarto e inferiore a un mezzo.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "superiore a un quarto e inferiore a un mezzo",
@@ -187,8 +187,8 @@
 ,
 {
   "Input": "Questo numero è più grande o uguale a tremilanovecentosessantacinque.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più grande o uguale a tremilanovecentosessantacinque",
@@ -202,8 +202,8 @@
 ,
 {
   "Input": "Questo numero è più grande di 4.565",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più grande di",
@@ -217,8 +217,8 @@
 ,
 {
   "Input": "Lui ha più di trenta anni.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più di trenta",
@@ -232,8 +232,8 @@
 ,
 {
   "Input": "Lui ha sopra i trenta anni He is over thirty years old.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sopra i trenta",
@@ -247,8 +247,8 @@
 ,
 {
   "Input": "La sua età non è inferiore a trenta.", 
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "non è inferiore a trenta",
@@ -262,8 +262,8 @@
 ,
 {
   "Input": "Ci sono circa cinquecento e più in questi prodotti.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinquecento e più",
@@ -277,8 +277,8 @@
 ,
 {
   "Input": "Ci sono circa cinquecento o più in questi prodotti.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinquecento o più",
@@ -292,8 +292,8 @@
 ,
 {
   "Input": "Più di 1/2 delle persone sono venute qui.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Più di 1/2",
@@ -307,8 +307,8 @@
 ,
 {
   "Input": "Trova i numeri primi che sono più piccoli o uguali a 100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più piccoli o uguali a 100",
@@ -322,8 +322,8 @@
 ,
 {
   "Input": "Trova i numeri primi che sono minori o uguali a 100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": " minori o uguali a 100",
@@ -337,8 +337,8 @@
 ,
 {
   "Input": "Ci sono circa cinquecento o meno in questi prodotti.", 
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinquecento o meno",
@@ -352,8 +352,8 @@
 ,
 {
   "Input": "Trova i numeri primi che sono < = 100",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "< = 100",
@@ -367,8 +367,8 @@
 ,
 {
   "Input": "La sua altezza è inferiore a 170.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "inferiore a 170",
@@ -382,8 +382,8 @@
 ,
 {
   "Input": "La sua altezza è al di sotto di 170.", 
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "è al di sotto di 170",
@@ -397,8 +397,8 @@
 ,
 {
   "Input": "Meno di mille panda giganti vivono ancora allo stato brado.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "Meno di mille",
@@ -412,8 +412,8 @@
 ,
 {
   "Input": "x è uguale a centosettanta.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "uguale a centosettanta",
@@ -427,8 +427,8 @@
 ,
 {
   "Input": "x>10 e y<20",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": ">10",
@@ -449,8 +449,8 @@
 ,
 {
   "Input": "x è maggiore di 10 e minore di 20. y è non più di 50 e non meno di 20.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "maggiore di 10 e minore di 20",

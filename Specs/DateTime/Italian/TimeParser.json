@@ -1,6 +1,7 @@
 [{
   "Input": "imposta una sveglia per le otto e quaranta",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "otto e quaranta",
@@ -20,7 +21,8 @@
 ,
 {
   "Input": "imposta una sveglia per le otto e quaranta am",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "otto e quaranta am",
@@ -40,7 +42,8 @@
 ,
 {
   "Input": "imposta una sveglia per le otto e quaranta pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "otto e quaranta pm",
@@ -60,7 +63,8 @@
 ,
 {
   "Input": "imposta una sveglia per le dieci e quarantacinque",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "dieci e quarantacinque",
@@ -80,7 +84,8 @@
 ,
 {
   "Input": "imposta una sveglia per le quindici e quindici p m",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "quindici e quindici p m",
@@ -100,7 +105,8 @@
 ,
 {
   "Input": "imposta una sveglia per le quindici e trenta p m",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "quindici e trenta p m",
@@ -120,7 +126,8 @@
 ,
 {
   "Input": "imposta una sveglia per le dieci e dieci",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "dieci e dieci",
@@ -140,7 +147,8 @@
 ,
 {
   "Input": "imposta una sveglia per le dieci e cinquantacinque p. m.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "dieci e cinquantacinque p. m.",
@@ -160,7 +168,8 @@
 ,
 {
   "Input": "Tornerò alle 7ampm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7ampm",
@@ -180,7 +189,8 @@
 ,
 {
   "Input": "Tornerò alle 7",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7",
@@ -200,7 +210,8 @@
 ,
 {
   "Input": "Tornerò alle sette",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette",
@@ -220,7 +231,8 @@
 ,
 {
   "Input": "Tornerò alle 7pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7pm",
@@ -240,7 +252,8 @@
 ,
 {
   "Input": "Tornerò alle 7:56pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7:56pm",
@@ -260,7 +273,8 @@
 ,
 {
   "Input": "Tornerò alle 7:56:30pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7:56:30pm",
@@ -280,7 +294,8 @@
 ,
 {
   "Input": "Tornerò alle 7:56:30 pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7:56:30 pm",
@@ -300,7 +315,8 @@
 ,
 {
   "Input": "Tornerò alle 12:34",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "12:34",
@@ -320,7 +336,8 @@
 ,
 {
   "Input": "Tornerò alle 12:34:25 ",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "12:34:25",
@@ -340,7 +357,8 @@
 ,
 {
   "Input": "Sono le 7",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7",
@@ -360,7 +378,8 @@
 ,
 {
   "Input": "Sono le sette",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette",
@@ -380,7 +399,8 @@
 ,
 {
   "Input": "Sono le 8 del mattino",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "8 del mattino",
@@ -400,7 +420,8 @@
 ,
 {
   "Input": "Sono le 8 di notte",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "8 di notte",
@@ -420,7 +441,8 @@
 ,
 {
   "Input": "Sono le otto e mezza",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "otto e mezza",
@@ -440,7 +462,8 @@
 ,
 {
   "Input": "Sono le 8 e mezza pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "8 e mezza pm",
@@ -460,7 +483,8 @@
 ,
 {
   "Input": "Sono le otto e 30 min",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "otto e 30 min",
@@ -480,7 +504,8 @@
 ,
 {
   "Input": "Sono le otto e un quarto",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "otto e un quarto",
@@ -500,7 +525,8 @@
 ,
 {
   "Input": "Sono le 9pm e tre quarti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "9pm e tre quarti",
@@ -520,7 +546,8 @@
 ,
 {
   "Input": "Sono le otto meno tre minuti",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "otto meno tre minuti",
@@ -540,7 +567,8 @@
 ,
 {
   "Input": "Sono le sette e mezza",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette e mezza",
@@ -560,7 +588,8 @@
 ,
 {
   "Input": "Sono le sette e mezza di pomeriggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette e mezza di pomeriggio",
@@ -580,7 +609,8 @@
 ,
 {
   "Input": "Sono le sette e mezza del mattino",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette e mezza del mattino",
@@ -600,7 +630,8 @@
 ,
 {
   "Input": "Sono le 8 meno un quarto del mattino",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "8 meno un quarto del mattino",
@@ -620,7 +651,8 @@
 ,
 {
   "Input": "Sono le otto e 20 min di sera",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "otto e 20 min di sera",
@@ -640,7 +672,8 @@
 ,
 {
   "Input": "Tornerò nel pomeriggio alle 7",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "nel pomeriggio alle 7",
@@ -660,7 +693,8 @@
 ,
 {
   "Input": "Tornerò all  7 di pomeriggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7 di pomeriggio",
@@ -680,7 +714,8 @@
 ,
 {
   "Input": "Tornerò alle 7:00 di pomeriggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7:00 di pomeriggio",
@@ -700,7 +735,8 @@
 ,
 {
   "Input": "Tornerò alle 7:00:05 di pomeriggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7:00:05 di pomeriggio",
@@ -720,7 +756,8 @@
 ,
 {
   "Input": "Tornerò alle sette pm di pomeriggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette pm di pomeriggio",
@@ -740,7 +777,8 @@
 ,
 {
   "Input": "Tornerò alle sette e trenta pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette e trenta pm",
@@ -760,7 +798,8 @@
 ,
 {
   "Input": "Tornerò alle sette e trentacinque pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette e trentacinque pm",
@@ -780,7 +819,8 @@
 ,
 {
   "Input": "Tornerò alle undici e venti pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "undici e venti pm",
@@ -800,7 +840,8 @@
 ,
 {
   "Input": "Tornerò più o meno a mezzogiorno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più o meno a mezzogiorno",
@@ -820,7 +861,8 @@
 ,
 {
   "Input": "Tornerò a mezzogiorno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "mezzogiorno",
@@ -840,7 +882,8 @@
 ,
 {
   "Input": "Tornerò più o meno alle 11",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "più o meno alle 11",
@@ -860,7 +903,8 @@
 ,
 {
   "Input": "Tornerò alle 340pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "340pm",
@@ -880,7 +924,8 @@
 ,
 {
   "Input": "Tornerò alle 1140 a.m.",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1140 a.m.",
@@ -900,7 +945,8 @@
 ,
 {
   "Input": "mezzanotte",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "mezzanotte",
@@ -920,7 +966,8 @@
 ,
 {
   "Input": "metà mattina",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "metà mattina",
@@ -940,7 +987,8 @@
 ,
 {
   "Input": "metà mattinata",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "metà mattinata",
@@ -960,7 +1008,8 @@
 ,
 {
   "Input": "metà pomeriggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "metà pomeriggio",
@@ -980,7 +1029,8 @@
 ,
 {
   "Input": "metà giornata",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "metà giornata",
@@ -1000,7 +1050,8 @@
 ,
 {
   "Input": "mezzogiorno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "mezzogiorno",
@@ -1020,7 +1071,8 @@
 ,
 {
   "Input": "Tornerò alle 12 ora di pranzo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "alle 12 ora di pranzo",
@@ -1040,7 +1092,8 @@
 ,
 {
   "Input": "Tornerò alle 12 mezzanotte",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "12 mezzanotte",
@@ -1060,7 +1113,8 @@
 ,
 {
   "Input": "Tornerò alle 12 di notte",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "12 di notte",
@@ -1080,7 +1134,8 @@
 ,
 {
   "Input": "Tornerò all'1 di notte",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 di notte",
@@ -1100,7 +1155,8 @@
 ,
 {
   "Input": "Tornerò alle 11 ora di pranzo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "11 ora di pranzo",
@@ -1120,7 +1176,8 @@
 ,
 {
   "Input": "Tornerò all'1 ora di pranzo",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "1 ora di pranzo",
@@ -1140,7 +1197,8 @@
 ,
 {
   "Input": "Tornerò a ora di pranzo alle 11",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "a ora di pranzo alle 11",
@@ -1160,7 +1218,8 @@
 ,
 {
   "Input": "Tornerò alle 7:56:13 pm",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7:56:13 pm",
@@ -1180,7 +1239,8 @@
 ,
 {
   "Input": "Tornerò alle 12:34:45 ",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "12:34:45",
@@ -1200,7 +1260,8 @@
 ,
 {
   "Input": "Tornerò alle 7:00:25 di pomeriggio",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "7:00:25 di pomeriggio",
@@ -1220,7 +1281,8 @@
 ,
 {
   "Input": "Tornerò alle sette e trenta am",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "sette e trenta am",
@@ -1240,7 +1302,8 @@
 ,
 {
   "Input": "Tornerò alle undici e cinque",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "undici e cinque",
@@ -1260,7 +1323,8 @@
 ,
 {
   "Input": "Tornerò alle cinque e mezza meno tre minuti ",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinque e mezza meno tre minuti",
@@ -1280,7 +1344,8 @@
 ,
 {
   "Input": "Tornerò alle cinque e mezza di notte",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "cinque e mezza di notte",
@@ -1300,7 +1365,8 @@
 ,
 {
   "Input": "Tornerò di notte alle cinque e mezza",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "di notte alle cinque e mezza",
@@ -1320,7 +1386,8 @@
 ,
 {
   "Input": "Tornerò a mezzogiorno",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "mezzogiorno",
@@ -1340,7 +1407,8 @@
 ,
 {
   "Input": "Tornerò a ora di pranzo alle 12",
-  "NotSupportedByDesign": "python",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,javascript,python",
   "Results": [
     {
       "Text": "ora di pranzo alle 12",
