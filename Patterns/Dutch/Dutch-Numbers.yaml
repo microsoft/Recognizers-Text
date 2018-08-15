@@ -75,10 +75,10 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(en\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n|halven|vierdes)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(en\s+)?)?(een)(\s+|\s*-\s*)(?!\beerste\b|\btweede\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|vierde)(?=\b)
+  def: (?<=\b)({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|kwart)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+op\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
+  def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+(op|op\s+de|van\s+de|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
   references: [ AllIntRegex ]
 FractionPrepositionWithinPercentModeRegex: !nestedRegex
   def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)

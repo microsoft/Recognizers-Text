@@ -1287,7 +1287,7 @@
         "Text": "1 van de 3",
         "TypeName": "number",
         "Resolution": {
-          "value": "0.333333333333333"
+          "value": "0,333333333333333"
         }
       }
     ],
@@ -1343,7 +1343,7 @@
         "Text": "Een op de twintig",
         "TypeName": "number",
         "Resolution": {
-          "value": "-0.05"
+          "value": "0,05"
         }
       }
     ],
