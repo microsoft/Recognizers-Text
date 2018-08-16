@@ -18,6 +18,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex SinceRegex =
             new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AroundRegex =
+            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex FromToRegex = 
             new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -107,6 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
         Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
+        Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;

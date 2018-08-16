@@ -146,6 +146,7 @@ export namespace SpanishDateTime {
 	export const BeforeRegex = `(antes(\\s+del?(\\s+las?)?)?)`;
 	export const AfterRegex = `(despues(\\s*del?(\\s+las?)?)?)`;
 	export const SinceRegex = `(desde(\\s+(las?|el))?)`;
+	export const AroundRegex = `^[.]`;
 	export const PeriodicRegex = `\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b`;
 	export const EachExpression = `cada|tod[oa]s\\s*(l[oa]s)?`;
 	export const EachUnitRegex = `(?<each>(${EachExpression})\\s*${UnitRegex})`;

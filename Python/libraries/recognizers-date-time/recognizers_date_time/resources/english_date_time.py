@@ -186,6 +186,7 @@ class EnglishDateTime:
     BeforeRegex = f'(\\b{InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until){InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|>)((?<include><=)|<)'
     AfterRegex = f'(\\b{InclusiveModPrepositions}?(after(?!\\s+or equal to)|(?<!no\\s+)later than){InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|<)((?<include>>=)|>)'
     SinceRegex = f'(\\b(since|after or equal to|starting (from|on|with))\\b\\s*)|(?<!\\w|<)(>=)'
+    AroundRegex = f'(\\b(around|circa)\\s*\\b)'
     AgoRegex = f'\\b(ago|before (?<day>yesterday|today))\\b'
     LaterRegex = f'\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b'
     InConnectorRegex = f'\\b(in)\\b'
@@ -558,6 +559,8 @@ class EnglishDateTime:
     SpecialDecadeCases = dict([('noughties', 2000),
                                ('two thousands', 2000)])
     DefaultLanguageFallback = 'MDY'
-    SuperfluousWordList = ['preferably', 'how about', 'maybe', 'say', 'like', 'around']
+    SuperfluousWordList = ['preferably', 'how about', 'maybe', 'say', 'like']
     DurationDateRestrictions = ['today', 'now']
+    AmbiguityFiltersDict = dict([('\\bmorning|afternoon|evening|night|day\\b', '\\bgood\\s+(morning|afternoon|evening|night|day)\\b'),
+                                 ('\\bmay\\b', '\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b')])
 # pylint: enable=line-too-long

@@ -406,6 +406,9 @@ AfterRegex: !simpleRegex
   def: \b(dopo(?!\s+o uguale a)|(?<!no\s+)dopo di)\b
 SinceRegex: !simpleRegex
   def: \b(a partire da|dopo il|a partire (da|del))\b
+AroundRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AgoPrefixRegex: !simpleRegex
   def: \b(di)\b
 LaterRegex: !simpleRegex

@@ -641,5 +641,87 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana, can you please set something up around the 21st.",
+    "Comment": "Only supported in CalendarMode",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "around the 21st",
+        "Start": 41,
+        "End": 55,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-21",
+              "Mod": "approx",
+              "type": "daterange",
+              "value": "2018-07-21"
+            },
+            {
+              "timex": "XXXX-XX-21",
+              "Mod": "approx",
+              "type": "daterange",
+              "value": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up around the 21st this month.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "around the 21st this month",
+        "Start": 41,
+        "End": 66,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-21",
+              "Mod": "approx",
+              "type": "daterange",
+              "value": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up around tomorrow 10am.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-16T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "around tomorrow 10am",
+        "Start": 41,
+        "End": 60,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-17T10",
+              "Mod": "approx",
+              "type": "datetimerange",
+              "value": "2018-08-17 10:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -166,6 +166,7 @@ class FrenchDateTime:
     BeforeRegex2 = f'\\b(entre\\s*(le|la(s)?)?)\\b'
     AfterRegex = f'\\b(apres)\\b'
     SinceRegex = f'\\b(depuis)\\b'
+    AroundRegex = f'^[.]'
     AgoPrefixRegex = f'\\b(y a)\\b'
     LaterRegex = f'\\b(plus tard)\\b'
     AgoRegex = f'^[.]'

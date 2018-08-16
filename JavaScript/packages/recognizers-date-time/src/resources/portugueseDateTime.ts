@@ -147,6 +147,7 @@ export namespace PortugueseDateTime {
 	export const BeforeRegex = `(antes(\\s+(de|dos?|das?)?)?)`;
 	export const AfterRegex = `((depois|ap[óo]s)(\\s*(de|d?os?|d?as?)?)?)`;
 	export const SinceRegex = `(desde(\\s+(as?|o))?)`;
+	export const AroundRegex = `^[.]`;
 	export const PeriodicRegex = `\\b(?<periodic>di[áa]ri[ao]|diariamente|mensalmente|semanalmente|quinzenalmente|anualmente)\\b`;
 	export const EachExpression = `cada|tod[oa]s?\\s*([oa]s)?`;
 	export const EachUnitRegex = `(?<each>(${EachExpression})\\s*${UnitRegex})`;
