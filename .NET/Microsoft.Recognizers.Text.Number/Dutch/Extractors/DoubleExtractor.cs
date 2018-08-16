@@ -59,7 +59,10 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceComma, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumBlankComma, placeholder), RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 }
+
             };
 
             Regexes = regexes.ToImmutableDictionary();
