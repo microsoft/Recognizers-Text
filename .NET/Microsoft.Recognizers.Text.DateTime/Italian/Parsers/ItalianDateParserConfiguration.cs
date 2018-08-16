@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
-            DateRegexes = ItalianDateExtractorConfiguration.DateRegexList;
+            DateRegexes = new ItalianDateExtractorConfiguration(this).DateRegexList;
             OnRegex = ItalianDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = ItalianDateExtractorConfiguration.SpecialDayWithNumRegex;

@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SinceRegex { get; }
 
+        Regex AroundRegex { get; }
+
         Regex YearAfterRegex { get; }
 
         Regex YearRegex { get; }

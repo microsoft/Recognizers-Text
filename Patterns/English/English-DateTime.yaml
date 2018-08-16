@@ -445,6 +445,8 @@ AfterRegex: !nestedRegex
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
   def: (\b(since|after or equal to|starting (from|on|with))\b\s*)|(?<!\w|<)(>=)
+AroundRegex: !simpleRegex
+  def: (\b(around|circa)\s*\b)
 AgoRegex: !simpleRegex
   def: \b(ago|before (?<day>yesterday|today))\b
 LaterRegex: !simpleRegex
@@ -930,7 +932,6 @@ SuperfluousWordList: !list
     - maybe
     - say
     - like
-    - around
 DurationDateRestrictions: [ today, now ]
 # For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty. 
 AmbiguityFiltersDict: !dictionary

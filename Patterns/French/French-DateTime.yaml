@@ -397,6 +397,9 @@ AfterRegex: !simpleRegex
   def: \b(apres)\b
 SinceRegex: !simpleRegex
   def: \b(depuis)\b
+AroundRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 AgoPrefixRegex: !simpleRegex
   def: \b(y a)\b
 LaterRegex: !simpleRegex

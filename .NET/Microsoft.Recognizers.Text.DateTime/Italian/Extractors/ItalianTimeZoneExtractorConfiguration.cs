@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    class ItalianTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
+    public class ItalianTimeZoneExtractorConfiguration : BaseOptionsConfiguration, ITimeZoneExtractorConfiguration
     {
         public static readonly Regex[] TimeZoneRegexList =
         {
@@ -16,8 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         }
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
-        public Regex LocationTimeSuffixRegex { get; }
-        public StringMatcher CityMatcher { get; }
+        public Regex LocationTimeSuffixRegex { get; } = null;
+        public StringMatcher CityMatcher { get; } = new StringMatcher();
         public List<string> AmbiguousTimezoneList => new List<string>();
     }
 }

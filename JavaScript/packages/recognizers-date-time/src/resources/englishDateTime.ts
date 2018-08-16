@@ -185,6 +185,7 @@ export namespace EnglishDateTime {
 	export const BeforeRegex = `(\\b${InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)${InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|>)((?<include><=)|<)`;
 	export const AfterRegex = `(\\b${InclusiveModPrepositions}?(after(?!\\s+or equal to)|(?<!no\\s+)later than)${InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|<)((?<include>>=)|>)`;
 	export const SinceRegex = `(\\b(since|after or equal to|starting (from|on|with))\\b\\s*)|(?<!\\w|<)(>=)`;
+	export const AroundRegex = `(\\b(around|circa)\\s*\\b)`;
 	export const AgoRegex = `\\b(ago|before (?<day>yesterday|today))\\b`;
 	export const LaterRegex = `\\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
@@ -244,6 +245,7 @@ export namespace EnglishDateTime {
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["hundreds", 0],["tens", 10],["twenties", 20],["thirties", 30],["forties", 40],["fifties", 50],["sixties", 60],["seventies", 70],["eighties", 80],["nineties", 90]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["noughties", 2000],["two thousands", 2000]]);
 	export const DefaultLanguageFallback = 'MDY';
-	export const SuperfluousWordList = [ 'preferably','how about','maybe','say','like','around' ];
+	export const SuperfluousWordList = [ 'preferably','how about','maybe','say','like' ];
 	export const DurationDateRestrictions = [ 'today','now' ];
+	export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\bmorning|afternoon|evening|night|day\\b", "\\bgood\\s+(morning|afternoon|evening|night|day)\\b"],["\\bmay\\b", "\\b((^may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\\b"]]);
 }

@@ -405,6 +405,9 @@ SinceRegex: !simpleRegex
   def: \b(seit)\b
 AgoRegex: !simpleRegex
   def: \b(ago)\b
+AroundRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 LaterRegex: !simpleRegex
   def: \b(später|von jetzt an)\b
 InConnectorRegex: !simpleRegex

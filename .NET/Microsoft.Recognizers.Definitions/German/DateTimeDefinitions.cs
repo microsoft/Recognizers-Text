@@ -176,6 +176,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AfterRegex = @"(nach)";
 		public const string SinceRegex = @"\b(seit)\b";
 		public const string AgoRegex = @"\b(ago)\b";
+		public const string AroundRegex = @"^[.]";
 		public const string LaterRegex = @"\b(später|von jetzt an)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
 		public const string WithinNextPrefixRegex = @"^[.]";

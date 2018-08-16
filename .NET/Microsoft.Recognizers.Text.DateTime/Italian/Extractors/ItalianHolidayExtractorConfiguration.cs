@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             //H4
         };
 
-        public ItalianHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        public ItalianHolidayExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
         }
 

@@ -38,15 +38,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex SetEachRegex =
             new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public ItalianSetExtractorConfiguration() : base(DateTimeOptions.None)
+        public ItalianSetExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration());
-            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
+            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DurationExtractor { get; }

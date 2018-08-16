@@ -17,6 +17,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex SinceRegex =
             new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AroundRegex =
+            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline); // 'Je vais du lundi au mecredi' - I will go from monday to weds
 
@@ -69,26 +72,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
-        public ItalianMergedExtractorConfiguration(DateTimeOptions options) : base(options)
+        public ItalianMergedExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
 
-            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(options));
-            DateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(options));
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration());
-            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new ItalianSetExtractorConfiguration());
-            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
+            DateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            SetExtractor = new BaseSetExtractor(new ItalianSetExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
-            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new ItalianDateTimeAltExtractorConfiguration());
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new ItalianDateTimeAltExtractorConfiguration(this));
             IntegerExtractor = new Number.Italian.IntegerExtractor();
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
         Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
+        Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;

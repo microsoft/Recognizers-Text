@@ -148,6 +148,7 @@ class PortugueseDateTime:
     BeforeRegex = f'(antes(\\s+(de|dos?|das?)?)?)'
     AfterRegex = f'((depois|ap[óo]s)(\\s*(de|d?os?|d?as?)?)?)'
     SinceRegex = f'(desde(\\s+(as?|o))?)'
+    AroundRegex = f'^[.]'
     PeriodicRegex = f'\\b(?<periodic>di[áa]ri[ao]|diariamente|mensalmente|semanalmente|quinzenalmente|anualmente)\\b'
     EachExpression = f'cada|tod[oa]s?\\s*([oa]s)?'
     EachUnitRegex = f'(?<each>({EachExpression})\\s*{UnitRegex})'

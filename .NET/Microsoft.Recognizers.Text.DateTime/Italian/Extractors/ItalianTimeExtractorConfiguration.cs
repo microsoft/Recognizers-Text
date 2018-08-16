@@ -134,9 +134,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public ItalianTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public ItalianTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
         }
     }

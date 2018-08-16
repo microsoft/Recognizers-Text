@@ -651,30 +651,33 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeExtractor GetItalianExtractor(DateTimeExtractors extractorName)
         {
+            var config = new BaseOptionsConfiguration();
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
-                    return new BaseDateExtractor(new ItalianDateExtractorConfiguration());
+                    return new BaseDateExtractor(new ItalianDateExtractorConfiguration(config));
                 case DateTimeExtractors.Time:
-                    return new BaseTimeExtractor(new ItalianTimeExtractorConfiguration());
+                    return new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(config));
                 case DateTimeExtractors.DatePeriod:
-                    return new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration());
+                    return new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(config));
                 case DateTimeExtractors.TimePeriod:
-                    return new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration());
+                    return new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(config));
                 case DateTimeExtractors.DateTime:
-                    return new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration());
+                    return new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(config));
                 case DateTimeExtractors.DateTimePeriod:
-                    return new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration());
+                    return new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration(config));
                 case DateTimeExtractors.Duration:
-                    return new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
+                    return new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(config));
                 case DateTimeExtractors.Holiday:
-                    return new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration());
+                    return new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(config));
                 case DateTimeExtractors.Set:
-                    return new BaseSetExtractor(new ItalianSetExtractorConfiguration());
+                    return new BaseSetExtractor(new ItalianSetExtractorConfiguration(config));
                 case DateTimeExtractors.Merged:
-                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.None));
+                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(config));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(DateTimeOptions.SkipFromToMerge));
+                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(config));
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(config));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Italian not supported");

@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Push, save the MOD string
-            bool hasBefore = false, hasAfter = false, hasSince = false, hasYearAfter = false;
+            bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasYearAfter = false;
 
             // "InclusieModifier" means MOD should include the start/end time
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
@@ -48,6 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beforeMatch = Config.BeforeRegex.Match(er.Text);
             var afterMatch = Config.AfterRegex.Match(er.Text);
             var sinceMatch = Config.SinceRegex.Match(er.Text);
+            var aroundMatch = Config.AroundRegex.Match(er.Text);
 
             if (beforeMatch.Success && beforeMatch.Index == 0)
             {
@@ -82,6 +83,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length -= sinceMatch.Length;
                 er.Text = er.Text.Substring(sinceMatch.Length);
                 modStr = sinceMatch.Value;
+            }
+            else if (aroundMatch.Success && aroundMatch.Index == 0)
+            {
+                hasAround = true;
+                er.Start += aroundMatch.Length;
+                er.Length -= aroundMatch.Length;
+                er.Text = er.Text.Substring(aroundMatch.Length);
+                modStr = aroundMatch.Value;
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success)
             {
@@ -195,6 +204,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Text = modStr + pr.Text;
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = Constants.SINCE_MOD;
+                pr.Value = val;
+            }
+
+            if (hasAround && pr.Value != null)
+            {
+                pr.Length += modStr.Length;
+                pr.Start -= modStr.Length;
+                pr.Text = modStr + pr.Text;
+                var val = (DateTimeResolutionResult)pr.Value;
+                val.Mod = Constants.APPROX_MOD;
                 pr.Value = val;
             }
 

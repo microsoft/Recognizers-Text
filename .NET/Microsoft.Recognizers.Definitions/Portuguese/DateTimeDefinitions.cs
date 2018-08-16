@@ -156,6 +156,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string BeforeRegex = @"(antes(\s+(de|dos?|das?)?)?)";
 		public const string AfterRegex = @"((depois|ap[óo]s)(\s*(de|d?os?|d?as?)?)?)";
 		public const string SinceRegex = @"(desde(\s+(as?|o))?)";
+		public const string AroundRegex = @"^[.]";
 		public const string PeriodicRegex = @"\b(?<periodic>di[áa]ri[ao]|diariamente|mensalmente|semanalmente|quinzenalmente|anualmente)\b";
 		public const string EachExpression = @"cada|tod[oa]s?\s*([oa]s)?";
 		public static readonly string EachUnitRegex = $@"(?<each>({EachExpression})\s*{UnitRegex})";

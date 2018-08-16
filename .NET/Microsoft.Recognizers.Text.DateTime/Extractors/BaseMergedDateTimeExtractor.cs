@@ -62,12 +62,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = FilterAmbiguity(ret, text);
 
-            AddMod(ret, text);
+            ret = AddMod(ret, text);
 
             // Filtering
             if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
             {
-                CheckCalendarFilterList(ret, text);
+                ret = CheckCalendarFilterList(ret, text);
             }
 
             ret = ret.OrderBy(p => p.Start).ToList();
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void CheckCalendarFilterList(List<ExtractResult> ers, string text)
+        private List<ExtractResult> CheckCalendarFilterList(List<ExtractResult> ers, string text)
         {
             foreach (var er in ers.Reverse<ExtractResult>())
             {
@@ -93,6 +93,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
+            return ers;
         }
 
         private void AddTo(List<ExtractResult> dst, List<ExtractResult> src, string text)
@@ -224,33 +226,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             return Token.MergeAllTokens(tokens, text, Constants.SYS_DATETIME_TIME);
         }
 
-        private void AddMod(List<ExtractResult> ers, string text)
+        private List<ExtractResult> AddMod(List<ExtractResult> ers, string text)
         {
-            var lastEnd = 0;
             foreach (var er in ers)
             {
-                var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
+                var success = TryMergeModifierToken(er, config.BeforeRegex, text);
 
-                if (HasTokenIndex(beforeStr.TrimEnd(), config.BeforeRegex, out int tokenIndex))
+                if (!success)
                 {
-                    var modLengh = beforeStr.Length - tokenIndex;
-                    er.Length += modLengh;
-                    er.Start -= modLengh;
-                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                    success = TryMergeModifierToken(er, config.AfterRegex, text);
                 }
-                else if (HasTokenIndex(beforeStr.TrimEnd(), config.AfterRegex, out tokenIndex))
+
+                if (!success)
                 {
-                    var modLengh = beforeStr.Length - tokenIndex;
-                    er.Length += modLengh;
-                    er.Start -= modLengh;
-                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                    success = TryMergeModifierToken(er, config.SinceRegex, text);
                 }
-                else if (HasTokenIndex(beforeStr.TrimEnd(), config.SinceRegex, out tokenIndex))
+
+                if (!success)
                 {
-                    var modLengh = beforeStr.Length - tokenIndex;
-                    er.Length += modLengh;
-                    er.Start -= modLengh;
-                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                    TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
                 if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
@@ -267,25 +261,39 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
+            return ers;
+        }
+
+        public bool TryMergeModifierToken(ExtractResult er, Regex tokenRegex, string text)
+        {
+            var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
+            if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
+            {
+                var modLengh = beforeStr.Length - tokenIndex;
+                er.Length += modLengh;
+                er.Start -= modLengh;
+                er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                return true;
+            }
+
+            return false;
         }
 
         public bool HasTokenIndex(string text, Regex regex, out int index)
         {
             index = -1;
-            var match = regex.Match(text);
 
-            while (match.Success)
+            // Support cases has two or more specific tokens
+            // For example, "show me sales after 2010 and before 2018 or before 2000"
+            // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
+
+            var match = Regex.Match(text, regex.ToString(), RegexOptions.RightToLeft | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+            if (match.Success && string.IsNullOrEmpty(text.Substring(match.Index + match.Length)))
             {
-                if (string.IsNullOrWhiteSpace(text.Substring(match.Index + match.Length)))
-                {
-                    index = match.Index;
-                    return true;
-                }
-
-                // Support cases has two or more specific tokens
-                // For example, "show me sales after 2010 and before 2018 or before 2000"
-                // When extract "before 2000", we need the second "before" which will be matched in the second Regex match
-                match = match.NextMatch();
+                index = match.Index;
+                return true;
             }
 
             return false;
