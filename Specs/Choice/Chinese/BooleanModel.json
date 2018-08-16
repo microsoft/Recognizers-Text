@@ -312,4 +312,154 @@
     }
   ]
 }
+,
+{
+  "Input": "不是，我并不认为是这样",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "不是",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "我觉得那样可行，所以我 同意",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "同意",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.6
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "不是，我说是7月4号",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "不是",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "对，我说不要洋葱",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "对",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "我说\"不\"而不是\"对\"",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "不",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "对，我说了不是",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "对",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "否定，那不可以",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "否定",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "同意，那很好",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "同意",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "同意，那不好",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "同意",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌 可以",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.7
+      }
+    }
+  ]
+}
 ]
