@@ -1839,19 +1839,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "",
-    "Results": [
-      {
-        "Text": "",
-        "TypeName": "number",
-        "Resolution": {
-          "value": ""
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "tweeduizend en vijfhonderdzevenenzeventig",
     "Results": [
       {
