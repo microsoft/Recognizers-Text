@@ -726,7 +726,7 @@
     "Input": " tweeendertigduizend tweehonderd  ",
     "Results": [
       {
-        "Text": "tweeendertigduizend tweehonderd ",
+        "Text": "tweeendertigduizend tweehonderd",
         "TypeName": "number",
         "Resolution": {
           "value": "32200"
@@ -814,19 +814,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "drie kwart",
-    "Results": [
-      {
-        "Text": "drie kwart",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "0,75"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "drie en een kwart",
     "Results": [
       {
@@ -878,7 +865,7 @@
     ],
     "NotSupportedByDesign": "javascript,python,java"
   },
-    {
+  {
     "Input": "Driekwart van de bevolking heeft hier last van.",
     "Results": [
       {
@@ -948,6 +935,19 @@
     "Results": [
       {
         "Text": "anderhalf",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Anderhalve week is niet zo lang. ",
+    "Results": [
+      {
+        "Text": "Anderhalve",
         "TypeName": "number",
         "Resolution": {
           "value": "1,5"
@@ -1516,6 +1516,18 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "honderdachtste",
+    "Comment": "This is a 'rangtelwoord', not a fraction.",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdenachtste",
+    "Comment": "This is a 'rangtelwoord', not a fraction.",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "1 234 567",
     "Results": [
       {
@@ -1719,6 +1731,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
