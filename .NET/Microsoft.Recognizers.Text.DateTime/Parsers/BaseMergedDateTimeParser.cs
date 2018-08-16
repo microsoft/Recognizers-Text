@@ -217,7 +217,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-
             if (hasYearAfter && pr.Value != null)
             {
                 pr.Length += modStr.Length;
