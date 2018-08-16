@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex LessThanRegex =
             new Regex(DateTimeDefinitions.LessThanRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public ItalianDurationExtractorConfiguration() : base(DateTimeOptions.None)
+        public ItalianDurationExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

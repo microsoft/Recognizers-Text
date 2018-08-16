@@ -10,16 +10,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public string TokenBeforeDate { get; }
 
-        public ItalianDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public ItalianDateTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
 
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
-            SingleDateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration());
-            SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration());
-            SingleDateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
-            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration());
+            SingleDateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
+            SingleDateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
         }
 
         private static readonly Regex[] SimpleCases =

@@ -267,11 +267,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             RelativeDecadeRegex
         };
 
-        public ItalianDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public ItalianDatePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration());
         }
 

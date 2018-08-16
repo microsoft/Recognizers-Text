@@ -73,12 +73,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public ItalianDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
+        public ItalianDateTimeExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             IntegerExtractor = new IntegerExtractor();
-            DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration());
-            TimePointExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration());
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration());
+            DatePointExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            TimePointExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
         }
 

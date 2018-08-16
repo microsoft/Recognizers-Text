@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
-            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(), false);
+            DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this), false);
             NumberCombinedWithUnit = ItalianDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = ItalianDurationExtractorConfiguration.AnUnitRegex;
             DuringRegex = ItalianDurationExtractorConfiguration.DuringRegex;

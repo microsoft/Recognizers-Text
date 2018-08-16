@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
-            DateRegexes = new GermanDateExtractorConfiguration(config).DateRegexList;
+            DateRegexes = new GermanDateExtractorConfiguration(this).DateRegexList;
             OnRegex = GermanDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = GermanDateExtractorConfiguration.SpecialDayWithNumRegex;

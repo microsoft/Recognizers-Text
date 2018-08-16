@@ -73,10 +73,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public ItalianTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
+        public ItalianTimePeriodExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration());
+            SingleTimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IExtractor IntegerExtractor { get; }
 
-        public IEnumerable<Regex> SimpleCasesRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd, PmRegex, AmRegex };
+        public IEnumerable<Regex> SimpleCasesRegex => new[] { PureNumFromTo, PureNumBetweenAnd, PmRegex, AmRegex };
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 

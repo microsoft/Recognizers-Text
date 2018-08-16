@@ -5,12 +5,12 @@ using Microsoft.Recognizers.Definitions.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
-    public class ItalianDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
+    public class ItalianDateTimeAltExtractorConfiguration : BaseOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
-        public ItalianDateTimeAltExtractorConfiguration()
+        public ItalianDateTimeAltExtractorConfiguration(IOptionsConfiguration config) : base(config)
         {
-            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration());
-            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration());
+            DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(this));
         }
 
         public IDateTimeExtractor DateExtractor { get; }
