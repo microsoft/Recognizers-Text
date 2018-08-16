@@ -46,7 +46,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (honderdste|duizendste|miljoenste|miljardste|biljoenste)
 BasicOrdinalRegex: !simpleRegex
-  def: (eerste|tweede|derde|vierde|vijfde|zesde|zevende|achtste|negende|tiende|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)
+  def: (eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)
 SuffixBasicOrdinalRegex: !nestedRegex
   def: ((((({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(en\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*|\s*/\s*))?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
@@ -254,11 +254,14 @@ OrdinalNumberMap: !dictionary
     vierde: 4
     kwart: 4
     vijfde: 5
+    vijfden: 5
     zesde: 6
     zevende: 7
     achtste: 8
+    achtsten: 8
     negende: 9
     tiende: 10
+    tienden: 10
     elfde: 11
     twaalfde: 12
     dertiende: 13

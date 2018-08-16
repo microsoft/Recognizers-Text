@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((een\s+)?half\s+dozijn)|({AllIntRegex}\s+dozijn(en)?))(?=\b)";
 		public const string RoundNumberOrdinalRegex = @"(honderdste|duizendste|miljoenste|miljardste|biljoenste)";
-		public const string BasicOrdinalRegex = @"(eerste|tweede|derde|vierde|vijfde|zesde|zevende|achtste|negende|tiende|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)";
+		public const string BasicOrdinalRegex = @"(eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)";
 		public static readonly string SuffixBasicOrdinalRegex = $@"((((({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(en\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*|\s*/\s*))?{BasicOrdinalRegex})";
 		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
 		public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
@@ -151,11 +151,14 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 			{ "vierde", 4 },
 			{ "kwart", 4 },
 			{ "vijfde", 5 },
+			{ "vijfden", 5 },
 			{ "zesde", 6 },
 			{ "zevende", 7 },
 			{ "achtste", 8 },
+			{ "achtsten", 8 },
 			{ "negende", 9 },
 			{ "tiende", 10 },
+			{ "tienden", 10 },
 			{ "elfde", 11 },
 			{ "twaalfde", 12 },
 			{ "dertiende", 13 },
