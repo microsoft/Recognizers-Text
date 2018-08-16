@@ -82,7 +82,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		    "score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -97,7 +97,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		    "score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -112,7 +112,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		    "score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -127,7 +127,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		    "score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -142,7 +142,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		    "score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -157,7 +157,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		    "score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -172,7 +172,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		    "score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -187,7 +187,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		    "score": 1.0
+        "score": 1.0
       }
     }
   ]
@@ -259,6 +259,36 @@
   "Results": [
     {
       "Text": "拒绝",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "否定",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "否定",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "不好",
+  "NotSupportedByDesign": "python,java",
+  "Results": [
+    {
+      "Text": "不好",
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
