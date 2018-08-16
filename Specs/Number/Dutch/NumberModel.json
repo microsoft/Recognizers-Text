@@ -827,6 +827,71 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "drie en een kwart",
+    "Results": [
+      {
+        "Text": "drie en een kwart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3,25"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik wil graag een half brood",
+    "Results": [
+      {
+        "Text": "een half",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik wil graag een kwart brood",
+    "Results": [
+      {
+        "Text": "een kwart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,25"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Drie kwart van de bevolking heeft hier last van.",
+    "Results": [
+      {
+        "Text": "Drie kwart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+    {
+    "Input": "Driekwart van de bevolking heeft hier last van.",
+    "Results": [
+      {
+        "Text": "Driekwart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "twintig drie vijfde",
     "Results": [
       {
