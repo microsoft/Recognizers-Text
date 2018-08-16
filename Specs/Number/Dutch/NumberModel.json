@@ -1635,6 +1635,8 @@
   },
   {
     "Input": "Heb je op 17/5/2018 tijd om af te spreken?",
+    "Comment": "Fractions in Dutch are written like 17/5, which conflicts with this case",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "17",
