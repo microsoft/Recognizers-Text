@@ -878,7 +878,7 @@
     ],
     "NotSupportedByDesign": "javascript,python,java"
   },
-    {
+  {
     "Input": "Driekwart van de bevolking heeft hier last van.",
     "Results": [
       {
@@ -1526,6 +1526,18 @@
         }
       }
     ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdachtste",
+    "Comment": "This is a 'rangtelwoord', not a fraction.",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdenachtste",
+    "Comment": "This is a 'rangtelwoord', not a fraction.",
+    "Results": [],
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
