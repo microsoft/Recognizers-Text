@@ -957,6 +957,19 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "Anderhalve week is niet zo lang. ",
+    "Results": [
+      {
+        "Text": "Anderhalve",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "een en een vierde",
     "Results": [
       {
