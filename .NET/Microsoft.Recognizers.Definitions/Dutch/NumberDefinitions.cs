@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((een\s+)?half\s+dozijn)|({AllIntRegex}\s+dozijn(en)?))(?=\b)";
 		public const string RoundNumberOrdinalRegex = @"(honderdste|duizendste|miljoenste|miljardste|biljoenste)";
 		public const string BasicOrdinalRegex = @"(eerste|tweede|derde|vierde|vijfde|zesde|zevende|achtste|negende|tiende|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)";
-		public static readonly string SuffixBasicOrdinalRegex = $@"((((({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(en\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
+		public static readonly string SuffixBasicOrdinalRegex = $@"((((({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(en\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*|\s*/\s*))?{BasicOrdinalRegex})";
 		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s+){RoundNumberOrdinalRegex})";
 		public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
 		public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1e|2e|3e|4e|5e|6e|7e|8e|9e|0e))|(1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)|([0-9]*1[0-9]de)|([0-9]*[2-9][0-9]ste)|([0-9]*[0](1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)))(?=\b)";
@@ -46,9 +46,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly string OrdinalDutchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
 		public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
 		public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
-		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(en\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes)(?=\b)";
-		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|halve|kwart)(?=\b)";
-		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
+		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(en\s+)?)?({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes)(?=\b)";
+		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|halve|kwart)(?=\b)";
+		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
 		public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
 		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
 		public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+komma){AllPointRegex}";
