@@ -726,7 +726,7 @@
     "Input": " tweeendertigduizend tweehonderd  ",
     "Results": [
       {
-        "Text": "tweeendertigduizend tweehonderd ",
+        "Text": "tweeendertigduizend tweehonderd",
         "TypeName": "number",
         "Resolution": {
           "value": "32200"
