@@ -2032,5 +2032,18 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "291.890",
+    "Results": [
+      {
+        "Text": "291.890",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "291890"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]
