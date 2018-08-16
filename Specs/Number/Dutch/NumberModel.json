@@ -1664,6 +1664,8 @@
   },
   {
     "Input": "Mijn telefoonnummer is +1-222-2222/2222",
+    "Comment": "Fractions in Dutch are written like 2222/2222, which conflicts with this case",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1",
