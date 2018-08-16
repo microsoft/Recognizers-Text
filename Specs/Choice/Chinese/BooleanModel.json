@@ -1,0 +1,285 @@
+[{
+  "Input": "是",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "是",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "是的",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "是的",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "好",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "好",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "好的",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "好的",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "没问题",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "没问题",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "可以",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "可以",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		    "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "中",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "中",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		    "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "行",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "行",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		    "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "好啊",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "好啊",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		    "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "好呀",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "好呀",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		    "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "好哇",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "好哇",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		    "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "好嘞",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "好嘞",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		    "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "同意",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "同意",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		    "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "不行",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "不行",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "不中",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "不中",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "不是",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "不是",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "不可以",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "不可以",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拒绝",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "拒绝",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌👌👌",
+  "NotSupportedByDesign": "javascript,python,java",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.6
+      }
+    }
+  ]
+}
+]
