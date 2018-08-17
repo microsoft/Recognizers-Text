@@ -281,6 +281,11 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration()),
                     Dutch.NumberExtractor.GetInstance(NumberMode.PureNumber)));
+            RegisterModel<OrdinalModel>(
+                Culture.Dutch,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration()),
+                    Dutch.OrdinalExtractor.GetInstance()));
             #endregion
         }
     }

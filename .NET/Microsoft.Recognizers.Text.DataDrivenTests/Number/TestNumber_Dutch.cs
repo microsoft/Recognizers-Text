@@ -29,5 +29,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             base.TestNumber();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Dutch.csv", "OrdinalModel-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void OrdinalModel()
+        {
+            base.TestNumber();
+        }
+
     }
 }
