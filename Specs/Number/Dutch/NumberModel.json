@@ -115,23 +115,28 @@
   },
   {
     "Input": "180,25ml vloeistof",
-    "Results": []
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "180ml vloeistof",
-    "Results": []
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": " 29km weg ",
-    "Results": []
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": " de 4e van mei ",
-    "Results": []
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": ",25ml vloeistof",
-    "Results": []
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": ",08",
@@ -148,7 +153,8 @@
   },
   {
     "Input": "en",
-    "Results": []
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": ",23456000",

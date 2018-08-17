@@ -15,7 +15,8 @@
   },
   {
     "Input": "een biljoenste",
-    "Results": []
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "honderd biljoenste",
