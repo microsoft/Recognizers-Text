@@ -191,9 +191,9 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string AMTimeRegex = @"(?<am>morning)";
 		public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
 		public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
-		public static readonly string BeforeRegex = $@"(\b{InclusiveModPrepositions}?(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)";
+		public static readonly string BeforeRegex = $@"(\b{InclusiveModPrepositions}?(before|in\s+advance\s+of|prior\s+to|(no\s+later|earlier|sooner)\s+than|ending\s+(with|on)|by|till|til|until|(?<include>as\s+late\s+as)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)";
 		public static readonly string AfterRegex = $@"(\b{InclusiveModPrepositions}?(after(?!\s+or equal to)|(?<!no\s+)later than){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)";
-		public const string SinceRegex = @"(\b(since|after or equal to|starting (from|on|with))\b\s*)|(?<!\w|<)(>=)";
+		public const string SinceRegex = @"(\b(since|after\s+or\s+equal\s+to|starting\s+(from|on|with)|as\s+early\s+as)\b\s*)|(?<!\w|<)(>=)";
 		public const string AroundRegex = @"(\b(around|circa)\s*\b)";
 		public const string AgoRegex = @"\b(ago|before (?<day>yesterday|today))\b";
 		public const string LaterRegex = @"\b(later|from now|(from|after) (?<day>tomorrow|tmr|today))\b";

@@ -5091,5 +5091,95 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's meet this week as early as 7:00 am",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Start": 11,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W33",
+              "type": "daterange",
+              "start": "2018-08-13",
+              "end": "2018-08-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "as early as 7:00 am",
+        "Start": 21,
+        "End": 39,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave as late as 7:00 am",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "as late as 7:00 am",
+        "Start": 11,
+        "End": 28,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "Mod": "until",
+              "type": "timerange",
+              "end": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave as late as tomorrow.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "as late as tomorrow",
+        "Start": 11,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-18",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2018-08-18"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
