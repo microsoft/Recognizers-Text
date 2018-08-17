@@ -393,10 +393,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Fahrenheit naar Celsius: 101 Fahrenheit is hoe veel graden Celsius",
+    "Input": "Fahrenheit naar Celsius: 101 Fahrenheit is hoeveel graden Celsius",
     "Results": [
       {
         "Text": "101 Fahrenheit",
@@ -431,6 +432,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -461,6 +463,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
