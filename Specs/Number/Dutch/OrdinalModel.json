@@ -122,13 +122,13 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "vijfentwintigste",
+    "Input": "vijfendertigste",
     "Results": [
       {
-        "Text": "vijfentwintigste",
+        "Text": "vijfendertigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "25"
+          "value": "35"
         }
       }
     ],
