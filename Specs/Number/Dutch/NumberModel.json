@@ -110,6 +110,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -863,6 +864,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -876,6 +878,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -889,6 +892,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -941,6 +945,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -954,6 +959,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1162,6 +1168,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1201,6 +1208,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1227,6 +1235,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1240,6 +1249,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1253,6 +1263,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1266,6 +1277,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1279,6 +1291,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1412,10 +1425,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Het antwoord is min 5 komma vijf",
+    "Input": "Het antwoord is min vijf komma vijf",
     "Results": [
       {
-        "Text": "min 5 komma vijf",
+        "Text": "min vijf komma vijf",
         "TypeName": "number",
         "Resolution": {
           "value": "-5,5"
@@ -1601,7 +1614,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "1 234 567,89 is een geldig nummer.",
+    "Input": "1 234 567,89 is een geldig nummer.",
     "Results": [
       {
         "Text": "1 234 567,89",
@@ -1611,6 +1624,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1970,6 +1984,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -1996,6 +2011,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -2035,6 +2051,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
