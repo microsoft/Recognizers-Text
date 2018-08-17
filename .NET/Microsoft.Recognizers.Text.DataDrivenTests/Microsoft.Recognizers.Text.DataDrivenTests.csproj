@@ -91,6 +91,7 @@
     <Compile Include="Number\TestNumber_Italian.cs" />
     <Compile Include="Number\TestNumberRecognizerCache.cs" />
     <Compile Include="Number\TestNumberRecognizerInitialization.cs" />
+    <Compile Include="Number\TestNumber_Dutch.cs" />
     <Compile Include="Number\TestNumber_English.cs" />
     <Compile Include="Number\TestNumber_French.cs" />
     <Compile Include="Number\TestNumber_German.cs" />
