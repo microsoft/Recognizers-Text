@@ -1,9 +1,7 @@
 [
   {
     "Input": "10-1995",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": "Dit nummer is hoger dan twintig en kleiner of gelijk dan vijfendertig.",
@@ -455,9 +453,7 @@
   },
   {
     "Input": "Een vierde is een breuk",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": "Het getal is gelijk aan 20.",
@@ -489,21 +485,15 @@
   },
   {
     "Input": "0612345678 is een telefoonnummer.",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": "+31612345678 is een telefoonnummer.",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": "+31 6 12 34 56 78 is een telefoonnummer.",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "Results": []
   },
   {
     "Input": "Zojn resultaat is 200 of meer",

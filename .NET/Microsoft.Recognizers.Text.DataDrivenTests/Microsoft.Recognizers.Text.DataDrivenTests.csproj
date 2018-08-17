@@ -77,6 +77,7 @@
     <Compile Include="Matcher\StringMatcherTest.cs" />
     <Compile Include="Matcher\SimpleTokenizerTest.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerCache.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnit_Dutch.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Italian.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_French.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_German.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Number\TestNumber_Italian.cs" />
     <Compile Include="Number\TestNumberRecognizerCache.cs" />
     <Compile Include="Number\TestNumberRecognizerInitialization.cs" />
+    <Compile Include="Number\TestNumber_Dutch.cs" />
     <Compile Include="Number\TestNumber_English.cs" />
     <Compile Include="Number\TestNumber_French.cs" />
     <Compile Include="Number\TestNumber_German.cs" />

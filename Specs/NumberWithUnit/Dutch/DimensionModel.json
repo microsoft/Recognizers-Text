@@ -11,14 +11,13 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Het grootste nadeel is de dikte van 3 inch, groot genoeg voor een consultant om het beschrijven als plomp.",
     "Results": [
       {
-        "Text": "3-inch",
+        "Text": "3 inch",
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
@@ -26,7 +25,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -41,7 +39,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -51,12 +48,11 @@
         "Text": "10 1/2 kilometer",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "10.5",
+          "value": "10,5",
           "unit": "Kilometer"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -71,11 +67,10 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": " In de gehele industrie daalde de olieproductie in dit land met 500.000 vaten per dag naar vaten in de eerste acht maanden van dit jaar. ",
+    "Input": " In de gehele industrie daalde de olieproductie in dit land met 500.000 vaten per dag in de eerste acht maanden van dit jaar. ",
     "Results": [
       {
         "Text": "500.000 vaten",
@@ -86,7 +81,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -101,7 +95,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -116,14 +109,13 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": " Dhr. Hulings gnoof dat hij al zijn aandelen verkocht een week voor de markt 190 punten kelderde op 13 oktober, en hij gebruikt het geld om een 45-hectare groot paardenbedrijf te kopen.",
+    "Input": " Dhr. Hulings gnoof dat hij al zijn aandelen verkocht een week voor de markt 190 punten kelderde op 13 oktober, en hij gebruikt het geld om een 45 hectare groot paardenbedrijf te kopen.",
     "Results": [
       {
-        "Text": "45-hectare",
+        "Text": "45 hectare",
         "TypeName": "dimension",
         "Resolution": {
           "value": "45",
@@ -131,14 +123,13 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "dan, om van deze tuintjes vrij letterlijk kamers te maken, had mvr. Bartlett raamloze wanden (baksteen, traliewerk, haag) van acht tot tien voet hoog gemaakt, waardoor haar interieurs in dag-lange stygische schaduwen worden geworpen",
     "Results": [
       {
-        "Text": "10 voet",
+        "Text": "tien voet",
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
@@ -146,7 +137,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -161,7 +151,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -176,7 +165,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -191,7 +179,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -206,7 +193,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -221,7 +207,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -236,7 +221,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -251,7 +235,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -266,7 +249,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -281,7 +263,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -296,11 +277,10 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": " de satelliet, gebouwd door hughes voor de internationale telecommunicatiesatellietorganisatie, maakt deel uit van een contract van 700 miljoen dollar dat in 1982 aan Hughes werd toegekend om vijf van de drie ton-satellieten te ontwikkelen.",
+    "Input": " de satelliet, gebouwd door hughes voor de internationale telecommunicatiesatellietorganisatie, maakt deel uit van een contract van 700 miljoen dollar dat in 1982 aan Hughes werd toegekend om vijf satellieten van drie ton te ontwikkelen.",
     "Results": [
       {
         "Text": "drie ton",
@@ -311,7 +291,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -322,15 +301,14 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "130",
-          "unit": "Gallon"
+          "unit": "Liter"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": " uit de gegevens van de handelsgroep over de gegevens van de handelsafdeling bleek dat de invoer in augustus, het op een na grootste maandelijkse totaal van het jaar, met 5% steeg ten opzichte van 1.488.000 ton in juli, maar onder het niveau van vorig jaar in juni 1988.",
+    "Input": " uit de gegevens van de handelsgroep over de gegevens van de handelsafdeling bleek dat de invoer in augustus, het op een na grootste maandelijkse totaal van het jaar, met 5% steeg ten opzichte van 1.458.000 ton in juli, maar onder het niveau van vorig jaar in juni 1988.",
     "Results": [
       {
         "Text": "1.458.000 ton",
@@ -341,7 +319,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -356,7 +333,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -367,11 +343,10 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "16000",
-          "unit": "Metric ton"
+          "unit": "Ton"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -386,7 +361,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -401,7 +375,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -416,22 +389,20 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": " Caltran is van plan om een tweede dek toe te voegen voor bussen en carpools boven de mediaan van een 2,5 mijl lang stuk van de havenfiet net ten zuiden van Los Angeles, in de buurt van het gedenkteken Coliseum. ",
     "Results": [
       {
-        "Text": "2.,5 mijl",
+        "Text": "2,5 mijl",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "2.5",
+          "value": "2,5",
           "unit": "Mile"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -446,7 +417,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -461,7 +431,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -476,7 +445,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -491,7 +459,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -501,12 +468,11 @@
         "Text": "1/4 mijl",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "0.25",
+          "value": "0,25",
           "unit": "Mile"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -516,12 +482,11 @@
         "Text": "1,6 km",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "1.6",
+          "value": "1,6",
           "unit": "Kilometer"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -536,7 +501,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -551,7 +515,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -566,7 +529,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -581,7 +543,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -591,12 +552,11 @@
         "Text": "7,62 mm",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "7.62",
+          "value": "7,62",
           "unit": "Millimeter"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -611,7 +571,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -626,7 +585,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -641,36 +599,313 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": " een metrische ton is gelijk aan 2,204.62 pond. ",
+    "Input": " een metrische ton is gelijk aan 2.204,62 pond. ",
     "Results": [
       {
-        "Text": "2,204.62 pond",
+        "Text": "een metrische ton",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "2204.62",
-          "unit": "Pound"
+          "value": "1",
+          "unit": "Metric ton"
         }
       },
       {
-        "Text": "metric ton",
+        "Text": "2.204,62 pond",
         "TypeName": "dimension",
         "Resolution": {
-          "value": null,
-          "unit": "Metric ton"
+          "value": "2204,62",
+          "unit": "Pound"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Ik ben een man",
     "Results": [],
-    "NotSupported": "",
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik heb grote voeten",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik leef op grote voet",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Mijn internetverbindig is 500 Mb per seconde ",
+    "Results": [
+      {
+        "Text": "500 Mb",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500",
+          "unit": "Megabit"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Dit bestand is wel driehonderd MB groot!",
+    "Results": [
+      {
+        "Text": "driehonderd MB",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "300",
+          "unit": "Megabyte"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik heb een nieuwe hardeschijf gekocht van 2 terabyte",
+    "Results": [
+      {
+        "Text": "2 terabyte",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Terabyte"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ben je gek? Ik ga niet fietsen als het meer dan 10 km is...",
+    "Results": [
+      {
+        "Text": "10 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Kilometer"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "De grootte van een voetbalveld varieert dus van 6400 vierkante meter tot 7140 m² en is gemiddeld 6770 m^2.",
+    "Results": [
+      {
+        "Text": "6400 vierkante meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square meter",
+          "value": "6400"
+        }
+      },
+      {
+        "Text": "7140 m²",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square meter",
+          "value": "7140"
+        }
+      },
+      {
+        "Text": "6770 m^2",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Square meter",
+          "value": "6770"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Deze planeet staat twintig lichtjaar van ons vandaan",
+    "Results": [
+      {
+        "Text": "twintig lichtjaar",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "20",
+          "unit": "Light year"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik heb alweer een boete voor mijn snelheid, ik reed tachtig km/u waar je 30 kilometer per uur mag.",
+    "Results": [
+      {
+        "Text": "tachtig km/u",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "80",
+          "unit": "Kilometer per hour"
+        }
+      },
+      {
+        "Text": "30 kilometer per uur",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "30",
+          "unit": "Kilometer per hour"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Meter per seconde is een afgeleide SI-eenheid voor snelheid. Het symbool is m/s. Een snelheid van 1 m/s komt overeen met het afleggen van 1 meter in 1 seconde.",
+    "Results": [
+      {
+        "Text": "1 m/s",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter per second",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "1 meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "Meter per seconde",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter per second",
+          "value": null
+        }
+      },
+      {
+        "Text": "m/s",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter per second",
+          "value": null
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "1 theelepel is tussen de 3 en 15 gram.",
+    "Results": [
+      {
+        "Text": "1 theelepel",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Teaspoon",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "15 gram",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Gram",
+          "value": "15"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " 1 eetlepel is tussen de 8 en 30 gram",
+    "Results": [
+      {
+        "Text": "1 eetlepel",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Tablespoon",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "30 gram",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Gram",
+          "value": "30"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een ha is gelijk aan tienduizend m²",
+    "Results": [
+      {
+        "Text": "Een ha",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Hectare"
+        }
+      },
+      {
+        "Text": "tienduizend m²",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10000",
+          "unit": "Square meter"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een are is gelijk aan honderd m2",
+    "Results": [
+      {
+        "Text": "Een are",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Acre"
+        }
+      },
+      {
+        "Text": "honderd m2",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Square meter"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Zeer geregeld krijg ik mails van mensen die iets zeggen als: 'Hoi, ik ben Karin en ik ben 1,65m en 70 kilo, heb ik dan een gezond gewicht?'",
+    "Results": [
+      {
+        "Text": "1,65m",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1,65",
+          "unit": "Meter"
+        }
+      },
+      {
+        "Text": "70 kilo",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "70",
+          "unit": "Kilogram"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]

@@ -11,7 +11,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -26,7 +25,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -41,7 +39,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -56,7 +53,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -66,12 +62,11 @@
         "Text": "98,6 graden F",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "98.6",
+          "value": "98,6",
           "unit": "F"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -86,7 +81,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -96,12 +90,11 @@
         "Text": "98,6 graden Fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "98.6",
+          "value": "98,6",
           "unit": "F"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -116,7 +109,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -131,37 +123,34 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "100,2 graden Farenheit is laag",
+    "Input": "100,2 graden Fahrenheit is laag",
     "Results": [
       {
-        "Text": "100,2 graden Farenheit",
+        "Text": "100,2 graden Fahrenheit",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "100.2",
+          "value": "100,2",
           "unit": "F"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "10,5 Celcius",
+    "Input": "10,5 Celsius",
     "Results": [
       {
-        "Text": "10,5 Celcius",
+        "Text": "10,5 Celsius",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "10.5",
+          "value": "10,5",
           "unit": "C"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -176,7 +165,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -186,27 +174,25 @@
         "Text": "20,3 Celsius",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "20.3",
+          "value": "20,3",
           "unit": "C"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "34,5 Celcius",
+    "Input": "34,5 Celsius",
     "Results": [
       {
-        "Text": "34,5 Celcius",
+        "Text": "34,5 Celsius",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "34.5",
+          "value": "34,5",
           "unit": "C"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -221,7 +207,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -236,7 +221,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -251,7 +235,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -266,7 +249,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -281,7 +263,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -296,7 +277,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -311,7 +291,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -326,7 +305,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -341,7 +319,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -364,7 +341,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -374,7 +350,7 @@
         "Text": "34,9 graden Celsius",
         "TypeName": "temperature",
         "Resolution": {
-          "value": "34.9",
+          "value": "34,9",
           "unit": "C"
         }
       },
@@ -387,7 +363,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -418,7 +393,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -457,7 +431,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -488,7 +461,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -511,7 +483,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -534,7 +505,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -557,7 +527,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -580,7 +549,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   }
 ]

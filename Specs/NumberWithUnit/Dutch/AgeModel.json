@@ -11,7 +11,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -26,7 +25,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -41,14 +39,13 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Nu, op 95-jarige leeftijd, inzichten veranderen.",
+    "Input": "Nu, op 95 jarige leeftijd, inzichten veranderen.",
     "Results": [
       {
-        "Text": "95-jarige leeftijd",
+        "Text": "95 jarige leeftijd",
         "TypeName": "age",
         "Resolution": {
           "value": "95",
@@ -56,7 +53,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -71,14 +67,13 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Zij is 60; zij is geboren op 8 mei 1945.",
+    "Input": "Zij is 60 jaar oud; zij is geboren op 8 mei 1945.",
     "Results": [
       {
-        "Text": "60",
+        "Text": "60 jaar oud",
         "TypeName": "age",
         "Resolution": {
           "value": "60",
@@ -86,14 +81,13 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "25% van de gevallen zijn niet gediagnostiseerd tot een leeftijd van 3 jaar.",
     "Results": [
       {
-        "Text": "leeftijd van 3 jaar",
+        "Text": "3 jaar",
         "TypeName": "age",
         "Resolution": {
           "value": "3",
@@ -101,11 +95,10 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Wanneer komt er druk om een afspraak van 1 jaar na te komen?",
+    "Input": "Wanneer komt er druk om een afspraak van één jaar na te komen?",
     "Results": [
       {
         "Text": "één jaar",
@@ -116,11 +109,10 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Het gebeurde toen de baby pas 10 maanden was.",
+    "Input": "Het gebeurde toen de baby pas tien maanden was.",
     "Results": [
       {
         "Text": "tien maanden",
@@ -131,7 +123,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -146,11 +137,10 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ongeveer 50% van de gevallen worden gediagnostiseerd wanneer ze 18 maanden oud zijn.",
+    "Input": "Ongeveer 50% van de gevallen worden gediagnostiseerd wanneer ze achttien maanden oud zijn.",
     "Results": [
       {
         "Text": "achttien maanden oud",
@@ -161,7 +151,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -176,7 +165,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -191,7 +179,6 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -202,18 +189,17 @@
         "TypeName": "age",
         "Resolution": {
           "value": "6",
-          "unit": "Week"
+          "unit": "Year"
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Een energie factuur van 90 dagen is erg oud",
     "Results": [
       {
-        "Text": "van 90 dagen",
+        "Text": "90 dagen",
         "TypeName": "age",
         "Resolution": {
           "value": "90",
@@ -221,12 +207,10 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Hij is tussen de 40 en 50 jaar.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "50 jaar",

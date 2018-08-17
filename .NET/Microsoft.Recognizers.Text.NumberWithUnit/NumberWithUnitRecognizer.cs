@@ -409,6 +409,47 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }));
                 
             #endregion
+
+            #region Dutch
+            
+            // RegisterModel<CurrencyModel>(
+            //     Culture.Dutch,
+            //     (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+            //     {
+            //         {
+            //             new BaseMergedUnitExtractor(new Dutch.CurrencyExtractorConfiguration()),
+            //             new BaseMergedUnitParser(new Dutch.CurrencyParserConfiguration())
+            //         }
+            //     }));
+            RegisterModel<TemperatureModel>(
+                Culture.Dutch,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Dutch.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Dutch.TemperatureParserConfiguration())
+                    }
+                }));
+            RegisterModel<DimensionModel>(
+                Culture.Dutch,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Dutch.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Dutch.DimensionParserConfiguration())
+                    }
+                }));
+            RegisterModel<AgeModel>(
+                Culture.Dutch,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Dutch.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Dutch.AgeParserConfiguration())
+                    }
+                }));
+                                            
+            #endregion
         }
     }
 }
