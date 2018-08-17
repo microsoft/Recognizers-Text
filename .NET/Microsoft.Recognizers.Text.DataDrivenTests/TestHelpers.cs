@@ -18,6 +18,7 @@ using Microsoft.Recognizers.Text.Sequence;
 using Microsoft.Recognizers.Text.Choice;
 
 using Newtonsoft.Json;
+using Microsoft.Recognizers.Text.DateTime.Italian;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -39,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizerLanguage[1];
                 var rawData = File.ReadAllText(specsFile);
                 var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
-                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine + 
+                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine +
                                   string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
                 resources.Add(Path.GetFileNameWithoutExtension(specsFile), specs);
             }
@@ -56,6 +57,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
     {
         Number,
         NumberPercentMode,
+        NumberExperimentalMode,
         Ordinal,
         Percent,
         PercentPercentMode,
@@ -117,6 +119,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         private static IDictionary<Models, Func<TestModel, string, IList<ModelResult>>> modelFunctions = new Dictionary<Models, Func<TestModel, string, IList<ModelResult>>>() {
             { Models.Number, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.NumberPercentMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false) },
+            { Models.NumberExperimentalMode, (test, culture) => NumberRecognizer.RecognizeNumber(test.Input, culture, NumberOptions.ExperimentalMode, fallbackToDefaultCulture: false) },
             { Models.Ordinal, (test, culture) => NumberRecognizer.RecognizeOrdinal(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Percent, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, fallbackToDefaultCulture: false)},
             { Models.PercentPercentMode, (test, culture) => NumberRecognizer.RecognizePercentage(test.Input, culture, NumberOptions.PercentageMode, fallbackToDefaultCulture: false)},
@@ -150,7 +153,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             return modelFunction(test, culture);
         }
-        
+
         public static IDateTimeExtractor GetExtractor(this TestContext context)
         {
             var culture = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
@@ -171,6 +174,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetFrenchExtractor(extractorName);
                 case Culture.German:
                     return GetGermanExtractor(extractorName);
+                case Culture.Italian:
+                    return GetItalianExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
@@ -196,6 +201,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetFrenchParser(parserName);
                 case Culture.German:
                     return GetGermanParser(parserName);
+                case Culture.Italian:
+                    return GetItalianParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
@@ -390,7 +397,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new DateTime.Chinese.SetParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
                 case DateTimeParsers.Merged:
-                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration() );
+                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
@@ -620,7 +627,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Date:
                     return new BaseDateParser(new GermanDateParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Time:
-                    return new DateTime.French.TimeParser(new GermanTimeParserConfiguration(commonConfiguration));
+                    return new DateTime.German.TimeParser(new GermanTimeParserConfiguration(commonConfiguration));
                 case DateTimeParsers.DatePeriod:
                     return new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(commonConfiguration));
                 case DateTimeParsers.TimePeriod:
@@ -640,6 +647,70 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for German not supported");
+        }
+
+        public static IDateTimeExtractor GetItalianExtractor(DateTimeExtractors extractorName)
+        {
+            var config = new BaseOptionsConfiguration();
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new ItalianDateExtractorConfiguration(config));
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new ItalianDatePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(config));
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(config));
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new ItalianSetExtractorConfiguration(config));
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(config));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseMergedDateTimeExtractor(new ItalianMergedExtractorConfiguration(config));
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(config));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Italian not supported");
+        }
+
+        public static IDateTimeParser GetItalianParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new ItalianCommonDateTimeParserConfiguration(new BaseOptionsConfiguration());
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new ItalianDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.Italian.TimeParser(new ItalianTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new ItalianDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new ItalianTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new ItalianDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new ItalianDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new ItalianDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new ItalianHolidayParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new ItalianSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedDateTimeParser(new ItalianMergedParserConfiguration(commonConfiguration));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Italian not supported");
         }
 
     }

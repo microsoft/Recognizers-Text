@@ -34,12 +34,10 @@ namespace Microsoft.Recognizers.Text.Number
         /// <returns></returns>
         public List<ExtractResult> Extract(string source)
         {
-            string originSource = source;
-            Dictionary<int, int> positionMap;
-            IList<ExtractResult> numExtResults;
+            var originSource = source;
 
             // preprocess the source sentence via extracting and replacing the numbers in it
-            source = PreprocessStrWithNumberExtracted(originSource, out positionMap, out numExtResults);
+            source = PreprocessStrWithNumberExtracted(originSource, out var positionMap, out var numExtResults);
 
             var allMatches = new List<MatchCollection>();
             // match percentage with regexes
@@ -69,7 +67,7 @@ namespace Microsoft.Recognizers.Text.Number
             var last = -1;
 
             // get index of each matched results
-            for (int i = 0; i < source.Length; i++)
+            for (var i = 0; i < source.Length; i++)
             {
                 if (matched[i])
                 {
@@ -205,6 +203,8 @@ namespace Microsoft.Recognizers.Text.Number
         /// get the number extractor results and convert the extracted numbers to @sys.num, so that the regexes can work
         /// </summary>
         /// <param name="str"></param>
+        /// <param name="positionMap"></param>
+        /// <param name="numExtResults"></param>
         /// <returns></returns>
         private string PreprocessStrWithNumberExtracted(string str, out Dictionary<int, int> positionMap,
             out IList<ExtractResult> numExtResults)

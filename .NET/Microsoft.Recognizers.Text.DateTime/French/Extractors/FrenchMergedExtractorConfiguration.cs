@@ -1,9 +1,8 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Matcher;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -17,6 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly Regex SinceRegex =
             new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AroundRegex =
+            new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex FromToRegex =
             new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline); // 'Je vais du lundi au mecredi' - I will go from monday to weds
@@ -68,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor IntegerExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public FrenchMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
 
@@ -88,6 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
         Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
+        Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;

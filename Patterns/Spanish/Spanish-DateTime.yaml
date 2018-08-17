@@ -393,6 +393,9 @@ AfterRegex: !simpleRegex
   def: (despues(\s*del?(\s+las?)?)?)
 SinceRegex: !simpleRegex
   def: (desde(\s+(las?|el))?)
+AroundRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # SpanishSetExtractorConfiguration
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b

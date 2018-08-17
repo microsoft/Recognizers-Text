@@ -10,11 +10,15 @@ namespace Microsoft.Recognizers.Text.Number.English
     {
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
+        protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
         protected sealed override NumberOptions Options { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
         protected sealed override Regex NegativeNumberTermsRegex { get; }
+
+        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
 
         private static readonly ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor> Instances =
             new ConcurrentDictionary<(NumberMode, NumberOptions), NumberExtractor>();
@@ -34,6 +38,8 @@ namespace Microsoft.Recognizers.Text.Number.English
         private NumberExtractor(NumberMode mode, NumberOptions options)
         {
             NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
             Options = options;
 
@@ -65,6 +71,15 @@ namespace Microsoft.Recognizers.Text.Number.English
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();
+
+            var ambiguityBuilder = ImmutableDictionary.CreateBuilder<Regex, Regex>();
+
+            foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
+            {
+                ambiguityBuilder.Add(new Regex(item.Key, RegexOptions.IgnoreCase | RegexOptions.Singleline), new Regex(item.Value, RegexOptions.IgnoreCase | RegexOptions.Singleline));
+            }
+
+            AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();
         }
     }
 }

@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return match.Success;
         }
 
-        public bool HasConnectorToken(string text)
+        public bool IsConnectorToken(string text)
         {
             return ConnectorAndRegex.IsMatch(text);
         }

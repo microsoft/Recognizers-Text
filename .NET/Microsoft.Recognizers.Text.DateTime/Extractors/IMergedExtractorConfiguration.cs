@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SinceRegex { get; }
 
+        Regex AroundRegex { get; }
+
         Regex FromToRegex { get; }
 
         Regex SingleAmbiguousMonthRegex { get; }
@@ -54,6 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex UnspecificDatePeriodRegex { get; }
 
         StringMatcher SuperfluousWordMatcher { get; }
+
+        Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
     }
 }

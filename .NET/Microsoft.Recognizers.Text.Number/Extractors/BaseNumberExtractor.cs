@@ -11,11 +11,16 @@ namespace Microsoft.Recognizers.Text.Number
     {
         internal abstract ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
+        protected virtual ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         protected virtual string ExtractType { get; } = "";
 
         protected virtual NumberOptions Options { get; } = NumberOptions.None;
 
         protected virtual Regex NegativeNumberTermsRegex { get; } = null;
+
+        protected virtual Regex AmbiguousFractionConnectorsRegex { get; } = null;
+
 
         public virtual List<ExtractResult> Extract(string source)
         {
@@ -33,6 +38,12 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 foreach (Match m in collection.Key)
                 {
+                    // In ExperimentalMode, AmbigiuousFraction like "30000 in 2009" needs to be skipped
+                    if (Options == NumberOptions.ExperimentalMode && AmbiguousFractionConnectorsRegex.Match(m.Value).Success)
+                    {
+                        continue;
+                    }
+
                     for (var j = 0; j < m.Length; j++)
                     {
                         matched[m.Index + j] = true;
@@ -60,7 +71,8 @@ namespace Microsoft.Recognizers.Text.Number
                                 .Select(p => (p.Value.Priority, p.Value.Name)).Min().Item2;
 
                             // Extract negative numbers
-                            if (NegativeNumberTermsRegex != null) {
+                            if (NegativeNumberTermsRegex != null)
+                            {
                                 var match = NegativeNumberTermsRegex.Match(source.Substring(0, start));
                                 if (match.Success)
                                 {
@@ -88,7 +100,28 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
+            result = FilterAmbiguity(result, source);
+
             return result;
+        }
+
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
+        {
+            var result = new List<ExtractResult>();
+
+            if (AmbiguityFiltersDict != null)
+            {
+                foreach (var regex in AmbiguityFiltersDict)
+                {
+                    if (regex.Key.IsMatch(text))
+                    {
+                        var matches = regex.Value.Matches(text).Cast<Match>();
+                        ers = ers.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start)).ToList();
+                    }
+                }
+            }
+
+            return ers;
         }
 
         protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
@@ -156,7 +189,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         // 1'234'567,89
         public static LongFormatType DoubleNumQuoteComma = new LongFormatType('\'', ',');
-        
+
         private LongFormatType(char thousandsMark, char decimalsMark)
         {
             ThousandsMark = thousandsMark;

@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
-            DateRegexes = new PortugueseDateExtractorConfiguration(config).DateRegexList;
+            DateRegexes = new PortugueseDateExtractorConfiguration(this).DateRegexList;
             OnRegex = PortugueseDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = PortugueseDateExtractorConfiguration.SpecialDayRegex;
             SpecialDayWithNumRegex = PortugueseDateExtractorConfiguration.SpecialDayWithNumRegex;

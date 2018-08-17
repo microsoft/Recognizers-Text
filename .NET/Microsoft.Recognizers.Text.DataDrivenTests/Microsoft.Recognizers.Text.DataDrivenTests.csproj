@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Choice\TestChoiceRecognizerCache.cs" />
     <Compile Include="Choice\TestChoiceRecognizerInitialization.cs" />
+    <Compile Include="Choice\TestChoice_Chinese.cs" />
     <Compile Include="Choice\TestChoice_Dutch.cs" />
     <Compile Include="Choice\TestChoice_English.cs" />
     <Compile Include="Choice\TestChoice_Japanese.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Choice\TestChoice_Portuguese.cs" />
     <Compile Include="DateTime\TestDateTimeRecognizerCache.cs" />
     <Compile Include="DateTime\TestDateTime_Chinese.cs" />
+    <Compile Include="DateTime\TestDateTime_Italian.cs" />
     <Compile Include="DateTime\TestDateTime_EnglishOthers.cs" />
     <Compile Include="DateTime\TestDateTime_French.cs" />
     <Compile Include="DateTime\TestDateTime_Portuguese.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Matcher\StringMatcherTest.cs" />
     <Compile Include="Matcher\SimpleTokenizerTest.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerCache.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnit_Italian.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_French.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_German.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Japanese.cs" />
@@ -85,6 +88,7 @@
     <Compile Include="NumberWithUnit\TestNumberWithUnit_English.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnitRecognizerInitialization.cs" />
     <Compile Include="Number\TestDecimalAndThousandsSeparators.cs" />
+    <Compile Include="Number\TestNumber_Italian.cs" />
     <Compile Include="Number\TestNumberRecognizerCache.cs" />
     <Compile Include="Number\TestNumberRecognizerInitialization.cs" />
     <Compile Include="Number\TestNumber_English.cs" />
@@ -109,8 +113,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj">
+      <Project>{9318ea22-c36a-48c8-9882-8a0d2d74c356}</Project>
+      <Name>Microsoft.Recognizers.Text.Choice</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj">
-      <Project>{19522B81-C63F-4DD5-AB4C-674CD44D67D6}</Project>
+      <Project>{19522b81-c63f-4dd5-ab4c-674cd44d67d6}</Project>
       <Name>Microsoft.Recognizers.Text.DateTime</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj">
@@ -120,10 +128,6 @@
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
       <Project>{f1005971-0341-4635-ac1b-b272681d0834}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Microsoft.Recognizers.Text.Choice\Microsoft.Recognizers.Text.Choice.csproj">
-      <Project>{9318ea22-c36a-48c8-9882-8a0d2d74c356}</Project>
-      <Name>Microsoft.Recognizers.Text.Choice</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj">
       <Project>{a5f60d50-81f7-44f8-a2b4-a63606376ee7}</Project>

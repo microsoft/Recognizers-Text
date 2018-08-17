@@ -7,6 +7,7 @@ class Culture:
     Japanese: str = 'ja-jp'
     Dutch: str = 'nl-nl'
     Korean: str = 'ko-kr'
+    Italian: str = 'it-it'
 
 class BaseCultureInfo:
     def __init__(self, culture_code: str):

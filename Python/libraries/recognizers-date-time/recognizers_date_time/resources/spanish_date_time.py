@@ -147,6 +147,7 @@ class SpanishDateTime:
     BeforeRegex = f'(antes(\\s+del?(\\s+las?)?)?)'
     AfterRegex = f'(despues(\\s*del?(\\s+las?)?)?)'
     SinceRegex = f'(desde(\\s+(las?|el))?)'
+    AroundRegex = f'^[.]'
     PeriodicRegex = f'\\b(?<periodic>a\\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\\b'
     EachExpression = f'cada|tod[oa]s\\s*(l[oa]s)?'
     EachUnitRegex = f'(?<each>({EachExpression})\\s*{UnitRegex})'

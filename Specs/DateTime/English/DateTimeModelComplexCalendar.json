@@ -4965,5 +4965,221 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana, find time for us to meet between 7 and 9 PM EST .",
+    "Context": {
+      "ReferenceDateTime": "2018-08-14T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "between 7 and 9 pm est",
+        "Start": 34,
+        "End": 55,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T19,T21,PT2H)",
+              "type": "timerange",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "start": "19:00:00",
+              "end": "21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Good Morning Paul",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Good night Cortana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Cortana, can you please set something up around the 21st.",
+    "Comment": "Only supported in CalendarMode",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "around the 21st",
+        "Start": 41,
+        "End": 55,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-21",
+              "Mod": "approx",
+              "type": "daterange",
+              "value": "2018-07-21"
+            },
+            {
+              "timex": "XXXX-XX-21",
+              "Mod": "approx",
+              "type": "daterange",
+              "value": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up around the 21st this month.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-08T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "around the 21st this month",
+        "Start": 41,
+        "End": 66,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-21",
+              "Mod": "approx",
+              "type": "daterange",
+              "value": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up around tomorrow 10am.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-16T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "around tomorrow 10am",
+        "Start": 41,
+        "End": 60,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-17T10",
+              "Mod": "approx",
+              "type": "datetimerange",
+              "value": "2018-08-17 10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet this week as early as 7:00 am",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Start": 11,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W33",
+              "type": "daterange",
+              "start": "2018-08-13",
+              "end": "2018-08-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "as early as 7:00 am",
+        "Start": 21,
+        "End": 39,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave as late as 7:00 am",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "as late as 7:00 am",
+        "Start": 11,
+        "End": 28,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "Mod": "until",
+              "type": "timerange",
+              "end": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave as late as tomorrow.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "as late as tomorrow",
+        "Start": 11,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-18",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2018-08-18"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

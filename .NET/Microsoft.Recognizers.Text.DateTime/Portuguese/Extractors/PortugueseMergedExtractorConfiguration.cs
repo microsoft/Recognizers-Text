@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AroundRegex = new Regex(DateTimeDefinitions.AroundRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         //TODO: change the following three regexes to Portuguese if there are the same requirement of splitting from A to B as two time points
         public static readonly Regex FromToRegex = 
             new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -63,6 +65,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
         public PortugueseMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
             DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
@@ -82,6 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
         Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
         Regex IMergedExtractorConfiguration.SinceRegex => SinceRegex;
+        Regex IMergedExtractorConfiguration.AroundRegex => AroundRegex;
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;

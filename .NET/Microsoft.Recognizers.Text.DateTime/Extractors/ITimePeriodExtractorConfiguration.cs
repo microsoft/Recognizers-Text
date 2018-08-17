@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         
         bool GetFromTokenIndex(string text, out int index);
 
-        bool HasConnectorToken(string text);
+        bool IsConnectorToken(string text);
 
         bool GetBetweenTokenIndex(string text, out int index);
     }

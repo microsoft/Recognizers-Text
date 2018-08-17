@@ -73,6 +73,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string REF_UNDEF_MOD = "ref_undef";
 
+        public const string APPROX_MOD = "approx";
+
         // Invalid year
         public const int InvalidYear = int.MinValue;
 

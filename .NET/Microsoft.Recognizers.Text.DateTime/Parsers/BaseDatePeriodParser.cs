@@ -1227,7 +1227,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 switch (durationUnit)
                 {
                     case "W":
-                        var diff = 7 - (((int)beginDate.DayOfWeek) == 0 ? 7 : (int)beginDate.DayOfWeek);
+                        var diff = 7 - ((int)beginDate.DayOfWeek == 0 ? 7 : (int)beginDate.DayOfWeek);
                         endDate = beginDate.AddDays(diff);
                         timex = "P" + diff + "D";
                         if (diff == 0)
