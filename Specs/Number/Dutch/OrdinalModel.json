@@ -211,5 +211,70 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdachtste",
+    "Results": [
+      {
+        "Text": "honderdachtste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "108"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdenachtste",
+    "Results": [
+      {
+        "Text": "honderdenachtste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "108"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend zestiende",
+    "Results": [
+      {
+        "Text": "tweeduizend zestiende",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2016"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend en zestiende",
+    "Results": [
+      {
+        "Text": "tweeduizend en zestiende",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2016"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zeventien miljoenste",
+    "Results": [
+      {
+        "Text": "zeventien miljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "17000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]
