@@ -1,7 +1,6 @@
 [
   {
     "Input": "drie biljoenste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie biljoenste",
@@ -20,7 +19,6 @@
   },
   {
     "Input": "honderd biljoenste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderd biljoenste",
@@ -34,7 +32,6 @@
   },
   {
     "Input": "11e",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "11e",
@@ -48,7 +45,6 @@
   },
   {
     "Input": "derde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "derde",
@@ -62,7 +58,6 @@
   },
   {
     "Input": "30ste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "30ste",
@@ -76,7 +71,6 @@
   },
   {
     "Input": "tweede",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweede",
@@ -90,7 +84,6 @@
   },
   {
     "Input": "elfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "elfde",
@@ -104,7 +97,6 @@
   },
   {
     "Input": "nulde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "nulde",
@@ -118,7 +110,6 @@
   },
   {
     "Input": "twintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintigste",
@@ -132,7 +123,6 @@
   },
   {
     "Input": "vijfentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijfentwintigste",
@@ -146,7 +136,6 @@
   },
   {
     "Input": "eenentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eenentwintigste",
@@ -160,7 +149,6 @@
   },
   {
     "Input": "honderdvijfentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdvijfentwintigste",
@@ -174,7 +162,6 @@
   },
   {
     "Input": "biljoenste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "biljoenste",
@@ -188,7 +175,6 @@
   },
   {
     "Input": "eerste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eerste",
@@ -202,7 +188,6 @@
   },
   {
     "Input": "tweehonderdste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweehonderdste",
@@ -216,7 +201,6 @@
   },
   {
     "Input": "Boek een eerste klas ticket naar Amsterdam",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eerste",
