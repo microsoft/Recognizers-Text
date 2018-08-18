@@ -75,7 +75,7 @@ FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(en\s+)?)?({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s*(en|ën)?\s*)?(\s+een\s+)?(\s*|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|halve|kwart)(?=\b)
+  def: (?<=\b)({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|halve|kwart)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
