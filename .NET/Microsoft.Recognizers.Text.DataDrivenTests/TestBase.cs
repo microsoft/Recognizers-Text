@@ -265,8 +265,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestPhoneNumber()
         {
+            var testResolutionKeys = new List<string> { "score" };
             TestPreValidation();
-            ValidateResults();
+            ValidateResults(testResolutionKeys);
         }
 
         public void TestMention()

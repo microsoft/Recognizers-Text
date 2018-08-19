@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 // Nothing to do. Exceptions in parse should not break users of recognizers.
                 // No result.
             }
-
+            
             return parsedSequences.Select(o => new ModelResult
             {
                 Start = o.Start.Value,
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                         ResolutionKey.Value, o.ResolutionStr
                     },
                     {
-                        ResolutionKey.Score, o.Score.Value
+                        ResolutionKey.Score, o.Value.ToString()
                     }
                 },
                 Text = o.Text,

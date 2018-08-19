@@ -15,7 +15,6 @@ namespace Microsoft.Recognizers.Text
         public string Type { get; set; } = null;
         public object Data { get; set; } = null;
         public Metadata Metadata { get; set; } = null;
-        public double? Score { get; set; } = null;
     }
 
     public class Metadata

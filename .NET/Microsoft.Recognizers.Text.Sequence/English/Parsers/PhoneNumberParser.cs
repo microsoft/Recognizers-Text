@@ -1,10 +1,22 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.Sequence.English
 {
     public class PhoneNumberParser : BaseSequenceParser
-    { 
+    {
+        private static double scoreUpperBound = 1;
+        private static double scoreLowerBound = 0;
+        private static double baseScore = 0.3;
+        private static double countryCodeAward = 0.4;
+        private static double areaCodeAward = 0.2;
+        private static double formattedAward = 0.1;
+        private static double lengthAward = 0.05;
+        private static int maxFormatIndicatorNum = 4;
+        private static int maxLengthAwardNum = 4;
+        private static int phoneNumberLengthBase = 8;
+
         public PhoneNumberParser()
         {
 
@@ -12,25 +24,27 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         
         double ScorePhoneNumber(string phoneNumberText)
         {
-            double baseScore = 0.3;
-            double scoreIncrement = 0;
+            double score = baseScore;
 
-            string countryCodeFormat = @"^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})";
-            string areaCodeFormat = @"\(";
-            string separatorChar = @"[\s-/]";
+            Regex countryCodeRegex = new Regex(BasePhoneNumbers.CountryCodeRegex);
+            Regex areaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex);
+            Regex formatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
 
-            //Country code score or area code score 
-            scoreIncrement += Regex.IsMatch(phoneNumberText, countryCodeFormat) ?
-                                    0.4 : Regex.IsMatch(phoneNumberText, areaCodeFormat) ? 0.2 : 0;
- 
-            //Formatted score
-            int separatorCount = Regex.Matches(phoneNumberText, separatorChar).Count;
-            scoreIncrement += Math.Min(separatorCount, 4) * 0.1;
+            // Country code score or area code score 
+            score += countryCodeRegex.IsMatch(phoneNumberText) ?
+                                    countryCodeAward : areaCodeRegex.IsMatch(phoneNumberText) ? areaCodeAward : 0;
             
-            //Length score
-            scoreIncrement += Math.Min((phoneNumberText.Length - 8), 4) * 0.05;
-           
-            return Math.Max(Math.Min(baseScore + scoreIncrement, 1), 0);
+            // Formatted score
+            if (formatIndicatorRegex.IsMatch(phoneNumberText))
+            {
+                int formatIndicatorCount = formatIndicatorRegex.Matches(phoneNumberText).Count;
+                score += Math.Min(formatIndicatorCount, maxFormatIndicatorNum) * formattedAward;
+            }
+            
+            // Length score
+            score += Math.Min((phoneNumberText.Length - phoneNumberLengthBase), maxLengthAwardNum) * lengthAward;
+
+            return Math.Max(Math.Min(score, scoreUpperBound), scoreLowerBound) / scoreUpperBound;
         }
         
         public override ParseResult Parse(ExtractResult extResult)
@@ -42,7 +56,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
                 Text = extResult.Text,
                 Type = extResult.Type,
                 ResolutionStr = extResult.Text,
-                Score = ScorePhoneNumber(extResult.Text),
+                Value = ScorePhoneNumber(extResult.Text),
             };
             return result;
         }
