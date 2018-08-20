@@ -182,7 +182,7 @@
 ,
 {
   "Input": "일백삼과 삼분의 이",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일백삼과 삼분의 이",
@@ -210,7 +210,7 @@
 ,
 {
   "Input": "삼분의 이",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "삼분의 이",
@@ -244,7 +244,7 @@
       "Text": "일백육",
       "TypeName": "number",
       "Resolution": {
-        "value": "160"
+        "value": "106"
       }
     }
   ]
@@ -910,7 +910,7 @@
 ,
 {
   "Input": "이십삼과 오분의 삼",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "이십삼과 오분의 삼",
@@ -924,7 +924,7 @@
 ,
 {
   "Input": "일과 이분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일과 이분의 일",
@@ -938,7 +938,7 @@
 ,
 {
   "Input": "일과 사분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일과 사분의 일",
@@ -952,7 +952,7 @@
 ,
 {
   "Input": "오와 사분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "오와 사분의 일",
@@ -966,7 +966,7 @@
 ,
 {
   "Input": "일백과 사분의 삼",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일백과 사분의 삼",
@@ -1148,7 +1148,7 @@
 ,
 {
   "Input": "삼과 오분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "삼과 오분의 일",
@@ -1232,13 +1232,13 @@
 ,
 {
   "Input": "일백과 오분의 삼십",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일백과 오분의 삼십",
       "TypeName": "number",
       "Resolution": {
-        "value": "26"
+        "value": "106"
       }
     }
   ]
@@ -1274,7 +1274,7 @@
 ,
 {
   "Input": "일백삼십과 오분의 이",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일백삼십과 오분의 이",
@@ -1302,7 +1302,7 @@
 ,
 {
   "Input": "일백오분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일백오분의 일",
@@ -1316,7 +1316,7 @@
 ,
 {
   "Input": "백오분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "백오분의 일",
@@ -1330,7 +1330,7 @@
 ,
 {
   "Input": "일천오분의 일백",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일천오분의 일백",
@@ -1372,7 +1372,7 @@
 ,
 {
   "Input": "일백이십일분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일백이십일분의 일",
@@ -1470,13 +1470,13 @@
 ,
 {
   "Input": "일백이십팔분의 일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "일백이십팔분의 일",
       "TypeName": "number",
       "Resolution": {
-        "value": "0.008"
+        "value": "0.0078125"
       }
     }
   ]

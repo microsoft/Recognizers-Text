@@ -238,5 +238,9 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "b", 1000000000 },
 			{ "t", 1000000000000 }
 		};
+		public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+		{
+			{ "\\bone\\b", "\\b(the|this|that|which)\\s+(one)\\b" }
+		};
 	}
 }

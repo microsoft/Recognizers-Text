@@ -221,4 +221,5 @@ class EnglishNumeric:
                            ('g', 1000000000),
                            ('b', 1000000000),
                            ('t', 1000000000000)])
+    AmbiguityFiltersDict = dict([('\\bone\\b', '\\b(the|this|that|which)\\s+(one)\\b')])
 # pylint: enable=line-too-long

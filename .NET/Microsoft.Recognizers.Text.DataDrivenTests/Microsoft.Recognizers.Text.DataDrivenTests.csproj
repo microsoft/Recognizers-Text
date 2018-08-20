@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Choice\TestChoiceRecognizerCache.cs" />
     <Compile Include="Choice\TestChoiceRecognizerInitialization.cs" />
+    <Compile Include="Choice\TestChoice_Chinese.cs" />
     <Compile Include="Choice\TestChoice_Dutch.cs" />
     <Compile Include="Choice\TestChoice_English.cs" />
     <Compile Include="Choice\TestChoice_Japanese.cs" />
