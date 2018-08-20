@@ -952,6 +952,51 @@
     ]
   },
   {
+    "Input": "s666666666 é uma sequência de caracteres.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "666666666s é uma sequência de caracteres.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "s666666666s é uma sequência de caracteres.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "666666666S é uma sequência de caracteres, mas não um telefone.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "3333*2=6666 não parece um número telefônico.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "3333/2=6666 não parece um número telefônico.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "1000-1=999 não parece um número telefônico.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "(456 (4)) 345 não parece um número telefônico.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "(081)  342-86221d não parece um número telefônico.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
     "Input": "19) 35831647 parece que tem um parenteses faltando antes do código de área",
     "NotSupportedByDesign": "python",
     "Results": [

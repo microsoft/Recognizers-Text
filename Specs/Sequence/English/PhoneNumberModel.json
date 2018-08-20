@@ -3514,6 +3514,56 @@
     ]
   },
   {
+    "Input": "Do you know bazinga?",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "s666666666 is a sequence.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "666666666s is a sequence.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "s666666666s is a sequence.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "666666666S is a sequence, but not a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "3333*2=6666 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "3333/2=6666 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "1000-1=999 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "(456 (4)) 345 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "(081)  342-86221d doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
     "Input": "19) 35831647 looks like the area code is missing the starting parenthesis",
     "NotSupportedByDesign": "python",
     "Results": [
@@ -3540,6 +3590,51 @@
         }
       }
     ]
+  },
+  {
+    "Input": "-2208960000 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "-77.034040723966 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "0.000000012 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "P0-001-000016155-9 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "16/04/2010 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "16-04-2010 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "2009/2010 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "http://twitter.com/#!/mstrohm/stus/87057367204202896 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "T005-2333-100731-SW-2 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
   },
   {
     "Input": "My phone number is 86 (40) 08423331.",
@@ -4310,6 +4405,56 @@
         }
       }
     ]
+  },
+  {
+    "Input": "(45)+(31)-278394 is not a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "Formula 45+31-339243873 is not a phone number",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "Formula 45*31-339243873 is not a phone number",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "0039 31122627111-26737 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "(39 (6)) 345276 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "+45-12-34-56-78 doesn't look like a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "323456 seems too short to be a phone number.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is (06)-12234567, ')-' is not allowed.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is (+31) (12)-3456789, ')-' is not allowed.",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "My phone number is (012)-3456789, ')-' is not allowed.",
+    "NotSupportedByDesign": "python",
+    "Results": []
   },
   {
     "Input": "My phone number is+45 12 34 56 78.",
