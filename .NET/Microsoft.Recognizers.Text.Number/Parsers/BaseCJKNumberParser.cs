@@ -540,7 +540,7 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                     else
                     {
-                        if (i == intStr.Length - 1 && Config.CultureInfo.Name == "ja-JP")
+                        if (i == intStr.Length - 1 && (Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR"))
                         {
                             roundDefault = 1;
                         }
