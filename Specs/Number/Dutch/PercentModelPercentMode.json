@@ -127,8 +127,7 @@
   },
   {
     "Input": "een derde",
-    "NotSupported": "",
     "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]

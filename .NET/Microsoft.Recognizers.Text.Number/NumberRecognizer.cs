@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Number.Dutch;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;
@@ -86,7 +87,6 @@ namespace Microsoft.Recognizers.Text.Number
         protected override void InitializeConfiguration()
         {
             #region English
-
             RegisterModel<NumberModel>(
                 Culture.English,
                 options => new NumberModel(
@@ -273,6 +273,14 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new KoreanNumberParserConfiguration()),
                     new Korean.NumberExtractor()));
 
+            #endregion
+
+            #region Dutch
+            RegisterModel<NumberModel>(
+                Culture.Dutch,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration()),
+                    Dutch.NumberExtractor.GetInstance(NumberMode.PureNumber)));
             #endregion
         }
     }

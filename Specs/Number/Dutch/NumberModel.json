@@ -1,7 +1,72 @@
 [
   {
+    "Input": "tweehonderd",
+    "Comment": "https://onzetaal.nl/taaladvies/getallen-uitschrijven",
+    "Results": [
+      {
+        "Text": "tweehonderd",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "eenentwintig",
+    "Results": [
+      {
+        "Text": "eenentwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "21"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeentwintig",
+    "Results": [
+      {
+        "Text": "tweeentwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "22"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeëntwintig",
+    "Results": [
+      {
+        "Text": "tweeëntwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "22"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "achthonderd",
+    "Results": [
+      {
+        "Text": "achthonderd",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "800"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "192.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "192",
@@ -15,7 +80,6 @@
   },
   {
     "Input": "192.168.1.2",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "192",
@@ -46,41 +110,36 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "180,25ml vloeistof",
-    "NotSupported": "",
     "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "180ml vloeistof",
-    "NotSupported": "",
     "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": " 29km weg ",
-    "NotSupported": "",
     "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": " 4 mei ",
-    "NotSupported": "",
+    "Input": " de 4e van mei ",
     "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": ",25ml vloeistof",
-    "NotSupported": "",
     "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": ",08",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": ",08",
@@ -94,13 +153,11 @@
   },
   {
     "Input": "en",
-    "NotSupported": "",
     "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": ",23456000",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": ",23456000",
@@ -114,7 +171,6 @@
   },
   {
     "Input": "4,800",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "4,800",
@@ -128,7 +184,6 @@
   },
   {
     "Input": "honderddrie en twee derde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderddrie en twee derde",
@@ -142,7 +197,6 @@
   },
   {
     "Input": "honderdendrie en twee derde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdendrie en twee derde",
@@ -156,7 +210,6 @@
   },
   {
     "Input": "zestien",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "zestien",
@@ -170,7 +223,6 @@
   },
   {
     "Input": "twee derde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twee derde",
@@ -184,7 +236,6 @@
   },
   {
     "Input": "honderdzestien",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdzestien",
@@ -198,7 +249,6 @@
   },
   {
     "Input": "honderdzes",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdzes",
@@ -211,8 +261,20 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "honderdenzes",
+    "Results": [
+      {
+        "Text": "honderdenzes",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "106"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "honderdeenenzestig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdeenenzestig",
@@ -225,8 +287,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "een half  dozijn",
-    "NotSupported": "dotNet",
+    "Input": "een half dozijn",
     "Results": [
       {
         "Text": "een half dozijn",
@@ -240,7 +301,6 @@
   },
   {
     "Input": " 3 dozijn",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "3 dozijn",
@@ -254,7 +314,6 @@
   },
   {
     "Input": "een dozijn",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een dozijn",
@@ -268,7 +327,6 @@
   },
   {
     "Input": " drie dozijnen ",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie dozijnen",
@@ -282,7 +340,6 @@
   },
   {
     "Input": " driehonderd en twee dozijn",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "driehonderd en twee dozijn",
@@ -296,7 +353,6 @@
   },
   {
     "Input": "1.234,567",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1.234,567",
@@ -310,7 +366,6 @@
   },
   {
     "Input": "1, 234, 567",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1",
@@ -338,7 +393,6 @@
   },
   {
     "Input": "9,2321312",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "9,2321312",
@@ -352,7 +406,6 @@
   },
   {
     "Input": " -9,2321312",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-9,2321312",
@@ -366,7 +419,6 @@
   },
   {
     "Input": " -1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-1",
@@ -380,7 +432,6 @@
   },
   {
     "Input": "-4/5",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-4/5",
@@ -394,7 +445,6 @@
   },
   {
     "Input": "- 1 4/5",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "- 1 4/5",
@@ -408,7 +458,6 @@
   },
   {
     "Input": "drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie",
@@ -422,7 +471,6 @@
   },
   {
     "Input": " 123456789101231",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "123456789101231",
@@ -436,7 +484,6 @@
   },
   {
     "Input": "-123456789101231",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -450,7 +497,6 @@
   },
   {
     "Input": " -123456789101231",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -464,7 +510,6 @@
   },
   {
     "Input": "1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1",
@@ -478,7 +523,6 @@
   },
   {
     "Input": "10k",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "10k",
@@ -492,7 +536,6 @@
   },
   {
     "Input": "10G",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "10G",
@@ -506,7 +549,6 @@
   },
   {
     "Input": "- 10  k",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "- 10  k",
@@ -520,7 +562,6 @@
   },
   {
     "Input": "2 miljoen",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2 miljoen",
@@ -534,7 +575,6 @@
   },
   {
     "Input": "1 biljoen",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 biljoen",
@@ -548,7 +588,6 @@
   },
   {
     "Input": " drie ",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie",
@@ -562,7 +601,6 @@
   },
   {
     "Input": "een biljoen",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een biljoen",
@@ -576,7 +614,6 @@
   },
   {
     "Input": "eenentwintig biljoen",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eenentwintig biljoen",
@@ -589,22 +626,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "fifty - two",
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "fifty - two",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "tweeënvijftig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeënvijftig",
@@ -618,7 +640,6 @@
   },
   {
     "Input": "tweeenvijftig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeenvijftig",
@@ -632,7 +653,6 @@
   },
   {
     "Input": "tweeduizend tweehonderd",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeduizend tweehonderd",
@@ -646,7 +666,6 @@
   },
   {
     "Input": "tweeduizend tweehonderdtwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeduizend tweehonderdtwintig",
@@ -660,7 +679,6 @@
   },
   {
     "Input": "tweeëntwintighonderd",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeëntwintighonderd",
@@ -674,7 +692,6 @@
   },
   {
     "Input": " 2,33 k",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2,33 k",
@@ -688,7 +705,6 @@
   },
   {
     "Input": "1e10",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1e10",
@@ -702,7 +718,6 @@
   },
   {
     "Input": "1,1^23",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1,1^23",
@@ -716,10 +731,9 @@
   },
   {
     "Input": " tweeendertigduizend tweehonderd  ",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "tweeendertigduizend tweehonderd ",
+        "Text": "tweeendertigduizend tweehonderd",
         "TypeName": "number",
         "Resolution": {
           "value": "32200"
@@ -730,7 +744,6 @@
   },
   {
     "Input": "zeventig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "zeventig",
@@ -743,22 +756,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "tweeenvijftig",
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "tweeenvijftig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "52"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "2  1/4",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2  1/4",
@@ -772,7 +770,6 @@
   },
   {
     "Input": "3/4",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "3/4",
@@ -786,7 +783,6 @@
   },
   {
     "Input": "een achtste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een achtste",
@@ -800,7 +796,6 @@
   },
   {
     "Input": "vijf achtste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf achtste",
@@ -814,7 +809,6 @@
   },
   {
     "Input": "een halve",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een halve",
@@ -827,22 +821,74 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "drie kwart",
-    "NotSupported": "dotNet",
+    "Input": "drie en een kwart",
     "Results": [
       {
-        "Text": "drie kwart",
+        "Text": "drie en een kwart",
         "TypeName": "number",
         "Resolution": {
-          "value": "0,75"
+          "value": "3,25"
         }
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "twintig drie vijfde",
+    "Input": "Ik wil graag een half brood",
+    "Results": [
+      {
+        "Text": "een half",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Ik wil graag een kwart brood",
+    "Results": [
+      {
+        "Text": "een kwart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,25"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Drie kwart van de bevolking heeft hier last van.",
+    "Results": [
+      {
+        "Text": "Drie kwart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        }
+      }
+    ],
     "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Driekwart van de bevolking heeft hier last van.",
+    "Results": [
+      {
+        "Text": "Driekwart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,75"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "twintig drie vijfde",
     "Results": [
       {
         "Text": "twintig drie vijfde",
@@ -852,11 +898,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "drieëntwintig vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drieëntwintig vijfde",
@@ -870,7 +916,6 @@
   },
   {
     "Input": "drieëntwintig en drie vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drieëntwintig en drie vijfde",
@@ -884,7 +929,6 @@
   },
   {
     "Input": "een miljoen tweeduizend tweehonderd drie vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een miljoen tweeduizend tweehonderd drie vijfde",
@@ -898,7 +942,6 @@
   },
   {
     "Input": "anderhalf",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "anderhalf",
@@ -908,11 +951,25 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Anderhalve week is niet zo lang. ",
+    "Results": [
+      {
+        "Text": "Anderhalve",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een en een vierde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een en een vierde",
@@ -926,7 +983,6 @@
   },
   {
     "Input": "vijf en een kwart",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf en een kwart",
@@ -940,7 +996,6 @@
   },
   {
     "Input": "honderd driekwart",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderd driekwart",
@@ -950,11 +1005,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een honderdste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een honderdste",
@@ -968,7 +1023,6 @@
   },
   {
     "Input": "1,1^+23",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1,1^+23",
@@ -982,7 +1036,6 @@
   },
   {
     "Input": "2,5^-1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "2,5^-1",
@@ -996,7 +1049,6 @@
   },
   {
     "Input": "-2500^-1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-2500^-1",
@@ -1010,7 +1062,6 @@
   },
   {
     "Input": "-1,1^+23",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-1,1^+23",
@@ -1024,7 +1075,6 @@
   },
   {
     "Input": "-2,5^-1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-2,5^-1",
@@ -1038,7 +1088,6 @@
   },
   {
     "Input": "-1,1^--23",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-1,1^--23",
@@ -1052,7 +1101,6 @@
   },
   {
     "Input": "-127,32e13",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-127,32e13",
@@ -1066,7 +1114,6 @@
   },
   {
     "Input": "12,32e+14",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "12,32e+14",
@@ -1080,7 +1127,6 @@
   },
   {
     "Input": "-12e-1",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "-12e-1",
@@ -1094,7 +1140,6 @@
   },
   {
     "Input": "1,2b",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1,2b",
@@ -1108,7 +1153,6 @@
   },
   {
     "Input": "een vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een vijfde",
@@ -1122,7 +1166,6 @@
   },
   {
     "Input": "honderdduizend biljoensten",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdduizend biljoensten",
@@ -1132,11 +1175,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "drie vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie vijfde",
@@ -1150,7 +1193,6 @@
   },
   {
     "Input": "twintig vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintig vijfde",
@@ -1164,7 +1206,6 @@
   },
   {
     "Input": "drie een vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie een vijfde",
@@ -1174,11 +1215,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "eenentwintig vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eenentwintig vijfde",
@@ -1192,7 +1233,6 @@
   },
   {
     "Input": "een eenentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een eenentwintigste",
@@ -1202,11 +1242,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een vijfentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een vijfentwintigste",
@@ -1216,11 +1256,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "drie eenentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie eenentwintigste",
@@ -1230,11 +1270,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "twintig vijventwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintig vijventwintigste",
@@ -1244,11 +1284,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "honderd en dertig vijfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderd en dertig vijfde",
@@ -1258,11 +1298,11 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "een van de drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een van de drie",
@@ -1276,7 +1316,6 @@
   },
   {
     "Input": "1 uit eenentwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 uit eenentwintig",
@@ -1290,7 +1329,6 @@
   },
   {
     "Input": "1 uit drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 uit drie",
@@ -1304,7 +1342,6 @@
   },
   {
     "Input": "1 op de 3",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 op de 3",
@@ -1318,13 +1355,12 @@
   },
   {
     "Input": "1 van de 3",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 van de 3",
         "TypeName": "number",
         "Resolution": {
-          "value": "0.333333333333333"
+          "value": "0,333333333333333"
         }
       }
     ],
@@ -1332,7 +1368,6 @@
   },
   {
     "Input": "één uit de 20",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "één uit de 20",
@@ -1346,7 +1381,6 @@
   },
   {
     "Input": "één van de twintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "één van de twintig",
@@ -1359,14 +1393,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Boek een eerste klas ticket naar Amsterdam",
-    "NotSupported": "",
-    "Results": [],
-    "NotSupportedByDesign": "dotNet,javascript,python,java"
-  },
-  {
     "Input": "Het antwoord is min een",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "min een",
@@ -1380,13 +1407,12 @@
   },
   {
     "Input": "Een op de twintig is hier niet tevreden mee",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "Een op de twintig",
         "TypeName": "number",
         "Resolution": {
-          "value": "-0.05"
+          "value": "0,05"
         }
       }
     ],
@@ -1394,7 +1420,6 @@
   },
   {
     "Input": "Het antwoord is vijf en een half",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf en een half",
@@ -1407,11 +1432,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Het antwoord is min 5 punt vijf",
-    "NotSupported": "dotNet",
+    "Input": "Het antwoord is min vijf komma vijf",
     "Results": [
       {
-        "Text": "min 5 punt vijf",
+        "Text": "min vijf komma vijf",
         "TypeName": "number",
         "Resolution": {
           "value": "-5,5"
@@ -1422,7 +1446,6 @@
   },
   {
     "Input": "Het antwoord is min 5",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "min 5",
@@ -1436,7 +1459,6 @@
   },
   {
     "Input": "een - vierde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een - vierde",
@@ -1450,7 +1472,6 @@
   },
   {
     "Input": "een-achtste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een-achtste",
@@ -1464,7 +1485,6 @@
   },
   {
     "Input": "vijf / achtste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf / achtste",
@@ -1478,7 +1498,6 @@
   },
   {
     "Input": "een van de drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een van de drie",
@@ -1492,7 +1511,6 @@
   },
   {
     "Input": "1 van de eenentwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 van de eenentwintig",
@@ -1506,7 +1524,6 @@
   },
   {
     "Input": "vijf achtsten van",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "vijf achtsten",
@@ -1519,8 +1536,19 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "honderdachtste",
+    "Comment": "This is a 'rangtelwoord', not a fraction.",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdenachtste",
+    "Comment": "This is a 'rangtelwoord', not a fraction.",
+    "Results": [],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "1 234 567",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 234 567",
@@ -1534,7 +1562,6 @@
   },
   {
     "Input": "40 000 is hetzelfde als 40 000",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "40 000",
@@ -1555,7 +1582,6 @@
   },
   {
     "Input": "Op dit moment de populatie van China is 1 414 021 100.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1 414 021 100",
@@ -1569,7 +1595,6 @@
   },
   {
     "Input": "423 0000 zal worden herkend als twee nummers.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "423",
@@ -1596,8 +1621,7 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "1 234 567,89 is een geldig nummer.",
-    "NotSupported": "dotNet",
+    "Input": "1 234 567,89 is een geldig nummer.",
     "Results": [
       {
         "Text": "1 234 567,89",
@@ -1607,14 +1631,14 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Nul is hetzelfde als 0",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "nul",
+        "Text": "Nul",
         "TypeName": "number",
         "Resolution": {
           "value": "0"
@@ -1632,6 +1656,7 @@
   },
   {
     "Input": "Heb je op 17/5/2018 tijd om af te spreken?",
+    "Comment": "Fractions in Dutch are written like 17/5, which conflicts with this case",
     "NotSupported": "dotNet",
     "Results": [
       {
@@ -1660,6 +1685,7 @@
   },
   {
     "Input": "Mijn telefoonnummer is +1-222-2222/2222",
+    "Comment": "Fractions in Dutch are written like 2222/2222, which conflicts with this case",
     "NotSupported": "dotNet",
     "Results": [
       {
@@ -1695,7 +1721,6 @@
   },
   {
     "Input": "tweeentwintig",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweeentwintig",
@@ -1708,28 +1733,342 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "tweeëntwintig",
-    "NotSupported": "dotNet",
-    "Results": [
-      {
-        "Text": "tweeëntwintig",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "22"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "één",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "één",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een gros eieren.",
+    "Results": [
+      {
+        "Text": "gros",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "144"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "driehonderdeenentachtigduizend",
+    "Results": [
+      {
+        "Text": "driehonderdeenentachtigduizend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "381000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vierduizend twee",
+    "Results": [
+      {
+        "Text": "vierduizend twee",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4002"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vierduizend en twee",
+    "Results": [
+      {
+        "Text": "vierduizend en twee",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4002"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zesduizend achtentwintig",
+    "Results": [
+      {
+        "Text": "zesduizend achtentwintig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6028"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "drie miljoen",
+    "Results": [
+      {
+        "Text": "drie miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vijf miljard tweehonderd miljoen",
+    "Results": [
+      {
+        "Text": "vijf miljard tweehonderd miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5200000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdacht",
+    "Results": [
+      {
+        "Text": "honderdacht",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "108"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdenacht",
+    "Results": [
+      {
+        "Text": "honderdenacht",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "108"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zeshonderdachtenzeventig",
+    "Results": [
+      {
+        "Text": "zeshonderdachtenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "678"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zeshonderdenachtenzeventig",
+    "Results": [
+      {
+        "Text": "zeshonderdenachtenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "678"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend zestien",
+    "Results": [
+      {
+        "Text": "tweeduizend zestien",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2016"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend en zestien",
+    "Results": [
+      {
+        "Text": "tweeduizend en zestien",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2016"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend vijfhonderdzevenenzeventig",
+    "Results": [
+      {
+        "Text": "tweeduizend vijfhonderdzevenenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2577"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vijfentwintighonderdzevenenzeventig",
+    "Results": [
+      {
+        "Text": "vijfentwintighonderdzevenenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2577"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend en vijfhonderdzevenenzeventig",
+    "Results": [
+      {
+        "Text": "tweeduizend en vijfhonderdzevenenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2577"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vijfentwintighonderdenzevenenzeventig",
+    "Results": [
+      {
+        "Text": "vijfentwintighonderdenzevenenzeventig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2577"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zeventien miljoen drieënvijftigduizend negenhonderdtachtig",
+    "Results": [
+      {
+        "Text": "zeventien miljoen drieënvijftigduizend negenhonderdtachtig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "17053980"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeënhalf",
+    "Results": [
+      {
+        "Text": "tweeënhalf",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,5"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "twee en een half",
+    "Results": [
+      {
+        "Text": "twee en een half",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "twaalfenhalve",
+    "Results": [
+      {
+        "Text": "twaalfenhalve",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12,5"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "twaalf en een halve",
+    "Results": [
+      {
+        "Text": "twaalf en een halve",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderd",
+    "Results": [
+      {
+        "Text": "honderd",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdduizend",
+    "Results": [
+      {
+        "Text": "honderdduizend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "291.890",
+    "Results": [
+      {
+        "Text": "291.890",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "291890"
         }
       }
     ],
