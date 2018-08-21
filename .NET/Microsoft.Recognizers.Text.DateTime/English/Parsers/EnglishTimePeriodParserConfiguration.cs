@@ -90,6 +90,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 endHour = 23;
                 endMin = 59;
             }
+            else if (trimedText.Contains("business") && trimedText.Contains("hour"))
+            {
+                timex = "TBH";
+                beginHour = 8;
+                endHour = 18;
+            }
             else
             {
                 timex = null;

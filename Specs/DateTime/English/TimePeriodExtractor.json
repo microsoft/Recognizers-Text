@@ -658,5 +658,17 @@
         "Length": 18
       }
     ]
+  },
+  {
+    "Input": "Don't call me in the business hours",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "in the business hours",
+        "Type": "timerange",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
   }
 ]
