@@ -84,14 +84,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string GenerateYearTimex(DateObject date = default(DateObject))
         {
-            if (date == default(DateObject))
+            return date == default(DateObject) ? "XXXX" : date.Year.ToString("D4");
+        }
+
+        public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)
+        {
+            if (!unitStr.Equals("BD"))
             {
-                return "XXXX";
+                unitStr = unitStr.Substring(0, 1);
             }
-            else
-            {
-                return date.Year.ToString("D4");
-            }
+
+            return "P" + (isLessThanDay ? "T" : "") + number.ToString(CultureInfo.InvariantCulture) + unitStr;
         }
         
         public static DatePeriodTimexType GetDatePeriodTimexType(string durationTimex)

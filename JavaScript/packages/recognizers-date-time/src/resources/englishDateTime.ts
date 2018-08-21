@@ -32,16 +32,16 @@ export namespace EnglishDateTime {
 	export const RelativeMonthRegex = `(?<relmonth>(of\\s+)?${RelativeRegex}\\s+month)\\b`;
 	export const WrittenMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))`;
 	export const MonthSuffixRegex = `(?<msuf>(in\\s+|of\\s+|on\\s+)?(${RelativeMonthRegex}|${WrittenMonthRegex}))`;
-	export const DateUnitRegex = `(?<unit>years|year|months|month|weeks|week|days|day)\\b`;
+	export const DateUnitRegex = `(?<unit>years?|months?|weeks?|(?<business>business\\s+)?days?)\\b`;
 	export const SimpleCasesRegex = `\\b((from|between)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex}\\s+${MonthSuffixRegex}|${MonthSuffixRegex}\\s+${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthFrontSimpleCasesRegex = `\\b((from|between)\\s+)?${MonthSuffixRegex}\\s+((from)\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
 	export const MonthWithYear = `\\b((${WrittenMonthRegex}(\\.)?(\\s*),?(\\s+of)?(\\s*)(${YearRegex}|(?<order>following|next|last|this)\\s+year))|((${YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
 	export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|(${RelativeRegex}\\s+)?(my\\s+)?(weekend|week|month|year)(?!(\\s+of)?\\s+\\d+)(\\s+${AfterNextSuffixRegex})?)\\b`;
-	export const MonthNumWithYear = `(${YearNumRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${YearNumRegex})`;
-	export const WeekOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex})`;
-	export const WeekOfYearRegex = `(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))`;
+	export const MonthNumWithYear = `\\b((${YearNumRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${YearNumRegex}))\\b`;
+	export const WeekOfMonthRegex = `\\b(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex})\\b`;
+	export const WeekOfYearRegex = `\\b(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))\\b`;
 	export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
 	export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
 	export const QuarterTermRegex = `\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\\s+quarter)|(Q(?<number>[1-4])))\\b`;
@@ -80,7 +80,7 @@ export namespace EnglishDateTime {
 	export const WeekDayOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
 	export const RelativeWeekDayRegex = `\\b(${WrittenNumRegex}\\s+${WeekDayRegex}\\s+(from\\s+now|later))\\b`;
 	export const SpecialDate = `(?=\\b(on|at)\\s+the\\s+)${DayRegex}\\b`;
-	export const DateExtractor1 = `\\b((this\\s+)?${WeekDayRegex}\\s*[,-]?\\s*)?((${MonthRegex}(\\.)?\\s*[/\\\\\\.\\-]?\\s*${DayRegex})|(\\(${MonthRegex}\\s*[-.]\\s*${DayRegex}\\)))(\\s*\\(\\s*${WeekDayRegex}\\s*\\))?`;
+	export const DateExtractor1 = `\\b((this\\s+)?${WeekDayRegex}\\s*[,-]?\\s*)?((${MonthRegex}(\\.)?\\s*[/\\\\.,-]?\\s*${DayRegex})|(\\(${MonthRegex}\\s*[-.]\\s*${DayRegex}\\)))(\\s*\\(\\s*${WeekDayRegex}\\s*\\))?`;
 	export const DateExtractor2 = `\\b${DateExtractor1}(\\s+|\\s*,\\s*|\\s+of\\s+)${DateYearRegex}\\b`;
 	export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\.)?(\\s+|\\s*,\\s*|\\s+of\\s+|\\s*-\\s*)${MonthRegex}(\\.)?((\\s+|\\s*,\\s*)${DateYearRegex})?\\b`;
 	export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*${DateYearRegex}`;
@@ -157,7 +157,7 @@ export namespace EnglishDateTime {
 	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}(\\s+(on|of))?))\\b`;
 	export const LessThanRegex = `\\b(less\\s+than)\\b`;
 	export const MoreThanRegex = `\\b(more\\s+than)\\b`;
-	export const DurationUnitRegex = `(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b`;
+	export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|hours?|hrs?|h|minutes?|mins?|seconds?|secs?)\\b`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(and)\\s+((an|a)\\s+)?(?<suffix_num>half|quarter))`;
 	export const PeriodicRegex = `\\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annually|annual)\\b`;
 	export const EachUnitRegex = `(?<each>(each|every)(?<other>\\s+other)?\\s*${DurationUnitRegex})`;
