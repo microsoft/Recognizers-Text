@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
                     continue;
                 }
 
-                BindUnitsString(sourceDictionary, pair.Key, pair.Value);
+                BindUnitsString(sourceDictionary, pair.Key, pair.Value.ToLowerInvariant());
             }
         }
 

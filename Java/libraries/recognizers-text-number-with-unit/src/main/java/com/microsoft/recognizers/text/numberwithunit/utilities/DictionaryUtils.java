@@ -20,7 +20,7 @@ public abstract class DictionaryUtils {
                 continue;
             }
 
-            bindUnitsString(sourceDictionary, pair.getKey(), pair.getValue());
+            bindUnitsString(sourceDictionary, pair.getKey(), pair.getValue().toLowerCase());
         }
     }
 

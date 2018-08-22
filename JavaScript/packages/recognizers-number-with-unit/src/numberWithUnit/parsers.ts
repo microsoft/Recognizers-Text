@@ -46,23 +46,7 @@ export abstract class BaseNumberWithUnitParserConfiguration implements INumberWi
     }
 
     BindDictionary(dictionary: ReadonlyMap<string, string>): void {
-        if (!dictionary) return;
-        for (let key of dictionary.keys()) {
-            let value = dictionary.get(key);
-
-            if (!key || key.length === 0) {
-                continue;
-            }
-
-            let values = value.trim().split('|');
-            values.forEach(token => {
-                if (!token || token.length === 0 || this.unitMap.has(token)) {
-                    return;
-                }
-
-                this.unitMap.set(token, key);
-            });
-        }
+        DictionaryUtils.bindDictionary(dictionary, this.unitMap); 
     }
 }
 
@@ -121,6 +105,7 @@ export class NumberWithUnitParser implements IParser {
         if (this.config.connectorToken && this.config.connectorToken.length && lastUnit.indexOf(this.config.connectorToken) === 0) {
             lastUnit = lastUnit.substring(this.config.connectorToken.length).trim();
         }
+
         if (key && key.length && (this.config.unitMap !== null) && this.config.unitMap.has(lastUnit)) {
             let unitValue = this.config.unitMap.get(lastUnit);
             let numValue = numberResult.text && numberResult.text.length
