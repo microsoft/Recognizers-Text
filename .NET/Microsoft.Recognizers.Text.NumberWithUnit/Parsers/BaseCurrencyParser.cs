@@ -203,15 +203,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
             var unitsMap = new Dictionary<string, string>();
             DictionaryUtils.BindUnitsString(unitsMap, "", fractionUnitsString);
-            if (unitsMap.ContainsKey(fractionUnitCode))
-            {
-                return true;
-            }
-
-            return false;
+            return unitsMap.ContainsKey(fractionUnitCode);
         }
 
-        private void ResolveText(List<ParseResult> prs, string source, int bias)
+        private static void ResolveText(List<ParseResult> prs, string source, int bias)
         {
             foreach (var parseResult in prs)
             {

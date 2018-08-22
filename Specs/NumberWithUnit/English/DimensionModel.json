@@ -674,4 +674,32 @@
     }
   ]
 }
+,
+{
+  "Input": "The size of this file is 100 mb",
+  "Results": [
+    {
+      "Text": "100 mb",
+      "TypeName": "dimension",
+      "Resolution": {
+        "unit": "Megabit",
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The size of this file is 100 MB",
+  "Results": [
+    {
+      "Text": "100 MB",
+      "TypeName": "dimension",
+      "Resolution": {
+        "unit": "Megabit",
+        "value": "100"
+      }
+    }
+  ]
+}
 ]
