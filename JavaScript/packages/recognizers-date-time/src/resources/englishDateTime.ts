@@ -139,10 +139,11 @@ export namespace EnglishDateTime {
 	export const SpecificTimeFromTo = `((from|between)\\s+)?(?<time1>(${TimeRegex2}|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${TillRegex}\\s*(?<time2>(${TimeRegex2}|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
 	export const SpecificTimeBetweenAnd = `(between\\s+)(?<time1>(${TimeRegex2}|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?))\\s*${RangeConnectorRegex}\\s*(?<time2>(${TimeRegex2}|(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<rightDesc>${DescRegex}))?))`;
 	export const PrepositionRegex = `(?<prep>^(at|on|of)(\\s+the)?$)`;
-	export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime)))s?)\\b`;
+	export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b`;
 	export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btonight)s?\\b`;
 	export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
 	export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
+	export const BusinessHourSplitStrings = [ 'business','hour' ];
 	export const NowRegex = `\\b(?<now>(right\\s+)?now|as soon as possible|asap|recently|previously)\\b`;
 	export const SuffixRegex = `^\\s*(in the\\s+)?(morning|afternoon|evening|night)\\b`;
 	export const DateTimeTimeOfDayRegex = `\\b(?<timeOfDay>morning|afternoon|night|evening)\\b`;

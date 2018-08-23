@@ -119,13 +119,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MinuteGroupName = "min";
         public const string HourGroupName = "hour";
         public const string TimeOfDayGroupName = "timeOfDay";
+        public const string BusinessDayGroupName = "business";
 
         // Timex
-        public static readonly string[] DatePeriodTimexSplitter = new string[] { ",", "(", ")" };
+        public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
         public const string TimexYear = "Y";
         public const string TimexMonth = "M";
+        public const string TimexMonthFull = "MON";
         public const string TimexWeek = "W";
         public const string TimexDay = "D";
+        public const string TimexBusinessDay = "BD";
         public const char TimexFuzzy = 'X';
     }
 }

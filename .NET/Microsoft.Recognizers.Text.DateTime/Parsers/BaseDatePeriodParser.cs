@@ -1208,28 +1208,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var durationUnit = this.config.UnitMap[durationStr];
                 switch (durationUnit)
                 {
-                    case "W":
+                    case Constants.TimexWeek:
                         var diff = 7 - (beginDate.DayOfWeek == 0 ? 7 : (int)beginDate.DayOfWeek);
                         endDate = beginDate.AddDays(diff);
-                        timex = "P" + diff + "D";
+                        timex = "P" + diff + Constants.TimexDay;
                         if (diff == 0)
                         {
                             restNowSunday = true;
                         }
                         break;
 
-                    case "MON":
+                    case Constants.TimexMonthFull:
                         endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, beginDate.Month, 1);
                         endDate = endDate.AddMonths(1).AddDays(-1);
                         diff = endDate.Day - beginDate.Day + 1;
-                        timex = "P" + diff + "D";
+                        timex = "P" + diff + Constants.TimexDay;
                         break;
 
-                    case "Y":
+                    case Constants.TimexYear:
                         endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, 12, 1);
                         endDate = endDate.AddMonths(1).AddDays(-1);
                         diff = endDate.DayOfYear - beginDate.DayOfYear + 1;
-                        timex = "P" + diff + "D";
+                        timex = "P" + diff + Constants.TimexDay;
                         break;
                 }
             }
@@ -1251,7 +1251,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             string timex, bool future, out string mod, out List<DateObject> dateList)
         {
             dateList = null;
-            var isBusinessDay = timex.EndsWith("BD");
+            var isBusinessDay = timex.EndsWith(Constants.TimexBusinessDay);
             var businessDayCount = 0;
 
             if (isBusinessDay)

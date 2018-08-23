@@ -495,16 +495,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             DateObject date;
                             switch (unitStr)
                             {
-                                case "D":
+                                case Constants.TimexDay:
                                     date = referenceDate.AddDays(-double.Parse(numStr));
                                     break;
-                                case "W":
+                                case Constants.TimexWeek:
                                     date = referenceDate.AddDays(-7 * double.Parse(numStr));
                                     break;
-                                case "MON":
+                                case Constants.TimexMonthFull:
                                     date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
                                     break;
-                                case "Y":
+                                case Constants.TimexYear:
                                     date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
                                     break;
                                 default:
@@ -521,16 +521,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             DateObject date;
                             switch (unitStr)
                             {
-                                case "D":
+                                case Constants.TimexDay:
                                     date = referenceDate.AddDays(double.Parse(numStr));
                                     break;
-                                case "W":
+                                case Constants.TimexWeek:
                                     date = referenceDate.AddDays(7 * double.Parse(numStr));
                                     break;
-                                case "MON":
+                                case Constants.TimexMonthFull:
                                     date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
                                     break;
-                                case "Y":
+                                case Constants.TimexYear:
                                     date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
                                     break;
                                 default:

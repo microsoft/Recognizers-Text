@@ -149,10 +149,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     suffixStr = match.Groups[Constants.SuffixGroupName].Value.ToLower();
                 }
 
-                if (match.Success && match.Groups["business"].Success)
+                if (match.Success && match.Groups[Constants.BusinessDayGroupName].Success)
                 {
                     var numVal = int.Parse(pr.Value.ToString());
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, "BD", false);
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, Constants.TimexBusinessDay, false);
                     ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[1]];
                     ret.Success = true;
 
@@ -189,7 +189,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var unitStr = this.config.UnitMap[srcUnit];
 
-                    if (double.Parse(numStr) > 1000 && (unitStr.Equals("Y") || unitStr.Equals("MON") || unitStr.Equals("W")))
+                    if (double.Parse(numStr) > 1000 && (unitStr.Equals(Constants.TimexYear) || unitStr.Equals(Constants.TimexMonthFull) ||
+                                                        unitStr.Equals(Constants.TimexWeek)))
                     {
                         return ret;
                     }
@@ -230,9 +231,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.FutureValue = ret.PastValue = double.Parse(numStr) * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                 }
-                else if (match.Groups["business"].Success)
+                else if (match.Groups[Constants.BusinessDayGroupName].Success)
                 {
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, "BD", false);
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, Constants.TimexBusinessDay, false);
                     ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[1]];
                     ret.Success = true;
                 }
@@ -258,7 +259,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var unitStr = this.config.UnitMap[srcUnit];
 
-                    if (double.Parse(numStr) > 1000 && (unitStr.Equals("Y") || unitStr.Equals("MON") || unitStr.Equals("W")))
+                    if (double.Parse(numStr) > 1000 && (unitStr.Equals(Constants.TimexYear) || unitStr.Equals(Constants.TimexMonthFull) ||
+                                                        unitStr.Equals(Constants.TimexWeek)))
                     {
                         return ret;
                     }
@@ -267,9 +269,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.FutureValue = ret.PastValue = double.Parse(numStr) * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                 }
-                else if (match.Groups["business"].Success)
+                else if (match.Groups[Constants.BusinessDayGroupName].Success)
                 {
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, "BD", false);
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, Constants.TimexBusinessDay, false);
                     ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[1]];
                     ret.Success = true;
                 }

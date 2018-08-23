@@ -140,10 +140,11 @@ class EnglishDateTime:
     SpecificTimeFromTo = f'((from|between)\\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{TillRegex}\\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))'
     SpecificTimeBetweenAnd = f'(between\\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?))\\s*{RangeConnectorRegex}\\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\\s*(?<rightDesc>{DescRegex}))?))'
     PrepositionRegex = f'(?<prep>^(at|on|of)(\\s+the)?$)'
-    TimeOfDayRegex = f'\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime)))s?)\\b'
+    TimeOfDayRegex = f'\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b'
     SpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btonight)s?\\b'
     TimeFollowedUnit = f'^\\s*{TimeUnitRegex}'
     TimeNumberCombinedWithUnit = f'\\b(?<num>\\d+(\\.\\d*)?){TimeUnitRegex}'
+    BusinessHourSplitStrings = ['business', 'hour']
     NowRegex = f'\\b(?<now>(right\\s+)?now|as soon as possible|asap|recently|previously)\\b'
     SuffixRegex = f'^\\s*(in the\\s+)?(morning|afternoon|evening|night)\\b'
     DateTimeTimeOfDayRegex = f'\\b(?<timeOfDay>morning|afternoon|night|evening)\\b'

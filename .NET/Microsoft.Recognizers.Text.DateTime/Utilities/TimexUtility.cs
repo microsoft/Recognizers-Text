@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType)
         {
-            var datePeriodTimex = string.Empty;
+            string datePeriodTimex;
 
             if (timexType == DatePeriodTimexType.ByDay)
             {
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)
         {
-            if (!unitStr.Equals("BD"))
+            if (!unitStr.Equals(Constants.TimexBusinessDay))
             {
                 unitStr = unitStr.Substring(0, 1);
             }

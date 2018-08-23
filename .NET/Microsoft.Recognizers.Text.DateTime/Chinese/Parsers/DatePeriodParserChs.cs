@@ -790,19 +790,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         DateObject beginDate, endDate;
                         switch (unitStr)
                         {
-                            case "D":
+                            case Constants.TimexDay:
                                 beginDate = referenceDate.AddDays(-double.Parse(numStr));
                                 endDate = referenceDate;
                                 break;
-                            case "W":
+                            case Constants.TimexWeek:
                                 beginDate = referenceDate.AddDays(-7*double.Parse(numStr));
                                 endDate = referenceDate;
                                 break;
-                            case "MON":
+                            case Constants.TimexMonthFull:
                                 beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
                                 endDate = referenceDate;
                                 break;
-                            case "Y":
+                            case Constants.TimexYear:
                                 beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
                                 endDate = referenceDate;
                                 break;
@@ -822,19 +822,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         DateObject beginDate, endDate;
                         switch (unitStr)
                         {
-                            case "D":
+                            case Constants.TimexDay:
                                 beginDate = referenceDate;
                                 endDate = referenceDate.AddDays(double.Parse(numStr));
                                 break;
-                            case "W":
+                            case Constants.TimexWeek:
                                 beginDate = referenceDate;
                                 endDate = referenceDate.AddDays(7*double.Parse(numStr));
                                 break;
-                            case "MON":
+                            case Constants.TimexMonthFull:
                                 beginDate = referenceDate;
                                 endDate = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
                                 break;
-                            case "Y":
+                            case Constants.TimexYear:
                                 beginDate = referenceDate;
                                 endDate = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
                                 break;
@@ -873,19 +873,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             DateObject beginDate, endDate;
                             switch (unitStr)
                             {
-                                case "D":
+                                case Constants.TimexDay:
                                     beginDate = referenceDate.AddDays(-double.Parse(numStr));
                                     endDate = referenceDate;
                                     break;
-                                case "W":
+                                case Constants.TimexWeek:
                                     beginDate = referenceDate.AddDays(-7*double.Parse(numStr));
                                     endDate = referenceDate;
                                     break;
-                                case "MON":
+                                case Constants.TimexMonthFull:
                                     beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
                                     endDate = referenceDate;
                                     break;
-                                case "Y":
+                                case Constants.TimexYear:
                                     beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
                                     endDate = referenceDate;
                                     break;
@@ -905,19 +905,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             DateObject beginDate, endDate;
                             switch (unitStr)
                             {
-                                case "D":
+                                case Constants.TimexDay:
                                     beginDate = referenceDate;
                                     endDate = referenceDate.AddDays(double.Parse(numStr));
                                     break;
-                                case "W":
+                                case Constants.TimexWeek:
                                     beginDate = referenceDate;
                                     endDate = referenceDate.AddDays(7*double.Parse(numStr));
                                     break;
-                                case "MON":
+                                case Constants.TimexMonthFull:
                                     beginDate = referenceDate;
                                     endDate = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
                                     break;
-                                case "Y":
+                                case Constants.TimexYear:
                                     beginDate = referenceDate;
                                     endDate = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
                                     break;

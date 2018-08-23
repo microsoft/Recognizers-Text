@@ -75,19 +75,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     case "S":
                         ret = ret.AddSeconds(number * futureOrPast);
                         break;
-                    case "D":
+                    case Constants.TimexDay:
                         ret = ret.AddDays(number * futureOrPast);
                         break;
-                    case "W":
+                    case Constants.TimexWeek:
                         ret = ret.AddDays(7 * number * futureOrPast);
                         break;
-                    case "MON":
+                    case Constants.TimexMonthFull:
                         ret = ret.AddMonths(Convert.ToInt32(number) * futureOrPast);
                         break;
-                    case "Y":
+                    case Constants.TimexYear:
                         ret = ret.AddYears(Convert.ToInt32(number) * futureOrPast);
                         break;
-                    case "BD":
+                    case Constants.TimexBusinessDay:
                         ret = GetNthBusinessDay(ret, Convert.ToInt32(number), future, out _);
                         break;
                     default:
@@ -139,11 +139,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var isTime = false;
 
             // Resolve business days
-            if (durationStr.EndsWith("BD"))
+            if (durationStr.EndsWith(Constants.TimexBusinessDay))
             {
                 if (double.TryParse(durationStr.Substring(0, durationStr.Length - 2), out var numVal))
                 {
-                    ret.Add("BD", numVal);
+                    ret.Add(Constants.TimexBusinessDay, numVal);
                 }
 
                 return ret.ToImmutableDictionary();
@@ -166,9 +166,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         var srcTimexUnit = durationStr.Substring(idx, 1);
-                        if (!isTime && srcTimexUnit == "M")
+                        if (!isTime && srcTimexUnit == Constants.TimexMonth)
                         {
-                            srcTimexUnit = "MON";
+                            srcTimexUnit = Constants.TimexMonthFull;
                         }
 
                         ret.Add(srcTimexUnit, number);
