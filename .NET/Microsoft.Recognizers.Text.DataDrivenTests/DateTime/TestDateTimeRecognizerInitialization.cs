@@ -132,10 +132,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
                 if (expected.Start != 0) Assert.AreEqual(expected.Start, actual.Start, source);
                 if (expected.End != 0) Assert.AreEqual(expected.End, actual.End, source);
 
-                var listValues = actual.Resolution[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
+                var listValues = actual.Resolution[ResolutionKey.ValueSet] as IList<Dictionary<string, object>>;
                 var actualValues = listValues.FirstOrDefault();
 
-                var expectedObj = expected.Resolution[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
+                var expectedObj = expected.Resolution[ResolutionKey.ValueSet] as IList<Dictionary<string, object>>;
                 var expectedValues = expectedObj.FirstOrDefault();
 
                 CollectionAssert.AreEqual(expectedValues, actualValues, source);

@@ -7,6 +7,7 @@ using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -92,15 +93,30 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var actualValues = (values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>).ToList();
-                var expectedValues = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
+                var actualValues = ((List<Dictionary<string, object>>)values[ResolutionKey.ValueSet]).ToList();
+                var expectedValues = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(
+                    expected.Resolution[ResolutionKey.ValueSet].ToString(),
+                    new JsonSerializerSettings {DateParseHandling = DateParseHandling.None});
 
                 Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(TestSpec));
-                foreach (var t in expectedValues.Zip(actualValues, Tuple.Create))
-                {
-                   CollectionAssert.AreEqual(t.Item1, t.Item2, GetMessage(TestSpec)); 
-                }
 
+                foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
+                {
+                    Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
+
+                    foreach (var o in value.Item1)
+                    {
+                        if (o.Value is string)
+                        {
+                            Assert.AreEqual(o.Value, value.Item2[o.Key], GetMessage(TestSpec));
+                        }
+                        else
+                        {
+                            CollectionAssert.AreEqual(((JArray)o.Value).ToObject<List<string>>(),
+                                (List<string>)value.Item2[o.Key]);
+                        }
+                    }
+                }
             }
         }
 
@@ -125,23 +141,38 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 if (expected.ParentText != null)
                 {
-                    Assert.AreEqual(expected.ParentText, ((ExtendedModelResult)actual).ParentText, GetMessage(TestSpec));
+                    Assert.AreEqual(expected.ParentText, ((ExtendedModelResult)actual).ParentText,
+                        GetMessage(TestSpec));
                 }
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
+                var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, object>>;
                 var actualValues = listValues;
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution[ResolutionKey.ValueSet].ToString());
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, object>>>(
+                    expected.Resolution[ResolutionKey.ValueSet].ToString(),
+                    new JsonSerializerSettings {DateParseHandling = DateParseHandling.None});
                 var expectedValues = expectedObj;
 
                 Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(TestSpec));
 
-                foreach (var value in Enumerable.Zip(expectedValues, actualValues, Tuple.Create))
+                foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                 {
-                    CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
-                }
+                    Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
 
+                    foreach (var o in value.Item1)
+                    {
+                        if (o.Value is string)
+                        {
+                            Assert.AreEqual(o.Value, value.Item2[o.Key], GetMessage(TestSpec));
+                        }
+                        else
+                        {
+                            CollectionAssert.AreEqual(((JArray)o.Value).ToObject<List<string>>(),
+                                (List<string>)value.Item2[o.Key]);
+                        }
+                    }
+                }
             }
         }
 
@@ -228,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var expectedResults = TestSpec.CastResults<DateTimeParseResult>();
 
-            Assert.AreEqual(expectedResults.Count(), actualResults.Count(), GetMessage(TestSpec));
+            Assert.AreEqual(expectedResults.Count(), actualResults.Length, GetMessage(TestSpec));
 
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
@@ -240,19 +271,33 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Length, actual.Length, GetMessage(TestSpec));
 
-                var values = actual.Value as IDictionary<string, object>;
-                if (values != null)
+                if (actual.Value is IDictionary<string, object> values)
                 {
-                    var actualValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
+                    var actualValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, object>>;
 
-                    var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
+                    var expectedObj =
+                        JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, object>>>>(
+                            expected.Value.ToString(),
+                            new JsonSerializerSettings {DateParseHandling = DateParseHandling.None});
                     var expectedValues = expectedObj[ResolutionKey.ValueSet];
 
-                    foreach (var results in Enumerable.Zip(expectedValues, actualValues, Tuple.Create))
+                    foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                     {
-                        CollectionAssert.AreEqual(results.Item1, results.Item2, GetMessage(TestSpec));
-                    }
+                        Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
 
+                        foreach (var o in value.Item1)
+                        {
+                            if (o.Value is string)
+                            {
+                                Assert.AreEqual(o.Value, value.Item2[o.Key], GetMessage(TestSpec));
+                            }
+                            else
+                            {
+                                CollectionAssert.AreEqual(((JArray)o.Value).ToObject<List<string>>(),
+                                    (List<string>)value.Item2[o.Key]);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -260,7 +305,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestIpAddress()
         {
             TestPreValidation();
-            ValidateResults(new List<string>() { ResolutionKey.Type });
+            ValidateResults(new List<string> { ResolutionKey.Type });
         }
 
         public void TestPhoneNumber()

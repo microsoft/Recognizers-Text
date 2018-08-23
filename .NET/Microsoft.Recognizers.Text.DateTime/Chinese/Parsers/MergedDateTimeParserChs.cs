@@ -25,11 +25,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public new ParseResult Parse(ExtractResult er, DateObject refTime)
         {
             var referenceTime = refTime;
-            DateTimeParseResult pr = null;
+            DateTimeParseResult pr;
 
             // push, save teh MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false;
-            var modStr = string.Empty;
             if (BeforeRegex.IsMatch(er.Text))
             {
                 hasBefore = true;

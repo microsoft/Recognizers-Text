@@ -1530,5 +1530,31 @@
         "Length": 18
       }
     ]
+  },
+  {
+    "Input": "Don't call me in the business hours.",
+    "Context": {
+      "ReferenceDateTime": "2017-12-01T13:37:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "in the business hours",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TBH",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 21
+      }
+    ]
   }
 ]

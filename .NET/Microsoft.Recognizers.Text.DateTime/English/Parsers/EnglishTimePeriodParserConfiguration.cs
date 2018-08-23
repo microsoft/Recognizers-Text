@@ -1,6 +1,8 @@
 ﻿using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
 
@@ -89,6 +91,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;
+            }
+            else if (DateTimeDefinitions.BusinessHourSplitStrings.All(o => trimedText.Contains(o)))
+            {
+                timex = "TBH";
+                beginHour = 8;
+                endHour = 18;
             }
             else
             {

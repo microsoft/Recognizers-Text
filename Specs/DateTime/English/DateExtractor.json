@@ -1626,5 +1626,27 @@
         "Length": 15
       }
     ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime in two business days.",
+    "Results": [
+      {
+        "Text": "in two business days",
+        "Type": "date",
+        "Start": 45,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for October, 1st.",
+    "Results": [
+      {
+        "Text": "October, 1st",
+        "Type": "date",
+        "Start": 45,
+        "Length": 12
+      }
+    ]
   }
 ]

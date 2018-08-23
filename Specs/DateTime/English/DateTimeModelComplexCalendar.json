@@ -5181,5 +5181,99 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the next 4 business days.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-20T10:00:00"
+    },
+    "Debug": true,
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next 4 business days",
+        "Start": 49,
+        "End": 68,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-08-21,2018-08-25,P4BD)",
+              "type": "daterange",
+              "list": [
+                "2018-08-21",
+                "2018-08-22",
+                "2018-08-23",
+                "2018-08-24"
+              ],
+              "start": "2018-08-21",
+              "end": "2018-08-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the next 4 business days.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next 4 business days",
+        "Start": 49,
+        "End": 68,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-08-22,2018-08-28,P4BD)",
+              "type": "daterange",
+              "list": [
+                "2018-08-22",
+                "2018-08-23",
+                "2018-08-24",
+                "2018-08-27"
+              ],
+              "start": "2018-08-22",
+              "end": "2018-08-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for the previous 4 business days.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "previous 4 business days",
+        "Start": 49,
+        "End": 72,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-08-15,2018-08-21,P4BD)",
+              "type": "daterange",
+              "list": [
+                "2018-08-15",
+                "2018-08-16",
+                "2018-08-17",
+                "2018-08-20"
+              ],
+              "start": "2018-08-15",
+              "end": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
