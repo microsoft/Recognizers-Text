@@ -13,6 +13,6 @@ public class LengthParserConfiguration extends PortugueseNumberWithUnitParserCon
     public LengthParserConfiguration(CultureInfo cultureInfo) {
         super(cultureInfo);
 
-        this.bindDictionary(LengthExtractorConfiguration.LenghtSuffixList);
+        this.bindDictionary(LengthExtractorConfiguration.LengthSuffixList);
     }
 }
