@@ -167,11 +167,11 @@ public class EnglishNumeric {
 
     public static final String TillRegex = "(to|through|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "((bigger|greater|more|higher|larger)(\\s+than)?|above|over|>)";
+    public static final String MoreRegex = "((bigger|greater|more|higher|larger)(\\s+than)?|above|over|(?<!<|=)>)";
 
-    public static final String LessRegex = "((less|lower|smaller|fewer)(\\s+than)?|below|under|<)";
+    public static final String LessRegex = "((less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)";
 
-    public static final String EqualRegex = "(equal(s|ing)?(\\s+(to|than))?|=)";
+    public static final String EqualRegex = "(equal(s|ing)?(\\s+(to|than))?|(?<!<|>)=)";
 
     public static final String MoreOrEqualPrefix = "((no\\s+{LessRegex})|(at\\s+least))"
             .replace("{LessRegex}", LessRegex);
@@ -416,5 +416,9 @@ public class EnglishNumeric {
         .put("g", 1000000000L)
         .put("b", 1000000000L)
         .put("t", 1000000000000L)
+        .build();
+
+    public static final Map<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\bone\\b", "\\\\b(the|this|that|which)\\\\s+(one)\\\\b")
         .build();
 }

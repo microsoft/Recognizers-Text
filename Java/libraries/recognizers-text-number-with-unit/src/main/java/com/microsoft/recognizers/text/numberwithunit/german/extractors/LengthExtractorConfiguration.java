@@ -27,7 +27,7 @@ public class LengthExtractorConfiguration extends GermanNumberWithUnitExtractorC
 
     @Override
     public Map<String, String> getSuffixList() {
-        return LenghtSuffixList;
+        return LengthSuffixList;
     }
 
     @Override
@@ -40,5 +40,5 @@ public class LengthExtractorConfiguration extends GermanNumberWithUnitExtractorC
         return GermanNumericWithUnit.AmbiguousLengthUnitList;
     }
 
-    public static Map<String, String> LenghtSuffixList = GermanNumericWithUnit.LenghtSuffixList;
+    public static Map<String, String> LengthSuffixList = GermanNumericWithUnit.LengthSuffixList;
 }

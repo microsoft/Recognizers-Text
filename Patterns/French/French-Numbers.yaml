@@ -213,6 +213,7 @@ CardinalNumberMap: !dictionary
     quatre-vingt-quinze: 95
     quatre-vingts-seize: 96
     quatre-vingt-seize: 96
+    huitante: 80
     octante: 80
     nonante: 90
     cent: 100
@@ -362,6 +363,9 @@ PrefixCardinalDictionary: !dictionary
     septante: 70
     quatre-vingt: 80
     quatre vingt: 80
+    huitante: 80
+    octante: 80
+    nonante: 90
     quatre vingt dix: 90
     quatre-vingt-dix: 90
     cent: 100 

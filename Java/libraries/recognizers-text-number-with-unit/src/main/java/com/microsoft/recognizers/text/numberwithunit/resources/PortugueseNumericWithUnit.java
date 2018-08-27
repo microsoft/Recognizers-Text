@@ -417,7 +417,7 @@ public class PortugueseNumericWithUnit {
 
     public static final String ConnectorToken = "de";
 
-    public static final Map<String, String> LenghtSuffixList = ImmutableMap.<String, String>builder()
+    public static final Map<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Quilômetro", "km|quilometro|quilômetro|quilómetro|quilometros|quilômetros|quilómetros")
         .put("Hectômetro", "hm|hectometro|hectômetro|hectómetro|hectometros|hectômetros|hectómetros")
         .put("Decâmetro", "decametro|decâmetro|decámetro|decametros|decâmetro|decámetros|dam")

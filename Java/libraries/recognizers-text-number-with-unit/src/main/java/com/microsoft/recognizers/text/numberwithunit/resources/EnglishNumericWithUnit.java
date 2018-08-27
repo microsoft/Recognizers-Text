@@ -621,7 +621,7 @@ public class EnglishNumericWithUnit {
 
     public static final String BuildSuffix = "(?=(\\s|\\W|$))";
 
-    public static final Map<String, String> LenghtSuffixList = ImmutableMap.<String, String>builder()
+    public static final Map<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilometer", "km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre")
         .put("Hectometer", "hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre")
         .put("Decameter", "dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre")
