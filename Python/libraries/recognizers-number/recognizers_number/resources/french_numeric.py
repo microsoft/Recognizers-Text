@@ -12,13 +12,13 @@ class FrenchNumeric:
     LangMarker = 'Fr'
     RoundNumberIntegerRegex = f'(cent|mille|millions|million|milliard|milliards|billion|billions)'
     ZeroToNineIntegerRegex = f'(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)'
-    TenToNineteenIntegerRegex = f'(dix\\Wneuf|dix\\Whuit|dix\\Wsept|seize|quinze|quatorze|treize|douze|onze|dix)'
-    TensNumberIntegerRegex = f'(octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)'
+    TenToNineteenIntegerRegex = f'(dix[-\\s]neuf|dix[-\\s]huit|dix[-\\s]sept|(-)?seize|(-)?quinze|(-)?quatorze|(-)?treize|(-)?douze|(-)?onze|dix)'
+    TensNumberIntegerRegex = f'(quatre[-\\s]vingt[-\\s]dix|quatre[-\\s]vingt(s)?|soixante[-\\s]dix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
     NegativeNumberTermsRegex = f'^[.]'
     NegativeNumberSignRegex = f'^({NegativeNumberTermsRegex}\\s+).*'
     HundredsNumberIntegerRegex = f'(({ZeroToNineIntegerRegex}(\\s+cent))|cent|((\\s+cent\\s)+{TensNumberIntegerRegex}))'
-    BelowHundredsRegex = f'(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\W+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})'
+    BelowHundredsRegex = f'({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}[-\\s]+{TenToNineteenIntegerRegex})|({TensNumberIntegerRegex}([-\\s]+{ZeroToNineIntegerRegex})?)|{ZeroToNineIntegerRegex})'
     BelowThousandsRegex = f'(({HundredsNumberIntegerRegex}(\\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\\s+{TenToNineteenIntegerRegex})'
     SupportThousandsRegex = f'(({BelowThousandsRegex}|{BelowHundredsRegex})\\s+{RoundNumberIntegerRegex}(\\s+{RoundNumberIntegerRegex})?)'
     SeparaIntRegex = f'({SupportThousandsRegex}(\\s+{SupportThousandsRegex})*(\\s+{BelowThousandsRegex})?|{BelowThousandsRegex})'
@@ -104,15 +104,25 @@ class FrenchNumeric:
                               ('soixante-dix', 70),
                               ('septante', 70),
                               ('quatre-vingts', 80),
+                              ('quatre-vingt', 80),
+                              ('quatre vingts', 80),
+                              ('quatre vingt', 80),
+                              ('quatre-vingt-dix', 90),
+                              ('quatre-vingt dix', 90),
+                              ('quatre vingt dix', 90),
                               ('quatre-vingts-dix', 90),
                               ('quatre-vingts-onze', 91),
+                              ('quatre-vingt-onze', 91),
                               ('quatre-vingts-douze', 92),
+                              ('quatre-vingt-douze', 92),
                               ('quatre-vingts-treize', 93),
+                              ('quatre-vingt-treize', 93),
                               ('quatre-vingts-quatorze', 94),
+                              ('quatre-vingt-quatorze', 94),
                               ('quatre-vingts-quinze', 95),
+                              ('quatre-vingt-quinze', 95),
                               ('quatre-vingts-seize', 96),
-                              ('quatre-vingt-dix-sept', 97),
-                              ('quatre-vingt-dix-neuf', 98),
+                              ('quatre-vingt-seize', 96),
                               ('nonante', 90),
                               ('cent', 100),
                               ('mille', 1000),

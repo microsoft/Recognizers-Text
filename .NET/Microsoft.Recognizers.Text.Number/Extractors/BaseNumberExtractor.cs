@@ -107,7 +107,6 @@ namespace Microsoft.Recognizers.Text.Number
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
         {
-            var result = new List<ExtractResult>();
 
             if (AmbiguityFiltersDict != null)
             {

@@ -1,4 +1,5 @@
-[{
+[
+{
   "Input": "Quand elle avait cinq ans, elle a appris à aller à une bicyclette",
   "Results": [
     {
@@ -10,8 +11,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "Cette saga a dix ans.",
   "Results": [
@@ -24,8 +24,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "J'ai seulement 29 ans!",
   "Results": [
@@ -38,8 +37,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "Maintenant, après trente cinq ans, mes perspectives changent",
   "Results": [
@@ -52,8 +50,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "La Grande Muraille de Chine a plus de 500 ans et prolonge au-dessus de 5000 miles",
   "Results": [
@@ -66,8 +63,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "Elle est 60 ans; elle est née dans le 8 mai 1945",
   "Results": [
@@ -80,8 +76,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "25 % de cas ne sont pas diagnostiqués jusqu'à autour de 3 ans.",
   "Results": [
@@ -94,8 +89,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "Quand sera là la pression pour accomplir une promesse qui est un ans?",
   "Results": [
@@ -108,8 +102,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "C'est arrivé quand le bébé était seulement dix mois.",
   "Results": [
@@ -122,8 +115,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "La proposition de comité est 8 mois.",
   "Results": [
@@ -136,8 +128,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "50 % de cas sont diagnostiqués a peus peu près dix-huit mois d'âge",
   "Results": [
@@ -150,8 +141,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "C'est possible, mais en 2006 95 % d'entre eux étaient plus jeunes que trois mois.",
   "Results": [
@@ -164,8 +154,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "Si nous avançons en décembre ce sera trois semaines vieilles",
   "Results": [
@@ -178,8 +167,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "à l'âge de 6 semaines, on peut déjà fêter Noël",
   "Results": [
@@ -192,8 +180,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "Un 90 jour la vieille facture est tres tard",
   "Results": [
@@ -206,8 +193,7 @@
       }
     }
   ]
-}
-,
+},
 {
   "Input": "Il a environ 40 - 50 ans",
   "NotSupported": "javascript, java",
@@ -220,6 +206,32 @@
       "Resolution": {
         "unit": "Ans",
         "value": "50"
+      }
+    }
+  ]
+},
+{
+  "Input": "Maintenant, après quatre-vingt-quinze ans, mes perspectives changent",
+  "Results": [
+    {
+      "Text": "quatre-vingt-quinze ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "95",
+        "unit": "Ans"
+      }
+    }
+  ]
+},
+{
+  "Input": "Maintenant, après quatre vingt quinze ans, mes perspectives changent",
+  "Results": [
+    {
+      "Text": "quatre vingt quinze ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "95",
+        "unit": "Ans"
       }
     }
   ]
