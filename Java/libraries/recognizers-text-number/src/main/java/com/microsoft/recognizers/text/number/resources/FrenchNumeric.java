@@ -22,9 +22,9 @@ public class FrenchNumeric {
 
     public static final String ZeroToNineIntegerRegex = "(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
 
-    public static final String TenToNineteenIntegerRegex = "(dix\\Wneuf|dix\\Whuit|dix\\Wsept|seize|quinze|quatorze|treize|douze|onze|dix)";
+    public static final String TenToNineteenIntegerRegex = "(dix[-\\s]neuf|dix[-\\s]huit|dix[-\\s]sept|(-)?seize|(-)?quinze|(-)?quatorze|(-)?treize|(-)?douze|(-)?onze|dix)";
 
-    public static final String TensNumberIntegerRegex = "(octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)";
+    public static final String TensNumberIntegerRegex = "(quatre[-\\s]vingt[-\\s]dix|quatre[-\\s]vingt(s)?|soixante[-\\s]dix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
 
     public static final String DigitsNumberRegex = "\\d|\\d{1,3}(\\.\\d{3})";
 
@@ -37,7 +37,7 @@ public class FrenchNumeric {
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex);
 
-    public static final String BelowHundredsRegex = "(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\W+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})"
+    public static final String BelowHundredsRegex = "({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}[-\\s]+{TenToNineteenIntegerRegex})|({TensNumberIntegerRegex}([-\\s]+{ZeroToNineIntegerRegex})?)|{ZeroToNineIntegerRegex})"
             .replace("{TenToNineteenIntegerRegex}", TenToNineteenIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
@@ -243,15 +243,27 @@ public class FrenchNumeric {
         .put("soixante-dix", 70L)
         .put("septante", 70L)
         .put("quatre-vingts", 80L)
+        .put("quatre-vingt", 80L)
+        .put("quatre vingts", 80L)
+        .put("quatre vingt", 80L)
+        .put("quatre-vingt-dix", 90L)
+        .put("quatre-vingt dix", 90L)
+        .put("quatre vingt dix", 90L)
         .put("quatre-vingts-dix", 90L)
         .put("quatre-vingts-onze", 91L)
+        .put("quatre-vingt-onze", 91L)
         .put("quatre-vingts-douze", 92L)
+        .put("quatre-vingt-douze", 92L)
         .put("quatre-vingts-treize", 93L)
+        .put("quatre-vingt-treize", 93L)
         .put("quatre-vingts-quatorze", 94L)
+        .put("quatre-vingt-quatorze", 94L)
         .put("quatre-vingts-quinze", 95L)
+        .put("quatre-vingt-quinze", 95L)
         .put("quatre-vingts-seize", 96L)
-        .put("quatre-vingt-dix-sept", 97L)
-        .put("quatre-vingt-dix-neuf", 98L)
+        .put("quatre-vingt-seize", 96L)
+        .put("huitante", 80L)
+        .put("octante", 80L)
         .put("nonante", 90L)
         .put("cent", 100L)
         .put("mille", 1000L)
@@ -400,6 +412,9 @@ public class FrenchNumeric {
         .put("septante", 70L)
         .put("quatre-vingt", 80L)
         .put("quatre vingt", 80L)
+        .put("huitante", 80L)
+        .put("octante", 80L)
+        .put("nonante", 90L)
         .put("quatre vingt dix", 90L)
         .put("quatre-vingt-dix", 90L)
         .put("cent", 100L)

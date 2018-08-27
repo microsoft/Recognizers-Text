@@ -27,7 +27,7 @@ public class LengthExtractorConfiguration extends EnglishNumberWithUnitExtractor
 
     @Override
     public Map<String, String> getSuffixList() {
-        return LenghtSuffixList;
+        return LengthSuffixList;
     }
 
     @Override
@@ -40,5 +40,5 @@ public class LengthExtractorConfiguration extends EnglishNumberWithUnitExtractor
         return EnglishNumericWithUnit.AmbiguousLengthUnitList;
     }
 
-    public static Map<String, String> LenghtSuffixList = EnglishNumericWithUnit.LenghtSuffixList;
+    public static Map<String, String> LengthSuffixList = EnglishNumericWithUnit.LengthSuffixList;
 }

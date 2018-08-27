@@ -1327,5 +1327,92 @@
         }
       }
     ]
+  },
+  {
+    "Input": "quatre-vingt-quinze!",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "quatre-vingt-quinze",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "95"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quatre-vingt",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "quatre-vingt",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "80"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "quatre-vingt-quinze; quatre-vingt; quatre-vingt-dix-neuf; quatre-vingt-dix neuf; quatre vingt dix neuf; quatre-vingts.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "quatre-vingt-quinze",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "95"
+        }
+      },
+      {
+        "Text": "quatre-vingt",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "80"
+        }
+      },
+      {
+        "Text": "quatre-vingt-dix-neuf",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "99"
+        }
+      },
+      {
+        "Text": "quatre-vingt-dix neuf",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "99"
+        }
+      },
+      {
+        "Text": "quatre vingt dix neuf",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "99"
+        }
+      },
+      {
+        "Text": "quatre-vingts",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "80"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "neuf mille neuf cent quatre-vingt-dix neuf",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "neuf mille neuf cent quatre-vingt-dix neuf",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9999"
+        }
+      }
+    ]
   }
 ]

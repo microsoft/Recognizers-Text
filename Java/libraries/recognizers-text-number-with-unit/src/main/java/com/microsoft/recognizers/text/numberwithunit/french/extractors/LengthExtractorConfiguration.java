@@ -27,7 +27,7 @@ public class LengthExtractorConfiguration extends FrenchNumberWithUnitExtractorC
 
     @Override
     public Map<String, String> getSuffixList() {
-        return LenghtSuffixList;
+        return LengthSuffixList;
     }
 
     @Override
@@ -40,5 +40,5 @@ public class LengthExtractorConfiguration extends FrenchNumberWithUnitExtractorC
         return FrenchNumericWithUnit.AmbiguousLengthUnitList;
     }
 
-    public static Map<String, String> LenghtSuffixList = FrenchNumericWithUnit.LengthSuffixList;
+    public static Map<String, String> LengthSuffixList = FrenchNumericWithUnit.LengthSuffixList;
 }
