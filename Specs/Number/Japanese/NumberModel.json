@@ -1394,8 +1394,6 @@
   "Results": [
     {
       "Text": "十",
-      "Start": 3,
-      "End": 3,
       "TypeName": "number",
       "Resolution": {
         "value": "10"
