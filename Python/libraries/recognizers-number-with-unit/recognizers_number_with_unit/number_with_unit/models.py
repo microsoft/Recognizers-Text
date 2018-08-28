@@ -33,7 +33,7 @@ class AbstractNumberWithUnitModel(Model):
             for parse_result in parse_results:
                 model_result = ModelResult()
                 model_result.start = parse_result.start
-                model_result.end = parse_result.start + parse_result.end - 1
+                model_result.end = parse_result.start + parse_result.length - 1
                 model_result.text = parse_result.text
                 model_result.type_name = self.model_type_name
                 model_result.resolution = self.get_resolution(parse_result.value)
