@@ -6356,18 +6356,25 @@
     "Context": {
       "ReferenceDateTime": "2018-08-29T12:00:00"
     },
+    "Comment": "Not currently supported. The first number will be tagged as time.",
+    "NotSupported": "dotnet, javascript, python",
     "Results": [
       {
         "Text": "18",
         "Start": 25,
         "End": 26,
-        "TypeName": "datetimeV2.time",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "T18",
-              "type": "time",
-              "value": "18:00:00"
+              "timex": "XXXX-06-18",
+              "type": "date",
+              "value": "2018-06-18"
+            },
+            {
+              "timex": "XXXX-06-18",
+              "type": "date",
+              "value": "2019-06-18"
             }
           ]
         }
