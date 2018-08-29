@@ -5275,5 +5275,119 @@
         }
       }
     ]
+  },
+  {
+    "Input": "set up a 15 minute skype call next Monday or Tuesday after 1pm GMT.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-29T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15 minute",
+        "Start": 9,
+        "End": 17,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT15M",
+              "type": "duration",
+              "value": "900"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next monday or tuesday after 1pm gmt",
+        "Text": "next monday",
+        "Start": 30,
+        "End": 40,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-03T13",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC+00:00",
+              "timezoneText": "gmt",
+              "utcOffsetMins": "0",
+              "start": "2018-09-03 13:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "next monday or tuesday after 1pm gmt",
+        "Text": "tuesday after 1pm gmt",
+        "Start": 45,
+        "End": 65,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T13",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC+00:00",
+              "timezoneText": "gmt",
+              "utcOffsetMins": "0",
+              "start": "2018-08-28 13:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T13",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC+00:00",
+              "timezoneText": "gmt",
+              "utcOffsetMins": "0",
+              "start": "2018-09-04 13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, I am looking at 18 and 19 June.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-29T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "ParentText": "18 and 19 june",
+        "Text": "18",
+        "Start": 25,
+        "End": 26,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-18",
+              "type": "date",
+              "value": "2019-06-18"
+            }
+          ]
+        }
+      },
+      {
+        "ParentText": "18 and 19 june",
+        "Text": "19 june",
+        "Start": 32,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimealt",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-19",
+              "type": "date",
+              "value": "2019-06-19"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
