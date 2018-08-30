@@ -8,7 +8,7 @@ RelativeRegex: !simpleRegex
 StrictRelativeRegex: !simpleRegex
   def: (?<order>following|next|coming|upcoming|this|last|past|previous|current)
 NextPrefixRegex: !simpleRegex
-  def: (following|next|coming|upcoming)\b
+  def: (following|next|upcoming|coming)\b
 AfterNextSuffixRegex: !simpleRegex
   def: \b(after\s+(the\s+)?next)\b
 PastPrefixRegex: !simpleRegex

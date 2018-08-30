@@ -919,6 +919,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeStr = text.Substring(0, pr.Start ?? 0).Trim().ToLowerInvariant();
                 var afterStr = text.Substring((pr.Start ?? 0) + (pr.Length ?? 0)).Trim().ToLowerInvariant();
 
+                var numbersInSuffix = Config.CardinalExtractor.Extract(beforeStr);
+                var numbersInDuration = Config.CardinalExtractor.Extract(ers[0].Text);
+
+                // Handle cases like "2 upcoming days", "5 previous years"
+                if (numbersInSuffix.Any() && !numbersInDuration.Any())
+                {
+                    var numberEr = numbersInSuffix.First();
+                    var numberText = numberEr.Text;
+                    var durationText = ers[0].Text;
+                    var combinedText = $"{numberText} {durationText}";
+                    var combinedDurationEr = Config.DurationExtractor.Extract(combinedText, referenceTime);
+
+                    if (combinedDurationEr.Any())
+                    {
+                        pr = Config.DurationParser.Parse(combinedDurationEr.First());
+                        var startIndex = numberEr.Start.Value + numberEr.Length.Value;
+                        beforeStr = beforeStr.Substring(startIndex).Trim();
+                    }
+                }
+
                 if (pr.Value != null)
                 {
                     var swiftSeconds = 0;

@@ -1127,6 +1127,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var durationPr = config.DurationParser.Parse(durationErs[0]);
                 var beforeStr = text.Substring(0, durationPr.Start ?? 0).Trim().ToLowerInvariant();
                 var afterStr = text.Substring((durationPr.Start ?? 0) + (durationPr.Length ?? 0)).Trim().ToLowerInvariant();
+
+                var numbersInSuffix = config.CardinalExtractor.Extract(beforeStr);
+                var numbersInDuration = config.CardinalExtractor.Extract(durationErs[0].Text);
+
+                // Handle cases like "2 upcoming days", "5 previous years"
+                if (numbersInSuffix.Any() && !numbersInDuration.Any())
+                {
+                    var numberEr = numbersInSuffix.First();
+                    var numberText = numberEr.Text;
+                    var durationText = durationErs[0].Text;
+                    var combinedText = $"{numberText} {durationText}";
+                    var combinedDurationEr = config.DurationExtractor.Extract(combinedText, referenceDate);
+                    
+                    if (combinedDurationEr.Any())
+                    {
+                        durationPr = config.DurationParser.Parse(combinedDurationEr.First());
+                        var startIndex = numberEr.Start.Value + numberEr.Length.Value;
+                        beforeStr = beforeStr.Substring(startIndex).Trim();
+                    }
+                }
+
                 var mod = string.Empty;
 
                 if (durationPr.Value != null)

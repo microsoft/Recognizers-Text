@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string RangeConnectorRegex = @"(?<and>and|through|to|--|-|—|——|~|–)";
 		public const string RelativeRegex = @"(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)";
 		public const string StrictRelativeRegex = @"(?<order>following|next|coming|upcoming|this|last|past|previous|current)";
-		public const string NextPrefixRegex = @"(following|next|coming|upcoming)\b";
+		public const string NextPrefixRegex = @"(following|next|upcoming|coming)\b";
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
 		public const string PastPrefixRegex = @"(last|past|previous)\b";
 		public const string ThisPrefixRegex = @"(this|current)\b";
