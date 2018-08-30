@@ -159,22 +159,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var parentText = (string)((Dictionary<string, object>)er.Data)[ExtendedModelResult.ParentTextKey];
             var type = pr.Type;
-            
-            var isPeriod = false;
-            var isSinglePoint = false;
-            string singlePointResolution = "";
-            string pastStartPointResolution = "";
-            string pastEndPointResolution = "";
-            string futureStartPointResolution = "";
-            string futureEndPointResolution = "";
-            string singlePointType = "";
-            string startPointType = "";
-            string endPointType = "";
+
+            var singlePointResolution = "";
+            var pastStartPointResolution = "";
+            var pastEndPointResolution = "";
+            var futureStartPointResolution = "";
+            var futureEndPointResolution = "";
+            var singlePointType = "";
+            var startPointType = "";
+            var endPointType = "";
             
             if (type == Constants.SYS_DATETIME_DATEPERIOD || type == Constants.SYS_DATETIME_TIMEPERIOD || 
                 type == Constants.SYS_DATETIME_DATETIMEPERIOD)
             {
-                isPeriod = true;
                 switch (type)
                 {
                     case Constants.SYS_DATETIME_DATEPERIOD:
@@ -189,10 +186,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
                         startPointType = TimeTypeConstants.START_DATETIME;
                         endPointType = TimeTypeConstants.END_DATETIME;
-                        pastStartPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.PastValue).Item1);
-                        pastEndPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.PastValue).Item2);
-                        futureStartPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
-                        futureEndPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
+
+                        if (ret.PastValue is Tuple<DateObject, DateObject> tuple)
+                        {
+                            pastStartPointResolution = FormatUtil.FormatDateTime(tuple.Item1);
+                            pastEndPointResolution = FormatUtil.FormatDateTime(tuple.Item2);
+                            futureStartPointResolution =
+                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
+                            futureEndPointResolution =
+                                FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
+                        }
+                        else if (ret.PastValue is DateObject datetime)
+                        {
+                            pastStartPointResolution = FormatUtil.FormatDateTime(datetime);
+                            futureStartPointResolution = FormatUtil.FormatDateTime((DateObject)ret.FutureValue);
+                        }
+
                         break;
 
                     case Constants.SYS_DATETIME_TIMEPERIOD:
@@ -207,7 +216,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                isSinglePoint = true;
                 switch (type)
                 {
                     case Constants.SYS_DATETIME_DATE:
@@ -227,35 +235,44 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (isPeriod)
+            ret.FutureResolution = new Dictionary<string, string>();
+            ret.PastResolution = new Dictionary<string, string>();
+            
+            if (!string.IsNullOrEmpty(futureStartPointResolution))
             {
-                ret.FutureResolution = new Dictionary<string, string>
-                {
-                    {startPointType, futureStartPointResolution},
-                    {endPointType, futureEndPointResolution},
-                    {ExtendedModelResult.ParentTextKey, parentText}
-                };
-
-                ret.PastResolution = new Dictionary<string, string>
-                {
-                    {startPointType, pastStartPointResolution},
-                    {endPointType, pastEndPointResolution},
-                    {ExtendedModelResult.ParentTextKey, parentText}
-                };
+                ret.FutureResolution.Add(startPointType, futureStartPointResolution);
             }
-            else if (isSinglePoint)
-            {
-                ret.FutureResolution = new Dictionary<string, string>
-                {
-                    {singlePointType, singlePointResolution},
-                    {ExtendedModelResult.ParentTextKey, parentText}
-                };
 
-                ret.PastResolution = new Dictionary<string, string>
-                {
-                    {singlePointType, singlePointResolution},
-                    {ExtendedModelResult.ParentTextKey, parentText}
-                };
+            if (!string.IsNullOrEmpty(futureEndPointResolution))
+            {
+                ret.FutureResolution.Add(endPointType, futureEndPointResolution);
+            }
+
+            if (!string.IsNullOrEmpty(pastStartPointResolution))
+            {
+                ret.PastResolution.Add(startPointType, pastStartPointResolution);
+            }
+
+            if (!string.IsNullOrEmpty(pastEndPointResolution))
+            {
+                ret.PastResolution.Add(endPointType, pastEndPointResolution);
+            }
+
+            if (!string.IsNullOrEmpty(singlePointResolution))
+            {
+                ret.FutureResolution.Add(singlePointType, singlePointResolution);
+                ret.PastResolution.Add(singlePointType, singlePointResolution);
+            }
+
+            if (!string.IsNullOrEmpty(parentText))
+            {
+                ret.FutureResolution.Add(ExtendedModelResult.ParentTextKey, parentText);
+                ret.PastResolution.Add(ExtendedModelResult.ParentTextKey, parentText);
+            }
+
+            if (((DateTimeResolutionResult)pr.Value).Mod != null)
+            {
+                ret.Mod = ((DateTimeResolutionResult)pr.Value).Mod;
             }
 
             if (((DateTimeResolutionResult)pr.Value).TimeZoneResolution != null)

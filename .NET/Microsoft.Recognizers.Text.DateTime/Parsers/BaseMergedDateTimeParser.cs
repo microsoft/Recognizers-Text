@@ -728,7 +728,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             else if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
                 // for a period
-                if (resolutionDic.Count > 2)
+                if (resolutionDic.Count > 2 || !string.IsNullOrEmpty(mod))
                 {
                     AddAltPeriodToResolution(resolutionDic, mod, res);
                 }
@@ -744,15 +744,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public void AddAltPeriodToResolution(Dictionary<string, string> resolutionDic, string mod, Dictionary<string, string> res)
         {
-            if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATETIME) && resolutionDic.ContainsKey(TimeTypeConstants.END_DATETIME))
+            if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATETIME) || resolutionDic.ContainsKey(TimeTypeConstants.END_DATETIME))
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, res);
             }
-            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATE) && resolutionDic.ContainsKey(TimeTypeConstants.END_DATE))
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATE) || resolutionDic.ContainsKey(TimeTypeConstants.END_DATE))
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, res);
             }
-            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_TIME) && resolutionDic.ContainsKey(TimeTypeConstants.END_TIME))
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_TIME) || resolutionDic.ContainsKey(TimeTypeConstants.END_TIME))
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
             }
