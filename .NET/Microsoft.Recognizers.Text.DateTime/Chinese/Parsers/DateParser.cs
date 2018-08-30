@@ -476,8 +476,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var match = DateExtractorChs.UnitRegex.Match(text);
                 if (match.Success)
                 {
-                    var afterStr =
-                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length, 1)
+                    var suffix =
+                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
                             .Trim()
                             .ToLowerInvariant();
                     var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
@@ -490,7 +490,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         unitStr = this.config.UnitMap[srcUnit];
                         numStr = number.ToString();
-                        if (afterStr.Equals("前"))
+
+                        var beforeMatch = DateExtractorChs.BeforeRegex.Match(suffix);
+                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
                         {
                             DateObject date;
                             switch (unitStr)
@@ -516,7 +518,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             return ret;
                         }
 
-                        if (afterStr.Equals("后"))
+                        var afterMatch = DateExtractorChs.AfterRegex.Match(suffix);
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
                         {
                             DateObject date;
                             switch (unitStr)

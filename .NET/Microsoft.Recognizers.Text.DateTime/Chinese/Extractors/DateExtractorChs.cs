@@ -98,6 +98,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly DurationExtractorChs DurationExtractor = new DurationExtractorChs();
 
         public List<ExtractResult> Extract(string text)
@@ -161,13 +163,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var durationEr = DurationExtractor.Extract(text, referenceTime);
             foreach (var er in durationEr)
             {
+                // Only handles date durations here
+                // Cases with dateTime durations will be handled in DateTime Extractor
+                if (DateTimePeriodUnitRegex.Match(er.Text).Success)
+                {
+                    continue;
+                }
+
                 var pos = (int)er.Start + (int)er.Length;
                 if (pos < text.Length)
                 {
-                    var tmp = text.Substring(pos, 1);
-                    if (tmp.Equals("前") || tmp.Equals("后"))
+                    var suffix = text.Substring(pos);
+                    var beforeMatch = BeforeRegex.Match(suffix);
+                    var afterMatch = AfterRegex.Match(suffix);
+
+                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))|| (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
                     {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1));
+                        var metadata = new Metadata() { IsDurationWithBeforeAndAfter = true };
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
                     }
                 }
             }

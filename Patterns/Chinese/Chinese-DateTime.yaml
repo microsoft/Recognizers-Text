@@ -53,9 +53,9 @@ SpecialDate: !nestedRegex
 DateUnitRegex: !simpleRegex
   def: (?<unit>年|个月|周|日|天)
 BeforeRegex: !simpleRegex
-  def: 之前|前
+  def: 以前|之前|前
 AfterRegex: !simpleRegex
-  def: 之后|后
+  def: 以后|之后|后
 # (农历)?(2016年)?一月三日(星期三)?
 DateRegexList1: !nestedRegex
   def: ({LunarRegex}(\s*))?((({YearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
