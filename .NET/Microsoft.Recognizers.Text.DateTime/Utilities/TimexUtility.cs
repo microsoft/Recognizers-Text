@@ -91,7 +91,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (!unitStr.Equals(Constants.TimexBusinessDay))
             {
-                unitStr = unitStr.Substring(0, 1);
+                if(unitStr.Equals("10Y"))
+                {
+                    number = number * 10;
+                    unitStr = "Y";
+                }
+                else
+                {
+                    unitStr = unitStr.Substring(0, 1);
+                }
             }
 
             return "P" + (isLessThanDay ? "T" : "") + number.ToString(CultureInfo.InvariantCulture) + unitStr;
