@@ -13,7 +13,7 @@ class EnglishDateTime:
     RangeConnectorRegex = f'(?<and>and|through|to|--|-|—|——|~|–)'
     RelativeRegex = f'(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)'
     StrictRelativeRegex = f'(?<order>following|next|coming|upcoming|this|last|past|previous|current)'
-    NextPrefixRegex = f'(following|next|coming|upcoming)\\b'
+    NextPrefixRegex = f'(following|next|upcoming|coming)\\b'
     AfterNextSuffixRegex = f'\\b(after\\s+(the\\s+)?next)\\b'
     PastPrefixRegex = f'(last|past|previous)\\b'
     ThisPrefixRegex = f'(this|current)\\b'
