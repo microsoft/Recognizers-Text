@@ -375,17 +375,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
                 // Only NumberWithUnit is supported currently.
-                if (expected.Start != null)
+                if (expected.Start != Constants.InvalidIndex)
                 {
                     Assert.AreEqual(expected.Start, actual.Start, GetMessage(TestSpec));
                 }
 
                 // Only NumberWithUnit is supported currently.
-                if (expected.End != null)
+                if (expected.End != Constants.InvalidIndex)
                 {
                     Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
-                }   
-                
+                }
+
                 Assert.AreEqual(expected.Resolution[ResolutionKey.Value], actual.Resolution[ResolutionKey.Value],
                                 GetMessage(TestSpec));
 
