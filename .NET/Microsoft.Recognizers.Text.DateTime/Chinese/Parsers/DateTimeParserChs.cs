@@ -4,6 +4,9 @@ using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number.Chinese;
+using System;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -17,6 +20,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorChs();
         private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorChs();
+        private readonly IDateTimeExtractor DurationExtractor = new DurationExtractorChs();
+        private readonly IExtractor IntegerExtractor = new IntegerExtractor();
+        private readonly IParser NumberParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -46,6 +52,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!innerResult.Success)
                 {
                     innerResult = ParseTimeOfToday(er.Text, referenceTime);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParserDurationWithBeforeAndAfter(er.Text, referenceTime);
                 }
 
                 if (innerResult.Success)
@@ -283,6 +294,103 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return ret;
+        }
+
+        // handle cases like "5分钟前", "1小时以后"
+        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var durationRes = DurationExtractor.Extract(text, referenceDate);
+            var numStr = string.Empty;
+            var unitStr = string.Empty;
+            if (durationRes.Count > 0)
+            {
+                var match = DateTimeExtractorChs.DateTimePeriodUnitRegex.Match(text);
+                if (match.Success)
+                {
+                    var suffix =
+                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
+                    var numberStr =
+                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var number = ConvertChineseToNum(numberStr);
+                    if (this.config.UnitMap.ContainsKey(srcUnit))
+                    {
+                        unitStr = this.config.UnitMap[srcUnit];
+                        numStr = number.ToString();
+
+                        var beforeMatch = DateTimeExtractorChs.BeforeRegex.Match(suffix);
+                        if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value))
+                        {
+                            DateObject date;
+                            switch (unitStr)
+                            {
+                                case Constants.TimexHour:
+                                    date = referenceDate.AddHours(-double.Parse(numStr));
+                                    break;
+                                case Constants.TimexMinute:
+                                    date = referenceDate.AddMinutes(-double.Parse(numStr));
+                                    break;
+                                case Constants.TimexSecond:
+                                    date = referenceDate.AddSeconds(-double.Parse(numStr));
+                                    break;
+                                default:
+                                    return ret;
+                            }
+                            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+                            ret.FutureValue = ret.PastValue = date;
+                            ret.Success = true;
+                            return ret;
+                        }
+
+                        var afterMatch = DateTimeExtractorChs.AfterRegex.Match(suffix);
+                        if (afterMatch.Success && suffix.StartsWith(afterMatch.Value))
+                        {
+                            DateObject date;
+                            switch (unitStr)
+                            {
+                                case Constants.TimexHour:
+                                    date = referenceDate.AddHours(double.Parse(numStr));
+                                    break;
+                                case Constants.TimexMinute:
+                                    date = referenceDate.AddMinutes(double.Parse(numStr));
+                                    break;
+                                case Constants.TimexSecond:
+                                    date = referenceDate.AddSeconds(double.Parse(numStr));
+                                    break;
+                                default:
+                                    return ret;
+                            }
+
+                            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+                            ret.FutureValue = ret.PastValue = date;
+                            ret.Success = true;
+                            return ret;
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        // convert Chinese Number to Integer
+        private int ConvertChineseToNum(string numStr)
+        {
+            var num = -1;
+            var er = IntegerExtractor.Extract(numStr);
+            if (er.Count != 0)
+            {
+                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                {
+                    num = Convert.ToInt32((double)(NumberParser.Parse(er[0]).Value ?? 0));
+                }
+            }
+            return num;
         }
     }
 }

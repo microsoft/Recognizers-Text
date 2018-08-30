@@ -34,14 +34,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             var sinceMatchPrefix = config.SincePrefixRegex.Match(er.Text);
             var sinceMatchSuffix = config.SinceSuffixRegex.Match(er.Text);
 
-            if (beforeMatch.Success && er.Text.EndsWith(beforeMatch.Value))
+            if (beforeMatch.Success && er.Text.EndsWith(beforeMatch.Value) && !IsDurationWithBeforeAndAfter(er))
             {
                 hasBefore = true;
                 er.Length -= beforeMatch.Length;
                 er.Text = er.Text.Substring(0, er.Length ?? 0);
                 modStr = beforeMatch.Value;
             }
-            else if (afterMatch.Success && er.Text.EndsWith(afterMatch.Value))
+            else if (afterMatch.Success && er.Text.EndsWith(afterMatch.Value) && !IsDurationWithBeforeAndAfter(er))
             {
                 hasAfter = true;
                 er.Length -= afterMatch.Length;
@@ -514,6 +514,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        private bool IsDurationWithBeforeAndAfter(ExtractResult er)
+        {
+            return er.Metadata != null && er.Metadata.IsDurationWithBeforeAndAfter;
         }
     }
 }

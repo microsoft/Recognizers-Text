@@ -1886,5 +1886,141 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2分钟前价格创30分钟高",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:13:33"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2分钟前",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-30",
+              "type": "datetime",
+              "value": "2018-08-30 14:11:33"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "30分钟",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT30M",
+              "type": "duration",
+              "value": "1800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "他10分钟之前刚走",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:16:03"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10分钟之前",
+        "Start": 1,
+        "End": 6,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-30",
+              "type": "datetime",
+              "value": "2018-08-30 14:06:03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "他2小时后就回来了",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:16:03"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2小时后",
+        "Start": 1,
+        "End": 4,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-30",
+              "type": "datetime",
+              "value": "2018-08-30 16:16:03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "5年前，这里的情况要糟糕的多",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:16:03"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5年前",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2013-08-30",
+              "type": "date",
+              "value": "2013-08-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015年前，这里的情况要糟糕的多",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:16:03"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年前",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
