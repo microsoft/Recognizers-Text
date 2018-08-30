@@ -1250,5 +1250,26 @@
         "Length": 20
       }
     ]
+  },
+  {
+    "Input": "I'll leave for two decades.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "two decades",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P20Y",
+          "FutureResolution": {
+            "duration": "630720000"
+          },
+          "PastResolution": {
+            "duration": "630720000"
+          }
+        },
+        "Start": 15,
+        "Length": 11
+      }
+    ]
   }
 ]

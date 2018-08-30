@@ -651,5 +651,17 @@
         "Length": 21
       }
     ]
+  },
+  {
+    "Input": "I'll leave for two decades.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "two decades",
+        "Type": "duration",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
   }
 ]

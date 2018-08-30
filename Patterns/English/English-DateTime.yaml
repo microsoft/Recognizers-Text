@@ -52,7 +52,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(in\s+|of\s+|on\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>years?|months?|weeks?|(?<business>business\s+)?days?)\b
+  def: (?<unit>decades?|years?|months?|weeks?|(?<business>business\s+)?days?)\b
 SimpleCasesRegex: !nestedRegex
   def: \b((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -483,7 +483,7 @@ RelativeDurationUnitRegex: !nestedRegex
   def: (((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))
   references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
 ReferenceDatePeriodRegex: !nestedRegex
-  def: \b{ReferencePrefixRegex}\s+(?<duration>week|month|year|weekend)\b
+  def: \b{ReferencePrefixRegex}\s+(?<duration>week|month|year|decade|weekend)\b
   references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|for|t|around|@)$
@@ -507,7 +507,7 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(the\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 RestOfDateRegex: !simpleRegex
-  def: \bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year)\b
+  def: \bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year|decade)\b
 RestOfDateTimeRegex: !simpleRegex
   def: \bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b
 MealTimeRegex: !simpleRegex
@@ -563,6 +563,8 @@ ComplexDatePeriodRegex: !nestedRegex
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
+    decades: 10Y
+    decade: 10Y
     years: Y
     year: Y
     months: MON
@@ -587,6 +589,8 @@ UnitMap: !dictionary
 UnitValueMap: !dictionary
   types: [ string, long ]
   entries:
+    decades: 315360000
+    decade: 315360000
     years: 31536000
     year: 31536000
     months: 2592000
