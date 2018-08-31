@@ -1869,7 +1869,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var beginYear = firstTwoNumOfYear * 100 + decade;
-            var totalLastYear = decadeLastYear * Math.Abs(swift);
+            // swift = 0 correspoding to the/this decade
+            var totalLastYear = decadeLastYear * Math.Abs(swift == 0 ? 1 : swift);
 
             if (inputCentury)
             {
