@@ -50,40 +50,40 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("s"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.EndsWith("s"))
             {
-                trimedText = trimedText.Substring(0, trimedText.Length - 1);
+                trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);
             }
 
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (trimedText.EndsWith("morgen"))
+            if (trimmedText.EndsWith("morgen"))
             {
                 timex = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (trimedText.EndsWith("nachmittag"))
+            else if (trimmedText.EndsWith("nachmittag"))
             {
                 timex = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimedText.EndsWith("abend"))
+            else if (trimmedText.EndsWith("abend"))
             {
                 timex = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.Equals("tag"))
+            else if (trimmedText.Equals("tag"))
             {
                 timex = "TDT";
                 beginHour = 8;
                 endHour = 18;
             }
-            else if (trimedText.EndsWith("nacht"))
+            else if (trimmedText.EndsWith("nacht"))
             {
                 timex = "TNI";
                 beginHour = 20;

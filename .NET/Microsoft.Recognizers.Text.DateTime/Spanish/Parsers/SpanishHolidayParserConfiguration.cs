@@ -51,19 +51,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public override int GetSwiftYear(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
 
-            if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimedText))
+            if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimedText))
+            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (SpanishDatePeriodParserConfiguration.ThisPrefixRegex.IsMatch(trimedText))
+            else if (SpanishDatePeriodParserConfiguration.ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }

@@ -49,42 +49,42 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("s"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.EndsWith("s"))
             {
-                trimedText = trimedText.Substring(0, trimedText.Length - 1);
+                trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);
             }
 
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
-            if (trimedText.EndsWith("matinee") || trimedText.EndsWith("matin") || trimedText.EndsWith("matinée"))
+            if (trimmedText.EndsWith("matinee") || trimmedText.EndsWith("matin") || trimmedText.EndsWith("matinée"))
             {
                 timex = "TMO";
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (trimedText.EndsWith("apres-midi")||trimedText.EndsWith("apres midi") 
-                || trimedText.EndsWith("après midi") || trimedText.EndsWith("après-midi"))
+            else if (trimmedText.EndsWith("apres-midi")||trimmedText.EndsWith("apres midi") 
+                || trimmedText.EndsWith("après midi") || trimmedText.EndsWith("après-midi"))
             {
                 timex = "TAF";
                 beginHour = 12;
                 endHour = 16;
             } 
-            else if (trimedText.EndsWith("soir") || trimedText.EndsWith("soiree") || trimedText.EndsWith("soirée"))
+            else if (trimmedText.EndsWith("soir") || trimmedText.EndsWith("soiree") || trimmedText.EndsWith("soirée"))
             {
                 timex = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.Equals("jour") || trimedText.EndsWith("journee") || trimedText.EndsWith("journée"))
+            else if (trimmedText.Equals("jour") || trimmedText.EndsWith("journee") || trimmedText.EndsWith("journée"))
             {
                 timex = "TDT";
                 beginHour = 8;
                 endHour = 18;
             }
-            else if (trimedText.EndsWith("nuit"))
+            else if (trimmedText.EndsWith("nuit"))
             {
                 timex = "TNI";
                 beginHour = 20;

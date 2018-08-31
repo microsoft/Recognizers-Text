@@ -171,14 +171,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         }
         public int GetSwiftDayOrMonth(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
             //TODO: Replace with a regex
             //TODO: Add 'upcoming' key word
             
             // example: "nous serons ensemble cette fois la semaine prochaine" - "We'll be together this time next week"
-            if (trimedText.EndsWith("prochain") || trimedText.EndsWith("prochaine"))
+            if (trimmedText.EndsWith("prochain") || trimmedText.EndsWith("prochaine"))
             {
                 swift = 1;
             }
@@ -186,8 +186,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             //TODO: Replace with a regex
 
             // example: Je l'ai vue pas plus tard que la semaine derniere - "I saw her only last week" 
-            if (trimedText.EndsWith("dernière") || trimedText.EndsWith("dernières") ||
-                trimedText.EndsWith("derniere") || trimedText.EndsWith("dernieres")) 
+            if (trimmedText.EndsWith("dernière") || trimmedText.EndsWith("dernières") ||
+                trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernieres")) 
             {
                 swift = -1;
             }
@@ -196,19 +196,19 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public int GetSwiftYear(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimedText.EndsWith("prochain") || trimedText.EndsWith("prochaine"))
+            if (trimmedText.EndsWith("prochain") || trimmedText.EndsWith("prochaine"))
             {
                 swift = 1;
             }
 
-            if (trimedText.EndsWith("dernières") || trimedText.EndsWith("dernière") ||
-                trimedText.EndsWith("dernieres") || trimedText.EndsWith("derniere") || trimedText.EndsWith("dernier"))
+            if (trimmedText.EndsWith("dernières") || trimmedText.EndsWith("dernière") ||
+                trimmedText.EndsWith("dernieres") || trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernier"))
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("cette"))
+            else if (trimmedText.StartsWith("cette"))
             {
                 swift = 0;
             }
@@ -218,56 +218,56 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsFuture(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return (
-                trimedText.StartsWith("cette") ||
-                trimedText.EndsWith("prochaine") || trimedText.EndsWith("prochain"));
+                trimmedText.StartsWith("cette") ||
+                trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"));
         }
 
         public bool IsLastCardinal(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             return (
-                trimedText.Equals("dernières") || trimedText.Equals("dernière") ||
-                trimedText.Equals("dernieres") || trimedText.Equals("derniere")||trimedText.Equals("dernier"));
+                trimmedText.Equals("dernières") || trimmedText.Equals("dernière") ||
+                trimmedText.Equals("dernieres") || trimmedText.Equals("derniere")||trimmedText.Equals("dernier"));
         }
 
         public bool IsMonthOnly(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("mois");
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return trimmedText.EndsWith("mois");
         }
 
         public bool IsMonthToDate(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.Equals("mois à ce jour");
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return trimmedText.Equals("mois à ce jour");
         }
 
         public bool IsWeekend(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("fin de semaine") || trimedText.EndsWith("le weekend"));
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return (trimmedText.EndsWith("fin de semaine") || trimmedText.EndsWith("le weekend"));
         }
 
         public bool IsWeekOnly(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("semaine") && !trimedText.EndsWith("fin de semaine"));
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return (trimmedText.EndsWith("semaine") && !trimmedText.EndsWith("fin de semaine"));
         }
 
         public bool IsYearOnly(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("années") || trimedText.EndsWith("ans")
-                || (trimedText.EndsWith("l'annees") || trimedText.EndsWith("l'annee"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return (trimmedText.EndsWith("années") || trimmedText.EndsWith("ans")
+                || (trimmedText.EndsWith("l'annees") || trimmedText.EndsWith("l'annee"))
                 );
         }
 
         public bool IsYearToDate(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.Equals("année à ce jour") || trimedText.Equals("an à ce jour"));
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return (trimmedText.Equals("année à ce jour") || trimmedText.Equals("an à ce jour"));
         }
     }
 }

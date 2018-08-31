@@ -114,37 +114,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
             //TODO: modify it according to the coresponding function in English part
-            if (trimedText.EndsWith("madrugada"))
+            if (trimmedText.EndsWith("madrugada"))
             {
                 timeStr = "TDA";
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (trimedText.EndsWith("mañana"))
+            else if (trimmedText.EndsWith("mañana"))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (trimedText.Contains("pasado mediodia") || trimedText.Contains("pasado el mediodia"))
+            else if (trimmedText.Contains("pasado mediodia") || trimmedText.Contains("pasado el mediodia"))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimedText.EndsWith("tarde"))
+            else if (trimmedText.EndsWith("tarde"))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.EndsWith("noche"))
+            else if (trimmedText.EndsWith("noche"))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -162,16 +162,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetSwiftPrefix(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
             //TODO: Replace with a regex
-            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimedText) ||
-                trimedText.Equals("anoche"))
+            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText) ||
+                trimmedText.Equals("anoche"))
             {
                 swift = -1;
             }
-            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimedText))
+            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }

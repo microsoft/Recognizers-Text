@@ -21,10 +21,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         private DateTimeResolutionResult ParseIsh(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.ToLowerInvariant().Trim();
+            var trimmedText = text.ToLowerInvariant().Trim();
 
-            var match = FrenchTimeExtractorConfiguration.IshRegex.Match(trimedText);
-            if (match.Success && match.Length == trimedText.Length)
+            var match = FrenchTimeExtractorConfiguration.IshRegex.Match(trimmedText);
+            if (match.Success && match.Length == trimmedText.Length)
             {
                 var hourStr = match.Groups[Constants.HourGroupName].Value;
                 var hour = Constants.HalfDayHourCount;
