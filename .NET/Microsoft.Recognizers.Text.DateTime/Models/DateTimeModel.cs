@@ -40,9 +40,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var parseResults = Parser.Parse(result, refTime);
 
-                    if (parseResults.Value is List<DateTimeParseResult>)
+                    if (parseResults.Value is List<DateTimeParseResult> list)
                     {
-                        parsedDateTimes.AddRange((List<DateTimeParseResult>)parseResults.Value);
+                        parsedDateTimes.AddRange(list);
                     }
                     else
                     {

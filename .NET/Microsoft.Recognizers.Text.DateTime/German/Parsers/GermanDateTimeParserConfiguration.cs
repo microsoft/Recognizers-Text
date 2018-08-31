@@ -89,13 +89,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetHour(string text, int hour)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if ((trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour >= Constants.HalfDayHourCount)
+            if ((trimmedText.EndsWith("morgen") || trimmedText.EndsWith("morgens")) && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimedText.EndsWith("morgen") || trimedText.EndsWith("morgens")) && hour < Constants.HalfDayHourCount)
+            else if (!(trimmedText.EndsWith("morgen") || trimmedText.EndsWith("morgens")) && hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -104,16 +104,16 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("jetzt"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.EndsWith("jetzt"))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimedText.Equals("neulich") || trimedText.Equals("vorher") || trimedText.Equals("vorhin"))
+            else if (trimmedText.Equals("neulich") || trimmedText.Equals("vorher") || trimmedText.Equals("vorhin"))
             {
                 timex = "PAST_REF";
             }
-            else if (trimedText.Equals("so früh wie möglich") || trimedText.Equals("asap"))
+            else if (trimmedText.Equals("so früh wie möglich") || trimmedText.Equals("asap"))
             {
                 timex = "FUTURE_REF";
             }
@@ -128,14 +128,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetSwiftDay(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             var swift = 0;
-            if (trimedText.StartsWith("nächsten") || trimedText.StartsWith("nächste") || trimedText.StartsWith("nächstes") || trimedText.StartsWith("nächster"))
+            if (trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächste") || trimmedText.StartsWith("nächstes") || trimmedText.StartsWith("nächster"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("letzten") || trimedText.StartsWith("letzte") || trimedText.StartsWith("letztes") || trimedText.StartsWith("letzter"))
+            else if (trimmedText.StartsWith("letzten") || trimmedText.StartsWith("letzte") || trimmedText.StartsWith("letztes") || trimmedText.StartsWith("letzter"))
             {
                 swift = -1;
             }

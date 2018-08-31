@@ -52,47 +52,47 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("s"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.EndsWith("s"))
             {
-                trimedText = trimedText.Substring(0, trimedText.Length - 1);
+                trimmedText = trimmedText.Substring(0, trimmedText.Length - 1);
             }
 
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (trimedText.EndsWith("morning"))
+            if (trimmedText.EndsWith("morning"))
             {
                 timex = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (trimedText.EndsWith("afternoon"))
+            else if (trimmedText.EndsWith("afternoon"))
             {
                 timex = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimedText.EndsWith("evening"))
+            else if (trimmedText.EndsWith("evening"))
             {
                 timex = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.Equals("daytime"))
+            else if (trimmedText.Equals("daytime"))
             {
                 timex = "TDT";
                 beginHour = 8;
                 endHour = 18;
             }
-            else if (trimedText.EndsWith("night"))
+            else if (trimmedText.EndsWith("night"))
             {
                 timex = "TNI";
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;
             }
-            else if (DateTimeDefinitions.BusinessHourSplitStrings.All(o => trimedText.Contains(o)))
+            else if (DateTimeDefinitions.BusinessHourSplitStrings.All(o => trimmedText.Contains(o)))
             {
                 timex = "TBH";
                 beginHour = 8;

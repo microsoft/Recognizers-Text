@@ -104,13 +104,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
-            var trimedText = text.Trim().ToLower();
+            var trimmedText = text.Trim().ToLower();
 
-            var match = this.config.PureNumberFromToRegex.Match(trimedText);
+            var match = this.config.PureNumberFromToRegex.Match(trimmedText);
 
             if (!match.Success)
             {
-                match = this.config.PureNumberBetweenAndRegex.Match(trimedText);
+                match = this.config.PureNumberBetweenAndRegex.Match(trimmedText);
             }
 
             if (match.Success && match.Index == 0)
@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterHourIndex = hourGroup.Captures[0].Index + hourGroup.Captures[0].Length;
 
                 // hard to integrate this part into the regex
-                if (afterHourIndex == trimedText.Length || !trimedText.Substring(afterHourIndex).Trim().StartsWith(":"))
+                if (afterHourIndex == trimmedText.Length || !trimmedText.Substring(afterHourIndex).Trim().StartsWith(":"))
                 {
 
                     if (!this.config.Numbers.TryGetValue(hourStr, out int beginHour))
@@ -135,7 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hourStr = hourGroup.Captures[1].Value;
                     afterHourIndex = hourGroup.Captures[1].Index + hourGroup.Captures[1].Length;
 
-                    if (afterHourIndex == trimedText.Length || !trimedText.Substring(afterHourIndex).Trim().StartsWith(":"))
+                    if (afterHourIndex == trimmedText.Length || !trimmedText.Substring(afterHourIndex).Trim().StartsWith(":"))
                     {
                         if (!this.config.Numbers.TryGetValue(hourStr, out int endHour))
                         {
@@ -213,7 +213,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
 
                             // Try to get the timezone resolution
-                            var timeErs = config.TimeExtractor.Extract(trimedText);
+                            var timeErs = config.TimeExtractor.Extract(trimmedText);
                             foreach (var er in timeErs)
                             {
                                 var pr = config.TimeParser.Parse(er, referenceTime);
@@ -242,7 +242,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
-            var trimedText = text.Trim().ToLower();
+            var trimmedText = text.Trim().ToLower();
 
             // Handle cases like "from 4:30 to 5"
             var match = config.SpecificTimeFromToRegex.Match(text);
@@ -253,7 +253,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 match = config.SpecificTimeBetweenAndRegex.Match(text);
             }
 
-            if (match.Success && match.Index == 0 && match.Index + match.Length == trimedText.Length)
+            if (match.Success && match.Index == 0 && match.Index + match.Length == trimmedText.Length)
             {
                 // Cases like "half past seven" are not handled here
                 if (match.Groups[Constants.PrefixGroupName].Success)
@@ -358,7 +358,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var hasLeft = hasLeftAm || hasLeftPm;
                 var hasRight = hasRightAm || hasRightPm;
 
-                // Both timepoint has description like 'am' or 'pm'
+                // Both time point has description like 'am' or 'pm'
                 if (hasLeft && hasRight)
                 {
                     if (hasLeftAm)
@@ -368,7 +368,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
                     }
-                    else if (hasLeftPm)
+                    else
                     {
                         if (beginHour < Constants.HalfDayHourCount)
                         {
@@ -378,12 +378,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (hasRightAm)
                     {
-                        if (endHour >= Constants.HalfDayHourCount)
+                        if (endHour > Constants.HalfDayHourCount)
                         {
                             endDateTime = endDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
                     }
-                    else if (hasRightPm)
+                    else
                     {
                         if (endHour < Constants.HalfDayHourCount)
                         {
@@ -391,9 +391,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
                 }
-                // one of the timepoint has description like 'am' or 'pm'
                 else if (hasLeft || hasRight)
                 {
+                    // one of the time point has description like 'am' or 'pm'
                     if (hasLeftAm)
                     {
                         if (beginHour >= Constants.HalfDayHourCount)
@@ -421,14 +421,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (endDateTime < beginDateTime)
                             {
                                 var span = beginDateTime - endDateTime;
-                                if (span.TotalHours >= Constants.HalfDayHourCount)
-                                {
-                                    endDateTime = endDateTime.AddHours(24);
-                                }
-                                else
-                                {
-                                    endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
-                                }
+                                endDateTime = endDateTime.AddHours(span.TotalHours >= Constants.HalfDayHourCount ?
+                                    24 :
+                                    Constants.HalfDayHourCount);
                             }
                         }
                     }

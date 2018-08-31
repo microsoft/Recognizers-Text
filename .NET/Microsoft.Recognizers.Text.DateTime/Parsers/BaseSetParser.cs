@@ -201,9 +201,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var success = false;
             if (match.Success)
             {
-                var trimedText = text.Remove(match.Index, match.Length);
-                ers = extractor.Extract(trimedText, refDate);
-                if (ers.Count == 1 && ers.First().Length == trimedText.Length)
+                var trimmedText = text.Remove(match.Index, match.Length);
+                ers = extractor.Extract(trimmedText, refDate);
+                if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
                 {
                     success = true;
                 }
@@ -213,10 +213,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.SetWeekDayRegex.Match(text);
             if (match.Success)
             {
-                var trimedText = text.Remove(match.Index, match.Length);
-                trimedText = trimedText.Insert(match.Index, match.Groups["weekday"].ToString());
-                ers = extractor.Extract(trimedText, refDate);
-                if (ers.Count == 1 && ers.First().Length == trimedText.Length)
+                var trimmedText = text.Remove(match.Index, match.Length);
+                trimmedText = trimmedText.Insert(match.Index, match.Groups["weekday"].ToString());
+                ers = extractor.Extract(trimmedText, refDate);
+                if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
                 {
                     success = true;
                 }

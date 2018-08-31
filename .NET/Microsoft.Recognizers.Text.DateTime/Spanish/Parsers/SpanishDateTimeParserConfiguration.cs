@@ -87,15 +87,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetHour(string text, int hour)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             int result = hour;
 
             //TODO: Replace with a regex
-            if ((trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour >= Constants.HalfDayHourCount)
+            if ((trimmedText.EndsWith("mañana") || trimmedText.EndsWith("madrugada")) && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour < Constants.HalfDayHourCount)
+            else if (!(trimmedText.EndsWith("mañana") || trimmedText.EndsWith("madrugada")) && hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -104,17 +104,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("ahora") || trimedText.EndsWith("mismo") || trimedText.EndsWith("momento"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.EndsWith("ahora") || trimmedText.EndsWith("mismo") || trimmedText.EndsWith("momento"))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimedText.EndsWith("posible") || trimedText.EndsWith("pueda") ||
-                     trimedText.EndsWith("puedas") || trimedText.EndsWith("podamos") || trimedText.EndsWith("puedan"))
+            else if (trimmedText.EndsWith("posible") || trimmedText.EndsWith("pueda") ||
+                     trimmedText.EndsWith("puedas") || trimmedText.EndsWith("podamos") || trimmedText.EndsWith("puedan"))
             {
                 timex = "FUTURE_REF";
             }
-            else if (trimedText.EndsWith("mente"))
+            else if (trimmedText.EndsWith("mente"))
             {
                 timex = "PAST_REF";
             }
@@ -129,14 +129,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetSwiftDay(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimedText))
+            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimedText))
+            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }

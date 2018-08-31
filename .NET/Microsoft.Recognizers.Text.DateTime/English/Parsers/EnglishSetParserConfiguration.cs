@@ -76,24 +76,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.Equals("daily"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.Equals("daily"))
             {
                 timex = "P1D";
             }
-            else if (trimedText.Equals("weekly"))
+            else if (trimmedText.Equals("weekly"))
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("biweekly"))
+            else if (trimmedText.Equals("biweekly"))
             {
                 timex = "P2W";
             }
-            else if (trimedText.Equals("monthly"))
+            else if (trimmedText.Equals("monthly"))
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("yearly") || trimedText.Equals("annually") || trimedText.Equals("annual"))
+            else if (trimmedText.Equals("yearly") || trimmedText.Equals("annually") || trimmedText.Equals("annual"))
             {
                 timex = "P1Y";
             }
@@ -108,20 +108,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.Equals("day"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.Equals("day"))
             {
                 timex = "P1D";
             }
-            else if (trimedText.Equals("week"))
+            else if (trimmedText.Equals("week"))
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("month"))
+            else if (trimmedText.Equals("month"))
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("year"))
+            else if (trimmedText.Equals("year"))
             {
                 timex = "P1Y";
             }

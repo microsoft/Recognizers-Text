@@ -87,13 +87,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public int GetHour(string text, int hour)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if (trimedText.EndsWith("matin") && hour >= 12)
+            if (trimmedText.EndsWith("matin") && hour >= 12)
             {
                 result -= 12;
             }
-            else if (!trimedText.EndsWith("matin") && hour < 12)
+            else if (!trimmedText.EndsWith("matin") && hour < 12)
             {
                 result += 12;
             }
@@ -102,16 +102,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("maintenant"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.EndsWith("maintenant"))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimedText.Equals("récemment") || trimedText.Equals("précédemment")||trimedText.Equals("auparavant"))
+            else if (trimmedText.Equals("récemment") || trimmedText.Equals("précédemment")||trimmedText.Equals("auparavant"))
             {
                 timex = "PAST_REF";
             }
-            else if (trimedText.Equals("dès que possible") || trimedText.Equals("dqp"))
+            else if (trimmedText.Equals("dès que possible") || trimmedText.Equals("dqp"))
             {
                 timex = "FUTURE_REF";
             }
@@ -125,15 +125,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public int GetSwiftDay(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.StartsWith("prochain") || trimedText.EndsWith("prochain") ||
-                trimedText.StartsWith("prochaine") || trimedText.EndsWith("prochaine"))
+            if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
+                trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("dernier") || trimedText.StartsWith("dernière") ||
-                      trimedText.EndsWith("dernier") || trimedText.EndsWith("dernière"))
+            else if (trimmedText.StartsWith("dernier") || trimmedText.StartsWith("dernière") ||
+                      trimmedText.EndsWith("dernier") || trimmedText.EndsWith("dernière"))
             {
                 swift = -1;
             }

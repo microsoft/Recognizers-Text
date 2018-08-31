@@ -101,8 +101,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // parse if lunar contains
         private static bool IsLunarCalendar(string text)
         {
-            var trimedText = text.Trim();
-            var match = DateExtractorChs.LunarRegex.Match(trimedText);
+            var trimmedText = text.Trim();
+            var match = DateExtractorChs.LunarRegex.Match(trimmedText);
 
             return match.Success;
         }
@@ -110,13 +110,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // parse basic patterns in DateRegexList
         protected DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
-            var trimedText = text.Trim();
+            var trimmedText = text.Trim();
             foreach (var regex in DateExtractorChs.DateRegexList)
             {
                 const int offset = 0;
-                var match = regex.Match(trimedText);
+                var match = regex.Match(trimmedText);
 
-                if (match.Success && match.Index == offset && match.Length == trimedText.Length)
+                if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
                 {
                     // LUIS value string will be set in Match2Date method
                     var ret = Match2Date(match, referenceDate);
@@ -131,13 +131,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // including '今天', '后天', '十三日'
         protected DateTimeResolutionResult ParseImplicitDate(string text, DateObject referenceDate)
         {
-            var trimedText = text.Trim();
+            var trimmedText = text.Trim();
 
             var ret = new DateTimeResolutionResult();
 
             // handle "十二日" "明年这个月三日" "本月十一日"
-            var match = DateExtractorChs.SpecialDate.Match(trimedText);
-            if (match.Success && match.Length == trimedText.Length)
+            var match = DateExtractorChs.SpecialDate.Match(trimmedText);
+            if (match.Success && match.Length == trimmedText.Length)
             {
                 var yearStr = match.Groups["thisyear"].Value.ToLower();
                 var monthStr = match.Groups["thismonth"].Value.ToLower();
@@ -231,8 +231,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle cases like "昨日", "明日", "大后天"
-            match = DateExtractorChs.SpecialDayRegex.Match(trimedText);
-            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            match = DateExtractorChs.SpecialDayRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
                 var value = referenceDate.AddDays(config.GetSwiftDay(match.Value.ToLower()));
                 ret.Timex = FormatUtil.LuisDate(value);
@@ -365,8 +365,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
 
-            var trimedText = text.Trim().ToLowerInvariant();
-            var match = this.config.WeekDayOfMonthRegex.Match(trimedText);
+            var trimmedText = text.Trim().ToLowerInvariant();
+            var match = this.config.WeekDayOfMonthRegex.Match(trimmedText);
             if (!match.Success)
             {
                 return ret;
@@ -393,11 +393,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimedText.StartsWith(this.config.NextMonthToken))
+                if (trimmedText.StartsWith(this.config.NextMonthToken))
                 {
                     swift = 1;
                 }
-                else if (trimedText.StartsWith(this.config.LastMonthToken))
+                else if (trimmedText.StartsWith(this.config.LastMonthToken))
                 {
                     swift = -1;
                 }

@@ -108,33 +108,33 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public int GetSwiftDay(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             var swift = 0;
-            if (trimedText.Equals("aujourd'hui") || trimedText.Equals("auj")) //today
+            if (trimmedText.Equals("aujourd'hui") || trimmedText.Equals("auj")) //today
             {
                 swift = 0;
             }
-            else if (trimedText.Equals("demain") || trimedText.Equals("a2m1") || 
-                     trimedText.Equals("lendemain") || trimedText.Equals("jour suivant"))
+            else if (trimmedText.Equals("demain") || trimmedText.Equals("a2m1") || 
+                     trimmedText.Equals("lendemain") || trimmedText.Equals("jour suivant"))
             {
                 swift = 1;
             }
-            else if (trimedText.Equals("hier")) // yesterday
+            else if (trimmedText.Equals("hier")) // yesterday
             {
                 swift = -1;
             }
-            else if (trimedText.EndsWith("après demain") || // day after tomorrow
-                     trimedText.EndsWith("après-demain"))
+            else if (trimmedText.EndsWith("après demain") || // day after tomorrow
+                     trimmedText.EndsWith("après-demain"))
             {
                 swift = 2;
             }
-            else if (trimedText.StartsWith("avant-hier") || // day before yesterday
-                     trimedText.StartsWith("avant hier"))
+            else if (trimmedText.StartsWith("avant-hier") || // day before yesterday
+                     trimmedText.StartsWith("avant hier"))
             {
                 swift = -2;
             }
-            else if (trimedText.EndsWith("dernier")) // dernier
+            else if (trimmedText.EndsWith("dernier")) // dernier
             {
                 swift = -1;
             }
@@ -143,14 +143,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public int GetSwiftMonth(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.EndsWith("prochaine") || trimedText.EndsWith("prochain"))
+            if (trimmedText.EndsWith("prochaine") || trimmedText.EndsWith("prochain"))
             {
                 swift = 1;
             }
-            else if (trimedText.Equals("dernière") || trimedText.Equals("dernières") ||
-                    trimedText.Equals("derniere") || trimedText.Equals("dernieres"))
+            else if (trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
+                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres"))
             {
                 swift = -1;
             }
@@ -159,9 +159,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool IsCardinalLast(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.Equals("dernière") || trimedText.Equals("dernières") ||
-                    trimedText.Equals("derniere") || trimedText.Equals("dernieres"));
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return (trimmedText.Equals("dernière") || trimmedText.Equals("dernières") ||
+                    trimmedText.Equals("derniere") || trimmedText.Equals("dernieres"));
         }
     }
 }

@@ -98,34 +98,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         // parse if lunar contains
         private bool IsLunarCalendar(string text)
         {
-            var trimedText = text.Trim();
-            var match = DateExtractorChs.LunarRegex.Match(trimedText);
+            var trimmedText = text.Trim();
+            var match = DateExtractorChs.LunarRegex.Match(trimmedText);
             if (match.Success)
             {
                 return true;
             }
 
-            return ChineseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimedText);
+            return ChineseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimmedText);
         }
 
         private static DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.Trim().ToLower();
+            var trimmedText = text.Trim().ToLower();
 
             // handle "现在"
-            var match = DateTimeExtractorChs.NowRegex.Match(trimedText);
-            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            var match = DateTimeExtractorChs.NowRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                if (trimedText.EndsWith("现在"))
+                if (trimmedText.EndsWith("现在"))
                 {
                     ret.Timex = "PRESENT_REF";
                 }
-                else if (trimedText.Equals("刚刚才") || trimedText.Equals("刚刚") || trimedText.Equals("刚才"))
+                else if (trimmedText.Equals("刚刚才") || trimmedText.Equals("刚刚") || trimmedText.Equals("刚才"))
                 {
                     ret.Timex = "PAST_REF";
                 }
-                else if (trimedText.Equals("立刻") || trimedText.Equals("马上"))
+                else if (trimmedText.Equals("立刻") || trimmedText.Equals("马上"))
                 {
                     ret.Timex = "FUTURE_REF";
                 }

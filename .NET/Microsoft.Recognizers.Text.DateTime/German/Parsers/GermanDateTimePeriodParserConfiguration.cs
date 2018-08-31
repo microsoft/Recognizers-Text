@@ -127,30 +127,30 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (MorningStartEndRegex.IsMatch(trimedText))
+            if (MorningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (AfternoonStartEndRegex.IsMatch(trimedText))
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EveningStartEndRegex.IsMatch(trimedText))
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NightStartEndRegex.IsMatch(trimedText))
+            else if (NightStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -168,14 +168,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetSwiftPrefix(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             var swift = 0;
-            if (trimedText.StartsWith("nächster") || trimedText.StartsWith("nächste") || trimedText.StartsWith("nächsten") || trimedText.StartsWith("nächstes"))
+            if (trimmedText.StartsWith("nächster") || trimmedText.StartsWith("nächste") || trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächstes"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("letzter") || trimedText.StartsWith("letzte") || trimedText.StartsWith("letzten") || trimedText.StartsWith("letztes"))
+            else if (trimmedText.StartsWith("letzter") || trimmedText.StartsWith("letzte") || trimmedText.StartsWith("letzten") || trimmedText.StartsWith("letztes"))
             {
                 swift = -1;
             }

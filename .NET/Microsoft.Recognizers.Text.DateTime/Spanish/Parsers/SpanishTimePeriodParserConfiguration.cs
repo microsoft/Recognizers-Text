@@ -50,37 +50,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
-            if (trimedText.EndsWith("madrugada"))
+            if (trimmedText.EndsWith("madrugada"))
             {
                 timex = "TDA";
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (trimedText.EndsWith("mañana"))
+            else if (trimmedText.EndsWith("mañana"))
             {
                 timex = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (trimedText.Contains("pasado mediodia") || trimedText.Contains("pasado el mediodia"))
+            else if (trimmedText.Contains("pasado mediodia") || trimmedText.Contains("pasado el mediodia"))
             {
                 timex = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimedText.EndsWith("tarde"))
+            else if (trimmedText.EndsWith("tarde"))
             {
                 timex = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.EndsWith("noche"))
+            else if (trimmedText.EndsWith("noche"))
             {
                 timex = "TNI";
                 beginHour = 20;
