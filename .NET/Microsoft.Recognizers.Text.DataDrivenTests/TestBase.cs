@@ -7,7 +7,6 @@ using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -93,29 +92,19 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Assert.AreEqual(expected.End, actual.End, GetMessage(TestSpec));
 
                 var values = actual.Resolution as IDictionary<string, object>;
-                var actualValues = ((List<Dictionary<string, object>>)values[ResolutionKey.ValueSet]).ToList();
-                var expectedValues = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(
-                    expected.Resolution[ResolutionKey.ValueSet].ToString(),
-                    new JsonSerializerSettings {DateParseHandling = DateParseHandling.None});
+                
+                // Actual ValueSet types should not be modified as that's considered a breaking API change
+                var actualValues = ((List<Dictionary<string, string>>)values[ResolutionKey.ValueSet]).ToList();
+                var expectedValues =
+                    JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected
+                        .Resolution[ResolutionKey.ValueSet].ToString());
 
                 Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(TestSpec));
 
                 foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                 {
                     Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
-
-                    foreach (var o in value.Item1)
-                    {
-                        if (o.Value is string)
-                        {
-                            Assert.AreEqual(o.Value, value.Item2[o.Key], GetMessage(TestSpec));
-                        }
-                        else
-                        {
-                            CollectionAssert.AreEqual(((JArray)o.Value).ToObject<List<string>>(),
-                                (List<string>)value.Item2[o.Key]);
-                        }
-                    }
+                    CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
                 }
             }
         }
@@ -145,33 +134,21 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                         GetMessage(TestSpec));
                 }
 
-                var values = actual.Resolution as IDictionary<string, object>;
-                var listValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, object>>;
-                var actualValues = listValues;
+                // Actual ValueSet types should not be modified as that's considered a breaking API change
+                var actualValues =
+                    ((IDictionary<string, object>)actual.Resolution)[ResolutionKey.ValueSet] as
+                    IList<Dictionary<string, string>>;
 
-                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, object>>>(
-                    expected.Resolution[ResolutionKey.ValueSet].ToString(),
-                    new JsonSerializerSettings {DateParseHandling = DateParseHandling.None});
-                var expectedValues = expectedObj;
+                var expectedValues =
+                    JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected
+                        .Resolution[ResolutionKey.ValueSet].ToString());
 
                 Assert.AreEqual(expectedValues.Count, actualValues.Count, GetMessage(TestSpec));
 
                 foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                 {
                     Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
-
-                    foreach (var o in value.Item1)
-                    {
-                        if (o.Value is string)
-                        {
-                            Assert.AreEqual(o.Value, value.Item2[o.Key], GetMessage(TestSpec));
-                        }
-                        else
-                        {
-                            CollectionAssert.AreEqual(((JArray)o.Value).ToObject<List<string>>(),
-                                (List<string>)value.Item2[o.Key]);
-                        }
-                    }
+                    CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
                 }
             }
         }
@@ -273,30 +250,18 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 if (actual.Value is IDictionary<string, object> values)
                 {
-                    var actualValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, object>>;
+                    // Actual ValueSet types should not be modified as that's considered a breaking API change
+                    var actualValues = values[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
 
                     var expectedObj =
-                        JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, object>>>>(
-                            expected.Value.ToString(),
-                            new JsonSerializerSettings {DateParseHandling = DateParseHandling.None});
+                        JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(
+                            expected.Value.ToString());
                     var expectedValues = expectedObj[ResolutionKey.ValueSet];
 
                     foreach (var value in expectedValues.Zip(actualValues, Tuple.Create))
                     {
                         Assert.AreEqual(value.Item1.Count, value.Item2.Count, GetMessage(TestSpec));
-
-                        foreach (var o in value.Item1)
-                        {
-                            if (o.Value is string)
-                            {
-                                Assert.AreEqual(o.Value, value.Item2[o.Key], GetMessage(TestSpec));
-                            }
-                            else
-                            {
-                                CollectionAssert.AreEqual(((JArray)o.Value).ToObject<List<string>>(),
-                                    (List<string>)value.Item2[o.Key]);
-                            }
-                        }
+                        CollectionAssert.AreEqual(value.Item1, value.Item2, GetMessage(TestSpec));
                     }
                 }
             }

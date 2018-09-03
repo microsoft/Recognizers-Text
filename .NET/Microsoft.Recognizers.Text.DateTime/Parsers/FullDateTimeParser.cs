@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
-            var resolutions = new List<Dictionary<string, object>>();
+            var resolutions = new List<Dictionary<string, string>>();
             var res = new Dictionary<string, object>();
 
             var type = slot.Type;
@@ -278,7 +278,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (p.Value is Dictionary<string, string> dictionary)
                 {
-                    var value = new Dictionary<string, object>();
+                    var value = new Dictionary<string, string>();
 
                     if (!string.IsNullOrEmpty(timex))
                     {
@@ -313,7 +313,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (resolutionPast.Count == 0 && resolutionFuture.Count == 0)
             {
-                var notResolved = new Dictionary<string, object> {
+                var notResolved = new Dictionary<string, string> {
                     {
                         DateTimeResolutionKey.Timex, timex
                     }, {

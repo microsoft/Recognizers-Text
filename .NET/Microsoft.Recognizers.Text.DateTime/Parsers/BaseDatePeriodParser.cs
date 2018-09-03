@@ -1268,6 +1268,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // TODO: This method should be refactored as it takes too many parameters and has too many side-effects
         private static void GetModAndDate(out DateObject beginDate, ref DateObject endDate, DateObject referenceDate,
             string timex, bool future, out string mod, out List<DateObject> dateList)
         {
