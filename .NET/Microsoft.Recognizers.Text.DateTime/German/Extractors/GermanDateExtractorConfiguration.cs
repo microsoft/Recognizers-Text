@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             };
 
-            var enableDmy = EnableDmy ||
+            var enableDmy = DmyDateFormat ||
                             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
 
             DateRegexList = DateRegexList.Concat(enableDmy
