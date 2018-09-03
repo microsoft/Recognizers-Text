@@ -124,7 +124,7 @@ public class FrenchNumericWithUnit {
         .put("Złoty polonais", "złoty polonais|złoty|zł|pln|zloty|zloty polonais")
         .put("Groxz", "groszy|grosz|grosze")
         .put("Riyal qatari", "riyal qatari|qar|riyals qatari")
-        .put("Riayl saudi", "riyal saudi|sar|riyals saudi")
+        .put("Riyal saudi", "riyal saudi|sar|riyals saudi")
         .put("Riyal", "riyal|riyals|rial|﷼")
         .put("Dirham", "dirham|dirhem|dirhm")
         .put("Halala", "halalas|halala")
