@@ -4,6 +4,6 @@
     {
         DateTimeOptions Options { get; }
 
-        bool EnableDmy { get; }
+        bool DmyDateFormat { get; }
     }
 }

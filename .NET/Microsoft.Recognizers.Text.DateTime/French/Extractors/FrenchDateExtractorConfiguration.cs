@@ -203,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             };
 
-            var enableDmy = EnableDmy ||
+            var enableDmy = DmyDateFormat ||
                             DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
 
             DateRegexList = DateRegexList.Concat(enableDmy

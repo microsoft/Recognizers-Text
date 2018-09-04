@@ -2,20 +2,20 @@
 {
     public class BaseOptionsConfiguration : IOptionsConfiguration
     {
-        public BaseOptionsConfiguration(DateTimeOptions options = DateTimeOptions.None, bool enableDmy = false)
+        public BaseOptionsConfiguration(DateTimeOptions options = DateTimeOptions.None, bool dmyDateFormat = false)
         {
             Options = options;
-            EnableDmy = enableDmy;
+            DmyDateFormat = dmyDateFormat;
         }
 
         public BaseOptionsConfiguration(IOptionsConfiguration config)
         {
             Options = config.Options;
-            EnableDmy = config.EnableDmy;
+            DmyDateFormat = config.DmyDateFormat;
         }
 
         public DateTimeOptions Options { get; }
 
-        public bool EnableDmy { get; }
+        public bool DmyDateFormat { get; }
     }
 }
