@@ -19,8 +19,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex TimeOfTodayRegex = new Regex(DateTimeDefinitions.TimeOfTodayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly DateExtractorChs DatePointExtractor = new DateExtractorChs();
         private static readonly TimeExtractorChs TimePointExtractor = new TimeExtractorChs();
+        private static readonly DurationExtractorChs DurationExtractor = new DurationExtractorChs();
 
         public List<ExtractResult> Extract(string text)
         {
@@ -33,6 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             tokens.AddRange(MergeDateAndTime(text, referenceTime));
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(TimeOfToday(text, referenceTime));
+            tokens.AddRange(DurationWithBeforeAndAfter(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -141,6 +149,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
             }
 
+            return ret;
+        }
+
+        // process case like "5分钟前" "二小时后"
+        private List<Token> DurationWithBeforeAndAfter(string text, DateObject referenceTime)
+        {
+            var ret = new List<Token>();
+            var durationEr = DurationExtractor.Extract(text, referenceTime);
+            foreach (var er in durationEr)
+            {
+                var pos = (int)er.Start + (int)er.Length;
+                if (pos < text.Length)
+                {
+                    var suffix = text.Substring(pos);
+                    var beforeMatch = BeforeRegex.Match(suffix);
+                    var afterMatch = AfterRegex.Match(suffix);
+
+                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value)) || (afterMatch.Success && suffix.StartsWith(afterMatch.Value)))
+                    {
+                        var metadata = new Metadata() { IsDurationWithBeforeAndAfter = true };
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
+                    }
+                }
+            }
             return ret;
         }
     }

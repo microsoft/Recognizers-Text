@@ -1226,5 +1226,50 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "Can we wait another business day?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python, javascript",
+    "Results": [
+      {
+        "Text": "another business day",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1BD",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave for two decades.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "two decades",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P20Y",
+          "FutureResolution": {
+            "duration": "630720000"
+          },
+          "PastResolution": {
+            "duration": "630720000"
+          }
+        },
+        "Start": 15,
+        "Length": 11
+      }
+    ]
   }
 ]

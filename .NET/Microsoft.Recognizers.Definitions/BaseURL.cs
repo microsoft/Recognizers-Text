@@ -19,9 +19,9 @@ namespace Microsoft.Recognizers.Definitions
 	{
 		public const string ProtocolRegex = @"((https?|ftp):\/\/)";
 		public const string PortRegex = @"(:\d{1,5})";
-		public const string ExtractionRestrictionRegex = @"(?<=\s|[\'""\(\[:.]|^)";
-		public static readonly string UrlPrefixRegex = $@"{ExtractionRestrictionRegex}{ProtocolRegex}?[-a-zA-Z0-9:%._\+~#=]{{1,256}}\.";
-		public static readonly string UrlSuffixRegex = $@"{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=])";
+		public const string ExtractionRestrictionRegex = @"(?<=\s|[\'""\(\[:]|^)";
+		public static readonly string UrlPrefixRegex = $@"({ExtractionRestrictionRegex}{ProtocolRegex}?|{ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9:%._\+~#=]{{0,256}}\.";
+		public static readonly string UrlSuffixRegex = $@"{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=@])";
 		public static readonly string UrlRegex = $@"{UrlPrefixRegex}(?<Tld>[a-zA-Z]{{2,18}}){UrlSuffixRegex}";
 		public static readonly string IpUrlRegex = $@"{ExtractionRestrictionRegex}{ProtocolRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}";
 		public static readonly IList<string> TldList = new List<string>

@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
 		public const string DozenRegex = @".*타$";
 		public const string PercentageRegex = @"(?<=백\s*분\s*의).+|.+(?=퍼\s*센\s*트)|.*(?=[％%])";
 		public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*[만억]{{1,2}}(\s*(이상))?";
-		public const string FracSplitRegex = @"분\s*의";
+		public const string FracSplitRegex = @"[와|과]|분\s*의";
 		public const string ZeroToNineIntegerRegex = @"[일이삼사오육륙칠팔구영공]";
 		public const string NegativeNumberTermsRegex = @"((마\s*이\s*너\s*스|음\s*수)\s*)";
 		public const string NegativeNumberTermsRegexNum = @"((?<!(\d+\s*)|[-－])[-－])";

@@ -20,13 +20,13 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string LangMarker = "Fr";
 		public const string RoundNumberIntegerRegex = @"(cent|mille|millions|million|milliard|milliards|billion|billions)";
 		public const string ZeroToNineIntegerRegex = @"(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
-		public const string TenToNineteenIntegerRegex = @"(dix\Wneuf|dix\Whuit|dix\Wsept|seize|quinze|quatorze|treize|douze|onze|dix)";
-		public const string TensNumberIntegerRegex = @"(octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)";
+		public const string TenToNineteenIntegerRegex = @"(dix[-\s]neuf|dix[-\s]huit|dix[-\s]sept|(-)?seize|(-)?quinze|(-)?quatorze|(-)?treize|(-)?douze|(-)?onze|dix)";
+		public const string TensNumberIntegerRegex = @"(quatre[-\s]vingt[-\s]dix|quatre[-\s]vingt(s)?|soixante[-\s]dix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
 		public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
 		public const string NegativeNumberTermsRegex = @"^[.]";
 		public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";
 		public static readonly string HundredsNumberIntegerRegex = $@"(({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))";
-		public static readonly string BelowHundredsRegex = $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\W+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
+		public static readonly string BelowHundredsRegex = $@"({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}[-\s]+{TenToNineteenIntegerRegex})|({TensNumberIntegerRegex}([-\s]+{ZeroToNineIntegerRegex})?)|{ZeroToNineIntegerRegex})";
 		public static readonly string BelowThousandsRegex = $@"(({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\s+{TenToNineteenIntegerRegex})";
 		public static readonly string SupportThousandsRegex = $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
 		public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
@@ -114,15 +114,27 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "soixante-dix", 70 },
 			{ "septante", 70 },
 			{ "quatre-vingts", 80 },
+			{ "quatre-vingt", 80 },
+			{ "quatre vingts", 80 },
+			{ "quatre vingt", 80 },
+			{ "quatre-vingt-dix", 90 },
+			{ "quatre-vingt dix", 90 },
+			{ "quatre vingt dix", 90 },
 			{ "quatre-vingts-dix", 90 },
 			{ "quatre-vingts-onze", 91 },
+			{ "quatre-vingt-onze", 91 },
 			{ "quatre-vingts-douze", 92 },
+			{ "quatre-vingt-douze", 92 },
 			{ "quatre-vingts-treize", 93 },
+			{ "quatre-vingt-treize", 93 },
 			{ "quatre-vingts-quatorze", 94 },
+			{ "quatre-vingt-quatorze", 94 },
 			{ "quatre-vingts-quinze", 95 },
+			{ "quatre-vingt-quinze", 95 },
 			{ "quatre-vingts-seize", 96 },
-			{ "quatre-vingt-dix-sept", 97 },
-			{ "quatre-vingt-dix-neuf", 98 },
+			{ "quatre-vingt-seize", 96 },
+			{ "huitante", 80 },
+			{ "octante", 80 },
 			{ "nonante", 90 },
 			{ "cent", 100 },
 			{ "mille", 1000 },
@@ -271,6 +283,9 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "septante", 70 },
 			{ "quatre-vingt", 80 },
 			{ "quatre vingt", 80 },
+			{ "huitante", 80 },
+			{ "octante", 80 },
+			{ "nonante", 90 },
 			{ "quatre vingt dix", 90 },
 			{ "quatre-vingt-dix", 90 },
 			{ "cent", 100 },

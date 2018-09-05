@@ -77,28 +77,28 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.Equals("täglich") || trimedText.Equals("täglicher") || trimedText.Equals("tägliches") || trimedText.Equals("tägliche") || trimedText.Equals("täglichen") ||
-                trimedText.Equals("alltäglich") || trimedText.Equals("alltäglicher") || trimedText.Equals("alltägliches") || trimedText.Equals("alltägliche") || trimedText.Equals("alltäglichen") ||
-                trimedText.Equals("jeden tag")
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.Equals("täglich") || trimmedText.Equals("täglicher") || trimmedText.Equals("tägliches") || trimmedText.Equals("tägliche") || trimmedText.Equals("täglichen") ||
+                trimmedText.Equals("alltäglich") || trimmedText.Equals("alltäglicher") || trimmedText.Equals("alltägliches") || trimmedText.Equals("alltägliche") || trimmedText.Equals("alltäglichen") ||
+                trimmedText.Equals("jeden tag")
                 )
             {
                 timex = "P1D";
             }
-            else if (trimedText.Equals("wöchentlich") || trimedText.Equals("wöchentlicher") || trimedText.Equals("wöchentliches") || trimedText.Equals("wöchentliche") || trimedText.Equals("wöchentlichen")
-                || trimedText.Equals("allwöchentlich") || trimedText.Equals("allwöchentlicher") || trimedText.Equals("allwöchentliches") || trimedText.Equals("allwöchentliche") || trimedText.Equals("allwöchentlichen")
+            else if (trimmedText.Equals("wöchentlich") || trimmedText.Equals("wöchentlicher") || trimmedText.Equals("wöchentliches") || trimmedText.Equals("wöchentliche") || trimmedText.Equals("wöchentlichen")
+                || trimmedText.Equals("allwöchentlich") || trimmedText.Equals("allwöchentlicher") || trimmedText.Equals("allwöchentliches") || trimmedText.Equals("allwöchentliche") || trimmedText.Equals("allwöchentlichen")
                 )
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("monatlich") || trimedText.Equals("monatlicher") || trimedText.Equals("monatliches") || trimedText.Equals("monatliche") || trimedText.Equals("monatlichen")
-                || trimedText.Equals("allmonatlich") || trimedText.Equals("allmonatlicher") || trimedText.Equals("allmonatliches") || trimedText.Equals("allmonatliche") || trimedText.Equals("allmonatlichen")
+            else if (trimmedText.Equals("monatlich") || trimmedText.Equals("monatlicher") || trimmedText.Equals("monatliches") || trimmedText.Equals("monatliche") || trimmedText.Equals("monatlichen")
+                || trimmedText.Equals("allmonatlich") || trimmedText.Equals("allmonatlicher") || trimmedText.Equals("allmonatliches") || trimmedText.Equals("allmonatliche") || trimmedText.Equals("allmonatlichen")
                 )
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("jährlich") || trimedText.Equals("jährlicher") || trimedText.Equals("jährliches") || trimedText.Equals("jährliche") || trimedText.Equals("jährlichen")
-                || trimedText.Equals("alljährlich") || trimedText.Equals("alljährlicher") || trimedText.Equals("alljährliches") || trimedText.Equals("alljährliche") || trimedText.Equals("alljährlichen")
+            else if (trimmedText.Equals("jährlich") || trimmedText.Equals("jährlicher") || trimmedText.Equals("jährliches") || trimmedText.Equals("jährliche") || trimmedText.Equals("jährlichen")
+                || trimmedText.Equals("alljährlich") || trimmedText.Equals("alljährlicher") || trimmedText.Equals("alljährliches") || trimmedText.Equals("alljährliche") || trimmedText.Equals("alljährlichen")
                 )
             {
                 timex = "P1Y";
@@ -114,20 +114,20 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimedText = text.Trim()/*.ToLowerInvariant()*/;
-            if (trimedText.Equals("tag") || trimedText.Equals("Tag"))
+            var trimmedText = text.Trim()/*.ToLowerInvariant()*/;
+            if (trimmedText.Equals("tag") || trimmedText.Equals("Tag"))
             {
                 timex = "P1D";
             }
-            else if (trimedText.Equals("woche"))
+            else if (trimmedText.Equals("woche"))
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("monat"))
+            else if (trimmedText.Equals("monat"))
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("jahr"))
+            else if (trimmedText.Equals("jahr"))
             {
                 timex = "P1Y";
             }

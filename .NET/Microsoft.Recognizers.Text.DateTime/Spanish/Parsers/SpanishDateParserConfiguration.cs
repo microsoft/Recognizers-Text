@@ -112,36 +112,36 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetSwiftDay(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant().Normalized();
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
             var swift = 0;
 
             //TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
-            if (trimedText.Equals("hoy") || trimedText.Equals("el dia"))
+            if (trimmedText.Equals("hoy") || trimmedText.Equals("el dia"))
             {
                 swift = 0;
             }
-            else if (trimedText.Equals("mañana") ||
-                     trimedText.EndsWith("dia siguiente") ||
-                     trimedText.EndsWith("el dia de mañana") ||
-                     trimedText.EndsWith("proximo dia"))
+            else if (trimmedText.Equals("mañana") ||
+                     trimmedText.EndsWith("dia siguiente") ||
+                     trimmedText.EndsWith("el dia de mañana") ||
+                     trimmedText.EndsWith("proximo dia"))
             {
                 swift = 1;
             }
-            else if (trimedText.Equals("ayer"))
+            else if (trimmedText.Equals("ayer"))
             {
                 swift = -1;
             }
-            else if (trimedText.EndsWith("pasado mañana") ||
-                     trimedText.EndsWith("dia despues de mañana"))
+            else if (trimmedText.EndsWith("pasado mañana") ||
+                     trimmedText.EndsWith("dia despues de mañana"))
             {
                 swift = 2;
             }
-            else if (trimedText.EndsWith("anteayer") ||
-                     trimedText.EndsWith("dia antes de ayer"))
+            else if (trimmedText.EndsWith("anteayer") ||
+                     trimmedText.EndsWith("dia antes de ayer"))
             {
                 swift = -2;
             }
-            else if (trimedText.EndsWith("ultimo dia"))
+            else if (trimmedText.EndsWith("ultimo dia"))
             {
                 swift = -1;
             }
@@ -151,15 +151,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetSwiftMonth(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PastPrefixRegex.IsMatch(trimedText))
+            if (PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -169,8 +169,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool IsCardinalLast(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return PastPrefixRegex.IsMatch(trimedText);
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return PastPrefixRegex.IsMatch(trimmedText);
         }
 
     }

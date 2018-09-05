@@ -6,8 +6,6 @@ using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
-
-using Microsoft.Recognizers.Text.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Italian;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -52,17 +50,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Culture.English,
                 options => new DateTimeModel(
                     new BaseMergedDateTimeParser(
-                        new EnglishMergedParserConfiguration(new BaseOptionsConfiguration(options))),
+                        new EnglishMergedParserConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: false))),
                     new BaseMergedDateTimeExtractor(
-                        new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(options)))));
+                        new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: false)))));
 
             RegisterModel<DateTimeModel>(
                 Culture.EnglishOthers,
                 options => new DateTimeModel(
                     new BaseMergedDateTimeParser(
-                        new EnglishMergedParserConfiguration(new BaseOptionsConfiguration(options, true))),
+                        new EnglishMergedParserConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true))),
                     new BaseMergedDateTimeExtractor(
-                        new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(options, true)))));
+                        new EnglishMergedExtractorConfiguration(new BaseOptionsConfiguration(options, dmyDateFormat: true)))));
 
             RegisterModel<DateTimeModel>(
                 Culture.Chinese,

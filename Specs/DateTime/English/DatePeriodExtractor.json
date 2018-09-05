@@ -3654,5 +3654,17 @@
         "Length": 20
       }
     ]
+  },
+  {
+    "Input": "sales where date is this decade.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "this decade",
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 11
+      }
+    ]
   }
 ]

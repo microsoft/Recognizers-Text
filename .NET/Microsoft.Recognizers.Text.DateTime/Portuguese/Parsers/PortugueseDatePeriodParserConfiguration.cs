@@ -166,15 +166,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public int GetSwiftDayOrMonth(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PastPrefixRegex.IsMatch(trimedText))
+            if (PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -184,18 +184,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public int GetSwiftYear(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PastPrefixRegex.IsMatch(trimedText))
+            if (PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (ThisPrefixRegex.IsMatch(trimedText))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
@@ -205,51 +205,51 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool IsFuture(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return ThisPrefixRegex.IsMatch(trimedText) || NextPrefixRegex.IsMatch(trimedText);
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return ThisPrefixRegex.IsMatch(trimmedText) || NextPrefixRegex.IsMatch(trimmedText);
         }
 
         public bool IsLastCardinal(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return PastPrefixRegex.IsMatch(trimedText);
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return PastPrefixRegex.IsMatch(trimmedText);
         }
 
         public bool IsMonthOnly(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant().Normalized();
-            return (trimedText.EndsWith("mes") || trimedText.EndsWith("meses"));
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            return (trimmedText.EndsWith("mes") || trimmedText.EndsWith("meses"));
         }
 
         public bool IsMonthToDate(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant().Normalized();
-            return (trimedText.Equals("mes ate agora") || trimedText.Equals("mes ate hoje") || trimedText.Equals("mes ate a data"));
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            return (trimmedText.Equals("mes ate agora") || trimmedText.Equals("mes ate hoje") || trimmedText.Equals("mes ate a data"));
         }
 
         public bool IsWeekend(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("fim de semana");
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return trimmedText.EndsWith("fim de semana");
         }
 
         public bool IsWeekOnly(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("semana") && !trimedText.EndsWith("fim de semana"));
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return (trimmedText.EndsWith("semana") && !trimmedText.EndsWith("fim de semana"));
         }
 
         public bool IsYearOnly(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("ano") || trimedText.EndsWith("anos"));
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return (trimmedText.EndsWith("ano") || trimmedText.EndsWith("anos"));
         }
 
         public bool IsYearToDate(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant().Normalized();
-            return (trimedText.Equals("ano ate agora") || trimedText.Equals("ano ate hoje") || trimedText.Equals("ano ate a data") ||
-                    trimedText.Equals("anos ate agora") || trimedText.Equals("anos ate hoje") || trimedText.Equals("anos ate a data"));
+            var trimmedText = text.Trim().ToLowerInvariant().Normalized();
+            return (trimmedText.Equals("ano ate agora") || trimmedText.Equals("ano ate hoje") || trimmedText.Equals("ano ate a data") ||
+                    trimmedText.Equals("anos ate agora") || trimmedText.Equals("anos ate hoje") || trimmedText.Equals("anos ate a data"));
         }
     }
 }

@@ -125,30 +125,30 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
-            if (MorningStartEndRegex.IsMatch(trimedText))
+            if (MorningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (AfternoonStartEndRegex.IsMatch(trimedText))
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EveningStartEndRegex.IsMatch(trimedText))
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NightStartEndRegex.IsMatch(trimedText))
+            else if (NightStartEndRegex.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -167,16 +167,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         // **NOTE: for certain cases, prochain/dernier (next, last) are suffix OR prefix
         public int GetSwiftPrefix(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            if (trimedText.StartsWith("prochain") || trimedText.EndsWith("prochain") ||
-                trimedText.StartsWith("prochaine") || trimedText.EndsWith("prochaine"))
+            if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
+                trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("derniere")|| trimedText.StartsWith("dernier")||
-                     trimedText.EndsWith("derniere") || trimedText.EndsWith("dernier"))
+            else if (trimmedText.StartsWith("derniere")|| trimmedText.StartsWith("dernier")||
+                     trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernier"))
             {
                 swift = -1;
             }

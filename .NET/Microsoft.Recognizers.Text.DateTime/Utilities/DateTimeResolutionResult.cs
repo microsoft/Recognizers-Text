@@ -30,6 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<object> SubDateTimeEntities { get; set; }
 
         public TimeZoneResolutionResult TimeZoneResolution { get; set; }
+
+        public List<object> List { get; set; }
     }
 
     public class TimeZoneResolutionResult

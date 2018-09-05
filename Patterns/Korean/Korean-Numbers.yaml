@@ -115,7 +115,7 @@ DoubleAndRoundRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*[만억]{1,2}(\s*(이상))?'
   references: [ZeroToNineFullHalfRegex]
 FracSplitRegex: !simpleRegex
-  def: 분\s*의
+  def: '[와|과]|분\s*의'
 ZeroToNineIntegerRegex: !simpleRegex
   def: '[일이삼사오육륙칠팔구영공]'
 NegativeNumberTermsRegex: !simpleRegex

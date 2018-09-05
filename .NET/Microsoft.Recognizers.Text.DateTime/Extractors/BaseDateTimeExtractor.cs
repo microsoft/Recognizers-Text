@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDateTimeExtractor : IDateTimeExtractor
@@ -41,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
-            text = text.Trim().ToLower();
+            text = text.ToLower();
 
             // Handle "now"
             var matches = this.config.NowRegex.Matches(text);
@@ -220,7 +218,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
 
-                // handle "this morningh at 7am"
+                // handle "this morning at 7am"
                 var innerMatch = this.config.TimeOfDayRegex.Match(er.Text);
                 if (innerMatch.Success && innerMatch.Index == 0)
                 {

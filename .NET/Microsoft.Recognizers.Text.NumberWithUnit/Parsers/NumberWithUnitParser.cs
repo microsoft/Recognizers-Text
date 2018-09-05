@@ -19,8 +19,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
             var ret = new ParseResult(extResult);
             ExtractResult numberResult;
-            var unitResult = extResult.Data as ExtractResult;
-            if (unitResult != null)
+
+            if (extResult.Data is ExtractResult unitResult)
             {
                 numberResult = unitResult;
             }
@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 lastUnit = lastUnit.Substring(this.config.ConnectorToken.Length).Trim();
             }
 
-            if (!string.IsNullOrWhiteSpace(key) && (this.config.UnitMap != null) && this.config.UnitMap.ContainsKey(lastUnit))
+            if (!string.IsNullOrWhiteSpace(key) && config.UnitMap != null && config.UnitMap.ContainsKey(lastUnit))
             {
                 var unitValue = this.config.UnitMap[lastUnit];
                 var numValue = (string.IsNullOrEmpty(numberResult.Text)) ? null : this.config.InternalNumberParser.Parse(numberResult);
@@ -86,6 +86,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 };
                 ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
             }
+
             return ret;
         }
 

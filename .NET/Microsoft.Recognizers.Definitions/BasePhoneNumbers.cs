@@ -28,6 +28,9 @@ namespace Microsoft.Recognizers.Definitions
 		public const string ITPhoneNumberRegex = @"((\(\s?(\+\s?|00)39\s?\)\s?)|(((?<!\d)\+\s?|\b00)39\s?)|(?<![\+\*])\b)((0[\d\s-]{4,10}\d)|(3[\d\s-]{7,9}\d))(?!-)\b";
 		public const string NLPhoneNumberRegex = @"((((\(\s?(\+\s?|00)31\s?\)\s?)|(((?<!\d)\+\s?|\b00)31\s?)|(?<![\+\*])\b)((0?\d{1,3}\s?-?\s?|\(\s?0?\d{0,3}\s?\)\s?)[\d\s]{5,11}\d))|\b\d{10,12})(?!-)\b";
 		public const string SpecialPhoneNumberRegex = @"\b(\d{3,4}[/-]\d{1,4}[/-]\d{3,4})\b";
+		public const string CountryCodeRegex = @"^(\(\s?(\+\s?|00)\d{1,3}\s?\)|(\+\s?|00)\d{1,3})";
+		public const string AreaCodeIndicatorRegex = @"\(";
+		public const string FormatIndicatorRegex = @"(\s|-|/)";
 		public static readonly IList<char> SeparatorCharList = new List<char>
 		{
 			'-',

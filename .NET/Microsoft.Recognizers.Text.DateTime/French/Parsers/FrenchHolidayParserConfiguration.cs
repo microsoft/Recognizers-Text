@@ -98,17 +98,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public override int GetSwiftYear(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimedText.EndsWith("prochain")) // next - 'l'annee prochain'
+            if (trimmedText.EndsWith("prochain")) // next - 'l'annee prochain'
             {
                 swift = 1;
             }
-            else if (trimedText.EndsWith("dernier")) // last - 'l'annee dernier'
+            else if (trimmedText.EndsWith("dernier")) // last - 'l'annee dernier'
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("cette")) // this - 'cette annees'
+            else if (trimmedText.StartsWith("cette")) // this - 'cette annees'
             {
                 swift = 0;
             }

@@ -7,7 +7,8 @@
         "Text": "1 (877) 609-2233",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1 (877) 609-2233"
+          "value": "1 (877) 609-2233",
+          "score": "1"
         }
       }
     ]
@@ -20,7 +21,8 @@
         "Text": "+1 541-754-3010",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+1 541-754-3010"
+          "value": "+1 541-754-3010",
+          "score": "1"
         }
       }
     ]
@@ -33,7 +35,8 @@
         "Text": "(541) 754-3010",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(541) 754-3010"
+          "value": "(541) 754-3010",
+          "score": "0.9"
         }
       }
     ]
@@ -46,7 +49,8 @@
         "Text": "541-754-3010",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "541-754-3010"
+          "value": "541-754-3010",
+          "score": "0.7"
         }
       }
     ]
@@ -59,7 +63,8 @@
         "Text": "+1-541-754-3010",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+1-541-754-3010"
+          "value": "+1-541-754-3010",
+          "score": "1"
         }
       }
     ]
@@ -72,7 +77,8 @@
         "Text": "1-541-754-3010",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1-541-754-3010"
+          "value": "1-541-754-3010",
+          "score": "0.8"
         }
       }
     ]
@@ -85,7 +91,8 @@
         "Text": "(55) 3333-33333",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(55) 3333-33333"
+          "value": "(55) 3333-33333",
+          "score": "0.9"
         }
       }
     ]
@@ -98,7 +105,8 @@
         "Text": "(081) 3333-33333",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(081) 3333-33333"
+          "value": "(081) 3333-33333",
+          "score": "0.9"
         }
       }
     ]
@@ -111,7 +119,8 @@
         "Text": "( 19 ) 38294427",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "( 19 ) 38294427"
+          "value": "( 19 ) 38294427",
+          "score": "1"
         }
       }
     ]
@@ -124,7 +133,8 @@
         "Text": "(19) 35831647",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(19) 35831647"
+          "value": "(19) 35831647",
+          "score": "0.8"
         }
       }
     ]
@@ -137,7 +147,8 @@
         "Text": "(21) 996205563",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(21) 996205563"
+          "value": "(21) 996205563",
+          "score": "0.8"
         }
       }
     ]
@@ -150,7 +161,8 @@
         "Text": "(21)99713-3601",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(21)99713-3601"
+          "value": "(21)99713-3601",
+          "score": "0.8"
         }
       }
     ]
@@ -163,7 +175,8 @@
         "Text": "(71)3019-9811",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(71)3019-9811"
+          "value": "(71)3019-9811",
+          "score": "0.8"
         }
       }
     ]
@@ -176,7 +189,8 @@
         "Text": "018 997821551",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "018 997821551"
+          "value": "018 997821551",
+          "score": "0.6"
         }
       }
     ]
@@ -189,7 +203,8 @@
         "Text": "21 995556144",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "21 995556144"
+          "value": "21 995556144",
+          "score": "0.6"
         }
       }
     ]
@@ -202,7 +217,8 @@
         "Text": "280930640",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "280930640"
+          "value": "280930640",
+          "score": "0.35"
         }
       }
     ]
@@ -215,7 +231,8 @@
         "Text": "92995299770",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "92995299770"
+          "value": "92995299770",
+          "score": "0.45"
         }
       }
     ]
@@ -228,7 +245,8 @@
         "Text": "972101245",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "972101245"
+          "value": "972101245",
+          "score": "0.35"
         }
       }
     ]
@@ -241,7 +259,8 @@
         "Text": "+44 (0)7123 129683",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+44 (0)7123 129683"
+          "value": "+44 (0)7123 129683",
+          "score": "1"
         }
       }
     ]
@@ -254,7 +273,8 @@
         "Text": "+44 7123 123456",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+44 7123 123456"
+          "value": "+44 7123 123456",
+          "score": "1"
         }
       }
     ]
@@ -267,7 +287,8 @@
         "Text": "+44 7700900397",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+44 7700900397"
+          "value": "+44 7700900397",
+          "score": "1"
         }
       }
     ]
@@ -280,7 +301,8 @@
         "Text": "+447700 900 397",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+447700 900 397"
+          "value": "+447700 900 397",
+          "score": "1"
         }
       }
     ]
@@ -293,7 +315,8 @@
         "Text": "0044 07456934723",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0044 07456934723"
+          "value": "0044 07456934723",
+          "score": "1"
         }
       }
     ]
@@ -306,7 +329,8 @@
         "Text": "0044 07700 900873",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0044 07700 900873"
+          "value": "0044 07700 900873",
+          "score": "1"
         }
       }
     ]
@@ -319,7 +343,8 @@
         "Text": "004407624938475",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "004407624938475"
+          "value": "004407624938475",
+          "score": "0.9"
         }
       }
     ]
@@ -332,7 +357,8 @@
         "Text": "07098 785467",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "07098 785467"
+          "value": "07098 785467",
+          "score": "0.6"
         }
       }
     ]
@@ -345,7 +371,8 @@
         "Text": "07453 372 351",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "07453 372 351"
+          "value": "07453 372 351",
+          "score": "0.7"
         }
       }
     ]
@@ -358,7 +385,8 @@
         "Text": "07700 900873",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "07700 900873"
+          "value": "07700 900873",
+          "score": "0.6"
         }
       }
     ]
@@ -371,7 +399,8 @@
         "Text": "07700900095",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "07700900095"
+          "value": "07700900095",
+          "score": "0.45"
         }
       }
     ]
@@ -384,7 +413,8 @@
         "Text": "07877 954 457",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "07877 954 457"
+          "value": "07877 954 457",
+          "score": "0.7"
         }
       }
     ]
@@ -397,7 +427,8 @@
         "Text": "07893 564893",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "07893 564893"
+          "value": "07893 564893",
+          "score": "0.6"
         }
       }
     ]
@@ -410,475 +441,512 @@
         "Text": "+49 171 1234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49 171 1234567"
+          "value": "+49 171 1234567",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49 1741234567.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49 1741234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49 1741234567"
+          "value": "+49 1741234567",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49 176 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49 176 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49 176 12345678"
+          "value": "+49 176 12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49 176- 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49 176- 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49 176- 12345678"
+          "value": "+49 176- 12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49 176-12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49 176-12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49 176-12345678"
+          "value": "+49 176-12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49 176/ 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49 176/ 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49 176/ 12345678"
+          "value": "+49 176/ 12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49 176/12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49 176/12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49 176/12345678"
+          "value": "+49 176/12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49 17612345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49 17612345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49 17612345678"
+          "value": "+49 17612345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +491731234567.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+491731234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+491731234567"
+          "value": "+491731234567",
+          "score": "0.9"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49176 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49176 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49176 12345678"
+          "value": "+49176 12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49176- 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49176- 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49176- 12345678"
+          "value": "+49176- 12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is +49176/ 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "+49176/ 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+49176/ 12345678"
+          "value": "+49176/ 12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 00 49 176 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "00 49 176 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00 49 176 12345678"
+          "value": "00 49 176 12345678",
+          "score": "0.8"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 00 49 17612345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "00 49 17612345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00 49 17612345678"
+          "value": "00 49 17612345678",
+          "score": "0.7"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0049 171 1234567.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0049 171 1234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0049 171 1234567"
+          "value": "0049 171 1234567",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0049 176 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0049 176 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0049 176 12345678"
+          "value": "0049 176 12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 00491731234567.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "00491731234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00491731234567"
+          "value": "00491731234567",
+          "score": "0.9"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0049176 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0049176 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0049176 12345678"
+          "value": "0049176 12345678",
+          "score": "1"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 004917612345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "004917612345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "004917612345678"
+          "value": "004917612345678",
+          "score": "0.9"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0171 1234567.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0171 1234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0171 1234567"
+          "value": "0171 1234567",
+          "score": "0.6"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 01731234567.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "01731234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "01731234567"
+          "value": "01731234567",
+          "score": "0.45"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176 -12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176 -12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176 -12345678"
+          "value": "0176 -12345678",
+          "score": "0.7"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176 12 34 56 78.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176 12 34 56 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176 12 34 56 78"
+          "value": "0176 12 34 56 78",
+          "score": "0.9"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176 123 456 78.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176 123 456 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176 123 456 78"
+          "value": "0176 123 456 78",
+          "score": "0.8"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176 1234 5678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176 1234 5678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176 1234 5678"
+          "value": "0176 1234 5678",
+          "score": "0.7"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176 12345678"
+          "value": "0176 12345678",
+          "score": "0.6"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176- 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176- 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176- 12345678"
+          "value": "0176- 12345678",
+          "score": "0.7"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176-12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176-12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176-12345678"
+          "value": "0176-12345678",
+          "score": "0.6"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176/ 12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176/ 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176/ 12345678"
+          "value": "0176/ 12345678",
+          "score": "0.7"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 0176/12345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "0176/12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0176/12345678"
+          "value": "0176/12345678",
+          "score": "0.6"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 017612345678.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "017612345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "017612345678"
+          "value": "017612345678",
+          "score": "0.5"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 622 15 31 23.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "622 15 31 23",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "622 15 31 23"
+          "value": "622 15 31 23",
+          "score": "0.8"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 632 139823.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "632 139823",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "632 139823"
+          "value": "632 139823",
+          "score": "0.5"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 679 124 898.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "679 124 898",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "679 124 898"
+          "value": "679 124 898",
+          "score": "0.65"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 652123123.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "652123123",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "652123123"
+          "value": "652123123",
+          "score": "0.35"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 3333/2/6666.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "3333/2/6666",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "3333/2/6666"
+          "value": "3333/2/6666",
+          "score": "0.65"
         }
       }
     ]
   },
   {
     "Input": "My phone number is 1000-1-999.",
-      "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "1000-1-999",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1000-1-999"
+          "value": "1000-1-999",
+          "score": "0.6"
         }
       }
     ]
@@ -891,7 +959,8 @@
         "Text": "010-6228-8559",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "010-6228-8559"
+          "value": "010-6228-8559",
+          "score": "0.7"
         }
       }
     ]
@@ -904,7 +973,8 @@
         "Text": "010-62288559",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "010-62288559"
+          "value": "010-62288559",
+          "score": "0.6"
         }
       }
     ]
@@ -917,7 +987,8 @@
         "Text": "1444-555-1234",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1444-555-1234"
+          "value": "1444-555-1234",
+          "score": "0.7"
         }
       }
     ]
@@ -944,7 +1015,8 @@
         "Text": "1235554567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1235554567"
+          "value": "1235554567",
+          "score": "0.4"
         }
       }
     ]
@@ -957,7 +1029,8 @@
         "Text": "(123)456-7890",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(123)456-7890"
+          "value": "(123)456-7890",
+          "score": "0.8"
         }
       }
     ]
@@ -970,7 +1043,8 @@
         "Text": "1-444-555-1234",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1-444-555-1234"
+          "value": "1-444-555-1234",
+          "score": "0.8"
         }
       }
     ]
@@ -983,7 +1057,8 @@
         "Text": "14325678901",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "14325678901"
+          "value": "14325678901",
+          "score": "0.45"
         }
       }
     ]
@@ -996,7 +1071,8 @@
         "Text": "1(123)456-7890",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1(123)456-7890"
+          "value": "1(123)456-7890",
+          "score": "0.8"
         }
       }
     ]
@@ -1009,7 +1085,8 @@
         "Text": "+1 (123)456-7890",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+1 (123)456-7890"
+          "value": "+1 (123)456-7890",
+          "score": "1"
         }
       }
     ]
@@ -1022,7 +1099,8 @@
         "Text": "+1(123)456-7890",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+1(123)456-7890"
+          "value": "+1(123)456-7890",
+          "score": "1"
         }
       }
     ]
@@ -1035,7 +1113,8 @@
         "Text": "00971501234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00971501234567"
+          "value": "00971501234567",
+          "score": "0.9"
         }
       }
     ]
@@ -1048,7 +1127,8 @@
         "Text": "+971521234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+971521234567"
+          "value": "+971521234567",
+          "score": "0.9"
         }
       }
     ]
@@ -1061,7 +1141,8 @@
         "Text": "971551234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "971551234567"
+          "value": "971551234567",
+          "score": "0.5"
         }
       }
     ]
@@ -1074,7 +1155,8 @@
         "Text": "971 56 123 4567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "971 56 123 4567"
+          "value": "971 56 123 4567",
+          "score": "0.8"
         }
       }
     ]
@@ -1143,7 +1225,8 @@
         "Text": "0551234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0551234567"
+          "value": "0551234567",
+          "score": "0.4"
         }
       }
     ]
@@ -1156,7 +1239,8 @@
         "Text": "021234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "021234567"
+          "value": "021234567",
+          "score": "0.35"
         }
       }
     ]
@@ -1169,7 +1253,8 @@
         "Text": "600-540-000",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "600-540-000"
+          "value": "600-540-000",
+          "score": "0.65"
         }
       }
     ]
@@ -1182,7 +1267,8 @@
         "Text": "359895123456",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "359895123456"
+          "value": "359895123456",
+          "score": "0.5"
         }
       }
     ]
@@ -1195,7 +1281,8 @@
         "Text": "0898111222",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0898111222"
+          "value": "0898111222",
+          "score": "0.4"
         }
       }
     ]
@@ -1208,7 +1295,8 @@
         "Text": "0886111222",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0886111222"
+          "value": "0886111222",
+          "score": "0.4"
         }
       }
     ]
@@ -1221,7 +1309,8 @@
         "Text": "0875111222",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0875111222"
+          "value": "0875111222",
+          "score": "0.4"
         }
       }
     ]
@@ -1234,7 +1323,8 @@
         "Text": "0899555555",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0899555555"
+          "value": "0899555555",
+          "score": "0.4"
         }
       }
     ]
@@ -1247,7 +1337,8 @@
         "Text": "359898111222",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "359898111222"
+          "value": "359898111222",
+          "score": "0.5"
         }
       }
     ]
@@ -1260,7 +1351,8 @@
         "Text": "00898111222",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00898111222"
+          "value": "00898111222",
+          "score": "0.85"
         }
       }
     ]
@@ -1273,7 +1365,8 @@
         "Text": "+35998111222",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+35998111222"
+          "value": "+35998111222",
+          "score": "0.9"
         }
       }
     ]
@@ -1286,7 +1379,8 @@
         "Text": "098111222",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "098111222"
+          "value": "098111222",
+          "score": "0.35"
         }
       }
     ]
@@ -1299,7 +1393,8 @@
         "Text": "090012900",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "090012900"
+          "value": "090012900",
+          "score": "0.35"
         }
       }
     ]
@@ -1312,7 +1407,8 @@
         "Text": "070010007",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "070010007"
+          "value": "070010007",
+          "score": "0.35"
         }
       }
     ]
@@ -1325,7 +1421,8 @@
         "Text": "070043256",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "070043256"
+          "value": "070043256",
+          "score": "0.35"
         }
       }
     ]
@@ -1338,7 +1435,8 @@
         "Text": "35970045045",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "35970045045"
+          "value": "35970045045",
+          "score": "0.45"
         }
       }
     ]
@@ -1351,7 +1449,8 @@
         "Text": "35970045666",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "35970045666"
+          "value": "35970045666",
+          "score": "0.45"
         }
       }
     ]
@@ -1364,7 +1463,8 @@
         "Text": "08000700",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "08000700"
+          "value": "08000700",
+          "score": "0.3"
         }
       }
     ]
@@ -1377,7 +1477,8 @@
         "Text": "080088001",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "080088001"
+          "value": "080088001",
+          "score": "0.35"
         }
       }
     ]
@@ -1390,7 +1491,8 @@
         "Text": "080015333",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "080015333"
+          "value": "080015333",
+          "score": "0.35"
         }
       }
     ]
@@ -1403,7 +1505,8 @@
         "Text": "028700000",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "028700000"
+          "value": "028700000",
+          "score": "0.35"
         }
       }
     ]
@@ -1416,7 +1519,8 @@
         "Text": "030100000",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "030100000"
+          "value": "030100000",
+          "score": "0.35"
         }
       }
     ]
@@ -1429,7 +1533,8 @@
         "Text": "03010070",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "03010070"
+          "value": "03010070",
+          "score": "0.3"
         }
       }
     ]
@@ -1442,7 +1547,8 @@
         "Text": "03656745",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "03656745"
+          "value": "03656745",
+          "score": "0.3"
         }
       }
     ]
@@ -1469,7 +1575,8 @@
         "Text": "0800 000 00 00",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0800 000 00 00"
+          "value": "0800 000 00 00",
+          "score": "0.8"
         }
       }
     ]
@@ -1496,7 +1603,8 @@
         "Text": "0800 00 00 00",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0800 00 00 00"
+          "value": "0800 00 00 00",
+          "score": "0.8"
         }
       }
     ]
@@ -1509,7 +1617,8 @@
         "Text": "0800-000-0000",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0800-000-0000"
+          "value": "0800-000-0000",
+          "score": "0.7"
         }
       }
     ]
@@ -1522,7 +1631,8 @@
         "Text": "0800 000 0000",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0800 000 0000"
+          "value": "0800 000 0000",
+          "score": "0.7"
         }
       }
     ]
@@ -1535,7 +1645,8 @@
         "Text": "08000000000",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "08000000000"
+          "value": "08000000000",
+          "score": "0.45"
         }
       }
     ]
@@ -1548,7 +1659,8 @@
         "Text": "1692089-4635",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1692089-4635"
+          "value": "1692089-4635",
+          "score": "0.6"
         }
       }
     ]
@@ -1561,7 +1673,8 @@
         "Text": "16920894635",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "16920894635"
+          "value": "16920894635",
+          "score": "0.45"
         }
       }
     ]
@@ -1574,7 +1687,8 @@
         "Text": "16992089-4635",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "16992089-4635"
+          "value": "16992089-4635",
+          "score": "0.6"
         }
       }
     ]
@@ -1587,7 +1701,8 @@
         "Text": "16 99202-4635",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "16 99202-4635"
+          "value": "16 99202-4635",
+          "score": "0.7"
         }
       }
     ]
@@ -1600,7 +1715,8 @@
         "Text": "(16)99202-4635",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(16)99202-4635"
+          "value": "(16)99202-4635",
+          "score": "0.8"
         }
       }
     ]
@@ -1613,7 +1729,8 @@
         "Text": "(16)92089-4635",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(16)92089-4635"
+          "value": "(16)92089-4635",
+          "score": "0.8"
         }
       }
     ]
@@ -1626,7 +1743,8 @@
         "Text": "(16) 92089-4635",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(16) 92089-4635"
+          "value": "(16) 92089-4635",
+          "score": "0.9"
         }
       }
     ]
@@ -1639,7 +1757,8 @@
         "Text": "(15) 4343-4343",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(15) 4343-4343"
+          "value": "(15) 4343-4343",
+          "score": "0.9"
         }
       }
     ]
@@ -1750,7 +1869,8 @@
         "Text": "(16) 9208-4635",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(16) 9208-4635"
+          "value": "(16) 9208-4635",
+          "score": "0.9"
         }
       }
     ]
@@ -1763,7 +1883,8 @@
         "Text": "18911111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "18911111111"
+          "value": "18911111111",
+          "score": "0.45"
         }
       }
     ]
@@ -1776,7 +1897,8 @@
         "Text": "189 1111 1111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "189 1111 1111"
+          "value": "189 1111 1111",
+          "score": "0.7"
         }
       }
     ]
@@ -1789,7 +1911,8 @@
         "Text": "189-1111-1111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "189-1111-1111"
+          "value": "189-1111-1111",
+          "score": "0.7"
         }
       }
     ]
@@ -1802,7 +1925,8 @@
         "Text": "0086-18911111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0086-18911111111"
+          "value": "0086-18911111111",
+          "score": "1"
         }
       }
     ]
@@ -1815,7 +1939,8 @@
         "Text": "+86-18911111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+86-18911111111"
+          "value": "+86-18911111111",
+          "score": "1"
         }
       }
     ]
@@ -1828,7 +1953,8 @@
         "Text": "86-18911111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "86-18911111111"
+          "value": "86-18911111111",
+          "score": "0.6"
         }
       }
     ]
@@ -1841,7 +1967,8 @@
         "Text": "0086 18911111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0086 18911111111"
+          "value": "0086 18911111111",
+          "score": "1"
         }
       }
     ]
@@ -1854,7 +1981,8 @@
         "Text": "+86 18911111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+86 18911111111"
+          "value": "+86 18911111111",
+          "score": "1"
         }
       }
     ]
@@ -1867,7 +1995,8 @@
         "Text": "86 18911111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "86 18911111111"
+          "value": "86 18911111111",
+          "score": "0.6"
         }
       }
     ]
@@ -1880,7 +2009,8 @@
         "Text": "0086 189-1111-1111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0086 189-1111-1111"
+          "value": "0086 189-1111-1111",
+          "score": "1"
         }
       }
     ]
@@ -1893,7 +2023,8 @@
         "Text": "+86 189-1111-1111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+86 189-1111-1111"
+          "value": "+86 189-1111-1111",
+          "score": "1"
         }
       }
     ]
@@ -1906,7 +2037,8 @@
         "Text": "86 189-1111-1111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "86 189-1111-1111"
+          "value": "86 189-1111-1111",
+          "score": "0.8"
         }
       }
     ]
@@ -1919,7 +2051,8 @@
         "Text": "02011111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "02011111111"
+          "value": "02011111111",
+          "score": "0.45"
         }
       }
     ]
@@ -1932,7 +2065,8 @@
         "Text": "020-11111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "020-11111111"
+          "value": "020-11111111",
+          "score": "0.6"
         }
       }
     ]
@@ -1945,7 +2079,8 @@
         "Text": "020 11111111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "020 11111111"
+          "value": "020 11111111",
+          "score": "0.6"
         }
       }
     ]
@@ -1958,7 +2093,8 @@
         "Text": "020 1111 1111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "020 1111 1111"
+          "value": "020 1111 1111",
+          "score": "0.7"
         }
       }
     ]
@@ -1971,7 +2107,8 @@
         "Text": "020-1111-1111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "020-1111-1111"
+          "value": "020-1111-1111",
+          "score": "0.7"
         }
       }
     ]
@@ -1984,7 +2121,8 @@
         "Text": "0086 020 82803159",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0086 020 82803159"
+          "value": "0086 020 82803159",
+          "score": "1"
         }
       }
     ]
@@ -1997,7 +2135,8 @@
         "Text": "0086-020-82803159",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0086-020-82803159"
+          "value": "0086-020-82803159",
+          "score": "1"
         }
       }
     ]
@@ -2010,7 +2149,8 @@
         "Text": "+86 20 61302222-8866",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+86 20 61302222-8866"
+          "value": "+86 20 61302222-8866",
+          "score": "1"
         }
       }
     ]
@@ -2023,7 +2163,8 @@
         "Text": "+86 20 6130-2222-8866",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+86 20 6130-2222-8866"
+          "value": "+86 20 6130-2222-8866",
+          "score": "1"
         }
       }
     ]
@@ -2036,7 +2177,8 @@
         "Text": "+86 10 59081185",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+86 10 59081185"
+          "value": "+86 10 59081185",
+          "score": "1"
         }
       }
     ]
@@ -2049,7 +2191,8 @@
         "Text": "00420123456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00420123456789"
+          "value": "00420123456789",
+          "score": "0.9"
         }
       }
     ]
@@ -2062,7 +2205,8 @@
         "Text": "00420 123456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00420 123456789"
+          "value": "00420 123456789",
+          "score": "1"
         }
       }
     ]
@@ -2075,7 +2219,8 @@
         "Text": "00420 123 456 789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00420 123 456 789"
+          "value": "00420 123 456 789",
+          "score": "1"
         }
       }
     ]
@@ -2088,7 +2233,8 @@
         "Text": "00 420 123 456 789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00 420 123 456 789"
+          "value": "00 420 123 456 789",
+          "score": "0.9"
         }
       }
     ]
@@ -2101,7 +2247,8 @@
         "Text": "+420123456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+420123456789"
+          "value": "+420123456789",
+          "score": "0.9"
         }
       }
     ]
@@ -2142,7 +2289,8 @@
         "Text": "123456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "123456789"
+          "value": "123456789",
+          "score": "0.35"
         }
       }
     ]
@@ -2155,7 +2303,8 @@
         "Text": "123 456 789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "123 456 789"
+          "value": "123 456 789",
+          "score": "0.65"
         }
       }
     ]
@@ -2168,7 +2317,8 @@
         "Text": "0644444444",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0644444444"
+          "value": "0644444444",
+          "score": "0.4"
         }
       }
     ]
@@ -2181,7 +2331,8 @@
         "Text": "06 44 44 44 44",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "06 44 44 44 44"
+          "value": "06 44 44 44 44",
+          "score": "0.9"
         }
       }
     ]
@@ -2208,7 +2359,8 @@
         "Text": "+33644444444",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+33644444444"
+          "value": "+33644444444",
+          "score": "0.9"
         }
       }
     ]
@@ -2221,7 +2373,8 @@
         "Text": "0033644444444",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0033644444444"
+          "value": "0033644444444",
+          "score": "0.9"
         }
       }
     ]
@@ -2234,7 +2387,8 @@
         "Text": "+33(0)644444444",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+33(0)644444444"
+          "value": "+33(0)644444444",
+          "score": "0.9"
         }
       }
     ]
@@ -2275,7 +2429,8 @@
         "Text": "089-1234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "089-1234567"
+          "value": "089-1234567",
+          "score": "0.55"
         }
       }
     ]
@@ -2288,7 +2443,8 @@
         "Text": "0891234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0891234567"
+          "value": "0891234567",
+          "score": "0.4"
         }
       }
     ]
@@ -2329,7 +2485,8 @@
         "Text": "9999114011",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "9999114011"
+          "value": "9999114011",
+          "score": "0.4"
         }
       }
     ]
@@ -2342,7 +2499,8 @@
         "Text": "+919911112341",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+919911112341"
+          "value": "+919911112341",
+          "score": "0.9"
         }
       }
     ]
@@ -2355,7 +2513,8 @@
         "Text": "+91 9415007327",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+91 9415007327"
+          "value": "+91 9415007327",
+          "score": "1"
         }
       }
     ]
@@ -2368,7 +2527,8 @@
         "Text": "03598245785",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "03598245785"
+          "value": "03598245785",
+          "score": "0.45"
         }
       }
     ]
@@ -2381,7 +2541,8 @@
         "Text": "+911204312280",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+911204312280"
+          "value": "+911204312280",
+          "score": "0.9"
         }
       }
     ]
@@ -2394,7 +2555,8 @@
         "Text": "1302231221",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1302231221"
+          "value": "1302231221",
+          "score": "0.4"
         }
       }
     ]
@@ -2407,7 +2569,8 @@
         "Text": "0644444444",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0644444444"
+          "value": "0644444444",
+          "score": "0.4"
         }
       }
     ]
@@ -2420,7 +2583,8 @@
         "Text": "0610245896",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0610245896"
+          "value": "0610245896",
+          "score": "0.4"
         }
       }
     ]
@@ -2433,7 +2597,8 @@
         "Text": "0630548564",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0630548564"
+          "value": "0630548564",
+          "score": "0.4"
         }
       }
     ]
@@ -2446,7 +2611,8 @@
         "Text": "06 44 44 44 44",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "06 44 44 44 44"
+          "value": "06 44 44 44 44",
+          "score": "0.9"
         }
       }
     ]
@@ -2473,7 +2639,8 @@
         "Text": "0528254856",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0528254856"
+          "value": "0528254856",
+          "score": "0.4"
         }
       }
     ]
@@ -2486,7 +2653,8 @@
         "Text": "0535484541",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0535484541"
+          "value": "0535484541",
+          "score": "0.4"
         }
       }
     ]
@@ -2499,7 +2667,8 @@
         "Text": "05 28 44 44 44",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "05 28 44 44 44"
+          "value": "05 28 44 44 44",
+          "score": "0.9"
         }
       }
     ]
@@ -2512,7 +2681,8 @@
         "Text": "+212644444444",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+212644444444"
+          "value": "+212644444444",
+          "score": "0.9"
         }
       }
     ]
@@ -2525,7 +2695,8 @@
         "Text": "00212644444444",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00212644444444"
+          "value": "00212644444444",
+          "score": "0.9"
         }
       }
     ]
@@ -2566,7 +2737,8 @@
         "Text": "0101234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0101234567"
+          "value": "0101234567",
+          "score": "0.4"
         }
       }
     ]
@@ -2579,7 +2751,8 @@
         "Text": "010-1234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "010-1234567"
+          "value": "010-1234567",
+          "score": "0.55"
         }
       }
     ]
@@ -2592,7 +2765,8 @@
         "Text": "010 - 123 45 67",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "010 - 123 45 67"
+          "value": "010 - 123 45 67",
+          "score": "0.9"
         }
       }
     ]
@@ -2605,7 +2779,8 @@
         "Text": "010 1234 567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "010 1234 567"
+          "value": "010 1234 567",
+          "score": "0.7"
         }
       }
     ]
@@ -2618,7 +2793,8 @@
         "Text": "06-12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "06-12345678"
+          "value": "06-12345678",
+          "score": "0.55"
         }
       }
     ]
@@ -2631,7 +2807,8 @@
         "Text": "06 123 456 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "06 123 456 78"
+          "value": "06 123 456 78",
+          "score": "0.8"
         }
       }
     ]
@@ -2644,7 +2821,8 @@
         "Text": "0111-123456",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0111-123456"
+          "value": "0111-123456",
+          "score": "0.55"
         }
       }
     ]
@@ -2657,7 +2835,8 @@
         "Text": "0111 123456",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0111 123456"
+          "value": "0111 123456",
+          "score": "0.55"
         }
       }
     ]
@@ -2670,7 +2849,8 @@
         "Text": "+31101234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31101234567"
+          "value": "+31101234567",
+          "score": "0.9"
         }
       }
     ]
@@ -2683,7 +2863,8 @@
         "Text": "0031101234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0031101234567"
+          "value": "0031101234567",
+          "score": "0.9"
         }
       }
     ]
@@ -2696,7 +2877,8 @@
         "Text": "+31(0) 10123 4567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31(0) 10123 4567"
+          "value": "+31(0) 10123 4567",
+          "score": "1"
         }
       }
     ]
@@ -2709,7 +2891,8 @@
         "Text": "+3110-1234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+3110-1234567"
+          "value": "+3110-1234567",
+          "score": "1"
         }
       }
     ]
@@ -2722,7 +2905,8 @@
         "Text": "003110 1234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "003110 1234567"
+          "value": "003110 1234567",
+          "score": "1"
         }
       }
     ]
@@ -2735,7 +2919,8 @@
         "Text": "+316 123 456 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+316 123 456 78"
+          "value": "+316 123 456 78",
+          "score": "1"
         }
       }
     ]
@@ -2748,7 +2933,8 @@
         "Text": "+31(0)6 123 45678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31(0)6 123 45678"
+          "value": "+31(0)6 123 45678",
+          "score": "1"
         }
       }
     ]
@@ -2761,7 +2947,8 @@
         "Text": "+31 (0) 6 123 45678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 (0) 6 123 45678"
+          "value": "+31 (0) 6 123 45678",
+          "score": "1"
         }
       }
     ]
@@ -2774,7 +2961,8 @@
         "Text": "+31 (20) 5001234",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 (20) 5001234"
+          "value": "+31 (20) 5001234",
+          "score": "1"
         }
       }
     ]
@@ -2787,7 +2975,8 @@
         "Text": "+31 (0)6 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 (0)6 12345678"
+          "value": "+31 (0)6 12345678",
+          "score": "1"
         }
       }
     ]
@@ -2800,7 +2989,8 @@
         "Text": "+31111-123456",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31111-123456"
+          "value": "+31111-123456",
+          "score": "1"
         }
       }
     ]
@@ -2813,7 +3003,8 @@
         "Text": "0031111-123456",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0031111-123456"
+          "value": "0031111-123456",
+          "score": "1"
         }
       }
     ]
@@ -2840,7 +3031,8 @@
         "Text": "+40213 564 864",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+40213 564 864"
+          "value": "+40213 564 864",
+          "score": "1"
         }
       }
     ]
@@ -2853,7 +3045,8 @@
         "Text": "0213-564-864",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0213-564-864"
+          "value": "0213-564-864",
+          "score": "0.7"
         }
       }
     ]
@@ -2866,7 +3059,8 @@
         "Text": "0213564864",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0213564864"
+          "value": "0213564864",
+          "score": "0.4"
         }
       }
     ]
@@ -2879,7 +3073,8 @@
         "Text": "0313564864",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0313564864"
+          "value": "0313564864",
+          "score": "0.4"
         }
       }
     ]
@@ -2892,7 +3087,8 @@
         "Text": "0720512346",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0720512346"
+          "value": "0720512346",
+          "score": "0.4"
         }
       }
     ]
@@ -2905,7 +3101,8 @@
         "Text": "0730512346",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0730512346"
+          "value": "0730512346",
+          "score": "0.4"
         }
       }
     ]
@@ -2918,7 +3115,8 @@
         "Text": "0740512346",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0740512346"
+          "value": "0740512346",
+          "score": "0.4"
         }
       }
     ]
@@ -2931,7 +3129,8 @@
         "Text": "0750512346",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0750512346"
+          "value": "0750512346",
+          "score": "0.4"
         }
       }
     ]
@@ -2944,7 +3143,8 @@
         "Text": "+40750512346",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+40750512346"
+          "value": "+40750512346",
+          "score": "0.9"
         }
       }
     ]
@@ -2957,7 +3157,8 @@
         "Text": "0760512346",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0760512346"
+          "value": "0760512346",
+          "score": "0.4"
         }
       }
     ]
@@ -2970,7 +3171,8 @@
         "Text": "0770512346",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0770512346"
+          "value": "0770512346",
+          "score": "0.4"
         }
       }
     ]
@@ -2983,7 +3185,8 @@
         "Text": "0780512346",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0780512346"
+          "value": "0780512346",
+          "score": "0.4"
         }
       }
     ]
@@ -2996,7 +3199,8 @@
         "Text": "00421123456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00421123456789"
+          "value": "00421123456789",
+          "score": "0.9"
         }
       }
     ]
@@ -3009,7 +3213,8 @@
         "Text": "00421 123456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00421 123456789"
+          "value": "00421 123456789",
+          "score": "1"
         }
       }
     ]
@@ -3022,7 +3227,8 @@
         "Text": "00421 123 456 789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00421 123 456 789"
+          "value": "00421 123 456 789",
+          "score": "1"
         }
       }
     ]
@@ -3035,7 +3241,8 @@
         "Text": "00 421 123 456 789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00 421 123 456 789"
+          "value": "00 421 123 456 789",
+          "score": "0.9"
         }
       }
     ]
@@ -3048,7 +3255,8 @@
         "Text": "+421123456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+421123456789"
+          "value": "+421123456789",
+          "score": "0.9"
         }
       }
     ]
@@ -3089,7 +3297,8 @@
         "Text": "123456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "123456789"
+          "value": "123456789",
+          "score": "0.35"
         }
       }
     ]
@@ -3102,7 +3311,8 @@
         "Text": "123 456 789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "123 456 789"
+          "value": "123 456 789",
+          "score": "0.65"
         }
       }
     ]
@@ -3115,7 +3325,8 @@
         "Text": "01611234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "01611234567"
+          "value": "01611234567",
+          "score": "0.45"
         }
       }
     ]
@@ -3128,7 +3339,8 @@
         "Text": "0161 123 4567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0161 123 4567"
+          "value": "0161 123 4567",
+          "score": "0.7"
         }
       }
     ]
@@ -3155,7 +3367,8 @@
         "Text": "0161-123-4567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0161-123-4567"
+          "value": "0161-123-4567",
+          "score": "0.7"
         }
       }
     ]
@@ -3182,7 +3395,8 @@
         "Text": "+441611234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+441611234567"
+          "value": "+441611234567",
+          "score": "0.9"
         }
       }
     ]
@@ -3195,7 +3409,8 @@
         "Text": "+44(0)161234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+44(0)161234567"
+          "value": "+44(0)161234567",
+          "score": "0.9"
         }
       }
     ]
@@ -3208,7 +3423,8 @@
         "Text": "00 44 161 1234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "00 44 161 1234567"
+          "value": "00 44 161 1234567",
+          "score": "0.8"
         }
       }
     ]
@@ -3235,7 +3451,8 @@
         "Text": "0161-158-5587",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0161-158-5587"
+          "value": "0161-158-5587",
+          "score": "0.7"
         }
       }
     ]
@@ -3354,7 +3571,8 @@
         "Text": "35831647",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "35831647"
+          "value": "35831647",
+          "score": "0.3"
         }
       }
     ]
@@ -3367,7 +3585,8 @@
         "Text": "19 35831647",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "19 35831647"
+          "value": "19 35831647",
+          "score": "0.55"
         }
       }
     ]
@@ -3416,8 +3635,7 @@
     "Input": "T005-2333-100731-SW-2 doesn't look like a phone number.",
     "NotSupportedByDesign": "python",
     "Results": []
-  }
-  ,
+  },
   {
     "Input": "My phone number is 86 (40) 08423331.",
     "NotSupportedByDesign": "python",
@@ -3426,7 +3644,8 @@
         "Text": "86 (40) 08423331",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "86 (40) 08423331"
+          "value": "86 (40) 08423331",
+          "score": "0.9"
         }
       }
     ]
@@ -3439,7 +3658,8 @@
         "Text": "(+45) 12-34-56-78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45) 12-34-56-78"
+          "value": "(+45) 12-34-56-78",
+          "score": "1"
         }
       }
     ]
@@ -3452,7 +3672,8 @@
         "Text": "(+45) 12 345 678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45) 12 345 678"
+          "value": "(+45) 12 345 678",
+          "score": "1"
         }
       }
     ]
@@ -3465,7 +3686,8 @@
         "Text": "(+45) 12 34 56 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45) 12 34 56 78"
+          "value": "(+45) 12 34 56 78",
+          "score": "1"
         }
       }
     ]
@@ -3478,7 +3700,8 @@
         "Text": "(+45) 1234 5678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45) 1234 5678"
+          "value": "(+45) 1234 5678",
+          "score": "1"
         }
       }
     ]
@@ -3491,7 +3714,8 @@
         "Text": "(+45) 12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45) 12345678"
+          "value": "(+45) 12345678",
+          "score": "1"
         }
       }
     ]
@@ -3504,7 +3728,8 @@
         "Text": "+45 12-34-56-78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+45 12-34-56-78"
+          "value": "+45 12-34-56-78",
+          "score": "1"
         }
       }
     ]
@@ -3517,7 +3742,8 @@
         "Text": "+45 12 345 678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+45 12 345 678"
+          "value": "+45 12 345 678",
+          "score": "1"
         }
       }
     ]
@@ -3530,7 +3756,8 @@
         "Text": "+45 12 34 56 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+45 12 34 56 78"
+          "value": "+45 12 34 56 78",
+          "score": "1"
         }
       }
     ]
@@ -3543,7 +3770,8 @@
         "Text": "+45 1234 5678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+45 1234 5678"
+          "value": "+45 1234 5678",
+          "score": "1"
         }
       }
     ]
@@ -3556,7 +3784,8 @@
         "Text": "12-34-56-78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "12-34-56-78"
+          "value": "12-34-56-78",
+          "score": "0.75"
         }
       }
     ]
@@ -3569,7 +3798,8 @@
         "Text": "12 345 678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "12 345 678"
+          "value": "12 345 678",
+          "score": "0.6"
         }
       }
     ]
@@ -3582,7 +3812,8 @@
         "Text": "12 34 56 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "12 34 56 78"
+          "value": "12 34 56 78",
+          "score": "0.75"
         }
       }
     ]
@@ -3595,7 +3826,8 @@
         "Text": "1234 5678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "1234 5678"
+          "value": "1234 5678",
+          "score": "0.45"
         }
       }
     ]
@@ -3608,7 +3840,8 @@
         "Text": "12345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "12345678"
+          "value": "12345678",
+          "score": "0.3"
         }
       }
     ]
@@ -3621,7 +3854,8 @@
         "Text": "(0045) 12-34-56-78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(0045) 12-34-56-78"
+          "value": "(0045) 12-34-56-78",
+          "score": "1"
         }
       }
     ]
@@ -3634,7 +3868,8 @@
         "Text": "(0045) 12 34 56 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(0045) 12 34 56 78"
+          "value": "(0045) 12 34 56 78",
+          "score": "1"
         }
       }
     ]
@@ -3647,7 +3882,8 @@
         "Text": "0045 12 34 56 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0045 12 34 56 78"
+          "value": "0045 12 34 56 78",
+          "score": "1"
         }
       }
     ]
@@ -3660,7 +3896,8 @@
         "Text": "(+45)12-34-56-78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45)12-34-56-78"
+          "value": "(+45)12-34-56-78",
+          "score": "1"
         }
       }
     ]
@@ -3673,7 +3910,8 @@
         "Text": "(+45)12-34-56-78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45)12-34-56-78"
+          "value": "(+45)12-34-56-78",
+          "score": "1"
         }
       }
     ]
@@ -3686,7 +3924,8 @@
         "Text": "(+45) 12-345-678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45) 12-345-678"
+          "value": "(+45) 12-345-678",
+          "score": "1"
         }
       }
     ]
@@ -3699,7 +3938,8 @@
         "Text": "(+45) 1234-5678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+45) 1234-5678"
+          "value": "(+45) 1234-5678",
+          "score": "1"
         }
       }
     ]
@@ -3712,7 +3952,8 @@
         "Text": "012-3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "012-3456789"
+          "value": "012-3456789",
+          "score": "0.55"
         }
       }
     ]
@@ -3725,7 +3966,8 @@
         "Text": "012 3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "012 3456789"
+          "value": "012 3456789",
+          "score": "0.55"
         }
       }
     ]
@@ -3738,7 +3980,8 @@
         "Text": "(012) 3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(012) 3456789"
+          "value": "(012) 3456789",
+          "score": "0.8"
         }
       }
     ]
@@ -3751,7 +3994,8 @@
         "Text": "+31 12-3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 12-3456789"
+          "value": "+31 12-3456789",
+          "score": "1"
         }
       }
     ]
@@ -3764,7 +4008,8 @@
         "Text": "+31 12 3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 12 3456789"
+          "value": "+31 12 3456789",
+          "score": "1"
         }
       }
     ]
@@ -3777,7 +4022,8 @@
         "Text": "(+31) 12-3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+31) 12-3456789"
+          "value": "(+31) 12-3456789",
+          "score": "1"
         }
       }
     ]
@@ -3790,7 +4036,8 @@
         "Text": "(+31) (12) 3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+31) (12) 3456789"
+          "value": "(+31) (12) 3456789",
+          "score": "1"
         }
       }
     ]
@@ -3803,7 +4050,8 @@
         "Text": "(+31) 12 3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+31) 12 3456789"
+          "value": "(+31) 12 3456789",
+          "score": "1"
         }
       }
     ]
@@ -3816,7 +4064,8 @@
         "Text": "(+31)12-3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+31)12-3456789"
+          "value": "(+31)12-3456789",
+          "score": "1"
         }
       }
     ]
@@ -3829,7 +4078,8 @@
         "Text": "(+31) 12 3456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+31) 12 3456789"
+          "value": "(+31) 12 3456789",
+          "score": "1"
         }
       }
     ]
@@ -3842,7 +4092,8 @@
         "Text": "0123-456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0123-456789"
+          "value": "0123-456789",
+          "score": "0.55"
         }
       }
     ]
@@ -3855,7 +4106,8 @@
         "Text": "0123 456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0123 456789"
+          "value": "0123 456789",
+          "score": "0.55"
         }
       }
     ]
@@ -3868,7 +4120,8 @@
         "Text": "+31 123-456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 123-456789"
+          "value": "+31 123-456789",
+          "score": "1"
         }
       }
     ]
@@ -3881,7 +4134,8 @@
         "Text": "+31 123 456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 123 456789"
+          "value": "+31 123 456789",
+          "score": "1"
         }
       }
     ]
@@ -3894,7 +4148,8 @@
         "Text": "06-23456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "06-23456789"
+          "value": "06-23456789",
+          "score": "0.55"
         }
       }
     ]
@@ -3907,7 +4162,8 @@
         "Text": "06 23456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "06 23456789"
+          "value": "06 23456789",
+          "score": "0.55"
         }
       }
     ]
@@ -3920,7 +4176,8 @@
         "Text": "+31 6-23456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 6-23456789"
+          "value": "+31 6-23456789",
+          "score": "1"
         }
       }
     ]
@@ -3933,7 +4190,8 @@
         "Text": "+31 6 23456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 6 23456789"
+          "value": "+31 6 23456789",
+          "score": "1"
         }
       }
     ]
@@ -3946,7 +4204,8 @@
         "Text": "0623456789",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0623456789"
+          "value": "0623456789",
+          "score": "0.4"
         }
       }
     ]
@@ -3959,7 +4218,8 @@
         "Text": "31612234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "31612234567"
+          "value": "31612234567",
+          "score": "0.45"
         }
       }
     ]
@@ -3972,7 +4232,8 @@
         "Text": "316122345678",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "316122345678"
+          "value": "316122345678",
+          "score": "0.5"
         }
       }
     ]
@@ -3985,7 +4246,8 @@
         "Text": "+31 (6) 12234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+31 (6) 12234567"
+          "value": "+31 (6) 12234567",
+          "score": "1"
         }
       }
     ]
@@ -3998,7 +4260,8 @@
         "Text": "(06) 12234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(06) 12234567"
+          "value": "(06) 12234567",
+          "score": "0.8"
         }
       }
     ]
@@ -4011,7 +4274,8 @@
         "Text": "(+31)(6) 12234567",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+31)(6) 12234567"
+          "value": "(+31)(6) 12234567",
+          "score": "1"
         }
       }
     ]
@@ -4024,7 +4288,8 @@
         "Text": "(+39) 012234",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+39) 012234"
+          "value": "(+39) 012234",
+          "score": "1"
         }
       }
     ]
@@ -4037,7 +4302,8 @@
         "Text": "(+39) 012 23411111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(+39) 012 23411111"
+          "value": "(+39) 012 23411111",
+          "score": "1"
         }
       }
     ]
@@ -4050,7 +4316,8 @@
         "Text": "012234",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "012234"
+          "value": "012234",
+          "score": "0.2"
         }
       }
     ]
@@ -4063,7 +4330,8 @@
         "Text": "+39 012-23411111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+39 012-23411111"
+          "value": "+39 012-23411111",
+          "score": "1"
         }
       }
     ]
@@ -4076,7 +4344,8 @@
         "Text": "+39 3122 411111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+39 3122 411111"
+          "value": "+39 3122 411111",
+          "score": "1"
         }
       }
     ]
@@ -4089,7 +4358,8 @@
         "Text": "+39 31 22411111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+39 31 22411111"
+          "value": "+39 31 22411111",
+          "score": "1"
         }
       }
     ]
@@ -4102,7 +4372,8 @@
         "Text": "312 2411111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "312 2411111"
+          "value": "312 2411111",
+          "score": "0.55"
         }
       }
     ]
@@ -4115,7 +4386,8 @@
         "Text": "0039 3122411111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "0039 3122411111"
+          "value": "0039 3122411111",
+          "score": "1"
         }
       }
     ]
@@ -4128,7 +4400,8 @@
         "Text": "3122411111",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "3122411111"
+          "value": "3122411111",
+          "score": "0.4"
         }
       }
     ]
@@ -4191,7 +4464,8 @@
         "Text": "+45 12 34 56 78",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "+45 12 34 56 78"
+          "value": "+45 12 34 56 78",
+          "score": "1"
         }
       }
     ]

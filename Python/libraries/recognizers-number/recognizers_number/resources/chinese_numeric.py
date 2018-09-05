@@ -194,7 +194,7 @@ class ChineseNumeric:
     OneNumberRangeMoreSeparateRegex = f'^[.]'
     OneNumberRangeLessSeparateRegex = f'^[.]'
     OneNumberRangeEqualRegex = f'{EqualRegex}\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)'
-    TwoNumberRangeRegex1 = f'(位于|在|位於)\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(和|与|與|{TillRegex})\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(之间|之間)'
+    TwoNumberRangeRegex1 = f'((位于|在|位於)|(?=(\\d|\\+|\\-)))\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(和|与|與|{TillRegex})\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。))[^之])+)\\s*(之)?(间|間)'
     TwoNumberRangeRegex2 = f'({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})'
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})'
     TwoNumberRangeRegex4 = f'(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)'

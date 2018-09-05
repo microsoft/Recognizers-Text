@@ -4,14 +4,14 @@ ProtocolRegex: !simpleRegex
 PortRegex: !simpleRegex
   def: (:\d{1,5})
 ExtractionRestrictionRegex: !simpleRegex
-  def: (?<=\s|[\'""\(\[:.]|^)
+  def: (?<=\s|[\'""\(\[:]|^)
 # For restrictions+protocol+hostname (without its tld)
 UrlPrefixRegex: !nestedRegex
-  def: '{ExtractionRestrictionRegex}{ProtocolRegex}?[-a-zA-Z0-9:%._\+~#=]{1,256}\.'
+  def: '({ExtractionRestrictionRegex}{ProtocolRegex}?|{ProtocolRegex})[a-zA-Z0-9][-a-zA-Z0-9:%._\+~#=]{0,256}\.'
   references: [ ExtractionRestrictionRegex, ProtocolRegex ]
 # For port+path+query
 UrlSuffixRegex: !nestedRegex
-  def: '{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=])'
+  def: '{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=@])'
   references: [ PortRegex ]
 UrlRegex: !nestedRegex
   def: '{UrlPrefixRegex}(?<Tld>[a-zA-Z]{2,18}){UrlSuffixRegex}'
