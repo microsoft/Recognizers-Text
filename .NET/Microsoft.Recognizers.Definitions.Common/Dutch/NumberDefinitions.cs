@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string TillRegex = @"(tot|--|-|—|——|~)";
 		public const string MoreRegex = @"((groter|hoger|meer)(\s+dan|\s+als)?|boven|over|>)";
 		public const string LessRegex = @"((minder|lager|kleiner)(\s+dan|\s+als)?|beneden|onder|<)";
-		public const string EqualRegex = @"(gelijk(\s+(aan|als))?|=)";
+		public const string EqualRegex = @"(gelijk(\s+(aan|tot|als))?|(?<!<|>)=)";
 		public static readonly string MoreOrEqual = $@"(({MoreRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{LessRegex}|>\s*=)";
 		public const string MoreOrEqualSuffix = @"((en|of)\s+(meer|groter|hoger|grotere)((?!\s+dan)|(?!\s+als)))";
 		public static readonly string LessOrEqual = $@"(({LessRegex}\s+of\s+{EqualRegex})|maximum|niet\s+{MoreRegex}|<\s*=)";

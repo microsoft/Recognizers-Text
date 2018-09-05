@@ -131,7 +131,7 @@ MoreRegex: !simpleRegex
 LessRegex: !simpleRegex
   def: ((minder|lager|kleiner)(\s+dan|\s+als)?|beneden|onder|<)
 EqualRegex: !simpleRegex
-  def: (gelijk(\s+(aan|als))?|=)
+  def: (gelijk(\s+(aan|tot|als))?|(?<!<|>)=)
 MoreOrEqual: !nestedRegex
   def: (({MoreRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{LessRegex}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex ]
