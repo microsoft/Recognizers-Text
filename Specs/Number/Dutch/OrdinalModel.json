@@ -15,6 +15,7 @@
   {
     "Input": "een biljoenste",
     "Results": [],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
@@ -210,6 +211,7 @@
         }
       }
     ],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
