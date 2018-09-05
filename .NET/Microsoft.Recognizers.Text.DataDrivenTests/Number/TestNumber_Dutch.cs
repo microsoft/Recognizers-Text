@@ -66,14 +66,12 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestNumber();
         }
 
-        /*
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-Dutch.csv", "NumberRangeModel-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberRangeModel()
         {
             TestNumber();
         }
-        */
 
         /*
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModelExperimentalMode-Dutch.csv", "NumberRangeModelExperimentalMode-Dutch#csv", DataAccessMethod.Sequential)]
