@@ -46,7 +46,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         }
         */
 
-        /*
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Dutch.csv", "OrdinalModel-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
@@ -54,6 +53,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             base.TestNumber();
         }
 
+        /*
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Dutch.csv", "PercentModel-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModel()
