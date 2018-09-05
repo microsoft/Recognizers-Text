@@ -1,13 +1,13 @@
 [
   {
-    "Input": "¡‚©‚ç‹A‚è‚Ü‚·",
+    "Input": "ä»Šã‹ã‚‰å¸°ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡",
+        "Text": "ä»Š",
         "Type": "datetime",
         "Value": {
           "Timex": "PRESENT_REF",
@@ -24,14 +24,14 @@
     ]
   },
   {
-    "Input": "o—ˆ‚éŒÀ‚è‘‚­‹A‚è‚Ü‚·",
+    "Input": "å‡ºæ¥ã‚‹é™ã‚Šæ—©ãå¸°ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "o—ˆ‚éŒÀ‚è‘‚­",
+        "Text": "å‡ºæ¥ã‚‹é™ã‚Šæ—©ã",
         "Type": "datetime",
         "Value": {
           "Timex": "FUTURE_REF",
@@ -48,14 +48,14 @@
     ]
   },
   {
-    "Input": "„‚Í15“ú‚Ì8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯15æ—¥ã®8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "15“ú‚Ì8",
+        "Text": "15æ—¥ã®8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-15T08:00",
@@ -72,14 +72,14 @@
     ]
   },
   {
-    "Input": "„‚Í15“ú‚Ì80•ª20•b‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯15æ—¥ã®8æ™‚0åˆ†20ç§’ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "15“ú‚Ì80•ª20•b",
+        "Text": "15æ—¥ã®8æ™‚0åˆ†20ç§’",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-15T08:00:20",
@@ -96,14 +96,14 @@
     ]
   },
   {
-    "Input": "„‚Í15“ú‚ÌŒßŒã8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯15æ—¥ã®åˆå¾Œ8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "15“ú‚ÌŒßŒã8",
+        "Text": "15æ—¥ã®åˆå¾Œ8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-15T20",
@@ -120,14 +120,14 @@
     ]
   },
   {
-    "Input": "„‚Í5“ú‚ÌŒß‘O4‚É–ß‚è‚Ü‚·B",
+    "Input": "ç§ã¯5æ—¥ã®åˆå‰4æ™‚ã«æˆ»ã‚Šã¾ã™ã€‚",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "5“ú‚ÌŒß‘O4",
+        "Text": "5æ—¥ã®åˆå‰4æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-05T04",
@@ -144,11 +144,11 @@
     ]
   },
   {
-    "Input": "„‚Í2016”N04Œ21“ú‚ÌŒßŒã8:00‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯2016å¹´04æœˆ21æ—¥ã®åˆå¾Œ8:00ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "04/21/2016, 8:00pm",
@@ -168,11 +168,11 @@
     ]
   },
   {
-    "Input": "„‚Í2016”N04Œ21“ú‚ÌŒßŒã8:00:20‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯2016å¹´04æœˆ21æ—¥ã®åˆå¾Œ8:00:20ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "04/21/2016, 8:00:20pm",
@@ -192,14 +192,14 @@
     ]
   },
   {
-    "Input": "„‚Í10Œ23“ú‚Ì7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯10æœˆ23æ—¥ã®7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "10Œ23“ú‚Ì7",
+        "Text": "10æœˆ23æ—¥ã®7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-23T07",
@@ -216,14 +216,14 @@
     ]
   },
   {
-    "Input": "„‚Í10Œ14“ú‚ÌŒß‘O8:00‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯10æœˆ14æ—¥ã®åˆå‰8:00ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "10Œ14“ú‚ÌŒß‘O8:00",
+        "Text": "10æœˆ14æ—¥ã®åˆå‰8:00",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-14T08:00",
@@ -240,14 +240,14 @@
     ]
   },
   {
-    "Input": "„‚Í10Œ14“ú‚ÌŒß‘O8:00:31‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯10æœˆ14æ—¥ã®åˆå‰8:00:31ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "10Œ14“ú‚ÌŒß‘O8:00:31",
+        "Text": "10æœˆ14æ—¥ã®åˆå‰8:00:31",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-14T08:00:31",
@@ -264,14 +264,14 @@
     ]
   },
   {
-    "Input": "„‚Í10Œ14“ú‚ÌŒß‘O8:00 ‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯10æœˆ14æ—¥ã®åˆå‰8:00é ƒã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "10Œ14“ú‚ÌŒß‘O8:00 ",
+        "Text": "10æœˆ14æ—¥ã®åˆå‰8:00é ƒ",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-14T08:00",
@@ -288,14 +288,14 @@
     ]
   },
   {
-    "Input": "„‚Í10Œ14“ú‚ÌŒß‘O8:00:31‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯10æœˆ14æ—¥ã®åˆå‰8:00:31ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "10Œ14“ú‚ÌŒß‘O8:00:31",
+        "Text": "10æœˆ14æ—¥ã®åˆå‰8:00:31",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-14T08:00:31",
@@ -312,14 +312,14 @@
     ]
   },
   {
-    "Input": "„‚Í10Œ14“ú‚ÌŒß‘O8:00‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯10æœˆ14æ—¥ã®åˆå‰8:00ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "10Œ14“ú‚ÌŒß‘O8:00",
+        "Text": "10æœˆ14æ—¥ã®åˆå‰8:00",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-14T08:00",
@@ -336,14 +336,14 @@
     ]
   },
   {
-    "Input": "„‚Í10Œ14“ú‚ÌŒß‘O8:00:25‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯10æœˆ14æ—¥ã®åˆå‰8:00:25ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "10Œ14“ú‚ÌŒß‘O8:00:25",
+        "Text": "10æœˆ14æ—¥ã®åˆå‰8:00:25",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-14T08:00:25",
@@ -360,14 +360,14 @@
     ]
   },
   {
-    "Input": "„‚Í2016”N5Œ5“ú‚Ì–é820•ª‰ß‚¬‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯2016å¹´5æœˆ5æ—¥ã®å¤œ8æ™‚20åˆ†éãã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "2016”N5Œ5“ú‚Ì–é820•ª‰ß‚¬",
+        "Text": "2016å¹´5æœˆ5æ—¥ã®å¤œ8æ™‚20åˆ†éã",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-05-05T20:20",
@@ -384,14 +384,14 @@
     ]
   },
   {
-    "Input": "„‚Í15“ú‚ÌŒßŒã8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯15æ—¥ã®åˆå¾Œ8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "15“ú‚ÌŒßŒã8",
+        "Text": "15æ—¥ã®åˆå¾Œ8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-15T20",
@@ -408,14 +408,14 @@
     ]
   },
   {
-    "Input": "„‚Í15“úŒßŒã8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯15æ—¥åˆå¾Œ8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "15“úŒßŒã8",
+        "Text": "15æ—¥åˆå¾Œ8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-15T20",
@@ -432,14 +432,14 @@
     ]
   },
   {
-    "Input": "„‚Í15“ú‚Ì7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯15æ—¥ã®7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "15“ú‚Ì7",
+        "Text": "15æ—¥ã®7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-15T07",
@@ -456,14 +456,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡“ú‚ÌŒßŒã8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šæ—¥ã®åˆå¾Œ8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡“ú‚ÌŒßŒã8",
+        "Text": "ä»Šæ—¥ã®åˆå¾Œ8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T20",
@@ -480,14 +480,14 @@
     ]
   },
   {
-    "Input": "„‚Í–¾“ú‚Ì715•ª‘O‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯æ˜æ—¥ã®7æ™‚15åˆ†å‰ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "–¾“ú‚Ì715•ª‘O",
+        "Text": "æ˜æ—¥ã®7æ™‚15åˆ†å‰",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-08T06:45",
@@ -504,11 +504,11 @@
     ]
   },
   {
-    "Input": "„‚Í2016-12-22 19:00‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯2016-12-22 19:00ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "2016-12-22 19:00",
@@ -528,14 +528,14 @@
     ]
   },
   {
-    "Input": "„‚Í–¾“ú‚ÌŒß‘O8:00‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯æ˜æ—¥ã®åˆå‰8:00ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "–¾“ú‚ÌŒß‘O8:00",
+        "Text": "æ˜æ—¥ã®åˆå‰8:00",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-08T08:00",
@@ -552,14 +552,14 @@
     ]
   },
   {
-    "Input": "„‚Í–¾“ú‚Ì’©7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯æ˜æ—¥ã®æœ7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "–¾“ú‚Ì’©7",
+        "Text": "æ˜æ—¥ã®æœ7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-08T07",
@@ -576,14 +576,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡–é7‚®‚ç‚¢‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šå¤œ7æ™‚ãã‚‰ã„ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡–é7‚®‚ç‚¢",
+        "Text": "ä»Šå¤œ7æ™‚ãã‚‰ã„",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T19",
@@ -600,14 +600,14 @@
     ]
   },
   {
-    "Input": "„‚ÍŸ‚Ì“ú—j“ú‚ÌŒßŒã7:00‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯æ¬¡ã®æ—¥æ›œæ—¥ã®åˆå¾Œ7:00ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "Ÿ‚Ì“ú—j“ú‚ÌŒßŒã7:00",
+        "Text": "æ¬¡ã®æ—¥æ›œæ—¥ã®åˆå¾Œ7:00",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-20T19:00",
@@ -624,14 +624,14 @@
     ]
   },
   {
-    "Input": "„‚Í–¾“ú‚Ì’©520•ª‰ß‚¬‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯æ˜æ—¥ã®æœ5æ™‚20åˆ†éãã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "–¾“ú‚Ì’©520•ª‰ß‚¬",
+        "Text": "æ˜æ—¥ã®æœ5æ™‚20åˆ†éã",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-08T05:20",
@@ -648,14 +648,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡’©‚Ì7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šæœã®7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡’©‚Ì7",
+        "Text": "ä»Šæœã®7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T07",
@@ -672,14 +672,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡–é10‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šå¤œ10æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡–é10",
+        "Text": "ä»Šå¤œ10æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T22",
@@ -696,14 +696,14 @@
     ]
   },
   {
-    "Input": "„‚Í“ú—j“úA–é‚ÌŒßŒã8‚É–ß‚è‚Üs",
+    "Input": "ç§ã¯æ—¥æ›œæ—¥ã€å¤œã®åˆå¾Œ8æ™‚ã«æˆ»ã‚Šã¾s",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "“ú—j“úA–é‚ÌŒßŒã8",
+        "Text": "æ—¥æ›œæ—¥ã€å¤œã®åˆå¾Œ8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-WXX-7T20",
@@ -720,14 +720,14 @@
     ]
   },
   {
-    "Input": "„‚Í1Œ1“úA–é‚ÌŒßŒã8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯1æœˆ1æ—¥ã€å¤œã®åˆå¾Œ8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "1Œ1“úA–é‚ÌŒßŒã8",
+        "Text": "1æœˆ1æ—¥ã€å¤œã®åˆå¾Œ8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-01-01T20",
@@ -744,14 +744,14 @@
     ]
   },
   {
-    "Input": "„‚Í1Œ1“ú‚Ì–éAŒßŒã8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯1æœˆ1æ—¥ã®å¤œã€åˆå¾Œ8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "1Œ1“ú‚Ì–éAŒßŒã8",
+        "Text": "1æœˆ1æ—¥ã®å¤œã€åˆå¾Œ8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-01-01T20",
@@ -768,14 +768,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡–éŒßŒã10‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šå¤œåˆå¾Œ10æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡–éŒßŒã10",
+        "Text": "ä»Šå¤œåˆå¾Œ10æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T22",
@@ -792,14 +792,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡’©‚ÌŒß‘O8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šæœã®åˆå‰8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡’©‚ÌŒß‘O8",
+        "Text": "ä»Šæœã®åˆå‰8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T08",
@@ -816,14 +816,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡–éŒßŒã8‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šå¤œåˆå¾Œ8æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡–éŒßŒã8",
+        "Text": "ä»Šå¤œåˆå¾Œ8æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T20",
@@ -840,14 +840,14 @@
     ]
   },
   {
-    "Input": "„‚Í‚»‚Ì“ú‚ÌI‚í‚è‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ãã®æ—¥ã®çµ‚ã‚ã‚Šã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "‚»‚Ì“ú‚ÌI‚í‚è",
+        "Text": "ãã®æ—¥ã®çµ‚ã‚ã‚Š",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T23:59",
@@ -864,14 +864,14 @@
     ]
   },
   {
-    "Input": "„‚Í–¾“ú‚ÌI‚í‚è‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯æ˜æ—¥ã®çµ‚ã‚ã‚Šã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "–¾“ú‚ÌI‚í‚è",
+        "Text": "æ˜æ—¥ã®çµ‚ã‚ã‚Š",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-08T23:59",
@@ -888,14 +888,14 @@
     ]
   },
   {
-    "Input": "„‚Í“ú—j“ú‚ÌI‚í‚è‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯æ—¥æ›œæ—¥ã®çµ‚ã‚ã‚Šã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "“ú—j“ú‚ÌI‚í‚è",
+        "Text": "æ—¥æ›œæ—¥ã®çµ‚ã‚ã‚Š",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-WXX-7T23:59",
@@ -912,14 +912,14 @@
     ]
   },
   {
-    "Input": "„‚Í5ŠÔˆÈ“à‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯5æ™‚é–“ä»¥å†…ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "5ŠÔˆÈ“à",
+        "Text": "5æ™‚é–“ä»¥å†…",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T05:00:00",
@@ -936,14 +936,14 @@
     ]
   },
   {
-    "Input": "„‚Í15“ú‚Ì8:00:24‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯15æ—¥ã®8:00:24ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "15“ú‚Ì8:00:24",
+        "Text": "15æ—¥ã®8:00:24",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-XX-15T08:00:24",
@@ -960,14 +960,14 @@
     ]
   },
   {
-    "Input": "„‚Í04/21/2016A 8:00:24pm‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯04/21/2016ã€ 8:00:24pmã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "04/21/2016A 8:00:24pm",
+        "Text": "04/21/2016ã€ 8:00:24pm",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-04-21T20:00:24",
@@ -984,14 +984,14 @@
     ]
   },
   {
-    "Input": "„‚Í10Œ14“ú‚ÌŒß‘O8:00:13‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯10æœˆ14æ—¥ã®åˆå‰8:00:13ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "10Œ14“ú‚ÌŒß‘O8:00:13",
+        "Text": "10æœˆ14æ—¥ã®åˆå‰8:00:13",
         "Type": "datetime",
         "Value": {
           "Timex": "XXXX-10-14T08:00:13",
@@ -1008,14 +1008,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡’©7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šæœ7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡’©7",
+        "Text": "ä»Šæœ7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T07",
@@ -1032,14 +1032,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡“ú‚Ì–éŒß‘O7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šæ—¥ã®å¤œåˆå‰7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡“ú‚Ì–éŒß‘O7",
+        "Text": "ä»Šæ—¥ã®å¤œåˆå‰7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T07",
@@ -1056,14 +1056,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡“ú‚Ì’©7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šæ—¥ã®æœ7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡“ú‚Ì’©7",
+        "Text": "ä»Šæ—¥ã®æœ7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T07",
@@ -1080,14 +1080,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡“ú‚Ì’©7:00‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šæ—¥ã®æœ7:00ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡“ú‚Ì’©7:00",
+        "Text": "ä»Šæ—¥ã®æœ7:00",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T07:00",
@@ -1104,14 +1104,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡“ú‚Ì–é7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šæ—¥ã®å¤œ7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡“ú‚Ì–é7",
+        "Text": "ä»Šæ—¥ã®å¤œ7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T19",
@@ -1128,14 +1128,14 @@
     ]
   },
   {
-    "Input": "„‚Í¡–é7‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯ä»Šå¤œ7æ™‚ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "¡–é7",
+        "Text": "ä»Šå¤œ7æ™‚",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-07T19",
@@ -1152,11 +1152,11 @@
     ]
   },
   {
-    "Input": "„‚Í2016-12-16T12:23:59‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯2016-12-16T12:23:59ã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "2016-12-16T12:23:59",
@@ -1176,14 +1176,14 @@
     ]
   },
   {
-    "Input": "„‚Í2017”N1Œ6“ú - 6:37am‚É–ß‚è‚Ü‚·",
+    "Input": "ç§ã¯2017å¹´1æœˆ6æ—¥ - 6:37amã«æˆ»ã‚Šã¾ã™",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "2017”N1Œ6“ú - 6:37am",
+        "Text": "2017å¹´1æœˆ6æ—¥ - 6:37am",
         "Type": "datetime",
         "Value": {
           "Timex": "2017-01-06T06:37",
@@ -1200,14 +1200,14 @@
     ]
   },
   {
-    "Input": "2016”N11Œ16“ú 10:38",
+    "Input": "2016å¹´11æœˆ16æ—¥ 10:38",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "2016”N11Œ16“ú 10:38",
+        "Text": "2016å¹´11æœˆ16æ—¥ 10:38",
         "Type": "datetime",
         "Value": {
           "Timex": "2016-11-16T10:38",
@@ -1224,14 +1224,14 @@
     ]
   },
   {
-    "Input": "„‚Í1“ú‚Æ2ŠÔŒã‚Éo”­‚µ‚Ü‚·",
+    "Input": "ç§ã¯1æ—¥ã¨2æ™‚é–“å¾Œã«å‡ºç™ºã—ã¾ã™",
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "1“ú‚Æ2ŠÔŒã",
+        "Text": "1æ—¥ã¨2æ™‚é–“å¾Œ",
         "Type": "datetime",
         "Value": {
           "Timex": "2017-11-24T21:00:00",
@@ -1248,14 +1248,14 @@
     ]
   },
   {
-    "Input": "„‚½‚¿‚Í1‚©Œ‚Æ2“ú‚Æ2ŠÔ30•ª‘O‚É‰ï‚¢‚Ü‚µ‚½",
+    "Input": "ç§ãŸã¡ã¯1ã‹æœˆã¨2æ—¥ã¨2æ™‚é–“30åˆ†å‰ã«ä¼šã„ã¾ã—ãŸ",
     "Context": {
       "ReferenceDateTime": "2017-11-23T19:15:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "1‚©Œ‚Æ2“ú‚Æ2ŠÔ30•ª‘O",
+        "Text": "1ã‹æœˆã¨2æ—¥ã¨2æ™‚é–“30åˆ†å‰",
         "Type": "datetime",
         "Value": {
           "Timex": "2017-10-21T16:45:00",
@@ -1272,14 +1272,14 @@
     ]
   },
   {
-    "Input": "„‚Í‚ ‚Æ1ŠÔ‚Í–Z‚µ‚¢‚Ì‚ÅA‚ ‚Æ‚Å˜A—‚µ‚Ä‰º‚³‚¢",
+    "Input": "ç§ã¯ã‚ã¨1æ™‚é–“ã¯å¿™ã—ã„ã®ã§ã€ã‚ã¨ã§é€£çµ¡ã—ã¦ä¸‹ã•ã„",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "‚ ‚Æ1ŠÔ",
+        "Text": "ã‚ã¨1æ™‚é–“",
         "Type": "datetime",
         "Value": {
           "Timex": "2017-11-23T01:00:00",
@@ -1296,14 +1296,14 @@
     ]
   },
   {
-    "Input": "„‚Í‚ ‚Æ1ŠÔã‚Åè‚ª‹ó‚­‚Ì‚ÅA‚ ‚Æ‚Å˜A—‚µ‚Ä‚­‚¾‚³‚¢",
+    "Input": "ç§ã¯ã‚ã¨1æ™‚é–“å¼±ã§æ‰‹ãŒç©ºãã®ã§ã€ã‚ã¨ã§é€£çµ¡ã—ã¦ãã ã•ã„",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
     "Results": [
       {
-        "Text": "‚ ‚Æ1ŠÔã",
+        "Text": "ã‚ã¨1æ™‚é–“å¼±",
         "Type": "datetime",
         "Value": {
           "Mod": "less",
