@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.English;
 
-namespace Microsoft.Recognizers.Text.Choice.French.Extractors
+namespace Microsoft.Recognizers.Text.Choice.French
 {
     class FrenchBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
