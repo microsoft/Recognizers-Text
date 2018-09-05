@@ -68,7 +68,7 @@
     "Input": "twintig procent",
     "Results": [
       {
-        "Text": "twenty percent",
+        "Text": "twintig procent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
@@ -78,10 +78,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "percentage van 30 procent",
+    "Input": "percentage van 30",
     "Results": [
       {
-        "Text": "30 procent",
+        "Text": "percentage van 30",
         "TypeName": "percentage",
         "Resolution": {
           "value": "30%"

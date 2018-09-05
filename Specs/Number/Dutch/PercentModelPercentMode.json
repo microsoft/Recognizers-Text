@@ -26,10 +26,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "percents of twenty",
+    "Input": "percentage van twintig",
     "Results": [
       {
-        "Text": "percents of twenty",
+        "Text": "percentage van twintig",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
