@@ -650,7 +650,6 @@
           }
         }
       ],
-      "NotSupported": "dotNet",
       "NotSupportedByDesign": "javascript,python,java"
     },
     {
@@ -665,7 +664,20 @@
           }
         }
       ],
-      "NotSupported": "dotNet",
+      "NotSupportedByDesign": "javascript,python,java"
+    },
+    {
+      "Input": "Dit bestand is maar tweehonderd kB groot!",
+      "Results": [
+        {
+          "Text": "tweehonderd kB",
+          "TypeName": "dimension",
+          "Resolution": {
+            "value": "200",
+            "unit": "Kilobyte"
+          }
+        }
+      ],
       "NotSupportedByDesign": "javascript,python,java"
     },
     {
