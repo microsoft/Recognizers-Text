@@ -449,4 +449,46 @@
     }
   ]
 }
+,
+{
+  "Input": "10000与20000间",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "10000与20000间",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[10000,20000]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10000与20000之间",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "10000与20000之间",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[10000,20000]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-10000与20000间",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "-10000与20000间",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[-10000,20000]"
+      }
+    }
+  ]
+}
 ]
