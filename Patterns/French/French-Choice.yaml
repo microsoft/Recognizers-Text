@@ -1,0 +1,9 @@
+---
+LangMarker: Fr
+#Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
+TrueRegex: !simpleRegex
+  def: \b(ouais|oui|yep|y|sure|approuver|accepter|consentir|d'accord)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
+FalseRegex: !simpleRegex
+  def: \b(faux|nan|non|pas\s+d'accord|ne\s+pas\s+concorder)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
