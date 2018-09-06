@@ -308,14 +308,14 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration()),
                     Dutch.OrdinalExtractor.GetInstance()));
+           */
 
             /*
             RegisterModel<PercentModel>(
                 Culture.Dutch,
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration()),
-                    new Dutch.PercentageExtractor()));
-            */
+                    new Dutch.PercentageExtractor(options)));
 
             /*
             RegisterModel<NumberRangeModel>(
