@@ -92,9 +92,24 @@
   },
   {
     "Input": "de helft van",
+    "Comment": "no support for prefixing with 'de' yet",
     "Results": [
       {
         "Text": "de helft van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een half van",
+    "Results": [
+      {
+        "Text": "een half van",
         "TypeName": "percentage",
         "Resolution": {
           "value": "50%"
