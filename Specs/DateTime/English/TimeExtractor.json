@@ -883,5 +883,10 @@
         "Length": 2
       }
     ]
+  },
+  {
+    "Input": "This item priced at 1.6714.",
+    "Comment": "1 shouldn't recognized as time here",
+    "Results": []
   }
 ]
