@@ -46,12 +46,12 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (honderdste|duizendste|miljoenste|miljardste|biljoenste)
 BasicOrdinalRegex: !simpleRegex
-  def: (eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)
+  def: (nulde|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: ((((({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(en\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*|\s*/\s*))?{BasicOrdinalRegex})
+  def: (((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex}))?(\s*en)?\s*{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
-  def: (({AllIntRegex}\s+){RoundNumberOrdinalRegex})
+  def: (({AllIntRegex}\s*){RoundNumberOrdinalRegex})
   references: [ AllIntRegex, RoundNumberOrdinalRegex ]
 AllOrdinalRegex: !nestedRegex
   def: ({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
