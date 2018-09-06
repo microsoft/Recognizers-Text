@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 			{ "Terabit", "terabit|terabits|Tb|Tbit" },
 			{ "Petabit", "petabit|petabits|Pb|Pbit" },
 			{ "Byte", "-byte|byte|bytes" },
-			{ "Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|kilobytes|kilo byte|kilo bytes|kByte" },
+			{ "Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kByte" },
 			{ "Megabyte", "-megabyte|-megabytes|megabyte|MB|megabytes|mega byte|mega bytes|MByte" },
 			{ "Gigabyte", "-gigabyte|-gigabytes|gigabyte|GB|gigabytes|giga byte|giga bytes|GByte" },
 			{ "Terabyte", "-terabyte|-terabytes|terabyte|TB|terabytes|tera byte|tera bytes|TByte" },
