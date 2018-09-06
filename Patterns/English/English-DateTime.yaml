@@ -443,7 +443,7 @@ BeforeRegex: !nestedRegex
   def: (\b{InclusiveModPrepositions}?(before|in\s+advance\s+of|prior\s+to|(no\s+later|earlier|sooner)\s+than|ending\s+(with|on)|by|till|til|until|(?<include>as\s+late\s+as)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)
   references: [ InclusiveModPrepositions ]
 AfterRegex: !nestedRegex
-  def: (\b{InclusiveModPrepositions}?(after(?!\s+or equal to)|(?<!no\s+)later than){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)
+  def: (\b{InclusiveModPrepositions}?((after|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
   def: (\b(since|after\s+or\s+equal\s+to|starting\s+(from|on|with)|as\s+early\s+as)\b\s*)|(?<!\w|<)(>=)
@@ -552,8 +552,8 @@ DecadeWithCenturyRegex: !nestedRegex
 RelativeDecadeRegex: !nestedRegex
   def: \b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b
   references: [ RelativeRegex ]
-YearAfterRegex: !simpleRegex
-  def: \b(or\s+(above|after))\b
+DateAfterRegex: !simpleRegex
+  def: \b((or|and)\s+(above|after|later|greater))\b
 YearPeriodRegex: !nestedRegex
   def: ((((from|during|in)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((between)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]

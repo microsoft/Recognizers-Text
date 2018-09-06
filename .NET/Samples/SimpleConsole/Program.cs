@@ -68,7 +68,7 @@ namespace SimpleConsole
 
                 // Number Range recognizer will find any cardinal or ordinal number range
                 // E.g. "between 2 and 5" will return "(2,5)"
-                NumberRecognizer.RecognizeNumberRange(query, culture),
+                NumberRecognizer.RecognizeNumberRange(query, culture, NumberOptions.ExperimentalMode),
 
                 // Age recognizer will find any age number presented
                 // E.g "After ninety five years of age, perspectives change" will return "95 Year"

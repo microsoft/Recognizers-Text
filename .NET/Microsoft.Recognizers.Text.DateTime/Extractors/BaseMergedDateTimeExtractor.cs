@@ -249,7 +249,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
-                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
                 {
                     // 2012 or after/above
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();

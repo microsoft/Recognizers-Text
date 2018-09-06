@@ -193,7 +193,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
 		public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
 		public static readonly string BeforeRegex = $@"(\b{InclusiveModPrepositions}?(before|in\s+advance\s+of|prior\s+to|(no\s+later|earlier|sooner)\s+than|ending\s+(with|on)|by|till|til|until|(?<include>as\s+late\s+as)){InclusiveModPrepositions}?\b\s*)|(?<!\w|>)((?<include><=)|<)";
-		public static readonly string AfterRegex = $@"(\b{InclusiveModPrepositions}?(after(?!\s+or equal to)|(?<!no\s+)later than){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)";
+		public static readonly string AfterRegex = $@"(\b{InclusiveModPrepositions}?((after|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*)|(?<!\w|<)((?<include>>=)|>)";
 		public const string SinceRegex = @"(\b(since|after\s+or\s+equal\s+to|starting\s+(from|on|with)|as\s+early\s+as)\b\s*)|(?<!\w|<)(>=)";
 		public const string AroundRegex = @"(\b(around|circa)\s*\b)";
 		public const string AgoRegex = @"\b(ago|before (?<day>yesterday|today))\b";
@@ -238,7 +238,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string DecadeRegex = @"(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)";
 		public static readonly string DecadeWithCenturyRegex = $@"(the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))";
 		public static readonly string RelativeDecadeRegex = $@"\b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b";
-		public const string YearAfterRegex = @"\b(or\s+(above|after))\b";
+		public const string DateAfterRegex = @"\b((or|and)\s+(above|after|later|greater))\b";
 		public static readonly string YearPeriodRegex = $@"((((from|during|in)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((between)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
 		public static readonly string ComplexDatePeriodRegex = $@"(((from|during|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((between)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
