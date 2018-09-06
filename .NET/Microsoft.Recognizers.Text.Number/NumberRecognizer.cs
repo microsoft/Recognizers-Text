@@ -315,7 +315,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Culture.Dutch,
                 (options) => new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration()),
-                    new Dutch.PercentageExtractor()));
+                    new Dutch.PercentageExtractor(options)));
 
             /*
             RegisterModel<NumberRangeModel>(
