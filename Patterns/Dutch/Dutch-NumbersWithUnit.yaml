@@ -189,7 +189,7 @@ CurrencySuffixList: !dictionary
 #Bolivian boliviano
     Bolivian boliviano: boliviaanse boliviano|bob|bs.|bolivia boliviano|bolivia bolivianos|boliviaanse bolivianos|boliviano
 #Bosnia and Herzegovina convertible mark
-    Bosnia and Herzegovina convertible mark: bosnia and herzegovina convertible mark|bam
+    Bosnia and Herzegovina convertible mark: bosnische inwisselbare mark|bosnia and herzegovina convertible mark|bam
     Fening: fenings|fenings
 #Botswana pula
     Botswana pula: botswaanse pula|bwp|pula|pulas|botswaanse pulas
@@ -205,7 +205,7 @@ CurrencySuffixList: !dictionary
 #No use of "esc" and "$"
     Cape Verdean escudo: kaapverdische escudo|cve|escudo
 #Costa Rican colón
-    Costa Rican colón: Costa Ricaanse colonolón|costa ricaanse colóns|crc|₡|costa rica colón|costa rica colóns|ccosta ricaanse colon|costa ricaanse colons|costa rica colon|costa rica colons
+    Costa Rican colón: costa ricaanse colonolón|costa ricaanse colóns|crc|₡|costa rica colón|costa rica colóns|ccosta ricaanse colon|costa ricaanse colons|costa rica colon|costa rica colons
 #Salvadoran colón
     Salvadoran colón: svc|salvadoraanse colón|salvadoraanse colóns|salvador colón|salvador colóns|salvadoraanse colon|salvadoraanse colons|salvador colon|salvador colons
     Céntimo: céntimo
