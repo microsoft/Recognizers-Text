@@ -280,114 +280,115 @@ CurrencySuffixList: !dictionary
     Malawian kwacha: malawische kwacha|malawian kwacha|mk|mwk
     Tambala: tambala
 #Malaysian ringgit
-    Malaysian ringgit: malaysian ringgit|rm|myr|malaysia ringgit|malaysia ringgits|malaysian ringgits
+    Malaysian ringgit: maleisische ringgit|rm|myr|malaysia ringgit|malaysia ringgits|maleisische ringgits
 #Mauritanian ouguiya
-    Mauritanian ouguiya: mauritanian ouguiya|um|mro|mauritania ouguiya|mauritania ouguiyas|mauritanian ouguiyas
+    Mauritanian ouguiya: mauritaanse ouguiya|um|mro|mauritania ouguiya|mauritania ouguiyas|mauritaanse ouguiyas
     Khoums: khoums
 #Mongolian tögrög
-    Mongolian tögrög: mongolian tögrög|mnt|₮|mongolia tögrög|mongolia tögrögs|mongolian tögrögs|mongolian togrog|mongolian togrogs|mongolia togrog|mongolia togrogs
+    Mongolian tögrög: mongoolse tugrik|mongoolse tugriks|mongoolse tögrög|mnt|₮|mongolia tögrög|mongolia tögrögs|mongoolse tögrögs|mongoolse togrog|mongoolse togrogs|mongolia togrog|mongolia togrogs
 #Mozambican metical
-    Mozambican metical: mozambican metical|mt|mzn|mozambica metical|mozambica meticals|mozambican meticals
+    Mozambican metical: mozambikaanse metical|mt|mzn|mozambica metical|mozambica meticals|mozambikaanse meticals
 #Burmese kyat
-    Burmese kyat: Burmese kyat|ks|mmk
+    Burmese kyat: myanmarese kyat|burmese kyat|ks|mmk
     Pya: pya
 #Nicaraguan córdoba
-    Nicaraguan córdoba: nicaraguan córdoba|nio
+    Nicaraguan córdoba: nicaraguaanse córdoba|nio
 #Nigerian naira
-    Nigerian naira: nigerian naira|naira|ngn|₦|nigeria naira|nigeria nairas|nigerian nairas
+    Nigerian naira: nigeriaanse naira|naira|ngn|₦|nigeria naira|nigeria nairas|nigeriaanse nairas
     Kobo: kobo
 #Turkish lira
-    Turkish lira: turkish lira|try|tl|turkey lira|turkey liras|turkish liras
+    Turkish lira: turkse lira|try|tl|turkey lira|turkey liras|turkse liras
     Kuruş: kuruş
 #Omani rial
-    Omani rial: omani rial|omr|ر.ع.
+    Omani rial: omaanse rial|omani rial|omr|ر.ع.
 #Panamanian balboa
-    Panamanian balboa: panamanian balboa|b/.|pab
+    Panamanian balboa: panamese balboa|panamanian balboa|b/.|pab
     Centesimo: centesimo|céntimo
 #Papua New Guinean kina
-    Papua New Guinean kina: papua new guinean kina|kina|pgk
+    Papua New Guinean kina: papoea-nieuw-guinese kina|papoea nieuw guinese kina|papua new guinean kina|kina|pgk
     Toea: toea
 #Paraguayan guaraní
-    Paraguayan guaraní: paraguayan guaraní|₲|pyg
+    Paraguayan guaraní: paraguayaanse guarani|paraguayan guaraní|₲|pyg|guarani|guaraní
 #Peruvian sol
-    Peruvian sol: peruvian sol|soles|sol|peruvian nuevo sol
+    Peruvian sol: peruviaanse sol|peruviaanse nieuwe sol|sol|soles|sol|peruviaanse nuevo sol
 #Polish zloty
-    Polish złoty: złoty|polish złoty|zł|pln|zloty|polish zloty|poland zloty|poland złoty
+    Polish złoty: złoty|poolse złoty|zł|pln|zloty|poolse zloty|poland zloty|poland złoty
     Grosz: groszy|grosz|grosze
 #Qatari riyal
-    Qatari riyal: qatari riyal|qar|qatari riyals|qatar riyal|qatar riyals
-    Saudi riyal: saudi riyal|sar|saudi riyals
-    Riyal: riyal|riyals|rial|﷼
+    Qatari riyal: qatarese rial|qatarese rials|qatarese riyal|qar|qatarese riyals|qatar riyal|qatar riyals
+    Saudi riyal: saoedi-arabische riyal|saoedi-arabische riyals|saoedi arabische riyal|saoedi arabische riyals|saudi riyal|sar|saudi riyals|saoedi riyal|saoedi riyals
+    Riyal: riyal|riyals|rial|rials|﷼
     Dirham: dirham|dirhem|dirhm
     Halala: halalas|halala
 #Samoan tālā
-    Samoan tālā: samoan tālā|tālā|tala|ws$|samoa|wst|samoan tala
+    Samoan tālā: samoaanse tālā|tālā|tala|ws$|samoa|wst|samoaanse tala
     Sene: sene
 #São Tomé and Príncipe dobra
-    São Tomé and Príncipe dobra: são tomé and príncipe dobra|dobras|dobra|std
+    São Tomé and Príncipe dobra: santomese dobra|são tomé and príncipe dobra|dobras|dobra|std
 #Sierra Leonean leone
-    Sierra Leonean leone: sierra Leonean leone|sll|leone|le
+    Sierra Leonean leone: sierra leoonse leone|sierra Leonean leone|sll|leone|le
 #Spain
-    Peseta: pesetas|peseta
+    Peseta: spaanse peseta|spaanse pesetas|pesetas|peseta
 #Netherlands guilder
     Netherlands guilder: florin|netherlands antillean guilder|ang|ƒ|nederlandse gulden|guilders|guilder|gulden|-guilders|-guilder|dutch guilders|dutch guilder|fl
 #Swazi lilangeni
-    Swazi lilangeni: swazi lilangeni|lilangeni|szl|emalangeni
+    Swazi lilangeni: swazische lilangeni|swazi lilangeni|lilangeni|szl|emalangeni
 #Tajikistani somoni
-    Tajikistani somoni: tajikistani somoni|tjs|somoni
+    Tajikistani somoni: tadzjiekse somoni|tajikistani somoni|tjs|somoni
     Diram: dirams|diram
 #Thai baht
-    Thai baht: thai baht|฿|thb|baht
+    Thai baht: thaise baht|hai baht|฿|thb|baht
     Satang: satang|satangs
 #Tongan paʻanga
-    Tongan paʻanga: tongan paʻanga|paʻanga|tongan pa'anga|pa'anga
+    Tongan paʻanga: tongaanse paʻanga|paʻanga|tongaanse pa'anga|pa'anga
     Seniti: seniti
 #Ukrainian hryvnia
-    Ukrainian hryvnia: ukrainian hryvnia|hyrvnia|uah|₴|ukrain hryvnia|ukrain hryvnias|ukrainian hryvnias
+    Ukrainian hryvnia: oekraïense grivna|oekraiense grivna|eukrainian hryvnia|hyrvnia|uah|₴|ukrain hryvnia|ukrain hryvnias|ukrainian hryvnias|grivna|grivnya
 #Vanuatu vatu
-    Vanuatu vatu: vanuatu vatu|vatu|vuv
+    Vanuatu vatu: vanuatuaanse vatu|vanuatu vatu|vatu|vuv
 #Venezuelan bolívar
-    Venezuelan bolívar: venezuelan bolívar|venezuelan bolívars|bs.f.|vef|bolívar fuerte|venezuelan bolivar|venezuelan bolivars|venezuela bolivar|venezuela bolivarsvenezuelan bolivar|venezuelan bolivars
+    Venezuelan bolívar: venezolaanse bolivar|venezolaanse bolívar|venezolaanse bolívars|bs.f.|vef|bolívar fuerte|venezuelan bolivar|venezuelan bolivars|venezuela bolivar|venezuela bolivars|venezolaanse bolivar|venezolaanse bolivars
 #Vietnamese dong
     Vietnamese dong: vietnamese dong|vnd|đồng|vietnam dong|vietnamese dongs|vietnam dongs
 #Zambian kwacha
-    Zambian kwacha: zambian kwacha|zk|zmw|zambia kwacha|kwachas|zambian kwachas
+    Zambian kwacha: zambiaanse kwacha|zk|zmw|zambia kwacha|kwachas|zambiaanse kwachas
 #Dirham
-    Moroccan dirham: moroccan dirham|mad|د.م.
-    United Arab Emirates dirham: united arab emirates dirham|د.إ|aed
+    Moroccan dirham: marokkaanse dirham|moroccan dirham|mad|د.م.
+    United Arab Emirates dirham: vae-dirham|vae dirham|verenigde arabische emiraten dirham|verenigde-arabische-emiraten dirham|united arab emirates dirham|د.إ|aed
 #Manat
-    Azerbaijani manat: azerbaijani manat|azn
-    Turkmenistan manat: turkmenistan manat|turkmenistan new manat|tmt
+    Azerbaijani manat: azerbeidzjaanse manat|azerbaijani manat|azn
+    Turkmenistan manat: turkmeense manat|turkmeense nieuwe manat|turkmenistan manat|turkmenistan new manat|tmt
     Manat: manats|manat
     Qəpik: qəpik
 #Shilling
-    Somali shilling: somali shillings|somali shilling|shilin soomaali|-shilin soomaali|scellino|shilin|sh.so.|sos
+    Somali shilling: somalische shilling|somalische shillings|somali shillings|somali shilling|shilin soomaali|-shilin soomaali|scellino|shilin|sh.so.|sos
     Somaliland shilling: somaliland shillings|somaliland shilling|soomaaliland shilin
-    Tanzanian shilling: tanzanian shilling|tanzanian shillings|tsh|tzs|tanzania shilling|tanzania shillings
-    Ugandan shilling: ugandan shilling|ugandan shillings|sh|ugx|uganda shilling|uganda shillings
+    Tanzanian shilling: tanzaniaanse shilling|tanzaniaanse shillings|tsh|tzs|tanzania shilling|tanzania shillings
+    Ugandan shilling: oegandese shilling|oegandese shillings|sh|ugx|uganda shilling|uganda shillings
 #Leu
-    Romanian leu: romanian leu|lei|ron|romania leu
-    Moldovan leu: moldovan leu|mdl|moldova leu
-    Leu: leu
+    Romanian leu: roemeense leu|ron|romania leu
+    Moldovan leu: moldavische leu|mdl|moldova leu
+    Leu: leu|lei
     Ban: bani|-ban|ban
 #Rupee
-    Nepalese rupee: nepalese rupee|npr
-    Pakistani rupee: pakistani rupee|pkr
-    Indian rupee: indian rupee|inr|₹|india rupee
-    Seychellois rupee: seychellois rupee|scr|sr|sre
-    Mauritian rupee: mauritian rupee|mur
-    Maldivian rufiyaa: maldivian rufiyaa|rf|mvr|.ރ|maldive rufiyaa
-    Sri Lankan rupee: sri Lankan rupee|lkr|රු|ரூ
-    Indonesian rupiah: Indonesian rupiah|rupiah|perak|rp|idr
-    Rupee: rupee|rs
+    Nepalese rupee: nepalese roepie|nepalese rupee|npr
+    Pakistani rupee: pakistaanse roepie|pakistani rupee|pkr
+    Indian rupee: indiase roepie|indian rupee|inr|₹|india rupee
+    Seychellois rupee: seychelse roepie|seychellois rupee|scr|sr|sre
+    Mauritian rupee: mauritiaanse roepie|mauritian rupee|mur
+    Maldivian rufiyaa: maldivische rufiyaa|maldivian rufiyaa|rf|mvr|.ރ|maldive rufiyaa
+    Sri Lankan rupee: sri lankaanse roepie|sri lankan rupee|lkr|රු|ரூ
+    Indonesian rupiah: indonesische roepia|indonesische rupiah|indonesian rupiah|rupiah|perak|rp|idr|roepia
+    Rupee: roepie|rupee|rs
 #Krone
-    Danish krone: danish krone|dkk|denmark krone|denmark krones|danish krones
-    Norwegian krone: norwegian krone|nok|norway krone|norway krones|norwegian krones
-    Faroese króna: faroese króna|faroese krona
-    Icelandic króna: icelandic króna|isk|icelandic krona|iceland króna|iceland krona
-    Swedish krona: swedish krona|sek|swedan krona
-    Krone: kronor|krona|króna|krone|krones|kr|-kr
-    Øre: Øre|oyra|eyrir
+    Danish krone: deense kroon|dansk krone|dkk|denmark krone|denmark krones|deense kronen
+    Norwegian krone: noorse kroon|nok|norway krone|norway krones|noorse kronen
+    Faroese króna: faeröerse kroon|faeroerse kroon|faroese króna|faroese krona
+    Icelandic króna: ijslandse kroon|ijslandse kronen|icelandic króna|isk|icelandic krona|iceland króna|iceland krona
+    Swedish krona: zweedse kroon|zweedse kronen|swedish krona|swedish kronor|sek
+    Estonian kroon: estische kroon|estische kronen|stonian kroon
+    Krone: kroon|kronen|kronor|krona|króna|krone|krones|kr|-kr
+    Øre: öre|Øre|oyra|eyrir
 #Franc
     West African CFA franc: west african cfa franc|xof|west africa cfa franc|west africa franc|west african franc
     Central African CFA franc: central african cfa franc|xaf|central africa cfa franc|central african franc|central africa franc
@@ -591,6 +592,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Sri Lankan rupee: LKR
     Indonesian rupiah: IDR
     Danish krone: DKK
+    Estonian kroon: EEK
     Norwegian krone: NOK
     Icelandic króna: ISK
     Swedish krona: SEK
