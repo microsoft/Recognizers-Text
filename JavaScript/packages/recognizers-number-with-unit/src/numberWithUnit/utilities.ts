@@ -11,7 +11,7 @@ export class DictionaryUtils {
                 return;
             }
             
-            this.bindUnitsString(source, key, value.toLowerCase());
+            this.bindUnitsString(source, key, value);
         });
     }
 

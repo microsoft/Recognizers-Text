@@ -50,7 +50,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             base.TestNumber();
         }
-        */
 
         /*
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Dutch.csv", "PercentModel-Dutch#csv", DataAccessMethod.Sequential)]
