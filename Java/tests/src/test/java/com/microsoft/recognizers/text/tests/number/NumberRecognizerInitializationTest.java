@@ -97,6 +97,8 @@ public class NumberRecognizerInitializationTest {
 
                     Assert.assertEquals("typeName", expected.typeName, actual.typeName);
                     Assert.assertEquals("text", expected.text, actual.text);
+                    Assert.assertEquals("start", expected.start, actual.start);
+                    Assert.assertEquals("end", expected.end, actual.end);
 
                     Assert.assertEquals("resolution.value", expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
                 });
