@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // In ExperimentalMode, cases like "from 3 to 5" and "between 10 and 15" are set to closed at both start and end
-            if (Options == NumberOptions.ExperimentalMode)
+            if ((Options & NumberOptions.ExperimentalMode) != 0)
             {
                 foreach (var result in results)
                 {
@@ -233,12 +233,7 @@ namespace Microsoft.Recognizers.Text.Number
                 ret = ret.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
             }
 
-            var removeFractionWithInConnector = false;
-
-            if (Options == NumberOptions.ExperimentalMode)
-            {
-                removeFractionWithInConnector = IsFractionWithInConnector(numberStr);
-            }
+            var removeFractionWithInConnector = ShouldRemoveFractionWithInConnector(numberStr);
 
             if (ret != null && (removeFractionWithInConnector || isAmbiguousRangeOrFraction))
             {
@@ -246,6 +241,18 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return ret;
+        }
+
+        private bool ShouldRemoveFractionWithInConnector(string numberStr)
+        {
+            var removeFractionWithInConnector = false;
+
+            if ((Options & NumberOptions.ExperimentalMode) != 0)
+            {
+                removeFractionWithInConnector = IsFractionWithInConnector(numberStr);
+            }
+
+            return removeFractionWithInConnector;
         }
 
         // Fraction with InConnector may lead to some ambiguous cases like "more than 30000 in 2010"
