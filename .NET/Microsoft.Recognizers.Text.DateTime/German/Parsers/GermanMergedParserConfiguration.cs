@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex AroundRegex { get; }
 
-        public Regex YearAfterRegex { get; }
+        public Regex DateAfter { get; }
 
         public Regex YearRegex { get; }
 
@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             AfterRegex = GermanMergedExtractorConfiguration.AfterRegex;
             SinceRegex = GermanMergedExtractorConfiguration.SinceRegex;
             AroundRegex = GermanMergedExtractorConfiguration.AroundRegex;
-            YearAfterRegex = GermanMergedExtractorConfiguration.YearAfterRegex;
+            DateAfter = GermanMergedExtractorConfiguration.DateAfterRegex;
             YearRegex = GermanDatePeriodExtractorConfiguration.YearRegex;
             SuperfluousWordMatcher = GermanMergedExtractorConfiguration.SuperfluousWordMatcher;
             DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));

@@ -15,6 +15,8 @@ def test_number_recognizer(culture, model, options, context, source, expected_re
     for actual, expected in zip(results, expected_results):
         assert actual.type_name == expected['TypeName']
         assert actual.text == expected['Text']
+        assert actual.start == expected['Start']
+        assert actual.end == expected['End']
         assert actual.resolution['value'] == expected['Resolution']['value']
 
 def get_results(culture, model, source):

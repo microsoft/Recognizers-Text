@@ -1,7 +1,6 @@
 [
   {
     "Input": "100%",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "100%",
@@ -15,7 +14,6 @@
   },
   {
     "Input": " 100% ",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "100%",
@@ -29,7 +27,6 @@
   },
   {
     "Input": " 100 procent",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "100 procent",
@@ -43,7 +40,6 @@
   },
   {
     "Input": " percentage van 100",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "percentage van 100",
@@ -57,7 +53,6 @@
   },
   {
     "Input": "240 procent",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "240 procent",
@@ -71,10 +66,9 @@
   },
   {
     "Input": "twintig procent",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "twenty percent",
+        "Text": "twintig procent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
@@ -84,11 +78,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "percentage van 30 procent",
-    "NotSupported": "dotNet",
+    "Input": "percentage van 30",
     "Results": [
       {
-        "Text": "30 procent",
+        "Text": "percentage van 30",
         "TypeName": "percentage",
         "Resolution": {
           "value": "30%"
@@ -99,7 +92,6 @@
   },
   {
     "Input": "honderd procent",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderd procent",
@@ -113,7 +105,6 @@
   },
   {
     "Input": "210 percent",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "210 percent",
@@ -127,7 +118,6 @@
   },
   {
     "Input": "10 percent",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "10 percent",
@@ -141,7 +131,6 @@
   },
   {
     "Input": "dit is een korting van min vijf procent",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "min vijf procent",

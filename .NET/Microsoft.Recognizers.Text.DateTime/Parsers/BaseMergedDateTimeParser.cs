@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Push, save the MOD string
-            bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasYearAfter = false;
+            bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasDateAfter = false;
 
             // "InclusieModifier" means MOD should include the start/end time
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
@@ -92,14 +92,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Text = er.Text.Substring(aroundMatch.Length);
                 modStr = aroundMatch.Value;
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success)
+            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success) || (er.Type.Equals(Constants.SYS_DATETIME_DATE)))
             {
                 // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                 // 2012 or after/above
-                var match = Config.YearAfterRegex.Match(er.Text);
+                var match = Config.DateAfter.Match(er.Text);
                 if (match.Success && er.Text.EndsWith(match.Value))
                 {
-                    hasYearAfter = true;
+                    hasDateAfter = true;
                     er.Length -= match.Length;
                     er.Text = er.Text.Substring(0, er.Length ?? 0);
                     modStr = match.Value;
@@ -217,7 +217,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (hasYearAfter && pr.Value != null)
+            if (hasDateAfter && pr.Value != null)
             {
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;

@@ -1,7 +1,6 @@
 [
   {
     "Input": "100%",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "100%",
@@ -15,7 +14,6 @@
   },
   {
     "Input": "twintig procent",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintig procent",
@@ -28,11 +26,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "percents of twenty",
-    "NotSupported": "dotNet",
+    "Input": "percentage van twintig",
     "Results": [
       {
-        "Text": "percents of twenty",
+        "Text": "percentage van twintig",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
@@ -43,7 +40,6 @@
   },
   {
     "Input": "een van de drie",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een van de drie",
@@ -57,7 +53,6 @@
   },
   {
     "Input": "een uit twee",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een uit twee",
@@ -71,7 +66,6 @@
   },
   {
     "Input": "1/4 van",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1/4 van",
@@ -85,7 +79,6 @@
   },
   {
     "Input": "een vierde van",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een vierde van",
@@ -99,10 +92,24 @@
   },
   {
     "Input": "de helft van",
-    "NotSupported": "dotNet",
+    "Comment": "no support for prefixing with 'de' yet",
     "Results": [
       {
         "Text": "de helft van",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "een half van",
+    "Results": [
+      {
+        "Text": "een half van",
         "TypeName": "percentage",
         "Resolution": {
           "value": "50%"
@@ -113,7 +120,6 @@
   },
   {
     "Input": "een kwart van",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "een kwart van",
