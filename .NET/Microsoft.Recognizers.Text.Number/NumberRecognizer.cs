@@ -308,7 +308,6 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration()),
                     Dutch.OrdinalExtractor.GetInstance()));
-           */
 
             /*
             RegisterModel<PercentModel>(

@@ -57,24 +57,37 @@ public class NumberWithUnitParser implements IParser {
         }
 
         /* Unit type depends on last unit in suffix.*/
-        String lastUnit = unitKeys.get(unitKeys.size() - 1).toLowerCase();
+        String lastUnit = unitKeys.get(unitKeys.size() - 1);
+        String normalizedLastUnit = lastUnit.toLowerCase();
 
-        if (connectorToken != null && !connectorToken.isEmpty() && lastUnit.startsWith(connectorToken)) {
+        if (connectorToken != null && !connectorToken.isEmpty() && normalizedLastUnit.startsWith(connectorToken)) {
+            normalizedLastUnit = normalizedLastUnit.substring(connectorToken.length()).trim();
             lastUnit = lastUnit.substring(connectorToken.length()).trim();
         }
 
-        if (key != null && !key.isEmpty() && unitMap != null && unitMap.containsKey(lastUnit)) {
-            String unitValue = unitMap.get(lastUnit);
+        if (key != null && !key.isEmpty() && unitMap != null) {
 
-            ParseResult numValue = numberResult.text == null || numberResult.text.isEmpty()
-                    ? null
-                    : this.config.getInternalNumberParser().parse(numberResult);
+            String unitValue = null;
 
-            String resolutionStr = numValue != null ? numValue.resolutionStr : null;
+            if (unitMap.containsKey(lastUnit)) {
+                unitValue = unitMap.get(lastUnit);
+            }
+            else if (unitMap.containsKey(normalizedLastUnit)) {
+                unitValue = unitMap.get(normalizedLastUnit);
+            }
 
-            ret = ret
-                    .withValue(new UnitValue(resolutionStr, unitValue))
-                    .withResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());
+            if (unitValue != null) {
+
+                ParseResult numValue = numberResult.text == null || numberResult.text.isEmpty()
+                        ? null
+                        : this.config.getInternalNumberParser().parse(numberResult);
+
+                String resolutionStr = numValue != null ? numValue.resolutionStr : null;
+
+                ret = ret
+                        .withValue(new UnitValue(resolutionStr, unitValue))
+                        .withResolutionStr(String.format("%s %s", resolutionStr != null ? resolutionStr : "", unitValue).trim());
+            }
         }
 
         return ret;
