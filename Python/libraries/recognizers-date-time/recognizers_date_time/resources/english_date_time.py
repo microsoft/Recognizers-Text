@@ -185,7 +185,7 @@ class EnglishDateTime:
     PMTimeRegex = f'\\b(?<pm>afternoon|evening|night)\\b'
     InclusiveModPrepositions = f'(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))'
     BeforeRegex = f'(\\b{InclusiveModPrepositions}?(before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|till|til|until|(?<include>as\\s+late\\s+as)){InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|>)((?<include><=)|<)'
-    AfterRegex = f'(\\b{InclusiveModPrepositions}?(after(?!\\s+or equal to)|(?<!no\\s+)later than){InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|<)((?<include>>=)|>)'
+    AfterRegex = f'(\\b{InclusiveModPrepositions}?((after|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*)|(?<!\\w|<)((?<include>>=)|>)'
     SinceRegex = f'(\\b(since|after\\s+or\\s+equal\\s+to|starting\\s+(from|on|with)|as\\s+early\\s+as)\\b\\s*)|(?<!\\w|<)(>=)'
     AroundRegex = f'(\\b(around|circa)\\s*\\b)'
     AgoRegex = f'\\b(ago|before\\s+(?<day>yesterday|today))\\b'
@@ -230,7 +230,7 @@ class EnglishDateTime:
     DecadeRegex = f'(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)'
     DecadeWithCenturyRegex = f'(the\\s+)?(((?<century>\\d|1\\d|2\\d)?(\')?(?<decade>\\d0)(\')?s)|(({CenturyRegex}(\\s+|-)(and\\s+)?)?{DecadeRegex})|({CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))'
     RelativeDecadeRegex = f'\\b((the\\s+)?{RelativeRegex}\\s+((?<number>[\\w,]+)\\s+)?decades?)\\b'
-    YearAfterRegex = f'\\b(or\\s+(above|after))\\b'
+    DateAfterRegex = f'\\b((or|and)\\s+(above|after|later|greater))\\b'
     YearPeriodRegex = f'((((from|during|in)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((between)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))'
     ComplexDatePeriodRegex = f'(((from|during|in)\\s+)?(?<start>.+)\\s*({TillRegex})\\s*(?<end>.+)|((between)\\s+)(?<start>.+)\\s*({RangeConnectorRegex})\\s*(?<end>.+))'
     UnitMap = dict([('decades', '10Y'),

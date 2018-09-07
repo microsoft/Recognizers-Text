@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NumberEndingPattern { get; }
 
-        Regex YearAfterRegex { get; }
+        Regex DateAfterRegex { get; }
 
         Regex UnspecificDatePeriodRegex { get; }
 

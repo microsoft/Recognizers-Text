@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.NumberEndingPattern,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex YearAfterRegex =
+        public static readonly Regex DateAfterRegex =
             new Regex(DateTimeDefinitions.YearAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex UnspecificDatePeriodRegex =
@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
-        Regex IMergedExtractorConfiguration.YearAfterRegex => YearAfterRegex;
+        Regex IMergedExtractorConfiguration.DateAfterRegex => DateAfterRegex;
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
         IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
