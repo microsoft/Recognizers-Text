@@ -602,17 +602,17 @@ public class EnglishNumericWithUnit {
 
     public static final Map<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("Bit", "-bit|bit|bits")
-        .put("Kilobit", "kilobit|kilobits|kb|kbit")
-        .put("Megabit", "megabit|megabits|Mb|Mbit")
-        .put("Gigabit", "gigabit|gigabits|Gb|Gbit")
-        .put("Terabit", "terabit|terabits|Tb|Tbit")
-        .put("Petabit", "petabit|petabits|Pb|Pbit")
+        .put("Kilobit", "kilobit|kilobits|kb|Kb|kbit")
+        .put("Megabit", "megabit|megabits|mb|Mb|mbit")
+        .put("Gigabit", "gigabit|gigabits|gb|Gb|gbit")
+        .put("Terabit", "terabit|terabits|tb|Tb|tbit")
+        .put("Petabit", "petabit|petabits|pb|Pb|pbit")
         .put("Byte", "-byte|byte|bytes")
-        .put("Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|kilobytes|kilo byte|kilo bytes|kByte")
-        .put("Megabyte", "-megabyte|-megabytes|megabyte|mB|megabytes|mega byte|mega bytes|MByte")
-        .put("Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|gigabytes|giga byte|giga bytes|GByte")
-        .put("Terabyte", "-terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte")
-        .put("Petabyte", "-petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte")
+        .put("Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kbyte")
+        .put("Megabyte", "-megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|mbyte")
+        .put("Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|gbyte")
+        .put("Terabyte", "-terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|tbyte")
+        .put("Petabyte", "-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte")
         .build();
 
     public static final List<String> AmbiguousDimensionUnitList = Arrays.asList("barrel", "barrels", "grain", "pound", "stone", "yards", "yard", "cord", "dram", "feet", "foot", "gill", "knot", "peck", "cup", "fps", "pts", "in", "dm", "\\\"");

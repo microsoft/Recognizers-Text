@@ -29,8 +29,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 ret.Value = config.InternalNumberParser.Parse(extResult).Value;
                 return ret;
             }
-            else // if there is no unitResult, means there is just unit
-            {
+            else
+            { 
+                // if there is no unitResult, means there is just unit
                 numberResult = new ExtractResult { Start = -1, Length = 0 };
             }
 
@@ -50,7 +51,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 else if (i == numberResult.Start)
                 {   
                     // numberResult.start is a relative position
-
                     if (unitKeyBuild.Length != 0)
                     {
                         AddIfNotContained(unitKeys, unitKeyBuild.ToString().Trim());
@@ -69,22 +69,30 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             /* Unit type depends on last unit in suffix.*/
-            var lastUnit = unitKeys.Last().ToLowerInvariant();
-            if (!string.IsNullOrEmpty(this.config.ConnectorToken) && lastUnit.StartsWith(this.config.ConnectorToken))
+            var lastUnit = unitKeys.Last();
+            var normalizedLastUnit = lastUnit.ToLowerInvariant();
+            if (!string.IsNullOrEmpty(config.ConnectorToken) && normalizedLastUnit.StartsWith(config.ConnectorToken))
             {
-                lastUnit = lastUnit.Substring(this.config.ConnectorToken.Length).Trim();
+                normalizedLastUnit = normalizedLastUnit.Substring(config.ConnectorToken.Length).Trim();
+                lastUnit = lastUnit.Substring(config.ConnectorToken.Length).Trim();
             }
 
-            if (!string.IsNullOrWhiteSpace(key) && config.UnitMap != null && config.UnitMap.ContainsKey(lastUnit))
+            if (!string.IsNullOrWhiteSpace(key) && config.UnitMap != null)
             {
-                var unitValue = this.config.UnitMap[lastUnit];
-                var numValue = (string.IsNullOrEmpty(numberResult.Text)) ? null : this.config.InternalNumberParser.Parse(numberResult);
-                ret.Value = new UnitValue
+                if (config.UnitMap.TryGetValue(lastUnit, out var unitValue) ||
+                    config.UnitMap.TryGetValue(normalizedLastUnit, out unitValue))
                 {
-                    Number = numValue?.ResolutionStr,
-                    Unit = unitValue
-                };
-                ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
+                    var numValue = string.IsNullOrEmpty(numberResult.Text) ?
+                        null :
+                        this.config.InternalNumberParser.Parse(numberResult);
+
+                    ret.Value = new UnitValue
+                    {
+                        Number = numValue?.ResolutionStr,
+                        Unit = unitValue
+                    };
+                    ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
+                }
             }
 
             return ret;
@@ -92,7 +100,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public void AddIfNotContained(List<string> unitKeys, string unit)
         {
-            bool add = true;
+            var add = true;
             foreach (var unitKey in unitKeys)
             {
                 if (unitKey.Contains(unit))
