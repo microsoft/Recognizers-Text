@@ -928,5 +928,40 @@
   "Input": "=<30",
   "NotSupported": "javascript, python, java",
   "Results": []
+},
+{
+  "Input": "The number is equals to 20000 in 1998",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "equals to 20000 in 1998",
+      "Start": 14,
+      "End": 36,
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[10.01001001001,10.01001001001]"
+      }
+    }
+  ]
+},
+{
+  "Input": "The number is from 200 to 300 in 2008",
+  "NotSupported": "javascript, python, java",
+  "Results": []
+},
+{
+  "Input": "The number is from 200 to 3000000 in 2008",
+  "NotSupported": "javascript, python, java",
+  "Results": [
+    {
+      "Text": "from 200 to 3000000 in 2008",
+      "Start": 14,
+      "End": 40,
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[200,1494.02390438247)"
+      }
+    }
+  ]
 }
 ]
