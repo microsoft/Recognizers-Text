@@ -3666,5 +3666,54 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "I'll be out the third- quarter of 2016",
+    "Results": [
+      {
+        "Text": "the third- quarter of 2016",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out the third- quarter",
+    "Results": [
+      {
+        "Text": "the third- quarter",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out next year's third-quarter",
+    "Results": [
+      {
+        "Text": "next year's third-quarter",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out next year's fourth-quarter",
+    "Results": [
+      {
+        "Text": "next year's fourth-quarter",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Please convert $2000 to gbp.",
+    "Comment": "2000 shouldn't recognized as year here",
+    "Results": []
   }
 ]

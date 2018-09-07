@@ -649,17 +649,17 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
 		{
 			{ "Bit", "-bit|bit|bits" },
-			{ "Kilobit", "kilobit|kilobits|kb|kbit" },
-			{ "Megabit", "megabit|megabits|Mb|Mbit" },
-			{ "Gigabit", "gigabit|gigabits|Gb|Gbit" },
-			{ "Terabit", "terabit|terabits|Tb|Tbit" },
-			{ "Petabit", "petabit|petabits|Pb|Pbit" },
+			{ "Kilobit", "kilobit|kilobits|kb|Kb|kbit" },
+			{ "Megabit", "megabit|megabits|mb|Mb|mbit" },
+			{ "Gigabit", "gigabit|gigabits|gb|Gb|gbit" },
+			{ "Terabit", "terabit|terabits|tb|Tb|tbit" },
+			{ "Petabit", "petabit|petabits|pb|Pb|pbit" },
 			{ "Byte", "-byte|byte|bytes" },
-			{ "Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|kilobytes|kilo byte|kilo bytes|kByte" },
-			{ "Megabyte", "-megabyte|-megabytes|megabyte|mB|megabytes|mega byte|mega bytes|MByte" },
-			{ "Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|gigabytes|giga byte|giga bytes|GByte" },
-			{ "Terabyte", "-terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte" },
-			{ "Petabyte", "-petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte" }
+			{ "Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kbyte" },
+			{ "Megabyte", "-megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|mbyte" },
+			{ "Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|gbyte" },
+			{ "Terabyte", "-terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|tbyte" },
+			{ "Petabyte", "-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|pbyte" }
 		};
 		public static readonly IList<string> AmbiguousDimensionUnitList = new List<string>
 		{

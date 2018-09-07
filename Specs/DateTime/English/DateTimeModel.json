@@ -6602,6 +6602,31 @@
     ]
   },
   {
+    "Input": "I'll go back as early as next year's first quarter.",
+    "Context": {
+      "ReferenceDateTime": "2018-09-06T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "as early as next year's first quarter",
+        "Start": 13,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-04-01,P3M)",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "What's the sales for year greater than 2012",
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"

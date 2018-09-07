@@ -412,7 +412,7 @@ public class ChineseNumeric {
     public static final String OneNumberRangeEqualRegex = "{EqualRegex}\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)"
             .replace("{EqualRegex}", EqualRegex);
 
-    public static final String TwoNumberRangeRegex1 = "(位于|在|位於)\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(和|与|與|{TillRegex})\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(之间|之間)"
+    public static final String TwoNumberRangeRegex1 = "((位于|在|位於)|(?=(\\d|\\+|\\-)))\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(和|与|與|{TillRegex})\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。))[^之])+)\\s*(之)?(间|間)"
             .replace("{TillRegex}", TillRegex);
 
     public static final String TwoNumberRangeRegex2 = "({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})"

@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     }
                 }
 
-                // 2 is the maxium length of spaces.
+                // 2 is the maximum length of spaces.
                 maxPrefixMatchLen += 2;
                 prefixRegexes = BuildRegexFromSet(this.config.PrefixList.Values);
             }
@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         protected Regex BuildSeparateRegexFromSet(bool ignoreCase = true)
         {
-            HashSet<string> separateWords = new HashSet<string>();
+            var separateWords = new HashSet<string>();
             if (config.PrefixList?.Count > 0)
             {
                 foreach (var addWord in config.PrefixList.Values)

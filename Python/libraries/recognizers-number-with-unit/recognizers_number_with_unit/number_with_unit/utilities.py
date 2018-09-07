@@ -12,7 +12,7 @@ class DictionaryUtility():
             if not key:
                 continue
 
-            DictionaryUtility.bind_units_string(source_dictionary, key, value.lower())
+            DictionaryUtility.bind_units_string(source_dictionary, key, value)
 
     # Bind keys in a string which contains words separated by '|'.
     @staticmethod
