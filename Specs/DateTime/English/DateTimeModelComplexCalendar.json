@@ -5742,5 +5742,69 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I can only leave on 1/1/2016 and after my work item is done",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/1/2016",
+        "Start": 20,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I can only leave on 1/1/2016 and after 6PM",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/1/2016",
+        "Start": 20,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "after 6pm",
+        "Start": 33,
+        "End": 41,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
