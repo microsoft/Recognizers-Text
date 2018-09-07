@@ -3715,5 +3715,16 @@
     "Input": "Please convert $2000 to gbp.",
     "Comment": "2000 shouldn't recognized as year here",
     "Results": []
+  },
+  {
+    "Input": "This bank stock is down 20% in the year to date.",
+    "Results": [
+      {
+        "Text": "year to date",
+        "Type": "daterange",
+        "Start": 35,
+        "Length": 12
+      }
+    ]
   }
 ]
