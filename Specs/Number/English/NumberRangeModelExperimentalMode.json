@@ -871,17 +871,7 @@
   {
     "Input": "How about 2 in 5 or more",
     "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "2 in 5 or more",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[0.4,)"
-        },
-        "Start": 10,
-        "End": 23
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "How about more than 2 in 5",
@@ -1003,5 +993,35 @@
     "Input": "=<30",
     "NotSupported": "javascript, python, java",
     "Results": []
+  },
+  {
+    "Input": "The number is equals to 20000 in 1998",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "equals to 20000",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20000,20000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The number is from 200 to 300 in 2008",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 200 to 300",
+        "Start": 14,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,300]"
+        }
+      }
+    ]
   }
 ]
