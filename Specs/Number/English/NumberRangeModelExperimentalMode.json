@@ -809,15 +809,7 @@
 {
   "Input": "How about 2 in 5 or more",
   "NotSupported": "javascript, python, java",
-  "Results": [
-    {
-      "Text": "2 in 5 or more",
-      "TypeName": "numberrange",
-      "Resolution": {
-        "value": "[0.4,)"
-      }
-    }
-  ]
+  "Results": []
 }
 ,
 {

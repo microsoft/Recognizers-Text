@@ -161,8 +161,9 @@ namespace Microsoft.Recognizers.Text.Number
             else
             {
                 var numberStr = string.IsNullOrEmpty(numberStr1) ? numberStr2 : numberStr1;
-                
-                var extractNumList = ExtractNumberAndOrdinalFromStr(numberStr);
+
+                var isAmbiguousRangeOrFraction = IsAmbiguousRangeOrFraction(match, type, numberStr);
+                var extractNumList = ExtractNumberAndOrdinalFromStr(numberStr, isAmbiguousRangeOrFraction);
 
                 if (extractNumList != null)
                 {
@@ -210,7 +211,7 @@ namespace Microsoft.Recognizers.Text.Number
         }
 
         // TODO: this should not be in the NumberRangeExtractor as it doesn't handle duration concepts
-        private List<ExtractResult> ExtractNumberAndOrdinalFromStr(string numberStr)
+        private List<ExtractResult> ExtractNumberAndOrdinalFromStr(string numberStr, bool isAmbiguousRangeOrFraction = false)
         {
             List<ExtractResult> ret = null;
             var extractNumber = numberExtractor.Extract(numberStr);
@@ -232,16 +233,16 @@ namespace Microsoft.Recognizers.Text.Number
                 ret = ret.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
             }
 
-            var isFractionWithInConnector = false;
+            var removeFractionWithInConnector = false;
 
             if (Options == NumberOptions.ExperimentalMode)
             {
-                isFractionWithInConnector = IsFractionWithInConnector(numberStr);
+                removeFractionWithInConnector = IsFractionWithInConnector(numberStr);
+            }
 
-                if (ret != null && isFractionWithInConnector)
-                {
-                    ret = RemoveAmbiguousFractions(ret);
-                }
+            if (ret != null && (removeFractionWithInConnector || isAmbiguousRangeOrFraction))
+            {
+                ret = RemoveAmbiguousFractions(ret);
             }
 
             return ret;
@@ -252,6 +253,13 @@ namespace Microsoft.Recognizers.Text.Number
         private bool IsFractionWithInConnector(string numberStr)
         {
             return AmbiguousFractionConnectorsRegex.Match(numberStr).Success;
+        }
+
+        // Judge whether it's special cases like "more than 30000 in 2010"
+        // For these specific cases, we will not treat "30000 in 2010" as a fraction number
+        private bool IsAmbiguousRangeOrFraction(Match match, string type, string numberStr)
+        {
+            return (type == NumberRangeConstants.MORE || type == NumberRangeConstants.LESS) && match.Value.Trim().EndsWith(numberStr);
         }
 
         // For cases like "more than 30000 in 2010", we will not treate "30000 in 2010" as a fraction number
