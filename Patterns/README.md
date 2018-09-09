@@ -66,6 +66,6 @@ The Microsoft.Recognizers.Definitions project contains all the required T4 templ
 #### TypeScript
 The TypeScript implementation uses a Node.js program to read the YAML files and generate a .TS files containing a single namespace including all data structures for each YAML file.
 
-The *tools\resource-generator* folder contains the Node.js program which generates the data structures namespaces in the *src\resources folder*. To update the definition namespaces the `build-resources` configured script can be used as follow: `npm run build-resources`.
+The *tools\resource-generator* folder contains the Node.js program which generates the data structures namespaces in the *src\resources* folder. To update the definition namespaces the `build-resources` configured script can be used as follow: `npm run build-resources`.
 
 ![TypeScrip resources](images/typescript-resources.png)
