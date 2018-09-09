@@ -1,7 +1,6 @@
 [
   {
     "Input": "Het zal een kuai en vijf mao vijf kosten.",
-    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "een kuai en vijf mao vijf",
@@ -9,14 +8,14 @@
         "Resolution": {
           "isoCurrency": "CNY",
           "unit": "Chinese yuan",
-          "value": "1.55"
+          "value": "1,55"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Hey, het gaat $4,25 kosten en 32 is het aantal dat ik wil afnemen!",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "$4,25",
@@ -26,11 +25,11 @@
           "value": "4,25"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Het bedrag is 5 euro 50",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5 euro 50",
@@ -40,11 +39,11 @@
           "value": "5,50"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "Hey, het gaat €4,25 kosten en 32 is het aantal dat ik wil afnemen!",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "€4,25",
@@ -54,6 +53,7 @@
           "value": "4,25"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]
