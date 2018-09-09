@@ -175,7 +175,7 @@ CurrencySuffixList: !dictionary
     Groxz: groszy|grosz|grosze
 #Qatari riyal
     Riyal qatari: riyal qatari|qar|riyals qatari
-    Riayl saudi: riyal saudi|sar|riyals saudi
+    Riyal saudi: riyal saudi|sar|riyals saudi
     Riyal: riyal|riyals|rial|﷼
     Dirham: dirham|dirhem|dirhm
     Halala: halalas|halala

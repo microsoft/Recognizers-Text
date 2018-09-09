@@ -121,29 +121,29 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetSwiftDay(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
             var match = RelativeDayRegex.Match(text);
 
-            if (trimedText.Equals("today"))
+            if (trimmedText.Equals("today"))
             {
                 swift = 0;
             }
-            else if (trimedText.Equals("tomorrow") || trimedText.Equals("tmr"))
+            else if (trimmedText.Equals("tomorrow") || trimmedText.Equals("tmr"))
             {
                 swift = 1;
             }
-            else if (trimedText.Equals("yesterday"))
+            else if (trimmedText.Equals("yesterday"))
             {
                 swift = -1;
             }
-            else if (trimedText.EndsWith("day after tomorrow") ||
-                     trimedText.EndsWith("day after tmr"))
+            else if (trimmedText.EndsWith("day after tomorrow") ||
+                     trimmedText.EndsWith("day after tmr"))
             {
                 swift = 2;
             }
-            else if (trimedText.EndsWith("day before yesterday"))
+            else if (trimmedText.EndsWith("day before yesterday"))
             {
                 swift = -2;
             }
@@ -161,13 +161,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetSwift(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PastPrefixRegex.IsMatch(trimedText))
+            else if (PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -176,8 +176,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool IsCardinalLast(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.Equals("last");
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return trimmedText.Equals("last");
         }
     }
 }

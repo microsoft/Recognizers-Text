@@ -28,8 +28,8 @@ namespace Microsoft.Recognizers.Text.Number
 
             TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-            //necessary for the german language because bigger numbers are not separated by whitespaces or special characters like in other languages
-            if (config.CultureInfo.Name == "de-DE") {
+            // necessary for the German & Dutch language because bigger numbers are not separated by whitespaces or special characters like in other languages
+            if (config.CultureInfo.Name == "de-DE" || config.CultureInfo.Name == "nl-NL") {
                 TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.IgnoreCase | RegexOptions.Singleline);
             }
 
@@ -290,6 +290,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Text = extResult.Text,
                 Type = extResult.Type
             };
+
             var handle = extResult.Text.ToLower();
 
             #region Special case for "dozen"
@@ -305,7 +306,7 @@ namespace Microsoft.Recognizers.Text.Number
             var intPart = numGroup[0];
             var sMatch = TextNumberRegex.Match(intPart);
 
-            //Store all match str.
+            // Store all match str.
             var matchStrs = new List<string>();
 
             while (sMatch.Success)
@@ -328,12 +329,14 @@ namespace Microsoft.Recognizers.Text.Number
                 var pointPart = numGroup[1];
                 sMatch = TextNumberRegex.Match(pointPart);
                 matchStrs.Clear();
+
                 while (sMatch.Success)
                 {
                     var matchStr = sMatch.Groups[0].Value.ToLower();
                     matchStrs.Add(matchStr);
                     sMatch = sMatch.NextMatch();
                 }
+
                 pointPartRet += GetPointValue(matchStrs);
             }
 
@@ -361,13 +364,13 @@ namespace Microsoft.Recognizers.Text.Number
                 var numerator = match.Groups["numerator"].Value;
                 var denominator = match.Groups["denominator"].Value;
 
-                var smallValue = char.IsDigit(numerator[0])
-                    ? GetDigitalValue(numerator, 1)
-                    : GetIntValue(GetMatches(numerator));
+                var smallValue = char.IsDigit(numerator[0]) ? 
+                    GetDigitalValue(numerator, 1) : 
+                    GetIntValue(GetMatches(numerator));
 
-                var bigValue = char.IsDigit(denominator[0])
-                    ? GetDigitalValue(denominator, 1)
-                    : GetIntValue(GetMatches(denominator));
+                var bigValue = char.IsDigit(denominator[0]) ? 
+                    GetDigitalValue(denominator, 1) : 
+                    GetIntValue(GetMatches(denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -394,10 +397,10 @@ namespace Microsoft.Recognizers.Text.Number
 
                     var smHundreds = 100;
 
-                    // previous : hundred
-                    // current : one
-                    if ((previousValue >= smHundreds && previousValue > currentValue)
-                        || (previousValue < smHundreds && IsComposable(currentValue, previousValue)))
+                    // Previous : hundred
+                    // Current : one
+                    if ((previousValue >= smHundreds && previousValue > currentValue) || 
+                        (previousValue < smHundreds && IsComposable(currentValue, previousValue)))
                     {
                         if (previousValue < smHundreds && currentValue >= roundValue)
                         {
@@ -409,18 +412,18 @@ namespace Microsoft.Recognizers.Text.Number
                             break;
                         }
 
-                        // current is the first word
+                        // Current is the first word
                         if (splitIndex == 0)
                         {
-                            // scan, skip the first word
+                            // Scan, skip the first word
                             splitIndex = 1;
                             while (splitIndex <= fracWords.Count - 2)
                             {
                                 // e.g. one hundred thousand 
                                 // frac[i+1] % 100 && frac[i] % 100 = 0
-                                if (Config.ResolveCompositeNumber(fracWords[splitIndex]) >= smHundreds
-                                    && !Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1])
-                                    && Config.ResolveCompositeNumber(fracWords[splitIndex + 1]) < smHundreds)
+                                if (Config.ResolveCompositeNumber(fracWords[splitIndex]) >= smHundreds && 
+                                    !Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1]) && 
+                                    Config.ResolveCompositeNumber(fracWords[splitIndex + 1]) < smHundreds)
                                 {
                                     splitIndex++;
                                     break;
@@ -457,9 +460,8 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 fracWords.RemoveRange(splitIndex, fracWords.Count - splitIndex);
 
-                // denomi = denominator
-                var denomiValue = GetIntValue(fracPart);
                 // Split mixed number with fraction
+                var denominator = GetIntValue(fracPart);
                 double numerValue = 0;
                 double intValue = 0;
 
@@ -479,13 +481,13 @@ namespace Microsoft.Recognizers.Text.Number
                 intValue = GetIntValue(GetMatches(intStr));
 
                 // Find mixed number
-                if (mixedIndex != fracWords.Count && numerValue < denomiValue)
+                if (mixedIndex != fracWords.Count && numerValue < denominator)
                 {
-                    result.Value = intValue + numerValue / denomiValue;
+                    result.Value = intValue + numerValue / denominator;
                 }
                 else
                 {
-                    result.Value = (intValue + numerValue) / denomiValue;
+                    result.Value = (intValue + numerValue) / denominator;
                 }
             }
 
@@ -503,7 +505,7 @@ namespace Microsoft.Recognizers.Text.Number
             var sMatch = TextNumberRegex.Match(input);
             var matchStrs = new List<string>();
 
-            //Store all match str.
+            // Store all match str.
             while (sMatch.Success)
             {
                 var matchStr = sMatch.Groups[0].Value.ToLower();
@@ -514,8 +516,8 @@ namespace Microsoft.Recognizers.Text.Number
             return matchStrs;
         }
 
-        //Test if big and combine with small.
-        //e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
+        // Test if big and combine with small.
+        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
         private bool IsComposable(long big, long small)
         {
             var baseNumber = small > 10 ? 100 : 10;
@@ -535,13 +537,13 @@ namespace Microsoft.Recognizers.Text.Number
             double tempValue = 0;
             long endFlag = 1;
 
-            //Scan from end to start, find the end word
+            // Scan from end to start, find the end word
             for (var i = matchStrs.Count - 1; i >= 0; i--)
             {
                 if (RoundNumberSet.Contains(matchStrs[i]))
                 {
-                    //if false,then continue
-                    //You will meet hundred first, then thousand.
+                    // If false, then continue
+                    // will meet hundred first, then thousand.
                     if (endFlag > Config.RoundNumberMap[matchStrs[i]])
                     {
                         continue;
@@ -566,7 +568,7 @@ namespace Microsoft.Recognizers.Text.Number
                             ? Config.CardinalNumberMap[matchStr]
                             : Config.OrdinalNumberMap[matchStr];
                     
-                        //This is just for ordinal now. Not for fraction ever.
+                        // This is just for ordinal now. Not for fraction ever.
                         if (isOrdinal)
                         {
                             double fracPart = Config.OrdinalNumberMap[matchStr];
@@ -574,7 +576,7 @@ namespace Microsoft.Recognizers.Text.Number
                             {
                                 var intPart = tempStack.Pop();
                         
-                                // if intPart >= fracPart, it means it is an ordinal number
+                                // If intPart >= fracPart, it means it is an ordinal number
                                 // it begins with an integer, ends with an ordinal
                                 // e.g. ninety-ninth
                                 if (intPart >= fracPart)
@@ -583,7 +585,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 }
                                 else
                                 {
-                                    // another case of the type is ordinal
+                                    // Another case where the type is ordinal
                                     // e.g. three hundredth
 
                                     while (tempStack.Any())
@@ -655,8 +657,9 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                 }
 
-                //Calculate the part like "thirty-one"
+                // Calculate the part like "thirty-one"
                 mulValue = 1;
+
                 if (lastIndex != isEnd.Length)
                 {
                     partValue = GetIntValue(matchStrs.GetRange(lastIndex, isEnd.Length - lastIndex));
@@ -705,17 +708,19 @@ namespace Microsoft.Recognizers.Text.Number
                 Type = extResult.Type
             };
 
-            //[1] 24
-            //[2] 12 32/33
-            //[3] 1,000,000
-            //[4] 234.567
-            //[5] 44/55
-            //[6] 2 hundred
-            //dot occured.
+            // [1] 24
+            // [2] 12 32/33
+            // [3] 1,000,000
+            // [4] 234.567
+            // [5] 44/55
+            // [6] 2 hundred
+            // dot occured.
             double power = 1;
             var handle = extResult.Text.ToLower();
-            var match = Config.DigitalNumberRegex.Match(handle);
             int startIndex = 0;
+
+            var match = Config.DigitalNumberRegex.Match(handle);
+
             while (match.Success)
             {
                 var tmpIndex = -1;
@@ -733,7 +738,7 @@ namespace Microsoft.Recognizers.Text.Number
                 match = match.NextMatch();
             }
 
-            //scale used in the calculate of double
+            // Scale used in calculating double
             result.Value = GetDigitalValue(handle, power);
 
             return result;
@@ -784,9 +789,10 @@ namespace Microsoft.Recognizers.Text.Number
                     isNegative = true;
                 }
             }
+
             calStack.Push(temp);
 
-            // is the number is a fraction.
+            // If the number is a fraction.
             double calResult = 0;
             if (isFrac)
             {
@@ -799,6 +805,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 calResult += calStack.Pop();
             }
+
             calResult *= power;
 
             if (isNegative)

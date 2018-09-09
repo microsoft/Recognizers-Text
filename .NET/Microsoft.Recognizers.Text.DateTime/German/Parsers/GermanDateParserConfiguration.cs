@@ -118,28 +118,28 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetSwiftDay(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
             var match = RelativeDayRegex.Match(text);
 
-            if (trimedText.Equals("heute"))
+            if (trimmedText.Equals("heute"))
             {
                 swift = 0;
             }
-            else if (trimedText.Equals("morgen") || trimedText.Equals("tmr"))
+            else if (trimmedText.Equals("morgen") || trimmedText.Equals("tmr"))
             {
                 swift = 1;
             }
-            else if (trimedText.Equals("gestern"))
+            else if (trimmedText.Equals("gestern"))
             {
                 swift = -1;
             }
-            else if (trimedText.EndsWith("übermorgen"))
+            else if (trimmedText.EndsWith("übermorgen"))
             {
                 swift = 2;
             }
-            else if (trimedText.EndsWith("vorgestern"))
+            else if (trimmedText.EndsWith("vorgestern"))
             {
                 swift = -2;
             }
@@ -157,13 +157,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public int GetSwift(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (PastPrefixRegex.IsMatch(trimedText))
+            else if (PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -172,8 +172,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool IsCardinalLast(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.Equals("letzten");
+            var trimmedText = text.Trim().ToLowerInvariant();
+            return trimmedText.Equals("letzten");
         }
     }
 }

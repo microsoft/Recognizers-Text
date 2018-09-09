@@ -14,18 +14,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         protected override DateTimeResolutionResult ParseSpecificTimeOfDay(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             // handle morning, afternoon..
-            if (!this.Config.GetMatchedTimeRange(trimedText, out string timeStr, out int beginHour, out int endHour, out int endMin))
+            if (!this.Config.GetMatchedTimeRange(trimmedText, out string timeStr, out int beginHour, out int endHour, out int endMin))
             {
                 return ret;
             }
 
-            var match = this.Config.SpecificTimeOfDayRegex.Match(trimedText);
-            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            var match = this.Config.SpecificTimeOfDayRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                var swift = this.Config.GetSwiftPrefix(trimedText);
+                var swift = this.Config.GetSwiftPrefix(trimmedText);
 
                 var date = referenceTime.AddDays(swift).Date;
                 int day = date.Day, month = date.Month, year = date.Year;
@@ -39,15 +39,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 return ret;
             }
 
-            var startIndex = trimedText.IndexOf(DateTimeDefinitions.Tomorrow, StringComparison.Ordinal) == 0 ? DateTimeDefinitions.Tomorrow.Length : 0;
+            var startIndex = trimmedText.IndexOf(DateTimeDefinitions.Tomorrow, StringComparison.Ordinal) == 0 ? DateTimeDefinitions.Tomorrow.Length : 0;
 
             // handle Date followed by morning, afternoon
             // Add handling code to handle morning, afternoon followed by Date
             // Add handling code to handle early/late morning, afternoon
-            match = this.Config.TimeOfDayRegex.Match(trimedText.Substring(startIndex));
+            match = this.Config.TimeOfDayRegex.Match(trimmedText.Substring(startIndex));
             if (match.Success)
             {
-                var beforeStr = trimedText.Substring(0, match.Index + startIndex).Trim();
+                var beforeStr = trimmedText.Substring(0, match.Index + startIndex).Trim();
                 var ers = this.Config.DateExtractor.Extract(beforeStr, referenceTime);
                 if (ers.Count == 0)
                 {

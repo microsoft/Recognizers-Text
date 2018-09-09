@@ -76,25 +76,25 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.Equals("quotidien") || trimedText.Equals("quotidienne") || 
-                trimedText.Equals("jours") || trimedText.Equals("journellement")) // daily
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.Equals("quotidien") || trimmedText.Equals("quotidienne") || 
+                trimmedText.Equals("jours") || trimmedText.Equals("journellement")) // daily
             {
                 timex = "P1D";
             }
-            else if (trimedText.Equals("hebdomadaire"))           // weekly
+            else if (trimmedText.Equals("hebdomadaire"))           // weekly
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("bihebdomadaire"))          // bi weekly
+            else if (trimmedText.Equals("bihebdomadaire"))          // bi weekly
             {
                 timex = "P2W";
             }
-            else if (trimedText.Equals("mensuel") || trimedText.Equals("mensuelle"))              // monthly
+            else if (trimmedText.Equals("mensuel") || trimmedText.Equals("mensuelle"))              // monthly
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("annuel") || trimedText.Equals("annuellement")) // yearly/annually
+            else if (trimmedText.Equals("annuel") || trimmedText.Equals("annuellement")) // yearly/annually
             {
                 timex = "P1Y";
             }
@@ -108,20 +108,20 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.Equals("jour")||trimedText.Equals("journee"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.Equals("jour")||trimmedText.Equals("journee"))
             {
                 timex = "P1D";
             }
-            else if (trimedText.Equals("semaine"))
+            else if (trimmedText.Equals("semaine"))
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("mois"))
+            else if (trimmedText.Equals("mois"))
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("an")||trimedText.Equals("annee")) // year
+            else if (trimmedText.Equals("an")||trimmedText.Equals("annee")) // year
             {
                 timex = "P1Y";
             }

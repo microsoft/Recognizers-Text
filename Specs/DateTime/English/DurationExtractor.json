@@ -627,5 +627,41 @@
         "Length": 13
       }
     ]
+  },
+  {
+    "Input": "Can we wait another business day?",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "another business day",
+        "Type": "duration",
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave for half an business days.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "half an business days",
+        "Type": "duration",
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave for two decades.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "two decades",
+        "Type": "duration",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
   }
 ]

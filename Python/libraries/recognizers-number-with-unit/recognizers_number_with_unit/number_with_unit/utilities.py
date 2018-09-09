@@ -1,5 +1,6 @@
 from typing import Dict
 
+
 class DictionaryUtility():
     # Safely bind dictionary which contains several key-value pairs to the destination dictionary.
     # This function is used to bind all the prefix and suffix for units.

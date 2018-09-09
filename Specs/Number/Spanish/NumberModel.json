@@ -7,7 +7,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2000000000"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -19,7 +21,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "123456789101231"
-        }
+        },
+        "Start": 1,
+        "End": 15
       }
     ]
   },
@@ -31,7 +35,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-123456789101231"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -43,7 +49,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-123456789101231"
-        }
+        },
+        "Start": 1,
+        "End": 16
       }
     ]
   },
@@ -55,7 +63,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-1"
-        }
+        },
+        "Start": 1,
+        "End": 2
       }
     ]
   },
@@ -67,7 +77,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1234567"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -79,7 +91,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "36"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -91,7 +105,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2000000000"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -103,7 +119,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "12"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -115,7 +133,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "180"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -127,7 +147,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2048"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -139,7 +161,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "7"
-        }
+        },
+        "Start": 0,
+        "End": 4
       }
     ]
   },
@@ -151,7 +175,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "47"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -163,7 +189,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "347"
-        }
+        },
+        "Start": 0,
+        "End": 27
       }
     ]
   },
@@ -175,7 +203,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2347"
-        }
+        },
+        "Start": 0,
+        "End": 35
       }
     ]
   },
@@ -187,7 +217,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "52347"
-        }
+        },
+        "Start": 0,
+        "End": 47
       }
     ]
   },
@@ -199,7 +231,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "452347"
-        }
+        },
+        "Start": 0,
+        "End": 61
       }
     ]
   },
@@ -211,7 +245,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3000000"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -223,7 +259,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3000007"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -235,7 +273,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3000047"
-        }
+        },
+        "Start": 0,
+        "End": 29
       }
     ]
   },
@@ -247,7 +287,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3000347"
-        }
+        },
+        "Start": 0,
+        "End": 41
       }
     ]
   },
@@ -259,7 +301,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3002347"
-        }
+        },
+        "Start": 0,
+        "End": 49
       }
     ]
   },
@@ -271,7 +315,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3052347"
-        }
+        },
+        "Start": 0,
+        "End": 61
       }
     ]
   },
@@ -283,7 +329,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3452347"
-        }
+        },
+        "Start": 0,
+        "End": 75
       }
     ]
   },
@@ -295,7 +343,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "13452347"
-        }
+        },
+        "Start": 0,
+        "End": 76
       }
     ]
   },
@@ -307,7 +357,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "513452347"
-        }
+        },
+        "Start": 0,
+        "End": 87
       }
     ]
   },
@@ -319,7 +371,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "513452340"
-        }
+        },
+        "Start": 0,
+        "End": 79
       }
     ]
   },
@@ -331,7 +385,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "513452300"
-        }
+        },
+        "Start": 0,
+        "End": 70
       }
     ]
   },
@@ -343,7 +399,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "513452000"
-        }
+        },
+        "Start": 0,
+        "End": 58
       }
     ]
   },
@@ -355,7 +413,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "513450000"
-        }
+        },
+        "Start": 0,
+        "End": 52
       }
     ]
   },
@@ -367,7 +427,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "513400000"
-        }
+        },
+        "Start": 0,
+        "End": 42
       }
     ]
   },
@@ -379,7 +441,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "513000000"
-        }
+        },
+        "Start": 0,
+        "End": 24
       }
     ]
   },
@@ -391,7 +455,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "510000000"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -403,7 +469,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "500000000"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -415,7 +483,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1523"
-        }
+        },
+        "Start": 0,
+        "End": 24
       }
     ]
   },
@@ -427,7 +497,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3455228556832"
-        }
+        },
+        "Start": 0,
+        "End": 137
       }
     ]
   },
@@ -439,7 +511,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3455228556000"
-        }
+        },
+        "Start": 0,
+        "End": 111
       }
     ]
   },
@@ -451,7 +525,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3455228000000"
-        }
+        },
+        "Start": 0,
+        "End": 79
       }
     ]
   },
@@ -463,7 +539,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3455000000000"
-        }
+        },
+        "Start": 0,
+        "End": 57
       }
     ]
   },
@@ -475,7 +553,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3000000000000"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -487,7 +567,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1000"
-        }
+        },
+        "Start": 5,
+        "End": 10
       }
     ]
   },
@@ -499,7 +581,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
+        },
+        "Start": 7,
+        "End": 8
       }
     ]
   },
@@ -511,7 +595,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
+        },
+        "Start": 19,
+        "End": 21
       }
     ]
   },
@@ -523,7 +609,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "200"
-        }
+        },
+        "Start": 14,
+        "End": 23
       }
     ]
   },
@@ -535,7 +623,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1100"
-        }
+        },
+        "Start": 16,
+        "End": 23
       }
     ]
   },
@@ -547,7 +637,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "7235"
-        }
+        },
+        "Start": 16,
+        "End": 51
       }
     ]
   },
@@ -559,7 +651,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "13452347"
-        }
+        },
+        "Start": 46,
+        "End": 122
       }
     ]
   },
@@ -571,7 +665,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "101231,2353"
-        }
+        },
+        "Start": 1,
+        "End": 11
       }
     ]
   },
@@ -583,7 +679,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-101231,4323"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -595,7 +693,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-89101231,5127"
-        }
+        },
+        "Start": 1,
+        "End": 14
       }
     ]
   },
@@ -607,7 +707,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-1,1234567"
-        }
+        },
+        "Start": 1,
+        "End": 10
       }
     ]
   },
@@ -619,7 +721,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1234567,51274"
-        }
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
@@ -631,7 +735,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "192"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -643,7 +749,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,23456"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -655,7 +763,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "4,8"
-        }
+        },
+        "Start": 0,
+        "End": 4
       }
     ]
   },
@@ -667,7 +777,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,08"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -679,7 +791,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "9,2321312"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -691,7 +805,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-9,2321312"
-        }
+        },
+        "Start": 1,
+        "End": 10
       }
     ]
   },
@@ -703,7 +819,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "10000000000"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -715,7 +833,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "8,95430243255239"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -727,7 +847,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "7,5"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -739,7 +861,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "47,28"
-        }
+        },
+        "Start": 0,
+        "End": 31
       }
     ]
   },
@@ -751,7 +875,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "347,512"
-        }
+        },
+        "Start": 0,
+        "End": 47
       }
     ]
   },
@@ -763,7 +889,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2347,1578"
-        }
+        },
+        "Start": 0,
+        "End": 70
       }
     ]
   },
@@ -775,7 +903,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "52347,2"
-        }
+        },
+        "Start": 0,
+        "End": 62
       }
     ]
   },
@@ -787,7 +917,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "452347,22"
-        }
+        },
+        "Start": 0,
+        "End": 76
       }
     ]
   },
@@ -799,7 +931,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "8,95430243255239"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -811,7 +945,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,4"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -823,7 +959,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-0,0004"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -835,7 +973,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-8,95430243255239"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -847,7 +987,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-0,4"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -859,7 +1001,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-8,95430243255239"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -871,7 +1015,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-1,2732E+15"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -883,7 +1029,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1,232E+15"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -895,7 +1043,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-1,2"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -907,7 +1057,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "192"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -919,21 +1071,27 @@
         "TypeName": "number",
         "Resolution": {
           "value": "192168"
-        }
+        },
+        "Start": 0,
+        "End": 6
       },
       {
         "Text": "1",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
+        },
+        "Start": 8,
+        "End": 8
       },
       {
         "Text": "2",
         "TypeName": "number",
         "Resolution": {
           "value": "2"
-        }
+        },
+        "Start": 10,
+        "End": 10
       }
     ]
   },
@@ -965,7 +1123,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -977,7 +1137,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
+        },
+        "Start": 0,
+        "End": 1
       }
     ]
   },
@@ -989,7 +1151,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "103,666666666667"
-        }
+        },
+        "Start": 0,
+        "End": 26
       }
     ]
   },
@@ -1001,7 +1165,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "16"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1013,7 +1179,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,666666666666667"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -1025,7 +1193,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "116"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -1037,7 +1207,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "106"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -1049,7 +1221,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "161"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -1061,7 +1235,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1E-12"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1073,7 +1249,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1E-10"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1085,7 +1263,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "6"
-        }
+        },
+        "Start": 1,
+        "End": 14
       }
     ]
   },
@@ -1097,7 +1277,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "36"
-        }
+        },
+        "Start": 1,
+        "End": 9
       }
     ]
   },
@@ -1109,7 +1291,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "36"
-        }
+        },
+        "Start": 1,
+        "End": 12
       }
     ]
   },
@@ -1121,21 +1305,27 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
+        },
+        "Start": 0,
+        "End": 0
       },
       {
         "Text": "234",
         "TypeName": "number",
         "Resolution": {
           "value": "234"
-        }
+        },
+        "Start": 3,
+        "End": 5
       },
       {
         "Text": "567",
         "TypeName": "number",
         "Resolution": {
           "value": "567"
-        }
+        },
+        "Start": 8,
+        "End": 10
       }
     ]
   },
@@ -1147,7 +1337,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-0,8"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -1159,7 +1351,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-1,8"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -1171,7 +1365,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -1183,7 +1379,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
+        },
+        "Start": 0,
+        "End": 0
       }
     ]
   },
@@ -1195,7 +1393,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "10000"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -1207,7 +1407,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "10000000000"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -1219,7 +1421,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "-10000"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -1231,7 +1435,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2000000"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -1243,7 +1449,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1000000000000"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -1255,7 +1463,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3"
-        }
+        },
+        "Start": 1,
+        "End": 4
       }
     ]
   },
@@ -1267,7 +1477,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1000000000000"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1279,7 +1491,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "21000000000000"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1291,7 +1505,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "21000000000300"
-        }
+        },
+        "Start": 0,
+        "End": 28
       }
     ]
   },
@@ -1303,7 +1519,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "52"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -1315,7 +1533,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "331"
-        }
+        },
+        "Start": 0,
+        "End": 29
       }
     ]
   },
@@ -1327,7 +1547,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "202000"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -1339,7 +1561,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2200"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -1351,7 +1575,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2330"
-        }
+        },
+        "Start": 1,
+        "End": 6
       }
     ]
   },
@@ -1363,7 +1589,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "200,03"
-        }
+        },
+        "Start": 1,
+        "End": 25
       }
     ]
   },
@@ -1375,7 +1603,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "200,71"
-        }
+        },
+        "Start": 1,
+        "End": 28
       }
     ]
   },
@@ -1387,7 +1617,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "322000000"
-        }
+        },
+        "Start": 1,
+        "End": 12
       }
     ]
   },
@@ -1399,7 +1631,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "70"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -1411,7 +1645,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "52"
-        }
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
@@ -1423,7 +1659,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2,25"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -1435,7 +1673,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,75"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -1447,7 +1687,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,125"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1459,7 +1701,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,625"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -1471,7 +1715,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,5"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -1483,7 +1729,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,75"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1495,7 +1743,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "20,6"
-        }
+        },
+        "Start": 0,
+        "End": 22
       }
     ]
   },
@@ -1507,7 +1757,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "4,6"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -1519,7 +1771,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "23,6"
-        }
+        },
+        "Start": 0,
+        "End": 26
       }
     ]
   },
@@ -1531,7 +1785,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "200440,6"
-        }
+        },
+        "Start": 0,
+        "End": 40
       }
     ]
   },
@@ -1543,7 +1799,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1,5"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -1555,7 +1813,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1,25"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1567,7 +1827,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "5,25"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -1579,7 +1841,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "100,75"
-        }
+        },
+        "Start": 0,
+        "End": 20
       }
     ]
   },
@@ -1591,7 +1855,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,01"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1603,7 +1869,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,2"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1615,7 +1883,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1E-07"
-        }
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -1627,7 +1897,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,6"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1639,7 +1911,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "4"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1651,7 +1925,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "4,6"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -1663,7 +1939,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3,2"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -1675,7 +1953,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "4,2"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -1687,7 +1967,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,0476190476190476"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1699,7 +1981,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "6,33333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 33
       }
     ]
   },
@@ -1711,7 +1995,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "130,142857142857"
-        }
+        },
+        "Start": 0,
+        "End": 35
       }
     ]
   },
@@ -1723,7 +2009,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,733333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -1735,7 +2023,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,04"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1747,7 +2037,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,8"
-        }
+        },
+        "Start": 0,
+        "End": 21
       }
     ]
   },
@@ -1759,7 +2051,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,142857142857143"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1771,7 +2065,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,15"
-        }
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
@@ -1783,7 +2079,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,015"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -1795,7 +2093,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,0015"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1807,7 +2107,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,00015"
-        }
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -1819,7 +2121,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1,5E-05"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -1831,7 +2135,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1,5E-06"
-        }
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -1843,7 +2149,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "26"
-        }
+        },
+        "Start": 0,
+        "End": 21
       }
     ]
   },
@@ -1855,7 +2163,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2,85714285714286"
-        }
+        },
+        "Start": 0,
+        "End": 21
       }
     ]
   },
@@ -1867,7 +2177,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "26,4"
-        }
+        },
+        "Start": 0,
+        "End": 29
       }
     ]
   },
@@ -1879,7 +2191,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "130,4"
-        }
+        },
+        "Start": 0,
+        "End": 31
       }
     ]
   },
@@ -1891,7 +2205,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "26,4"
-        }
+        },
+        "Start": 0,
+        "End": 27
       }
     ]
   },
@@ -1903,7 +2219,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "130,4"
-        }
+        },
+        "Start": 0,
+        "End": 29
       }
     ]
   },
@@ -1915,7 +2233,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,00952380952380952"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -1927,7 +2247,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,0995024875621891"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1939,7 +2261,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1951,7 +2275,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,0476190476190476"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -1963,7 +2289,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1975,7 +2303,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1987,7 +2317,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -1999,7 +2331,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,05"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -2011,7 +2345,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,05"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -2023,7 +2359,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,01"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -2035,7 +2373,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,00826446280991736"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -2047,7 +2387,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "0,00740740740740741"
-        }
+        },
+        "Start": 0,
+        "End": 31
       }
     ]
   },
@@ -2059,7 +2401,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "2,5"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -2071,7 +2415,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "67,5"
-        }
+        },
+        "Start": 0,
+        "End": 28
       }
     ]
   },
@@ -2083,7 +2429,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "11,5"
-        }
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -2095,7 +2443,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "10,5"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -2107,7 +2457,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "10,25"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -2119,7 +2471,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1234567"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -2131,14 +2485,18 @@
         "TypeName": "number",
         "Resolution": {
           "value": "40000"
-        }
+        },
+        "Start": 0,
+        "End": 5
       },
       {
         "Text": "40 000",
         "TypeName": "number",
         "Resolution": {
           "value": "40000"
-        }
+        },
+        "Start": 23,
+        "End": 28
       }
     ]
   },
@@ -2150,34 +2508,42 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1414021100"
-        }
+        },
+        "Start": 36,
+        "End": 48
       }
     ]
   },
   {
     "Input": "423 0000 se reconocerán como dos números.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "423",
         "TypeName": "number",
         "Resolution": {
           "value": "423"
-        }
+        },
+        "Start": 0,
+        "End": 2
       },
       {
         "Text": "0000",
         "TypeName": "number",
         "Resolution": {
           "value": "0"
-        }
+        },
+        "Start": 4,
+        "End": 7
       },
       {
         "Text": "dos",
         "TypeName": "number",
         "Resolution": {
           "value": "2"
-        }
+        },
+        "Start": 29,
+        "End": 31
       }
     ]
   },
@@ -2189,14 +2555,18 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1234567,89"
-        }
+        },
+        "Start": 0,
+        "End": 11
       },
       {
         "Text": "un",
         "TypeName": "number",
         "Resolution": {
           "value": "1"
-        }
+        },
+        "Start": 16,
+        "End": 17
       }
     ]
   }

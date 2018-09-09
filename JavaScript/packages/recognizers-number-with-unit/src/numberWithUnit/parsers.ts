@@ -46,23 +46,7 @@ export abstract class BaseNumberWithUnitParserConfiguration implements INumberWi
     }
 
     BindDictionary(dictionary: ReadonlyMap<string, string>): void {
-        if (!dictionary) return;
-        for (let key of dictionary.keys()) {
-            let value = dictionary.get(key);
-
-            if (!key || key.length === 0) {
-                continue;
-            }
-
-            let values = value.trim().split('|');
-            values.forEach(token => {
-                if (!token || token.length === 0 || this.unitMap.has(token)) {
-                    return;
-                }
-
-                this.unitMap.set(token, key);
-            });
-        }
+        DictionaryUtils.bindDictionary(dictionary, this.unitMap); 
     }
 }
 
@@ -84,10 +68,12 @@ export class NumberWithUnitParser implements IParser {
             ret.value = this.config.internalNumberParser.parse(extResult).value;
             return ret;
         }
-        else // if there is no unitResult, means there is just unit
-        {
+        else
+        { 
+            // if there is no unitResult, means there is just unit
             numberResult = { start: -1, length: 0, text: null, type: null };
         }
+
         // key contains units
         let key = extResult.text;
         let unitKeyBuild = '';
@@ -98,6 +84,7 @@ export class NumberWithUnitParser implements IParser {
                     this.addIfNotContained(unitKeys, unitKeyBuild.trim());
                 }
             }
+
             // numberResult.start is a relative position
             else if (i === numberResult.start) {
                 if (unitKeyBuild.length !== 0) {
@@ -116,26 +103,29 @@ export class NumberWithUnitParser implements IParser {
         }
 
         /* Unit type depends on last unit in suffix.*/
-
-        let lastUnit = last(unitKeys).toLowerCase();
-        if (this.config.connectorToken && this.config.connectorToken.length && lastUnit.indexOf(this.config.connectorToken) === 0) {
+        let lastUnit = last(unitKeys);
+        let normalizedLastUnit = lastUnit.toLowerCase();
+        if (this.config.connectorToken && this.config.connectorToken.length && normalizedLastUnit.indexOf(this.config.connectorToken) === 0) {
+            normalizedLastUnit = normalizedLastUnit.substring(this.config.connectorToken.length).trim();
             lastUnit = lastUnit.substring(this.config.connectorToken.length).trim();
         }
-        if (key && key.length && (this.config.unitMap !== null) && this.config.unitMap.has(lastUnit)) {
-            let unitValue = this.config.unitMap.get(lastUnit);
-            let numValue = numberResult.text && numberResult.text.length
-                ? this.config.internalNumberParser.parse(numberResult)
-                : null;
 
-            let resolutionStr = numValue ? numValue.resolutionStr : null;
+        if (key && key.length && (this.config.unitMap !== null))
+        {
+            let unitValue = null;
+            if (this.config.unitMap.has(lastUnit)) {
+                unitValue = this.config.unitMap.get(lastUnit);
+            }
+            else if (this.config.unitMap.has(normalizedLastUnit)) {
+                unitValue = this.config.unitMap.get(normalizedLastUnit);
+            }
 
-            ret.value =
-                {
-                    number: resolutionStr,
-                    unit: unitValue
-                } as UnitValue;
-
-            ret.resolutionStr = (`${resolutionStr} ${unitValue}`).trim();
+            if (unitValue) {
+                let numValue = numberResult.text && numberResult.text.length ? this.config.internalNumberParser.parse(numberResult) : null;
+                let resolutionStr = numValue ? numValue.resolutionStr : null;
+                ret.value = { number: resolutionStr, unit: unitValue } as UnitValue;
+                ret.resolutionStr = (`${resolutionStr} ${unitValue}`).trim();
+            }
         }
 
         return ret;

@@ -17135,7 +17135,7 @@ module.exports={
 		"babel-plugin-external-helpers": "^6.22.0",
 		"colors": "^1.1.2",
 		"js-yaml": "^3.9.1",
-		"lerna": "^2.5.1",
+		"lerna": "^2.11.0",
 		"lodash.camelcase": "^4.3.0",
 		"lodash.keys": "^4.2.0",
 		"prettier": "^1.6.1",

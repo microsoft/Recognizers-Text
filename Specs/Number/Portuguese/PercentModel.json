@@ -7,7 +7,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -19,7 +21,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 1,
+        "End": 4
       }
     ]
   },
@@ -31,7 +35,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 1,
+        "End": 13
       }
     ]
   },
@@ -43,7 +49,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 1,
+        "End": 13
       }
     ]
   },
@@ -55,7 +63,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "243%"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -67,7 +77,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
-        }
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
@@ -79,7 +91,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "35%"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -91,7 +105,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "535%"
-        }
+        },
+        "Start": 0,
+        "End": 36
       }
     ]
   },
@@ -103,7 +119,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -115,7 +133,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -127,7 +147,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "3052347%"
-        }
+        },
+        "Start": 0,
+        "End": 70
       }
     ]
   },
@@ -139,7 +161,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "11%"
-        }
+        },
+        "Start": 14,
+        "End": 16
       }
     ]
   },
@@ -151,7 +175,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "15%"
-        }
+        },
+        "Start": 19,
+        "End": 30
       }
     ]
   },
@@ -163,7 +189,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "25%"
-        }
+        },
+        "Start": 19,
+        "End": 41
       }
     ]
   },
@@ -175,7 +203,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 8,
+        "End": 20
       }
     ]
   },
@@ -187,7 +217,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "25%"
-        }
+        },
+        "Start": 17,
+        "End": 19
       }
     ]
   },
@@ -199,7 +231,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "36%"
-        }
+        },
+        "Start": 19,
+        "End": 41
       }
     ]
   },
@@ -211,7 +245,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "84%"
-        }
+        },
+        "Start": 17,
+        "End": 42
       }
     ]
   },
@@ -223,7 +259,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "101231,2353%"
-        }
+        },
+        "Start": 1,
+        "End": 12
       }
     ]
   },
@@ -235,7 +273,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-101231,4323%"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -247,7 +287,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-89101231,5127%"
-        }
+        },
+        "Start": 1,
+        "End": 15
       }
     ]
   },
@@ -259,7 +301,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-89101231,5127%"
-        }
+        },
+        "Start": 1,
+        "End": 16
       }
     ]
   },
@@ -271,7 +315,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,23456%"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -283,7 +329,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "4,8%"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -295,7 +343,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "4,8%"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -307,7 +357,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-89101231,5127%"
-        }
+        },
+        "Start": 1,
+        "End": 24
       }
     ]
   },
@@ -319,7 +371,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-89101231,5127%"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -331,7 +385,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-89101231,5127%"
-        }
+        },
+        "Start": 1,
+        "End": 25
       }
     ]
   },
@@ -343,7 +399,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-1,1234567%"
-        }
+        },
+        "Start": 1,
+        "End": 20
       }
     ]
   },
@@ -355,7 +413,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "1234567,51274%"
-        }
+        },
+        "Start": 0,
+        "End": 24
       }
     ]
   },
@@ -367,7 +427,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,08%"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -379,7 +441,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "9,2321312%"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -391,7 +455,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "-9,2321312%"
-        }
+        },
+        "Start": 1,
+        "End": 20
       }
     ]
   },
@@ -403,7 +469,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "10000000000%"
-        }
+        },
+        "Start": 0,
+        "End": 4
       }
     ]
   },
@@ -415,7 +483,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "8,95430243255239%"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -427,7 +497,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "47,28%"
-        }
+        },
+        "Start": 0,
+        "End": 45
       }
     ]
   },
@@ -439,7 +511,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,6%"
-        }
+        },
+        "Start": 0,
+        "End": 21
       }
     ]
   },
@@ -451,7 +525,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "2,5%"
-        }
+        },
+        "Start": 0,
+        "End": 27
       }
     ]
   },
@@ -463,7 +539,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,2%"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -475,7 +553,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "1E-09%"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -487,7 +567,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,0476190476190476%"
-        }
+        },
+        "Start": 0,
+        "End": 27
       }
     ]
   },
@@ -499,7 +581,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "6,33333333333333%"
-        }
+        },
+        "Start": 0,
+        "End": 46
       }
     ]
   },
@@ -511,7 +595,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,733333333333333%"
-        }
+        },
+        "Start": 0,
+        "End": 33
       }
     ]
   },
@@ -523,7 +609,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,0015%"
-        }
+        },
+        "Start": 0,
+        "End": 28
       }
     ]
   },
@@ -535,7 +623,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "26%"
-        }
+        },
+        "Start": 0,
+        "End": 31
       }
     ]
   },
@@ -547,7 +637,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "26,4%"
-        }
+        },
+        "Start": 0,
+        "End": 38
       }
     ]
   },
@@ -559,7 +651,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,333333333333333%"
-        }
+        },
+        "Start": 0,
+        "End": 22
       }
     ]
   },
@@ -571,7 +665,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,333333333333333%"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -583,7 +679,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,75%"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -595,13 +693,15 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "0,666666666666667%"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
   {
-    "NotSupported": "javascript",
     "Input": "você pode ir para http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 para mais detalhes",
+    "NotSupported": "javascript",
     "Results": []
   }
 ]

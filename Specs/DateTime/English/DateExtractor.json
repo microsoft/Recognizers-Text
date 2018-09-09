@@ -1626,5 +1626,32 @@
         "Length": 15
       }
     ]
+  },
+  {
+    "Input": "Cortana, please set up a Skype call sometime in two business days.",
+    "Results": [
+      {
+        "Text": "in two business days",
+        "Type": "date",
+        "Start": 45,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, can you please set something up for October, 1st.",
+    "Results": [
+      {
+        "Text": "October, 1st",
+        "Type": "date",
+        "Start": 45,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "the face amount of its 6 1/4% convertible...",
+    "Comment": "1/4 shouldn't recognized as date here",
+    "Results": []
   }
 ]

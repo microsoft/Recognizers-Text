@@ -37,9 +37,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.TimeExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.DatePeriodExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.DurationExtractor.Extract(text, reference), text);
-            AddTo(ret, this.config.DateTimeExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.TimePeriodExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.DateTimeExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.SetExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
 
@@ -152,10 +152,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dst.Clear();
                     dst.AddRange(tempDst);
                 }
+
+                dst.Sort((a, b) => (int)(a.Start - b.Start));
             }
         }
 
-        private bool ShouldSkipFromToMerge(ExtractResult er) {
+        private bool ShouldSkipFromToMerge(ExtractResult er)
+        {
             return config.FromToRegex.IsMatch(er.Text);
         }
 
@@ -203,12 +206,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var extractResult in extractResults)
             {
-                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME)
-                    || extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME))
+                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME) ||
+                    extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME))
                 {
                     var stringAfter = text.Substring((int)extractResult.Start + (int)extractResult.Length);
                     var match = this.config.NumberEndingPattern.Match(stringAfter);
-                    if (match != null && match.Success)
+                    if (match.Success)
                     {
                         var newTime = match.Groups["newTime"];
                         var numRes = this.config.IntegerExtractor.Extract(newTime.ToString());
@@ -247,17 +250,37 @@ namespace Microsoft.Recognizers.Text.DateTime
                     TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
-                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
+                if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) || er.Type.Equals(Constants.SYS_DATETIME_DATE))
                 {
                     // 2012 or after/above
                     var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
 
-                    var match = config.YearAfterRegex.Match(afterStr.TrimStart());
-                    if (match.Success && match.Index == 0 && match.Length == afterStr.Trim().Length)
+                    var match = config.DateAfterRegex.Match(afterStr.TrimStart());
+                    if (match.Success && match.Index == 0)
                     {
-                        var modLengh = match.Length + afterStr.IndexOf(match.Value);
-                        er.Length += modLengh;
-                        er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                        var isFollowedByOtherEntity = true;
+
+                        if (match.Length == afterStr.Trim().Length)
+                        {
+                            isFollowedByOtherEntity = false;
+                        }
+                        else
+                        {
+                            afterStr = afterStr.Trim().Substring(match.Length).Trim();
+                            var nextEr = ers.Where(t => t.Start > er.Start).FirstOrDefault();
+
+                            if (nextEr != null && !afterStr.StartsWith(nextEr.Text))
+                            {
+                                isFollowedByOtherEntity = false;
+                            }
+                        }
+
+                        if (!isFollowedByOtherEntity)
+                        {
+                            var modLength = match.Length + afterStr.IndexOf(match.Value);
+                            er.Length += modLength;
+                            er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                        }
                     }
                 }
             }
@@ -270,9 +293,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beforeStr = text.Substring(0, er.Start ?? 0).ToLowerInvariant();
             if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex))
             {
-                var modLengh = beforeStr.Length - tokenIndex;
-                er.Length += modLengh;
-                er.Start -= modLengh;
+                var modLength = beforeStr.Length - tokenIndex;
+                er.Length += modLength;
+                er.Start -= modLength;
                 er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 return true;
             }

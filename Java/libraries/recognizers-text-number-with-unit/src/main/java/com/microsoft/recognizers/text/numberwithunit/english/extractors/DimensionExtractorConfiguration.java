@@ -43,7 +43,7 @@ public class DimensionExtractorConfiguration extends EnglishNumberWithUnitExtrac
     public static Map<String, String> DimensionSuffixList = new ImmutableMap.Builder<String, String>()
             .putAll(EnglishNumericWithUnit.InformationSuffixList)
             .putAll(AreaExtractorConfiguration.AreaSuffixList)
-            .putAll(LengthExtractorConfiguration.LenghtSuffixList)
+            .putAll(LengthExtractorConfiguration.LengthSuffixList)
             .putAll(SpeedExtractorConfiguration.SpeedSuffixList)
             .putAll(VolumeExtractorConfiguration.VolumeSuffixList)
             .putAll(WeightExtractorConfiguration.WeightSuffixList)

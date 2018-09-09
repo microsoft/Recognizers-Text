@@ -1,5 +1,4 @@
-[
-  {
+[{
     "Input": "Toen ze vijf jaar oud was, heeft ze leren fietsen.",
     "Results": [
       {
@@ -8,12 +7,14 @@
         "Resolution": {
           "value": "5",
           "unit": "Year"
-        }
+        },
+        "Start": 8,
+        "End": 20
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "Dit verhaal is 10 jaar oud.",
     "Results": [
@@ -23,12 +24,14 @@
         "Resolution": {
           "value": "10",
           "unit": "Year"
-        }
+        },
+        "Start": 15,
+        "End": 25
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "Ik ben pas 29 jaar.",
     "Results": [
@@ -38,27 +41,31 @@
         "Resolution": {
           "value": "29",
           "unit": "Year"
-        }
+        },
+        "Start": 11,
+        "End": 17
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
-    "Input": "Nu, op 95-jarige leeftijd, inzichten veranderen.",
+    "Input": "Nu, op 95 jarige leeftijd, inzichten veranderen.",
     "Results": [
       {
-        "Text": "95-jarige leeftijd",
+        "Text": "95 jarige leeftijd",
         "TypeName": "age",
         "Resolution": {
           "value": "95",
           "unit": "Year"
-        }
+        },
+        "Start": 7,
+        "End": 24
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "De Chinese Muur is meer dan 500 jaar oud en is langer dan 5000 mijl.",
     "Results": [
@@ -68,44 +75,50 @@
         "Resolution": {
           "value": "500",
           "unit": "Year"
-        }
+        },
+        "Start": 28,
+        "End": 39
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
-    "Input": "Zij is 60; zij is geboren op 8 mei 1945.",
+    "Input": "Zij is 60 jaar oud; zij is geboren op 8 mei 1945.",
     "Results": [
       {
-        "Text": "60",
+        "Text": "60 jaar oud",
         "TypeName": "age",
         "Resolution": {
           "value": "60",
           "unit": "Year"
-        }
+        },
+        "Start": 7,
+        "End": 17
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "25% van de gevallen zijn niet gediagnostiseerd tot een leeftijd van 3 jaar.",
     "Results": [
       {
-        "Text": "leeftijd van 3 jaar",
+        "Text": "3 jaar",
         "TypeName": "age",
         "Resolution": {
           "value": "3",
           "unit": "Year"
-        }
+        },
+        "Start": 68,
+        "End": 73
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
-    "Input": "Wanneer komt er druk om een afspraak van 1 jaar na te komen?",
+    "Input": "Wanneer komt er druk om een afspraak van één jaar na te komen?",
     "Results": [
       {
         "Text": "één jaar",
@@ -113,14 +126,16 @@
         "Resolution": {
           "value": "1",
           "unit": "Year"
-        }
+        },
+        "Start": 41,
+        "End": 48
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
-    "Input": "Het gebeurde toen de baby pas 10 maanden was.",
+    "Input": "Het gebeurde toen de baby pas tien maanden was.",
     "Results": [
       {
         "Text": "tien maanden",
@@ -128,12 +143,14 @@
         "Resolution": {
           "value": "10",
           "unit": "Month"
-        }
+        },
+        "Start": 30,
+        "End": 41
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "Het bestuursvoorstel is 8 maanden.",
     "Results": [
@@ -143,14 +160,16 @@
         "Resolution": {
           "value": "8",
           "unit": "Month"
-        }
+        },
+        "Start": 24,
+        "End": 32
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
-    "Input": "Ongeveer 50% van de gevallen worden gediagnostiseerd wanneer ze 18 maanden oud zijn.",
+    "Input": "Ongeveer 50% van de gevallen worden gediagnostiseerd wanneer ze achttien maanden oud zijn.",
     "Results": [
       {
         "Text": "achttien maanden oud",
@@ -158,12 +177,14 @@
         "Resolution": {
           "value": "18",
           "unit": "Month"
-        }
+        },
+        "Start": 64,
+        "End": 83
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "Het is mogelijk, maar in 2006 was 95% jonger dan drie maanden.",
     "Results": [
@@ -173,12 +194,14 @@
         "Resolution": {
           "value": "3",
           "unit": "Month"
-        }
+        },
+        "Start": 49,
+        "End": 60
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "Als we doorgaan in december, is het project 3 weken oud.",
     "Results": [
@@ -188,12 +211,14 @@
         "Resolution": {
           "value": "3",
           "unit": "Week"
-        }
+        },
+        "Start": 44,
+        "End": 54
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "Op 6-jarige leeftijd kun je al Kerst vieren.",
     "Results": [
@@ -202,31 +227,34 @@
         "TypeName": "age",
         "Resolution": {
           "value": "6",
-          "unit": "Week"
-        }
+          "unit": "Year"
+        },
+        "Start": 3,
+        "End": 19
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "Een energie factuur van 90 dagen is erg oud",
     "Results": [
       {
-        "Text": "van 90 dagen",
+        "Text": "90 dagen",
         "TypeName": "age",
         "Resolution": {
           "value": "90",
           "unit": "Day"
-        }
+        },
+        "Start": 24,
+        "End": 31
       }
     ],
-    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
-  },
+  }
+  ,
   {
     "Input": "Hij is tussen de 40 en 50 jaar.",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "50 jaar",
@@ -234,7 +262,9 @@
         "Resolution": {
           "unit": "Year",
           "value": "50"
-        }
+        },
+        "Start": 23,
+        "End": 29
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"

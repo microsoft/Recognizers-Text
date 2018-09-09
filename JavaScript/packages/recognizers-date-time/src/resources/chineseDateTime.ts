@@ -31,8 +31,8 @@ export namespace ChineseDateTime {
 	export const DateNextRe = `下个|下一个|下|下一|明`;
 	export const SpecialDate = `(?<thisyear>(${DateThisRe}|${DateLastRe}|${DateNextRe})年)?(?<thismonth>(${DateThisRe}|${DateLastRe}|${DateNextRe})月)?${DateDayRegexInChinese}`;
 	export const DateUnitRegex = `(?<unit>年|个月|周|日|天)`;
-	export const BeforeRegex = `之前|前`;
-	export const AfterRegex = `之后|后`;
+	export const BeforeRegex = `以前|之前|前`;
+	export const AfterRegex = `以后|之后|后`;
 	export const DateRegexList1 = `(${LunarRegex}(\\s*))?(((${YearRegex}|${DateYearInChineseRegex})年)(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
 	export const DateRegexList2 = `(((${YearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
 	export const DateRegexList3 = `(((${YearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)(${DayRegexNumInChinese}|${DayRegex})((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
@@ -41,7 +41,7 @@ export namespace ChineseDateTime {
 	export const DateRegexList6 = `${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${YearRegex}`;
 	export const DateRegexList7 = `${DayRegex}\\s*[/\\\\\\-\\.]\\s*${MonthNumRegex}\\s*[/\\\\\\-\\.]\\s*${YearNumRegex}`;
 	export const DateRegexList8 = `${YearNumRegex}\\s*[/\\\\\\-\\. ]\\s*${MonthNumRegex}\\s*[/\\\\\\-\\. ]\\s*${DayRegex}`;
-	export const DatePeriodTillRegex = `(?<till>到|至|--|-|—|——|~|–)`;
+	export const DatePeriodTillRegex = `(?<till>与|和|到|至|--|-|—|——|~|–)`;
 	export const DatePeriodDayRegexInChinese = `(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十||廿|卅)`;
 	export const DatePeriodThisRegex = `这个|这一个|这|这一|本`;
 	export const DatePeriodLastRegex = `上个|上一个|上|上一`;
@@ -60,7 +60,7 @@ export namespace ChineseDateTime {
 	export const UnitRegex = `(?<unit>年|(个)?月|周|日|天)`;
 	export const FollowedUnit = `^\\s*${UnitRegex}`;
 	export const NumberCombinedWithUnit = `(?<num>\\d+(\\.\\d*)?)${UnitRegex}`;
-	export const YearToYear = `((从|在|自)\\s*)?(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})\\s*${DatePeriodTillRegex}\\s*(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})`;
+	export const YearToYear = `((从|在|自)\\s*)?(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})\\s*${DatePeriodTillRegex}\\s*(${DatePeriodYearInChineseRegex}|${DatePeriodYearRegex})(\\s*(之间|之内|期间|中间|间))?`;
 	export const MonthToMonth = `(${MonthRegex})${DatePeriodTillRegex}(${MonthRegex})`;
 	export const PastRegex = `(?<past>(前|上|之前|近|过去))`;
 	export const FutureRegex = `(?<future>(后|(?<![一两几]\\s*)下|之后|未来(的)?))`;

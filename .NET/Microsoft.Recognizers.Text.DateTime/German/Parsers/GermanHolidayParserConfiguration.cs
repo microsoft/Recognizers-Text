@@ -93,17 +93,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public override int GetSwiftYear(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimedText.StartsWith("nächster") || trimedText.StartsWith("nächstes") || trimedText.StartsWith("nächsten") || trimedText.StartsWith("nächste"))
+            if (trimmedText.StartsWith("nächster") || trimmedText.StartsWith("nächstes") || trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächste"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("letzter") || trimedText.StartsWith("letztes") || trimedText.StartsWith("letzten") || trimedText.StartsWith("letzte"))
+            else if (trimmedText.StartsWith("letzter") || trimmedText.StartsWith("letztes") || trimmedText.StartsWith("letzten") || trimmedText.StartsWith("letzte"))
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("dieser") || trimedText.StartsWith("dieses") || trimedText.StartsWith("diesen") || trimedText.StartsWith("diese"))
+            else if (trimmedText.StartsWith("dieser") || trimmedText.StartsWith("dieses") || trimmedText.StartsWith("diesen") || trimmedText.StartsWith("diese"))
             {
                 swift = 0;
             }

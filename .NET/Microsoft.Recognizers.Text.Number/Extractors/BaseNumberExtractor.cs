@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.Number
                 foreach (Match m in collection.Key)
                 {
                     // In ExperimentalMode, AmbigiuousFraction like "30000 in 2009" needs to be skipped
-                    if (Options == NumberOptions.ExperimentalMode && AmbiguousFractionConnectorsRegex.Match(m.Value).Success)
+                    if ((Options & NumberOptions.ExperimentalMode) != 0 && AmbiguousFractionConnectorsRegex.Match(m.Value).Success)
                     {
                         continue;
                     }
@@ -107,7 +107,6 @@ namespace Microsoft.Recognizers.Text.Number
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> ers, string text)
         {
-            var result = new List<ExtractResult>();
 
             if (AmbiguityFiltersDict != null)
             {

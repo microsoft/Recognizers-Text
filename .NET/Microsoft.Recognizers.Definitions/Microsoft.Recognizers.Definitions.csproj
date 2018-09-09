@@ -111,6 +111,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Dutch\NumberDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumberDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Dutch\NumbersWithUnitDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="English\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -318,6 +328,14 @@
     <None Update="Dutch\ChoiceDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Dutch\NumberDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumberDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Dutch\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\ChoiceDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

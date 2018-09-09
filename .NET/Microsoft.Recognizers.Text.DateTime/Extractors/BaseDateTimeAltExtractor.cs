@@ -50,16 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var middleBegin = ers[j - 1].Start + ers[j - 1].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
 
-                    if (middleBegin >= middleEnd)
-                    {
-                        break;
-                    }
-
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
-                    var matches = config.OrRegex.Matches(middleStr);
-
-                    if (!string.IsNullOrEmpty(middleStr) &&
-                        (matches.Count != 1 || matches[0].Index != 0 || matches[0].Length != middleStr.Length))
+                    if (!IsConnectorOrWhiteSpace(middleBegin, middleEnd, text))
                     {
                         break;
                     }
@@ -148,13 +139,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (Match dateMatch in implicitDateMatches)
             {
-                var notBeContained = true;
+                var notIncluded = true;
                 while (i < originalErs.Count)
                 {
                     if (originalErs[i].Start <= dateMatch.Index && originalErs[i].Start + originalErs[i].Length >=
                         dateMatch.Index + dateMatch.Length)
                     {
-                        notBeContained = false;
+                        notIncluded = false;
                         break;
                     }
 
@@ -162,22 +153,36 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         i++;
                     }
-                    else if(originalErs[i].Start + originalErs[i].Length >= dateMatch.Index + dateMatch.Length)
+                    else if (originalErs[i].Start + originalErs[i].Length >= dateMatch.Index + dateMatch.Length)
                     {
                         break;
                     }
                 }
 
-                if (notBeContained)
+                var dateEr = new ExtractResult
                 {
-                    ret.Add(new ExtractResult
+                    Start = dateMatch.Index,
+                    Length = dateMatch.Length,
+                    Text = dateMatch.Value,
+                    Type = Constants.SYS_DATETIME_DATE,
+                    Data = ExtractorName
+                };
+
+                if (notIncluded)
+                {
+                    ret.Add(dateEr);
+                }
+                else if (i + 1 < originalErs.Count)
+                {
+                    // For cases like "I am looking at 18 and 19 June"
+                    // in which "18" is wrongly recognized as time without context.
+                    var nextEr = originalErs[i + 1];
+                    if (nextEr.Type.Equals(Constants.SYS_DATETIME_DATE) && originalErs[i].Text.Equals(dateEr.Text) &&
+                        IsConnectorOrWhiteSpace((int)(dateEr.Start + dateEr.Length), (int)nextEr.Start, text))
                     {
-                        Start = dateMatch.Index,
-                        Length = dateMatch.Length,
-                        Text = dateMatch.Value,
-                        Type = Constants.SYS_DATETIME_DATE,
-                        Data = ExtractorName
-                    });
+                        ret.Add(dateEr);
+                        originalErs.RemoveAt(i);
+                    }
                 }
             }
 
@@ -217,10 +222,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                             // Check whether middle string is a connector
                             var middleBegin = resultEnd ?? 0;
                             var middleEnd = relativeTermsMatch.Index;
-                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
-                        
-                            var orTermMatches = config.OrRegex.Matches(middleStr);
-                            if (orTermMatches.Count == 1 && orTermMatches[0].Index == 0 && orTermMatches[0].Length == middleStr.Length)
+
+                            if (IsConnectorOrWhiteSpace(middleBegin, middleEnd, text))
                             {
                                 var parentTextStart = result.Start;
                                 var parentTextLen = relativeTermsMatch.Index + relativeTermsMatch.Length - result.Start;
@@ -269,6 +272,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             
             ers.AddRange(relativeDatePeriodErs);
             ers.Sort((a, b) => a.Start - b.Start ?? 0);
+        }
+
+        private bool IsConnectorOrWhiteSpace(int start, int end, string text)
+        {
+            if (end <= start)
+            {
+                return false;
+            }
+
+            var middleStr = text.Substring(start, end - start).Trim().ToLower();
+
+            if (string.IsNullOrEmpty(middleStr))
+            {
+                return true;
+            }
+
+            var orTermMatches = config.OrRegex.Matches(middleStr);
+
+            return orTermMatches.Count == 1 && orTermMatches[0].Index == 0 &&
+                   orTermMatches[0].Length == middleStr.Length;
         }
 
         private Dictionary<string, object> ExtractAlt(List<ExtractResult> extractResults)
@@ -362,11 +385,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var match = regex.Match(extractResults[0].Text);
                         if (match.Success)
                         {
-                            var contextErs = new ExtractResult();
-                            contextErs.Text = match.Value;
-                            contextErs.Start = match.Index;
-                            contextErs.Length = match.Length;
-                            contextErs.Type = Constants.ContextType_RelativePrefix;
+                            var contextErs = new ExtractResult
+                            {
+                                Text = match.Value,
+                                Start = match.Index,
+                                Length = match.Length,
+                                Type = Constants.ContextType_RelativePrefix
+                            };
+
                             data.Add(Constants.Context, contextErs);
                             data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
                         }
@@ -388,11 +414,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var match = regex.Match(former.Text);
                     if (match.Success)
                     {
-                        var contextErs = new ExtractResult();
-                        contextErs.Text = match.Value;
-                        contextErs.Start = match.Index;
-                        contextErs.Length = match.Length;
-                        contextErs.Type = Constants.ContextType_AmPm;
+                        var contextErs = new ExtractResult
+                        {
+                            Text = match.Value,
+                            Start = match.Index,
+                            Length = match.Length,
+                            Type = Constants.ContextType_AmPm
+                        };
+
                         data.Add(Constants.Context, contextErs);
                         data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
                     }

@@ -129,9 +129,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, source);
                 Assert.AreEqual(expected.Text, actual.Text, source);
-                if (expected.Start != 0) Assert.AreEqual(expected.Start, actual.Start, source);
-                if (expected.End != 0) Assert.AreEqual(expected.End, actual.End, source);
+                if (expected.Start != 0)
+                {
+                    Assert.AreEqual(expected.Start, actual.Start, source);
+                }
 
+                if (expected.End != 0)
+                {
+                    Assert.AreEqual(expected.End, actual.End, source);
+                }
+
+                // Actual ValueSet types should not be modified as that's considered a breaking API change
                 var listValues = actual.Resolution[ResolutionKey.ValueSet] as IList<Dictionary<string, string>>;
                 var actualValues = listValues.FirstOrDefault();
 

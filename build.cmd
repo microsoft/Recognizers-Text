@@ -11,3 +11,7 @@ POPD
 PUSHD Python
 CALL build.cmd
 POPD
+
+PUSHD Java
+CALL build.cmd
+POPD

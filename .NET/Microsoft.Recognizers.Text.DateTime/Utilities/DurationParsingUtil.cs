@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    class DurationParsingUtil
+    internal class DurationParsingUtil
     {
         public static bool IsTimeDurationUnit(string unitStr)
         {
@@ -26,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret = true;
                     break;
             }
+
             return ret;
         }
 
@@ -33,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var dict = ResolveDurationTimex(timex);
 
-            return (dict.Count > 1);
+            return dict.Count > 1;
         }
 
         public static bool IsDateDuration(string timex)
@@ -57,10 +54,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = GetShiftResult(timexUnitMap, referenceDateTime, future);
             return ret;
         }
-        private static DateObject GetShiftResult(IImmutableDictionary<string, double> timexUnitMap, System.DateTime referenceDate, bool future)
+
+        private static DateObject GetShiftResult(IImmutableDictionary<string, double> timexUnitMap, DateObject referenceDate, bool future)
         {
-            System.DateTime ret = referenceDate;
-            int futureOrPast = future ? 1 : -1;
+            var ret = referenceDate;
+            var futureOrPast = future ? 1 : -1;
 
             foreach (var pair in timexUnitMap)
             {
@@ -77,17 +75,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                     case "S":
                         ret = ret.AddSeconds(number * futureOrPast);
                         break;
-                    case "D":
+                    case Constants.TimexDay:
                         ret = ret.AddDays(number * futureOrPast);
                         break;
-                    case "W":
+                    case Constants.TimexWeek:
                         ret = ret.AddDays(7 * number * futureOrPast);
                         break;
-                    case "MON":
+                    case Constants.TimexMonthFull:
                         ret = ret.AddMonths(Convert.ToInt32(number) * futureOrPast);
                         break;
-                    case "Y":
+                    case Constants.TimexYear:
                         ret = ret.AddYears(Convert.ToInt32(number) * futureOrPast);
+                        break;
+                    case Constants.TimexBusinessDay:
+                        ret = GetNthBusinessDay(ret, Convert.ToInt32(number), future, out _);
                         break;
                     default:
                         return ret;
@@ -97,13 +98,57 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        public static DateObject GetNthBusinessDay(DateObject startDate, int n, bool isFuture, out List<DateObject> dateList)
+        {
+            var date = startDate;
+            dateList = new List<DateObject> {date};
+
+            for (var i = 0; i < n; i++)
+            {
+                date = GetNextBusinessDay(date, isFuture);
+                dateList.Add(date);
+            }
+
+            if (!isFuture)
+            {
+                dateList.Reverse();
+            }
+
+            return date;
+        }
+
+        public static DateObject GetNextBusinessDay(DateObject startDate, bool isFuture = true)
+        {
+            var dateIncrement = isFuture ? 1 : -1;
+            var date = startDate.AddDays(dateIncrement);
+            while (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                date = date.AddDays(dateIncrement);
+            }
+
+            return date;
+        }
+
         private static ImmutableDictionary<string, double> ResolveDurationTimex(string timexStr)
         {
             var ret = new Dictionary<string, double>();
-            // resolve duration timex, such as P21DT2H(21 days 2 hours)
+
+            // Resolve duration timex, such as P21DT2H(21 days 2 hours)
             var durationStr = timexStr.Replace("P", "");
             var numberStart = 0;
             var isTime = false;
+
+            // Resolve business days
+            if (durationStr.EndsWith(Constants.TimexBusinessDay))
+            {
+                if (double.TryParse(durationStr.Substring(0, durationStr.Length - 2), out var numVal))
+                {
+                    ret.Add(Constants.TimexBusinessDay, numVal);
+                }
+
+                return ret.ToImmutableDictionary();
+            }
+
             for (var idx = 0; idx < durationStr.Length; idx++)
             {
                 if (char.IsLetter(durationStr[idx]))
@@ -115,23 +160,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else
                     {
                         var numStr = durationStr.Substring(numberStart, idx - numberStart);
-                        double number = 0;
-                        if (!double.TryParse(numStr, out number))
+                        if (!double.TryParse(numStr, out var number))
                         {
-                            return (new Dictionary<string, double>()).ToImmutableDictionary();
+                            return new Dictionary<string, double>().ToImmutableDictionary();
                         }
+
                         var srcTimexUnit = durationStr.Substring(idx, 1);
-                        if (!isTime && srcTimexUnit == "M")
+                        if (!isTime && srcTimexUnit == Constants.TimexMonth)
                         {
-                            srcTimexUnit = "MON";
+                            srcTimexUnit = Constants.TimexMonthFull;
                         }
+
                         ret.Add(srcTimexUnit, number);
                     }
+
                     numberStart = idx + 1;
                 }
             }
+
             return ret.ToImmutableDictionary();
         }
+
         public enum MultiDurationType
         {
             Date = 0,

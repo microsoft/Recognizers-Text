@@ -27,7 +27,7 @@ public class LengthExtractorConfiguration extends PortugueseNumberWithUnitExtrac
 
     @Override
     public Map<String, String> getSuffixList() {
-        return LenghtSuffixList;
+        return LengthSuffixList;
     }
 
     @Override
@@ -40,5 +40,5 @@ public class LengthExtractorConfiguration extends PortugueseNumberWithUnitExtrac
         return PortugueseNumericWithUnit.AmbiguousLengthUnitList;
     }
 
-    public static Map<String, String> LenghtSuffixList = PortugueseNumericWithUnit.LenghtSuffixList;
+    public static Map<String, String> LengthSuffixList = PortugueseNumericWithUnit.LengthSuffixList;
 }

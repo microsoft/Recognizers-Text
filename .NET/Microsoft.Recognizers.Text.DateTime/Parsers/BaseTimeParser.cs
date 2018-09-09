@@ -88,17 +88,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         // parse basic patterns in TimeRegexList
         private DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceTime)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var offset = 0;
 
-            var match = this.config.AtRegex.Match(trimedText);
+            var match = this.config.AtRegex.Match(trimmedText);
             if (!match.Success)
             {
-                match = this.config.AtRegex.Match(this.config.TimeTokenPrefix + trimedText);
+                match = this.config.AtRegex.Match(this.config.TimeTokenPrefix + trimmedText);
                 offset = this.config.TimeTokenPrefix.Length;
             }
 
-            if (match.Success && match.Index == offset && match.Length == trimedText.Length)
+            if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
             {
                 return Match2Time(match, referenceTime);
             }
@@ -135,10 +135,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in regexes)
             {
                 offset = 0;
-                match = regex.Match(trimedText);
+                match = regex.Match(trimmedText);
 
                 var mealStr = string.Empty;
-                if (match.Success && match.Index == offset && match.Length == trimedText.Length)
+                if (match.Success && match.Index == offset && match.Length == trimmedText.Length)
                 {
                     return Match2Time(match, referenceTime);
                 }

@@ -514,16 +514,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var match = this.config.PastPrefixRegex.Match(beforeStr);
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
-                {
-                    ret.Add(new Token(match.Index, duration.End));
-                    continue;
-                }
-
                 // within (the) (next) "Seconds/Minutes/Hours" should be handled as datetimeRange here
                 // within (the) (next) XX days/months/years + "Seconds/Minutes/Hours" should also be handled as datetimeRange here
-                match = config.WithinNextPrefixRegex.Match(beforeStr);
+                var match = config.WithinNextPrefixRegex.Match(beforeStr);
                 if (MatchPrefixRegexInSegment(beforeStr, match))
                 {
                     var startToken = match.Index;
@@ -531,13 +524,49 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (match.Success)
                     {
                         ret.Add(new Token(startToken, duration.End));
+                        continue;
                     }
                 }
 
-                match = this.config.NextPrefixRegex.Match(beforeStr);
+                match = this.config.PastPrefixRegex.Match(beforeStr);
+                var index = -1;
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
-                    ret.Add(new Token(match.Index, duration.End));
+                    index = match.Index;
+                }
+
+                if (index < 0)
+                {
+                    match = this.config.NextPrefixRegex.Match(beforeStr);
+                    if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
+                    {
+                        index = match.Index;
+                    }
+                }
+
+                if (index >= 0)
+                {
+                    var prefix = beforeStr.Substring(0, index).Trim();
+                    var durationText = text.Substring(duration.Start, duration.Length);
+                    var numbersInPrefix = config.CardinalExtractor.Extract(prefix);
+                    var numbersInDuration = config.CardinalExtractor.Extract(durationText);
+
+                    // Cases like "2 upcoming days", should be supported here
+                    // Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
+                    if (numbersInPrefix.Any() && !numbersInDuration.Any())
+                    {
+                        var lastNumber = numbersInPrefix.OrderBy(t => t.Start + t.Length).Last();
+
+                        // Prefix should ends with the last number
+                        if (lastNumber.Start + lastNumber.Length == prefix.Length)
+                        {
+                            ret.Add(new Token(lastNumber.Start.Value, duration.End));
+                        }
+                    }
+                    else
+                    {
+                        ret.Add(new Token(index, duration.End));
+                    }
                     continue;
                 }
 

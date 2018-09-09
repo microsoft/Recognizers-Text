@@ -334,16 +334,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             int beginHour, endHour, endMin = 0;
             string timeStr;
 
             // handle 昨晚，今晨
-            var match = DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.Match(trimedText);
-            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            var match = DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
                 var swift = 0;
-                switch (trimedText)
+                switch (trimmedText)
                 {
                     case "今晚":
                         swift = 0;
@@ -394,25 +394,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // handle morning, afternoon..
-            if (MORegex.IsMatch(trimedText))
+            if (MORegex.IsMatch(trimmedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
-            else if (AFRegex.IsMatch(trimedText))
+            else if (AFRegex.IsMatch(trimmedText))
             {
                 timeStr = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (EVRegex.IsMatch(trimedText))
+            else if (EVRegex.IsMatch(trimmedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (NIRegex.IsMatch(trimedText))
+            else if (NIRegex.IsMatch(trimmedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;
@@ -424,15 +424,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            match = DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.Match(trimedText);
-            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            match = DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
                 var swift = 0;
-                if (DateTimePeriodExtractorChs.NextRegex.IsMatch(trimedText))
+                if (DateTimePeriodExtractorChs.NextRegex.IsMatch(trimmedText))
                 {
                     swift = 1;
                 }
-                else if (DateTimePeriodExtractorChs.LastRegex.IsMatch(trimedText))
+                else if (DateTimePeriodExtractorChs.LastRegex.IsMatch(trimmedText))
                 {
                     swift = -1;
                 }
@@ -451,10 +451,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
 
             // handle Date followed by morning, afternoon
-            match = DateTimePeriodExtractorChs.TimeOfDayRegex.Match(trimedText);
+            match = DateTimePeriodExtractorChs.TimeOfDayRegex.Match(trimmedText);
             if (match.Success)
             {
-                var beforeStr = trimedText.Substring(0, match.Index).Trim();
+                var beforeStr = trimmedText.Substring(0, match.Index).Trim();
                 var ers = SingleDateExtractor.Extract(beforeStr, referenceTime);
                 if (ers.Count == 0 || ers[0].Length != beforeStr.Length)
                 {

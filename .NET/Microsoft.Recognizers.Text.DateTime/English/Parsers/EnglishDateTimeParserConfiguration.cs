@@ -94,13 +94,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetHour(string text, int hour)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             int result = hour;
-            if (trimedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
+            if (trimmedText.EndsWith("morning") && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!trimedText.EndsWith("morning") && hour < Constants.HalfDayHourCount)
+            else if (!trimmedText.EndsWith("morning") && hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -109,16 +109,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("now"))
+            var trimmedText = text.Trim().ToLowerInvariant();
+            if (trimmedText.EndsWith("now"))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimedText.Equals("recently") || trimedText.Equals("previously"))
+            else if (trimmedText.Equals("recently") || trimmedText.Equals("previously"))
             {
                 timex = "PAST_REF";
             }
-            else if (trimedText.Equals("as soon as possible") || trimedText.Equals("asap"))
+            else if (trimmedText.Equals("as soon as possible") || trimmedText.Equals("asap"))
             {
                 timex = "FUTURE_REF";
             }
@@ -133,14 +133,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public int GetSwiftDay(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
             var swift = 0;
-            if (trimedText.StartsWith("next"))
+            if (trimmedText.StartsWith("next"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (trimmedText.StartsWith("last"))
             {
                 swift = -1;
             }

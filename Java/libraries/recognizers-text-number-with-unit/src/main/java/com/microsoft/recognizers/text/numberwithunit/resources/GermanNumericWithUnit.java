@@ -357,7 +357,7 @@ public class GermanNumericWithUnit {
 
     public static final String BuildSuffix = "(?=(\\s|\\W|$))";
 
-    public static final Map<String, String> LenghtSuffixList = ImmutableMap.<String, String>builder()
+    public static final Map<String, String> LengthSuffixList = ImmutableMap.<String, String>builder()
         .put("Kilometer", "km|kilometer|kilometern")
         .put("Hectometer", "hm|hektometer|hektometern")
         .put("Decameter", "dam|dekameter|dekametern")
