@@ -439,7 +439,7 @@ CurrencySuffixList: !dictionary
     Philippine peso: filipijnse pesos|filipijnse peso|piso|philippine pesos|philippine peso|₱|php
     Uruguayan peso: uruguayaanse pesos|uruguayaanse peso|uruguayan pesos|uruguayan peso|uyu
     Peso: pesos|peso
-    Centavo: centavos|centavo|¢
+    Centavo: centavos|centavo
 #Pound
     Alderney pound: alderney pond|alderney pounds|alderney pound|alderney £
     British pound: british pounds|british pound|british £|gbp|pound sterling|pound sterlings|sterling|pound scot|pound scots
@@ -462,41 +462,41 @@ CurrencySuffixList: !dictionary
     Shilling: shillings|shilling|shilingi
     Penny: pennies|penny
 #Dollar
-    United States dollar: united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars
-    East Caribbean dollar: east caribbean dollars|east caribbean dollar|east Caribbean $|xcd
-    Australian dollar: australian dollars|australian dollar|australian $|australian$|aud|australia dollars|australia dollar|australia $|australia$
-    Bahamian dollar: bahamian dollars|bahamian dollar|bahamian $|bahamian$|bsd|bahamia dollars|bahamia dollar|bahamia $|bahamia$
-    Barbadian dollar: barbadian dollars|barbadian dollar|barbadian $|bbd
-    Belize dollar: belize dollars|belize dollar|belize $|bzd
-    Bermudian dollar: bermudian dollars|bermudian dollar|bermudian $|bmd|bermudia dollars|bermudia dollar|bermudia $
-    British Virgin Islands dollar: british virgin islands dollars|british virgin islands dollar|british virgin islands $|bvi$|virgin islands dollars|virgin islands dolalr|virgin islands $|virgin island dollars|virgin island dollar|virgin island $
-    Brunei dollar: brunei dollar|brunei $|bnd
+    United States dollar: amerikaanse dollars|amerikaanse dollar|amerikaanse $|united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|US dollar|US dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars
+    East Caribbean dollar: oost-caribische dollars|oost-caribische dollar|oost-caribische $|oost caribische dollars|oost caribische $|oost caribische dollar|east caribbean dollars|east caribbean dollar|east Caribbean $|xcd
+    Australian dollar: australische dollars|australische dollar|australische $|australian dollars|australian dollar|australian $|australian$|aud|australia dollars|australia dollar|australia $|australia$
+    Bahamian dollar: bahamaanse dollars|bahamaanse dollar|bahamaanse $|bahama $|bahamian dollars|bahamian dollar|bahamian $|bahamian$|bsd|bahamia dollars|bahamia dollar|bahamia $|bahamia$
+    Barbadian dollar: barbadiaanse dollars|barbadiaanse dollar|barbadiaanse $|barbada $|barbadian dollars|barbadian dollar|barbadian $|bbd
+    Belize dollar: belizaanse dollars|belizaanse dollar|belizaanse $|belize dollars|belize dollar|belize $|bzd
+    Bermudian dollar: bermudaanse dollars|bermudaanse dollar|bermudaanse $|bermuda $|bermudian dollars|bermudian dollar|bermudian $|bmd|bermudia dollars|bermudia dollar|bermudia $
+    British Virgin Islands dollar: britse maagdeneilanden dollars|britse maagdeneilanden dollar|britse maagdeneilanden $|british virgin islands dollars|british virgin islands dollar|british virgin islands $|bvi$|virgin islands dollars|virgin islands dolalr|virgin islands $|virgin island dollars|virgin island dollar|virgin island $
+    Brunei dollar: bruneise dollars|bruneise dollar|bruneise $|brunei dollar|brunei $|bnd
     Sen: sen
-    Singapore dollar: singapore dollars|singapore dollar|singapore $|s$|sgd
-    Canadian dollar: canadian dollars|canadian dollar|canadian $|cad|can$|c$|canada dollars|canada dolllar|canada $
-    Cayman Islands dollar: cayman islands dollars|cayman islands dollar|cayman islands $|kyd|ci$|cayman island dollar|cayman island doolars|cayman island $
-    New Zealand dollar: new zealand dollars|new zealand dollar|new zealand $|nz$|nzd|kiwi
-    Cook Islands dollar: cook islands dollars|cook islands dollar|cook islands $|cook island dollars|cook island dollar|cook island $
-    Fijian dollar: fijian dollars|fijian dollar|fijian $|fjd|fiji dollars|fiji dollar|fiji $
-    Guyanese dollar: guyanese dollars|guyanese dollar|gyd|gy$
-    Hong Kong dollar: hong kong dollars|hong kong dollar|hong kong $|hk$|hkd|hk dollars|hk dollar|hk $|hongkong$
-    Jamaican dollar: jamaican dollars|jamaican dollar|jamaican $|j$|jamaica dollars|jamaica dollar|jamaica $|jmd
-    Kiribati dollar: kiribati dollars|kiribati dollar|kiribati $
-    Liberian dollar: liberian dollars|liberian dollar|liberian $|liberia dollars|liberia dollar|liberia $|lrd
-    Micronesian dollar: micronesian dollars|micronesian dollar|micronesian $
-    Namibian dollar: namibian dollars|namibian dollar|namibian $|nad|n$|namibia dollars|namibia dollar|namibia $
-    Nauruan dollar: nauruan dollars|nauruan dollar|nauruan $
+    Singapore dollar: singaporese dollars|singaporese dollar|Singaporese $|singapore dollars|singapore dollar|singapore $|s$|sgd
+    Canadian dollar: canadese dollars|canadese dollar|canadese $|canadian dollars|canadian dollar|canadian $|cad|can$|c$|canada dollars|canada dolllar|canada $
+    Cayman Islands dollar: kaaimaneilandse dollars|kaaimaneilandse dollar|kaaimaneilandse $|cayman islands dollars|cayman islands dollar|cayman islands $|kyd|ci$|cayman island dollar|cayman island doolars|cayman island $
+    New Zealand dollar: nieuw-zeelandse dollars|nieuw-zeelandse dollar|nieuw-zeelandse $|nieuw zeelandse dollars|nieuw zeelandse dollar|nieuw zeelandse $|new zealand dollars|new zealand dollar|new zealand $|nz$|nzd|kiwi
+    Cook Islands dollar: cookeilandse dollars|cookeilandse dollar|cookeilandse $|cook islands dollars|cook islands dollar|cook islands $|cook island dollars|cook island dollar|cook island $
+    Fijian dollar: fiji-dollars|fiji-dollar|fijian dollars|fijian dollar|fijian $|fjd|fiji dollars|fiji dollar|fiji $
+    Guyanese dollar: guyaanse dollars|guyaanse dollar|guyaanse $|guyanese dollars|guyanese dollar|gyd|gy$
+    Hong Kong dollar: hongkongse dollars|hongkongse dollar|hongkongse $|hongkong dollars|hongkong dollar|hongkong $|hong kong dollars|hong kong dollar|hong kong $|hk$|hkd|hk dollars|hk dollar|hk $|hongkong$
+    Jamaican dollar: jamaicaanse dollars|jamaicaanse dollar|jamaicaanse $|jamaican dollars|jamaican dollar|jamaican $|j$|jamaica dollars|jamaica dollar|jamaica $|jmd
+    Kiribati dollar: kiribatische dollars|kiribatische dollar|kiribatische $|kiribati dollars|kiribati dollar|kiribati $
+    Liberian dollar: liberiaanse dollars|liberiaanse dollar|liberiaanse $|liberian dollars|liberian dollar|liberian $|liberia dollars|liberia dollar|liberia $|lrd
+    Micronesian dollar: micronesia dollars|micronesia dollar|micronesia $|micronesian dollars|micronesian dollar|micronesian $
+    Namibian dollar: namibische dollars|namibische dollar|namibische $|namibian dollars|namibian dollar|namibian $|nad|n$|namibia dollars|namibia dollar|namibia $
+    Nauruan dollar: nauruaanse dollars|nauruaanse dollar|nauruaanse $|nauruan dollars|nauruan dollar|nauruan $
     Niue dollar: niue dollars|niue dollar|niue $
-    Palauan dollar: palauan dollars|palauan dollar|palauan $
-    Pitcairn Islands dollar: pitcairn islands dollars|pitcairn islands dollar|pitcairn islands $|pitcairn island dollars|pitcairn island dollar|pitcairn island $
-    Solomon Islands dollar: solomon islands dollars|solomon islands dollar|solomon islands $|si$|sbd|solomon island dollars|solomon island dollar|solomon island $
-    Surinamese dollar: surinamese dollars|surinamese dollar|surinamese $|srd
-    New Taiwan dollar: new taiwan dollars|new taiwan dollar|nt$|twd|ntd
-    Trinidad and Tobago dollar: trinidad and tobago dollars|trinidad and tobago dollar|trinidad and tobago $|trinidad $|trinidad dollar|trinidad dollars|trinidadian dollar|trinidadian dollars|trinidadian $|ttd
-    Tuvaluan dollar: tuvaluan dollars|tuvaluan dollar|tuvaluan $
+    Palauan dollar: palaus dollars|palaus dollar|palaus $|palauan dollars|palauan dollar|palauan $
+    Pitcairn Islands dollar: pitcairneilandse dollars|pitcairneilandse dollar|pitcairneilandse $|pitcairn islands dollars|pitcairn islands dollar|pitcairn islands $|pitcairn island dollars|pitcairn island dollar|pitcairn island $
+    Solomon Islands dollar: salomon-dollars|salomon-dollar|salomon-$|salomon dollars|salomon dollar|salomon $|solomon islands dollars|solomon islands dollar|solomon islands $|si$|sbd|solomon island dollars|solomon island dollar|solomon island $
+    Surinamese dollar: surinaamse dollars|surinaamse dollar|surinaamse $|surinamese dollars|surinamese dollar|surinamese $|srd
+    New Taiwan dollar: taiwanese dollars|taiwanese dollar|taiwanese $|nieuw taiwanese dollars|nieuw taiwanese dollar|nieuw taiwanese $|new taiwan dollars|new taiwan dollar|nt$|twd|ntd
+    Trinidad and Tobago dollar: trinidad en tobagodollars|trinidad en tobagodollar|trinidad en tobago dollars|trinidad en tobago dollar|trinidad en tobago $|trinidad and tobago dollars|trinidad and tobago dollar|trinidad and tobago $|trinidad $|trinidad dollar|trinidad dollars|trinidadian dollar|trinidadian dollars|trinidadian $|ttd
+    Tuvaluan dollar: tuvaluaanse dollars|tuvaluaanse dollar|tuvaluaanse $|tuvaluan dollars|tuvaluan dollar|tuvaluan $
     Dollar: dollars|dollar|$
 #Chinese yuan
-    Chinese yuan: yuan|kuai|chinese yuan|renminbi|cny|rmb|￥
+    Chinese yuan: chinese renminbi|chinese yuan|yuan|kuai|chinese yuan|renminbi|cny|rmb|￥
     Fen: fen
     Jiao: jiao|mao
 #Additional
