@@ -405,43 +405,43 @@ CurrencySuffixList: !dictionary
     Franc: frank|franken|francs|franc|fr.|fs|ff|fc
     Centime: centimes|centime|santim
 #Ruble
-    Russian ruble: russische roebel|₽|rub|russia ruble|russia ₽|russian ₽|russische roebels|russia rubles
-    New Belarusian ruble: new belarusian ruble|byn|new belarus ruble|new belarus rubles|new belarusian rubles
-    Old Belarusian ruble: old belarusian ruble|byr|old belarus ruble|old belarus rubles|old belarusian rubles
-    Transnistrian ruble: transnistrian ruble|prb|р.
-    Belarusian ruble: belarusian ruble|belarus ruble|belarus rubles|belarusian rubles
-    Kopek: kopek|kopeks
+    Russian ruble: russische roebel|₽|rub|russia ruble|russia ₽|russian ₽|russische ₽|russische roebels
+    New Belarusian ruble: nieuwe wit-russische roebel|nieuwe wit russische roebel|nieuwe witrussische roebel|new belarusian ruble|byn|new belarus ruble|new belarus rubles|new belarusian rubles
+    Old Belarusian ruble: oude wit-russische roebel|oude wit russische roebel|oude witrussische roebel|old belarusian ruble|byr|old belarus ruble|old belarus rubles|old belarusian rubles
+    Transnistrian ruble: transnistrische roebel|transnistrische roebels|transnistrian ruble|prb|р.
+    Belarusian ruble: wit-russische roebel|wit russische roebel|witrussische roebel|belarusian ruble|belarus ruble|belarus rubles
+    Kopek: kopek|kopeken|kopeks
     Kapyeyka: kapyeyka
-    Ruble: roebel|roebles|rubles|ruble|br
+    Ruble: roebel|roebels|rubles|ruble|br
 #Dinar
-    Algerian dinar: algerian dinar|د.ج|dzd|algerian dinars|algeria dinar|algeria dinars
-    Bahraini dinar: bahraini dinars|bahraini dinar|bhd|.د.ب
+    Algerian dinar: algerijnse dinars|algerijnse dinar|algerian dinar|د.ج|dzd|algerian dinars|algeria dinar|algeria dinars
+    Bahraini dinar: bahreinse dinars|bahreinse dinar|bahraini dinars|bahraini dinar|bhd|.د.ب
     Santeem: santeem|santeems
-    Iraqi dinar: iraqi dinars|iraqi dinar|iraq dinars|iraq dinar|iqd|ع.د
-    Jordanian dinar: jordanian dinars|jordanian dinar|د.ا|jod|jordan dinar|jordan dinars
-    Kuwaiti dinar: kuwaiti dinars|kuwaiti dinar|kwd|د.ك
-    Libyan dinar: libyan dinars|libyan dinar|libya dinars|libya dinar|lyd
-    Serbian dinar: serbian dinars|serbian dinar|din.|rsd|дин.|serbia dinars|serbia dinar
-    Tunisian dinar: tunisian dinars|tunisian dinar|tnd|tunisia dinars|tunisia dinar
-    Yugoslav dinar: yugoslav dinars|yugoslav dinar|yun
+    Iraqi dinar: iraakse dinars|iraakse dinar|iraqi dinars|iraqi dinar|iraq dinars|iraq dinar|iqd|ع.د
+    Jordanian dinar: jordaanse dinars|jordaanse dinar|jordanian dinars|jordanian dinar|د.ا|jod|jordan dinar|jordan dinars
+    Kuwaiti dinar: koeweitse dinars|koeweitse dinar|kuwaiti dinars|kuwaiti dinar|kwd|د.ك
+    Libyan dinar: libische dinars|libische dinar|libyan dinars|libyan dinar|libya dinars|libya dinar|lyd
+    Serbian dinar: servische dinars|servische dinar|serbian dinars|serbian dinar|din.|rsd|дин.|serbia dinars|serbia dinar
+    Tunisian dinar: tunesische dinars|tunesische dinar|tunisian dinars|tunisian dinar|tnd|tunisia dinars|tunisia dinar
+    Yugoslav dinar: joegoslavische dinars|joegoslavische dinar|yugoslav dinars|yugoslav dinar|yun
     Dinar: dinars|dinar|denar|-dinars|-dinar
     Fils: fils|fulūs|-fils|-fil
     Para: para|napa
     Millime: millimes|millime
 #Peso
-    Argentine peso: argentine peso|ars|argetina peso|argetina pesos|argentine pesos
-    Chilean peso: chilean pesos|chilean peso|clp|chile peso|chile peso
-    Colombian peso: colombian pesos|colombian peso|cop|colombia peso|colombia pesos
-    Cuban convertible peso: cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso
-    Cuban peso: cuban pesos|cuban peso|cup|cuba pesos|cuba peso
-    Dominican peso: dominican pesos|dominican peso|dop|dominica pesos|dominica peso
-    Mexican peso: mexican pesos|mexican peso|mxn|mexico pesos|mexico peso
-    Philippine peso: piso|philippine pesos|philippine peso|₱|php
-    Uruguayan peso: uruguayan pesos|uruguayan peso|uyu
+    Argentine peso: argentijnse pesos|argentijnse peso|argentine peso|ars|argetina peso|argetina pesos|argentine pesos
+    Chilean peso: chileense pesos|chileense peso|chilean pesos|chilean peso|clp|chile peso|chile peso
+    Colombian peso: colombiaanse pesos|colombiaanse peso|colombian pesos|colombian peso|cop|colombia peso|colombia pesos
+    Cuban convertible peso: convertibele pesos|convertibele peso|cubaanse convertible pesos|cubaanse convertible peso|cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso
+    Cuban peso: cubaanse pesos|cubaanse peso|cuban pesos|cuban peso|cup|cuba pesos|cuba peso
+    Dominican peso: dominicaanse pesos|dominicaanse peso|dominican pesos|dominican peso|dop|dominica pesos|dominica peso
+    Mexican peso: mexicaanse pesos|mexicaanse peso|mexican pesos|mexican peso|mxn|mexico pesos|mexico peso
+    Philippine peso: filipijnse pesos|filipijnse peso|piso|philippine pesos|philippine peso|₱|php
+    Uruguayan peso: uruguayaanse pesos|uruguayaanse peso|uruguayan pesos|uruguayan peso|uyu
     Peso: pesos|peso
-    Centavo: centavos|centavo
+    Centavo: centavos|centavo|¢
 #Pound
-    Alderney pound: alderney pounds|alderney pound|alderney £
+    Alderney pound: alderney pond|alderney pounds|alderney pound|alderney £
     British pound: british pounds|british pound|british £|gbp|pound sterling|pound sterlings|sterling|pound scot|pound scots
     Guernsey pound: guernsey pounds|guernsey £|ggp
     Ascension pound: ascension pounds|ascension pound|ascension £
@@ -457,7 +457,7 @@ CurrencySuffixList: !dictionary
     Sudanese pound: sudanese pounds|sudanese pound|sudanese £|ج.س.|sdg|sudan pounds|sudan pound|sudan £
     Syrian pound: syrian pounds|syrian pound|syrian £|ل.س|syp|syria pounds|syria pound|syria £
     Tristan da Cunha pound: tristan da cunha pounds|tristan da cunha pound|tristan da cunha £
-    Pound: pounds|pound|-pounds|-pound|£
+    Pound: pond|ponden|-pond|-ponden|pounds|pound|-pounds|-pound|£
     Pence: pence
     Shilling: shillings|shilling|shilingi
     Penny: pennies|penny
@@ -500,7 +500,7 @@ CurrencySuffixList: !dictionary
     Fen: fen
     Jiao: jiao|mao
 #Additional
-    Finnish markka: suomen markka|finnish markka|finsk mark|fim|markkaa|markka
+    Finnish markka: finse mark|finse markka|suomen markka|finnish markka|finsk mark|fim|markkaa|markka
     Penni: penniä|penni
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
