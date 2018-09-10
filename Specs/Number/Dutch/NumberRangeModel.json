@@ -239,19 +239,6 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "There're about five hundred and more in these products.",
-    "Results": [
-      {
-        "Text": "five hundred and more",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[500,)"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Er zijn ongeveer vijfhonderd of meer van deze producten.",
     "Results": [
       {
