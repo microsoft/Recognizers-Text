@@ -210,6 +210,14 @@
     "Input": "De markka was verdeeld in 100 penni (Finse en Zweedse naam). 1 euro is 5,94573 markka waard.",
     "Results": [
       {
+        "Text": "markka",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Finnish markka",
+          "value": null
+        }
+      },
+      {
         "Text": "100 penni",
         "TypeName": "currency",
         "Resolution": {
