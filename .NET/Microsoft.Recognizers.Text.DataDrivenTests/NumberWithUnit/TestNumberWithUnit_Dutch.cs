@@ -28,12 +28,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             base.TestNumberWithUnit();
         }
 
-        // [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-Dutch.csv", "CurrencyModel-Dutch#csv", DataAccessMethod.Sequential)]
-        // [TestMethod]
-        // public void CurrencyModel()
-        // {
-        //     base.TestNumberWithUnit();
-        // }
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-Dutch.csv", "CurrencyModel-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void CurrencyModel()
+        {
+            base.TestNumberWithUnit();
+        }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-Dutch.csv", "DimensionModel-Dutch#csv", DataAccessMethod.Sequential)]
         [TestMethod]
