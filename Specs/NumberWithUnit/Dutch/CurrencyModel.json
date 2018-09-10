@@ -1,20 +1,5 @@
 [
   {
-    "Input": "Het zal een kuai en vijf mao vijf kosten.",
-    "Results": [
-      {
-        "Text": "een kuai en vijf mao vijf",
-        "TypeName": "currency",
-        "Resolution": {
-          "isoCurrency": "CNY",
-          "unit": "Chinese yuan",
-          "value": "1,55"
-        }
-      }
-    ],
-    "NotSupportedByDesign": "javascript,python,java"
-  },
-  {
     "Input": "Hey, het gaat $4,25 kosten en 32 is het aantal dat ik wil afnemen!",
     "Results": [
       {
@@ -36,7 +21,7 @@
         "TypeName": "currency",
         "Resolution": {
           "unit": "Euro",
-          "value": "5,50"
+          "value": "5,5"
         }
       }
     ],
@@ -64,7 +49,7 @@
         "TypeName": "currency",
         "Resolution": {
           "unit": "Euro",
-          "value": "3,50"
+          "value": "3,5"
         }
       }
     ],
@@ -78,7 +63,7 @@
         "TypeName": "currency",
         "Resolution": {
           "unit": "Euro",
-          "value": "2,20"
+          "value": "2,2"
         }
       }
     ],
@@ -115,6 +100,49 @@
         "Resolution": {
           "unit": "Euro",
           "value": "-12"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": " Hij is me nog 24 euro schuldig",
+    "Results": [
+      {
+        "Text": "24 euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "24"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Hij is me nog € 24,- schuldig.",
+    "Results": [
+      {
+        "Text": "€ 24",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "24"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het zal een kuai en vijf mao vijf kosten.",
+    "Results": [
+      {
+        "Text": "een kuai en vijf mao vijf",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "1,55"
         }
       }
     ],
