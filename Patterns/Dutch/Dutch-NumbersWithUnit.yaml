@@ -442,20 +442,20 @@ CurrencySuffixList: !dictionary
     Centavo: centavos|centavo
 #Pound
     Alderney pound: alderney pond|alderney pounds|alderney pound|alderney £
-    British pound: british pounds|british pound|british £|gbp|pound sterling|pound sterlings|sterling|pound scot|pound scots
+    British pound: pond sterling|britse pond|britse ponden|britse £|british pounds|british pound|british £|gbp|pound sterling|pound sterlings|sterling|pound scot|pound scots
     Guernsey pound: guernsey pounds|guernsey £|ggp
-    Ascension pound: ascension pounds|ascension pound|ascension £
-    Saint Helena pound: saint helena pounds|saint helena pound|saint helena £|shp
-    Egyptian pound: egyptian pounds|egyptian pound|egyptian £|egp|ج.م|egypt pounds|egypt pound
-    Falkland Islands pound: falkland islands pounds|falkland islands pound|falkland islands £|fkp|falkland island pounds|falkland island pound|falkland island £
-    Gibraltar pound: gibraltar pounds|gibraltar pound|gibraltar £|gip
-    Manx pound: manx pounds|manx pound|manx £|imp
-    Jersey pound: jersey pounds|jersey pound|jersey £|jep
-    Lebanese pound: lebanese pounds|lebanese pound|lebanese £|lebanan pounds|lebanan pound|lebanan £|lbp|ل.ل
-    South Georgia and the South Sandwich Islands pound: south georgia and the south sandwich islands pounds|south georgia and the south sandwich islands pound|south georgia and the south sandwich islands £
-    South Sudanese pound: south sudanese pounds|south sudanese pound|south sudanese £|ssp|south sudan pounds|south sudan pound|south sudan £
-    Sudanese pound: sudanese pounds|sudanese pound|sudanese £|ج.س.|sdg|sudan pounds|sudan pound|sudan £
-    Syrian pound: syrian pounds|syrian pound|syrian £|ل.س|syp|syria pounds|syria pound|syria £
+    Ascension pound: ascension ponden|ascension pond|ascension pounds|ascension pound|ascension £
+    Saint Helena pound: sint-heleens pond|sint-heleens £|sint heleens pond|sint heleens £|saint helena pounds|saint helena pound|saint helena £|shp
+    Egyptian pound: egyptische pond|egyptische £|egyptische ponden|egyptian pounds|egyptian pound|egyptian £|egp|ج.م|egypt pounds|egypt pound
+    Falkland Islands pound: falklandeilanden pond|falklandeilandse pond|falklandeilandse £|falklandeilanse ponden|falkland islands pounds|falkland islands pound|falkland islands £|fkp|falkland island pounds|falkland island pound|falkland island £
+    Gibraltar pound: gibraltarees pond|gibraltarees £|gibraltar pounds|gibraltar pound|gibraltar £|gip
+    Manx pound: isle of man-pond|isle of man pond|isle of man-£|isle of man £|manx pounds|manx pound|manx £|imp
+    Jersey pound: jerseypond|jerseyponden|jersey pounds|jersey pound|jersey £|jep
+    Lebanese pound: libanese ponden|libanese pond|libanese £|lebanese pounds|lebanese pound|lebanese £|lebanan pounds|lebanan pound|lebanan £|lbp|ل.ل
+    South Georgia and the South Sandwich Islands pound: zuid-georgia en de zuidelijke sandwicheilanden ponden|zuid-georgia en de zuidelijke sandwicheilanden pond|zuid-georgia en de zuidelijke sandwicheilanden £|south georgia and the south sandwich islands pounds|south georgia and the south sandwich islands pound|south georgia and the south sandwich islands £
+    South Sudanese pound: zuid sudanese ponden|zuid sudanese pond|zuid sudanese £|south sudanese pounds|south sudanese pound|south sudanese £|ssp|south sudan pounds|south sudan pound|south sudan £
+    Sudanese pound: sudanese ponden|sudanese pond|sudanese £|sudanese pounds|sudanese pound|sudanese £|ج.س.|sdg|sudan pounds|sudan pound|sudan £
+    Syrian pound: syrische ponden|syrische pond|syrische £|syrian pounds|syrian pound|syrian £|ل.س|syp|syria pounds|syria pound|syria £
     Tristan da Cunha pound: tristan da cunha pounds|tristan da cunha pound|tristan da cunha £
     Pound: pond|ponden|-pond|-ponden|pounds|pound|-pounds|-pound|£
     Pence: pence
