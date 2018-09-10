@@ -433,15 +433,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             #region Dutch
             
-            // RegisterModel<CurrencyModel>(
-            //     Culture.Dutch,
-            //     (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
-            //     {
-            //         {
-            //             new BaseMergedUnitExtractor(new Dutch.CurrencyExtractorConfiguration()),
-            //             new BaseMergedUnitParser(new Dutch.CurrencyParserConfiguration())
-            //         }
-            //     }));
+            RegisterModel<CurrencyModel>(
+                Culture.Dutch,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Dutch.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Dutch.CurrencyParserConfiguration())
+                    }
+                }));
 
             RegisterModel<TemperatureModel>(
                 Culture.Dutch,
