@@ -55,5 +55,69 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het bedrag is 3 euro en 50 cent",
+    "Results": [
+      {
+        "Text": "3 euro en 50 cent",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "3,50"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Een broodje kost gemiddeld € 2,20",
+    "Results": [
+      {
+        "Text": "€ 2,20",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "2,20"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "De internationale symbolen voor munteenheden kunnen voor of achter het bedrag staan (bijvoorbeeld 200 EUR, EUR 500). In Nederland is het gebruikelijk de muntcode voor het bedrag te zetten, in Vlaanderen erachter.",
+    "Results": [
+      {
+        "Text": "200 EUR",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "200"
+        }
+      },
+      {
+        "Text": "EUR 500",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "500"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Voor negatieve bedragen is het aan te bevelen € -12 te schrijven.",
+    "Results": [
+      {
+        "Text": "€ -12",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "-12"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]
