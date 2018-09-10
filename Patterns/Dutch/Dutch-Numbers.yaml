@@ -151,9 +151,9 @@ LessOrEqualSuffix: !simpleRegex
 NumberSplitMark: !simpleRegex
   def: (?![,.](?!\d+))
 MoreRegexNoNumberSucceed: !simpleRegex
-  def: ((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+)))
+  def: ((groter|hoger|meer)((?!\s+dan)|\s+(dan(?!(\s*\d+))))|(boven|over)(?!(\s*\d+)))
 LessRegexNoNumberSucceed: !simpleRegex
-  def: ((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+)))
+  def: ((minder|lager|kleiner)((?!\s+dan)|\s+(dan(?!(\s*\d+))))|(beneden|onder)(?!(\s*\d+)))
 EqualRegexNoNumberSucceed: !simpleRegex
   def: (gelijk?((?!\s+(aan|tot))|(\s+(aan|tot)(?!(\s*\d+))))) 
 OneNumberRangeMoreRegex1: !nestedRegex
