@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // In ExperimentalMode, cases like "from 3 to 5" and "between 10 and 15" are set to closed at both start and end
-            if (Options == NumberOptions.ExperimentalMode)
+            if ((Options & NumberOptions.ExperimentalMode) != 0)
             {
                 foreach (var result in results)
                 {
@@ -161,6 +161,7 @@ namespace Microsoft.Recognizers.Text.Number
             else
             {
                 var numberStr = string.IsNullOrEmpty(numberStr1) ? numberStr2 : numberStr1;
+
                 var isAmbiguousRangeOrFraction = IsAmbiguousRangeOrFraction(match, type, numberStr);
                 var extractNumList = ExtractNumberAndOrdinalFromStr(numberStr, isAmbiguousRangeOrFraction);
 
@@ -232,12 +233,33 @@ namespace Microsoft.Recognizers.Text.Number
                 ret = ret.OrderByDescending(num => num.Length).ThenByDescending(num => num.Start).ToList();
             }
 
-            if (ret != null && isAmbiguousRangeOrFraction)
+            var removeFractionWithInConnector = ShouldRemoveFractionWithInConnector(numberStr);
+
+            if (ret != null && (removeFractionWithInConnector || isAmbiguousRangeOrFraction))
             {
                 ret = RemoveAmbiguousFractions(ret);
             }
 
             return ret;
+        }
+
+        private bool ShouldRemoveFractionWithInConnector(string numberStr)
+        {
+            var removeFractionWithInConnector = false;
+
+            if ((Options & NumberOptions.ExperimentalMode) != 0)
+            {
+                removeFractionWithInConnector = IsFractionWithInConnector(numberStr);
+            }
+
+            return removeFractionWithInConnector;
+        }
+
+        // Fraction with InConnector may lead to some ambiguous cases like "more than 30000 in 2010"
+        // In ExperimentalMode, we will remove all FractionWithInConnector numbers to avoid such cases
+        private bool IsFractionWithInConnector(string numberStr)
+        {
+            return AmbiguousFractionConnectorsRegex.Match(numberStr).Success;
         }
 
         // Judge whether it's special cases like "more than 30000 in 2010"

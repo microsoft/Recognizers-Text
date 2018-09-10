@@ -5592,5 +5592,269 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back as early as next year's first quarter.",
+    "Context": {
+      "ReferenceDateTime": "2018-09-06T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "as early as next year's first quarter",
+        "Start": 13,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-04-01,P3M)",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What's the sales for year greater than 2012",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "year greater than 2012",
+        "Start": 21,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2012-12-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want sales for year 2012 or later",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "year 2012 or later",
+        "Start": 17,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2012-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How about year 2016 and greater",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "year 2016 and greater",
+        "Start": 10,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You can only leave on 1/1/2016 and later",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/1/2016 and later",
+        "Start": 22,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You can only leave on 1/1/2016 and later",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/1/2016 and later",
+        "Start": 22,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "You can only leave on 1/1/2016 and after",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/1/2016 and after",
+        "Start": 22,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I can only leave on 1/1/2016 and after my work item is done",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/1/2016",
+        "Start": 20,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I can only leave on 1/1/2016 and after 6PM",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/1/2016",
+        "Start": 20,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "after 6pm",
+        "Start": 33,
+        "End": 41,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This bank stock is down 20% in the year to date.",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "year to date",
+        "Start": 35,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-09-07"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
