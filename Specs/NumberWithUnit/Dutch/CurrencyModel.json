@@ -71,6 +71,7 @@
   },
   {
     "Input": "De internationale symbolen voor munteenheden kunnen voor of achter het bedrag staan (bijvoorbeeld 200 EUR, EUR 500). In Nederland is het gebruikelijk de muntcode voor het bedrag te zetten, in Vlaanderen erachter.",
+    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "200 EUR",
@@ -143,6 +144,49 @@
           "isoCurrency": "CNY",
           "unit": "Chinese yuan",
           "value": "1,55"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Microsoft CEO Satya Nadella heeft bijna een derde van zijn aandelen in de leverancier verkocht voor 35,9 miljoen dollar. Nadella verkocht 328.000 van zijn Microsoft-aandelen, dat was zo'n 29,6 procent van de totale aandelen die hij bezit.",
+    "Results": [
+      {
+        "Text": "35,9 miljoen dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "35900000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het Amerikaanse defensie-onderdeel darpa, oftewel Defense Advanced Research Projects Agency, gaat omgerekend iets meer dan 1,7 miljard euro stoppen in onderzoek naar ai.",
+    "Results": [
+      {
+        "Text": "1,7 miljard euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "1700000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Amerikaanse defensie investeert 2 miljard amerikaanse dollar in onderzoek naar ai",
+    "Results": [
+      {
+        "Text": "2 miljard amerikaanse dollar",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "2000000000"
         }
       }
     ],
