@@ -191,5 +191,50 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "  Het gewicht van de zilverguldens tussen 1839 en 1954 heeft tot gevolg dat 1000 kg (= 1 ton) aan guldens een waarde heeft van 100.000 gulden. De gewichtseenheid krijgt daarmee een geldswaarde.",
+    "Results": [
+      {
+        "Text": "100.000 gulden",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Netherlands guilder",
+          "value": "100000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "De markka was verdeeld in 100 penni (Finse en Zweedse naam). 1 euro is 5,94573 markka waard.",
+    "Results": [
+      {
+        "Text": "100 penni",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Penni",
+          "value": "100"
+        }
+      },
+      {
+        "Text": "1 euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "5,94573 markka",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Finnish markka",
+          "value": "5,94573"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]
