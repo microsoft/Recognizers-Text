@@ -38,17 +38,17 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 {
                     //１５.２만
                     new Regex(NumbersDefinitions.DoubleWithThousandsRegex, RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.KOREAN)
                 },
                 {
                     // 2e6, 21.2e0
                     new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
                     //2^5
                     new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 }
             };
 

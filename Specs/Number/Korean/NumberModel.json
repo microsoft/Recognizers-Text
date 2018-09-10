@@ -126,13 +126,13 @@
 ,
 {
   "Input": ".25ml의 액체",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": ".25",
       "TypeName": "number",
       "Resolution": {
-        "value": ".25"
+        "value": "0.25"
       }
     }
   ]
@@ -574,24 +574,10 @@
 ,
 {
   "Input": "이십일조 삼백",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
-      "Text": "이십일조",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "21000000000300"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "이십일조 그리고 삼백",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "이십일조 그리고 삼백",
+      "Text": "이십일조 삼백",
       "TypeName": "number",
       "Resolution": {
         "value": "21000000000300"
@@ -671,92 +657,8 @@
 }
 ,
 {
-  "Input": " 2.33천",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "2.33천",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2330"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 이백 점 영삼",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "이백 점 영삼",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "200.03"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 이백 점 칠일",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "이백 점 칠일",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "200.71"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "서른다섯",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "서른다섯",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "35"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "일곱",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "일곱",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "7"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "마흔 여덟",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "마흔 여덟",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "48"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "1e10",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "1e10",
@@ -770,27 +672,13 @@
 ,
 {
   "Input": "1.1^23",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "1.1^23",
       "TypeName": "number",
       "Resolution": {
         "value": "8.95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 322 백 ",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "322 백",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "32200"
       }
     }
   ]
@@ -895,20 +783,6 @@
 }
 ,
 {
-  "Input": "이십 점 육",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
-  "Results": [
-    {
-      "Text": "이십 점 육",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "20.6"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "이십삼과 오분의 삼",
   "NotSupportedByDesign": "javascript,python,java",
   "Results": [
@@ -994,7 +868,7 @@
 ,
 {
   "Input": "1.1^+23",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "1.1^+23",
@@ -1008,7 +882,7 @@
 ,
 {
   "Input": "2.5^-1",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "2.5^-1",
@@ -1022,7 +896,7 @@
 ,
 {
   "Input": "-2500^-1",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "-2500^-1",
@@ -1036,7 +910,7 @@
 ,
 {
   "Input": "-1.1^+23",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "-1.1^+23",
@@ -1050,7 +924,7 @@
 ,
 {
   "Input": "-2.5^-1",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "-2.5^-1",
@@ -1064,7 +938,7 @@
 ,
 {
   "Input": "-1.1^--23",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "-1.1^--23",
@@ -1078,7 +952,7 @@
 ,
 {
   "Input": "-127.32e13",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "-127.32e13",
@@ -1092,7 +966,7 @@
 ,
 {
   "Input": "12.32e+14",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "12.32e+14",
@@ -1106,7 +980,7 @@
 ,
 {
   "Input": "-12e-1",
-  "NotSupportedByDesign": "dotNet,javascript,python,java",
+  "NotSupportedByDesign": "javascript,python,java",
   "Results": [
     {
       "Text": "-12e-1",
@@ -1725,20 +1599,21 @@
       }
     }
   ]
-},
+}
+,
 {
   "Input": "0은 영이다.",
   "NotSupportedByDesign": "dotNet,javascript,python,java",
   "Results": [
     {
-      "Text": "영",
+      "Text": "0",
       "TypeName": "number",
       "Resolution": {
         "value": "0"
       }
     },
     {
-      "Text": "0",
+      "Text": "영",
       "TypeName": "number",
       "Resolution": {
         "value": "0"
