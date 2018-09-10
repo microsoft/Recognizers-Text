@@ -483,7 +483,7 @@ CurrencySuffixList: !dictionary
     Jamaican dollar: jamaicaanse dollars|jamaicaanse dollar|jamaicaanse $|jamaican dollars|jamaican dollar|jamaican $|j$|jamaica dollars|jamaica dollar|jamaica $|jmd
     Kiribati dollar: kiribatische dollars|kiribatische dollar|kiribatische $|kiribati dollars|kiribati dollar|kiribati $
     Liberian dollar: liberiaanse dollars|liberiaanse dollar|liberiaanse $|liberian dollars|liberian dollar|liberian $|liberia dollars|liberia dollar|liberia $|lrd
-    Micronesian dollar: micronesia dollars|micronesia dollar|micronesia $|micronesian dollars|micronesian dollar|micronesian $
+    Micronesian dollar: micronesische dollars|micronesische dollar|micronesische $|micronesia dollars|micronesia dollar|micronesia $|micronesian dollars|micronesian dollar|micronesian $
     Namibian dollar: namibische dollars|namibische dollar|namibische $|namibian dollars|namibian dollar|namibian $|nad|n$|namibia dollars|namibia dollar|namibia $
     Nauruan dollar: nauruaanse dollars|nauruaanse dollar|nauruaanse $|nauruan dollars|nauruan dollar|nauruan $
     Niue dollar: niue dollars|niue dollar|niue $
@@ -777,38 +777,38 @@ CurrencyPrefixList: !dictionary
   entries:
 #Dollar Prefix
     Dollar: $
-    United States dollar: united states $|us$|us $|u.s. $|u.s $
-    East Caribbean dollar: east caribbean $
-    Australian dollar: australian $|australia $
-    Bahamian dollar: bahamian $|bahamia $
-    Barbadian dollar: barbadian $|barbadin $
-    Belize dollar: belize $
-    Bermudian dollar: bermudian $
-    British Virgin Islands dollar: british virgin islands $|bvi$|virgin islands $|virgin island $|british virgin island $
-    Brunei dollar: brunei $|b$
+    United States dollar: amerikaanse $|united states $|us$|us $|u.s. $|u.s $
+    East Caribbean dollar: oost-caribische $|oost caribische $|east caribbean $
+    Australian dollar: australische $|australian $|australia $
+    Bahamian dollar: bahamaanse $|bahamian $|bahamia $
+    Barbadian dollar: barbadiaanse $|barbadian $|barbadin $
+    Belize dollar: belizaanse $|belize $
+    Bermudian dollar: bermudaanse $|bermudian $
+    British Virgin Islands dollar: britse maagdeneilanden $|british virgin islands $|bvi$|virgin islands $|virgin island $|british virgin island $
+    Brunei dollar: bruneise $|brunei $|b$
     Sen: sen
-    Singapore dollar: singapore $|s$
-    Canadian dollar: canadian $|can$|c$|c $|canada $
-    Cayman Islands dollar: cayman islands $|ci$|cayman island $
-    New Zealand dollar: new zealand $|nz$|nz $
-    Cook Islands dollar: cook islands $|cook island $
-    Fijian dollar: fijian $|fiji $
-    Guyanese dollar: gy$|gy $|g$|g $
-    Hong Kong dollar: hong kong $|hk$|hkd|hk $
-    Jamaican dollar: jamaican $|j$|jamaica $
-    Kiribati dollar: kiribati $
-    Liberian dollar: liberian $|liberia $
-    Micronesian dollar: micronesian $
-    Namibian dollar: namibian $|nad|n$|namibia $
-    Nauruan dollar: nauruan $
+    Singapore dollar: singaporese $|singapore $|s$
+    Canadian dollar: canadese $|canadian $|can$|c$|c $|canada $
+    Cayman Islands dollar: kaaimaneilandse $|cayman islands $|ci$|cayman island $
+    New Zealand dollar: nieuw-zeelandse $|nieuw zeelandse $|new zealand $|nz$|nz $
+    Cook Islands dollar: cookeilandse $|cook islands $|cook island $
+    Fijian dollar: fiji-$|fijian $|fiji $
+    Guyanese dollar: guyaanse $|gy$|gy $|g$|g $
+    Hong Kong dollar: hongkong $|hong kong $|hk$|hkd|hk $
+    Jamaican dollar: jamaicaanse $|jamaican $|j$|jamaica $
+    Kiribati dollar: kiribatische $|kiribati $
+    Liberian dollar: liberiaanse $|liberian $|liberia $
+    Micronesian dollar: micronesische $|micronesian $
+    Namibian dollar: namibische $|namibian $|nad|n$|namibia $
+    Nauruan dollar: nauruaanse $|nauruan $
     Niue dollar: niue $
-    Palauan dollar: palauan $
-    Pitcairn Islands dollar: pitcairn islands $|pitcairn island $
-    Solomon Islands dollar: solomon islands $|si$|si $|solomon island $
-    Surinamese dollar: surinamese $|surinam $
-    New Taiwan dollar: nt$|nt $
-    Trinidad and Tobago dollar: trinidad and tobago $|trinidad $|trinidadian $
-    Tuvaluan dollar: tuvaluan $
+    Palauan dollar: palaus $|palauan $
+    Pitcairn Islands dollar: pitcairneilandse $|pitcairn islands $|pitcairn island $
+    Solomon Islands dollar: salomon-$|salomon $|solomon islands $|si$|si $|solomon island $
+    Surinamese dollar: surinaamse $|surinamese $|surinam $
+    New Taiwan dollar: taiwanese $|nt$|nt $
+    Trinidad and Tobago dollar: trinidad en tobago $|trinidad and tobago $|trinidad $|trinidadian $
+    Tuvaluan dollar: tuvaluaanse $|tuvaluan $
     Samoan tālā: ws$
     Chinese yuan: ￥
     Japanese yen: ¥
