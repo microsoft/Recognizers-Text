@@ -771,7 +771,7 @@ FractionalUnitNameToCodeMap: !dictionary
     Hào: HAO
     Ngwee: NGWEE
 CompoundUnitConnectorRegex: !simpleRegex
-    def: (?<spacer>and)
+    def: (?<spacer>en)
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
