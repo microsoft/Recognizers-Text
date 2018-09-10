@@ -132,11 +132,17 @@ LessRegex: !simpleRegex
   def: ((minder|lager|kleiner)(\s+dan|\s+als)?|beneden|onder|<)
 EqualRegex: !simpleRegex
   def: (gelijk(\s+(aan|tot|als))?|(?<!<|>)=)
+MoreOrEqualPrefix: !nestedRegex
+  def: ((niet\s+{LessRegex})|(at\s+least))
+  references: [ LessRegex ]
 MoreOrEqual: !nestedRegex
   def: (({MoreRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{LessRegex}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex ]
 MoreOrEqualSuffix: !simpleRegex
   def: ((en|of)\s+(meer|groter|hoger|grotere)((?!\s+dan)|(?!\s+als)))
+LessOrEqualPrefix: !nestedRegex
+  def: ((niet\s+{MoreRegex})|(at\s+most))
+  references: [ MoreRegex ]
 LessOrEqual: !nestedRegex
   def: (({LessRegex}\s+of\s+{EqualRegex})|maximum|niet\s+{MoreRegex}|<\s*=)
   references: [ LessRegex, EqualRegex, MoreRegex ]
@@ -145,9 +151,9 @@ LessOrEqualSuffix: !simpleRegex
 NumberSplitMark: !simpleRegex
   def: (?![,.](?!\d+))
 MoreRegexNoNumberSucceed: !simpleRegex
-  def: ((groter|hoger|meer)((?!\s+dan|?!\s+als)|\s+(dan(?!(\s*\d+))))|(boven|over)(?!(\s*\d+))) 
+  def: ((bigger|greater|more|higher|larger)((?!\s+than)|\s+(than(?!(\s*\d+))))|(above|over)(?!(\s*\d+)))
 LessRegexNoNumberSucceed: !simpleRegex
-  def: ((minder|lager|kleiner)((?!\s+dan|?!\s+als)|\s+(dan(?!(\s*\d+))))|(beneden|onder)(?!(\s*\d+))) 
+  def: ((less|lower|smaller|fewer)((?!\s+than)|\s+(than(?!(\s*\d+))))|(below|under)(?!(\s*\d+)))
 EqualRegexNoNumberSucceed: !simpleRegex
   def: (gelijk?((?!\s+(aan|tot))|(\s+(aan|tot)(?!(\s*\d+))))) 
 OneNumberRangeMoreRegex1: !nestedRegex
@@ -185,6 +191,7 @@ TwoNumberRangeRegex4: !nestedRegex
   references: [ TillRegex ]
 AmbiguousFractionConnectorsRegex: !simpleRegex 
   def: ^[.]  # TODO: modify regex according to the counterpart in English
+# "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: van de
