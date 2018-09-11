@@ -3,16 +3,26 @@ import { BaseSequenceParser, BaseIpParser } from "../parsers";
 import { ExtractResult, ParseResult, Match } from "@microsoft/recognizers-text";
 
 export class PhoneNumberParser extends BaseSequenceParser {
-    scoreUpperBound = 100;
-    scoreLowerBound = 0;
+    scoreUpperLimit = 100;
+    scoreLowerLimit = 0;
     baseScore = 30;
     countryCodeAward = 40;
-    areaCodeAward = 20;
-    formattedAward = 10;
-    lengthAward = 5;
-    maxFormatIndicatorNum = 4;
-    maxLengthAwardNum = 4;
+    areaCodeAward = 30;
+    formattedAward = 20;
+    lengthAward = 10;
+    typicalFormatDeductionScore = 40;
+    continueDigitDeductionScore = 10;
+    tailSameDeductionScore = 10;
+    continueFormatIndicatorDeductionScore = 20;
+    maxFormatIndicatorNum = 3;
+    maxLengthAwardNum = 3;
+    tailSameLimit = 2;
     phoneNumberLengthBase = 8;
+    pureDigitLengthLimit = 11;
+    tailSameDigitRegex = new RegExp("([\\d])\\1{2,10}$");
+    pureDigitRegex = new RegExp("^\\d*$");
+    continueDigitRegex = new RegExp("\\d{5}\\d*", "ig");
+    digitRegex = new RegExp("\\d", "ig");
 
     ScorePhoneNumber(phoneNumberText: string): number{
         let score = this.baseScore;
@@ -24,17 +34,42 @@ export class PhoneNumberParser extends BaseSequenceParser {
         // Country code score or area code score 
         score += countryCodeRegex.test(phoneNumberText) ?
             this.countryCodeAward : areaCodeRegex.test(phoneNumberText) ? this.areaCodeAward : 0;
-
+        
         // Formatted score
-        if(formatIndicatorRegex.test(phoneNumberText)){
-            var formatIndicatorCount = phoneNumberText.match(formatIndicatorRegex).length;
+        if (formatIndicatorRegex.test(phoneNumberText)) {
+            var formatMathes = phoneNumberText.match(formatIndicatorRegex);
+            var formatIndicatorCount = formatMathes.length;
             score += Math.min(formatIndicatorCount, this.maxFormatIndicatorNum) * this.formattedAward;
+            score -= formatMathes.some(match => match.length > 1) ? this.continueFormatIndicatorDeductionScore : 0;
+        }
+       
+        // Same tailing digit deduction
+        if (this.tailSameDigitRegex.test(phoneNumberText)) {
+            score -= (phoneNumberText.match(this.tailSameDigitRegex)[0].length - this.tailSameLimit) * this.tailSameDeductionScore;
+           
+        }
+        
+        // Length score
+        if (this.digitRegex.test(phoneNumberText)) {
+            score += Math.min((phoneNumberText.match(this.digitRegex).length - this.phoneNumberLengthBase),
+                this.maxLengthAwardNum) * this.lengthAward;
+        }
+        
+        // Pure digit deduction
+        if (this.pureDigitRegex.test(phoneNumberText)) {
+            score -= phoneNumberText.length > this.pureDigitLengthLimit ?
+                (phoneNumberText.length - this.pureDigitLengthLimit) * this.lengthAward : 0;
+        }
+        
+        // Special format deduction
+        score -= BasePhoneNumbers.TypicalDeductionRegexList.some(o => new RegExp(o).test(phoneNumberText)) ? this.typicalFormatDeductionScore : 0;
+        
+        // Continue digit deduction
+        if (this.continueDigitRegex.test(phoneNumberText)) {
+            score -= Math.max(phoneNumberText.match(this.continueDigitRegex).length - 1, 0) * this.continueDigitDeductionScore;
         }
 
-        // Length score
-        score += Math.min((phoneNumberText.length - this.phoneNumberLengthBase), this.maxLengthAwardNum) * this.lengthAward; 
-
-        return Math.max(Math.min(score, this.scoreUpperBound), this.scoreLowerBound) / this.scoreUpperBound;
+        return Math.max(Math.min(score, this.scoreUpperLimit), this.scoreLowerLimit) / (this.scoreUpperLimit-this.scoreLowerLimit);
     }
 
     parse(extResult: ExtractResult): ParseResult {
