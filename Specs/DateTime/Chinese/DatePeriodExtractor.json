@@ -210,7 +210,7 @@
   },
   {
     "Input": "上世纪90年代",
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "上世纪90年代",
@@ -222,7 +222,7 @@
   },
   {
     "Input": "本世纪20年代",
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "本世纪20年代",
@@ -234,7 +234,7 @@
   },
   {
     "Input": "20世纪80年代",
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20世纪80年代",
@@ -246,7 +246,7 @@
   },
   {
     "Input": "在50年代的时候",
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "50年代",
@@ -258,7 +258,7 @@
   },
   {
     "Input": "19世纪70年代，他出生了",
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "19世纪70年代",
@@ -270,7 +270,7 @@
   },
   {
     "Input": "十九世纪七十年代",
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "十九世纪七十年代",
@@ -282,7 +282,7 @@
   },
   {
     "Input": "九十年代",
-  "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "九十年代",
@@ -457,6 +457,17 @@
         "Type": "daterange",
         "Start": 0,
         "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "帮我统计一下2010年之后2018年之前的销量",
+    "Results": [
+      {
+        "Text": "2010年之后2018年之前",
+        "Type": "daterange",
+        "Start": 6,
+        "Length": 14
       }
     ]
   }

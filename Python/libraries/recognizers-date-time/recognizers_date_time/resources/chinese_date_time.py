@@ -61,7 +61,7 @@ class ChineseDateTime:
     UnitRegex = f'(?<unit>年|(个)?月|周|日|天)'
     FollowedUnit = f'^\\s*{UnitRegex}'
     NumberCombinedWithUnit = f'(?<num>\\d+(\\.\\d*)?){UnitRegex}'
-    YearToYear = f'((从|在|自)\\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*{DatePeriodTillRegex}\\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\\s*(之间|之内|期间|中间|间))?'
+    YearToYear = f'((从|在|自)\\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*({DatePeriodTillRegex}|后|之后)\\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\\s*((之间|之内|期间|中间|间)|前|之前))?'
     MonthToMonth = f'({MonthRegex}){DatePeriodTillRegex}({MonthRegex})'
     PastRegex = f'(?<past>(前|上|之前|近|过去))'
     FutureRegex = f'(?<future>(后|(?<![一两几]\\s*)下|之后|未来(的)?))'

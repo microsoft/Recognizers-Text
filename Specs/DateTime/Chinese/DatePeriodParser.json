@@ -1129,5 +1129,30 @@
         "Length": 14
       }
     ]
+  },
+  {
+    "Input": "帮我统计一下2010年之后2018年之前的销量",
+    "Context": {
+      "ReferenceDateTime": "2018-09-12T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2010年之后2018年之前",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2018-01-01,P8Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 6,
+        "Length": 14
+      }
+    ]
   }
 ]
