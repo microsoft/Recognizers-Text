@@ -28,6 +28,34 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "Het bedrag is vijf euro vijftig",
+    "Results": [
+      {
+        "Text": "vijf euro vijftig",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "5,5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "Het bedrag is vijf euro",
+    "Results": [
+      {
+        "Text": "vijf euro",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "5"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "Hey, het gaat €4,25 kosten en 32 is het aantal dat ik wil afnemen!",
     "Results": [
       {
