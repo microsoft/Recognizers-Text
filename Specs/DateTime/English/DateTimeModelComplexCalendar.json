@@ -5856,5 +5856,71 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Shall we leave on 2018 or later, is this ok for you?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "2018 or later",
+        "Start": 18,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What's the sales for between 2015 and 2018 or later than 2020",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "between 2015 and 2018",
+        "Start": 21,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01,2018-01-01,P3Y)",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "later than 2020",
+        "Start": 46,
+        "End": 60,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2020-12-31"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
