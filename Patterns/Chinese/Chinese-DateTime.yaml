@@ -21,7 +21,7 @@ DateYearInChineseRegex: !nestedRegex
   def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))
   references: [ZeroToNineIntegerRegexChs]
 WeekDayRegex: !simpleRegex
-  def: (?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天)
+  def: (?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)
 LunarRegex: !simpleRegex
   def: (农历|初一|正月|大年)
 DateThisRegex: !nestedRegex
@@ -34,7 +34,7 @@ DateNextRegex: !nestedRegex
   def: (下一个|下个|下一|下)(的)?{WeekDayRegex}
   references: [WeekDayRegex]
 SpecialDayRegex: !simpleRegex
-  def: (最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天)
+  def: (最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天)
 SpecialDayWithNumRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -665,6 +665,22 @@ ParserConfigurationDayOfWeek: !dictionary
     周六: 6
     周日: 0
     周天: 0
+    禮拜一: 1
+    禮拜二: 2
+    禮拜三: 3
+    禮拜四: 4
+    禮拜五: 5
+    禮拜六: 6
+    禮拜天: 0
+    禮拜日: 0
+    週一: 1
+    週二: 2
+    週三: 3
+    週四: 4
+    週五: 5
+    週六: 6
+    週日: 0
+    週天: 0
 ParserConfigurationMonthOfYear: !dictionary
   types: [string, int]
   entries:
@@ -755,7 +771,7 @@ HolidayNoFixedTimex: !dictionary
 MergedBeforeRegex: !simpleRegex
   def: (前|之前)$
 MergedAfterRegex: !simpleRegex
-  def: (后|之后)$
+  def: (后|之后|後|之後)$
 TimeNumberDictionary: !dictionary
   types: [char, int]
   entries:
