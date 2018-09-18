@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/recognizers-text-suite",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "recognizers-text-suite provides robust recognition and resolution of numbers, units, date/time, and more; expressed in multiple languages.",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -32,11 +32,11 @@
     "prepare": "npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "@microsoft/recognizers-text": "~1.0.1",
-    "@microsoft/recognizers-text-number": "~1.0.1",
-    "@microsoft/recognizers-text-number-with-unit": "~1.0.1",
-    "@microsoft/recognizers-text-date-time": "~1.0.1",
-    "@microsoft/recognizers-text-sequence": "~1.0.1",
-    "@microsoft/recognizers-text-choice": "~1.0.1"
+    "@microsoft/recognizers-text": "~1.1.0",
+    "@microsoft/recognizers-text-number": "~1.1.0",
+    "@microsoft/recognizers-text-number-with-unit": "~1.1.0",
+    "@microsoft/recognizers-text-date-time": "~1.1.0",
+    "@microsoft/recognizers-text-sequence": "~1.1.0",
+    "@microsoft/recognizers-text-choice": "~1.1.0"
   }
 }
