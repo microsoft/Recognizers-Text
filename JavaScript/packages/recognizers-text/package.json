@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/recognizers-text",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "recognizers-text provides base classes for robust recognition and resolution of text entities.",
   "author": "Microsoft Corp.",
   "license": "MIT",
