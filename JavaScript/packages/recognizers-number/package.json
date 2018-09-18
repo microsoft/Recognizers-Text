@@ -31,9 +31,10 @@
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
+    "@microsoft/recognizers-text": "~1.1.0",
+    "bignumber.js": "^7.2.1",
     "lodash.escaperegexp": "^4.1.2",
     "lodash.sortby": "^4.7.0",
-    "lodash.trimend": "^4.5.1",
-    "@microsoft/recognizers-text": "~1.1.0"
+    "lodash.trimend": "^4.5.1"
   }
 }
