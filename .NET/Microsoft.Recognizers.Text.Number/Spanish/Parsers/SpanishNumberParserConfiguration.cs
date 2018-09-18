@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
@@ -11,6 +12,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
     public class SpanishNumberParserConfiguration : INumberParserConfiguration
     {
         public SpanishNumberParserConfiguration() : this(new CultureInfo(Culture.Spanish)) { }
+
+        private static readonly ConcurrentDictionary<string, long> ConcurrentSimpleOrdinalNumberMap = new ConcurrentDictionary<string, long>(NumbersDefinitions.SimpleOrdinalNumberMap.ToImmutableList());
 
         public SpanishNumberParserConfiguration(CultureInfo ci)
         {
@@ -28,20 +31,16 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             this.WrittenIntegerSeparatorTexts = NumbersDefinitions.WrittenIntegerSeparatorTexts;
             this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
-
             foreach (var sufix in NumbersDefinitions.SufixOrdinalDictionary)
             {
                 foreach (var prefix in NumbersDefinitions.PrefixCardinalDictionary)
                 {
-                    if (!NumbersDefinitions.SimpleOrdinalNumberMap.ContainsKey(prefix.Key + sufix.Key))
-                    {
-                        NumbersDefinitions.SimpleOrdinalNumberMap.Add(prefix.Key + sufix.Key, prefix.Value * sufix.Value);
-                    }
+                    ConcurrentSimpleOrdinalNumberMap.TryAdd(prefix.Key + sufix.Key, prefix.Value * sufix.Value);
                 }
             }
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
-            this.OrdinalNumberMap = NumbersDefinitions.SimpleOrdinalNumberMap.ToImmutableDictionary();
+            this.OrdinalNumberMap = ConcurrentSimpleOrdinalNumberMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
