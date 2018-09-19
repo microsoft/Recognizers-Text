@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
-            this.OrdinalNumberMap = InitOrdinalNumberMap();
+            this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -159,27 +159,6 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                 }
             }
             return finalValue;
-        }
-
-        private static ImmutableDictionary<string, long> InitOrdinalNumberMap()
-        {
-            var simpleOrdinalDictionary = NumbersDefinitions.OrdinalNumberMap
-                .ToDictionary(entry => entry.Key,
-                              entry => entry.Value);
-
-            var prefixCardinalDictionary = NumbersDefinitions.PrefixCardinalMap;
-
-            var sufixOrdinalDictionary = NumbersDefinitions.SuffixOrdinalMap;
-
-            foreach (var sufix in sufixOrdinalDictionary)
-            {
-                foreach (var prefix in prefixCardinalDictionary)
-                {
-                    simpleOrdinalDictionary.Add(prefix.Key + sufix.Key, prefix.Value * sufix.Value);
-                }
-            }
-
-            return new Dictionary<string, long>(simpleOrdinalDictionary).ToImmutableDictionary();
         }
     }
 }

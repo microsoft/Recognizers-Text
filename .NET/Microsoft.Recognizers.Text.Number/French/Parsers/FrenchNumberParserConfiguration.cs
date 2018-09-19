@@ -1,5 +1,4 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
@@ -12,8 +11,6 @@ namespace Microsoft.Recognizers.Text.Number.French
     public class FrenchNumberParserConfiguration : INumberParserConfiguration
     {
         public FrenchNumberParserConfiguration(): this(new CultureInfo(Culture.French)) { }
-
-        private static readonly ConcurrentDictionary<string, long> ConcurrentOrdinalNumberMap = new ConcurrentDictionary<string, long>(NumbersDefinitions.OrdinalNumberMap.ToImmutableList());
 
         public FrenchNumberParserConfiguration(CultureInfo ci)
         {
@@ -31,16 +28,8 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.WrittenIntegerSeparatorTexts = NumbersDefinitions.WrittenIntegerSeparatorTexts;
             this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
-            foreach (var sufix in NumbersDefinitions.SufixOrdinalDictionary)
-            {
-                foreach (var prefix in NumbersDefinitions.PrefixCardinalDictionary)
-                {
-                    ConcurrentOrdinalNumberMap.TryAdd(prefix.Key + sufix.Key, prefix.Value + sufix.Value);
-                }
-            }
-
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
-            this.OrdinalNumberMap = ConcurrentOrdinalNumberMap.ToImmutableDictionary();
+            this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalDictionary, NumbersDefinitions.SufixOrdinalDictionary);
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
