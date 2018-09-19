@@ -43,10 +43,10 @@ export class SpanishNumberParserConfiguration implements INumberParserConfigurat
         this.writtenIntegerSeparatorTexts = SpanishNumeric.WrittenIntegerSeparatorTexts;
         this.writtenFractionSeparatorTexts = SpanishNumeric.WrittenFractionSeparatorTexts;
 
-        let ordinalNumberMap = new Map<string, number>(SpanishNumeric.SimpleOrdinalNumberMap);
+        let ordinalNumberMap = new Map<string, number>(SpanishNumeric.OrdinalNumberMap);
 
-        SpanishNumeric.PrefixCardinalDictionary.forEach((prefixValue: number, prefixKey: string) => {
-            SpanishNumeric.SufixOrdinalDictionary.forEach((suffixValue: number, suffixKey: string) => {
+        SpanishNumeric.PrefixCardinalMap.forEach((prefixValue: number, prefixKey: string) => {
+            SpanishNumeric.SuffixOrdinalMap.forEach((suffixValue: number, suffixKey: string) => {
                 if (!ordinalNumberMap.has(prefixKey + suffixKey)) {
                     ordinalNumberMap.set(prefixKey + suffixKey, prefixValue * suffixValue);
                 }
