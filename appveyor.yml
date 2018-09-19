@@ -30,18 +30,18 @@ build:
 build_script:
 - cmd: >-
     ECHO # Build env info
-	
-	ECHO OS info
-	wmic os get caption, version, osarchitecture
-	
-	ECHO Node version
-	node -v
-	
-	ECHO NPM version
-	npm -v
-	
-	ECHO V8 version
-	node -e "console.log(process.versions.v8);"
+    
+    ECHO OS info
+    wmic os get caption, version, osarchitecture
+    
+    ECHO Node version
+    node -v
+    
+    ECHO NPM version
+    npm -v
+    
+    ECHO V8 version
+    node -e "console.log(process.versions.v8);"
 
     cd .NET\
 
