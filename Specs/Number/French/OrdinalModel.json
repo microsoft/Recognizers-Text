@@ -330,7 +330,7 @@
     "Results": [
       {
         "Text": "neuf mille neuf cent quatre-vingt-dix seconde",
-        "TypeName": "number",
+        "TypeName": "ordinal",
         "Resolution": {
           "value": "9992"
         },
