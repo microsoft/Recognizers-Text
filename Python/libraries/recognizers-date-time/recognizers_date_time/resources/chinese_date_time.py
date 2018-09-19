@@ -19,12 +19,12 @@ class ChineseDateTime:
     YearRegex = f'(?<year>(\\d{{2,4}}))'
     ZeroToNineIntegerRegexChs = f'[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]'
     DateYearInChineseRegex = f'(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))'
-    WeekDayRegex = f'(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天)'
+    WeekDayRegex = f'(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)'
     LunarRegex = f'(农历|初一|正月|大年)'
     DateThisRegex = f'(这个|这一个|这|这一|本){WeekDayRegex}'
     DateLastRegex = f'(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}'
     DateNextRegex = f'(下一个|下个|下一|下)(的)?{WeekDayRegex}'
-    SpecialDayRegex = f'(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天)'
+    SpecialDayRegex = f'(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天)'
     SpecialDayWithNumRegex = f'^[.]'
     WeekDayOfMonthRegex = f'((({MonthRegex}|{MonthNumRegex})的\\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\\s*{WeekDayRegex})'
     DateThisRe = f'这个|这一个|这|这一|本|今'
@@ -431,7 +431,23 @@ class ChineseDateTime:
                                          ('周五', 5),
                                          ('周六', 6),
                                          ('周日', 0),
-                                         ('周天', 0)])
+                                         ('周天', 0),
+                                         ('禮拜一', 1),
+                                         ('禮拜二', 2),
+                                         ('禮拜三', 3),
+                                         ('禮拜四', 4),
+                                         ('禮拜五', 5),
+                                         ('禮拜六', 6),
+                                         ('禮拜天', 0),
+                                         ('禮拜日', 0),
+                                         ('週一', 1),
+                                         ('週二', 2),
+                                         ('週三', 3),
+                                         ('週四', 4),
+                                         ('週五', 5),
+                                         ('週六', 6),
+                                         ('週日', 0),
+                                         ('週天', 0)])
     ParserConfigurationMonthOfYear = dict([('1', 1),
                                            ('2', 2),
                                            ('3', 3),
@@ -505,7 +521,7 @@ class ChineseDateTime:
                                 ('母亲节', '-05-WXX-7-2'),
                                 ('感恩节', '-11-WXX-4-4')])
     MergedBeforeRegex = f'(前|之前)$'
-    MergedAfterRegex = f'(后|之后)$'
+    MergedAfterRegex = f'(后|之后|後|之後)$'
     TimeNumberDictionary = dict([('零', 0),
                                  ('一', 1),
                                  ('二', 2),

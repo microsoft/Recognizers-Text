@@ -130,11 +130,11 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
             swift = 1
         elif source.startswith('昨'):
             swift = -1
-        elif source == '大后天':
+        elif source == '大后天' or source == '大後天':
             swift = 3
         elif source == '大前天':
             swift = -3
-        elif source == '后天':
+        elif source == '后天' or source == '後天':
             swift = 2
         elif source == '前天':
             swift = -2
