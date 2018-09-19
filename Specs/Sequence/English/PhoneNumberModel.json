@@ -4108,16 +4108,43 @@
     "Results": []
   },
   {
-    "Input": "My phone number is (06)-12234567, ')-' is not allowed.",
-    "Results": []
+    "Input": "My phone number is (06)-12234567.",
+    "Results": [
+      {
+        "Text": "(06)-12234567",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(06)-12234567",
+          "score": "1"
+        }
+      }
+    ]
   },
   {
-    "Input": "My phone number is (+31) (12)-3456789, ')-' is not allowed.",
-    "Results": []
+    "Input": "My phone number is (+31) (12)-3456789.",
+    "Results": [
+      {
+        "Text": "(+31) (12)-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(+31) (12)-3456789",
+          "score": "1"
+        }
+      }
+    ]
   },
   {
-    "Input": "My phone number is (012)-3456789, ')-' is not allowed.",
-    "Results": []
+    "Input": "My phone number is (012)-3456789.",
+    "Results": [
+      {
+        "Text": "(012)-3456789",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "(012)-3456789",
+          "score": "1"
+        }
+      }
+    ]
   },
   {
     "Input": "My phone number is+45 12 34 56 78.",
@@ -4316,13 +4343,13 @@
   },
   {
     "Input": "My phone number is (084)-9682756.",
-    "NotSupported": "dotnet,javascript,python",
     "Results": [
       {
         "Text": "(084)-9682756",
         "TypeName": "phonenumber",
         "Resolution": {
-          "value": "(084)-9682756"
+          "value": "(084)-9682756",
+          "score": "1"
         }
       }
     ]
@@ -4334,5 +4361,174 @@
   {
     "Input": "#20020211895 is not a phone number, since it starts with #.",
     "Results": []
+  },
+  {
+    "Input": "My phone number is 837.824.1482x63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482x63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482x63888",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 837.824.1482X63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482X63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482X63888",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 837.824.1482ext63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482ext63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482ext63888",
+          "score": "0.9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 837.824.1482 ext 63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482 ext 63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482 ext 63888",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 837.824.1482 x 63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482 x 63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482 x 63888",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is 837.824.1482 X 63888.",
+    "Results": [
+      {
+        "Text": "837.824.1482 X 63888",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "837.824.1482 X 63888",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +44(0)113-496-0009.",
+    "Results": [
+      {
+        "Text": "+44(0)113-496-0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0)113-496-0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +44(0) 113-496-0009.",
+    "Results": [
+      {
+        "Text": "+44(0) 113-496-0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0) 113-496-0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +44 (0) 113-496-0009.",
+    "Results": [
+      {
+        "Text": "+44 (0) 113-496-0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0) 113-496-0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +44 (0) 113 496 0009.",
+    "Results": [
+      {
+        "Text": "+44 (0) 113 496 0009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0) 113 496 0009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +44(0)1134960009.",
+    "Results": [
+      {
+        "Text": "+44(0)1134960009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0)1134960009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +44(0) 1134960009.",
+    "Results": [
+      {
+        "Text": "+44(0) 1134960009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44(0) 1134960009",
+          "score": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My phone number is +44 (0)1134960009.",
+    "Results": [
+      {
+        "Text": "+44 (0)1134960009",
+        "TypeName": "phonenumber",
+        "Resolution": {
+          "value": "+44 (0)1134960009",
+          "score": "1"
+        }
+      }
+    ]
   }
 ]
