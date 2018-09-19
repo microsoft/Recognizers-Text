@@ -66,7 +66,11 @@ def parse_all(user_input: str, culture: str) -> List[List[ModelResult]]:
 
         # DateTime recognizer - This function will find any Date even if its write in colloquial language -
         # E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-        Recognizers.recognize_datetime(user_input, culture)
+        Recognizers.recognize_datetime(user_input, culture),
+
+        # PhoneNumber recognizer will find any phone number presented
+        # E.g "My phone number is ( 19 ) 38294427."
+        Recognizers.recognize_phone_number(user_input, culture)
     ]
 
 

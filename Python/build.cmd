@@ -11,6 +11,7 @@ ECHO # Building Resources
 CALL python index.py ..\recognizers-number\resource-definitions.json
 CALL python index.py ..\recognizers-number-with-unit\resource-definitions.json
 CALL python index.py ..\recognizers-date-time\resource-definitions.json
+CALL python index.py ..\recognizers-sequence\resource-definitions.json
 
 popd
 ECHO.
@@ -28,6 +29,10 @@ CALL  pip install -e .\libraries\recognizers-number-with-unit\
 ECHO.
 ECHO # Installing recognizers-date-time
 CALL  pip install -e .\libraries\recognizers-date-time\
+
+ECHO.
+ECHO # Installing recognizers-sequence
+CALL  pip install -e .\libraries\recognizers-sequence\
 
 ECHO.
 ECHO # Installing recognizers-suite

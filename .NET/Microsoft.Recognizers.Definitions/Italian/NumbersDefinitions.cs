@@ -261,7 +261,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "trilioneisimi", 1000000000000 },
 			{ "trilionesime", 1000000000000 }
 		};
-		public static readonly Dictionary<string, long> PrefixCardinalDictionary = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> PrefixCardinalMap = new Dictionary<string, long>
 		{
 			{ "due", 2 },
 			{ "tre", 3 },
@@ -317,7 +317,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
 			{ "nove cento", 900 },
 			{ "novecento", 900 }
 		};
-		public static readonly Dictionary<string, long> SufixOrdinalDictionary = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> SuffixOrdinalMap = new Dictionary<string, long>
 		{
 			{ "mille", 1000 },
 			{ "milione", 1000000 },

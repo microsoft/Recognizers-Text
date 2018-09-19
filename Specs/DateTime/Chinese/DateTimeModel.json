@@ -2022,5 +2022,84 @@
         }
       }
     ]
+  },
+  {
+    "Input": "禮拜一",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "禮拜一",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2018-09-17"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2018-09-24"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "後天你有空吗？",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "後天",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-20",
+              "type": "date",
+              "value": "2018-09-20"
+           }
+         ]
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "週三",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "週三",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2018-09-12"
+            },
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2018-09-19"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
   }
 ]

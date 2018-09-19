@@ -918,5 +918,74 @@
         "Length": 2
       }
     ]
+  },
+  {
+    "Input": "禮拜一",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "禮拜一",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "date": "2018-09-24"
+          },
+          "PastResolution": {
+            "date": "2018-09-17"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "後天你有空吗？",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "後天",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-09-20",
+          "FutureResolution": {
+            "date": "2018-09-20"
+          },
+          "PastResolution": {
+            "date": "2018-09-20"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "週三",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "Results": [
+     {
+        "Text": "週三",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-3",
+          "FutureResolution": {
+            "date": "2018-09-19"
+          },
+          "PastResolution": {
+            "date": "2018-09-12"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
   }
 ]

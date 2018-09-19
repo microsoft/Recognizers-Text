@@ -51,6 +51,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return pr;
         }
 
+        private string GetResolutionStr(object value)
+        {
+            return config.CultureInfo != null
+                ? ((double)value).ToString(config.CultureInfo)
+                : value.ToString();
+        }
+
         private ParseResult MergeCompoundUnit(ExtractResult compoundResult)
         {
             var results = new List<ParseResult>();
@@ -97,7 +104,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         result.Value = new UnitValue
                         {
-                            Number = numberValue.ToString(),
+                            Number = GetResolutionStr(numberValue),
                             Unit = mainUnitValue
                         };
                         results.Add(result);
@@ -140,7 +147,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             {
                                 result.Value = new UnitValue
                                 {
-                                    Number = numberValue.ToString(),
+                                    Number = GetResolutionStr(numberValue),
                                     Unit = mainUnitValue
                                 };
                             }
@@ -148,7 +155,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             {
                                 result.Value = new CurrencyUnitValue
                                 {
-                                    Number = numberValue.ToString(),
+                                    Number = GetResolutionStr(numberValue),
                                     Unit = mainUnitValue,
                                     IsoCurrency = mainUnitIsoCode
                                 };
@@ -174,7 +181,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 {
                     result.Value = new UnitValue
                     {
-                        Number = numberValue.ToString(),
+                        Number = GetResolutionStr(numberValue),
                         Unit = mainUnitValue
                     };
                 }
@@ -182,7 +189,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 {
                     result.Value = new CurrencyUnitValue
                     {
-                        Number = numberValue.ToString(),
+                        Number = GetResolutionStr(numberValue),
                         Unit = mainUnitValue,
                         IsoCurrency = mainUnitIsoCode
                     };

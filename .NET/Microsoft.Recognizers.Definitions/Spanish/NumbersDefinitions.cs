@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			{ "trillón", 1000000000000000000 },
 			{ "trillones", 1000000000000000000 }
 		};
-		public static readonly Dictionary<string, long> SimpleOrdinalNumberMap = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
 		{
 			{ "primero", 1 },
 			{ "primera", 1 },
@@ -249,7 +249,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			{ "billonesimo", 1000000000000 },
 			{ "billonesima", 1000000000000 }
 		};
-		public static readonly Dictionary<string, long> PrefixCardinalDictionary = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> PrefixCardinalMap = new Dictionary<string, long>
 		{
 			{ "dos", 2 },
 			{ "tres", 3 },
@@ -299,7 +299,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 			{ "ochocientos", 800 },
 			{ "novecientos", 900 }
 		};
-		public static readonly Dictionary<string, long> SufixOrdinalDictionary = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> SuffixOrdinalMap = new Dictionary<string, long>
 		{
 			{ "milesimo", 1000 },
 			{ "millonesimo", 1000000 },
