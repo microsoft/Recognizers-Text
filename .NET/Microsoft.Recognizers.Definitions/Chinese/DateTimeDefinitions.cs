@@ -27,12 +27,12 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string YearRegex = @"(?<year>(\d{2,4}))";
 		public const string ZeroToNineIntegerRegexChs = @"[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
 		public static readonly string DateYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))";
-		public const string WeekDayRegex = @"(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天)";
+		public const string WeekDayRegex = @"(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)";
 		public const string LunarRegex = @"(农历|初一|正月|大年)";
 		public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本){WeekDayRegex}";
 		public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}";
 		public static readonly string DateNextRegex = $@"(下一个|下个|下一|下)(的)?{WeekDayRegex}";
-		public const string SpecialDayRegex = @"(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天)";
+		public const string SpecialDayRegex = @"(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天)";
 		public const string SpecialDayWithNumRegex = @"^[.]";
 		public static readonly string WeekDayOfMonthRegex = $@"((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})";
 		public const string DateThisRe = @"这个|这一个|这|这一|本|今";
@@ -475,7 +475,23 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "周五", 5 },
 			{ "周六", 6 },
 			{ "周日", 0 },
-			{ "周天", 0 }
+			{ "周天", 0 },
+			{ "禮拜一", 1 },
+			{ "禮拜二", 2 },
+			{ "禮拜三", 3 },
+			{ "禮拜四", 4 },
+			{ "禮拜五", 5 },
+			{ "禮拜六", 6 },
+			{ "禮拜天", 0 },
+			{ "禮拜日", 0 },
+			{ "週一", 1 },
+			{ "週二", 2 },
+			{ "週三", 3 },
+			{ "週四", 4 },
+			{ "週五", 5 },
+			{ "週六", 6 },
+			{ "週日", 0 },
+			{ "週天", 0 }
 		};
 		public static readonly Dictionary<string, int> ParserConfigurationMonthOfYear = new Dictionary<string, int>
 		{
@@ -559,7 +575,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "感恩节", "-11-WXX-4-4" }
 		};
 		public const string MergedBeforeRegex = @"(前|之前)$";
-		public const string MergedAfterRegex = @"(后|之后)$";
+		public const string MergedAfterRegex = @"(后|之后|後|之後)$";
 		public static readonly Dictionary<char, int> TimeNumberDictionary = new Dictionary<char, int>
 		{
 			{ '零', 0 },
