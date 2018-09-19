@@ -29,27 +29,23 @@ build:
 
 build_script:
 - cmd: >-
-    @ECHO off
+    @ECHO # Build env info
 
-    ECHO # Build env info
-
-    ECHO OS info
+    @ECHO OS info
 
     CALL wmic os get caption, version, osarchitecture
 
-    ECHO Node version
+    @ECHO Node version
 
     CALL node -v
 
-    ECHO NPM version
+    @ECHO NPM version
 
     CALL npm -v
 
-    ECHO V8 version
+    @ECHO V8 version
 
     CALL node -e "console.log(process.versions.v8);"
-
-    @ECHO on
 
     cd .NET\
 
