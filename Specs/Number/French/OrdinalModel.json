@@ -324,5 +324,19 @@
         "End": 23
       }
     ]
+  },
+  {
+    "Input": "neuf mille neuf cent quatre-vingt-dix seconde",
+    "Results": [
+      {
+        "Text": "neuf mille neuf cent quatre-vingt-dix seconde",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9992"
+        },
+        "Start": 0,
+        "End": 44
+      }
+    ]
   }
 ]
