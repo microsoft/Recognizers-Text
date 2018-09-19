@@ -6781,7 +6781,8 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "Comment": "Known false positive needs to be supported in the future",
+    "NotSupported": "javascript, python, java, dotnet",
     "Results": [
       {
         "Text": "1/1/2016",
@@ -6870,7 +6871,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "2018 or later",
@@ -6895,7 +6896,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "java",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "between 2015 and 2018",
