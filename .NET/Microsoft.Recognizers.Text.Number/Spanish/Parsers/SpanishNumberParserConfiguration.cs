@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
-            this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.SimpleOrdinalNumberMap, NumbersDefinitions.PrefixCardinalDictionary, NumbersDefinitions.SufixOrdinalDictionary);
+            this.OrdinalNumberMap = NumberMapGenerator.InitOrdinalNumberMap(NumbersDefinitions.OrdinalNumberMap, NumbersDefinitions.PrefixCardinalMap, NumbersDefinitions.SuffixOrdinalMap);
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
             this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

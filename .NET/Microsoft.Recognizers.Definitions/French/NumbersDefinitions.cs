@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "trillionième", 1000000000000000000 },
 			{ "trillionieme", 1000000000000000000 }
 		};
-		public static readonly Dictionary<string, long> PrefixCardinalDictionary = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> PrefixCardinalMap = new Dictionary<string, long>
 		{
 			{ "deux", 2 },
 			{ "trois", 3 },
@@ -298,7 +298,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "huit cent", 800 },
 			{ "neuf cent", 900 }
 		};
-		public static readonly Dictionary<string, long> SufixOrdinalDictionary = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> SuffixOrdinalMap = new Dictionary<string, long>
 		{
 			{ "millième", 1000 },
 			{ "million", 1000000 },

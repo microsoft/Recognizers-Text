@@ -311,7 +311,7 @@ OrdinalNumberMap: !dictionary
     billionième: 1000000000000
     trillionième: 1000000000000000000
     trillionieme: 1000000000000000000
-PrefixCardinalDictionary: !dictionary
+PrefixCardinalMap: !dictionary
   types: [ string, long ]
   entries:
     deux: 2 
@@ -377,7 +377,7 @@ PrefixCardinalDictionary: !dictionary
     sept cent: 700
     huit cent: 800
     neuf cent: 900
-SufixOrdinalDictionary: !dictionary
+SuffixOrdinalMap: !dictionary
   types: [ string, long ]
   entries:
     millième: 1000 

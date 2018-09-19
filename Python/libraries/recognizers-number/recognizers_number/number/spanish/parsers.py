@@ -94,12 +94,12 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         self._written_integer_separator_texts = SpanishNumeric.WrittenIntegerSeparatorTexts
         self._written_fraction_separator_texts = SpanishNumeric.WrittenFractionSeparatorTexts
 
-        ordinal_number_map: Dict[str, int] = dict(SpanishNumeric.SimpleOrdinalNumberMap)
-        for prefix_key in SpanishNumeric.PrefixCardinalDictionary:
-            for suffix_key in SpanishNumeric.SufixOrdinalDictionary:
+        ordinal_number_map: Dict[str, int] = dict(SpanishNumeric.OrdinalNumberMap)
+        for prefix_key in SpanishNumeric.PrefixCardinalMap:
+            for suffix_key in SpanishNumeric.SuffixOrdinalMap:
                 if not prefix_key+suffix_key in ordinal_number_map:
-                    prefix_value = SpanishNumeric.PrefixCardinalDictionary[prefix_key]
-                    suffix_value = SpanishNumeric.SufixOrdinalDictionary[suffix_key]
+                    prefix_value = SpanishNumeric.PrefixCardinalMap[prefix_key]
+                    suffix_value = SpanishNumeric.SuffixOrdinalMap[suffix_key]
                     ordinal_number_map[prefix_key+suffix_key] = prefix_value*suffix_value
         self._cardinal_number_map = SpanishNumeric.CardinalNumberMap
         self._ordinal_number_map = ordinal_number_map
