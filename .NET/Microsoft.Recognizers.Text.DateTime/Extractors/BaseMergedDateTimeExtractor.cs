@@ -266,10 +266,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                         else
                         {
-                            afterStr = afterStr.Trim().Substring(match.Length).Trim();
+                            var nextStr = afterStr.Trim().Substring(match.Length).Trim();
                             var nextEr = ers.Where(t => t.Start > er.Start).FirstOrDefault();
 
-                            if (nextEr != null && !afterStr.StartsWith(nextEr.Text))
+                            if (nextEr == null || ((nextEr != null) && !nextStr.StartsWith(nextEr.Text)))
                             {
                                 isFollowedByOtherEntity = false;
                             }
