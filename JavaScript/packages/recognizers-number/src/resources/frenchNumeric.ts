@@ -11,13 +11,13 @@ export namespace FrenchNumeric {
 	export const LangMarker = 'Fr';
 	export const RoundNumberIntegerRegex = `(cent|mille|millions|million|milliard|milliards|billion|billions)`;
 	export const ZeroToNineIntegerRegex = `(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)`;
-	export const TenToNineteenIntegerRegex = `(dix[-\\s]neuf|dix[-\\s]huit|dix[-\\s]sept|(-)?seize|(-)?quinze|(-)?quatorze|(-)?treize|(-)?douze|(-)?onze|dix)`;
-	export const TensNumberIntegerRegex = `(quatre[-\\s]vingt[-\\s]dix|quatre[-\\s]vingt(s)?|soixante[-\\s]dix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)`;
+	export const TenToNineteenIntegerRegex = `((-)?((sei|quin|quator|trei|dou|on)ze)|dix(\\W(neuf|huit|sept))?)`;
+	export const TensNumberIntegerRegex = `(quatre\\Wvingt(s|\\Wdix)?|soixante\\Wdix|vingt|(tren|quaran|cinquan|soixan|septan|octan|huitan|nonan)te)`;
 	export const DigitsNumberRegex = `\\d|\\d{1,3}(\\.\\d{3})`;
 	export const NegativeNumberTermsRegex = `^[.]`;
 	export const NegativeNumberSignRegex = `^(${NegativeNumberTermsRegex}\\s+).*`;
 	export const HundredsNumberIntegerRegex = `((${ZeroToNineIntegerRegex}(\\s+cent))|cent|((\\s+cent\\s)+${TensNumberIntegerRegex}))`;
-	export const BelowHundredsRegex = `(${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}[-\\s]+${TenToNineteenIntegerRegex})|(${TensNumberIntegerRegex}([-\\s]+${ZeroToNineIntegerRegex})?)|${ZeroToNineIntegerRegex})`;
+	export const BelowHundredsRegex = `((${TenToNineteenIntegerRegex}|(${TensNumberIntegerRegex}([-\\s]+(${TenToNineteenIntegerRegex}|${ZeroToNineIntegerRegex}))?))|${ZeroToNineIntegerRegex})`;
 	export const BelowThousandsRegex = `((${HundredsNumberIntegerRegex}(\\s+${BelowHundredsRegex})?|${BelowHundredsRegex}|${TenToNineteenIntegerRegex})|cent\\s+${TenToNineteenIntegerRegex})`;
 	export const SupportThousandsRegex = `((${BelowThousandsRegex}|${BelowHundredsRegex})\\s+${RoundNumberIntegerRegex}(\\s+${RoundNumberIntegerRegex})?)`;
 	export const SeparaIntRegex = `(${SupportThousandsRegex}(\\s+${SupportThousandsRegex})*(\\s+${BelowThousandsRegex})?|${BelowThousandsRegex})`;
