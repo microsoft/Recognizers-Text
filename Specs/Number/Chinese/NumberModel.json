@@ -2619,7 +2619,7 @@
   },
   {
     "Input": "百分之十万零六百五十一",
-    "NotSupported": "java",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
