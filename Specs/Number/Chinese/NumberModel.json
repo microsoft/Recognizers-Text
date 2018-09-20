@@ -4215,5 +4215,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "五十千",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "五十",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "50"
+        }
+      }
+    ]
   }
 ]

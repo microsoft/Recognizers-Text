@@ -2010,5 +2010,20 @@
         "End": 10
       }
     ]
+  },
+  {
+    "Input": "股票十天收盘价的百分之七十百分位大于1",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "百分之七十",
+        "Start": 8,
+        "End": 12,
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "70%"
+        }
+      }
+    ]
   }
 ]
