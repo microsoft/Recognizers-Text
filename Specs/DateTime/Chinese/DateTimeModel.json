@@ -2101,5 +2101,124 @@
         "End": 1
       }
     ]
+  },
+  {
+    "Input": "这家工厂2015年和2018年的销售额分别为5亿和7.5亿元人民币",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年",
+        "Start": 4,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2018年",
+        "Start": 10,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这家工厂2015年和2018年之间的销售额为8亿人民币",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年和2018年之间",
+        "Start": 4,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01,2018-01-01,P3Y)",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "这家工厂3月和5月的销售额分别为30万和45万元人民币",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3月",
+        "Start": 4,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "end": "2018-04-01"
+            },
+            {
+              "timex": "XXXX-03",
+              "type": "daterange",
+              "start": "2019-03-01",
+              "end": "2019-04-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "5月",
+        "Start": 7,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05",
+              "type": "daterange",
+              "start": "2018-05-01",
+              "end": "2018-06-01"
+            },
+            {
+              "timex": "XXXX-05",
+              "type": "daterange",
+              "start": "2019-05-01",
+              "end": "2019-06-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

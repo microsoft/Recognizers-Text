@@ -186,7 +186,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!string.IsNullOrEmpty(monthStr))
                 {
-                    month = this.config.MonthOfYear[monthStr.ToLower()];
+                    month = ToMonthNumber(monthStr.ToLower());
                 }
                 else
                 {
@@ -269,11 +269,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        // handle like "2016年到2017年"
+        // handle like "2016年到2017年", "2016年和2017年之间"
         private DateTimeResolutionResult ParseYearToYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
             var match = DatePeriodExtractorChs.YearToYear.Match(text);
+
+            if (!match.Success)
+            {
+                match = DatePeriodExtractorChs.YearToYearDependence.Match(text);
+            }
+
             if (match.Success)
             {
                 var yearMatch = DatePeriodExtractorChs.YearRegex.Matches(text);
@@ -401,7 +407,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             var monthStr = match.Groups["month"].Value;
-            var month = this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr]%12 : this.config.MonthOfYear[monthStr];
+            var month = ToMonthNumber(monthStr);
             var beginDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             DateObject endDay;
 
@@ -463,7 +469,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         swift = 0;
                     }
 
-                    month = this.config.MonthOfYear[monthStr.ToLower()];
+                    month = ToMonthNumber(monthStr.ToLower());
 
                     if (swift >= -1)
                     {
@@ -984,7 +990,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else
             {
-                month = this.config.MonthOfYear[monthStr];
+                month = ToMonthNumber(monthStr);
                 ret.Timex = "XXXX" + "-" + month.ToString("D2");
                 year = referenceDate.Year;
                 noYear = true;
@@ -1274,6 +1280,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return firstWeekday.AddDays(7*(cadinal - 1));
+        }
+
+        private int ToMonthNumber(string monthStr)
+        {
+            return this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr] % 12 : this.config.MonthOfYear[monthStr];
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)

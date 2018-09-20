@@ -62,7 +62,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex YearToYear = new Regex(DateTimeDefinitions.YearToYear, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex YearToYearDependence = new Regex(DateTimeDefinitions.YearToYearDependence, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex MonthToMonth = new Regex(DateTimeDefinitions.MonthToMonth, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MonthToMonthDependence = new Regex(DateTimeDefinitions.MonthToMonthDependence, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -85,7 +89,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             OneWordPeriodRegex,
             StrictYearRegex,
             YearToYear,
+            YearToYearDependence,
             MonthToMonth,
+            MonthToMonthDependence,
             YearAndMonth,
             PureNumYearAndMonth,
             YearInChineseRegex,
