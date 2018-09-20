@@ -5863,7 +5863,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java, python, javascript",
     "Results": [
       {
         "Text": "2018 or later",
@@ -5888,7 +5888,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "java, python",
+    "NotSupported": "java, python, javascript",
     "Results": [
       {
         "Text": "between 2015 and 2018",
