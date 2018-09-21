@@ -326,23 +326,14 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "4-22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 16,
-        "Length": 4
-      }
-    ]
+    "Results": []
+  },
+  {
+    "Input": "I'll go back at 4.22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": []
   },
   {
     "Input": "I'll go back on    4/22",

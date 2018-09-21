@@ -5741,5 +5741,129 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Please schedule a meeting for Monday at 2.30",
+    "Context": {
+      "ReferenceDateTime": "2018-09-21T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "monday at 2.30",
+        "Start": 30,
+        "End": 43,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T02:30",
+              "type": "datetime",
+              "value": "2018-09-17 02:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T02:30",
+              "type": "datetime",
+              "value": "2018-09-24 02:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T14:30",
+              "type": "datetime",
+              "value": "2018-09-17 14:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T14:30",
+              "type": "datetime",
+              "value": "2018-09-24 14:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Shall we leave before 2.30pm?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "before 2.30pm",
+        "Start": 15,
+        "End": 27,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14:30",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "hi thursday 29/03 11.00am is good",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "thursday 29/03 11.00am",
+        "Start": 3,
+        "End": 24,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-29T11:00",
+              "type": "datetime",
+              "value": "2018-03-29 11:00:00"
+            },
+            {
+              "timex": "XXXX-03-29T11:00",
+              "type": "datetime",
+              "value": "2019-03-29 11:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Please book something for 6/4 between 9.30-4.30pm PST",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "6/4 between 9.30-4.30pm",
+        "Start": 26,
+        "End": 48,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-06-04T09:30,XXXX-06-04T16:30,PT7H)",
+              "type": "datetimerange",
+              "start": "2018-06-04 09:30:00",
+              "end": "2018-06-04 16:30:00"
+            },
+            {
+              "timex": "(XXXX-06-04T09:30,XXXX-06-04T16:30,PT7H)",
+              "type": "datetimerange",
+              "start": "2019-06-04 09:30:00",
+              "end": "2019-06-04 16:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
