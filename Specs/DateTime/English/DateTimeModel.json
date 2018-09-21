@@ -6931,5 +6931,45 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's meet this week any time from 7:00 am",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Start": 11,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W33",
+              "type": "daterange",
+              "start": "2018-08-13",
+              "end": "2018-08-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "any time from 7:00 am",
+        "Start": 21,
+        "End": 41,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
