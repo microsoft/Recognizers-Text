@@ -1,4 +1,4 @@
-import { BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor } from "../extractors";
+import { BasePhoneNumberExtractor, BaseIpExtractor, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, BaseURLExtractor, BaseGUIDExtractor } from "../extractors";
 import { ExtractResult } from "@microsoft/recognizers-text";
 import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";
 
@@ -35,5 +35,9 @@ export class EmailExtractor extends BaseEmailExtractor{
 }
 
 export class URLExtractor extends BaseURLExtractor{
+
+}
+
+export class GUIDExtractor extends BaseGUIDExtractor {
 
 }

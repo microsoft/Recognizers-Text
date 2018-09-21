@@ -114,6 +114,10 @@ namespace SimpleConsole
                 // E.g "bing.com"
                 SequenceRecognizer.RecognizeURL(query, culture),
 
+                // GUID recognizer will find all the GUID usages
+                // E.g "{123e4567-e89b-12d3-a456-426655440000}"
+                SequenceRecognizer.RecognizeGUID(query, culture),
+
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"
                 ChoiceRecognizer.RecognizeBoolean(query, culture)

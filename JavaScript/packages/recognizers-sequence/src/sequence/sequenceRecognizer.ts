@@ -1,7 +1,7 @@
 import { Recognizer, IModel, Culture, ModelResult } from "@microsoft/recognizers-text";
-import { PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailModel, URLModel } from "./models";
-import { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser } from "./english/parsers";
-import { PhoneNumberExtractor, IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, URLExtractor } from "./english/extractors";
+import { PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailModel, URLModel, GUIDModel } from "./models";
+import { PhoneNumberParser, IpParser, MentionParser, HashtagParser, EmailParser, URLParser, GUIDParser } from "./english/parsers";
+import { PhoneNumberExtractor, IpExtractor, MentionExtractor, HashtagExtractor, EmailExtractor, URLExtractor, GUIDExtractor } from "./english/extractors";
 
 
 export enum SequenceOptions {
@@ -32,6 +32,10 @@ export function recognizeURL(query: string, culture: string, options: SequenceOp
     return recognizeByModel(recognizer => recognizer.getURLModel(), query, culture, options);
 }
 
+export function recognizeGUID(query: string, culture: string, options: SequenceOptions = SequenceOptions.None): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getGUIDModel(), query, culture, options);
+}
+
 function recognizeByModel(getModelFunc: (n: SequenceRecognizer) => IModel, query: string, culture: string, options: SequenceOptions): Array<ModelResult> {
     let recognizer = new SequenceRecognizer(culture, options);
     let model = getModelFunc(recognizer);
@@ -55,6 +59,7 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
         this.registerModel("HashtagModel", Culture.English, (options) => new HashtagModel(new HashtagParser(), new HashtagExtractor()));
         this.registerModel("EmailModel", Culture.English, (options) => new EmailModel(new EmailParser(), new EmailExtractor()));
         this.registerModel("URLModel", Culture.English, (options) => new URLModel(new URLParser(), new URLExtractor()));
+        this.registerModel("GUIDModel", Culture.English, (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
     }
 
     getPhoneNumberModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
@@ -79,5 +84,9 @@ export default class SequenceRecognizer extends Recognizer<SequenceOptions> {
 
     getURLModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
         return this.getModel("URLModel", culture, fallbackToDefaultCulture);
+    }
+
+    getGUIDModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IModel {
+        return this.getModel("GUIDModel", culture, fallbackToDefaultCulture);
     }
 } 
