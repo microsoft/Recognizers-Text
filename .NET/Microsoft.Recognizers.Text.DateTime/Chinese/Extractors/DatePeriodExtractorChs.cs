@@ -62,11 +62,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex YearToYear = new Regex(DateTimeDefinitions.YearToYear, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex YearToYearSuffixRequiredRegex = new Regex(DateTimeDefinitions.YearToYearSuffixRequiredRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex YearToYearSuffixRequired = new Regex(DateTimeDefinitions.YearToYearSuffixRequired, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthToMonth = new Regex(DateTimeDefinitions.MonthToMonth, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex MonthToMonthSuffixRequiredRegex = new Regex(DateTimeDefinitions.MonthToMonthSuffixRequiredRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex MonthToMonthSuffixRequired = new Regex(DateTimeDefinitions.MonthToMonthSuffixRequired, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -89,9 +89,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             OneWordPeriodRegex,
             StrictYearRegex,
             YearToYear,
-            YearToYearSuffixRequiredRegex,
+            YearToYearSuffixRequired,
             MonthToMonth,
-            MonthToMonthSuffixRequiredRegex,
+            MonthToMonthSuffixRequired,
             YearAndMonth,
             PureNumYearAndMonth,
             YearInChineseRegex,

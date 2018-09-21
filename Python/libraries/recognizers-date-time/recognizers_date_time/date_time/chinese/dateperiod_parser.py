@@ -24,7 +24,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         self.year_and_month_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearAndMonth)
         self.pure_number_year_and_month_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.PureNumYearAndMonth)
         self.year_to_year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYear)
-        self.year_to_year_suffix_required_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYearSuffixRequiredRegex)
+        self.year_to_year_suffix_required = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYearSuffixRequired)
         self.chinese_year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodYearInChineseRegex)
         self.season_with_year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.SeasonWithYear)
 
@@ -310,7 +310,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         match = regex.search(self.year_to_year_regex, source)
 
         if not match:
-            match = regex.search(self.year_to_year_suffix_required_regex, source)
+            match = regex.search(self.year_to_year_suffix_required, source)
             if not match:
                 return result
 

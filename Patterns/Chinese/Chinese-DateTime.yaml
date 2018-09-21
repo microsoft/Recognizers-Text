@@ -147,13 +147,13 @@ NumberCombinedWithUnit: !nestedRegex
 YearToYear: !nestedRegex
   def: ((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillRegex}|后|之后)\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\s*((之间|之内|期间|中间|间)|前|之前))?
   references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillRegex]
-YearToYearSuffixRequiredRegex: !nestedRegex
+YearToYearSuffixRequired: !nestedRegex
   def: ((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*(之间|之内|期间|中间|间)
   references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillSuffixRequiredRegex]
 MonthToMonth: !nestedRegex
   def: ({MonthRegex}){DatePeriodTillRegex}({MonthRegex})
   references: [MonthRegex, DatePeriodTillRegex]
-MonthToMonthSuffixRequiredRegex: !nestedRegex
+MonthToMonthSuffixRequired: !nestedRegex
   def: ({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\s*(之间|之内|期间|中间|间)
   references: [MonthRegex, DatePeriodTillSuffixRequiredRegex]
 PastRegex: !simpleRegex

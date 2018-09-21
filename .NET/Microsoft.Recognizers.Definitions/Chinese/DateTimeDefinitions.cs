@@ -71,9 +71,9 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
 		public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";
 		public static readonly string YearToYear = $@"((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillRegex}|后|之后)\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\s*((之间|之内|期间|中间|间)|前|之前))?";
-		public static readonly string YearToYearSuffixRequiredRegex = $@"((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*(之间|之内|期间|中间|间)";
+		public static readonly string YearToYearSuffixRequired = $@"((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*(之间|之内|期间|中间|间)";
 		public static readonly string MonthToMonth = $@"({MonthRegex}){DatePeriodTillRegex}({MonthRegex})";
-		public static readonly string MonthToMonthSuffixRequiredRegex = $@"({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\s*(之间|之内|期间|中间|间)";
+		public static readonly string MonthToMonthSuffixRequired = $@"({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\s*(之间|之内|期间|中间|间)";
 		public const string PastRegex = @"(?<past>(前|上|之前|近|过去))";
 		public const string FutureRegex = @"(?<future>(后|(?<![一两几]\s*)下|之后|未来(的)?))";
 		public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?";
