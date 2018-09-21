@@ -11,8 +11,8 @@ export namespace FrenchNumeric {
 	export const LangMarker = 'Fr';
 	export const RoundNumberIntegerRegex = `(cent|mille|millions|million|milliard|milliards|billion|billions)`;
 	export const ZeroToNineIntegerRegex = `(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)`;
-	export const TenToNineteenIntegerRegex = `(((sei|quin|quator|trei|dou|on)ze)|dix(\\W(neuf|huit|sept))?)`;
-	export const TensNumberIntegerRegex = `(quatre\\Wvingt(s|\\Wdix)?|soixante\\Wdix|vingt|(tren|quaran|cinquan|soixan|septan|octan|huitan|nonan)te)`;
+	export const TenToNineteenIntegerRegex = `((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)`;
+	export const TensNumberIntegerRegex = `(quatre\\Wvingt(s|\\Wdix)?|soixante\\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)`;
 	export const DigitsNumberRegex = `\\d|\\d{1,3}(\\.\\d{3})`;
 	export const NegativeNumberTermsRegex = `^[.]`;
 	export const NegativeNumberSignRegex = `^(${NegativeNumberTermsRegex}\\s+).*`;

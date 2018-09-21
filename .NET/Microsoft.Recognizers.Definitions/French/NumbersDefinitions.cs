@@ -20,8 +20,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string LangMarker = "Fr";
 		public const string RoundNumberIntegerRegex = @"(cent|mille|millions|million|milliard|milliards|billion|billions)";
 		public const string ZeroToNineIntegerRegex = @"(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
-		public const string TenToNineteenIntegerRegex = @"(((sei|quin|quator|trei|dou|on)ze)|dix(\W(neuf|huit|sept))?)";
-		public const string TensNumberIntegerRegex = @"(quatre\Wvingt(s|\Wdix)?|soixante\Wdix|vingt|(tren|quaran|cinquan|soixan|septan|octan|huitan|nonan)te)";
+		public const string TenToNineteenIntegerRegex = @"((seize|quinze|quatorze|treize|douze|onze)|dix(\Wneuf|\Whuit|\Wsept)?)";
+		public const string TensNumberIntegerRegex = @"(quatre\Wvingt(s|\Wdix)?|soixante\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
 		public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
 		public const string NegativeNumberTermsRegex = @"^[.]";
 		public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";
