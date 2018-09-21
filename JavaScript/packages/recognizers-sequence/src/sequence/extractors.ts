@@ -5,6 +5,7 @@ import { BaseMention } from "../resources/baseMention";
 import { BaseHashtag } from "../resources/baseHashtag";
 import { BaseEmail } from "../resources/baseEmail";
 import { BaseURL } from "../resources/baseURL";
+import { BaseGUID } from "../resources/baseGUID";
 import { Constants } from "./constants";
 
 export abstract class BaseSequenceExtractor implements IExtractor {
@@ -207,5 +208,15 @@ export class BaseURLExtractor extends BaseSequenceExtractor {
         this.regexes = new Map<RegExp, string>()
             .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex), Constants.URL_REGEX)
             .set(RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex), Constants.URL_REGEX)
+    }
+}
+
+export class BaseGUIDExtractor extends BaseSequenceExtractor {
+    regexes: Map<RegExp, string>;
+
+    constructor() {
+        super();
+        this.regexes = new Map<RegExp, string>()
+            .set(RegExpUtility.getSafeRegExp(BaseGUID.GUIDRegex), Constants.GUID_REGEX)
     }
 }

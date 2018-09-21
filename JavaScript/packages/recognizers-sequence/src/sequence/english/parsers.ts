@@ -99,3 +99,7 @@ export class EmailParser extends BaseSequenceParser {
 export class URLParser extends BaseSequenceParser {
     
 }
+
+export class GUIDParser extends BaseSequenceParser {
+
+}

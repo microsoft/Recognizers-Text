@@ -304,6 +304,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             ValidateResults();
         }
 
+        public void TestGUID()
+        {
+            TestPreValidation();
+            ValidateResults();
+        }
+
         public void TestChoice()
         {
             TestPreValidation();
