@@ -26,14 +26,14 @@
     ]
   },
   {
-    "Input": "Ich bin von 5 bis 6 am 22/4/2016 weg.",
+    "Input": "Ich bin von 5 bis 6 am 22.4.2016 weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "von 5 bis 6 am 22/4/2016",
+        "Text": "von 5 bis 6 am 22.4.2016",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "Input": "Ich bin am 22/4/2016 von 5 bis 6 weg.",
+    "Input": "Ich bin am 22.4.2016 von 5 bis 6 weg.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -60,7 +60,7 @@
     "NotSupported": "javascript, dotnet, python",
     "Results": [
       {
-        "Text": "22/4/2016 von 5 bis 6 ",
+        "Text": "22.4.2016 von 5 bis 6 ",
         "Type": "datetimerange",
         "Value": {
           "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
@@ -129,28 +129,28 @@
     ]
   },
   {
-    "Input": "Ich gehe Dienstag Abend zurück.",
+    "Input": "Ich gehe Dienstagabend zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Dienstag Abend",
+        "Text": "Dienstagabend",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
           }
         },
         "Start": 9,
-        "Length": 14
+        "Length": 13
       }
     ]
   },
@@ -181,28 +181,28 @@
     ]
   },
   {
-    "Input": "Wir treffen uns dann Dienstag Nacht.",
+    "Input": "Wir treffen uns dann Dienstagnacht.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Dienstag Nacht",
+        "Text": "Dienstagnacht",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TNI",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-09 06:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-09 06:00:00"
           }
         },
         "Start": 21,
-        "Length": 14
+        "Length": 13
       }
     ]
   },
@@ -245,12 +245,12 @@
         "Value": {
           "Timex": "2016-11-07TNI",
           "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
+            "startDateTime": "2016-11-07 22:00:00",
+            "endDateTime": "2016-11-08 06:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
+            "startDateTime": "2016-11-07 22:00:00",
+            "endDateTime": "2016-11-08 06:00:00"
           }
         },
         "Start": 10,
@@ -271,12 +271,12 @@
         "Value": {
           "Timex": "2016-11-07TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-07 16:00:00",
-            "endDateTime": "2016-11-07 20:00:00"
+            "startDateTime": "2016-11-07 18:00:00",
+            "endDateTime": "2016-11-07 22:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-07 16:00:00",
-            "endDateTime": "2016-11-07 20:00:00"
+            "startDateTime": "2016-11-07 18:00:00",
+            "endDateTime": "2016-11-07 22:00:00"
           }
         },
         "Start": 9,
@@ -285,14 +285,14 @@
     ]
   },
   {
-    "Input": "An diesem Morgen",
+    "Input": "An diesem Vormittag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "diesem Morgen",
+        "Text": "diesem Vormittag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TMO",
@@ -324,11 +324,11 @@
           "Timex": "2016-11-07TAF",
           "FutureResolution": {
             "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
+            "endDateTime": "2016-11-07 18:00:00"
           },
           "PastResolution": {
             "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
+            "endDateTime": "2016-11-07 18:00:00"
           }
         },
         "Start": 3,
@@ -415,7 +415,7 @@
     ]
   },
   {
-    "Input": "Innerhalb den nächsten 3 Stunden",
+    "Input": "Innerhalb der nächsten 3 Stunden",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -441,14 +441,14 @@
     ]
   },
   {
-    "Input": "Bitte setz das Meeting für 30 Minuten am Dienstag Morgen an.",
+    "Input": "Bitte setz das Meeting für 30 Minuten am Dienstagmorgen an.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Dienstag Morgen",
+        "Text": "Dienstagmorgen",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TMO",
@@ -462,45 +462,45 @@
           }
         },
         "Start": 41,
-        "Length": 15
-      }
-    ]
-  },
-  {
-    "Input": "Das ist dann halt erst am Dienstag Abend",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "Dienstag Abend",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "2016-11-08TEV",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
-          }
-        },
-        "Start": 26,
         "Length": 14
       }
     ]
   },
   {
-    "Input": "Das macht der jeden Dienstag am Morgen.",
+    "Input": "Das ist dann halt erst am Dienstagabend",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Dienstag am Morgen",
+        "Text": "Dienstagabend",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          }
+        },
+        "Start": 26,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Das macht der jeden Dienstag am Vormittag.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Dienstag am Vormittag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TMO",
@@ -514,7 +514,7 @@
           }
         },
         "Start": 20,
-        "Length": 18
+        "Length": 21
       }
     ]
   }

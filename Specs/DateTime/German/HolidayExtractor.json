@@ -82,12 +82,12 @@
         "Text": "Vatertag",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-06-WXX-7-3",
+          "Timex": "",
           "FutureResolution": {
-            "date": "2017-06-18"
+            "date": "0001-01-01"
           },
           "PastResolution": {
-            "date": "2016-06-19"
+            "date": "0001-01-01"
           }
         },
         "Start": 35,
