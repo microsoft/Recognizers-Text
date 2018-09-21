@@ -6,7 +6,7 @@ RoundNumberIntegerRegex: !simpleRegex
 ZeroToNineIntegerRegex: !simpleRegex
   def: (et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: ((-)?((sei|quin|quator|trei|dou|on)ze)|dix(\W(neuf|huit|sept))?)
+  def: (((sei|quin|quator|trei|dou|on)ze)|dix(\W(neuf|huit|sept))?)
 TensNumberIntegerRegex: !simpleRegex
   def: (quatre\Wvingt(s|\Wdix)?|soixante\Wdix|vingt|(tren|quaran|cinquan|soixan|septan|octan|huitan|nonan)te)
 DigitsNumberRegex: !simpleRegex
