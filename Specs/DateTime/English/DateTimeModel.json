@@ -6931,5 +6931,46 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2015 or later than 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-09-21T16:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "2015",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "later than 2018",
+        "Start": 8,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-12-31"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
