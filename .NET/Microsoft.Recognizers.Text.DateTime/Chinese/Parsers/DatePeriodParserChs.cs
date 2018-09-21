@@ -277,7 +277,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (!match.Success)
             {
-                match = DatePeriodExtractorChs.YearToYearDependence.Match(text);
+                match = DatePeriodExtractorChs.YearToYearSuffixRequired.Match(text);
             }
 
             if (match.Success)

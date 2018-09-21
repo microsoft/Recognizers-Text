@@ -82,7 +82,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.OneWordPeriodRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.StrictYearRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYear),
-            RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYearDependence),
+            RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearToYearSuffixRequired),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearAndMonth),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.PureNumYearAndMonth),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodYearInChineseRegex),
