@@ -120,6 +120,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string HourGroupName = "hour";
         public const string TimeOfDayGroupName = "timeOfDay";
         public const string BusinessDayGroupName = "business";
+        public const string LeftAmPmGroupName = "leftDesc";
+        public const string RightAmPmGroupName = "rightDesc";
 
         // Timex
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
