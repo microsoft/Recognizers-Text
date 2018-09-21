@@ -57,6 +57,11 @@ namespace Microsoft.Recognizers.Text.Sequence
             return GetModel<URLModel>(Culture.English, fallbackToDefaultCulture);
         }
 
+        public IModel GetGUIDModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<GUIDModel>(Culture.English, fallbackToDefaultCulture);
+        }
+
         public static List<ModelResult> RecognizePhoneNumber(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
         {
             return RecognizeByModel(recognizer => recognizer.GetPhoneNumberModel(culture, fallbackToDefaultCulture), query, options);
@@ -85,6 +90,11 @@ namespace Microsoft.Recognizers.Text.Sequence
         public static List<ModelResult> RecognizeURL(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
         {
             return RecognizeByModel(recognizer => recognizer.GetURLModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizeGUID(string query, string culture, SequenceOptions options = SequenceOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetGUIDModel(culture, fallbackToDefaultCulture), query, options);
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)
@@ -119,6 +129,10 @@ namespace Microsoft.Recognizers.Text.Sequence
             RegisterModel<URLModel>(
                 Culture.English,
                 (options) => new URLModel(new URLParser(), new URLExtractor()));
+
+            RegisterModel<GUIDModel>(
+                Culture.English,
+                (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
         }
     }
 }
