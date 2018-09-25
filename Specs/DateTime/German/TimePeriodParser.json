@@ -104,14 +104,14 @@
     ]
   },
   {
-    "Input": "Ich bin von 4 Uhr Abends bis 5 Uhr Abends da",
+    "Input": "Ich bin von 4 Uhr Nachmittags bis 5 Uhr Nachmittags da",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "4 Uhr Abends bis 5 Uhr Abends",
+        "Text": "4 Uhr Nachmittags bis 5 Uhr Nachmittags",
         "Type": "timerange",
         "Value": {
           "Timex": "(T16,T17,PT1H)",
@@ -125,7 +125,7 @@
           }
         },
         "Start": 12,
-        "Length": 29
+        "Length": 39
       }
     ]
   },
@@ -260,7 +260,7 @@
     ]
   },
   {
-    "Input": "Das Treffen geht über den Morgen",
+    "Input": "Das Treffen geht den ganzen den Morgen",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -280,7 +280,7 @@
             "endTime": "12:00:00"
           }
         },
-        "Start": 26,
+        "Start": 32,
         "Length": 6
       }
     ]

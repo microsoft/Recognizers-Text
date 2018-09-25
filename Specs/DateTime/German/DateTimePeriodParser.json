@@ -129,7 +129,7 @@
     ]
   },
   {
-    "Input": "Ich komme Dienstagabend zurück.",
+    "Input": "Ich gehe Dienstagabend zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -141,15 +141,15 @@
         "Value": {
           "Timex": "2016-11-08TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
           }
         },
-        "Start": 13,
+        "Start": 9,
         "Length": 13
       }
     ]
@@ -193,12 +193,12 @@
         "Value": {
           "Timex": "2016-11-08TNI",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-09 06:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 20:00:00",
-            "endDateTime": "2016-11-08 23:59:59"
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-09 06:00:00"
           }
         },
         "Start": 21,
@@ -271,12 +271,12 @@
         "Value": {
           "Timex": "2016-11-07TNI",
           "FutureResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
+            "startDateTime": "2016-11-07 22:00:00",
+            "endDateTime": "2016-11-08 06:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-07 20:00:00",
-            "endDateTime": "2016-11-07 23:59:59"
+            "startDateTime": "2016-11-07 22:00:00",
+            "endDateTime": "2016-11-08 06:00:00"
           }
         },
         "Start": 10,
@@ -297,12 +297,12 @@
         "Value": {
           "Timex": "2016-11-07TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-07 16:00:00",
-            "endDateTime": "2016-11-07 20:00:00"
+            "startDateTime": "2016-11-07 18:00:00",
+            "endDateTime": "2016-11-07 22:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-07 16:00:00",
-            "endDateTime": "2016-11-07 20:00:00"
+            "startDateTime": "2016-11-07 18:00:00",
+            "endDateTime": "2016-11-07 22:00:00"
           }
         },
         "Start": 10,
@@ -311,14 +311,14 @@
     ]
   },
   {
-    "Input": "An diesem Morgen",
+    "Input": "An diesem Vormittag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "diesem Morgen",
+        "Text": "diesem Vormittag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TMO",
@@ -350,11 +350,11 @@
           "Timex": "2016-11-07TAF",
           "FutureResolution": {
             "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
+            "endDateTime": "2016-11-07 18:00:00"
           },
           "PastResolution": {
             "startDateTime": "2016-11-07 12:00:00",
-            "endDateTime": "2016-11-07 16:00:00"
+            "endDateTime": "2016-11-07 18:00:00"
           }
         },
         "Start": 3,
@@ -441,7 +441,7 @@
     ]
   },
   {
-    "Input": "Innerhalb den nächsten 3 Stunden",
+    "Input": "Innerhalb der nächsten 3 Stunden",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -505,12 +505,12 @@
         "Value": {
           "Timex": "2016-11-08TEV",
           "FutureResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2016-11-08 16:00:00",
-            "endDateTime": "2016-11-08 20:00:00"
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
           }
         },
         "Start": 26,
@@ -519,14 +519,14 @@
     ]
   },
   {
-    "Input": "Das macht er jeden Dienstag am Morgen.",
+    "Input": "Das macht der jeden Dienstag am Vormittag.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "Dienstag am Morgen",
+        "Text": "Dienstag am Vormittag",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-08TMO",
@@ -539,8 +539,8 @@
             "endDateTime": "2016-11-08 12:00:00"
           }
         },
-        "Start": 19,
-        "Length": 18
+        "Start": 20,
+        "Length": 21
       }
     ]
   }

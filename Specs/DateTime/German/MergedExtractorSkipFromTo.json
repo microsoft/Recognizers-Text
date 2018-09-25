@@ -106,6 +106,18 @@
     ]
   },
   {
+    "Input": "6.6. 12:15",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "6.6. 12:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
     "Input": "06/06/12 15:15",
     "NotSupported": "javascript, python",
     "Results": [
@@ -114,6 +126,18 @@
         "Type": "datetime",
         "Start": 0,
         "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "6.6.12 15:15",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "6.6.12 15:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
