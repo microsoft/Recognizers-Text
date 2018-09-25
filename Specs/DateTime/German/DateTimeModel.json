@@ -1,6 +1,6 @@
 [
   {
-    "Input": "Ich gehe am 2. Oktober zurück.",
+    "Input": "Ich komme am 2. Oktober zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -8,8 +8,8 @@
     "Results": [
       {
         "Text": "2. oktober",
-        "Start": 12,
-        "End": 21,
+        "Start": 13,
+        "End": 23,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -29,16 +29,16 @@
     ]
   },
   {
-    "Input": "Ich komme am 22/04 zurück",
+    "Input": "Ich komme am 22.04 zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "22/04",
+        "Text": "22.04",
         "Start": 13,
-        "End": 17,
+        "End": 18,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -58,7 +58,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am neunundzwanzig Mai zurück",
+    "Input": "Ich komme am neunundzwanzig Mai zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -66,8 +66,8 @@
     "Results": [
       {
         "Text": "neunundzwanzig mai",
-        "Start": 12,
-        "End": 29,
+        "Start": 13,
+        "End": 31,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -87,7 +87,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am zweiten Mai zurück",
+    "Input": "Ich komme am zweiten Mai zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -95,8 +95,8 @@
     "Results": [
       {
         "Text": "zweiten mai",
-        "Start": 12,
-        "End": 22,
+        "Start": 13,
+        "End": 24,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -116,7 +116,7 @@
     ]
   },
   {
-    "Input": "Ich gehe am 2. Mai zurück",
+    "Input": "Ich komme am 2. Mai zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -124,8 +124,8 @@
     "Results": [
       {
         "Text": "2. mai",
-        "Start": 12,
-        "End": 17,
+        "Start": 13,
+        "End": 19,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -145,7 +145,7 @@
     ]
   },
   {
-    "Input": "Ich komme dann Freitag zurück",
+    "Input": "Ich komme am Freitag zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -153,8 +153,8 @@
     "Results": [
       {
         "Text": "Freitag",
-        "Start": 0,
-        "End": 0,
+        "Start": 13,
+        "End": 20,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -199,7 +199,7 @@
     ]
   },
   {
-    "Input": "Ich bin zwischen dem 3. und dem 12. september nicht da",
+    "Input": "Ich bin zwischen dem 3. und dem 12. September nicht da",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -230,7 +230,7 @@
     ]
   },
   {
-    "Input": "Diesen September fahre ich in Urlaub.",
+    "Input": "Diesen September fahre ich in den Urlaub.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -399,7 +399,7 @@
     ]
   },
   {
-    "Input": "Ich werde am 22. April von 5 bis 6 Nachmittags nicht im Büro sein",
+    "Input": "Ich werde am 22. April von 5 bis 6 Uhr Nachmittags nicht im Büro sein",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -408,7 +408,7 @@
       {
         "Text": "22. april von 5 bis 6 nachmittags",
         "Start": 13,
-        "End": 45,
+        "End": 49,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -446,8 +446,8 @@
             {
               "timex": "2016-11-07TEV",
               "type": "datetimerange",
-              "start": "2016-11-07 16:00:00",
-              "end": "2016-11-07 20:00:00"
+              "start": "2016-11-07 18:00:00",
+              "end": "2016-11-07 22:00:00"
             }
           ]
         }
@@ -455,24 +455,24 @@
     ]
   },
   {
-    "Input": "Das ist dann nächsten Montag Nachmittag.",
+    "Input": "Das ist dann nächsten Montagnachmittag.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
-        "Text": "nächsten montag machmittag",
-        "Start": 0,
-        "End": 0,
+        "Text": "nächsten Montagnachmittag",
+        "Start": 13,
+        "End": 25,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
               "timex": "2016-11-14TAF",
               "type": "datetimerange",
-              "start": "2016-11-14 12:00:00",
-              "end": "2016-11-14 16:00:00"
+              "start": "2016-11-14 14:00:00",
+              "end": "2016-11-14 18:00:00"
             }
           ]
         }
@@ -480,16 +480,16 @@
     ]
   },
   {
-    "Input": "Ich gehe dann Dienstag morgen zurück.",
+    "Input": "Ich gehe dann Dienstagmorgen zurück.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "dotNet, javascript, python",
     "Results": [
       {
-        "Text": "dienstag morgen",
-        "Start": 0,
-        "End": 0,
+        "Text": "Dienstagmorgen",
+        "Start": 14,
+        "End": 14,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -894,8 +894,8 @@
     "Results": [
       {
         "Text": "abend",
-        "Start": 0,
-        "End": 0,
+        "Start": 19,
+        "End": 24,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
@@ -991,8 +991,8 @@
     "Results": [
       {
         "Text": "nächste woche montag um 9 uhr morgens",
-        "Start": 0,
-        "End": 0,
+        "Start": 31,
+        "End": 68,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
@@ -1006,8 +1006,8 @@
       },
       {
         "Text": "ein uhr nachmittags",
-        "Start": 0,
-        "End": 0,
+        "Start": 74,
+        "End": 93,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [

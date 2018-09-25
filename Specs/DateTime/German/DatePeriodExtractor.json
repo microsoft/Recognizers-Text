@@ -1,12 +1,12 @@
 [
   {
-    "Input": "Ich werde diesen Januar nicht hier sein.",
+    "Input": "Diesen Januar werde nicht hier sein.",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "diesen Januar",
+        "Text": "Diesen Januar",
         "Type": "daterange",
-        "Start": 10,
+        "Start": 0,
         "Length": 13
       }
     ]
@@ -480,6 +480,18 @@
     ]
   },
   {
+    "Input": "Ich war zwischen dem 15. und dem 19. November dort",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "zwischen dem 15. und dem 19. November",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 37
+      }
+    ]
+  },
+  {
     "Input": "Ich war vom 15. November bis zum 19. November dort",
     "NotSupported": "javascript, python",
     "Results": [
@@ -488,6 +500,54 @@
         "Type": "daterange",
         "Start": 8,
         "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Ich war vom 15.-19. November dort",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vom 15.-19. November",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Ich war vom 15. - 19.11. dort",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vom 15. - 19.11.",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Ich war zwischen dem 15. November und dem 19. Dezember dort",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "zwischen dem 15. November und dem 19. Dezember dort",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 51
+      }
+    ]
+  },
+  {
+    "Input": "Ich war vom 15.11. - 19.12. dort",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vom 15.11. - 19.12.",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 19
       }
     ]
   },
@@ -564,11 +624,11 @@
     ]
   },
   {
-    "Input": "Ich würde 2016-05 nicht hier",
+    "Input": "Ich war im 05.2016 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "2016-05",
+        "Text": "05.2016",
         "Type": "daterange",
         "Start": 10,
         "Length": 7
@@ -612,11 +672,11 @@
     ]
   },
   {
-    "Input": "Ich würde 2016 - 05 nicht hier",
+    "Input": "Ich würde 05. 2016 nicht hier",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "2016 - 05",
+        "Text": "05. 2016",
         "Type": "daterange",
         "Start": 10,
         "Length": 9
