@@ -9,6 +9,7 @@ var modelFunctions = {
     'HashtagModel': (input, culture, options) => Recognizer.recognizeHashtag(input, culture, options),
     'EmailModel': (input, culture, options) => Recognizer.recognizeEmail(input, culture, options),
     'URLModel': (input, culture, options) => Recognizer.recognizeURL(input, culture, options),
+    'GUIDModel': (input, culture, options) => Recognizer.recognizeGUID(input, culture, options),
 };
 
 module.exports = function getSequenceTestRunner(config) {

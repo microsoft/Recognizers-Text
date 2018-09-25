@@ -16,4 +16,5 @@ export class Constants {
     static readonly HASHTAG_REGEX = "Hashtag";
     static readonly EMAIL_REGEX = "Email";
     static readonly URL_REGEX = "Url";
+    static readonly GUID_REGEX = "Guid";
 }

@@ -1,0 +1,64 @@
+[
+  {
+    "Input": "123e4567-e89b-12d3-a456-426655440000",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "123e4567-e89b-12d3-a456-426655440000",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "123e4567-e89b-12d3-a456-426655440000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "{123e4567-e89b-12d3-a456-426655440000}",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "{123e4567-e89b-12d3-a456-426655440000}",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "{123e4567-e89b-12d3-a456-426655440000}"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "urn:uuid:123e4567-e89b-12d3-a456-426655440000",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "urn:uuid:123e4567-e89b-12d3-a456-426655440000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "urn:uuid:123E4567-E89B-12D3-A456-426655440000",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "urn:uuid:123E4567-E89B-12D3-A456-426655440000",
+        "TypeName": "guid",
+        "Resolution": {
+          "value": "urn:uuid:123E4567-E89B-12D3-A456-426655440000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "{123e4567e-89b-12d3-a456-426655440000} is not a guid number, it is irregular",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "{123k4567-e89b-12d3-a456-426655440000} is not a guid number, it contains 'k'",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  }
+]

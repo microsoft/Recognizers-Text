@@ -67,5 +67,12 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         {
             TestURL();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "GUIDModel-English.csv", "GUIDModel-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void GUIDModel()
+        {
+            TestGUID();
+        }
     }
 }

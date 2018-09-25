@@ -86,3 +86,7 @@ export class EmailModel extends AbstractSequenceModel {
 export class URLModel extends AbstractSequenceModel {
     public modelTypeName: string = "url";
 }
+
+export class GUIDModel extends AbstractSequenceModel {
+    public modelTypeName: string = "guid";
+}
