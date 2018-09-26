@@ -10,7 +10,7 @@
         "Text": "Ostern",
         "Type": "date",
         "Value": {
-          "Timex": "",
+          "Timex": "XXXX",
           "FutureResolution": {
             "date": "0001-01-01"
           },
@@ -82,12 +82,12 @@
         "Text": "Vatertag",
         "Type": "date",
         "Value": {
-          "Timex": "",
+          "Timex": "XXXX-06-WXX-6-3",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2017-06-18"
           },
           "PastResolution": {
-            "date": "0001-01-01"
+            "date": "2016-06-19"
           }
         },
         "Start": 3,
@@ -106,12 +106,12 @@
         "Text": "Vatertag 2015",
         "Type": "date",
         "Value": {
-          "Timex": "",
+          "Timex": "2015-06-WXX-6-3",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2015-06-21"
           },
           "PastResolution": {
-            "date": "0001-01-01"
+            "date": "2015-06-21"
           }
         },
         "Start": 0,

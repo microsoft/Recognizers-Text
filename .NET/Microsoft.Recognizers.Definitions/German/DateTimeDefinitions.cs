@@ -732,7 +732,15 @@ namespace Microsoft.Recognizers.Definitions.German
 		{
 			{ "zweitausender", 2000 }
 		};
-		public const string DefaultLanguageFallback = "DMY";
+        public static readonly Dictionary<string, string> HolidayNoFixedTimex = new Dictionary<string, string>
+        {
+            {"fathers", "-06-WXX-6-3" },
+            {"easterday", "" },
+            {"eastersunday", "" },
+            {"eastermonday", "" },
+            {"ascensionday", "" }
+        };
+        public const string DefaultLanguageFallback = "DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
 	}
 }
