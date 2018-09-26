@@ -144,12 +144,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.TimeRegex10,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // at 2.30, "at" prefix is a must here
+            // at 2.30, "at" prefix is required here
+            // 3.30pm, "am/pm" suffix is required here
             new Regex(DateTimeDefinitions.TimeRegex11,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline),
-
-            // 3.30pm, "am/pm" suffix is a must here
-            new Regex(DateTimeDefinitions.TimeRegex12,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 340pm
