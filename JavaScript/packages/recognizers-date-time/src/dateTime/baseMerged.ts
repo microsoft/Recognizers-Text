@@ -140,7 +140,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
                     }
                 }
 
-                // insert at the first overlap occurence to keep the order
+                // insert at the first overlap occurrence to keep the order
                 tempDst.splice(firstIndex, 0, value);
                 destination.length = 0;
                 destination.push.apply(destination, tempDst);
@@ -565,16 +565,35 @@ export class BaseMergedParser implements IDateTimeParser {
         let start = resolutions[startType];
         let end = resolutions[endType];
         if (!StringUtility.isNullOrEmpty(mod)) {
+            // For the 'before' mod
+            // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
+            // 2. Cases like "More than 3 days before today", the date point should be the end of the new period
             if (mod === TimeTypeConstants.beforeMod) {
-                result[TimeTypeConstants.END] = start;
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+                    result[TimeTypeConstants.END] = start;
+                } else {
+                    result[TimeTypeConstants.END] = end;
+                }
                 return;
             }
 
+            // For the 'after' mod
+            // 1. Cases like "After January". the end of the period should be the start of the new period, not the end
+            // 2. Cases like "More than 3 days after today", the date point should be the start of the new period
             if (mod === TimeTypeConstants.afterMod) {
-                result[TimeTypeConstants.START] = end;
+                // For cases like "After January" or "After 2018"
+                // The "end" of the period is not inclusive by default ("January", the end should be "XXXX-02-01" / "2018", the end should be "2019-01-01")
+                // Mod "after" is also not inclusive the "start" ("After January", the start should be "XXXX-01-31" / "After 2018", the start should be "2017-12-31")
+                // So here the START day should be the inclusive end of the period, which is one day previous to the default end (exclusive end)
+                if (!StringUtility.isNullOrEmpty(start) && !StringUtility.isNullOrEmpty(end)) {
+                    var dateObj = new Date(end);
+                    dateObj.setDate(dateObj.getDate() - 1);
+                    result[TimeTypeConstants.START] = FormatUtil.formatDate(dateObj);
+                } else {
+                    result[TimeTypeConstants.START] = start;
+                }
                 return;
             }
-
             if (mod === TimeTypeConstants.sinceMod) {
                 result[TimeTypeConstants.START] = start;
                 return;

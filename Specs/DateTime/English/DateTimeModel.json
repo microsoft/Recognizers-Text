@@ -6971,5 +6971,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "later than 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-09-25T12:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "later than 2018",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-12-31"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
