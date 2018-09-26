@@ -6933,6 +6933,71 @@
     ]
   },
   {
+    "Input": "Let's meet this week any time from 7:00 am",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "Results": [
+      {
+        "Text": "this week",
+        "Start": 11,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W33",
+              "type": "daterange",
+              "start": "2018-08-13",
+              "end": "2018-08-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "any time from 7:00 am",
+        "Start": 21,
+        "End": 41,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "later than 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-09-25T12:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "later than 2018",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-12-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Please schedule a meeting for Monday at 2.30",
     "Context": {
       "ReferenceDateTime": "2018-09-21T12:00:00"
