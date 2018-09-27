@@ -277,11 +277,13 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new JapaneseNumberParserConfiguration()),
                     new Japanese.PercentageExtractor()));
 
+            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Japanese,
                 (options) => new NumberRangeModel(
                     new BaseNumberRangeParser(new JapaneseNumberRangeParserConfiguration()),
                     new Japanese.NumberRangeExtractor(options)));
+            */
                             
             #endregion
 
@@ -309,7 +311,6 @@ namespace Microsoft.Recognizers.Text.Number
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration()),
                     Dutch.OrdinalExtractor.GetInstance()));
 
-            /*
             RegisterModel<PercentModel>(
                 Culture.Dutch,
                 (options) => new PercentModel(
