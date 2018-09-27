@@ -2220,5 +2220,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "时间从二零一六年至二零一八年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "从二零一六年至二零一八年",
+        "Start": 2,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-01-01,2018-01-01,P2Y)",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
