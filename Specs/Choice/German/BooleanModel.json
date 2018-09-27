@@ -1,13 +1,14 @@
-[{
+[
+{
   "Input": "Ja klar!",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
-      "Text": "Ja klar",
+      "Text": "Ja",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-        "score": 1.0
+        "score": 0.7
       }
     }
   ]
@@ -15,14 +16,14 @@
 ,
 {
   "Input": "Ich denke nicht. Nein.",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
-      "Text": "nein",
+      "Text": "Nein",
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-        "score": 0.5
+        "score": 0.55
       }
     }
   ]
@@ -30,14 +31,15 @@
 ,
 {
   "Input": "Das sollte funktionieren, also mache ich es.",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
-      "Text": "ja",
+      "Text": "mache ich",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-        "score": 0.4666666666666667
+        "score": 0.571428571428571
       }
     }
   ]
@@ -45,14 +47,14 @@
 ,
 {
   "Input": "Nein. Ich sagte vierter Juli",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
-      "Text": "nein",
+      "Text": "Nein",
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-        "score": 0.4857142857142857
+        "score": 0.52
       }
     }
   ]
@@ -60,10 +62,10 @@
 ,
 {
   "Input": "Ja... ich sagte keine Zwiebeln",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
-      "Text": "ja",
+      "Text": "Ja",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
@@ -75,10 +77,10 @@
 ,
 {
   "Input": "Ich sagte NEIN NICHT ja!",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
-      "Text": "NO",
+      "Text": "NEIN",
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
@@ -90,7 +92,7 @@
 ,
 {
   "Input": "Ja. Ich sagte nein",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "Ja",
@@ -105,14 +107,14 @@
 ,
 {
   "Input": "👌 Alles klar",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "👌",
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-        "score": 0.55
+        "score": 0.6
       }
     }
   ]
@@ -120,7 +122,7 @@
 ,
 {
   "Input": "👌👌👌",
-  "NotSupportedByDesign": "dotnet,python,java,javascript",
+  "NotSupportedByDesign": "python,java,javascript",
   "Results": [
     {
       "Text": "👌",

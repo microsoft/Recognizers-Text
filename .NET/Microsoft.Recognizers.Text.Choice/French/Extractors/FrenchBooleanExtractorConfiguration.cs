@@ -1,19 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Definitions.French;
 
-namespace Microsoft.Recognizers.Text.Choice.Portuguese
+namespace Microsoft.Recognizers.Text.Choice.French
 {
-    public class PortugueseBooleanExtractorConfiguration : IBooleanExtractorConfiguration
+    class FrenchBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
-        public static readonly Regex TrueRegex = 
+        public static readonly Regex TrueRegex =
             new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FalseRegex = 
+        public static readonly Regex FalseRegex =
             new Regex(ChoiceDefinitions.FalseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TokenRegex = 
+        public static readonly Regex TokenRegex =
             new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Choice.Portuguese
             {FalseRegex, Constants.SYS_BOOLEAN_FALSE }
         };
 
-        public PortugueseBooleanExtractorConfiguration(bool onlyTopMatch = true)
+        public FrenchBooleanExtractorConfiguration(bool onlyTopMatch = true)
         {
             this.OnlyTopMatch = onlyTopMatch;
         }
@@ -40,5 +40,6 @@ namespace Microsoft.Recognizers.Text.Choice.Portuguese
         public int MaxDistance => 2;
 
         public bool OnlyTopMatch { get; }
+
     }
 }

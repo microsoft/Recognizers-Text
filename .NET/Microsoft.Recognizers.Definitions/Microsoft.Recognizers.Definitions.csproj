@@ -18,29 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Chinese\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </None>
-    <None Include="Japanese\ChoiceDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </None>
-    <None Include="Japanese\NumbersDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-    </None>
-    <None Include="Japanese\NumbersWithUnitDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="BaseCurrency.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -151,6 +128,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>TimeZoneDefinitions.tt</DependentUpon>
     </Compile>
+	<Compile Update="French\ChoiceDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="French\DateTimeDefinitions.cs">
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -166,6 +148,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+	<Compile Update="German\ChoiceDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="German\DateTimeDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -181,17 +168,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Update="German\DateTimeDefinitions.cs">
+    <Compile Update="Italian\DateTimeDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Update="German\NumbersDefinitions.cs">
+    <Compile Update="Italian\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Update="German\NumbersWithUnitDefinitions.cs">
+    <Compile Update="Italian\NumbersWithUnitDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
@@ -220,21 +207,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Italian\DateTimeDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Italian\NumbersDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Italian\NumbersWithUnitDefinitions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Portuguese\DateTimeDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -366,6 +338,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TimeZoneDefinitions.cs</LastGenOutput>
     </None>
+	<None Update="French\ChoiceDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
+    </None>
     <None Update="French\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
@@ -378,6 +354,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
+	<None Update="German\ChoiceDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
+    </None>
     <None Update="German\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
@@ -387,6 +367,18 @@
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="German\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Italian\DateTimeDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Italian\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Italian\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
@@ -410,29 +402,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
     </None>
-    <None Update="Italian\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Italian\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="Italian\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </None>
     <None Update="Portuguese\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="German\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </None>
-    <None Update="German\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

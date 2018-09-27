@@ -2,10 +2,34 @@
     "outputPath": "./src/resources/",
     "configFiles": [
         {
+            "input": [ "Chinese", "Chinese-Choice" ],
+            "output": "chineseChoice",
+            "header": [
+                "export namespace ChineseChoice {"
+            ],
+            "footer": [ "}" ]
+        },
+		{
             "input": [ "English", "English-Choice" ],
             "output": "englishChoice",
             "header": [
                 "export namespace EnglishChoice {"
+            ],
+            "footer": [ "}" ]
+        },
+		{
+            "input": [ "French", "French-Choice" ],
+            "output": "frenchChoice",
+            "header": [
+                "export namespace FrenchChoice {"
+            ],
+            "footer": [ "}" ]
+        },
+		{
+            "input": [ "German", "German-Choice" ],
+            "output": "germanChoice",
+            "header": [
+                "export namespace GermanChoice {"
             ],
             "footer": [ "}" ]
         },
@@ -22,6 +46,14 @@
             "output": "portugueseChoice",
             "header": [
                 "export namespace PortugueseChoice {"
+            ],
+            "footer": [ "}" ]
+        },
+		{
+            "input": [ "Spanish", "Spanish-Choice" ],
+            "output": "spanishChoice",
+            "header": [
+                "export namespace SpanishChoice {"
             ],
             "footer": [ "}" ]
         }
