@@ -77,7 +77,7 @@
     ]
   },
   {
-    "Input": "Ich war Montag von fünf bis sieben weg.",
+    "Input": "Ich war am Montag von fünf bis sieben weg.",
     "Context": {
       "ReferenceDateTime": "2018-02-07T12:12:00"
     },
@@ -97,7 +97,7 @@
             "endDateTime": "2018-02-05 07:00:00"
           }
         },
-        "Start": 8,
+        "Start": 11,
         "Length": 27
       }
     ]
@@ -155,7 +155,7 @@
     ]
   },
   {
-    "Input": "für den Rest des Tages",
+    "Input": "Für den Rest des Tages",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -233,6 +233,32 @@
     ]
   },
   {
+    "Input": "Ankunft ist heute zwischen 16-17 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "heute zwischen 16 und 17 Uhr",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 24
+      }
+    ]
+  },
+  {
     "Input": "Ich komme heute Nacht zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -259,14 +285,14 @@
     ]
   },
   {
-    "Input": "Ich gehe diesen Abend zurück",
+    "Input": "Ich komme heute Abend zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "diesen Abend",
+        "Text": "heute Abend",
         "Type": "datetimerange",
         "Value": {
           "Timex": "2016-11-07TEV",
@@ -279,8 +305,8 @@
             "endDateTime": "2016-11-07 22:00:00"
           }
         },
-        "Start": 9,
-        "Length": 12
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
@@ -337,7 +363,7 @@
     ]
   },
   {
-    "Input": "Ich geh in den nächsten 5 Stunden zurück",
+    "Input": "Ich komme in den nächsten 5 Stunden zurück",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -357,7 +383,7 @@
             "endDateTime": "2016-11-07 21:12:00"
           }
         },
-        "Start": 15,
+        "Start": 17,
         "Length": 18
       }
     ]
