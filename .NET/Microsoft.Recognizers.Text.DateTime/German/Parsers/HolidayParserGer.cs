@@ -15,15 +15,24 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
 
-        //private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
-
-        //private static readonly IParser IntegerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration());
-
         public static readonly Dictionary<string, Func<int, DateObject>> FixedHolidaysDict = new Dictionary<string, Func<int, DateObject>>
         {
 
             #region Fixed Date Holidays
 
+                {"assumptionofmary", AssumptionOfMary}, // 15. August
+                {"germanunityday", GermanUnityDay}, // 3. Oktober
+                {"reformationday", ReformationDay}, // 31. Oktober
+                {"stmartinsday", StMartinsDay}, // 11. November
+                {"saintnicholasday", SaintNicholasDay}, // 6. Dezember
+                {"biblicalmagiday", BiblicalMagiDay}, // 6. Januar
+                {"walpurgisnight", WalpurgisNight}, // 30. April
+                {"austriannationalday", AustrianNationalDay}, // 26. Oktober
+                {"immaculateconception", ImmaculateConception}, // 8. Dezember
+                {"secondchristmasday", SecondChristmasDay}, // 26. Dezember
+                {"berchtoldsday", BerchtoldsDay}, // 2. Januar
+                {"saintjosephsday", SaintJosephsDay}, // 19. März
+                {"swissnationalday", SwissNationalDay}, // 1. August
                 {"maosbirthday", MaoBirthday},
                 {"yuandan", NewYear},
                 {"teachersday", TeacherDay},
@@ -76,7 +85,22 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {"easterday", EasterDay},
             {"eastersunday", GetEasterSundayOfYear},
             {"eastermonday", GetEasterMondayOfYear},
-            {"ascensionday", GetAscensionDayOfYear }
+            // Weiberfastnacht
+            // Karneval
+            // Rosenmontag
+            // Fastnacht
+            // Aschermittwoch
+            // Palmsonntag
+            // Gründonnerstag
+            // Karfreitag
+            // Pfingstsonntag
+            // Pfingstmontag
+            // Frohnleichnam
+            // Volkstrauertag
+            // Buß und Bettag (Ges. Feiertag)
+            // Totensonntag
+            // 1.,2.,3.,4. Advent
+            // Eidg. Dank-, Buss- und Bettag 
             
             #endregion
 
@@ -273,6 +297,19 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return value;
         }
 
+        private static DateObject AssumptionOfMary(int year) => new DateObject(year, 8, 15);
+        private static DateObject GermanUnityDay(int year) => new DateObject(year, 10, 3);
+        private static DateObject ReformationDay(int year) => new DateObject(year, 10, 31);
+        private static DateObject StMartinsDay(int year) => new DateObject(year, 11, 11);
+        private static DateObject SaintNicholasDay(int year) => new DateObject(year, 12, 6);
+        private static DateObject BiblicalMagiDay(int year) => new DateObject(year, 1, 6);
+        private static DateObject WalpurgisNight(int year) => new DateObject(year, 4, 30);
+        private static DateObject AustrianNationalDay(int year) => new DateObject(year, 10, 26);
+        private static DateObject ImmaculateConception(int year) => new DateObject(year, 2, 14);
+        private static DateObject SecondChristmasDay(int year) => new DateObject(year, 12, 26);
+        private static DateObject BerchtoldsDay(int year) => new DateObject(year, 1, 2);
+        private static DateObject SaintJosephsDay(int year) => new DateObject(year, 3, 19);
+        private static DateObject SwissNationalDay(int year) => new DateObject(year, 8, 1);
         private static DateObject LoverDay(int year) => new DateObject(year, 2, 14);
         private static DateObject LaborDay(int year) => new DateObject(year, 5, 1);
         private static DateObject MidautumnDay(int year) => new DateObject(year, 8, 15);
@@ -379,12 +416,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
                                                                       where DateObject.MinValue.SafeCreateFromValue(year, 11, day).DayOfWeek == DayOfWeek.Thursday
                                                                       select day).ElementAt(3));
-        }
-
-
-        private static DateObject GetAscensionDayOfYear(int arg)
-        {
-            throw new NotImplementedException();
         }
 
         private static DateObject GetEasterMondayOfYear(int arg)

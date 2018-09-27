@@ -82,16 +82,65 @@
         "Text": "Vatertag",
         "Type": "date",
         "Value": {
-          "Timex": "",
+          "Timex": "XXXX-06-WXX-6-3",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2017-06-18"
           },
           "PastResolution": {
-            "date": "0001-01-01"
+            "date": "2016-06-19"
           }
         },
         "Start": 35,
         "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "An Mariä Himmelfahrt haben wir Bayern frei.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Mariä Himmelfahrt",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-08-15",
+          "FutureResolution": {
+            "date": "2017-08-15"
+          },
+          "PastResolution": {
+            "date": "2016-08-15"
+          }
+        },
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Was machst du am Tag der deutschen Einheit?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Tag der deutschen Einheit",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-03",
+          "FutureResolution": {
+            "date": "2017-10-03"
+          },
+          "PastResolution": {
+            "date": "2016-10-03"
+          }
+        },
+        "Start": 17,
+        "Length": 25
       }
     ]
   }

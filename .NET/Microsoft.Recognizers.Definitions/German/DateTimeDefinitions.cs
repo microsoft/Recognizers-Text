@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AllRegex = @"\b(?<all>ganz(en|es|er|e)\s+(?<unit>jahr|monat|woche|tag))\b";
 		public const string HalfRegex = @"(((ein(en|er|es|e)?)\s*)|\b)(?<half>halb(en|er|es|e)?\s+(?<unit>jahr(er|es|e)?|monat(s|e)?|woch(en|e)?|tag(en|er|es|e)?|stund(en|e)?))\b";
 		public const string ConjunctionRegex = @"\b((und(\s+für)?)|mit|für)\b";
-		public static readonly string HolidayRegex1 = $@"\b((dieses Jahr)\s*)?(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|neujahr|neujahrstag|vatertag|mayday|yuan dan|erster april|heiligabend|weihnachten|weihnachtstag|erntedankfest|halloween|yuandan|ostern|osterfest)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
+		public static readonly string HolidayRegex1 = $@"\b((dieses Jahr)\s*)?(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|neujahr|neujahrstag|vatertag|mayday|yuan dan|erster april|heiligabend|weihnachten|weihnachtstag|erntedankfest|halloween|yuandan|ostern|osterfest|tag der deutschen einheit|mariä himmelfahrt)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
 		public static readonly string HolidayRegex2 = $@"\b((dieses Jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
 		public static readonly string HolidayRegex3 = $@"((dieses Jahr)\s*)?(?<holiday>(canberra|ostern|columbus|thanks\s*giving|weihnachten|weihnachtstag|tag der arbeit|muttertag|vatertag|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?";
 		public const string DateTokenPrefix = "am ";
@@ -224,6 +224,11 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string YearPeriodRegex = @"(für|über)\s*(\d\s*)(Jahr(en|e)?)";
 		public const string FutureSuffixRegex = @"^[.]";
 		public const string ComplexDatePeriodRegex = @"^[.]";
+		public static readonly Dictionary<string, string> HolidayNoFixedTimex = new Dictionary<string, string>
+		{
+			{ "fathers", "-06-WXX-6-3" },
+			{ "easterday", "" }
+		};
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "jahren", "Y" },
@@ -659,6 +664,8 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
 		{
+			{ "assumptionofmary", new string[] { "mariä himmelfahrt" } },
+			{ "germanunityday", new string[] { "tag der deutschen einheit" } },
 			{ "easterday", new string[] { "ostern" } },
 			{ "fathers", new string[] { "vatertag" } },
 			{ "mothers", new string[] { "muttertag" } },
@@ -732,15 +739,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		{
 			{ "zweitausender", 2000 }
 		};
-        public static readonly Dictionary<string, string> HolidayNoFixedTimex = new Dictionary<string, string>
-        {
-            {"fathers", "-06-WXX-6-3" },
-            {"easterday", "" },
-            {"eastersunday", "" },
-            {"eastermonday", "" },
-            {"ascensionday", "" }
-        };
-        public const string DefaultLanguageFallback = "DMY";
+		public const string DefaultLanguageFallback = "DMY";
 		public static readonly string[] DurationDateRestrictions = {  };
 	}
 }
