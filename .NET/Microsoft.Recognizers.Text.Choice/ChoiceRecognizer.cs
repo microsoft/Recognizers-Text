@@ -50,23 +50,23 @@ namespace Microsoft.Recognizers.Text.Choice
             RegisterModel<BooleanModel>(
                 Culture.Chinese,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new ChineseBooleanExtractorConfiguration())));
-			
-			RegisterModel<BooleanModel>(
+
+            RegisterModel<BooleanModel>(
                 Culture.Dutch,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new DutchBooleanExtractorConfiguration())));
-			
-			RegisterModel<BooleanModel>(
+
+            RegisterModel<BooleanModel>(
                 Culture.English,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new EnglishBooleanExtractorConfiguration())));
 
-			RegisterModel<BooleanModel>(
+            RegisterModel<BooleanModel>(
                 Culture.French,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new FrenchBooleanExtractorConfiguration())));
-			
-			RegisterModel<BooleanModel>(
+
+            RegisterModel<BooleanModel>(
                 Culture.German,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new GermanBooleanExtractorConfiguration())));
-			
+
             RegisterModel<BooleanModel>(
                 Culture.Japanese,
                 (options) => new BooleanModel(new BooleanParser(), new BooleanExtractor(new JapaneseBooleanExtractorConfiguration())));
