@@ -6,12 +6,14 @@ export { IChoiceExtractorConfiguration, ChoiceExtractor, IBooleanExtractorConfig
 export { IChoiceParserConfiguration, ChoiceParser, BooleanParser } from "./choice/parsers";
 export { EnglishBooleanExtractorConfiguration } from "./choice/english/boolean";
 export { FrenchBooleanExtractorConfiguration } from "./choice/french/boolean";
+export { GermanBooleanExtractorConfiguration } from "./choice/german/boolean";
 export { PortugueseBooleanExtractorConfiguration } from "./choice/portuguese/boolean";
 export { JapaneseBooleanExtractorConfiguration } from "./choice/japanese/boolean";
 export { SpanishBooleanExtractorConfiguration } from "./choice/spanish/boolean";
 export { ChineseBooleanExtractorConfiguration } from "./choice/chinese/boolean";
 export { EnglishChoice } from "./resources/englishChoice";
 export { FrenchChoice } from "./resources/frenchChoice";
+export { GermanChoice } from "./resources/germanChoice";
 export { PortugueseChoice } from "./resources/portugueseChoice";
 export { JapaneseChoice } from "./resources/japaneseChoice";
 export { SpanishChoice } from "./resources/spanishChoice";

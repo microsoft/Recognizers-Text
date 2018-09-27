@@ -9,9 +9,9 @@ export class FrenchBooleanExtractorConfiguration implements IBooleanExtractorCon
     readonly onlyTopMatch: boolean;
 
     constructor(onlyTopMatch: boolean = true) {
-        this.regexTrue = RegExpUtility.getSafeRegExp(EnglishChoice.TrueRegex);
-        this.regexFalse = RegExpUtility.getSafeRegExp(EnglishChoice.FalseRegex);
-        this.tokenRegex = RegExpUtility.getSafeRegExp(EnglishChoice.TokenizerRegex, 'is');
+        this.regexTrue = RegExpUtility.getSafeRegExp(FrenchChoice.TrueRegex);
+        this.regexFalse = RegExpUtility.getSafeRegExp(FrenchChoice.FalseRegex);
+        this.tokenRegex = RegExpUtility.getSafeRegExp(FrenchChoice.TokenizerRegex, 'is');
         this.onlyTopMatch = onlyTopMatch;
     }
 }

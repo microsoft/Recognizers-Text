@@ -4,6 +4,7 @@ import { BooleanExtractor } from "./extractors";
 import { BooleanParser } from "./parsers";
 import { EnglishBooleanExtractorConfiguration } from "./english/boolean";
 import { FrenchBooleanExtractorConfiguration } from "./french/boolean";
+import { GermanBooleanExtractorConfiguration } from "./german/boolean";
 import { JapaneseBooleanExtractorConfiguration } from "./japanese/boolean";
 import { PortugueseBooleanExtractorConfiguration } from "./portuguese/boolean";
 import { SpanishBooleanExtractorConfiguration } from "./spanish/boolean";
@@ -60,11 +61,18 @@ export default class ChoiceRecognizer extends Recognizer<ChoiceOptions> {
             new BooleanExtractor(new ChineseBooleanExtractorConfiguration())
         ));
         //#endregion
-		
-		//#region French
+
+        //#region French
         this.registerModel("BooleanModel", Culture.French, (options) => new BooleanModel(
             new BooleanParser(),
             new BooleanExtractor(new FrenchBooleanExtractorConfiguration())
+        ));
+        //#endregion
+
+        //#region German
+        this.registerModel("BooleanModel", Culture.German, (options) => new BooleanModel(
+            new BooleanParser(),
+            new BooleanExtractor(new GermanBooleanExtractorConfiguration())
         ));
         //#endregion
     }

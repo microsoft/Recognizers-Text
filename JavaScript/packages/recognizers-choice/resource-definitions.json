@@ -3,7 +3,7 @@
     "configFiles": [
         {
             "input": [ "Chinese", "Chinese-Choice" ],
-            "output": "chinseseChoice",
+            "output": "chineseChoice",
             "header": [
                 "export namespace ChineseChoice {"
             ],
@@ -22,6 +22,14 @@
             "output": "frenchChoice",
             "header": [
                 "export namespace FrenchChoice {"
+            ],
+            "footer": [ "}" ]
+        },
+		{
+            "input": [ "German", "German-Choice" ],
+            "output": "germanChoice",
+            "header": [
+                "export namespace GermanChoice {"
             ],
             "footer": [ "}" ]
         },

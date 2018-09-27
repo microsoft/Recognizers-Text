@@ -6,9 +6,9 @@
 // </auto-generated>
 // ------------------------------------------------------------------------------
 
-export namespace FrenchChoice {
-	export const LangMarker = 'Fr';
+export namespace GermanChoice {
+	export const LangMarker = 'Ger';
 	export const TokenizerRegex = `[^\\w\\d]`;
-	export const TrueRegex = `\\b(s[uû]r|ouais|oui|yep|y|sure|approuver|accepter|consentir|d'accord|ça march[eé])\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)`;
-	export const FalseRegex = `\\b(faux|nan|non|pas\\s+d'accord|pas\\s+concorder|n'est\\s+pas\\s+(correct|ok)|pas)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)`;
+	export const TrueRegex = `\\b(wahr|ja|jep|j|sicher|ok|einverstanden|mit\\s+Sicherheit|sicherlich|jap|mache ich)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)`;
+	export const FalseRegex = `\\b(falsch|nein|ne|nö|nicht\\s+ok|nicht\\s+einverstanden|n)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)`;
 }
