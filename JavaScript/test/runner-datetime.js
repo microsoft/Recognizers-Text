@@ -165,6 +165,16 @@ function getMergedParserTestRunner(extractor, parser) {
     };
 }
 
+function compareValue(a, b){
+    if (a.value < b.value){
+        return -1;
+    }
+    if (a.value > b.value){
+        return 1;
+    }
+    return 0;
+}
+
 function getModelTestRunner(getResults) {
     return function (t, testCase) {
         var expected = testCase.Results;
@@ -188,6 +198,14 @@ function getModelTestRunner(getResults) {
             t.is(!!actual.resolution, !!expected.Resolution, 'Result.Resolution');
             if (expected.Resolution) {
                 t.is(actual.resolution.values.length, expected.Resolution.values.length, 'Resolution.Values count');
+                if (actual.resolution.values){
+                    actual.resolution.values.sort(compareValue);
+                }
+
+                if (expected.Resolution.values){
+                    expected.Resolution.values.sort(compareValue);
+                }
+
                 _.zip(actual.resolution.values, expected.Resolution.values).forEach(o => {
                     var actual = o[0];
                     var expected = o[1];

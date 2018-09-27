@@ -7002,7 +7002,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-21T12:00:00"
     },
-    "NotSupported": "java, python, javascript",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "monday at 2.30",
@@ -7041,7 +7041,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "java, python, javascript",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "before 2.30pm",
@@ -7066,7 +7066,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
-    "NotSupported": "java, python, javascript",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "thursday 29/03 11.00am",
