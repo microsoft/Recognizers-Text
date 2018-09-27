@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Złoty polonais", "złoty polonais|złoty|zł|pln|zloty|zloty polonais" },
 			{ "Groxz", "groszy|grosz|grosze" },
 			{ "Riyal qatari", "riyal qatari|qar|riyals qatari" },
-			{ "Riayl saudi", "riyal saudi|sar|riyals saudi" },
+			{ "Riyal saudi", "riyal saudi|sar|riyals saudi" },
 			{ "Riyal", "riyal|riyals|rial|﷼" },
 			{ "Dirham", "dirham|dirhem|dirhm" },
 			{ "Halala", "halalas|halala" },

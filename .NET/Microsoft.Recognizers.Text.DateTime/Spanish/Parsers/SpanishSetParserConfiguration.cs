@@ -76,25 +76,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
-            if (trimedText.EndsWith("diario") || trimedText.EndsWith("diariamente"))
+            if (trimmedText.EndsWith("diario") || trimmedText.EndsWith("diariamente"))
             {
                 timex = "P1D";
             }
-            else if (trimedText.Equals("semanalmente"))
+            else if (trimmedText.Equals("semanalmente"))
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("quincenalmente"))
+            else if (trimmedText.Equals("quincenalmente"))
             {
                 timex = "P2W";
             }
-            else if (trimedText.Equals("mensualmente"))
+            else if (trimmedText.Equals("mensualmente"))
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("anualmente"))
+            else if (trimmedText.Equals("anualmente"))
             {
                 timex = "P1Y";
             }
@@ -109,22 +109,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
 
-            if (trimedText.Equals("día") || trimedText.Equals("dia") ||
-                trimedText.Equals("días") || trimedText.Equals("dias"))
+            if (trimmedText.Equals("día") || trimmedText.Equals("dia") ||
+                trimmedText.Equals("días") || trimmedText.Equals("dias"))
             {
                 timex = "P1D";
             }
-            else if (trimedText.Equals("semana") || trimedText.Equals("semanas"))
+            else if (trimmedText.Equals("semana") || trimmedText.Equals("semanas"))
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("mes") || trimedText.Equals("meses"))
+            else if (trimmedText.Equals("mes") || trimmedText.Equals("meses"))
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("año") || trimedText.Equals("años"))
+            else if (trimmedText.Equals("año") || trimmedText.Equals("años"))
             {
                 timex = "P1Y";
             }

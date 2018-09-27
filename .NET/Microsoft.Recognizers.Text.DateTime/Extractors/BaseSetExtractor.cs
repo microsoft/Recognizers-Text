@@ -2,8 +2,6 @@
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseSetExtractor : IDateTimeExtractor
@@ -118,8 +116,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (match.Success)
                 {
-                    var trimedText = text.Remove(match.Index, match.Length);
-                    var ers = extractor.Extract(trimedText, reference);
+                    var trimmedText = text.Remove(match.Index, match.Length);
+                    var ers = extractor.Extract(trimmedText, reference);
                     foreach (var er in ers)
                     {
                         if (er.Start <= match.Index && (er.Start+er.Length) > match.Index)
@@ -136,10 +134,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (match.Success)
                 {
-                    var trimedText = text.Remove(match.Index, match.Length);
-                    trimedText = trimedText.Insert(match.Index, match.Groups["weekday"].ToString());
+                    var trimmedText = text.Remove(match.Index, match.Length);
+                    trimmedText = trimmedText.Insert(match.Index, match.Groups["weekday"].ToString());
 
-                    var ers = extractor.Extract(trimedText, reference);
+                    var ers = extractor.Extract(trimmedText, reference);
                     foreach (var er in ers)
                     {
                         if (er.Start <= match.Index && er.Text.Contains(match.Groups["weekday"].Value))

@@ -9,7 +9,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "192"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -23,7 +25,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "192"
-        }
+        },
+        "Start": 0,
+        "End": 2
       },
       {
         "Text": "168",
@@ -31,7 +35,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "168"
-        }
+        },
+        "Start": 4,
+        "End": 6
       },
       {
         "Text": "1",
@@ -39,7 +45,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1"
-        }
+        },
+        "Start": 8,
+        "End": 8
       },
       {
         "Text": "2",
@@ -47,7 +55,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2"
-        }
+        },
+        "Start": 10,
+        "End": 10
       }
     ]
   },
@@ -86,7 +96,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "0.08"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -110,7 +122,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "0.23456"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -124,7 +138,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "4.8"
-        }
+        },
+        "Start": 0,
+        "End": 4
       }
     ]
   },
@@ -138,7 +154,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "103.666666666667"
-        }
+        },
+        "Start": 0,
+        "End": 35
       }
     ]
   },
@@ -152,7 +170,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "16"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -166,7 +186,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.666666666666667"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -180,7 +202,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "116"
-        }
+        },
+        "Start": 0,
+        "End": 22
       }
     ]
   },
@@ -194,7 +218,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "106"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -208,7 +234,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "161"
-        }
+        },
+        "Start": 0,
+        "End": 24
       }
     ]
   },
@@ -222,7 +250,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1E-12"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -236,7 +266,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1E-10"
-        }
+        },
+        "Start": 0,
+        "End": 20
       }
     ]
   },
@@ -250,7 +282,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "6"
-        }
+        },
+        "Start": 1,
+        "End": 13
       }
     ]
   },
@@ -264,7 +298,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "36"
-        }
+        },
+        "Start": 1,
+        "End": 8
       }
     ]
   },
@@ -278,7 +314,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "12"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -292,7 +330,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "36"
-        }
+        },
+        "Start": 1,
+        "End": 12
       }
     ]
   },
@@ -306,7 +346,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "324"
-        }
+        },
+        "Start": 1,
+        "End": 28
       }
     ]
   },
@@ -320,7 +362,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1234567"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -334,7 +378,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1"
-        }
+        },
+        "Start": 0,
+        "End": 0
       },
       {
         "Text": "234",
@@ -342,7 +388,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "234"
-        }
+        },
+        "Start": 3,
+        "End": 5
       },
       {
         "Text": "567",
@@ -350,7 +398,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "567"
-        }
+        },
+        "Start": 8,
+        "End": 10
       }
     ]
   },
@@ -364,7 +414,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "9.2321312"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -378,7 +430,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "-9.2321312"
-        }
+        },
+        "Start": 1,
+        "End": 10
       }
     ]
   },
@@ -392,7 +446,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "-1"
-        }
+        },
+        "Start": 1,
+        "End": 2
       }
     ]
   },
@@ -406,7 +462,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "-0.8"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -420,7 +478,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "-1.8"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -434,7 +494,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "3"
-        }
+        },
+        "Start": 0,
+        "End": 4
       }
     ]
   },
@@ -448,7 +510,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "123456789101231"
-        }
+        },
+        "Start": 1,
+        "End": 15
       }
     ]
   },
@@ -462,7 +526,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "-123456789101231"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -476,7 +542,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "-123456789101231"
-        }
+        },
+        "Start": 1,
+        "End": 16
       }
     ]
   },
@@ -490,7 +558,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1"
-        }
+        },
+        "Start": 0,
+        "End": 0
       }
     ]
   },
@@ -504,7 +574,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "10000"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -518,7 +590,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "10000000000"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -532,7 +606,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "-10000"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -546,7 +622,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2000000"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -560,7 +638,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1000000000000"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -574,7 +654,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "3"
-        }
+        },
+        "Start": 1,
+        "End": 5
       }
     ]
   },
@@ -588,7 +670,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1000000000000"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -602,7 +686,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "21000000000000"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -616,7 +702,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "21000000000300"
-        }
+        },
+        "Start": 0,
+        "End": 32
       }
     ]
   },
@@ -630,7 +718,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "21000000000300"
-        }
+        },
+        "Start": 0,
+        "End": 36
       }
     ]
   },
@@ -644,7 +734,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "52"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -658,7 +750,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "52"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -672,7 +766,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "331"
-        }
+        },
+        "Start": 0,
+        "End": 29
       }
     ]
   },
@@ -686,7 +782,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "202000"
-        }
+        },
+        "Start": 0,
+        "End": 27
       }
     ]
   },
@@ -700,7 +798,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2200"
-        }
+        },
+        "Start": 0,
+        "End": 30
       }
     ]
   },
@@ -714,7 +814,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "2330"
-        }
+        },
+        "Start": 1,
+        "End": 6
       }
     ]
   },
@@ -728,7 +830,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "200.03"
-        }
+        },
+        "Start": 1,
+        "End": 28
       }
     ]
   },
@@ -742,7 +846,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "200.71"
-        }
+        },
+        "Start": 1,
+        "End": 29
       }
     ]
   },
@@ -756,7 +862,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "10000000000"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -770,7 +878,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "8.95430243255239"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -784,7 +894,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "32200"
-        }
+        },
+        "Start": 1,
+        "End": 11
       }
     ]
   },
@@ -798,7 +910,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "70"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -812,7 +926,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "52"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -826,7 +942,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "2.25"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -840,7 +958,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.75"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -854,7 +974,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.125"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -868,7 +990,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.625"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -882,7 +1006,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.5"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -896,7 +1022,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.75"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -910,7 +1038,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "20.6"
-        }
+        },
+        "Start": 0,
+        "End": 22
       }
     ]
   },
@@ -924,7 +1054,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "4.6"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -938,7 +1070,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "23.6"
-        }
+        },
+        "Start": 0,
+        "End": 32
       }
     ]
   },
@@ -952,7 +1086,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "200440.6"
-        }
+        },
+        "Start": 0,
+        "End": 48
       }
     ]
   },
@@ -966,7 +1102,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1.5"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -980,7 +1118,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1.25"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -994,7 +1134,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "5.25"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -1008,7 +1150,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "100.75"
-        }
+        },
+        "Start": 0,
+        "End": 29
       }
     ]
   },
@@ -1022,7 +1166,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.01"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -1036,7 +1182,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "8.95430243255239"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -1050,7 +1198,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "0.4"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -1064,7 +1214,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "-0.0004"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -1078,7 +1230,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "-8.95430243255239"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -1092,7 +1246,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "-0.4"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -1106,7 +1262,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "-8.95430243255239"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1120,7 +1278,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "-1.2732E+15"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -1134,7 +1294,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "1.232E+15"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1148,7 +1310,9 @@
         "Resolution": {
           "subtype": "power",
           "value": "-1.2"
-        }
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -1162,7 +1326,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "1200000000"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -1176,7 +1342,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.2"
-        }
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -1190,7 +1358,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1E-07"
-        }
+        },
+        "Start": 0,
+        "End": 29
       }
     ]
   },
@@ -1204,7 +1374,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.2"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1218,7 +1390,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.6"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1232,7 +1406,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "4"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -1246,7 +1422,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "3.2"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1260,7 +1438,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "4.2"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1274,7 +1454,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.0476190476190476"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1288,7 +1470,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.04"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -1302,7 +1486,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.142857142857143"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -1316,7 +1502,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.142857142857143"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -1330,7 +1518,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.8"
-        }
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -1344,7 +1534,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "26"
-        }
+        },
+        "Start": 0,
+        "End": 28
       }
     ]
   },
@@ -1358,7 +1550,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "2.85714285714286"
-        }
+        },
+        "Start": 0,
+        "End": 24
       }
     ]
   },
@@ -1372,7 +1566,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "26.4"
-        }
+        },
+        "Start": 0,
+        "End": 28
       }
     ]
   },
@@ -1386,7 +1582,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "26.4"
-        }
+        },
+        "Start": 0,
+        "End": 28
       }
     ]
   },
@@ -1400,7 +1598,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "26.4"
-        }
+        },
+        "Start": 0,
+        "End": 32
       }
     ]
   },
@@ -1414,7 +1614,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "130.4"
-        }
+        },
+        "Start": 0,
+        "End": 36
       }
     ]
   },
@@ -1428,7 +1630,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "2.85714285714286"
-        }
+        },
+        "Start": 0,
+        "End": 24
       }
     ]
   },
@@ -1442,7 +1646,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.00952380952380952"
-        }
+        },
+        "Start": 0,
+        "End": 20
       }
     ]
   },
@@ -1456,7 +1662,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.00952380952380952"
-        }
+        },
+        "Start": 0,
+        "End": 24
       }
     ]
   },
@@ -1470,7 +1678,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.0995024875621891"
-        }
+        },
+        "Start": 0,
+        "End": 30
       }
     ]
   },
@@ -1484,7 +1694,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1498,7 +1710,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.0476190476190476"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -1512,7 +1726,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.00826446280991736"
-        }
+        },
+        "Start": 0,
+        "End": 32
       }
     ]
   },
@@ -1526,7 +1742,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1540,7 +1758,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -1554,7 +1774,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -1568,7 +1790,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.05"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -1582,7 +1806,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.05"
-        }
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
@@ -1596,7 +1822,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.01"
-        }
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -1610,7 +1838,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.008"
-        }
+        },
+        "Start": 0,
+        "End": 35
       }
     ]
   },
@@ -1624,7 +1854,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1900"
-        }
+        },
+        "Start": 0,
+        "End": 27
       }
     ]
   },
@@ -1643,7 +1875,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "-1900"
-        }
+        },
+        "Start": 14,
+        "End": 50
       }
     ]
   },
@@ -1657,7 +1891,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "-1900"
-        }
+        },
+        "Start": 14,
+        "End": 47
       }
     ]
   },
@@ -1671,7 +1907,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "-1"
-        }
+        },
+        "Start": 14,
+        "End": 22
       }
     ]
   },
@@ -1685,7 +1923,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "-2.85714285714286"
-        }
+        },
+        "Start": 14,
+        "End": 44
       }
     ]
   },
@@ -1699,7 +1939,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "-0.05"
-        }
+        },
+        "Start": 14,
+        "End": 33
       }
     ]
   },
@@ -1713,7 +1955,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "-5.5"
-        }
+        },
+        "Start": 14,
+        "End": 34
       }
     ]
   },
@@ -1727,7 +1971,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "-5"
-        }
+        },
+        "Start": 14,
+        "End": 20
       }
     ]
   },
@@ -1741,7 +1987,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.25"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1755,7 +2003,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.125"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -1769,7 +2019,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.625"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -1783,7 +2035,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1900"
-        }
+        },
+        "Start": 0,
+        "End": 27
       }
     ]
   },
@@ -1797,13 +2051,15 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.333333333333333"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
   {
     "Input": "1 in twenty-one",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1",
@@ -1811,7 +2067,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1"
-        }
+        },
+        "Start": 0,
+        "End": 0
       },
       {
         "Text": "twenty-one",
@@ -1819,7 +2077,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "21"
-        }
+        },
+        "Start": 5,
+        "End": 14
       }
     ]
   },
@@ -1833,7 +2093,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "0.625"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1847,7 +2109,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1234567"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -1861,7 +2125,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "40000"
-        }
+        },
+        "Start": 0,
+        "End": 5
       },
       {
         "Text": "40 000",
@@ -1869,7 +2135,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "40000"
-        }
+        },
+        "Start": 22,
+        "End": 27
       }
     ]
   },
@@ -1883,13 +2151,15 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1414021100"
-        }
+        },
+        "Start": 31,
+        "End": 43
       }
     ]
   },
   {
     "Input": "423 0000 will be recognized as two numbers.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "423",
@@ -1897,7 +2167,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "423"
-        }
+        },
+        "Start": 0,
+        "End": 2
       },
       {
         "Text": "0000",
@@ -1905,7 +2177,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "0"
-        }
+        },
+        "Start": 4,
+        "End": 7
       },
       {
         "Text": "two",
@@ -1913,7 +2187,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2"
-        }
+        },
+        "Start": 31,
+        "End": 33
       }
     ]
   },
@@ -1927,7 +2203,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "1234567.89"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1941,7 +2219,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "0"
-        }
+        },
+        "Start": 0,
+        "End": 3
       },
       {
         "Text": "0",
@@ -1949,7 +2229,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "0"
-        }
+        },
+        "Start": 8,
+        "End": 8
       }
     ]
   },
@@ -1963,7 +2245,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "5"
-        }
+        },
+        "Start": 20,
+        "End": 20
       },
       {
         "Text": "17",
@@ -1971,7 +2255,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "17"
-        }
+        },
+        "Start": 22,
+        "End": 23
       },
       {
         "Text": "2018",
@@ -1979,13 +2265,15 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2018"
-        }
+        },
+        "Start": 25,
+        "End": 28
       }
     ]
   },
   {
     "Input": "My phone number is +1-222-2222/2222",
-    "NotSupported": "javascript,java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1",
@@ -1993,7 +2281,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1"
-        }
+        },
+        "Start": 20,
+        "End": 20
       },
       {
         "Text": "222",
@@ -2001,7 +2291,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "222"
-        }
+        },
+        "Start": 22,
+        "End": 24
       },
       {
         "Text": "2222",
@@ -2009,7 +2301,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2222"
-        }
+        },
+        "Start": 26,
+        "End": 29
       },
       {
         "Text": "2222",
@@ -2017,7 +2311,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2222"
-        }
+        },
+        "Start": 31,
+        "End": 34
       }
     ]
   },
@@ -2031,7 +2327,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "1000000"
-        }
+        },
+        "Start": 15,
+        "End": 16
       }
     ]
   },
@@ -2049,7 +2347,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "321"
-        }
+        },
+        "Start": 15,
+        "End": 30
       }
     ]
   },
@@ -2062,7 +2362,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "4321"
-        }
+        },
+        "Start": 0,
+        "End": 26
       }
     ]
   },
@@ -2075,14 +2377,18 @@
         "TypeName": "number",
         "Resolution": {
           "value": "4300"
-        }
+        },
+        "Start": 0,
+        "End": 19
       },
       {
         "Text": "0",
         "TypeName": "number",
         "Resolution": {
           "value": "0"
-        }
+        },
+        "Start": 25,
+        "End": 25
       },
       {
         "Text": "two",
@@ -2090,7 +2396,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2"
-        }
+        },
+        "Start": 31,
+        "End": 33
       }
     ]
   },
@@ -2104,14 +2412,18 @@
         "Resolution": {
           "subtype": "integer",
           "value": "4000"
-        }
+        },
+        "Start": 0,
+        "End": 3
       },
       {
         "Text": "3 hundred and 21",
         "TypeName": "number",
         "Resolution": {
           "value": "321"
-        }
+        },
+        "Start": 5,
+        "End": 20
       },
       {
         "Text": "two",
@@ -2119,7 +2431,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2"
-        }
+        },
+        "Start": 26,
+        "End": 28
       }
     ]
   },
@@ -2132,14 +2446,18 @@
         "TypeName": "number",
         "Resolution": {
           "value": "300"
-        }
+        },
+        "Start": 0,
+        "End": 8
       },
       {
         "Text": "2 hundred",
         "TypeName": "number",
         "Resolution": {
           "value": "200"
-        }
+        },
+        "Start": 14,
+        "End": 22
       },
       {
         "Text": "two",
@@ -2147,7 +2465,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2"
-        }
+        },
+        "Start": 28,
+        "End": 30
       }
     ]
   },
@@ -2161,7 +2481,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "300"
-        }
+        },
+        "Start": 0,
+        "End": 8
       },
       {
         "Text": "2.12 hundred",
@@ -2169,7 +2491,9 @@
         "Resolution": {
           "subtype": "decimal",
           "value": "212"
-        }
+        },
+        "Start": 14,
+        "End": 25
       },
       {
         "Text": "two",
@@ -2177,7 +2501,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2"
-        }
+        },
+        "Start": 31,
+        "End": 33
       }
     ]
   },
@@ -2190,14 +2516,18 @@
         "TypeName": "number",
         "Resolution": {
           "value": "300"
-        }
+        },
+        "Start": 0,
+        "End": 8
       },
       {
         "Text": "negative one",
         "TypeName": "number",
         "Resolution": {
           "value": "-1"
-        }
+        },
+        "Start": 14,
+        "End": 25
       },
       {
         "Text": "two",
@@ -2205,7 +2535,9 @@
         "Resolution": {
           "subtype": "integer",
           "value": "2"
-        }
+        },
+        "Start": 31,
+        "End": 33
       }
     ]
   },
@@ -2218,7 +2550,9 @@
         "TypeName": "number",
         "Resolution": {
           "value": "301"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   }

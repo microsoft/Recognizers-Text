@@ -1,304 +1,342 @@
-[{
-  "Input": "tierce",
-  "Results": [
-    {
-      "Text": "tierce",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "3"
+[
+  {
+    "Input": "tierce",
+    "Results": [
+      {
+        "Text": "tierce",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "trois billionieme",
-  "Results": [
-    {
-      "Text": "trois billionieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "3000000000000"
+    ]
+  },
+  {
+    "Input": "trois billionieme",
+    "Results": [
+      {
+        "Text": "trois billionieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000000000"
+        },
+        "Start": 0,
+        "End": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "un trillion",
-  "Results": []
-}
-,
-{
-  "Input": "11eme",
-  "Results": [
-    {
-      "Text": "11eme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "11"
+    ]
+  },
+  {
+    "Input": "un trillion",
+    "Results": []
+  },
+  {
+    "Input": "11eme",
+    "Results": [
+      {
+        "Text": "11eme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        },
+        "Start": 0,
+        "End": 4
       }
-    }
-  ]
-}
-,
-{
-  "Input": "trois millieme",
-  "Results": [
-    {
-      "Text": "trois millieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "3000"
+    ]
+  },
+  {
+    "Input": "trois millieme",
+    "Results": [
+      {
+        "Text": "trois millieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000"
+        },
+        "Start": 0,
+        "End": 13
       }
-    }
-  ]
-}
-,
-{
-  "Input": "neuf milliardieme",
-  "Results": [
-    {
-      "Text": "neuf milliardieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "9000000000"
+    ]
+  },
+  {
+    "Input": "neuf milliardieme",
+    "Results": [
+      {
+        "Text": "neuf milliardieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "9000000000"
+        },
+        "Start": 0,
+        "End": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "22e",
-  "Results": [
-    {
-      "Text": "22e",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "22"
+    ]
+  },
+  {
+    "Input": "22e",
+    "Results": [
+      {
+        "Text": "22e",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "22"
+        },
+        "Start": 0,
+        "End": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "30e",
-  "Results": [
-    {
-      "Text": "30e",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "30"
+    ]
+  },
+  {
+    "Input": "30e",
+    "Results": [
+      {
+        "Text": "30e",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "30"
+        },
+        "Start": 0,
+        "End": 2
       }
-    }
-  ]
-}
-,
-{
-  "Input": "155e",
-  "Results": [
-    {
-      "Text": "155e",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "155"
+    ]
+  },
+  {
+    "Input": "155e",
+    "Results": [
+      {
+        "Text": "155e",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "155"
+        },
+        "Start": 0,
+        "End": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "255eme",
-  "Results": [
-    {
-      "Text": "255eme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "255"
+    ]
+  },
+  {
+    "Input": "255eme",
+    "Results": [
+      {
+        "Text": "255eme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "255"
+        },
+        "Start": 0,
+        "End": 5
       }
-    }
-  ]
-}
-,
-{
-  "Input": "500000eme",
-  "Results": [
-    {
-      "Text": "500000eme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "500000"
+    ]
+  },
+  {
+    "Input": "500000eme",
+    "Results": [
+      {
+        "Text": "500000eme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "500000"
+        },
+        "Start": 0,
+        "End": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "2eme",
-  "Results": [
-    {
-      "Text": "2eme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "2"
+    ]
+  },
+  {
+    "Input": "2eme",
+    "Results": [
+      {
+        "Text": "2eme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 3
       }
-    }
-  ]
-}
-,
-{
-  "Input": "onzieme",
-  "Results": [
-    {
-      "Text": "onzieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "11"
+    ]
+  },
+  {
+    "Input": "onzieme",
+    "Results": [
+      {
+        "Text": "onzieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        },
+        "Start": 0,
+        "End": 6
       }
-    }
-  ]
-}
-,
-{
-  "Input": "vingtieme",
-  "Results": [
-    {
-      "Text": "vingtieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "20"
+    ]
+  },
+  {
+    "Input": "vingtieme",
+    "Results": [
+      {
+        "Text": "vingtieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "20"
+        },
+        "Start": 0,
+        "End": 8
       }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt-cinquieme",
-  "Results": [
-    {
-      "Text": "vingt-cinquieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "25"
+    ]
+  },
+  {
+    "Input": "vingt-cinquieme",
+    "Results": [
+      {
+        "Text": "vingt-cinquieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25"
+        },
+        "Start": 0,
+        "End": 14
       }
-    }
-  ]
-}
-,
-{
-  "Input": "octantieme",
-  "Results": [
-    {
-      "Text": "octantieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "80"
+    ]
+  },
+  {
+    "Input": "octantieme",
+    "Results": [
+      {
+        "Text": "octantieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "80"
+        },
+        "Start": 0,
+        "End": 9
       }
-    }
-  ]
-}
-,
-{
-  "Input": "deux centieme",
-  "Results": [
-    {
-      "Text": "deux centieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "200"
+    ]
+  },
+  {
+    "Input": "deux centieme",
+    "Results": [
+      {
+        "Text": "deux centieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 0,
+        "End": 12
       }
-    }
-  ]
-}
-,
-{
-  "Input": "cent vingt cinquieme",
-  "Results": [
-    {
-      "Text": "cent vingt cinquieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "125"
+    ]
+  },
+  {
+    "Input": "cent vingt cinquieme",
+    "Results": [
+      {
+        "Text": "cent vingt cinquieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "125"
+        },
+        "Start": 0,
+        "End": 19
       }
-    }
-  ]
-}
-,
-{
-  "Input": "cent vingt-cinquieme",
-  "Results": [
-    {
-      "Text": "cent vingt-cinquieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "125"
+    ]
+  },
+  {
+    "Input": "cent vingt-cinquieme",
+    "Results": [
+      {
+        "Text": "cent vingt-cinquieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "125"
+        },
+        "Start": 0,
+        "End": 19
       }
-    }
-  ]
-}
-,
-{
-  "Input": "soixante-dixieme",
-  "Results": [
-    {
-      "Text": "soixante-dixieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "70"
+    ]
+  },
+  {
+    "Input": "soixante-dixieme",
+    "Results": [
+      {
+        "Text": "soixante-dixieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "quatre-vingtieme",
-  "Results": [
-    {
-      "Text": "quatre-vingtieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "80"
+    ]
+  },
+  {
+    "Input": "quatre-vingtieme",
+    "Results": [
+      {
+        "Text": "quatre-vingtieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "80"
+        },
+        "Start": 0,
+        "End": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "septante-huitieme",
-  "Results": [
-    {
-      "Text": "septante-huitieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "78"
+    ]
+  },
+  {
+    "Input": "septante-huitieme",
+    "Results": [
+      {
+        "Text": "septante-huitieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "78"
+        },
+        "Start": 0,
+        "End": 16
       }
-    }
-  ]
-}
-,
-{
-  "Input": "nonante-deuxieme",
-  "Results": [
-    {
-      "Text": "nonante-deuxieme",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "92"
+    ]
+  },
+  {
+    "Input": "nonante-deuxieme",
+    "Results": [
+      {
+        "Text": "nonante-deuxieme",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "92"
+        },
+        "Start": 0,
+        "End": 15
       }
-    }
-  ]
-}
-,
-{
-  "Input": "trois cent vingt seconde",
-  "Results": [
-    {
-      "Text": "trois cent vingt seconde",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "322"
+    ]
+  },
+  {
+    "Input": "trois cent vingt seconde",
+    "Results": [
+      {
+        "Text": "trois cent vingt seconde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "322"
+        },
+        "Start": 0,
+        "End": 23
       }
-    }
-  ]
-}
+    ]
+  },
+  {
+    "Input": "neuf mille neuf cent quatre-vingt-dix seconde",
+    "Results": [
+      {
+        "Text": "neuf mille neuf cent quatre-vingt-dix seconde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "9992"
+        },
+        "Start": 0,
+        "End": 44
+      }
+    ]
+  }
 ]

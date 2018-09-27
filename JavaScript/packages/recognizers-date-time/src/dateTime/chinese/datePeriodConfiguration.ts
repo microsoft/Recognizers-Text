@@ -36,6 +36,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
             RegExpUtility.getSafeRegExp(ChineseDateTime.OneWordPeriodRegex),
             RegExpUtility.getSafeRegExp(ChineseDateTime.StrictYearRegex),
             RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYear),
+            RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYearSuffixRequired),
             RegExpUtility.getSafeRegExp(ChineseDateTime.YearAndMonth),
             RegExpUtility.getSafeRegExp(ChineseDateTime.PureNumYearAndMonth),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex),
@@ -282,6 +283,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     private readonly yearAndMonthRegex: RegExp;
     private readonly pureNumberYearAndMonthRegex: RegExp;
     private readonly yearToYearRegex: RegExp;
+    private readonly YearToYearSuffixRequired: RegExp;
     private readonly chineseYearRegex: RegExp;
     private readonly seasonWithYearRegex: RegExp;
 
@@ -296,6 +298,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         this.yearAndMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearAndMonth);
         this.pureNumberYearAndMonthRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PureNumYearAndMonth);
         this.yearToYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYear);
+        this.YearToYearSuffixRequired = RegExpUtility.getSafeRegExp(ChineseDateTime.YearToYearSuffixRequired);
         this.chineseYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodYearInChineseRegex);
         this.seasonWithYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.SeasonWithYear);
     }
@@ -762,7 +765,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let match = RegExpUtility.getMatches(this.yearToYearRegex, source).pop();
         if (!match) {
-            return result;
+            let match = RegExpUtility.getMatches(this.YearToYearSuffixRequired, source).pop();
+            if (!match) {
+                return result;
+            }
         }
 
         let yearMatches = RegExpUtility.getMatches(this.config.yearRegex, source);

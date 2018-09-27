@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AroundRegex { get; }
 
-        Regex YearAfterRegex { get; }
+        Regex DateAfter { get; }
 
         Regex YearRegex { get; }
 

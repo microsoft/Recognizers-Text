@@ -1,4 +1,3 @@
-﻿using System.Collections.Generic;
 using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,6 +27,62 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             base.TestNumber();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelPercentMode-Dutch.csv", "NumberModelPercentMode-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberModelPercentMode()
+        {
+            base.TestNumber();
+        }
+       
+        /*
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModelExperimentalMode-Dutch.csv", "NumberModelExperimentalMode-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberModelExperimentalMode()
+        {
+            base.TestNumber();
+        }
+        */
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Dutch.csv", "OrdinalModel-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void OrdinalModel()
+        {
+            base.TestNumber();
+        }
+
+        /*
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Dutch.csv", "PercentModel-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void PercentModel()
+        {
+            base.TestNumber();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModelPercentMode-Dutch.csv", "PercentModelPercentMode-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void PercentModelPercentMode()
+        {
+            base.TestNumber();
+        }
+
+        /*
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModel-Dutch.csv", "NumberRangeModel-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberRangeModel()
+        {
+            base.TestNumber();
+        }
+        */
+
+        /*
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberRangeModelExperimentalMode-Dutch.csv", "NumberRangeModelExperimentalMode-Dutch#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void NumberRangeModelExperimentalMode()
+        {
+            base.TestNumber();
+        }
+        */
 
     }
 }

@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Definitions.English
 	{
 		public const string DirectUtcRegex = @"\b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}(\s*:\s*[\d]{1,2})?)?\b";
 		public const string AbbreviationsRegex = @"(\b)(AFT|AKST|AKDT|ABST|AST|ARBST|ARST|ART|ADT|ACST|AEST|AEDT|AZT|AZST|AZOT|AZOST|BST|CCST|CT|CVT|AMT|AMST|ACDT|CAST|CADT|BTT|CBT|CBST|CET|CEST|SBT|CST|CDT|CSTM|CDTM|BIT|ET|EAT|EET|EEST|ESAT|ESAST|EST|EDT|ESTM|EDTM|EGST|YEKT|FJT|FJST|GET|GMT|GNST|GNDT|GST|GTBST|HAST|HST|HADT|HDT|IST|IRST|IRDT|ISST|ISDT|JST|JDT|PETT|KST|LINT|MAGT|MAGST|MUT|MAT|MEST|MVST|MOST|WEST|MST|MDT|MSTM|MDTM|MYST|NCAST|NMST|NMDT|NPT|NZT|NZST|NZDT|NST|NDT|IRKT|KRAT|PSAT|PSAST|PST|PDT|PSTM|PDTM|PKT|PYT|PYST|RST|MSK|SAEST|SAPST|SAWST|SST|SMST|THA|SNST|SAST|SLT|SGT|TIST|TAST|TADT|TST|TOT|TOST|TRT|ULAT|UTC|VET|VLAT|AWST|WAT|ECT|WAST|WET|WPST|YAKT|PDST|PT|AWDT|COT|HKT)(\b)";
-		public const string FullNameRegex = @"\b(Afghanistan Standard Time|Alaskan Standard Time|Arab Standard Time|Arabian Standard Time|Arabic Standard Time|Argentina Standard Time|Atlantic Standard Time|AUS Central Standard Time|AUS Eastern Standard Time|Azerbaijan Standard Time|Azores Standard Time|Bahia Standard Time|Bangladesh Standard Time|Belarus Standard Time|Canada Central Standard Time|Cape Verde Standard Time|Caucasus Standard Time|Cen. Australia Standard Time|Central|Central America Standard Time|Central Asia Standard Time|Central Brazilian Standard Time|Central Europe Standard Time|Central European Standard Time|Central Pacific Standard Time|Central Standard Time|Central Standard Time|China Standard Time|Beijing time|Shanghai time|Shenzhen time|Suzhou time|Tianjian time|Chengdu time|Guangzhou time|Wuxi time|Xiamen time|Chongqing time|Shenyang time|China Time|Dateline Standard Time|E. Africa Standard Time|E. Australia Standard Time|E. Europe Standard Time|E. South America Standard Time|Eastern Time|Eastern Standard Time|Eastern Standard Time|Egypt Standard Time|Ekaterinburg Standard Time|Fiji Standard Time|FLE Standard Time|Georgian Standard Time|GMT Standard Time|Greenland Standard Time|Greenwich Standard Time|GTB Standard Time|Hawaiian Standard Time|India Standard Time|Iran Standard Time|Israel Standard Time|Jordan Standard Time|Kaliningrad Standard Time|Kamchatka Standard Time|Korea Standard Time|Libya Standard Time|Line Islands Standard Time|Magadan Standard Time|Mauritius Standard Time|Mid-Atlantic Standard Time|Middle East Standard Time|Montevideo Standard Time|Morocco Standard Time|Mountain Standard Time|Mountain Standard Time|Myanmar Standard Time|N. Central Asia Standard Time|Namibia Standard Time|Nepal Standard Time|New Zealand Standard Time|Newfoundland Standard Time|North Asia East Standard Time|North Asia Standard Time|North Korea Standard Time|Pacific SA Standard Time|Pacific Standard Time|Redmond time|Seattle time|Bellevue time|Pacific Daylight Time|Pacific Time|Pacific Standard Time|Pakistan Standard Time|Paraguay Standard Time|Romance Standard Time|Russia Time Zone 10|Russia Time Zone 11|Russia Time Zone 3|Russian Standard Time|SA Eastern Standard Time|SA Pacific Standard Time|SA Western Standard Time|Samoa Standard Time|SE Asia Standard Time|Singapore\s+(Standard\s+)?Time|South Africa Standard Time|Sri Lanka Standard Time|Syria Standard Time|Taipei Standard Time|Tasmania Standard Time|Tokyo Standard Time|Tonga Standard Time|Turkey Standard Time|Ulaanbaatar Standard Time|US Eastern Standard Time|US Mountain Standard Time|Mountain|UTC|UTC+12|UTC-02|UTC-11|Venezuela Standard Time|Vladivostok Standard Time|W. Australia Standard Time|W. Central Africa Standard Time|W. Europe Standard Time|West Asia Standard Time|West Pacific Standard Time|Yakutsk Standard Time|Pacific Daylight Saving Time|Austrialian Western Daylight Time|Colombia Time|Hong Kong Time|Austrialian West Daylight Time|Pacific|Eastern)\b";
+		public const string FullNameRegex = @"\b(Afghanistan Standard Time|Alaskan Standard Time|Arab Standard Time|Arabian Standard Time|Arabic Standard Time|Argentina Standard Time|Atlantic Standard Time|AUS Central Standard Time|AUS Eastern Standard Time|Azerbaijan Standard Time|Azores Standard Time|Bahia Standard Time|Bangladesh Standard Time|Belarus Standard Time|Canada Central Standard Time|Cape Verde Standard Time|Caucasus Standard Time|Cen. Australia Standard Time|Central America Standard Time|Central Asia Standard Time|Central Brazilian Standard Time|Europe Central Time|European Central Time|Central Europe Standard Time|Central Europe Std Time|Central European Std Time|Central European Standard Time|Central Pacific Standard Time|Central Standard Time|Central Standard Time|China Standard Time|Beijing time|Shanghai time|Shenzhen time|Suzhou time|Tianjian time|Chengdu time|Guangzhou time|Wuxi time|Xiamen time|Chongqing time|Shenyang time|China Time|Dateline Standard Time|E. Africa Standard Time|E. Australia Standard Time|E. Europe Standard Time|E. South America Standard Time|Eastern Time|Eastern Standard Time|Eastern Standard Time|Egypt Standard Time|Ekaterinburg Standard Time|Fiji Standard Time|FLE Standard Time|Georgian Standard Time|GMT Standard Time|Greenland Standard Time|Greenwich Standard Time|GTB Standard Time|Hawaiian Standard Time|India Standard Time|Iran Standard Time|Israel Standard Time|Jordan Standard Time|Kaliningrad Standard Time|Kamchatka Standard Time|Korea Standard Time|Libya Standard Time|Line Islands Standard Time|Magadan Standard Time|Mauritius Standard Time|Mid-Atlantic Standard Time|Middle East Standard Time|Montevideo Standard Time|Morocco Standard Time|Mountain Standard Time|Mountain Standard Time|Myanmar Standard Time|N. Central Asia Standard Time|Namibia Standard Time|Nepal Standard Time|New Zealand Standard Time|Newfoundland Standard Time|North Asia East Standard Time|North Asia Standard Time|North Korea Standard Time|Pacific SA Standard Time|Pacific Standard Time|Redmond time|Seattle time|Bellevue time|Pacific Daylight Time|Pacific Time|Pacific Standard Time|Pakistan Standard Time|Paraguay Standard Time|Romance Standard Time|Russia Time Zone 10|Russia Time Zone 11|Russia Time Zone 3|Russian Standard Time|SA Eastern Standard Time|SA Pacific Standard Time|SA Western Standard Time|Samoa Standard Time|SE Asia Standard Time|Singapore\s+(Standard\s+)?Time|South Africa Standard Time|Sri Lanka Standard Time|Syria Standard Time|Taipei Standard Time|Tasmania Standard Time|Tokyo Standard Time|Tonga Standard Time|Turkey Standard Time|Ulaanbaatar Standard Time|US Eastern Standard Time|US Mountain Standard Time|Mountain|UTC|UTC+12|UTC-02|UTC-11|Venezuela Standard Time|Vladivostok Standard Time|W. Australia Standard Time|W. Central Africa Standard Time|W. Europe Standard Time|West Asia Standard Time|West Pacific Standard Time|Yakutsk Standard Time|Pacific Daylight Saving Time|Austrialian Western Daylight Time|Colombia Time|Hong Kong Time|Austrialian West Daylight Time|Central Europe Time|Central European Time|Central Europe Summer Time|Central European Summer Time|Central Europe Standard Time|Central European Standard Time|Central Europe Std Time|Central European Std Time|Central|Pacific|Eastern)\b";
 		public const string LocationTimeSuffixRegex = @"((\s+|-)(timezone|time)\b)";
 		public static readonly IList<string> AmbiguousTimezoneList = new List<string>
 		{
@@ -121,7 +121,6 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "mest", 120 },
 			{ "mvst", -180 },
 			{ "most", 0 },
-			{ "west", -10000 },
 			{ "mst", -420 },
 			{ "mdt", -360 },
 			{ "mstm", -420 },
@@ -175,6 +174,7 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "ect", -10000 },
 			{ "wast", 120 },
 			{ "wet", 0 },
+			{ "west", 60 },
 			{ "wpst", 600 },
 			{ "yakt", 540 },
 			{ "pt", -420 },
@@ -220,11 +220,18 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "cape verde standard time", -60 },
 			{ "caucasus standard time", 240 },
 			{ "cen. australia standard time", 570 },
+			{ "central australia standard time", 570 },
 			{ "central america standard time", -360 },
 			{ "central asia standard time", 360 },
 			{ "central brazilian standard time", -240 },
+			{ "central europe time", 60 },
+			{ "central european time", 60 },
+			{ "central europe std time", 60 },
+			{ "central european std time", 60 },
 			{ "central europe standard time", 60 },
 			{ "central european standard time", 60 },
+			{ "central europe summer time", 120 },
+			{ "central european summer time", 120 },
 			{ "central pacific standard time", 660 },
 			{ "central standard time", -360 },
 			{ "central standard time (mexico)", -360 },
@@ -234,6 +241,8 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "e. australia standard time", 600 },
 			{ "e. europe standard time", 120 },
 			{ "e. south america standard time", -180 },
+			{ "europe central time", 60 },
+			{ "european central time", 60 },
 			{ "central", -300 },
 			{ "eastern", -240 },
 			{ "eastern standard time", -300 },
@@ -308,7 +317,15 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "vladivostok standard time", 600 },
 			{ "w. australia standard time", 480 },
 			{ "w. central africa standard time", 60 },
-			{ "w. europe standard time", 60 },
+			{ "w. europe standard time", 0 },
+			{ "western european time", 0 },
+			{ "west europe standard time", 0 },
+			{ "west europe std time", 0 },
+			{ "western europe standard time", 0 },
+			{ "western europe summer time", 60 },
+			{ "w. europe summer time", 60 },
+			{ "western european summer time", 60 },
+			{ "west europe summer time", 60 },
 			{ "west asia standard time", 300 },
 			{ "west pacific standard time", 600 },
 			{ "yakutsk standard time", 540 },

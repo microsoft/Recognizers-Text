@@ -5512,5 +5512,31 @@
         "Length": 20
       }
     ]
+  },
+  {
+    "Input": "sales where date is this decade.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "this decade",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
+        "Start": 20,
+        "Length": 11
+      }
+    ]
   }
 ]

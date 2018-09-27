@@ -420,5 +420,38 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "禮拜一",
+    "Results": [
+      {
+        "Text": "禮拜一",
+        "Type": "date",
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "後天你有空吗？",
+    "Results": [
+      {
+        "Text": "後天",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "週三",
+    "Results": [
+      {
+        "Text": "週三",
+        "Type": "date",
+        "Start": 0,
+        "Length": 2
+      }
+    ]
   }
 ]

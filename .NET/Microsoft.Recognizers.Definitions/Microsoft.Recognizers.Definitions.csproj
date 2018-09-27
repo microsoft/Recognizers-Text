@@ -33,6 +33,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BaseEmail.tt</DependentUpon>
     </Compile>
+    <Compile Update="BaseGUID.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseGUID.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseHashTag.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -256,6 +261,10 @@
     <None Update="BaseEmail.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseEmail.cs</LastGenOutput>
+    </None>
+    <None Update="BaseGUID.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseGUID.cs</LastGenOutput>
     </None>
     <None Update="BaseHashtag.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

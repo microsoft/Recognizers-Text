@@ -1,7 +1,6 @@
 [
   {
     "Input": "drie biljoenste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "drie biljoenste",
@@ -16,11 +15,11 @@
   {
     "Input": "een biljoenste",
     "Results": [],
+    "NotSupported": "dotNet",
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
     "Input": "honderd biljoenste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderd biljoenste",
@@ -34,7 +33,6 @@
   },
   {
     "Input": "11e",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "11e",
@@ -48,7 +46,6 @@
   },
   {
     "Input": "derde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "derde",
@@ -62,7 +59,6 @@
   },
   {
     "Input": "30ste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "30ste",
@@ -76,7 +72,6 @@
   },
   {
     "Input": "tweede",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweede",
@@ -90,7 +85,6 @@
   },
   {
     "Input": "elfde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "elfde",
@@ -104,7 +98,6 @@
   },
   {
     "Input": "nulde",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "nulde",
@@ -118,7 +111,6 @@
   },
   {
     "Input": "twintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "twintigste",
@@ -131,14 +123,13 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "vijfentwintigste",
-    "NotSupported": "dotNet",
+    "Input": "vijfendertigste",
     "Results": [
       {
-        "Text": "vijfentwintigste",
+        "Text": "vijfendertigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "25"
+          "value": "35"
         }
       }
     ],
@@ -146,7 +137,6 @@
   },
   {
     "Input": "eenentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eenentwintigste",
@@ -160,7 +150,6 @@
   },
   {
     "Input": "honderdvijfentwintigste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "honderdvijfentwintigste",
@@ -174,7 +163,6 @@
   },
   {
     "Input": "biljoenste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "biljoenste",
@@ -188,7 +176,6 @@
   },
   {
     "Input": "eerste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eerste",
@@ -202,7 +189,6 @@
   },
   {
     "Input": "tweehonderdste",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "tweehonderdste",
@@ -216,13 +202,256 @@
   },
   {
     "Input": "Boek een eerste klas ticket naar Amsterdam",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "eerste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdachtste",
+    "Results": [
+      {
+        "Text": "honderdachtste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "108"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdenachtste",
+    "Results": [
+      {
+        "Text": "honderdenachtste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "108"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend zestiende",
+    "Results": [
+      {
+        "Text": "tweeduizend zestiende",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2016"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "tweeduizend en zestiende",
+    "Results": [
+      {
+        "Text": "tweeduizend en zestiende",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2016"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "zeventien miljoenste",
+    "Results": [
+      {
+        "Text": "zeventien miljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "17000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vier miljoenste",
+    "Results": [
+      {
+        "Text": "vier miljoenste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "4000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vier miljoen vierhonderdduizendste",
+    "Results": [
+      {
+        "Text": "vier miljoen vierhonderdduizendste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "4400000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "drieduizend tweehonderdtwintigste",
+    "Results": [
+      {
+        "Text": "drieduizend tweehonderdtwintigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3220"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdvijfendertigste",
+    "Results": [
+      {
+        "Text": "honderdvijfendertigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "135"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdentweede",
+    "Results": [
+      {
+        "Text": "honderdentweede",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "102"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "drieduizendste",
+    "Results": [
+      {
+        "Text": "drieduizendste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdeende",
+    "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "Results": [
+      {
+        "Text": "honderdeende",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "101"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdeneende",
+    "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "Results": [
+      {
+        "Text": "honderdeneende",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "101"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdeerste",
+    "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "Results": [
+      {
+        "Text": "honderdeerste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "101"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "duizendeende",
+    "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "Results": [
+      {
+        "Text": "duizendeende",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1001"
+        }
+      }
+    ],
+    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "duizendeerste",
+    "Comment": "edge case: https://onzetaal.nl/taaladvies/honderdeneende-honderdeneerste/",
+    "Results": [
+      {
+        "Text": "duizendeerste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1001"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "achthonderdzevende",
+    "Results": [
+      {
+        "Text": "achthonderdzevende",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "807"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "driehonderdachtste",
+    "Results": [
+      {
+        "Text": "driehonderdachtste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "308"
         }
       }
     ],

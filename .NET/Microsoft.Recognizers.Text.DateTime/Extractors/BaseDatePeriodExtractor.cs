@@ -323,17 +323,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                // Match prefix
-                var match = this.config.PastRegex.Match(beforeStr);
-                if (MatchPrefixRegexInSegment(beforeStr, match))
-                {
-                    ret.Add(new Token(match.Index, duration.End));
-                    continue;
-                }
-
                 // within "Days/Weeks/Months/Years" should be handled as dateRange here
                 // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
-                match = Regex.Match(beforeStr, config.WithinNextPrefixRegex.ToString(),
+                var match = Regex.Match(beforeStr, config.WithinNextPrefixRegex.ToString(),
                     RegexOptions.RightToLeft | config.WithinNextPrefixRegex.Options);
                 if (MatchPrefixRegexInSegment(beforeStr, match))
                 {
@@ -344,15 +336,53 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (matchDate.Success && !matchTime.Success)
                     {
                         ret.Add(new Token(startToken, duration.End));
+                        continue;
                     }
                 }
 
-                // For cases like "next five days"
-                match = Regex.Match(beforeStr, config.FutureRegex.ToString(),
-                    RegexOptions.RightToLeft | config.FutureRegex.Options);
+                // Match prefix
+                match = this.config.PastRegex.Match(beforeStr);
+                var index = -1;
+
                 if (MatchPrefixRegexInSegment(beforeStr, match))
                 {
-                    ret.Add(new Token(match.Index, duration.End));
+                    index = match.Index;
+                }
+
+                if (index < 0)
+                {
+                    // For cases like "next five days"
+                    match = Regex.Match(beforeStr, config.FutureRegex.ToString(),
+                        RegexOptions.RightToLeft | config.FutureRegex.Options);
+                    if (MatchPrefixRegexInSegment(beforeStr, match))
+                    {
+                        index = match.Index;
+                    }
+                }
+
+                if (index >= 0)
+                {
+                    var prefix = beforeStr.Substring(0, index).Trim();
+                    var durationText = text.Substring(duration.Start, duration.Length);
+                    var numbersInPrefix = config.CardinalExtractor.Extract(prefix);
+                    var numbersInDuration = config.CardinalExtractor.Extract(durationText);
+
+                    // Cases like "2 upcoming days", should be supported here
+                    // Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
+                    if (numbersInPrefix.Any() && !numbersInDuration.Any())
+                    {
+                        var lastNumber = numbersInPrefix.OrderBy(t => t.Start + t.Length).Last();
+
+                        // Prefix should ends with the last number
+                        if (lastNumber.Start + lastNumber.Length == prefix.Length)
+                        {
+                            ret.Add(new Token(lastNumber.Start.Value, duration.End));
+                        }
+                    }
+                    else
+                    {
+                        ret.Add(new Token(index, duration.End));
+                    }
                     continue;
                 }
 

@@ -155,6 +155,10 @@
   },
   {
     "Input": "I'll go back at 4.22",
+    "Results": []
+  },
+  {
+    "Input": "I'll go back on 4.22",
     "Results": [
       {
         "Text": "4.22",
@@ -1648,5 +1652,10 @@
         "Length": 12
       }
     ]
+  },
+  {
+    "Input": "the face amount of its 6 1/4% convertible...",
+    "Comment": "1/4 shouldn't recognized as date here",
+    "Results": []
   }
 ]

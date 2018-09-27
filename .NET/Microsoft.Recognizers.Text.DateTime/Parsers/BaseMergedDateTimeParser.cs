@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Push, save the MOD string
-            bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasYearAfter = false;
+            bool hasBefore = false, hasAfter = false, hasSince = false, hasAround = false, hasDateAfter = false;
 
             // "InclusieModifier" means MOD should include the start/end time
             // For example, cases like "on or later than", "earlier than or in" have inclusive modifier
@@ -92,14 +92,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Text = er.Text.Substring(aroundMatch.Length);
                 modStr = aroundMatch.Value;
             }
-            else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success)
+            else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success) || (er.Type.Equals(Constants.SYS_DATETIME_DATE)))
             {
                 // This has to be put at the end of the if, or cases like "before 2012" and "after 2012" would fall into this
                 // 2012 or after/above
-                var match = Config.YearAfterRegex.Match(er.Text);
+                var match = Config.DateAfter.Match(er.Text);
                 if (match.Success && er.Text.EndsWith(match.Value))
                 {
-                    hasYearAfter = true;
+                    hasDateAfter = true;
                     er.Length -= match.Length;
                     er.Text = er.Text.Substring(0, er.Length ?? 0);
                     modStr = match.Value;
@@ -217,7 +217,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (hasYearAfter && pr.Value != null)
+            if (hasDateAfter && pr.Value != null)
             {
                 pr.Length += modStr.Length;
                 pr.Text = pr.Text + modStr;
@@ -284,15 +284,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
                     {
-                        if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, object>> valueSet && valueSet.Any())
+                        if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, string>> valueSet && valueSet.Any())
                         {
                             foreach (var values in valueSet)
                             {
                                 // This is only a sanity check, as here we only handle DatePeriod like "(StartDate,EndDate,Duration)"
                                 if (values.ContainsKey(DateTimeResolutionKey.START) && values.ContainsKey(DateTimeResolutionKey.END) && values.ContainsKey(DateTimeResolutionKey.Timex))
                                 {
-                                    var startDate = DateObject.Parse(values[DateTimeResolutionKey.START].ToString());
-                                    var endDate = DateObject.Parse(values[DateTimeResolutionKey.END].ToString());
+                                    var startDate = DateObject.Parse(values[DateTimeResolutionKey.START]);
+                                    var endDate = DateObject.Parse(values[DateTimeResolutionKey.END]);
                                     var durationStr = timexComponents[2];
                                     var datePeriodTimexType = TimexUtility.GetDatePeriodTimexType(durationStr);
                                     endDate = TimexUtility.OffsetDateObject(endDate, offset: 1, timexType: datePeriodTimexType);
@@ -301,7 +301,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                                     if (string.IsNullOrEmpty(altTimex))
                                     {
-                                        altTimex = values[DateTimeResolutionKey.Timex].ToString();
+                                        altTimex = values[DateTimeResolutionKey.Timex];
                                     }
                                 }
                             }
@@ -406,7 +406,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return null;
             }
 
-            var resolutions = new List<Dictionary<string, object>>();
+            var resolutions = new List<Dictionary<string, string>>();
             var res = new Dictionary<string, object>();
 
             var type = slot.Type;
@@ -418,14 +418,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return null;
             }
 
-            var islunar = val.IsLunar;
+            var isLunar = val.IsLunar;
             var mod = val.Mod;
-            List<string> list = null;
+            string list = null;
 
             // Resolve dates list for date periods
             if (slot.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && val.List != null)
             {
-                list = val.List.Select(o => FormatUtil.LuisDate((DateObject)o)).ToList();
+                list = string.Join(",", val.List.Select(o => FormatUtil.LuisDate((DateObject)o)).ToArray());
             }
 
             // With modifier, output Type might not be the same with type in resolution result 
@@ -438,7 +438,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddResolutionFields(res, Constants.Comment, comment);
             AddResolutionFields(res, DateTimeResolutionKey.Mod, mod);
             AddResolutionFields(res, ResolutionKey.Type, typeOutput);
-            AddResolutionFields(res, DateTimeResolutionKey.IsLunar, islunar ? islunar.ToString() : string.Empty);
+            AddResolutionFields(res, DateTimeResolutionKey.IsLunar, isLunar ? isLunar.ToString() : string.Empty);
 
             var hasTimeZone = false;
 
@@ -523,12 +523,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (p.Value is Dictionary<string, string> dictionary)
                 {
-                    var value = new Dictionary<string, object>();
+                    var value = new Dictionary<string, string>();
 
                     AddResolutionFields(value, DateTimeResolutionKey.Timex, timex);
                     AddResolutionFields(value, DateTimeResolutionKey.Mod, mod);
                     AddResolutionFields(value, ResolutionKey.Type, typeOutput);
-                    AddResolutionFields(value, DateTimeResolutionKey.IsLunar, islunar ? islunar.ToString() : string.Empty);
+                    AddResolutionFields(value, DateTimeResolutionKey.IsLunar, isLunar ? isLunar.ToString() : string.Empty);
                     AddResolutionFields(value, DateTimeResolutionKey.List, list);
 
                     if (hasTimeZone)
@@ -556,7 +556,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (resolutionPast.Count == 0 && resolutionFuture.Count == 0 && val.TimeZoneResolution == null)
             {
-                var notResolved = new Dictionary<string, object> {
+                var notResolved = new Dictionary<string, string> {
                     {
                         DateTimeResolutionKey.Timex, timex
                     },
@@ -592,16 +592,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
+        internal void AddResolutionFields(Dictionary<string, string> dic, string key, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                dic.Add(key, value);
+            }
+        }
+
         internal void AddResolutionFields(Dictionary<string, object> dic, string key, object value)
         {
-            if (value is string v)
-            {
-                if (!string.IsNullOrEmpty(v))
-                {
-                    dic.Add(key, v);
-                }
-            }
-            else if (value != null)
+            if (value != null)
             {
                 dic.Add(key, value);
             }
@@ -728,7 +729,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             else if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
                 // for a period
-                if (resolutionDic.Count > 2)
+                if (resolutionDic.Count > 2 || !string.IsNullOrEmpty(mod))
                 {
                     AddAltPeriodToResolution(resolutionDic, mod, res);
                 }
@@ -744,15 +745,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public void AddAltPeriodToResolution(Dictionary<string, string> resolutionDic, string mod, Dictionary<string, string> res)
         {
-            if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATETIME) && resolutionDic.ContainsKey(TimeTypeConstants.END_DATETIME))
+            if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATETIME) || resolutionDic.ContainsKey(TimeTypeConstants.END_DATETIME))
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, res);
             }
-            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATE) && resolutionDic.ContainsKey(TimeTypeConstants.END_DATE))
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATE) || resolutionDic.ContainsKey(TimeTypeConstants.END_DATE))
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, res);
             }
-            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_TIME) && resolutionDic.ContainsKey(TimeTypeConstants.END_TIME))
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_TIME) || resolutionDic.ContainsKey(TimeTypeConstants.END_TIME))
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
             }

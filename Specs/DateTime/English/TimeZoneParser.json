@@ -439,5 +439,47 @@
         "Length": 21
       }
     ]
+  },
+  {
+    "Input": "Book me a room at 16:30 WET.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "WET",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+00:00",
+            "UtcOffsetMins": 0
+          }
+        },
+        "Start": 24,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at 16:30 Central Europe Std Time.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Central Europe Std Time",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+01:00",
+            "UtcOffsetMins": 60
+          }
+        },
+        "Start": 24,
+        "Length": 23
+      }
+    ]
   }
 ]

@@ -34,14 +34,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             var sinceMatchPrefix = config.SincePrefixRegex.Match(er.Text);
             var sinceMatchSuffix = config.SinceSuffixRegex.Match(er.Text);
 
-            if (beforeMatch.Success && er.Text.EndsWith(beforeMatch.Value))
+            if (beforeMatch.Success && er.Text.EndsWith(beforeMatch.Value) && !IsDurationWithBeforeAndAfter(er))
             {
                 hasBefore = true;
                 er.Length -= beforeMatch.Length;
                 er.Text = er.Text.Substring(0, er.Length ?? 0);
                 modStr = beforeMatch.Value;
             }
-            else if (afterMatch.Success && er.Text.EndsWith(afterMatch.Value))
+            else if (afterMatch.Success && er.Text.EndsWith(afterMatch.Value) && !IsDurationWithBeforeAndAfter(er))
             {
                 hasAfter = true;
                 er.Length -= afterMatch.Length;
@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
-            var resolutions = new List<Dictionary<string, object>>();
+            var resolutions = new List<Dictionary<string, string>>();
             var res = new Dictionary<string, object>();
 
             var type = slot.Type;
@@ -278,7 +278,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (p.Value is Dictionary<string, string> dictionary)
                 {
-                    var value = new Dictionary<string, object>();
+                    var value = new Dictionary<string, string>();
 
                     if (!string.IsNullOrEmpty(timex))
                     {
@@ -313,7 +313,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (resolutionPast.Count == 0 && resolutionFuture.Count == 0)
             {
-                var notResolved = new Dictionary<string, object> {
+                var notResolved = new Dictionary<string, string> {
                     {
                         DateTimeResolutionKey.Timex, timex
                     }, {
@@ -514,6 +514,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        private bool IsDurationWithBeforeAndAfter(ExtractResult er)
+        {
+            return er.Metadata != null && er.Metadata.IsDurationWithBeforeAndAfter;
         }
     }
 }

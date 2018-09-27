@@ -237,7 +237,7 @@ CardinalNumberMap: !dictionary
     trillon: 1000000000000000000
     trillón: 1000000000000000000
     trillones: 1000000000000000000
-SimpleOrdinalNumberMap: !dictionary
+OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
     primero: 1
@@ -323,7 +323,7 @@ SimpleOrdinalNumberMap: !dictionary
     millonesima: 1000000
     billonesimo: 1000000000000
     billonesima: 1000000000000
-PrefixCardinalDictionary: !dictionary
+PrefixCardinalMap: !dictionary
   types: [ string, long ]
   entries:
     dos: 2 
@@ -373,7 +373,7 @@ PrefixCardinalDictionary: !dictionary
     setecientos: 700
     ochocientos: 800
     novecientos: 900
-SufixOrdinalDictionary: !dictionary
+SuffixOrdinalMap: !dictionary
   types: [ string, long ]
   entries:
     milesimo: 1000 

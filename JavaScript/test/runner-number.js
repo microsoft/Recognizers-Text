@@ -23,6 +23,8 @@ module.exports = function getNumberTestRunner(config) {
             var actual = o[0];
             var expected = o[1];
             t.is(actual.text, expected.Text, 'Result.Text');
+            t.is(actual.start, expected.Start, 'Result.Start');
+            t.is(actual.end, expected.End, 'Result.End')
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
             t.is(actual.resolution.value, expected.Resolution.value, 'Result.Resolution.value');
         });

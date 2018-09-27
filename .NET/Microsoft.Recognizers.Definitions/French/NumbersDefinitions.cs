@@ -20,13 +20,13 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string LangMarker = "Fr";
 		public const string RoundNumberIntegerRegex = @"(cent|mille|millions|million|milliard|milliards|billion|billions)";
 		public const string ZeroToNineIntegerRegex = @"(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
-		public const string TenToNineteenIntegerRegex = @"(dix[-\s]neuf|dix[-\s]huit|dix[-\s]sept|(-)?seize|(-)?quinze|(-)?quatorze|(-)?treize|(-)?douze|(-)?onze|dix)";
-		public const string TensNumberIntegerRegex = @"(quatre[-\s]vingt[-\s]dix|quatre[-\s]vingt(s)?|soixante[-\s]dix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
+		public const string TenToNineteenIntegerRegex = @"((seize|quinze|quatorze|treize|douze|onze)|dix(\Wneuf|\Whuit|\Wsept)?)";
+		public const string TensNumberIntegerRegex = @"(quatre\Wvingt(s|\Wdix)?|soixante\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
 		public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
 		public const string NegativeNumberTermsRegex = @"^[.]";
 		public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";
 		public static readonly string HundredsNumberIntegerRegex = $@"(({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))";
-		public static readonly string BelowHundredsRegex = $@"({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}[-\s]+{TenToNineteenIntegerRegex})|({TensNumberIntegerRegex}([-\s]+{ZeroToNineIntegerRegex})?)|{ZeroToNineIntegerRegex})";
+		public static readonly string BelowHundredsRegex = $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}([-\s]+({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})";
 		public static readonly string BelowThousandsRegex = $@"(({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\s+{TenToNineteenIntegerRegex})";
 		public static readonly string SupportThousandsRegex = $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
 		public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "trillionième", 1000000000000000000 },
 			{ "trillionieme", 1000000000000000000 }
 		};
-		public static readonly Dictionary<string, long> PrefixCardinalDictionary = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> PrefixCardinalMap = new Dictionary<string, long>
 		{
 			{ "deux", 2 },
 			{ "trois", 3 },
@@ -298,7 +298,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "huit cent", 800 },
 			{ "neuf cent", 900 }
 		};
-		public static readonly Dictionary<string, long> SufixOrdinalDictionary = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> SuffixOrdinalMap = new Dictionary<string, long>
 		{
 			{ "millième", 1000 },
 			{ "million", 1000000 },

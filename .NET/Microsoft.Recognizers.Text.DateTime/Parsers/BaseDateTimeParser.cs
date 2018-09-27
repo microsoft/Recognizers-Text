@@ -81,13 +81,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.Trim().ToLower();
+            var trimmedText = text.Trim().ToLower();
 
             // Handle "now"
-            var match = this.config.NowRegex.Match(trimedText);
-            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            var match = this.config.NowRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                this.config.GetMatchedNowTimex(trimedText, out string timex);
+                this.config.GetMatchedNowTimex(trimmedText, out string timex);
                 ret.Timex = timex;
                 ret.FutureValue = ret.PastValue = referenceTime;
                 ret.Success = true;
@@ -244,18 +244,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.ToLowerInvariant().Trim();
+            var trimmedText = text.ToLowerInvariant().Trim();
 
             int hour = 0, min = 0, sec = 0;
             string timeStr;
 
-            var wholeMatch = this.config.SimpleTimeOfTodayAfterRegex.Match(trimedText);
-            if (!(wholeMatch.Success && wholeMatch.Length == trimedText.Length))
+            var wholeMatch = this.config.SimpleTimeOfTodayAfterRegex.Match(trimmedText);
+            if (!(wholeMatch.Success && wholeMatch.Length == trimmedText.Length))
             {
-                wholeMatch = this.config.SimpleTimeOfTodayBeforeRegex.Match(trimedText);
+                wholeMatch = this.config.SimpleTimeOfTodayBeforeRegex.Match(trimmedText);
             }
 
-            if (wholeMatch.Success && wholeMatch.Length == trimedText.Length)
+            if (wholeMatch.Success && wholeMatch.Length == trimmedText.Length)
             {
                 var hourStr = wholeMatch.Groups[Constants.HourGroupName].Value;
                 if (string.IsNullOrEmpty(hourStr))
@@ -271,10 +271,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                var ers = this.config.TimeExtractor.Extract(trimedText, referenceTime);
+                var ers = this.config.TimeExtractor.Extract(trimmedText, referenceTime);
                 if (ers.Count != 1)
                 {
-                    ers = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + trimedText, referenceTime);
+                    ers = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + trimmedText, referenceTime);
                     if (ers.Count == 1)
                     {
                         ers[0].Start -= this.config.TokenBeforeTime.Length;
@@ -299,7 +299,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timeStr = pr.TimexStr;
             }
             
-            var match = this.config.SpecificTimeOfDayRegex.Match(trimedText);
+            var match = this.config.SpecificTimeOfDayRegex.Match(trimmedText);
 
             if (match.Success)
             {

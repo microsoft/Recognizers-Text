@@ -293,9 +293,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult MergeDateAndTimePeriods(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.Trim().ToLower();
+            var trimmedText = text.Trim().ToLower();
 
-            var er = Config.TimePeriodExtractor.Extract(trimedText, referenceTime);
+            var er = Config.TimePeriodExtractor.Extract(trimmedText, referenceTime);
             if (er.Count != 1)
             {
                 return ParseSimpleCases(text, referenceTime);
@@ -320,9 +320,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(timePeriodTimex) && timePeriodTimex.StartsWith("("))
             {
 
-                var dateResult = this.Config.DateExtractor.Extract(trimedText.Replace(er[0].Text, ""), referenceTime);
+                var dateResult = this.Config.DateExtractor.Extract(trimmedText.Replace(er[0].Text, ""), referenceTime);
 
-                var dateText = trimedText.Replace(er[0].Text, "")
+                var dateText = trimmedText.Replace(er[0].Text, "")
                     .Replace(Config.TokenBeforeDate, "").Trim();
 
                 if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text))
@@ -403,15 +403,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseSimpleCases(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.Trim().ToLower();
+            var trimmedText = text.Trim().ToLower();
 
-            var match = this.Config.PureNumberFromToRegex.Match(trimedText);
+            var match = this.Config.PureNumberFromToRegex.Match(trimmedText);
             if (!match.Success)
             {
-                match = this.Config.PureNumberBetweenAndRegex.Match(trimedText);
+                match = this.Config.PureNumberBetweenAndRegex.Match(trimmedText);
             }
 
-            if (match.Success && (match.Index == 0 || match.Index + match.Length == trimedText.Length))
+            if (match.Success && (match.Index == 0 || match.Index + match.Length == trimmedText.Length))
             {
                 // This "from .. to .." pattern is valid if followed by a Date OR "pm"
                 var hasAm = false;
@@ -445,7 +445,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Parse following date
-                var er = this.Config.DateExtractor.Extract(trimedText.Replace(match.Value, ""), referenceTime);
+                var er = this.Config.DateExtractor.Extract(trimmedText.Replace(match.Value, ""), referenceTime);
 
                 DateObject futureTime, pastTime;
                 if (er.Count > 0)
@@ -681,10 +681,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         protected virtual DateTimeResolutionResult ParseSpecificTimeOfDay(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var trimedText = text.Trim().ToLowerInvariant();
-            var timeText = trimedText;
+            var trimmedText = text.Trim().ToLowerInvariant();
+            var timeText = trimmedText;
 
-            var match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimedText);
+            var match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimmedText);
 
             // Extract early/late prefix from text if any
             bool hasEarly = false, hasLate = false;
@@ -705,10 +705,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                match = this.Config.AmDescRegex.Match(trimedText);
+                match = this.Config.AmDescRegex.Match(trimmedText);
                 if (!match.Success)
                 {
-                    match = this.Config.PmDescRegex.Match(trimedText);
+                    match = this.Config.PmDescRegex.Match(trimmedText);
                 }
 
                 if (match.Success)
@@ -743,10 +743,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginHour = beginHour + 2;
             }
 
-            match = this.Config.SpecificTimeOfDayRegex.Match(trimedText);
-            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            match = this.Config.SpecificTimeOfDayRegex.Match(trimmedText);
+            if (match.Success && match.Index == 0 && match.Length == trimmedText.Length)
             {
-                var swift = this.Config.GetSwiftPrefix(trimedText);
+                var swift = this.Config.GetSwiftPrefix(trimmedText);
 
                 var date = referenceTime.AddDays(swift).Date;
                 int day = date.Day, month = date.Month, year = date.Year;
@@ -763,21 +763,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Handle Date followed by morning, afternoon and morning, afternoon followed by Date
-            match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimedText);
+            match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimmedText);
 
             if (!match.Success)
             {
-                match = this.Config.AmDescRegex.Match(trimedText);
+                match = this.Config.AmDescRegex.Match(trimmedText);
                 if (!match.Success)
                 {
-                    match = this.Config.PmDescRegex.Match(trimedText);
+                    match = this.Config.PmDescRegex.Match(trimmedText);
                 }
             }
 
             if (match.Success)
             {
-                var beforeStr = trimedText.Substring(0, match.Index).Trim();
-                var afterStr = trimedText.Substring(match.Index + match.Length).Trim();
+                var beforeStr = trimmedText.Substring(0, match.Index).Trim();
+                var afterStr = trimmedText.Substring(match.Index + match.Length).Trim();
                 
                 // Eliminate time period, if any
                 var timePeriodErs = this.Config.TimePeriodExtractor.Extract(beforeStr);
@@ -918,6 +918,26 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var beforeStr = text.Substring(0, pr.Start ?? 0).Trim().ToLowerInvariant();
                 var afterStr = text.Substring((pr.Start ?? 0) + (pr.Length ?? 0)).Trim().ToLowerInvariant();
+
+                var numbersInSuffix = Config.CardinalExtractor.Extract(beforeStr);
+                var numbersInDuration = Config.CardinalExtractor.Extract(ers[0].Text);
+
+                // Handle cases like "2 upcoming days", "5 previous years"
+                if (numbersInSuffix.Any() && !numbersInDuration.Any())
+                {
+                    var numberEr = numbersInSuffix.First();
+                    var numberText = numberEr.Text;
+                    var durationText = ers[0].Text;
+                    var combinedText = $"{numberText} {durationText}";
+                    var combinedDurationEr = Config.DurationExtractor.Extract(combinedText, referenceTime);
+
+                    if (combinedDurationEr.Any())
+                    {
+                        pr = Config.DurationParser.Parse(combinedDurationEr.First());
+                        var startIndex = numberEr.Start.Value + numberEr.Length.Value;
+                        beforeStr = beforeStr.Substring(startIndex).Trim();
+                    }
+                }
 
                 if (pr.Value != null)
                 {

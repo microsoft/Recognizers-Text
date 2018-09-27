@@ -49,19 +49,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public override int GetSwiftYear(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim().ToLowerInvariant();
             var swift = -10;
 
-            if (PortugueseDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimedText))
+            if (PortugueseDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
 
-            if (PortugueseDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimedText))
+            if (PortugueseDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (PortugueseDatePeriodParserConfiguration.ThisPrefixRegex.IsMatch(trimedText))
+            else if (PortugueseDatePeriodParserConfiguration.ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
