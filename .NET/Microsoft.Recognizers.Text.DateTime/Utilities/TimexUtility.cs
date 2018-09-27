@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             '0','1','2','3','4','5','6','7','8','9','.'
         };
 
-        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType)
+        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject altBegin = default(DateObject), DateObject altEnd = default(DateObject))
         {
             string datePeriodTimex;
 
@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 datePeriodTimex = $"P{yearDiff}{Constants.TimexYear}";
             }
 
-            return $"({FormatUtil.LuisDate(begin)},{FormatUtil.LuisDate(end)},{datePeriodTimex})";
+            return $"({FormatUtil.LuisDate(begin, altBegin)},{FormatUtil.LuisDate(end, altEnd)},{datePeriodTimex})";
         }
 
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))

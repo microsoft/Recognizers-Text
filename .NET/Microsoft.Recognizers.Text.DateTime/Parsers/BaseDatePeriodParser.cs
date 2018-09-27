@@ -220,7 +220,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             datePeriodTimexType = DatePeriodTimexType.ByWeek;
                         }
 
-                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType);
+                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType, pastBegin, pastEnd);
 
                         ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
                         ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);

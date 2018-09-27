@@ -30,11 +30,33 @@ namespace Microsoft.Recognizers.Text.DateTime
             return string.Join("-", year.ToString("D4"), month.ToString("D2"), day.ToString("D2"));
         }
 
-        public static string LuisDate(System.DateTime date)
+        public static string LuisDate(System.DateTime date1, System.DateTime date2 = default(System.DateTime))
         {
-            return LuisDate(date.Year, date.Month, date.Day);
-        }
+            var year = date1.Year;
+            var month = date1.Month;
+            var day = date1.Day;
 
+            if (date2 != default(System.DateTime))
+            {
+                if (date2.Year != year)
+                {
+                    year = -1;
+                }
+
+                if (date2.Month != month)
+                {
+                    month = -1;
+                }
+
+                if (date2.Day != day)
+                {
+                    day = -1;
+                }
+            }
+
+            return LuisDate(year, month, day);
+        }
+        
         public static string ShortTime(int hour, int min, int second)
         {
             if (min < 0 && second < 0)
