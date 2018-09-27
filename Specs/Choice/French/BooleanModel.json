@@ -31,6 +31,7 @@
 ,
 {
   "Input": "Je crois que ça marche",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -69,7 +70,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-        "score": 0.485714285714286
+        "score": 0.4857142857142857
       }
     }
   ]
@@ -145,7 +146,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-        "score": 0.742857142857143
+        "score": 0.7428571428571429
       }
     }
 ]
