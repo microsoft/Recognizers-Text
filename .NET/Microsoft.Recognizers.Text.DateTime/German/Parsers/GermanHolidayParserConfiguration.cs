@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public override string SanitizeHolidayToken(string holiday)
         {
             return holiday
-                //.Replace(" ", "")
+                .Replace(" ", "")
                 .Replace("'", "");
         }
     }
