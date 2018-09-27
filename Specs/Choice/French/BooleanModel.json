@@ -1,210 +1,213 @@
-[{
-    "Input": "Sur",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "Sur",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 1.0
-        }
-      } 
-    ]
-  }
-  ,
-  {
-    "Input": "Je ne pense pas.",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "Je ne pense pas",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.5
-        }
+[
+{
+  "Input": "Sur",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sur",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 1.0
       }
-    ]
-  }
-  ,
-  {
-    "Input": "Je crois que ça marche",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "Je crois que ça marche",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.4666666666666667
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "non. J'ai dit le 4 juillet",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "non",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.4857142857142857
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "oui ... j'ai dit pas d'oignons",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "oui",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.52
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "J'ai dit NON pas oui!",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "NON",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.52
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "Oui. j'ai dit non",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "Oui",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.55
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "pas d'accord, ce n'est pas correct",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "pas correct",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.64
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "d'accord, c'est ok",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "d'accord",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.55
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "d'accord, ce n'est pas ok",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "pas d'accord",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.64
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "ne pas concorder",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "pas concorder",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 1.0
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "ce n'est pas ok",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "pas ok",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": false,
-          "score": 0.7
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "👌 C'est bon",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "👌",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.55
-        }
-      }
-    ]
-  }
-  ,
-  {
-    "Input": "👌👌👌",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "👌",
-        "TypeName": "boolean",
-        "Resolution": {
-          "value": true,
-          "score": 0.6
-        }
-      }
-    ]
-  }
+    } 
   ]
+}
+,
+{
+  "Input": "Je ne pense pas.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "pas",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je crois que ça marche",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ça marche",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.64
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "non. J'ai dit le 4 juillet",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "non",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.4857142857142857
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "oui... j'ai dit pas d'oignons!",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "oui",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.485714285714286
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "J'ai dit NON pas oui!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "NON",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.5
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Oui. j'ai dit non",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oui",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.52
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "pas d'accord, ce n'est pas correct",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "n'est pas correct",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.7
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "d'accord, c'est ok",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "d'accord",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.64
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "d'accord, ce n'est pas ok",
+  "NotSupported": "dotnet",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "n'est pas ok",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.742857142857143
+      }
+    }
+]
+}
+,
+{
+  "Input": "ne pas concorder",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "pas concorder",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.8
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ce n'est pas ok",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "n'est pas ok",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+        "score": 0.88
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌 C'est bon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌👌👌",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+        "score": 0.6
+      }
+    }
+  ]
+}
+]

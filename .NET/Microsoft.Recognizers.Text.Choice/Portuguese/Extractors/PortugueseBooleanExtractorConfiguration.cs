@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Choice.Portuguese
         public static readonly Regex TokenRegex = 
             new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly IDictionary<Regex, string> MapRegexes =  new Dictionary<Regex, string>()
+        public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {
             {TrueRegex, Constants.SYS_BOOLEAN_TRUE },
             {FalseRegex, Constants.SYS_BOOLEAN_FALSE }

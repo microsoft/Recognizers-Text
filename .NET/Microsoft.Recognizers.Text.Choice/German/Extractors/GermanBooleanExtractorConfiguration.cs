@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Definitions.German;
 
-namespace Microsoft.Recognizers.Text.Choice.French
+namespace Microsoft.Recognizers.Text.Choice.German
 {
-    class FrenchBooleanExtractorConfiguration : IBooleanExtractorConfiguration
+    public class GermanBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex =
             new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Choice.French
             {FalseRegex, Constants.SYS_BOOLEAN_FALSE }
         };
 
-        public FrenchBooleanExtractorConfiguration(bool onlyTopMatch = true)
+        public GermanBooleanExtractorConfiguration(bool onlyTopMatch = true)
         {
             this.OnlyTopMatch = onlyTopMatch;
         }
@@ -40,6 +40,5 @@ namespace Microsoft.Recognizers.Text.Choice.French
         public int MaxDistance => 2;
 
         public bool OnlyTopMatch { get; }
-
     }
 }
