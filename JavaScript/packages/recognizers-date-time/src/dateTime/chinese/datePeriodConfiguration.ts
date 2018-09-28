@@ -475,13 +475,14 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             if (yearNum < 10) {
                 yearNum = 0;
                 for (let index = 0; index < yearStr.length; index++) {
-                    let char = yearStr.charAt[index];
+                    let char = yearStr.charAt(index);
                     yearNum *= 10;
                     er = this.integerExtractor.extract(char).pop();
                     if (er && er.type === NumberConstants.SYS_NUM_INTEGER) {
                         yearNum += Number.parseInt(this.numberParser.parse(er).value);
                     }
                 }
+                year = yearNum;
             } else {
                 year = yearNum;
             }
@@ -781,8 +782,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
             endYear = this.convertChineseToNumber(yearMatches[1].groups('year').value);
         } else if (chineseYearMatches.length === 2) {
-            beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearchs').value);
-            endYear = this.convertChineseToNumber(chineseYearMatches[1].groups('yearchs').value);
+            beginYear = this.convertYear(chineseYearMatches[0].groups('yearchs').value, true);
+            endYear = this.convertYear(chineseYearMatches[1].groups('yearchs').value, true);
         } else if (yearMatches.length === 1 && chineseYearMatches.length === 1) {
             if (yearMatches[0].index < chineseYearMatches[0].index) {
                 beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
