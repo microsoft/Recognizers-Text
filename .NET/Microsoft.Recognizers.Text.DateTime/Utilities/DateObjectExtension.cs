@@ -111,5 +111,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59 && second >= 0 && second <= 59;
         }
+
+        public static bool IsDefaultValue(this System.DateTime datetime)
+        {
+            return datetime == default(System.DateTime);
+        }
     }
 }

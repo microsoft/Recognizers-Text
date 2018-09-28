@@ -23,11 +23,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {DatePeriodTimexType.ByYear, Constants.TimexYear }
         };
 
-        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject altBegin = default(DateObject), DateObject altEnd = default(DateObject))
+        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject alternativeBegin = default(DateObject), DateObject alternativeEnd = default(DateObject))
         {
-            var equalDurationLength = ((end - begin) == (altEnd - altBegin));
+            var equalDurationLength = ((end - begin) == (alternativeEnd - alternativeBegin));
 
-            if (altBegin == default(DateObject) || altEnd == default(DateObject))
+            if (alternativeBegin.IsDefaultValue() || alternativeEnd.IsDefaultValue())
             {
                 equalDurationLength = true;
             }
@@ -56,12 +56,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             
             var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
 
-            return $"({FormatUtil.LuisDate(begin, altBegin)},{FormatUtil.LuisDate(end, altEnd)},{datePeriodTimex})";
+            return $"({FormatUtil.LuisDate(begin, alternativeBegin)},{FormatUtil.LuisDate(end, alternativeEnd)},{datePeriodTimex})";
         }
 
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
         {
-            if (monday == default(DateObject))
+            if (monday.IsDefaultValue())
             {
                 return "XXXX-WXX";
             }
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string GenerateWeekendTimex(DateObject date = default(DateObject))
         {
-            if (date == default(DateObject))
+            if (date.IsDefaultValue())
             {
                 return "XXXX-WXX-WE";
             }
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string GenerateMonthTimex(DateObject date = default(DateObject))
         {
-            if (date == default(DateObject))
+            if (date.IsDefaultValue())
             {
                 return "XXXX-XX";
             }
@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static string GenerateYearTimex(DateObject date = default(DateObject))
         {
-            return date == default(DateObject) ? "XXXX" : date.Year.ToString("D4");
+            return date.IsDefaultValue() ? "XXXX" : date.Year.ToString("D4");
         }
 
         public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)
