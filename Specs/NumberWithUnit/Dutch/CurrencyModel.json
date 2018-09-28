@@ -272,5 +272,19 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "De kosten zijn 100元!",
+    "Results": [
+      {
+        "Text": "100元",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Chinese yuan",
+          "value": "100",
+          "isoCurrency": "CNY"
+        }
+      }
+    ]
   }
 ]
