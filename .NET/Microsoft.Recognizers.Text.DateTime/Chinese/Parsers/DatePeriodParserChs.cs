@@ -70,6 +70,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!innerResult.Success)
                 {
+                    innerResult = ParseMonthToMonth(er.Text, referenceDate);
+                }
+
+                if (!innerResult.Success)
+                {
                     innerResult = ParseYear(er.Text, referenceDate);
                 }
 
@@ -345,6 +350,91 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
                 return ret;
+            }
+            return ret;
+        }
+
+        // handle like "3月到5月", "3月和5月之间"
+        private DateTimeResolutionResult ParseMonthToMonth(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var match = DatePeriodExtractorChs.MonthToMonth.Match(text);
+
+            if (!match.Success)
+            {
+                match = DatePeriodExtractorChs.MonthToMonthSuffixRequired.Match(text);
+            }
+
+            if (match.Success)
+            {
+                var monthMatch = DatePeriodExtractorChs.MonthRegex.Matches(text);
+                var beginMonth = 0;
+                var endMonth = 0;
+
+                if (monthMatch.Count == 2)
+                {
+                    var monthFrom = monthMatch[0].Groups["month"].Value;
+                    var monthTo = monthMatch[1].Groups["month"].Value;
+                    beginMonth = ToMonthNumber(monthFrom);
+                    endMonth = ToMonthNumber(monthTo);
+                }
+
+                var currentYear = referenceDate.Year;
+                var currentMonth = referenceDate.Month;
+                var beginYearForPastResolution = currentYear;
+                var endYearForPastResolution = currentYear;
+                var beginYearForFutureResolution = currentYear;
+                var endYearForFutureResolution = currentYear;
+                var durationMonths = 0;
+
+                if (beginMonth < endMonth)
+                {
+                    // For this case, FutureValue and PastValue share the same resolution
+                    if (beginMonth < currentMonth && endMonth >= currentMonth)
+                    {
+                        // Keep the beginYear and endYear equal to currentYear
+                    }
+                    else if (beginMonth >= currentMonth)
+                    {
+                        beginYearForPastResolution = endYearForPastResolution = currentYear - 1;
+                    }
+                    else if (endMonth < currentMonth)
+                    {
+                        beginYearForFutureResolution = endYearForFutureResolution = currentYear + 1;
+                    }
+
+                    durationMonths = endMonth - beginMonth;
+                }
+                else if (beginMonth > endMonth)
+                {
+                    // For this case, FutureValue and PastValue share the same resolution
+                    if (beginMonth < currentMonth)
+                    {
+                        endYearForPastResolution = endYearForFutureResolution = currentYear + 1;
+                    }
+                    else
+                    {
+                        beginYearForPastResolution = currentYear - 1;
+                        endYearForFutureResolution = currentYear + 1;
+                    }
+
+                    durationMonths = beginMonth - endMonth;
+                }
+
+                if (durationMonths != 0)
+                {
+                    var beginDateForPastResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForPastResolution, beginMonth, 1);
+                    var endDateForPastResolution = DateObject.MinValue.SafeCreateFromValue(endYearForPastResolution, endMonth, 1);
+                    var beginDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(beginYearForFutureResolution, beginMonth, 1);
+                    var endDateForFutureResolution = DateObject.MinValue.SafeCreateFromValue(endYearForFutureResolution, endMonth, 1);
+
+                    var beginTimex = FormatUtil.LuisDate(beginDateForPastResolution, beginDateForFutureResolution);
+                    var endTimex = FormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution);
+                    ret.Timex = $"({beginTimex},{endTimex},P{durationMonths}M)";
+                    ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
+                    ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
+                    ret.Success = true;
+                }
             }
             return ret;
         }

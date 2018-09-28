@@ -17,8 +17,8 @@ namespace Microsoft.Recognizers.Definitions.English
 
 	public static class DateTimeDefinitions
 	{
-		public const string TillRegex = @"(?<till>to|till|til|until|thru|through|--|-|—|——|~|–)";
-		public const string RangeConnectorRegex = @"(?<and>and|through|to|--|-|—|——|~|–)";
+		public const string TillRegex = @"(?<till>\b(to|till|til|until|thru|through)\b|(--|-|—|——|~|–))";
+		public const string RangeConnectorRegex = @"(?<and>\b(and|through|to)\b|(--|-|—|——|~|–))";
 		public const string RelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\b";
 		public const string StrictRelativeRegex = @"\b(?<order>following|next|coming|upcoming|this|last|past|previous|current)\b";
 		public const string NextPrefixRegex = @"\b(following|next|upcoming|coming)\b";

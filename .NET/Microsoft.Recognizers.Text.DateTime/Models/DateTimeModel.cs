@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Utilities;
 
@@ -22,10 +23,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ModelResult> Parse(string query)
         {
-            return this.Parse(query, System.DateTime.Now);
+            return this.Parse(query, DateObject.Now);
         }
 
-        public List<ModelResult> Parse(string query, System.DateTime refTime)
+        public List<ModelResult> Parse(string query, DateObject refTime)
         {
             // Preprocess the query
             query = FormatUtility.Preprocess(query);
