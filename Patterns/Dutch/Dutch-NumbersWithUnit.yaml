@@ -72,7 +72,7 @@ LengthSuffixList: !dictionary
     Mile: -mijl|mijl|mijlen
     Inch: -inch|inch|inches
     Foot: -voet|voet
-    Light year: lichtjaar|lichtjaren|lj|ly
+    Light year: lichtjaar|lichtjaren|lj
     Pt: pt|imperial pint|pint
 AmbiguousLengthUnitList: !list
   types: [ string ]

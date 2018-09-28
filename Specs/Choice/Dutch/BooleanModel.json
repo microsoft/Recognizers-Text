@@ -124,5 +124,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Ik ga akkoord",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "akkoord",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga niet akkoord",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "niet",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": false,
+          "score": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Dat is vanzelfsprekend",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanzelfsprekend",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Natuurlijk gaan we dat doen!",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Natuurlijk",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.52
+        }
+      }
+    ]
   }
 ]
