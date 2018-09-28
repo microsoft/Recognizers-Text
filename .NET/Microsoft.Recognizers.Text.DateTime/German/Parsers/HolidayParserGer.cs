@@ -97,7 +97,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {"rosenmontag", GetRosenmontag},
             {"fastnacht", GetFastnacht},
             {"holythursday", GetHolyThursday},
-            {"allhallowsday", GetAllHallowsDay},
             {"memorialDayGermany", GetMemorialDayGermany},
             {"dayofrepentance", GetDayOfRepentance},
             {"totenSonntag", GetTotenSonntag},
@@ -370,9 +369,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject GetFathersDayOfYear(int year)
         {
-            return DateObject.MinValue.SafeCreateFromValue(year, 6, (from day in Enumerable.Range(1, 30)
-                                                                     where DateObject.MinValue.SafeCreateFromValue(year, 6, day).DayOfWeek == DayOfWeek.Sunday
-                                                                     select day).ElementAt(2));
+            return CalculateHolydaysByEaster(year, 39);
         }
 
         private static DateObject GetMartinLutherKingDayOfYear(int year)
@@ -430,111 +427,109 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         }
 
 
-        private static DateObject GetCheDayOfRepentance(int arg)
+        private static DateObject GetCheDayOfRepentance(int year)
         {
-            throw new NotImplementedException();
+            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
+                                                                      where DateObject.MinValue.SafeCreateFromValue(year, 9, day).DayOfWeek == DayOfWeek.Sunday
+                                                                      select day).ElementAt(2));
         }
 
-        private static DateObject GetFourthAdvent(int arg)
+        private static DateObject GetFourthAdvent(int year)
         {
-            throw new NotImplementedException();
+            return GetDateAdvent(year);
         }
 
-        private static DateObject GetThirdAdvent(int arg)
+        private static DateObject GetThirdAdvent(int year)
         {
-            throw new NotImplementedException();
+            return GetDateAdvent(year, 7);
         }
 
-        private static DateObject GetSecondAdvent(int arg)
+        private static DateObject GetSecondAdvent(int year)
         {
-            throw new NotImplementedException();
+            return GetDateAdvent(year, 14);
         }
 
-        private static DateObject GetFirstAdvent(int arg)
+        private static DateObject GetFirstAdvent(int year)
         {
-            throw new NotImplementedException();
+            return GetDateAdvent(year, 21);
         }
 
-        private static DateObject GetTotenSonntag(int arg)
+        private static DateObject GetTotenSonntag(int year)
         {
-            throw new NotImplementedException();
+            return GetDateAdvent(year, 28);
         }
 
-        private static DateObject GetDayOfRepentance(int arg)
+        private static DateObject GetDayOfRepentance(int year)
         {
-            throw new NotImplementedException();
+            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(16, 22)
+                                                                      where DateObject.MinValue.SafeCreateFromValue(year, 11, day).DayOfWeek == DayOfWeek.Wednesday
+                                                                      select day).ElementAt(0));
         }
 
-        private static DateObject GetAllHallowsDay(int arg)
+        private static DateObject GetMemorialDayGermany(int year)
         {
-            throw new NotImplementedException();
+            return GetDateAdvent(year, 35);
         }
 
-        private static DateObject GetMemorialDayGermany(int arg)
+        private static DateObject GetHolyThursday(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, -3);
         }
 
-        private static DateObject GetHolyThursday(int arg)
+        private static DateObject GetFastnacht(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, -47);
         }
 
-        private static DateObject GetFastnacht(int arg)
+        private static DateObject GetRosenmontag(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, -48);
         }
 
-        private static DateObject GetRosenmontag(int arg)
+        private static DateObject GetCorpusChristi(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, 60);
         }
 
-        private static DateObject GetCorpusChristi(int arg)
+        private static DateObject GetWhitsunday(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, 49);
         }
 
-        private static DateObject GetWhitsunday(int arg)
+        private static DateObject GetWhitMonday(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, 50);
         }
 
-        private static DateObject GetWhitMonday(int arg)
+        private static DateObject GetAscensionOfChrist(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, 39);
         }
 
-        private static DateObject GetAscensionOfChrist(int arg)
+        private static DateObject GetGoodfriday(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, -2);
         }
 
-        private static DateObject GetGoodfriday(int arg)
+        private static DateObject GetPalmsunday(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, -7);
         }
 
-        private static DateObject GetPalmsunday(int arg)
+        private static DateObject GetAshwednesday(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, -46);
         }
 
-        private static DateObject GetAshwednesday(int arg)
+        private static DateObject GetCarnival(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, -49);
         }
 
-        private static DateObject GetCarnival(int arg)
+        private static DateObject GetWeiberfastnacht(int year)
         {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year, -52);
         }
-
-        private static DateObject GetWeiberfastnacht(int arg)
-        {
-            throw new NotImplementedException();
-        }
-
 
         private static DateObject CalculateHolydaysByEaster(int year, int days = 0)
         {
@@ -554,8 +549,28 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 month++;
                 day -= 31;
             }
-            return DateObject.MinValue.SafeCreateFromValue(year, month, day + days);
+            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
         }
+
+        private static DateObject GetDateAdvent(int year, int days = 0)
+        {
+            DateObject xmas = new DateObject(year, 12, 25);
+            int weekday = (int)xmas.DayOfWeek;
+
+            DateObject aday;
+
+            if (weekday == 0)
+            {
+                aday = xmas.AddDays(-7 - days);
+            }
+            else
+            {
+                aday = xmas.AddDays(-weekday - days);
+            }
+
+            return aday;
+        }
+
 
     }
 
