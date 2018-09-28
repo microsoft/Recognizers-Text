@@ -144,18 +144,20 @@ FollowedUnit: !nestedRegex
 NumberCombinedWithUnit: !nestedRegex
   def: (?<num>\d+(\.\d*)?){UnitRegex}
   references: [UnitRegex]
+DateRangePrepositions: !simpleRegex
+  def: ((从|在|自)\s*)?
 YearToYear: !nestedRegex
-  def: ((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillRegex}|后|之后)\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\s*((之间|之内|期间|中间|间)|前|之前))?
-  references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillRegex]
+  def: ({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillRegex}|后|之后)\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\s*((之间|之内|期间|中间|间)|前|之前))?
+  references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillRegex, DateRangePrepositions]
 YearToYearSuffixRequired: !nestedRegex
-  def: ((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*(之间|之内|期间|中间|间)
-  references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillSuffixRequiredRegex]
+  def: ({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*({DatePeriodTillSuffixRequiredRegex})\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\s*(之间|之内|期间|中间|间)
+  references: [DatePeriodYearInChineseRegex, DatePeriodYearRegex, DatePeriodTillSuffixRequiredRegex, DateRangePrepositions]
 MonthToMonth: !nestedRegex
-  def: ({MonthRegex}){DatePeriodTillRegex}({MonthRegex})
-  references: [MonthRegex, DatePeriodTillRegex]
+  def: ({DateRangePrepositions})({MonthRegex}){DatePeriodTillRegex}({MonthRegex})
+  references: [MonthRegex, DatePeriodTillRegex, DateRangePrepositions]
 MonthToMonthSuffixRequired: !nestedRegex
-  def: ({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\s*(之间|之内|期间|中间|间)
-  references: [MonthRegex, DatePeriodTillSuffixRequiredRegex]
+  def: ({DateRangePrepositions})({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\s*(之间|之内|期间|中间|间)
+  references: [MonthRegex, DatePeriodTillSuffixRequiredRegex, DateRangePrepositions]
 PastRegex: !simpleRegex
   def: (?<past>(前|上|之前|近|过去))
 FutureRegex: !simpleRegex
