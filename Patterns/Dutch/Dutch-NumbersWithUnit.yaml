@@ -3,7 +3,7 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: jaren oud|jaar oud|jaar|jaren|levensjaren|jarige leeftijd|-jarige leeftijd
+    Year: jaren oud|jaar oud|jaar|jaren|levensjaren|jarige leeftijd|-jarige leeftijd|-jarige|jarige
     Month: maanden oud|maand oud|maand|maanden
     Week: week oud|weken oud|week|weken
     Day: dag oud|dagen oud|dag|dagen
