@@ -163,9 +163,9 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AllRegex = @"\b(?<all>ganz(en|es|er|e)\s+(?<unit>jahr|monat|woche|tag))\b";
 		public const string HalfRegex = @"(((ein(en|er|es|e)?)\s*)|\b)(?<half>halb(en|er|es|e)?\s+(?<unit>jahr(er|es|e)?|monat(s|e)?|woch(en|e)?|tag(en|er|es|e)?|stund(en|e)?))\b";
 		public const string ConjunctionRegex = @"\b((und(\s+für)?)|mit|für)\b";
-		public static readonly string HolidayRegex1 = $@"\b((dieses Jahr)\s*)?(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|neujahr|neujahrstag|vatertag|mayday|yuan dan|erster april|heiligabend|weihnachten|weihnachtstag|erntedankfest|halloween|yuandan|ostern|osterfest|tag der deutschen einheit|mariä himmelfahrt)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
+		public static readonly string HolidayRegex1 = $@"\b((dieses Jahr)\s*)?(?<holiday>reformationstag|reformationsfest|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erster weihnachtstag|1. weihnachtstag|erster weihnachtsfeiertag|1. weihnachtsfeiertag|zweiter weihnachtstag|zweiter weihnachtsfeiertag|2. weihnachtstag|zweiter weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|allerheiligen|tag der jugend|kindertag|frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|tag der arbeit|maifeiertag|cincodemayo|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|allerheiligen|allerseelen|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
 		public static readonly string HolidayRegex2 = $@"\b((dieses Jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
-		public static readonly string HolidayRegex3 = $@"((dieses Jahr)\s*)?(?<holiday>(canberra|ostern|columbus|thanks\s*giving|weihnachten|weihnachtstag|tag der arbeit|muttertag|vatertag|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?";
+		public static readonly string HolidayRegex3 = $@"((dieses Jahr)\s*)?(?<holiday>(canberra|columbus|thanks\s*giving|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?";
 		public const string DateTokenPrefix = "am ";
 		public const string TimeTokenPrefix = "um ";
 		public const string TokenBeforeDate = "am ";
@@ -664,6 +664,20 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
 		{
+			{ "reformationday", new string[] { "reformationstag", "reformationsfest", "gedenktagderreformation" } },
+			{ "stmartinsday", new string[] { "martinstag", "st.martin", "sanktmartin", "martinsfest", "martini" } },
+			{ "saintnicholasday", new string[] { "nikolaustag" } },
+			{ "biblicalmagiday", new string[] { "dreikönigstag", "dreikönigsfest" } },
+			{ "walpurgisnight", new string[] { "walpurgisnacht" } },
+			{ "austriannationalday", new string[] { "nationalfeiertag" } },
+			{ "immaculateconception", new string[] { "mariäempfängnis" } },
+			{ "firstchristmasday", new string[] { "weihnachten", "weihnachtstag", "ersterweihnachtstag", "1.weihnachtstag", "ersterweihnachtsfeiertag", "1.weihnachtsfeiertag" } },
+			{ "secondchristmasday", new string[] { "zweiterweihnachtstag", "zweiterweihnachtsfeiertag", "2.weihnachtstag", "zweiterweihnachtsfeiertag", "stefanitag", "stafanstag" } },
+			{ "berchtoldsday", new string[] { "berchtoldstag", "bechtelistag", "bächtelistag", "berchtelistag", "bärzelistag" } },
+			{ "saintjosephsday", new string[] { "josefstag", "joseftag", "josefitag" } },
+			{ "eastermonday", new string[] { "ostermontag" } },
+			{ "eastersunday", new string[] { "ostersonntag" } },
+			{ "swissnationalday", new string[] { "bundesfeiertag", "bundesfeier" } },
 			{ "assumptionofmary", new string[] { "mariähimmelfahrt" } },
 			{ "germanunityday", new string[] { "tagderdeutscheneinheit" } },
 			{ "easterday", new string[] { "ostern" } },
@@ -692,15 +706,16 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "christmas", new string[] { "weihnachten", "weihnachtstag" } },
 			{ "xmas", new string[] { "xmas" } },
 			{ "newyear", new string[] { "neujahr" } },
-			{ "newyearday", new string[] { "neujahrstag" } },
-			{ "newyearsday", new string[] { "neujahrstag" } },
+			{ "newyearday", new string[] { "neujahrstag", "neujahr" } },
+			{ "newyearsday", new string[] { "neujahrstag", "neujahr" } },
 			{ "inaugurationday", new string[] { "inaugurationday" } },
 			{ "groundhougday", new string[] { "murmeltiertag" } },
 			{ "valentinesday", new string[] { "valentinstag" } },
 			{ "stpatrickday", new string[] { "stpatrickday" } },
 			{ "aprilfools", new string[] { "ersterapril", "aprilscherz" } },
 			{ "stgeorgeday", new string[] { "georgstag" } },
-			{ "mayday", new string[] { "mayday" } },
+			{ "mayday", new string[] { "mayday", "maitag", "tagderarbeit", "maifeiertag" } },
+			{ "laborday", new string[] { "mayday", "maitag", "tagderarbeit", "maifeiertag" } },
 			{ "cincodemayoday", new string[] { "cinco de mayo" } },
 			{ "baptisteday", new string[] { "geburtjohannesdestäufers" } },
 			{ "usindependenceday", new string[] { "usunabhängigkeitstag" } },
