@@ -15,28 +15,46 @@ namespace Microsoft.Recognizers.Text.DateTime
             '0','1','2','3','4','5','6','7','8','9','.'
         };
 
+        private static readonly Dictionary<DatePeriodTimexType, string> DatePeriodTimexTypeToTimexSuffix = new Dictionary<DatePeriodTimexType, string>()
+        {
+            {DatePeriodTimexType.ByDay, Constants.TimexDay },
+            {DatePeriodTimexType.ByWeek, Constants.TimexWeek },
+            {DatePeriodTimexType.ByMonth, Constants.TimexMonth },
+            {DatePeriodTimexType.ByYear, Constants.TimexYear }
+        };
+
         public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject altBegin = default(DateObject), DateObject altEnd = default(DateObject))
         {
-            string datePeriodTimex;
+            var equalDurationLength = ((end - begin) == (altEnd - altBegin));
 
-            if (timexType == DatePeriodTimexType.ByDay)
+            if (altBegin == default(DateObject) || altEnd == default(DateObject))
             {
-                datePeriodTimex = $"P{(end - begin).TotalDays}{Constants.TimexDay}";
+                equalDurationLength = true;
             }
-            else if (timexType == DatePeriodTimexType.ByWeek)
+
+            var unitCount = "XX";
+
+            if (equalDurationLength)
             {
-                datePeriodTimex = $"P{(end - begin).TotalDays / 7}{Constants.TimexWeek}";
+                if (timexType == DatePeriodTimexType.ByDay)
+                {
+                    unitCount = (end - begin).TotalDays.ToString();
+                }
+                else if (timexType == DatePeriodTimexType.ByWeek)
+                {
+                    unitCount = ((end - begin).TotalDays / 7).ToString();
+                }
+                else if (timexType == DatePeriodTimexType.ByMonth)
+                {
+                    unitCount = (((end.Year - begin.Year) * 12) + (end.Month - begin.Month)).ToString();
+                }
+                else
+                {
+                    unitCount = ((end.Year - begin.Year) + (end.Month - begin.Month) / 12.0).ToString();
+                }
             }
-            else if (timexType == DatePeriodTimexType.ByMonth)
-            {
-                var monthDiff = ((end.Year - begin.Year) * 12) + (end.Month - begin.Month);
-                datePeriodTimex = $"P{monthDiff}{Constants.TimexMonth}";
-            }
-            else
-            {
-                var yearDiff = (end.Year - begin.Year) + (end.Month - begin.Month) / 12.0;
-                datePeriodTimex = $"P{yearDiff}{Constants.TimexYear}";
-            }
+            
+            var datePeriodTimex = $"P{unitCount}{DatePeriodTimexTypeToTimexSuffix[timexType]}";
 
             return $"({FormatUtil.LuisDate(begin, altBegin)},{FormatUtil.LuisDate(end, altEnd)},{datePeriodTimex})";
         }
@@ -91,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (!unitStr.Equals(Constants.TimexBusinessDay))
             {
-                if(unitStr.Equals("10Y"))
+                if (unitStr.Equals("10Y"))
                 {
                     number = number * 10;
                     unitStr = "Y";
@@ -104,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return "P" + (isLessThanDay ? "T" : "") + number.ToString(CultureInfo.InvariantCulture) + unitStr;
         }
-        
+
         public static DatePeriodTimexType GetDatePeriodTimexType(string durationTimex)
         {
             var minimumUnit = durationTimex.Substring(durationTimex.Length - 1);

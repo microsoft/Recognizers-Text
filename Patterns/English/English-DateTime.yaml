@@ -1,6 +1,6 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>to|till|til|until|thru|through|--|-|—|——|~|–)
+  def: (?<till>\b(to|till|til|until|thru|through)|(--|-|—|——|~|–))
 RangeConnectorRegex : !simpleRegex
   def: (?<and>and|through|to|--|-|—|——|~|–)
 RelativeRegex: !simpleRegex

@@ -70,6 +70,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (!innerResult.Success)
                 {
+                    innerResult = ParseMonthToMonth(er.Text, referenceDate);
+                }
+
+                if (!innerResult.Success)
+                {
                     innerResult = ParseYear(er.Text, referenceDate);
                 }
 
@@ -344,6 +349,43 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
+                return ret;
+            }
+            return ret;
+        }
+
+        // handle like "3月到5月", "3月和5月之间"
+        private DateTimeResolutionResult ParseMonthToMonth(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var match = DatePeriodExtractorChs.MonthToMonth.Match(text);
+
+            if (!match.Success)
+            {
+                match = DatePeriodExtractorChs.MonthToMonthSuffixRequired.Match(text);
+            }
+
+            if (match.Success)
+            {
+                var monthMatch = DatePeriodExtractorChs.MonthRegex.Matches(text);
+                var beginMonth = 0;
+                var endMonth = 0;
+
+                if (monthMatch.Count == 2)
+                {
+                    var monthFrom = monthMatch[0].Groups["month"].Value;
+                    var monthTo = monthMatch[1].Groups["month"].Value;
+                    beginMonth = ToMonthNumber(monthFrom);
+                    endMonth = ToMonthNumber(monthTo);
+                }
+
+                //var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
+                //var endDay = DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
+                //var beginTimex = FormatUtil.LuisDate(beginYear, 1, 1);
+                //var endTimex = FormatUtil.LuisDate(endYear, 1, 1);
+                //ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";
+                //ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
+                //ret.Success = true;
                 return ret;
             }
             return ret;
