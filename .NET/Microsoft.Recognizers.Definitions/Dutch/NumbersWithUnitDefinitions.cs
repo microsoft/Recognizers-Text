@@ -19,20 +19,20 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 	{
 		public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
 		{
-			{ "Year", "jaren oud|jaar oud|jaar|jaren|levensjaren|jarige leeftijd|-jarige leeftijd" },
+			{ "Year", "jaren oud|jaar oud|jaar|jaren|levensjaren|jarige leeftijd|-jarige leeftijd|-jarige|jarige" },
 			{ "Month", "maanden oud|maand oud|maand|maanden" },
 			{ "Week", "week oud|weken oud|week|weken" },
 			{ "Day", "dag oud|dagen oud|dag|dagen" }
 		};
 		public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
 		{
-			{ "Square kilometer", "vierkante kilometer|kilometer km2|kilometer km^2|km^2|km²|km2" },
-			{ "Square hectometer", "vierkante hectometer|hm^2|hm²|hektar|hm2" },
-			{ "Square decameter", "vierkante decameter|dam^2|dam²|dm2" },
-			{ "Square meter", "vierkante meter|m^2|m²|m2" },
-			{ "Square decimeter", "vierkante decimeter|dm^2|dm²|dm2" },
-			{ "Square centimeter", "vierkante centimeter|cm^2|cm²|cm2" },
-			{ "Square millimeter", "vierkante millimeter|mm^2|mm²|mm2" },
+			{ "Square kilometer", "vierkante km|vierkante kilometer|kilometer km2|kilometer km^2|km^2|km²|km2" },
+			{ "Square hectometer", "vierkante hm|vierkante hectometer|hm^2|hm²|hektar|hm2" },
+			{ "Square decameter", "vierkante dam|vierkante decameter|dam^2|dam²|dam2" },
+			{ "Square meter", "vierkante m|vierkante meter|m^2|m²|m2" },
+			{ "Square decimeter", "vierkante dm|vierkante decimeter|dm^2|dm²|dm2" },
+			{ "Square centimeter", "vierkante cm|vierkante centimeter|cm^2|cm²|cm2" },
+			{ "Square millimeter", "vierkante mm|vierkante millimeter|mm^2|mm²|mm2" },
 			{ "Square inch", "in2|in^2|in²" },
 			{ "Square foot", "ft2|ft^2|ft²" },
 			{ "Square mile", "vierkante mijl|mi^2|mi²|mi2" },
@@ -50,10 +50,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 			{ "Petabit", "petabit|petabits|Pb|Pbit" },
 			{ "Byte", "-byte|byte|bytes" },
 			{ "Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kByte" },
-			{ "Megabyte", "-megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|MByte" },
-			{ "Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|GByte" },
-			{ "Terabyte", "-terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|TByte" },
-			{ "Petabyte", "-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|PByte" }
+			{ "Megabyte", "-megabyte|-megabytes|megabyte|MB|megabytes|mega byte|mega bytes|MByte" },
+			{ "Gigabyte", "-gigabyte|-gigabytes|gigabyte|GB|gigabytes|giga byte|giga bytes|GByte" },
+			{ "Terabyte", "-terabyte|-terabytes|terabyte|TB|terabytes|tera byte|tera bytes|TByte" },
+			{ "Petabyte", "-petabyte|-petabytes|petabyte|PM|petabytes|peta byte|peta bytes|PByte" }
 		};
 		public static readonly IList<string> AmbiguousDimensionUnitList = new List<string>
 		{
@@ -71,18 +71,18 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 			{ "Kilometer", "km|kilometer|kilometers|kilometers" },
 			{ "Hectometer", "hm|hectometer|hectometers" },
 			{ "Decameter", "dam|decameter|decameters" },
-			{ "Meter", "m|meter|metre|meters|metres" },
+			{ "Meter", "m|meter|meters" },
 			{ "Decimeter", "dm|decimeter|decimeters" },
 			{ "Centimeter", "cm|centimeter|centimeters" },
 			{ "Millimeter", "mm|millimeter|millimeters" },
 			{ "Micrometer", "μm|micrometer|micrometers" },
-			{ "Nanometer", "nm|nanometer|nanometers" },
+			{ "Nanometer", "nm|nanometer|nanometers|millimicron" },
 			{ "Picometer", "pm|picometer|picometers" },
 			{ "Mile", "-mijl|mijl|mijlen" },
 			{ "Inch", "-inch|inch|inches" },
 			{ "Foot", "-voet|voet" },
 			{ "Light year", "lichtjaar|lichtjaren|lj" },
-			{ "Pt", "pt|pint" }
+			{ "Pt", "pt|imperial pint|pint" }
 		};
 		public static readonly IList<string> AmbiguousLengthUnitList = new List<string>
 		{
@@ -408,7 +408,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 			{ "Trinidad and Tobago dollar", "trinidad en tobagodollars|trinidad en tobagodollar|trinidad en tobago dollars|trinidad en tobago dollar|trinidad en tobago $|trinidad and tobago dollars|trinidad and tobago dollar|trinidad and tobago $|trinidad $|trinidad dollar|trinidad dollars|trinidadian dollar|trinidadian dollars|trinidadian $|ttd" },
 			{ "Tuvaluan dollar", "tuvaluaanse dollars|tuvaluaanse dollar|tuvaluaanse $|tuvaluan dollars|tuvaluan dollar|tuvaluan $" },
 			{ "Dollar", "dollars|dollar|$" },
-			{ "Chinese yuan", "chinese renminbi|chinese yuan|yuan|kuai|chinese yuan|renminbi|cny|rmb|￥" },
+			{ "Chinese yuan", "chinese renminbi|chinese yuan|yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元" },
 			{ "Fen", "fen" },
 			{ "Jiao", "jiao|mao" },
 			{ "Finnish markka", "finse mark|finse markka|suomen markka|finnish markka|finsk mark|fim|markkaa|markka" },
