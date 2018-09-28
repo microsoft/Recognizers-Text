@@ -31,10 +31,10 @@ InformationSuffixList: !dictionary
 #Information
     Bit: -bit|bit|bits
     Kilobit: kilobit|kilobits|kb|kbit
-    Megabit: megabit|megabits|Mb|Mbit
-    Gigabit: gigabit|gigabits|Gb|Gbit
-    Terabit: terabit|terabits|Tb|Tbit
-    Petabit: petabit|petabits|Pb|Pbit
+    Megabit: megabit|megabits|Mb|mb|Mbit
+    Gigabit: gigabit|gigabits|Gb|gb|Gbit
+    Terabit: terabit|terabits|Tb|tb|Tbit
+    Petabit: petabit|petabits|Pb|pb|Pbit
     Byte: -byte|byte|bytes
     Kilobyte: -kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kByte
     Megabyte: -megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|MByte
