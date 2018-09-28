@@ -1,10 +1,11 @@
 ﻿using System;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class DateObjectExtension
     {
-        public static System.DateTime Next(this System.DateTime from, DayOfWeek dayOfWeek)
+        public static DateObject Next(this DateObject from, DayOfWeek dayOfWeek)
         {
             var start = (int)from.DayOfWeek;
             var target = (int)dayOfWeek;
@@ -22,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return from.AddDays(target - start + 7);
         }
 
-        public static System.DateTime This(this System.DateTime from, DayOfWeek dayOfWeek)
+        public static DateObject This(this DateObject from, DayOfWeek dayOfWeek)
         {
             var start = (int)from.DayOfWeek;
             var target = (int)dayOfWeek;
@@ -40,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return from.AddDays(target - start);
         }
 
-        public static System.DateTime Last(this System.DateTime from, DayOfWeek dayOfWeek)
+        public static DateObject Last(this DateObject from, DayOfWeek dayOfWeek)
         {
             var start = (int)from.DayOfWeek;
             var target = (int)dayOfWeek;
@@ -58,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return from.AddDays(target - start - 7);
         }
 
-        public static System.DateTime SafeCreateFromValue(this System.DateTime datetime, int year, int month, int day)
+        public static DateObject SafeCreateFromValue(this DateObject datetime, int year, int month, int day)
         {
             if (IsValidDate(year, month, day))
             {
@@ -70,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return datetime;
         }
 
-        public static System.DateTime SafeCreateFromValue(this System.DateTime datetime, int year, int month, int day, int hour, int minute, int second)
+        public static DateObject SafeCreateFromValue(this DateObject datetime, int year, int month, int day, int hour, int minute, int second)
         {
             if (IsValidDate(year, month, day) && IsValidTime(hour, minute, second))
             {
@@ -112,9 +113,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59 && second >= 0 && second <= 59;
         }
 
-        public static bool IsDefaultValue(this System.DateTime datetime)
+        public static bool IsDefaultValue(this DateObject datetime)
         {
-            return datetime == default(System.DateTime);
+            return datetime == default(DateObject);
         }
     }
 }
