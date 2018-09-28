@@ -362,7 +362,7 @@ CurrencySuffixList: !dictionary
     Tuvaluan dollar: tuvaluan dollars|tuvaluan dollar|tuvaluan $
     Dollar: dollars|dollar|$
 #Chinese yuan
-    Chinese yuan: yuan|kuai|chinese yuan|renminbi|cny|rmb|￥
+    Chinese yuan: yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元
     Fen: fen
     Jiao: jiao|mao
 #Additional
