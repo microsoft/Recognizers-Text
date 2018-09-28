@@ -82,29 +82,35 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             #region Holiday Functions
 
             {"fathers", GetFathersDayOfYear},
-            {"easterday", EasterDay},
-            {"eastersunday", GetEasterSundayOfYear},
+            {"easterday", GetEasterDay},
+            {"eastersunday", GetEasterDay},
             {"eastermonday", GetEasterMondayOfYear},
-            // Weiberfastnacht
-            // Karneval
-            // Rosenmontag
-            // Fastnacht
-            // Aschermittwoch
-            // Palmsonntag
-            // Gründonnerstag
-            // Karfreitag
-            // Pfingstsonntag
-            // Pfingstmontag
-            // Frohnleichnam
-            // Volkstrauertag
-            // Buß und Bettag (Ges. Feiertag)
-            // Totensonntag
-            // 1.,2.,3.,4. Advent
-            // Eidg. Dank-, Buss- und Bettag 
+            {"weiberfastnacht", GetWeiberfastnacht},
+            {"carnival", GetCarnival},
+            {"ashwednesday", GetAshwednesday},
+            {"palmsunday", GetPalmsunday},
+            {"goodfriday", GetGoodfriday},
+            {"ascensionofchrist", GetAscensionOfChrist},
+            {"whitsunday", GetWhitsunday},
+            {"whitemonday", GetWhitMonday},
+            {"corpuschristi", GetCorpusChristi},
+            {"rosenmontag", GetRosenmontag},
+            {"fastnacht", GetFastnacht},
+            {"holythursday", GetHolyThursday},
+            {"allhallowsday", GetAllHallowsDay},
+            {"memorialDayGermany", GetMemorialDayGermany},
+            {"dayofrepentance", GetDayOfRepentance},
+            {"totenSonntag", GetTotenSonntag},
+            {"firstadvent", GetFirstAdvent},
+            {"secondadvent", GetSecondAdvent},
+            {"thirdadvent", GetThirdAdvent},
+            {"fourthadvent", GetFourthAdvent},
+            {"chedayofrepentance", GetCheDayOfRepentance}
             
             #endregion
 
         };
+
 
         public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.HolidayNoFixedTimex;
 
@@ -350,9 +356,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int arg)
+        private static DateObject GetEasterDay(int year)
         {
-            return DateObject.MinValue;
+            return CalculateHolydaysByEaster(year);
         }
 
         private static DateObject GetMothersDayOfYear(int year)
@@ -418,14 +424,137 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                                                                       select day).ElementAt(3));
         }
 
-        private static DateObject GetEasterMondayOfYear(int arg)
+        private static DateObject GetEasterMondayOfYear(int year)
+        {
+            return CalculateHolydaysByEaster(year, 1);
+        }
+
+
+        private static DateObject GetCheDayOfRepentance(int arg)
         {
             throw new NotImplementedException();
         }
 
-        private static DateObject GetEasterSundayOfYear(int arg)
+        private static DateObject GetFourthAdvent(int arg)
         {
             throw new NotImplementedException();
+        }
+
+        private static DateObject GetThirdAdvent(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetSecondAdvent(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetFirstAdvent(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetTotenSonntag(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetDayOfRepentance(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetAllHallowsDay(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetMemorialDayGermany(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetHolyThursday(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetFastnacht(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetRosenmontag(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetCorpusChristi(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetWhitsunday(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetWhitMonday(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetAscensionOfChrist(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetGoodfriday(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetPalmsunday(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetAshwednesday(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetCarnival(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static DateObject GetWeiberfastnacht(int arg)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        private static DateObject CalculateHolydaysByEaster(int year, int days = 0)
+        {
+
+            int day = 0;
+            int month = 3;
+
+            int g = year % 19;
+            int c = year / 100;
+            int h = (c - (int)(c / 4) - (int)((8 * c + 13) / 25) + 19 * g + 15) % 30;
+            int i = h - (int)(h / 28) * (1 - (int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11));
+
+            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
+
+            if (day > 31)
+            {
+                month++;
+                day -= 31;
+            }
+            return DateObject.MinValue.SafeCreateFromValue(year, month, day + days);
         }
 
     }
