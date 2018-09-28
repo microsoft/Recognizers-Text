@@ -72,7 +72,7 @@ QuarterRegex: !nestedRegex
 QuarterRegexYearFront: !nestedRegex #Not needed in german
   def: (?!)#({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter
   references: [ YearRegex, RelativeRegex ]
-AllHalfYearRegex: !simpleRegex
+AllHalfYearRegex: !nestedRegex
   # TODO: Check and test new regex
   def: ((das|dem|im|in dem)\s+)?(?<cardinal>erst(en|es|e)|1\.|zweit(en|es|e)|2\.|dritt(en|es|e)|3\.|viert(en|es|e)|4\.)\s+(halbjahr|hälfte)(\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex})
   references: [ YearRegex, RelativeRegex ]
@@ -119,9 +119,10 @@ NextDateRegex: !nestedRegex
 SpecialDayRegex: !nestedRegex
   def: (vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+tag)|gestern|morgen|heute)
   references: [ RelativeRegex]
-SpecialDayWithNumRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+SpecialDayWithNumRegex: !nestedRegex
+  # TODO: Check and test
+  def: \b((?<number>{WrittenNumRegex})\s+tage?\s+von\s+(?<day>gestern|morgen|heute))\b
+  references: [ WrittenNumRegex ]
 RelativeDayRegex: !nestedRegex
   def: ((((der|dem|den|des)\s+)?{RelativeRegex}\s+tag(e(s)?)?))
   references: [ RelativeRegex]
@@ -130,12 +131,12 @@ SetWeekDayRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: \b(?<wom>((dem|der|des|am|an dem)\s+)?(?<cardinal>erst(er|en|e)|1.|zweit(er|en|e)|2.|dritt(er|en|e)|3.|viert(er|en|e)|4.|fünft(er|en|e)|5.|letzt(er|en|e))\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b
   references: [ WeekDayRegex, MonthSuffixRegex ]
-RelativeWeekDayRegex: !simpleRegex
-  # TODO: Check an test new regex
+RelativeWeekDayRegex: !nestedRegex
+  # TODO: Check and test new regex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}e\s+(von\s+jetzt|später))\b
   references: [ WrittenNumRegex, WeekDayRegex ]
 WrittenNumRegex: !simpleRegex
-  # TODO: Check an test new regex
+  # TODO: Check and test new regex
   def: (ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)
 SpecialDate: !nestedRegex
   def: (?=\b(an|am|an dem)\s+){DayRegex}\b
