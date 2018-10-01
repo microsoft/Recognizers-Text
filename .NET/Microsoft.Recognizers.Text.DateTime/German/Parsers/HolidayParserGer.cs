@@ -80,30 +80,34 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             #region Holiday Functions
 
             {"fathers", GetFathersDayOfYear},
-            {"easterday", EasterDay},
-            {"eastersunday", GetEasterSundayOfYear},
+            {"easterday", GetEasterDay},
+            {"eastersunday", GetEasterDay},
             {"eastermonday", GetEasterMondayOfYear},
-            {"mothers", GetMothersDayOfYear}
-            // Weiberfastnacht
-            // Karneval
-            // Rosenmontag
-            // Fastnacht
-            // Aschermittwoch
-            // Palmsonntag
-            // Gründonnerstag
-            // Karfreitag
-            // Pfingstsonntag
-            // Pfingstmontag
-            // Frohnleichnam
-            // Volkstrauertag
-            // Buß und Bettag (Ges. Feiertag)
-            // Totensonntag
-            // 1.,2.,3.,4. Advent
-            // Eidg. Dank-, Buss- und Bettag 
+            {"weiberfastnacht", GetWeiberfastnacht},
+            {"carnival", GetCarnival},
+            {"ashwednesday", GetAshwednesday},
+            {"palmsunday", GetPalmsunday},
+            {"goodfriday", GetGoodfriday},
+            {"ascensionofchrist", GetAscensionOfChrist},
+            {"whitsunday", GetWhitsunday},
+            {"whitemonday", GetWhitMonday},
+            {"corpuschristi", GetCorpusChristi},
+            {"rosenmontag", GetRosenmontag},
+            {"fastnacht", GetFastnacht},
+            {"holythursday", GetHolyThursday},
+            {"memorialDayGermany", GetMemorialDayGermany},
+            {"dayofrepentance", GetDayOfRepentance},
+            {"totenSonntag", GetTotenSonntag},
+            {"firstadvent", GetFirstAdvent},
+            {"secondadvent", GetSecondAdvent},
+            {"thirdadvent", GetThirdAdvent},
+            {"fourthadvent", GetFourthAdvent},
+            {"chedayofrepentance", GetCheDayOfRepentance}
             
             #endregion
 
         };
+
 
         public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.HolidayNoFixedTimex;
 
@@ -349,19 +353,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
 
-        private static DateObject EasterDay(int arg)
+        private static DateObject GetEasterDay(int year)
         {
-            return DateObject.MinValue;
-        }
-
-        private static DateObject GetEasterMondayOfYear(int arg)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static DateObject GetEasterSundayOfYear(int arg)
-        {
-            throw new NotImplementedException();
+            return CalculateHolydaysByEaster(year);
         }
 
         private static DateObject GetMothersDayOfYear(int year)
@@ -373,11 +367,208 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject GetFathersDayOfYear(int year)
         {
-            //TODO Calculate correct fathers day
-            return DateObject.MinValue.SafeCreateFromValue(year, 6, (from day in Enumerable.Range(1, 30)
-                                                                     where DateObject.MinValue.SafeCreateFromValue(year, 6, day).DayOfWeek == DayOfWeek.Sunday
+            return CalculateHolydaysByEaster(year, 39);
+        }
+
+        private static DateObject GetMartinLutherKingDayOfYear(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 1, (from day in Enumerable.Range(1, 31)
+                                                                     where DateObject.MinValue.SafeCreateFromValue(year, 1, day).DayOfWeek == DayOfWeek.Monday
                                                                      select day).ElementAt(2));
         }
+
+        private static DateObject GetWashingtonsBirthdayOfYear(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 2, (from day in Enumerable.Range(1, 29)
+                                                                     where DateObject.MinValue.SafeCreateFromValue(year, 2, day).DayOfWeek == DayOfWeek.Monday
+                                                                     select day).ElementAt(2));
+        }
+
+        private static DateObject GetCanberraDayOfYear(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 3, (from day in Enumerable.Range(1, 31)
+                                                                     where DateObject.MinValue.SafeCreateFromValue(year, 3, day).DayOfWeek == DayOfWeek.Monday
+                                                                     select day).ElementAt(0));
+        }
+
+        private static DateObject GetMemorialDayOfYear(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 5, (from day in Enumerable.Range(1, 31)
+                                                                     where DateObject.MinValue.SafeCreateFromValue(year, 5, day).DayOfWeek == DayOfWeek.Monday
+                                                                     select day).Last());
+        }
+
+        private static DateObject GetLabourDayOfYear(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 9, (from day in Enumerable.Range(1, 30)
+                                                                     where DateObject.MinValue.SafeCreateFromValue(year, 9, day).DayOfWeek == DayOfWeek.Monday
+                                                                     select day).ElementAt(0));
+        }
+
+        private static DateObject GetColumbusDayOfYear(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 10, (from day in Enumerable.Range(1, 31)
+                                                                      where DateObject.MinValue.SafeCreateFromValue(year, 10, day).DayOfWeek == DayOfWeek.Monday
+                                                                      select day).ElementAt(1));
+        }
+
+        private static DateObject GetThanksgivingDayOfYear(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
+                                                                      where DateObject.MinValue.SafeCreateFromValue(year, 11, day).DayOfWeek == DayOfWeek.Thursday
+                                                                      select day).ElementAt(3));
+        }
+
+        private static DateObject GetEasterMondayOfYear(int year)
+        {
+            return CalculateHolydaysByEaster(year, 1);
+        }
+
+
+        private static DateObject GetCheDayOfRepentance(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
+                                                                      where DateObject.MinValue.SafeCreateFromValue(year, 9, day).DayOfWeek == DayOfWeek.Sunday
+                                                                      select day).ElementAt(2));
+        }
+
+        private static DateObject GetFourthAdvent(int year)
+        {
+            return GetDateAdvent(year);
+        }
+
+        private static DateObject GetThirdAdvent(int year)
+        {
+            return GetDateAdvent(year, 7);
+        }
+
+        private static DateObject GetSecondAdvent(int year)
+        {
+            return GetDateAdvent(year, 14);
+        }
+
+        private static DateObject GetFirstAdvent(int year)
+        {
+            return GetDateAdvent(year, 21);
+        }
+
+        private static DateObject GetTotenSonntag(int year)
+        {
+            return GetDateAdvent(year, 28);
+        }
+
+        private static DateObject GetDayOfRepentance(int year)
+        {
+            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(16, 22)
+                                                                      where DateObject.MinValue.SafeCreateFromValue(year, 11, day).DayOfWeek == DayOfWeek.Wednesday
+                                                                      select day).ElementAt(0));
+        }
+
+        private static DateObject GetMemorialDayGermany(int year)
+        {
+            return GetDateAdvent(year, 35);
+        }
+
+        private static DateObject GetHolyThursday(int year)
+        {
+            return CalculateHolydaysByEaster(year, -3);
+        }
+
+        private static DateObject GetFastnacht(int year)
+        {
+            return CalculateHolydaysByEaster(year, -47);
+        }
+
+        private static DateObject GetRosenmontag(int year)
+        {
+            return CalculateHolydaysByEaster(year, -48);
+        }
+
+        private static DateObject GetCorpusChristi(int year)
+        {
+            return CalculateHolydaysByEaster(year, 60);
+        }
+
+        private static DateObject GetWhitsunday(int year)
+        {
+            return CalculateHolydaysByEaster(year, 49);
+        }
+
+        private static DateObject GetWhitMonday(int year)
+        {
+            return CalculateHolydaysByEaster(year, 50);
+        }
+
+        private static DateObject GetAscensionOfChrist(int year)
+        {
+            return CalculateHolydaysByEaster(year, 39);
+        }
+
+        private static DateObject GetGoodfriday(int year)
+        {
+            return CalculateHolydaysByEaster(year, -2);
+        }
+
+        private static DateObject GetPalmsunday(int year)
+        {
+            return CalculateHolydaysByEaster(year, -7);
+        }
+
+        private static DateObject GetAshwednesday(int year)
+        {
+            return CalculateHolydaysByEaster(year, -46);
+        }
+
+        private static DateObject GetCarnival(int year)
+        {
+            return CalculateHolydaysByEaster(year, -49);
+        }
+
+        private static DateObject GetWeiberfastnacht(int year)
+        {
+            return CalculateHolydaysByEaster(year, -52);
+        }
+
+        private static DateObject CalculateHolydaysByEaster(int year, int days = 0)
+        {
+
+            int day = 0;
+            int month = 3;
+
+            int g = year % 19;
+            int c = year / 100;
+            int h = (c - (int)(c / 4) - (int)((8 * c + 13) / 25) + 19 * g + 15) % 30;
+            int i = h - (int)(h / 28) * (1 - (int)(h / 28) * (int)(29 / (h + 1)) * (int)((21 - g) / 11));
+
+            day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
+
+            if (day > 31)
+            {
+                month++;
+                day -= 31;
+            }
+            return DateObject.MinValue.SafeCreateFromValue(year, month, day).AddDays(days);
+        }
+
+        private static DateObject GetDateAdvent(int year, int days = 0)
+        {
+            DateObject xmas = new DateObject(year, 12, 25);
+            int weekday = (int)xmas.DayOfWeek;
+
+            DateObject aday;
+
+            if (weekday == 0)
+            {
+                aday = xmas.AddDays(-7 - days);
+            }
+            else
+            {
+                aday = xmas.AddDays(-weekday - days);
+            }
+
+            return aday;
+        }
+
 
     }
 
