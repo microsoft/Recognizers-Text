@@ -82,6 +82,9 @@ PrefixDayRegex: !simpleRegex
 CenturySuffixRegex: !simpleRegex
   # TODO: Check and test new regex
   def: (^jahrhundert)\b
+ReferencePrefixRegex: !simpleRegex
+  # TODO: Check and test new regex
+  def: ((gleich(e|en))|(selb(e|en)))\b
 SeasonRegex: !nestedRegex
   def: \b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b
   references: [ YearRegex, RelativeRegex ]
@@ -295,12 +298,14 @@ PureNumFromTo: !nestedRegex
 PureNumBetweenAnd: !nestedRegex
   def: \b(zwischen\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?\b
   references: [ HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangeConnectorRegex ]
-SpecificTimeFromTo: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-SpecificTimeBetweenAnd: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+SpecificTimeFromTo: !nestedRegex
+  # TODO: Check and test new regex
+  def: ((von|zwischen)\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{TillRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
+  references: [ TimeRegex2, TillRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex ]
+SpecificTimeBetweenAnd: !nestedRegex
+  # TODO: Check and test new regex
+  def: (zwischen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
+  references: [ TimeRegex2, RangeConnectorRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex ]
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(um|am|vom|von|in)(\s+(der|dem|den))?$)
 TimeOfDayRegex: !simpleRegex
@@ -346,11 +351,11 @@ PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b((((am|von|in der)\s+)?{TimeOfDayRegex}(\s+am)?))\b
  references: [ TimeOfDayRegex]
 LessThanRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: Check and test new regex
+  def: \b(weniger\s+als)\b
 MoreThanRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: Check and test new regex
+  def: \b(mehr\s+als)\b
 DurationUnitRegex: !simpleRegex
   def: (?<unit>jahr(en|es|e)?|monat(en|e|s)?|woche(n)?|tag(en|es|e)?|stund(en|e)?|std|minute(n)?|min|sekunde(n)?|sek)\b
 SuffixAndRegex: !simpleRegex
@@ -378,8 +383,8 @@ AnUnitRegex: !nestedRegex
   def: \b(((ein(er|es|en|em|e)?)(?<half>\s+halb(es|er|en|e))?))\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: Check and test new regex
+  def: \b(während|im\slaufe)\s+(des|der)\s+(?<unit>jahres|monats|woche|tages)\b
 AllRegex: !simpleRegex
   def: \b(?<all>ganz(en|es|er|e)\s+(?<unit>jahr|monat|woche|tag))\b
 HalfRegex: !simpleRegex
@@ -412,15 +417,16 @@ SinceRegex: !simpleRegex
 AgoRegex: !simpleRegex
   def: \b(ago)\b
 AroundRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: Check and test new regex
+  def: (\b(ca|gegen|circa)\s*\b)
 LaterRegex: !simpleRegex
   def: \b(später|von jetzt an)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
-WithinNextPrefixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+WithinNextPrefixRegex: !nestedRegex
+  # TODO: Check and test new regex
+  def: \b(innerhalb|während(\s+der|des)?(\s+(?<next>{NextPrefixRegex}))?)\b
+  references: [ NextPrefixRegex ]
 AmPmDescRegex: !simpleRegex
   def: (ampm)
 MorningStartEndRegex: !simpleRegex
@@ -442,9 +448,10 @@ RelativeTimeUnitRegex: !nestedRegex
 RelativeDurationUnitRegex: !nestedRegex
   def: (((?<=({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s*)({DurationUnitRegex})))
   references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
-ReferenceDatePeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+ReferenceDatePeriodRegex: !nestedRegex
+  # TODO: Check and test new regex
+  def: \b{ReferencePrefixRegex}\s+(?<duration>tag|monat|jahr|jahrzehnt|wochenende)\b
+  references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|für|t|gegen)$
 FromToRegex: !simpleRegex
@@ -452,8 +459,8 @@ FromToRegex: !simpleRegex
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
 UnspecificDatePeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: Check and test new regex
+  def: ^(woche|wochenende|woche|monat|jahr)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(am|in|um|gegen|von|vom|zum)$
 FlexibleDayRegex: !simpleRegex
@@ -490,8 +497,8 @@ DurationConnectorRegex: !simpleRegex
 PrefixArticleRegex: !simpleRegex
   def: \b(der|dem|des)?\s+
 OrRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: Check and test new regex
+  def: \s*((\b|,\s*)(oder|und)\b|,)\s*
 YearPlusNumberRegex: !simpleRegex
   def: \b(Jahr\s+(?<number>(\d{3,4})))\b
 NumberAsTimeRegex: !nestedRegex
@@ -503,35 +510,40 @@ TimeBeforeAfterRegex: !nestedRegex
 DateNumberConnectorRegex: !simpleRegex
   def: \s*(?<connector>am)\s*
 CenturyRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: Check and test new regex
+  def: \b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\b
 DecadeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
+  # TODO: Check and test new regex
   def: (?<decade>zwanziger|dreißiger|vierziger|fünfziger|sechziger|siebziger|achtziger|neunziger|zweitausender)(n)?
 DecadeWithCenturyRegex: !nestedRegex
-  def: (the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))
+  def: (die\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(und\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(und\s+)?(?<decade>zehner|hunderter)))
   references: [ CenturyRegex, DecadeRegex ]
-RelativeDecadeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-FullTextYearRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+RelativeDecadeRegex: !nestedRegex
+  # TODO: Check and test new regex
+  def: \b((das|die\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?jahrzehnte?)\b
+  references: [ RelativeRegex ]
+FullTextYearRegex: !nestedRegex
+  # TODO: Check and test new regex
+  def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
+  references: [ CenturyRegex, WrittenNumRegex ]
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
 YearAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
+  # Does not exist in English
   def: ^[.]
-YearPeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: (für|über)\s*(\d\s*)(Jahr(en|e)?)
+YearPeriodRegex: !nestedRegex
+  # TODO: Check and test new regex
+  def: ((((von|während|zwischen)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((zwischen)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
+  references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 FutureSuffixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-ComplexDatePeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  # TODO: Test and check new regex
+  def: \b(in\s+der\s+)?(zukunft|zukünftig)\b
+ComplexDatePeriodRegex: !nestedRegex
+  # TODO: Test and check new regex
+  def: (((von|während|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((zwischen)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
+  references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 HolidayNoFixedTimex: !dictionary
   types: [string, string]
   entries:
