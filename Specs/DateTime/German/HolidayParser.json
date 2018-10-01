@@ -12,10 +12,10 @@
         "Value": {
           "Timex": "XXXX",
           "FutureResolution": {
-            "date": "0001-01-01"
+            "date": "2017-04-16"
           },
           "PastResolution": {
-            "date": "0001-01-01"
+            "date": "2016-03-27"
           }
         },
         "Start": 3,
@@ -82,12 +82,12 @@
         "Text": "Vatertag",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-06-WXX-6-3",
+          "Timex": "XXXX",
           "FutureResolution": {
-            "date": "2017-06-18"
+            "date": "2017-05-25"
           },
           "PastResolution": {
-            "date": "2016-06-19"
+            "date": "2016-05-05"
           }
         },
         "Start": 3,
@@ -106,12 +106,12 @@
         "Text": "Vatertag 2015",
         "Type": "date",
         "Value": {
-          "Timex": "2015-06-WXX-6-3",
+          "Timex": "2015-05-14",
           "FutureResolution": {
-            "date": "2015-06-21"
+            "date": "2015-05-14"
           },
           "PastResolution": {
-            "date": "2015-06-21"
+            "date": "2015-05-14"
           }
         },
         "Start": 0,
@@ -165,6 +165,31 @@
         },
         "Start": 17,
         "Length": 25
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Was machst du an Ostermontag 2017?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Ostermontag 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-04-17",
+          "FutureResolution": {
+            "date": "2017-04-17"
+          },
+          "PastResolution": {
+            "date": "2017-04-17"
+          }
+        },
+        "Start": 17,
+        "Length": 16
       }
     ]
   }

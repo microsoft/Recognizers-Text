@@ -238,7 +238,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                     if (HolidayFuncDict.ContainsKey(holidayKey))
                     {
                         value = HolidayFuncDict[holidayKey](year);
-                        timexStr = NoFixedTimex[holidayKey];
+                        if (hasYear)
+                        {
+                            timexStr = $"-{value.Month:D2}-{value.Day:D2}";
+                        }
+                        else timexStr = NoFixedTimex[holidayKey];
                     }
                     else
                     {

@@ -228,8 +228,30 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string ComplexDatePeriodRegex = $@"(((von|während|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((zwischen)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
 		public static readonly Dictionary<string, string> HolidayNoFixedTimex = new Dictionary<string, string>
 		{
-			{ "fathers", "-06-WXX-6-3" },
-			{ "easterday", "" }
+			{ "fathers", "" },
+			{ "easterday", "" },
+			{ "eastersunday", "" },
+			{ "eastermonday", "" },
+			{ "weiberfastnacht", "" },
+			{ "carnival", "" },
+			{ "ashwednesday", "" },
+			{ "palmsunday", "" },
+			{ "goodfriday", "" },
+			{ "ascensionofchrist", "" },
+			{ "whitsunday", "" },
+			{ "whitemonday", "" },
+			{ "corpuschristi", "" },
+			{ "rosenmontag", "" },
+			{ "fastnacht", "" },
+			{ "holythursday", "" },
+			{ "memorialDayGermany", "" },
+			{ "dayofrepentance", "" },
+			{ "totenSonntag", "" },
+			{ "firstadvent", "" },
+			{ "secondadvent", "" },
+			{ "thirdadvent", "" },
+			{ "fourthadvent", "" },
+			{ "chedayofrepentance", "" }
 		};
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{

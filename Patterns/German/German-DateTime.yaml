@@ -547,8 +547,30 @@ ComplexDatePeriodRegex: !nestedRegex
 HolidayNoFixedTimex: !dictionary
   types: [string, string]
   entries:
-    fathers: -06-WXX-6-3
-    easterday: 
+    fathers:
+    easterday:
+    eastersunday:
+    eastermonday:
+    weiberfastnacht:
+    carnival:
+    ashwednesday:
+    palmsunday:
+    goodfriday:
+    ascensionofchrist:
+    whitsunday:
+    whitemonday:
+    corpuschristi:
+    rosenmontag:
+    fastnacht:
+    holythursday:
+    memorialDayGermany:
+    dayofrepentance:
+    totenSonntag:
+    firstadvent:
+    secondadvent:
+    thirdadvent:
+    fourthadvent:
+    chedayofrepentance:
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
