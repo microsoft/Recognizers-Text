@@ -696,6 +696,21 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "Dit bestand is maar acht mb groot!",
+    "Comment": "mb is also supported as it is a very common mistake seen in data we mined.",
+    "Results": [
+      {
+        "Text": "acht mb",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "8",
+          "unit": "Megabyte"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "Ik heb een nieuwe hardeschijf gekocht van 2 terabyte",
     "Results": [
       {
