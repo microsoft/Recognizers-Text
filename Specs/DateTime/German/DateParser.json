@@ -79,7 +79,7 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "15.01",
+        "Text": "15.01.",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-15",

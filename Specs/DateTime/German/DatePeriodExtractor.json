@@ -532,10 +532,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "zwischen dem 15. November und dem 19. Dezember dort",
+        "Text": "zwischen dem 15. November und dem 19. Dezember",
         "Type": "daterange",
         "Start": 8,
-        "Length": 51
+        "Length": 46
       }
     ]
   },
