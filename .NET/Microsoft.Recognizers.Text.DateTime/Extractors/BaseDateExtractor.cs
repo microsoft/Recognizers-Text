@@ -203,13 +203,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                             {
                                 // Get week of day for the ordinal number which is regarded as a date of reference month
                                 var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
-                                var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
+                                var numWeekDayInt = (int)date.DayOfWeek;
 
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToLower();
                                 if (!date.Equals(DateObject.MinValue) &&
-                                    config.DayOfWeek[numWeekDayStr] == config.DayOfWeek[extractedWeekDayStr])
+                                    numWeekDayInt == config.DayOfWeek[extractedWeekDayStr])
                                 {
                                     ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
                                     isFound = true;
