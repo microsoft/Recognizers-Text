@@ -383,8 +383,8 @@ AnUnitRegex: !nestedRegex
   def: \b(((ein(er|es|en|em|e)?)(?<half>\s+halb(es|er|en|e))?))\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
-  # TODO: Check and test new regex
-  def: \b(während|im\slaufe)\s+(des|der)\s+(?<unit>jahres|monats|woche|tages)\b
+  # TODO: Check and test new regex, maybe including plural
+  def: \b(während|im\slauf(|e))\s+(des|der)\s+(?<unit>jahres|monats|woche|tages)\b
 AllRegex: !simpleRegex
   def: \b(?<all>ganz(en|es|er|e)\s+(?<unit>jahr|monat|woche|tag))\b
 HalfRegex: !simpleRegex
@@ -418,14 +418,14 @@ AgoRegex: !simpleRegex
   def: \b(ago)\b
 AroundRegex: !simpleRegex
   # TODO: Check and test new regex
-  def: (\b(ca|gegen|circa)\s*\b)
+  def: (\b(um|ca|gegen|circa)\s*\b)
 LaterRegex: !simpleRegex
   def: \b(später|von jetzt an)\b
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 WithinNextPrefixRegex: !nestedRegex
   # TODO: Check and test new regex
-  def: \b(innerhalb|während(\s+der|des)?(\s+(?<next>{NextPrefixRegex}))?)\b
+  def: \b(innerhalb|während(\s+der|de(s|m))?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
 AmPmDescRegex: !simpleRegex
   def: (ampm)
@@ -450,7 +450,7 @@ RelativeDurationUnitRegex: !nestedRegex
   references: [NextPrefixRegex, PastPrefixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
 ReferenceDatePeriodRegex: !nestedRegex
   # TODO: Check and test new regex
-  def: \b{ReferencePrefixRegex}\s+(?<duration>tag|monat|jahr|jahrzehnt|wochenende)\b
+  def: \b{ReferencePrefixRegex}\s+(?<duration>tag|monat|jahr|jahrzehnt|wochenende|wochentag)\b
   references: [ReferencePrefixRegex]
 ConnectorRegex: !simpleRegex
   def: ^(-|,|für|t|gegen)$
@@ -459,7 +459,7 @@ FromToRegex: !simpleRegex
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
 UnspecificDatePeriodRegex: !simpleRegex
-  # TODO: Check and test new regex
+  # TODO: Check and test new regex, maybe add plural
   def: ^(woche|wochenende|woche|monat|jahr)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(am|in|um|gegen|von|vom|zum)$
