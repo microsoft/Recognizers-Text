@@ -74,7 +74,7 @@ QuarterRegexYearFront: !nestedRegex #Not needed in german
   references: [ YearRegex, RelativeRegex ]
 AllHalfYearRegex: !nestedRegex
   # TODO: Check and test new regex
-  def: ((das|dem|im|in dem)\s+)?(?<cardinal>erst(en|es|e)|1\.|zweit(en|es|e)|2\.|dritt(en|es|e)|3\.|viert(en|es|e)|4\.)\s+(halbjahr|hälfte)(\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex})
+  def: ((das|dem|im|in dem)\s+)?(?<cardinal>erst(en|es|e)|1\.|zweit(en|es|e)|2\.)\s+(halbjahr|hälfte)(\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex})
   references: [ YearRegex, RelativeRegex ]
 PrefixDayRegex: !simpleRegex
   # TODO: Check and test new regex
