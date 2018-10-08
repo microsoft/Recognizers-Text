@@ -63,7 +63,7 @@ class ChineseDateTime:
     FollowedUnit = f'^\\s*{UnitRegex}'
     NumberCombinedWithUnit = f'(?<num>\\d+(\\.\\d*)?){UnitRegex}'
     DateRangePrepositions = f'((从|在|自)\\s*)?'
-    YearToYear = f'({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*({DatePeriodTillRegex}|后|後|之后)\\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\\s*((之间|之内|期间|中间|间)|前|之前))?'
+    YearToYear = f'({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*({DatePeriodTillRegex}|后|後|之后|之後)\\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\\s*((之间|之内|期间|中间|间)|前|之前))?'
     YearToYearSuffixRequired = f'({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*({DatePeriodTillSuffixRequiredRegex})\\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*(之间|之内|期间|中间|间)'
     MonthToMonth = f'({DateRangePrepositions})({MonthRegex}){DatePeriodTillRegex}({MonthRegex})'
     MonthToMonthSuffixRequired = f'({DateRangePrepositions})({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\\s*(之间|之内|期间|中间|间)'
