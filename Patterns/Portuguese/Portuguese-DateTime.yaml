@@ -94,7 +94,7 @@ ConnectorAndRegex: !simpleRegex
 BetweenRegex: !simpleRegex
   def: (entre\s*([oa](s)?)?)
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>Domingos?|Segundas?-feiras?|Segundas?\s+feiras?|Segundas?|2a|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|Ter[cça]s?|3a|Quartas?-feiras?|Quartas?\s+feiras?|Quartas?|4a|Quintas?-feiras?|Quintas?\s+feiras?|Quintas?|5a|Sextas?-feiras?|Sextas?\s+feiras?|Sextas?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg.|Ter[cç].|Qua.|Qui.|Sex.|S[aá]b.|Dom.)\b
+  def: \b(?<weekday>Domingos?|Segundas?-feiras?|Segundas?\s+feiras?|Segundas?|2a|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|Ter[cça]s?|3a|Quartas?-feiras?|Quartas?\s+feiras?|Quartas?|4a|Quintas?-feiras?|Quintas?\s+feiras?|Quintas?|5a|Sextas?-feiras?|Sextas?\s+feiras?|Sextas?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg\.|Ter[cç]\.|Qua\.|Qui\.|Sex\.|S[aá]b\.|Dom\.)\b
 OnRegex: !nestedRegex
   def: (?<=\b(em|no)\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -107,7 +107,7 @@ LastDateRegex: !nestedRegex
   def: \b(([uú]ltim[ao])\s*{WeekDayRegex})|({WeekDayRegex}(\s+(([nd]?es[st]a|na|da)\s+([uú]ltima\s+)?semana)))\b
   references: [ WeekDayRegex ]
 NextDateRegex: !nestedRegex
-  def: \b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(da\s+)?(pr[oó]xima|seguinte)?(\s*semana\s+seguinte|\s*semana)?))\b
+  def: \b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}((\s+(pr[oó]xim[oa]|seguinte))|(\s+(da\s+)?(semana\s+seguinte|pr[oó]xima\s+semana))))\b
   references: [ WeekDayRegex ]
 SpecialDayRegex: !simpleRegex
   def: \b((d?o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((d?o\s+)?(dia\s+|depois\s+|dia\s+depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|ontem|amanh[ãa]|hoje)|(do\s+dia$)\b

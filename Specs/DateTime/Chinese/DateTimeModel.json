@@ -2222,6 +2222,251 @@
     ]
   },
   {
+    "Input": "时间从二零一六年至二零一八年",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "从二零一六年至二零一八年",
+        "Start": 2,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-01-01,2018-01-01,P2Y)",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "可以给我三月到五月的数据吗?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "三月到五月",
+        "Start": 4,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-03-01,XXXX-05-01,P2M)",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "end": "2018-05-01"
+            },
+            {
+              "timex": "(XXXX-03-01,XXXX-05-01,P2M)",
+              "type": "daterange",
+              "start": "2019-03-01",
+              "end": "2019-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "可以给我三月和九月之间的数据吗?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "三月和九月之间",
+        "Start": 4,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-03-01,2018-09-01,P6M)",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "end": "2018-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "可以给我5月-10月的数据吗?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5月-10月",
+        "Start": 4,
+        "End": 9,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-01,2018-10-01,P5M)",
+              "type": "daterange",
+              "start": "2018-05-01",
+              "end": "2018-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "可以给我8月至2月的数据吗?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "8月至2月",
+        "Start": 4,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-08-01,2019-02-01,P6M)",
+              "type": "daterange",
+              "start": "2018-08-01",
+              "end": "2019-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "可以给我从10月到11月的数据吗?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "从10月到11月",
+        "Start": 4,
+        "End": 11,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-10-01,XXXX-11-01,P1M)",
+              "type": "daterange",
+              "start": "2017-10-01",
+              "end": "2017-11-01"
+            },
+            {
+              "timex": "(XXXX-10-01,XXXX-11-01,P1M)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "可以给我10月和5月间的数据吗?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10月和5月间",
+        "Start": 4,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-10-01,XXXX-05-01,P5M)",
+              "type": "daterange",
+              "start": "2017-10-01",
+              "end": "2018-05-01"
+            },
+            {
+              "timex": "(XXXX-10-01,XXXX-05-01,P5M)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2019-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "可以给我10月和5月的数据吗?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10月",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10",
+              "type": "daterange",
+              "start": "2017-10-01",
+              "end": "2017-11-01"
+            },
+            {
+              "timex": "XXXX-10",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2018-11-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "5月",
+        "Start": 8,
+        "End": 9,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05",
+              "type": "daterange",
+              "start": "2018-05-01",
+              "end": "2018-06-01"
+            },
+            {
+              "timex": "XXXX-05",
+              "type": "daterange",
+              "start": "2019-05-01",
+              "end": "2019-06-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "2:00pm的时候发生了什么？",
     "Context": {
       "ReferenceDateTime": "2018-09-18T18:00:00"

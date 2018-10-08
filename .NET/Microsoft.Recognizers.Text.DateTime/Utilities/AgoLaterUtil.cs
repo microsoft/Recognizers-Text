@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult durationParseResult,
             string afterStr,
             string beforeStr,
-            System.DateTime referenceTime,
+            DateObject referenceTime,
             IDateTimeUtilityConfiguration utilityConfiguration,
             AgoLaterMode mode,
             SwiftDayDelegate SwiftDay)

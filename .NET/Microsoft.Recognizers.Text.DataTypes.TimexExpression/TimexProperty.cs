@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System.Collections.Generic;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -18,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             TimexParsing.ParseString(timex, this);
         }
 
-        public static TimexProperty FromDate(System.DateTime date)
+        public static TimexProperty FromDate(DateObject date)
         {
             return new TimexProperty
             {
@@ -28,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             };
         }
 		
-        public static TimexProperty FromDateTime(System.DateTime datetime)
+        public static TimexProperty FromDateTime(DateObject datetime)
         {
             var timex = FromDate(datetime);
             timex.Hour = datetime.Hour;
@@ -56,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return TimexConvert.ConvertTimexToString(this);
         }
 
-        public string ToNaturalLanguage(System.DateTime referenceDate)
+        public string ToNaturalLanguage(DateObject referenceDate)
         {
             return TimexRelativeConvert.ConvertTimexToStringRelative(this, referenceDate);
         }

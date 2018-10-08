@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -30,11 +31,33 @@ namespace Microsoft.Recognizers.Text.DateTime
             return string.Join("-", year.ToString("D4"), month.ToString("D2"), day.ToString("D2"));
         }
 
-        public static string LuisDate(System.DateTime date)
+        public static string LuisDate(DateObject date, DateObject alternativeDate = default(DateObject))
         {
-            return LuisDate(date.Year, date.Month, date.Day);
-        }
+            var year = date.Year;
+            var month = date.Month;
+            var day = date.Day;
 
+            if (!alternativeDate.IsDefaultValue())
+            {
+                if (alternativeDate.Year != year)
+                {
+                    year = -1;
+                }
+
+                if (alternativeDate.Month != month)
+                {
+                    month = -1;
+                }
+
+                if (alternativeDate.Day != day)
+                {
+                    day = -1;
+                }
+            }
+
+            return LuisDate(year, month, day);
+        }
+        
         public static string ShortTime(int hour, int min, int second)
         {
             if (min < 0 && second < 0)
@@ -54,12 +77,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
         }
 
-        public static string LuisTime(System.DateTime time)
+        public static string LuisTime(DateObject time)
         {
             return LuisTime(time.Hour, time.Minute, time.Second);
         }
 
-        public static string LuisDateTime(System.DateTime time)
+        public static string LuisDateTime(DateObject time)
         {
             return $"{LuisDate(time)}T{LuisTime(time.Hour, time.Minute, time.Second)}";
         }
@@ -87,17 +110,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             return result;
         }
 
-        public static string FormatDate(System.DateTime date)
+        public static string FormatDate(DateObject date)
         {
             return string.Join("-", date.Year.ToString("D4"), date.Month.ToString("D2"), date.Day.ToString("D2"));
         }
 
-        public static string FormatTime(System.DateTime time)
+        public static string FormatTime(DateObject time)
         {
             return string.Join(":", time.Hour.ToString("D2"), time.Minute.ToString("D2"), time.Second.ToString("D2"));
         }
 
-        public static string FormatDateTime(System.DateTime datetime)
+        public static string FormatDateTime(DateObject datetime)
         {
             return FormatDate(datetime) + " " + FormatTime(datetime);
         }
@@ -172,7 +195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return hasT ? "T" + string.Join(":", splited) : string.Join(":", splited);
         }
 
-        public static string ToIsoWeekTimex(System.DateTime monday)
+        public static string ToIsoWeekTimex(DateObject monday)
         {
             var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
             return monday.Year.ToString("D4") + "-W" + 
