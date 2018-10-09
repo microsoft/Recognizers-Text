@@ -97,6 +97,7 @@ export abstract class BaseDateTimeExtractor<T> implements IDateTimeExtractor {
 
 export class TimeResolutionUtils {
     static addDescription(lowBoundMap: ReadonlyMap<string, number>, timeResult: TimeResult, description: string) {
+        description = description.replace(" ", "").replace(".", "");
         if (lowBoundMap.has(description) && timeResult.hour < lowBoundMap.get(description)) {
             timeResult.hour += 12;
             timeResult.lowBound = lowBoundMap.get(description);

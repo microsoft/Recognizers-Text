@@ -2471,7 +2471,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-18T18:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "2:00pm",
@@ -2495,7 +2495,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-18T18:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "8:00 a.m.",
@@ -2519,7 +2519,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-18T18:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "8:00",
@@ -2548,7 +2548,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-18T18:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "11:30:10 p.m.",
