@@ -32,7 +32,7 @@ export namespace ChineseDateTime {
 	export const SpecialDate = `(?<thisyear>(${DateThisRe}|${DateLastRe}|${DateNextRe})年)?(?<thismonth>(${DateThisRe}|${DateLastRe}|${DateNextRe})月)?${DateDayRegexInChinese}`;
 	export const DateUnitRegex = `(?<unit>年|个月|周|日|天)`;
 	export const BeforeRegex = `以前|之前|前`;
-    export const AfterRegex = `以后|以後|之后|之後|后|後`;
+	export const AfterRegex = `以后|以後|之后|之後|后|後`;
 	export const DateRegexList1 = `(${LunarRegex}(\\s*))?(((${YearRegex}|${DateYearInChineseRegex})年)(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
 	export const DateRegexList2 = `(((${YearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInChinese}((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
 	export const DateRegexList3 = `(((${YearRegex}|${DateYearInChineseRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)(${DayRegexNumInChinese}|${DayRegex})((\\s*|,|，)${WeekDayRegex})?(${BeforeRegex}|${AfterRegex})?`;
@@ -164,7 +164,7 @@ export namespace ChineseDateTime {
 	export const DurationUnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["Y", 31536000],["Mon", 2592000],["W", 604800],["D", 86400],["H", 3600],["M", 60],["S", 1]]);
 	export const HolidayNoFixedTimex: ReadonlyMap<string, string> = new Map<string, string>([["父亲节", "-06-WXX-6-3"],["母亲节", "-05-WXX-7-2"],["感恩节", "-11-WXX-4-4"]]);
 	export const MergedBeforeRegex = `(前|之前)$`;
-    export const MergedAfterRegex = `(后|後|之后|之後)$`;
+	export const MergedAfterRegex = `(后|後|之后|之後)$`;
 	export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
 	export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18]]);
 	export const DefaultLanguageFallback = 'DMY';
