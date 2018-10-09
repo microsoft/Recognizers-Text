@@ -209,8 +209,8 @@ DateTimePeriodLastRegex: !simpleRegex
   def: 上个|上一个|上|上一
 DateTimePeriodNextRegex: !simpleRegex
   def: 下个|下一个|下|下一
-DescRegex: !simpleRegex
-  def: (?<desc>pm|am|p\.m\.|a\.m\.|p|a)
+AmPmDescRegex: !simpleRegex
+  def: (?<daydesc>(am|a\.m\.|a m|a\. m\.|a\.m|a\. m|a m|pm|p\.m\.|p m|p\. m\.|p\.m|p\. m|p m))
 TimeOfDayRegex: !simpleRegex
   def: (?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)
 SpecificTimeOfDayRegex: !nestedRegex
@@ -328,8 +328,8 @@ TimeRegexes1: !nestedRegex
   def: '{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?'
   references: [TimeApproximateDescPreffixRegex, TimeDayDescRegex, TimeChineseTimeRegex, TimeApproximateDescSuffixRegex]
 TimeRegexes2: !nestedRegex
-  def: '{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?'
-  references: [TimeApproximateDescPreffixRegex, TimeDayDescRegex, TimeDigitTimeRegex, TimeApproximateDescSuffixRegex]
+  def: '{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?(\s*{AmPmDescRegex}?)'
+  references: [TimeApproximateDescPreffixRegex, TimeDayDescRegex, TimeDigitTimeRegex, TimeApproximateDescSuffixRegex, AmPmDescRegex]
 TimeRegexes3: !nestedRegex
   def: 差{TimeMinuteRegex}{TimeChineseTimeRegex}
   references: [TimeMinuteRegex, TimeChineseTimeRegex]
@@ -814,5 +814,6 @@ TimeLowBoundDesc: !dictionary
     深夜: 18
     傍晚: 18
     晚: 18
+    pm: 12
 DefaultLanguageFallback: DMY
 ...

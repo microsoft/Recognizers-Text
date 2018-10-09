@@ -89,7 +89,7 @@ class ChineseDateTime:
     DateTimePeriodThisRegex = f'这个|这一个|这|这一'
     DateTimePeriodLastRegex = f'上个|上一个|上|上一'
     DateTimePeriodNextRegex = f'下个|下一个|下|下一'
-    DescRegex = f'(?<desc>pm|am|p\\.m\\.|a\\.m\\.|p|a)'
+    AmPmDescRegex = f'(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m))'
     TimeOfDayRegex = f'(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)'
     SpecificTimeOfDayRegex = f'((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))'
     DateTimePeriodUnitRegex = f'(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))'
@@ -134,7 +134,7 @@ class ChineseDateTime:
     TimeApproximateDescPreffixRegex = f'(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)'
     TimeApproximateDescSuffixRegex = f'(之前|以前|以后|以後|之后|之後|前|后|後|左右)'
     TimeRegexes1 = f'{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?'
-    TimeRegexes2 = f'{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?'
+    TimeRegexes2 = f'{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?(\\s*{AmPmDescRegex}?)'
     TimeRegexes3 = f'差{TimeMinuteRegex}{TimeChineseTimeRegex}'
     TimePeriodTimePeriodConnectWords = f'(起|至|到|–|-|—|~|～)'
     TimePeriodLeftChsTimeRegex = f'(从)?(?<left>{TimeDayDescRegex}?({TimeChineseTimeRegex}))'
@@ -548,6 +548,7 @@ class ChineseDateTime:
                              ('夜间', 18),
                              ('深夜', 18),
                              ('傍晚', 18),
-                             ('晚', 18)])
+                             ('晚', 18),
+                             ('pm', 12)])
     DefaultLanguageFallback = 'DMY'
 # pylint: enable=line-too-long

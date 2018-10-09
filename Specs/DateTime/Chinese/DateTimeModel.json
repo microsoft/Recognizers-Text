@@ -2465,5 +2465,106 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2:00pm的时候发生了什么？",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "python, java",
+    "Results": [
+      {
+        "Text": "2:00pm",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14:00",
+              "type": "time",
+              "value": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "8:00 a.m.的时候发生了什么？",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "python, java",
+    "Results": [
+      {
+        "Text": "8:00 a.m.",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "你8:00的时候在做什么",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "python, java",
+    "Results": [
+      {
+        "Text": "8:00",
+        "Start": 1,
+        "End": 4,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            },
+            {
+              "timex": "T20:00",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "你11:30:10 p.m.的时候在做什么",
+    "Context": {
+      "ReferenceDateTime": "2018-09-18T18:00:00"
+    },
+    "NotSupported": "python, java",
+    "Results": [
+      {
+        "Text": "11:30:10 p.m.",
+        "Start": 1,
+        "End": 13,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T23:30:10",
+              "type": "time",
+              "value": "23:30:10"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
