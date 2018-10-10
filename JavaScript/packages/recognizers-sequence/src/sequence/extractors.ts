@@ -197,6 +197,8 @@ export class BaseEmailExtractor extends BaseSequenceExtractor {
         super();
         this.regexes = new Map<RegExp, string>()
             .set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex), Constants.EMAIL_REGEX)
+            //.set(RegExpUtility.getSafeRegExp(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX)
+            //EmailRegex2 will break the code as it's not supportted in Javascript, comment out for now
     }
 }
 
@@ -207,6 +209,7 @@ export class BaseURLExtractor extends BaseSequenceExtractor {
         super();
         this.regexes = new Map<RegExp, string>()
             .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex), Constants.URL_REGEX)
+            .set(RegExpUtility.getSafeRegExp(BaseURL.UrlRegex2), Constants.URL_REGEX)
             .set(RegExpUtility.getSafeRegExp(BaseURL.IpUrlRegex), Constants.URL_REGEX)
     }
 }

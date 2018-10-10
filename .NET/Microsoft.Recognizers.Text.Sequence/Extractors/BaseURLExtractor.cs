@@ -18,6 +18,9 @@ namespace Microsoft.Recognizers.Text.Sequence
             new Regex(BaseURL.UrlRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        private static Regex UrlRegex2 { get; } = new Regex(BaseURL.UrlRegex2,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private StringMatcher TldMatcher { get; }
 
         public BaseURLExtractor()
@@ -38,7 +41,20 @@ namespace Microsoft.Recognizers.Text.Sequence
         public override List<ExtractResult> Extract(string text)
         {
             var ret = base.Extract(text);
-            var urlMatches = UrlRegex.Matches(text);
+            ret.AddRange(ExtractUrl(text, UrlRegex));
+
+            if (!ret.Any())
+            {
+                ret.AddRange(ExtractUrl(text, UrlRegex2));
+            }
+
+            return ret;
+        }
+
+        private List<ExtractResult> ExtractUrl(string text, Regex urlRegex)
+        {
+            var ret = new List<ExtractResult>();
+            var urlMatches = urlRegex.Matches(text);
 
             foreach (Match urlMatch in urlMatches)
             {

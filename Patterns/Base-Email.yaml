@@ -1,4 +1,16 @@
 ---
 EmailRegex: !simpleRegex
-  def: (([-a-zA-Z0-9_\.]+)@([-a-zA-Z\d\.]+)\.([a-zA-Z\.]{2,6}))
+  def: (([-a-zA-Z0-9_\+\.]+)@([-a-zA-Z\d\.]+)\.([a-zA-Z\.]{2,6}))
+IPv4Regex: !simpleRegex
+  def: (?<ipv4>(\d{1,3}\.){3}\d{1,3})
+NormalSuffixRegex: !simpleRegex
+  def: (([0-9A-Za-z][-]*[0-9A-Za-z]*\.)+(?<tld>[a-zA-Z][\-a-zA-Z]{0,22}[a-zA-Z]))
+EmailPrefix: !simpleRegex
+  def: (?("")("".+?(?<!\\)"")|(([0-9A-Za-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^\{\}\|~\w])*)(?<=[0-9A-Za-z])))
+EmailSuffix: !nestedRegex
+  def: (?(\[)(\[{IPv4Regex}\])|{NormalSuffixRegex})
+  references: [ IPv4Regex, NormalSuffixRegex ]
+EmailRegex2: !nestedRegex
+  def: (({EmailPrefix})@({EmailSuffix}))
+  references: [ EmailPrefix, EmailSuffix ]
 ...
