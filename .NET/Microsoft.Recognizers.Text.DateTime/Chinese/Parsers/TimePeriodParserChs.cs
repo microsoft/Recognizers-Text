@@ -90,24 +90,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 year = referenceTime.Year;
             var ret = new DateTimeResolutionResult();
             var match = this.config.TimeOfDayRegex.Match(text);
+            
             if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
             {
                 return new DateTimeResolutionResult();
             }
+            
             ret.Timex = timex;
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
                DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, endMinSeg)
                );
             ret.Success = true;
+            
             return ret;
         }
+        
         private bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+            
             if (trimmedText.EndsWith("上午"))
             {
                 timex = "TMO";
@@ -144,6 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 timex = null;
                 return false;
             }
+            
             return true;
         }
 
