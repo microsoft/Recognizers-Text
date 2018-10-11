@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Definitions
 		public static readonly string UrlSuffixRegex = $@"{PortRegex}?([/#][-a-zA-Z0-9:%_\+.~#?!&//=]*)?(?![-a-zA-Z0-9:%_\+~#?!&//=@])";
 		public static readonly string UrlRegex = $@"{UrlPrefixRegex}(?<Tld>[a-zA-Z]{{2,18}}){UrlSuffixRegex}";
 		public const string UrlRegex2 = @"((ht|f)tp(s?)\:\/\/|www\.)[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(\.(?<Tld>[0-9a-zA-Z]+))+(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_=@]*)?";
-		public static readonly string IpUrlRegex = $@"{ExtractionRestrictionRegex}{ProtocolRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}";
+		public static readonly string IpUrlRegex = $@"(?<IPurl>({ExtractionRestrictionRegex}{ProtocolRegex}({BaseIp.Ipv4Regex}|localhost){UrlSuffixRegex}))";
 		public static readonly IList<string> TldList = new List<string>
 		{
 			"com",

@@ -29,13 +29,16 @@ namespace Microsoft.Recognizers.Text.Sequence
             {
                 foreach (Match m in collection.Key)
                 {
-                    for (var j = 0; j < m.Length; j++)
+                    if (IsValidMatch(m))
                     {
-                        matched[m.Index + j] = true;
-                    }
+                        for (var j = 0; j < m.Length; j++)
+                        {
+                            matched[m.Index + j] = true;
+                        }
 
-                    // Keep Source Data for extra information
-                    matchSource.Add(m, collection.Value);
+                        // Keep Source Data for extra information
+                        matchSource.Add(m, collection.Value);
+                    }
                 }
             }
 
@@ -73,6 +76,11 @@ namespace Microsoft.Recognizers.Text.Sequence
             }
 
             return result;
+        }
+
+        public virtual bool IsValidMatch(Match match)
+        {
+            return true;
         }
     }
 }

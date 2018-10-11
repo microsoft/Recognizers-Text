@@ -14,13 +14,6 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected sealed override string ExtractType { get; } = Constants.SYS_URL;
 
-        private static Regex UrlRegex { get; } =
-            new Regex(BaseURL.UrlRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        private static Regex UrlRegex2 { get; } = new Regex(BaseURL.UrlRegex2,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         private StringMatcher TldMatcher { get; }
 
         public BaseURLExtractor()
@@ -29,6 +22,12 @@ namespace Microsoft.Recognizers.Text.Sequence
             {
                 {
                     new Regex(BaseURL.IpUrlRegex), Constants.URL_REGEX
+                },
+                {
+                    new Regex(BaseURL.UrlRegex), Constants.URL_REGEX
+                },
+                {
+                    new Regex(BaseURL.UrlRegex2), Constants.URL_REGEX
                 }
             };
 
@@ -38,43 +37,20 @@ namespace Microsoft.Recognizers.Text.Sequence
             TldMatcher.Init(BaseURL.TldList);
         }
 
-        public override List<ExtractResult> Extract(string text)
+        public override bool IsValidMatch(Match match)
         {
-            var ret = base.Extract(text);
-            ret.AddRange(ExtractUrl(text, UrlRegex));
+            var isValidTld = false;
+            var isIPUrl = match.Groups["IPurl"].Success;
+            
+            var tldString = match.Groups["Tld"].Value;
+            var tldMatches = TldMatcher.Find(tldString);
 
-            if (!ret.Any())
+            if (tldMatches.Any(o => o.Start == 0 && o.End == tldString.Length))
             {
-                ret.AddRange(ExtractUrl(text, UrlRegex2));
+                isValidTld = true;
             }
 
-            return ret;
-        }
-
-        private List<ExtractResult> ExtractUrl(string text, Regex urlRegex)
-        {
-            var ret = new List<ExtractResult>();
-            var urlMatches = urlRegex.Matches(text);
-
-            foreach (Match urlMatch in urlMatches)
-            {
-                var tldString = urlMatch.Groups["Tld"].Value;
-                var tldMatches = TldMatcher.Find(tldString);
-
-                if (tldMatches.Any(o => o.Start == 0 && o.End == tldString.Length))
-                {
-                    ret.Add(new ExtractResult
-                    {
-                        Start = urlMatch.Index,
-                        Length = urlMatch.Length,
-                        Text = urlMatch.Value,
-                        Type = ExtractType,
-                        Data = Constants.URL_REGEX
-                    });
-                }
-            }
-
-            return ret;
+            return isValidTld || isIPUrl;
         }
     }
 }

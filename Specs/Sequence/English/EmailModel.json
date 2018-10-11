@@ -111,7 +111,7 @@
     "Results": []
   },
   {
-    "Input": "d.j@server1.proseware.com is valid email address",
+    "Input": "d.j@server1.proseware.com is a valid email address",
     "NotSupportedByDesign": "python",
     "Results": [
       {
@@ -124,7 +124,7 @@
     ]
   },
   {
-    "Input": "j_9@[129.126.118.1] is valid email address",
+    "Input": "j_9@[129.126.118.1] is a valid email address",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
@@ -137,12 +137,12 @@
     ]
   },
   {
-    "Input": "j_9@129.126.118.1 is invalid email address",
+    "Input": "j_9@129.126.118.1 is an invalid email address",
     "NotSupportedByDesign": "python",
     "Results": []
   },
   {
-    "Input": "user.name+tag@lero.com is valid email address",
+    "Input": "user.name+tag@lero.com is a valid email address",
     "NotSupportedByDesign": "python",
     "Results": [
       {
