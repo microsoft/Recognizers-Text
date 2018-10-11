@@ -33,7 +33,7 @@ class ChineseDateTime:
     SpecialDate = f'(?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInChinese}'
     DateUnitRegex = f'(?<unit>年|个月|周|日|天)'
     BeforeRegex = f'以前|之前|前'
-    AfterRegex = f'以后|之后|后'
+    AfterRegex = f'以后|以後|之后|之後|后|後'
     DateRegexList1 = f'({LunarRegex}(\\s*))?((({YearRegex}|{DateYearInChineseRegex})年)(\\s*))?{MonthRegex}(\\s*){DateDayRegexInChinese}((\\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?'
     DateRegexList2 = f'((({YearRegex}|{DateYearInChineseRegex})年)(\\s*))?({LunarRegex}(\\s*))?{MonthRegex}(\\s*){DateDayRegexInChinese}((\\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?'
     DateRegexList3 = f'((({YearRegex}|{DateYearInChineseRegex})年)(\\s*))?({LunarRegex}(\\s*))?{MonthRegex}(\\s*)({DayRegexNumInChinese}|{DayRegex})((\\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?'
@@ -63,12 +63,12 @@ class ChineseDateTime:
     FollowedUnit = f'^\\s*{UnitRegex}'
     NumberCombinedWithUnit = f'(?<num>\\d+(\\.\\d*)?){UnitRegex}'
     DateRangePrepositions = f'((从|在|自)\\s*)?'
-    YearToYear = f'({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*({DatePeriodTillRegex}|后|之后)\\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\\s*((之间|之内|期间|中间|间)|前|之前))?'
+    YearToYear = f'({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*({DatePeriodTillRegex}|后|後|之后|之後)\\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})(\\s*((之间|之内|期间|中间|间)|前|之前))?'
     YearToYearSuffixRequired = f'({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*({DatePeriodTillSuffixRequiredRegex})\\s*({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})\\s*(之间|之内|期间|中间|间)'
     MonthToMonth = f'({DateRangePrepositions})({MonthRegex}){DatePeriodTillRegex}({MonthRegex})'
     MonthToMonthSuffixRequired = f'({DateRangePrepositions})({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\\s*(之间|之内|期间|中间|间)'
     PastRegex = f'(?<past>(前|上|之前|近|过去))'
-    FutureRegex = f'(?<future>(后|(?<![一两几]\\s*)下|之后|未来(的)?))'
+    FutureRegex = f'(?<future>(后|後|(?<![一两几]\\s*)下|之后|之後|未来(的)?))'
     SeasonRegex = f'(?<season>春|夏|秋|冬)(天|季)?'
     SeasonWithYear = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}'
     QuarterRegex = f'(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)'
@@ -89,7 +89,7 @@ class ChineseDateTime:
     DateTimePeriodThisRegex = f'这个|这一个|这|这一'
     DateTimePeriodLastRegex = f'上个|上一个|上|上一'
     DateTimePeriodNextRegex = f'下个|下一个|下|下一'
-    DescRegex = f'(?<desc>pm|am|p\\.m\\.|a\\.m\\.|p|a)'
+    AmPmDescRegex = f'(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m))'
     TimeOfDayRegex = f'(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)'
     SpecificTimeOfDayRegex = f'((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))'
     DateTimePeriodUnitRegex = f'(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))'
@@ -132,9 +132,9 @@ class ChineseDateTime:
     TimeDigitTimeRegex = f'(?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?'
     TimeDayDescRegex = f'(?<daydesc>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)'
     TimeApproximateDescPreffixRegex = f'(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)'
-    TimeApproximateDescSuffixRegex = f'(之前|以前|以后|之后|前|后|左右)'
+    TimeApproximateDescSuffixRegex = f'(之前|以前|以后|以後|之后|之後|前|后|後|左右)'
     TimeRegexes1 = f'{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?'
-    TimeRegexes2 = f'{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?'
+    TimeRegexes2 = f'{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?(\\s*{AmPmDescRegex}?)'
     TimeRegexes3 = f'差{TimeMinuteRegex}{TimeChineseTimeRegex}'
     TimePeriodTimePeriodConnectWords = f'(起|至|到|–|-|—|~|～)'
     TimePeriodLeftChsTimeRegex = f'(从)?(?<left>{TimeDayDescRegex}?({TimeChineseTimeRegex}))'
@@ -146,7 +146,7 @@ class ChineseDateTime:
     TimePeriodRegexes1 = f'({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})'
     TimePeriodRegexes2 = f'({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})'
     ParserConfigurationBefore = f'(之前|以前|前)'
-    ParserConfigurationAfter = f'(之后|以后|后)'
+    ParserConfigurationAfter = f'(之后|之後|以后|以後|后|後)'
     ParserConfigurationUntil = f'(直到|直至|截至|截止(到)?)'
     ParserConfigurationSincePrefix = f'(自从|自|自打|打)'
     ParserConfigurationSinceSuffix = f'(以来|开始)'
@@ -525,7 +525,7 @@ class ChineseDateTime:
                                 ('母亲节', '-05-WXX-7-2'),
                                 ('感恩节', '-11-WXX-4-4')])
     MergedBeforeRegex = f'(前|之前)$'
-    MergedAfterRegex = f'(后|之后|後|之後)$'
+    MergedAfterRegex = f'(后|後|之后|之後)$'
     TimeNumberDictionary = dict([('零', 0),
                                  ('一', 1),
                                  ('二', 2),
@@ -548,6 +548,7 @@ class ChineseDateTime:
                              ('夜间', 18),
                              ('深夜', 18),
                              ('傍晚', 18),
-                             ('晚', 18)])
+                             ('晚', 18),
+                             ('pm', 12)])
     DefaultLanguageFallback = 'DMY'
 # pylint: enable=line-too-long
