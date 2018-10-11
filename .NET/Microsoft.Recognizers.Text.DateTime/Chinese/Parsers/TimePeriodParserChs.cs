@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (extra != null)
             {
                 // Handle special case like '上午', '下午'
-                var parseResult = ParseNight(er.Text, referenceTime);
+                var parseResult = ParseTimeOfDay(er.Text, referenceTime);
 
                 if (!parseResult.Success)
                 {
@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return null;
         }
 
-        private DateTimeResolutionResult ParseNight(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseTimeOfDay(string text, DateObject referenceTime)
         {
             int day = referenceTime.Day,
                 month = referenceTime.Month,
