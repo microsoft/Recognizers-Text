@@ -39,6 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             UntilRegex = MergedExtractorChs.UntilRegex;
             SincePrefixRegex = MergedExtractorChs.SincePrefixRegex;
             SinceSuffixRegex = MergedExtractorChs.SinceSuffixRegex;
+            TimeOfDayRegex = TimePeriodExtractorChs.TimeOfDayRegex;
         }
 
         public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear);
@@ -118,6 +119,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex SincePrefixRegex { get; }
 
         public Regex SinceSuffixRegex { get; }
+
+        public Regex TimeOfDayRegex { get; }
 
         #endregion
 

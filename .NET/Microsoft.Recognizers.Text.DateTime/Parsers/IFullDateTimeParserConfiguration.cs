@@ -40,6 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SinceSuffixRegex { get; }
 
+        Regex TimeOfDayRegex { get; }
+
         #endregion
 
         #region Dictionaries
