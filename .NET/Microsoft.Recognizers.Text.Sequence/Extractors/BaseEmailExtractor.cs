@@ -1,7 +1,6 @@
 ﻿using Microsoft.Recognizers.Definitions;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Sequence

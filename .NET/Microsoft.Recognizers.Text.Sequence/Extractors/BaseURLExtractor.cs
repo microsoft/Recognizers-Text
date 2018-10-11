@@ -41,13 +41,16 @@ namespace Microsoft.Recognizers.Text.Sequence
         {
             var isValidTld = false;
             var isIPUrl = match.Groups["IPurl"].Success;
-            
-            var tldString = match.Groups["Tld"].Value;
-            var tldMatches = TldMatcher.Find(tldString);
 
-            if (tldMatches.Any(o => o.Start == 0 && o.End == tldString.Length))
+            if (!isIPUrl)
             {
-                isValidTld = true;
+                var tldString = match.Groups["Tld"].Value;
+                var tldMatches = TldMatcher.Find(tldString);
+
+                if (tldMatches.Any(o => o.Start == 0 && o.End == tldString.Length))
+                {
+                    isValidTld = true;
+                }
             }
 
             return isValidTld || isIPUrl;
