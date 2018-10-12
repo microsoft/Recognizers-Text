@@ -2572,7 +2572,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-11T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "上午",
@@ -2597,7 +2596,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-11T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "下午",
@@ -2622,7 +2620,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-11T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "晚上",

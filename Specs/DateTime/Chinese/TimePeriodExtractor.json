@@ -133,7 +133,6 @@
   },
   {
     "Input": "上午",
-    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "上午",
@@ -145,7 +144,6 @@
   },
   {
     "Input": "下午",
-    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "下午",
@@ -157,7 +155,6 @@
   },
   {
     "Input": "晚上",
-    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "晚上",

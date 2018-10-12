@@ -32,7 +32,10 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
             return result
 
         if source.type is self.parser_type_name:
-            inner_result = self.parse_time_period(extra, reference)
+            inner_result = self.parse_chinese_time_of_day(source.text, reference)
+
+            if inner_result.success is False:
+                inner_result = self.parse_time_period(extra, reference)
 
             if inner_result.success:
                 inner_result.future_resolution[TimeTypeConstants.START_TIME] = FormatUtil.format_time(inner_result.future_value[0])
@@ -45,6 +48,64 @@ class ChineseTimePeriodParser(BaseTimePeriodParser):
                 result.resolution_str = ''
 
         return result
+
+    def parse_chinese_time_of_day(self, text: str, reference: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+
+        day = reference.day
+        month = reference.month
+        year = reference.year
+
+        parameters = self.get_matched_timex_range(text)
+        if parameters['matched'] is False:
+            return DateTimeResolutionResult()
+
+        result.timex = parameters['timex']
+        result.future_value = result.past_value = [
+            DateUtils.safe_create_from_min_value(year, month, day, parameters['begin_hour'], 0, 0),
+            DateUtils.safe_create_from_min_value(year, month, day, parameters['end_hour'], parameters['end_min'], 0)
+        ]
+
+        result.success = True
+        return result
+
+    def get_matched_timex_range(self, text: str) -> dict:
+        trimmed_text = text.strip()
+        begin_hour = 0
+        end_hour = 0
+        end_min = 0
+
+        if trimmed_text.endswith("上午"):
+            timex = "TMO"
+            begin_hour = 8
+            end_hour = 12
+        elif trimmed_text.endswith("下午"):
+            timex = "TAF"
+            begin_hour = 12
+            end_hour = 16
+        elif trimmed_text.endswith("晚上"):
+            timex = "TEV"
+            begin_hour = 16
+            end_hour = 20
+        elif trimmed_text == "白天":
+            timex = "TDT"
+            begin_hour = 8
+            end_hour = 18
+        elif trimmed_text.endswith("深夜"):
+            timex = "TNT"
+            begin_hour = 20
+            end_hour = 23
+            end_min = 59
+        else:
+            timex = None
+            matched = False
+
+            return {'matched': matched, 'timex': timex, 'begin_hour': begin_hour,
+                    'end_hour': end_hour, 'end_min': end_min}
+
+        matched = True
+        return {'matched': matched, 'timex': timex, 'begin_hour': begin_hour,
+                'end_hour': end_hour, 'end_min': end_min}
 
     def parse_time_period(self, extra: DateTimeExtra, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()

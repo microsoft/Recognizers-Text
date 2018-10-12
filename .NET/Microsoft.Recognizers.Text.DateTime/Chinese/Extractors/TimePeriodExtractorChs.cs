@@ -33,9 +33,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly string ShortLeftDigitTimeRegex = DateTimeDefinitions.TimePeriodShortLeftDigitTimeRegex;
 
-        //上午, 下午
-        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         public TimePeriodExtractorChs()
         {
             var regexes = new Dictionary<Regex, PeriodType>

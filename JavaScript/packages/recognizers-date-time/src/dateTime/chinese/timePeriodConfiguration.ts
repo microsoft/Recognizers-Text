@@ -21,7 +21,8 @@ export class ChineseTimePeriodExtractor extends BaseDateTimeExtractor<TimePeriod
     constructor() {
         super(new Map<RegExp, TimePeriodType>([
             [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes1), TimePeriodType.FullTime ],
-            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes2), TimePeriodType.ShortTime ]
+            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimePeriodRegexes2), TimePeriodType.ShortTime ],
+            [ RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfDayRegex), TimePeriodType.ShortTime ]
         ]));
     }
 }
@@ -72,7 +73,11 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
             return result;
         }
 
-        let parseResult = this.parseTimePeriod(extra, referenceTime);
+        let parseResult = this.parseChineseTimeOfDay(er.text, referenceTime);
+
+        if(!parseResult.success) {
+            parseResult = this.parseTimePeriod(extra, referenceTime);
+        }
 
         if (parseResult.success) {
             parseResult.futureResolution = {};
@@ -88,6 +93,66 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         result.timexStr = parseResult.timex;
 
         return result;
+    }
+
+    private parseChineseTimeOfDay(text: string, referenceTime: Date): DateTimeResolutionResult {
+        let day = referenceTime.getDay(),
+        month = referenceTime.getMonth(),
+        year = referenceTime.getFullYear();
+        let ret = new DateTimeResolutionResult();
+
+        let parameters = this.GetMatchedTimexRange(text);
+        if (!parameters.matched) {
+            return new DateTimeResolutionResult();
+        }
+
+        ret.timex = parameters.timex;
+        ret.futureValue = ret.pastValue = {
+            item1: DateUtils.safeCreateFromMinValue(year, month, day, parameters.beginHour, 0, 0),
+            item2: DateUtils.safeCreateFromMinValue(year, month, day, parameters.endHour, parameters.endMin, 0)
+        }
+        ret.success = true;
+
+        return ret;
+    }
+
+    private GetMatchedTimexRange(text: string): {matched: boolean, timex: string, beginHour: number, endHour: number, endMin: number} {
+        let trimmedText = text.trim(),
+        matched = false,
+        timex = null,
+        beginHour = 0,
+        endHour = 0,
+        endMin = 0;
+
+        if (trimmedText.endsWith("上午")) {
+            timex = "TMO";
+            beginHour = 8;
+            endHour = 12;
+        } else if (trimmedText.endsWith("下午")) {
+            timex = "TAF";
+            beginHour = 12;
+            endHour = 16;
+        } else if (trimmedText.endsWith("晚上")) {
+            timex = "TEV";
+            beginHour = 16;
+            endHour = 20;
+        } else if (trimmedText.localeCompare("白天") == 0) {
+            timex = "TDT";
+            beginHour = 8;
+            endHour = 18;
+        } else if (trimmedText.endsWith("深夜")) {
+            timex = "TNI";
+            beginHour = 20;
+            endHour = 23;
+            endMin = 59;
+        } else {
+            timex = null;
+            matched = false;
+            return {matched, timex, beginHour, endHour, endMin};
+        }
+
+        matched = true;
+        return {matched, timex, beginHour, endHour, endMin};
     }
 
     private parseTimePeriod(extra: DateTimeExtra<TimePeriodType>, referenceTime: Date): DateTimeResolutionResult {

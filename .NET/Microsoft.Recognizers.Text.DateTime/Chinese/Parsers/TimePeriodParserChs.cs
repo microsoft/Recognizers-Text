@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (extra != null)
             {
                 // Handle special case like '上午', '下午'
-                var parseResult = ParseTimeOfDay(er.Text, referenceTime);
+                var parseResult = ParseChineseTimeOfDay(er.Text, referenceTime);
 
                 if (!parseResult.Success)
                 {
@@ -83,13 +83,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return null;
         }
 
-        private DateTimeResolutionResult ParseTimeOfDay(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseChineseTimeOfDay(string text, DateObject referenceTime)
         {
             int day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
             var ret = new DateTimeResolutionResult();
-            var match = this.config.TimeOfDayRegex.Match(text);
             
             if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
             {
@@ -99,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             ret.Timex = timex;
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
-               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, endMinSeg)
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0)
                );
             ret.Success = true;
             
