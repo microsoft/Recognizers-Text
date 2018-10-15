@@ -109,5 +109,49 @@
     "Input": "Hi, @Eve, you can find my CV at https://frank.website.com/CV/#cite_2",
     "NotSupportedByDesign": "python",
     "Results": []
+  },
+  {
+    "Input": "d.j@server1.proseware.com is a valid email address",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "d.j@server1.proseware.com",
+        "TypeName": "email",
+        "Resolution": {
+          "value": "d.j@server1.proseware.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "j_9@[129.126.118.1] is a valid email address",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "j_9@[129.126.118.1]",
+        "TypeName": "email",
+        "Resolution": {
+          "value": "j_9@[129.126.118.1]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "j_9@129.126.118.1 is an invalid email address",
+    "NotSupportedByDesign": "python",
+    "Results": []
+  },
+  {
+    "Input": "user.name+tag@lero.com is a valid email address",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "user.name+tag@lero.com",
+        "TypeName": "email",
+        "Resolution": {
+          "value": "user.name+tag@lero.com"
+        }
+      }
+    ]
   }
 ]

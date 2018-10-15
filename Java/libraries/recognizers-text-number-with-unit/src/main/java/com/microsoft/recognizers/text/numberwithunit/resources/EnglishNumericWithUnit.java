@@ -282,7 +282,7 @@ public class EnglishNumericWithUnit {
         .put("Trinidad and Tobago dollar", "trinidad and tobago dollars|trinidad and tobago dollar|trinidad and tobago $|trinidad $|trinidad dollar|trinidad dollars|trinidadian dollar|trinidadian dollars|trinidadian $|ttd")
         .put("Tuvaluan dollar", "tuvaluan dollars|tuvaluan dollar|tuvaluan $")
         .put("Dollar", "dollars|dollar|$")
-        .put("Chinese yuan", "yuan|kuai|chinese yuan|renminbi|cny|rmb|￥")
+        .put("Chinese yuan", "yuan|kuai|chinese yuan|renminbi|cny|rmb|￥|元")
         .put("Fen", "fen")
         .put("Jiao", "jiao|mao")
         .put("Finnish markka", "suomen markka|finnish markka|finsk mark|fim|markkaa|markka")

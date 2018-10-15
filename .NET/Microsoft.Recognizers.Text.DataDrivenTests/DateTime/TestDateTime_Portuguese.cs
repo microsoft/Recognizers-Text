@@ -186,5 +186,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.ParserInitialize(Parsers);
             base.TestDateTimeParser();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModel-Portuguese.csv", "DateTimeModel-Portuguese#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimeModel()
+        {
+            base.TestDateTime();
+        }
+
     }
 }

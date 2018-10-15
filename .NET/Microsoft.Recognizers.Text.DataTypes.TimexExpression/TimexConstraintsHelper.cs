@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -25,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             while (InnerCollapse(r)) { }
 
-            r.Sort((a, b) => System.DateTime.Compare(a.Start, b.Start));
+            r.Sort((a, b) => DateObject.Compare(a.Start, b.Start));
             return r;
         }
 

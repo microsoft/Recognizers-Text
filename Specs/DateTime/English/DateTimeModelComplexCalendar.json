@@ -3399,7 +3399,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "PT1HT30M",
+              "timex": "PT1H30M",
               "Mod": "more",
               "type": "duration",
               "value": "5400"
@@ -6060,6 +6060,174 @@
               "timezoneText": "pst",
               "utcOffsetMins": "-480",
               "value": "16:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Where were you from March to May",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "from march to may",
+        "Start": 15,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-03-01,XXXX-05-01,P2M)",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "end": "2018-05-01"
+            },
+            {
+              "timex": "(XXXX-03-01,XXXX-05-01,P2M)",
+              "type": "daterange",
+              "start": "2019-03-01",
+              "end": "2019-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What will happen between august and october",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "between august and october",
+        "Start": 17,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-08-01,2018-10-01,P2M)",
+              "type": "daterange",
+              "start": "2018-08-01",
+              "end": "2018-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What will happen May to March",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "may to march",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-01,2019-03-01,P10M)",
+              "type": "daterange",
+              "start": "2018-05-01",
+              "end": "2019-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What will happen from Sep to Nov",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "from sep to nov",
+        "Start": 17,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-09-01,XXXX-11-01,P2M)",
+              "type": "daterange",
+              "start": "2017-09-01",
+              "end": "2017-11-01"
+            },
+            {
+              "timex": "(XXXX-09-01,XXXX-11-01,P2M)",
+              "type": "daterange",
+              "start": "2018-09-01",
+              "end": "2018-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What will happen from May to September",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "from may to september",
+        "Start": 17,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-01,2018-09-01,P4M)",
+              "type": "daterange",
+              "start": "2018-05-01",
+              "end": "2018-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What will happen from Nov to March",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, python, javascript",
+    "Results": [
+      {
+        "Text": "from nov to march",
+        "Start": 17,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-11-01,XXXX-03-01,P4M)",
+              "type": "daterange",
+              "start": "2017-11-01",
+              "end": "2018-03-01"
+            },
+            {
+              "timex": "(XXXX-11-01,XXXX-03-01,P4M)",
+              "type": "daterange",
+              "start": "2018-11-01",
+              "end": "2019-03-01"
             }
           ]
         }
