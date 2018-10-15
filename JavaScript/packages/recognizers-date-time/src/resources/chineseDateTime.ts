@@ -88,7 +88,7 @@ export namespace ChineseDateTime {
 	export const DateTimePeriodThisRegex = `这个|这一个|这|这一`;
 	export const DateTimePeriodLastRegex = `上个|上一个|上|上一`;
 	export const DateTimePeriodNextRegex = `下个|下一个|下|下一`;
-	export const DescRegex = `(?<desc>pm|am|p\\.m\\.|a\\.m\\.|p|a)`;
+	export const AmPmDescRegex = `(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m))`;
 	export const TimeOfDayRegex = `(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)`;
 	export const SpecificTimeOfDayRegex = `(((${DateTimePeriodThisRegex}|${DateTimePeriodNextRegex}|${DateTimePeriodLastRegex})\\s+${TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))`;
 	export const DateTimePeriodUnitRegex = `(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))`;
@@ -127,7 +127,7 @@ export namespace ChineseDateTime {
 	export const TimeApproximateDescPreffixRegex = `(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)`;
 	export const TimeApproximateDescSuffixRegex = `(之前|以前|以后|以後|之后|之後|前|后|後|左右)`;
 	export const TimeRegexes1 = `${TimeApproximateDescPreffixRegex}?${TimeDayDescRegex}?${TimeChineseTimeRegex}${TimeApproximateDescSuffixRegex}?`;
-	export const TimeRegexes2 = `${TimeApproximateDescPreffixRegex}?${TimeDayDescRegex}?${TimeDigitTimeRegex}${TimeApproximateDescSuffixRegex}?`;
+	export const TimeRegexes2 = `${TimeApproximateDescPreffixRegex}?${TimeDayDescRegex}?${TimeDigitTimeRegex}${TimeApproximateDescSuffixRegex}?(\\s*${AmPmDescRegex}?)`;
 	export const TimeRegexes3 = `差${TimeMinuteRegex}${TimeChineseTimeRegex}`;
 	export const TimePeriodTimePeriodConnectWords = `(起|至|到|–|-|—|~|～)`;
 	export const TimePeriodLeftChsTimeRegex = `(从)?(?<left>${TimeDayDescRegex}?(${TimeChineseTimeRegex}))`;
@@ -166,6 +166,6 @@ export namespace ChineseDateTime {
 	export const MergedBeforeRegex = `(前|之前)$`;
 	export const MergedAfterRegex = `(后|後|之后|之後)$`;
 	export const TimeNumberDictionary: ReadonlyMap<string, number> = new Map<string, number>([["零", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["〇", 0],["两", 2],["十", 10]]);
-	export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18]]);
+	export const TimeLowBoundDesc: ReadonlyMap<string, number> = new Map<string, number>([["中午", 11],["下午", 12],["午后", 12],["晚上", 18],["夜里", 18],["夜晚", 18],["夜间", 18],["深夜", 18],["傍晚", 18],["晚", 18],["pm", 12]]);
 	export const DefaultLanguageFallback = 'DMY';
 }

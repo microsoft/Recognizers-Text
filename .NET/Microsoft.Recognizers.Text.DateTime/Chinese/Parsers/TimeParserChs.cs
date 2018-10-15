@@ -239,6 +239,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return;
             }
 
+            dayDesc = NormalizeDayDesc(dayDesc);
+
             if (LowBoundDesc.ContainsKey(dayDesc) && result.Hour < LowBoundDesc[dayDesc])
             {
                 result.Hour += Constants.HalfDayHourCount;
@@ -248,6 +250,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 result.LowBound = 0;
             }
+        }
+
+        // Normalize cases like "p.m.", "p m" to canonical form "pm"
+        private static string NormalizeDayDesc(string dayDesc)
+        {
+            return dayDesc.Replace(" ", string.Empty).Replace(".", string.Empty);
         }
 
         public static TimeResult GetShortLeft(string text)

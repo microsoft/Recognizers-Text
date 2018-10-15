@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string DateTimePeriodThisRegex = @"这个|这一个|这|这一";
 		public const string DateTimePeriodLastRegex = @"上个|上一个|上|上一";
 		public const string DateTimePeriodNextRegex = @"下个|下一个|下|下一";
-		public const string DescRegex = @"(?<desc>pm|am|p\.m\.|a\.m\.|p|a)";
+		public const string AmPmDescRegex = @"(?<daydesc>(am|a\.m\.|a m|a\. m\.|a\.m|a\. m|a m|pm|p\.m\.|p m|p\. m\.|p\.m|p\. m|p m))";
 		public const string TimeOfDayRegex = @"(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)";
 		public static readonly string SpecificTimeOfDayRegex = $@"((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))";
 		public const string DateTimePeriodUnitRegex = @"(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))";
@@ -158,7 +158,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string TimeApproximateDescPreffixRegex = @"(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)";
 		public const string TimeApproximateDescSuffixRegex = @"(之前|以前|以后|以後|之后|之後|前|后|後|左右)";
 		public static readonly string TimeRegexes1 = $@"{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?";
-		public static readonly string TimeRegexes2 = $@"{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?";
+		public static readonly string TimeRegexes2 = $@"{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?(\s*{AmPmDescRegex}?)";
 		public static readonly string TimeRegexes3 = $@"差{TimeMinuteRegex}{TimeChineseTimeRegex}";
 		public const string TimePeriodTimePeriodConnectWords = @"(起|至|到|–|-|—|~|～)";
 		public static readonly string TimePeriodLeftChsTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeChineseTimeRegex}))";
@@ -607,7 +607,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "夜间", 18 },
 			{ "深夜", 18 },
 			{ "傍晚", 18 },
-			{ "晚", 18 }
+			{ "晚", 18 },
+			{ "pm", 12 }
 		};
 		public const string DefaultLanguageFallback = "DMY";
 	}

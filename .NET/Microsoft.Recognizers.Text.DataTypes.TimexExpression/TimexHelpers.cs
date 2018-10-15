@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     }
                 }
 
-                if (duration.Month != null)
+                if (duration.Months != null)
                 {
                     if (start.Month != null)
                     {

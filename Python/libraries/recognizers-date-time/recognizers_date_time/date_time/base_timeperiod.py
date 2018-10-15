@@ -263,7 +263,7 @@ class BaseTimePeriodParser(DateTimeParser):
                 inner_result = self.merge_two_time_points(source_text, reference)
 
             if not inner_result.success:
-                inner_result = self.parse_night(source_text, reference)
+                inner_result = self.parse_time_of_day(source_text, reference)
 
             if inner_result.success:
                 inner_result.future_resolution[TimeTypeConstants.START_TIME] = FormatUtil.format_time(inner_result.future_value.start)
@@ -446,7 +446,7 @@ class BaseTimePeriodParser(DateTimeParser):
         return result
 
     # parse "morning", "afternoon", "night"
-    def parse_night(self, source: str, reference: datetime) -> DateTimeResolutionResult:
+    def parse_time_of_day(self, source: str, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         year = reference.year
         month = reference.month
