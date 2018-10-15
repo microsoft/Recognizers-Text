@@ -62,15 +62,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(DateTimeDefinitions.RelativeWeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: modify below regex according to the counterpart in English
-        public static readonly Regex ForTheRegex = new Regex($@"^[.]",
+        public static readonly Regex ForTheRegex = new Regex($@".^",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: modify below regex according to the counterpart in English
-        public static readonly Regex WeekDayAndDayOfMothRegex = new Regex($@"^[.]",
+        public static readonly Regex WeekDayAndDayOfMothRegex = new Regex($@".^",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: modify below regex according to the counterpart in English
-        public static readonly Regex RelativeMonthRegex = new Regex($@"^[.]",
+        public static readonly Regex RelativeMonthRegex = new Regex($@".^",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PrefixArticleRegex =
