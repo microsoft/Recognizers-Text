@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseNight(er.Text, referenceTime);
+                    innerResult = ParseTimeOfDay(er.Text, referenceTime);
                 }
 
                 if (innerResult.Success)
@@ -659,7 +659,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // parse "morning", "afternoon", "night"
-        private DateTimeResolutionResult ParseNight(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseTimeOfDay(string text, DateObject referenceTime)
         {
             int day = referenceTime.Day,
                 month = referenceTime.Month,
