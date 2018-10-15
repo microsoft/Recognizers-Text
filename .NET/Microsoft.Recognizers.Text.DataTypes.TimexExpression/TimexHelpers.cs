@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -111,7 +112,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     if (start.Year != null)
                     {
-                        var d = new System.DateTime(start.Year.Value, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
+                        var d = new DateObject(start.Year.Value, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
                         d = d.AddDays((double)duration.Days.Value);
 
                         return new TimexProperty {
@@ -122,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     }
                     else
                     {
-                        var d = new System.DateTime(2001, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
+                        var d = new DateObject(2001, start.Month.Value, start.DayOfMonth.Value, 0, 0, 0);
                         d = d.AddDays((double)duration.Days.Value);
 
                         return new TimexProperty
@@ -146,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     }
                 }
 
-                if (duration.Month != null)
+                if (duration.Months != null)
                 {
                     if (start.Month != null)
                     {
@@ -176,7 +177,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
                     if (result.Year != null && result.Month != null && result.DayOfMonth != null)
                     {
-                        var d = new System.DateTime(result.Year.Value, result.Month.Value, result.DayOfMonth.Value, 0, 0, 0);
+                        var d = new DateObject(result.Year.Value, result.Month.Value, result.DayOfMonth.Value, 0, 0, 0);
                         d = d.AddDays((double)days);
 
                         result.Year = d.Year;
@@ -218,9 +219,9 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return TimexTimeAdd(TimexDateAdd(start, duration), duration);
         }
 
-        public static System.DateTime DateFromTimex(TimexProperty timex)
+        public static DateObject DateFromTimex(TimexProperty timex)
         {
-            return new System.DateTime(timex.Year ?? 2001, timex.Month ?? 1, timex.DayOfMonth ?? 1, timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
+            return new DateObject(timex.Year ?? 2001, timex.Month ?? 1, timex.DayOfMonth ?? 1, timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
         }
 
         public static Time TimeFromTimex(TimexProperty timex)

@@ -230,7 +230,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 innerResult = this.mergeTwoTimePoints(er.text, referenceTime);
             }
             if (!innerResult.success) {
-                innerResult = this.parseNight(er.text, referenceTime);
+                innerResult = this.parseTimeOfDay(er.text, referenceTime);
             }
             if (innerResult.success) {
                 innerResult.futureResolution = {};
@@ -717,7 +717,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
     }
 
     // parse "morning", "afternoon", "night"
-    private parseNight(text: string, referenceTime: Date): DateTimeResolutionResult {
+    private parseTimeOfDay(text: string, referenceTime: Date): DateTimeResolutionResult {
         let day = referenceTime.getDate();
         let month = referenceTime.getMonth();
         let year = referenceTime.getFullYear();

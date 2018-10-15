@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -18,88 +20,110 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (day == -1)
                     {
-                        return string.Join("-", "XXXX", "XX", "XX");
+                        return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, Constants.TimexFuzzyMonth, Constants.TimexFuzzyDay);
                     }
                     
-                    return string.Join("-", "XXXX", "XX", day.ToString("D2"));
+                    return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, Constants.TimexFuzzyMonth, day.ToString("D2"));
                 }
 
-                return string.Join("-", "XXXX", month.ToString("D2"), day.ToString("D2"));
+                return string.Join(Constants.DateTimexConnector, Constants.TimexFuzzyYear, month.ToString("D2"), day.ToString("D2"));
             }
 
-            return string.Join("-", year.ToString("D4"), month.ToString("D2"), day.ToString("D2"));
+            return string.Join(Constants.DateTimexConnector, year.ToString("D4"), month.ToString("D2"), day.ToString("D2"));
         }
 
-        public static string LuisDate(System.DateTime date)
+        public static string LuisDate(DateObject date, DateObject alternativeDate = default(DateObject))
         {
-            return LuisDate(date.Year, date.Month, date.Day);
-        }
+            var year = date.Year;
+            var month = date.Month;
+            var day = date.Day;
 
+            if (!alternativeDate.IsDefaultValue())
+            {
+                if (alternativeDate.Year != year)
+                {
+                    year = -1;
+                }
+
+                if (alternativeDate.Month != month)
+                {
+                    month = -1;
+                }
+
+                if (alternativeDate.Day != day)
+                {
+                    day = -1;
+                }
+            }
+
+            return LuisDate(year, month, day);
+        }
+        
         public static string ShortTime(int hour, int min, int second)
         {
             if (min < 0 && second < 0)
             {
-                return $"T{hour.ToString("D2")}";
+                return $"{Constants.TimeTimexPrefix}{hour.ToString("D2")}";
             }
             else if (second < 0)
             {
-                return $"T{string.Join(":", hour.ToString("D2"), min.ToString("D2"))}";
+                return $"{Constants.TimeTimexPrefix}{string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"))}";
             }
 
-            return $"T{string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"))}";
+            return $"{Constants.TimeTimexPrefix}{string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"))}";
         }
 
         public static string LuisTime(int hour, int min, int second)
         {
-            return string.Join(":", hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
+            return string.Join(Constants.TimeTimexConnector, hour.ToString("D2"), min.ToString("D2"), second.ToString("D2"));
         }
 
-        public static string LuisTime(System.DateTime time)
+        public static string LuisTime(DateObject time)
         {
             return LuisTime(time.Hour, time.Minute, time.Second);
         }
 
-        public static string LuisDateTime(System.DateTime time)
+        public static string LuisDateTime(DateObject time)
         {
-            return $"{LuisDate(time)}T{LuisTime(time.Hour, time.Minute, time.Second)}";
+            return $"{LuisDate(time)}{Constants.TimeTimexPrefix}{LuisTime(time.Hour, time.Minute, time.Second)}";
         }
 
         // Only handle TimeSpan which is less than one day
         public static string LuisTimeSpan(System.TimeSpan timeSpan)
         {
-            var result = "PT";
+            var timexBuilder = new StringBuilder($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}");
 
             if (timeSpan.Hours > 0)
             {
-                result += $"{timeSpan.Hours}H";
+                timexBuilder.Append($"{timeSpan.Hours}H");
             }
 
             if (timeSpan.Minutes > 0)
             {
-                result += $"{timeSpan.Minutes}M";
+                timexBuilder.Append($"{timeSpan.Minutes}M");
             }
 
             if (timeSpan.Seconds > 0)
             {
-                result += $"{timeSpan.Seconds}S";
+                timexBuilder.Append($"{timeSpan.Seconds}S");
             }
 
-            return result;
+            return timexBuilder.ToString();
         }
 
-        public static string FormatDate(System.DateTime date)
+        public static string FormatDate(DateObject date)
         {
-            return string.Join("-", date.Year.ToString("D4"), date.Month.ToString("D2"), date.Day.ToString("D2"));
+            return string.Join(Constants.DateTimexConnector, date.Year.ToString("D4"), date.Month.ToString("D2"), date.Day.ToString("D2"));
         }
 
-        public static string FormatTime(System.DateTime time)
+        public static string FormatTime(DateObject time)
         {
-            return string.Join(":", time.Hour.ToString("D2"), time.Minute.ToString("D2"), time.Second.ToString("D2"));
+            return string.Join(Constants.TimeTimexConnector, time.Hour.ToString("D2"), time.Minute.ToString("D2"), time.Second.ToString("D2"));
         }
 
-        public static string FormatDateTime(System.DateTime datetime)
+        public static string FormatDateTime(DateObject datetime)
         {
-            return FormatDate(datetime) + " " + FormatTime(datetime);
+            return $"{FormatDate(datetime)} {FormatTime(datetime)}";
         }
 
         public static string AllStringToPm(string timeStr)
@@ -158,21 +182,21 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string ToPm(string timeStr)
         {
             bool hasT = false;
-            if (timeStr.StartsWith("T"))
+            if (timeStr.StartsWith(Constants.TimeTimexPrefix))
             {
                 hasT = true;
                 timeStr = timeStr.Substring(1);
             }
 
-            var splited = timeStr.Split(':');
+            var splited = timeStr.Split(new string[] { Constants.TimeTimexConnector }, StringSplitOptions.RemoveEmptyEntries);
             var hour = int.Parse(splited[0]);
             hour = hour >= Constants.HalfDayHourCount ? hour - Constants.HalfDayHourCount: hour + Constants.HalfDayHourCount;
             splited[0] = hour.ToString("D2");
 
-            return hasT ? "T" + string.Join(":", splited) : string.Join(":", splited);
+            return hasT ? Constants.TimeTimexPrefix + string.Join(Constants.TimeTimexConnector, splited) : string.Join(Constants.TimeTimexConnector, splited);
         }
 
-        public static string ToIsoWeekTimex(System.DateTime monday)
+        public static string ToIsoWeekTimex(DateObject monday)
         {
             var cal = DateTimeFormatInfo.InvariantInfo.Calendar;
             return monday.Year.ToString("D4") + "-W" + 

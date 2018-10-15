@@ -2072,7 +2072,7 @@
         "Text": "within 2 days 1 hour 5 minutes 30 seconds",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-09 17:17:30"
@@ -2098,7 +2098,7 @@
         "Text": "within next 2 days 1 hour 5 minutes 30 seconds",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-09 17:17:30"
@@ -2124,7 +2124,7 @@
         "Text": "within the upcoming 2 days 1 hour 5 minutes 30 seconds",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1HT5MT30S)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-09 17:17:30"

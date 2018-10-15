@@ -55,12 +55,12 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string FromRegex = @"((desde|de)(\s*a(s)?)?)$";
 		public const string ConnectorAndRegex = @"(e\s*([àa](s)?)?)$";
 		public const string BetweenRegex = @"(entre\s*([oa](s)?)?)";
-		public const string WeekDayRegex = @"\b(?<weekday>Domingos?|Segundas?-feiras?|Segundas?\s+feiras?|Segundas?|2a|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|Ter[cça]s?|3a|Quartas?-feiras?|Quartas?\s+feiras?|Quartas?|4a|Quintas?-feiras?|Quintas?\s+feiras?|Quintas?|5a|Sextas?-feiras?|Sextas?\s+feiras?|Sextas?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg.|Ter[cç].|Qua.|Qui.|Sex.|S[aá]b.|Dom.)\b";
+		public const string WeekDayRegex = @"\b(?<weekday>Domingos?|Segundas?-feiras?|Segundas?\s+feiras?|Segundas?|2a|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|Ter[cça]s?|3a|Quartas?-feiras?|Quartas?\s+feiras?|Quartas?|4a|Quintas?-feiras?|Quintas?\s+feiras?|Quintas?|5a|Sextas?-feiras?|Sextas?\s+feiras?|Sextas?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg\.|Ter[cç]\.|Qua\.|Qui\.|Sex\.|S[aá]b\.|Dom\.)\b";
 		public static readonly string OnRegex = $@"(?<=\b(em|no)\s+)({DayRegex}s?)\b";
 		public const string RelaxedOnRegex = @"(?<=\b(em|n[oa]|d[oa])\s+)(dia\s+)?((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\b";
 		public static readonly string ThisRegex = $@"\b(([nd]?es[st][ea]\s*){WeekDayRegex})|({WeekDayRegex}\s*([nd]?es[st]a\s+semana))\b";
 		public static readonly string LastDateRegex = $@"\b(([uú]ltim[ao])\s*{WeekDayRegex})|({WeekDayRegex}(\s+(([nd]?es[st]a|na|da)\s+([uú]ltima\s+)?semana)))\b";
-		public static readonly string NextDateRegex = $@"\b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(da\s+)?(pr[oó]xima|seguinte)?(\s*semana\s+seguinte|\s*semana)?))\b";
+		public static readonly string NextDateRegex = $@"\b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}((\s+(pr[oó]xim[oa]|seguinte))|(\s+(da\s+)?(semana\s+seguinte|pr[oó]xima\s+semana))))\b";
 		public const string SpecialDayRegex = @"\b((d?o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((d?o\s+)?(dia\s+|depois\s+|dia\s+depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|ontem|amanh[ãa]|hoje)|(do\s+dia$)\b";
 		public const string SpecialDayWithNumRegex = @"^[.]";
 		public const string ForTheRegex = @"^[.]";

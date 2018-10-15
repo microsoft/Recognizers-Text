@@ -1752,5 +1752,21 @@
         "End": 21
       }
     ]
+  },
+  {
+    "Input": "Hey, the cost is 100元!",
+    "Results": [
+      {
+        "Text": "100元",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Chinese yuan",
+          "value": "100",
+          "isoCurrency": "CNY"
+        },
+        "Start": 17,
+        "End": 20
+      }
+    ]
   }
 ]

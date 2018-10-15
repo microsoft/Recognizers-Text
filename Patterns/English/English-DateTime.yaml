@@ -1,8 +1,8 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>to|till|til|until|thru|through|--|-|—|——|~|–)
+  def: (?<till>\b(to|till|til|until|thru|through)\b|(--|-|—|——|~|–))
 RangeConnectorRegex : !simpleRegex
-  def: (?<and>and|through|to|--|-|—|——|~|–)
+  def: (?<and>\b(and|through|to)\b|(--|-|—|——|~|–))
 RelativeRegex: !simpleRegex
   def: \b(?<order>following|next|coming|upcoming|this|last|past|previous|current|the)\b
 StrictRelativeRegex: !simpleRegex
