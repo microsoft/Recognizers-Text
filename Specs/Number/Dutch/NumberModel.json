@@ -2048,6 +2048,19 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
+    "Input": "honderd duizend",
+    "Results": [
+      {
+        "Text": "honderd duizend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
     "Input": "honderdduizend",
     "Results": [
       {
@@ -2058,7 +2071,32 @@
         }
       }
     ],
-    "NotSupported": "dotNet",
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "honderdduizend miljoen",
+    "Results": [
+      {
+        "Text": "honderdduizend miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100000000000"
+        }
+      }
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "vijf miljard tweehonderd miljoen",
+    "Results": [
+      {
+        "Text": "vijf miljard tweehonderd miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5200000000"
+        }
+      }
+    ],
     "NotSupportedByDesign": "javascript,python,java"
   },
   {

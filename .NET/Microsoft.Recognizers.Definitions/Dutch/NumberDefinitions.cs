@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public const string AnIntRegex = @"(een|één)(?=\s)";
 		public const string TenToNineteenIntegerRegex = @"(zeventien|dertien|veertien|achttien|negentien|vijftien|zestien|elf|twaalf|tien)";
 		public const string TensNumberIntegerRegex = @"(zeventig|twintig|dertig|tachtig|negentig|veertig|vijftig|zestig)";
-		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|{RoundNumberIntegerRegex}|(({AnIntRegex}?(\s*{RoundNumberIntegerRegex})+))";
+		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|{RoundNumberIntegerRegex}|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
 		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(en|ën){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex}))\s*(en\s*)?)*{SeparaIntRegex})";
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
