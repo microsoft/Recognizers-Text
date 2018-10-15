@@ -376,4 +376,22 @@
     "NotSupported": "javascript",
     "Results": []
   }
+  ,
+  {
+    "Input": "2:00 pm",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "pm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Picometer"
+        },
+        "Start": 5,
+        "End": 6
+      }
+    ]
+  }
 ]

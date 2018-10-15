@@ -53,7 +53,7 @@ public class EnglishNumeric {
     public static final String PlaceHolderDefault = "\\D|\\b";
 
     public static String NumbersWithPlaceHolder(String placeholder) {
-        return "(?<!:\\s*)(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\.\\d+[a-zA-Z]))(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\.\\d+[a-zA-Z]))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 

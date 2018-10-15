@@ -208,6 +208,32 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var maxFindLen = sourceLen - start - length;
                 mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
 
+                //Special treatment, handle cases like '2:00 pm', '2 : 00 pm'. '00 pm' is not dimension
+                if(start > 1)
+                {
+                    var index = start - 1;
+
+                    while(index > 0 && source[index] == ' ')
+                    {
+                        index = index - 1;
+                    }
+
+                    if(index > 0 && source[index] == ':')
+                    {
+                        index = index - 1;
+
+                        while (index > 0 && source[index] == ' ')
+                        {
+                            index--;
+                        }
+
+                        if (index >= 0 && source[index] >= '0' && source[index] <= '9')
+                        {
+                            continue;
+                        }
+                    }                   
+                }
+
                 if (maxFindLen > 0)
                 {
                     var rightSub = source.Substring(start + length, maxFindLen);

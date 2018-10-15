@@ -116,6 +116,24 @@ export class NumberWithUnitExtractor implements IExtractor {
 
             let prefixUnit: PrefixUnitResult = mappingPrefix.has(start) ? mappingPrefix.get(start) : null;
 
+            if (start > 1) {
+                let index = start - 1;
+                while(index > 0 && source[index] === ' ') {
+                    index = index - 1;
+                }
+
+                if(index > 0 && source[index] === ':') {
+                    index= index - 1;
+                    while(index > 0 && source[index] === ' ') {
+                        index = index - 1;
+                    }
+
+                    if(index >= 0 && source[index] >= '0' && source[index] <= '9') {
+                        continue;
+                    }
+                }
+            }
+
             if (maxFindLen > 0) {
                 let rightSub = source.substring(start + length, start + length + maxFindLen);
                 let unitMatch = Array.from(this.suffixRegexes.values()).map(r => RegExpUtility.getMatches(r, rightSub))

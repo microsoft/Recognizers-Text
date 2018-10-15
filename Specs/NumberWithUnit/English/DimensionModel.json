@@ -815,4 +815,30 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "He said: 2 pm is 2 picometer",
+    "Results": [
+      {
+        "Text": "2 pm",
+        "Start": 9,
+        "End": 12,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Picometer",
+          "value": "2"
+        }
+      },
+      {
+        "Text": "2 picometer",
+        "Start": 17,
+        "End": 27,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Picometer",
+          "value": "2"
+        }
+      }
+    ]
+  }
 ]

@@ -756,4 +756,20 @@
       }
     ]
   }
+  ,
+  {
+    "Input": "2:00 pm",
+    "Results": [
+      {
+        "Text": "pm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Picómetro"
+        },
+        "Start": 5,
+        "End": 6
+      }
+    ]
+  }
 ]
