@@ -65,6 +65,13 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
                         }
                     }
                 }
+
+                if (match.length === 4 && match.index > 0 && match.index + match.length < source.length) {
+                    if (source[match.index - 1] === '-' && source[match.index + match.length] === '-') {
+                        addToken = false;
+                    }
+                }
+
                 if (addToken) {
                     tokens.push(new Token(match.index, match.index + match.length));
                 }

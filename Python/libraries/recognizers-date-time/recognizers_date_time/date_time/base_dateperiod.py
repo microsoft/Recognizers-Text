@@ -150,6 +150,10 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                         if not (year >= 1500 and year <= 2000):
                             add_token = False
 
+                if  len(match.group()) == 4 and match.start() > 0 and match.end() < len(source):
+                    if source[match.start() - 1] == '-' and source[match.end()] == '-':
+                        add_token = False
+
                 if add_token:
                     tokens.append(Token(match.start(), match.end()))
 

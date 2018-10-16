@@ -119,6 +119,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                             continue;
                         }
                     }
+
+                    // handle single year which is surrounded by '-' at both sides, e.g., a single year falls in a GUID            
+                    if (match.Length == 4 && match.Index > 0 && match.Index + match.Length < text.Length)
+                    {
+                        if (text[match.Index - 1] == '-' && text[match.Index + match.Length] == '-')
+                        {
+                            continue;
+                        }
+                    }
+
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
