@@ -97,12 +97,19 @@ export abstract class BaseDateTimeExtractor<T> implements IDateTimeExtractor {
 
 export class TimeResolutionUtils {
     static addDescription(lowBoundMap: ReadonlyMap<string, number>, timeResult: TimeResult, description: string) {
+        description = TimeResolutionUtils.normalizeDesc(description);
         if (lowBoundMap.has(description) && timeResult.hour < lowBoundMap.get(description)) {
             timeResult.hour += 12;
             timeResult.lowBound = lowBoundMap.get(description);
         } else {
             timeResult.lowBound = 0;
         }
+    }
+
+    static normalizeDesc(description: string): string {
+        description = description.replace(/\s/g, '');
+        description = description.replace(/\./g, '');
+        return description;
     }
 
     static matchToValue(onlyDigitMatch: RegExp, numbersMap: ReadonlyMap<string, number>, source: string): number {

@@ -31,7 +31,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (extra != null)
             {
-                var parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime);
+                // Handle special case like '上午', '下午'
+                var parseResult = ParseChineseTimeOfDay(er.Text, referenceTime);
+
+                if (!parseResult.Success)
+                {
+                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime);
+                }
+
                 if (parseResult.Success)
                 {
                     parseResult.FutureResolution = new Dictionary<string, string>
@@ -74,6 +81,75 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             return null;
+        }
+
+        private DateTimeResolutionResult ParseChineseTimeOfDay(string text, DateObject referenceTime)
+        {
+            int day = referenceTime.Day,
+                month = referenceTime.Month,
+                year = referenceTime.Year;
+            var ret = new DateTimeResolutionResult();
+            
+            if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
+            {
+                return new DateTimeResolutionResult();
+            }
+            
+            ret.Timex = timex;
+            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0)
+               );
+            ret.Success = true;
+            
+            return ret;
+        }
+        
+        private bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
+        {
+            var trimmedText = text.Trim();
+            beginHour = 0;
+            endHour = 0;
+            endMin = 0;
+            
+            if (trimmedText.EndsWith("上午"))
+            {
+                timex = "TMO";
+                beginHour = 8;
+                endHour = Constants.HalfDayHourCount;
+            }
+            else if (trimmedText.EndsWith("下午"))
+            {
+                timex = "TAF";
+                beginHour = Constants.HalfDayHourCount;
+                endHour = 16;
+            }
+            else if (trimmedText.EndsWith("晚上"))
+            {
+                timex = "TEV";
+                beginHour = 16;
+                endHour = 20;
+            }
+            else if (trimmedText.Equals("白天"))
+            {
+                timex = "TDT";
+                beginHour = 8;
+                endHour = 18;
+            }
+            else if (trimmedText.EndsWith("深夜"))
+            {
+                timex = "TNI";
+                beginHour = 20;
+                endHour = 23;
+                endMin = 59;
+            }
+            else
+            {
+                timex = null;
+                return false;
+            }
+            
+            return true;
         }
 
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)

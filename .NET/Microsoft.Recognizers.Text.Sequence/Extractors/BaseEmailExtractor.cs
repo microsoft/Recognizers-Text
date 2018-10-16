@@ -17,6 +17,9 @@ namespace Microsoft.Recognizers.Text.Sequence
             {
                 {
                     new Regex(BaseEmail.EmailRegex), Constants.EMAIL_REGEX
+                },
+                {
+                    new Regex(BaseEmail.EmailRegex2), Constants.EMAIL_REGEX
                 }
             };
 

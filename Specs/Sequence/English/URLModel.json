@@ -386,4 +386,26 @@
     "NotSupportedByDesign": "python",
     "Results": []
   }
+  ,
+  {
+    "Input": "Please visit https://luis.ai?action=add for more information",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "https://luis.ai?action=add",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "url",
+        "Resolution": {
+          "value": "https://luis.ai?action=add"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Please visit https://luis.xxx?action=add for more information",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": []
+  }
 ]

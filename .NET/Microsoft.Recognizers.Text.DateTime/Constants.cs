@@ -131,9 +131,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexWeek = "W";
         public const string TimexDay = "D";
         public const string TimexBusinessDay = "BD";
+        public const string TimexWeekend = "WE";
         public const string TimexHour = "H";
         public const string TimexMinute = "M";
         public const string TimexSecond = "S";
         public const char TimexFuzzy = 'X';
+        public const string TimexFuzzyYear = "XXXX";
+        public const string TimexFuzzyMonth = "XX";
+        public const string TimexFuzzyWeek = "WXX";
+        public const string TimexFuzzyDay = "XX";
+        public const string DateTimexConnector = "-";
+        public const string TimeTimexConnector = ":";
+        public const string GeneralPeriodPrefix = "P";
+        public const string TimeTimexPrefix = "T";
     }
 }
