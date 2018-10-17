@@ -6101,7 +6101,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-17T12:00:00"
     },
-    "NotSupported": "java, python, javascript",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "two months ago",
@@ -6140,7 +6140,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-17T12:00:00"
     },
-    "NotSupported": "java",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "in two days",
