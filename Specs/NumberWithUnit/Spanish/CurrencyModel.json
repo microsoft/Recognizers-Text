@@ -1605,6 +1605,7 @@
   },
   {
     "Input": "Ayer me encontré a Obama en Taco Bell y me pidio $5.00 prestados. Me los devolverá el 3 de Enero del 2019.",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "$5.00",
@@ -1620,7 +1621,6 @@
   },
   {
     "Input": "Ayer me encontré a Obama en Taco Bell y me pidio $5,00 prestados. Me los devolverá el 3 de Enero del 2019.",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "$5,00",
