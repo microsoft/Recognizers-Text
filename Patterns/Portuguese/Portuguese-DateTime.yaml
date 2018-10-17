@@ -132,10 +132,10 @@ SpecialDayWithNumRegex: !simpleRegex
   def: ^[.]
 ForTheRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: .^
 WeekDayAndDayOfMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: .^
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -166,12 +166,12 @@ DateExtractor1: !nestedRegex
   references: [ WeekDayRegex, DayRegex, MonthRegex ]
 DateExtractor2: !nestedRegex
   # (domingo,)? 5 de Abril 5, 2016
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*([\.\-]|de)?\s*{MonthRegex}?(\s*(,|de)\s*){DateYearRegex}\b
-  references: [ MonthRegex, DayRegex, DateYearRegex, WeekDayRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*([\.\-]|de)?\s*{MonthRegex}?(\s*(,|de)\s*){YearRegex}\b
+  references: [ MonthRegex, DayRegex, YearRegex, WeekDayRegex ]
 DateExtractor3: !nestedRegex
   # (domingo,)? 6 de Abril
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+de\s+|\s*-\s*){MonthRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?\b
-  references: [ DayRegex, MonthRegex, WeekDayRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+de\s+|\s*-\s*){MonthRegex}((\s+|\s*(,|de)\s*){YearRegex})?\b
+  references: [ DayRegex, MonthRegex, WeekDayRegex, YearRegex ]
 DateExtractor4: !nestedRegex
   # 3-23-2017
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}
@@ -186,8 +186,8 @@ DateExtractor6: !nestedRegex
   references: [ MonthNumRegex, DayRegex ]
 DateExtractor7: !nestedRegex
   # 7/23
-  def: \b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*(,|de)\s*){YearRegex})?\b
-  references: [ MonthNumRegex, DayRegex, YearRegex ]
+  def: \b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?\b
+  references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor8: !nestedRegex
   # o 24-12
   def: (?<=\b(em|no|o)\s+){DayRegex}[\\\-]{MonthNumRegex}\b
