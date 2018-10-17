@@ -1,5 +1,6 @@
 package com.microsoft.recognizers.text.number.parsers;
 
+import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.ParseResult;
@@ -423,18 +424,34 @@ public class BaseNumberParser implements IParser {
         return String.join("|", keys);
     }
 
-    protected double getDigitalValue(String digitStr, double power) {
+    private boolean skipNonDecimalSeparator(char ch, int distance, CultureInfo culture)
+    {
+        int decimalLength = 3;
+
+        // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
+        // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
+        // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
+        Pattern cultureRegex = Pattern.compile("^(en|es|fr)(-)?\b", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS);
+
+        return (ch == config.getNonDecimalSeparatorChar() && !(distance <= decimalLength && cultureRegex.matcher(culture.cultureCode).matches()) );
+    }
+
+    protected double getDigitalValue(String digitsStr, double power) {
         double temp = 0;
         double scale = 10;
-        boolean dot = false;
+        boolean decimalSeparator = false;
+        int strLength = digitsStr.length();
         boolean isNegative = false;
-        boolean isFrac = digitStr.contains("/");
+        boolean isFrac = digitsStr.contains("/");
 
         Stack<Double> calStack = new Stack<>();
 
-        for (int i = 0; i < digitStr.length(); i++) {
-            char ch = digitStr.charAt(i);
-            if (!isFrac && (ch == config.getNonDecimalSeparatorChar() || ch == ' ' || ch == Constants.NO_BREAK_SPACE)) {
+        for (int i = 0; i < digitsStr.length(); i++) {
+
+            char ch = digitsStr.charAt(i);
+            boolean skippableNonDecimal = skipNonDecimalSeparator(ch, strLength - i, config.getCultureInfo());
+
+            if (!isFrac && (ch == ' ' || ch == Constants.NO_BREAK_SPACE || skippableNonDecimal)) {
                 continue;
             }
 
@@ -442,14 +459,14 @@ public class BaseNumberParser implements IParser {
                 calStack.push(temp);
                 temp = 0;
             } else if (ch >= '0' && ch <= '9') {
-                if (dot) {
+                if (decimalSeparator) {
                     temp = temp + scale * (ch - '0');
                     scale *= 0.1;
                 } else {
                     temp = temp * scale + (ch - '0');
                 }
-            } else if (ch == config.getDecimalSeparatorChar()) {
-                dot = true;
+            } else if (ch == config.getDecimalSeparatorChar() || (!skippableNonDecimal && ch == config.getNonDecimalSeparatorChar())) {
+                decimalSeparator = true;
                 scale = 0.1;
             } else if (ch == '-') {
                 isNegative = true;

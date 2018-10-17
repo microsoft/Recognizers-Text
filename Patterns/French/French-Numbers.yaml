@@ -37,7 +37,7 @@ AllIntRegex: !nestedRegex
   def: ({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)
   references: [ SeparaIntRegex, BelowThousandsRegex ]
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([,\.]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
@@ -117,23 +117,23 @@ AllFloatRegex: !nestedRegex
   def: ({AllIntRegex}(\s+(virgule|point)){AllPointRegex})
   references: [ AllIntRegex, AllPointRegex ]
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))\d+[,\.]\d+(?!([,\.]\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithoutIntegralRegex: !paramsRegex
-  def: (?<=\s|^)(?<!(\d+)),\d+(?!(,\d+))(?={placeholder})
+  def: (?<=\s|^)(?<!(\d+))[,\.]\d+(?!([,\.]\d+))(?={placeholder})
   params: [ placeholder ]
 DoubleWithMultiplierRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(K|k|M|G|T)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s*(K|k|M|G|T)(?=\b)
 DoubleWithRoundNumber: !nestedRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\[,\.])))\d+[,\.]\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
 DoubleAllFloatRegex: !nestedRegex
   def: ((?<=\b){AllFloatRegex}(?=\b))
   references: [ AllFloatRegex ]
 DoubleExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))(\d+([,\.]\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[,\.])))(\d+([,\.]\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 #Number Regex
 CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
