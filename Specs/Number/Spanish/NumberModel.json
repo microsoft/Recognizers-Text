@@ -2572,6 +2572,7 @@
   },
   {
     "Input": "En algunos países puedes escribir informalmente 5.00 or 5,00.",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "5.00",
