@@ -15,6 +15,7 @@ export namespace ChineseDateTime {
 	export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)`;
 	export const TwoNumYear = '50';
 	export const YearNumRegex = `(?<year>((1[5-9]|20)\\d{2})|2100)`;
+	export const IllegalYearRegex = `([-])(?<year>((1[5-9]|20)\\d{2})|2100)([-])`;
 	export const YearRegex = `(?<year>(\\d{2,4}))`;
 	export const ZeroToNineIntegerRegexChs = `[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]`;
 	export const DateYearInChineseRegex = `(?<yearchs>(${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}|${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}${ZeroToNineIntegerRegexChs}))`;

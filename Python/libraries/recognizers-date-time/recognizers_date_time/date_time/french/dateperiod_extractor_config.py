@@ -18,6 +18,10 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._simple_cases_regexes
 
     @property
+    def illegal_year_regex(self) -> Pattern:
+        return self._illegal_year_regex
+
+    @property
     def year_regex(self) -> Pattern:
         return self._year_regex
 
@@ -99,6 +103,7 @@ class FrenchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.get_safe_reg_exp(FrenchDateTime.WeekWithWeekDayRangeRegex)
         ]
+        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.YearRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.TillRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(FrenchDateTime.FollowedDateUnit)

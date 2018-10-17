@@ -18,6 +18,10 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._simple_cases_regexes
 
     @property
+    def illegal_year_regex(self) -> Pattern:
+        return self._illegal_year_regex
+
+    @property
     def year_regex(self) -> Pattern:
         return self._year_regex
 
@@ -99,6 +103,7 @@ class SpanishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.WeekWithWeekDayRangeRegex)
         ]
+        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.YearRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.TillRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(SpanishDateTime.FollowedDateUnit)

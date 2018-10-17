@@ -11,6 +11,7 @@ import { IDateTimeExtractor } from "../baseDateTime";
 
 export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
+    readonly illegalYearRegex: RegExp;
     readonly YearRegex: RegExp;
     readonly tillRegex: RegExp;
     readonly followedUnit: RegExp;
@@ -53,6 +54,8 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(SpanishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.WeekWithWeekDayRangeRegex)
         ];
+
+        this.illegalYearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.IllegalYearRegex);
         this.YearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedDateUnit);

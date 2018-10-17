@@ -27,6 +27,7 @@ class EnglishDateTime:
     WrittenNumRegex = f'(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)'
     FullTextYearRegex = f'\\b((?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\\s+{WrittenNumRegex})|{WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>{CenturyRegex})\\b'
     YearNumRegex = f'\\b(?<![$])(?<year>((1[5-9]|20)\\d{{2}})|2100)(?!\\.0\\b)\\b'
+    IllegalYearRegex = f'([-])(?<year>((1[5-9]|20)\\d{{2}})|2100)([-])'
     YearRegex = f'({YearNumRegex}|{FullTextYearRegex})'
     WeekDayRegex = f'\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\\b'
     SingleWeekDayRegex = f'\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on\\s+)(Sat|Sun)))\\b'

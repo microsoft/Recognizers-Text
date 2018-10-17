@@ -12,6 +12,7 @@ export namespace PortugueseDateTime {
 	export const AndRegex = `(?<and>e|e\\s*o|--|-|—|——)`;
 	export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|4|5|6|7|8|9)(?=\\b|t)`;
 	export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
+	export const IllegalYearRegex = `([-])(?<year>((1[5-9]|20)\\d{2})|2100)([-])`;
 	export const YearRegex = `(?<year>((1[5-9]|20)\\d{2})|[0-27-9]\\d)`;
 	export const FullYearRegex = `\\b(?<year>19\\d{2}|20\\d{2})\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\\s+m[eê]s)\\b`;

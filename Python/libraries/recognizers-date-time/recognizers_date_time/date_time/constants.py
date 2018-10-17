@@ -23,6 +23,7 @@ class Constants:
 
     SemesterMonthCount: int = 6
     TrimesterMonthCount: int = 3
+    FourDigitsYearLength: int = 4
     
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'

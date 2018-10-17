@@ -17,6 +17,8 @@ MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
 MinYearNum: '1500'
 MaxYearNum: '2100'
+IllegalYearRegex: !simpleRegex
+  def: ([-])(?<year>((1[5-9]|20)\d{2})|2100)([-])
 YearRegex: !simpleRegex
   def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
 WeekDayRegex: !simpleRegex

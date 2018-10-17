@@ -13,6 +13,7 @@ import { Constants, TimeTypeConstants } from "../constants";
 
 class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[]
+    readonly illegalYearRegex: RegExp
     readonly YearRegex: RegExp
     readonly tillRegex: RegExp
     readonly followedUnit: RegExp
@@ -52,6 +53,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(ChineseDateTime.NumberCombinedWithUnit);
         this.pastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PastRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.FutureRegex);
+        this.illegalYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.IllegalYearRegex);
     }
 
     getFromTokenIndex(source: string) {

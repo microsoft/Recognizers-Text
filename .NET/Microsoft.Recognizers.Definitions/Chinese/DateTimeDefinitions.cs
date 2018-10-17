@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)";
 		public const string TwoNumYear = "50";
 		public const string YearNumRegex = @"(?<year>((1[5-9]|20)\d{2})|2100)";
+		public const string IllegalYearRegex = @"([-])(?<year>((1[5-9]|20)\d{2})|2100)([-])";
 		public const string YearRegex = @"(?<year>(\d{2,4}))";
 		public const string ZeroToNineIntegerRegexChs = @"[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
 		public static readonly string DateYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))";
@@ -170,7 +171,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string TimePeriodRegexes1 = $@"({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
 		public static readonly string TimePeriodRegexes2 = $@"({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
 		public const string ParserConfigurationBefore = @"(之前|以前|前)";
-		public const string ParserConfigurationAfter = @"(之后|以后|后|之後|以後|後)";
+		public const string ParserConfigurationAfter = @"(之后|之後|以后|以後|后|後)";
 		public const string ParserConfigurationUntil = @"(直到|直至|截至|截止(到)?)";
 		public const string ParserConfigurationSincePrefix = @"(自从|自|自打|打)";
 		public const string ParserConfigurationSinceSuffix = @"(以来|开始)";

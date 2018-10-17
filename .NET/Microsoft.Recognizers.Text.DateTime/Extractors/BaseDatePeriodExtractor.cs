@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return ret;
         }
-
+       
         private List<Token> MatchSimpleCases(string text)
         {
             var ret = new List<Token>();
@@ -119,16 +119,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                             continue;
                         }
                     }
-
+                                          
                     // handle single year which is surrounded by '-' at both sides, e.g., a single year falls in a GUID            
-                    if (match.Length == 4 && match.Index > 0 && match.Index + match.Length < text.Length)
-                    {
-                        if (text[match.Index - 1] == '-' && text[match.Index + match.Length] == '-')
+                    if (match.Length == Constants.FourDigitsYearLength && this.config.YearRegex.IsMatch(match.Value) && InfixBoundaryCheck(match, text))
+                    {                 
+                        var substr = text.Substring(match.Index - 1, 6);
+                        if (this.config.IllegalYearRegex.IsMatch(substr))
                         {
                             continue;
                         }
-                    }
-
+                    }                   
+                    
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
@@ -445,6 +446,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return false;
+        }
+
+        // check whether the match is an infix of source
+        private bool InfixBoundaryCheck(Match match, string source)
+        {
+            bool isMatchInfixOfSource = false;
+            if (match.Index > 0 && match.Index + match.Length < source.Length)
+            {
+                if (source.Substring(match.Index, match.Length).Equals(match.Value))
+                {
+                    isMatchInfixOfSource = true;
+                }
+            }
+
+            return isMatchInfixOfSource;
         }
     }
 }

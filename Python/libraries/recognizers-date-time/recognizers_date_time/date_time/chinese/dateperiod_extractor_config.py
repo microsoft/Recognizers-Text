@@ -13,6 +13,10 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._simple_cases_regexes
 
     @property
+    def illegal_year_regex(self) -> Pattern:
+        return self._illegal_year_regex
+
+    @property
     def year_regex(self) -> Pattern:
         return self._year_regex
 
@@ -90,6 +94,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SeasonWithYear),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.QuarterRegex),
         ]
+        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodTillRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(ChineseDateTime.FollowedUnit)

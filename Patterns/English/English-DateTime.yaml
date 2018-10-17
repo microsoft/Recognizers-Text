@@ -36,6 +36,8 @@ FullTextYearRegex: !nestedRegex
   references: [ CenturyRegex, WrittenNumRegex ]
 YearNumRegex: !simpleRegex
   def: \b(?<![$])(?<year>((1[5-9]|20)\d{2})|2100)(?!\.0\b)\b
+IllegalYearRegex: !simpleRegex
+  def: ([-])(?<year>((1[5-9]|20)\d{2})|2100)([-])
 YearRegex: !nestedRegex
   def: ({YearNumRegex}|{FullTextYearRegex})
   references: [ YearNumRegex, FullTextYearRegex ]

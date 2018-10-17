@@ -11,6 +11,7 @@ import { IDateTimeExtractor } from "../baseDateTime";
 
 export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[]
+    readonly illegalYearRegex: RegExp
     readonly YearRegex: RegExp
     readonly tillRegex: RegExp
     readonly followedUnit: RegExp
@@ -49,6 +50,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex)
         ];
+        this.illegalYearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.IllegalYearRegex),
         this.YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit);
