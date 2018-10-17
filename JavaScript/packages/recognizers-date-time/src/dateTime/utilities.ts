@@ -171,7 +171,7 @@ export class MatchingUtil {
         let result: MatchedIndex = { matched: false, index: -1 };
         let referencedMatches = RegExpUtility.getMatches(regex, source.trim().toLowerCase());
         if (referencedMatches && referencedMatches.length > 0 && referencedMatches[0].index === 0) {
-            result.index = source.toLowerCase().lastIndexOf(referencedMatches[0].value) + referencedMatches[0].length;
+            result.index = source.toLowerCase().indexOf(referencedMatches[0].value) + referencedMatches[0].length;
             result.matched = true;
         }
         return result;
