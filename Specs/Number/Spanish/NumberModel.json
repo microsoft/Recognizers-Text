@@ -2569,5 +2569,28 @@
         "End": 17
       }
     ]
+  },
+  {
+    "Input": "En algunos países puedes escribir informalmente 5.00 or 5,00.",
+    "Results": [
+      {
+        "Text": "5.00",
+        "Start": 48,
+        "End": 51,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      },
+      {
+        "Text": "5,00",
+        "Start": 56,
+        "End": 59,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        }
+      }
+    ]
   }
 ]

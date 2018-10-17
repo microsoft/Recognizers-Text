@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 }
             }
 
-            //Form the extracted results from all the matched intervals in the text.
+            // Form the extracted results mark all the matched intervals in the text.
             var lastNotMatched = -1;
             for (var i = 0; i < text.Length; i++)
             {
