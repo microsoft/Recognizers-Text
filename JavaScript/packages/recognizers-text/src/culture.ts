@@ -33,6 +33,25 @@ export class Culture {
   static getSupportedCultureCodes(): Array<string> {
     return Culture.supportedCultures.map(c => c.cultureCode)
   }
+
+  static mapToNearestLanguage(cultureCode: string): string {
+    if (cultureCode !== undefined) {    
+      cultureCode = cultureCode.toLowerCase();
+      var supportedCultureCodes = Culture.getSupportedCultureCodes();
+      
+      if (supportedCultureCodes.indexOf(cultureCode) < 0) {
+        var culturePrefix = cultureCode.split('-')[0].trim();
+
+        supportedCultureCodes.forEach(function(supportedCultureCode) {
+          if (supportedCultureCode.startsWith(culturePrefix)) {
+            cultureCode = supportedCultureCode;
+          }
+        })
+      }
+    }
+
+    return cultureCode;
+  }
 }
 
 export class CultureInfo {

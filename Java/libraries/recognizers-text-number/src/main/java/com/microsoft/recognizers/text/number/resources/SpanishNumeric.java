@@ -65,7 +65,7 @@ public class SpanishNumeric {
     public static final String PlaceHolderDefault = "\\D|\\b";
 
     public static String NumbersWithPlaceHolder(String placeholder) {
-        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 
@@ -158,26 +158,26 @@ public class SpanishNumeric {
             .replace("{AllPointRegex}", AllPointRegex);
 
     public static String DoubleDecimalPointRegex(String placeholder) {
-        return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 
     public static String DoubleWithoutIntegralRegex(String placeholder) {
-        return "(?<=\\s|^)(?<!(\\d+)),\\d+(?!(,\\d+))(?={placeholder})"
+        return "(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 
-    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*(K|k|M|G|T)(?=\\b)";
+    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s*(K|k|M|G|T)(?=\\b)";
 
-    public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
+    public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[\\.,])))\\d+[\\.,]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
     public static final String DoubleAllFloatRegex = "((?<=\\b){AllFloatRegex}(?=\\b))"
             .replace("{AllFloatRegex}", AllFloatRegex);
 
-    public static final String DoubleExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)";
+    public static final String DoubleExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)";
 
-    public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)";
+    public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)";
 
     public static final String NumberWithPrefixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por ciento|por cien)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
@@ -287,7 +287,7 @@ public class SpanishNumeric {
         .put("trillones", 1000000000000000000L)
         .build();
 
-    public static final Map<String, Long> SimpleOrdinalNumberMap = ImmutableMap.<String, Long>builder()
+    public static final Map<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("primero", 1L)
         .put("primera", 1L)
         .put("primer", 1L)
@@ -373,7 +373,7 @@ public class SpanishNumeric {
         .put("billonesima", 1000000000000L)
         .build();
 
-    public static final Map<String, Long> PrefixCardinalDictionary = ImmutableMap.<String, Long>builder()
+    public static final Map<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
         .put("dos", 2L)
         .put("tres", 3L)
         .put("cuatro", 4L)
@@ -423,7 +423,7 @@ public class SpanishNumeric {
         .put("novecientos", 900L)
         .build();
 
-    public static final Map<String, Long> SufixOrdinalDictionary = ImmutableMap.<String, Long>builder()
+    public static final Map<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
         .put("milesimo", 1000L)
         .put("millonesimo", 1000000L)
         .put("billonesimo", 1000000000000L)

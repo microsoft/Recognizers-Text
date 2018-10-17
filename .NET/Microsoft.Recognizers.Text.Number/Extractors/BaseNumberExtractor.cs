@@ -90,6 +90,7 @@ namespace Microsoft.Recognizers.Text.Number
                                 Type = ExtractType,
                                 Data = type
                             };
+
                             result.Add(er);
                         }
                     }

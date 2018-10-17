@@ -584,18 +584,33 @@ export class BaseNumberParser implements IParser {
         return ret;
     }
 
-    protected getDigitalValue(digitStr: string, power: number): number {
+    private skipNonDecimalSeparator(ch: string, distance: number, culture: CultureInfo) {
+        var decimalLength = 3;
+
+        // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
+        // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
+        // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
+        var cultureRegex = RegExpUtility.getSafeRegExp(String.raw`^(en|es|fr)(-)?\b`, "is");
+
+        return (ch == this.config.nonDecimalSeparatorChar && !(distance <= decimalLength && (cultureRegex.exec(culture.code) !== null)) );
+    }
+
+    protected getDigitalValue(digitsStr: string, power: number): number {
         let tmp = new BigNumber(0);
         let scale = new BigNumber(10);
-        let dot = false;
+        let decimalSeparator = false;
+        var strLength = digitsStr.length;
         let isNegative = false;
-        let isFrac = digitStr.includes('/');
+        let isFrac = digitsStr.includes('/');
 
         let calStack = new Array<BigNumber>();
 
-        for (let i = 0; i < digitStr.length; i++) {
-            let ch = digitStr[i];
-            if (!isFrac && (ch === this.config.nonDecimalSeparatorChar || ch === ' ')) {
+        for (let i = 0; i < digitsStr.length; i++) {
+            
+            let ch = digitsStr[i];
+            var skippableNonDecimal = this.skipNonDecimalSeparator(ch, strLength - i, this.config.cultureInfo);
+
+            if (!isFrac && (ch === ' ' || skippableNonDecimal)) {
                 continue;
             }
 
@@ -604,7 +619,7 @@ export class BaseNumberParser implements IParser {
                 tmp = new BigNumber(0);
             }
             else if (ch >= '0' && ch <= '9') {
-                if (dot) {
+                if (decimalSeparator) {
                     // tmp = tmp + scale * (ch.charCodeAt(0) - 48);
                     // scale *= 0.1;
                     tmp = tmp.plus(scale.times(ch.charCodeAt(0) - 48));
@@ -615,8 +630,8 @@ export class BaseNumberParser implements IParser {
                     tmp = tmp.times(scale).plus(ch.charCodeAt(0) - 48);
                 }
             }
-            else if (ch === this.config.decimalSeparatorChar) {
-                dot = true;
+            else if (ch === this.config.decimalSeparatorChar || (!skippableNonDecimal && ch == this.config.nonDecimalSeparatorChar)) {
+                decimalSeparator = true;
                 scale = new BigNumber(0.1);
             }
             else if (ch === '-') {
@@ -625,7 +640,7 @@ export class BaseNumberParser implements IParser {
         }
         calStack.push(tmp);
 
-        // is the number is a fraction.
+        // if the number is a fraction.
         let calResult = new BigNumber(0);
         if (isFrac) {
             let deno = calStack.pop();

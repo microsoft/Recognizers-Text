@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             this.OrdinalNumberMap = ImmutableDictionary<string, long>.Empty;
             this.RoundNumberMap = ImmutableDictionary<string, long>.Empty;
             this.DigitalNumberRegex = new Regex(@"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
-                                                RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Singleline);
+                                                RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
@@ -79,11 +79,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             char decimalSep = type.DecimalsMark, nonDecimalSep = type.ThousandsMark;
 
-            var parser = AgnosticNumberParserFactory.GetParser(
-            AgnosticNumberParserType.Double,
-            new LongFormTestConfiguration(decimalSep, nonDecimalSep));
-            var resultJson = parser.Parse(
-                new ExtractResult() { Text = query, Start = 0, Length = query.Length, Type = "builtin.num.double", Data = "Num" });
+            var parser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Double,
+                                                               new LongFormTestConfiguration(decimalSep, nonDecimalSep));
+
+            var resultJson = parser.Parse(new ExtractResult() {
+                Text = query, Start = 0, Length = query.Length, Type = "builtin.num.double", Data = "Num"
+            });
+
             Assert.AreEqual(value, resultJson.ResolutionStr);
         }
 
