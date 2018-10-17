@@ -27,7 +27,6 @@ namespace Microsoft.Recognizers.Definitions.Italian
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
 		public const string MinYearNum = "1500";
 		public const string MaxYearNum = "2100";
-		public const string IllegalYearRegex = @"([-])(?<year>((1[5-9]|20)\d{2})|2100)([-])";
 		public const string YearRegex = @"\b(?<year>((1[5-9]|20)\d{2})|2100)\b";
 		public const string WeekDayRegex = @"\b(?<weekday>Domenica|Lunedì|Martedì|Mercoledì|Giovedì|Venerdì|Sabato|Lun|Mar|Mer|Gio|Ven|Sab|Dom)\b";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>({ThisPrefixRegex}\s+mese)|(mese\s+{PastSuffixRegex})|(mese\s+{NextSuffixRegex}))\b";

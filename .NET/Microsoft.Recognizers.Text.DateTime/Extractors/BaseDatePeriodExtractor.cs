@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return ret;
         }
-       
+
         private List<Token> MatchSimpleCases(string text)
         {
             var ret = new List<Token>();

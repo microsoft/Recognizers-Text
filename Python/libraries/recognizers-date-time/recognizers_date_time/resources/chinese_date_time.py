@@ -16,7 +16,6 @@ class ChineseDateTime:
     MonthNumRegex = f'(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)'
     TwoNumYear = '50'
     YearNumRegex = f'(?<year>((1[5-9]|20)\\d{{2}})|2100)'
-    IllegalYearRegex = f'([-])(?<year>((1[5-9]|20)\\d{{2}})|2100)([-])'
     YearRegex = f'(?<year>(\\d{{2,4}}))'
     ZeroToNineIntegerRegexChs = f'[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]'
     DateYearInChineseRegex = f'(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))'

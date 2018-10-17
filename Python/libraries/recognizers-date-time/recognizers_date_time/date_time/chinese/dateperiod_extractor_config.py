@@ -2,6 +2,7 @@ from typing import List, Pattern
 
 from recognizers_text import Extractor, Parser, RegExpUtility
 from recognizers_number import ChineseNumberExtractor, ChineseNumberParserConfiguration, BaseNumberParser
+from ...resources.base_date_time import BaseDateTime
 from ...resources.chinese_date_time import ChineseDateTime
 from ..extractors import DateTimeExtractor
 from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
@@ -94,7 +95,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SeasonWithYear),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.QuarterRegex),
         ]
-        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.IllegalYearRegex)
+        self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.YearRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(ChineseDateTime.DatePeriodTillRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(ChineseDateTime.FollowedUnit)

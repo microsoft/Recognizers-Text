@@ -13,7 +13,6 @@ class PortugueseDateTime:
     AndRegex = f'(?<and>e|e\\s*o|--|-|—|——)'
     DayRegex = f'(?<day>01|02|03|04|05|06|07|08|09|1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|4|5|6|7|8|9)(?=\\b|t)'
     MonthNumRegex = f'(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b'
-    IllegalYearRegex = f'([-])(?<year>((1[5-9]|20)\\d{{2}})|2100)([-])'
     DescRegex = f'(?<desc>pm\\b|am\\b|p\\.m\\.|a\\.m\\.)'
     AmDescRegex = f'(am\\b|a\\.m\\.|a m\\b|a\\. m\\.\\b|a\\.m\\b|a\\. m\\b)'
     PmDescRegex = f'(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.\\b|p\\.m\\b|p\\. m\\b)'

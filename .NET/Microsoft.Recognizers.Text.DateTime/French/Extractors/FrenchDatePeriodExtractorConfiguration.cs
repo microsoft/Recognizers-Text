@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.French;
@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly Regex IllegalYearRegex =
             new Regex(
-                DateTimeDefinitions.IllegalYearRegex,
+                BaseDateTime.IllegalYearRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearRegex = 

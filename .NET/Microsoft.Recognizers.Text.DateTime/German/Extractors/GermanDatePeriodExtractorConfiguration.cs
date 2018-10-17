@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.German;
@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex IllegalYearRegex =
-            new Regex(DateTimeDefinitions.IllegalYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(BaseDateTime.IllegalYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearRegex = 
             new Regex(DateTimeDefinitions.YearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

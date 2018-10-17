@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Portuguese;
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex IllegalYearRegex =
-            new Regex(DateTimeDefinitions.IllegalYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(BaseDateTime.IllegalYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearRegex = 
             new Regex(DateTimeDefinitions.YearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);

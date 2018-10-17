@@ -152,7 +152,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     if not year_str:
                         year = self.__get_year_from_text(match_year)
 
-                        if not (year >= 1500 and year <= 2100):
+                        if not (year >= Constants.MinYearNum and year <= Constants.MaxYearNum):
                             add_token = False
 
                 if (match.end() - match.start() == Constants.FourDigitsYearLength) and self.__infix_boundary_check(match, source):

@@ -5,6 +5,7 @@ import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { SpanishDateExtractorConfiguration } from "./dateConfiguration";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
+import { BaseDateTime } from "../../resources/baseDateTime";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeExtractor } from "../baseDateTime";
@@ -54,8 +55,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(SpanishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.WeekWithWeekDayRangeRegex)
         ];
-
-        this.illegalYearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.IllegalYearRegex);
+        this.illegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
         this.YearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedDateUnit);

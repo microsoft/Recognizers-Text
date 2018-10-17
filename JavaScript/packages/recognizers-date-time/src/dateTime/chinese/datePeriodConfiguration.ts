@@ -7,6 +7,7 @@ import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { ChineseDurationExtractor } from "./durationConfiguration";
 import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateUtils, FormatUtil, StringMap } from "../utilities";
+import { BaseDateTime } from "../../resources/baseDateTime";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
@@ -48,12 +49,12 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
         this.datePointExtractor = new ChineseDateExtractor();
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = new BaseNumberParser(new ChineseNumberParserConfiguration());
-        this.tillRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodTillRegex)
+        this.illegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
+        this.tillRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodTillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(ChineseDateTime.FollowedUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(ChineseDateTime.NumberCombinedWithUnit);
         this.pastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PastRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.FutureRegex);
-        this.illegalYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.IllegalYearRegex);
     }
 
     getFromTokenIndex(source: string) {
