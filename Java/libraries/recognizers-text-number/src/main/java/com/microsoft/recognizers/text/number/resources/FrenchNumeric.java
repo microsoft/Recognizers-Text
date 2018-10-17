@@ -22,9 +22,9 @@ public class FrenchNumeric {
 
     public static final String ZeroToNineIntegerRegex = "(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
 
-    public static final String TenToNineteenIntegerRegex = "(dix[-\\s]neuf|dix[-\\s]huit|dix[-\\s]sept|(-)?seize|(-)?quinze|(-)?quatorze|(-)?treize|(-)?douze|(-)?onze|dix)";
+    public static final String TenToNineteenIntegerRegex = "((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)";
 
-    public static final String TensNumberIntegerRegex = "(quatre[-\\s]vingt[-\\s]dix|quatre[-\\s]vingt(s)?|soixante[-\\s]dix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
+    public static final String TensNumberIntegerRegex = "(quatre\\Wvingt(s|\\Wdix)?|soixante\\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
 
     public static final String DigitsNumberRegex = "\\d|\\d{1,3}(\\.\\d{3})";
 
@@ -37,7 +37,7 @@ public class FrenchNumeric {
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex);
 
-    public static final String BelowHundredsRegex = "({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}[-\\s]+{TenToNineteenIntegerRegex})|({TensNumberIntegerRegex}([-\\s]+{ZeroToNineIntegerRegex})?)|{ZeroToNineIntegerRegex})"
+    public static final String BelowHundredsRegex = "(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}([-\\s]+({TenToNineteenIntegerRegex}|{ZeroToNineIntegerRegex}))?))|{ZeroToNineIntegerRegex})"
             .replace("{TenToNineteenIntegerRegex}", TenToNineteenIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
@@ -61,7 +61,7 @@ public class FrenchNumeric {
             .replace("{BelowThousandsRegex}", BelowThousandsRegex);
 
     public static String NumbersWithPlaceHolder(String placeholder) {
-        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(,\\d+[a-zA-Z]))(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!([,\\.]\\d+[a-zA-Z]))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 
@@ -159,26 +159,26 @@ public class FrenchNumeric {
             .replace("{AllPointRegex}", AllPointRegex);
 
     public static String DoubleDecimalPointRegex(String placeholder) {
-        return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))\\d+,\\d+(?!(,\\d+))(?={placeholder})"
+        return "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[,\\.])))\\d+[,\\.]\\d+(?!([,\\.]\\d+))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 
     public static String DoubleWithoutIntegralRegex(String placeholder) {
-        return "(?<=\\s|^)(?<!(\\d+)),\\d+(?!(,\\d+))(?={placeholder})"
+        return "(?<=\\s|^)(?<!(\\d+))[,\\.]\\d+(?!([,\\.]\\d+))(?={placeholder})"
 			.replace("{placeholder}", placeholder);
     }
 
-    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*(K|k|M|G|T)(?=\\b)";
+    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[,\\.])))\\d+[,\\.]\\d+\\s*(K|k|M|G|T)(?=\\b)";
 
-    public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
+    public static final String DoubleWithRoundNumber = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\[,\\.])))\\d+[,\\.]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
     public static final String DoubleAllFloatRegex = "((?<=\\b){AllFloatRegex}(?=\\b))"
             .replace("{AllFloatRegex}", AllFloatRegex);
 
-    public static final String DoubleExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)";
+    public static final String DoubleExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[,\\.])))(\\d+([,\\.]\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)";
 
-    public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)";
+    public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[,\\.])))(\\d+([,\\.]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)";
 
     public static final String CurrencyRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s*(B|b|m|t|g)(?=\\b)";
 
@@ -362,7 +362,7 @@ public class FrenchNumeric {
         .put("trillionieme", 1000000000000000000L)
         .build();
 
-    public static final Map<String, Long> PrefixCardinalDictionary = ImmutableMap.<String, Long>builder()
+    public static final Map<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
         .put("deux", 2L)
         .put("trois", 3L)
         .put("quatre", 4L)
@@ -428,7 +428,7 @@ public class FrenchNumeric {
         .put("neuf cent", 900L)
         .build();
 
-    public static final Map<String, Long> SufixOrdinalDictionary = ImmutableMap.<String, Long>builder()
+    public static final Map<String, Long> SuffixOrdinalMap = ImmutableMap.<String, Long>builder()
         .put("millième", 1000L)
         .put("million", 1000000L)
         .put("milliardième", 1000000000000L)

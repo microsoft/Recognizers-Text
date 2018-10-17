@@ -8,5 +8,10 @@
 
 # pylint: disable=line-too-long
 class BaseEmail:
-    EmailRegex = f'(([-a-zA-Z0-9_\\.]+)@([-a-zA-Z\\d\\.]+)\\.([a-zA-Z\\.]{{2,6}}))'
+    EmailRegex = f'(([-a-zA-Z0-9_\\+\\.]+)@([-a-zA-Z\\d\\.]+)\\.([a-zA-Z\\.]{{2,6}}))'
+    IPv4Regex = f'(?<ipv4>(\\d{{1,3}}\\.){{3}}\\d{{1,3}})'
+    NormalSuffixRegex = f'(([0-9A-Za-z][-]*[0-9A-Za-z]*\\.)+(?<tld>[a-zA-Z][\\-a-zA-Z]{{0,22}}[a-zA-Z]))'
+    EmailPrefix = f'(?(\"\")(\"\".+?(?<!\\\\)\"\")|(([0-9A-Za-z]((\\.(?!\\.))|[-!#\\$%&\'\\*\\+/=\\?\\^\\{{\\}}\\|~\\w])*)(?<=[0-9A-Za-z])))'
+    EmailSuffix = f'(?(\\[)(\\[{IPv4Regex}\\])|{NormalSuffixRegex})'
+    EmailRegex2 = f'(({EmailPrefix})@({EmailSuffix}))'
 # pylint: enable=line-too-long
