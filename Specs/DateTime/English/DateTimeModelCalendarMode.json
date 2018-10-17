@@ -898,42 +898,5 @@
         }
       }
     ]
-  },
-  {
-    "Input": "Mortgages were at 6.45 percent",
-    "Context": {
-      "ReferenceDateTime": "2018-08-30T10:00:00"
-    },
-    "NotSupported": "java, javascript, python",
-    "Results": []
-  },
-  {
-    "Input": "Shall we leave at 6.45?",
-    "Context": {
-      "ReferenceDateTime": "2018-08-30T10:00:00"
-    },
-    "NotSupported": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "at 6.45",
-        "Start": 15,
-        "End": 21,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T06:45",
-              "type": "time",
-              "value": "06:45:00"
-            },
-            {
-              "timex": "T18:45",
-              "type": "time",
-              "value": "18:45:00"
-            }
-          ]
-        }
-      }
-    ]
   }
 ]

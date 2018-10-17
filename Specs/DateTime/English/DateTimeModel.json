@@ -7294,7 +7294,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python",
     "Results": []
   },
   {
@@ -7302,7 +7302,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T10:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "at 6.45",
@@ -7359,6 +7359,45 @@
               "timex": "2018-09-17",
               "type": "date",
               "value": "2018-09-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Will he be back in two days? or in a week?",
+    "Context": {
+      "ReferenceDateTime": "2018-10-17T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "in two days",
+        "Start": 16,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-19",
+              "type": "date",
+              "value": "2018-10-19"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "in a week",
+        "Start": 32,
+        "End": 40,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-24",
+              "type": "date",
+              "value": "2018-10-24"
             }
           ]
         }
