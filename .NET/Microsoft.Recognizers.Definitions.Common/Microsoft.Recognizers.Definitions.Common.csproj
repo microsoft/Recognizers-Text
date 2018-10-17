@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="YamlDotNet" Version="4.2.1" />
+    <PackageReference Include="YamlDotNet" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
