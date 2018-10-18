@@ -20,10 +20,9 @@ export namespace FrenchDateTime {
 	export const AmDescRegex = `(h|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b)`;
 	export const PmDescRegex = `(h|pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b)`;
 	export const AmPmDescRegex = `(h|ampm)`;
-	export const FourDigitYearRegex = `\\b(?<year>(1[5-9]|20)\\d{2})(?!\\.0\\b)\\b`;
 	export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
 	export const FullTextYearRegex = `^[\\*]`;
-	export const YearRegex = `(${FourDigitYearRegex}|${FullTextYearRegex})`;
+	export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
 	export const WeekDayRegex = `(?<weekday>Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>(${ThisPrefixRegex}\\s+mois)|(mois\\s+${PastSuffixRegex})|(mois\\s+${NextSuffixRegex}))\\b`;
 	export const WrittenMonthRegex = `(?<month>Avril|Avr\\.|Avr|Août|D[eé]cembre|D[eé]c|D[eé]c\\.|F[eé]vrier|F[eé]v|F[eé]vr\\.|F[eé]vr|Javier|Jan|Janv\\.|Janv|Juillet|Jul|Juil|Juil\\.|Juin|Jun|Mars|Mar|Mai|Novembre|Nov|Nov\\.|Octobre|Oct|Oct\\.|Septembre|Sep|Sept|Sept\\.)`;

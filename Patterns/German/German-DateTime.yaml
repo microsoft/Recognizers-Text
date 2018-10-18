@@ -26,8 +26,6 @@ PmDescRegex: !simpleRegex
   def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
 AmPmDescRegex: !simpleRegex
   def: (ampm)
-FourDigitYearRegex: !simpleRegex
-  def: \b(?<year>(1[5-9]|20)\d{2})(?!\.0\b)\b
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
@@ -36,8 +34,8 @@ FullTextYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\*]
 YearRegex: !nestedRegex
-  def: ({FourDigitYearRegex}|{FullTextYearRegex})
-  references: [ FourDigitYearRegex, FullTextYearRegex ]
+  def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
+  references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
   def: (?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))
 SingleWeekDayRegex: !simpleRegex

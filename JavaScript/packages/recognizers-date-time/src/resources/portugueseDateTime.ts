@@ -16,10 +16,9 @@ export namespace PortugueseDateTime {
 	export const AmDescRegex = `(am\\b|a\\.m\\.|a m\\b|a\\. m\\.\\b|a\\.m\\b|a\\. m\\b)`;
 	export const PmDescRegex = `(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.\\b|p\\.m\\b|p\\. m\\b)`;
 	export const AmPmDescRegex = `(ampm)`;
-	export const FourDigitYearRegex = `\\b(?<year>(1[5-9]|20)\\d{2})(?!\\.0\\b)\\b`;
 	export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
 	export const FullTextYearRegex = `^[\\*]`;
-	export const YearRegex = `(${FourDigitYearRegex}|${FullTextYearRegex})`;
+	export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
 	export const RelativeMonthRegex = `(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\\s+m[eê]s)\\b`;
 	export const MonthRegex = `(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)`;
 	export const MonthSuffixRegex = `(?<msuf>((em|no)\\s+|d[eo]\\s+)?(${RelativeMonthRegex}|${MonthRegex}))`;
