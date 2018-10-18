@@ -264,7 +264,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         var isDimensionFallsInTime = false;
                         if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
                         {
-                            var specialTime = this.config.SpecialTimeRegex.Matches(source);                           
+                            var specialTime = this.config.PmNonUnitRegex.Matches(source);                           
 
                             foreach (Match time in specialTime)
                             {
@@ -351,9 +351,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                             //Special treatment, handle cases like '2:00 pm', both '00 pm' and 'pm' are not dimension
                             var isDimensionFallsInTime = false;
-                            if (match.Value.Equals(Constants.SYS_SPECIAL_UNIT))
+                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
                             {
-                                var specialTime = this.config.SpecialTimeRegex.Matches(source);
+                                var specialTime = this.config.PmNonUnitRegex.Matches(source);
 
                                 foreach (Match time in specialTime)
                                 {

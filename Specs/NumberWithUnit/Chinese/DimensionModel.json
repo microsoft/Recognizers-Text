@@ -118,7 +118,7 @@
   ,
   {
     "Input": "今天2:00 pm, 你将会收到一个惊喜！",
-    "NotSupported": "python, java",
+    "NotSupported": "java",
     "Results": []
   }
 ]

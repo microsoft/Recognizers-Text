@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = string.Empty;
             this.CompoundUnitConnectorRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.IgnoreCase);
-            this.SpecialTimeRegex = new Regex(BaseUnits.SpecialTimeRegex, RegexOptions.IgnoreCase);
+            this.PmNonUnitRegex = new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.IgnoreCase);
         }
 
         public abstract string ExtractType { get; }
@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 
         public Regex CompoundUnitConnectorRegex { get; set; }
 
-        public Regex SpecialTimeRegex { get; set; }
+        public Regex PmNonUnitRegex { get; set; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

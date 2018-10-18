@@ -18,7 +18,7 @@ export abstract class JapaneseNumberWithUnitExtractorConfiguration implements IN
     readonly buildSuffix: string;
     readonly connectorToken: string;
     readonly compoundUnitConnectorRegex: RegExp;
-    readonly specialTimeRegex: RegExp;
+    readonly pmNonUnitRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -28,7 +28,7 @@ export abstract class JapaneseNumberWithUnitExtractorConfiguration implements IN
         this.buildSuffix = JapaneseNumericWithUnit.BuildSuffix;
         this.connectorToken = JapaneseNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(JapaneseNumericWithUnit.CompoundUnitConnectorRegex);
-        this.specialTimeRegex = RegExpUtility.getSafeRegExp(BaseUnits.SpecialTimeRegex);
+        this.pmNonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
     }
 }
 

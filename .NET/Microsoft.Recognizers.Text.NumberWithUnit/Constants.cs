@@ -1,5 +1,7 @@
 ﻿// ReSharper disable InconsistentNaming
 
+using Microsoft.Recognizers.Definitions;
+
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public static class Constants
@@ -17,7 +19,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public const string SYS_NUM = "builtin.num";
         
         // For cases like '2:00 pm', both 'pm' and '00 pm' are not dimension 
-        public const string SYS_SPECIAL_UNIT = "pm";
+        public const string AMBIGUOUS_TIME_TERM = BaseUnits.AmbiguousTimeTerm;
 
         // For currencies without ISO codes, we use internal values prefixed by '_'. 
         // These values should never be present in parse output.

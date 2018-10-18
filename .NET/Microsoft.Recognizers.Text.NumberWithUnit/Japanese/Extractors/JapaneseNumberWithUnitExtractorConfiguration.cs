@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
             this.CompoundUnitConnectorRegex = new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexOptions.IgnoreCase);
-            this.SpecialTimeRegex = new Regex(BaseUnits.SpecialTimeRegex, RegexOptions.IgnoreCase);
+            this.PmNonUnitRegex = new Regex(BaseUnits.PmNonUnitRegex, RegexOptions.IgnoreCase);
         }
 
         public abstract string ExtractType { get; }
@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 
         public Regex CompoundUnitConnectorRegex { get; }
 
-        public Regex SpecialTimeRegex { get; set; }
+        public Regex PmNonUnitRegex { get; set; }
 
         public IExtractor IntegerExtractor { get; }
 

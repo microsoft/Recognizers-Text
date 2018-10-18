@@ -27,6 +27,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         Regex CompoundUnitConnectorRegex { get; }
 
-        Regex SpecialTimeRegex { get; }
+        Regex PmNonUnitRegex { get; }
     }
 }

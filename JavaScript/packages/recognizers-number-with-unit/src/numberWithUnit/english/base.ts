@@ -18,7 +18,7 @@ export abstract class EnglishNumberWithUnitExtractorConfiguration implements INu
     readonly buildSuffix: string;
     readonly connectorToken: string;
     readonly compoundUnitConnectorRegex: RegExp;
-    readonly specialTimeRegex: RegExp;
+    readonly pmNonUnitRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -28,7 +28,7 @@ export abstract class EnglishNumberWithUnitExtractorConfiguration implements INu
         this.buildSuffix = EnglishNumericWithUnit.BuildSuffix;
         this.connectorToken = '';
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(EnglishNumericWithUnit.CompoundUnitConnectorRegex);
-        this.specialTimeRegex = RegExpUtility.getSafeRegExp(BaseUnits.SpecialTimeRegex);
+        this.pmNonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
     }
 }
 

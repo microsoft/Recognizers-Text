@@ -16,7 +16,7 @@ export interface INumberWithUnitExtractorConfiguration {
     readonly buildSuffix: string;
     readonly connectorToken: string;
     readonly compoundUnitConnectorRegex: RegExp;
-    readonly specialTimeRegex: RegExp;
+    readonly pmNonUnitRegex: RegExp;
 }
 
 export class NumberWithUnitExtractor implements IExtractor {
@@ -161,7 +161,7 @@ export class NumberWithUnitExtractor implements IExtractor {
 
                     let isDimensionFallsInTime = false;
                     if (er.type === Constants.SYS_UNIT_DIMENSION) {
-                        let specialTime = RegExpUtility.getMatches(this.config.specialTimeRegex, source);
+                        let specialTime = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
 
                         specialTime.forEach(match => {
                             if (er.start >= match.index && er.start + er.length <= match.index + match.length) {
@@ -237,8 +237,8 @@ export class NumberWithUnitExtractor implements IExtractor {
                     }
 
                     let isDimensionFallsInTime = false;
-                    if (match.value === Constants.SYS_SPECIAL_UNIT) {
-                        let specialTime = RegExpUtility.getMatches(this.config.specialTimeRegex, source);
+                    if (match.value === Constants.AMBIGUOUS_TIME_TERM) {
+                        let specialTime = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
 
                         specialTime.forEach(time => {
                             if (this.isDimensionFallsInSpecialTime(match, time)) {
