@@ -124,19 +124,6 @@ class NumberWithUnitExtractor(Extractor):
 
             prefix_unit: PrefixUnitResult = mapping_prefix.get(start, None)
 
-            if start > 1:
-                index = start - 1
-                while index > 0 and source[index - 1] == ' ':
-                    index = index - 1
-
-                if index > 0 and source[index] == ':':
-                    index = index - 1
-                    while index > 0 and source[index - 1] == ':':
-                        index = index - 1
-
-                    if index >= 0 and source[index] >= '0' and source[index] <= '9':
-                        continue
-
             if max_find_len > 0:
                 right = source[start + length:start + length + max_find_len]
                 unit_match_list = map(lambda x: list(regex.finditer(x, right)), self.suffix_regex)
