@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = regex.Match(text.TrimStart().ToLower());
             if (match.Success && match.Index == 0)
             {
-                index = text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal) + match.Value.Length;
+                index = text.ToLower().IndexOf(match.Value, StringComparison.Ordinal) + match.Value.Length;
                 return true;
             }
 

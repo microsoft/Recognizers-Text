@@ -142,7 +142,7 @@
               "timex": "2018",
               "type": "daterange",
               "start": "2018-01-01",
-			  "end": "2019-01-01"
+              "end": "2019-01-01"
             }
           ]
         }
@@ -197,11 +197,108 @@
               "timex": "2018",
               "type": "daterange",
               "start": "2018-01-01",
-			  "end": "2019-01-01"
+              "end": "2019-01-01"
             }
           ]
         }
       }
     ]
+  },
+  {
+    "Input": "O preço é em torno de US $ 5,00 certo?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "O preço é em torno de US $5,00 certo?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "O preço é em torno de US 5,00$ certo?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "O preço é em torno de US 5,00 $ certo?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "O preço é em torno de US $ 5.00 certo?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "O preço é em torno de US $5.00 certo?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "O preço é em torno de US 5.00$ certo?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "O preço é em torno de US 5.00 $ certo?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
+  },
+  {
+    "Input": "A tarefa será concluída em torno de 2000",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "2000",
+        "Start": 36,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "type": "daterange",
+              "start": "2000-01-01",
+              "end": "2001-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A tarefa será concluída em torno de 00",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": []
   }
 ]

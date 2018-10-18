@@ -287,7 +287,7 @@ class MatchingUtil:
         referenced_matches = regex.match(regexp, source.strip().lower())
 
         if referenced_matches and referenced_matches.start() == 0:
-            result.index = source.lower().rfind(referenced_matches.group()) + len(referenced_matches.group())
+            result.index = source.lower().find(referenced_matches.group()) + len(referenced_matches.group())
             result.matched = True
 
         return result

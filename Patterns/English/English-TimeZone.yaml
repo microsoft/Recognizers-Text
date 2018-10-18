@@ -371,6 +371,20 @@ FullToMinMapping: !dictionary
 MajorLocations: !list
   types: [ string ]
   entries:
+    # top due to conflict
+    - Dominican Republic
+    - Dominica
+    - Guinea Bissau
+    - Guinea-Bissau
+    - Guinea
+    - Equatorial Guinea
+    - Papua New Guinea
+    - New York City
+    - New York
+    - York
+    - Mexico City
+    - New Mexico
+    - Mexico
     # major cities, english focus
     - Aberdeen
     - Adelaide
@@ -443,11 +457,12 @@ MajorLocations: !list
     - Milton Keynes
     - Minneapolis
     - Montréal
+    - Montreal
     - Nashville
     - New Orleans
-    - New York City
     - Newark
     - Newcastle-upon-Tyne
+    - Newcastle
     - Northampton
     - Norwich
     - Nottingham
@@ -465,6 +480,9 @@ MajorLocations: !list
     - Portsmouth
     - Preston
     - Québec City
+    - Quebec City
+    - Québec
+    - Quebec
     - Raleigh
     - Reading
     - Richmond
@@ -482,8 +500,11 @@ MajorLocations: !list
     - St Louis
     - St Paul
     - St Petersburg
-    - Stockton
+    - St. Louis
+    - St. Paul
+    - St. Petersburg
     - Stockton-on-Tees
+    - Stockton
     - Stoke-on-Trent
     - Sunderland
     - Swansea
@@ -500,7 +521,6 @@ MajorLocations: !list
     - Washington
     - Wellington
     - Wolverhampton
-    - York
     - Abilene
     - Akron
     - Albuquerque
@@ -695,7 +715,6 @@ MajorLocations: !list
     - Sioux Falls
     - South Bend
     - Springfield
-    - St. Louis
     - Stamford
     - Sterling Heights
     - Sunnyvale
@@ -813,12 +832,9 @@ MajorLocations: !list
     - Delaware
     - Denmark
     - Djibouti
-    - Dominica
-    - Dominican Republic
     - Ecuador
     - Egypt
     - El Salvador
-    - Equatorial Guinea
     - Eritrea
     - Estonia
     - eSwatini
@@ -850,9 +866,6 @@ MajorLocations: !list
     - Guam
     - Guatemala
     - Guernsey
-    - Guinea
-    - Guinea Bissau
-    - Guinea-Bissau
     - Guyana
     - Haiti
     - Hawaii
@@ -926,7 +939,6 @@ MajorLocations: !list
     - Mayotte
     - MD
     - ME
-    - Mexico
     - MI
     - Michigan
     - Micronesia
@@ -958,8 +970,6 @@ MajorLocations: !list
     - New Caledonia
     - New Hampshire
     - New Jersey
-    - New Mexico
-    - New York
     - New Zealand
     - NH
     - Nicaragua
@@ -988,7 +998,6 @@ MajorLocations: !list
     - Palau
     - Palestinian Authority
     - Panama
-    - Papua New Guinea
     - Paraguay
     - Pennsylvania
     - Peru
@@ -1060,7 +1069,9 @@ MajorLocations: !list
     - Tuvalu
     - TX
     - U.S. Outlying Islands
+    - US Outlying Islands
     - U.S. Virgin Islands
+    - US Virgin Islands
     - Uganda
     - Ukraine
     - United Arab Emirates
@@ -1089,3 +1100,29 @@ MajorLocations: !list
     - Yemen
     - Zambia
     - Zimbabwe
+    # other major cities
+    - Paris
+    - Tokyo
+    - Shanghai
+    - Sao Paulo
+    - Rio de Janeiro
+    - Rio
+    - Brasília
+    - Brasilia
+    - Recife
+    - Milan
+    - Mumbai
+    - Moscow
+    - Frankfurt
+    - Munich
+    - Berlim
+    - Madrid
+    - Lisbon
+    - Warsaw
+    - Johannesburg
+    - Seoul
+    - Istanbul
+    - Kuala Kumpur
+    - Jakarta
+    - Amsterdam
+    - Brussels
