@@ -379,8 +379,7 @@
   ,
   {
     "Input": "2:00 pm",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript, java",
+    "NotSupported": "java",
     "Results": []
   }
 ]

@@ -261,22 +261,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         er.Data = number;
 
                         //Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
-                        var isDimensionFallsInTime = false;
+                        var isDimensionFallsInPmTime = false;
                         if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
                         {
-                            var specialTime = this.config.SpecialTimeRegex.Matches(source);                           
+                            var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);                           
 
-                            foreach (Match time in specialTime)
+                            foreach (Match time in nonUnitMatch)
                             {
                                 if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
                                 {
-                                    isDimensionFallsInTime = true;
+                                    isDimensionFallsInPmTime = true;
                                     break;
                                 }
                             }
                         }
 
-                        if (isDimensionFallsInTime)
+                        if (isDimensionFallsInPmTime)
                         {
                             continue;
                         }
@@ -350,22 +350,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
 
                             //Special treatment, handle cases like '2:00 pm', both '00 pm' and 'pm' are not dimension
-                            var isDimensionFallsInTime = false;
-                            if (match.Value.Equals(Constants.SYS_SPECIAL_UNIT))
+                            var isDimensionFallsInPmTime = false;
+                            if (match.Value.Equals(Constants.AMBIGUOUS_TIME_TERM))
                             {
-                                var specialTime = this.config.SpecialTimeRegex.Matches(source);
+                                var nonUnitMatch = this.config.PmNonUnitRegex.Matches(source);
 
-                                foreach (Match time in specialTime)
+                                foreach (Match time in nonUnitMatch)
                                 {
-                                    if (isDimensionFallsInSpecialTime(match, time))
+                                    if (isDimensionFallsInTime(match, time))
                                     {
-                                        isDimensionFallsInTime = true;
+                                        isDimensionFallsInPmTime = true;
                                         break;
                                     }
                                 }
                             }
 
-                            if (isDimensionFallsInTime)
+                            if (isDimensionFallsInPmTime)
                             {
                                 continue;
                             }
@@ -389,7 +389,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return !string.IsNullOrEmpty(str);
         }
 
-        private bool isDimensionFallsInSpecialTime(Match dimension, Match time)
+        private bool isDimensionFallsInTime(Match dimension, Match time)
         {
             bool isSubMatch = false;
             if (dimension.Index >= time.Index && dimension.Index + dimension.Length <= time.Index + time.Length)

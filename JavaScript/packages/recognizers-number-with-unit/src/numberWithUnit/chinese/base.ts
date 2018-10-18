@@ -18,7 +18,7 @@ export abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
     readonly buildSuffix: string;
     readonly connectorToken: string;
     readonly compoundUnitConnectorRegex: RegExp;
-    readonly specialTimeRegex: RegExp;
+    readonly pmNonUnitRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -28,7 +28,7 @@ export abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
         this.buildSuffix = ChineseNumericWithUnit.BuildSuffix;
         this.connectorToken = ChineseNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(ChineseNumericWithUnit.CompoundUnitConnectorRegex);
-        this.specialTimeRegex = RegExpUtility.getSafeRegExp(BaseUnits.SpecialTimeRegex);
+        this.pmNonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
     }
 }
 
