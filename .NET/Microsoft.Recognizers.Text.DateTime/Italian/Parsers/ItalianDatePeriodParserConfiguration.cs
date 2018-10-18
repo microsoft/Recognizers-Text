@@ -124,8 +124,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            MinYearNum = ItalianDatePeriodExtractorConfiguration.MinYearNum;
-            MaxYearNum = ItalianDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = ItalianDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = ItalianDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = ItalianDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;

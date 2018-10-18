@@ -25,10 +25,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b)";
 		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p\. m\.\b|p\.m\b|p\. m\b)";
 		public const string AmPmDescRegex = @"(ampm)";
-		public const string FourDigitYearRegex = @"\b(?<year>(1[5-9]|20)\d{2})(?!\.0\b)\b";
 		public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
 		public const string FullTextYearRegex = @"^[\*]";
-		public static readonly string YearRegex = $@"({FourDigitYearRegex}|{FullTextYearRegex})";
+		public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
 		public const string RelativeMonthRegex = @"(?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\s+mes)\b";
 		public const string MonthRegex = @"(?<month>Abril|Abr|Agosto|Ago|Diciembre|Dic|Febrero|Feb|Enero|Ene|Julio|Jul|Junio|Jun|Marzo|Mar|Mayo|May|Noviembre|Nov|Octubre|Oct|Septiembre|Setiembre|Sept|Set)";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>(en\s+|del\s+|de\s+)?({RelativeMonthRegex}|{MonthRegex}))";

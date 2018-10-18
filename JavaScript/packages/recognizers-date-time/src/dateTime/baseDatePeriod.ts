@@ -61,7 +61,7 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
                     let yearStr = matchYear.groups('year').value;
                     if (StringUtility.isNullOrEmpty(yearStr)) {
                         let year = this.getYearFromText(matchYear);
-                        if (!(year >= 1500 && year <= 2100)) {
+                        if (!(year >= Constants.MinYearNum && year <= Constants.MaxYearNum)) {
                             addToken = false;
                         }
                     }

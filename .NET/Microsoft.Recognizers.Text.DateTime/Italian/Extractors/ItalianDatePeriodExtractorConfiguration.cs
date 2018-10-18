@@ -9,10 +9,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
-        public static readonly int MinYearNum = int.Parse(DateTimeDefinitions.MinYearNum);
-
-        public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
-
         // base regexes
         public static readonly Regex TillRegex = new Regex(
             DateTimeDefinitions.TillRegex, // until 

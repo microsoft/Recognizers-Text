@@ -16,10 +16,9 @@ export namespace SpanishDateTime {
 	export const AmDescRegex = `(am\\b|a\\.m\\.|a m\\b|a\\. m\\.\\b|a\\.m\\b|a\\. m\\b)`;
 	export const PmDescRegex = `(pm\\b|p\\.m\\.|p\\b|p m\\b|p\\. m\\.\\b|p\\.m\\b|p\\. m\\b)`;
 	export const AmPmDescRegex = `(ampm)`;
-	export const FourDigitYearRegex = `\\b(?<year>(1[5-9]|20)\\d{2})(?!\\.0\\b)\\b`;
 	export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-27-9]\\d))(?!(\\s*((\\:)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
 	export const FullTextYearRegex = `^[\\*]`;
-	export const YearRegex = `(${FourDigitYearRegex}|${FullTextYearRegex})`;
+	export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
 	export const RelativeMonthRegex = `(?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\\s+mes)\\b`;
 	export const MonthRegex = `(?<month>Abril|Abr|Agosto|Ago|Diciembre|Dic|Febrero|Feb|Enero|Ene|Julio|Jul|Junio|Jun|Marzo|Mar|Mayo|May|Noviembre|Nov|Octubre|Oct|Septiembre|Setiembre|Sept|Set)`;
 	export const MonthSuffixRegex = `(?<msuf>(en\\s+|del\\s+|de\\s+)?(${RelativeMonthRegex}|${MonthRegex}))`;
