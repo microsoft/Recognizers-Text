@@ -159,18 +159,18 @@ export class NumberWithUnitExtractor implements IExtractor {
                     num.start = start - er.start;
                     er.data = num;
 
-                    let isDimensionFallsInTime = false;
+                    let isDimensionFallsInPmTime = false;
                     if (er.type === Constants.SYS_UNIT_DIMENSION) {
-                        let specialTime = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
+                        let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
 
-                        specialTime.forEach(match => {
+                        nonUnitMatch.forEach(match => {
                             if (er.start >= match.index && er.start + er.length <= match.index + match.length) {
-                                isDimensionFallsInTime = true;
+                                isDimensionFallsInPmTime = true;
                             }
                         });
                     }
 
-                    if (isDimensionFallsInTime) {
+                    if (isDimensionFallsInPmTime) {
                         continue;
                     }
 
@@ -236,18 +236,18 @@ export class NumberWithUnitExtractor implements IExtractor {
                         matchResult[j] = true;
                     }
 
-                    let isDimensionFallsInTime = false;
+                    let isDimensionFallsInPmTime = false;
                     if (match.value === Constants.AMBIGUOUS_TIME_TERM) {
-                        let specialTime = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
+                        let nonUnitMatch = RegExpUtility.getMatches(this.config.pmNonUnitRegex, source);
 
-                        specialTime.forEach(time => {
-                            if (this.isDimensionFallsInSpecialTime(match, time)) {
-                                isDimensionFallsInTime = true;
+                        nonUnitMatch.forEach(time => {
+                            if (this.isDimensionFallsInTime(match, time)) {
+                                isDimensionFallsInPmTime = true;
                             }
                         });
                     }
 
-                    if (isDimensionFallsInTime === false) {
+                    if (isDimensionFallsInPmTime === false) {
                         numDependResults.push({
                             start: match.index,
                             length: match.length,
@@ -366,7 +366,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         }
     }
 
-    private isDimensionFallsInSpecialTime(dimension: Match, time: Match): boolean {
+    private isDimensionFallsInTime(dimension: Match, time: Match): boolean {
         let isSubMatch = false;
         if (dimension.index >= time.index && dimension.index + dimension.length <= time.index + time.length) {
             isSubMatch = true;
