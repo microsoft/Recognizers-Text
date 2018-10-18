@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.English;
@@ -22,6 +22,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex MonthNumRegex =
             new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex IllegalYearRegex =
+            new Regex(BaseDateTime.IllegalYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearRegex = 
             new Regex(DateTimeDefinitions.YearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -205,6 +208,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IParser NumberParser { get; }
 
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
+
+        Regex IDatePeriodExtractorConfiguration.IllegalYearRegex => IllegalYearRegex;
 
         Regex IDatePeriodExtractorConfiguration.YearRegex => YearRegex;
 

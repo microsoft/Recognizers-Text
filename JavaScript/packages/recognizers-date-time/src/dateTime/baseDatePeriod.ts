@@ -9,6 +9,7 @@ import { IDateTimeExtractor } from "./baseDateTime"
 
 export interface IDatePeriodExtractorConfiguration {
     simpleCasesRegexes: RegExp[]
+    illegalYearRegex: RegExp
     YearRegex: RegExp
     tillRegex: RegExp
     followedUnit: RegExp
@@ -65,6 +66,14 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
                         }
                     }
                 }
+
+                if (match.length === Constants.FourDigitsYearLength && RegExpUtility.isMatch(this.config.YearRegex, match.value) && this.infixBoundaryCheck(match, source)) {
+                    let substr = source.substr(match.index - 1, 6);
+                    if (RegExpUtility.isMatch(this.config.illegalYearRegex, substr)) {
+                        addToken = false;
+                    }
+                }
+
                 if (addToken) {
                     tokens.push(new Token(match.index, match.index + match.length));
                 }
@@ -221,6 +230,17 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
     private matchRegexInPrefix(source: string, match: Match): boolean {
         return (match && StringUtility.isNullOrWhitespace(source.substring(match.index + match.length)))
+    }
+
+    private infixBoundaryCheck(match: Match, source: string): boolean {
+        let isMatchInfixOfSource = false;
+        if (match.index > 0 && match.index + match.length < source.length) {
+            if (source.substr(match.index, match.length) === match.value) {
+                isMatchInfixOfSource = true;
+            }
+        }
+
+        return isMatchInfixOfSource;
     }
 }
 

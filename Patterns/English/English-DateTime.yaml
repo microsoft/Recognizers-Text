@@ -39,14 +39,12 @@ AmDescRegex: !simpleRegex
 PmDescRegex: !simpleRegex
   def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
 # As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
-FourDigitYearRegex: !simpleRegex
-  def: \b(?<![$])(?<year>((1\d|20)\d{2})|2100)(?!\.0\b)\b
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 YearRegex: !nestedRegex
-  def: ({FourDigitYearRegex}|{FullTextYearRegex})
-  references: [ FourDigitYearRegex, FullTextYearRegex ]
+  def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
+  references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\b
 SingleWeekDayRegex: !simpleRegex
@@ -84,8 +82,8 @@ OneWordPeriodRegex: !nestedRegex
   def: \b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(my\s+)?(weekend|week|month|year)(?!((\s+of)?\s+\d+|\s+to\s+date))(\s+{AfterNextSuffixRegex})?)\b
   references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex ]
 MonthNumWithYear: !nestedRegex
-  def: \b(({FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){FourDigitYearRegex}))\b
-  references: [ FourDigitYearRegex, MonthNumRegex ]
+  def: \b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b
+  references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
   def: \b(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex})\b
   references: [ MonthSuffixRegex ]
@@ -150,8 +148,8 @@ AmbiguousMonthP0Regex: !simpleRegex
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>{FourDigitYearRegex}|{TwoDigitYearRegex})
-  references: [ FourDigitYearRegex, TwoDigitYearRegex ]
+  def: (?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})
+  references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]

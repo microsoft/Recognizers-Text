@@ -103,6 +103,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         // hours of a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
 
+        // the length of four digits year, e.g., 2018
+        public const int FourDigitsYearLength = 4;
+
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
 

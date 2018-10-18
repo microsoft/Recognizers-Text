@@ -7403,5 +7403,14 @@
         }
       }
     ]
+  },
+  {
+    "Input": "<a href=\"https://localhost:44300/api/redir/?r=&id=~.~3am3ioYcY0KBufXFAiTvCA~.~&userid=cc6f1c38-cc23-413d-b8ab-4aa5b54eb896&requestid=410c74a8-1687-4ea7-8418-4d958c33eab5\" style=\"text-decoration: none; color: black;\">https://localhost:44300 </a>",
+    "Context": {
+      "ReferenceDateTime": "2018-10-16T12:00:00"
+    },
+    "NotSupportedByDesign": "java",
+    "Results": []
+    
   }
 ]
