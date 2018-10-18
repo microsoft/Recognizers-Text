@@ -117,24 +117,6 @@ public class NumberWithUnitExtractor implements IExtractor {
                 prefixUnit = mappingPrefix.get(start);
             }
 
-            if (start > 1) {
-                int index = start - 1;
-                while(index > 0 && source.charAt(index) == ' ') {
-                    index = index - 1;
-                }
-
-                if(index > 0 && source.charAt(index) == ':') {
-                    index = index - 1;
-                    while(index > 0 && source.charAt(index) == ' ') {
-                        index = index - 1;
-                    }
-
-                    if(index >= 0 && source.charAt(index) >= '0' && source.charAt(index) <= '9') {
-                        continue;
-                    }
-                }
-            }
-
             if (maxFindLen > 0) {
                 String rightSub = source.substring(start + length, start + length + maxFindLen);
                 List<Matcher> unitMatch = suffixRegexes.stream().map(p -> p.matcher(rightSub)).collect(Collectors.toList());

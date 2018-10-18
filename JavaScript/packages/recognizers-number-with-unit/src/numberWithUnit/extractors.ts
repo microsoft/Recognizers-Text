@@ -16,6 +16,7 @@ export interface INumberWithUnitExtractorConfiguration {
     readonly buildSuffix: string;
     readonly connectorToken: string;
     readonly compoundUnitConnectorRegex: RegExp;
+    readonly specialTimeRegex: RegExp;
 }
 
 export class NumberWithUnitExtractor implements IExtractor {
@@ -116,24 +117,6 @@ export class NumberWithUnitExtractor implements IExtractor {
 
             let prefixUnit: PrefixUnitResult = mappingPrefix.has(start) ? mappingPrefix.get(start) : null;
 
-            if (start > 1) {
-                let index = start - 1;
-                while(index > 0 && source[index] === ' ') {
-                    index = index - 1;
-                }
-
-                if(index > 0 && source[index] === ':') {
-                    index= index - 1;
-                    while(index > 0 && source[index] === ' ') {
-                        index = index - 1;
-                    }
-
-                    if(index >= 0 && source[index] >= '0' && source[index] <= '9') {
-                        continue;
-                    }
-                }
-            }
-
             if (maxFindLen > 0) {
                 let rightSub = source.substring(start + length, start + length + maxFindLen);
                 let unitMatch = Array.from(this.suffixRegexes.values()).map(r => RegExpUtility.getMatches(r, rightSub))
@@ -175,6 +158,21 @@ export class NumberWithUnitExtractor implements IExtractor {
                     /* Relative position will be used in Parser */
                     num.start = start - er.start;
                     er.data = num;
+
+                    let isDimensionFallsInTime = false;
+                    if (er.type === Constants.SYS_UNIT_DIMENSION) {
+                        let specialTime = RegExpUtility.getMatches(this.config.specialTimeRegex, source);
+
+                        specialTime.forEach(match => {
+                            if (er.start >= match.index && er.start + er.length <= match.index + match.length) {
+                                isDimensionFallsInTime = true;
+                            }
+                        });
+                    }
+
+                    if (isDimensionFallsInTime) {
+                        continue;
+                    }
 
                     result.push(er);
                     continue;
@@ -237,13 +235,27 @@ export class NumberWithUnitExtractor implements IExtractor {
                     for (let j = 0; j < i; j++) {
                         matchResult[j] = true;
                     }
-                    numDependResults.push({
-                        start: match.index,
-                        length: match.length,
-                        text: match.value,
-                        type: this.config.extractType,
-                        data: null
-                    } as ExtractResult);
+
+                    let isDimensionFallsInTime = false;
+                    if (match.value === Constants.SYS_SPECIAL_UNIT) {
+                        let specialTime = RegExpUtility.getMatches(this.config.specialTimeRegex, source);
+
+                        specialTime.forEach(time => {
+                            if (this.isDimensionFallsInSpecialTime(match, time)) {
+                                isDimensionFallsInTime = true;
+                            }
+                        });
+                    }
+
+                    if (isDimensionFallsInTime === false) {
+                        numDependResults.push({
+                            start: match.index,
+                            length: match.length,
+                            text: match.value,
+                            type: this.config.extractType,
+                            data: null
+                        } as ExtractResult);
+                    }
                 }
             });
         }
@@ -352,6 +364,15 @@ export class NumberWithUnitExtractor implements IExtractor {
                 }
             }
         }
+    }
+
+    private isDimensionFallsInSpecialTime(dimension: Match, time: Match): boolean {
+        let isSubMatch = false;
+        if (dimension.index >= time.index && dimension.index + dimension.length <= time.index + time.length) {
+            isSubMatch = true;
+        }
+
+        return isSubMatch;
     }
 }
 

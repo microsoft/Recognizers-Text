@@ -802,18 +802,8 @@
   ,
   {
     "Input": "I'll give you a surprise at 2:00 pm",
-    "Results": [
-      {
-        "Text": "pm",
-        "Start": 33,
-        "End": 34,
-        "TypeName": "dimension",
-        "Resolution": {
-          "unit": "Picometer",
-          "value": null
-        }
-      }
-    ]
+    "NotSupported": "python, java",
+    "Results": []
   }
   ,
   {

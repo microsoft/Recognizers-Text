@@ -208,32 +208,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var maxFindLen = sourceLen - start - length;
                 mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
 
-                //Special treatment, handle cases like '2:00 pm', '2 : 00 pm'. '00 pm' is not dimension
-                if(start > 1)
-                {
-                    var index = start - 1;
-
-                    while(index > 0 && source[index] == ' ')
-                    {
-                        index = index - 1;
-                    }
-
-                    if(index > 0 && source[index] == ':')
-                    {
-                        index = index - 1;
-
-                        while (index > 0 && source[index] == ' ')
-                        {
-                            index--;
-                        }
-
-                        if (index >= 0 && source[index] >= '0' && source[index] <= '9')
-                        {
-                            continue;
-                        }
-                    }                   
-                }
-
                 if (maxFindLen > 0)
                 {
                     var rightSub = source.Substring(start + length, maxFindLen);
@@ -285,6 +259,28 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         /* Relative position will be used in Parser */
                         number.Start = start - er.Start;
                         er.Data = number;
+
+                        //Special treatment, handle cases like '2:00 pm', '00 pm' is not dimension
+                        var isDimensionFallsInTime = false;
+                        if (er.Type.Equals(Constants.SYS_UNIT_DIMENSION))
+                        {
+                            var specialTime = this.config.SpecialTimeRegex.Matches(source);                           
+
+                            foreach (Match time in specialTime)
+                            {
+                                if (er.Start >= time.Index && er.Start + er.Length <= time.Index + time.Length)
+                                {
+                                    isDimensionFallsInTime = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (isDimensionFallsInTime)
+                        {
+                            continue;
+                        }
+
                         result.Add(er);
 
                         continue;
@@ -353,6 +349,27 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 matchResult[j] = true;
                             }
 
+                            //Special treatment, handle cases like '2:00 pm', both '00 pm' and 'pm' are not dimension
+                            var isDimensionFallsInTime = false;
+                            if (match.Value.Equals(Constants.SYS_SPECIAL_UNIT))
+                            {
+                                var specialTime = this.config.SpecialTimeRegex.Matches(source);
+
+                                foreach (Match time in specialTime)
+                                {
+                                    if (isDimensionFallsInSpecialTime(match, time))
+                                    {
+                                        isDimensionFallsInTime = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (isDimensionFallsInTime)
+                            {
+                                continue;
+                            }
+
                             numDependResults.Add(new ExtractResult
                             {
                                 Start = match.Index,
@@ -370,6 +387,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         protected virtual bool PreCheckStr(string str)
         {
             return !string.IsNullOrEmpty(str);
+        }
+
+        private bool isDimensionFallsInSpecialTime(Match dimension, Match time)
+        {
+            bool isSubMatch = false;
+            if (dimension.Index >= time.Index && dimension.Index + dimension.Length <= time.Index + time.Length)
+            {
+                isSubMatch = true;
+            }
+
+            return isSubMatch;        
         }
 
     }
@@ -433,5 +461,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public int Offset;
         public string UnitStr;
     }
- 
+
 }

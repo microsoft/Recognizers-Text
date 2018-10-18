@@ -118,17 +118,7 @@
   ,
   {
     "Input": "今天2:00 pm, 你将会收到一个惊喜！",
-    "Results": [
-      {
-        "Text": "pm",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": null,
-          "unit": "Picometer"
-        },
-        "Start": 7,
-        "End": 8
-      }
-    ]
+    "NotSupported": "python, java",
+    "Results": []
   }
 ]

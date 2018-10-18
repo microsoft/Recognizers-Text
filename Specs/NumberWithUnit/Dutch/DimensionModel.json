@@ -939,16 +939,7 @@
     },
     {
       "Input": "2:00 pm",
-      "Results": [
-        {
-          "Text": "pm",
-          "TypeName": "dimension",
-          "Resolution": {
-            "value": null,
-            "unit": "Picometer"
-          }
-        }
-      ],
+      "Results": [],
       "NotSupportedByDesign": "javascript,python,java"
     }
   ]
