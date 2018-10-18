@@ -4,6 +4,7 @@ import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
 import { BaseNumberWithUnitParserConfiguration } from "../parsers";
 import { EnglishNumericWithUnit } from "../../resources/englishNumericWithUnit";
+import { BaseUnits} from "../../resources/baseUnits";
 
 export abstract class EnglishNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
     abstract readonly suffixList: ReadonlyMap<string, string>;
@@ -17,6 +18,7 @@ export abstract class EnglishNumberWithUnitExtractorConfiguration implements INu
     readonly buildSuffix: string;
     readonly connectorToken: string;
     readonly compoundUnitConnectorRegex: RegExp;
+    readonly specialTimeRegex: RegExp;
 
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
@@ -26,6 +28,7 @@ export abstract class EnglishNumberWithUnitExtractorConfiguration implements INu
         this.buildSuffix = EnglishNumericWithUnit.BuildSuffix;
         this.connectorToken = '';
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(EnglishNumericWithUnit.CompoundUnitConnectorRegex);
+        this.specialTimeRegex = RegExpUtility.getSafeRegExp(BaseUnits.SpecialTimeRegex);
     }
 }
 
