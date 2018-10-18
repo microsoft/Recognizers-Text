@@ -63,6 +63,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BasePhoneNumbers.tt</DependentUpon>
     </Compile>
+    <Compile Update="BaseUnits.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseUnits.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseURL.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -285,6 +290,10 @@
     <None Update="BasePhoneNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BasePhoneNumbers.cs</LastGenOutput>
+    </None>
+    <None Update="BaseUnits.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseUnits.cs</LastGenOutput>
     </None>
     <None Update="BaseURL.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
