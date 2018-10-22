@@ -285,6 +285,7 @@
           "isoCurrency": "CNY"
         }
       }
-    ]
+    ],
+    "NotSupportedByDesign": "javascript,python,java"
   }
 ]
