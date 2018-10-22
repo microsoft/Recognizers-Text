@@ -170,7 +170,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string TimePeriodRegexes1 = $@"({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
 		public static readonly string TimePeriodRegexes2 = $@"({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
 		public const string ParserConfigurationBefore = @"(之前|以前|前)";
-		public const string ParserConfigurationAfter = @"(之后|以后|后|之後|以後|後)";
+		public const string ParserConfigurationAfter = @"(之后|之後|以后|以後|后|後)";
 		public const string ParserConfigurationUntil = @"(直到|直至|截至|截止(到)?)";
 		public const string ParserConfigurationSincePrefix = @"(自从|自|自打|打)";
 		public const string ParserConfigurationSinceSuffix = @"(以来|开始)";

@@ -6058,5 +6058,120 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Mortgages were at 6.45 percent",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": []
+  },
+  {
+    "Input": "Shall we leave at 6.45?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T10:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "at 6.45",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06:45",
+              "type": "time",
+              "value": "06:45:00"
+            },
+            {
+              "timex": "T18:45",
+              "type": "time",
+              "value": "18:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Typhoon Xangsane hit Metro Manila and southern Luzon two months ago, killing at least 200 and destroying billions of pesos of properties and infrastructures. Another typhoon, Cimaron, hit the northern part of the country one month ago, killing a dozen people.",
+    "Context": {
+      "ReferenceDateTime": "2018-10-17T12:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "two months ago",
+        "Start": 53,
+        "End": 66,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-17",
+              "type": "date",
+              "value": "2018-08-17"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "one month ago",
+        "Start": 221,
+        "End": 233,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-17",
+              "type": "date",
+              "value": "2018-09-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Will he be back in two days? or in a week?",
+    "Context": {
+      "ReferenceDateTime": "2018-10-17T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "in two days",
+        "Start": 16,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-19",
+              "type": "date",
+              "value": "2018-10-19"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "in a week",
+        "Start": 32,
+        "End": 40,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-10-24",
+              "type": "date",
+              "value": "2018-10-24"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

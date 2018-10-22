@@ -936,5 +936,10 @@
         }
       ],
       "NotSupportedByDesign": "javascript,python,java"
+    },
+    {
+      "Input": "2:00 pm",
+      "Results": [],
+      "NotSupportedByDesign": "javascript,python,java"
     }
   ]

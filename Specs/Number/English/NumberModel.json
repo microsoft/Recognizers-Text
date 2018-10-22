@@ -2426,5 +2426,31 @@
     "Input": "That one is really good",
     "NotSupported": "javascript, java, python",
     "Results": []
+  },
+  {
+    "Input": "In some countries you can write 5.00 or 5,00.",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "5.00",
+        "Start": 32,
+        "End": 35,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "5,00",
+        "Start": 40,
+        "End": 43,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "5"
+        }
+      }
+    ]
   }
 ]

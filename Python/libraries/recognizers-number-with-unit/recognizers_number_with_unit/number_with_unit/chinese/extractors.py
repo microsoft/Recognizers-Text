@@ -8,6 +8,7 @@ from recognizers_number.number.chinese.extractors import ChineseNumberExtractor,
 from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.chinese_numeric_with_unit import ChineseNumericWithUnit
+from recognizers_number_with_unit.resources.base_units import BaseUnits
 
 # pylint: disable=abstract-method
 class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
@@ -31,6 +32,10 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def compound_unit_connector_regex(self) -> Pattern:
         return self._compound_unit_connector_regex
 
+    @property
+    def pm_non_unit_regex(self) -> Pattern:
+        return self._pm_non_unit_regex
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
@@ -39,6 +44,7 @@ class ChineseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._build_prefix = ChineseNumericWithUnit.BuildPrefix
         self._build_suffix = ChineseNumericWithUnit.BuildSuffix
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(ChineseNumericWithUnit.CompoundUnitConnectorRegex)
+        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
 # pylint: enable=abstract-method
 
 class ChineseAgeExtractorConfiguration(ChineseNumberWithUnitExtractorConfiguration):

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Italian;
@@ -9,10 +9,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
-        public static readonly int MinYearNum = int.Parse(DateTimeDefinitions.MinYearNum);
-
-        public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
-
         // base regexes
         public static readonly Regex TillRegex = new Regex(
             DateTimeDefinitions.TillRegex, // until 
@@ -30,6 +26,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public static readonly Regex MonthNumRegex =
             new Regex(
                 DateTimeDefinitions.MonthNumRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex IllegalYearRegex =
+            new Regex(
+                BaseDateTime.IllegalYearRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearRegex = 
@@ -286,6 +287,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IParser NumberParser { get; }
 
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
+
+        Regex IDatePeriodExtractorConfiguration.IllegalYearRegex => IllegalYearRegex;
 
         Regex IDatePeriodExtractorConfiguration.YearRegex => YearRegex;
 

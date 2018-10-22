@@ -34,11 +34,17 @@ WrittenNumRegex: !simpleRegex
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
-YearNumRegex: !simpleRegex
-  def: \b(?<![$])(?<year>((1[5-9]|20)\d{2})|2100)(?!\.0\b)\b
+AmDescRegex: !simpleRegex
+  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
+PmDescRegex: !simpleRegex
+  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
+# As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
+TwoDigitYearRegex: !nestedRegex
+  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  references: [ AmDescRegex, PmDescRegex]
 YearRegex: !nestedRegex
-  def: ({YearNumRegex}|{FullTextYearRegex})
-  references: [ YearNumRegex, FullTextYearRegex ]
+  def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
+  references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)s?\b
 SingleWeekDayRegex: !simpleRegex
@@ -76,8 +82,8 @@ OneWordPeriodRegex: !nestedRegex
   def: \b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(my\s+)?(weekend|week|month|year)(?!((\s+of)?\s+\d+|\s+to\s+date))(\s+{AfterNextSuffixRegex})?)\b
   references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex ]
 MonthNumWithYear: !nestedRegex
-  def: \b(({YearNumRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){YearNumRegex}))\b
-  references: [ YearNumRegex, MonthNumRegex ]
+  def: \b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b
+  references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
   def: \b(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex})\b
   references: [ MonthSuffixRegex ]
@@ -139,15 +145,11 @@ MonthRegex: !simpleRegex
 #Cases collected from mined data 
 AmbiguousMonthP0Regex: !simpleRegex
   def: \b((^may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply))|(or may not))))\b
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>((1\d|20)\d{2})|2100|(([0-27-9]\d)\b(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))))
-  references: [ AmDescRegex, PmDescRegex ]
+  def: (?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})
+  references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
@@ -334,7 +336,7 @@ TimeRegex10: !nestedRegex
   def: \b({TimePrefix}\s+)?{BaseDateTime.HourRegex}(\s*h\s*){BaseDateTime.MinuteRegex}(\s*{DescRegex})?
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex11: !nestedRegex
-  def: \b(({TimeTokenPrefix}{TimeRegexWithDotConnector})|({TimeRegexWithDotConnector}(\s*{DescRegex})))
+  def: \b(({TimeTokenPrefix}{TimeRegexWithDotConnector})(?!\s*per\s*cent|%)|({TimeRegexWithDotConnector}(\s*{DescRegex})))
   references: [ TimeTokenPrefix, TimeRegexWithDotConnector, DescRegex ]
 FirstTimeRegexInTimeRange: !nestedRegex
   def: \b{TimeRegexWithDotConnector}(\s*{DescRegex})?

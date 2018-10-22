@@ -8,6 +8,7 @@ from recognizers_number.number.spanish.extractors import SpanishNumberExtractor
 from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.spanish_numeric_with_unit import SpanishNumericWithUnit
+from recognizers_number_with_unit.resources.base_units import BaseUnits
 
 # pylint: disable=abstract-method
 class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfiguration):
@@ -31,6 +32,10 @@ class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     def compound_unit_connector_regex(self) -> Pattern:
         return self._compound_unit_connector_regex
 
+    @property
+    def pm_non_unit_regex(self) -> Pattern:
+        return self._pm_non_unit_regex
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)
@@ -39,6 +44,7 @@ class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         self._build_prefix = SpanishNumericWithUnit.BuildPrefix
         self._build_suffix = SpanishNumericWithUnit.BuildSuffix
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(SpanishNumericWithUnit.CompoundUnitConnectorRegex)
+        self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(BaseUnits.PmNonUnitRegex)
 # pylint: enable=abstract-method
 
 class SpanishAgeExtractorConfiguration(SpanishNumberWithUnitExtractorConfiguration):
