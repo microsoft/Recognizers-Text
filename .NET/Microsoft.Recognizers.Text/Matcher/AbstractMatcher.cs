@@ -42,6 +42,7 @@ namespace Microsoft.Recognizers.Text.Matcher
                 ConvertDictToList(kvp.Value);
             }
 
+            // re-malloc dictionary to reduce memory usage
             node.Children = new Dictionary<T, Node<T>>(node.Children);
         }
         

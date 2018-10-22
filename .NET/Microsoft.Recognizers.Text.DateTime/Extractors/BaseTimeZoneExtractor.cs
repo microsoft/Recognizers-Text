@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
                 var cityMatchResult = MatchingUtil.FilterSubsetItems(config.CityMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant()));
-                
+
                 var i = 0;
                 foreach (Match match in timeMatch)
                 {
