@@ -50,7 +50,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Temporary solution for remove superfluous words only under the Preview mode
         public static string PreProcessTextRemoveSuperfluousWords(string text, StringMatcher matcher, out List<MatchResult<string>> superfluousWordMatches)
         {
-            superfluousWordMatches = matcher.Find(text).ToList();
+            superfluousWordMatches = FilterSubsetItems(matcher.Find(text));
+
             var bias = 0;
 
             foreach (var match in superfluousWordMatches)
@@ -91,5 +92,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             return extractResults;
         }
 
+        public static List<MatchResult<string>> FilterSubsetItems(IEnumerable<MatchResult<string>> matchResults)
+        {
+            return matchResults.ToList().Where(item =>
+                !matchResults.Any(
+                    ritem => (ritem.Start < item.Start && ritem.End >= item.End) ||
+                        (ritem.Start <= item.Start && ritem.End > item.End)
+                    )
+                ).ToList();
+        }
     }
 }

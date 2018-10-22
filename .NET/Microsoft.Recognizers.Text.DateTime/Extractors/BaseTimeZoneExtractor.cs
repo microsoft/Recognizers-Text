@@ -51,8 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (timeMatch.Count != 0)
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
-                var cityMatchResult = config.CityMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant()).ToList();
-
+                var cityMatchResult = MatchingUtil.FilterSubsetItems(config.CityMatcher.Find(text.Substring(0, lastMatchIndex).ToLowerInvariant()));
+                
                 var i = 0;
                 foreach (Match match in timeMatch)
                 {
