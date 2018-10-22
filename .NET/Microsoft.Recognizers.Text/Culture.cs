@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text
         };
 
         private static readonly string[] SupportedCultureCodes = SupportedCultures.Select(c => c.CultureCode).ToArray();
-        
+
         private Culture(string cultureName, string cultureCode)
         {
             this.CultureName = cultureName;
@@ -50,16 +50,27 @@ namespace Microsoft.Recognizers.Text
         // the first culture with the same prefix as the input one will be returned.
         // Otherwise, the original input culture code will be returned.
         // e.g. "en-029"->"en-*" "vo-id"->"vo-id" "en-us"->"en-us"
-        public static string MapToMoreSpecificLanguage(string cultureCode)
+        public static string MapToNearestLanguage(string cultureCode)
         {
             cultureCode = cultureCode.ToLowerInvariant();
 
             if (SupportedCultureCodes.All(o => o != cultureCode))
             {
+                // Handle cases like EnglishOthers with cultureCode "en-*"
                 var fallbackCultureCodes = SupportedCultureCodes
                     .Where(o => o.EndsWith("*") && cultureCode.StartsWith(o.Split('-').First())).ToList();
 
                 if (fallbackCultureCodes.Count == 1)
+                {
+                    return fallbackCultureCodes.First();
+                }
+
+                // If there is no cultureCode like "-*", map only the prefix
+                // For example, "es-mx" will be mapped to "es-es"
+                fallbackCultureCodes = SupportedCultureCodes
+                    .Where(o => cultureCode.StartsWith(o.Split('-').First())).ToList();
+
+                if (fallbackCultureCodes.Any())
                 {
                     return fallbackCultureCodes.First();
                 }

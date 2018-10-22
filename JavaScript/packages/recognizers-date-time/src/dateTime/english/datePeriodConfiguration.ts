@@ -3,6 +3,7 @@ import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseNumberParser, BaseNumberExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "@microsoft/recognizers-text-number"
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
+import { BaseDateTime } from "../../resources/baseDateTime"
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
@@ -11,6 +12,7 @@ import { IDateTimeExtractor } from "../baseDateTime";
 
 export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[]
+    readonly illegalYearRegex: RegExp
     readonly YearRegex: RegExp
     readonly tillRegex: RegExp
     readonly followedUnit: RegExp
@@ -49,6 +51,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex)
         ];
+        this.illegalYearRegex = RegExpUtility.getSafeRegExp(BaseDateTime.IllegalYearRegex);
         this.YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit);

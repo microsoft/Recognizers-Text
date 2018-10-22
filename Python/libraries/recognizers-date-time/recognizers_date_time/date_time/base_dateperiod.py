@@ -25,6 +25,11 @@ class DatePeriodExtractorConfiguration(ABC):
 
     @property
     @abstractmethod
+    def illegal_year_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def year_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -147,8 +152,13 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
                     if not year_str:
                         year = self.__get_year_from_text(match_year)
 
-                        if not (year >= 1500 and year <= 2000):
+                        if not (year >= Constants.MinYearNum and year <= Constants.MaxYearNum):
                             add_token = False
+
+                if (match.end() - match.start() == Constants.FourDigitsYearLength) and self.__infix_boundary_check(match, source):
+                    sub_str = source[match.start() - 1 : match.end() + 1]
+                    if self.config.illegal_year_regex.match(sub_str):
+                        add_token = False
 
                 if add_token:
                     tokens.append(Token(match.start(), match.end()))
@@ -293,6 +303,13 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
 
         return tokens
 
+    def __infix_boundary_check(self, match: Match, source: str) -> bool:
+        is_match_infix_of_source = False
+        if match.start() > 0 and match.end() < len(source):
+            if source[match.start():match.end()] == match.group():
+                is_match_infix_of_source = True
+
+        return is_match_infix_of_source
 
 class DatePeriodParserConfiguration(ABC):
     @property

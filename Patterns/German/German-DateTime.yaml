@@ -17,8 +17,25 @@ DayRegex: !simpleRegex
   def: ((der|dem|des)\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9))(\.)?
 MonthNumRegex: !simpleRegex
   def: (?<month>01([\.])?|02([\.])?|03([\.])?|04([\.])?|05([\.])?|06([\.])?|07([\.])?|08([\.])?|09([\.])?|10([\.])?|11([\.])?|12([\.])?|1([\.])?|2([\.])?|3([\.])?|4([\.])?|5([\.])?|6([\.])?|7([\.])?|8([\.])?|9([\.])?)\b
-YearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2})
+DescRegex: !nestedRegex
+  def: ({OclockRegex})
+  references: [ OclockRegex ]
+AmDescRegex: !simpleRegex
+  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
+PmDescRegex: !simpleRegex
+  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
+AmPmDescRegex: !simpleRegex
+  def: (ampm)
+# As month number can't be 0, so add (?!\.0\b) to filter out some wrong cases
+TwoDigitYearRegex: !nestedRegex
+  def: \b(?<![$])(?<year>([0-27-9]\d))(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  references: [ AmDescRegex, PmDescRegex]
+FullTextYearRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[\*]
+YearRegex: !nestedRegex
+  def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
+  references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
   def: (?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))
 SingleWeekDayRegex: !simpleRegex
@@ -74,13 +91,13 @@ QuarterRegexYearFront: !nestedRegex #Not needed in german
   references: [ YearRegex, RelativeRegex ]
 AllHalfYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: .^
 PrefixDayRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: .^
 CenturySuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: .^
 SeasonRegex: !nestedRegex
   def: \b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b
   references: [ YearRegex, RelativeRegex ]
@@ -92,10 +109,6 @@ MonthOfRegex: !simpleRegex
   def: (monat)(\s*)(des)
 MonthRegex: !simpleRegex
   def: (?<month>april|apr.|august|aug.|dezember|dez.|februar|feb.|januar|jan.|juli|jul.|juni|jun.|märz|mai|november|nov.|oktober|okt.|september|sep.)
-AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)
-PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
@@ -143,7 +156,7 @@ DateExtractor2: !nestedRegex
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex ]
 DateExtractor3: !nestedRegex
   def: \b({DayRegex}{MonthRegex})
-  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+  references: [ WeekDayRegex, DayRegex, MonthRegex ]
 DateExtractor4: !nestedRegex
   def: \b({DayRegex}\s*{MonthNumRegex}\s*{DateYearRegex})\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
@@ -181,9 +194,6 @@ RangeUnitRegex: !simpleRegex
   def: (?<unit>jahren|jahre|jahr|monaten|monate|monat|wochen|woche|tagen|tage|tag)
 OclockRegex: !simpleRegex
   def: (?<oclock>Uhr)
-DescRegex: !nestedRegex
-  def: ({OclockRegex})
-  references: [ OclockRegex ]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>'null'|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig)\b
 MinuteNumRegex: !simpleRegex
@@ -415,8 +425,6 @@ InConnectorRegex: !simpleRegex
 WithinNextPrefixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-AmPmDescRegex: !simpleRegex
-  def: (ampm)
 MorningStartEndRegex: !simpleRegex
   def: (^(morgen(s)?))|((morgen(s)?)$)
 AfternoonStartEndRegex: !simpleRegex
@@ -506,9 +514,6 @@ DecadeWithCenturyRegex: !nestedRegex
   def: (the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))
   references: [ CenturyRegex, DecadeRegex ]
 RelativeDecadeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-FullTextYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 YearSuffix: !nestedRegex

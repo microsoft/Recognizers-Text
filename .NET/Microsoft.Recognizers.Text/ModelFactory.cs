@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text
                 return false;
             }
 
-            culture = Culture.MapToMoreSpecificLanguage(culture);
+            culture = Culture.MapToNearestLanguage(culture);
 
             // Look in cache
             var cacheKey = (culture, modelType, options.ToString());
