@@ -22,7 +22,7 @@ Especially for Japanese, Italian, Korean, and Dutch. More info below.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-Good stating points for contribution are:
+Good starting points for contribution are:
 * the list of [open issues](https://github.com/Microsoft/Recognizers-Text/issues) (especially those marked as ```help wanted```); 
 * the json spec cases temporarily marked as ```NotSupported``` ([Specs](./Specs)); and
 * translating json test spec cases that work in English, but don't yet exist in a target language.
