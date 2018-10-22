@@ -704,7 +704,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "8",
-          "unit": "Megabyte"
+          "unit": "Megabit"
         }
       }
     ],

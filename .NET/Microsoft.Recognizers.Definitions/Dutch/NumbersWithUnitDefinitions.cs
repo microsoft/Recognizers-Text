@@ -43,17 +43,17 @@ namespace Microsoft.Recognizers.Definitions.Dutch
 		public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
 		{
 			{ "Bit", "-bit|bit|bits" },
-			{ "Kilobit", "kilobit|kilobits|kb|kbit" },
-			{ "Megabit", "megabit|megabits|Mb|Mbit" },
-			{ "Gigabit", "gigabit|gigabits|Gb|Gbit" },
-			{ "Terabit", "terabit|terabits|Tb|Tbit" },
-			{ "Petabit", "petabit|petabits|Pb|Pbit" },
+			{ "Kilobit", "kilobit|kilobits|kb|Kb|kbit" },
+			{ "Megabit", "megabit|megabits|Mb|mb|Mbit" },
+			{ "Gigabit", "gigabit|gigabits|Gb|gb|Gbit" },
+			{ "Terabit", "terabit|terabits|Tb|tb|Tbit" },
+			{ "Petabit", "petabit|petabits|Pb|pb|Pbit" },
 			{ "Byte", "-byte|byte|bytes" },
 			{ "Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|KB|kilobytes|kilo byte|kilo bytes|kByte" },
-			{ "Megabyte", "-megabyte|-megabytes|megabyte|mB|MB|mb|megabytes|mega byte|mega bytes|MByte" },
-			{ "Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|GB|gb|gigabytes|giga byte|giga bytes|GByte" },
-			{ "Terabyte", "-terabyte|-terabytes|terabyte|tB|TB|tb|terabytes|tera byte|tera bytes|TByte" },
-			{ "Petabyte", "-petabyte|-petabytes|petabyte|pB|PB|pb|petabytes|peta byte|peta bytes|PByte" }
+			{ "Megabyte", "-megabyte|-megabytes|megabyte|mB|MB|megabytes|mega byte|mega bytes|MByte" },
+			{ "Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|GB|gigabytes|giga byte|giga bytes|GByte" },
+			{ "Terabyte", "-terabyte|-terabytes|terabyte|tB|TB|terabytes|tera byte|tera bytes|TByte" },
+			{ "Petabyte", "-petabyte|-petabytes|petabyte|pB|PB|petabytes|peta byte|peta bytes|PByte" }
 		};
 		public static readonly IList<string> AmbiguousDimensionUnitList = new List<string>
 		{
