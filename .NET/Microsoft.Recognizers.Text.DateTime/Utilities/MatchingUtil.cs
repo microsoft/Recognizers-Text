@@ -94,8 +94,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static List<MatchResult<string>> FilterSubsetItems(IEnumerable<MatchResult<string>> matchResults)
         {
-            return matchResults.ToList().Where(item =>
-                !matchResults.Any(
+            var allMatchResults = matchResults.ToList();
+            return allMatchResults.Where(item =>
+                !allMatchResults.Any(
                     ritem => (ritem.Start < item.Start && ritem.End >= item.End) ||
                         (ritem.Start <= item.Start && ritem.End > item.End)
                     )
