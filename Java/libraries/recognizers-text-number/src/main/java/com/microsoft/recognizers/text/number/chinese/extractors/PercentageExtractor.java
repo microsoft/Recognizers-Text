@@ -70,7 +70,7 @@ public class PercentageExtractor extends BaseNumberExtractor {
         //2,123个百分点
         builder.put(Pattern.compile(ChineseNumeric.NumbersFractionPercentageRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "PerNum");
 
-        // @TODO Example missing
+        //32.5%
         builder.put(Pattern.compile(ChineseNumeric.SimpleIntegerPercentageRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "PerNum");
 
         //2折 ２.５折
@@ -91,7 +91,7 @@ public class PercentageExtractor extends BaseNumberExtractor {
         //三成 六点五成
         builder.put(Pattern.compile(ChineseNumeric.SimpleSpecialsPercentageRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "PerSpe");
 
-        // @TODO Example missing
+        //打对折 半成
         builder.put(Pattern.compile(ChineseNumeric.SpecialsFoldsPercentageRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), "PerSpe");
 
         this.regexes = Collections.unmodifiableMap(builder);
