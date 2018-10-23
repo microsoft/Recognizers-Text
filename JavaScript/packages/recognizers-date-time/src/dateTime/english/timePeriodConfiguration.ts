@@ -93,31 +93,32 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
             endHour: 0,
             endMin: 0
         };
+
         if (trimmedText.endsWith(Constants.EN_MORNING)) {
-            result.timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_MORNING];
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_MORNING];
-            result.endHour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_MORNING];
+            result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_MORNING);
+            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_MORNING);
+            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_MORNING);
         }
         else if (trimmedText.endsWith(Constants.EN_AFTERNOON)) {
-            result.timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_AFTERNOON];
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_AFTERNOON];
-            result.endHour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_AFTERNOON];
+            result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_AFTERNOON);
+            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_AFTERNOON);
+            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_AFTERNOON);
         }
         else if (trimmedText.endsWith(Constants.EN_EVENING)) {
-            result.timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_EVENING];
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_EVENING];
-            result.endHour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_EVENING];
+            result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_EVENING);
+            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_EVENING);
+            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_EVENING);
         }
         else if (trimmedText === Constants.EN_DAYTIME) {
-            result.timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_DAYTIME];
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_DAYTIME];
-            result.endHour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_DAYTIME];
+            result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_DAYTIME);
+            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_DAYTIME);
+            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_DAYTIME);
         }
         else if (trimmedText.endsWith(Constants.EN_NIGHT)) {
-            result.timex = EnglishDateTime.TimeOfDayTimex[Constants.EN_NIGHT];
-            result.beginHour = EnglishDateTime.TimeOfDayBeginHour[Constants.EN_NIGHT];
-            result.endHour = EnglishDateTime.TimeOfDayEndHour[Constants.EN_NIGHT];
-            result.endMin = EnglishDateTime.TimeOfDayEndMin[Constants.EN_NIGHT];
+            result.timex = EnglishDateTime.TimeOfDayTimex.get(Constants.EN_NIGHT);
+            result.beginHour = EnglishDateTime.TimeOfDayBeginHour.get(Constants.EN_NIGHT);
+            result.endHour = EnglishDateTime.TimeOfDayEndHour.get(Constants.EN_NIGHT);
+            result.endMin = EnglishDateTime.TimeOfDayEndMin.get(Constants.EN_NIGHT);
         }
         else {
             result.timex = null;
