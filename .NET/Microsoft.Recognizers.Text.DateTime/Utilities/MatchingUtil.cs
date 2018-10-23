@@ -48,9 +48,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // Temporary solution for remove superfluous words only under the Preview mode
-        public static string PreProcessTextRemoveSuperfluousWords(string text, StringMatcher matcher, out List<MatchResult<string>> superfluousWordMatches)
+        public static string PreProcessTextRemoveSuperfluousWords(string text, StringMatcher matcher, 
+                                                                  out List<MatchResult<string>> superfluousWordMatches)
         {
-            superfluousWordMatches = FilterSubsetItems(matcher.Find(text));
+
+            superfluousWordMatches = RemoveSubMatches(matcher.Find(text));
 
             var bias = 0;
 
@@ -65,8 +67,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Temporary solution for recover superfluous words only under the Preview mode
         public static List<ExtractResult> PosProcessExtractionRecoverSuperfluousWords(List<ExtractResult> extractResults,
-            List<MatchResult<string>> superfluousWordMatches, string originText)
+                                                                                      List<MatchResult<string>> superfluousWordMatches, 
+                                                                                      string originText)
         {
+
             foreach (var match in superfluousWordMatches)
             {
                 foreach (var extractResult in extractResults)
@@ -92,13 +96,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             return extractResults;
         }
 
-        public static List<MatchResult<string>> FilterSubsetItems(IEnumerable<MatchResult<string>> matchResults)
+        public static List<MatchResult<string>> RemoveSubMatches(IEnumerable<MatchResult<string>> matchResults)
         {
-            var allMatchResults = matchResults.ToList();
-            return allMatchResults.Where(item =>
-                !allMatchResults.Any(
+            var matchList = matchResults.ToList();
+
+            return matchList.Where(item =>
+                !matchList.Any(
                     ritem => (ritem.Start < item.Start && ritem.End >= item.End) ||
-                        (ritem.Start <= item.Start && ritem.End > item.End)
+                             (ritem.Start <= item.Start && ritem.End > item.End)
                     )
                 ).ToList();
         }
