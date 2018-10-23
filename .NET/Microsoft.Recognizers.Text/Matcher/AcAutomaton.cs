@@ -66,6 +66,8 @@ namespace Microsoft.Recognizers.Text.Matcher
                 node.Fail = fail[node.Word] ?? root;
                 node.Fail = node.Fail == node ? root : node.Fail;
             }
+
+            ConvertDictToList(root);
         }
 
         public override IEnumerable<MatchResult<T>> Find(IEnumerable<T> queryText)

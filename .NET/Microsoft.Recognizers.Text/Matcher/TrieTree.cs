@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.Matcher
         public override void Init(IEnumerable<T>[] values, string[] ids)
         {
             BatchInsert(values, ids);
+            ConvertDictToList(root);
         }
 
         public override IEnumerable<MatchResult<T>> Find(IEnumerable<T> queryText)
