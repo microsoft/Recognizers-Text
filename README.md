@@ -10,19 +10,24 @@ Microsoft.Recognizers.Text provides robust recognition and resolution of entitie
 Microsoft.Recognizers.Text powers pre-built entities in both [**LUIS: Language Understanding Intelligent Service**](https://www.luis.ai/home) and [**Microsoft Bot Framework**](https://dev.botframework.com/); and is also available as standalone packages (for the base classes and the different entity recognizers).
 
 The Microsoft.Recognizers.Text packages currently target four platforms:
-* [C# version](https://github.com/Microsoft/Recognizers-Text/tree/master/.NET) - **NuGet packages** available at: https://www.nuget.org/profiles/Recognizers.Text
-* [JavaScript version](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-text-suite) - **NPM packages** available at: https://www.npmjs.com/~recognizers.text
-* [Python version](https://github.com/Microsoft/Recognizers-Text/tree/master/Python) (in progress)
-* [Java version](https://github.com/Microsoft/Recognizers-Text/tree/master/Java) (in progress)
+* [C#/.NET](https://github.com/Microsoft/Recognizers-Text/tree/master/.NET) - **NuGet packages** available at: https://www.nuget.org/profiles/Recognizers.Text
+* [JavaScript/TypeScript](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-text-suite) - **NPM packages** available at: https://www.npmjs.com/~recognizers.text
+* [Python](https://github.com/Microsoft/Recognizers-Text/tree/master/Python) (in progress)
+* [Java](https://github.com/Microsoft/Recognizers-Text/tree/master/Java) (in progress)
 
 Contributions are greatly welcome! Both for fixes and extensions in the currently supported languages and for expansion to new ones.
-Especially for Japanese, Italian, Korean, and Dutch.
+Especially for Japanese, Italian, Korean, and Dutch. More info below.
 
 # Contributing
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-The links below provide tips and an overview on how to contribute. Thank you!
+Good starting points for contribution are:
+* the list of [open issues](https://github.com/Microsoft/Recognizers-Text/issues) (especially those marked as ```help wanted```); 
+* the json spec cases temporarily marked as ```NotSupported``` ([Specs](./Specs)); and
+* translating json test spec cases that work in English, but don't yet exist in a target language.
+
+The links below decribe the project structure and provide both an overview and tips on how to contribute. Thank you!
 
 * [Overview and language resources](https://blog.botframework.com/2018/01/24/contributing-luis-microsoft-recognizers-text-part-1/)
 * [Implementing language specific behaviour](https://blog.botframework.com/2018/02/01/contributing-luis-microsoft-recognizers-text-part-2/)

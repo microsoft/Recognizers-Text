@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IEnumerable<Regex> TimeZoneRegexes => TimeZoneRegexList;
         public Regex LocationTimeSuffixRegex { get; }
-        public StringMatcher CityMatcher { get; }
+        public StringMatcher LocationMatcher { get; }
         public List<string> AmbiguousTimezoneList => new List<string>();
     }
 }

@@ -216,7 +216,7 @@ namespace Microsoft.Recognizers.Text.Number
             string replaceFracText = "@" + FracNumExtType;
             bool percentModeEnabled = (Options & NumberOptions.PercentageMode) != 0;
 
-            //@TODO pontential cause of GC
+            //@TODO potential cause of GC
             var match = new int[str.Length];
             var strParts = new List<Tuple<int, int>>();
             int start, end;
